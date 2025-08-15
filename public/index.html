@@ -3,44 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Informed 360</title>
-  <link rel="stylesheet" href="styles.css?v=ui2" />
+  <title>Informed30</title>
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
-  <header class="mast">
-    <div class="brand">Informed 360</div>
-    <div class="date" id="today"></div>
+  <header class="topnav">
+    <div class="brand">Informed30</div>
+    <nav class="links">
+      <a href="#">Home</a>
+      <a href="#">Markets</a>
+      <a href="#">Politics</a>
+      <a href="#">Technology</a>
+      <a href="#">Analysis</a>
+      <button class="search-btn" title="Search">🔍</button>
+    </nav>
   </header>
 
-  <div class="layout">
-    <aside class="col-left">
-      <section class="panel">
-        <h3>Search</h3>
-        <input id="search" class="search" placeholder="Type to filter..." />
-      </section>
-      <section class="panel">
+  <main class="shell">
+    <section class="hero" id="hero">
+      <div class="hero-img" id="heroImg"></div>
+      <div class="hero-card">
+        <h1 id="heroTitle">Loading…</h1>
+        <div class="hero-meta">
+          <span id="heroBias" class="chip">Bias: —</span>
+        </div>
+        <div id="heroGauge" class="gauge-box"></div>
+        <div class="hero-actions">
+          <a id="heroLink" class="btn" target="_blank" rel="noreferrer">Read Analysis</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid3">
+      <aside class="panel" id="dailyL">
         <h3>Daily Briefing</h3>
-        <ul id="dailyList" class="brief"></ul>
+        <ul id="dailyList" class="bullets"></ul>
+      </aside>
+
+      <section class="panel" id="newsMain">
+        <h3>News</h3>
+        <div id="newsCards" class="cards"></div>
       </section>
-    </aside>
 
-    <main class="col-main">
-      <article id="mainArticle" class="article"></article>
-    </main>
+      <aside class="panel" id="biasSpot">
+        <h3>.Bias Spotlight</h3>
+        <div id="spotList" class="spot"></div>
+      </aside>
+    </section>
 
-    <aside class="col-right">
-      <section class="panel">
-        <h3>Sentiment Meter</h3>
-        <div id="sc-topic1" class="senti-card"></div>
-        <div id="sc-topic2" class="senti-card"></div>
-        <div id="sc-s1" class="senti-card"></div>
-        <div id="sc-s2" class="senti-card"></div>
-      </section>
-    </aside>
-  </div>
+    <section class="panel longlist">
+      <h3>Economy & Markets</h3>
+      <div id="economyList" class="feedlist"></div>
+    </section>
 
-  <footer class="legal">Headlines link to original sources.</footer>
+    <section class="panel" id="dailyL2">
+      <h3>Daily Briefing</h3>
+      <ul id="dailyList2" class="bullets"></ul>
+    </section>
+  </main>
 
-  <script type="module" src="app.js?v=ui2"></script>
+  <footer class="foot">Headlines link to original sources.</footer>
+
+  <script type="module" src="app.js?v=3"></script>
 </body>
 </html>
