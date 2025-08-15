@@ -5,21 +5,26 @@ import fs from "fs";
 import _ from "lodash";
 import path from "path";
 import { fileURLToPath } from "url";
+import { JSDOM } from "jsdom";
 
-// ---- ESM-safe __dirname -----------------------------------------------------
+// ---------------------------------------------------------------------------
+// ESM-safe __dirname and app/static
+// ---------------------------------------------------------------------------
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// ---- App & static files -----------------------------------------------------
 const app = express();
 const PUBLIC_DIR = path.join(__dirname, "public");
 app.use(express.static(PUBLIC_DIR));
+
 app.get("/", (_req, res) => res.sendFile(path.join(PUBLIC_DIR, "index.html")));
 
-// ---- Config / helpers -------------------------------------------------------
+// ---------------------------------------------------------------------------
+// Config
+// ---------------------------------------------------------------------------
 const parser = new Parser({ timeout: 15000 });
 
-// Simple outlet bias map (tweak if you like)
+// Outlet bias hints (lightweight; tweak as you wish)
 const biasMap = {
   "pib.gov.in": "Center",
   "thehindu.com": "Lean Left",
@@ -35,10 +40,10 @@ const biasMap = {
   "espncricinfo.com": "Center"
 };
 
-// India-only allowlist (keeps the site focused and avoids legal issues)
+// India-only allowlist
 const ALLOWED_DOMAINS = new Set(Object.keys(biasMap));
 
-// Prefer these for the main story slot (big brands)
+// Prefer these for "main" story
 const PREFERRED_DOMAINS = new Set([
   "indianexpress.com",
   "thehindu.com",
@@ -72,7 +77,6 @@ function biasPercentages(title, domain) {
   if (bias === "Lean Right")  [L, C, R] = [0.15, 0.30, 0.55];
   if (bias === "Right")       [L, C, R] = [0.10, 0.20, 0.70];
 
-  // small headline cue nudges
   const leftCues  = /(climate|environment|equality|minority|rights|secular|labor|welfare|gender|lgbt|far-right|communal)/i;
   const rightCues = /(nationalism|border|illegal immigration|terror|law and order|heritage|tax cut|hindutva)/i;
   const t = (title || "").toLowerCase();
@@ -83,6 +87,63 @@ function biasPercentages(title, domain) {
   return { Left: L / s, Center: C / s, Right: R / s };
 }
 
+// ---------------------------------------------------------------------------
+// Image helpers (find images from enclosure/media/HTML) + absolutize
+// ---------------------------------------------------------------------------
+function absolutizeUrl(src, pageUrl) {
+  try { return new URL(src, pageUrl).href; } catch { return src || null; }
+}
+
+function firstImgFromHtml(html, pageUrl) {
+  try {
+    if (!html) return null;
+    const dom = new JSDOM(html);
+    const img = dom.window.document.querySelector("img");
+    if (!img) return null;
+    const u = img.getAttribute("src") || img.getAttribute("data-src");
+    return u ? absolutizeUrl(u, pageUrl) : null;
+  } catch {
+    const m = String(html || "").match(/<img[^>]+src=["']([^"']+)["']/i);
+    return m ? absolutizeUrl(m[1], pageUrl) : null;
+  }
+}
+
+function pickImageUrl(item, pageUrl) {
+  // Common RSS locations
+  const media = item["media:content"] || item["media:thumbnail"] || {};
+  const enclosures = Array.isArray(item.enclosure) ? item.enclosure : [item.enclosure].filter(Boolean);
+  const candidates = [
+    media.url,
+    item.image?.url,
+    item.thumbnail,
+    item.enclosure?.url,
+    ...enclosures.map(e => e?.url).filter(Boolean)
+  ].filter(Boolean);
+
+  for (const u of candidates) {
+    const abs = absolutizeUrl(u, pageUrl);
+    if (abs) return abs;
+  }
+
+  // Embedded HTML
+  const htmlBlocks = [
+    item["content:encoded"],
+    item.content,
+    item.contentSnippet,
+    item.summary,
+    item.description
+  ];
+  for (const html of htmlBlocks) {
+    const u = firstImgFromHtml(html, pageUrl);
+    if (u) return u;
+  }
+
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// Fetch feeds
+// ---------------------------------------------------------------------------
 async function fetchFeed(src) {
   const feed = await parser.parseURL(src.url);
   const items = feed.items || [];
@@ -94,11 +155,11 @@ async function fetchFeed(src) {
     if (!link || !title) continue;
 
     const domain = domainFromUrl(link);
-    if (!ALLOWED_DOMAINS.has(domain)) continue; // India-only
+    if (!ALLOWED_DOMAINS.has(domain)) continue;
 
     const category = src.category || inferCategory(title, "general");
 
-    // Sentiment: title only for HEADLINE_ONLY; title+snippet when allowed
+    // Sentiment input respects policy
     let textForSent = title;
     if (src.policy !== "HEADLINE_ONLY") {
       const snippet = String(it.contentSnippet || it.summary || "");
@@ -106,6 +167,8 @@ async function fetchFeed(src) {
     }
     const { compound } = vader.SentimentIntensityAnalyzer.polarity_scores(textForSent);
     const sentiment = Math.max(-1, Math.min(1, compound));
+
+    const image_url = pickImageUrl(it, link);
 
     out.push({
       id: `${src.id}:${link}`,
@@ -115,10 +178,10 @@ async function fetchFeed(src) {
       source_domain: domain,
       source_name: src.name,
       category,
-      policy: src.policy,                       // HEADLINE_ONLY | OPEN | CC_*
-      image_url: it?.enclosure?.url || it?.["media:content"]?.url || null,
+      policy: src.policy, // HEADLINE_ONLY | OPEN | CC_*
+      image_url,
       summary: (src.policy === "OPEN" || src.policy?.startsWith("CC_"))
-                ? (it.contentSnippet || it.summary || null) : null,
+               ? (it.contentSnippet || it.summary || null) : null,
       sentiment,
       bias_pct: biasPercentages(title, domain)
     });
@@ -138,7 +201,7 @@ function dedupe(articles) {
 }
 
 async function getAllArticles() {
-  // Read feeds list (keep this file at repo root)
+  // Load your feeds list from rss-feeds.json (repo root)
   const raw = fs.readFileSync(path.join(__dirname, "rss-feeds.json"), "utf8");
   const feeds = JSON.parse(raw.replace(/^\uFEFF/, "").trim());
 
@@ -149,7 +212,9 @@ async function getAllArticles() {
   return clean;
 }
 
-// ---- API --------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// API
+// ---------------------------------------------------------------------------
 app.get("/api/news", async (_req, res) => {
   try {
     const all = await getAllArticles();
@@ -157,10 +222,9 @@ app.get("/api/news", async (_req, res) => {
       return res.json({ ok: true, generated_at: new Date().toISOString(), main: null, daily: [], topics: {} });
     }
 
-    // Pick main
     const main = all.find(a => PREFERRED_DOMAINS.has(a.source_domain)) || all[0];
 
-    // Build Daily Briefing (min 5 items, no duplicates, skip main)
+    // Build Daily Briefing (≥5 items)
     const byCat = _.groupBy(all.filter(a => a.id !== main.id), "category");
     let daily = [
       ...(byCat.politics || []).slice(0, 2),
@@ -168,31 +232,19 @@ app.get("/api/news", async (_req, res) => {
       ...(byCat.sports   || []).slice(0, 1),
       ...(byCat.entertainment || []).slice(0, 1)
     ];
-    // de-dup + cap
+    // de-dup + top-up
     const seen = new Set();
     daily = daily.filter(a => a && !seen.has(a.id) && seen.add(a.id)).slice(0, 10);
-    // top-up to at least 5
     if (daily.length < 5) {
       const used = new Set(daily.map(a => a.id).concat([main.id]));
       const fillers = all.filter(a => !used.has(a.id));
       daily = daily.concat(fillers.slice(0, 5 - daily.length));
     }
 
-    // Simple topic meters (avg sentiment by keyword across main+daily)
-    const pool = [main, ...daily].filter(Boolean);
-    const avgSentiment = (kw) => {
-      const k = kw.toLowerCase();
-      const hits = pool.filter(a => (a.title || "").toLowerCase().includes(k));
-      if (!hits.length) return null;
-      const avg = hits.reduce((s, a) => s + (a.sentiment || 0), 0) / hits.length;
-      return { count: hits.length, avg };
-    };
-    const topics = { Modi: avgSentiment("Modi"), Sensex: avgSentiment("Sensex") };
-
     res.json({
       ok: true,
       generated_at: new Date().toISOString(),
-      main, daily, topics
+      main, daily
     });
   } catch (e) {
     console.error("NEWS API ERROR:", e);
@@ -200,10 +252,31 @@ app.get("/api/news", async (_req, res) => {
   }
 });
 
-// basic health endpoint for uptime checks
+// Health
 app.get("/healthz", (_req, res) => res.type("text").send("ok"));
+app.get("/health",  (_req, res) => res.type("text").send("ok")); // alias
 
-// ---- Start (Render-compatible) ---------------------------------------------
+// ---------------------------------------------------------------------------
+// Image proxy (serves remote images via your HTTPS domain)
+// ex: <img src="/img?u=http%3A%2F%2Fexample.com%2Fpic.jpg">
+// ---------------------------------------------------------------------------
+app.get("/img", async (req, res) => {
+  const u = req.query.u;
+  if (!u) return res.status(400).send("Missing u param");
+  try {
+    const r = await fetch(u, { redirect: "follow" });
+    if (!r.ok) return res.status(502).send("Upstream image error");
+    const type = r.headers.get("content-type") || "image/jpeg";
+    res.set("Content-Type", type);
+    res.set("Cache-Control", "public, max-age=86400");
+    const buf = Buffer.from(await r.arrayBuffer());
+    res.send(buf);
+  } catch (e) {
+    res.status(500).send("Image proxy error");
+  }
+});
+
+// Start (Render-compatible)
 const PORT = process.env.PORT || 3000;
 const HOST = "0.0.0.0";
 app.listen(PORT, HOST, () => {
