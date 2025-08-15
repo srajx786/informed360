@@ -42,7 +42,10 @@ function miniMeterHTML(v){
 function setHero(main){
   const s = pick(main);
   const heroImg = document.getElementById("heroImg");
-  heroImg.style.backgroundImage = main.image_url ? `url(${main.image_url})` : "linear-gradient(45deg,#cfd8ff,#e8ecff)";
+  const img = main.image_url ? `/img?u=${encodeURIComponent(main.image_url)}` : null;
+  heroImg.style.backgroundImage = img
+    ? `url(${img})`
+    : "linear-gradient(45deg,#cfd8ff,#e8ecff)";
   document.getElementById("heroTitle").textContent = main.title;
   document.getElementById("heroBias").textContent = "Bias: " + biasLabel(main.bias_pct);
   document.getElementById("heroGauge").innerHTML = gaugeSVG(s);
@@ -64,8 +67,9 @@ function addNewsCards(el, items){
   items.forEach(a=>{
     const div=document.createElement("div");
     div.className="card";
+    const img = a.image_url ? `/img?u=${encodeURIComponent(a.image_url)}` : null;
     div.innerHTML = `
-      <div class="thumb" style="background-image:${a.image_url?`url(${a.image_url})`:"linear-gradient(45deg,#f3f4f6,#e5e7eb)"}"></div>
+      <div class="thumb" style="background-image:${img?`url(${img})`:"linear-gradient(45deg,#f3f4f6,#e5e7eb)"}"></div>
       <div>
         <div class="meta">${a.source_name||a.source_domain||""}</div>
         <div class="title"><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></div>
@@ -88,8 +92,9 @@ function addEconomy(el, items){
   el.innerHTML="";
   items.slice(0,6).forEach(a=>{
     const row=document.createElement("div"); row.className="feed-item";
+    const img = a.image_url ? `/img?u=${encodeURIComponent(a.image_url)}` : null;
     row.innerHTML=`
-      <div class="thumb" style="background-image:${a.image_url?`url(${a.image_url})`:"linear-gradient(45deg,#f3f4f6,#e5e7eb)"}"></div>
+      <div class="thumb" style="background-image:${img?`url(${img})`:"linear-gradient(45deg,#f3f4f6,#e5e7eb)"}"></div>
       <div>
         <div class="title"><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></div>
         <div class="meta">${a.source_name||a.source_domain||""}</div>
