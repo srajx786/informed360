@@ -2,99 +2,122 @@ import vader from "https://esm.sh/vader-sentiment@1.1.3";
 
 const clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
 const toPct=v=>Math.round(clamp((v+1)/2,0,1)*100);
-const cls=v=>v<-0.05?"neg":v>0.05?"pos":"neu";
-const fmt=d=>{try{return new Date(d).toLocaleString()}catch{return ""}};
-
-const compute=(t)=>{
-  try{
-    const {compound}=vader.SentimentIntensityAnalyzer.polarity_scores(t||"");
-    return clamp(compound,-1,1);
-  }catch{ return 0; }
-};
-const pickSent=(item)=>
-  typeof item?.sentiment==="number" ? clamp(item.sentiment,-1,1)
-  : compute((item?.title||"")+(item?.summary?(". "+item.summary):""));
-
-function card(el,title,val){
-  if(!el) return;
-  const pct=toPct(val), c=cls(val);
-  el.innerHTML = `
-    <div class="senti-row">
-      <div class="senti-title">${title}</div>
-      <div class="senti-val">${pct}%</div>
-    </div>
-    <div class="bar"><div class="fill ${c}" style="width:${pct}%"></div></div>`;
-}
+const pick=(a)=> typeof a?.sentiment==="number" ? clamp(a.sentiment,-1,1)
+  : vader.SentimentIntensityAnalyzer.polarity_scores(((a?.title)||"")+" "+(a?.summary||"")).compound;
 
 function biasLabel(p){
-  const L=p?.Left||0, C=p?.Center||0, R=p?.Right||0;
-  const m=Math.max(L,C,R); return m===C?"Centre":(m===L?"Left":"Right");
+  const L=p?.Left||0,C=p?.Center||0,R=p?.Right||0;
+  const m=Math.max(L,C,R); return m===C?"Neutral":(m===L?"Left":"Right");
+}
+
+function gaugeSVG(value){
+  const v=clamp(value,-1,1);
+  const pct=toPct(v);
+  const ang = Math.PI * (1 - (v+1)/2); // 0..pi semicircle
+  const cx=60, cy=60, r=50;
+  const x = cx + r*Math.cos(ang);
+  const y = cy - r*Math.sin(ang);
+  const color = v>=0 ? "#16a34a" : "#f97316"; // Positive / Caution
+  return `
+    <div class="gauge">
+      <svg width="120" height="70" viewBox="0 0 120 70">
+        <path d="M10 60 A50 50 0 0 1 110 60" fill="none" stroke="#e5e7eb" stroke-width="12" />
+        <path d="M10 60 A50 50 0 0 1 60 10" fill="none" stroke="#16a34a" stroke-width="12" />
+        <path d="M60 10 A50 50 0 0 1 110 60" fill="none" stroke="#f97316" stroke-width="12" />
+        <circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="6" fill="${color}" stroke="#fff" stroke-width="2"/>
+      </svg>
+      <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-top:2px">
+        <span style="color:#16a34a;font-weight:700">Positive</span>
+        <span style="color:#9ca3af;font-weight:700">${pct}%</span>
+        <span style="color:#f97316;font-weight:700">Caution</span>
+      </div>
+    </div>`;
+}
+
+function miniMeterHTML(v){
+  const pct=toPct(v), cls=v>0.05?"pos":v<-0.05?"neg":"neu";
+  return `<div class="mini"><div class="fill ${cls}" style="width:${pct}%"></div></div>`;
+}
+
+function setHero(main){
+  const s = pick(main);
+  const heroImg = document.getElementById("heroImg");
+  heroImg.style.backgroundImage = main.image_url ? `url(${main.image_url})` : "linear-gradient(45deg,#cfd8ff,#e8ecff)";
+  document.getElementById("heroTitle").textContent = main.title;
+  document.getElementById("heroBias").textContent = "Bias: " + biasLabel(main.bias_pct);
+  document.getElementById("heroGauge").innerHTML = gaugeSVG(s);
+  const link = document.getElementById("heroLink");
+  link.href = main.url;
+}
+
+function addDaily(listEl, items){
+  listEl.innerHTML = "";
+  items.forEach(a=>{
+    const li=document.createElement("li");
+    li.innerHTML = `<span class="dot"><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></span>${miniMeterHTML(pick(a))}`;
+    listEl.appendChild(li);
+  });
+}
+
+function addNewsCards(el, items){
+  el.innerHTML = "";
+  items.forEach(a=>{
+    const div=document.createElement("div");
+    div.className="card";
+    div.innerHTML = `
+      <div class="thumb" style="background-image:${a.image_url?`url(${a.image_url})`:"linear-gradient(45deg,#f3f4f6,#e5e7eb)"}"></div>
+      <div>
+        <div class="meta">${a.source_name||a.source_domain||""}</div>
+        <div class="title"><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></div>
+        <div class="meta">${new Date(a.published_at||Date.now()).toLocaleString()}</div>
+      </div>`;
+    el.appendChild(div);
+  });
+}
+
+function addSpotlight(el, items){
+  el.innerHTML="";
+  items.slice(0,2).forEach(a=>{
+    const row=document.createElement("div"); row.className="spot-row";
+    row.innerHTML=`<div style="max-width:65%"><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></div>` + gaugeSVG(pick(a));
+    el.appendChild(row);
+  });
+}
+
+function addEconomy(el, items){
+  el.innerHTML="";
+  items.slice(0,6).forEach(a=>{
+    const row=document.createElement("div"); row.className="feed-item";
+    row.innerHTML=`
+      <div class="thumb" style="background-image:${a.image_url?`url(${a.image_url})`:"linear-gradient(45deg,#f3f4f6,#e5e7eb)"}"></div>
+      <div>
+        <div class="title"><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></div>
+        <div class="meta">${a.source_name||a.source_domain||""}</div>
+      </div>
+      <div>${miniMeterHTML(pick(a))}</div>`;
+    el.appendChild(row);
+  });
 }
 
 async function boot(){
-  document.getElementById("today").textContent =
-    new Date().toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"});
-
   const res = await fetch("/api/news");
   const data = await res.json();
-  if(!data.ok || !data.main){
-    document.getElementById("mainArticle").textContent = "No news loaded.";
-    return;
-  }
+  if(!data.ok || !data.main){ document.getElementById("heroTitle").textContent="No news loaded."; return;}
 
-  const main = data.main;
-  const bias = main.bias_pct || {Left:.33,Center:.34,Right:.33};
-  const L=Math.round((bias.Left||0)*100), C=Math.round((bias.Center||0)*100), R=Math.round((bias.Right||0)*100);
-  const sMain = pickSent(main);
+  const all=[data.main,...(data.daily||[])].filter(Boolean);
+  setHero(data.main);
 
-  const root = document.getElementById("mainArticle");
-  root.innerHTML = `
-    <h1>${main.title}</h1>
-    <div class="meta"><span class="source">${main.source_name||main.source_domain||""}</span> — ${fmt(main.published_at)}</div>
-    <div class="biasbar"><div class="left" style="width:${L}%"></div><div class="center" style="width:${C}%"></div><div class="right" style="width:${R}%"></div></div>
-    <p><a href="${main.url}" target="_blank" rel="noreferrer">Read at source →</a></p>
-    <div id="photoSenti" class="senti-card"></div>
-  `;
-  card(document.getElementById("photoSenti"), "Article sentiment", sMain);
+  const left = (data.daily||[]).slice(0,6);
+  const left2 = (data.daily||[]).slice(6,12);
+  addDaily(document.getElementById("dailyList"), left);
+  addDaily(document.getElementById("dailyList2"), left2);
 
-  // Daily Briefing
-  const ul = document.getElementById("dailyList"); ul.innerHTML="";
-  (data.daily||[]).forEach(it=>{
-    const s = pickSent(it);
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <a href="${it.url}" target="_blank" rel="noreferrer">${it.title}</a>
-      <div class="mini-bar"><div class="fill ${cls(s)}" style="width:${toPct(s)}%"></div></div>`;
-    ul.appendChild(li);
-  });
+  addNewsCards(document.getElementById("newsCards"), (data.daily||[]).slice(0,3));
+  const sortedByPolar = [...all].sort((a,b)=>Math.abs(pick(b))-Math.abs(pick(a)));
+  addSpotlight(document.getElementById("spotList"), sortedByPolar);
 
-  // Right-rail meters (always render)
-  const all = [data.main, ...(data.daily||[])].filter(Boolean);
-  const topicAvg = (kw)=>{
-    const k=kw.toLowerCase();
-    const hits = all.filter(a => (a.title||"").toLowerCase().includes(k));
-    if(!hits.length) return 0;
-    return hits.reduce((sum,a)=>sum+pickSent(a),0)/hits.length;
-  };
-  card(document.getElementById("sc-topic1"), "Modi (topic)", topicAvg("Modi"));
-  card(document.getElementById("sc-topic2"), "Sensex (topic)", topicAvg("Sensex"));
-  card(document.getElementById("sc-s1"), "Main article", sMain);
-  const dailyAvg = (data.daily||[]).length
-    ? (data.daily||[]).reduce((a,b)=>a+pickSent(b),0)/(data.daily||[]).length
-    : 0;
-  card(document.getElementById("sc-s2"), "Daily average", dailyAvg);
-
-  // Search
-  const box=document.getElementById("search");
-  if(box){
-    box.addEventListener("input",()=>{
-      const q=box.value.trim().toLowerCase();
-      document.querySelectorAll("#dailyList li").forEach(li=>{
-        const t=li.querySelector("a")?.textContent.toLowerCase()||"";
-        li.style.display = t.includes(q) ? "" : "none";
-      });
-    });
-  }
+  const econ = (data.daily||[]).filter(a=> (a.category||"").match(/business|tech|markets|economy/i));
+  addEconomy(document.getElementById("economyList"), econ.length?econ:(data.daily||[]));
 }
 
 boot();
