@@ -3,12 +3,25 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Informed30</title>
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <title>Informed 360</title>
+
+  <!-- Roboto for headings; Arial fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <header class="topnav">
-    <div class="brand">Informed360</div>
+    <div class="leftbrand">
+      <div class="brand">Informed 360</div>
+      <div class="stocks" id="stocks">
+        <span class="stockchip" id="nseChip">NSE …</span>
+        <span class="stockchip" id="bseChip">BSE …</span>
+      </div>
+    </div>
+
     <nav class="links">
       <a href="#">Home</a>
       <a href="#">Markets</a>
@@ -17,6 +30,8 @@
       <a href="#">Analysis</a>
       <button class="search-btn" title="Search">🔍</button>
     </nav>
+
+    <div class="datenow" id="nowDate">—</div>
   </header>
 
   <main class="shell">
@@ -64,6 +79,6 @@
 
   <footer class="foot">Headlines link to original sources.</footer>
 
-  <script type="module" src="app.js?v=3"></script>
+  <script type="module" src="app.js?v=4"></script>
 </body>
 </html>
