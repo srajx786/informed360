@@ -1,0 +1,44 @@
+[
+  {
+    "id": "thehindu",
+    "name": "The Hindu \u2014 Front Page",
+    "url": "https://www.thehindu.com/feeder/default.rss",
+    "policy": "HEADLINE_ONLY",
+    "category": "general"
+  },
+  {
+    "id": "indianexpress",
+    "name": "Indian Express \u2014 All",
+    "url": "https://indianexpress.com/feed/",
+    "policy": "HEADLINE_ONLY",
+    "category": "general"
+  },
+  {
+    "id": "hindustantimes",
+    "name": "Hindustan Times \u2014 India",
+    "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+    "policy": "HEADLINE_ONLY",
+    "category": "general"
+  },
+  {
+    "id": "toi",
+    "name": "Times of India \u2014 Top Stories",
+    "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+    "policy": "HEADLINE_ONLY",
+    "category": "general"
+  },
+  {
+    "id": "ndtv",
+    "name": "NDTV \u2014 Top Stories",
+    "url": "https://feeds.feedburner.com/ndtvnews-top-stories",
+    "policy": "HEADLINE_ONLY",
+    "category": "general"
+  },
+  {
+    "id": "pib",
+    "name": "PIB \u2014 Press Releases",
+    "url": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3",
+    "policy": "OPEN",
+    "category": "politics"
+  }
+]

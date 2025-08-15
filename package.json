@@ -1,0 +1,17 @@
+{
+  "name": "informed360",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.3",
+    "rss-parser": "^3.12.0",
+    "vader-sentiment": "^1.1.4",
+    "lodash": "^4.17.21"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
