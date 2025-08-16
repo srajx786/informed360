@@ -8,25 +8,20 @@ html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sys
 .nav a{margin:0 10px;text-decoration:none;color:#333;font-weight:600}
 .date{white-space:nowrap;color:#374151;font-weight:700}
 
-/* NEW chips next to brand */
 .chips{display:flex;gap:8px}
 .chip{
   display:inline-flex;align-items:center;gap:6px;
   padding:5px 10px;border-radius:999px;border:1px solid var(--line);
-  background:#f3f4f6;font-weight:700;font-size:.84rem;white-space:nowrap;
+  background:#f3f4f6;font-weight:700;font-size:.84rem;white-space:nowrap
 }
 .chip.up{color:#16a34a;border-color:#16a34a;background:#ecfdf5}
 .chip.down{color:#f97316;border-color:#f97316;background:#fff7ed}
 
-/* Ticker row (optional) */
 .ticker{background:#111;color:#fff;font-size:14px;padding:6px 20px;white-space:nowrap;overflow:hidden}
 .ticker span{display:inline-block;padding-right:50px;animation:ticker 22s linear infinite}
 @keyframes ticker{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 
-/* HERO smaller */
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;max-width:1100px;margin:16px auto}
-.hero--compact img{height:260px;width:100%;object-fit:cover;border-radius:12px}
-.hero-text{background:#fff;border-radius:12px;padding:16px;box-shadow:0 2px 10px rgba(0,0,0,.08);display:flex;flex-direction:column;justify-content:center}
+/* hero sizing is also hotfixed inline in index.html */
 .hero h1{margin:0;font-size:24px;line-height:1.25;color:#222}
 .cta{margin-top:10px;background:#0a66ff;color:#fff;padding:9px 14px;border-radius:6px;text-decoration:none;width:fit-content;display:inline-block}
 
@@ -59,5 +54,5 @@ footer{background:#fff;text-align:center;padding:18px;margin-top:24px;font-size:
 @media(max-width:980px){
   .hero{grid-template-columns:1fr}
   main{grid-template-columns:1fr}
-  .chips{display:none} /* hide chips on very small screens if cramped */
+  .chips{display:none}
 }
