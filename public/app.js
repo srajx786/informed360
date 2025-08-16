@@ -1,4 +1,4 @@
-// app v9 – small hero, header chips, Title-Case trending
+// app v10 – adds "why caution" tooltip to all meters
 
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
 const posPctFromSent = (s)=>Math.round(clamp((s+1)/2,0,1)*100);
@@ -47,15 +47,39 @@ async function loadMarkets(){
   }
 }
 
+/* ----- Bias + wording helpers for "why caution" ----- */
+function biasLabel(p){ const L=p?.Left||0,C=p?.Center||0,R=p?.Right||0; const m=Math.max(L,C,R); return m===C?"Neutral":(m===L?"Left":"Right"); }
+const UNCERTAIN=/\b(may|might|could|reportedly|alleged|alleges|likely|expected|appears|sources say|claims?)\b/i;
+const CHARGED=/\b(slam|slams|hits out|blast|blasts|explosive|shocking|massive|furious|war of words)\b/i;
+
+function reasonForCaution(article){
+  const s = article?.sentiment ?? 0;
+  const pos = posPctFromSent(s);
+  const t = (article?.title||"").toLowerCase();
+  const reasons = [];
+
+  if (pos < 40) reasons.push("headline leans negative");
+  if (pos >= 40 && pos <= 60) reasons.push("headline reads mixed/neutral");
+  if (UNCERTAIN.test(t)) reasons.push("uses uncertainty words (e.g., “may”, “reportedly”)");
+  if (CHARGED.test(t)) reasons.push("contains charged/sensational language");
+  const bias = biasLabel(article?.bias_pct);
+  if (bias !== "Neutral") reasons.push(`headline tilts ${bias.toLowerCase()} (bias estimate)`);
+
+  if (reasons.length === 0)
+    return "Caution reflects the share that is not Positive (neutral or negative) based on automated VADER sentiment.";
+  return "Caution because " + reasons[0] + ". (Auto-analysis)";
+}
+
+/* ----- Meter + UI building ----- */
 function setMeter(el, positive, tipText){
   const pos = clamp(+positive || 50, 0, 100);
   const needle = el.querySelector(".needle"); if(needle) needle.style.left = `${pos}%`;
   const labels = el.parentElement.querySelector(".bar-labels");
   if(labels) labels.innerHTML = `<span>Positive: ${pos}%</span><span>Caution: ${100-pos}%</span>`;
-  const tip = el.parentElement.querySelector(".tooltiptext"); if(tip && tipText) tip.textContent = tipText;
+  const tip = el.parentElement.querySelector(".tooltiptext");
+  if(tip && tipText) tip.textContent = tipText;
 }
 
-function biasLabel(p){ const L=p?.Left||0,C=p?.Center||0,R=p?.Right||0; const m=Math.max(L,C,R); return m===C?"Neutral":(m===L?"Left":"Right"); }
 function timeString(iso){ const d=iso?new Date(iso):new Date(); return d.toLocaleString(); }
 function imgUrl(a){
   return a.image_url ? `/img?u=${encodeURIComponent(a.image_url)}`
@@ -78,17 +102,22 @@ function buildNewsList(container, items){
   items.forEach(a=>{
     const row=document.createElement("article");
     row.className="news-row";
+    // meter now wrapped in tooltip
     row.innerHTML=`
       <div class="news-thumb" style="background-image:url(${imgUrl(a)})"></div>
       <div class="news-src">${a.source_name||a.source_domain||""}</div>
       <div class="news-time">${timeString(a.published_at)}</div>
       <h3><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></h3>
       <div class="news-meter">
-        <div class="bar-meter small"><div class="needle"></div></div>
+        <div class="tooltip">
+          <div class="bar-meter small"><div class="needle"></div></div>
+          <div class="tooltiptext"></div>
+        </div>
         <div class="bar-labels" style="width:140px"></div>
       </div>`;
     container.appendChild(row);
-    setMeter(row.querySelector(".bar-meter"), posPctFromSent(a.sentiment ?? 0));
+    const pos = posPctFromSent(a.sentiment ?? 0);
+    setMeter(row.querySelector(".bar-meter"), pos, reasonForCaution(a));
   });
 }
 
@@ -97,16 +126,20 @@ function buildBriefList(container, items){
   items.forEach(a=>{
     const div=document.createElement("div");
     div.className="brief-item";
+    const pos = posPctFromSent(a.sentiment ?? 0);
     div.innerHTML=`
       <span><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></span>
-      <div class="bar-meter tiny"><div class="needle"></div></div>
+      <div class="tooltip">
+        <div class="bar-meter tiny"><div class="needle"></div></div>
+        <div class="tooltiptext"></div>
+      </div>
       <div class="bar-labels" style="width:100px"></div>`;
     container.appendChild(div);
-    setMeter(div.querySelector(".bar-meter"), posPctFromSent(a.sentiment ?? 0));
+    setMeter(div.querySelector(".bar-meter"), pos, reasonForCaution(a));
   });
 }
 
-/* Trending now — Title-Case the pair */
+/* Trending now — Title-Case pair + tooltip explains caution math */
 function buildTrending(container, items){
   const map=new Map();
   items.forEach(a=>{
@@ -123,10 +156,14 @@ function buildTrending(container, items){
     const div=document.createElement("div");
     div.className="brief-item";
     div.innerHTML=`<span>${p.key}</span>
-      <div class="bar-meter tiny"><div class="needle"></div></div>
+      <div class="tooltip">
+        <div class="bar-meter tiny"><div class="needle"></div></div>
+        <div class="tooltiptext"></div>
+      </div>
       <div class="bar-labels" style="width:100px"></div>`;
     container.appendChild(div);
-    setMeter(div.querySelector(".bar-meter"), p.avg, `Based on ${p.count} articles in last 12h`);
+    const tip = `Based on ${p.count} recent headlines; Positive ≈ ${p.avg}%. Caution shows the non-positive share.`;
+    setMeter(div.querySelector(".bar-meter"), p.avg, tip);
   });
 }
 
@@ -135,7 +172,7 @@ function setHero(main){
   document.getElementById("heroLink").href = main.url;
   document.getElementById("heroImg").src = imgUrl(main);
   const pos = posPctFromSent(main.sentiment ?? 0);
-  setMeter(document.getElementById("heroMeter"), pos, "Article sentiment");
+  setMeter(document.getElementById("heroMeter"), pos, reasonForCaution(main));
   document.getElementById("biasText").textContent = `Bias: ${biasLabel(main.bias_pct)} • Source ${main.source_name||main.source_domain||""}`;
   document.getElementById("heroLabels").innerHTML = `<span>Positive: ${pos}%</span><span>Caution: ${100-pos}%</span>`;
 }
