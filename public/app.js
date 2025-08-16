@@ -1,8 +1,9 @@
-// app v11 – show tooltip only when Caution >= 60%
+// app v12 — centered needle, tooltip only when Caution >= 60%
 
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
 const posPctFromSent = (s)=>Math.round(clamp((s+1)/2,0,1)*100);
 
+/* header/date/ticker */
 function setDate(){
   const d=new Date();
   const weekday=d.toLocaleString("en-US",{weekday:"long"});
@@ -12,7 +13,6 @@ function setDate(){
   document.getElementById("dateNow").textContent = `${weekday}, ${day} ${month} ,${year}`;
   document.getElementById("yr").textContent = String(year);
 }
-
 function setTickerText(j){
   const n = j.nifty?.percent ?? 0;
   const s = j.sensex?.percent ?? 0;
@@ -24,7 +24,6 @@ function setTickerText(j){
   ].join(" | ");
   document.getElementById("ticker").innerHTML = `<span>${text}</span>`;
 }
-
 function setChips(j){
   const setChip=(id,label,obj)=>{
     const el=document.getElementById(id); if(!el) return;
@@ -36,7 +35,6 @@ function setChips(j){
   setChip('nseChip','NSE', j.nifty);
   setChip('bseChip','BSE', j.sensex);
 }
-
 async function loadMarkets(){
   try{
     const r=await fetch("/api/markets"); const j=await r.json();
@@ -47,64 +45,59 @@ async function loadMarkets(){
   }
 }
 
-/* ----- "Why caution" helpers ----- */
+/* why-caution helpers */
 function biasLabel(p){ const L=p?.Left||0,C=p?.Center||0,R=p?.Right||0; const m=Math.max(L,C,R); return m===C?"Neutral":(m===L?"Left":"Right"); }
 const UNCERTAIN=/\b(may|might|could|reportedly|alleged|alleges|likely|expected|appears|sources say|claims?)\b/i;
 const CHARGED=/\b(slam|slams|hits out|blast|blasts|explosive|shocking|massive|furious|war of words)\b/i;
-
 function reasonForCaution(article){
   const s = article?.sentiment ?? 0;
   const pos = posPctFromSent(s);
   const t = (article?.title||"").toLowerCase();
   const reasons = [];
-
   if (pos < 40) reasons.push("headline leans negative");
   if (pos >= 40 && pos <= 60) reasons.push("headline reads mixed/neutral");
   if (UNCERTAIN.test(t)) reasons.push("uses uncertainty words (e.g., “may”, “reportedly”)");
   if (CHARGED.test(t)) reasons.push("contains charged/sensational language");
   const bias = biasLabel(article?.bias_pct);
   if (bias !== "Neutral") reasons.push(`headline tilts ${bias.toLowerCase()} (bias estimate)`);
-
   if (reasons.length === 0)
     return "Caution reflects the share that is not Positive (neutral or negative) based on automated VADER sentiment.";
   return "Caution because " + reasons[0] + ". (Auto-analysis)";
 }
 
-/* ----- Meter with tooltip gating (only when Caution >= 60%) ----- */
+/* meter with tooltip gating */
 function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   const pos = clamp(+positive || 50, 0, 100);
   const caution = 100 - pos;
 
   const needle = el.querySelector(".needle");
-  if (needle) needle.style.left = `${pos}%`;
+  if (needle) needle.style.left = `${pos}%`;  // CSS centers with translateX(-50%)
 
   const wrapper = el.closest(".tooltip");
   const tip = wrapper ? wrapper.querySelector(".tooltiptext") : null;
 
-  // Always show labels
   const labels = wrapper ? wrapper.parentElement.querySelector(".bar-labels")
                          : el.parentElement.querySelector(".bar-labels");
   if (labels) labels.innerHTML = `<span>Positive: ${pos}%</span><span>Caution: ${caution}%</span>`;
 
-  // Gate tooltip by caution threshold
   if (wrapper && tip){
     if (caution >= minCautionForTooltip && tipText){
       wrapper.classList.remove("disabled");
       tip.textContent = tipText;
     } else {
       wrapper.classList.add("disabled");
-      tip.textContent = ""; // hide content
+      tip.textContent = "";
     }
   }
 }
 
+/* utils + builders */
 function timeString(iso){ const d=iso?new Date(iso):new Date(); return d.toLocaleString(); }
 function imgUrl(a){
   return a.image_url ? `/img?u=${encodeURIComponent(a.image_url)}`
                      : `/img?u=${encodeURIComponent('https://www.google.com/s2/favicons?sz=128&domain='+(a.source_domain||''))}`;
 }
 
-/* Trending helpers */
 const STOP = new Set("and or the a an to in for of on with from by after amid over under against during new india".split(" "));
 function keywords(title){
   const t=(title||"").replace(/[^\w\s-]/g," ").split(/\s+/).filter(Boolean);
@@ -183,6 +176,7 @@ function buildTrending(container, items){
   });
 }
 
+/* hero */
 function setHero(main){
   document.getElementById("heroTitle").innerHTML = `<a target="_blank" rel="noreferrer" href="${main.url}">${main.title}</a>`;
   document.getElementById("heroLink").href = main.url;
@@ -193,6 +187,7 @@ function setHero(main){
   document.getElementById("heroLabels").innerHTML = `<span>Positive: ${pos}%</span><span>Caution: ${100-pos}%</span>`;
 }
 
+/* boot */
 async function boot(){
   setDate();
   await loadMarkets();
