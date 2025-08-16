@@ -56,3 +56,6 @@ footer{background:#fff;text-align:center;padding:18px;margin-top:24px;font-size:
   main{grid-template-columns:1fr}
   .chips{display:none}
 }
+/* Hide/disable tooltips when we don't want them */
+.tooltip.disabled { cursor: default; }
+.tooltip.disabled .tooltiptext { display: none !important; }
