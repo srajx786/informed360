@@ -1,84 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Informed 360</title>
-
-  <!-- Roboto for headings; Arial fallback -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Informed360</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=7"/>
 </head>
 <body>
-  <header class="topnav">
-    <div class="leftbrand">
-      <div class="brand">Informed 360</div>
-      <div class="stocks" id="stocks">
-        <span class="stockchip" id="nseChip">NSE …</span>
-        <span class="stockchip" id="bseChip">BSE …</span>
-      </div>
-    </div>
-
-    <nav class="links">
-      <a href="#">Home</a>
-      <a href="#">Markets</a>
-      <a href="#">Politics</a>
-      <a href="#">Technology</a>
-      <a href="#">Analysis</a>
-      <button class="search-btn" title="Search">🔍</button>
+  <header class="hdr">
+    <div class="logo"><strong>Informed360</strong></div>
+    <nav class="nav">
+      <a>Home</a><a>Markets</a><a>Politics</a><a>Technology</a><a>Analysis</a>
     </nav>
-
-    <div class="datenow" id="nowDate">—</div>
+    <div class="date" id="dateNow">—</div>
   </header>
 
-  <main class="shell">
-    <section class="hero" id="hero">
-      <div class="hero-img" id="heroImg"></div>
-      <div class="hero-card">
-        <h1 id="heroTitle">Loading…</h1>
-        <div class="hero-meta">
-          <span id="heroBias" class="chip">Bias: —</span>
-        </div>
-        <div id="heroGauge" class="gauge-box"></div>
-        <div class="hero-actions">
-          <a id="heroLink" class="btn" target="_blank" rel="noreferrer">Read Analysis</a>
-        </div>
+  <div class="ticker" id="ticker">Loading markets…</div>
+
+  <section class="hero">
+    <img id="heroImg" src="https://via.placeholder.com/600x420" alt="Hero"/>
+    <div class="hero-text">
+      <h1 id="heroTitle">Loading…</h1>
+      <a id="heroLink" class="cta" target="_blank" rel="noreferrer">Read Analysis</a>
+
+      <div class="tooltip">
+        <div class="bar-meter" id="heroMeter"><div class="needle"></div></div>
+        <div class="tooltiptext" id="heroTip">Sentiment</div>
       </div>
+      <div class="bar-labels" id="heroLabels"></div>
+      <div class="bias-text" id="biasText">Bias: —</div>
+    </div>
+  </section>
+
+  <main>
+    <aside class="card">
+      <h2>Trending News</h2>
+      <div id="trending-list" class="brief-list"></div>
+    </aside>
+
+    <section class="card">
+      <h2>News</h2>
+      <div class="news-list" id="news-list"></div>
     </section>
 
-    <section class="grid3">
-      <aside class="panel" id="dailyL">
-        <h3>Daily Briefing</h3>
-        <ul id="dailyList" class="bullets"></ul>
-      </aside>
-
-      <section class="panel" id="newsMain">
-        <h3>News</h3>
-        <div id="newsCards" class="cards"></div>
-      </section>
-
-      <aside class="panel" id="biasSpot">
-        <h3>.Bias Spotlight</h3>
-        <div id="spotList" class="spot"></div>
-      </aside>
-    </section>
-
-    <section class="panel longlist">
-      <h3>Economy & Markets</h3>
-      <div id="economyList" class="feedlist"></div>
-    </section>
-
-    <section class="panel" id="dailyL2">
-      <h3>Daily Briefing</h3>
-      <ul id="dailyList2" class="bullets"></ul>
-    </section>
+    <aside class="card">
+      <h2>Daily Briefing</h2>
+      <div id="brief-right" class="brief-list"></div>
+    </aside>
   </main>
 
-  <footer class="foot">Headlines link to original sources.</footer>
+  <footer>&copy; <span id="yr"></span> Informed360. All rights reserved.</footer>
 
-  <script type="module" src="app.js?v=4"></script>
+  <script type="module" src="app.js?v=7"></script>
 </body>
 </html>
