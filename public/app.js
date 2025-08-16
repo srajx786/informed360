@@ -1,4 +1,4 @@
-// app v10 – adds "why caution" tooltip to all meters
+// app v11 – show tooltip only when Caution >= 60%
 
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
 const posPctFromSent = (s)=>Math.round(clamp((s+1)/2,0,1)*100);
@@ -47,7 +47,7 @@ async function loadMarkets(){
   }
 }
 
-/* ----- Bias + wording helpers for "why caution" ----- */
+/* ----- "Why caution" helpers ----- */
 function biasLabel(p){ const L=p?.Left||0,C=p?.Center||0,R=p?.Right||0; const m=Math.max(L,C,R); return m===C?"Neutral":(m===L?"Left":"Right"); }
 const UNCERTAIN=/\b(may|might|could|reportedly|alleged|alleges|likely|expected|appears|sources say|claims?)\b/i;
 const CHARGED=/\b(slam|slams|hits out|blast|blasts|explosive|shocking|massive|furious|war of words)\b/i;
@@ -70,14 +70,32 @@ function reasonForCaution(article){
   return "Caution because " + reasons[0] + ". (Auto-analysis)";
 }
 
-/* ----- Meter + UI building ----- */
-function setMeter(el, positive, tipText){
+/* ----- Meter with tooltip gating (only when Caution >= 60%) ----- */
+function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   const pos = clamp(+positive || 50, 0, 100);
-  const needle = el.querySelector(".needle"); if(needle) needle.style.left = `${pos}%`;
-  const labels = el.parentElement.querySelector(".bar-labels");
-  if(labels) labels.innerHTML = `<span>Positive: ${pos}%</span><span>Caution: ${100-pos}%</span>`;
-  const tip = el.parentElement.querySelector(".tooltiptext");
-  if(tip && tipText) tip.textContent = tipText;
+  const caution = 100 - pos;
+
+  const needle = el.querySelector(".needle");
+  if (needle) needle.style.left = `${pos}%`;
+
+  const wrapper = el.closest(".tooltip");
+  const tip = wrapper ? wrapper.querySelector(".tooltiptext") : null;
+
+  // Always show labels
+  const labels = wrapper ? wrapper.parentElement.querySelector(".bar-labels")
+                         : el.parentElement.querySelector(".bar-labels");
+  if (labels) labels.innerHTML = `<span>Positive: ${pos}%</span><span>Caution: ${caution}%</span>`;
+
+  // Gate tooltip by caution threshold
+  if (wrapper && tip){
+    if (caution >= minCautionForTooltip && tipText){
+      wrapper.classList.remove("disabled");
+      tip.textContent = tipText;
+    } else {
+      wrapper.classList.add("disabled");
+      tip.textContent = ""; // hide content
+    }
+  }
 }
 
 function timeString(iso){ const d=iso?new Date(iso):new Date(); return d.toLocaleString(); }
@@ -102,7 +120,6 @@ function buildNewsList(container, items){
   items.forEach(a=>{
     const row=document.createElement("article");
     row.className="news-row";
-    // meter now wrapped in tooltip
     row.innerHTML=`
       <div class="news-thumb" style="background-image:url(${imgUrl(a)})"></div>
       <div class="news-src">${a.source_name||a.source_domain||""}</div>
@@ -139,7 +156,6 @@ function buildBriefList(container, items){
   });
 }
 
-/* Trending now — Title-Case pair + tooltip explains caution math */
 function buildTrending(container, items){
   const map=new Map();
   items.forEach(a=>{
