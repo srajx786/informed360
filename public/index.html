@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=9"/>
-
-  <!-- HOTFIX to guarantee a smaller hero even if old CSS is cached -->
   <style>
     .hero{max-width:1100px;margin:16px auto;display:grid;grid-template-columns:1.1fr 1fr;gap:16px}
     .hero--compact img{height:260px !important;width:100%;object-fit:cover;border-radius:12px}
@@ -20,23 +18,19 @@
   <header class="hdr">
     <div class="left">
       <div class="logo"><strong>Informed360</strong></div>
-      <!-- NSE/BSE chips next to brand -->
       <div class="chips">
         <span class="chip" id="nseChip">NSE —</span>
         <span class="chip" id="bseChip">BSE —</span>
       </div>
     </div>
-
     <nav class="nav">
       <a>Home</a><a>Markets</a><a>Politics</a><a>Technology</a><a>Analysis</a>
     </nav>
     <div class="date" id="dateNow">—</div>
   </header>
 
-  <!-- Optional scroller; keep or remove -->
   <div class="ticker" id="ticker"><span>Loading markets…</span></div>
 
-  <!-- SMALL HERO -->
   <section class="hero hero--compact">
     <img id="heroImg" src="https://via.placeholder.com/640x360" alt="Hero"/>
     <div class="hero-text">
@@ -71,10 +65,6 @@
 
   <footer>&copy; <span id="yr"></span> Informed360. All rights reserved.</footer>
 
-  <script type="module">
-    // visible version marker for quick check in DevTools
-    console.log("app v9");
-  </script>
-  <script type="module" src="app.js?v=9"></script>
+  <script type="module" src="app.js?v=10"></script>
 </body>
 </html>
