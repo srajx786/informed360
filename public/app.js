@@ -1,4 +1,4 @@
-// app v12 — centered needle, tooltip only when Caution >= 60%
+// app v13 — Positive=green, Caution=orange; tooltip only when Caution ≥ 60%
 
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
 const posPctFromSent = (s)=>Math.round(clamp((s+1)/2,0,1)*100);
@@ -65,20 +65,27 @@ function reasonForCaution(article){
   return "Caution because " + reasons[0] + ". (Auto-analysis)";
 }
 
-/* meter with tooltip gating */
+/* meter with tooltip gating + corrected legend colors */
 function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   const pos = clamp(+positive || 50, 0, 100);
   const caution = 100 - pos;
 
+  // position needle (50% = center)
   const needle = el.querySelector(".needle");
-  if (needle) needle.style.left = `${pos}%`;  // CSS centers with translateX(-50%)
+  if (needle) needle.style.left = `${pos}%`;
 
   const wrapper = el.closest(".tooltip");
   const tip = wrapper ? wrapper.querySelector(".tooltiptext") : null;
 
+  // legend shows swatches (green=Positive, orange=Caution)
   const labels = wrapper ? wrapper.parentElement.querySelector(".bar-labels")
                          : el.parentElement.querySelector(".bar-labels");
-  if (labels) labels.innerHTML = `<span>Positive: ${pos}%</span><span>Caution: ${caution}%</span>`;
+  if (labels){
+    labels.innerHTML = `
+      <div class="legend-item"><span class="swatch pos"></span> Positive: ${pos}%</div>
+      <div class="legend-item"><span class="swatch cau"></span> Caution: ${caution}%</div>
+    `;
+  }
 
   if (wrapper && tip){
     if (caution >= minCautionForTooltip && tipText){
@@ -184,7 +191,6 @@ function setHero(main){
   const pos = posPctFromSent(main.sentiment ?? 0);
   setMeter(document.getElementById("heroMeter"), pos, reasonForCaution(main));
   document.getElementById("biasText").textContent = `Bias: ${biasLabel(main.bias_pct)} • Source ${main.source_name||main.source_domain||""}`;
-  document.getElementById("heroLabels").innerHTML = `<span>Positive: ${pos}%</span><span>Caution: ${100-pos}%</span>`;
 }
 
 /* boot */
