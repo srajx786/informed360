@@ -1,4 +1,4 @@
-// server.js — works with/without rss-feeds.json; India-focused defaults.
+// server.js — works with/without rss-feeds.json; India-focused defaults
 
 import express from "express";
 import Parser from "rss-parser";
