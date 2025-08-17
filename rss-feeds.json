@@ -1,15 +1,8 @@
 [
-  { "id": "thehindu:front",       "name": "The Hindu — Front Page",     "url": "https://www.thehindu.com/feeder/default.rss",              "policy": "HEADLINE_ONLY", "category": "general" },
-  { "id": "indianexpress:india",  "name": "Indian Express — India",      "url": "https://indianexpress.com/section/india/feed/",            "policy": "HEADLINE_ONLY", "category": "politics" },
-  { "id": "hindustantimes:india", "name": "Hindustan Times — India",     "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml", "policy": "HEADLINE_ONLY", "category": "politics" },
-  { "id": "ndtv:top",             "name": "NDTV — Top Stories",          "url": "https://feeds.feedburner.com/ndtvnews-top-stories",        "policy": "HEADLINE_ONLY", "category": "general" },
-  { "id": "toi:top",              "name": "Times of India — Top",        "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",     "policy": "HEADLINE_ONLY", "category": "general" },
-  { "id": "livemint:home",        "name": "LiveMint — Home",             "url": "https://www.livemint.com/rss/homepage",                    "policy": "HEADLINE_ONLY", "category": "business" },
-  { "id": "et:default",           "name": "Economic Times — All",        "url": "https://economictimes.indiatimes.com/rssfeedsdefault.cms",         "policy": "HEADLINE_ONLY", "category": "business" },
-  { "id": "moneycontrol:latest",  "name": "Moneycontrol — Latest",       "url": "https://www.moneycontrol.com/rss/latestnews.xml",          "policy": "HEADLINE_ONLY", "category": "business" },
-  { "id": "abp:india",            "name": "ABP Live — India",            "url": "https://news.abplive.com/news/india/feed",                 "policy": "HEADLINE_ONLY", "category": "general" },
-  { "id": "espn:cricinfo",        "name": "ESPNcricinfo — Cricket",      "url": "https://www.espncricinfo.com/rss/content/story/feeds/0.xml","policy": "HEADLINE_ONLY", "category": "sports" },
-  { "id": "bollywoodhungama:all", "name": "Bollywood Hungama",           "url": "https://www.bollywoodhungama.com/rss.xml",                 "policy": "HEADLINE_ONLY", "category": "entertainment" },
-  { "id": "mongabay:india",       "name": "Mongabay India",              "url": "https://india.mongabay.com/feed/",                         "policy": "CC_BY_ND",      "category": "general" },
-  { "id": "reuters:in-top",       "name": "Reuters India — Top",         "url": "https://feeds.reuters.com/reuters/INtopNews",              "policy": "HEADLINE_ONLY", "category": "general" }
+  { "id": "thehindu",        "name": "The Hindu — Front Page",          "url": "https://www.thehindu.com/feeder/default.rss", "policy": "HEADLINE_ONLY", "category":"general" },
+  { "id": "indianexpress",   "name": "Indian Express — All",             "url": "https://indianexpress.com/feed/",             "policy": "HEADLINE_ONLY", "category":"general" },
+  { "id": "hindustantimes",  "name": "Hindustan Times — India",          "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml", "policy": "HEADLINE_ONLY", "category":"general" },
+  { "id": "toi",             "name": "Times of India — Top Stories",     "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms", "policy": "HEADLINE_ONLY", "category":"general" },
+  { "id": "ndtv",            "name": "NDTV — Top Stories",               "url": "https://feeds.feedburner.com/ndtvnews-top-stories", "policy": "HEADLINE_ONLY", "category":"general" },
+  { "id": "pib",             "name": "PIB — Press Releases",             "url": "https://pib.gov.in/RssMain.aspx?ModId=6&Lang=1&Regid=3", "policy": "OPEN", "category":"politics" }
 ]
