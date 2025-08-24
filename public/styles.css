@@ -76,7 +76,7 @@ html,body{ margin:0; background:var(--bg); color:var(--ink);
 .bar-meter.hero{ width:240px }
 .bar-meter .needle{ position:absolute; top:-5px; width:2px; height:16px; background:#ef4444; left:50%; transform:translateX(-50%) }
 
-.bar-labels{ display:flex; justify-content:space-between; gap:12px; font-weight:800; color:#374151 }
+.bar-labels{ display:flex; justify-content:space-around;align-items:center; gap:4px; font-weight:600; margin-top:2px; width:160px; color:#374151 ;text-align:center; }
 .bar-labels.hero{ width:240px; font-size:12px }
 .swatch{ display:none } /* no dots */
 
