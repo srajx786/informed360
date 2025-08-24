@@ -17,11 +17,7 @@ html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sys
 
 /* chips */
 .chips{display:flex;gap:8px}
-.chip{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:5px 10px;border-radius:999px;border:1px solid var(--line);
-  background:#f3f4f6;font-weight:700;font-size:.84rem;white-space:nowrap
-}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:#f3f4f6;font-weight:700;font-size:.84rem;white-space:nowrap}
 .chip.up{color:#16a34a;border-color:#16a34a;background:#ecfdf5}
 .chip.down{color:#f97316;border-color:#f97316;background:#fff7ed}
 
@@ -30,40 +26,46 @@ html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sys
 .ticker span{display:inline-block;padding-right:50px;animation:ticker 22s linear infinite}
 @keyframes ticker{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
 
-/* shared container so hero + main align perfectly */
+/* container */
 .container{max-width:1100px;margin:0 auto;padding:10px 16px 26px}
 
 /* cards */
 .card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);border:1px solid var(--line);padding:14px}
+.card h2{margin:0 0 10px;font-size:18px;color:#0f172a}
 
-/* HERO */
+/* HERO slider */
 .hero-card{margin-bottom:20px}
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;align-items:stretch}
+.hero{position:relative}
+.hero-slide{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;align-items:stretch}
 .hero-media img{width:100%;height:260px;object-fit:cover;border-radius:10px}
 .hero-text{display:flex;flex-direction:column;gap:12px}
 .hero h1{margin:0;font-size:24px;line-height:1.25;color:#222}
-.cta{background:#0a66ff;color:#fff;padding:9px 14px;border-radius:6px;text-decoration:none;width:fit-content;display:inline-block}
+.cta{background:#0a66ff;color:#fff;padding:9px 14px;border-radius:6px;text-decoration:none;width:fit-content;display:inline-block;font-weight:800}
 
-/* Sentiment bar: green → grey → black (needle = red) */
+/* arrows & dots */
+.hero-nav{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;z-index:2}
+.hero-nav.prev{left:8px}
+.hero-nav.next{right:8px}
+.hero-dots{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(17,17,17,.25);border:1px solid rgba(17,17,17,.35);cursor:pointer}
+.hero-dot.active{background:#111}
+
+/* meter */
 .bar-meter{
   background:linear-gradient(to right, var(--pos) 0%, var(--neu) 50%, var(--cau) 100%);
-  height:6px;border-radius:3px;position:relative;margin-top:6px;width:100%;
-  max-width:260px; /* keeps it compact and consistent */
+  height:6px;border-radius:3px;position:relative;margin-top:6px;width:100%;max-width:260px
 }
 .bar-meter .needle{position:absolute;top:-4px;width:2px;height:14px;background:#ef4444;left:50%;transform:translateX(-50%)}
-
-/* labels sit right under the bar and are width-synced from JS */
 .meter-block{display:flex;flex-direction:column;gap:4px}
 .bar-labels{
   display:flex;justify-content:space-between;align-items:center;
   gap:8px;font-size:11px;font-weight:700;color:#374151;width:100%;max-width:260px
 }
+.bias-text{font-size:14px;font-weight:800;color:#333}
 
-/* list sizes */
+/* small sizes */
 .bar-meter.small{max-width:220px}
 .bar-meter.tiny {max-width:160px}
-
-.bias-text{font-size:14px;font-weight:800;color:#333}
 
 /* tooltip */
 .tooltip{position:relative;display:inline-block;cursor:help}
@@ -72,10 +74,8 @@ html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sys
 .tooltip.disabled{cursor:default}
 .tooltip.disabled .tooltiptext{display:none !important}
 
-/* main grid perfectly aligned to container width */
+/* main grid */
 main{display:grid;grid-template-columns:320px 1fr 300px;gap:20px}
-.card h2{margin:0 0 10px;font-size:18px;color:#0f172a}
-
 .brief-list{display:flex;flex-direction:column;gap:10px}
 .brief-item{display:flex;flex-direction:column;gap:6px;padding:6px 0;border-bottom:1px solid #eef1f4}
 .brief-item:last-child{border-bottom:0}
@@ -90,11 +90,10 @@ main{display:grid;grid-template-columns:320px 1fr 300px;gap:20px}
 
 footer{background:#fff;text-align:center;padding:18px;margin-top:24px;font-size:14px;color:#555}
 
-/* Mobile readability */
+/* mobile */
 @media(max-width:980px){
-  .hero{grid-template-columns:1fr}
+  .hero-slide{grid-template-columns:1fr}
   main{grid-template-columns:1fr}
   .chips{display:none}
-  .bar-meter{max-width:100%}
-  .bar-labels{max-width:100%}
+  .bar-meter,.bar-labels{max-width:100%}
 }
