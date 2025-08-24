@@ -41,6 +41,7 @@ html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',sys
   font-size:10px; font-weight:700; margin-top:2px; color:#374151;
 }
 .legend-item{ display:flex; align-items:center; gap:6px; min-width:0 }
+.swatch { display: none !important; }
 .swatch{ display:inline-block; width:14px; height:6px; border-radius:999px; flex:0 0 auto }
 .swatch.pos{ background: var(--pos) }  /* Positive = green */
 .swatch.cau{ background: var(--cau) }  /* Caution = black */
