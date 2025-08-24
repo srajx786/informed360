@@ -1,4 +1,5 @@
-// app v13 — Positive=green, Caution=orange; tooltip only when Caution ≥ 60%
+// app v14 — Positive=green, Caution=orange; tooltip only when Caution ≥ 60%
+// Adds "Sources: N" chip without changing HTML (appends to .chips)
 
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
 const posPctFromSent = (s)=>Math.round(clamp((s+1)/2,0,1)*100);
@@ -43,6 +44,25 @@ async function loadMarkets(){
   }catch{
     document.getElementById("ticker").innerHTML = `<span>Markets unavailable</span>`;
   }
+}
+
+/* NEW: fetch feeds and add a "Sources: N" chip to the header */
+async function loadFeedsCount(){
+  try{
+    const r = await fetch("/api/feeds");
+    const j = await r.json();
+    if(!j.ok) return;
+    const chips = document.querySelector(".chips");
+    if (!chips) return;
+    let chip = document.getElementById("sourcesChip");
+    if (!chip){
+      chip = document.createElement("span");
+      chip.id = "sourcesChip";
+      chip.className = "chip";
+      chips.appendChild(chip);
+    }
+    chip.textContent = `Sources: ${j.count ?? (j.feeds?.length ?? 0)}`;
+  }catch{/* ignore */}
 }
 
 /* why-caution helpers */
@@ -197,6 +217,7 @@ function setHero(main){
 async function boot(){
   setDate();
   await loadMarkets();
+  loadFeedsCount(); // NEW: show source count chip
 
   const r=await fetch("/api/news");
   const data=await r.json();
