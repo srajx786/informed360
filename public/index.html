@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=22"/>
+  <link rel="stylesheet" href="styles.css?v=23"/>
 </head>
 <body>
   <header class="hdr">
@@ -26,29 +26,36 @@
 
   <div class="ticker" id="ticker"><span>Loading markets…</span></div>
 
-  <!-- PAGE CONTAINER: hero and main share the same width/padding for perfect alignment -->
+  <!-- Unified container so hero aligns with cards below -->
   <div class="container">
 
-    <!-- HERO as a full-width card that visually aligns with cards below -->
+    <!-- HERO SLIDER (4 slides) -->
     <section class="card hero-card">
       <div class="hero">
-        <div class="hero-media">
-          <img id="heroImg" src="https://via.placeholder.com/640x360" alt="Hero"/>
-        </div>
-        <div class="hero-text">
-          <h1 id="heroTitle">Loading…</h1>
-          <a id="heroLink" class="cta" target="_blank" rel="noreferrer">Read Analysis</a>
+        <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
 
-          <div class="meter-block">
-            <div class="tooltip">
-              <div class="bar-meter" id="heroMeter"><div class="needle"></div></div>
-              <div class="tooltiptext" id="heroTip">Sentiment</div>
-            </div>
-            <div class="bar-labels" id="heroLabels"></div>
+        <div class="hero-slide" id="heroSlide">
+          <div class="hero-media">
+            <img id="heroImg" src="https://via.placeholder.com/640x360" alt="Hero"/>
           </div>
+          <div class="hero-text">
+            <h1 id="heroTitle">Loading…</h1>
+            <a id="heroLink" class="cta" target="_blank" rel="noreferrer">Read Analysis</a>
 
-          <div class="bias-text" id="biasText">Bias: —</div>
+            <div class="meter-block">
+              <div class="tooltip">
+                <div class="bar-meter" id="heroMeter"><div class="needle"></div></div>
+                <div class="tooltiptext" id="heroTip">Sentiment</div>
+              </div>
+              <div class="bar-labels" id="heroLabels"></div>
+            </div>
+
+            <div class="bias-text" id="biasText">Bias: —</div>
+          </div>
         </div>
+
+        <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
+        <div class="hero-dots" id="heroDots"></div>
       </div>
     </section>
 
@@ -73,6 +80,6 @@
 
   <footer>&copy; <span id="yr"></span> Informed360. All rights reserved.</footer>
 
-  <script type="module" src="app.js?v=22"></script>
+  <script type="module" src="app.js?v=23"></script>
 </body>
 </html>
