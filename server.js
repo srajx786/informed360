@@ -35,7 +35,21 @@ const biasMap = {
   "espncricinfo.com": "Center",
   "reuters.com": "Center",
   "mongabay.com": "Center",
-  "bollywoodhungama.com": "Entertainment"
+  "bollywoodhungama.com": "Entertainment",
+  /* new */
+  "business-standard.com": "Center",
+  "thehindubusinessline.com": "Center",
+  "financialexpress.com": "Center",
+  "indiatoday.in": "Center",
+  "news18.com": "Center",
+  "scroll.in": "Center",
+  "theprint.in": "Center",
+  "thewire.in": "Lean Left",
+  "firstpost.com": "Center",
+  "cnbctv18.com": "Center",
+  "bbc.co.uk": "Center",
+  "bbc.com": "Center",
+  "telegraphindia.com": "Center"
 };
 
 const PREFERRED_DOMAINS = new Set([
@@ -44,7 +58,15 @@ const PREFERRED_DOMAINS = new Set([
   "hindustantimes.com",
   "timesofindia.indiatimes.com",
   "ndtv.com",
-  "news.abplive.com"
+  "news.abplive.com",
+  /* new */
+  "livemint.com",
+  "economictimes.indiatimes.com",
+  "reuters.com",
+  "business-standard.com",
+  "indiatoday.in",
+  "news18.com",
+  "scroll.in"
 ]);
 
 function domainFromUrl(url) {
