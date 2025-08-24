@@ -1,5 +1,5 @@
-// app v14 — Positive=green, Caution=orange; tooltip only when Caution ≥ 60%
-// Adds "Sources: N" chip without changing HTML (appends to .chips)
+// app v15 — 4‑slide hero (image left, content right) + crisp logo fallbacks
+// Positive=green, Neutral=grey, Caution=black. Tooltip shown only when Caution ≥ 60%.
 
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
 const posPctFromSent = (s)=>Math.round(clamp((s+1)/2,0,1)*100);
@@ -11,8 +11,8 @@ function setDate(){
   const day=d.getDate();
   const month=d.toLocaleString("en-US",{month:"long"});
   const year=d.getFullYear();
-  document.getElementById("dateNow").textContent = `${weekday}, ${day} ${month} ,${year}`;
-  document.getElementById("yr").textContent = String(year);
+  const dn=document.getElementById("dateNow"); if(dn) dn.textContent = `${weekday}, ${day} ${month} ,${year}`;
+  const yr=document.getElementById("yr"); if(yr) yr.textContent = String(year);
 }
 function setTickerText(j){
   const n = j.nifty?.percent ?? 0;
@@ -23,7 +23,8 @@ function setTickerText(j){
     `USD/INR: ${(j.usdinr?.price??0).toFixed(2)}`,
     `Sensex: ${(j.sensex?.price??0).toLocaleString()}`
   ].join(" | ");
-  document.getElementById("ticker").innerHTML = `<span>${text}</span>`;
+  const tk=document.getElementById("ticker");
+  if (tk) tk.innerHTML = `<span>${text}</span>`;
 }
 function setChips(j){
   const setChip=(id,label,obj)=>{
@@ -42,30 +43,12 @@ async function loadMarkets(){
     if(!j.ok) throw 0;
     setTickerText(j); setChips(j);
   }catch{
-    document.getElementById("ticker").innerHTML = `<span>Markets unavailable</span>`;
+    const tk=document.getElementById("ticker");
+    if (tk) tk.innerHTML = `<span>Markets unavailable</span>`;
   }
 }
 
-/* NEW: fetch feeds and add a "Sources: N" chip to the header */
-async function loadFeedsCount(){
-  try{
-    const r = await fetch("/api/feeds");
-    const j = await r.json();
-    if(!j.ok) return;
-    const chips = document.querySelector(".chips");
-    if (!chips) return;
-    let chip = document.getElementById("sourcesChip");
-    if (!chip){
-      chip = document.createElement("span");
-      chip.id = "sourcesChip";
-      chip.className = "chip";
-      chips.appendChild(chip);
-    }
-    chip.textContent = `Sources: ${j.count ?? (j.feeds?.length ?? 0)}`;
-  }catch{/* ignore */}
-}
-
-/* why-caution helpers */
+/* Bias + tooltip helpers */
 function biasLabel(p){ const L=p?.Left||0,C=p?.Center||0,R=p?.Right||0; const m=Math.max(L,C,R); return m===C?"Neutral":(m===L?"Left":"Right"); }
 const UNCERTAIN=/\b(may|might|could|reportedly|alleged|alleges|likely|expected|appears|sources say|claims?)\b/i;
 const CHARGED=/\b(slam|slams|hits out|blast|blasts|explosive|shocking|massive|furious|war of words)\b/i;
@@ -84,20 +67,16 @@ function reasonForCaution(article){
     return "Caution reflects the share that is not Positive (neutral or negative) based on automated VADER sentiment.";
   return "Caution because " + reasons[0] + ". (Auto-analysis)";
 }
-
-/* meter with tooltip gating + corrected legend colors */
 function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   const pos = clamp(+positive || 50, 0, 100);
   const caution = 100 - pos;
 
-  // position needle (50% = center)
   const needle = el.querySelector(".needle");
   if (needle) needle.style.left = `${pos}%`;
 
   const wrapper = el.closest(".tooltip");
   const tip = wrapper ? wrapper.querySelector(".tooltiptext") : null;
 
-  // legend shows swatches (green=Positive, orange=Caution)
   const labels = wrapper ? wrapper.parentElement.querySelector(".bar-labels")
                          : el.parentElement.querySelector(".bar-labels");
   if (labels){
@@ -118,15 +97,30 @@ function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   }
 }
 
-/* utils + builders */
-function timeString(iso){ const d=iso?new Date(iso):new Date(); return d.toLocaleString(); }
-function imgUrl(a){
-  return a.image_url ? `/img?u=${encodeURIComponent(a.image_url)}`
-                     : `/img?u=${encodeURIComponent('https://www.google.com/s2/favicons?sz=128&domain='+(a.source_domain||''))}`;
+/* Image helpers — crisp fallbacks */
+function proxied(u){ return `/img?u=${encodeURIComponent(u)}`; }
+function clearbitLogo(domain){ return domain ? `https://logo.clearbit.com/${domain}` : null; }
+function googleFavicon(domain){ return domain ? `https://www.google.com/s2/favicons?sz=128&domain=${domain}` : null; }
+
+function bestImageFor(article){
+  const domain = article?.source_domain || "";
+  if (article?.image_url) return proxied(article.image_url);
+  // fallbacks: clearbit hi-res logo -> google favicon
+  return proxied(clearbitLogo(domain) || googleFavicon(domain));
+}
+function attachLogoFallback(imgEl, domain){
+  const tryClearbit = clearbitLogo(domain);
+  const tryFavicon = googleFavicon(domain);
+  imgEl.onerror = ()=>{
+    if (imgEl.dataset.fbk === "cb") { imgEl.src = proxied(tryFavicon); imgEl.dataset.fbk="fv"; }
+    else if (!imgEl.dataset.fbk) { imgEl.src = proxied(tryClearbit); imgEl.dataset.fbk="cb"; }
+  };
 }
 
-const STOP = new Set("and or the a an to in for of on with from by after amid over under against during new india".split(" "));
+/* utils for lists */
+function timeString(iso){ const d=iso?new Date(iso):new Date(); return d.toLocaleString(); }
 function keywords(title){
+  const STOP = new Set("and or the a an to in for of on with from by after amid over under against during new india".split(" "));
   const t=(title||"").replace(/[^\w\s-]/g," ").split(/\s+/).filter(Boolean);
   const caps = t.filter(w => /^[A-Z][A-Za-z0-9\-]*$/.test(w) && !STOP.has(w.toLowerCase()));
   if (caps.length>=2) return caps.slice(0,2);
@@ -135,13 +129,119 @@ function keywords(title){
 }
 const toTitle = s => s.split(/-/).map(p => p ? p[0].toUpperCase()+p.slice(1).toLowerCase() : p).join('-');
 
+/* ====== HERO SLIDER ====== */
+function makeHeroSlide(article){
+  const wrap = document.createElement("div");
+  wrap.className = "hero-slide";
+
+  const imgWrap = document.createElement("div");
+  imgWrap.className = "hero-img-wrap";
+  const img = document.createElement("img");
+  img.className = "hero-img";
+  img.alt = article.title || "";
+  img.src = bestImageFor(article);
+  attachLogoFallback(img, article.source_domain);
+  imgWrap.appendChild(img);
+
+  const content = document.createElement("div");
+  content.className = "hero-content";
+  content.innerHTML = `
+    <h1><a id="heroLink" target="_blank" rel="noreferrer" href="${article.url}">${article.title}</a></h1>
+    <div class="hero-actions">
+      <a class="btn-primary" href="${article.url}" target="_blank" rel="noreferrer">Read Analysis</a>
+      <div class="tooltip">
+        <div id="heroMeter" class="bar-meter" style="width:220px"><div class="needle"></div></div>
+        <div class="tooltiptext"></div>
+      </div>
+    </div>
+    <div id="heroBias" class="hero-bias">Bias: ${biasLabel(article?.bias_pct)} • Source ${article.source_name||article.source_domain||""}</div>
+  `;
+
+  wrap.appendChild(imgWrap);
+  wrap.appendChild(content);
+
+  // set meter now
+  const pos = posPctFromSent(article.sentiment ?? 0);
+  const meter = content.querySelector("#heroMeter");
+  setMeter(meter, pos, reasonForCaution(article));
+  return wrap;
+}
+
+function pickTopFour(data){
+  const main = data.main;
+  const items = (data.items||[]).filter(a => a && a.id !== main.id);
+  const picks = [main];
+  for (const a of items){
+    if (picks.length>=4) break;
+    picks.push(a);
+  }
+  return picks;
+}
+
+function buildHeroSlider(data){
+  const slider = document.getElementById("heroSlider");
+  const dotsWrap = document.getElementById("heroDots");
+  if (!slider) return;
+
+  const articles = pickTopFour(data);
+  slider.querySelectorAll(".hero-slide").forEach(n=>n.remove());
+  dotsWrap.innerHTML = "";
+
+  const slides = articles.map(makeHeroSlide);
+  slides.forEach(s => slider.insertBefore(s, slider.querySelector(".hero-nav.prev")));
+
+  // dots
+  const dots = slides.map((_,i)=>{
+    const d = document.createElement("div");
+    d.className = "hero-dot" + (i===0?" active":"");
+    d.addEventListener("click", ()=>go(i));
+    dotsWrap.appendChild(d);
+    return d;
+  });
+
+  let idx = 0, timer = null;
+  function show(i){
+    idx = (i+slides.length)%slides.length;
+    slides.forEach((s,k)=>{ s.style.display = k===idx ? "grid" : "none"; });
+    dots.forEach((d,k)=>{ d.classList.toggle("active", k===idx); });
+  }
+  function next(){ show(idx+1); }
+  function prev(){ show(idx-1); }
+  function go(i){ show(i); restart(); }
+  function start(){ timer = setInterval(next, 6000); }
+  function stop(){ if (timer) clearInterval(timer); timer=null; }
+  function restart(){ stop(); start(); }
+
+  slider.querySelector(".hero-nav.next").onclick = ()=>{ next(); restart(); };
+  slider.querySelector(".hero-nav.prev").onclick = ()=>{ prev(); restart(); };
+
+  // swipe (mobile)
+  let sx=0;
+  slider.addEventListener("touchstart",e=>{ sx=e.touches[0].clientX; },{passive:true});
+  slider.addEventListener("touchend",e=>{
+    const dx=(e.changedTouches[0].clientX - sx);
+    if (Math.abs(dx)>40){ (dx<0?next:prev)(); restart(); }
+  });
+
+  // init
+  show(0); start();
+}
+
+/* ====== LISTS ====== */
+function imgUrlFallback(article){
+  // For list cards: still prefer article image, fallback to clearbit->favicon
+  const domain = article?.source_domain || "";
+  if (article?.image_url) return proxied(article.image_url);
+  return proxied(clearbitLogo(domain) || googleFavicon(domain));
+}
+
 function buildNewsList(container, items){
   container.innerHTML="";
   items.forEach(a=>{
     const row=document.createElement("article");
     row.className="news-row";
     row.innerHTML=`
-      <div class="news-thumb" style="background-image:url(${imgUrl(a)})"></div>
+      <div class="news-thumb" style="background-image:url(${imgUrlFallback(a)})"></div>
       <div class="news-src">${a.source_name||a.source_domain||""}</div>
       <div class="news-time">${timeString(a.published_at)}</div>
       <h3><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></h3>
@@ -198,32 +298,23 @@ function buildTrending(container, items){
       </div>
       <div class="bar-labels" style="width:100px"></div>`;
     container.appendChild(div);
-    const tip = `Based on ${p.count} recent headlines; Positive ≈ ${p.avg}%. Caution shows the non-positive share.`;
+    const tip = `Based on ${p.count} recent headlines; Positive ≈ ${p.avg}%. Caution shows the non‑positive share.`;
     setMeter(div.querySelector(".bar-meter"), p.avg, tip);
   });
-}
-
-/* hero */
-function setHero(main){
-  document.getElementById("heroTitle").innerHTML = `<a target="_blank" rel="noreferrer" href="${main.url}">${main.title}</a>`;
-  document.getElementById("heroLink").href = main.url;
-  document.getElementById("heroImg").src = imgUrl(main);
-  const pos = posPctFromSent(main.sentiment ?? 0);
-  setMeter(document.getElementById("heroMeter"), pos, reasonForCaution(main));
-  document.getElementById("biasText").textContent = `Bias: ${biasLabel(main.bias_pct)} • Source ${main.source_name||main.source_domain||""}`;
 }
 
 /* boot */
 async function boot(){
   setDate();
   await loadMarkets();
-  loadFeedsCount(); // NEW: show source count chip
 
   const r=await fetch("/api/news");
   const data=await r.json();
-  if(!data.ok || !data.main){ document.getElementById("heroTitle").textContent="No news available."; return; }
+  const titleEl=document.getElementById("heroTitle");
+  if(!data.ok || !data.main){ if(titleEl) titleEl.textContent="No news available."; return; }
 
-  setHero(data.main);
+  // Build new HERO slider and the rest
+  buildHeroSlider(data);
   buildNewsList(document.getElementById("news-list"), (data.items||[]).slice(0,12));
   buildBriefList(document.getElementById("brief-right"), (data.daily||[]).slice(0,6));
   buildTrending(document.getElementById("trending-list"), data.items||[]);
