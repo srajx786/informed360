@@ -1,4 +1,4 @@
-// app v15 — 4‑slide hero (image left, content right) + crisp logo fallbacks
+// app v16 — Fix blurry hero images + show % under hero bar in slider
 // Positive=green, Neutral=grey, Caution=black. Tooltip shown only when Caution ≥ 60%.
 
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
@@ -67,6 +67,8 @@ function reasonForCaution(article){
     return "Caution reflects the share that is not Positive (neutral or negative) based on automated VADER sentiment.";
   return "Caution because " + reasons[0] + ". (Auto-analysis)";
 }
+
+/* meter with tooltip gating + labels */
 function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   const pos = clamp(+positive || 50, 0, 100);
   const caution = 100 - pos;
@@ -77,8 +79,18 @@ function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   const wrapper = el.closest(".tooltip");
   const tip = wrapper ? wrapper.querySelector(".tooltiptext") : null;
 
-  const labels = wrapper ? wrapper.parentElement.querySelector(".bar-labels")
-                         : el.parentElement.querySelector(".bar-labels");
+  // find labels area beside/under the bar
+  let labels = wrapper ? wrapper.parentElement.querySelector(".bar-labels")
+                       : el.parentElement.querySelector(".bar-labels");
+  if (!labels) {
+    // if missing (e.g., inside hero slide), create it right after wrapper
+    if (wrapper && wrapper.parentElement) {
+      labels = document.createElement("div");
+      labels.className = "bar-labels";
+      labels.style.width = "220px";
+      wrapper.parentElement.insertBefore(labels, wrapper.nextSibling);
+    }
+  }
   if (labels){
     labels.innerHTML = `
       <div class="legend-item"><span class="swatch pos"></span> Positive: ${pos}%</div>
@@ -105,22 +117,38 @@ function googleFavicon(domain){ return domain ? `https://www.google.com/s2/favic
 function bestImageFor(article){
   const domain = article?.source_domain || "";
   if (article?.image_url) return proxied(article.image_url);
-  // fallbacks: clearbit hi-res logo -> google favicon
+  // Prefer Clearbit (usually hi‑res), then Google 128px favicon
   return proxied(clearbitLogo(domain) || googleFavicon(domain));
+}
+function markLogoishIfNeeded(imgEl){
+  try{
+    const u = new URL(imgEl.src, location.href);
+    const host = u.hostname;
+    if (host.includes("logo.clearbit.com") || host.includes("www.google.com")){
+      imgEl.classList.add("logoish");
+    }
+  }catch{}
 }
 function attachLogoFallback(imgEl, domain){
   const tryClearbit = clearbitLogo(domain);
   const tryFavicon = googleFavicon(domain);
   imgEl.onerror = ()=>{
-    if (imgEl.dataset.fbk === "cb") { imgEl.src = proxied(tryFavicon); imgEl.dataset.fbk="fv"; }
-    else if (!imgEl.dataset.fbk) { imgEl.src = proxied(tryClearbit); imgEl.dataset.fbk="cb"; }
+    if (imgEl.dataset.fbk === "cb") { imgEl.src = proxied(tryFavicon); imgEl.dataset.fbk="fv"; markLogoishIfNeeded(imgEl); }
+    else if (!imgEl.dataset.fbk) { imgEl.src = proxied(tryClearbit); imgEl.dataset.fbk="cb"; markLogoishIfNeeded(imgEl); }
   };
+  // Mark on first load as well
+  imgEl.addEventListener("load", ()=>markLogoishIfNeeded(imgEl));
 }
 
-/* utils for lists */
+/* utils + builders */
 function timeString(iso){ const d=iso?new Date(iso):new Date(); return d.toLocaleString(); }
+function imgUrlListCard(a){
+  const domain = a?.source_domain || "";
+  return a.image_url ? proxied(a.image_url) : proxied(clearbitLogo(domain) || googleFavicon(domain));
+}
+
+const STOP = new Set("and or the a an to in for of on with from by after amid over under against during new india".split(" "));
 function keywords(title){
-  const STOP = new Set("and or the a an to in for of on with from by after amid over under against during new india".split(" "));
   const t=(title||"").replace(/[^\w\s-]/g," ").split(/\s+/).filter(Boolean);
   const caps = t.filter(w => /^[A-Z][A-Za-z0-9\-]*$/.test(w) && !STOP.has(w.toLowerCase()));
   if (caps.length>=2) return caps.slice(0,2);
@@ -146,23 +174,23 @@ function makeHeroSlide(article){
   const content = document.createElement("div");
   content.className = "hero-content";
   content.innerHTML = `
-    <h1><a id="heroLink" target="_blank" rel="noreferrer" href="${article.url}">${article.title}</a></h1>
+    <h1><a target="_blank" rel="noreferrer" href="${article.url}">${article.title}</a></h1>
     <div class="hero-actions">
       <a class="btn-primary" href="${article.url}" target="_blank" rel="noreferrer">Read Analysis</a>
       <div class="tooltip">
-        <div id="heroMeter" class="bar-meter" style="width:220px"><div class="needle"></div></div>
+        <div class="bar-meter" style="width:220px"><div class="needle"></div></div>
         <div class="tooltiptext"></div>
       </div>
     </div>
-    <div id="heroBias" class="hero-bias">Bias: ${biasLabel(article?.bias_pct)} • Source ${article.source_name||article.source_domain||""}</div>
+    <div class="hero-bias">Bias: ${biasLabel(article?.bias_pct)} • Source ${article.source_name||article.source_domain||""}</div>
   `;
 
   wrap.appendChild(imgWrap);
   wrap.appendChild(content);
 
-  // set meter now
+  // set meter now (also inject % labels below)
   const pos = posPctFromSent(article.sentiment ?? 0);
-  const meter = content.querySelector("#heroMeter");
+  const meter = content.querySelector(".bar-meter");
   setMeter(meter, pos, reasonForCaution(article));
   return wrap;
 }
@@ -228,20 +256,13 @@ function buildHeroSlider(data){
 }
 
 /* ====== LISTS ====== */
-function imgUrlFallback(article){
-  // For list cards: still prefer article image, fallback to clearbit->favicon
-  const domain = article?.source_domain || "";
-  if (article?.image_url) return proxied(article.image_url);
-  return proxied(clearbitLogo(domain) || googleFavicon(domain));
-}
-
 function buildNewsList(container, items){
   container.innerHTML="";
   items.forEach(a=>{
     const row=document.createElement("article");
     row.className="news-row";
     row.innerHTML=`
-      <div class="news-thumb" style="background-image:url(${imgUrlFallback(a)})"></div>
+      <div class="news-thumb" style="background-image:url(${imgUrlListCard(a)})"></div>
       <div class="news-src">${a.source_name||a.source_domain||""}</div>
       <div class="news-time">${timeString(a.published_at)}</div>
       <h3><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></h3>
@@ -310,10 +331,8 @@ async function boot(){
 
   const r=await fetch("/api/news");
   const data=await r.json();
-  const titleEl=document.getElementById("heroTitle");
-  if(!data.ok || !data.main){ if(titleEl) titleEl.textContent="No news available."; return; }
+  if(!data.ok || !data.main){ const hero=document.getElementById("heroSlider"); if (hero) hero.textContent="No news available."; return; }
 
-  // Build new HERO slider and the rest
   buildHeroSlider(data);
   buildNewsList(document.getElementById("news-list"), (data.items||[]).slice(0,12));
   buildBriefList(document.getElementById("brief-right"), (data.daily||[]).slice(0,6));
