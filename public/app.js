@@ -1,4 +1,4 @@
-// app v22 — aligned hero, meter labels always visible & width-synced
+// app v23 — 4‑slide hero, aligned, labels always visible, more sources ready
 
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
 const posPctFromSent = (s)=>Math.round(clamp((s+1)/2,0,1)*100);
@@ -19,8 +19,7 @@ function setTickerText(j){
   const text = [
     `NSE: ${n>=0?"▲":"▼"} ${Math.abs(n).toFixed(2)}%`,
     `BSE: ${s>=0?"▲":"▼"} ${Math.abs(s).toFixed(2)}%`,
-    `USD/INR: ${(j.usdinr?.price??0).toFixed(2)}`,
-    `Sensex: ${(j.sensex?.price??0).toLocaleString()}`
+    `USD/INR: ${(j.usdinr?.price??0).toFixed(2)}`
   ].join(" | ");
   document.getElementById("ticker").innerHTML = `<span>${text}</span>`;
 }
@@ -58,16 +57,14 @@ function reasonForCaution(a){
          "Caution reflects the non‑positive share based on automated VADER sentiment.";
 }
 
-/* === meter: always creates labels under THIS bar and syncs width === */
+/* meter (labels always created + width‑synced) */
 function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   const pos = Math.max(0, Math.min(100, +positive || 50));
   const caution = 100 - pos;
 
-  // needle
   const needle = el.querySelector(".needle");
   if (needle) needle.style.left = `${pos}%`;
 
-  // find/create labels right next to this bar
   const container = el.closest(".tooltip");
   const outer = container ? container.parentElement : el.parentElement;
   let labels = outer.querySelector(":scope > .bar-labels");
@@ -76,8 +73,6 @@ function setMeter(el, positive, tipText, minCautionForTooltip = 60){
     labels.className = "bar-labels";
     outer.appendChild(labels);
   }
-
-  // match label width to actual bar
   const w = Math.round(el.getBoundingClientRect().width);
   if (w) labels.style.width = `${w}px`;
 
@@ -86,7 +81,6 @@ function setMeter(el, positive, tipText, minCautionForTooltip = 60){
     <div class="legend-item">Caution: ${caution}%</div>
   `;
 
-  // tooltip gating
   const wrap = el.closest(".tooltip");
   const tip = wrap ? wrap.querySelector(".tooltiptext") : null;
   if (wrap && tip){
@@ -183,26 +177,59 @@ function buildTrending(container, items){
   });
 }
 
-/* hero */
-function setHero(main){
-  document.getElementById("heroTitle").innerHTML = `<a target="_blank" rel="noreferrer" href="${main.url}">${main.title}</a>`;
-  document.getElementById("heroLink").href = main.url;
-  document.getElementById("heroImg").src = imgUrl(main);
-  const pos = posPctFromSent(main.sentiment ?? 0);
-  setMeter(document.getElementById("heroMeter"), pos, reasonForCaution(main));
-  document.getElementById("biasText").textContent = `Bias: ${biasLabel(main.bias_pct)} • Source ${main.source_name||main.source_domain||""}`;
+/* ===== HERO SLIDER (4 items) ===== */
+let heroArticles=[], idx=0, timer=null;
+
+function paintHero(i){
+  const a = heroArticles[i]; if(!a) return;
+  const imgEl = document.getElementById("heroImg");
+  imgEl.src = imgUrl(a);
+
+  document.getElementById("heroTitle").innerHTML =
+    `<a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a>`;
+  document.getElementById("heroLink").href = a.url;
+
+  const pos = posPctFromSent(a.sentiment ?? 0);
+  setMeter(document.getElementById("heroMeter"), pos, reasonForCaution(a));
+  document.getElementById("biasText").textContent =
+    `Bias: ${biasLabel(a?.bias_pct)} • Source ${a.source_name||a.source_domain||""}`;
+
+  // dots
+  const dots = document.getElementById("heroDots");
+  dots.innerHTML = "";
+  heroArticles.forEach((_,k)=>{
+    const d=document.createElement("div");
+    d.className="hero-dot"+(k===i?" active":"");
+    d.onclick=()=>{show(k); restart();};
+    dots.appendChild(d);
+  });
 }
+
+function show(i){ idx=(i+heroArticles.length)%heroArticles.length; paintHero(idx); }
+function next(){ show(idx+1); }
+function prev(){ show(idx-1); }
+function start(){ timer=setInterval(next, 7000); }
+function stop(){ if(timer) clearInterval(timer); timer=null; }
+function restart(){ stop(); start(); }
 
 /* boot */
 async function boot(){
-  setDate();
-  await loadMarkets();
+  setDate(); await loadMarkets();
 
   const r=await fetch("/api/news");
   const data=await r.json();
   if(!data.ok || !data.main){ document.getElementById("heroTitle").textContent="No news available."; return; }
 
-  setHero(data.main);
+  // Build hero list: main + next 3 unique items (avoid dup ids)
+  const seen=new Set();
+  const list=[data.main].concat((data.items||[])).filter(Boolean);
+  heroArticles = list.filter(a=>{ if(seen.has(a.id)) return false; seen.add(a.id); return true; }).slice(0,4);
+
+  paintHero(0);
+  document.getElementById("heroPrev").onclick=()=>{prev();restart();};
+  document.getElementById("heroNext").onclick=()=>{next();restart();};
+  start();
+
   buildNewsList(document.getElementById("news-list"), (data.items||[]).slice(0,12));
   buildBriefList(document.getElementById("brief-right"), (data.daily||[]).slice(0,6));
   buildTrending(document.getElementById("trending-list"), data.items||[]);
