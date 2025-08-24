@@ -94,8 +94,8 @@ function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   labels.style.width = barWidth ? `${barWidth}px` : "";
 
   labels.innerHTML = `
-    <div class="legend-item"><span class="swatch pos"></span> Positive: ${pos}%</div>
-    <div class="legend-item"><span class="swatch cau"></span> Caution: ${caution}%</div>
+  <div class="legend-item">Positive: ${pos}%</div>
+  <div class="legend-item">Caution: ${caution}%</div>
   `;
 
   if (wrapper && tip){
