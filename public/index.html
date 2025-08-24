@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=19"/>
+  <link rel="stylesheet" href="styles.css?v=20"/>
 </head>
 <body>
   <header class="hdr">
@@ -26,15 +26,23 @@
 
   <div class="ticker" id="ticker"><span>Loading markets…</span></div>
 
-  <!-- HERO (compact, crisp) -->
-  <section class="hero hero--tight">
+  <!-- HERO: fixed height, no overlap, sentiment pinned at bottom -->
+  <section class="hero">
+    <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
+
     <div class="hero-img-wrap">
-      <img id="heroImg" class="hero-img" src="" alt="Top story image" />
+      <img id="heroImg" class="hero-img" src="https://via.placeholder.com/640x360" alt="Top story image"/>
     </div>
+
     <div class="hero-content">
       <h1 id="heroTitle">Loading…</h1>
 
-      <div class="hero-meter-row">
+      <div class="hero-actions">
+        <a id="heroLink" class="btn-primary" target="_blank" rel="noreferrer">Read Analysis</a>
+      </div>
+
+      <!-- Sentiment block is at the bottom of the hero card -->
+      <div class="hero-sentiment">
         <div class="tooltip">
           <div class="bar-meter hero" id="heroMeter"><div class="needle"></div></div>
           <div class="tooltiptext" id="heroTip"></div>
@@ -42,15 +50,11 @@
         <div class="bar-labels hero" id="heroLabels"></div>
       </div>
 
-      <div class="hero-actions">
-        <a id="heroLink" class="btn-primary" target="_blank" rel="noreferrer">Read Analysis</a>
-        <div class="hero-bias" id="biasText">Bias: —</div>
-      </div>
-
-      <div class="hero-dots" id="heroDots"></div>
-      <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
-      <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
+      <div class="hero-bias" id="biasText">Bias: —</div>
     </div>
+
+    <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
+    <div class="hero-dots" id="heroDots"></div>
   </section>
 
   <main>
@@ -72,6 +76,6 @@
 
   <footer>&copy; <span id="yr"></span> Informed360. All rights reserved.</footer>
 
-  <script type="module" src="app.js?v=19"></script>
+  <script type="module" src="app.js?v=20"></script>
 </body>
 </html>
