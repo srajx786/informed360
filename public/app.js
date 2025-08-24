@@ -1,4 +1,4 @@
-// app v21 — labels always visible & width‑synced; Positive=green, Neutral=grey, Caution=black
+// app v22 — aligned hero, meter labels always visible & width-synced
 
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
 const posPctFromSent = (s)=>Math.round(clamp((s+1)/2,0,1)*100);
@@ -58,7 +58,7 @@ function reasonForCaution(a){
          "Caution reflects the non‑positive share based on automated VADER sentiment.";
 }
 
-/* === v21 setMeter: always creates labels under THIS bar and syncs width === */
+/* === meter: always creates labels under THIS bar and syncs width === */
 function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   const pos = Math.max(0, Math.min(100, +positive || 50));
   const caution = 100 - pos;
@@ -67,7 +67,7 @@ function setMeter(el, positive, tipText, minCautionForTooltip = 60){
   const needle = el.querySelector(".needle");
   if (needle) needle.style.left = `${pos}%`;
 
-  // find or create labels right next to this bar
+  // find/create labels right next to this bar
   const container = el.closest(".tooltip");
   const outer = container ? container.parentElement : el.parentElement;
   let labels = outer.querySelector(":scope > .bar-labels");
@@ -77,9 +77,9 @@ function setMeter(el, positive, tipText, minCautionForTooltip = 60){
     outer.appendChild(labels);
   }
 
-  // match label width to bar width (prevents drift)
+  // match label width to actual bar
   const w = Math.round(el.getBoundingClientRect().width);
-  labels.style.width = w ? `${w}px` : "";
+  if (w) labels.style.width = `${w}px`;
 
   labels.innerHTML = `
     <div class="legend-item">Positive: ${pos}%</div>
@@ -130,7 +130,7 @@ function buildNewsList(container, items){
           <div class="bar-meter small"><div class="needle"></div></div>
           <div class="tooltiptext"></div>
         </div>
-        <div class="bar-labels" style="width:140px"></div>
+        <div class="bar-labels"></div>
       </div>`;
     container.appendChild(row);
     const pos = posPctFromSent(a.sentiment ?? 0);
@@ -150,7 +150,7 @@ function buildBriefList(container, items){
         <div class="bar-meter tiny"><div class="needle"></div></div>
         <div class="tooltiptext"></div>
       </div>
-      <div class="bar-labels" style="width:100px"></div>`;
+      <div class="bar-labels"></div>`;
     container.appendChild(div);
     setMeter(div.querySelector(".bar-meter"), pos, reasonForCaution(a));
   });
@@ -176,7 +176,7 @@ function buildTrending(container, items){
         <div class="bar-meter tiny"><div class="needle"></div></div>
         <div class="tooltiptext"></div>
       </div>
-      <div class="bar-labels" style="width:100px"></div>`;
+      <div class="bar-labels"></div>`;
     container.appendChild(div);
     const tip = `Based on ${p.count} recent headlines; Positive ≈ ${p.avg}%. Caution shows the non‑positive share.`;
     setMeter(div.querySelector(".bar-meter"), p.avg, tip);
