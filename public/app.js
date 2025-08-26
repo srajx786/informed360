@@ -1,19 +1,60 @@
-/* app.js — v27 (robust wiring, graceful fallbacks) */
+/* app.js — v28
+   - Auto-detects API endpoint (window.API_BASE -> same-origin /api).
+   - Shows a small badge "API: OK/FAIL" for quick debugging.
+   - Falls back to demo data so UI never sticks on "Loading…".
+*/
 
-/* ===== API ===== */
-const API_BASE = (typeof window !== "undefined" && window.API_BASE) || ""; // if empty uses same origin
+/* =============== API autodetect =============== */
+const candidates = [];
+if (typeof window !== "undefined" && window.API_BASE) candidates.push(window.API_BASE);
+candidates.push(""); // same-origin (i.e., /api/... on current host)
 
-async function api(path) {
-  const url = `${API_BASE}${path}`;
-  const r = await fetch(url, { credentials: "omit" });
-  if (!r.ok) throw new Error(`HTTP ${r.status} for ${url}`);
+function join(base, path){
+  if (!base) return path; // same-origin
+  return `${base.replace(/\/+$/,"")}${path}`;
+}
+
+const apiState = { base: null, ok: false };
+
+async function tryApi(base){
+  // Ping a cheap endpoint (markets) to validate
+  try{
+    const url = join(base, "/api/markets");
+    const r = await fetch(url, { credentials:"omit" });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const j = await r.json();
+    if (j && j.ok) { apiState.base = base; apiState.ok = true; return true; }
+  }catch(e){}
+  return false;
+}
+
+async function pickApiBase(){
+  for (const base of candidates){
+    const ok = await tryApi(base);
+    if (ok) return base;
+  }
+  return null; // none worked
+}
+
+async function api(path){
+  if (!apiState.base) apiState.base = await pickApiBase();
+  if (apiState.base===null) throw new Error("No API reachable");
+  const r = await fetch(join(apiState.base, path), { credentials:"omit" });
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
   return r.json();
 }
 
-/* ===== Utilities ===== */
+function setBadge(status, note){
+  const el = document.getElementById("apiBadge");
+  if (!el) return;
+  el.classList.remove("ok","fail");
+  if (status==="ok"){ el.classList.add("ok"); el.innerHTML = `API: <small>OK</small>`; }
+  else { el.classList.add("fail"); el.innerHTML = `API: <small>FAIL</small>${note?` — ${note}`:""}`; }
+}
+
+/* =============== Utilities =============== */
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
 const posPctFromSent = (s)=>Math.round(clamp((s+1)/2,0,1)*100);
-
 function setDate(){
   const d=new Date();
   const weekday=d.toLocaleString("en-US",{weekday:"long"});
@@ -23,7 +64,6 @@ function setDate(){
   document.getElementById("dateNow").textContent = `${weekday}, ${day} ${month} ,${year}`;
   document.getElementById("yr").textContent = String(year);
 }
-
 function setTickerText(j){
   const n = j.nifty?.percent ?? 0;
   const s = j.sensex?.percent ?? 0;
@@ -46,7 +86,7 @@ function setChips(j){
   set('bseChip','BSE', j.sensex);
 }
 
-/* ===== Meter ===== */
+/* =============== Meter =============== */
 function setMeter(el, positive){
   const pos = Math.max(0, Math.min(100, +positive || 50));
   const caution = 100 - pos;
@@ -65,7 +105,7 @@ function setMeter(el, positive){
   labels.innerHTML = `<div>Positive: ${pos}%</div><div>Caution: ${caution}%</div>`;
 }
 
-/* ===== Images ===== */
+/* =============== Images =============== */
 function imgUrl(a){
   const u = a?.image_url || "";
   if (u.startsWith("/logos/") || u.startsWith("/images/")) return u;
@@ -73,7 +113,7 @@ function imgUrl(a){
   return "/images/placeholder.png";
 }
 
-/* ===== Hero slider ===== */
+/* =============== Hero slider =============== */
 let heroArticles=[], idx=0, timer=null;
 
 function paintHero(i){
@@ -117,7 +157,7 @@ function prev(){ show(idx-1); }
 function start(){ if(timer) clearInterval(timer); timer=setInterval(next, 7000); }
 function restart(){ start(); }
 
-/* ===== Builders ===== */
+/* =============== Builders =============== */
 function timeString(iso){ const d=iso?new Date(iso):new Date(); return d.toLocaleString(); }
 
 function buildNewsList(container, items){
@@ -165,26 +205,44 @@ function buildBriefList(container, items){
   });
 }
 
-/* ===== Markets & News ===== */
+/* =============== Loaders with demo fallback =============== */
+function demoMarkets(){
+  return { ok:true, nifty:{price:24650.25,percent:0.34}, sensex:{price:81234.1,percent:-0.12}, usdinr:{price:83.2} };
+}
+function demoNews(){
+  const now = new Date().toISOString();
+  const mk=(i)=>({id:`demo:${i}`, title:`Demo article #${i}`, url:"https://example.com",
+    source_name:"Demo Source", source_domain:"example.com", published_at:now,
+    sentiment:(i%3===0?0.25:(i%3===1?-0.15:0.05)), image_url:"/images/placeholder.png"});
+  const items=[mk(1),mk(2),mk(3),mk(4),mk(5),mk(6)];
+  return { ok:true, main:items[0], items };
+}
+
 async function loadMarkets(){
-  try {
+  try{
     const j = await api("/api/markets");
+    setBadge("ok");
     if (j && j.ok){ setTickerText(j); setChips(j); return; }
-  } catch {}
-  document.getElementById("ticker").innerHTML = `<span>Markets unavailable</span>`;
-  setChips({});
+  }catch(e){
+    setBadge("fail","markets");
+  }
+  const j = demoMarkets();
+  setTickerText(j); setChips(j);
 }
 
 async function loadNews(){
-  let data;
-  try { data = await api("/api/news"); }
-  catch { data = { ok:false, main:null, items:[] }; }
+  let data=null;
+  try{
+    data = await api("/api/news");
+    setBadge("ok");
+  }catch(e){
+    setBadge("fail","news"); data = demoNews();
+  }
 
   const list = [];
   if (data?.main) list.push(data.main);
   if (Array.isArray(data?.items)) list.push(...data.items);
 
-  // unique & limit 4 for hero
   const seen = new Set();
   heroArticles = list.filter(a=>{
     if(!a || !a.id) return false;
@@ -205,7 +263,7 @@ async function loadNews(){
   buildBriefList(document.getElementById("trending-list"), (data.items||[]).slice(6,12));
 }
 
-/* ===== Boot ===== */
+/* =============== Boot =============== */
 function boot(){
   setDate();
   loadMarkets();
