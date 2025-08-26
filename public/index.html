@@ -6,11 +6,24 @@
   <title>Informed360</title>
   <link rel="stylesheet" href="styles.css"/>
 
-  <!-- ✅ Set your API base ONCE here -->
+  <!-- Optional: set your API base explicitly. If you don't, app.js will auto-try options. -->
   <script>
-    // Replace with your Render API URL or your API custom domain
-    window.API_BASE = "https://YOUR-RENDER-APP.onrender.com";
+    /* If you know your Render API URL, set it here, e.g.:
+       window.API_BASE = "https://informed360-api.onrender.com";
+       If left undefined, the frontend will try same-origin /api and then fall back to demo data. */
+    // window.API_BASE = "https://informed360-api.onrender.com";
   </script>
+  <style>
+    .api-badge{
+      position:fixed; right:10px; bottom:10px; z-index:9999;
+      font: 600 12px/1.2 Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      padding:7px 10px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.12);
+      background:#fff; border:1px solid #e6e6e6; color:#111
+    }
+    .api-badge.ok{ border-color:#16a34a; }
+    .api-badge.fail{ border-color:#ef4444; }
+    .api-badge small{ color:#555; font-weight:700; margin-left:6px }
+  </style>
 </head>
 <body>
   <header class="hdr">
@@ -71,6 +84,9 @@
   </div>
 
   <footer>&copy; <span id="yr"></span> Informed360. All rights reserved.</footer>
+
+  <!-- Connection badge -->
+  <div id="apiBadge" class="api-badge">API: <small>checking…</small></div>
 
   <script type="module" src="app.js"></script>
 </body>
