@@ -1,7 +1,8 @@
-// server.js — Informed360 API (news + markets) with CORS + logo/placeholder fallbacks
+// server.js — Informed360 API (Node 18 compatible; no JSON import assert)
 import express from "express";
 import cors from "cors";
 import Parser from "rss-parser";
+import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -10,17 +11,17 @@ const __dirname  = path.dirname(__filename);
 
 const app = express();
 
-/* CORS: allow your site to call this API */
+/* CORS: allow ONLY your site */
 const ALLOWED = [
   "https://www.informed360.news",
   "https://informed360.news"
 ];
 app.use(cors({ origin: ALLOWED }));
 
-/* Static (optional: if you add /public/logos or images later) */
+/* Static files (optional: /public/logos, /public/images, etc.) */
 app.use(express.static(path.join(__dirname, "public")));
 
-/* RSS parser with polite UA (reduces 403s) */
+/* rss-parser with polite UA to reduce 403s */
 const parser = new Parser({
   requestOptions: {
     headers: {
@@ -30,7 +31,7 @@ const parser = new Parser({
   }
 });
 
-/* ---- Utilities ---- */
+/* ---- Helpers ---- */
 function looksLikeFavicon(u = "") {
   const s = String(u || "").toLowerCase();
   return s.includes("favicon") || s.endsWith(".ico") || s.includes("google.com/s2/favicons");
@@ -39,10 +40,8 @@ function firstImgFromHtml(html = "") {
   const m = String(html).match(/<img[^>]+src=["']([^"']+)["']/i);
   return m ? m[1] : null;
 }
-
-/* Data-URI placeholder (crisp, no extra file needed) */
 function placeholderSVG(label="News") {
-  const text = encodeURIComponent(label.slice(0,14));
+  const txt = encodeURIComponent(label.slice(0,14));
   const svg =
     `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
       <defs>
@@ -54,13 +53,13 @@ function placeholderSVG(label="News") {
       <rect width='100%' height='100%' fill='url(#g)'/>
       <text x='50%' y='50%' font-family='Inter,Arial,sans-serif'
             font-size='42' font-weight='700' fill='#111' text-anchor='middle' dominant-baseline='middle'>
-        ${text}
+        ${txt}
       </text>
     </svg>`;
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
-/* Optional: map feed IDs to local logos (serve from /public/logos/* if you add them later) */
+/* Optional: map feed IDs to local logos you place in /public/logos */
 const logoMap = {
   thehindu: "/logos/thehindu.svg",
   indianexpress: "/logos/indianexpress.svg",
@@ -94,11 +93,18 @@ function logoFor(feedId, feedName){
   return logoMap[key] || placeholderSVG(feedName||"News");
 }
 
-/* ---- Feeds ---- */
-import feeds from "./rss-feeds.json" assert { type: "json" };
+/* ---- Load feeds JSON without import assert (Node 18 safe) ---- */
+const feedsPath = path.join(__dirname, "rss-feeds.json");
+let feeds = [];
+try {
+  feeds = JSON.parse(fs.readFileSync(feedsPath, "utf8"));
+} catch (e) {
+  console.error("Failed to read rss-feeds.json:", e.message);
+  feeds = [];
+}
 const FEEDS = (Array.isArray(feeds) ? feeds : []).filter(f => f && f.id && f.url);
 
-/* Try to find an image for an item; fallback to logo/placeholder */
+/* ---- Image selection ---- */
 function pickImage(feed, item) {
   if (item.enclosure?.url) return item.enclosure.url;
   if (item["media:content"]?.url) return item["media:content"].url;
@@ -114,7 +120,7 @@ function pickImage(feed, item) {
   return logoFor(feed.id, feed.name);
 }
 
-/* Fetch a single feed safely */
+/* ---- Fetch one feed ---- */
 async function fetchFeed(feed) {
   try {
     const data = await parser.parseURL(feed.url);
@@ -129,7 +135,7 @@ async function fetchFeed(feed) {
         source_name: feed.name || feed.id,
         source_domain: feed.domain || "",
         published_at: it.isoDate || it.pubDate || new Date().toISOString(),
-        sentiment: 0,         // (placeholder; wire your sentiment later)
+        sentiment: 0,          // placeholder sentiment; wire your model if needed
         image_url: img
       };
     });
@@ -140,7 +146,7 @@ async function fetchFeed(feed) {
   }
 }
 
-/* Merge all feeds */
+/* ---- Merge all feeds ---- */
 async function fetchAll() {
   const arrays = await Promise.all(FEEDS.map(fetchFeed));
   let all = arrays.flat();
@@ -179,7 +185,6 @@ app.get("/api/news", async (_req, res) => {
 });
 
 app.get("/api/markets", (_req, res) => {
-  // Stub numbers; replace with real data source later.
   res.json({
     ok: true,
     nifty:  { price: 24650.25, percent: 0.34 },
@@ -188,7 +193,7 @@ app.get("/api/markets", (_req, res) => {
   });
 });
 
-// quick diagnostics (optional)
+/* Optional diagnostics */
 app.get("/api/news/sources", async (_req, res) => {
   const items = await fetchAll();
   const counts = {};
@@ -196,6 +201,6 @@ app.get("/api/news/sources", async (_req, res) => {
   res.json({ ok:true, counts });
 });
 
-/* Boot */
+/* ---- Boot ---- */
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`✅ Informed360 API on ${PORT}`));
