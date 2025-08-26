@@ -3,8 +3,9 @@
 
 import express from "express";
 import cors from "cors";
-app.use(cors());
+
 const app = express();
+app.use(cors());
 
 // --- CORS: allow your GoDaddy site to call this API ---
 const ALLOWED = [
