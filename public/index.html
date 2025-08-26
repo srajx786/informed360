@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Informed360</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=23"/>
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- ✅ Set your API base ONCE here -->
+  <script>
+    // Replace with your Render API URL or your API custom domain
+    window.API_BASE = "https://YOUR-RENDER-APP.onrender.com";
+  </script>
 </head>
 <body>
   <header class="hdr">
@@ -18,48 +21,37 @@
         <span class="chip" id="bseChip">BSE —</span>
       </div>
     </div>
-    <nav class="nav">
-      <a>Home</a><a>Markets</a><a>Politics</a><a>Technology</a><a>Analysis</a>
-    </nav>
-    <div class="date" id="dateNow">—</div>
+    <nav class="nav"></nav>
+    <div class="date" id="dateNow"></div>
   </header>
 
   <div class="ticker" id="ticker"><span>Loading markets…</span></div>
 
-  <!-- Unified container so hero aligns with cards below -->
   <div class="container">
-
-    <!-- HERO SLIDER (4 slides) -->
+    <!-- HERO -->
     <section class="card hero-card">
       <div class="hero">
         <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
-
         <div class="hero-slide" id="heroSlide">
           <div class="hero-media">
-            <img id="heroImg" src="/images/placeholder.png" alt="Hero"/>
-
+            <img id="heroImg" alt="Hero" />
           </div>
           <div class="hero-text">
-            <h1 id="heroTitle">Loading…</h1>
+            <h1 id="heroTitle">Loading...</h1>
             <a id="heroLink" class="cta" target="_blank" rel="noreferrer">Read Analysis</a>
-
             <div class="meter-block">
-              <div class="tooltip">
-                <div class="bar-meter" id="heroMeter"><div class="needle"></div></div>
-                <div class="tooltiptext" id="heroTip">Sentiment</div>
-              </div>
-              <div class="bar-labels" id="heroLabels"></div>
+              <div class="bar-meter" id="heroMeter"><div class="needle"></div></div>
+              <div class="bar-labels"></div>
             </div>
-
             <div class="bias-text" id="biasText">Bias: —</div>
           </div>
         </div>
-
         <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
         <div class="hero-dots" id="heroDots"></div>
       </div>
     </section>
 
+    <!-- 3-column -->
     <main>
       <aside class="card">
         <h2>Trending News</h2>
@@ -76,11 +68,10 @@
         <div id="brief-right" class="brief-list"></div>
       </aside>
     </main>
-
   </div>
 
   <footer>&copy; <span id="yr"></span> Informed360. All rights reserved.</footer>
 
-  <script type="module" src="app.js?v=23"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
