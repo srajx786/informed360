@@ -1,29 +1,26 @@
-// server.js — v26 minimal API for Informed360
-// Run with: node server.js  (Render: Start command "node server.js")
+// server.js — Informed360 API with CORS restricted to your domain
 
 import express from "express";
 import cors from "cors";
-
-const app = express();
-app.use(cors());
-
-// --- CORS: allow your GoDaddy site to call this API ---
-const ALLOWED = [
-  "https://YOUR-FRONTEND-DOMAIN.com",
-  "https://www.YOUR-FRONTEND-DOMAIN.com"
-];
-app.use(cors({ origin: ALLOWED }));
-
-// (Optional) serve static files (logos, placeholder images)
+import Parser from "rss-parser";
 import path from "path";
 import { fileURLToPath } from "url";
+
 const __filename = fileURLToPath(import.meta.url);
-const __dirname  = path.dirname(__filename);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+const parser = new Parser();
+
+// --- CORS: allow ONLY your frontend domain ---
+const ALLOWED = ["https://www.informed360.news"];
+app.use(cors({ origin: ALLOWED }));
+
+// --- Serve static files (logos, images, etc) ---
 app.use(express.static(path.join(__dirname, "public")));
 
-// --- MARKETS endpoint: JSON shape the UI expects ---
+// --- Demo MARKETS endpoint (replace with live data later) ---
 app.get("/api/markets", (_req, res) => {
-  // You can later plug real market data here; keep the fields the same.
   res.json({
     ok: true,
     nifty:  { price: 24650.25, percent: 0.34 },
@@ -32,9 +29,8 @@ app.get("/api/markets", (_req, res) => {
   });
 });
 
-// --- NEWS endpoint: placeholder (wire your real implementation here) ---
+// --- Simple NEWS endpoint (replace with full RSS merging) ---
 app.get("/api/news", (_req, res) => {
-  // Minimal stub so the page renders; replace with your merged RSS items.
   const now = new Date().toISOString();
   const demoItem = {
     id: "demo:1",
@@ -43,12 +39,14 @@ app.get("/api/news", (_req, res) => {
     source_name: "Demo Source",
     source_domain: "example.com",
     published_at: now,
-    sentiment: 0,        // neutral
+    sentiment: 0,
     image_url: "/images/placeholder.png"
   };
   res.json({ ok: true, main: demoItem, items: [demoItem] });
 });
 
-// --- Boot ---
+// --- BOOT ---
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`API listening on ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`✅ Informed360 API running on port ${PORT}`);
+});
