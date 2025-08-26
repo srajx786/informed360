@@ -1,7 +1,8 @@
-// server.js — Informed360 API (Node 18 compatible; no JSON import assert)
+// server.js — Informed360 API with VADER sentiment (Node 18 compatible)
 import express from "express";
 import cors from "cors";
 import Parser from "rss-parser";
+import vader from "vader-sentiment";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -18,15 +19,13 @@ const ALLOWED = [
 ];
 app.use(cors({ origin: ALLOWED }));
 
-/* Static files (optional: /public/logos, /public/images, etc.) */
+/* Static files (optional) */
 app.use(express.static(path.join(__dirname, "public")));
 
-/* rss-parser with polite UA to reduce 403s */
+/* rss-parser with polite UA */
 const parser = new Parser({
   requestOptions: {
-    headers: {
-      "User-Agent": "Informed360/1.0 (+https://www.informed360.news)"
-    },
+    headers: { "User-Agent": "Informed360/1.0 (+https://www.informed360.news)" },
     timeout: 15000
   }
 });
@@ -44,22 +43,17 @@ function placeholderSVG(label="News") {
   const txt = encodeURIComponent(label.slice(0,14));
   const svg =
     `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
-      <defs>
-        <linearGradient id='g' x1='0' x2='1' y1='0' y2='1'>
-          <stop stop-color='#F3F4F6' offset='0'/>
-          <stop stop-color='#E5E7EB' offset='1'/>
-        </linearGradient>
-      </defs>
+      <defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'>
+        <stop stop-color='#F3F4F6' offset='0'/><stop stop-color='#E5E7EB' offset='1'/>
+      </linearGradient></defs>
       <rect width='100%' height='100%' fill='url(#g)'/>
-      <text x='50%' y='50%' font-family='Inter,Arial,sans-serif'
-            font-size='42' font-weight='700' fill='#111' text-anchor='middle' dominant-baseline='middle'>
-        ${txt}
-      </text>
+      <text x='50%' y='50%' font-family='Inter,Arial,sans-serif' font-size='42' font-weight='700'
+        fill='#111' text-anchor='middle' dominant-baseline='middle'>${txt}</text>
     </svg>`;
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
-/* Optional: map feed IDs to local logos you place in /public/logos */
+/* Optional: local logos in /public/logos */
 const logoMap = {
   thehindu: "/logos/thehindu.svg",
   indianexpress: "/logos/indianexpress.svg",
@@ -93,18 +87,32 @@ function logoFor(feedId, feedName){
   return logoMap[key] || placeholderSVG(feedName||"News");
 }
 
-/* ---- Load feeds JSON without import assert (Node 18 safe) ---- */
+/* Load feeds JSON (Node 18 safe) */
 const feedsPath = path.join(__dirname, "rss-feeds.json");
 let feeds = [];
-try {
-  feeds = JSON.parse(fs.readFileSync(feedsPath, "utf8"));
-} catch (e) {
-  console.error("Failed to read rss-feeds.json:", e.message);
-  feeds = [];
-}
+try { feeds = JSON.parse(fs.readFileSync(feedsPath, "utf8")); }
+catch (e) { console.error("Failed to read rss-feeds.json:", e.message); feeds = []; }
 const FEEDS = (Array.isArray(feeds) ? feeds : []).filter(f => f && f.id && f.url);
 
-/* ---- Image selection ---- */
+/* VADER sentiment on (title + snippet). Returns [-1..+1] */
+function scoreSentiment(it){
+  const text = [
+    it.title || "",
+    it.contentSnippet || "",
+    it.summary || "",
+  ].join(". ").replace(/\s+/g," ").trim();
+
+  // If text is empty or mostly non-Latin, return neutral 0
+  if (!text) return 0;
+  const latinRatio = (text.match(/[A-Za-z]/g)||[]).length / Math.max(text.length,1);
+  if (latinRatio < 0.15) return 0; // basic guard for non-English feeds
+
+  const r = vader.SentimentIntensityAnalyzer.polarity_scores(text);
+  // r.compound is already in [-1..+1]
+  return Math.max(-1, Math.min(1, r.compound));
+}
+
+/* Choose image with graceful fallbacks */
 function pickImage(feed, item) {
   if (item.enclosure?.url) return item.enclosure.url;
   if (item["media:content"]?.url) return item["media:content"].url;
@@ -120,13 +128,14 @@ function pickImage(feed, item) {
   return logoFor(feed.id, feed.name);
 }
 
-/* ---- Fetch one feed ---- */
+/* Fetch a single feed */
 async function fetchFeed(feed) {
   try {
     const data = await parser.parseURL(feed.url);
     const items = (data.items || []).map(it => {
       let img = pickImage(feed, it);
       if (!img || looksLikeFavicon(img)) img = logoFor(feed.id, feed.name);
+
       return {
         id: `${feed.id}:${it.guid || it.link || it.pubDate || Math.random()}`,
         title: it.title || "(untitled)",
@@ -135,8 +144,9 @@ async function fetchFeed(feed) {
         source_name: feed.name || feed.id,
         source_domain: feed.domain || "",
         published_at: it.isoDate || it.pubDate || new Date().toISOString(),
-        sentiment: 0,          // placeholder sentiment; wire your model if needed
-        image_url: img
+        sentiment: scoreSentiment(it),  // <<<<<<<<<<  VADER score here
+        image_url: img,
+        contentSnippet: it.contentSnippet || ""
       };
     });
     return items;
@@ -146,15 +156,13 @@ async function fetchFeed(feed) {
   }
 }
 
-/* ---- Merge all feeds ---- */
+/* Merge, sort, dedupe */
 async function fetchAll() {
   const arrays = await Promise.all(FEEDS.map(fetchFeed));
   let all = arrays.flat();
 
-  // newest first
   all.sort((a,b)=> new Date(b.published_at) - new Date(a.published_at));
 
-  // de-dup by URL/title
   const seen = new Set();
   all = all.filter(it => {
     const key = (it.url || it.title).trim().toLowerCase();
@@ -172,7 +180,6 @@ app.get("/api/news", async (_req, res) => {
     const items = await fetchAll();
     res.json({ ok: true, main: items[0] || null, items });
   } catch (e) {
-    // last-resort demo fallback
     const now = new Date().toISOString();
     const mk=(i)=>({
       id:`demo:${i}`, title:`Demo article #${i}`, url:"https://example.com",
@@ -201,6 +208,6 @@ app.get("/api/news/sources", async (_req, res) => {
   res.json({ ok:true, counts });
 });
 
-/* ---- Boot ---- */
+/* Boot */
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`✅ Informed360 API on ${PORT}`));
+app.listen(PORT, () => console.log(`✅ Informed360 API with sentiment on ${PORT}`));
