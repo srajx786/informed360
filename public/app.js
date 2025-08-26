@@ -1,25 +1,28 @@
-/* app.js — v26
-   - Uses API_BASE for all requests (news + markets)
-   - Fixes "Markets unavailable" by handling errors + expected JSON shape
-*/
+/* app.js — v27 (robust wiring, graceful fallbacks) */
 
-//////////////////////////////
-//  API BASE — EDIT THIS!  //
-//////////////////////////////
-const API_BASE = "https://YOUR-RENDER-APP.onrender.com";  // e.g., https://informed360-api.onrender.com
-// If you set a custom domain for the API, use that instead, e.g. https://api.yourdomain.com
+/* ===== API ===== */
+const API_BASE = (typeof window !== "undefined" && window.API_BASE) || ""; // if empty uses same origin
 
 async function api(path) {
-  const r = await fetch(`${API_BASE}${path}`, { credentials: "omit" });
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const url = `${API_BASE}${path}`;
+  const r = await fetch(url, { credentials: "omit" });
+  if (!r.ok) throw new Error(`HTTP ${r.status} for ${url}`);
   return r.json();
 }
 
-///////////////////////////
-//  Sentiment utilities  //
-///////////////////////////
+/* ===== Utilities ===== */
 const clamp = (x,a,b)=>Math.min(b,Math.max(a,x));
 const posPctFromSent = (s)=>Math.round(clamp((s+1)/2,0,1)*100);
+
+function setDate(){
+  const d=new Date();
+  const weekday=d.toLocaleString("en-US",{weekday:"long"});
+  const day=d.getDate();
+  const month=d.toLocaleString("en-US",{month:"long"});
+  const year=d.getFullYear();
+  document.getElementById("dateNow").textContent = `${weekday}, ${day} ${month} ,${year}`;
+  document.getElementById("yr").textContent = String(year);
+}
 
 function setTickerText(j){
   const n = j.nifty?.percent ?? 0;
@@ -43,9 +46,7 @@ function setChips(j){
   set('bseChip','BSE', j.sensex);
 }
 
-//////////////////////
-//  Meter rendering //
-//////////////////////
+/* ===== Meter ===== */
 function setMeter(el, positive){
   const pos = Math.max(0, Math.min(100, +positive || 50));
   const caution = 100 - pos;
@@ -64,26 +65,37 @@ function setMeter(el, positive){
   labels.innerHTML = `<div>Positive: ${pos}%</div><div>Caution: ${caution}%</div>`;
 }
 
-///////////////////////////
-//  Image URL helper     //
-///////////////////////////
+/* ===== Images ===== */
 function imgUrl(a){
   const u = a?.image_url || "";
-  if (u.startsWith("/logos/") || u.startsWith("/images/")) return u;  // served by your API/static
-  if (u) return `/img?u=${encodeURIComponent(u)}`;                     // keep your image proxy if you use one
+  if (u.startsWith("/logos/") || u.startsWith("/images/")) return u;
+  if (u) return `/img?u=${encodeURIComponent(u)}`;
   return "/images/placeholder.png";
 }
 
-///////////////////////////
-//  Hero slider (4 items)
-///////////////////////////
+/* ===== Hero slider ===== */
 let heroArticles=[], idx=0, timer=null;
 
 function paintHero(i){
-  const a = heroArticles[i]; if(!a) return;
-  document.getElementById("heroImg").src = imgUrl(a);
-  document.getElementById("heroTitle").innerHTML = `<a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a>`;
-  document.getElementById("heroLink").href = a.url;
+  const a = heroArticles[i];
+  const titleEl = document.getElementById("heroTitle");
+  const linkEl = document.getElementById("heroLink");
+  const imgEl = document.getElementById("heroImg");
+  const biasEl = document.getElementById("biasText");
+
+  if(!a){
+    titleEl.textContent = "No news available";
+    linkEl.removeAttribute("href");
+    imgEl.src = "/images/placeholder.png";
+    biasEl.textContent = "Bias: —";
+    return;
+  }
+
+  imgEl.src = imgUrl(a);
+  titleEl.innerHTML = `<a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a>`;
+  linkEl.href = a.url;
+  biasEl.textContent = `Source ${a.source_name||a.source_domain||""}`;
+
   const pos = posPctFromSent(a.sentiment ?? 0);
   setMeter(document.getElementById("heroMeter"), pos);
 
@@ -99,37 +111,21 @@ function paintHero(i){
     });
   }
 }
-
 function show(i){ idx=(i+heroArticles.length)%heroArticles.length; paintHero(idx); }
 function next(){ show(idx+1); }
 function prev(){ show(idx-1); }
-function start(){ timer=setInterval(next, 7000); }
-function stop(){ if(timer) clearInterval(timer); timer=null; }
-function restart(){ stop(); start(); }
+function start(){ if(timer) clearInterval(timer); timer=setInterval(next, 7000); }
+function restart(){ start(); }
 
-//////////////////////
-//  Markets loader  //
-//////////////////////
-async function loadMarkets(){
-  let j;
-  try { j = await api("/api/markets"); }
-  catch { j = { ok:false }; }
-
-  if (j && j.ok){
-    setTickerText(j);
-    setChips(j);
-  } else {
-    document.getElementById("ticker").innerHTML = `<span>Markets unavailable</span>`;
-    setChips({});
-  }
-}
-
-/////////////////////////
-//  News + page boot   //
-/////////////////////////
+/* ===== Builders ===== */
 function timeString(iso){ const d=iso?new Date(iso):new Date(); return d.toLocaleString(); }
+
 function buildNewsList(container, items){
   container.innerHTML="";
+  if (!items || !items.length){
+    container.innerHTML = `<div class="brief-item">No articles yet.</div>`;
+    return;
+  }
   items.forEach(a=>{
     const row=document.createElement("article");
     row.className="news-row";
@@ -149,27 +145,70 @@ function buildNewsList(container, items){
     setMeter(row.querySelector(".bar-meter"), pos);
   });
 }
-
-async function boot(){
-  await loadMarkets();
-
-  // news
-  let data = { ok:false, items:[], main:null };
-  try { data = await api("/api/news"); } catch {}
-
-  if (data && data.main){
-    const list = [data.main].concat((data.items||[])).filter(Boolean);
-    heroArticles = Array.from(new Set(list.map(x=>x.id))).map(id => list.find(x=>x.id===id)).slice(0,4);
-    paintHero(0);
-    const prevBtn = document.getElementById("heroPrev");
-    const nextBtn = document.getElementById("heroNext");
-    if (prevBtn) prevBtn.onclick=()=>{prev();restart();};
-    if (nextBtn) nextBtn.onclick=()=>{next();restart();};
-    start();
+function buildBriefList(container, items){
+  container.innerHTML="";
+  if (!items || !items.length){
+    container.innerHTML = `<div class="brief-item">No items yet.</div>`;
+    return;
   }
-
-  const newsList = document.getElementById("news-list");
-  if (newsList) buildNewsList(newsList, (data.items||[]).slice(0,12));
+  items.forEach(a=>{
+    const div=document.createElement("div");
+    div.className="brief-item";
+    div.innerHTML=`<span><a target="_blank" rel="noreferrer" href="${a.url}">${a.title}</a></span>
+      <div class="meter-block">
+        <div class="bar-meter tiny"><div class="needle"></div></div>
+        <div class="bar-labels"></div>
+      </div>`;
+    container.appendChild(div);
+    const pos = posPctFromSent(a.sentiment ?? 0);
+    setMeter(div.querySelector(".bar-meter"), pos);
+  });
 }
 
+/* ===== Markets & News ===== */
+async function loadMarkets(){
+  try {
+    const j = await api("/api/markets");
+    if (j && j.ok){ setTickerText(j); setChips(j); return; }
+  } catch {}
+  document.getElementById("ticker").innerHTML = `<span>Markets unavailable</span>`;
+  setChips({});
+}
+
+async function loadNews(){
+  let data;
+  try { data = await api("/api/news"); }
+  catch { data = { ok:false, main:null, items:[] }; }
+
+  const list = [];
+  if (data?.main) list.push(data.main);
+  if (Array.isArray(data?.items)) list.push(...data.items);
+
+  // unique & limit 4 for hero
+  const seen = new Set();
+  heroArticles = list.filter(a=>{
+    if(!a || !a.id) return false;
+    if(seen.has(a.id)) return false;
+    seen.add(a.id);
+    return true;
+  }).slice(0,4);
+
+  paintHero(0);
+  const prevBtn = document.getElementById("heroPrev");
+  const nextBtn = document.getElementById("heroNext");
+  if (prevBtn) prevBtn.onclick=()=>{prev();restart();};
+  if (nextBtn) nextBtn.onclick=()=>{next();restart();};
+  start();
+
+  buildNewsList(document.getElementById("news-list"), (data.items||[]).slice(0,12));
+  buildBriefList(document.getElementById("brief-right"), (data.items||[]).slice(0,6));
+  buildBriefList(document.getElementById("trending-list"), (data.items||[]).slice(6,12));
+}
+
+/* ===== Boot ===== */
+function boot(){
+  setDate();
+  loadMarkets();
+  loadNews();
+}
 boot();
