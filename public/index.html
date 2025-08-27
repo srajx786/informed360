@@ -6,13 +6,13 @@
   <title>Informed360</title>
   <link rel="stylesheet" href="styles.css"/>
 
-  <!-- Optional: set your API base here. If omitted, the app auto-tries same-origin /api and falls back. -->
+  <!-- Optional: hard-set your API base. If omitted, app.js will auto-detect. -->
   <!-- <script>window.API_BASE="https://YOUR-RENDER-APP.onrender.com";</script> -->
 
   <style>
     .api-badge{
       position:fixed; right:10px; bottom:10px; z-index:9999;
-      font: 600 12px/1.2 Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      font:600 12px/1.2 Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
       padding:7px 10px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.12);
       background:#fff; border:1px solid #e6e6e6; color:#111
     }
@@ -43,7 +43,8 @@
         <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
         <div class="hero-slide" id="heroSlide">
           <div class="hero-media">
-            <img id="heroImg" alt="Hero" />
+            <!-- intrinsic size prevents layout shift -->
+            <img id="heroImg" alt="Hero" width="800" height="260" loading="eager" />
           </div>
           <div class="hero-text">
             <h1 id="heroTitle">Loading...</h1>
