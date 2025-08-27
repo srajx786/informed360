@@ -1,4 +1,4 @@
-/* app.js — v28 (auto-detect API; shows badge; graceful fallbacks) */
+/* app.js — stable layout version (no forced reflows; no auto-rotate) */
 
 /* ---- API autodetect ---- */
 const candidates = [];
@@ -74,10 +74,11 @@ function setChips(j){
   set('bseChip','BSE', j.sensex);
 }
 
-/* ---- meter ---- */
+/* ---- meter (no width measuring, no reflow) ---- */
 function setMeter(el, positive){
   const pos = Math.max(0, Math.min(100, +positive || 50));
   const caution = 100 - pos;
+
   const needle = el.querySelector(".needle");
   if (needle) needle.style.left = `${pos}%`;
 
@@ -88,8 +89,6 @@ function setMeter(el, positive){
     labels.className = "bar-labels";
     wrap.appendChild(labels);
   }
-  const w = Math.round(el.getBoundingClientRect().width);
-  if (w) labels.style.width = `${w}px`;
   labels.innerHTML = `<div>Positive: ${pos}%</div><div>Caution: ${caution}%</div>`;
 }
 
@@ -104,6 +103,7 @@ function imgUrl(a){
 
 /* ---- hero slider ---- */
 let heroArticles=[], idx=0, timer=null;
+
 function paintHero(i){
   const a = heroArticles[i];
   const titleEl = document.getElementById("heroTitle");
@@ -133,7 +133,7 @@ function paintHero(i){
     heroArticles.forEach((_,k)=>{
       const d=document.createElement("div");
       d.className="hero-dot"+(k===i?" active":"");
-      d.onclick=()=>{show(k); restart();};
+      d.onclick=()=>{show(k);};
       dots.appendChild(d);
     });
   }
@@ -141,10 +141,14 @@ function paintHero(i){
 function show(i){ idx=(i+heroArticles.length)%heroArticles.length; paintHero(idx); }
 function next(){ show(idx+1); }
 function prev(){ show(idx-1); }
-function start(){ if(timer) clearInterval(timer); timer=setInterval(next, 7000); }
-function restart(){ start(); }
 
-/* ---- lists ---- */
+/* Keep content steady: disable auto-rotate (users can click arrows/dots) */
+function start(){
+  if (timer) { clearInterval(timer); timer = null; }
+}
+function restart(){ /* no-op when auto-rotate disabled */ }
+
+/* ---- list builders ---- */
 function timeString(iso){ const d=iso?new Date(iso):new Date(); return d.toLocaleString(); }
 function buildNewsList(container, items){
   container.innerHTML="";
@@ -191,7 +195,7 @@ function buildBriefList(container, items){
   });
 }
 
-/* ---- loaders (with demo fallback) ---- */
+/* ---- loaders ---- */
 function demoMarkets(){
   return { ok:true, nifty:{price:24650.25,percent:0.34}, sensex:{price:81234.1,percent:-0.12}, usdinr:{price:83.2} };
 }
@@ -231,8 +235,8 @@ async function loadNews(){
   paintHero(0);
   const prevBtn = document.getElementById("heroPrev");
   const nextBtn = document.getElementById("heroNext");
-  if (prevBtn) prevBtn.onclick=()=>{prev();restart();};
-  if (nextBtn) nextBtn.onclick=()=>{next();restart();};
+  if (prevBtn) prevBtn.onclick=()=>{prev();};
+  if (nextBtn) nextBtn.onclick=()=>{next();};
   start();
 
   buildNewsList(document.getElementById("news-list"), (data.items||[]).slice(0,12));
