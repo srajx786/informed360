@@ -1,4 +1,5 @@
-// server.js — Informed360 API with VADER sentiment (Node 18 compatible)
+// server.js — Informed360 API (English-only filter + VADER sentiment; Node 18 safe)
+
 import express from "express";
 import cors from "cors";
 import Parser from "rss-parser";
@@ -19,7 +20,7 @@ const ALLOWED = [
 ];
 app.use(cors({ origin: ALLOWED }));
 
-/* Static files (optional) */
+/* Static files (optional: /public/logos, /public/images) */
 app.use(express.static(path.join(__dirname, "public")));
 
 /* rss-parser with polite UA */
@@ -30,7 +31,36 @@ const parser = new Parser({
   }
 });
 
-/* ---- Helpers ---- */
+/* ---------- Language filter: keep only English ---------- */
+/* We filter out Devanagari and other major Indic scripts, and require a healthy Latin ratio. */
+const NON_LATIN_BLOCKS = [
+  /[\u0900-\u097F]/, // Devanagari (Hindi/Marathi/etc.)
+  /[\u0980-\u09FF]/, // Bengali
+  /[\u0A00-\u0A7F]/, // Gurmukhi
+  /[\u0A80-\u0AFF]/, // Gujarati
+  /[\u0B00-\u0B7F]/, // Oriya/Odia
+  /[\u0B80-\u0BFF]/, // Tamil
+  /[\u0C00-\u0C7F]/, // Telugu
+  /[\u0C80-\u0CFF]/, // Kannada
+  /[\u0D00-\u0D7F]/, // Malayalam
+  /[\u0D80-\u0DFF]/  // Sinhala (just in case)
+];
+
+function looksIndic(text = "") {
+  return NON_LATIN_BLOCKS.some(rx => rx.test(text));
+}
+function latinRatio(text = "") {
+  const letters = (text.match(/[A-Za-z]/g) || []).length;
+  return letters / Math.max(text.length, 1);
+}
+/* Final predicate: “is English enough” */
+function isEnglish(text = "") {
+  if (!text) return false;
+  if (looksIndic(text)) return false;
+  return latinRatio(text) >= 0.35; // require at least ~35% Latin letters
+}
+
+/* ---------- Image helpers ---------- */
 function looksLikeFavicon(u = "") {
   const s = String(u || "").toLowerCase();
   return s.includes("favicon") || s.endsWith(".ico") || s.includes("google.com/s2/favicons");
@@ -40,7 +70,7 @@ function firstImgFromHtml(html = "") {
   return m ? m[1] : null;
 }
 function placeholderSVG(label="News") {
-  const txt = encodeURIComponent(label.slice(0,14));
+  const txt = encodeURIComponent(label.slice(0, 14));
   const svg =
     `<svg xmlns='http://www.w3.org/2000/svg' width='800' height='450'>
       <defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'>
@@ -53,7 +83,7 @@ function placeholderSVG(label="News") {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 }
 
-/* Optional: local logos in /public/logos */
+/* Optional: local logos you can place in /public/logos */
 const logoMap = {
   thehindu: "/logos/thehindu.svg",
   indianexpress: "/logos/indianexpress.svg",
@@ -87,32 +117,31 @@ function logoFor(feedId, feedName){
   return logoMap[key] || placeholderSVG(feedName||"News");
 }
 
-/* Load feeds JSON (Node 18 safe) */
+/* ---------- Load feeds JSON (Node 18 safe) ---------- */
 const feedsPath = path.join(__dirname, "rss-feeds.json");
 let feeds = [];
 try { feeds = JSON.parse(fs.readFileSync(feedsPath, "utf8")); }
 catch (e) { console.error("Failed to read rss-feeds.json:", e.message); feeds = []; }
 const FEEDS = (Array.isArray(feeds) ? feeds : []).filter(f => f && f.id && f.url);
 
-/* VADER sentiment on (title + snippet). Returns [-1..+1] */
+/* ---------- VADER sentiment ---------- */
 function scoreSentiment(it){
   const text = [
     it.title || "",
     it.contentSnippet || "",
-    it.summary || "",
+    it.summary || ""
   ].join(". ").replace(/\s+/g," ").trim();
 
-  // If text is empty or mostly non-Latin, return neutral 0
   if (!text) return 0;
-  const latinRatio = (text.match(/[A-Za-z]/g)||[]).length / Math.max(text.length,1);
-  if (latinRatio < 0.15) return 0; // basic guard for non-English feeds
+
+  // If the text is not English enough, return neutral to avoid garbage scores.
+  if (!isEnglish(text)) return 0;
 
   const r = vader.SentimentIntensityAnalyzer.polarity_scores(text);
-  // r.compound is already in [-1..+1]
   return Math.max(-1, Math.min(1, r.compound));
 }
 
-/* Choose image with graceful fallbacks */
+/* ---------- Image extraction ---------- */
 function pickImage(feed, item) {
   if (item.enclosure?.url) return item.enclosure.url;
   if (item["media:content"]?.url) return item["media:content"].url;
@@ -128,27 +157,31 @@ function pickImage(feed, item) {
   return logoFor(feed.id, feed.name);
 }
 
-/* Fetch a single feed */
+/* ---------- Fetch one feed & FILTER TO ENGLISH ---------- */
 async function fetchFeed(feed) {
   try {
     const data = await parser.parseURL(feed.url);
-    const items = (data.items || []).map(it => {
-      let img = pickImage(feed, it);
-      if (!img || looksLikeFavicon(img)) img = logoFor(feed.id, feed.name);
+    const items = (data.items || [])
+      // Keep only English titles (quick + reliable)
+      .filter(it => isEnglish(it.title || ""))
+      .map(it => {
+        let img = pickImage(feed, it);
+        if (!img || looksLikeFavicon(img)) img = logoFor(feed.id, feed.name);
 
-      return {
-        id: `${feed.id}:${it.guid || it.link || it.pubDate || Math.random()}`,
-        title: it.title || "(untitled)",
-        url: it.link || it.guid || "",
-        source_id: feed.id,
-        source_name: feed.name || feed.id,
-        source_domain: feed.domain || "",
-        published_at: it.isoDate || it.pubDate || new Date().toISOString(),
-        sentiment: scoreSentiment(it),  // <<<<<<<<<<  VADER score here
-        image_url: img,
-        contentSnippet: it.contentSnippet || ""
-      };
-    });
+        return {
+          id: `${feed.id}:${it.guid || it.link || it.pubDate || Math.random()}`,
+          title: it.title || "(untitled)",
+          url: it.link || it.guid || "",
+          source_id: feed.id,
+          source_name: feed.name || feed.id,
+          source_domain: feed.domain || "",
+          published_at: it.isoDate || it.pubDate || new Date().toISOString(),
+          sentiment: scoreSentiment(it),
+          image_url: img,
+          contentSnippet: it.contentSnippet || ""
+        };
+      });
+
     return items;
   } catch (e) {
     console.warn(`[FEED ERR] ${feed.id} -> ${e.message}`);
@@ -156,13 +189,15 @@ async function fetchFeed(feed) {
   }
 }
 
-/* Merge, sort, dedupe */
+/* ---------- Merge, sort, dedupe ---------- */
 async function fetchAll() {
   const arrays = await Promise.all(FEEDS.map(fetchFeed));
   let all = arrays.flat();
 
+  // newest first
   all.sort((a,b)=> new Date(b.published_at) - new Date(a.published_at));
 
+  // de-dup by URL/title
   const seen = new Set();
   all = all.filter(it => {
     const key = (it.url || it.title).trim().toLowerCase();
@@ -174,7 +209,7 @@ async function fetchAll() {
   return all;
 }
 
-/* ===== API ===== */
+/* ---------- API ---------- */
 app.get("/api/news", async (_req, res) => {
   try {
     const items = await fetchAll();
@@ -208,6 +243,6 @@ app.get("/api/news/sources", async (_req, res) => {
   res.json({ ok:true, counts });
 });
 
-/* Boot */
+/* ---------- Boot ---------- */
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`✅ Informed360 API with sentiment on ${PORT}`));
+app.listen(PORT, () => console.log(`✅ Informed360 API (English-only) on ${PORT}`));
