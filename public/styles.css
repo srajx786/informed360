@@ -30,8 +30,15 @@ main{display:grid;grid-template-columns:320px 1fr 320px;gap:20px;margin-top:16px
 
 /* hero */
 .hero{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:10px}
-.hero-slide{display:grid;grid-template-columns:44% 56%;gap:16px;align-items:center}
-.hero-media img{width:100%;height:260px;border-radius:12px;object-fit:cover;image-rendering:auto}
+.hero-slide{
+  display:grid;grid-template-columns:44% 56%;gap:16px;align-items:center;
+  min-height:300px;              /* reserve space to prevent jump */
+}
+.hero-media img{
+  width:100%;height:260px;border-radius:12px;object-fit:cover;image-rendering:auto;
+  display:block;
+}
+.hero-text{min-height:210px;}    /* keeps text column stable */
 .hero-text h1{margin:0;font-size:24px;line-height:1.25}
 .hero-nav{width:40px;height:40px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:22px}
 .cta{margin-top:10px;background:#0a66ff;color:#fff;padding:9px 14px;border-radius:6px;text-decoration:none;width:fit-content;display:inline-block}
@@ -43,7 +50,15 @@ main{display:grid;grid-template-columns:320px 1fr 320px;gap:20px;margin-top:16px
 .meter-block{display:flex;flex-direction:column;gap:6px;margin-top:10px}
 .bar-meter{background:linear-gradient(to right, var(--pos) 0%, var(--neu) 50%, var(--cau) 100%);height:8px;border-radius:999px;position:relative;width:100%}
 .bar-meter .needle{position:absolute;top:-5px;width:2px;height:18px;background:#ef4444;left:50%;transform:translateX(-50%)}
-.bar-labels{display:flex;justify-content:space-between;gap:12px;font-size:12px;font-weight:700;color:#374151}
+
+/* reserve label height to prevent vertical shift */
+.bar-labels{
+  display:flex;justify-content:space-between;gap:12px;
+  font-size:12px;font-weight:700;color:#374151;
+  min-height:18px;                /* fixes jump */
+  width:100%;
+}
+
 .bar-meter.small{height:6px}
 .bar-meter.tiny{height:6px}
 
@@ -65,5 +80,7 @@ footer{background:#fff;text-align:center;padding:18px;margin-top:24px;font-size:
 /* responsive */
 @media(max-width:980px){
   main{grid-template-columns:1fr}
-  .hero-slide{grid-template-columns:1fr}
+  .hero-slide{grid-template-columns:1fr; min-height:360px;}
+  .hero-media img{height:220px}
+  .hero-text{min-height:220px}
 }
