@@ -1,89 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Informed360</title>
-  <link rel="stylesheet" href="styles.css"/>
-
-  <!-- Optional: hard-set your API base. If omitted, app.js will auto-detect. -->
-  <!-- <script>window.API_BASE="https://YOUR-RENDER-APP.onrender.com";</script> -->
-
-  <style>
-    .api-badge{
-      position:fixed; right:10px; bottom:10px; z-index:9999;
-      font:600 12px/1.2 Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-      padding:7px 10px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.12);
-      background:#fff; border:1px solid #e6e6e6; color:#111
-    }
-    .api-badge.ok{ border-color:#16a34a; }
-    .api-badge.fail{ border-color:#ef4444; }
-    .api-badge small{ color:#555; font-weight:700; margin-left:6px }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
 </head>
 <body>
-  <header class="hdr">
-    <div class="left">
-      <div class="logo"><strong>Informed360</strong></div>
-      <div class="chips">
-        <span class="chip" id="nseChip">NSE —</span>
-        <span class="chip" id="bseChip">BSE —</span>
-      </div>
-    </div>
-    <nav class="nav"></nav>
-    <div class="date" id="dateNow"></div>
+  <header class="topbar">
+    <div class="logo"><strong>Informed360</strong></div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">Markets</a>
+      <a href="#">Politics</a>
+      <a href="#">Technology</a>
+      <a href="#">Analysis</a>
+    </nav>
+    <div class="date"></div>
   </header>
 
-  <div class="ticker" id="ticker"><span>Loading markets…</span></div>
+  <!-- ticker (animation disabled in CSS to avoid flicker) -->
+  <div class="ticker"><span>NSE: ▲ 0.8% | BSE: ▼ 0.4% | USD/INR: 83.2 | Sensex: 64,800</span></div>
 
-  <div class="container">
-    <!-- HERO -->
-    <section class="card hero-card">
-      <div class="hero">
-        <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
-        <div class="hero-slide" id="heroSlide">
-          <div class="hero-media">
-            <!-- intrinsic size prevents layout shift -->
-            <img id="heroImg" alt="Hero" width="800" height="260" loading="eager" />
-          </div>
-          <div class="hero-text">
-            <h1 id="heroTitle">Loading...</h1>
-            <a id="heroLink" class="cta" target="_blank" rel="noreferrer">Read Analysis</a>
-            <div class="meter-block">
-              <div class="bar-meter" id="heroMeter"><div class="needle"></div></div>
-              <div class="bar-labels"></div>
-            </div>
-            <div class="bias-text" id="biasText">Bias: —</div>
+  <!-- HERO -->
+  <section class="hero container">
+    <img class="hero-img" src="https://via.placeholder.com/600x420" alt="Hero news image"/>
+    <div class="hero-box">
+      <h1 class="hero-title">Top 5 run-scorers in ENG vs SA ODIs</h1>
+      <a class="cta" href="#">Read Analysis</a>
+
+      <div class="bar-wrap tooltip">
+        <div class="bar-meter hero" data-positive="69" data-caution="31"></div>
+        <div class="bar-labels"></div>
+        <div class="tooltiptext">Reader sentiment based on title/context.</div>
+      </div>
+
+      <div class="hero-meta">Source India Today — Home</div>
+    </div>
+  </section>
+
+  <!-- BODY -->
+  <main class="container grid-3">
+    <!-- Left: Trending -->
+    <aside class="card" id="trending-card">
+      <h2>Trending News</h2>
+      <div class="brief-list" id="trending-list">
+        <div class="brief-item">
+          <span>Odisha closes 30 fertiliser shops…</span>
+          <div class="bar-wrap">
+            <div class="bar-meter tiny" data-positive="50" data-caution="50"></div>
+            <div class="bar-labels"></div>
           </div>
         </div>
-        <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
-        <div class="hero-dots" id="heroDots"></div>
+      </div>
+    </aside>
+
+    <!-- Center: News -->
+    <section class="card">
+      <h2>News</h2>
+      <div class="news-list" id="news-list">
+        <article class="news-row" data-tags="Cricket,Stats">
+          <div class="news-thumb"></div>
+          <div class="news-src">India Today — Home</div>
+          <div class="news-time">8/31/2025, 10:30:03 PM</div>
+          <h3>Top 5 run-scorers in overseas Men’s T20Is</h3>
+          <div class="news-meter">
+            <div class="bar-wrap">
+              <div class="bar-meter small" data-positive="69" data-caution="31"></div>
+              <div class="bar-labels"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="news-row" data-tags="Policy,Transport">
+          <div class="news-thumb"></div>
+          <div class="news-src">NDTV</div>
+          <div class="news-time">8/16/2025, 5:30 PM</div>
+          <h3>Heavy rains disrupt Mumbai local trains</h3>
+          <div class="news-meter">
+            <div class="bar-wrap">
+              <div class="bar-meter small" data-positive="45" data-caution="55"></div>
+              <div class="bar-labels"></div>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- 3-column -->
-    <main>
-      <aside class="card">
-        <h2>Trending News</h2>
-        <div id="trending-list" class="brief-list"></div>
-      </aside>
+    <!-- Right: Daily Briefing -->
+    <aside class="card">
+      <h2>Daily Briefing</h2>
+      <div class="brief-list">
+        <div class="brief-item">
+          <span>Top 5 run-scorers in overseas Men’s T20Is</span>
+          <div class="bar-wrap">
+            <div class="bar-meter tiny" data-positive="69" data-caution="31"></div>
+            <div class="bar-labels"></div>
+          </div>
+        </div>
+        <div class="brief-item">
+          <span>Top 5 run-scorers in ENG vs SA ODIs</span>
+          <div class="bar-wrap">
+            <div class="bar-meter tiny" data-positive="60" data-caution="40"></div>
+            <div class="bar-labels"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
 
-      <section class="card">
-        <h2>News</h2>
-        <div class="news-list" id="news-list"></div>
-      </section>
-
-      <aside class="card">
-        <h2>Daily Briefing</h2>
-        <div id="brief-right" class="brief-list"></div>
-      </aside>
-    </main>
-  </div>
-
-  <footer>&copy; <span id="yr"></span> Informed360. All rights reserved.</footer>
-
-  <div id="apiBadge" class="api-badge">API: <small>checking…</small></div>
-
-  <script type="module" src="app.js"></script>
+  <footer class="footer">© 2025 Informed360. All rights reserved.</footer>
 </body>
 </html>
