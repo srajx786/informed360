@@ -17,7 +17,7 @@ const FEEDS = JSON.parse(
 );
 const REFRESH_MS = Math.max(2, FEEDS.refreshMinutes || 10) * 60 * 1000;
 
-/* Parser with stronger headers to reduce 403 */
+/* RSS parser with stronger headers (reduces 403/timeout) */
 const parser = new Parser({
   timeout: 15000,
   requestOptions: {
@@ -35,15 +35,9 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const domainFromUrl = (u = "") => {
   try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; }
 };
+const faviconForDomain = (d) => d ? `https://logo.clearbit.com/${d}` : "";
 
-const extractImage = (item) => {
-  if (item.enclosure?.url) return item.enclosure.url;
-  if (item["media:content"]?.url) return item["media:content"].url;
-  if (item["media:thumbnail"]?.url) return item["media:thumbnail"].url;
-  const d = domainFromUrl(item.link || "");
-  return d ? `https://logo.clearbit.com/${d}` : "";
-};
-
+/* Sentiment */
 const scoreSentiment = (text) => {
   const s = vader.SentimentIntensityAnalyzer.polarity_scores(text || "") || {
     pos: 0, neg: 0, neu: 1, compound: 0
@@ -75,19 +69,29 @@ function inferCategory({ title = "", link = "", source = "" }) {
   return "india";
 }
 
-/* polite per-host concurrency */
+/* Image extraction */
+const extractImage = (item) => {
+  if (item.enclosure?.url) return item.enclosure.url;
+  if (item["media:content"]?.url) return item["media:content"].url;
+  if (item["media:thumbnail"]?.url) return item["media:thumbnail"].url;
+  const d = domainFromUrl(item.link || "");
+  return d ? `https://logo.clearbit.com/${d}` : "";
+};
+
+/* Polite per-host concurrency */
 const hostCounters = new Map();
 const MAX_PER_HOST = 2;
 const acquire = async (host) => {
   while ((hostCounters.get(host) || 0) >= MAX_PER_HOST) await sleep(150);
   hostCounters.set(host, (hostCounters.get(host) || 0) + 1);
 };
-const release = (host) =>
-  hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
+const release = (host) => hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
 
 async function parseURL(u){ return parser.parseURL(u); }
 
-/* Google News fallback for a domain */
+/* Google News helpers */
+const gNewsSearch = (q) =>
+  `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=en-IN&gl=IN&ceid=IN:en`;
 const gNewsForDomain = (domain) =>
   `https://news.google.com/rss/search?q=site:${encodeURIComponent(domain)}&hl=en-IN&gl=IN&ceid=IN:en`;
 
@@ -97,6 +101,8 @@ async function fetchDirect(url) {
   try { return await parseURL(url); }
   finally { release(host); }
 }
+
+/* Fetch with fallback to Google News site:domain */
 async function fetchWithFallback(url) {
   const domain = domainFromUrl(url);
   try {
@@ -119,6 +125,7 @@ async function fetchWithFallback(url) {
   }
 }
 
+/* Fetch core lists */
 async function fetchList(urls) {
   const articles = [];
   const seen = new Set();
@@ -138,9 +145,11 @@ async function fetchList(urls) {
       const image = extractImage(item);
       const sentiment = scoreSentiment(`${title}. ${description}`);
       const category = inferCategory({ title, link, source });
+      const sdom = domainFromUrl(link);
+      const sourceIcon = faviconForDomain(sdom);
 
       seen.add(link);
-      articles.push({ title, link, source, description, image, publishedAt, sentiment, category });
+      articles.push({ title, link, source, sourceIcon, description, image, publishedAt, sentiment, category });
     });
   }));
 
@@ -165,28 +174,66 @@ await refreshCore(); await refreshExp();
 setInterval(refreshCore, REFRESH_MS);
 setInterval(refreshExp, REFRESH_MS);
 
-/* Topics / Pinned / News */
-const normalize = (t = "") => t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
-const topicKey = (title) => {
-  const w = normalize(title).split(" ").filter(Boolean);
-  const bi = []; for (let i=0;i<w.length-1;i++) if (w[i].length>=3 && w[i+1].length>=3) bi.push(`${w[i]} ${w[i+1]}`);
-  return bi.slice(0,3).join(" | ") || w.slice(0,3).join(" ");
-};
-function buildClusters(arts){
-  const map = new Map();
-  for (const a of arts) {
-    const k = topicKey(a.title); if (!k) continue;
-    if (!map.has(k)) map.set(k, { key:k, count:0, pos:0, neg:0, neu:0, sources:new Set(), image:a.image });
-    const c = map.get(k);
-    c.count++; c.pos+=a.sentiment.posP; c.neg+=a.sentiment.negP; c.neu+=a.sentiment.neuP; c.sources.add(a.source);
+/* ---------- Google Trends (India) → build trending topics ---------- */
+async function fetchGoogleTrendsIN(limit = 8) {
+  // Daily trending searches RSS for India
+  const url = "https://trends.google.com/trends/trendingsearches/daily/rss?geo=IN";
+  try {
+    const feed = await parseURL(url);
+    // Each item.title = query
+    const queries = (feed.items || []).map(i => i.title).filter(Boolean);
+    return queries.slice(0, limit);
+  } catch (e) {
+    console.warn("[Trends ERR]", e?.message || e);
+    return [];
   }
-  return [...map.values()].map(c=>{
-    const n = Math.max(1,c.count);
-    return { title:c.key, count:c.count, sources:c.sources.size,
-      sentiment:{ pos:Math.round(c.pos/n), neg:Math.round(c.neg/n), neu:Math.round(c.neu/n) }, image:c.image };
-  }).sort((a,b)=>b.count-a.count).slice(0,12);
 }
 
+async function buildTrendingFromTrends(limit = 8) {
+  const queries = await fetchGoogleTrendsIN(limit);
+  if (!queries.length) return [];
+
+  // Fetch 4–5 news items per query from Google News
+  const results = await Promise.all(
+    queries.map(async (q) => {
+      try { return await parseURL(gNewsSearch(q)); }
+      catch { return { items: [] }; }
+    })
+  );
+
+  const topics = results.map((feed, idx) => {
+    const q = queries[idx];
+    const items = (feed.items || []).slice(0, 6);
+    let pos = 0, neg = 0, neu = 0, count = 0;
+    const domains = new Set();
+    let image = "";
+
+    for (const it of items) {
+      const t = it.title || "";
+      const d = it.contentSnippet || it.summary || "";
+      const s = scoreSentiment(`${t}. ${d}`);
+      pos += s.posP; neg += s.negP; neu += s.neuP; count++;
+      const dm = domainFromUrl(it.link || "");
+      if (dm) domains.add(dm);
+      if (!image) image = extractImage(it);
+    }
+
+    if (!count) {
+      return { title: q, count: 0, sources: 0, sentiment: { pos: 0, neu: 100, neg: 0 }, icons: [], image: "" };
+    }
+    const avg = {
+      pos: Math.round(pos / count),
+      neu: Math.round(neu / count),
+      neg: Math.round(neg / count)
+    };
+    const icons = [...domains].slice(0, 4).map(faviconForDomain);
+    return { title: q, count, sources: domains.size, sentiment: avg, icons, image };
+  });
+
+  return topics;
+}
+
+/* ---------- Endpoints ---------- */
 app.get("/api/news", (req, res) => {
   const limit = Number(req.query.limit || 200);
   const sentiment = req.query.sentiment;
@@ -200,17 +247,42 @@ app.get("/api/news", (req, res) => {
   res.json({ fetchedAt: Date.now(), articles: arts.slice(0, limit) });
 });
 
-app.get("/api/topics", (req,res)=>{
-  const includeExp = req.query.experimental === "1";
-  const arts = includeExp ? uniqueMerge(CORE.articles, EXP.articles) : CORE.articles;
-  res.json({ fetchedAt: Date.now(), topics: buildClusters(arts) });
+app.get("/api/topics", async (req,res)=>{
+  try {
+    // Prefer Google Trends-driven topics
+    const topics = await buildTrendingFromTrends(8);
+    if (topics.length) return res.json({ fetchedAt: Date.now(), topics });
+  } catch {}
+  // Fallback: simple clustering over current articles
+  const arts = CORE.articles;
+  const normalize = (t = "") => t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+  const topicKey = (title) => {
+    const w = normalize(title).split(" ").filter(Boolean);
+    const bi = []; for (let i=0;i<w.length-1;i++) if (w[i].length>=3 && w[i+1].length>=3) bi.push(`${w[i]} ${w[i+1]}`);
+    return bi.slice(0,3).join(" | ") || w.slice(0,3).join(" ");
+  };
+  const map = new Map();
+  for (const a of arts) {
+    const k = topicKey(a.title); if (!k) continue;
+    if (!map.has(k)) map.set(k, { key:k, count:0, pos:0, neg:0, neu:0, sources:new Set(), icons:new Set() });
+    const c = map.get(k);
+    c.count++; c.pos+=a.sentiment.posP; c.neg+=a.sentiment.negP; c.neu+=a.sentiment.neuP;
+    const dm = domainFromUrl(a.link || ""); if (dm) { c.sources.add(dm); c.icons.add(faviconForDomain(dm)); }
+  }
+  const topics = [...map.values()].map(c=>{
+    const n = Math.max(1,c.count);
+    return { title:c.key, count:c.count, sources:c.sources.size,
+      sentiment:{ pos:Math.round(c.pos/n), neg:Math.round(c.neg/n), neu:Math.round(c.neu/n) },
+      icons:[...c.icons].slice(0,4) };
+  }).sort((a,b)=>b.count-a.count).slice(0,8);
+  res.json({ fetchedAt: Date.now(), topics });
 });
 
 app.get("/api/pinned", (_req,res)=>{
   res.json({ articles: CORE.articles.slice(0,3) });
 });
 
-/* Markets endpoint */
+/* Markets endpoint (unchanged) */
 let yfModule = null;
 async function loadYF(){
   try { if (yfModule) return yfModule; const mod = await import("yahoo-finance2"); yfModule = mod?.default || mod; return yfModule; }
