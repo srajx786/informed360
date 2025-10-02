@@ -2,7 +2,8 @@ import express from "express";
 import cors from "cors";
 import Parser from "rss-parser";
 import vader from "vader-sentiment";
-import yahooFinance from "yahoo-finance2";
+// ⛔ remove the hard import that crashes when package is missing
+// import yahooFinance from "yahoo-finance2";
 import fs from "fs";
 import path from "path";
 
@@ -43,38 +44,24 @@ const scoreSentiment = (text) => {
   return { ...s, posP, negP, neuP, label };
 };
 
-// small pool per host to avoid WAF
-const hostCounters = new Map();
-const maxPerHost = 2;
-const acquire = async (host) => {
-  while ((hostCounters.get(host) || 0) >= maxPerHost) await new Promise(r => setTimeout(r, 150));
-  hostCounters.set(host, (hostCounters.get(host) || 0) + 1);
-};
-const release = (host) => hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
-
+// ---- fetch & cache feeds (same as before) -----------------------------------
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-const withRetry = async (fn, tries = 2) => {
-  let lastErr;
-  for (let i=0;i<tries;i++){
-    try { return await fn(); } catch(e){ lastErr = e; await sleep(300 + Math.random()*600); }
-  }
-  throw lastErr;
-};
+const hostCounters = new Map(); const maxPerHost = 2;
+const acquire = async (h) => { while((hostCounters.get(h)||0) >= maxPerHost) await sleep(150); hostCounters.set(h,(hostCounters.get(h)||0)+1); };
+const release = (h) => hostCounters.set(h, Math.max(0,(hostCounters.get(h)||1)-1));
+const withRetry = async (fn, tries=2) => { let e; for (let i=0;i<tries;i++){ try{return await fn();} catch(err){ e=err; await sleep(300+Math.random()*600);} } throw e; };
 
-async function fetchFeed(url) {
+async function fetchFeed(url){
   const host = domainFromUrl(url);
   await acquire(host);
-  try {
-    return await withRetry(() => parser.parseURL(url), 2);
-  } finally {
-    release(host);
-  }
+  try { return await withRetry(() => parser.parseURL(url), 2); }
+  finally { release(host); }
 }
 
 const fetchAll = async () => {
   const articles = [];
   const byUrl = new Map();
-  const allFeeds = [...(FEEDS.feeds || [])]; // experimental skipped by default
+  const allFeeds = [...(FEEDS.feeds || [])];
 
   await Promise.all(allFeeds.map(async (url) => {
     try {
@@ -102,50 +89,21 @@ const fetchAll = async () => {
 await fetchAll();
 setInterval(fetchAll, REFRESH_MS);
 
-const normalize = (t = "") => t.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim();
+// ---- topics clustering (same as before) -------------------------------------
+const normalize = (t="") => t.toLowerCase().replace(/[^a-z0-9\s]/g," ").replace(/\s+/g," ").trim();
 const topicKey = (title) => {
   const w = normalize(title).split(" ").filter(Boolean);
-  const bigrams = [];
-  for (let i=0;i<w.length-1;i++) if (w[i].length>=3 && w[i+1].length>=3) bigrams.push(`${w[i]} ${w[i+1]}`);
-  return bigrams.slice(0,3).join(" | ") || w.slice(0,3).join(" ");
+  const b = []; for (let i=0;i<w.length-1;i++) if (w[i].length>=3 && w[i+1].length>=3) b.push(`${w[i]} ${w[i+1]}`);
+  return b.slice(0,3).join(" | ") || w.slice(0,3).join(" ");
 };
 const clusters = (arts) => {
   const map = new Map();
   for (const a of arts) {
-    const k = topicKey(a.title);
-    if (!k) continue;
+    const k = topicKey(a.title); if (!k) continue;
     if (!map.has(k)) map.set(k, { key:k, count:0, pos:0, neg:0, neu:0, sources:new Set(), image:a.image });
     const c = map.get(k);
     c.count++; c.pos+=a.sentiment.posP; c.neg+=a.sentiment.negP; c.neu+=a.sentiment.neuP; c.sources.add(a.source);
   }
-  return [...map.values()].map(c => {
-    const n = Math.max(1, c.count);
-    const sentiment = { pos: Math.round(c.pos/n), neg: Math.round(c.neg/n), neu: Math.round(c.neu/n) };
-    return { title:c.key, count:c.count, sources:c.sources.size, sentiment, image:c.image };
-  }).sort((a,b)=>b.count-a.count).slice(0,20);
-};
-
-// API
-app.get("/api/news", (req,res)=>{
-  const limit = Number(req.query.limit || 200);
-  const sentiment = req.query.sentiment; // positive|neutral|negative
-  let data = CACHE.articles;
-  if (sentiment) data = data.filter(a => a.sentiment?.label === sentiment);
-  res.json({ fetchedAt: CACHE.fetchedAt, articles: data.slice(0,limit) });
-});
-app.get("/api/topics", (req,res)=> res.json({ fetchedAt: CACHE.fetchedAt, topics: clusters(CACHE.articles) }));
-app.get("/api/pinned", (req,res)=> res.json({ articles: (FEEDS.pinned||[]).map(u=>u && CACHE.byUrl.get(u)).filter(Boolean) }));
-app.get("/api/ticker", async (req, res) => {
-  try {
-    const symbols = ["^BSESN","^NSEI","^NYA"];
-    const quotes = await yahooFinance.quote(symbols);
-    res.json({ updatedAt: Date.now(), quotes: quotes.map(q=>({
-      symbol:q.symbol, shortName:q.shortName, price:q.regularMarketPrice,
-      change:q.regularMarketChange, changePercent:q.regularMarketChangePercent
-    }))});
-  } catch (e) { res.status(500).json({ error:e.message }); }
-});
-app.get("/health", (_,res)=>res.json({ ok:true, at:Date.now() }));
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Informed360 running on :${PORT}`));
+  return [...map.values()].map(c=>{
+    const n=Math.max(1,c.count);
+    return { title:c.key, count:c.count, sources:c.sources.size, sentiment:{ pos:Math.r
