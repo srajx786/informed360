@@ -1,115 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Informed360</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="app.js"></script>
+  <meta charset="utf-8"/>
+  <title>Informed 360</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+  <!-- Top navigation bar with brand, ticker and theme toggle -->
   <header class="topbar">
-    <div class="logo"><strong>Informed360</strong></div>
-    <nav class="nav">
-      <a href="#">Home</a>
-      <a href="#">Markets</a>
-      <a href="#">Politics</a>
-      <a href="#">Technology</a>
-      <a href="#">Analysis</a>
-    </nav>
-    <div class="date"></div>
+    <div class="brand">Informed 360</div>
+    <div id="ticker" class="ticker" aria-live="polite"></div>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"></button>
   </header>
 
-  <!-- ticker (animation disabled in CSS to avoid flicker) -->
-  <div class="ticker"><span>NSE: ▲ 0.8% | BSE: ▼ 0.4% | USD/INR: 83.2 | Sensex: 64,800</span></div>
-
-  <!-- HERO -->
-  <section class="hero container">
-    <img class="hero-img" src="https://via.placeholder.com/600x420" alt="Hero news image"/>
-    <div class="hero-box">
-      <h1 class="hero-title">Top 5 run-scorers in ENG vs SA ODIs</h1>
-      <a class="cta" href="#">Read Analysis</a>
-
-      <div class="bar-wrap tooltip">
-        <div class="bar-meter hero" data-positive="69" data-caution="31"></div>
-        <div class="bar-labels"></div>
-        <div class="tooltiptext">Reader sentiment based on title/context.</div>
-      </div>
-
-      <div class="hero-meta">Source India Today — Home</div>
-    </div>
-  </section>
-
-  <!-- BODY -->
-  <main class="container grid-3">
-    <!-- Left: Trending -->
-    <aside class="card" id="trending-card">
-      <h2>Trending News</h2>
-      <div class="brief-list" id="trending-list">
-        <div class="brief-item">
-          <span>Odisha closes 30 fertiliser shops…</span>
-          <div class="bar-wrap">
-            <div class="bar-meter tiny" data-positive="50" data-caution="50"></div>
-            <div class="bar-labels"></div>
-          </div>
-        </div>
-      </div>
+  <!-- Main three‑column layout -->
+  <main class="layout">
+    <!-- Left column: pinned stories -->
+    <aside class="left">
+      <h2>Pinned News</h2>
+      <div id="pinned" class="card-list"></div>
     </aside>
 
-    <!-- Center: News -->
-    <section class="card">
-      <h2>News</h2>
-      <div class="news-list" id="news-list">
-        <article class="news-row" data-tags="Cricket,Stats">
-          <div class="news-thumb"></div>
-          <div class="news-src">India Today — Home</div>
-          <div class="news-time">8/31/2025, 10:30:03 PM</div>
-          <h3>Top 5 run-scorers in overseas Men’s T20Is</h3>
-          <div class="news-meter">
-            <div class="bar-wrap">
-              <div class="bar-meter small" data-positive="69" data-caution="31"></div>
-              <div class="bar-labels"></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="news-row" data-tags="Policy,Transport">
-          <div class="news-thumb"></div>
-          <div class="news-src">NDTV</div>
-          <div class="news-time">8/16/2025, 5:30 PM</div>
-          <h3>Heavy rains disrupt Mumbai local trains</h3>
-          <div class="news-meter">
-            <div class="bar-wrap">
-              <div class="bar-meter small" data-positive="45" data-caution="55"></div>
-              <div class="bar-labels"></div>
-            </div>
-          </div>
-        </article>
+    <!-- Centre column: hero and news list -->
+    <section class="center">
+      <!-- Featured story / hero panel -->
+      <div id="mainHero" class="main-hero"></div>
+      <!-- News list -->
+      <div class="news-section">
+        <h2>News</h2>
+        <div id="newsList" class="news-list"></div>
       </div>
     </section>
 
-    <!-- Right: Daily Briefing -->
-    <aside class="card">
-      <h2>Daily Briefing</h2>
-      <div class="brief-list">
-        <div class="brief-item">
-          <span>Top 5 run-scorers in overseas Men’s T20Is</span>
-          <div class="bar-wrap">
-            <div class="bar-meter tiny" data-positive="69" data-caution="31"></div>
-            <div class="bar-labels"></div>
-          </div>
-        </div>
-        <div class="brief-item">
-          <span>Top 5 run-scorers in ENG vs SA ODIs</span>
-          <div class="bar-wrap">
-            <div class="bar-meter tiny" data-positive="60" data-caution="40"></div>
-            <div class="bar-labels"></div>
-          </div>
-        </div>
+    <!-- Right column: trending topics and daily feed -->
+    <aside class="right">
+      <!-- Trending topics cluster -->
+      <div class="topics">
+        <h3>Trending Topics</h3>
+        <div id="topicsList" class="topics-list"></div>
+      </div>
+      <!-- Daily feed list -->
+      <div class="daily">
+        <h3>Daily News</h3>
+        <div id="daily" class="daily-list"></div>
       </div>
     </aside>
   </main>
 
-  <footer class="footer">© 2025 Informed360. All rights reserved.</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <span>© <span id="year"></span> Informed 360 — Indian news & sentiment for readers.</span>
+  </footer>
+
+  <!-- Client‑side logic -->
+  <script src="app.js" defer></script>
 </body>
 </html>
