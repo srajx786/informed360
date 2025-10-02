@@ -4,24 +4,19 @@
   <meta charset="utf-8"/>
   <title>Informed360</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-  <!-- Display titles -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <!-- ===== Header ===== -->
+  <!-- Header -->
   <header class="gn-header">
     <div class="gn-topbar">
       <div class="gn-logo">Informed360</div>
-
       <form id="searchForm" class="gn-search" role="search" aria-label="Search">
         <span class="icon" aria-hidden="true">🔍</span>
         <input id="searchInput" type="search" placeholder="Search for topics, locations & sources" autocomplete="off"/>
         <button type="button" class="chevron" tabindex="-1" aria-hidden="true">▾</button>
       </form>
-
       <div class="gn-actions">
         <button class="icon-btn" title="Help" aria-label="Help">❔</button>
         <button class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
@@ -48,19 +43,17 @@
     </nav>
   </header>
 
-  <!-- ===== Briefing strip: Date + Markets + Weather ===== -->
+  <!-- Briefing: Date • Ticker • Weather -->
   <section class="gn-briefing">
     <div class="briefing-left">
       <h1 class="display-title">Your briefing</h1>
       <div id="briefingDate" class="briefing-date"></div>
     </div>
-
     <div id="marketTicker" class="ticker" aria-live="polite"></div>
-
     <div id="weatherCard" class="weather-card" aria-live="polite"></div>
   </section>
 
-  <!-- ===== Main 3-col layout: perfectly aligned headers ===== -->
+  <!-- 3-column layout -->
   <main class="layout">
     <aside class="left">
       <h2 class="display-title">Pinned</h2>
@@ -68,7 +61,6 @@
     </aside>
 
     <section class="center">
-      <!-- HERO CAROUSEL -->
       <section id="hero" class="hero-carousel" aria-roledescription="carousel">
         <div class="hero-track" id="heroTrack" role="group"></div>
         <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
@@ -82,7 +74,7 @@
           <button data-sent="positive" class="chip">Positive</button>
           <button data-sent="neutral" class="chip">Neutral</button>
           <button data-sent="negative" class="chip">Negative</button>
-          <button id="expChip" class="chip" title="Include experimental feeds (may be flaky)">Max Feeds</button>
+          <button id="expChip" class="chip" title="Include experimental feeds">Max Feeds</button>
         </div>
         <h2 class="display-title">News</h2>
         <div id="newsList" class="news-list"></div>
@@ -102,7 +94,7 @@
     <span>© <span id="year"></span> Informed360 — Indian news & sentiment.</span>
   </footer>
 
-  <!-- Sign-in / Preferences Modal -->
+  <!-- Sign-in modal -->
   <dialog id="signinModal" class="modal">
     <form method="dialog" class="modal-card" id="signinForm">
       <h3 class="display-title">Sign in & preferences</h3>
