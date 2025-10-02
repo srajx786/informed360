@@ -17,15 +17,14 @@ const FEEDS = JSON.parse(
 );
 const REFRESH_MS = Math.max(2, FEEDS.refreshMinutes || 10) * 60 * 1000;
 
-/* ---------- Parser with stronger headers ---------- */
+/* Parser with stronger headers to reduce 403 */
 const parser = new Parser({
   timeout: 15000,
   requestOptions: {
     headers: {
       "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 Informed360Bot/1.0",
-      "Accept":
-        "application/rss+xml, application/xml;q=0.9, */*;q=0.8",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Informed360Bot/1.0",
+      "Accept": "application/rss+xml, application/xml;q=0.9, */*;q=0.8",
       "Accept-Language": "en-IN,en;q=0.9",
       "Referer": "https://www.informed360.news/"
     }
@@ -37,7 +36,6 @@ const domainFromUrl = (u = "") => {
   try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; }
 };
 
-/* ---------- Helpers ---------- */
 const extractImage = (item) => {
   if (item.enclosure?.url) return item.enclosure.url;
   if (item["media:content"]?.url) return item["media:content"].url;
@@ -59,7 +57,7 @@ const scoreSentiment = (text) => {
   return { ...s, posP, negP, neuP, label };
 };
 
-/* ---------- Category inference ---------- */
+/* Category inference */
 const CAT_RULES = [
   { name: "sports", patterns: [/sport/i, /cricket/i, /ipl/i, /football/i, /badminton/i, /hockey/i] },
   { name: "business", patterns: [/business/i, /market/i, /econom/i, /stock/i, /sensex/i, /nifty/i, /finance/i, /industry/i] },
@@ -77,19 +75,20 @@ function inferCategory({ title = "", link = "", source = "" }) {
   return "india";
 }
 
-/* ---------- polite per-host concurrency ---------- */
+/* polite per-host concurrency */
 const hostCounters = new Map();
 const MAX_PER_HOST = 2;
 const acquire = async (host) => {
   while ((hostCounters.get(host) || 0) >= MAX_PER_HOST) await sleep(150);
   hostCounters.set(host, (hostCounters.get(host) || 0) + 1);
 };
-const release = (host) => hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
+const release = (host) =>
+  hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
 
 async function parseURL(u){ return parser.parseURL(u); }
 
-/* ---------- Google News fallback for a domain ---------- */
-const googleFeedForDomain = (domain) =>
+/* Google News fallback for a domain */
+const gNewsForDomain = (domain) =>
   `https://news.google.com/rss/search?q=site:${encodeURIComponent(domain)}&hl=en-IN&gl=IN&ceid=IN:en`;
 
 async function fetchDirect(url) {
@@ -98,20 +97,17 @@ async function fetchDirect(url) {
   try { return await parseURL(url); }
   finally { release(host); }
 }
-
 async function fetchWithFallback(url) {
   const domain = domainFromUrl(url);
   try {
     const feed = await fetchDirect(url);
     if (feed?.items?.length) return feed;
-    // empty feed? try fallback
-    const g = await parseURL(googleFeedForDomain(domain));
+    const g = await parseURL(gNewsForDomain(domain));
     g.title = g.title || domain;
     return g;
   } catch (e) {
-    // Any network/DNS/403/404 → fallback
     try {
-      const g = await parseURL(googleFeedForDomain(domain));
+      const g = await parseURL(gNewsForDomain(domain));
       g.title = g.title || domain;
       console.warn("[FEED Fallback]", domain, "-> Google News RSS");
       return g;
@@ -123,7 +119,6 @@ async function fetchWithFallback(url) {
   }
 }
 
-/* ---------- Fetch all lists ---------- */
 async function fetchList(urls) {
   const articles = [];
   const seen = new Set();
@@ -133,7 +128,6 @@ async function fetchList(urls) {
     const feed = await fetchWithFallback(url);
 
     (feed.items || []).slice(0, 30).forEach((item) => {
-      // Google News entries point to news.google.com; keep them (they redirect fine)
       const link = item.link || item.guid || "";
       if (!link || seen.has(link)) return;
 
@@ -171,7 +165,7 @@ await refreshCore(); await refreshExp();
 setInterval(refreshCore, REFRESH_MS);
 setInterval(refreshExp, REFRESH_MS);
 
-/* ---------- Topics / Pinned / News ---------- */
+/* Topics / Pinned / News */
 const normalize = (t = "") => t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
 const topicKey = (title) => {
   const w = normalize(title).split(" ").filter(Boolean);
@@ -216,7 +210,7 @@ app.get("/api/pinned", (_req,res)=>{
   res.json({ articles: CORE.articles.slice(0,3) });
 });
 
-/* ---------- Markets endpoint from prior step (kept if you have it) ---------- */
+/* Markets endpoint */
 let yfModule = null;
 async function loadYF(){
   try { if (yfModule) return yfModule; const mod = await import("yahoo-finance2"); yfModule = mod?.default || mod; return yfModule; }
