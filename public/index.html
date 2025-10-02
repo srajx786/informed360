@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <!-- ===== Header (Google News style) ===== -->
+  <!-- Header -->
   <header class="gn-header">
     <div class="gn-topbar">
       <div class="gn-logo">Informed360</div>
@@ -22,29 +22,29 @@
         <button class="icon-btn" title="Help" aria-label="Help">❔</button>
         <button class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
         <button class="icon-btn" title="Apps" aria-label="Apps">▦</button>
-        <div class="avatar" title="You">S</div>
+        <button id="avatarBtn" class="avatar" title="Sign in">S</button>
       </div>
     </div>
 
     <nav class="gn-tabs" aria-label="Sections">
-      <button class="tab active">Home</button>
-      <button class="tab">For you</button>
-      <button class="tab">Following</button>
-      <button class="tab">News Showcase</button>
+      <button class="tab active" data-cat="home">Home</button>
+      <button class="tab" data-cat="foryou">For you</button>
+      <button class="tab" data-cat="following" disabled>Following</button>
+      <button class="tab" disabled>News Showcase</button>
       <span class="tab-divider"></span>
-      <button class="tab">India</button>
-      <button class="tab">World</button>
-      <button class="tab">Local</button>
-      <button class="tab">Business</button>
-      <button class="tab">Technology</button>
-      <button class="tab">Entertainment</button>
-      <button class="tab">Sports</button>
-      <button class="tab">Science</button>
-      <button class="tab">Health</button>
+      <button class="tab" data-cat="india">India</button>
+      <button class="tab" data-cat="world">World</button>
+      <button class="tab" data-cat="local">Local</button>
+      <button class="tab" data-cat="business">Business</button>
+      <button class="tab" data-cat="technology">Technology</button>
+      <button class="tab" data-cat="entertainment">Entertainment</button>
+      <button class="tab" data-cat="sports">Sports</button>
+      <button class="tab" data-cat="science">Science</button>
+      <button class="tab" data-cat="health">Health</button>
     </nav>
   </header>
 
-  <!-- ===== Briefing strip (title + date + weather) ===== -->
+  <!-- Briefing strip -->
   <section class="gn-briefing">
     <div class="briefing-left">
       <h1>Your briefing</h1>
@@ -53,15 +53,13 @@
     <div id="weatherCard" class="weather-card" aria-live="polite"></div>
   </section>
 
-  <!-- ===== Main three-column layout (kept) ===== -->
+  <!-- Main -->
   <main class="layout">
-    <!-- Left column: pinned stories -->
     <aside class="left">
       <h2>Pinned</h2>
       <div id="pinned" class="card-list"></div>
     </aside>
 
-    <!-- Centre column: hero and news list -->
     <section class="center">
       <div id="mainHero" class="main-hero"></div>
 
@@ -78,7 +76,6 @@
       </div>
     </section>
 
-    <!-- Right column: trending topics and daily feed -->
     <aside class="right">
       <div class="topics">
         <h3>Trending Topics</h3>
@@ -94,6 +91,36 @@
   <footer class="footer">
     <span>© <span id="year"></span> Informed360 — Indian news & sentiment.</span>
   </footer>
+
+  <!-- Sign-in / Preferences Modal -->
+  <dialog id="signinModal" class="modal">
+    <form method="dialog" class="modal-card" id="signinForm">
+      <h3>Sign in & preferences</h3>
+      <label> Name
+        <input type="text" id="prefName" placeholder="Your name"/>
+      </label>
+      <label> City
+        <input type="text" id="prefCity" placeholder="e.g., Mumbai"/>
+      </label>
+      <fieldset>
+        <legend>Interests</legend>
+        <div class="grid-2">
+          <label><input type="checkbox" value="india" checked/> India</label>
+          <label><input type="checkbox" value="world"/> World</label>
+          <label><input type="checkbox" value="business"/> Business</label>
+          <label><input type="checkbox" value="technology"/> Technology</label>
+          <label><input type="checkbox" value="entertainment"/> Entertainment</label>
+          <label><input type="checkbox" value="sports"/> Sports</label>
+          <label><input type="checkbox" value="science"/> Science</label>
+          <label><input type="checkbox" value="health"/> Health</label>
+        </div>
+      </fieldset>
+      <menu class="actions">
+        <button value="cancel" class="btn ghost">Cancel</button>
+        <button id="savePrefs" value="default" class="btn">Save</button>
+      </menu>
+    </form>
+  </dialog>
 
   <script src="app.js" defer></script>
 </body>
