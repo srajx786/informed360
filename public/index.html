@@ -2,23 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Informed 360</title>
+  <title>Informed360</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">Informed 360</div>
-    <div id="ticker" class="ticker" aria-live="polite"></div>
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"></button>
+  <!-- ===== Header (Google News style) ===== -->
+  <header class="gn-header">
+    <div class="gn-topbar">
+      <div class="gn-logo">Informed360</div>
+
+      <form id="searchForm" class="gn-search" role="search" aria-label="Search">
+        <span class="icon" aria-hidden="true">🔍</span>
+        <input id="searchInput" type="search" placeholder="Search for topics, locations & sources" autocomplete="off"/>
+        <button type="button" class="chevron" tabindex="-1" aria-hidden="true">▾</button>
+      </form>
+
+      <div class="gn-actions">
+        <button class="icon-btn" title="Help" aria-label="Help">❔</button>
+        <button class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
+        <button class="icon-btn" title="Apps" aria-label="Apps">▦</button>
+        <div class="avatar" title="You">S</div>
+      </div>
+    </div>
+
+    <nav class="gn-tabs" aria-label="Sections">
+      <button class="tab active">Home</button>
+      <button class="tab">For you</button>
+      <button class="tab">Following</button>
+      <button class="tab">News Showcase</button>
+      <span class="tab-divider"></span>
+      <button class="tab">India</button>
+      <button class="tab">World</button>
+      <button class="tab">Local</button>
+      <button class="tab">Business</button>
+      <button class="tab">Technology</button>
+      <button class="tab">Entertainment</button>
+      <button class="tab">Sports</button>
+      <button class="tab">Science</button>
+      <button class="tab">Health</button>
+    </nav>
   </header>
 
+  <!-- ===== Briefing strip (title + date + weather) ===== -->
+  <section class="gn-briefing">
+    <div class="briefing-left">
+      <h1>Your briefing</h1>
+      <div id="briefingDate" class="briefing-date"></div>
+    </div>
+    <div id="weatherCard" class="weather-card" aria-live="polite"></div>
+  </section>
+
+  <!-- ===== Main three-column layout (kept) ===== -->
   <main class="layout">
+    <!-- Left column: pinned stories -->
     <aside class="left">
       <h2>Pinned</h2>
       <div id="pinned" class="card-list"></div>
     </aside>
 
+    <!-- Centre column: hero and news list -->
     <section class="center">
       <div id="mainHero" class="main-hero"></div>
 
@@ -35,6 +78,7 @@
       </div>
     </section>
 
+    <!-- Right column: trending topics and daily feed -->
     <aside class="right">
       <div class="topics">
         <h3>Trending Topics</h3>
@@ -48,7 +92,7 @@
   </main>
 
   <footer class="footer">
-    <span>© <span id="year"></span> Informed 360 — Indian news & sentiment.</span>
+    <span>© <span id="year"></span> Informed360 — Indian news & sentiment.</span>
   </footer>
 
   <script src="app.js" defer></script>
