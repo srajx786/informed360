@@ -12,12 +12,15 @@
   <header class="gn-header">
     <div class="gn-topbar">
       <div class="gn-logo">Informed360</div>
+
       <form id="searchForm" class="gn-search" role="search" aria-label="Search">
         <span class="icon" aria-hidden="true">🔍</span>
         <input id="searchInput" type="search" placeholder="Search for topics, locations & sources" autocomplete="off"/>
         <button type="button" class="chevron" tabindex="-1" aria-hidden="true">▾</button>
       </form>
+
       <div class="gn-actions">
+        <button id="themeToggle" class="icon-btn" title="Toggle dark / light" aria-label="Toggle theme">🌙</button>
         <button class="icon-btn" title="Help" aria-label="Help">❔</button>
         <button class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
         <button class="icon-btn" title="Apps" aria-label="Apps">▦</button>
@@ -43,7 +46,7 @@
     </nav>
   </header>
 
-  <!-- Briefing: Date • Ticker • Weather -->
+  <!-- Briefing -->
   <section class="gn-briefing">
     <div class="briefing-left">
       <h1 class="display-title">Your briefing</h1>
@@ -55,7 +58,7 @@
 
   <!-- 3-column layout -->
   <main class="layout">
-    <!-- LEFT: PINNED as a block card with separators -->
+    <!-- LEFT: PINNED -->
     <aside class="left">
       <div class="block-card">
         <div class="block-header">
@@ -65,7 +68,7 @@
       </div>
     </aside>
 
-    <!-- CENTER: HERO + NEWS -->
+    <!-- CENTER -->
     <section class="center">
       <section id="hero" class="hero-carousel" aria-roledescription="carousel">
         <div class="hero-track" id="heroTrack" role="group"></div>
@@ -87,7 +90,7 @@
       </div>
     </section>
 
-    <!-- RIGHT: TRENDING as a block card with separators -->
+    <!-- RIGHT: TRENDING -->
     <aside class="right">
       <div class="block-card">
         <div class="block-header">
