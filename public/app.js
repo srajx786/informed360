@@ -5,22 +5,23 @@ const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
 async function fetchJSON(u){ const r = await fetch(u); if(!r.ok) throw new Error(await r.text()); return r.json(); }
 
 /* sentiment meter */
-function renderSentiment(s){
+function renderSentiment(s, slim=false){
   const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
   const neu = Math.max(0, Number(s.neuP ?? s.neu ?? 0));
   const neg = Math.max(0, Number(s.negP ?? s.neg ?? 0));
   return `
-    <div class="sentiment">
+    <div class="sentiment ${slim?'slim':''}">
       <div class="bar">
         <span class="segment pos" style="width:${pos}%"></span>
         <span class="segment neu" style="width:${neu}%"></span>
         <span class="segment neg" style="width:${neg}%"></span>
       </div>
+      ${slim ? '' : `
       <div class="scores">
         <span>Positive ${fmtPct(pos)}</span>
         <span>Neutral ${fmtPct(neu)}</span>
         <span>Negative ${fmtPct(neg)}</span>
-      </div>
+      </div>`}
     </div>`;
 }
 
@@ -98,7 +99,7 @@ async function loadAll(){
   ]);
 
   state.articles = news.articles || [];
-  state.topics = (topics.topics || []).slice(0, 8); // cap right-rail to keep page short
+  state.topics = (topics.topics || []).slice(0, 8); // cap right-rail
   state.pins = state.articles.slice(0,3);
 
   if (state.category === "local" && state.profile?.city) {
@@ -124,18 +125,22 @@ function card(a){
       </div>
     </a>`;
 }
+
+/* Pinned inside a block-list with separators */
 function renderPinned(){
   $("#pinned").innerHTML = state.pins.map(a => `
-    <div class="card">
-      <a href="${a.link}" target="_blank"><strong>${a.title}</strong></a>
-      <div class="meta"><span class="source">${a.source}</span></div>
-      ${renderSentiment(a.sentiment)}
+    <div class="row">
+      <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
+      <div class="row-meta"><span class="source">${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
+      ${renderSentiment(a.sentiment, true)}
     </div>`).join("");
 }
+
+/* News + Daily */
 function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
 function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
 
-/* HERO */
+/* HERO (unchanged) */
 function renderHero(){
   const slides = state.articles.slice(0,4);
   const track = $("#heroTrack"); const dots = $("#heroDots");
@@ -162,16 +167,16 @@ function updateHero(i){
 function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
 function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
 
-/* topics */
+/* Trending topics as rows with separators */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
     const total = (t.sentiment.pos||0)+(t.sentiment.neu||0)+(t.sentiment.neg||0);
     const sent = { posP: total? (t.sentiment.pos/total)*100:0, neuP: total? (t.sentiment.neu/total)*100:0, negP: total? (t.sentiment.neg/total)*100:0 };
     return `
-      <div class="topic-item">
-        <div class="topic-header"><strong>${t.title.split("|")[0]}</strong></div>
-        <div class="topic-meta"><span>${t.count} articles</span> <span>${t.sources} sources</span></div>
-        ${renderSentiment(sent)}
+      <div class="row">
+        <div class="row-title">${t.title.split("|")[0]}</div>
+        <div class="row-meta"><span>${t.count} articles</span> · <span>${t.sources} sources</span></div>
+        ${renderSentiment(sent, true)}
       </div>`;
   }).join("");
 }
