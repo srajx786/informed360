@@ -1,46 +1,32 @@
 /*
- * Informed 360 — styles.css
- * Ground-News-style 3-column layout with distinct earthy palette,
- * positive/neutral/negative sentiment meters, hero, cards, topics, and daily.
+ * Informed 360 — Ground-News-style layout with distinct palette,
+ * P/N/N sentiment meters, hero, cards, topics, and daily.
  */
 
-/* =========================
-   THEME & TOKENS
-   ========================= */
+/* Theme tokens (dark) */
 :root{
-  /* Base colours (dark) */
-  --bg:#0d0f12;           /* page background */
-  --fg:#e9eef2;           /* primary text */
-  --muted:#9aa4ad;        /* secondary text */
-  --card:#161a1f;         /* card background */
-  --border:#232a31;       /* card border */
-
-  /* Accents */
+  --bg:#0d0f12;
+  --fg:#e9eef2;
+  --muted:#9aa4ad;
+  --card:#161a1f;
+  --border:#232a31;
   --ink-strong:#f1f5f9;
-  --brand:#2563eb;        /* CTA/link pill */
-  --chip:#243041;         /* filter chip bg */
-  --chip-active:#1e293b;  /* active chip bg */
-
-  /* Sentiment colours */
-  --pos:#2ecc71;          /* positive */
-  --neu:#bdc3c7;          /* neutral  */
-  --neg:#ff4c4c;          /* negative */
-
-  /* Effects */
+  --brand:#2563eb;
+  --chip:#243041;
+  --chip-active:#1e293b;
+  --pos:#2ecc71;
+  --neu:#bdc3c7;
+  --neg:#ff4c4c;
   --shadow: 0 6px 18px rgba(0,0,0,.25);
   --radius-lg: 14px;
   --radius-md: 12px;
-
-  /* Layout */
   --gap: 1rem;
   --container: 1300px;
-
-  /* Ticker */
   --green-up:#56d37a;
   --red-down:#ff6b6b;
 }
 
-/* Light theme overrides */
+/* Light theme */
 [data-theme="light"]{
   --bg:#f7f8fa;
   --fg:#101418;
@@ -56,9 +42,6 @@
   --shadow: 0 6px 18px rgba(16,20,24,.08);
 }
 
-/* =========================
-   GLOBAL
-   ========================= */
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
 body{
@@ -67,14 +50,11 @@ body{
   background:var(--bg);
   color:var(--fg);
 }
-
 a{ color:inherit; text-decoration:none; }
 h1,h2,h3{ margin:0 0 .6rem; }
 img{ display:block; max-width:100%; height:auto; border-radius:10px; }
 
-/* =========================
-   TOP BAR
-   ========================= */
+/* Top bar */
 .topbar{
   position:sticky; top:0; z-index:20;
   display:flex; align-items:center; justify-content:space-between;
@@ -97,9 +77,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:10px; }
   font-size:1.35rem; cursor:pointer; padding:.1rem .4rem;
 }
 
-/* =========================
-   LAYOUT
-   ========================= */
+/* Layout */
 .layout{
   display:grid;
   grid-template-columns:280px 1fr 340px;
@@ -120,9 +98,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:10px; }
 }
 .card-list{ display:flex; flex-direction:column; gap:.75rem; }
 
-/* =========================
-   HERO
-   ========================= */
+/* Hero */
 .main-hero{
   display:flex; flex-wrap:wrap; gap:1rem;
   background:var(--card);
@@ -153,9 +129,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:10px; }
   width:max-content;
 }
 
-/* =========================
-   CONTROLS / CHIPS
-   ========================= */
+/* Controls / chips */
 .controls{
   display:flex; gap:.5rem; align-items:center; margin:.4rem 0 .8rem;
   flex-wrap:wrap;
@@ -176,12 +150,9 @@ img{ display:block; max-width:100%; height:auto; border-radius:10px; }
   box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brand) 60%, transparent);
 }
 
-/* =========================
-   CENTER FEED
-   ========================= */
+/* Center feed */
 .news-section{ margin-top:.5rem; }
 .news-list{ display:flex; flex-direction:column; gap:.75rem; }
-
 .news-item{
   display:grid; grid-template-columns:96px 1fr; gap:.75rem; align-items:start;
   background:var(--card);
@@ -199,9 +170,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:10px; }
 }
 .meta{ color:var(--muted); font-size:.85rem; display:flex; gap:.5rem; align-items:center; }
 
-/* =========================
-   DAILY (RIGHT)
-   ========================= */
+/* Daily (right) */
 .daily-list{ display:flex; flex-direction:column; gap:.75rem; margin-top:.5rem; }
 .daily-item{
   display:grid; grid-template-columns:64px 1fr; gap:.75rem; align-items:center;
@@ -212,9 +181,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:10px; }
   box-shadow:var(--shadow);
 }
 
-/* =========================
-   SENTIMENT BAR
-   ========================= */
+/* Sentiment bar */
 .sentiment{
   display:flex; flex-direction:column; gap:.25rem;
 }
@@ -231,7 +198,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:10px; }
   font-size:.8rem; color:var(--muted);
 }
 
-/* Tooltip on hover (used for heavy negative clusters) */
+/* Tooltip */
 .tooltip{ position:relative; }
 .tooltip[data-tip]:hover::after{
   content:attr(data-tip);
@@ -242,9 +209,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:10px; }
   white-space:wrap; z-index:5;
 }
 
-/* =========================
-   TOPICS (RIGHT)
-   ========================= */
+/* Topics (right) */
 .topics-list{
   display:flex; flex-direction:column; gap:.75rem; margin-top:.5rem;
 }
@@ -259,9 +224,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:10px; }
 .topic-header{ font-weight:700; line-height:1.25; }
 .topic-meta{ font-size:.8rem; color:var(--muted); display:flex; gap:.5rem; }
 
-/* =========================
-   FOOTER
-   ========================= */
+/* Footer */
 .footer{
   padding:1rem;
   color:var(--muted);
@@ -269,9 +232,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:10px; }
   margin-top:1rem;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
+/* Responsive */
 @media (max-width:1100px){
   .layout{ grid-template-columns:1fr; }
   .left,.right{ order:2; }
