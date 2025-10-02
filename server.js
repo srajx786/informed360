@@ -2,8 +2,6 @@ import express from "express";
 import cors from "cors";
 import Parser from "rss-parser";
 import vader from "vader-sentiment";
-// Lazy ticker import so missing dependency never crashes the app
-// import yahooFinance from "yahoo-finance2";
 import fs from "fs";
 import path from "path";
 
@@ -53,12 +51,12 @@ const scoreSentiment = (text) => {
   return { ...s, posP, negP, neuP, label };
 };
 
-/* ---------- Category inference (keyword + URL heuristics) ---------- */
+/* ---------- Category inference ---------- */
 const CAT_RULES = [
   { name: "sports", patterns: [/sport/i, /cricket/i, /ipl/i, /football/i, /badminton/i, /hockey/i] },
   { name: "business", patterns: [/business/i, /market/i, /econom/i, /stock/i, /sensex/i, /nifty/i, /finance/i, /industry/i] },
   { name: "technology", patterns: [/tech/i, /technology/i, /software/i, /ai\b/i, /startup/i, /gadget/i, /iphone/i, /android/i] },
-  { name: "entertainment", patterns: [/entertainment/i, /bollywood/i, /movie/i, /film/i, /music/i, /celebrity/i, /tv\b/i, /web series/i] },
+  { name: "entertainment", patterns: [/entertainment/i, /bollywood/i, /movie/i, /film/i, /music/i, /celebrity/i, /\btv\b/i, /web series/i] },
   { name: "science", patterns: [/science/i, /space/i, /isro/i, /nasa/i, /research/i, /study/i, /astronom/i, /quantum/i] },
   { name: "health", patterns: [/health/i, /covid/i, /virus/i, /disease/i, /medical/i, /hospital/i, /vaccine/i, /wellness/i] },
   { name: "world", patterns: [/world/i, /international/i, /\bUS\b/i, /china/i, /pakistan/i, /\buk\b/i, /europe/i, /russia/i, /africa/i, /global/i, /middle[- ]east/i] },
@@ -66,15 +64,12 @@ const CAT_RULES = [
 ];
 function inferCategory({ title = "", link = "", source = "" }) {
   const hay = `${title} ${link} ${source}`.toLowerCase();
-  for (const r of CAT_RULES) {
-    if (r.patterns.some((p) => p.test(hay))) return r.name;
-  }
-  // If domain is Indian (.in), default to India
+  for (const r of CAT_RULES) if (r.patterns.some((p) => p.test(hay))) return r.name;
   if (/\.(in)(\/|$)/i.test(link)) return "india";
-  return "india"; // safe default for this site
+  return "india";
 }
 
-/* ---------- polite concurrency + retry (avoid WAFs) ---------- */
+/* ---------- polite concurrency ---------- */
 const hostCounters = new Map();
 const MAX_PER_HOST = 2;
 const acquire = async (host) => {
@@ -82,32 +77,25 @@ const acquire = async (host) => {
   hostCounters.set(host, (hostCounters.get(host) || 0) + 1);
 };
 const release = (host) => hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
-const withRetry = async (fn, tries = 2) => {
-  let last;
-  for (let i = 0; i < tries; i++) {
-    try { return await fn(); } catch (e) { last = e; await sleep(300 + Math.random() * 600); }
-  }
-  throw last;
-};
 
 async function fetchFeed(url) {
   const host = domainFromUrl(url);
   await acquire(host);
-  try { return await withRetry(() => parser.parseURL(url), 2); }
+  try { return await parser.parseURL(url); }
   finally { release(host); }
 }
 
-/* ---------- fetch lists (core & experimental separately) ---------- */
+/* ---------- fetchers ---------- */
 async function fetchList(urls) {
   const articles = [];
-  const byUrl = new Map();
+  const seen = new Set();
 
   await Promise.all(urls.map(async (url) => {
     try {
       const feed = await fetchFeed(url);
       (feed.items || []).slice(0, 30).forEach((item) => {
         const link = item.link || item.guid || "";
-        if (!link || byUrl.has(link)) return;
+        if (!link || seen.has(link)) return;
 
         const title = item.title || "";
         const source = feed.title || domainFromUrl(link);
@@ -117,7 +105,7 @@ async function fetchList(urls) {
         const sentiment = scoreSentiment(`${title}. ${description}`);
         const category = inferCategory({ title, link, source });
 
-        byUrl.set(link, true);
+        seen.add(link);
         articles.push({ title, link, source, description, image, publishedAt, sentiment, category });
       });
     } catch (e) {
@@ -127,17 +115,16 @@ async function fetchList(urls) {
   }));
 
   articles.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
-  return { fetchedAt: Date.now(), articles, byUrl };
+  return { fetchedAt: Date.now(), articles };
 }
 
-let CORE = { fetchedAt: 0, articles: [], byUrl: new Map() };
-let EXP  = { fetchedAt: 0, articles: [], byUrl: new Map() };
+let CORE = { fetchedAt: 0, articles: [] };
+let EXP  = { fetchedAt: 0, articles: [] };
 const uniqueMerge = (a, b) => {
-  const seen = new Set(), out = [];
+  const set = new Set(); const out = [];
   for (const x of [...a, ...b]) {
-    const k = x.link || x.title;
-    if (seen.has(k)) continue;
-    seen.add(k); out.push(x);
+    const k = x.link || x.title; if (set.has(k)) continue;
+    set.add(k); out.push(x);
   }
   return out;
 };
@@ -148,7 +135,7 @@ await refreshCore(); await refreshExp();
 setInterval(refreshCore, REFRESH_MS);
 setInterval(refreshExp, REFRESH_MS);
 
-/* ---------- lazy ticker loader ---------- */
+/* ---------- Markets (lazy yahoo-finance2) ---------- */
 let yfModule = null;
 async function loadYF(){
   try {
@@ -159,12 +146,41 @@ async function loadYF(){
   } catch { return null; }
 }
 
-/* ---------- Routes ---------- */
-// /api/news?limit=200&sentiment=positive|neutral|negative&category=sports|world|...&experimental=1
+app.get("/api/markets", async (_req, res) => {
+  try {
+    const yf = await loadYF();
+    const symbols = [
+      { s: "^BSESN", pretty: "BSE Sensex" },
+      { s: "^NSEI",  pretty: "NSE Nifty" },
+      { s: "GC=F",   pretty: "Gold" },
+      { s: "CL=F",   pretty: "Crude Oil" },
+      { s: "USDINR=X", pretty: "USD/INR" }
+    ];
+
+    if (!yf) return res.json({ updatedAt: Date.now(), quotes: symbols.map(x => ({
+      symbol: x.s, pretty: x.pretty, price: null, change: null, changePercent: null
+    }))});
+
+    const quotes = await yf.quote(symbols.map(x => x.s));
+    const out = quotes.map((q, i) => ({
+      symbol: q.symbol,
+      pretty: symbols[i].pretty,
+      price: q.regularMarketPrice,
+      change: q.regularMarketChange,
+      changePercent: q.regularMarketChangePercent
+    }));
+    res.json({ updatedAt: Date.now(), quotes: out });
+  } catch (e) {
+    console.warn("markets error", e?.message || e);
+    res.json({ updatedAt: Date.now(), quotes: [] });
+  }
+});
+
+/* ---------- News & Topics ---------- */
 app.get("/api/news", (req, res) => {
   const limit = Number(req.query.limit || 200);
   const sentiment = req.query.sentiment;
-  const category  = (req.query.category || "").toLowerCase(); // home => no filter
+  const category  = (req.query.category || "").toLowerCase();
   const includeExp = req.query.experimental === "1";
 
   let arts = includeExp ? uniqueMerge(CORE.articles, EXP.articles) : CORE.articles;
@@ -174,7 +190,6 @@ app.get("/api/news", (req, res) => {
   res.json({ fetchedAt: Date.now(), articles: arts.slice(0, limit) });
 });
 
-// /api/topics?experimental=1
 const normalize = (t = "") => t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
 const topicKey = (title) => {
   const w = normalize(title).split(" ").filter(Boolean);
@@ -193,7 +208,7 @@ function buildClusters(arts){
     const n = Math.max(1,c.count);
     return { title:c.key, count:c.count, sources:c.sources.size,
       sentiment:{ pos:Math.round(c.pos/n), neg:Math.round(c.neg/n), neu:Math.round(c.neu/n) }, image:c.image };
-  }).sort((a,b)=>b.count-a.count).slice(0,20);
+  }).sort((a,b)=>b.count-a.count).slice(0,12); // smaller cluster set
 }
 app.get("/api/topics", (req,res)=>{
   const includeExp = req.query.experimental === "1";
@@ -201,25 +216,8 @@ app.get("/api/topics", (req,res)=>{
   res.json({ fetchedAt: Date.now(), topics: buildClusters(arts) });
 });
 
-app.get("/api/pinned", (req,res)=>{
-  const pins = (FEEDS.pinned || []).map(u => u && (CORE.byUrl.get(u) || EXP.byUrl.get(u))).filter(Boolean).slice(0,3);
-  res.json({ articles: pins });
-});
-
-app.get("/api/ticker", async (_req, res) => {
-  try {
-    const yf = await loadYF();
-    if (!yf) return res.json({ updatedAt: Date.now(), quotes: [] });
-    const symbols = ["^BSESN","^NSEI","^NYA"];
-    const quotes = await yf.quote(symbols);
-    const out = quotes.map(q=>({
-      symbol:q.symbol, shortName:q.shortName, price:q.regularMarketPrice,
-      change:q.regularMarketChange, changePercent:q.regularMarketChangePercent
-    }));
-    res.json({ updatedAt: Date.now(), quotes: out });
-  } catch {
-    res.json({ updatedAt: Date.now(), quotes: [] });
-  }
+app.get("/api/pinned", (_req,res)=>{
+  res.json({ articles: CORE.articles.slice(0,3) });
 });
 
 app.get("/health", (_req,res)=> res.json({ ok:true, at:Date.now() }));
