@@ -1,10 +1,10 @@
-/* Helpers */
+/* helpers */
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
 async function fetchJSON(u){ const r = await fetch(u); if(!r.ok) throw new Error(await r.text()); return r.json(); }
 
-/* Sentiment bar */
+/* sentiment meter */
 function renderSentiment(s){
   const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
   const neu = Math.max(0, Number(s.neuP ?? s.neu ?? 0));
@@ -24,7 +24,7 @@ function renderSentiment(s){
     </div>`;
 }
 
-/* State */
+/* state */
 const state = {
   category: "home",
   filter: "all",
@@ -33,17 +33,15 @@ const state = {
   articles: [],
   topics: [],
   pins: [],
-  theme: localStorage.getItem("theme") || "light",
   profile: loadProfile(),
+  theme: localStorage.getItem("theme") || "light",
   hero: { index:0, timer:null, pause:false }
 };
 function loadProfile(){ try { return JSON.parse(localStorage.getItem("i360_profile") || "{}"); } catch { return {}; } }
 function saveProfile(p){ localStorage.setItem("i360_profile", JSON.stringify(p || {})); state.profile = p || {}; }
-
-/* Theme */
 function applyTheme(){ document.documentElement.setAttribute("data-theme", state.theme); }
 
-/* Date & Weather */
+/* date + weather */
 const todayStr = ()=> new Date().toLocaleDateString(undefined,{weekday:"long", day:"numeric", month:"long"});
 async function getWeather(){
   try{
@@ -69,7 +67,7 @@ async function getWeather(){
   }catch{ $("#weatherCard").textContent = "Weather unavailable"; }
 }
 
-/* Markets */
+/* markets */
 async function loadMarkets(){
   try{
     const data = await fetchJSON("/api/markets");
@@ -87,7 +85,7 @@ async function loadMarkets(){
   }catch{ $("#marketTicker").innerHTML = ""; }
 }
 
-/* Loads */
+/* loads */
 async function loadAll(){
   const qs = new URLSearchParams();
   if (state.filter !== "all") qs.set("sentiment", state.filter);
@@ -100,10 +98,9 @@ async function loadAll(){
   ]);
 
   state.articles = news.articles || [];
-  state.topics = (topics.topics || []).slice(0, 8); // cap right-rail size to keep page shorter
+  state.topics = (topics.topics || []).slice(0, 8); // cap right-rail to keep page short
   state.pins = state.articles.slice(0,3);
 
-  // "local" and "for you"
   if (state.category === "local" && state.profile?.city) {
     const c = state.profile.city.toLowerCase();
     state.articles = state.articles.filter(a => (a.title||"").toLowerCase().includes(c) || (a.link||"").toLowerCase().includes(c));
@@ -115,7 +112,7 @@ async function loadAll(){
   renderAll();
 }
 
-/* Renderers */
+/* renderers */
 function card(a){
   return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
@@ -138,7 +135,7 @@ function renderPinned(){
 function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
 function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
 
-/* HERO (4 slides) */
+/* HERO */
 function renderHero(){
   const slides = state.articles.slice(0,4);
   const track = $("#heroTrack"); const dots = $("#heroDots");
@@ -165,7 +162,7 @@ function updateHero(i){
 function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
 function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
 
-/* Topics */
+/* topics */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
     const total = (t.sentiment.pos||0)+(t.sentiment.neu||0)+(t.sentiment.neg||0);
@@ -179,14 +176,14 @@ function renderTopics(){
   }).join("");
 }
 
-/* Glue */
+/* glue */
 function renderAll(){
   $("#briefingDate").textContent = todayStr();
   renderHero(); renderPinned(); renderNews(); renderDaily(); renderTopics();
   $("#year").textContent = new Date().getFullYear();
 }
 
-/* Interactions */
+/* interactions */
 $$(".chip[data-sent]").forEach(btn=>{
   btn.addEventListener("click", ()=>{
     $$(".chip[data-sent]").forEach(b=>b.classList.remove("active"));
@@ -210,6 +207,7 @@ $("#heroNext")?.addEventListener("click", ()=> updateHero(state.hero.index+1));
 $("#hero")?.addEventListener("mouseenter", ()=> state.hero.pause = true);
 $("#hero")?.addEventListener("mouseleave", ()=> state.hero.pause = false);
 
+/* Sign-in */
 const modal = $("#signinModal");
 $("#avatarBtn")?.addEventListener("click", ()=>{
   $("#prefName").value = state.profile?.name || "";
@@ -228,7 +226,7 @@ $("#savePrefs")?.addEventListener("click", (e)=>{
   const forYouTab = $('.gn-tabs .tab[data-cat="foryou"]'); if (forYouTab) forYouTab.click();
 });
 
-/* Boot */
+/* boot */
 document.getElementById("year").textContent = new Date().getFullYear();
 applyTheme();
 $("#briefingDate").textContent = todayStr();
