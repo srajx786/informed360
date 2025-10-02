@@ -4,10 +4,12 @@
   <meta charset="utf-8"/>
   <title>Informed360</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <!-- Font: Inter (weights used in UI to match the look in your image) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <!-- Header -->
+  <!-- ===== Header (Google News style) ===== -->
   <header class="gn-header">
     <div class="gn-topbar">
       <div class="gn-logo">Informed360</div>
@@ -44,7 +46,7 @@
     </nav>
   </header>
 
-  <!-- Briefing strip -->
+  <!-- ===== Briefing strip (title + date + weather) ===== -->
   <section class="gn-briefing">
     <div class="briefing-left">
       <h1>Your briefing</h1>
@@ -53,15 +55,26 @@
     <div id="weatherCard" class="weather-card" aria-live="polite"></div>
   </section>
 
-  <!-- Main -->
+  <!-- ===== Main three-column layout ===== -->
   <main class="layout">
+    <!-- Left column: pinned stories -->
     <aside class="left">
       <h2>Pinned</h2>
       <div id="pinned" class="card-list"></div>
     </aside>
 
+    <!-- Centre column: hero carousel + news list -->
     <section class="center">
-      <div id="mainHero" class="main-hero"></div>
+      <!-- Top offset to align hero top with first cards in left/right columns -->
+      <div class="column-align-top"></div>
+
+      <!-- HERO CAROUSEL -->
+      <section id="hero" class="hero-carousel" aria-roledescription="carousel">
+        <div class="hero-track" id="heroTrack" role="group"></div>
+        <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
+        <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
+        <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero slides"></div>
+      </section>
 
       <div class="news-section">
         <div class="controls">
@@ -76,7 +89,11 @@
       </div>
     </section>
 
+    <!-- Right column: trending topics and daily feed -->
     <aside class="right">
+      <h2 class="sr-only">Right rail</h2>
+      <div class="column-align-top"></div>
+
       <div class="topics">
         <h3>Trending Topics</h3>
         <div id="topicsList" class="topics-list"></div>
