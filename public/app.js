@@ -3,9 +3,9 @@ const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
 
 function renderSentiment(s, tip=""){
-  const pos = Number(s.posP ?? s.pos ?? 0);
-  const neu = Number(s.neuP ?? s.neu ?? 0);
-  const neg = Number(s.negP ?? s.neg ?? 0);
+  const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
+  const neu = Math.max(0, Number(s.neuP ?? s.neu ?? 0));
+  const neg = Math.max(0, Number(s.negP ?? s.neg ?? 0));
   const negTip = neg > 50 ? tip || "Skews negative." : "";
   return `
     <div class="sentiment tooltip" ${negTip ? `data-tip="${negTip}"` : ""}>
@@ -23,24 +23,48 @@ function renderSentiment(s, tip=""){
   `;
 }
 
-const state = { articles: [], pins: [], topics: [], filter: "all", theme: localStorage.getItem("theme") || "dark" };
+const state = {
+  articles: [],
+  pins: [],
+  topics: [],
+  filter: "all",
+  experimental: false,
+  theme: localStorage.getItem("theme") || "dark"
+};
 
-function applyTheme(){ document.documentElement.setAttribute("data-theme", state.theme); $("#themeToggle").textContent = state.theme==="light"?"🌙":"☀️"; }
-$("#themeToggle").addEventListener("click", ()=>{ state.theme = state.theme==="light"?"dark":"light"; localStorage.setItem("theme", state.theme); applyTheme(); });
+function applyTheme(){
+  document.documentElement.setAttribute("data-theme", state.theme);
+  const btn = $("#themeToggle");
+  if (btn) btn.textContent = state.theme==="light" ? "🌙" : "☀️";
+}
+$("#themeToggle")?.addEventListener("click", ()=>{
+  state.theme = state.theme==="light" ? "dark" : "light";
+  localStorage.setItem("theme", state.theme);
+  applyTheme();
+});
 
-async function fetchJSON(u){ const r = await fetch(u); if(!r.ok) throw new Error(await r.text()); return r.json(); }
+async function fetchJSON(u){
+  const r = await fetch(u);
+  if(!r.ok) throw new Error(await r.text());
+  return r.json();
+}
 
 async function loadAll(){
-  const query = state.filter==="all" ? "" : `?sentiment=${state.filter}`;
+  const qs = new URLSearchParams();
+  if (state.filter !== "all") qs.set("sentiment", state.filter);
+  if (state.experimental) qs.set("experimental", "1");
+
   const [news, topics, pins, ticker] = await Promise.all([
-    fetchJSON(`/api/news${query}`),
-    fetchJSON("/api/topics"),
+    fetchJSON(`/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`),
+    fetchJSON(`/api/topics${state.experimental ? "?experimental=1" : ""}`),
     fetchJSON("/api/pinned"),
-    fetchJSON("/api/ticker").catch(()=>({quotes:[]})),
+    fetchJSON("/api/ticker").catch(()=>({quotes:[]}))
   ]);
+
   state.articles = news.articles || [];
   state.topics = topics.topics || [];
   state.pins = pins.articles || [];
+
   renderTicker(ticker.quotes || []);
   renderHero();
   renderNews();
@@ -73,7 +97,7 @@ function card(a){
       <div>
         <div class="title">${a.title}</div>
         <div class="meta"><span class="source">${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
-        ${renderSentiment(a.sentiment, a.tooltip)}
+        ${renderSentiment(a.sentiment, a.tooltip || "")}
       </div>
     </a>
   `;
@@ -85,13 +109,17 @@ function renderPinned(){
     <div class="card">
       <a href="${a.link}" target="_blank"><strong>${a.title}</strong></a>
       <div class="meta"><span class="source">${a.source}</span></div>
-      ${renderSentiment(a.sentiment, a.tooltip)}
+      ${renderSentiment(a.sentiment, a.tooltip || "")}
     </div>
   `).join("");
 }
 
-function renderNews(){ $("#newsList").innerHTML = state.articles.slice(1, 12).map(card).join(""); }
-function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
+function renderNews(){
+  $("#newsList").innerHTML = state.articles.slice(1, 12).map(card).join("");
+}
+function renderDaily(){
+  $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join("");
+}
 
 function renderHero(){
   const a = state.articles[0];
@@ -102,15 +130,19 @@ function renderHero(){
     <div class="hero-content">
       <h3>${a.title}</h3>
       <a href="${a.link}" target="_blank" class="analysis-link">Read Analysis</a>
-      ${renderSentiment(a.sentiment, a.tooltip)}
+      ${renderSentiment(a.sentiment, a.tooltip || "")}
       <div class="meta"><span class="source">${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
     </div>`;
 }
 
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
-    const total = t.sentiment.pos + t.sentiment.neu + t.sentiment.neg;
-    const sent = { posP: total? (t.sentiment.pos/total)*100 : 0, neuP: total? (t.sentiment.neu/total)*100 : 0, negP: total? (t.sentiment.neg/total)*100 : 0 };
+    const total = (t.sentiment.pos||0) + (t.sentiment.neu||0) + (t.sentiment.neg||0);
+    const sent = {
+      posP: total ? (t.sentiment.pos/total)*100 : 0,
+      neuP: total ? (t.sentiment.neu/total)*100 : 0,
+      negP: total ? (t.sentiment.neg/total)*100 : 0
+    };
     return `
       <div class="topic-item">
         <div class="topic-header"><strong>${t.title.split("|")[0]}</strong></div>
@@ -121,14 +153,22 @@ function renderTopics(){
 }
 
 // sentiment filter chips
-$$(".chip").forEach(btn=>{
+$$(".chip[data-sent]").forEach(btn=>{
   btn.addEventListener("click", ()=>{
-    $$(".chip").forEach(b=>b.classList.remove("active"));
+    $$(".chip[data-sent]").forEach(b=>b.classList.remove("active"));
     btn.classList.add("active");
     state.filter = btn.dataset.sent;
     loadAll();
   });
 });
 
+// experimental toggle
+$("#expChip")?.addEventListener("click", ()=>{
+  state.experimental = !state.experimental;
+  $("#expChip").classList.toggle("active", state.experimental);
+  loadAll();
+});
+
+// boot
 loadAll();
 setInterval(loadAll, 1000*60*5);
