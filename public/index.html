@@ -4,12 +4,16 @@
   <meta charset="utf-8"/>
   <title>Informed360</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <!-- Font: Inter (weights used in UI to match the look in your image) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <!-- Display: Bebas Neue (for brand + big section titles) -->
+  <!-- Body: Public Sans (close to "universalSans" look for articles) -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <!-- ===== Header (Google News style) ===== -->
+  <!-- ===== Header ===== -->
   <header class="gn-header">
     <div class="gn-topbar">
       <div class="gn-logo">Informed360</div>
@@ -46,26 +50,23 @@
     </nav>
   </header>
 
-  <!-- ===== Briefing strip (title + date + weather) ===== -->
+  <!-- ===== Briefing strip ===== -->
   <section class="gn-briefing">
     <div class="briefing-left">
-      <h1>Your briefing</h1>
+      <h1 class="display-title">Your briefing</h1>
       <div id="briefingDate" class="briefing-date"></div>
     </div>
     <div id="weatherCard" class="weather-card" aria-live="polite"></div>
   </section>
 
-  <!-- ===== Main three-column layout ===== -->
+  <!-- ===== Main ===== -->
   <main class="layout">
-    <!-- Left column: pinned stories -->
     <aside class="left">
-      <h2>Pinned</h2>
+      <h2 class="display-title">Pinned</h2>
       <div id="pinned" class="card-list"></div>
     </aside>
 
-    <!-- Centre column: hero carousel + news list -->
     <section class="center">
-      <!-- Top offset to align hero top with first cards in left/right columns -->
       <div class="column-align-top"></div>
 
       <!-- HERO CAROUSEL -->
@@ -84,22 +85,20 @@
           <button data-sent="negative" class="chip">Negative</button>
           <button id="expChip" class="chip" title="Include experimental feeds (may be flaky)">Max Feeds</button>
         </div>
-        <h2>News</h2>
+        <h2 class="display-title">News</h2>
         <div id="newsList" class="news-list"></div>
       </div>
     </section>
 
-    <!-- Right column: trending topics and daily feed -->
     <aside class="right">
-      <h2 class="sr-only">Right rail</h2>
       <div class="column-align-top"></div>
 
       <div class="topics">
-        <h3>Trending Topics</h3>
+        <h3 class="display-title">Trending Topics</h3>
         <div id="topicsList" class="topics-list"></div>
       </div>
       <div class="daily">
-        <h3>Daily News</h3>
+        <h3 class="display-title">Daily News</h3>
         <div id="daily" class="daily-list"></div>
       </div>
     </aside>
@@ -112,7 +111,7 @@
   <!-- Sign-in / Preferences Modal -->
   <dialog id="signinModal" class="modal">
     <form method="dialog" class="modal-card" id="signinForm">
-      <h3>Sign in & preferences</h3>
+      <h3 class="display-title">Sign in & preferences</h3>
       <label> Name
         <input type="text" id="prefName" placeholder="Your name"/>
       </label>
