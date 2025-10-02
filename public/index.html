@@ -5,9 +5,7 @@
   <title>Informed360</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <!-- Fonts -->
-  <!-- Display: Bebas Neue (for brand + big section titles) -->
-  <!-- Body: Public Sans (close to "universalSans" look for articles) -->
+  <!-- Display titles -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css"/>
@@ -50,16 +48,19 @@
     </nav>
   </header>
 
-  <!-- ===== Briefing strip ===== -->
+  <!-- ===== Briefing strip: Date + Markets + Weather ===== -->
   <section class="gn-briefing">
     <div class="briefing-left">
       <h1 class="display-title">Your briefing</h1>
       <div id="briefingDate" class="briefing-date"></div>
     </div>
+
+    <div id="marketTicker" class="ticker" aria-live="polite"></div>
+
     <div id="weatherCard" class="weather-card" aria-live="polite"></div>
   </section>
 
-  <!-- ===== Main ===== -->
+  <!-- ===== Main 3-col layout: perfectly aligned headers ===== -->
   <main class="layout">
     <aside class="left">
       <h2 class="display-title">Pinned</h2>
@@ -67,8 +68,6 @@
     </aside>
 
     <section class="center">
-      <div class="column-align-top"></div>
-
       <!-- HERO CAROUSEL -->
       <section id="hero" class="hero-carousel" aria-roledescription="carousel">
         <div class="hero-track" id="heroTrack" role="group"></div>
@@ -91,16 +90,11 @@
     </section>
 
     <aside class="right">
-      <div class="column-align-top"></div>
+      <h3 class="display-title">Trending Topics</h3>
+      <div id="topicsList" class="topics-list"></div>
 
-      <div class="topics">
-        <h3 class="display-title">Trending Topics</h3>
-        <div id="topicsList" class="topics-list"></div>
-      </div>
-      <div class="daily">
-        <h3 class="display-title">Daily News</h3>
-        <div id="daily" class="daily-list"></div>
-      </div>
+      <h3 class="display-title" style="margin-top:.6rem">Daily News</h3>
+      <div id="daily" class="daily-list"></div>
     </aside>
   </main>
 
