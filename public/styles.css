@@ -1,45 +1,41 @@
-/* Inter-based UI (kept) */
+/* ====== Theme & global ====== */
 :root{
-  /* Light theme default to match your screenshots */
   --bg:#f3f4f6; --fg:#0f172a; --muted:#64748b;
-  --card:#ffffff; --border:#e5e7eb;
-  --brand:#1f4fd6;
-
+  --card:#ffffff; --border:#e5e7eb; --brand:#1f4fd6;
   --chip:#eef2f7; --chip-active:#e2e8f0;
-
   --pos:#22c55e; --neu:#cbd5e1; --neg:#ef4444;
-
   --shadow:0 6px 18px rgba(16,24,40,.06);
   --radius-xl:18px; --radius-lg:14px; --radius-md:12px;
-
-  /* CONTAINER tightened so layout always fits typical laptop widths */
-  --container:1200px;
-
-  /* vertical align offset for center/right columns */
-  --align-top-offset:1.1rem;
+  --container:1200px;        /* stays compact; prevents horizontal scroll */
+  --align-top-offset:1.1rem; /* aligns hero with side columns */
 }
 
-/* Optional dark mode */
 [data-theme="dark"]{
   --bg:#0d0f12; --fg:#e9eef2; --muted:#9aa4ad;
-  --card:#161a1f; --border:#232a31;
-  --brand:#2563eb; --chip:#243041; --chip-active:#1e293b;
+  --card:#161a1f; --border:#232a31; --brand:#2563eb;
+  --chip:#243041; --chip-active:#1e293b;
   --pos:#22c55e; --neu:#6b7280; --neg:#ef4444;
   --shadow:0 6px 18px rgba(0,0,0,.25);
 }
 
-/* Global hard-stops for sideways scroll and intrinsic overflow */
 *{ box-sizing:border-box; min-width:0 }
-html,body{ height:100% }
-html,body{ overflow-x:hidden }     /* <- NO horizontal scrolling */
+html,body{ height:100%; overflow-x:hidden }  /* NO horizontal scrolling */
 body{
   margin:0;
-  font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  font-size:15px; line-height:1.45;
-  background:var(--bg); color:var(--fg);
+  font-family:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size:15px; line-height:1.45; background:var(--bg); color:var(--fg);
 }
 a{ color:inherit; text-decoration:none }
 h1,h2,h3{ margin:0 0 .6rem }
+
+/* Display font: like your Image 2 for big titles/brand */
+.display-title, .gn-logo{
+  font-family:"Bebas Neue", "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing:.2px;
+}
+.gn-logo{ font-size:1.9rem; line-height:1; font-weight:800 }
+
+/* Images */
 img{ display:block; max-width:100%; height:auto; border-radius:12px }
 .sr-only{ position:absolute; left:-9999px }
 
@@ -59,7 +55,6 @@ img{ display:block; max-width:100%; height:auto; border-radius:12px }
   display:grid; grid-template-columns:220px 1fr 220px; gap:1rem;
   align-items:center; padding:.7rem 12px;
 }
-.gn-logo{ font-weight:800; font-size:1.5rem; letter-spacing:.2px }
 .gn-actions{ display:flex; justify-content:flex-end; align-items:center; gap:.5rem }
 .icon-btn{
   background:#fff; border:1px solid var(--border); color:var(--muted);
@@ -90,7 +85,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:12px }
 .tab{
   background:transparent; color:var(--fg); border:0;
   padding:.35rem 0; border-bottom:2px solid transparent;
-  cursor:pointer; white-space:nowrap; font-weight:700;
+  cursor:pointer; white-space:nowrap; font-weight:700
 }
 .tab.active{ border-bottom:2px solid var(--brand) }
 .tab-divider{ width:1px; height:18px; background:var(--border) }
@@ -100,7 +95,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:12px }
   display:grid; grid-template-columns:1fr 280px; gap:1rem;
   align-items:center; padding:1rem 12px;
 }
-.briefing-left h1{ font-size:2rem; font-weight:800 }
+.briefing-left h1{ font-size:2.1rem; font-weight:800 }
 .briefing-date{ color:var(--muted) }
 
 /* Weather */
@@ -111,15 +106,15 @@ img{ display:block; max-width:100%; height:auto; border-radius:12px }
 }
 .weather-card .wx-icon{ font-size:1.5rem } .weather-card .wx-city{ font-weight:700 } .weather-card .wx-temp{ font-size:1.1rem; font-weight:800 }
 
-/* ===== Main layout ===== */
+/* ===== Layout ===== */
 .layout{
   display:grid;
-  grid-template-columns:300px minmax(0,1fr) 340px;   /* safe center column */
+  grid-template-columns:300px minmax(0,1fr) 340px;
   gap:.9rem; padding:.9rem 12px 1rem;
   align-items:start;
 }
 .left,.right,.center{ display:flex; flex-direction:column }
-.left h2,.right h3{ font-weight:800 }
+.left h2,.right h3,.news-section > h2{ font-weight:800 }
 .column-align-top{ height:var(--align-top-offset) }
 
 /* Cards */
@@ -129,25 +124,38 @@ img{ display:block; max-width:100%; height:auto; border-radius:12px }
 }
 .card-list{ display:flex; flex-direction:column; gap:.85rem }
 
-/* ===== HERO CAROUSEL (downsized) ===== */
+/* ===== HERO CAROUSEL (with overflow fixes) ===== */
 .hero-carousel{
-  position:relative; overflow:hidden;          /* clips wide track */
+  position:relative; overflow:hidden;              /* fully clips children */
   background:var(--card); border:1px solid var(--border);
   border-radius:var(--radius-xl); box-shadow:var(--shadow);
 }
 .hero-track{ display:flex; transition:transform .4s ease }
 .hero-slide{
   min-width:100%;
-  display:grid; grid-template-columns:38% minmax(0,1fr);  /* smaller image column */
+  display:grid; grid-template-columns:38% minmax(0,1fr);
   gap:.8rem; padding:.8rem;
+  overflow:hidden;                                   /* prevent bleed */
 }
-.hero-slide .hero-img{ overflow:hidden; border-radius:10px; max-height:180px }  /* SHORTER image */
+.hero-slide > *{ min-width:0 }                       /* grid overflow guard */
+.hero-slide .hero-img{ overflow:hidden; border-radius:10px; max-height:180px }
 .hero-slide .hero-img img{ width:100%; height:100%; object-fit:cover }
-.hero-slide h3{ font-size:1.25rem; line-height:1.25; font-weight:800; margin:.2rem 0 } /* smaller headline */
+
+/* Headline and meta inside hero never exceed card bounds */
+.hero-slide .hero-content{ display:flex; flex-direction:column; gap:.35rem; min-width:0; overflow:hidden }
+.hero-slide h3{ font-size:1.25rem; line-height:1.25; font-weight:800; margin:.2rem 0; word-wrap:break-word }
 .analysis-link{
-  display:inline-block; margin:.3rem 0; padding:.45rem .75rem;
+  display:inline-block; margin:.2rem 0; padding:.45rem .75rem;
   border-radius:10px; background:var(--brand); color:#fff; font-weight:700; font-size:.9rem
 }
+.hero-slide .meta{
+  color:var(--muted); font-size:.9rem;
+  display:flex; gap:.6rem; align-items:center;
+  flex-wrap:wrap;                                     /* wrap the date/source */
+  max-width:100%; overflow:hidden; word-break:break-word;
+}
+
+/* Controls */
 .hero-nav{
   position:absolute; top:50%; transform:translateY(-50%);
   background:#fff; color:#111; border:1px solid var(--border);
@@ -156,9 +164,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:12px }
 }
 .hero-nav.prev{ left:8px } .hero-nav.next{ right:8px }
 .hero-dots{ display:flex; gap:.35rem; justify-content:center; padding:.45rem }
-.hero-dots button{
-  width:6px; height:6px; border-radius:50%; border:0; background:#cbd5e1; cursor:pointer
-}
+.hero-dots button{ width:6px; height:6px; border-radius:50%; border:0; background:#cbd5e1; cursor:pointer }
 .hero-dots button.active{ background:var(--brand) }
 
 /* ===== News feed ===== */
@@ -205,7 +211,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:12px }
   background:var(--card); border:1px solid var(--border); color:var(--fg);
   width:min(520px, 92vw); border-radius:14px; padding:1rem; display:flex; flex-direction:column; gap:.7rem; box-shadow:var(--shadow)
 }
-.modal-card h3{ margin:.2rem 0 .6rem; font-weight:800 }
+.modal-card h3{ margin:.2rem 0 .6rem; font-weight:800; font-family:"Bebas Neue","Public Sans",sans-serif }
 .modal-card label{ display:flex; flex-direction:column; gap:.25rem; font-weight:600 }
 .modal-card input[type="text"]{ padding:.55rem .6rem; border-radius:10px; border:1px solid var(--border); background:transparent; color:var(--fg) }
 .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:.5rem .75rem }
@@ -216,7 +222,7 @@ img{ display:block; max-width:100%; height:auto; border-radius:12px }
 /* Footer */
 .footer{ padding:1rem 12px; color:var(--muted); border-top:1px solid var(--border); margin-top:1rem }
 
-/* Responsive tweaks */
+/* Responsive */
 @media (max-width:1100px){
   .gn-topbar{ grid-template-columns:1fr; row-gap:.6rem }
   .gn-actions{ justify-content:flex-start }
@@ -224,6 +230,6 @@ img{ display:block; max-width:100%; height:auto; border-radius:12px }
   .weather-card{ justify-self:start }
   .layout{ grid-template-columns:1fr }
   .left,.right{ order:2 } .center{ order:1 }
-  .hero-slide{ grid-template-columns:1fr }   /* single column hero on narrow screens */
+  .hero-slide{ grid-template-columns:1fr }
   .hero-slide .hero-img{ max-height:200px }
 }
