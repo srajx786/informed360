@@ -4,24 +4,24 @@ const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
 async function fetchJSON(u){ const r = await fetch(u); if(!r.ok) throw new Error(await r.text()); return r.json(); }
 
-/* sentiment meter */
-function renderSentiment(s, slim=false){
+/* sentiment UI */
+function renderSentiment(s, showNumbers = true){
   const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
   const neu = Math.max(0, Number(s.neuP ?? s.neu ?? 0));
   const neg = Math.max(0, Number(s.negP ?? s.neg ?? 0));
   return `
-    <div class="sentiment ${slim?'slim':''}">
+    <div class="sentiment ${showNumbers?'':'slim'}">
       <div class="bar">
         <span class="segment pos" style="width:${pos}%"></span>
         <span class="segment neu" style="width:${neu}%"></span>
         <span class="segment neg" style="width:${neg}%"></span>
       </div>
-      ${slim ? '' : `
+      ${showNumbers ? `
       <div class="scores">
         <span>Positive ${fmtPct(pos)}</span>
         <span>Neutral ${fmtPct(neu)}</span>
         <span>Negative ${fmtPct(neg)}</span>
-      </div>`}
+      </div>` : ``}
     </div>`;
 }
 
@@ -95,11 +95,11 @@ async function loadAll(){
 
   const [news, topics] = await Promise.all([
     fetchJSON(`/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`),
-    fetchJSON(`/api/topics${state.experimental ? "?experimental=1" : ""}`)
+    fetchJSON(`/api/topics`) // server now supplies Google Trends-driven topics
   ]);
 
   state.articles = news.articles || [];
-  state.topics = (topics.topics || []).slice(0, 8); // cap right-rail
+  state.topics = (topics.topics || []).slice(0, 8);
   state.pins = state.articles.slice(0,3);
 
   if (state.category === "local" && state.profile?.city) {
@@ -115,32 +115,49 @@ async function loadAll(){
 
 /* renderers */
 function card(a){
+  const icon = a.sourceIcon || safeFavicon(a.link);
   return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
       <img class="thumb" src="${a.image}" alt="">
       <div>
         <div class="title">${a.title}</div>
-        <div class="meta"><span class="source">${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
-        ${renderSentiment(a.sentiment)}
+        <div class="meta">
+          <span class="source-chip"><img src="${icon}" alt="" />${a.source}</span>
+          <span>·</span>
+          <span>${new Date(a.publishedAt).toLocaleString()}</span>
+        </div>
+        ${renderSentiment(a.sentiment, true)}
       </div>
     </a>`;
 }
 
-/* Pinned inside a block-list with separators */
+/* favicon helper on client (fallback) */
+function safeFavicon(link){
+  try{ const d = new URL(link).hostname.replace(/^www\./,''); return `https://logo.clearbit.com/${d}`; }catch{ return ""; }
+}
+
+/* Pinned: show numbers + source icon */
 function renderPinned(){
-  $("#pinned").innerHTML = state.pins.map(a => `
+  $("#pinned").innerHTML = state.pins.map(a => {
+    const icon = a.sourceIcon || safeFavicon(a.link);
+    return `
     <div class="row">
       <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
-      <div class="row-meta"><span class="source">${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
+      <div class="row-meta">
+        <span class="source-chip"><img src="${icon}" alt="" />${a.source}</span>
+        <span>·</span>
+        <span>${new Date(a.publishedAt).toLocaleString()}</span>
+      </div>
       ${renderSentiment(a.sentiment, true)}
-    </div>`).join("");
+    </div>`;
+  }).join("");
 }
 
 /* News + Daily */
 function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
 function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
 
-/* HERO (unchanged) */
+/* HERO */
 function renderHero(){
   const slides = state.articles.slice(0,4);
   const track = $("#heroTrack"); const dots = $("#heroDots");
@@ -151,8 +168,8 @@ function renderHero(){
       <div class="hero-content">
         <h3>${a.title}</h3>
         <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
-        ${renderSentiment(a.sentiment)}
-        <div class="meta"><span class="source">${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
+        ${renderSentiment(a.sentiment, true)}
+        <div class="meta"><span class="source-chip"><img src="${a.sourceIcon || safeFavicon(a.link)}" alt=""/>${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
       </div>
     </article>`).join("");
   dots.innerHTML = slides.map((_,i)=>`<button data-i="${i}" aria-label="Go to slide ${i+1}"></button>`).join("");
@@ -167,16 +184,18 @@ function updateHero(i){
 function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
 function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
 
-/* Trending topics as rows with separators */
+/* Trending (from Google Trends) — with icons + numbers */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
-    const total = (t.sentiment.pos||0)+(t.sentiment.neu||0)+(t.sentiment.neg||0);
-    const sent = { posP: total? (t.sentiment.pos/total)*100:0, neuP: total? (t.sentiment.neu/total)*100:0, negP: total? (t.sentiment.neg/total)*100:0 };
+    const icons = (t.icons || []).map(u=> `<img class="favicon" src="${u}" alt="">`).join("");
     return `
       <div class="row">
-        <div class="row-title">${t.title.split("|")[0]}</div>
-        <div class="row-meta"><span>${t.count} articles</span> · <span>${t.sources} sources</span></div>
-        ${renderSentiment(sent, true)}
+        <div class="row-title">${t.title}</div>
+        <div class="row-meta">
+          <span>${t.count} articles</span> · <span>${t.sources} sources</span>
+          ${icons ? `<span class="row-icons">${icons}</span>` : ``}
+        </div>
+        ${renderSentiment({ posP:t.sentiment.pos, neuP:t.sentiment.neu, negP:t.sentiment.neg }, true)}
       </div>`;
   }).join("");
 }
