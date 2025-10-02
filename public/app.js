@@ -26,6 +26,9 @@ function renderSentiment(s, showNumbers = true){
 }
 
 /* state */
+function preferredTheme(){
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
 const state = {
   category: "home",
   filter: "all",
@@ -35,12 +38,22 @@ const state = {
   topics: [],
   pins: [],
   profile: loadProfile(),
-  theme: localStorage.getItem("theme") || "light",
+  theme: localStorage.getItem("theme") || preferredTheme(), // default to system
   hero: { index:0, timer:null, pause:false }
 };
 function loadProfile(){ try { return JSON.parse(localStorage.getItem("i360_profile") || "{}"); } catch { return {}; } }
 function saveProfile(p){ localStorage.setItem("i360_profile", JSON.stringify(p || {})); state.profile = p || {}; }
-function applyTheme(){ document.documentElement.setAttribute("data-theme", state.theme); }
+
+function applyTheme(){
+  const t = state.theme || preferredTheme();
+  document.documentElement.setAttribute("data-theme", t);
+  const btn = $("#themeToggle");
+  if (btn) {
+    btn.textContent = (t === "dark") ? "🌞" : "🌙";
+    btn.setAttribute("aria-label", `Switch to ${t==="dark"?"light":"dark"} theme`);
+    btn.title = btn.getAttribute("aria-label");
+  }
+}
 
 /* date + weather */
 const todayStr = ()=> new Date().toLocaleDateString(undefined,{weekday:"long", day:"numeric", month:"long"});
@@ -95,7 +108,7 @@ async function loadAll(){
 
   const [news, topics] = await Promise.all([
     fetchJSON(`/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`),
-    fetchJSON(`/api/topics`) // server now supplies Google Trends-driven topics
+    fetchJSON(`/api/topics`)
   ]);
 
   state.articles = news.articles || [];
@@ -114,6 +127,9 @@ async function loadAll(){
 }
 
 /* renderers */
+function safeFavicon(link){
+  try{ const d = new URL(link).hostname.replace(/^www\./,''); return `https://logo.clearbit.com/${d}`; }catch{ return ""; }
+}
 function card(a){
   const icon = a.sourceIcon || safeFavicon(a.link);
   return `
@@ -130,13 +146,6 @@ function card(a){
       </div>
     </a>`;
 }
-
-/* favicon helper on client (fallback) */
-function safeFavicon(link){
-  try{ const d = new URL(link).hostname.replace(/^www\./,''); return `https://logo.clearbit.com/${d}`; }catch{ return ""; }
-}
-
-/* Pinned: show numbers + source icon */
 function renderPinned(){
   $("#pinned").innerHTML = state.pins.map(a => {
     const icon = a.sourceIcon || safeFavicon(a.link);
@@ -152,12 +161,8 @@ function renderPinned(){
     </div>`;
   }).join("");
 }
-
-/* News + Daily */
 function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
 function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
-
-/* HERO */
 function renderHero(){
   const slides = state.articles.slice(0,4);
   const track = $("#heroTrack"); const dots = $("#heroDots");
@@ -183,8 +188,6 @@ function updateHero(i){
 }
 function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
 function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
-
-/* Trending (from Google Trends) — with icons + numbers */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
     const icons = (t.icons || []).map(u=> `<img class="favicon" src="${u}" alt="">`).join("");
@@ -231,23 +234,11 @@ $("#heroNext")?.addEventListener("click", ()=> updateHero(state.hero.index+1));
 $("#hero")?.addEventListener("mouseenter", ()=> state.hero.pause = true);
 $("#hero")?.addEventListener("mouseleave", ()=> state.hero.pause = false);
 
-/* Sign-in */
-const modal = $("#signinModal");
-$("#avatarBtn")?.addEventListener("click", ()=>{
-  $("#prefName").value = state.profile?.name || "";
-  $("#prefCity").value = state.profile?.city || "";
-  const interests = new Set(state.profile?.interests || ["india"]);
-  modal.querySelectorAll('input[type="checkbox"]').forEach(cb=> cb.checked = interests.has(cb.value));
-  modal.showModal();
-});
-$("#savePrefs")?.addEventListener("click", (e)=>{
-  e.preventDefault();
-  const name = $("#prefName").value.trim();
-  const city = $("#prefCity").value.trim();
-  const interests = [...modal.querySelectorAll('input[type="checkbox"]:checked')].map(cb=>cb.value);
-  saveProfile({ name, city, interests });
-  modal.close();
-  const forYouTab = $('.gn-tabs .tab[data-cat="foryou"]'); if (forYouTab) forYouTab.click();
+/* Theme toggle */
+$("#themeToggle")?.addEventListener("click", ()=>{
+  state.theme = (state.theme === "dark") ? "light" : "dark";
+  localStorage.setItem("theme", state.theme);
+  applyTheme();
 });
 
 /* boot */
