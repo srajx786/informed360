@@ -55,11 +55,17 @@
 
   <!-- 3-column layout -->
   <main class="layout">
+    <!-- LEFT: PINNED as a block card with separators -->
     <aside class="left">
-      <h2 class="display-title">Pinned</h2>
-      <div id="pinned" class="card-list"></div>
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-title">Pinned</span>
+        </div>
+        <div id="pinned" class="block-list"></div>
+      </div>
     </aside>
 
+    <!-- CENTER: HERO + NEWS -->
     <section class="center">
       <section id="hero" class="hero-carousel" aria-roledescription="carousel">
         <div class="hero-track" id="heroTrack" role="group"></div>
@@ -81,9 +87,14 @@
       </div>
     </section>
 
+    <!-- RIGHT: TRENDING as a block card with separators -->
     <aside class="right">
-      <h3 class="display-title">Trending Topics</h3>
-      <div id="topicsList" class="topics-list"></div>
+      <div class="block-card">
+        <div class="block-header">
+          <span class="block-title">Trending topics</span>
+        </div>
+        <div id="topicsList" class="block-list"></div>
+      </div>
 
       <h3 class="display-title" style="margin-top:.6rem">Daily News</h3>
       <div id="daily" class="daily-list"></div>
