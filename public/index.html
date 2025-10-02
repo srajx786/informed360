@@ -2,45 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Informed 360</title>
+  <title>Informed 360</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <!-- Top navigation bar with brand, ticker and theme toggle -->
   <header class="topbar">
-    <div class="brand">Informed 360</div>
+    <div class="brand">Informed 360</div>
     <div id="ticker" class="ticker" aria-live="polite"></div>
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme"></button>
   </header>
 
-  <!-- Main three‑column layout -->
   <main class="layout">
-    <!-- Left column: pinned stories -->
     <aside class="left">
-      <h2>Pinned News</h2>
+      <h2>Pinned</h2>
       <div id="pinned" class="card-list"></div>
     </aside>
 
-    <!-- Centre column: hero and news list -->
     <section class="center">
-      <!-- Featured story / hero panel -->
       <div id="mainHero" class="main-hero"></div>
-      <!-- News list -->
+
       <div class="news-section">
+        <div class="controls">
+          <button data-sent="all" class="chip active">All</button>
+          <button data-sent="positive" class="chip">Positive</button>
+          <button data-sent="neutral" class="chip">Neutral</button>
+          <button data-sent="negative" class="chip">Negative</button>
+        </div>
         <h2>News</h2>
         <div id="newsList" class="news-list"></div>
       </div>
     </section>
 
-    <!-- Right column: trending topics and daily feed -->
     <aside class="right">
-      <!-- Trending topics cluster -->
       <div class="topics">
         <h3>Trending Topics</h3>
         <div id="topicsList" class="topics-list"></div>
       </div>
-      <!-- Daily feed list -->
       <div class="daily">
         <h3>Daily News</h3>
         <div id="daily" class="daily-list"></div>
@@ -48,12 +46,10 @@
     </aside>
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
-    <span>© <span id="year"></span> Informed 360 — Indian news & sentiment for readers.</span>
+    <span>© <span id="year"></span> Informed 360 — Indian news & sentiment.</span>
   </footer>
 
-  <!-- Client‑side logic -->
   <script src="app.js" defer></script>
 </body>
 </html>
