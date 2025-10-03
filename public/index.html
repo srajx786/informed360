@@ -2,16 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>Informed360</title>
+  <title>Informed360 News</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Informed360 News — India-first news with positive/neutral/negative sentiment analysis."/>
+  <meta property="og:site_name" content="Informed360 News"/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="/assets/informed360-logo.png">
+  <link rel="apple-touch-icon" href="/assets/informed360-logo.png">
+  <meta name="theme-color" content="#1f4fd6"/>
+
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <!-- Header -->
   <header class="gn-header">
     <div class="gn-topbar">
-      <div class="gn-logo">Informed360</div>
+      <a class="gn-brand" href="/" aria-label="Informed360 News">
+        <img class="brand-image" src="/assets/informed360-logo.png" alt="Informed360 News logo" width="148" height="36"/>
+        <span class="sr-only">Informed360 News</span>
+      </a>
 
       <form id="searchForm" class="gn-search" role="search" aria-label="Search">
         <span class="icon" aria-hidden="true">🔍</span>
@@ -46,7 +56,7 @@
     </nav>
   </header>
 
-  <!-- Briefing -->
+  <!-- Briefing / you can add ticker/weather later if needed -->
   <section class="gn-briefing">
     <div class="briefing-left">
       <h1 class="display-title">Your briefing</h1>
@@ -105,38 +115,8 @@
   </main>
 
   <footer class="footer">
-    <span>© <span id="year"></span> Informed360 — Indian news & sentiment.</span>
+    <span>© <span id="year"></span> Informed360 News — Indian news & sentiment.</span>
   </footer>
-
-  <!-- Sign-in modal -->
-  <dialog id="signinModal" class="modal">
-    <form method="dialog" class="modal-card" id="signinForm">
-      <h3 class="display-title">Sign in & preferences</h3>
-      <label> Name
-        <input type="text" id="prefName" placeholder="Your name"/>
-      </label>
-      <label> City
-        <input type="text" id="prefCity" placeholder="e.g., Mumbai"/>
-      </label>
-      <fieldset>
-        <legend>Interests</legend>
-        <div class="grid-2">
-          <label><input type="checkbox" value="india" checked/> India</label>
-          <label><input type="checkbox" value="world"/> World</label>
-          <label><input type="checkbox" value="business"/> Business</label>
-          <label><input type="checkbox" value="technology"/> Technology</label>
-          <label><input type="checkbox" value="entertainment"/> Entertainment</label>
-          <label><input type="checkbox" value="sports"/> Sports</label>
-          <label><input type="checkbox" value="science"/> Science</label>
-          <label><input type="checkbox" value="health"/> Health</label>
-        </div>
-      </fieldset>
-      <menu class="actions">
-        <button value="cancel" class="btn ghost">Cancel</button>
-        <button id="savePrefs" value="default" class="btn">Save</button>
-      </menu>
-    </form>
-  </dialog>
 
   <script src="app.js" defer></script>
 </body>
