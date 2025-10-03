@@ -1,6 +1,7 @@
 {
   "name": "informed360",
   "version": "1.0.0",
+  "description": "Informed360 News — India-first news with sentiment analysis.",
   "type": "module",
   "scripts": {
     "start": "node server.js"
@@ -9,7 +10,7 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "rss-parser": "^3.13.0",
-    "vader-sentiment": "^1.1.3",
-    "yahoo-finance2": "^2.7.5"
+    "vader-sentiment": "^1.1.5",
+    "yahoo-finance2": "^2.12.3"
   }
 }
