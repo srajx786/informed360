@@ -38,68 +38,48 @@ const state = {
   topics: [],
   pins: [],
   profile: loadProfile(),
-  theme: localStorage.getItem("theme") || preferredTheme(), // default to system
+  theme: localStorage.getItem("theme") || preferredTheme(),
   hero: { index:0, timer:null, pause:false }
 };
 function loadProfile(){ try { return JSON.parse(localStorage.getItem("i360_profile") || "{}"); } catch { return {}; } }
 function saveProfile(p){ localStorage.setItem("i360_profile", JSON.stringify(p || {})); state.profile = p || {}; }
-
 function applyTheme(){
   const t = state.theme || preferredTheme();
   document.documentElement.setAttribute("data-theme", t);
   const btn = $("#themeToggle");
-  if (btn) {
-    btn.textContent = (t === "dark") ? "🌞" : "🌙";
-    btn.setAttribute("aria-label", `Switch to ${t==="dark"?"light":"dark"} theme`);
-    btn.title = btn.getAttribute("aria-label");
-  }
+  if (btn) { btn.textContent = (t === "dark") ? "🌞" : "🌙"; }
 }
 
-/* date + weather */
+/* date + weather + markets (unchanged) */
 const todayStr = ()=> new Date().toLocaleDateString(undefined,{weekday:"long", day:"numeric", month:"long"});
-async function getWeather(){
-  try{
-    const coords = await new Promise((res)=>{
-      if(!navigator.geolocation) return res({latitude:19.0760, longitude:72.8777});
-      navigator.geolocation.getCurrentPosition(
-        p=>res({latitude:p.coords.latitude, longitude:p.coords.longitude}),
-        ()=>res({latitude:19.0760, longitude:72.8777})
-      );
-    });
-    const wx = await fetchJSON(`https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}&longitude=${coords.longitude}&current=temperature_2m,weather_code&timezone=auto`);
-    let city = state.profile?.city || "Your area";
-    if (!state.profile?.city) {
-      try {
-        const rev = await fetchJSON(`https://geocoding-api.open-meteo.com/v1/reverse?latitude=${coords.latitude}&longitude=${coords.longitude}&language=en`);
-        city = rev?.results?.[0]?.name || city;
-      } catch{}
-    }
-    const t = Math.round(wx?.current?.temperature_2m ?? 0);
-    const code = wx?.current?.weather_code ?? 0;
-    const icon = code>=0 && code<3 ? "🌙" : (code<50 ? "⛅" : "🌧️");
-    $("#weatherCard").innerHTML = `<div class="wx-icon">${icon}</div><div><div class="wx-city">${city}</div><div class="wx-temp">${t}°C</div></div>`;
-  }catch{ $("#weatherCard").textContent = "Weather unavailable"; }
-}
+async function getWeather(){ try{
+  const coords = await new Promise((res)=>{
+    if(!navigator.geolocation) return res({latitude:19.0760, longitude:72.8777});
+    navigator.geolocation.getCurrentPosition(
+      p=>res({latitude:p.coords.latitude, longitude:p.coords.longitude}),
+      ()=>res({latitude:19.0760, longitude:72.8777})
+    );
+  });
+  const wx = await fetchJSON(`https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}&longitude=${coords.longitude}&current=temperature_2m,weather_code&timezone=auto`);
+  const city = state.profile?.city || "Your area";
+  const t = Math.round(wx?.current?.temperature_2m ?? 0);
+  const icon = "⛅";
+  $("#weatherCard").innerHTML = `<div class="wx-icon">${icon}</div><div><div class="wx-city">${city}</div><div class="wx-temp">${t}°C</div></div>`;
+} catch{} }
+async function loadMarkets(){ try{
+  const data = await fetchJSON("/api/markets");
+  $("#marketTicker").innerHTML = (data.quotes||[]).map(q=>{
+    const price = (q.price ?? "—");
+    const pct = Number(q.changePercent ?? 0);
+    const cls = pct >= 0 ? "up" : "down";
+    const sign = pct >= 0 ? "▲" : "▼";
+    const pctTxt = isFinite(pct) ? `${sign} ${Math.abs(pct).toFixed(2)}%` : "—";
+    const pTxt = typeof price === "number" ? price.toLocaleString(undefined,{maximumFractionDigits:2}) : price;
+    return `<div class="qpill"><span class="sym">${q.pretty || q.symbol}</span><span class="price">${pTxt}</span><span class="chg ${cls}">${pctTxt}</span></div>`;
+  }).join("");
+} catch{} }
 
-/* markets */
-async function loadMarkets(){
-  try{
-    const data = await fetchJSON("/api/markets");
-    const el = $("#marketTicker");
-    const items = (data.quotes || []).map(q=>{
-      const price = (q.price ?? "—");
-      const pct = Number(q.changePercent ?? 0);
-      const cls = pct >= 0 ? "up" : "down";
-      const sign = pct >= 0 ? "▲" : "▼";
-      const pctTxt = isFinite(pct) ? `${sign} ${Math.abs(pct).toFixed(2)}%` : "—";
-      const pTxt = typeof price === "number" ? price.toLocaleString(undefined,{maximumFractionDigits:2}) : price;
-      return `<div class="qpill"><span class="sym">${q.pretty || q.symbol}</span><span class="price">${pTxt}</span><span class="chg ${cls}">${pctTxt}</span></div>`;
-    }).join("");
-    el.innerHTML = items || "";
-  }catch{ $("#marketTicker").innerHTML = ""; }
-}
-
-/* loads */
+/* load all */
 async function loadAll(){
   const qs = new URLSearchParams();
   if (state.filter !== "all") qs.set("sentiment", state.filter);
@@ -126,13 +106,47 @@ async function loadAll(){
   renderAll();
 }
 
-/* renderers */
-function safeFavicon(link){
-  try{ const d = new URL(link).hostname.replace(/^www\./,''); return `https://logo.clearbit.com/${d}`; }catch{ return ""; }
+/* favicon helper */
+function safeFavicon(link){ try{ const d = new URL(link).hostname.replace(/^www\./,''); return `https://logo.clearbit.com/${d}`; }catch{ return ""; } }
+
+/* tooltips: generic wrapper */
+function wrapWithTip(innerHtml, tipHtml){
+  return `<div class="has-tip">
+    ${innerHtml}
+    <div class="tip" role="tooltip">${tipHtml}</div>
+  </div>`;
 }
+
+/* Pinned */
+function renderPinned(){
+  const tip = `
+    <h4>How we calculate</h4>
+    <small>We run <b>VADER</b> on each article’s <i>title + summary</i> to get Positive/Neutral/Negative. Values are shown as percentages.</small>
+  `;
+  $("#pinned").innerHTML = state.pins.map(a => {
+    const icon = a.sourceIcon || safeFavicon(a.link);
+    const content = `
+      <div class="row">
+        <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
+        <div class="row-meta">
+          <span class="source-chip"><img src="${icon}" alt="" />${a.source}</span>
+          <span>·</span>
+          <span>${new Date(a.publishedAt).toLocaleString()}</span>
+        </div>
+        ${renderSentiment(a.sentiment, true)}
+      </div>`;
+    return wrapWithTip(content, tip);
+  }).join("");
+}
+
+/* News & Daily list (center column) */
 function card(a){
   const icon = a.sourceIcon || safeFavicon(a.link);
-  return `
+  const tip = `
+    <h4>How this score is made</h4>
+    <small>VADER sentiment on <i>title + snippet</i>. It does not read paywalled content.</small>
+  `;
+  const inner = `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
       <img class="thumb" src="${a.image}" alt="">
       <div>
@@ -145,38 +159,33 @@ function card(a){
         ${renderSentiment(a.sentiment, true)}
       </div>
     </a>`;
-}
-function renderPinned(){
-  $("#pinned").innerHTML = state.pins.map(a => {
-    const icon = a.sourceIcon || safeFavicon(a.link);
-    return `
-    <div class="row">
-      <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
-      <div class="row-meta">
-        <span class="source-chip"><img src="${icon}" alt="" />${a.source}</span>
-        <span>·</span>
-        <span>${new Date(a.publishedAt).toLocaleString()}</span>
-      </div>
-      ${renderSentiment(a.sentiment, true)}
-    </div>`;
-  }).join("");
+  return wrapWithTip(inner, tip);
 }
 function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
 function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
+
+/* HERO */
 function renderHero(){
   const slides = state.articles.slice(0,4);
   const track = $("#heroTrack"); const dots = $("#heroDots");
   if (!slides.length){ track.innerHTML=""; dots.innerHTML=""; return; }
-  track.innerHTML = slides.map(a => `
-    <article class="hero-slide">
-      <div class="hero-img"><img src="${a.image}" alt=""></div>
-      <div class="hero-content">
-        <h3>${a.title}</h3>
-        <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
-        ${renderSentiment(a.sentiment, true)}
-        <div class="meta"><span class="source-chip"><img src="${a.sourceIcon || safeFavicon(a.link)}" alt=""/>${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
-      </div>
-    </article>`).join("");
+  track.innerHTML = slides.map(a => {
+    const tip = `
+      <h4>Hero calculation</h4>
+      <small>VADER on headline + snippet → Positive/Neutral/Negative. Shown here for a single article.</small>
+    `;
+    const inner = `
+      <article class="hero-slide">
+        <div class="hero-img"><img src="${a.image}" alt=""></div>
+        <div class="hero-content">
+          <h3>${a.title}</h3>
+          <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
+          ${renderSentiment(a.sentiment, true)}
+          <div class="meta"><span class="source-chip"><img src="${a.sourceIcon || safeFavicon(a.link)}" alt=""/>${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
+        </div>
+      </article>`;
+    return wrapWithTip(inner, tip);
+  }).join("");
   dots.innerHTML = slides.map((_,i)=>`<button data-i="${i}" aria-label="Go to slide ${i+1}"></button>`).join("");
   updateHero(0);
 }
@@ -188,18 +197,35 @@ function updateHero(i){
 }
 function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
 function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
+
+/* Trending from Google Trends (with per-source breakdown tooltip) */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
     const icons = (t.icons || []).map(u=> `<img class="favicon" src="${u}" alt="">`).join("");
-    return `
+    const rows = (t.breakdown || []).slice(0,6).map(b=>`
+      <div class="tip-row">
+        <span class="tip-source"><img class="favicon" src="${b.icon}" alt=""> ${b.domain}</span>
+        <span class="tip-pct">P ${fmtPct(b.pos)} · N ${fmtPct(b.neu)} · Neg ${fmtPct(b.neg)} (${b.articles})</span>
+      </div>
+    `).join("") || `<small>No articles found yet.</small>`;
+
+    const tip = `
+      <h4>How we calculate</h4>
+      <small>${t.explain}</small>
+      <div class="tip-breakdown">${rows}</div>
+    `;
+
+    const inner = `
       <div class="row">
         <div class="row-title">${t.title}</div>
         <div class="row-meta">
           <span>${t.count} articles</span> · <span>${t.sources} sources</span>
           ${icons ? `<span class="row-icons">${icons}</span>` : ``}
         </div>
-        ${renderSentiment({ posP:t.sentiment.pos, neuP:t.sentiment.neu, negP:t.sentiment.neg }, true)}
+        ${renderSentiment({ pos:t.sentiment.pos, neu:t.sentiment.neu, neg:t.sentiment.neg }, true)}
       </div>`;
+
+    return wrapWithTip(inner, tip);
   }).join("");
 }
 
@@ -242,7 +268,6 @@ $("#themeToggle")?.addEventListener("click", ()=>{
 });
 
 /* boot */
-document.getElementById("year").textContent = new Date().getFullYear();
 applyTheme();
 $("#briefingDate").textContent = todayStr();
 getWeather();
