@@ -25,7 +25,7 @@ function renderSentiment(s, showNumbers = true){
     </div>`;
 }
 
-/* state */
+/* theme */
 function preferredTheme(){
   return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
@@ -42,7 +42,6 @@ const state = {
   hero: { index:0, timer:null, pause:false }
 };
 function loadProfile(){ try { return JSON.parse(localStorage.getItem("i360_profile") || "{}"); } catch { return {}; } }
-function saveProfile(p){ localStorage.setItem("i360_profile", JSON.stringify(p || {})); state.profile = p || {}; }
 function applyTheme(){
   const t = state.theme || preferredTheme();
   document.documentElement.setAttribute("data-theme", t);
@@ -50,34 +49,12 @@ function applyTheme(){
   if (btn) { btn.textContent = (t === "dark") ? "🌞" : "🌙"; }
 }
 
-/* date + weather + markets (unchanged) */
+/* date/briefing placeholders */
 const todayStr = ()=> new Date().toLocaleDateString(undefined,{weekday:"long", day:"numeric", month:"long"});
-async function getWeather(){ try{
-  const coords = await new Promise((res)=>{
-    if(!navigator.geolocation) return res({latitude:19.0760, longitude:72.8777});
-    navigator.geolocation.getCurrentPosition(
-      p=>res({latitude:p.coords.latitude, longitude:p.coords.longitude}),
-      ()=>res({latitude:19.0760, longitude:72.8777})
-    );
-  });
-  const wx = await fetchJSON(`https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}&longitude=${coords.longitude}&current=temperature_2m,weather_code&timezone=auto`);
-  const city = state.profile?.city || "Your area";
-  const t = Math.round(wx?.current?.temperature_2m ?? 0);
-  const icon = "⛅";
-  $("#weatherCard").innerHTML = `<div class="wx-icon">${icon}</div><div><div class="wx-city">${city}</div><div class="wx-temp">${t}°C</div></div>`;
-} catch{} }
-async function loadMarkets(){ try{
-  const data = await fetchJSON("/api/markets");
-  $("#marketTicker").innerHTML = (data.quotes||[]).map(q=>{
-    const price = (q.price ?? "—");
-    const pct = Number(q.changePercent ?? 0);
-    const cls = pct >= 0 ? "up" : "down";
-    const sign = pct >= 0 ? "▲" : "▼";
-    const pctTxt = isFinite(pct) ? `${sign} ${Math.abs(pct).toFixed(2)}%` : "—";
-    const pTxt = typeof price === "number" ? price.toLocaleString(undefined,{maximumFractionDigits:2}) : price;
-    return `<div class="qpill"><span class="sym">${q.pretty || q.symbol}</span><span class="price">${pTxt}</span><span class="chg ${cls}">${pctTxt}</span></div>`;
-  }).join("");
-} catch{} }
+
+/* optional placeholders (no-ops); keep DOM happy */
+function getWeather(){ $("#weatherCard").innerHTML = `<div>Weather</div>`; }
+function loadMarkets(){ $("#marketTicker").innerHTML = ``; }
 
 /* load all */
 async function loadAll(){
@@ -98,9 +75,6 @@ async function loadAll(){
   if (state.category === "local" && state.profile?.city) {
     const c = state.profile.city.toLowerCase();
     state.articles = state.articles.filter(a => (a.title||"").toLowerCase().includes(c) || (a.link||"").toLowerCase().includes(c));
-  } else if (state.category === "foryou" && Array.isArray(state.profile?.interests) && state.profile.interests.length) {
-    const wanted = new Set(state.profile.interests);
-    state.articles = state.articles.filter(a => wanted.has(a.category));
   }
 
   renderAll();
@@ -109,7 +83,7 @@ async function loadAll(){
 /* favicon helper */
 function safeFavicon(link){ try{ const d = new URL(link).hostname.replace(/^www\./,''); return `https://logo.clearbit.com/${d}`; }catch{ return ""; } }
 
-/* tooltips: generic wrapper */
+/* tooltips wrapper */
 function wrapWithTip(innerHtml, tipHtml){
   return `<div class="has-tip">
     ${innerHtml}
@@ -121,7 +95,7 @@ function wrapWithTip(innerHtml, tipHtml){
 function renderPinned(){
   const tip = `
     <h4>How we calculate</h4>
-    <small>We run <b>VADER</b> on each article’s <i>title + summary</i> to get Positive/Neutral/Negative. Values are shown as percentages.</small>
+    <small>We run <b>VADER</b> on each article’s <i>title + summary</i> to get Positive/Neutral/Negative.</small>
   `;
   $("#pinned").innerHTML = state.pins.map(a => {
     const icon = a.sourceIcon || safeFavicon(a.link);
@@ -143,8 +117,8 @@ function renderPinned(){
 function card(a){
   const icon = a.sourceIcon || safeFavicon(a.link);
   const tip = `
-    <h4>How this score is made</h4>
-    <small>VADER sentiment on <i>title + snippet</i>. It does not read paywalled content.</small>
+    <h4>This score</h4>
+    <small>VADER on <i>headline + snippet</i> for this article. We don’t crawl paywalls.</small>
   `;
   const inner = `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
@@ -172,7 +146,7 @@ function renderHero(){
   track.innerHTML = slides.map(a => {
     const tip = `
       <h4>Hero calculation</h4>
-      <small>VADER on headline + snippet → Positive/Neutral/Negative. Shown here for a single article.</small>
+      <small>VADER on headline + snippet → Positive/Neutral/Negative.</small>
     `;
     const inner = `
       <article class="hero-slide">
@@ -198,7 +172,7 @@ function updateHero(i){
 function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
 function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
 
-/* Trending from Google Trends (with per-source breakdown tooltip) */
+/* Trending (from Google Trends) with per-source breakdown tooltips */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
     const icons = (t.icons || []).map(u=> `<img class="favicon" src="${u}" alt="">`).join("");
@@ -232,8 +206,8 @@ function renderTopics(){
 /* glue */
 function renderAll(){
   $("#briefingDate").textContent = todayStr();
-  renderHero(); renderPinned(); renderNews(); renderDaily(); renderTopics();
   $("#year").textContent = new Date().getFullYear();
+  renderHero(); renderPinned(); renderNews(); renderDaily(); renderTopics();
 }
 
 /* interactions */
@@ -245,9 +219,6 @@ $$(".chip[data-sent]").forEach(btn=>{
   });
 });
 $("#expChip")?.addEventListener("click", ()=>{ state.experimental = !state.experimental; $("#expChip").classList.toggle("active", state.experimental); loadAll(); });
-$("#searchForm")?.addEventListener("submit", (e)=>{ e.preventDefault(); state.query = $("#searchInput").value.trim(); renderAll(); });
-$("#searchInput")?.addEventListener("input", (e)=>{ state.query = e.target.value.trim(); renderAll(); });
-
 $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
   tab.addEventListener("click", ()=>{
     $$(".gn-tabs .tab").forEach(t=>t.classList.remove("active"));
@@ -260,7 +231,6 @@ $("#heroNext")?.addEventListener("click", ()=> updateHero(state.hero.index+1));
 $("#hero")?.addEventListener("mouseenter", ()=> state.hero.pause = true);
 $("#hero")?.addEventListener("mouseleave", ()=> state.hero.pause = false);
 
-/* Theme toggle */
 $("#themeToggle")?.addEventListener("click", ()=>{
   state.theme = (state.theme === "dark") ? "light" : "dark";
   localStorage.setItem("theme", state.theme);
@@ -274,5 +244,3 @@ getWeather();
 loadMarkets();
 loadAll();
 startHeroAuto();
-setInterval(loadAll, 1000*60*5);
-setInterval(loadMarkets, 1000*60*5);
