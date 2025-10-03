@@ -17,7 +17,7 @@ const FEEDS = JSON.parse(
 );
 const REFRESH_MS = Math.max(2, FEEDS.refreshMinutes || 10) * 60 * 1000;
 
-/* RSS parser with resilient headers */
+/* Robust RSS parser (helps avoid 403/timeout) */
 const parser = new Parser({
   timeout: 15000,
   requestOptions: {
@@ -37,7 +37,7 @@ const domainFromUrl = (u = "") => {
 };
 const faviconForDomain = (d) => d ? `https://logo.clearbit.com/${d}` : "";
 
-/* Sentiment (VADER) */
+/* VADER sentiment → percentages + label */
 const scoreSentiment = (text) => {
   const s = vader.SentimentIntensityAnalyzer.polarity_scores(text || "") || {
     pos: 0, neg: 0, neu: 1, compound: 0
@@ -78,7 +78,7 @@ const extractImage = (item) => {
   return d ? `https://logo.clearbit.com/${d}` : "";
 };
 
-/* Helper: polite per-host concurrency */
+/* Polite host concurrency */
 const hostCounters = new Map();
 const MAX_PER_HOST = 2;
 const acquire = async (host) => {
@@ -86,16 +86,15 @@ const acquire = async (host) => {
   hostCounters.set(host, (hostCounters.get(host) || 0) + 1);
 };
 const release = (host) => hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
+const parseURL = async (u) => parser.parseURL(u);
 
-async function parseURL(u){ return parser.parseURL(u); }
-
-/* Google News query builders */
+/* Google News helpers */
 const gNewsSearch = (q) =>
   `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=en-IN&gl=IN&ceid=IN:en`;
 const gNewsForDomain = (domain) =>
   `https://news.google.com/rss/search?q=site:${encodeURIComponent(domain)}&hl=en-IN&gl=IN&ceid=IN:en`;
 
-/* Fetchers with fallback to Google News */
+/* Direct → fallback to Google News (per site) */
 async function fetchDirect(url) {
   const host = domainFromUrl(url);
   await acquire(host);
@@ -110,21 +109,20 @@ async function fetchWithFallback(url) {
     const g = await parseURL(gNewsForDomain(domain));
     g.title = g.title || domain;
     return g;
-  } catch (e) {
+  } catch {
     try {
       const g = await parseURL(gNewsForDomain(domain));
       g.title = g.title || domain;
       console.warn("[FEED Fallback]", domain, "-> Google News RSS");
       return g;
     } catch (e2) {
-      const msg = e?.statusCode ? `Status ${e.statusCode}` : (e?.code || e?.message || "Unknown");
-      console.warn("[FEED ERR]", domain, "->", msg);
+      console.warn("[FEED ERR]", domain, "->", e2?.message || e2);
       return { title: domain, items: [] };
     }
   }
 }
 
-/* Get normal RSS news */
+/* Build article list from feeds */
 async function fetchList(urls) {
   const articles = [];
   const seen = new Set();
@@ -156,17 +154,14 @@ async function fetchList(urls) {
   return { fetchedAt: Date.now(), articles };
 }
 
+/* Cache core/experimental */
 let CORE = { fetchedAt: 0, articles: [] };
 let EXP  = { fetchedAt: 0, articles: [] };
 const uniqueMerge = (a, b) => {
   const set = new Set(); const out = [];
-  for (const x of [...a, ...b]) {
-    const k = x.link || x.title; if (set.has(k)) continue;
-    set.add(k); out.push(x);
-  }
+  for (const x of [...a, ...b]) { const k = x.link || x.title; if (set.has(k)) continue; set.add(k); out.push(x); }
   return out;
 };
-
 async function refreshCore(){ CORE = await fetchList(FEEDS.feeds || []); }
 async function refreshExp(){  EXP  = await fetchList(FEEDS.experimental || []); }
 await refreshCore(); await refreshExp();
@@ -174,10 +169,7 @@ setInterval(refreshCore, REFRESH_MS);
 setInterval(refreshExp, REFRESH_MS);
 
 /* ---------- GOOGLE TRENDS (INDIA) ---------- */
-/* Source of truth for topics:
-   https://trends.google.com/trends/trendingsearches/daily/rss?geo=IN
-   (maps directly to https://trends.google.com/trending?geo=IN&hl=en-US)
-*/
+/* Daily trending RSS (maps to your link): */
 async function fetchGoogleTrendsIN(limit = 8) {
   const url = "https://trends.google.com/trends/trendingsearches/daily/rss?geo=IN";
   try {
@@ -190,12 +182,7 @@ async function fetchGoogleTrendsIN(limit = 8) {
   }
 }
 
-/* Build topics from trends:
-   1) For each trend, fetch Google News RSS
-   2) Group articles by domain (source)
-   3) Compute sentiment PER SOURCE (avg of its articles)
-   4) Aggregate across sources (equal weight) → overall %s
-*/
+/* Build topics → search Google News → per-source sentiment → overall */
 async function buildTrendingFromTrends(limit = 8) {
   const queries = await fetchGoogleTrendsIN(limit);
   if (!queries.length) return [];
@@ -265,7 +252,7 @@ async function buildTrendingFromTrends(limit = 8) {
   return topics;
 }
 
-/* ---------- Endpoints ---------- */
+/* ---------- API ---------- */
 app.get("/api/news", (req, res) => {
   const limit = Number(req.query.limit || 200);
   const sentiment = req.query.sentiment;
@@ -287,32 +274,6 @@ app.get("/api/topics", async (_req,res)=>{
     console.warn("[/api/topics]", e?.message || e);
     res.json({ fetchedAt: Date.now(), topics: [] });
   }
-});
-
-/* Markets (left intact) */
-let yfModule = null;
-async function loadYF(){
-  try { if (yfModule) return yfModule; const mod = await import("yahoo-finance2"); yfModule = mod?.default || mod; return yfModule; }
-  catch { return null; }
-}
-app.get("/api/markets", async (_req, res) => {
-  try {
-    const yf = await loadYF();
-    const symbols = [
-      { s: "^BSESN", pretty: "BSE Sensex" },
-      { s: "^NSEI",  pretty: "NSE Nifty" },
-      { s: "GC=F",   pretty: "Gold" },
-      { s: "CL=F",   pretty: "Crude Oil" },
-      { s: "USDINR=X", pretty: "USD/INR" }
-    ];
-    if (!yf) return res.json({ updatedAt: Date.now(), quotes: symbols.map(x => ({ symbol:x.s, pretty:x.pretty, price:null, change:null, changePercent:null })) });
-    const quotes = await yf.quote(symbols.map(x => x.s));
-    const out = quotes.map((q, i) => ({
-      symbol: q.symbol, pretty: symbols[i].pretty,
-      price: q.regularMarketPrice, change: q.regularMarketChange, changePercent: q.regularMarketChangePercent
-    }));
-    res.json({ updatedAt: Date.now(), quotes: out });
-  } catch { res.json({ updatedAt: Date.now(), quotes: [] }); }
 });
 
 app.get("/health", (_req,res)=> res.json({ ok:true, at:Date.now() }));
