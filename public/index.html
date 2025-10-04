@@ -7,9 +7,11 @@
   <meta name="description" content="Informed360 News — India-first news with positive/neutral/negative sentiment analysis."/>
   <meta property="og:site_name" content="Informed360 News"/>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="icon" type="image/png" href="/assets/informed360-logo.png">
   <link rel="apple-touch-icon" href="/assets/informed360-logo.png">
   <meta name="theme-color" content="#1f4fd6"/>
+
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -21,7 +23,7 @@
         <span class="sr-only">Informed360 News</span>
       </a>
 
-      <form id="searchForm" class="gn-search" role="search">
+      <form id="searchForm" class="gn-search" role="search" aria-label="Search">
         <span class="icon" aria-hidden="true">🔍</span>
         <input id="searchInput" type="search" placeholder="Search for topics, locations & sources" autocomplete="off"/>
         <button type="button" class="chevron" tabindex="-1" aria-hidden="true">▾</button>
@@ -54,7 +56,7 @@
     </nav>
   </header>
 
-  <!-- Briefing -->
+  <!-- Briefing / you can add ticker/weather later if needed -->
   <section class="gn-briefing">
     <div class="briefing-left">
       <h1 class="display-title">Your briefing</h1>
