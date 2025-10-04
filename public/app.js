@@ -178,7 +178,7 @@ function updateHero(i){
 function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
 function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
 
-/* === Trending (already from Google Trends via server) === */
+/* === Trending === */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
     const icons = (t.icons || []).map(u=> `<img class="favicon" src="${u}" alt="">`).join("");
@@ -210,15 +210,18 @@ $$(".chip[data-sent]").forEach(btn=>{
   });
 });
 $("#expChip")?.addEventListener("click", ()=>{ state.experimental = !state.experimental; $("#expChip").classList.toggle("active", state.experimental); loadAll(); });
+
+/* Tabs: keep to single line + center active tab; NO OVERLAP */
 $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
   tab.addEventListener("click", ()=>{
     $$(".gn-tabs .tab").forEach(t=>t.classList.remove("active"));
     tab.classList.add("active");
-    state.category = tab.dataset.cat; loadAll();
-    // ensure the active tab is visible on mobile
-    tab.scrollIntoView({inline:"center", behavior:"smooth", block:"nearest"});
+    state.category = tab.dataset.cat;
+    loadAll();
+    tab.scrollIntoView({behavior:"smooth", inline:"center", block:"nearest"});
   });
 });
+
 $("#heroPrev")?.addEventListener("click", ()=> updateHero(state.hero.index-1));
 $("#heroNext")?.addEventListener("click", ()=> updateHero(state.hero.index+1));
 $("#hero")?.addEventListener("mouseenter", ()=> state.hero.pause = true);
@@ -255,5 +258,5 @@ loadMarkets();
 loadAll();
 startHeroAuto();
 
-/* Optional: periodic refresh on mobile too */
+/* Periodic refresh */
 setInterval(loadAll, 1000*60*5);
