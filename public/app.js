@@ -1,124 +1,63 @@
-/* ---------- Tiny helpers ---------- */
+/* helpers */
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
-const pct = (n) => `${Math.max(0, Math.min(100, Math.round(Number(n)||0)))}%`;
-async function getJSON(url){ const r = await fetch(url); if(!r.ok) throw new Error(await r.text()); return r.json(); }
+const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
+async function fetchJSON(u){ const r = await fetch(u); if(!r.ok) throw new Error(await r.text()); return r.json(); }
 
-/* ---------- Theme ---------- */
-const prefersDark = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-function applyTheme(){
-  const t = localStorage.getItem("theme") || (prefersDark() ? "dark" : "light");
-  document.documentElement.setAttribute("data-theme", t);
-  const btn = $("#themeToggle"); if (btn) btn.textContent = (t === "dark") ? "🌞" : "🌙";
+/* sentiment UI */
+function renderSentiment(s, showNumbers = true){
+  const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
+  const neu = Math.max(0, Number(s.neuP ?? s.neu ?? 0));
+  const neg = Math.max(0, Number(s.negP ?? s.neg ?? 0));
+  return `
+    <div class="sentiment ${showNumbers?'':'slim'}">
+      <div class="bar">
+        <span class="segment pos" style="width:${pos}%"></span>
+        <span class="segment neu" style="width:${neu}%"></span>
+        <span class="segment neg" style="width:${neg}%"></span>
+      </div>
+      ${showNumbers ? `
+      <div class="scores">
+        <span>Positive ${fmtPct(pos)}</span>
+        <span>Neutral ${fmtPct(neu)}</span>
+        <span>Negative ${fmtPct(neg)}</span>
+      </div>` : ``}
+    </div>`;
 }
-$("#themeToggle")?.addEventListener("click", ()=>{
-  const cur = document.documentElement.getAttribute("data-theme") || "light";
-  const next = (cur === "dark") ? "light" : "dark";
-  document.documentElement.setAttribute("data-theme", next);
-  localStorage.setItem("theme", next);
-  $("#themeToggle").textContent = (next === "dark") ? "🌞" : "🌙";
-});
 
-/* ---------- State ---------- */
+/* theme */
+function preferredTheme(){
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
 const state = {
   category: "home",
   filter: "all",
   experimental: false,
+  query: "",
   articles: [],
-  pins: [],
   topics: [],
+  pins: [],
+  theme: localStorage.getItem("theme") || preferredTheme(),
+  hero: { index:0, timer:null, pause:false }
 };
+function applyTheme(){
+  const t = state.theme || preferredTheme();
+  document.documentElement.setAttribute("data-theme", t);
+  const btn = $("#themeToggle");
+  if (btn) { btn.textContent = (t === "dark") ? "🌞" : "🌙"; }
+}
+const todayStr = ()=> new Date().toLocaleDateString(undefined,{weekday:"long", day:"numeric", month:"long"});
+function safeFavicon(link){ try{ const d = new URL(link).hostname.replace(/^www\./,''); return `https://logo.clearbit.com/${d}`; }catch{ return ""; } }
 
-/* ---------- Sentiment renderer ---------- */
-function renderSentiment(s){
-  const pos = s.posP ?? s.pos ?? 0;
-  const neu = s.neuP ?? s.neu ?? 0;
-  const neg = s.negP ?? s.neg ?? 0;
-  return `
-    <div class="sentiment">
-      <div class="bar">
-        <span class="segment pos" style="width:${pct(pos)}"></span>
-        <span class="segment neu" style="width:${pct(neu)}"></span>
-        <span class="segment neg" style="width:${pct(neg)}"></span>
-      </div>
-      <div class="scores">
-        <span>Positive ${pct(pos)}</span>
-        <span>Neutral ${pct(neu)}</span>
-        <span>Negative ${pct(neg)}</span>
-      </div>
-    </div>`;
+/* tooltips wrapper */
+function wrapWithTip(innerHtml, tipHtml){
+  return `<div class="has-tip">
+    ${innerHtml}
+    <div class="tip" role="tooltip">${tipHtml}</div>
+  </div>`;
 }
 
-/* ---------- Markets (RESTORED) ---------- */
-async function loadMarkets(){
-  try{
-    const data = await getJSON("/api/markets");
-    const el = $("#marketTicker");
-    const q = data.quotes || [];
-    el.innerHTML = q.map(it => {
-      const price = (it.price ?? "--");
-      const chgPct = Number(it.changePercent ?? 0);
-      const sign = chgPct > 0 ? "up" : (chgPct < 0 ? "down" : "");
-      const arrow = chgPct > 0 ? "▲" : (chgPct < 0 ? "▼" : "•");
-      return `
-        <span class="badge" title="${it.pretty}">
-          <span>${it.pretty}</span>
-          <span class="val">${price}</span>
-          <span class="chg ${sign}">${arrow} ${Math.abs(chgPct).toFixed(2)}%</span>
-        </span>`;
-    }).join("");
-  }catch(e){
-    console.warn("markets", e);
-    $("#marketTicker").innerHTML = `<span class="badge">Markets unavailable</span>`;
-  }
-}
-
-/* ---------- News fetch/render ---------- */
-function favicon(link){ try{ return `https://logo.clearbit.com/${new URL(link).hostname.replace(/^www\./,'')}` }catch{return ""} }
-
-function newsCard(a){
-  const icon = a.sourceIcon || favicon(a.link);
-  return `
-    <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
-      <img class="thumb" src="${a.image}" alt="">
-      <div>
-        <div class="title">${a.title}</div>
-        <div class="meta">
-          <span><img class="favicon" src="${icon}" alt=""> ${a.source}</span>
-          <span>·</span>
-          <span>${new Date(a.publishedAt).toLocaleString()}</span>
-        </div>
-        ${renderSentiment(a.sentiment)}
-      </div>
-    </a>`;
-}
-
-function renderPinned(){
-  $("#pinned").innerHTML = state.pins.map(a => `
-    <div class="row">
-      <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
-      <div class="row-meta">
-        <span><img class="favicon" src="${a.sourceIcon || favicon(a.link)}" alt=""> ${a.source}</span>
-        <span>·</span>
-        <span>${new Date(a.publishedAt).toLocaleString()}</span>
-      </div>
-      ${renderSentiment(a.sentiment)}
-    </div>`).join("");
-}
-
-function renderNews(){ $("#newsList").innerHTML = state.articles.slice(3, 15).map(newsCard).join(""); }
-
-function renderTopics(){
-  $("#topicsList").innerHTML = state.topics.map(t => `
-    <div class="row">
-      <div class="row-title">${t.title}</div>
-      <div class="row-meta">
-        <span>${t.count} articles</span> · <span>${t.sources} sources</span>
-      </div>
-      ${renderSentiment({pos:t.sentiment.pos, neu:t.sentiment.neu, neg:t.sentiment.neg})}
-    </div>`).join("");
-}
-
+/* load all */
 async function loadAll(){
   const qs = new URLSearchParams();
   if (state.filter !== "all") qs.set("sentiment", state.filter);
@@ -126,49 +65,158 @@ async function loadAll(){
   if (state.category && !["home","foryou","local"].includes(state.category)) qs.set("category", state.category);
 
   const [news, topics] = await Promise.all([
-    getJSON(`/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`),
-    getJSON(`/api/topics`)
+    fetchJSON(`/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`),
+    fetchJSON(`/api/topics`)
   ]);
 
   state.articles = news.articles || [];
   state.pins = state.articles.slice(0,3);
   state.topics = (topics.topics || []).slice(0,8);
 
-  renderPinned();
-  renderNews();
-  renderTopics();
+  renderAll();
 }
 
-/* ---------- Tabs & Filters ---------- */
+/* Pinned */
+function renderPinned(){
+  const tip = `
+    <h4>How we calculate</h4>
+    <small>We run <b>VADER</b> on each article’s <i>title + summary</i> to get Positive/Neutral/Negative.</small>
+  `;
+  $("#pinned").innerHTML = state.pins.map(a => {
+    const icon = a.sourceIcon || safeFavicon(a.link);
+    const content = `
+      <div class="row">
+        <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
+        <div class="row-meta">
+          <span class="source-chip"><img class="favicon" src="${icon}" alt="" />${a.source}</span>
+          <span>·</span>
+          <span>${new Date(a.publishedAt).toLocaleString()}</span>
+        </div>
+        ${renderSentiment(a.sentiment, true)}
+      </div>`;
+    return wrapWithTip(content, tip);
+  }).join("");
+}
+
+/* News & Daily list (center) */
+function card(a){
+  const icon = a.sourceIcon || safeFavicon(a.link);
+  const tip = `<h4>This score</h4><small>VADER on <i>headline + snippet</i> for this article.</small>`;
+  const inner = `
+    <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
+      <img class="thumb" src="${a.image}" alt="">
+      <div>
+        <div class="title">${a.title}</div>
+        <div class="meta">
+          <span class="source-chip"><img class="favicon" src="${icon}" alt="" />${a.source}</span>
+          <span>·</span>
+          <span>${new Date(a.publishedAt).toLocaleString()}</span>
+        </div>
+        ${renderSentiment(a.sentiment, true)}
+      </div>
+    </a>`;
+  return wrapWithTip(inner, tip);
+}
+function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
+function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
+
+/* HERO */
+function renderHero(){
+  const slides = state.articles.slice(0,4);
+  const track = $("#heroTrack"); const dots = $("#heroDots");
+  if (!slides.length){ track.innerHTML=""; dots.innerHTML=""; return; }
+  track.innerHTML = slides.map(a => {
+    const tip = `<h4>Hero calculation</h4><small>VADER on headline + snippet.</small>`;
+    const inner = `
+      <article class="hero-slide">
+        <div class="hero-img"><img src="${a.image}" alt=""></div>
+        <div class="hero-content">
+          <h3>${a.title}</h3>
+          <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
+          ${renderSentiment(a.sentiment, true)}
+          <div class="meta"><span class="source-chip"><img class="favicon" src="${a.sourceIcon || safeFavicon(a.link)}" alt=""/>${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
+        </div>
+      </article>`;
+    return wrapWithTip(inner, tip);
+  }).join("");
+  dots.innerHTML = slides.map((_,i)=>`<button data-i="${i}" aria-label="Go to slide ${i+1}"></button>`).join("");
+  updateHero(0);
+}
+function updateHero(i){
+  const n = $$("#heroTrack .hero-slide").length;
+  state.hero.index = (i+n)%n;
+  $("#heroTrack").style.transform = `translateX(-${state.hero.index*100}%)`;
+  $$("#heroDots button").forEach((b,bi)=> b.classList.toggle("active", bi===state.hero.index));
+}
+function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
+function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
+
+/* TRENDING from Google Trends (with 4 sources, icons, tooltips) */
+function renderTopics(){
+  $("#topicsList").innerHTML = state.topics.map(t=>{
+    const iconRow = (t.breakdown || []).map(b=> `<img class="favicon" src="${b.icon}" alt="${b.domain}">`).join("");
+    const rows = (t.breakdown || []).map(b=>`
+      <div class="tip-row">
+        <span class="tip-source"><img class="favicon" src="${b.icon}" alt=""> ${b.domain}</span>
+        <span class="tip-pct">P ${fmtPct(b.pos)} · N ${fmtPct(b.neu)} · Neg ${fmtPct(b.neg)} (${b.articles})</span>
+      </div>
+    `).join("") || `<small>No articles found yet.</small>`;
+
+    const tip = `
+      <h4>How we calculate</h4>
+      <small>${t.explain}</small>
+      <div class="tip-breakdown">${rows}</div>
+    `;
+
+    const inner = `
+      <div class="row">
+        <div class="row-title">${t.title}</div>
+        <div class="row-meta">
+          <span>${t.count} articles</span> · <span>${t.sources} sources</span>
+          <span class="row-icons">${iconRow}</span>
+        </div>
+        ${renderSentiment({ pos:t.sentiment.pos, neu:t.sentiment.neu, neg:t.sentiment.neg }, true)}
+      </div>`;
+    return wrapWithTip(inner, tip);
+  }).join("");
+}
+
+/* glue */
+function renderAll(){
+  $("#briefingDate").textContent = todayStr();
+  $("#year").textContent = new Date().getFullYear();
+  renderHero(); renderPinned(); renderNews(); renderDaily(); renderTopics();
+}
+
+/* interactions */
+$$(".chip[data-sent]").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    $$(".chip[data-sent]").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    state.filter = btn.dataset.sent; loadAll();
+  });
+});
+$("#expChip")?.addEventListener("click", ()=>{ state.experimental = !state.experimental; $("#expChip").classList.toggle("active", state.experimental); loadAll(); });
 $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
   tab.addEventListener("click", ()=>{
     $$(".gn-tabs .tab").forEach(t=>t.classList.remove("active"));
     tab.classList.add("active");
-    state.category = tab.dataset.cat;
-    loadAll();
-    tab.scrollIntoView({behavior:"smooth", inline:"center", block:"nearest"});
+    state.category = tab.dataset.cat; loadAll();
   });
 });
+$("#heroPrev")?.addEventListener("click", ()=> updateHero(state.hero.index-1));
+$("#heroNext")?.addEventListener("click", ()=> updateHero(state.hero.index+1));
+$("#hero")?.addEventListener("mouseenter", ()=> state.hero.pause = true);
+$("#hero")?.addEventListener("mouseleave", ()=> state.hero.pause = false);
 
-$$(".controls .chip[data-sent]").forEach(btn=>{
-  btn.addEventListener("click", ()=>{
-    $$(".controls .chip[data-sent]").forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active");
-    state.filter = btn.dataset.sent;
-    loadAll();
-  });
-});
-$("#expChip")?.addEventListener("click", ()=>{
-  state.experimental = !state.experimental;
-  $("#expChip").classList.toggle("active", state.experimental);
-  loadAll();
+$("#themeToggle")?.addEventListener("click", ()=>{
+  state.theme = (state.theme === "dark") ? "light" : "dark";
+  localStorage.setItem("theme", state.theme);
+  applyTheme();
 });
 
-/* ---------- Boot ---------- */
+/* boot */
 applyTheme();
-$("#briefingDate").textContent = new Date().toLocaleDateString(undefined,{weekday:"long", day:"numeric", month:"long"});
-$("#year").textContent = new Date().getFullYear();
-
-loadMarkets();
+$("#briefingDate").textContent = todayStr();
 loadAll();
-setInterval(loadAll, 1000*60*5);
+startHeroAuto();
