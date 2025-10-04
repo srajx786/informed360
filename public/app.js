@@ -1,62 +1,124 @@
-/* === Helpers === */
+/* ---------- Tiny helpers ---------- */
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
-const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
-async function fetchJSON(u){ const r = await fetch(u); if(!r.ok) throw new Error(await r.text()); return r.json(); }
+const pct = (n) => `${Math.max(0, Math.min(100, Math.round(Number(n)||0)))}%`;
+async function getJSON(url){ const r = await fetch(url); if(!r.ok) throw new Error(await r.text()); return r.json(); }
 
-/* === Sentiment UI === */
-function renderSentiment(s, showNumbers = true){
-  const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
-  const neu = Math.max(0, Number(s.neuP ?? s.neu ?? 0));
-  const neg = Math.max(0, Number(s.negP ?? s.neg ?? 0));
-  return `
-    <div class="sentiment ${showNumbers?'':'slim'}">
-      <div class="bar">
-        <span class="segment pos" style="width:${pos}%"></span>
-        <span class="segment neu" style="width:${neu}%"></span>
-        <span class="segment neg" style="width:${neg}%"></span>
-      </div>
-      ${showNumbers ? `
-      <div class="scores">
-        <span>Positive ${fmtPct(pos)}</span>
-        <span>Neutral ${fmtPct(neu)}</span>
-        <span>Negative ${fmtPct(neg)}</span>
-      </div>` : ``}
-    </div>`;
+/* ---------- Theme ---------- */
+const prefersDark = () => window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+function applyTheme(){
+  const t = localStorage.getItem("theme") || (prefersDark() ? "dark" : "light");
+  document.documentElement.setAttribute("data-theme", t);
+  const btn = $("#themeToggle"); if (btn) btn.textContent = (t === "dark") ? "🌞" : "🌙";
 }
+$("#themeToggle")?.addEventListener("click", ()=>{
+  const cur = document.documentElement.getAttribute("data-theme") || "light";
+  const next = (cur === "dark") ? "light" : "dark";
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+  $("#themeToggle").textContent = (next === "dark") ? "🌞" : "🌙";
+});
 
-/* === Theme === */
-function preferredTheme(){
-  return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
+/* ---------- State ---------- */
 const state = {
   category: "home",
   filter: "all",
   experimental: false,
-  query: "",
   articles: [],
-  topics: [],
   pins: [],
-  profile: loadProfile(),
-  theme: localStorage.getItem("theme") || preferredTheme(),
-  hero: { index:0, timer:null, pause:false, startX:0, dx:0, touching:false }
+  topics: [],
 };
-function loadProfile(){ try { return JSON.parse(localStorage.getItem("i360_profile") || "{}"); } catch { return {}; } }
-function applyTheme(){
-  const t = state.theme || preferredTheme();
-  document.documentElement.setAttribute("data-theme", t);
-  const btn = $("#themeToggle");
-  if (btn) { btn.textContent = (t === "dark") ? "🌞" : "🌙"; }
+
+/* ---------- Sentiment renderer ---------- */
+function renderSentiment(s){
+  const pos = s.posP ?? s.pos ?? 0;
+  const neu = s.neuP ?? s.neu ?? 0;
+  const neg = s.negP ?? s.neg ?? 0;
+  return `
+    <div class="sentiment">
+      <div class="bar">
+        <span class="segment pos" style="width:${pct(pos)}"></span>
+        <span class="segment neu" style="width:${pct(neu)}"></span>
+        <span class="segment neg" style="width:${pct(neg)}"></span>
+      </div>
+      <div class="scores">
+        <span>Positive ${pct(pos)}</span>
+        <span>Neutral ${pct(neu)}</span>
+        <span>Negative ${pct(neg)}</span>
+      </div>
+    </div>`;
 }
 
-/* === Date === */
-const todayStr = ()=> new Date().toLocaleDateString(undefined,{weekday:"long", day:"numeric", month:"long"});
+/* ---------- Markets (RESTORED) ---------- */
+async function loadMarkets(){
+  try{
+    const data = await getJSON("/api/markets");
+    const el = $("#marketTicker");
+    const q = data.quotes || [];
+    el.innerHTML = q.map(it => {
+      const price = (it.price ?? "--");
+      const chgPct = Number(it.changePercent ?? 0);
+      const sign = chgPct > 0 ? "up" : (chgPct < 0 ? "down" : "");
+      const arrow = chgPct > 0 ? "▲" : (chgPct < 0 ? "▼" : "•");
+      return `
+        <span class="badge" title="${it.pretty}">
+          <span>${it.pretty}</span>
+          <span class="val">${price}</span>
+          <span class="chg ${sign}">${arrow} ${Math.abs(chgPct).toFixed(2)}%</span>
+        </span>`;
+    }).join("");
+  }catch(e){
+    console.warn("markets", e);
+    $("#marketTicker").innerHTML = `<span class="badge">Markets unavailable</span>`;
+  }
+}
 
-/* === Optional placeholders === */
-function getWeather(){ $("#weatherCard").innerHTML = `<div>⛅ <strong>${(state.profile?.city)||'Your area'}</strong></div>`; }
-function loadMarkets(){ $("#marketTicker").innerHTML = ``; }
+/* ---------- News fetch/render ---------- */
+function favicon(link){ try{ return `https://logo.clearbit.com/${new URL(link).hostname.replace(/^www\./,'')}` }catch{return ""} }
 
-/* === Data loading === */
+function newsCard(a){
+  const icon = a.sourceIcon || favicon(a.link);
+  return `
+    <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
+      <img class="thumb" src="${a.image}" alt="">
+      <div>
+        <div class="title">${a.title}</div>
+        <div class="meta">
+          <span><img class="favicon" src="${icon}" alt=""> ${a.source}</span>
+          <span>·</span>
+          <span>${new Date(a.publishedAt).toLocaleString()}</span>
+        </div>
+        ${renderSentiment(a.sentiment)}
+      </div>
+    </a>`;
+}
+
+function renderPinned(){
+  $("#pinned").innerHTML = state.pins.map(a => `
+    <div class="row">
+      <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
+      <div class="row-meta">
+        <span><img class="favicon" src="${a.sourceIcon || favicon(a.link)}" alt=""> ${a.source}</span>
+        <span>·</span>
+        <span>${new Date(a.publishedAt).toLocaleString()}</span>
+      </div>
+      ${renderSentiment(a.sentiment)}
+    </div>`).join("");
+}
+
+function renderNews(){ $("#newsList").innerHTML = state.articles.slice(3, 15).map(newsCard).join(""); }
+
+function renderTopics(){
+  $("#topicsList").innerHTML = state.topics.map(t => `
+    <div class="row">
+      <div class="row-title">${t.title}</div>
+      <div class="row-meta">
+        <span>${t.count} articles</span> · <span>${t.sources} sources</span>
+      </div>
+      ${renderSentiment({pos:t.sentiment.pos, neu:t.sentiment.neu, neg:t.sentiment.neg})}
+    </div>`).join("");
+}
+
 async function loadAll(){
   const qs = new URLSearchParams();
   if (state.filter !== "all") qs.set("sentiment", state.filter);
@@ -64,154 +126,20 @@ async function loadAll(){
   if (state.category && !["home","foryou","local"].includes(state.category)) qs.set("category", state.category);
 
   const [news, topics] = await Promise.all([
-    fetchJSON(`/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`),
-    fetchJSON(`/api/topics`)
+    getJSON(`/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`),
+    getJSON(`/api/topics`)
   ]);
 
   state.articles = news.articles || [];
-  state.topics = (topics.topics || []).slice(0, 8);
   state.pins = state.articles.slice(0,3);
+  state.topics = (topics.topics || []).slice(0,8);
 
-  if (state.category === "local" && state.profile?.city) {
-    const c = state.profile.city.toLowerCase();
-    state.articles = state.articles.filter(a => (a.title||"").toLowerCase().includes(c) || (a.link||"").toLowerCase().includes(c));
-  }
-
-  renderAll();
+  renderPinned();
+  renderNews();
+  renderTopics();
 }
 
-/* === Favicons === */
-function safeFavicon(link){ try{ const d = new URL(link).hostname.replace(/^www\./,''); return `https://logo.clearbit.com/${d}`; }catch{ return ""; } }
-
-/* === Cards === */
-function card(a){
-  const icon = a.sourceIcon || safeFavicon(a.link);
-  return `
-    <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
-      <img class="thumb" src="${a.image}" alt="">
-      <div>
-        <div class="title">${a.title}</div>
-        <div class="meta">
-          <span class="source-chip"><img class="favicon" src="${icon}" alt="" />${a.source}</span>
-          <span>·</span>
-          <span>${new Date(a.publishedAt).toLocaleString()}</span>
-        </div>
-        ${renderSentiment(a.sentiment, true)}
-      </div>
-    </a>`;
-}
-function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
-function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
-
-/* === Pinned === */
-function renderPinned(){
-  $("#pinned").innerHTML = state.pins.map(a => {
-    const icon = a.sourceIcon || safeFavicon(a.link);
-    return `
-    <div class="row">
-      <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
-      <div class="row-meta">
-        <span class="source-chip"><img class="favicon" src="${icon}" alt="" />${a.source}</span>
-        <span>·</span>
-        <span>${new Date(a.publishedAt).toLocaleString()}</span>
-      </div>
-      ${renderSentiment(a.sentiment, true)}
-    </div>`;
-  }).join("");
-}
-
-/* === Hero (swipe support) === */
-function renderHero(){
-  const slides = state.articles.slice(0,4);
-  const track = $("#heroTrack"); const dots = $("#heroDots");
-  if (!slides.length){ track.innerHTML=""; dots.innerHTML=""; return; }
-  track.innerHTML = slides.map(a => `
-    <article class="hero-slide">
-      <div class="hero-img"><img src="${a.image}" alt=""></div>
-      <div class="hero-content">
-        <h3>${a.title}</h3>
-        <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
-        ${renderSentiment(a.sentiment, true)}
-        <div class="meta"><span class="source-chip"><img class="favicon" src="${a.sourceIcon || safeFavicon(a.link)}" alt=""/>${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
-      </div>
-    </article>`).join("");
-  dots.innerHTML = slides.map((_,i)=>`<button data-i="${i}" aria-label="Go to slide ${i+1}"></button>`).join("");
-  updateHero(0);
-
-  /* touch swipe */
-  const hero = $("#hero");
-  const trackEl = $("#heroTrack");
-  hero.addEventListener("touchstart", (e)=>{
-    state.hero.touching = true;
-    state.hero.startX = e.touches[0].clientX;
-    state.hero.dx = 0;
-    trackEl.style.transition = "none";
-  }, {passive:true});
-  hero.addEventListener("touchmove", (e)=>{
-    if(!state.hero.touching) return;
-    state.hero.dx = e.touches[0].clientX - state.hero.startX;
-    const w = hero.clientWidth;
-    const offset = (-state.hero.index * w) + state.hero.dx;
-    trackEl.style.transform = `translateX(${offset}px)`;
-  }, {passive:true});
-  const end = ()=>{
-    if(!state.hero.touching) return;
-    trackEl.style.transition = "";
-    const w = hero.clientWidth;
-    if(Math.abs(state.hero.dx) > w * 0.2){
-      updateHero(state.hero.index + (state.hero.dx < 0 ? 1 : -1));
-    }else{
-      updateHero(state.hero.index);
-    }
-    state.hero.touching = false; state.hero.dx = 0;
-  };
-  hero.addEventListener("touchend", end, {passive:true});
-  hero.addEventListener("touchcancel", end, {passive:true});
-}
-function updateHero(i){
-  const n = $$("#heroTrack .hero-slide").length;
-  if (!n) return;
-  state.hero.index = (i+n)%n;
-  $("#heroTrack").style.transform = `translateX(-${state.hero.index*100}%)`;
-  $$("#heroDots button").forEach((b,bi)=> b.classList.toggle("active", bi===state.hero.index));
-}
-function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
-function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
-
-/* === Trending === */
-function renderTopics(){
-  $("#topicsList").innerHTML = state.topics.map(t=>{
-    const icons = (t.icons || []).map(u=> `<img class="favicon" src="${u}" alt="">`).join("");
-    return `
-      <div class="row">
-        <div class="row-title">${t.title}</div>
-        <div class="row-meta">
-          <span>${t.count} articles</span> · <span>${t.sources} sources</span>
-          ${icons ? `<span class="row-icons">${icons}</span>` : ``}
-        </div>
-        ${renderSentiment({ pos:t.sentiment.pos, neu:t.sentiment.neu, neg:t.sentiment.neg }, true)}
-      </div>`;
-  }).join("");
-}
-
-/* === Glue === */
-function renderAll(){
-  $("#briefingDate").textContent = todayStr();
-  $("#year").textContent = new Date().getFullYear();
-  renderHero(); renderPinned(); renderNews(); renderDaily(); renderTopics();
-}
-
-/* === Interactions === */
-$$(".chip[data-sent]").forEach(btn=>{
-  btn.addEventListener("click", ()=>{
-    $$(".chip[data-sent]").forEach(b=>b.classList.remove("active"));
-    btn.classList.add("active");
-    state.filter = btn.dataset.sent; loadAll();
-  });
-});
-$("#expChip")?.addEventListener("click", ()=>{ state.experimental = !state.experimental; $("#expChip").classList.toggle("active", state.experimental); loadAll(); });
-
-/* Tabs: keep to single line + center active tab; NO OVERLAP */
+/* ---------- Tabs & Filters ---------- */
 $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
   tab.addEventListener("click", ()=>{
     $$(".gn-tabs .tab").forEach(t=>t.classList.remove("active"));
@@ -222,41 +150,25 @@ $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
   });
 });
 
-$("#heroPrev")?.addEventListener("click", ()=> updateHero(state.hero.index-1));
-$("#heroNext")?.addEventListener("click", ()=> updateHero(state.hero.index+1));
-$("#hero")?.addEventListener("mouseenter", ()=> state.hero.pause = true);
-$("#hero")?.addEventListener("mouseleave", ()=> state.hero.pause = false);
-
-$("#themeToggle")?.addEventListener("click", ()=>{
-  state.theme = (state.theme === "dark") ? "light" : "dark";
-  localStorage.setItem("theme", state.theme);
-  applyTheme();
-});
-
-/* Tap-friendly tooltip toggles (mobile) */
-function wireTipButton(btn){
-  const id = btn.getAttribute("data-tip-target");
-  const tip = document.getElementById(id);
-  if(!tip) return;
-  btn.addEventListener("click", (e)=>{
-    e.stopPropagation();
-    const open = tip.getAttribute("aria-hidden") === "false";
-    $$("[role=tooltip]").forEach(t=> t.setAttribute("aria-hidden","true"));
-    tip.setAttribute("aria-hidden", open ? "true" : "false");
+$$(".controls .chip[data-sent]").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    $$(".controls .chip[data-sent]").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    state.filter = btn.dataset.sent;
+    loadAll();
   });
-}
-$$(".info-btn").forEach(wireTipButton);
-document.addEventListener("click", ()=> {
-  $$("[role=tooltip]").forEach(t=> t.setAttribute("aria-hidden","true"));
+});
+$("#expChip")?.addEventListener("click", ()=>{
+  state.experimental = !state.experimental;
+  $("#expChip").classList.toggle("active", state.experimental);
+  loadAll();
 });
 
-/* === Boot === */
+/* ---------- Boot ---------- */
 applyTheme();
-$("#briefingDate").textContent = todayStr();
-getWeather();
+$("#briefingDate").textContent = new Date().toLocaleDateString(undefined,{weekday:"long", day:"numeric", month:"long"});
+$("#year").textContent = new Date().getFullYear();
+
 loadMarkets();
 loadAll();
-startHeroAuto();
-
-/* Periodic refresh */
 setInterval(loadAll, 1000*60*5);
