@@ -24,13 +24,13 @@ if (!fs.existsSync(FEEDS_PATH)) {
 const FEEDS = JSON.parse(fs.readFileSync(FEEDS_PATH, "utf-8"));
 const REFRESH_MS = Math.max(2, FEEDS.refreshMinutes || 10) * 60 * 1000;
 
-/* ---------- RSS Parser (resilient) ---------- */
+/* ---------- RSS Parser ---------- */
 const parser = new Parser({
   timeout: 15000,
   requestOptions: {
     headers: {
       "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Informed360/1.0",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36 Informed360/1.0",
       "Accept": "application/rss+xml, application/xml;q=0.9, */*;q=0.8",
       "Accept-Language": "en-IN,en;q=0.9",
       "Referer": "https://www.informed360.news/"
@@ -48,7 +48,7 @@ const domainFromUrl = (u = "") => {
 };
 const faviconForDomain = (d) => (d ? `https://logo.clearbit.com/${d}` : "");
 
-/* Gentle per-host concurrency (avoid hammering one origin) */
+/* Gentle per-host concurrency */
 const hostCounters = new Map();
 const MAX_PER_HOST = 2;
 const acquire = async (host) => {
@@ -75,7 +75,7 @@ const scoreSentiment = (text) => {
   return { ...s, posP, negP, neuP, label };
 };
 
-/* ---------- Category inference (simple rules) ---------- */
+/* ---------- Category inference ---------- */
 const CAT_RULES = [
   { name: "sports", patterns: [/sport/i, /cricket/i, /ipl/i, /football/i, /hockey/i] },
   { name: "business", patterns: [/business/i, /econom/i, /market/i, /stock/i, /sensex/i, /nifty/i, /finance/i] },
@@ -138,7 +138,7 @@ async function fetchWithFallback(url) {
   }
 }
 
-/* ---------- Build general news list from rss-feeds.json ---------- */
+/* ---------- Build general news list ---------- */
 async function fetchList(urls) {
   const articles = [];
   const seen = new Set();
@@ -173,7 +173,7 @@ async function fetchList(urls) {
   return { fetchedAt: Date.now(), articles };
 }
 
-/* ---------- Caches for core & experimental feeds ---------- */
+/* ---------- Caches ---------- */
 let CORE = { fetchedAt: 0, articles: [] };
 let EXP  = { fetchedAt: 0, articles: [] };
 
@@ -196,8 +196,8 @@ setInterval(refreshCore, REFRESH_MS);
 setInterval(refreshExp, REFRESH_MS);
 
 /* ---------- Google Trends (India) → Trending Topics ---------- */
-/* Daily trending searches RSS (maps to trends UI you shared) */
 async function fetchGoogleTrendsIN(limit = 8) {
+  // Daily trending RSS (maps to trends UI)
   const url = "https://trends.google.com/trends/trendingsearches/daily/rss?geo=IN";
   try {
     const feed = await parseURL(url);
@@ -211,73 +211,65 @@ async function fetchGoogleTrendsIN(limit = 8) {
 
 /* For each trend:
    - Fetch Google News RSS for the query
-   - Compute VADER per article
-   - Aggregate per source (equal-weight averaging)
-   - Then overall = mean of per-source percentages
+   - Group by domain; keep up to 4 sources
+   - Compute VADER per article, average per source
+   - Overall = mean of per-source percentages
+   - Attach representative article per source (for icons/links if needed)
 */
 async function buildTrendingFromTrends(limit = 8) {
   const queries = await fetchGoogleTrendsIN(limit);
   if (!queries.length) return [];
 
-  const results = await Promise.all(
+  const feeds = await Promise.all(
     queries.map(async (q) => {
       try { return await parseURL(gNewsSearch(q)); }
       catch { return { items: [] }; }
     })
   );
 
-  const topics = results.map((feed, idx) => {
+  const topics = feeds.map((feed, idx) => {
     const q = queries[idx];
-    const items = (feed.items || []).slice(0, 12);
+    const items = (feed.items || []).slice(0, 40); // more items → better chance of 4 unique sources
 
-    const perSource = new Map(); // domain -> {count, pos, neu, neg}
-    let totalArticles = 0;
-
+    const bySource = new Map(); // domain -> {articles:[{title,link,desc,sentiment}], icon}
     for (const it of items) {
+      const dm = domainFromUrl(it.link || "");
+      if (!dm) continue;
       const title = it.title || "";
       const desc = it.contentSnippet || it.summary || "";
       const s = scoreSentiment(`${title}. ${desc}`);
-
-      const dm = domainFromUrl(it.link || "");
-      if (!dm) continue;
-
-      if (!perSource.has(dm)) perSource.set(dm, { count:0, pos:0, neu:0, neg:0 });
-      const p = perSource.get(dm);
-      p.count += 1; p.pos += s.posP; p.neu += s.neuP; p.neg += s.negP;
-      totalArticles += 1;
+      if (!bySource.has(dm)) bySource.set(dm, { articles: [], icon: faviconForDomain(dm) });
+      bySource.get(dm).articles.push({ title, link: it.link, sentiment: s });
     }
 
-    // Average per source
-    const breakdown = [];
-    for (const [dm, v] of perSource.entries()) {
-      const n = Math.max(1, v.count);
-      breakdown.push({
-        domain: dm,
-        articles: v.count,
-        pos: Math.round(v.pos / n),
-        neu: Math.round(v.neu / n),
-        neg: Math.round(v.neg / n),
-        icon: faviconForDomain(dm)
-      });
-    }
+    // keep up to 4 distinct sources
+    const topSources = [...bySource.entries()].slice(0, 4).map(([dm, data]) => {
+      const n = data.articles.length || 1;
+      const pos = Math.round(data.articles.reduce((a,b)=>a+(b.sentiment.posP||0),0)/n);
+      const neu = Math.round(data.articles.reduce((a,b)=>a+(b.sentiment.neuP||0),0)/n);
+      const neg = Math.round(data.articles.reduce((a,b)=>a+(b.sentiment.negP||0),0)/n);
+      const rep = data.articles[0]; // representative article
+      return { domain: dm, icon: data.icon, articles: n, pos, neu, neg, link: rep?.link, title: rep?.title };
+    });
 
-    // Overall = mean of per-source percentages (equal weight)
-    let pos=0, neu=0, neg=0;
-    const N = Math.max(1, breakdown.length);
-    breakdown.forEach(b => { pos += b.pos; neu += b.neu; neg += b.neg; });
-    const overall = { pos: Math.round(pos/N), neu: Math.round(neu/N), neg: Math.round(neg/N) };
+    // overall = mean of selected sources
+    const N = Math.max(1, topSources.length);
+    const overall = {
+      pos: Math.round(topSources.reduce((a,b)=>a+b.pos,0)/N),
+      neu: Math.round(topSources.reduce((a,b)=>a+b.neu,0)/N),
+      neg: Math.round(topSources.reduce((a,b)=>a+b.neg,0)/N)
+    };
 
-    const icons = breakdown.slice(0,4).map(b => b.icon).filter(Boolean);
-    const explain = `Trend: “${q}”. Articles pulled from Google News across ${breakdown.length} sources. `
-      + `We run VADER on each article (title + snippet) → average per source → average across sources equally.`;
+    const explain = `Trend: “${q}”. News pulled via Google News from ${topSources.length} sources (up to 4). `
+      + `We run VADER on each article (title + snippet) → average within each source → mean across sources.`;
 
     return {
       title: q,
-      count: totalArticles,
-      sources: breakdown.length,
+      sources: topSources.length,
+      count: items.length,
       sentiment: overall,
-      icons,
-      breakdown, // for UI tooltip list
+      breakdown: topSources,
+      icons: topSources.map(s => s.icon).filter(Boolean),
       explain
     };
   });
@@ -285,19 +277,11 @@ async function buildTrendingFromTrends(limit = 8) {
   return topics;
 }
 
-/* ---------- Markets (BSE/NSE/Gold/Oil/USDINR) ---------- */
-/* Optional dependency; we won’t crash if it’s unavailable. */
+/* ---------- Markets (optional) ---------- */
 let yfModule = null;
 async function loadYF(){
-  try {
-    if (yfModule) return yfModule;
-    const mod = await import("yahoo-finance2"); // ESM-aware
-    yfModule = mod?.default || mod;
-    return yfModule;
-  } catch (e) {
-    console.warn("[MARKETS] yahoo-finance2 not available:", e?.message || e);
-    return null;
-  }
+  try { if (yfModule) return yfModule; const mod = await import("yahoo-finance2"); yfModule = mod?.default || mod; return yfModule; }
+  catch (e) { console.warn("[MARKETS] yahoo-finance2 not available:", e?.message || e); return null; }
 }
 
 /* ---------- API Routes ---------- */
