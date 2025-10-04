@@ -33,12 +33,7 @@ body{
 a{ color:inherit; text-decoration:none }
 h1,h2,h3{ margin:0 0 .6rem }
 img{ max-width:100%; display:block }
-
-/* ===== Utility ===== */
-.sr-only{
-  position:absolute !important; width:1px; height:1px; padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,0,0); border:0;
-}
+.sr-only{ position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0 }
 
 /* ===== Header ===== */
 .gn-header{
@@ -81,21 +76,48 @@ img{ max-width:100%; display:block }
 .gn-search input{ flex:1; background:transparent; border:0; outline:0; color:inherit; font-size:1rem }
 .gn-search .chevron{ background:transparent; border:0; color:var(--muted); font-size:1rem }
 
-/* Tabs (mobile scrollable) */
+/* ===== Tabs (mobile scrollable, no overlap) ===== */
 .gn-tabs{
-  display:flex; align-items:center; gap:.9rem;
-  padding:0 12px .6rem; overflow-x:auto; scrollbar-width:none;
-  -webkit-overflow-scrolling: touch; scroll-snap-type:x proximity;
+  display:flex;
+  align-items:center;
+  gap:.9rem;
+  padding:0 12px .6rem;
+  overflow-x:auto;           /* horizontal scroll */
+  overflow-y:hidden;
+  white-space:nowrap;        /* single line */
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x proximity;
+  contain: layout paint;     /* prevent text overdraw on some GPUs */
 }
 .gn-tabs::-webkit-scrollbar{ display:none }
+
 .tab{
-  background:transparent; color:var(--fg); border:0;
-  padding:.35rem 0; border-bottom:2px solid transparent;
-  cursor:pointer; white-space:nowrap; font-weight:700; scroll-snap-align:center;
+  flex:0 0 auto;             /* no shrink, no wrap */
+  display:inline-flex;
+  align-items:center;
+  line-height:1.2;
   font-size:.95rem;
+  font-weight:700;
+  color:var(--fg);
+  background:transparent;
+  border:0;
+  padding:.38rem 0;
+  margin:0;
+  border-bottom:2px solid transparent;
+  cursor:pointer;
+  white-space:nowrap;
+  scroll-snap-align:center;
+  -webkit-text-size-adjust:100%;
+  text-rendering:optimizeLegibility;
 }
-.tab.active{ border-bottom:2px solid var(--brand) }
-.tab-divider{ width:1px; height:18px; background:var(--border) }
+.tab:focus-visible{
+  outline:2px solid var(--brand);
+  outline-offset:2px;
+  border-radius:6px;
+}
+.tab.active{ border-bottom-color:var(--brand) }
+.tab-divider{ flex:0 0 1px; height:18px; background:var(--border) }
 
 /* ===== Briefing ===== */
 .gn-briefing{
@@ -212,7 +234,7 @@ img{ max-width:100%; display:block }
 /* ===== Footer ===== */
 .footer{ padding:1rem 12px; color:var(--muted); border-top:1px solid var(--border); margin-top:.5rem }
 
-/* ===== Prefers-reduced-motion ===== */
+/* ===== Reduced motion ===== */
 @media (prefers-reduced-motion: reduce){
   *{ animation:none !important; transition:none !important }
 }
