@@ -1,10 +1,10 @@
-/* helpers */
+/* === Helpers === */
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
 async function fetchJSON(u){ const r = await fetch(u); if(!r.ok) throw new Error(await r.text()); return r.json(); }
 
-/* sentiment UI */
+/* === Sentiment UI === */
 function renderSentiment(s, showNumbers = true){
   const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
   const neu = Math.max(0, Number(s.neuP ?? s.neu ?? 0));
@@ -25,7 +25,7 @@ function renderSentiment(s, showNumbers = true){
     </div>`;
 }
 
-/* theme */
+/* === Theme === */
 function preferredTheme(){
   return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
@@ -39,7 +39,7 @@ const state = {
   pins: [],
   profile: loadProfile(),
   theme: localStorage.getItem("theme") || preferredTheme(),
-  hero: { index:0, timer:null, pause:false }
+  hero: { index:0, timer:null, pause:false, startX:0, dx:0, touching:false }
 };
 function loadProfile(){ try { return JSON.parse(localStorage.getItem("i360_profile") || "{}"); } catch { return {}; } }
 function applyTheme(){
@@ -49,14 +49,14 @@ function applyTheme(){
   if (btn) { btn.textContent = (t === "dark") ? "🌞" : "🌙"; }
 }
 
-/* date/briefing placeholders */
+/* === Date === */
 const todayStr = ()=> new Date().toLocaleDateString(undefined,{weekday:"long", day:"numeric", month:"long"});
 
-/* optional placeholders (no-ops); keep DOM happy */
-function getWeather(){ $("#weatherCard").innerHTML = `<div>Weather</div>`; }
+/* === Optional placeholders === */
+function getWeather(){ $("#weatherCard").innerHTML = `<div>⛅ <strong>${(state.profile?.city)||'Your area'}</strong></div>`; }
 function loadMarkets(){ $("#marketTicker").innerHTML = ``; }
 
-/* load all */
+/* === Data loading === */
 async function loadAll(){
   const qs = new URLSearchParams();
   if (state.filter !== "all") qs.set("sentiment", state.filter);
@@ -80,91 +80,97 @@ async function loadAll(){
   renderAll();
 }
 
-/* favicon helper */
+/* === Favicons === */
 function safeFavicon(link){ try{ const d = new URL(link).hostname.replace(/^www\./,''); return `https://logo.clearbit.com/${d}`; }catch{ return ""; } }
 
-/* tooltips wrapper */
-function wrapWithTip(innerHtml, tipHtml){
-  return `<div class="has-tip">
-    ${innerHtml}
-    <div class="tip" role="tooltip">${tipHtml}</div>
-  </div>`;
-}
-
-/* Pinned */
-function renderPinned(){
-  const tip = `
-    <h4>How we calculate</h4>
-    <small>We run <b>VADER</b> on each article’s <i>title + summary</i> to get Positive/Neutral/Negative.</small>
-  `;
-  $("#pinned").innerHTML = state.pins.map(a => {
-    const icon = a.sourceIcon || safeFavicon(a.link);
-    const content = `
-      <div class="row">
-        <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
-        <div class="row-meta">
-          <span class="source-chip"><img src="${icon}" alt="" />${a.source}</span>
-          <span>·</span>
-          <span>${new Date(a.publishedAt).toLocaleString()}</span>
-        </div>
-        ${renderSentiment(a.sentiment, true)}
-      </div>`;
-    return wrapWithTip(content, tip);
-  }).join("");
-}
-
-/* News & Daily list (center column) */
+/* === Cards === */
 function card(a){
   const icon = a.sourceIcon || safeFavicon(a.link);
-  const tip = `
-    <h4>This score</h4>
-    <small>VADER on <i>headline + snippet</i> for this article. We don’t crawl paywalls.</small>
-  `;
-  const inner = `
+  return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
       <img class="thumb" src="${a.image}" alt="">
       <div>
         <div class="title">${a.title}</div>
         <div class="meta">
-          <span class="source-chip"><img src="${icon}" alt="" />${a.source}</span>
+          <span class="source-chip"><img class="favicon" src="${icon}" alt="" />${a.source}</span>
           <span>·</span>
           <span>${new Date(a.publishedAt).toLocaleString()}</span>
         </div>
         ${renderSentiment(a.sentiment, true)}
       </div>
     </a>`;
-  return wrapWithTip(inner, tip);
 }
 function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
 function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
 
-/* HERO */
+/* === Pinned === */
+function renderPinned(){
+  $("#pinned").innerHTML = state.pins.map(a => {
+    const icon = a.sourceIcon || safeFavicon(a.link);
+    return `
+    <div class="row">
+      <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
+      <div class="row-meta">
+        <span class="source-chip"><img class="favicon" src="${icon}" alt="" />${a.source}</span>
+        <span>·</span>
+        <span>${new Date(a.publishedAt).toLocaleString()}</span>
+      </div>
+      ${renderSentiment(a.sentiment, true)}
+    </div>`;
+  }).join("");
+}
+
+/* === Hero (swipe support) === */
 function renderHero(){
   const slides = state.articles.slice(0,4);
   const track = $("#heroTrack"); const dots = $("#heroDots");
   if (!slides.length){ track.innerHTML=""; dots.innerHTML=""; return; }
-  track.innerHTML = slides.map(a => {
-    const tip = `
-      <h4>Hero calculation</h4>
-      <small>VADER on headline + snippet → Positive/Neutral/Negative.</small>
-    `;
-    const inner = `
-      <article class="hero-slide">
-        <div class="hero-img"><img src="${a.image}" alt=""></div>
-        <div class="hero-content">
-          <h3>${a.title}</h3>
-          <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
-          ${renderSentiment(a.sentiment, true)}
-          <div class="meta"><span class="source-chip"><img src="${a.sourceIcon || safeFavicon(a.link)}" alt=""/>${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
-        </div>
-      </article>`;
-    return wrapWithTip(inner, tip);
-  }).join("");
+  track.innerHTML = slides.map(a => `
+    <article class="hero-slide">
+      <div class="hero-img"><img src="${a.image}" alt=""></div>
+      <div class="hero-content">
+        <h3>${a.title}</h3>
+        <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
+        ${renderSentiment(a.sentiment, true)}
+        <div class="meta"><span class="source-chip"><img class="favicon" src="${a.sourceIcon || safeFavicon(a.link)}" alt=""/>${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
+      </div>
+    </article>`).join("");
   dots.innerHTML = slides.map((_,i)=>`<button data-i="${i}" aria-label="Go to slide ${i+1}"></button>`).join("");
   updateHero(0);
+
+  /* touch swipe */
+  const hero = $("#hero");
+  const trackEl = $("#heroTrack");
+  hero.addEventListener("touchstart", (e)=>{
+    state.hero.touching = true;
+    state.hero.startX = e.touches[0].clientX;
+    state.hero.dx = 0;
+    trackEl.style.transition = "none";
+  }, {passive:true});
+  hero.addEventListener("touchmove", (e)=>{
+    if(!state.hero.touching) return;
+    state.hero.dx = e.touches[0].clientX - state.hero.startX;
+    const w = hero.clientWidth;
+    const offset = (-state.hero.index * w) + state.hero.dx;
+    trackEl.style.transform = `translateX(${offset}px)`;
+  }, {passive:true});
+  const end = ()=>{
+    if(!state.hero.touching) return;
+    trackEl.style.transition = "";
+    const w = hero.clientWidth;
+    if(Math.abs(state.hero.dx) > w * 0.2){
+      updateHero(state.hero.index + (state.hero.dx < 0 ? 1 : -1));
+    }else{
+      updateHero(state.hero.index);
+    }
+    state.hero.touching = false; state.hero.dx = 0;
+  };
+  hero.addEventListener("touchend", end, {passive:true});
+  hero.addEventListener("touchcancel", end, {passive:true});
 }
 function updateHero(i){
   const n = $$("#heroTrack .hero-slide").length;
+  if (!n) return;
   state.hero.index = (i+n)%n;
   $("#heroTrack").style.transform = `translateX(-${state.hero.index*100}%)`;
   $$("#heroDots button").forEach((b,bi)=> b.classList.toggle("active", bi===state.hero.index));
@@ -172,24 +178,11 @@ function updateHero(i){
 function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
 function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
 
-/* Trending (from Google Trends) with per-source breakdown tooltips */
+/* === Trending (already from Google Trends via server) === */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
     const icons = (t.icons || []).map(u=> `<img class="favicon" src="${u}" alt="">`).join("");
-    const rows = (t.breakdown || []).slice(0,6).map(b=>`
-      <div class="tip-row">
-        <span class="tip-source"><img class="favicon" src="${b.icon}" alt=""> ${b.domain}</span>
-        <span class="tip-pct">P ${fmtPct(b.pos)} · N ${fmtPct(b.neu)} · Neg ${fmtPct(b.neg)} (${b.articles})</span>
-      </div>
-    `).join("") || `<small>No articles found yet.</small>`;
-
-    const tip = `
-      <h4>How we calculate</h4>
-      <small>${t.explain}</small>
-      <div class="tip-breakdown">${rows}</div>
-    `;
-
-    const inner = `
+    return `
       <div class="row">
         <div class="row-title">${t.title}</div>
         <div class="row-meta">
@@ -198,19 +191,17 @@ function renderTopics(){
         </div>
         ${renderSentiment({ pos:t.sentiment.pos, neu:t.sentiment.neu, neg:t.sentiment.neg }, true)}
       </div>`;
-
-    return wrapWithTip(inner, tip);
   }).join("");
 }
 
-/* glue */
+/* === Glue === */
 function renderAll(){
   $("#briefingDate").textContent = todayStr();
   $("#year").textContent = new Date().getFullYear();
   renderHero(); renderPinned(); renderNews(); renderDaily(); renderTopics();
 }
 
-/* interactions */
+/* === Interactions === */
 $$(".chip[data-sent]").forEach(btn=>{
   btn.addEventListener("click", ()=>{
     $$(".chip[data-sent]").forEach(b=>b.classList.remove("active"));
@@ -224,6 +215,8 @@ $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
     $$(".gn-tabs .tab").forEach(t=>t.classList.remove("active"));
     tab.classList.add("active");
     state.category = tab.dataset.cat; loadAll();
+    // ensure the active tab is visible on mobile
+    tab.scrollIntoView({inline:"center", behavior:"smooth", block:"nearest"});
   });
 });
 $("#heroPrev")?.addEventListener("click", ()=> updateHero(state.hero.index-1));
@@ -237,10 +230,30 @@ $("#themeToggle")?.addEventListener("click", ()=>{
   applyTheme();
 });
 
-/* boot */
+/* Tap-friendly tooltip toggles (mobile) */
+function wireTipButton(btn){
+  const id = btn.getAttribute("data-tip-target");
+  const tip = document.getElementById(id);
+  if(!tip) return;
+  btn.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    const open = tip.getAttribute("aria-hidden") === "false";
+    $$("[role=tooltip]").forEach(t=> t.setAttribute("aria-hidden","true"));
+    tip.setAttribute("aria-hidden", open ? "true" : "false");
+  });
+}
+$$(".info-btn").forEach(wireTipButton);
+document.addEventListener("click", ()=> {
+  $$("[role=tooltip]").forEach(t=> t.setAttribute("aria-hidden","true"));
+});
+
+/* === Boot === */
 applyTheme();
 $("#briefingDate").textContent = todayStr();
 getWeather();
 loadMarkets();
 loadAll();
 startHeroAuto();
+
+/* Optional: periodic refresh on mobile too */
+setInterval(loadAll, 1000*60*5);
