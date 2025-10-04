@@ -22,13 +22,11 @@
         <span class="sr-only">Informed360 News</span>
       </a>
 
-      <!-- Mobile actions -->
       <div class="gn-actions">
         <button id="themeToggle" class="icon-btn" title="Toggle dark / light" aria-label="Toggle theme">🌙</button>
         <button id="avatarBtn" class="avatar" title="Sign in">S</button>
       </div>
 
-      <!-- Search (mobile collapses) -->
       <form id="searchForm" class="gn-search" role="search" aria-label="Search">
         <span class="icon" aria-hidden="true">🔍</span>
         <input id="searchInput" type="search" placeholder="Search for topics, locations & sources" autocomplete="off"/>
@@ -36,7 +34,7 @@
       </form>
     </div>
 
-    <!-- Tabs (scrollable on mobile) -->
+    <!-- Tabs: single-line, horizontally scrollable -->
     <nav class="gn-tabs" aria-label="Sections">
       <button class="tab active" data-cat="home">Home</button>
       <button class="tab" data-cat="foryou">For you</button>
@@ -121,4 +119,21 @@
           <button class="info-btn" data-tip-target="trendingTip" aria-label="How sentiment is calculated">ⓘ</button>
           <div id="trendingTip" class="tip" role="tooltip" aria-hidden="true">
             <h4>How we calculate</h4>
-            <small>Topics come from <b>Google Trends (India)</b>. We gather articles per topic via Google News, compute VADER per article, average per source, then average across sources equally for the
+            <small>Topics come from <b>Google Trends (India)</b>. We gather articles per topic via Google News, compute VADER per article, average per source, then average across sources equally for the final bar.</small>
+          </div>
+        </div>
+        <div id="topicsList" class="block-list"></div>
+      </div>
+
+      <h3 class="display-title subhead">Daily News</h3>
+      <div id="daily" class="daily-list"></div>
+    </aside>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <span>© <span id="year"></span> Informed360 News — Indian news & sentiment.</span>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
