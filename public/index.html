@@ -15,7 +15,7 @@
   <!-- Header -->
   <header class="gn-header" role="banner">
     <div class="gn-topbar">
-      <!-- ✅ Text-based Brand (instead of missing image) -->
+      <!-- Text Brand -->
       <a class="gn-brand" href="/" aria-label="Informed360 News">
         <div class="brand-text">
           <span class="brand-main">Informed360</span>
@@ -60,11 +60,14 @@
       <h1 class="display-title">Your briefing</h1>
       <div id="briefingDate" class="briefing-date"></div>
     </div>
-    <div id="weatherCard" class="weather-card" aria-live="polite">☁️ Your area</div>
+    <!-- ✅ Market ticker restored -->
+    <div id="marketTicker" class="ticker" aria-live="polite"></div>
+    <div id="weatherCard" class="weather-card" aria-live="polite">⛅ <strong>Your area</strong></div>
   </section>
 
-  <!-- Content Layout -->
+  <!-- Content -->
   <main class="layout" role="main">
+    <!-- LEFT: PINNED -->
     <aside class="left" aria-label="Pinned">
       <div class="block-card">
         <div class="block-header">
@@ -74,15 +77,24 @@
       </div>
     </aside>
 
+    <!-- CENTER: NEWS -->
     <section class="center" aria-label="Top stories">
       <div class="news-section">
         <div class="section-header">
           <h2 class="display-title">News</h2>
+          <div class="controls">
+            <button data-sent="all" class="chip active">All</button>
+            <button data-sent="positive" class="chip">Positive</button>
+            <button data-sent="neutral" class="chip">Neutral</button>
+            <button data-sent="negative" class="chip">Negative</button>
+            <button id="expChip" class="chip" title="Include experimental feeds">Max Feeds</button>
+          </div>
         </div>
         <div id="newsList" class="news-list" aria-live="polite"></div>
       </div>
     </section>
 
+    <!-- RIGHT: TRENDING -->
     <aside class="right" aria-label="Trending topics">
       <div class="block-card">
         <div class="block-header">
