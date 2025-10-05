@@ -11,7 +11,7 @@
   <!-- Header -->
   <header class="gn-header">
     <div class="gn-topbar">
-      <div class="gn-logo">Informed360</div>
+      <img src="/logo.png" alt="Informed360" style="height:26px;object-fit:contain"/>
       <form id="searchForm" class="gn-search" role="search" aria-label="Search">
         <span class="icon" aria-hidden="true">🔍</span>
         <input id="searchInput" type="search" placeholder="Search for topics, locations & sources" autocomplete="off"/>
@@ -43,21 +43,26 @@
     </nav>
   </header>
 
-  <!-- Briefing: Date • Ticker • Weather -->
+  <!-- Briefing: Date • Mood • Markets • Weather -->
   <section class="gn-briefing">
     <div class="briefing-left">
       <h1 class="display-title">Your briefing</h1>
       <div id="briefingDate" class="briefing-date"></div>
     </div>
-    <div id="marketTicker" class="ticker" aria-live="polite"></div>
+
+    <div class="ticker-stack">
+      <div id="moodTicker" class="mood-ticker" aria-live="polite"></div>
+      <div id="marketTicker" class="ticker" aria-live="polite"></div>
+    </div>
+
     <div id="weatherCard" class="weather-card" aria-live="polite"></div>
   </section>
 
-  <!-- 3-column layout -->
+  <!-- 3-column board row -->
   <main class="layout">
-    <!-- LEFT: PINNED as a block card with separators -->
+    <!-- LEFT: PINNED (fixed-height board) -->
     <aside class="left">
-      <div class="block-card">
+      <div class="block-card board">
         <div class="block-header">
           <span class="block-title">Pinned</span>
         </div>
@@ -65,9 +70,9 @@
       </div>
     </aside>
 
-    <!-- CENTER: HERO + NEWS -->
+    <!-- CENTER: HERO (fixed-height board) + NEWS -->
     <section class="center">
-      <section id="hero" class="hero-carousel" aria-roledescription="carousel">
+      <section id="hero" class="hero-carousel board" aria-roledescription="carousel">
         <div class="hero-track" id="heroTrack" role="group"></div>
         <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
         <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
@@ -75,6 +80,7 @@
       </section>
 
       <div class="news-section">
+        <h2 class="display-title">News</h2>
         <div class="controls">
           <button data-sent="all" class="chip active">All</button>
           <button data-sent="positive" class="chip">Positive</button>
@@ -82,22 +88,25 @@
           <button data-sent="negative" class="chip">Negative</button>
           <button id="expChip" class="chip" title="Include experimental feeds">Max Feeds</button>
         </div>
-        <h2 class="display-title">News</h2>
         <div id="newsList" class="news-list"></div>
       </div>
     </section>
 
-    <!-- RIGHT: TRENDING as a block card with separators -->
+    <!-- RIGHT: TRENDING (fixed-height board) + LEADERBOARD -->
     <aside class="right">
-      <div class="block-card">
+      <div class="block-card board">
         <div class="block-header">
           <span class="block-title">Trending topics</span>
         </div>
         <div id="topicsList" class="block-list"></div>
       </div>
 
-      <h3 class="display-title" style="margin-top:.6rem">Daily News</h3>
-      <div id="daily" class="daily-list"></div>
+      <div class="block-card" style="margin-top:.9rem">
+        <div class="block-header">
+          <span class="block-title">Sentiment Leaderboard</span>
+        </div>
+        <div id="leaderboard" class="lb-grid"></div>
+      </div>
     </aside>
   </main>
 
