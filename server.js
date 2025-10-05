@@ -17,7 +17,7 @@ const FEEDS = JSON.parse(
 );
 const REFRESH_MS = Math.max(2, FEEDS.refreshMinutes || 10) * 60 * 1000;
 
-/* Robust RSS parser (helps avoid 403/timeout) */
+/* Parser with stronger headers to reduce 403 */
 const parser = new Parser({
   timeout: 15000,
   requestOptions: {
@@ -35,9 +35,15 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const domainFromUrl = (u = "") => {
   try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; }
 };
-const faviconForDomain = (d) => d ? `https://logo.clearbit.com/${d}` : "";
 
-/* VADER sentiment → percentages + label */
+const extractImage = (item) => {
+  if (item.enclosure?.url) return item.enclosure.url;
+  if (item["media:content"]?.url) return item["media:content"].url;
+  if (item["media:thumbnail"]?.url) return item["media:thumbnail"].url;
+  const d = domainFromUrl(item.link || "");
+  return d ? `https://logo.clearbit.com/${d}` : "";
+};
+
 const scoreSentiment = (text) => {
   const s = vader.SentimentIntensityAnalyzer.polarity_scores(text || "") || {
     pos: 0, neg: 0, neu: 1, compound: 0
@@ -51,16 +57,16 @@ const scoreSentiment = (text) => {
   return { ...s, posP, negP, neuP, label };
 };
 
-/* Category inference (simple rules) */
+/* Category inference */
 const CAT_RULES = [
-  { name: "sports", patterns: [/sport/i, /cricket/i, /ipl/i, /football/i, /hockey/i] },
-  { name: "business", patterns: [/business/i, /econom/i, /market/i, /stock/i, /sensex/i, /nifty/i, /finance/i] },
-  { name: "technology", patterns: [/tech/i, /technology/i, /software/i, /ai\b/i, /gadget/i] },
-  { name: "entertainment", patterns: [/entertainment/i, /bollywood/i, /movie/i, /film/i, /music/i, /\btv\b/i] },
-  { name: "science", patterns: [/science/i, /space/i, /isro/i, /nasa/i, /research/i, /study/i, /astro/i] },
-  { name: "health", patterns: [/health/i, /covid/i, /virus/i, /medical/i, /hospital/i, /vaccine/i] },
-  { name: "world", patterns: [/world/i, /international/i, /\bUS\b/i, /china/i, /pakistan/i, /\buk\b/i, /europe/i, /russia/i, /middle[- ]east/i] },
-  { name: "india", patterns: [/india/i, /indian/i, /delhi/i, /mumbai/i, /bengaluru/i, /hyderabad/i, /chennai/i, /kolkata/i, /maharashtra/i] }
+  { name: "sports", patterns: [/sport/i, /cricket/i, /ipl/i, /football/i, /badminton/i, /hockey/i] },
+  { name: "business", patterns: [/business/i, /market/i, /econom/i, /stock/i, /sensex/i, /nifty/i, /finance/i, /industry/i] },
+  { name: "technology", patterns: [/tech/i, /technology/i, /software/i, /ai\b/i, /startup/i, /gadget/i, /iphone/i, /android/i] },
+  { name: "entertainment", patterns: [/entertainment/i, /bollywood/i, /movie/i, /film/i, /music/i, /celebrity/i, /\btv\b/i, /web series/i] },
+  { name: "science", patterns: [/science/i, /space/i, /isro/i, /nasa/i, /research/i, /study/i, /astronom/i, /quantum/i] },
+  { name: "health", patterns: [/health/i, /covid/i, /virus/i, /disease/i, /medical/i, /hospital/i, /vaccine/i, /wellness/i] },
+  { name: "world", patterns: [/world/i, /international/i, /\bUS\b/i, /china/i, /pakistan/i, /\buk\b/i, /europe/i, /russia/i, /africa/i, /global/i, /middle[- ]east/i] },
+  { name: "india", patterns: [/india/i, /indian/i, /delhi/i, /mumbai/i, /bengaluru/i, /hyderabad/i, /chennai/i, /kolkata/i, /maharashtra/i, /uttar pradesh/i, /gujarat/i, /punjab/i] }
 ];
 function inferCategory({ title = "", link = "", source = "" }) {
   const hay = `${title} ${link} ${source}`.toLowerCase();
@@ -69,32 +75,22 @@ function inferCategory({ title = "", link = "", source = "" }) {
   return "india";
 }
 
-/* Image extraction */
-const extractImage = (item) => {
-  if (item.enclosure?.url) return item.enclosure.url;
-  if (item["media:content"]?.url) return item["media:content"].url;
-  if (item["media:thumbnail"]?.url) return item["media:thumbnail"].url;
-  const d = domainFromUrl(item.link || "");
-  return d ? `https://logo.clearbit.com/${d}` : "";
-};
-
-/* Polite host concurrency */
+/* polite per-host concurrency */
 const hostCounters = new Map();
 const MAX_PER_HOST = 2;
 const acquire = async (host) => {
   while ((hostCounters.get(host) || 0) >= MAX_PER_HOST) await sleep(150);
   hostCounters.set(host, (hostCounters.get(host) || 0) + 1);
 };
-const release = (host) => hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
-const parseURL = async (u) => parser.parseURL(u);
+const release = (host) =>
+  hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
 
-/* Google News helpers */
-const gNewsSearch = (q) =>
-  `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=en-IN&gl=IN&ceid=IN:en`;
+async function parseURL(u){ return parser.parseURL(u); }
+
+/* Google News fallback for a domain */
 const gNewsForDomain = (domain) =>
   `https://news.google.com/rss/search?q=site:${encodeURIComponent(domain)}&hl=en-IN&gl=IN&ceid=IN:en`;
 
-/* Direct → fallback to Google News (per site) */
 async function fetchDirect(url) {
   const host = domainFromUrl(url);
   await acquire(host);
@@ -109,20 +105,20 @@ async function fetchWithFallback(url) {
     const g = await parseURL(gNewsForDomain(domain));
     g.title = g.title || domain;
     return g;
-  } catch {
+  } catch (e) {
     try {
       const g = await parseURL(gNewsForDomain(domain));
       g.title = g.title || domain;
       console.warn("[FEED Fallback]", domain, "-> Google News RSS");
       return g;
     } catch (e2) {
-      console.warn("[FEED ERR]", domain, "->", e2?.message || e2);
+      const msg = e?.statusCode ? `Status ${e.statusCode}` : (e?.code || e?.message || "Unknown");
+      console.warn("[FEED ERR]", domain, "->", msg);
       return { title: domain, items: [] };
     }
   }
 }
 
-/* Build article list from feeds */
 async function fetchList(urls) {
   const articles = [];
   const seen = new Set();
@@ -142,11 +138,9 @@ async function fetchList(urls) {
       const image = extractImage(item);
       const sentiment = scoreSentiment(`${title}. ${description}`);
       const category = inferCategory({ title, link, source });
-      const sdom = domainFromUrl(link);
-      const sourceIcon = faviconForDomain(sdom);
 
       seen.add(link);
-      articles.push({ title, link, source, sourceIcon, description, image, publishedAt, sentiment, category });
+      articles.push({ title, link, source, description, image, publishedAt, sentiment, category });
     });
   }));
 
@@ -154,105 +148,45 @@ async function fetchList(urls) {
   return { fetchedAt: Date.now(), articles };
 }
 
-/* Cache core/experimental */
 let CORE = { fetchedAt: 0, articles: [] };
 let EXP  = { fetchedAt: 0, articles: [] };
 const uniqueMerge = (a, b) => {
   const set = new Set(); const out = [];
-  for (const x of [...a, ...b]) { const k = x.link || x.title; if (set.has(k)) continue; set.add(k); out.push(x); }
+  for (const x of [...a, ...b]) {
+    const k = x.link || x.title; if (set.has(k)) continue;
+    set.add(k); out.push(x);
+  }
   return out;
 };
+
 async function refreshCore(){ CORE = await fetchList(FEEDS.feeds || []); }
 async function refreshExp(){  EXP  = await fetchList(FEEDS.experimental || []); }
 await refreshCore(); await refreshExp();
 setInterval(refreshCore, REFRESH_MS);
 setInterval(refreshExp, REFRESH_MS);
 
-/* ---------- GOOGLE TRENDS (INDIA) ---------- */
-/* Daily trending RSS (maps to your link): */
-async function fetchGoogleTrendsIN(limit = 8) {
-  const url = "https://trends.google.com/trends/trendingsearches/daily/rss?geo=IN";
-  try {
-    const feed = await parseURL(url);
-    const queries = (feed.items || []).map(i => i.title).filter(Boolean);
-    return queries.slice(0, limit);
-  } catch (e) {
-    console.warn("[Trends ERR]", e?.message || e);
-    return [];
+/* Topics / Pinned / News */
+const normalize = (t = "") => t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+const topicKey = (title) => {
+  const w = normalize(title).split(" ").filter(Boolean);
+  const bi = []; for (let i=0;i<w.length-1;i++) if (w[i].length>=3 && w[i+1].length>=3) bi.push(`${w[i]} ${w[i+1]}`);
+  return bi.slice(0,3).join(" | ") || w.slice(0,3).join(" ");
+};
+function buildClusters(arts){
+  const map = new Map();
+  for (const a of arts) {
+    const k = topicKey(a.title); if (!k) continue;
+    if (!map.has(k)) map.set(k, { key:k, count:0, pos:0, neg:0, neu:0, sources:new Set(), image:a.image });
+    const c = map.get(k);
+    c.count++; c.pos+=a.sentiment.posP; c.neg+=a.sentiment.negP; c.neu+=a.sentiment.neuP; c.sources.add(a.source);
   }
+  return [...map.values()].map(c=>{
+    const n = Math.max(1,c.count);
+    return { title:c.key, count:c.count, sources:c.sources.size,
+      sentiment:{ pos:Math.round(c.pos/n), neg:Math.round(c.neg/n), neu:Math.round(c.neu/n) }, image:c.image };
+  }).sort((a,b)=>b.count-a.count).slice(0,12);
 }
 
-/* Build topics → search Google News → per-source sentiment → overall */
-async function buildTrendingFromTrends(limit = 8) {
-  const queries = await fetchGoogleTrendsIN(limit);
-  if (!queries.length) return [];
-
-  const results = await Promise.all(
-    queries.map(async (q) => {
-      try { return await parseURL(gNewsSearch(q)); }
-      catch { return { items: [] }; }
-    })
-  );
-
-  const topics = results.map((feed, idx) => {
-    const q = queries[idx];
-    const items = (feed.items || []).slice(0, 12);
-
-    const perSource = new Map(); // domain -> {count, pos, neu, neg}
-    let totalArticles = 0;
-
-    for (const it of items) {
-      const title = it.title || "";
-      const desc = it.contentSnippet || it.summary || "";
-      const s = scoreSentiment(`${title}. ${desc}`);
-
-      const dm = domainFromUrl(it.link || "");
-      if (!dm) continue;
-
-      if (!perSource.has(dm)) perSource.set(dm, { count:0, pos:0, neu:0, neg:0 });
-      const p = perSource.get(dm);
-      p.count += 1; p.pos += s.posP; p.neu += s.neuP; p.neg += s.negP;
-      totalArticles += 1;
-    }
-
-    // Average per source
-    const breakdown = [];
-    for (const [dm, v] of perSource.entries()) {
-      const n = Math.max(1, v.count);
-      breakdown.push({
-        domain: dm,
-        articles: v.count,
-        pos: Math.round(v.pos / n),
-        neu: Math.round(v.neu / n),
-        neg: Math.round(v.neg / n),
-        icon: faviconForDomain(dm)
-      });
-    }
-    // Overall = mean of per-source percentages (equal weight)
-    let pos=0, neu=0, neg=0;
-    const N = Math.max(1, breakdown.length);
-    breakdown.forEach(b => { pos += b.pos; neu += b.neu; neg += b.neg; });
-    const overall = { pos: Math.round(pos/N), neu: Math.round(neu/N), neg: Math.round(neg/N) };
-
-    const icons = breakdown.slice(0,4).map(b => b.icon).filter(Boolean);
-    const explain = `Trend: “${q}”. Articles pulled from Google News across ${breakdown.length} sources. `
-      + `We run VADER on each article (title + snippet) → average per source → average across sources equally.`;
-
-    return {
-      title: q,
-      count: totalArticles,
-      sources: breakdown.length,
-      sentiment: overall,
-      icons,
-      breakdown, // for tooltip
-      explain
-    };
-  });
-
-  return topics;
-}
-
-/* ---------- API ---------- */
 app.get("/api/news", (req, res) => {
   const limit = Number(req.query.limit || 200);
   const sentiment = req.query.sentiment;
@@ -266,14 +200,40 @@ app.get("/api/news", (req, res) => {
   res.json({ fetchedAt: Date.now(), articles: arts.slice(0, limit) });
 });
 
-app.get("/api/topics", async (_req,res)=>{
+app.get("/api/topics", (req,res)=>{
+  const includeExp = req.query.experimental === "1";
+  const arts = includeExp ? uniqueMerge(CORE.articles, EXP.articles) : CORE.articles;
+  res.json({ fetchedAt: Date.now(), topics: buildClusters(arts) });
+});
+
+app.get("/api/pinned", (_req,res)=>{
+  res.json({ articles: CORE.articles.slice(0,3) });
+});
+
+/* Markets endpoint */
+let yfModule = null;
+async function loadYF(){
+  try { if (yfModule) return yfModule; const mod = await import("yahoo-finance2"); yfModule = mod?.default || mod; return yfModule; }
+  catch { return null; }
+}
+app.get("/api/markets", async (_req, res) => {
   try {
-    const topics = await buildTrendingFromTrends(8);
-    return res.json({ fetchedAt: Date.now(), topics });
-  } catch (e) {
-    console.warn("[/api/topics]", e?.message || e);
-    res.json({ fetchedAt: Date.now(), topics: [] });
-  }
+    const yf = await loadYF();
+    const symbols = [
+      { s: "^BSESN", pretty: "BSE Sensex" },
+      { s: "^NSEI",  pretty: "NSE Nifty" },
+      { s: "GC=F",   pretty: "Gold" },
+      { s: "CL=F",   pretty: "Crude Oil" },
+      { s: "USDINR=X", pretty: "USD/INR" }
+    ];
+    if (!yf) return res.json({ updatedAt: Date.now(), quotes: symbols.map(x => ({ symbol:x.s, pretty:x.pretty, price:null, change:null, changePercent:null })) });
+    const quotes = await yf.quote(symbols.map(x => x.s));
+    const out = quotes.map((q, i) => ({
+      symbol: q.symbol, pretty: symbols[i].pretty,
+      price: q.regularMarketPrice, change: q.regularMarketChange, changePercent: q.regularMarketChangePercent
+    }));
+    res.json({ updatedAt: Date.now(), quotes: out });
+  } catch { res.json({ updatedAt: Date.now(), quotes: [] }); }
 });
 
 app.get("/health", (_req,res)=> res.json({ ok:true, at:Date.now() }));
