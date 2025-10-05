@@ -86,6 +86,23 @@ async function loadMarkets(){
   }catch{ $("#marketTicker").innerHTML = ""; }
 }
 
+/* Nation Mood */
+function renderMoodTicker(){
+  const arts = state.articles.slice(0, 60);            // use fresh recent slice
+  const sum = { pos:0, neu:0, neg:0 };
+  arts.forEach(a => { sum.pos += a.sentiment.posP; sum.neu += a.sentiment.neuP; sum.neg += a.sentiment.negP; });
+  const n = Math.max(1, arts.length);
+  const pos = Math.round(sum.pos / n);
+  const neu = Math.round(sum.neu / n);
+  const neg = Math.max(0, 100 - pos - neu);
+  $("#moodTicker").innerHTML =
+    `<div class="mood-pill">Nation’s Mood — 
+       <span class="pos">Positive ${fmtPct(pos)}</span> · 
+       <span class="neu">Neutral ${fmtPct(neu)}</span> · 
+       <span class="neg">Negative ${fmtPct(neg)}</span>
+     </div>`;
+}
+
 /* loads */
 async function loadAll(){
   const qs = new URLSearchParams();
@@ -99,8 +116,8 @@ async function loadAll(){
   ]);
 
   state.articles = news.articles || [];
-  state.topics = (topics.topics || []).slice(0, 8); // cap right-rail
-  state.pins = state.articles.slice(0,3);
+  state.topics = (topics.topics || []).slice(0, 3); // top 3 for board
+  state.pins = state.articles.slice(0,2);           // 2 pinned
 
   if (state.category === "local" && state.profile?.city) {
     const c = state.profile.city.toLowerCase();
@@ -126,21 +143,19 @@ function card(a){
     </a>`;
 }
 
-/* Pinned inside a block-list with separators */
 function renderPinned(){
   $("#pinned").innerHTML = state.pins.map(a => `
-    <div class="row">
+    <div class="row" title="${a.source}">
       <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
       <div class="row-meta"><span class="source">${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
       ${renderSentiment(a.sentiment, true)}
     </div>`).join("");
 }
 
-/* News + Daily */
-function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
-function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
+function renderNews(){
+  $("#newsList").innerHTML = state.articles.slice(4, 8).map(card).join(""); // 4 items
+}
 
-/* HERO (unchanged) */
 function renderHero(){
   const slides = state.articles.slice(0,4);
   const track = $("#heroTrack"); const dots = $("#heroDots");
@@ -167,13 +182,12 @@ function updateHero(i){
 function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
 function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
 
-/* Trending topics as rows with separators */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
     const total = (t.sentiment.pos||0)+(t.sentiment.neu||0)+(t.sentiment.neg||0);
     const sent = { posP: total? (t.sentiment.pos/total)*100:0, neuP: total? (t.sentiment.neu/total)*100:0, negP: total? (t.sentiment.neg/total)*100:0 };
     return `
-      <div class="row">
+      <div class="row" title="${t.count} articles across ${t.sources} sources">
         <div class="row-title">${t.title.split("|")[0]}</div>
         <div class="row-meta"><span>${t.count} articles</span> · <span>${t.sources} sources</span></div>
         ${renderSentiment(sent, true)}
@@ -181,10 +195,60 @@ function renderTopics(){
   }).join("");
 }
 
+/* Leaderboard (logos + vertical stacks) */
+const LOGO_DOMAIN = [
+  {match:/hindu/i, domain:"thehindu.com", label:"The Hindu"},
+  {match:/ndtv/i, domain:"ndtv.com", label:"NDTV"},
+  {match:/india today/i, domain:"indiatoday.in", label:"India Today"},
+  {match:/news18|network18/i, domain:"news18.com", label:"News18"},
+  {match:/hindustan times/i, domain:"hindustantimes.com", label:"Hindustan Times"},
+  {match:/times of india|toi/i, domain:"timesofindia.indiatimes.com", label:"Times of India"},
+  {match:/mint/i, domain:"livemint.com", label:"Mint"},
+  {match:/indian express/i, domain:"indianexpress.com", label:"Indian Express"}
+];
+function canonicalSourceName(src=""){
+  const hit = LOGO_DOMAIN.find(x => x.match.test(src));
+  return hit ? hit.label : src;
+}
+function domainForSource(src=""){
+  const hit = LOGO_DOMAIN.find(x => x.match.test(src));
+  if (hit) return hit.domain;
+  try { const u = new URL(src); return u.hostname; } catch { return ""; }
+}
+function renderLeaderboard(){
+  // compute per-publisher averages from recent 60 items
+  const stats = new Map();
+  state.articles.slice(0,60).forEach(a=>{
+    const key = canonicalSourceName(a.source || "");
+    const s = stats.get(key) || {count:0,pos:0,neu:0,neg:0,domain:domainForSource(a.source||"")};
+    s.count++; s.pos += a.sentiment.posP; s.neu += a.sentiment.neuP; s.neg += a.sentiment.negP;
+    stats.set(key,s);
+  });
+  const top = [...stats.entries()].sort((a,b)=>b[1].count - a[1].count).slice(0,4);
+  const html = top.map(([name, s])=>{
+    const n = Math.max(1, s.count);
+    const pos = Math.round(s.pos / n);
+    const neu = Math.round(s.neu / n);
+    const neg = Math.max(0, 100 - pos - neu);
+    const logo = s.domain ? `https://logo.clearbit.com/${s.domain}` : "";
+    return `
+      <div class="lb-col" title="${name} · ${s.count} articles">
+        <img class="lb-logo" src="${logo}" alt="${name} logo">
+        <div class="lb-stack" aria-label="${name} sentiment">
+          <div class="pos" style="height:${pos}%"></div>
+          <div class="neu" style="height:${neu}%"></div>
+          <div class="neg" style="height:${neg}%"></div>
+        </div>
+        <div class="lb-perc">${fmtPct(pos)} / ${fmtPct(neu)} / ${fmtPct(neg)}</div>
+      </div>`;
+  }).join("");
+  $("#leaderboard").innerHTML = html || `<div style="padding:.9rem;color:var(--muted)">Not enough data yet.</div>`;
+}
+
 /* glue */
 function renderAll(){
   $("#briefingDate").textContent = todayStr();
-  renderHero(); renderPinned(); renderNews(); renderDaily(); renderTopics();
+  renderHero(); renderPinned(); renderNews(); renderTopics(); renderLeaderboard(); renderMoodTicker();
   $("#year").textContent = new Date().getFullYear();
 }
 
@@ -239,5 +303,5 @@ getWeather();
 loadMarkets();
 loadAll();
 startHeroAuto();
-setInterval(loadAll, 1000*60*5);
-setInterval(loadMarkets, 1000*60*5);
+setInterval(loadAll, 1000*60*5);      // refresh news (and mood) every 5 min
+setInterval(loadMarkets, 1000*60*5);   // refresh markets every 5 min
