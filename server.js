@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ Static frontend folder (serves index.html, CSS, JS, logos, etc.)
+app.use(express.static("public"));
+
 const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "public")));
 
