@@ -3,6 +3,32 @@ const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
 async function fetchJSON(u){ const r = await fetch(u); if(!r.ok) throw new Error(await r.text()); return r.json(); }
+const domainFromUrl = (u="") => { try { return new URL(u).hostname.replace(/^www\./,""); } catch { return ""; } };
+
+/* Canonical domains for clean logos */
+const LOGO_DOMAIN_MAP = {
+  "India Today":"indiatoday.in",
+  "The Hindu":"thehindu.com",
+  "Scroll.in":"scroll.in","Scroll":"scroll.in",
+  "News18":"news18.com","NEWS18":"news18.com",
+  "Deccan Herald":"deccanherald.com","DH":"deccanherald.com",
+  "ThePrint":"theprint.in","Mint":"livemint.com",
+  "Hindustan Times":"hindustantimes.com",
+  "Times of India":"timesofindia.indiatimes.com","TOI":"timesofindia.indiatimes.com",
+  "Indian Express":"indianexpress.com","The Indian Express":"indianexpress.com",
+  "NDTV":"ndtv.com","Firstpost":"firstpost.com",
+  "Reuters":"reuters.com","Business Standard":"business-standard.com",
+  "Indiatimes":"indiatimes.com","The Economic Times":"economictimes.indiatimes.com",
+  "The Wire":"thewire.in","The Quint":"thequint.com","BBC":"bbc.com","Al Jazeera":"aljazeera.com"
+};
+const clearbit = (d)=> d ? `https://logo.clearbit.com/${d}` : "";
+const logoFor = (link="", source="") => {
+  const mapDom = LOGO_DOMAIN_MAP[source?.trim()] || "";
+  const d = mapDom || domainFromUrl(link) || "";
+  return clearbit(d);
+};
+
+const PLACEHOLDER = "data:image/svg+xml;base64," + btoa(`<svg xmlns='http://www.w3.org/2000/svg' width='400' height='260'><rect width='100%' height='100%' fill='#e5edf7'/><text x='50%' y='52%' text-anchor='middle' font-family='sans-serif' font-weight='700' fill='#8aa3c4' font-size='18'>Image</text></svg>`);
 
 /* sentiment meter */
 function renderSentiment(s, slim=false){
@@ -36,7 +62,8 @@ const state = {
   pins: [],
   profile: loadProfile(),
   theme: localStorage.getItem("theme") || "light",
-  hero: { index:0, timer:null, pause:false }
+  hero: { index:0, timer:null, pause:false },
+  lastLeaderboardAt: 0
 };
 function loadProfile(){ try { return JSON.parse(localStorage.getItem("i360_profile") || "{}"); } catch { return {}; } }
 function saveProfile(p){ localStorage.setItem("i360_profile", JSON.stringify(p || {})); state.profile = p || {}; }
@@ -86,23 +113,6 @@ async function loadMarkets(){
   }catch{ $("#marketTicker").innerHTML = ""; }
 }
 
-/* Nation Mood */
-function renderMoodTicker(){
-  const arts = state.articles.slice(0, 60);            // use fresh recent slice
-  const sum = { pos:0, neu:0, neg:0 };
-  arts.forEach(a => { sum.pos += a.sentiment.posP; sum.neu += a.sentiment.neuP; sum.neg += a.sentiment.negP; });
-  const n = Math.max(1, arts.length);
-  const pos = Math.round(sum.pos / n);
-  const neu = Math.round(sum.neu / n);
-  const neg = Math.max(0, 100 - pos - neu);
-  $("#moodTicker").innerHTML =
-    `<div class="mood-pill">Nation’s Mood — 
-       <span class="pos">Positive ${fmtPct(pos)}</span> · 
-       <span class="neu">Neutral ${fmtPct(neu)}</span> · 
-       <span class="neg">Negative ${fmtPct(neg)}</span>
-     </div>`;
-}
-
 /* loads */
 async function loadAll(){
   const qs = new URLSearchParams();
@@ -116,8 +126,8 @@ async function loadAll(){
   ]);
 
   state.articles = news.articles || [];
-  state.topics = (topics.topics || []).slice(0, 3); // top 3 for board
-  state.pins = state.articles.slice(0,2);           // 2 pinned
+  state.topics = (topics.topics || []).slice(0, 8);
+  state.pins = state.articles.slice(0,3);
 
   if (state.category === "local" && state.profile?.city) {
     const c = state.profile.city.toLowerCase();
@@ -130,11 +140,18 @@ async function loadAll(){
   renderAll();
 }
 
-/* renderers */
+/* image tags with fallbacks (news cards & hero keep placeholder if logo missing) */
+function safeImgTag(src, link, source, cls){
+  const fallback = logoFor(link, source) || PLACEHOLDER;
+  const s = src || fallback || PLACEHOLDER;
+  return `<img class="${cls}" src="${s}" onerror="this.onerror=null;this.src='${fallback || PLACEHOLDER}'" alt="">`;
+}
+
+/* News card */
 function card(a){
   return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
-      <img class="thumb" src="${a.image}" alt="">
+      ${safeImgTag(a.image, a.link, a.source, "thumb")}
       <div>
         <div class="title">${a.title}</div>
         <div class="meta"><span class="source">${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
@@ -143,26 +160,28 @@ function card(a){
     </a>`;
 }
 
+/* Pinned */
 function renderPinned(){
   $("#pinned").innerHTML = state.pins.map(a => `
-    <div class="row" title="${a.source}">
+    <div class="row">
       <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
       <div class="row-meta"><span class="source">${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
       ${renderSentiment(a.sentiment, true)}
     </div>`).join("");
 }
 
-function renderNews(){
-  $("#newsList").innerHTML = state.articles.slice(4, 8).map(card).join(""); // 4 items
-}
+/* News + Daily */
+function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
+function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
 
+/* HERO */
 function renderHero(){
   const slides = state.articles.slice(0,4);
   const track = $("#heroTrack"); const dots = $("#heroDots");
   if (!slides.length){ track.innerHTML=""; dots.innerHTML=""; return; }
   track.innerHTML = slides.map(a => `
     <article class="hero-slide">
-      <div class="hero-img"><img src="${a.image}" alt=""></div>
+      <div class="hero-img">${safeImgTag(a.image, a.link, a.source, "")}</div>
       <div class="hero-content">
         <h3>${a.title}</h3>
         <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
@@ -182,12 +201,13 @@ function updateHero(i){
 function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
 function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
 
+/* Trending topics */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
     const total = (t.sentiment.pos||0)+(t.sentiment.neu||0)+(t.sentiment.neg||0);
     const sent = { posP: total? (t.sentiment.pos/total)*100:0, neuP: total? (t.sentiment.neu/total)*100:0, negP: total? (t.sentiment.neg/total)*100:0 };
     return `
-      <div class="row" title="${t.count} articles across ${t.sources} sources">
+      <div class="row">
         <div class="row-title">${t.title.split("|")[0]}</div>
         <div class="row-meta"><span>${t.count} articles</span> · <span>${t.sources} sources</span></div>
         ${renderSentiment(sent, true)}
@@ -195,60 +215,127 @@ function renderTopics(){
   }).join("");
 }
 
-/* Leaderboard (logos + vertical stacks) */
-const LOGO_DOMAIN = [
-  {match:/hindu/i, domain:"thehindu.com", label:"The Hindu"},
-  {match:/ndtv/i, domain:"ndtv.com", label:"NDTV"},
-  {match:/india today/i, domain:"indiatoday.in", label:"India Today"},
-  {match:/news18|network18/i, domain:"news18.com", label:"News18"},
-  {match:/hindustan times/i, domain:"hindustantimes.com", label:"Hindustan Times"},
-  {match:/times of india|toi/i, domain:"timesofindia.indiatimes.com", label:"Times of India"},
-  {match:/mint/i, domain:"livemint.com", label:"Mint"},
-  {match:/indian express/i, domain:"indianexpress.com", label:"Indian Express"}
-];
-function canonicalSourceName(src=""){
-  const hit = LOGO_DOMAIN.find(x => x.match.test(src));
-  return hit ? hit.label : src;
-}
-function domainForSource(src=""){
-  const hit = LOGO_DOMAIN.find(x => x.match.test(src));
-  if (hit) return hit.domain;
-  try { const u = new URL(src); return u.hostname; } catch { return ""; }
-}
-function renderLeaderboard(){
-  // compute per-publisher averages from recent 60 items
-  const stats = new Map();
-  state.articles.slice(0,60).forEach(a=>{
-    const key = canonicalSourceName(a.source || "");
-    const s = stats.get(key) || {count:0,pos:0,neu:0,neg:0,domain:domainForSource(a.source||"")};
-    s.count++; s.pos += a.sentiment.posP; s.neu += a.sentiment.neuP; s.neg += a.sentiment.negP;
-    stats.set(key,s);
+/* ===== 4-hour mood (top/bottom halves, dashed ticks, labels) ===== */
+function renderMood4h(){
+  const now = Date.now();
+  const fourHrs = 4*60*60*1000;
+  const recent = state.articles.filter(a => now - new Date(a.publishedAt).getTime() <= fourHrs);
+
+  const buckets = [0,1,2,3].map(()=>({pos:0,neg:0,neu:0,c:0}));
+  recent.forEach(a=>{
+    const dt = now - new Date(a.publishedAt).getTime();
+    const idx = Math.min(3, Math.floor(dt/(60*60*1000))); // hours back
+    const bi = 3-idx; // oldest->left
+    buckets[bi].pos += a.sentiment.posP; buckets[bi].neg += a.sentiment.negP; buckets[bi].neu += a.sentiment.neuP; buckets[bi].c++;
   });
-  const top = [...stats.entries()].sort((a,b)=>b[1].count - a[1].count).slice(0,4);
-  const html = top.map(([name, s])=>{
-    const n = Math.max(1, s.count);
-    const pos = Math.round(s.pos / n);
-    const neu = Math.round(s.neu / n);
-    const neg = Math.max(0, 100 - pos - neu);
-    const logo = s.domain ? `https://logo.clearbit.com/${s.domain}` : "";
-    return `
-      <div class="lb-col" title="${name} · ${s.count} articles">
-        <img class="lb-logo" src="${logo}" alt="${name} logo">
-        <div class="lb-stack" aria-label="${name} sentiment">
-          <div class="pos" style="height:${pos}%"></div>
-          <div class="neu" style="height:${neu}%"></div>
-          <div class="neg" style="height:${neg}%"></div>
-        </div>
-        <div class="lb-perc">${fmtPct(pos)} / ${fmtPct(neu)} / ${fmtPct(neg)}</div>
-      </div>`;
-  }).join("");
-  $("#leaderboard").innerHTML = html || `<div style="padding:.9rem;color:var(--muted)">Not enough data yet.</div>`;
+  const pts = buckets.map(b=>{
+    const n = Math.max(1,b.c);
+    return { pos:Math.round(b.pos/n), neg:Math.round(b.neg/n), neu:Math.round(b.neu/n) };
+  });
+
+  const svg = $("#moodSpark");
+  const W = 300, H = 120;
+  const padL=36, padR=8, padT=10, padB=18;
+  const mid = (H - padB + padT)/2 + 2; // visual midline
+
+  const x = (i)=> padL + i*((W-padL-padR)/3);
+  // Map positives to top half, negatives to bottom half (independent scales)
+  const yTop = (p)=> mid - (p/100)*((H/2) - padT);
+  const yBot = (p)=> mid + (p/100)*((H/2) - padB);
+
+  // x-axis labels: last 4 hour marks (left=oldest)
+  const tickLabels = [3,2,1,0].map(h=>{
+    const d = new Date(now - h*60*60*1000);
+    return d.toLocaleTimeString([], { hour:'2-digit', minute:'2-digit' });
+  });
+
+  const grid = [0,1,2,3].map(i=>`<line x1="${x(i)}" y1="${padT}" x2="${x(i)}" y2="${H-padB}" stroke="#9aa4ad" stroke-dasharray="4 4" stroke-width="1" opacity=".6"/>`).join("");
+  const labels = [0,1,2,3].map(i=>`<text x="${x(i)}" y="${H-2}" text-anchor="middle" font-size="10" fill="#6b7280">${tickLabels[i]}</text>`).join("");
+
+  const pPath = pts.map((p,i)=> `${i?'L':'M'} ${x(i)} ${yTop(p.pos)}`).join(" ");
+  const nPath = pts.map((p,i)=> `${i?'L':'M'} ${x(i)} ${yBot(p.neg)}`).join(" ");
+  const pDots = pts.map((p,i)=> `<circle cx="${x(i)}" cy="${yTop(p.pos)}" r="2.8" fill="#22c55e"/><text x="${x(i)}" y="${yTop(p.pos)-7}" text-anchor="middle" font-size="11" fill="#22c55e">${p.pos}%</text>`).join("");
+  const nDots = pts.map((p,i)=> `<circle cx="${x(i)}" cy="${yBot(p.neg)}" r="2.8" fill="#ef4444"/><text x="${x(i)}" y="${yBot(p.neg)+12}" text-anchor="middle" font-size="11" fill="#ef4444">${p.neg}%</text>`).join("");
+
+  svg.innerHTML = `
+    <rect x="0" y="${mid-11}" width="${W}" height="22" fill="#e5e7eb" opacity=".95"></rect>
+    ${grid}
+    <path d="${pPath}" fill="none" stroke="#22c55e" stroke-width="2.6" />
+    <path d="${nPath}" fill="none" stroke="#ef4444" stroke-width="2.6" />
+    ${pDots}${nDots}${labels}
+  `;
+
+  const avg = pts.reduce((a,p)=>({pos:a.pos+p.pos, neu:a.neu+p.neu, neg:a.neg+p.neg}),{pos:0,neu:0,neg:0});
+  const n=pts.length||1;
+  $("#moodSummary").textContent = `Positive ${fmtPct(avg.pos/n)} · Neutral ${fmtPct(avg.neu/n)} · Negative ${fmtPct(avg.neg/n)}`;
+}
+
+/* ===== Sentiment Leaderboard (data-driven, exact look) ===== */
+function computeLeaderboard(){
+  const bySource = new Map();
+  state.articles.forEach(a=>{
+    const key = (a.source||"").trim();
+    if(!key) return;
+    const s = bySource.get(key) || {n:0,pos:0,neg:0,neu:0,link:a.link};
+    s.n++; s.pos+=a.sentiment.posP; s.neg+=a.sentiment.negP; s.neu+=a.sentiment.neuP;
+    s.link = a.link || s.link;
+    bySource.set(key, s);
+  });
+
+  const arr = [...bySource.entries()].map(([src,v])=>{
+    const n = Math.max(1,v.n);
+    const pos = v.pos/n, neg = v.neg/n, neu = v.neu/n;
+    const bias = (pos - neg); // >0 positive, <0 negative
+    const logo = logoFor(v.link, src);
+    return { source:src, pos, neg, neu, bias, logo };
+  }).filter(x=> (x.pos+x.neg+x.neu)>0.1);
+
+  const pos = arr.filter(x=>x.bias>3).sort((a,b)=>b.bias-a.bias).slice(0,2);
+  const neg = arr.filter(x=>x.bias<-3).sort((a,b)=>a.bias-b.bias).slice(0,2);
+  const neu = arr.slice().sort((a,b)=> Math.abs(a.bias)-Math.abs(b.bias) ).slice(0,2);
+  return { pos, neu, neg };
+}
+
+function renderLeaderboard(){
+  const grid = $("#leaderboard");
+  const colPos = grid.querySelector(".col-pos");
+  const colNeu = grid.querySelector(".col-neu");
+  const colNeg = grid.querySelector(".col-neg");
+  [colPos,colNeu,colNeg].forEach(c=> c.innerHTML="");
+
+  const {pos, neu, neg} = computeLeaderboard();
+
+  // tiers roughly matching your visual (one low ~35%, one high ~75%)
+  const TIERS = [0.35, 0.75];
+
+  function place(col, list){
+    let idx = 0;
+    list.forEach(s=>{
+      if(!s.logo) return; // never show placeholders inside leaderboard
+      const b = document.createElement("div");
+      b.className = "badge";
+      const left = (col.offsetWidth ? col.offsetWidth/2 : 110);
+      const top = (col.offsetHeight ? col.offsetHeight*TIERS[Math.min(idx,TIERS.length-1)] : 150);
+      b.style.left = left + "px";
+      b.style.top = top + "px";
+      b.innerHTML = `<img src="${s.logo}" alt="${s.source}" onerror="this.remove()">`;
+      col.appendChild(b);
+      idx++;
+    });
+  }
+
+  place(colPos, pos);
+  place(colNeu, neu);
+  place(colNeg, neg);
+
+  state.lastLeaderboardAt = Date.now();
 }
 
 /* glue */
 function renderAll(){
   $("#briefingDate").textContent = todayStr();
-  renderHero(); renderPinned(); renderNews(); renderTopics(); renderLeaderboard(); renderMoodTicker();
+  renderHero(); renderPinned(); renderNews(); renderDaily(); renderTopics();
+  renderMood4h(); renderLeaderboard();
   $("#year").textContent = new Date().getFullYear();
 }
 
@@ -303,5 +390,8 @@ getWeather();
 loadMarkets();
 loadAll();
 startHeroAuto();
-setInterval(loadAll, 1000*60*5);      // refresh news (and mood) every 5 min
-setInterval(loadMarkets, 1000*60*5);   // refresh markets every 5 min
+
+/* periodic refresh */
+setInterval(loadAll, 1000*60*5);
+setInterval(loadMarkets, 1000*60*5);
+setInterval(()=>{ if (Date.now() - state.lastLeaderboardAt > 1000*60*60) renderLeaderboard(); }, 15*1000);
