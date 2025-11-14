@@ -16,11 +16,21 @@ const LOGO_DOMAIN_MAP = {
   "Hindustan Times":"hindustantimes.com",
   "Times of India":"timesofindia.indiatimes.com","TOI":"timesofindia.indiatimes.com",
   "Indian Express":"indianexpress.com","The Indian Express":"indianexpress.com",
-  "NDTV":"ndtv.com","Firstpost":"firstpost.com",
-  "Reuters":"reuters.com","Business Standard":"business-standard.com",
-  "Indiatimes":"indiatimes.com","The Economic Times":"economictimes.indiatimes.com",
-  "The Wire":"thewire.in","The Quint":"thequint.com","BBC":"bbc.com","Al Jazeera":"aljazeera.com"
+  "NDTV":"ndtv.com",
+  "Firstpost":"firstpost.com",
+  "Business Standard":"business-standard.com",
+  "The Economic Times":"economictimes.indiatimes.com",
+  "Moneycontrol":"moneycontrol.com",
+  "Reuters":"reuters.com",
+  "BBC":"bbc.com",
+  "Al Jazeera":"aljazeera.com",
+  "The Wire":"thewire.in",
+  "The Quint":"thequint.com",
+  "Scroll":"scroll.in",
+  "Deccan Chronicle":"deccanchronicle.com",
+  "LiveMint":"livemint.com"
 };
+
 const clearbit = (d)=> d ? `https://logo.clearbit.com/${d}` : "";
 const logoFor = (link="", source="") => {
   const mapDom = LOGO_DOMAIN_MAP[source?.trim()] || "";
@@ -95,7 +105,7 @@ async function getWeather(){
   }catch{ $("#weatherCard").textContent = "Weather unavailable"; }
 }
 
-/* markets */
+/* markets – SECTION 3 ticker */
 async function loadMarkets(){
   try{
     const data = await fetchJSON("/api/markets");
@@ -171,7 +181,8 @@ function renderPinned(){
 }
 
 /* News + Daily */
-function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 12).map(card).join(""); }
+/* SECTION 9: ONLY 4 NEWS ARTICLES */
+function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 8).map(card).join(""); }
 function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
 
 /* HERO */
@@ -270,7 +281,7 @@ function renderMood4h(){
   $("#moodSummary").textContent = `Positive ${fmtPct(avg.pos/n)} · Neutral ${fmtPct(avg.neu/n)} · Negative ${fmtPct(avg.neg/n)}`;
 }
 
-/* ===== Sentiment Leaderboard (data-driven, exact look) ===== */
+/* ===== Sentiment Leaderboard (data-driven) ===== */
 function computeLeaderboard(){
   const bySource = new Map();
   state.articles.forEach(a=>{
@@ -305,13 +316,12 @@ function renderLeaderboard(){
 
   const {pos, neu, neg} = computeLeaderboard();
 
-  // tiers roughly matching your visual (one low ~35%, one high ~75%)
   const TIERS = [0.35, 0.75];
 
   function place(col, list){
     let idx = 0;
     list.forEach(s=>{
-      if(!s.logo) return; // never show placeholders inside leaderboard
+      if(!s.logo) return;
       const b = document.createElement("div");
       b.className = "badge";
       const left = (col.offsetWidth ? col.offsetWidth/2 : 110);
@@ -347,9 +357,20 @@ $$(".chip[data-sent]").forEach(btn=>{
     state.filter = btn.dataset.sent; loadAll();
   });
 });
-$("#expChip")?.addEventListener("click", ()=>{ state.experimental = !state.experimental; $("#expChip").classList.toggle("active", state.experimental); loadAll(); });
-$("#searchForm")?.addEventListener("submit", (e)=>{ e.preventDefault(); state.query = $("#searchInput").value.trim(); renderAll(); });
-$("#searchInput")?.addEventListener("input", (e)=>{ state.query = e.target.value.trim(); renderAll(); });
+$("#expChip")?.addEventListener("click", ()=>{
+  state.experimental = !state.experimental;
+  $("#expChip").classList.toggle("active", state.experimental);
+  loadAll();
+});
+$("#searchForm")?.addEventListener("submit", (e)=>{
+  e.preventDefault();
+  state.query = $("#searchInput").value.trim();
+  renderAll();
+});
+$("#searchInput")?.addEventListener("input", (e)=>{
+  state.query = e.target.value.trim();
+  renderAll();
+});
 
 $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
   tab.addEventListener("click", ()=>{
@@ -379,7 +400,8 @@ $("#savePrefs")?.addEventListener("click", (e)=>{
   const interests = [...modal.querySelectorAll('input[type="checkbox"]:checked')].map(cb=>cb.value);
   saveProfile({ name, city, interests });
   modal.close();
-  const forYouTab = $('.gn-tabs .tab[data-cat="foryou"]'); if (forYouTab) forYouTab.click();
+  const forYouTab = $('.gn-tabs .tab[data-cat="foryou"]');
+  if (forYouTab) forYouTab.click();
 });
 
 /* boot */
