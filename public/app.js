@@ -26,7 +26,6 @@ const LOGO_DOMAIN_MAP = {
   "Al Jazeera":"aljazeera.com",
   "The Wire":"thewire.in",
   "The Quint":"thequint.com",
-  "Scroll":"scroll.in",
   "Deccan Chronicle":"deccanchronicle.com",
   "LiveMint":"livemint.com"
 };
@@ -75,8 +74,20 @@ const state = {
   hero: { index:0, timer:null, pause:false },
   lastLeaderboardAt: 0
 };
-function loadProfile(){ try { return JSON.parse(localStorage.getItem("i360_profile") || "{}"); } catch { return {}; } }
-function saveProfile(p){ localStorage.setItem("i360_profile", JSON.stringify(p || {})); state.profile = p || {}; }
+
+function loadProfile(){
+  try{
+    const raw = JSON.parse(localStorage.getItem("i360_profile") || "{}");
+    if (!Array.isArray(raw.pinnedTopics)) raw.pinnedTopics = [];
+    return raw;
+  }catch{
+    return { pinnedTopics: [] };
+  }
+}
+function saveProfile(p){
+  localStorage.setItem("i360_profile", JSON.stringify(p || {}));
+  state.profile = p || {};
+}
 function applyTheme(){ document.documentElement.setAttribute("data-theme", state.theme); }
 
 /* date + weather */
@@ -102,25 +113,115 @@ async function getWeather(){
     const code = wx?.current?.weather_code ?? 0;
     const icon = code>=0 && code<3 ? "🌙" : (code<50 ? "⛅" : "🌧️");
     $("#weatherCard").innerHTML = `<div class="wx-icon">${icon}</div><div><div class="wx-city">${city}</div><div class="wx-temp">${t}°C</div></div>`;
-  }catch{ $("#weatherCard").textContent = "Weather unavailable"; }
+  }catch{
+    $("#weatherCard").textContent = "Weather unavailable";
+  }
 }
 
-/* markets – SECTION 3 ticker */
+/* markets – Grid 3 ticker with fallback even when quotes are empty */
 async function loadMarkets(){
+  const el = $("#marketTicker");
+  if (!el) return;
   try{
     const data = await fetchJSON("/api/markets");
-    const el = $("#marketTicker");
-    const items = (data.quotes || []).map(q=>{
+    const quotes = data && Array.isArray(data.quotes) ? data.quotes : [];
+    if (!quotes.length){
+      const fallback = [
+        { pretty: "BSE Sensex" },
+        { pretty: "NSE Nifty" },
+        { pretty: "Gold" },
+        { pretty: "Crude Oil" },
+        { pretty: "USD/INR" }
+      ];
+      el.innerHTML = fallback.map(q =>
+        `<div class="qpill"><span class="sym">${q.pretty}</span><span class="price">—</span><span class="chg">Offline</span></div>`
+      ).join("");
+      return;
+    }
+    const items = quotes.map(q=>{
       const price = (q.price ?? "—");
       const pct = Number(q.changePercent ?? 0);
       const cls = pct >= 0 ? "up" : "down";
       const sign = pct >= 0 ? "▲" : "▼";
       const pctTxt = isFinite(pct) ? `${sign} ${Math.abs(pct).toFixed(2)}%` : "—";
-      const pTxt = typeof price === "number" ? price.toLocaleString(undefined,{maximumFractionDigits:2}) : price;
+      const pTxt = typeof price === "number"
+        ? price.toLocaleString(undefined,{maximumFractionDigits:2})
+        : price;
       return `<div class="qpill"><span class="sym">${q.pretty || q.symbol}</span><span class="price">${pTxt}</span><span class="chg ${cls}">${pctTxt}</span></div>`;
     }).join("");
     el.innerHTML = items || "";
-  }catch{ $("#marketTicker").innerHTML = ""; }
+  }catch{
+    const fallback = [
+      { pretty: "BSE Sensex" },
+      { pretty: "NSE Nifty" },
+      { pretty: "Gold" },
+      { pretty: "Crude Oil" },
+      { pretty: "USD/INR" }
+    ];
+    el.innerHTML = fallback.map(q =>
+      `<div class="qpill"><span class="sym">${q.pretty}</span><span class="price">—</span><span class="chg">Offline</span></div>`
+    ).join("");
+  }
+}
+
+/* pinned topics (Grid 5) */
+function getPinnedTopics(){
+  const p = state.profile || {};
+  return Array.isArray(p.pinnedTopics) ? p.pinnedTopics.slice(0, 2) : [];
+}
+function setPinnedTopics(list){
+  const trimmed = (list || [])
+    .filter(Boolean)
+    .map(x=>x.trim())
+    .filter(x=>x)
+    .slice(0, 2);
+  const base = state.profile || {};
+  saveProfile({ ...base, pinnedTopics: trimmed });
+  renderPinnedChips();
+  buildPins();
+  renderPinned();
+}
+function buildPins(){
+  const topics = getPinnedTopics();
+  const pins = [];
+  const usedLinks = new Set();
+  const arts = state.articles || [];
+  topics.forEach(topic=>{
+    const t = topic.toLowerCase();
+    const match = arts.find(a=>{
+      if (!a) return false;
+      if (usedLinks.has(a.link)) return false;
+      const hay = `${a.title || ""} ${(a.description || "")}`.toLowerCase();
+      return hay.includes(t);
+    });
+    if (match){
+      usedLinks.add(match.link);
+      pins.push({ topic, article: match });
+    }
+  });
+  state.pins = pins.slice(0, 2);
+}
+function renderPinnedChips(){
+  const wrap = $("#pinnedChips");
+  if (!wrap) return;
+  const topics = getPinnedTopics();
+  if (!topics.length){
+    wrap.innerHTML = "";
+    return;
+  }
+  wrap.innerHTML = topics.map((t, i)=>`
+    <button class="pin-chip" type="button" data-i="${i}">
+      <span>${t}</span>
+      <span class="x">✕</span>
+    </button>`).join("");
+  wrap.querySelectorAll(".pin-chip").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const i = Number(btn.dataset.i);
+      const topics = getPinnedTopics();
+      topics.splice(i,1);
+      setPinnedTopics(topics);
+    });
+  });
 }
 
 /* loads */
@@ -137,15 +238,20 @@ async function loadAll(){
 
   state.articles = news.articles || [];
   state.topics = (topics.topics || []).slice(0, 8);
-  state.pins = state.articles.slice(0,3);
 
   if (state.category === "local" && state.profile?.city) {
     const c = state.profile.city.toLowerCase();
-    state.articles = state.articles.filter(a => (a.title||"").toLowerCase().includes(c) || (a.link||"").toLowerCase().includes(c));
+    state.articles = state.articles.filter(a =>
+      (a.title||"").toLowerCase().includes(c) ||
+      (a.link||"").toLowerCase().includes(c)
+    );
   } else if (state.category === "foryou" && Array.isArray(state.profile?.interests) && state.profile.interests.length) {
     const wanted = new Set(state.profile.interests);
     state.articles = state.articles.filter(a => wanted.has(a.category));
   }
+
+  // rebuild pinned articles (max 2) from latest feed
+  buildPins();
 
   renderAll();
 }
@@ -170,26 +276,43 @@ function card(a){
     </a>`;
 }
 
-/* Pinned */
+/* Pinned block render */
 function renderPinned(){
-  $("#pinned").innerHTML = state.pins.map(a => `
+  const container = $("#pinned");
+  if (!container) return;
+  const list = state.pins || [];
+  if (!list.length){
+    container.innerHTML = `<div class="pinned-empty">No matches yet — we’ll show the latest news for your pinned topics here.</div>`;
+    return;
+  }
+  container.innerHTML = list.map(p => {
+    const a = p.article || p;
+    const topicLabel = p.topic ? `<div class="pin-topic">Tracking: ${p.topic}</div>` : "";
+    return `
     <div class="row">
+      ${topicLabel}
       <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
       <div class="row-meta"><span class="source">${a.source}</span> · <span>${new Date(a.publishedAt).toLocaleString()}</span></div>
       ${renderSentiment(a.sentiment, true)}
-    </div>`).join("");
+    </div>`;
+  }).join("");
 }
 
-/* News + Daily */
-/* SECTION 9: ONLY 4 NEWS ARTICLES */
-function renderNews(){ $("#newsList").innerHTML = state.articles.slice(4, 8).map(card).join(""); }
-function renderDaily(){ $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join(""); }
+/* Grid 9: only 4 main news stories */
+function renderNews(){
+  $("#newsList").innerHTML = state.articles.slice(4, 8).map(card).join("");
+}
+function renderDaily(){
+  $("#daily").innerHTML = state.articles.slice(12, 20).map(card).join("");
+}
 
 /* HERO */
 function renderHero(){
   const slides = state.articles.slice(0,4);
   const track = $("#heroTrack"); const dots = $("#heroDots");
-  if (!slides.length){ track.innerHTML=""; dots.innerHTML=""; return; }
+  if (!slides.length){
+    track.innerHTML=""; dots.innerHTML=""; return;
+  }
   track.innerHTML = slides.map(a => `
     <article class="hero-slide">
       <div class="hero-img">${safeImgTag(a.image, a.link, a.source, "")}</div>
@@ -205,18 +328,29 @@ function renderHero(){
 }
 function updateHero(i){
   const n = $$("#heroTrack .hero-slide").length;
+  if (!n) return;
   state.hero.index = (i+n)%n;
   $("#heroTrack").style.transform = `translateX(-${state.hero.index*100}%)`;
   $$("#heroDots button").forEach((b,bi)=> b.classList.toggle("active", bi===state.hero.index));
 }
-function startHeroAuto(){ stopHeroAuto(); state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000); }
-function stopHeroAuto(){ if(state.hero.timer) clearInterval(state.hero.timer); state.hero.timer=null; }
+function startHeroAuto(){
+  stopHeroAuto();
+  state.hero.timer = setInterval(()=>{ if(!state.hero.pause) updateHero(state.hero.index+1); }, 6000);
+}
+function stopHeroAuto(){
+  if(state.hero.timer) clearInterval(state.hero.timer);
+  state.hero.timer=null;
+}
 
 /* Trending topics */
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t=>{
     const total = (t.sentiment.pos||0)+(t.sentiment.neu||0)+(t.sentiment.neg||0);
-    const sent = { posP: total? (t.sentiment.pos/total)*100:0, neuP: total? (t.sentiment.neu/total)*100:0, negP: total? (t.sentiment.neg/total)*100:0 };
+    const sent = {
+      posP: total? (t.sentiment.pos/total)*100:0,
+      neuP: total? (t.sentiment.neu/total)*100:0,
+      negP: total? (t.sentiment.neg/total)*100:0
+    };
     return `
       <div class="row">
         <div class="row-title">${t.title.split("|")[0]}</div>
@@ -265,14 +399,14 @@ function renderMood4h(){
 
   const pPath = pts.map((p,i)=> `${i?'L':'M'} ${x(i)} ${yTop(p.pos)}`).join(" ");
   const nPath = pts.map((p,i)=> `${i?'L':'M'} ${x(i)} ${yBot(p.neg)}`).join(" ");
-  const pDots = pts.map((p,i)=> `<circle cx="${x(i)}" cy="${yTop(p.pos)}" r="2.8" fill="#22c55e"/><text x="${x(i)}" y="${yTop(p.pos)-7}" text-anchor="middle" font-size="11" fill="#22c55e">${p.pos}%</text>`).join("");
-  const nDots = pts.map((p,i)=> `<circle cx="${x(i)}" cy="${yBot(p.neg)}" r="2.8" fill="#ef4444"/><text x="${x(i)}" y="${yBot(p.neg)+12}" text-anchor="middle" font-size="11" fill="#ef4444">${p.neg}%</text>`).join("");
+  const pDots = pts.map((p,i)=> `<circle cx="${x(i)}" cy="${yTop(p.pos)}" r="2.8" /><text x="${x(i)}" y="${yTop(p.pos)-7}" text-anchor="middle" font-size="11">${p.pos}%</text>`).join("");
+  const nDots = pts.map((p,i)=> `<circle cx="${x(i)}" cy="${yBot(p.neg)}" r="2.8" /><text x="${x(i)}" y="${yBot(p.neg)+12}" text-anchor="middle" font-size="11">${p.neg}%</text>`).join("");
 
   svg.innerHTML = `
-    <rect x="0" y="${mid-11}" width="${W}" height="22" fill="#e5e7eb" opacity=".95"></rect>
+    <rect x="0" y="${mid-11}" width="${W}" height="22" opacity=".0"></rect>
     ${grid}
-    <path d="${pPath}" fill="none" stroke="#22c55e" stroke-width="2.6" />
-    <path d="${nPath}" fill="none" stroke="#ef4444" stroke-width="2.6" />
+    <path d="${pPath}" fill="none" stroke-width="2.6" />
+    <path d="${nPath}" fill="none" stroke-width="2.6" />
     ${pDots}${nDots}${labels}
   `;
 
@@ -344,8 +478,13 @@ function renderLeaderboard(){
 /* glue */
 function renderAll(){
   $("#briefingDate").textContent = todayStr();
-  renderHero(); renderPinned(); renderNews(); renderDaily(); renderTopics();
-  renderMood4h(); renderLeaderboard();
+  renderHero();
+  renderPinned();
+  renderNews();
+  renderDaily();
+  renderTopics();
+  renderMood4h();
+  renderLeaderboard();
   $("#year").textContent = new Date().getFullYear();
 }
 
@@ -354,7 +493,8 @@ $$(".chip[data-sent]").forEach(btn=>{
   btn.addEventListener("click", ()=>{
     $$(".chip[data-sent]").forEach(b=>b.classList.remove("active"));
     btn.classList.add("active");
-    state.filter = btn.dataset.sent; loadAll();
+    state.filter = btn.dataset.sent;
+    loadAll();
   });
 });
 $("#expChip")?.addEventListener("click", ()=>{
@@ -376,7 +516,8 @@ $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
   tab.addEventListener("click", ()=>{
     $$(".gn-tabs .tab").forEach(t=>t.classList.remove("active"));
     tab.classList.add("active");
-    state.category = tab.dataset.cat; loadAll();
+    state.category = tab.dataset.cat;
+    loadAll();
   });
 });
 $("#heroPrev")?.addEventListener("click", ()=> updateHero(state.hero.index-1));
@@ -398,7 +539,7 @@ $("#savePrefs")?.addEventListener("click", (e)=>{
   const name = $("#prefName").value.trim();
   const city = $("#prefCity").value.trim();
   const interests = [...modal.querySelectorAll('input[type="checkbox"]:checked')].map(cb=>cb.value);
-  saveProfile({ name, city, interests });
+  saveProfile({ name, city, interests, pinnedTopics: getPinnedTopics() });
   modal.close();
   const forYouTab = $('.gn-tabs .tab[data-cat="foryou"]');
   if (forYouTab) forYouTab.click();
@@ -407,6 +548,7 @@ $("#savePrefs")?.addEventListener("click", (e)=>{
 /* boot */
 document.getElementById("year").textContent = new Date().getFullYear();
 applyTheme();
+renderPinnedChips();
 $("#briefingDate").textContent = todayStr();
 getWeather();
 loadMarkets();
