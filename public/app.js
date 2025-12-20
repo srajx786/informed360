@@ -161,7 +161,23 @@ async function loadMarkets(){
   try{
     const data = await fetchJSON("/api/markets");
     const el = $("#marketTicker");
-    const items = (data.quotes || []).map(q => {
+    const updatedAt = new Date(data.updatedAt || Date.now());
+    const updatedLabel = updatedAt.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+
+    const defaults = [
+      { symbol: "^BSESN", pretty: "BSE Sensex" },
+      { symbol: "^NSEI", pretty: "NSE Nifty" },
+      { symbol: "GC=F", pretty: "Gold" },
+      { symbol: "CL=F", pretty: "Crude Oil" },
+      { symbol: "USDINR=X", pretty: "USD/INR" }
+    ];
+    const bySymbol = new Map((data.quotes || []).map(q => [q.symbol, q]));
+
+    const items = defaults.map(d => {
+      const q = bySymbol.get(d.symbol) || {};
       const price = (q.price ?? "—");
       const pct = Number(q.changePercent ?? 0);
       const cls = pct >= 0 ? "up" : "down";
@@ -169,28 +185,37 @@ async function loadMarkets(){
       const pctTxt = isFinite(pct)
         ? `${sign} ${Math.abs(pct).toFixed(2)}%`
         : "—";
+      const changeTxt = typeof q.change === "number"
+        ? q.change.toLocaleString(undefined,{ maximumFractionDigits:2 })
+        : null;
       const pTxt = typeof price === "number"
         ? price.toLocaleString(undefined,{ maximumFractionDigits:2 })
         : price;
       return `
         <div class="qpill">
-          <span class="sym">${q.pretty || q.symbol}</span>
-          <span class="price">${pTxt}</span>
+          <span class="sym">${d.pretty || q.pretty || q.symbol || d.symbol}</span>
+          <span class="price">${pTxt}${changeTxt ? ` (${changeTxt})` : ""}</span>
           <span class="chg ${cls}">${pctTxt}</span>
         </div>`;
     }).join("");
-    el.innerHTML = items || "";
+    el.innerHTML = `
+      <div class="qpill stamp" aria-label="Markets updated at ${updatedLabel}">
+        Updated ${updatedLabel}
+      </div>
+      ${items || ""}`;
   }catch{
     // If API fails, show static labels so the bar is never empty
     const fallback = [
       "BSE Sensex","NSE Nifty","Gold","Crude Oil","USD/INR"
     ];
-    $("#marketTicker").innerHTML = fallback.map(n => `
-      <div class="qpill">
-        <span class="sym">${n}</span>
-        <span class="price">—</span>
-        <span class="chg">—</span>
-      </div>`).join("");
+    $("#marketTicker").innerHTML = `
+      <div class="qpill stamp">Live markets unavailable</div>
+      ${fallback.map(n => `
+        <div class="qpill">
+          <span class="sym">${n}</span>
+          <span class="price">—</span>
+          <span class="chg">—</span>
+        </div>`).join("")}`;
   }
 }
 
@@ -718,7 +743,7 @@ startHeroAuto();
 
 /* periodic refresh */
 setInterval(loadAll,     1000 * 60 * 5);
-setInterval(loadMarkets, 1000 * 60 * 5);
+setInterval(loadMarkets, 1000 * 60 * 2);
 setInterval(() => {
   if (Date.now() - state.lastLeaderboardAt > 1000 * 60 * 60)
     renderLeaderboard();

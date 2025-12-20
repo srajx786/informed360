@@ -55,19 +55,45 @@ h1,h2,h3{ margin:0 0 .6rem }
 .tab-divider{ width:1px; height:18px; background:var(--border) }
 
 /* Briefing */
-.gn-briefing{ display:grid; grid-template-columns:minmax(210px,240px) 1fr 280px; gap:1rem; align-items:center; padding:1rem 12px }
+.gn-briefing{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:
+    "left weather"
+    "ticker ticker";
+  gap:.8rem 1rem;
+  align-items:center;
+  padding:1rem 12px;
+}
+.briefing-left{ grid-area:left; max-width:360px }
 .briefing-left h1{ font-size:1.8rem; font-weight:800 } /* reduced */
 .briefing-date{ color:var(--muted) }
 
 /* Ticker */
-.ticker{ display:flex; align-items:center; gap:.4rem; flex-wrap:nowrap; overflow-x:auto; overflow-y:hidden; white-space:nowrap; padding:0 .2rem; scrollbar-width:none; min-width:0 }
-.ticker::-webkit-scrollbar{ display:none }
-.qpill{ background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.26rem .48rem; display:flex; align-items:baseline; gap:.42rem; box-shadow:var(--shadow); flex:0 0 auto; white-space:nowrap; font-variant-numeric: tabular-nums; line-height:1.1 }
+.ticker{
+  grid-area:ticker;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+  gap:.5rem;
+  align-items:stretch;
+  padding:0;
+  white-space:normal;
+  min-width:0;
+}
+.qpill{
+  background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.26rem .48rem;
+  display:flex; align-items:baseline; gap:.42rem; box-shadow:var(--shadow); flex:0 0 auto; white-space:nowrap;
+  font-variant-numeric: tabular-nums; line-height:1.1; width:100%; justify-content:space-between;
+}
+.qpill.stamp{
+  background:var(--brand); color:#fff; border-color:transparent; box-shadow:none; font-weight:700;
+  grid-column:1 / -1; width:auto; justify-content:flex-start;
+}
 .qpill .sym{ font-weight:800; font-size:.83rem } .qpill .price{ font-weight:700; font-size:.82rem } .qpill .chg{ font-size:.78rem }
 .qpill .chg.up{ color:#16a34a } .qpill .chg.down{ color:#ef4444 }
 
 /* Weather */
-.weather-card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:.7rem .9rem; display:flex; align-items:center; gap:.7rem; justify-self:end; min-width:220px; max-width:280px; box-shadow:var(--shadow) }
+.weather-card{ grid-area:weather; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:.7rem .9rem; display:flex; align-items:center; gap:.7rem; justify-self:end; min-width:220px; max-width:280px; box-shadow:var(--shadow); flex:0 0 260px }
 .weather-card .wx-icon{ font-size:1.5rem } .weather-card .wx-city{ font-weight:700 } .weather-card .wx-temp{ font-size:1.1rem; font-weight:800 }
 
 /* Layout */
@@ -164,10 +190,20 @@ h1,h2,h3{ margin:0 0 .6rem }
 @media (max-width:1100px){
   .gn-topbar{ grid-template-columns:1fr; row-gap:.6rem }
   .gn-actions{ justify-content:flex-start }
-  .gn-briefing{ grid-template-columns:1fr; row-gap:.5rem }
+  .gn-briefing{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "left"
+      "ticker"
+      "weather";
+    row-gap:.6rem;
+  }
   .weather-card{ justify-self:start }
   .layout{ grid-template-columns:1fr }
   .left,.right{ order:2 } .center{ order:1 }
   .hero-slide{ grid-template-columns:1fr }
   .hero-slide .hero-img{ max-height:200px }
+}
+@media (max-width:600px){
+  .ticker{ grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)) }
 }
