@@ -34,13 +34,42 @@ const LOGO_DOMAIN_MAP = {
   "The Wire":"thewire.in",
   "The Quint":"thequint.com",
   "Deccan Chronicle":"deccanchronicle.com",
-  "LiveMint":"livemint.com"
+  "LiveMint":"livemint.com",
+  "Guardian":"theguardian.com",
+  "PIB":"pib.gov.in",
+  "Google News":"news.google.com",
+  "NDTV News-Special":"ndtv.com"
+};
+
+const LOCAL_LOGOS = {
+  "indiatoday.in":"/logo/indiatoday.png",
+  "thehindu.com":"/logo/thehindu.png",
+  "scroll.in":"/logo/scroll.png",
+  "news18.com":"/logo/news18.png",
+  "deccanherald.com":"/logo/deccanherald.png",
+  "theprint.in":"/logo/theprint.png",
+  "hindustantimes.com":"/logo/hindustantimes.png",
+  "timesofindia.indiatimes.com":"/logo/toi.png",
+  "indiatoday.com":"/logo/indiatoday.png",
+  "indianexpress.com":"/logo/indianexpress.png",
+  "ndtv.com":"/logo/ndtv.png",
+  "firstpost.com":"/logo/firstpost.png",
+  "business-standard.com":"/logo/businessstandard.png",
+  "economictimes.indiatimes.com":"/logo/economictimes.png",
+  "reuters.com":"/logo/reuters.png",
+  "bbc.com":"/logo/bbc.png",
+  "aljazeera.com":"/logo/aljazeera.png",
+  "thewire.in":"/logo/thewire.png",
+  "livemint.com":"/logo/livemint.png",
+  "theguardian.com":"/logo/guardian.png",
+  "pib.gov.in":"/logo/pib.png"
 };
 
 const clearbit = (d) => d ? `https://logo.clearbit.com/${d}` : "";
 const logoFor = (link = "", source = "") => {
   const mapDom = LOGO_DOMAIN_MAP[source?.trim()] || "";
   const d = mapDom || domainFromUrl(link) || "";
+  if (LOCAL_LOGOS[d]) return LOCAL_LOGOS[d];
   return clearbit(d);
 };
 
@@ -48,10 +77,20 @@ const PLACEHOLDER =
   "data:image/svg+xml;base64," +
   btoa(
     `<svg xmlns='http://www.w3.org/2000/svg' width='400' height='260'>
-       <rect width='100%' height='100%' fill='#e5edf7'/>
-       <text x='50%' y='52%' text-anchor='middle'
+       <defs>
+         <linearGradient id='g' x1='0%' y1='0%' x2='100%' y2='100%'>
+           <stop offset='0%' stop-color='#e8f0fe'/>
+           <stop offset='100%' stop-color='#eef2ff'/>
+         </linearGradient>
+       </defs>
+       <rect width='100%' height='100%' fill='url(#g)' rx='18' ry='18'/>
+       <g fill='none' stroke='#94a3b8' stroke-width='12' stroke-linecap='round'>
+         <rect x='112' y='72' width='176' height='116' rx='16' ry='16' fill='#fff' stroke-width='10'/>
+         <path d='M148 156l30-38 28 32 18-24 24 30' stroke-width='8' stroke='#38bdf8'/>
+       </g>
+       <text x='50%' y='216' text-anchor='middle'
              font-family='sans-serif' font-weight='700'
-             fill='#8aa3c4' font-size='18'>Image</text>
+             fill='#475569' font-size='20'>News image unavailable</text>
      </svg>`
   );
 
@@ -328,13 +367,14 @@ function safeImgTag(src, link, source, cls){
   const fallbackLogo = logoFor(link, source);
   const fallback = fallbackLogo || PLACEHOLDER;
   const primary = (src || "").trim() || fallback;
-  const classNames = [cls, (!primary || primary === fallback) && fallbackLogo ? "logo-thumb" : ""]
+  const useLogoThumb = (!primary || primary === fallback || primary === PLACEHOLDER) && Boolean(fallbackLogo);
+  const classNames = [cls, useLogoThumb ? "logo-thumb" : ""]
     .filter(Boolean)
     .join(" ");
 
   return `<img class="${classNames}" src="${primary}" loading="lazy"
               data-fallback="${fallback}" data-placeholder="${PLACEHOLDER}"
-              onerror="if(this.dataset.errored){this.onerror=null;this.classList.add('logo-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';this.classList.add('logo-thumb');this.src=this.dataset.fallback || this.dataset.placeholder;}" alt="">`;
+              onerror="if(this.dataset.errored){this.onerror=null;this.classList.add('logo-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';this.classList.add('logo-thumb');this.src=this.dataset.fallback || this.dataset.placeholder;this.alt='';}" alt="">`;
 }
 
 /* card renderers */
@@ -590,13 +630,13 @@ function computeLeaderboard(){
     return { source:src, pos, neg, neu, bias, logo };
   }).filter(x => (x.pos + x.neg + x.neu) > 0.1);
 
-  const pos = arr.filter(x => x.bias > 3)
-    .sort((a,b) => b.bias - a.bias).slice(0,2);
-  const neg = arr.filter(x => x.bias < -3)
-    .sort((a,b) => a.bias - b.bias).slice(0,2);
-  const neu = arr.slice()
-    .sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias))
-    .slice(0,2);
+  const sortedPos = arr.slice().sort((a,b) => b.pos - a.pos || b.bias - a.bias);
+  const sortedNeg = arr.slice().sort((a,b) => b.neg - a.neg || a.bias - b.bias);
+  const sortedNeu = arr.slice().sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias));
+
+  const pos = sortedPos.slice(0,2);
+  const neg = sortedNeg.slice(0,2);
+  const neu = sortedNeu.slice(0,2);
 
   return { pos, neu, neg };
 }
@@ -607,6 +647,8 @@ function renderLeaderboard(){
   const colPos = grid.querySelector(".col-pos");
   const colNeu = grid.querySelector(".col-neu");
   const colNeg = grid.querySelector(".col-neg");
+  const empty = grid.querySelector(".board-empty");
+  empty?.classList.remove("show");
   [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
 
   const { pos, neu, neg } = computeLeaderboard();
@@ -615,14 +657,14 @@ function renderLeaderboard(){
   function place(col, list){
     let idx = 0;
     list.forEach(s => {
-      if (!s.logo) return;
       const b = document.createElement("div");
       b.className = "badge";
       const left = (col.offsetWidth ? col.offsetWidth/2 : 110);
       const top  = (col.offsetHeight ? col.offsetHeight*TIERS[Math.min(idx,TIERS.length-1)] : 150);
       b.style.left = left + "px";
       b.style.top  = top + "px";
-      b.innerHTML  = `<img src="${s.logo}" alt="${s.source}" onerror="this.remove()">`;
+      const badgeLogo = s.logo || PLACEHOLDER;
+      b.innerHTML  = `<img src="${badgeLogo}" alt="${s.source}" onerror="this.src='${PLACEHOLDER}';this.classList.add('logo-thumb');">`;
       col.appendChild(b);
       idx++;
     });
@@ -632,7 +674,105 @@ function renderLeaderboard(){
   place(colNeu, neu);
   place(colNeg, neg);
 
+  const hasBadges = grid.querySelectorAll(".badge").length > 0;
+  empty?.classList.toggle("show", !hasBadges);
+
   state.lastLeaderboardAt = Date.now();
+}
+
+const INDUSTRY_GROUPS = [
+  "Energy",
+  "Utilities",
+  "Communication",
+  "Healthcare",
+  "Manufacturing",
+  "Real Estate",
+  "Information Tech",
+  "Materials"
+];
+const INDUSTRY_KEYWORDS = {
+  "Energy":["energy","oil","gas","power","renewable","electricity"],
+  "Utilities":["utility","utilities","power distribution","water supply","electric grid"],
+  "Communication":["communication","telecom","telecommunications","network","carrier"],
+  "Healthcare":["healthcare","hospital","pharma","medical","drug","vaccine"],
+  "Manufacturing":["manufacturing","factory","industrial","production","plant"],
+  "Real Estate":["real estate","property","housing","construction","builder"],
+  "Information Tech":["information technology","technology","tech","software","it services","startup"],
+  "Materials":["materials","mining","metal","steel","cement","aluminium"]
+};
+
+function scoreIndustries(){
+  const rows = INDUSTRY_GROUPS.map(name => ({ name, pos:0, neg:0, neu:0, n:0 }));
+
+  state.articles.forEach(a => {
+    const text = `${a.title} ${a.description}`.toLowerCase();
+    const matches = rows.filter(r =>
+      INDUSTRY_KEYWORDS[r.name]?.some(k => text.includes(k))
+    );
+    if (!matches.length) return;
+    matches.forEach(r => {
+      r.n++;
+      r.pos += a.sentiment.posP;
+      r.neg += a.sentiment.negP;
+      r.neu += a.sentiment.neuP;
+    });
+  });
+
+  return rows
+    .map(r => {
+      const n = Math.max(1, r.n);
+      const pos = r.pos/n, neg = r.neg/n, neu = r.neu/n;
+      const bias = pos - neg;
+      return { name:r.name, pos, neg, neu, bias, n:r.n };
+    })
+    .filter(r => r.n > 0)
+    .sort((a,b) => Math.abs(b.bias) - Math.abs(a.bias));
+}
+
+function renderIndustryBoard(){
+  const grid = $("#industryBoard");
+  if (!grid) return;
+  const colPos = grid.querySelector(".col-pos");
+  const colNeu = grid.querySelector(".col-neu");
+  const colNeg = grid.querySelector(".col-neg");
+  const empty = grid.querySelector(".board-empty");
+  empty?.classList.remove("show");
+  [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
+
+  const scored = scoreIndustries();
+  if (!scored.length){
+    empty?.classList.add("show");
+    return;
+  }
+
+  const pos = scored.filter(x => x.bias > 3).slice(0,3);
+  const neg = scored.filter(x => x.bias < -3).slice(0,3);
+  const neu = scored
+    .filter(x => !pos.includes(x) && !neg.includes(x))
+    .slice(0,3);
+
+  const TIERS = [0.3, 0.55, 0.8];
+  const placeText = (col, list) => {
+    let idx = 0;
+    list.forEach(item => {
+      const badge = document.createElement("div");
+      badge.className = "badge text-badge";
+      const left = (col.offsetWidth ? col.offsetWidth/2 : 110);
+      const top  = (col.offsetHeight ? col.offsetHeight*TIERS[Math.min(idx,TIERS.length-1)] : 150);
+      badge.style.left = left + "px";
+      badge.style.top  = top + "px";
+      badge.textContent = item.name;
+      col.appendChild(badge);
+      idx++;
+    });
+  };
+
+  placeText(colPos, pos);
+  placeText(colNeu, neu);
+  placeText(colNeg, neg);
+
+  const hasBadges = grid.querySelectorAll(".badge").length > 0;
+  empty?.classList.toggle("show", !hasBadges);
 }
 
 /* glue */
@@ -645,6 +785,7 @@ function renderAll(){
   renderTopics();
   renderMood4h();
   renderLeaderboard();
+  renderIndustryBoard();
   $("#year").textContent = new Date().getFullYear();
 }
 
