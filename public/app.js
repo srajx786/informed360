@@ -166,6 +166,8 @@ async function loadMarkets(){
       hour: "2-digit",
       minute: "2-digit"
     });
+    const updatedDate = updatedAt.toLocaleDateString();
+    const statusText = `Website updated on ${updatedDate} · ${updatedLabel}`;
 
     const defaults = [
       { symbol: "^BSESN", pretty: "BSE Sensex" },
@@ -199,23 +201,27 @@ async function loadMarkets(){
         </div>`;
     }).join("");
     el.innerHTML = `
-      <div class="qpill stamp" aria-label="Markets updated at ${updatedLabel}">
-        Updated ${updatedLabel}
-      </div>
-      ${items || ""}`;
+      <div class="ticker-row" role="list">${items || ""}</div>
+      <div class="ticker-status" aria-label="${statusText}">
+        ${statusText}
+      </div>`;
   }catch{
     // If API fails, show static labels so the bar is never empty
     const fallback = [
       "BSE Sensex","NSE Nifty","Gold","Crude Oil","USD/INR"
     ];
+    const now = new Date();
+    const fallbackStatus = `Website updated on ${now.toLocaleDateString()} · ${now.toLocaleTimeString([], { hour:"2-digit", minute:"2-digit" })}`;
     $("#marketTicker").innerHTML = `
-      <div class="qpill stamp">Live markets unavailable</div>
-      ${fallback.map(n => `
+      <div class="ticker-row" role="list">${fallback.map(n => `
         <div class="qpill">
           <span class="sym">${n}</span>
           <span class="price">—</span>
           <span class="chg">—</span>
-        </div>`).join("")}`;
+        </div>`).join("")}</div>
+      <div class="ticker-status" aria-label="${fallbackStatus}">
+        ${fallbackStatus}
+      </div>`;
   }
 }
 
@@ -319,10 +325,16 @@ async function loadAll(){
 
 /* image helpers */
 function safeImgTag(src, link, source, cls){
-  const fallback = logoFor(link, source) || PLACEHOLDER;
-  const primary = src || fallback || PLACEHOLDER;
-  return `<img class="${cls}" src="${primary}" loading="lazy" data-fallback="${fallback}"
-              onerror="if(this.dataset.errored){this.onerror=null;this.src='${PLACEHOLDER}';this.alt='';}else{this.dataset.errored='1';this.src=this.dataset.fallback || '${PLACEHOLDER}';}" alt="">`;
+  const fallbackLogo = logoFor(link, source);
+  const fallback = fallbackLogo || PLACEHOLDER;
+  const primary = (src || "").trim() || fallback;
+  const classNames = [cls, (!primary || primary === fallback) && fallbackLogo ? "logo-thumb" : ""]
+    .filter(Boolean)
+    .join(" ");
+
+  return `<img class="${classNames}" src="${primary}" loading="lazy"
+              data-fallback="${fallback}" data-placeholder="${PLACEHOLDER}"
+              onerror="if(this.dataset.errored){this.onerror=null;this.classList.add('logo-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';this.classList.add('logo-thumb');this.src=this.dataset.fallback || this.dataset.placeholder;}" alt="">`;
 }
 
 /* card renderers */
