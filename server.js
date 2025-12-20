@@ -38,10 +38,46 @@ const domainFromUrl = (u = "") => {
     return "";
   }
 };
+const cleanUrl = (u = "", base = "") => {
+  if (!u) return "";
+  const normalized = u
+    .toString()
+    .replace(/^\/\//, "https://")
+    .replace(/^http:\/\//, "https://");
+  try {
+    return new URL(normalized, base || undefined).href;
+  } catch {
+    return normalized;
+  }
+};
+const firstImgInHtml = (html = "", base = "") => {
+  const m = /<img[^>]+src=["']([^"']+)["']/i.exec(html);
+  return m ? cleanUrl(m[1], base) : "";
+};
+const pickUrls = (v) => {
+  if (!v) return [];
+  if (Array.isArray(v)) return v.map((x) => x?.url || x).filter(Boolean);
+  if (typeof v === "object" && v.url) return [v.url];
+  return [];
+};
 const extractImage = (item) => {
-  if (item.enclosure?.url) return item.enclosure.url;
-  if (item["media:content"]?.url) return item["media:content"].url;
-  if (item["media:thumbnail"]?.url) return item["media:thumbnail"].url;
+  const candidates = [
+    ...pickUrls(item.enclosure),
+    ...pickUrls(item["media:content"]),
+    ...pickUrls(item["media:thumbnail"])
+  ];
+  const htmlImg = firstImgInHtml(
+    item["content:encoded"] || item.content || item.summary,
+    item.link
+  );
+  if (htmlImg) candidates.push(htmlImg);
+
+  const chosen =
+    candidates
+      .map((u) => cleanUrl(u, item.link))
+      .find((u) => typeof u === "string" && u.startsWith("http")) || "";
+  if (chosen) return chosen;
+
   const d = domainFromUrl(item.link || "");
   return d ? `https://logo.clearbit.com/${d}` : "";
 };

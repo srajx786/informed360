@@ -295,9 +295,9 @@ async function loadAll(){
 /* image helpers */
 function safeImgTag(src, link, source, cls){
   const fallback = logoFor(link, source) || PLACEHOLDER;
-  const s = src || fallback || PLACEHOLDER;
-  return `<img class="${cls}" src="${s}"
-              onerror="this.onerror=null;this.src='${fallback || PLACEHOLDER}'" alt="">`;
+  const primary = src || fallback || PLACEHOLDER;
+  return `<img class="${cls}" src="${primary}" loading="lazy" data-fallback="${fallback}"
+              onerror="if(this.dataset.errored){this.onerror=null;this.src='${PLACEHOLDER}';this.alt='';}else{this.dataset.errored='1';this.src=this.dataset.fallback || '${PLACEHOLDER}';}" alt="">`;
 }
 
 /* card renderers */
