@@ -648,10 +648,9 @@ function renderLeaderboard(){
       if (!s.logo) return;
       const b = document.createElement("div");
       b.className = "badge";
-      const left = (col.offsetWidth ? col.offsetWidth/2 : 110);
-      const top  = (col.offsetHeight ? col.offsetHeight*TIERS[Math.min(idx,TIERS.length-1)] : 150);
-      b.style.left = left + "px";
-      b.style.top  = top + "px";
+      const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
+      b.style.left = "50%";
+      b.style.top  = `${topPct}%`;
       b.innerHTML  = `<img src="${s.logo}" alt="${s.source}" onerror="this.remove()">`;
       col.appendChild(b);
       idx++;
@@ -733,10 +732,9 @@ function renderIndustryBoard(){
     list.forEach(item => {
       const badge = document.createElement("div");
       badge.className = "badge text-badge";
-      const left = (col.offsetWidth ? col.offsetWidth/2 : 110);
-      const top  = (col.offsetHeight ? col.offsetHeight*TIERS[Math.min(idx,TIERS.length-1)] : 150);
-      badge.style.left = left + "px";
-      badge.style.top  = top + "px";
+      const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
+      badge.style.left = "50%";
+      badge.style.top  = `${topPct}%`;
       badge.textContent = item.name;
       col.appendChild(badge);
       idx++;
@@ -877,3 +875,13 @@ setInterval(() => {
   if (Date.now() - state.lastLeaderboardAt > 1000 * 60 * 60)
     renderLeaderboard();
 }, 15 * 1000);
+
+/* keep badge positions responsive */
+let resizeRaf;
+window.addEventListener("resize", () => {
+  if (resizeRaf) cancelAnimationFrame(resizeRaf);
+  resizeRaf = requestAnimationFrame(() => {
+    renderLeaderboard();
+    renderIndustryBoard();
+  });
+});
