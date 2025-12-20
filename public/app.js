@@ -34,13 +34,40 @@ const LOGO_DOMAIN_MAP = {
   "The Wire":"thewire.in",
   "The Quint":"thequint.com",
   "Deccan Chronicle":"deccanchronicle.com",
-  "LiveMint":"livemint.com"
+  "LiveMint":"livemint.com",
+  "Guardian":"theguardian.com",
+  "PIB":"pib.gov.in"
+};
+
+const LOCAL_LOGOS = {
+  "indiatoday.in":"/logo/indiatoday.png",
+  "thehindu.com":"/logo/thehindu.png",
+  "scroll.in":"/logo/scroll.png",
+  "news18.com":"/logo/news18.png",
+  "deccanherald.com":"/logo/deccanherald.png",
+  "theprint.in":"/logo/theprint.png",
+  "hindustantimes.com":"/logo/hindustantimes.png",
+  "timesofindia.indiatimes.com":"/logo/toi.png",
+  "indiatoday.com":"/logo/indiatoday.png",
+  "indianexpress.com":"/logo/indianexpress.png",
+  "ndtv.com":"/logo/ndtv.png",
+  "firstpost.com":"/logo/firstpost.png",
+  "business-standard.com":"/logo/businessstandard.png",
+  "economictimes.indiatimes.com":"/logo/economictimes.png",
+  "reuters.com":"/logo/reuters.png",
+  "bbc.com":"/logo/bbc.png",
+  "aljazeera.com":"/logo/aljazeera.png",
+  "thewire.in":"/logo/thewire.png",
+  "livemint.com":"/logo/livemint.png",
+  "theguardian.com":"/logo/guardian.png",
+  "pib.gov.in":"/logo/pib.png"
 };
 
 const clearbit = (d) => d ? `https://logo.clearbit.com/${d}` : "";
 const logoFor = (link = "", source = "") => {
   const mapDom = LOGO_DOMAIN_MAP[source?.trim()] || "";
   const d = mapDom || domainFromUrl(link) || "";
+  if (LOCAL_LOGOS[d]) return LOCAL_LOGOS[d];
   return clearbit(d);
 };
 
@@ -49,9 +76,10 @@ const PLACEHOLDER =
   btoa(
     `<svg xmlns='http://www.w3.org/2000/svg' width='400' height='260'>
        <rect width='100%' height='100%' fill='#e5edf7'/>
-       <text x='50%' y='52%' text-anchor='middle'
+       <text x='50%' y='48%' text-anchor='middle'
              font-family='sans-serif' font-weight='700'
-             fill='#8aa3c4' font-size='18'>Image</text>
+             fill='#8aa3c4' font-size='18'>News</text>
+       <image href='cid:logo' x='168' y='130' width='64' height='64' preserveAspectRatio='xMidYMid meet'/>
      </svg>`
   );
 
@@ -328,13 +356,14 @@ function safeImgTag(src, link, source, cls){
   const fallbackLogo = logoFor(link, source);
   const fallback = fallbackLogo || PLACEHOLDER;
   const primary = (src || "").trim() || fallback;
-  const classNames = [cls, (!primary || primary === fallback) && fallbackLogo ? "logo-thumb" : ""]
+  const useLogoThumb = (!primary || primary === fallback || primary === PLACEHOLDER) && Boolean(fallbackLogo);
+  const classNames = [cls, useLogoThumb ? "logo-thumb" : ""]
     .filter(Boolean)
     .join(" ");
 
   return `<img class="${classNames}" src="${primary}" loading="lazy"
               data-fallback="${fallback}" data-placeholder="${PLACEHOLDER}"
-              onerror="if(this.dataset.errored){this.onerror=null;this.classList.add('logo-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';this.classList.add('logo-thumb');this.src=this.dataset.fallback || this.dataset.placeholder;}" alt="">`;
+              onerror="if(this.dataset.errored){this.onerror=null;this.classList.add('logo-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';this.classList.add('logo-thumb');this.src=this.dataset.fallback || this.dataset.placeholder;this.alt='';}" alt="">`;
 }
 
 /* card renderers */
@@ -607,6 +636,7 @@ function renderLeaderboard(){
   const colPos = grid.querySelector(".col-pos");
   const colNeu = grid.querySelector(".col-neu");
   const colNeg = grid.querySelector(".col-neg");
+  const empty = grid.querySelector(".board-empty");
   [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
 
   const { pos, neu, neg } = computeLeaderboard();
@@ -632,7 +662,93 @@ function renderLeaderboard(){
   place(colNeu, neu);
   place(colNeg, neg);
 
+  const hasBadges = grid.querySelectorAll(".badge").length > 0;
+  empty?.classList.toggle("show", !hasBadges);
+
   state.lastLeaderboardAt = Date.now();
+}
+
+const INDUSTRY_GROUPS = [
+  "Energy",
+  "Utilities",
+  "Communication",
+  "Healthcare",
+  "Manufacturing",
+  "Real Estate",
+  "Information Tech",
+  "Materials"
+];
+
+function scoreIndustries(){
+  const rows = INDUSTRY_GROUPS.map(name => ({ name, pos:0, neg:0, neu:0, n:0 }));
+  const byName = new Map(rows.map(r => [r.name, r]));
+
+  state.articles.forEach(a => {
+    const text = `${a.title} ${a.description}`.toLowerCase();
+    const matches = rows.filter(r => text.includes(r.name.toLowerCase()));
+    if (!matches.length) return;
+    matches.forEach(r => {
+      r.n++;
+      r.pos += a.sentiment.posP;
+      r.neg += a.sentiment.negP;
+      r.neu += a.sentiment.neuP;
+    });
+  });
+
+  return rows
+    .map(r => {
+      const n = Math.max(1, r.n);
+      const pos = r.pos/n, neg = r.neg/n, neu = r.neu/n;
+      const bias = pos - neg;
+      return { name:r.name, pos, neg, neu, bias, n:r.n };
+    })
+    .filter(r => r.n > 0)
+    .sort((a,b) => Math.abs(b.bias) - Math.abs(a.bias));
+}
+
+function renderIndustryBoard(){
+  const grid = $("#industryBoard");
+  if (!grid) return;
+  const colPos = grid.querySelector(".col-pos");
+  const colNeu = grid.querySelector(".col-neu");
+  const colNeg = grid.querySelector(".col-neg");
+  const empty = grid.querySelector(".board-empty");
+  [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
+
+  const scored = scoreIndustries();
+  if (!scored.length){
+    empty?.classList.add("show");
+    return;
+  }
+
+  const pos = scored.filter(x => x.bias > 3).slice(0,3);
+  const neg = scored.filter(x => x.bias < -3).slice(0,3);
+  const neu = scored
+    .filter(x => !pos.includes(x) && !neg.includes(x))
+    .slice(0,3);
+
+  const TIERS = [0.3, 0.55, 0.8];
+  const placeText = (col, list) => {
+    let idx = 0;
+    list.forEach(item => {
+      const badge = document.createElement("div");
+      badge.className = "badge text-badge";
+      const left = (col.offsetWidth ? col.offsetWidth/2 : 110);
+      const top  = (col.offsetHeight ? col.offsetHeight*TIERS[Math.min(idx,TIERS.length-1)] : 150);
+      badge.style.left = left + "px";
+      badge.style.top  = top + "px";
+      badge.textContent = item.name;
+      col.appendChild(badge);
+      idx++;
+    });
+  };
+
+  placeText(colPos, pos);
+  placeText(colNeu, neu);
+  placeText(colNeg, neg);
+
+  const hasBadges = grid.querySelectorAll(".badge").length > 0;
+  empty?.classList.toggle("show", !hasBadges);
 }
 
 /* glue */
@@ -645,6 +761,7 @@ function renderAll(){
   renderTopics();
   renderMood4h();
   renderLeaderboard();
+  renderIndustryBoard();
   $("#year").textContent = new Date().getFullYear();
 }
 
