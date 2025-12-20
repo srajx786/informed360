@@ -206,9 +206,17 @@ async function loadMarkets(){
     ];
     const bySymbol = new Map((data.quotes || []).map(q => [q.symbol, q]));
 
+    const currencyFor = (symbol) =>
+      ({ "^BSESN":"₹", "^NSEI":"₹", "USDINR=X":"₹", "GC=F":"$", "CL=F":"$" })[symbol] || "";
+    const formatMoney = (value, symbol) => {
+      if (typeof value !== "number") return "—";
+      const cur = currencyFor(symbol);
+      return `${cur}${value.toLocaleString(undefined,{ maximumFractionDigits:2 })}`;
+    };
+
     const items = defaults.map(d => {
       const q = bySymbol.get(d.symbol) || {};
-      const price = (q.price ?? "—");
+      const price = formatMoney(q.price, d.symbol);
       const pct = Number(q.changePercent ?? 0);
       const cls = pct >= 0 ? "up" : "down";
       const sign = pct >= 0 ? "▲" : "▼";
@@ -216,11 +224,9 @@ async function loadMarkets(){
         ? `${sign} ${Math.abs(pct).toFixed(2)}%`
         : "—";
       const changeTxt = typeof q.change === "number"
-        ? q.change.toLocaleString(undefined,{ maximumFractionDigits:2 })
+        ? formatMoney(q.change, d.symbol)
         : null;
-      const pTxt = typeof price === "number"
-        ? price.toLocaleString(undefined,{ maximumFractionDigits:2 })
-        : price;
+      const pTxt = price;
       return `
         <div class="qpill">
           <span class="sym">${d.pretty || q.pretty || q.symbol || d.symbol}</span>
@@ -645,14 +651,30 @@ function renderLeaderboard(){
   function place(col, list){
     let idx = 0;
     list.forEach(s => {
-      if (!s.logo) return;
       const b = document.createElement("div");
       b.className = "badge";
-      const left = (col.offsetWidth ? col.offsetWidth/2 : 110);
-      const top  = (col.offsetHeight ? col.offsetHeight*TIERS[Math.min(idx,TIERS.length-1)] : 150);
-      b.style.left = left + "px";
-      b.style.top  = top + "px";
-      b.innerHTML  = `<img src="${s.logo}" alt="${s.source}" onerror="this.remove()">`;
+      const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
+      b.style.left = "50%";
+      b.style.top  = `${topPct}%`;
+      const fallback = document.createElement("span");
+      fallback.className = "badge-text-fallback";
+      fallback.textContent = s.source || "Source";
+      if (s.logo){
+        const img = new Image();
+        img.src = s.logo;
+        img.alt = s.source;
+        img.addEventListener("error", () => {
+          b.innerHTML = "";
+          b.appendChild(fallback);
+        }, { once:true });
+        img.addEventListener("load", () => {
+          b.innerHTML = "";
+          b.appendChild(img);
+        }, { once:true });
+        b.appendChild(img);
+      }else{
+        b.appendChild(fallback);
+      }
       col.appendChild(b);
       idx++;
     });
@@ -733,10 +755,9 @@ function renderIndustryBoard(){
     list.forEach(item => {
       const badge = document.createElement("div");
       badge.className = "badge text-badge";
-      const left = (col.offsetWidth ? col.offsetWidth/2 : 110);
-      const top  = (col.offsetHeight ? col.offsetHeight*TIERS[Math.min(idx,TIERS.length-1)] : 150);
-      badge.style.left = left + "px";
-      badge.style.top  = top + "px";
+      const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
+      badge.style.left = "50%";
+      badge.style.top  = `${topPct}%`;
       badge.textContent = item.name;
       col.appendChild(badge);
       idx++;
@@ -877,3 +898,13 @@ setInterval(() => {
   if (Date.now() - state.lastLeaderboardAt > 1000 * 60 * 60)
     renderLeaderboard();
 }, 15 * 1000);
+
+/* keep badge positions responsive */
+let resizeRaf;
+window.addEventListener("resize", () => {
+  if (resizeRaf) cancelAnimationFrame(resizeRaf);
+  resizeRaf = requestAnimationFrame(() => {
+    renderLeaderboard();
+    renderIndustryBoard();
+  });
+});
