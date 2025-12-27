@@ -95,6 +95,14 @@ const isFallbackLogo = (url = "") => {
   if (lower.includes("favicon")) return true;
   return lower.includes("logo.");
 };
+const escapeHtml = (value = "") =>
+  String(value).replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
 
 /* sentiment meter */
 function renderSentiment(s, slim = false){
@@ -517,16 +525,21 @@ function heroImgTag(article, index){
 
 function safeImgTag(src, link, source, cls){
   const fallbackLogo = logoFor(link, source);
-  const fallback = fallbackLogo || PLACEHOLDER;
-  const primary = (src || "").trim() || fallback;
-  const useLogoThumb = (!primary || primary === fallback || primary === PLACEHOLDER) && Boolean(fallbackLogo);
+  const primary = (src || "").trim();
+  const fallback = fallbackLogo || "";
+  const fallbackText = escapeHtml(source || domainFromUrl(link) || "Source");
+  if (!primary && !fallback){
+    return `<div class="thumb-fallback ${cls || ""}">${fallbackText}</div>`;
+  }
+  const initialSrc = primary || fallback;
+  const useLogoThumb = (!primary || primary === fallback) && Boolean(fallbackLogo);
   const classNames = [cls, useLogoThumb ? "logo-thumb" : ""]
     .filter(Boolean)
     .join(" ");
 
-  return `<img class="${classNames}" src="${primary}" loading="lazy"
-              data-fallback="${fallback}" data-placeholder="${PLACEHOLDER}"
-              onerror="if(this.dataset.errored){this.onerror=null;this.classList.add('logo-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';this.classList.add('logo-thumb');this.src=this.dataset.fallback || this.dataset.placeholder;this.alt='';}" alt="">`;
+  return `<img class="${classNames}" src="${initialSrc}" loading="lazy"
+              data-fallback="${fallback}" data-fallback-text="${fallbackText}"
+              onerror="if(this.dataset.errored){const text=this.dataset.fallbackText||'Source';const div=document.createElement('div');div.className='thumb-fallback ${cls || ""}';div.textContent=text;this.replaceWith(div);}else{this.dataset.errored='1';if(this.dataset.fallback){this.classList.add('logo-thumb');this.src=this.dataset.fallback;this.alt='';}else{const text=this.dataset.fallbackText||'Source';const div=document.createElement('div');div.className='thumb-fallback ${cls || ""}';div.textContent=text;this.replaceWith(div);}}" alt="">`;
 }
 
 /* card renderers */
