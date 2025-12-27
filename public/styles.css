@@ -866,3 +866,86 @@ dialog::backdrop{
 @media (max-width:600px){
   .ticker{ grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)) }
 }
+/* ==========================================
+   MOBILE FIX: Header + Tabs must NOT overlap
+   ========================================== */
+
+/* Make sure flex/grid children can shrink properly */
+.gn-topbar, .gn-tabs, .gn-briefing, .layout { min-width: 0; }
+
+/* Tabs: always single-line scroll row on small screens */
+.gn-tabs {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+}
+.gn-tabs::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+.tab { flex: 0 0 auto; } /* prevent squeeze + wrap bugs */
+
+@media (max-width: 720px) {
+
+  /* Header: reduce vertical chaos */
+  .gn-topbar {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo actions"
+      "search search";
+    gap: .55rem .6rem;
+    padding: .55rem 12px .4rem;
+    align-items: center;
+  }
+
+  .gn-logo { grid-area: logo; font-size: 1.6rem; }
+  .gn-actions { grid-area: actions; gap: .4rem; }
+  .gn-search { grid-area: search; width: 100%; }
+
+  /* Tabs row: single line, scroll horizontally */
+  .gn-tabs {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    gap: .9rem;
+    padding: .25rem 12px .55rem;
+  }
+
+  .tab {
+    font-size: 13px;
+    padding: .35rem 0;
+    line-height: 1.1;
+  }
+
+  .tab-divider { display: none; }
+
+  /* Briefing row: stack nicely (ticker + weather won't collide) */
+  .gn-briefing {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left"
+      "ticker"
+      "weather";
+    padding: .6rem 12px .7rem;
+    gap: .6rem;
+  }
+
+  /* Weather full width on mobile */
+  .weather-card {
+    justify-self: stretch;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    flex: 1 1 auto;
+  }
+
+  /* Reduce the huge "Your briefing" header spacing on mobile */
+  .briefing-left h1 {
+    font-size: 1.35rem;
+    margin-bottom: .2rem;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 420px) {
+  .tab { font-size: 12.5px; }
+  .gn-logo { font-size: 1.45rem; }
+  .icon-btn { padding: .3rem .45rem; border-radius: 10px; }
+}
