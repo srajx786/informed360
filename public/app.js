@@ -1116,7 +1116,7 @@ function renderNews(){
       </div>`;
     return;
   }
-  list.innerHTML = state.articles.slice(4, 8).map(card).join("");
+  list.innerHTML = state.articles.slice(4, 9).map(card).join("");
 }
 function renderDaily(){
   $("#daily").innerHTML =
