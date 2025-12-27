@@ -2,7 +2,8 @@
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
-const PIN_STORAGE_KEY = "i360_pins";
+const PIN_STORAGE_KEY = "i360_pins_v2";
+const LEGACY_PIN_STORAGE_KEY = "i360_pins";
 async function fetchJSON(u){
   const r = await fetch(u);
   if (!r.ok) throw new Error(await r.text());
@@ -113,8 +114,7 @@ const state = {
   query: "",
   articles: [],
   topics: [],
-  pins: [],
-  pinnedTopics: loadPinnedTopics(),
+  pins: loadPins(),
   profile: loadProfile(),
   theme: localStorage.getItem("theme") || "light",
   hero: { index: 0, timer: null, pause: false },
@@ -134,9 +134,9 @@ function saveProfile(p){
   localStorage.setItem("i360_profile", JSON.stringify(p || {}));
   state.profile = p || {};
 }
-function loadPinnedTopics(){
+function loadLegacyPinnedTopics(){
   try{
-    const raw = JSON.parse(localStorage.getItem(PIN_STORAGE_KEY) || "null");
+    const raw = JSON.parse(localStorage.getItem(LEGACY_PIN_STORAGE_KEY) || "null");
     if (Array.isArray(raw)) return raw;
   }catch{}
   try{
@@ -145,12 +145,87 @@ function loadPinnedTopics(){
   }catch{}
   return [];
 }
-function savePinnedTopics(list){
-  localStorage.setItem(PIN_STORAGE_KEY, JSON.stringify(list || []));
-  state.pinnedTopics = list || [];
+function normalizePin(pin){
+  if (!pin || !pin.type) return null;
+  const value = typeof pin.value === "string" ? pin.value.trim() : "";
+  if (!value) return null;
+  return {
+    type: pin.type,
+    value,
+    lastArticle: pin.lastArticle || null,
+    lastSeenAt: pin.lastSeenAt || null
+  };
+}
+function loadPins(){
+  try{
+    const raw = JSON.parse(localStorage.getItem(PIN_STORAGE_KEY) || "null");
+    if (Array.isArray(raw)){
+      const normalized = raw.map(normalizePin).filter(Boolean).slice(0,2);
+      return normalized;
+    }
+  }catch{}
+  const legacy = loadLegacyPinnedTopics();
+  if (legacy.length){
+    const pins = legacy
+      .map(topic => normalizePin({ type:"topic", value: topic }))
+      .filter(Boolean)
+      .slice(0,2);
+    localStorage.setItem(PIN_STORAGE_KEY, JSON.stringify(pins));
+    return pins;
+  }
+  return [];
+}
+function savePins(list){
+  const cleaned = (list || []).map(normalizePin).filter(Boolean).slice(0,2);
+  localStorage.setItem(PIN_STORAGE_KEY, JSON.stringify(cleaned));
+  state.pins = cleaned;
 }
 function applyTheme(){
   document.documentElement.setAttribute("data-theme", state.theme);
+}
+function getPins(){
+  return Array.isArray(state.pins) ? state.pins.slice(0,2) : [];
+}
+function getTopicPins(){
+  return getPins().filter(pin => pin.type === "topic").map(pin => pin.value);
+}
+function snapshotArticle(a){
+  if (!a) return null;
+  return {
+    title: a.title,
+    link: a.link,
+    source: a.source,
+    publishedAt: a.publishedAt,
+    sentiment: a.sentiment,
+    image: a.image,
+    description: a.description
+  };
+}
+function showPinToast(message){
+  const toast = $("#pinToast");
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("show");
+  clearTimeout(showPinToast.timer);
+  showPinToast.timer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2200);
+}
+function matchesTopic(a, topic){
+  if (!a || !topic) return false;
+  const hay =
+    `${a.title || ""} ${a.source || ""} ${a.description || ""}`.toLowerCase();
+  return hay.includes(topic.toLowerCase());
+}
+function timeAgo(ts){
+  if (!ts) return "";
+  const diff = Math.max(0, Date.now() - ts);
+  const minutes = Math.floor(diff / (1000 * 60));
+  if (minutes < 60) return `${minutes || 1}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  return `${days}d ago`;
 }
 
 /* date + weather */
@@ -270,69 +345,77 @@ async function loadMarkets(){
   }
 }
 
-/* pinned topics (Grid 5) */
-function getPinnedTopics(){
-  const list = state.pinnedTopics || [];
-  return Array.isArray(list) ? list.slice(0,2) : [];
+/* pins (Grid 5) */
+function pinLabel(pin){
+  if (pin.type === "topic") return pin.value;
+  const title = pin.lastArticle?.title || "Article";
+  return title.length > 26 ? `${title.slice(0,26)}…` : title;
 }
-function setPinnedTopics(list){
-  const trimmed = (list || [])
-    .map(t => t && t.trim())
-    .filter(Boolean)
-    .slice(0,2);
-  const base = state.profile || {};
-  savePinnedTopics(trimmed);
-  saveProfile({ ...base, pinnedTopics: trimmed });
-  renderPinnedChips();
-  buildPins();
-  renderPinned();
+function isArticlePinned(link){
+  return getPins().some(p => p.type === "article" && p.value === link);
 }
-function buildPins(){
-  const topics = getPinnedTopics();
-  const pins = [];
+function findLatestTopicMatch(topic, articles, usedLinks){
+  const t = topic.toLowerCase();
+  return articles.reduce((latest, a) => {
+    if (!a || usedLinks.has(a.link)) return latest;
+    if (!matchesTopic(a, t)) return latest;
+    if (!latest) return a;
+    const latestTime = new Date(latest.publishedAt || 0).getTime();
+    const nextTime = new Date(a.publishedAt || 0).getTime();
+    return nextTime > latestTime ? a : latest;
+  }, null);
+}
+function syncPinsWithArticles(){
+  const pins = getPins();
   const usedLinks = new Set();
-  const arts = state.articles || [];
+  const articles = state.articles || [];
 
-  topics.forEach(topic => {
-    const t = topic.toLowerCase();
-    const match = arts.reduce((latest, a) => {
-      if (!a || usedLinks.has(a.link)) return latest;
-      const hay =
-        `${a.title || ""} ${a.source || ""} ${a.description || ""}`.toLowerCase();
-      if (!hay.includes(t)) return latest;
-      if (!latest) return a;
-      const latestTime = new Date(latest.publishedAt || 0).getTime();
-      const nextTime = new Date(a.publishedAt || 0).getTime();
-      return nextTime > latestTime ? a : latest;
-    }, null);
-    if (match){
-      usedLinks.add(match.link);
-      pins.push({ topic, article: match });
+  pins.forEach(pin => {
+    if (pin.type === "article"){
+      const match = articles.find(a => a.link === pin.value);
+      if (match){
+        pin.lastArticle = snapshotArticle(match);
+        pin.lastSeenAt = Date.now();
+        usedLinks.add(match.link);
+      }
     }
   });
 
-  state.pins = pins.slice(0,2);
+  pins.forEach(pin => {
+    if (pin.type !== "topic") return;
+    const match = findLatestTopicMatch(pin.value, articles, usedLinks);
+    if (match){
+      pin.lastArticle = snapshotArticle(match);
+      pin.lastSeenAt = Date.now();
+      usedLinks.add(match.link);
+    }
+  });
+
+  savePins(pins);
 }
 function renderPinnedChips(){
   const wrap = $("#pinnedChips");
   if (!wrap) return;
-  const topics = getPinnedTopics();
-  if (!topics.length){
+  const pins = getPins();
+  if (!pins.length){
     wrap.innerHTML = "";
     return;
   }
-  wrap.innerHTML = topics.map((t,i) => `
+  wrap.innerHTML = pins.map((pin,i) => `
     <button class="pin-chip" type="button" data-i="${i}">
-      <span>${t}</span>
+      <span>${pinLabel(pin)}</span>
       <span class="x">✕</span>
     </button>`).join("");
 
   wrap.querySelectorAll(".pin-chip").forEach(btn=>{
     btn.addEventListener("click", ()=>{
       const i = Number(btn.dataset.i);
-      const topics = getPinnedTopics();
-      topics.splice(i,1);
-      setPinnedTopics(topics);
+      const pins = getPins();
+      pins.splice(i,1);
+      savePins(pins);
+      renderPinnedChips();
+      renderPinned();
+      updatePinButtons();
     });
   });
 }
@@ -368,7 +451,8 @@ async function loadAll(){
     state.articles = state.articles.filter(a => wanted.has(a.category));
   }
 
-  buildPins();
+  syncPinsWithArticles();
+  renderPinnedChips();
   renderAll();
 }
 
@@ -391,6 +475,7 @@ function safeImgTag(src, link, source, cls){
 function card(a){
   return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
+      <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
       ${safeImgTag(a.image, a.link, a.source, "thumb")}
       <div>
         <div class="title">${a.title}</div>
@@ -406,30 +491,92 @@ function card(a){
 function renderPinned(){
   const container = $("#pinned");
   if (!container) return;
-  const list = state.pins || [];
+  const list = getPins();
   if (!list.length){
     container.innerHTML =
       `<div class="pinned-empty">
-         No matches yet — we’ll show the latest news for your pinned topics here.
+         Pin a topic or article to keep it handy here.
        </div>`;
     return;
   }
-  container.innerHTML = list.map(p => {
-    const a = p.article || p;
-    const topicLabel = p.topic
-      ? `<div class="pin-topic">Tracking: ${p.topic}</div>`
+  container.innerHTML = list.map(pin => {
+    const article = pin.lastArticle;
+    const hasMatch = pin.type === "article"
+      ? state.articles.some(a => a.link === pin.value)
+      : state.articles.some(a => matchesTopic(a, pin.value));
+    const isStale = !hasMatch;
+    const topicLabel = pin.type === "topic"
+      ? `<div class="pin-topic">Tracking: ${pin.value}</div>`
+      : `<div class="pin-topic">Pinned article</div>`;
+    if (!article){
+      return `
+        <div class="row">
+          ${topicLabel}
+          <div class="row-title">No recent match yet.</div>
+        </div>`;
+    }
+    const ageLine = isStale && pin.lastSeenAt
+      ? `<div class="pin-age">Last updated ${timeAgo(pin.lastSeenAt)}</div>`
       : "";
     return `
       <div class="row">
         ${topicLabel}
-        <a class="row-title" href="${a.link}" target="_blank" rel="noopener">${a.title}</a>
+        <a class="row-title" href="${article.link}" target="_blank" rel="noopener">${article.title}</a>
         <div class="row-meta">
-          <span class="source">${a.source}</span>
-          · <span>${new Date(a.publishedAt).toLocaleString()}</span>
+          <span class="source">${article.source}</span>
+          · <span>${new Date(article.publishedAt).toLocaleString()}</span>
         </div>
-        ${renderSentiment(a.sentiment, true)}
+        ${ageLine}
+        ${renderSentiment(article.sentiment, true)}
       </div>`;
   }).join("");
+}
+
+function updatePinButtons(){
+  $$(".pin-toggle").forEach(btn => {
+    const link = btn.dataset.link;
+    const pinned = isArticlePinned(link);
+    btn.classList.toggle("active", pinned);
+    btn.setAttribute("aria-pressed", String(pinned));
+    btn.textContent = pinned ? "Pinned" : "Pin";
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const article = state.articles.find(a => a.link === link)
+        || getPins().find(p => p.value === link)?.lastArticle;
+      if (!article) return;
+      toggleArticlePin(article);
+    });
+  });
+}
+
+function toggleArticlePin(article){
+  const pins = getPins();
+  const idx = pins.findIndex(p => p.type === "article" && p.value === article.link);
+  if (idx >= 0){
+    pins.splice(idx, 1);
+    savePins(pins);
+    renderPinnedChips();
+    renderPinned();
+    updatePinButtons();
+    return;
+  }
+  if (pins.length >= 2){
+    showPinToast("Limit reached (2). Unpin one first.");
+    return;
+  }
+  pins.push({
+    type: "article",
+    value: article.link,
+    lastArticle: snapshotArticle(article),
+    lastSeenAt: Date.now()
+  });
+  savePins(pins);
+  renderPinnedChips();
+  renderPinned();
+  updatePinButtons();
 }
 
 /* Grid 9: only 4 main news stories */
@@ -454,6 +601,7 @@ function renderHero(){
   }
   track.innerHTML = slides.map(a => `
     <article class="hero-slide">
+      <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
       <div class="hero-img">${safeImgTag(a.image, a.link, a.source, "")}</div>
       <div class="hero-content">
         <h3>${a.title}</h3>
@@ -613,6 +761,43 @@ function renderMood4h(){
   const n = pts.length || 1;
   $("#moodSummary").textContent =
     `Positive ${fmtPct(avg.pos/n)} · Neutral ${fmtPct(avg.neu/n)} · Negative ${fmtPct(avg.neg/n)}`;
+}
+
+function renderMoodCloud(){
+  const cloud = $("#moodCloud");
+  if (!cloud) return;
+  const stopwords = new Set([
+    "the","and","for","with","that","this","from","you","your","about","over",
+    "into","after","before","while","where","when","what","who","why","how",
+    "are","was","were","will","has","have","had","but","not","all","its","out",
+    "new","more","less","than","their","they","them","his","her","she","him",
+    "our","us","via","said","says","say","as","at","of","in","on","to","a",
+    "an","by","be","it","is","or","up","off","if","we","i","my","me"
+  ]);
+  const counts = new Map();
+  (state.articles || []).forEach(a => {
+    const text = `${a.title || ""} ${a.description || ""}`.toLowerCase();
+    const words = text.match(/[a-z0-9]+/g) || [];
+    words.forEach(word => {
+      if (word.length < 3 || stopwords.has(word)) return;
+      counts.set(word, (counts.get(word) || 0) + 1);
+    });
+  });
+  const list = [...counts.entries()]
+    .sort((a,b) => b[1] - a[1])
+    .slice(0, 22);
+  if (!list.length){
+    cloud.innerHTML = `<span class="cloud-word">No trending keywords yet.</span>`;
+    return;
+  }
+  const values = list.map(([,count]) => count);
+  const max = Math.max(...values);
+  const min = Math.min(...values);
+  cloud.innerHTML = list.map(([word, count]) => {
+    const ratio = max === min ? 0.5 : (count - min) / (max - min);
+    const size = 12 + ratio * 10;
+    return `<span class="cloud-word" style="font-size:${size.toFixed(1)}px">${word}</span>`;
+  }).join("");
 }
 
 /* ===== Sentiment Leaderboard (logic unchanged) ===== */
@@ -845,12 +1030,21 @@ function renderAll(){
   renderDaily();
   renderTopics();
   renderMood4h();
+  renderMoodCloud();
   renderLeaderboard();
   renderIndustryBoard();
   $("#year").textContent = new Date().getFullYear();
+  updatePinButtons();
 }
 
 /* interactions */
+function moveSentimentControls(){
+  const dock = $("#sentimentDock");
+  const controls = $(".news-section .controls");
+  if (dock && controls && controls.parentElement !== dock){
+    dock.appendChild(controls);
+  }
+}
 $$(".chip[data-sent]").forEach(btn=>{
   btn.addEventListener("click", () => {
     $$(".chip[data-sent]").forEach(b => b.classList.remove("active"));
@@ -882,18 +1076,33 @@ function handlePinnedAdd(){
   if (!pinnedInput) return;
   const value = pinnedInput.value.trim();
   if (!value) return;
-  const current = getPinnedTopics();
-  if (current.length >= 2){
+  const pins = getPins();
+  if (pins.length >= 2){
+    showPinToast("Limit reached (2). Unpin one first.");
     pinnedInput.value = "";
     return;
   }
-  const exists = current.some(item => item.toLowerCase() === value.toLowerCase());
+  const exists = pins.some(
+    pin => pin.type === "topic" && pin.value.toLowerCase() === value.toLowerCase()
+  );
   if (exists){
     pinnedInput.value = "";
     return;
   }
-  current.push(value);
-  setPinnedTopics(current);
+  const usedLinks = new Set(
+    pins.filter(pin => pin.type === "article").map(pin => pin.value)
+  );
+  const match = findLatestTopicMatch(value, state.articles || [], usedLinks);
+  pins.push({
+    type: "topic",
+    value,
+    lastArticle: match ? snapshotArticle(match) : null,
+    lastSeenAt: match ? Date.now() : null
+  });
+  savePins(pins);
+  renderPinnedChips();
+  renderPinned();
+  updatePinButtons();
   pinnedInput.value = "";
 }
 
@@ -943,7 +1152,7 @@ $("#savePrefs")?.addEventListener("click", (e)=>{
     name,
     city,
     interests: inter,
-    pinnedTopics: getPinnedTopics()
+    pinnedTopics: getTopicPins()
   });
   modal.close();
   const forYouTab = $('.gn-tabs .tab[data-cat="foryou"]');
@@ -953,6 +1162,7 @@ $("#savePrefs")?.addEventListener("click", (e)=>{
 /* boot */
 document.getElementById("year").textContent = new Date().getFullYear();
 applyTheme();
+moveSentimentControls();
 renderPinnedChips();
 $("#briefingDate").textContent = todayStr();
 getWeather();
