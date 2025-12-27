@@ -114,17 +114,27 @@ h1,h2,h3{ margin:0 0 .6rem }
   display:grid;
   grid-template-columns:300px minmax(0,1fr) 340px;
   grid-template-areas:
-    "left center right"
+    "pinned hero mood"
+    "source news trending"
+    "industry news trending"
     "daily daily daily";
   gap:.9rem;
   padding:.9rem 12px 1rem;
-  align-items:start;
+  align-items:stretch;
 }
-.left{ grid-area:left }
-.center{ grid-area:center }
-.right{ grid-area:right }
+.pinned-block{ grid-area:pinned }
+.hero-block{ grid-area:hero }
+.mood-block{ grid-area:mood }
+.source-block{ grid-area:source }
+.news-block{ grid-area:news }
+.trending-block{ grid-area:trending }
+.industry-block{ grid-area:industry }
 .daily-wide{ grid-area:daily }
-.left,.center,.right,.daily-wide{ display:flex; flex-direction:column }
+.daily-wide{ display:flex; flex-direction:column }
+
+.layout .news-section{ margin-top:0 }
+.layout .leader-card,
+.layout .mood-card{ margin-top:0; margin-bottom:0 }
 
 /* Block card */
 .block-card{ background:var(--card); border:1px solid var(--border); border-radius:18px; overflow:hidden; box-shadow:var(--shadow) }
@@ -263,6 +273,61 @@ h1,h2,h3{ margin:0 0 .6rem }
 .leader-foot{ display:grid; grid-template-columns:repeat(3,1fr); color:var(--muted); font-size:.85rem; text-align:center; margin-top:.25rem }
 .leader-foot span:nth-child(1){ color:var(--pos) } .leader-foot span:nth-child(3){ color:var(--neg) }
 
+/* Pinned */
+.pinned-controls{
+  display:flex;
+  gap:.5rem;
+  padding:.65rem .95rem 0;
+}
+.pinned-controls input{
+  flex:1;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:.4rem .6rem;
+  font-size:.9rem;
+  background:var(--card);
+  color:var(--fg);
+}
+.pinned-controls button{
+  border:1px solid var(--border);
+  background:var(--chip);
+  border-radius:10px;
+  padding:.4rem .7rem;
+  font-weight:600;
+  cursor:pointer;
+}
+.pinned-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem;
+  padding:.5rem .95rem 0;
+}
+.pin-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  border:1px solid var(--border);
+  background:var(--chip);
+  border-radius:999px;
+  padding:.2rem .6rem;
+  font-size:.8rem;
+  cursor:pointer;
+}
+.pin-chip .x{
+  font-size:.75rem;
+  color:var(--muted);
+}
+.pinned-empty{
+  padding:.8rem 1rem;
+  color:var(--muted);
+  font-size:.9rem;
+}
+.pin-topic{
+  font-size:.8rem;
+  color:var(--muted);
+  font-weight:600;
+}
+
 .daily-wide{ margin-top:.8rem }
 .daily-list{
   display:grid;
@@ -289,9 +354,13 @@ h1,h2,h3{ margin:0 0 .6rem }
   .layout{
     grid-template-columns:1fr;
     grid-template-areas:
-      "center"
-      "left"
-      "right"
+      "hero"
+      "pinned"
+      "mood"
+      "source"
+      "news"
+      "trending"
+      "industry"
       "daily";
   }
   .hero-slide{ grid-template-columns:1fr }

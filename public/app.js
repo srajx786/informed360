@@ -2,6 +2,7 @@
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
+const PIN_STORAGE_KEY = "i360_pins";
 async function fetchJSON(u){
   const r = await fetch(u);
   if (!r.ok) throw new Error(await r.text());
@@ -113,6 +114,7 @@ const state = {
   articles: [],
   topics: [],
   pins: [],
+  pinnedTopics: loadPinnedTopics(),
   profile: loadProfile(),
   theme: localStorage.getItem("theme") || "light",
   hero: { index: 0, timer: null, pause: false },
@@ -131,6 +133,21 @@ function loadProfile(){
 function saveProfile(p){
   localStorage.setItem("i360_profile", JSON.stringify(p || {}));
   state.profile = p || {};
+}
+function loadPinnedTopics(){
+  try{
+    const raw = JSON.parse(localStorage.getItem(PIN_STORAGE_KEY) || "null");
+    if (Array.isArray(raw)) return raw;
+  }catch{}
+  try{
+    const profile = JSON.parse(localStorage.getItem("i360_profile") || "{}");
+    if (Array.isArray(profile.pinnedTopics)) return profile.pinnedTopics;
+  }catch{}
+  return [];
+}
+function savePinnedTopics(list){
+  localStorage.setItem(PIN_STORAGE_KEY, JSON.stringify(list || []));
+  state.pinnedTopics = list || [];
 }
 function applyTheme(){
   document.documentElement.setAttribute("data-theme", state.theme);
@@ -255,8 +272,8 @@ async function loadMarkets(){
 
 /* pinned topics (Grid 5) */
 function getPinnedTopics(){
-  const p = state.profile || {};
-  return Array.isArray(p.pinnedTopics) ? p.pinnedTopics.slice(0,2) : [];
+  const list = state.pinnedTopics || [];
+  return Array.isArray(list) ? list.slice(0,2) : [];
 }
 function setPinnedTopics(list){
   const trimmed = (list || [])
@@ -264,6 +281,7 @@ function setPinnedTopics(list){
     .filter(Boolean)
     .slice(0,2);
   const base = state.profile || {};
+  savePinnedTopics(trimmed);
   saveProfile({ ...base, pinnedTopics: trimmed });
   renderPinnedChips();
   buildPins();
@@ -277,13 +295,16 @@ function buildPins(){
 
   topics.forEach(topic => {
     const t = topic.toLowerCase();
-    const match = arts.find(a => {
-      if (!a) return false;
-      if (usedLinks.has(a.link)) return false;
+    const match = arts.reduce((latest, a) => {
+      if (!a || usedLinks.has(a.link)) return latest;
       const hay =
-        `${a.title || ""} ${(a.description || "")}`.toLowerCase();
-      return hay.includes(t);
-    });
+        `${a.title || ""} ${a.source || ""} ${a.description || ""}`.toLowerCase();
+      if (!hay.includes(t)) return latest;
+      if (!latest) return a;
+      const latestTime = new Date(latest.publishedAt || 0).getTime();
+      const nextTime = new Date(a.publishedAt || 0).getTime();
+      return nextTime > latestTime ? a : latest;
+    }, null);
     if (match){
       usedLinks.add(match.link);
       pins.push({ topic, article: match });
@@ -862,7 +883,12 @@ function handlePinnedAdd(){
   const value = pinnedInput.value.trim();
   if (!value) return;
   const current = getPinnedTopics();
-  if (current.includes(value)){
+  if (current.length >= 2){
+    pinnedInput.value = "";
+    return;
+  }
+  const exists = current.some(item => item.toLowerCase() === value.toLowerCase());
+  if (exists){
     pinnedInput.value = "";
     return;
   }
