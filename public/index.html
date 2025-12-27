@@ -57,114 +57,107 @@
 
   <!-- 3-column layout -->
   <main class="layout">
-    <!-- LEFT: PINNED + LEADERBOARD BELOW -->
-    <aside class="left">
-      <!-- Pinned topics / pinned news (Grid 5) -->
-      <div class="block-card">
-        <div class="block-header">
-          <span class="block-title">Pinned</span>
-        </div>
-        <div class="pinned-controls">
-          <input
-            id="pinnedInput"
-            type="text"
-            placeholder="Add topic to track (e.g., US tariffs)"
-          />
-          <button id="pinnedAddBtn" type="button">Add</button>
-        </div>
-        <div id="pinnedChips" class="pinned-chips"></div>
-        <div id="pinned" class="block-list"></div>
+    <!-- Pinned topics / pinned news (Grid 5) -->
+    <div class="block-card pinned-block">
+      <div class="block-header">
+        <span class="block-title">Pinned</span>
       </div>
-
-      <!-- News source sentiment leaderboard (Grid 8) -->
-      <div class="leader-card card" id="leaderWrap">
-        <div class="leader-head">
-          <div class="leader-title">News Source Sentiment</div>
-          <div class="leader-sub">(Updated every hour)</div>
-        </div>
-        <div id="leaderboard" class="leader-grid" aria-live="polite">
-          <div class="leader-col col-pos"></div>
-          <div class="leader-col col-neu"></div>
-          <div class="leader-col col-neg"></div>
-          <div class="leader-lines"></div>
-          <div class="leader-ylabels">
-            <span>75%</span><span>50%</span><span>25%</span>
-          </div>
-          <div class="board-empty" aria-live="polite">Not enough recent articles to rank sources yet.</div>
-        </div>
-        <div class="leader-foot">
-          <span>Positive</span><span>Neutral</span><span>Negative</span>
-        </div>
+      <div class="pinned-controls">
+        <input
+          id="pinnedInput"
+          type="text"
+          placeholder="Add topic to track (e.g., US)"
+        />
+        <button id="pinnedAddBtn" type="button">Add</button>
       </div>
+      <div id="pinnedChips" class="pinned-chips"></div>
+      <div id="pinned" class="block-list"></div>
+    </div>
 
-      <!-- Industry sentiment board -->
-      <div class="leader-card card" id="industryWrap">
-        <div class="leader-head">
-          <div class="leader-title">Industry Sentiment Leaderboard</div>
-          <div class="leader-sub">(Updated every hour)</div>
-        </div>
-        <div id="industryBoard" class="leader-grid industry-grid" aria-live="polite">
-          <div class="leader-col col-pos"></div>
-          <div class="leader-col col-neu"></div>
-          <div class="leader-col col-neg"></div>
-          <div class="leader-lines"></div>
-          <div class="leader-ylabels">
-            <span>75%</span><span>50%</span><span>25%</span>
-          </div>
-          <div class="board-empty" aria-live="polite">Waiting for enough industry-tagged news.</div>
-        </div>
-        <div class="leader-foot">
-          <span>Positive</span><span>Neutral</span><span>Negative</span>
-        </div>
-      </div>
-    </aside>
-
-    <!-- CENTER: HERO + MAIN NEWS (Grid 2 + Grid 9) -->
-    <section class="center">
-      <section id="hero" class="hero-carousel" aria-roledescription="carousel">
-        <div class="hero-track" id="heroTrack" role="group"></div>
-        <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
-        <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
-        <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero slides"></div>
-      </section>
-
-      <div class="news-section">
-        <div class="controls">
-          <button data-sent="all" class="chip active">All</button>
-          <button data-sent="positive" class="chip">Positive</button>
-          <button data-sent="neutral" class="chip">Neutral</button>
-          <button data-sent="negative" class="chip">Negative</button>
-          <button id="expChip" class="chip" title="Include experimental feeds">Max Feeds</button>
-        </div>
-        <h2 class="display-title">News</h2>
-        <div id="newsList" class="news-list"></div>
-      </div>
+    <!-- HERO -->
+    <section id="hero" class="hero-carousel hero-block" aria-roledescription="carousel">
+      <div class="hero-track" id="heroTrack" role="group"></div>
+      <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
+      <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
+      <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero slides"></div>
     </section>
 
-    <!-- RIGHT: Mood (4h) + Trending -->
-    <aside class="right">
-      <!-- 4-hour mood microchart ABOVE Trending -->
-      <div class="mood-card card" id="mood4h" aria-live="polite">
-        <div class="mood-head">
-          <div class="mood-title">Nation’s Mood (Last 4h)</div>
-          <div class="mood-legend">
-            <span class="lg pos">Positive</span>
-            <span class="lg neu">Neutral</span>
-            <span class="lg neg">Negative</span>
-          </div>
+    <!-- 4-hour mood microchart -->
+    <div class="mood-card card mood-block" id="mood4h" aria-live="polite">
+      <div class="mood-head">
+        <div class="mood-title">Nation’s Mood (Last 4h)</div>
+        <div class="mood-legend">
+          <span class="lg pos">Positive</span>
+          <span class="lg neu">Neutral</span>
+          <span class="lg neg">Negative</span>
         </div>
-        <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour mood trend"></svg>
-        <div id="moodSummary" class="mood-summary"></div>
       </div>
+      <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour mood trend"></svg>
+      <div id="moodSummary" class="mood-summary"></div>
+    </div>
 
-      <div class="block-card">
-        <div class="block-header">
-          <span class="block-title">Trending topics</span>
+    <!-- News source sentiment leaderboard (Grid 8) -->
+    <div class="leader-card card source-block" id="leaderWrap">
+      <div class="leader-head">
+        <div class="leader-title">News Source Sentiment</div>
+        <div class="leader-sub">(Updated every hour)</div>
+      </div>
+      <div id="leaderboard" class="leader-grid" aria-live="polite">
+        <div class="leader-col col-pos"></div>
+        <div class="leader-col col-neu"></div>
+        <div class="leader-col col-neg"></div>
+        <div class="leader-lines"></div>
+        <div class="leader-ylabels">
+          <span>75%</span><span>50%</span><span>25%</span>
         </div>
-        <div id="topicsList" class="block-list"></div>
+        <div class="board-empty" aria-live="polite">Not enough recent articles to rank sources yet.</div>
       </div>
+      <div class="leader-foot">
+        <span>Positive</span><span>Neutral</span><span>Negative</span>
+      </div>
+    </div>
 
-    </aside>
+    <!-- MAIN NEWS (Grid 9) -->
+    <div class="news-section news-block">
+      <div class="controls">
+        <button data-sent="all" class="chip active">All</button>
+        <button data-sent="positive" class="chip">Positive</button>
+        <button data-sent="neutral" class="chip">Neutral</button>
+        <button data-sent="negative" class="chip">Negative</button>
+        <button id="expChip" class="chip" title="Include experimental feeds">Max Feeds</button>
+      </div>
+      <h2 class="display-title">News</h2>
+      <div id="newsList" class="news-list"></div>
+    </div>
+
+    <!-- Trending -->
+    <div class="block-card trending-block">
+      <div class="block-header">
+        <span class="block-title">Trending topics</span>
+      </div>
+      <div id="topicsList" class="block-list"></div>
+    </div>
+
+    <!-- Industry sentiment board -->
+    <div class="leader-card card industry-block" id="industryWrap">
+      <div class="leader-head">
+        <div class="leader-title">Industry Sentiment Leaderboard</div>
+        <div class="leader-sub">(Updated every hour)</div>
+      </div>
+      <div id="industryBoard" class="leader-grid industry-grid" aria-live="polite">
+        <div class="leader-col col-pos"></div>
+        <div class="leader-col col-neu"></div>
+        <div class="leader-col col-neg"></div>
+        <div class="leader-lines"></div>
+        <div class="leader-ylabels">
+          <span>75%</span><span>50%</span><span>25%</span>
+        </div>
+        <div class="board-empty" aria-live="polite">Waiting for enough industry-tagged news.</div>
+      </div>
+      <div class="leader-foot">
+        <span>Positive</span><span>Neutral</span><span>Negative</span>
+      </div>
+    </div>
 
     <section class="daily-wide">
       <h3 class="display-title">Daily News</h3>
