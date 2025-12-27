@@ -94,7 +94,7 @@ h1,h2,h3{ margin:0 0 .6rem }
 .sentiment-dock .controls{ margin:0 }
 .ticker-row{
   display:flex;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
   gap:.35rem;
   align-items:stretch;
   overflow-x:hidden;
@@ -109,7 +109,7 @@ h1,h2,h3{ margin:0 0 .6rem }
 .qpill{
   background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.2rem .4rem;
   display:flex; align-items:baseline; gap:.35rem; box-shadow:var(--shadow); flex:0 0 auto; white-space:nowrap;
-  font-variant-numeric: tabular-nums; line-height:1.1; min-width:140px; justify-content:space-between;
+  font-variant-numeric: tabular-nums; line-height:1.1; min-width:120px; justify-content:space-between;
 }
 .qpill .sym{ font-weight:800; font-size:.76rem } .qpill .price{ font-weight:700; font-size:.75rem } .qpill .chg{ font-size:.7rem }
 .qpill .chg.up{ color:#16a34a } .qpill .chg.down{ color:#ef4444 }
@@ -292,15 +292,11 @@ h1,h2,h3{ margin:0 0 .6rem }
   flex-direction:column;
   justify-content:space-between;
   align-items:flex-start;
-  color:#6b7280;
-  font-size:.82rem;
-  padding:6px 0;
-  min-width:34px;
-}
-.lb-axis.source-axis{
+  color:var(--muted);
   font-size:9px;
-  min-width:32px;
+  line-height:1.2;
   padding:6px 0;
+  min-width:20px;
 }
 .leader-grid{
   position:relative;
@@ -436,8 +432,7 @@ h1,h2,h3{ margin:0 0 .6rem }
   margin-top:.2rem;
   align-items:center;
 }
-.lb-axis-spacer{ min-width:34px }
-.source-block .lb-axis-spacer{ min-width:32px }
+.lb-axis-spacer{ min-width:20px }
 .leader-foot{ display:grid; grid-template-columns:repeat(3,1fr); color:var(--muted); font-size:.85rem; text-align:center }
 .leader-foot span:nth-child(1){ color:var(--pos) } .leader-foot span:nth-child(3){ color:var(--neg) }
 
@@ -520,7 +515,40 @@ h1,h2,h3{ margin:0 0 .6rem }
 }
 
 /* Footer */
-.footer{ padding:1rem 12px; color:var(--muted); border-top:1px solid var(--border); margin-top:1rem }
+.gn-footer{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:1rem 12px;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  margin-top:1rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem;
+  flex-wrap:wrap;
+}
+.footer-left{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  flex-wrap:wrap;
+}
+.footer-updated-group{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  flex-wrap:wrap;
+}
+.footer-link{
+  color:var(--brand);
+  font-weight:600;
+}
+.footer-updated{
+  font-size:.85rem;
+}
+.dot{ color:var(--border) }
 
 /* Responsive */
 @media (max-width:1100px){

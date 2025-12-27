@@ -665,6 +665,10 @@ async function loadMarkets(){
     });
     const updatedDate = updatedAt.toLocaleDateString();
     const statusText = `Website updated on ${updatedDate} · ${updatedLabel}`;
+    const updatedEl = $("#updatedAt");
+    if (updatedEl){
+      updatedEl.textContent = statusText;
+    }
 
     const defaults = [
       { symbol: "^BSESN", pretty: "BSE Sensex" },
@@ -698,10 +702,7 @@ async function loadMarkets(){
         </div>`;
     }).join("");
     el.innerHTML = `
-      <div class="ticker-row" role="list">${items || ""}</div>
-      <div class="ticker-status" aria-label="${statusText}">
-        ${statusText}
-      </div>`;
+      <div class="ticker-row" role="list">${items || ""}</div>`;
   }catch{
     // If API fails, show static labels so the bar is never empty
     const fallback = [
@@ -709,6 +710,10 @@ async function loadMarkets(){
     ];
     const now = new Date();
     const fallbackStatus = `Website updated on ${now.toLocaleDateString()} · ${now.toLocaleTimeString([], { hour:"2-digit", minute:"2-digit" })}`;
+    const updatedEl = $("#updatedAt");
+    if (updatedEl){
+      updatedEl.textContent = fallbackStatus;
+    }
     $("#marketTicker").innerHTML = `
       <div class="ticker-row" role="list">${fallback.map(n => `
         <div class="qpill">
@@ -716,9 +721,7 @@ async function loadMarkets(){
           <span class="price">—</span>
           <span class="chg">—</span>
         </div>`).join("")}</div>
-      <div class="ticker-status" aria-label="${fallbackStatus}">
-        ${fallbackStatus}
-      </div>`;
+      `;
   }
 }
 
