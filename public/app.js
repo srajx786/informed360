@@ -475,13 +475,17 @@ function safeImgTag(src, link, source, cls){
 function card(a){
   return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
-      <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
-      ${safeImgTag(a.image, a.link, a.source, "thumb")}
-      <div>
+      <div class="news-side">
+        ${safeImgTag(a.image, a.link, a.source, "thumb")}
+        <div class="card-actions">
+          <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
+        </div>
+      </div>
+      <div class="news-body">
         <div class="title">${a.title}</div>
         <div class="meta">
           <span class="source">${a.source}</span>
-          · <span>${new Date(a.publishedAt).toLocaleString()}</span>
+          · <span class="meta-time">${new Date(a.publishedAt).toLocaleString()}</span>
         </div>
         ${renderSentiment(a.sentiment)}
       </div>
@@ -601,15 +605,19 @@ function renderHero(){
   }
   track.innerHTML = slides.map(a => `
     <article class="hero-slide">
-      <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
-      <div class="hero-img">${safeImgTag(a.image, a.link, a.source, "")}</div>
+      <div class="hero-media">
+        <div class="hero-img">${safeImgTag(a.image, a.link, a.source, "")}</div>
+        <div class="hero-sentiment">${renderSentiment(a.sentiment, true)}</div>
+      </div>
+      <div class="hero-actions">
+        <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
+      </div>
       <div class="hero-content">
         <h3>${a.title}</h3>
         <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
-        ${renderSentiment(a.sentiment)}
         <div class="meta">
           <span class="source">${a.source}</span>
-          · <span>${new Date(a.publishedAt).toLocaleString()}</span>
+          · <span class="meta-time">${new Date(a.publishedAt).toLocaleString()}</span>
         </div>
       </div>
     </article>`).join("");
@@ -787,16 +795,34 @@ function renderMoodCloud(){
     .sort((a,b) => b[1] - a[1])
     .slice(0, 22);
   if (!list.length){
-    cloud.innerHTML = `<span class="cloud-word">No trending keywords yet.</span>`;
+    cloud.innerHTML = `<span class="mood-word">No trending keywords yet.</span>`;
     return;
   }
   const values = list.map(([,count]) => count);
   const max = Math.max(...values);
   const min = Math.min(...values);
+  const rotations = [-5, 0, 5];
+  const rotationFor = (word) => {
+    let hash = 0;
+    for (let i = 0; i < word.length; i++){
+      hash = (hash * 31 + word.charCodeAt(i)) % rotations.length;
+    }
+    return rotations[Math.abs(hash) % rotations.length];
+  };
   cloud.innerHTML = list.map(([word, count]) => {
     const ratio = max === min ? 0.5 : (count - min) / (max - min);
-    const size = 12 + ratio * 10;
-    return `<span class="cloud-word" style="font-size:${size.toFixed(1)}px">${word}</span>`;
+    const size = 12 + ratio * 14;
+    const weight = Math.round(500 + ratio * 300);
+    const opacity = (0.55 + ratio * 0.35).toFixed(2);
+    const rotation = rotationFor(word);
+    return `
+      <span class="mood-word"
+            style="font-size:${size.toFixed(1)}px;
+                   font-weight:${weight};
+                   opacity:${opacity};
+                   transform:rotate(${rotation}deg);">
+        ${word}
+      </span>`;
   }).join("");
 }
 
