@@ -147,7 +147,10 @@ const TOPIC_STOPWORDS = new Set([
   "up","down","out","about","as","is","are","was","were","be","been","being",
   "this","that","these","those","it","its","their","his","her","our","your","my",
   "not","no","yes","new","news","latest","live","update","updates","today","day",
-  "http","https","www","com","net","org","site","archive","sitemap","sends","legal"
+  "http","https","www","com","net","org","site","archive","sitemap","sends","legal",
+  "report","reports","says","say","said","tells","told","after","before","amid",
+  "reveals","reveal","announces","announce","breaking","liveblog","blog","watch",
+  "video","photos","photo","gallery","exclusive","analysis","opinion","editorial"
 ]);
 const TOPIC_BLACKLIST = new Set([
   "search results",
@@ -157,15 +160,34 @@ const TOPIC_BLACKLIST = new Set([
   "latest news",
   "live updates",
   "news update",
-  "news updates"
+  "news updates",
+  "read more",
+  "click here",
+  "full story"
 ]);
 const TOPIC_URL_TOKENS = new Set([
   "http","https","www","com","net","org","site","archive","sitemap","frontline"
 ]);
+const TOPIC_VERBS = new Set([
+  "announce","announces","announced","approve","approves","approved","ban","bans",
+  "ban","banned","boost","boosts","boosted","call","calls","called","crack",
+  "cracks","curb","curbs","curbed","cut","cuts","cutting","demand","demands",
+  "discuss","discusses","discussed","drop","drops","dropped","faces","face",
+  "fight","fights","fought","file","files","filed","focus","focuses","focused",
+  "launch","launches","launched","lift","lifts","lifted","meet","meets","met",
+  "move","moves","moved","probe","probes","probed","raise","raises","raised",
+  "seek","seeks","sought","sets","set","sign","signs","signed","slam","slams",
+  "target","targets","targeted","warn","warns","warned","win","wins","won"
+]);
 const normalizeTopicText = (t = "") =>
   t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
-const titleCase = (t = "") =>
-  t.split(" ").map(w => (w ? w[0].toUpperCase() + w.slice(1) : "")).join(" ").trim();
+const formatTopicTokens = (tokens = []) =>
+  tokens.map(word => {
+    if (!word) return "";
+    if (word.toUpperCase() === word) return word;
+    if (/[a-z][A-Z]/.test(word)) return word;
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+  }).join(" ").trim();
 const looksLikeUrl = (t = "") =>
   /https?:\/\//i.test(t) ||
   /www\./i.test(t) ||
@@ -173,19 +195,27 @@ const looksLikeUrl = (t = "") =>
   /\/(sitemap|archive)\//i.test(t);
 
 function scoreTopicSegment(segment = ""){
-  const urlish = looksLikeUrl(segment);
   const normalized = normalizeTopicText(segment);
   if (!normalized) return { score: -100, title: "" };
-  if (TOPIC_BLACKLIST.has(normalized)) return { score: -100, title: "" };
-  const tokens = normalized.split(" ").filter(Boolean);
-  const cleanedTokens = tokens.filter(t => !TOPIC_STOPWORDS.has(t));
-  const meaningful = cleanedTokens.filter(t => !(urlish && TOPIC_URL_TOKENS.has(t)));
+  if (looksLikeUrl(segment) || TOPIC_BLACKLIST.has(normalized)) return { score: -100, title: "" };
+  const rawTokens = segment.match(/[A-Za-z0-9]+/g) || [];
+  if (rawTokens.length < 2) return { score: -100, title: "" };
+  const lowerTokens = rawTokens.map(t => t.toLowerCase());
+  const cleanedTokens = rawTokens.filter((t, i) => !TOPIC_STOPWORDS.has(lowerTokens[i]));
+  const cleanedLower = cleanedTokens.map(t => t.toLowerCase());
+  if (cleanedTokens.length < 2) return { score: -100, title: "" };
+  const startsWithVerb =
+    TOPIC_VERBS.has(cleanedLower[0]) && !/^[A-Z]/.test(cleanedTokens[0]);
+  if (startsWithVerb) return { score: -100, title: "" };
+  const hasProper =
+    cleanedTokens.some(token => /^[A-Z][a-z]/.test(token) || /^[A-Z]{2,}$/.test(token) || /\d/.test(token));
+  const meaningful = cleanedTokens.filter(t => !TOPIC_URL_TOKENS.has(t.toLowerCase()));
   if (meaningful.length < 2) return { score: -100, title: "" };
   let score = meaningful.length * 2;
+  if (!hasProper) score -= 2;
   if (normalized.length < 4) score -= 4;
-  const properNouns = segment.split(" ").filter(word => /^[A-Z][a-z]/.test(word)).length;
-  score += properNouns;
-  return { score, title: titleCase(meaningful.join(" ")) };
+  score += cleanedTokens.filter(word => /^[A-Z][a-z]/.test(word)).length;
+  return { score, title: formatTopicTokens(meaningful) };
 }
 
 function scoreTopic(topic){
@@ -204,9 +234,29 @@ function scoreTopic(topic){
   return { ...topic, displayTitle: best.title, qualityScore: score };
 }
 
+function scoreTopicCandidate(topic){
+  const base = scoreTopicSegment(topic.displayTitle || topic.title || "");
+  if (!base.title) return null;
+  let score = base.score;
+  score += Math.min(topic.count || 0, 20);
+  score += Math.min(topic.sources || 0, 10) * 1.5;
+  if ((topic.count || 0) >= 3) score += 2;
+  return { ...topic, displayTitle: base.title, qualityScore: score };
+}
+
 function topicTokens(topic){
   const normalized = normalizeTopicText(topic.displayTitle || topic.title || "");
   return normalized.split(" ").filter(t => t && !TOPIC_STOPWORDS.has(t));
+}
+
+function aggregateSentiment(list = []){
+  return list.reduce((acc, a) => {
+    const s = a.sentiment || {};
+    acc.pos += Number(s.posP ?? s.pos ?? 0);
+    acc.neu += Number(s.neuP ?? s.neu ?? 0);
+    acc.neg += Number(s.negP ?? s.neg ?? 0);
+    return acc;
+  }, { pos: 0, neu: 0, neg: 0 });
 }
 
 function getTopicArticles(topic, articles){
@@ -218,6 +268,72 @@ function getTopicArticles(topic, articles){
   });
 }
 
+function extractHeadlinePhrases(articles = []){
+  const results = new Map();
+  articles.forEach(article => {
+    const title = (article.title || "").replace(/\s+/g, " ").trim();
+    if (!title) return;
+    const segments = title.split(/[|:–—\-·•]/).map(s => s.trim()).filter(Boolean);
+    segments.forEach(segment => {
+      if (!segment || looksLikeUrl(segment)) return;
+      const rawTokens = segment.match(/[A-Za-z0-9]+/g) || [];
+      if (rawTokens.length < 2) return;
+      const lowerTokens = rawTokens.map(t => t.toLowerCase());
+      const filtered = rawTokens.filter((t, i) => !TOPIC_STOPWORDS.has(lowerTokens[i]));
+      const filteredLower = filtered.map(t => t.toLowerCase());
+      if (filtered.length < 2) return;
+      for (let len = 2; len <= 3; len++){
+        for (let i = 0; i <= filtered.length - len; i++){
+          const windowTokens = filtered.slice(i, i + len);
+          const windowLower = filteredLower.slice(i, i + len);
+          if (windowLower.some(t => TOPIC_URL_TOKENS.has(t))) continue;
+          const startsWithVerb =
+            TOPIC_VERBS.has(windowLower[0]) && !/^[A-Z]/.test(windowTokens[0]);
+          if (startsWithVerb) continue;
+          const hasProper =
+            windowTokens.some(token => /^[A-Z][a-z]/.test(token) || /^[A-Z]{2,}$/.test(token) || /\d/.test(token));
+          if (!hasProper && len < 3) continue;
+          const titleText = formatTopicTokens(windowTokens);
+          const normalized = normalizeTopicText(titleText);
+          if (!normalized || TOPIC_BLACKLIST.has(normalized)) continue;
+          const entry = results.get(normalized) || {
+            title: titleText,
+            count: 0,
+            sources: new Set()
+          };
+          entry.count += 1;
+          if (article.source) entry.sources.add(article.source);
+          results.set(normalized, entry);
+        }
+      }
+    });
+  });
+  return [...results.values()].map(entry => ({
+    title: entry.title,
+    count: entry.count,
+    sources: entry.sources.size
+  }));
+}
+
+function buildTopicSparklineScores(articles = []){
+  const now = Date.now();
+  const windowMs = 4 * 60 * 60 * 1000;
+  const bucketMs = 60 * 60 * 1000;
+  const buckets = Array.from({ length: 4 }, () => ({ pos: 0, neg: 0, c: 0 }));
+  articles.forEach(a => {
+    const ts = new Date(a.publishedAt).getTime();
+    const age = now - ts;
+    if (Number.isNaN(ts) || age < 0 || age > windowMs) return;
+    const idx = Math.min(3, Math.floor(age / bucketMs));
+    const slot = 3 - idx;
+    const s = a.sentiment || {};
+    buckets[slot].pos += Number(s.posP ?? s.pos ?? 0);
+    buckets[slot].neg += Number(s.negP ?? s.neg ?? 0);
+    buckets[slot].c += 1;
+  });
+  return buckets.map(bucket => bucket.c ? (bucket.pos - bucket.neg) / bucket.c : 0);
+}
+
 function computeTopicTrend(topic, articles){
   const pos = Number(topic.sentiment?.pos ?? 0);
   const neg = Number(topic.sentiment?.neg ?? 0);
@@ -225,55 +341,42 @@ function computeTopicTrend(topic, articles){
   const tone =
     pos > neg + threshold ? "pos" :
     neg > pos + threshold ? "neg" : "neu";
-
-  const now = Date.now();
-  const windowMs = 4 * 60 * 60 * 1000;
-  const recent = [];
-  const prior = [];
-  (articles || []).forEach(a => {
-    const ts = new Date(a.publishedAt).getTime();
-    const age = now - ts;
-    if (Number.isNaN(ts) || age < 0 || age > windowMs) return;
-    if (age <= windowMs / 2) recent.push(a);
-    else prior.push(a);
-  });
-
-  const bucketScore = list => {
-    if (!list.length) return null;
-    const sums = list.reduce((acc, a) => ({
-      pos: acc.pos + (a.sentiment?.posP || 0),
-      neg: acc.neg + (a.sentiment?.negP || 0)
-    }), { pos: 0, neg: 0 });
-    const n = Math.max(1, list.length);
-    return {
-      net: (sums.pos - sums.neg) / n,
-      posShare: sums.pos / n,
-      negShare: sums.neg / n
-    };
-  };
-
-  const recentScore = bucketScore(recent);
-  const priorScore = bucketScore(prior);
-  let direction = "up";
-  if (recentScore && priorScore){
-    const improving =
-      recentScore.net > priorScore.net + 1 ||
-      recentScore.posShare > priorScore.posShare + 1;
-    const worsening =
-      recentScore.net < priorScore.net - 1 ||
-      recentScore.negShare > priorScore.negShare + 1;
-    if (improving && !worsening) direction = "up";
-    else if (worsening && !improving) direction = "down";
-    else direction = recentScore.net >= priorScore.net ? "up" : "down";
-  } else {
-    direction = tone === "neg" ? "down" : "up";
-  }
-  return { tone, direction };
+  const scores = buildTopicSparklineScores(articles);
+  return { tone, scores };
 }
 
 function selectTrendingTopics(topics = [], articles = []){
-  return topics
-    .map(scoreTopic)
+  const extracted = extractHeadlinePhrases(articles).map(scoreTopicCandidate).filter(Boolean);
+  const combined = new Map();
+  topics.map(scoreTopic).filter(Boolean).forEach(topic => {
+    const key = normalizeTopicText(topic.displayTitle || topic.title || "");
+    combined.set(key, topic);
+  });
+  extracted.forEach(topic => {
+    const key = normalizeTopicText(topic.displayTitle || topic.title || "");
+    if (!combined.has(key)){
+      combined.set(key, topic);
+      return;
+    }
+    const existing = combined.get(key);
+    combined.set(key, {
+      ...existing,
+      count: (existing.count || 0) + (topic.count || 0),
+      sources: Math.max(existing.sources || 0, topic.sources || 0)
+    });
+  });
+
+  return [...combined.values()]
+    .map(topic => {
+      const matches = getTopicArticles(topic, articles);
+      const sentiment = matches.length ? aggregateSentiment(matches) : (topic.sentiment || { pos: 0, neu: 0, neg: 0 });
+      const sources = matches.length
+        ? new Set(matches.map(a => a.source).filter(Boolean)).size
+        : (topic.sources || 0);
+      const count = matches.length || topic.count || 0;
+      return { ...topic, sentiment, sources, count };
+    })
+    .map(scoreTopicCandidate)
     .filter(Boolean)
     .filter(t => t.qualityScore >= 6)
     .sort((a, b) => {
@@ -923,6 +1026,34 @@ function stopHeroAuto(){
 }
 
 /* Trending topics */
+function renderTopicSparkline(scores = []){
+  const safeScores = scores.length ? scores : [0, 0, 0, 0];
+  const W = 32, H = 12, pad = 1;
+  const maxAbs = 20;
+  const xStep = (W - pad * 2) / 3;
+  const mid = H / 2;
+  const amplitude = (H / 2) - pad;
+  const clamp = value => Math.max(-maxAbs, Math.min(maxAbs, value));
+  const colorFor = value => {
+    if (value > 2) return "var(--pos)";
+    if (value < -2) return "var(--neg)";
+    return "#94a3b8";
+  };
+  const points = safeScores.map((score, i) => ({
+    x: pad + (xStep * i),
+    y: mid - (clamp(score) / maxAbs) * amplitude
+  }));
+  const segments = points.slice(0, -1).map((point, i) => {
+    const next = points[i + 1];
+    const color = colorFor(safeScores[i]);
+    return `<path d="M${point.x.toFixed(1)} ${point.y.toFixed(1)} L${next.x.toFixed(1)} ${next.y.toFixed(1)}" stroke="${color}" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>`;
+  }).join("");
+  return `
+    <svg class="trend-sparkline" viewBox="0 0 ${W} ${H}" aria-hidden="true" focusable="false">
+      ${segments}
+    </svg>`;
+}
+
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t => {
     const total =
@@ -935,18 +1066,14 @@ function renderTopics(){
       negP: total ? (t.sentiment.neg/total)*100 : 0
     };
     const trend = t.trend || computeTopicTrend(t, getTopicArticles(t, state.allArticles));
-    const trendLabel = trend.direction === "up" ? "Trending up" : "Trending down";
-    const trendPath = trend.direction === "up"
-      ? "M2 11 L7 6 L10 9 L14 5"
-      : "M2 5 L7 10 L10 7 L14 11";
+    const trendLabel = "Sentiment trend (last 4 hours)";
+    const sparkline = renderTopicSparkline(trend.scores || []);
     return `
       <div class="row">
         <div class="row-title">
           <span class="topic-title-text">${escapeHtml(t.displayTitle || t.title.split("|")[0])}</span>
-          <span class="topic-trend ${trend.tone} ${trend.direction}" aria-label="${trendLabel}">
-            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-              <path d="${trendPath}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
+          <span class="topic-trend ${trend.tone}" aria-label="${trendLabel}">
+            ${sparkline}
           </span>
         </div>
         <div class="row-meta">
