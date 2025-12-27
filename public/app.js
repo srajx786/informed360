@@ -1344,10 +1344,10 @@ function getActiveCategoryLabel(){
 }
 
 function formatSentimentTitle(label){
-  if (!label) return "World’s Sentiment (Last 4h)";
-  if (label.toLowerCase() === "for you") return "For You Sentiment (Last 4h)";
-  const possessive = label.endsWith("s") ? `${label}’` : `${label}’s`;
-  return `${possessive} Sentiment (Last 4h)`;
+  if (!label) return "World's Sentiment";
+  if (label.toLowerCase() === "for you") return "For You Sentiment";
+  const possessive = label.endsWith("s") ? `${label}'` : `${label}'s`;
+  return `${possessive} Sentiment`;
 }
 
 function getIndiaSentimentArticles(){
@@ -1370,7 +1370,7 @@ function renderIndiaSentiment(){
     sparkEl: "#moodSpark",
     summaryEl: "#moodSummary",
     titleEl: "#moodIndiaTitle",
-    title: "India’s Sentiment (Last 4h)",
+    title: "India's Sentiment",
     articles: getIndiaSentimentArticles()
   });
 }

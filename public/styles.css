@@ -92,10 +92,10 @@ h1,h2,h3{ margin:0 0 .6rem }
 .sentiment-dock .controls{ margin:0 }
 .ticker-row{
   display:flex;
-  flex-wrap:nowrap;
-  gap:.5rem;
+  flex-wrap:wrap;
+  gap:.35rem;
   align-items:stretch;
-  overflow-x:auto;
+  overflow-x:hidden;
   overflow-y:hidden;
 }
 .ticker-status{
@@ -105,11 +105,11 @@ h1,h2,h3{ margin:0 0 .6rem }
   padding:0 .25rem;
 }
 .qpill{
-  background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.26rem .48rem;
-  display:flex; align-items:baseline; gap:.42rem; box-shadow:var(--shadow); flex:0 0 auto; white-space:nowrap;
-  font-variant-numeric: tabular-nums; line-height:1.1; min-width:160px; justify-content:space-between;
+  background:var(--card); border:1px solid var(--border); border-radius:10px; padding:.2rem .4rem;
+  display:flex; align-items:baseline; gap:.35rem; box-shadow:var(--shadow); flex:0 0 auto; white-space:nowrap;
+  font-variant-numeric: tabular-nums; line-height:1.1; min-width:140px; justify-content:space-between;
 }
-.qpill .sym{ font-weight:800; font-size:.83rem } .qpill .price{ font-weight:700; font-size:.82rem } .qpill .chg{ font-size:.78rem }
+.qpill .sym{ font-weight:800; font-size:.76rem } .qpill .price{ font-weight:700; font-size:.75rem } .qpill .chg{ font-size:.7rem }
 .qpill .chg.up{ color:#16a34a } .qpill .chg.down{ color:#ef4444 }
 
 .logo-thumb{
@@ -152,7 +152,7 @@ h1,h2,h3{ margin:0 0 .6rem }
 /* Block card */
 .block-card{ background:var(--card); border:1px solid var(--border); border-radius:18px; overflow:hidden; box-shadow:var(--shadow) }
 .block-header{ padding:.65rem .95rem; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between }
-.block-title{ font-family:"Merriweather", serif; font-size:1.2rem; letter-spacing:.1px } /* reduced */
+.block-title{ font-family:"Merriweather", serif; font-size:16px; letter-spacing:.1px }
 .block-list{ display:flex; flex-direction:column }
 .block-list .row{ padding:.8rem 1rem; display:flex; flex-direction:column; gap:.35rem; background:var(--card) }
 .block-list .row + .row{ border-top:1px solid var(--border) }
@@ -270,8 +270,8 @@ h1,h2,h3{ margin:0 0 .6rem }
 
 /* 4-hour mood — exact look */
 .mood-card{ margin-bottom:0; display:flex; flex-direction:column; flex:1 }
-.mood-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; margin-bottom:.25rem }
-.mood-title{ font-family:"Merriweather", serif; font-weight:700; font-size:1rem }
+.mood-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; margin-bottom:.4rem; padding-bottom:.45rem; border-bottom:1px solid var(--border) }
+.mood-title{ font-family:"Merriweather", serif; font-weight:700; font-size:16px }
 .mood-spark{ width:100%; height:auto; min-height:140px; display:block; flex:1 }
 .mood-summary{ margin-top:.25rem; font-size:.86rem; color:var(--muted) }
 .mood-summary .sentiment-label{ font-weight:600 }
@@ -280,15 +280,15 @@ h1,h2,h3{ margin:0 0 .6rem }
 .mood-summary .sentiment-label.neg{ color:var(--neg) }
 
 /* Leaderboard — exact look */
-.leader-card{ margin-top:.8rem }
-.leader-head{ display:flex; justify-content:space-between; align-items:baseline }
-.leader-title{ font-family:"Merriweather", serif; font-size:1.2rem }
+.leader-card{ margin-top:.8rem; padding:.75rem .85rem .6rem }
+.leader-head{ display:flex; flex-direction:column; align-items:flex-start; gap:.1rem; padding-bottom:.45rem; border-bottom:1px solid var(--border) }
+.leader-title{ font-family:"Merriweather", serif; font-size:16px }
 .leader-sub{ color:var(--muted); font-size:.8rem }
 .lb-wrap{
   display:flex;
   align-items:stretch;
-  gap:8px;
-  margin-top:.4rem;
+  gap:6px;
+  margin-top:.35rem;
 }
 .lb-axis{
   display:flex;
@@ -297,8 +297,8 @@ h1,h2,h3{ margin:0 0 .6rem }
   align-items:flex-start;
   color:#6b7280;
   font-size:.82rem;
-  padding:8px 0;
-  min-width:36px;
+  padding:6px 0;
+  min-width:34px;
 }
 .lb-axis.source-axis{
   font-size:9px;
@@ -307,7 +307,7 @@ h1,h2,h3{ margin:0 0 .6rem }
 }
 .leader-grid{
   position:relative;
-  height:240px;
+  height:280px;
   border-radius:16px;
   overflow:hidden;
   border:1px solid var(--border);
@@ -432,7 +432,16 @@ h1,h2,h3{ margin:0 0 .6rem }
 .topic-trend.neg{ color:var(--neg) }
 .board-empty{ position:absolute; inset:0; display:none; align-items:center; justify-content:center; color:var(--muted); font-size:.9rem; padding:0 1rem; text-align:center; background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
 .board-empty.show{ display:flex }
-.leader-foot{ display:grid; grid-template-columns:repeat(3,1fr); color:var(--muted); font-size:.85rem; text-align:center; margin-top:.25rem }
+.lb-foot-wrap{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:6px;
+  margin-top:.2rem;
+  align-items:center;
+}
+.lb-axis-spacer{ min-width:34px }
+.source-block .lb-axis-spacer{ min-width:32px }
+.leader-foot{ display:grid; grid-template-columns:repeat(3,1fr); color:var(--muted); font-size:.85rem; text-align:center }
 .leader-foot span:nth-child(1){ color:var(--pos) } .leader-foot span:nth-child(3){ color:var(--neg) }
 
 /* Pinned */
