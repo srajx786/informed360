@@ -188,15 +188,10 @@ h1,h2,h3{ margin:0 0 .6rem }
 .hero-slide .hero-img{ height:200px }
 .hero-slide .hero-img img{ width:100%; height:100%; object-fit:cover; display:block }
 .hero-sentiment{
-  position:absolute;
-  bottom:8px;
-  left:12px;
-  right:12px;
-  background:color-mix(in oklab, var(--card) 78%, transparent);
-  border:1px solid color-mix(in oklab, var(--border) 70%, transparent);
-  border-radius:12px;
-  padding:.35rem .5rem;
-  backdrop-filter:blur(6px);
+  margin-top:.4rem;
+  background:transparent;
+  border:0;
+  padding:0;
 }
 .hero-sentiment .sentiment-line{ font-size:.7rem }
 .hero-actions{ display:flex; align-items:center; margin-top:0 }

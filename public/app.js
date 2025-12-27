@@ -1039,8 +1039,8 @@ function renderHero(){
     <article class="hero-slide">
       <div class="hero-media">
         <div class="hero-img">${heroImgTag(a)}</div>
-        <div class="hero-sentiment">${renderSentiment(a.sentiment, true)}</div>
       </div>
+      <div class="hero-sentiment">${renderSentiment(a.sentiment, true)}</div>
       <div class="hero-actions">
         <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
       </div>
