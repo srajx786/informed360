@@ -60,7 +60,8 @@ h1,h2,h3{ margin:0 0 .6rem }
   grid-template-columns:minmax(0,1fr) auto;
   grid-template-areas:
     "left weather"
-    "ticker dock";
+    "ticker weather"
+    "dock weather";
   gap:.8rem 1rem;
   align-items:center;
   padding:1rem 12px;
@@ -91,9 +92,11 @@ h1,h2,h3{ margin:0 0 .6rem }
 .sentiment-dock .controls{ margin:0 }
 .ticker-row{
   display:flex;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
   gap:.5rem;
   align-items:stretch;
+  overflow-x:auto;
+  overflow-y:hidden;
 }
 .ticker-status{
   align-self:flex-start;
