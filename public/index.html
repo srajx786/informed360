@@ -111,7 +111,7 @@
         <div class="leader-sub">Updated every hour</div>
       </div>
       <div class="lb-wrap">
-        <div class="lb-axis source-axis">
+        <div class="lb-axis">
           <span>100%</span><span>75%</span><span>50%</span><span>25%</span>
         </div>
         <div id="leaderboard" class="leader-grid lb-board" aria-live="polite">
@@ -137,7 +137,6 @@
         <button data-sent="positive" class="chip">Positive</button>
         <button data-sent="neutral" class="chip">Neutral</button>
         <button data-sent="negative" class="chip">Negative</button>
-        <button id="expChip" class="chip" title="Include experimental feeds">Max Feeds</button>
       </div>
       <h2 class="display-title">News</h2>
       <div id="newsList" class="news-list"></div>
@@ -188,8 +187,15 @@
     <div class="footer-left">
       <span>Informed360 © <span id="year"></span></span>
       <span class="dot">•</span>
+      <div class="footer-updated-group">
+        <span id="updatedAt" class="footer-updated">Website updated on —</span>
+        <a
+          class="linkish footer-link"
+          href="mailto:info.shrirajnair@gmail.com?subject=Informed360%20Feedback"
+        >Feedback</a>
+      </div>
+      <span class="dot">•</span>
       <button class="linkish" type="button">About</button>
-      <button class="linkish" type="button">Feedback</button>
     </div>
     <div class="footer-right">
       <span>Made for balanced, sentiment-aware news</span>
