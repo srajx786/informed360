@@ -97,12 +97,9 @@ function renderSentiment(s, slim = false){
         <span class="segment neu" style="width:${neu}%"></span>
         <span class="segment neg" style="width:${neg}%"></span>
       </div>
-      ${slim ? "" : `
-      <div class="scores">
-        <span>Positive ${fmtPct(pos)}</span>
-        <span>Neutral ${fmtPct(neu)}</span>
-        <span>Negative ${fmtPct(neg)}</span>
-      </div>`}
+      <div class="sentiment-line">
+        Positive ${fmtPct(pos)} · Neutral ${fmtPct(neu)} · Negative ${fmtPct(neg)}
+      </div>
     </div>`;
 }
 
@@ -795,35 +792,73 @@ function renderMoodCloud(){
     .sort((a,b) => b[1] - a[1])
     .slice(0, 22);
   if (!list.length){
-    cloud.innerHTML = `<span class="mood-word">No trending keywords yet.</span>`;
+    cloud.classList.add("is-empty");
+    cloud.innerHTML = `<span class="mood-word mood-word-empty">No trending keywords yet.</span>`;
     return;
   }
+  cloud.classList.remove("is-empty");
   const values = list.map(([,count]) => count);
   const max = Math.max(...values);
   const min = Math.min(...values);
-  const rotations = [-5, 0, 5];
-  const rotationFor = (word) => {
-    let hash = 0;
-    for (let i = 0; i < word.length; i++){
-      hash = (hash * 31 + word.charCodeAt(i)) % rotations.length;
-    }
-    return rotations[Math.abs(hash) % rotations.length];
-  };
-  cloud.innerHTML = list.map(([word, count]) => {
+  cloud.innerHTML = "";
+  const rotations = [0, -6, 6];
+  const placed = [];
+  const maxTries = 40;
+  const cloudRect = cloud.getBoundingClientRect();
+
+  const intersects = (a, b) =>
+    !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
+
+  list.forEach(([word, count]) => {
     const ratio = max === min ? 0.5 : (count - min) / (max - min);
-    const size = 12 + ratio * 14;
+    const size = 12 + ratio * 16;
     const weight = Math.round(500 + ratio * 300);
     const opacity = (0.55 + ratio * 0.35).toFixed(2);
-    const rotation = rotationFor(word);
-    return `
-      <span class="mood-word"
-            style="font-size:${size.toFixed(1)}px;
-                   font-weight:${weight};
-                   opacity:${opacity};
-                   transform:rotate(${rotation}deg);">
-        ${word}
-      </span>`;
-  }).join("");
+    const rotation = rotations[Math.floor(Math.random() * rotations.length)];
+
+    const span = document.createElement("span");
+    span.className = "mood-word";
+    span.textContent = word;
+    span.style.fontSize = `${size.toFixed(1)}px`;
+    span.style.fontWeight = `${weight}`;
+    span.style.opacity = `${opacity}`;
+    span.style.transform = `rotate(${rotation}deg)`;
+    span.style.visibility = "hidden";
+    cloud.appendChild(span);
+
+    const wordRect = span.getBoundingClientRect();
+    const maxX = Math.max(0, cloud.clientWidth - wordRect.width);
+    const maxY = Math.max(0, cloud.clientHeight - wordRect.height);
+    let placedRect = null;
+
+    for (let attempt = 0; attempt < maxTries; attempt++){
+      const x = Math.round(Math.random() * maxX);
+      const y = Math.round(Math.random() * maxY);
+      span.style.left = `${x}px`;
+      span.style.top = `${y}px`;
+
+      const rect = span.getBoundingClientRect();
+      const withinCloud =
+        rect.left >= cloudRect.left &&
+        rect.right <= cloudRect.right &&
+        rect.top >= cloudRect.top &&
+        rect.bottom <= cloudRect.bottom;
+      if (!withinCloud) continue;
+
+      const collision = placed.some(p => intersects(rect, p));
+      if (!collision){
+        placedRect = rect;
+        break;
+      }
+    }
+
+    if (placedRect){
+      placed.push(placedRect);
+      span.style.visibility = "visible";
+    }else{
+      span.remove();
+    }
+  });
 }
 
 /* ===== Sentiment Leaderboard (logic unchanged) ===== */
