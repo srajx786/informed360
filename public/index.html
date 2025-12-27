@@ -4,7 +4,7 @@
   <meta charset="utf-8"/>
   <title>Informed360</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -86,18 +86,31 @@
     </section>
 
     <!-- 4-hour mood microchart -->
-    <div class="mood-card card mood-block" id="mood4h" aria-live="polite">
-      <div class="mood-head">
-        <div class="mood-title">Nation’s Mood (Last 4h)</div>
-        <div class="mood-legend">
-          <span class="lg pos">Positive</span>
-          <span class="lg neu">Neutral</span>
-          <span class="lg neg">Negative</span>
+    <div class="mood-block">
+      <div class="mood-card card" id="mood4h" aria-live="polite">
+        <div class="mood-head">
+          <div class="mood-title" id="moodIndiaTitle">India’s Sentiment (Last 4h)</div>
+          <div class="mood-legend">
+            <span class="lg pos">Positive</span>
+            <span class="lg neu">Neutral</span>
+            <span class="lg neg">Negative</span>
+          </div>
         </div>
+        <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
+        <div id="moodSummary" class="mood-summary"></div>
       </div>
-      <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour mood trend"></svg>
-      <div id="moodSummary" class="mood-summary"></div>
-      <div id="moodCloud" class="mood-cloud" aria-label="Trending keywords"></div>
+      <div class="mood-card card" id="moodWorld" aria-live="polite">
+        <div class="mood-head">
+          <div class="mood-title" id="moodWorldTitle">World’s Sentiment (Last 4h)</div>
+          <div class="mood-legend">
+            <span class="lg pos">Positive</span>
+            <span class="lg neu">Neutral</span>
+            <span class="lg neg">Negative</span>
+          </div>
+        </div>
+        <svg id="moodWorldSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
+        <div id="moodWorldSummary" class="mood-summary"></div>
+      </div>
     </div>
 
     <!-- News source sentiment leaderboard (Grid 8) -->
