@@ -270,25 +270,50 @@ body.theme-dark .gn-search{ background:#1a222c }
 
 /* HERO */
 .hero-carousel{ position:relative; overflow:hidden; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-xl); box-shadow:var(--shadow); align-self:stretch; height:100%; display:flex; flex-direction:column }
+.hero-header{ padding:.65rem .95rem .4rem }
+.hero-title{ font-family:"Merriweather", serif; font-size:16px; font-weight:600; letter-spacing:.1px; white-space:nowrap }
+.hero-divider{ height:1px; background:var(--border); margin-top:.45rem }
+.hero-mode{ font-family:"Inter", sans-serif; font-size:12px; font-weight:500; color:var(--muted); margin-top:.35rem }
 .hero-track{ display:flex; transition:transform .4s ease; flex:1 1 auto }
-.hero-slide{ min-width:100%; display:flex; flex-direction:column; gap:.4rem; padding:.5rem .7rem .35rem; overflow:hidden; min-height:100% }
+.hero-slide{ min-width:100%; display:flex; flex-direction:column; overflow:hidden; min-height:100% }
 .hero-slide > *{ min-width:0 }
+.hero-cluster{
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+  gap:.9rem;
+  padding:.2rem .95rem .75rem;
+  flex:1 1 auto;
+}
+.hero-featured{ display:flex; flex-direction:column; gap:.35rem }
+.hero-featured-link{ display:flex; flex-direction:column; gap:.35rem; color:inherit; text-decoration:none }
 .hero-media{ position:relative; border-radius:12px; overflow:hidden; background:#edf2f7 }
-.hero-slide .hero-img{ height:200px }
+.hero-slide .hero-img{ height:190px }
 .hero-slide .hero-img img{ width:100%; height:100%; object-fit:cover; display:block }
+.hero-featured-body{ display:flex; flex-direction:column; gap:.2rem }
+.hero-source{ font-size:.78rem; font-weight:600; color:var(--muted) }
+.hero-headline{ font-family:"Merriweather", serif; font-size:1.05rem; line-height:1.28; font-weight:700 }
+.hero-time{ font-size:.85rem; color:var(--muted) }
+.hero-related{ display:flex; flex-direction:column; gap:.75rem }
+.hero-related-item{ display:flex; flex-direction:column; gap:.3rem }
+.hero-related-item a{ color:inherit; text-decoration:none; display:flex; flex-direction:column; gap:.2rem }
+.hero-related-headline{
+  font-size:.95rem;
+  line-height:1.3;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  font-weight:600;
+}
 .hero-sentiment{
-  margin-top:.4rem;
+  margin-top:.2rem;
   background:transparent;
   border:0;
   padding:0;
 }
+.hero-sentiment .bar{ background:transparent }
 .hero-sentiment .sentiment-line{ font-size:.7rem }
-.hero-actions{ display:flex; align-items:center; margin-top:0 }
-.hero-slide .hero-content{ display:flex; flex-direction:column; gap:.35rem; min-width:0; overflow:hidden; flex:1 1 auto }
-.hero-slide h3{ font-family:"Merriweather", serif; font-size:1.18rem; line-height:1.25; font-weight:700; margin:.2rem 0; word-wrap:break-word }
-.analysis-link{ display:inline-block; margin:.2rem 0; padding:.45rem .75rem; border-radius:10px; background:var(--brand); color:#fff; font-weight:700; font-size:.9rem }
-.hero-slide .meta{ color:var(--muted); font-size:.9rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; max-width:100%; word-break:break-word }
-.hero-nav{ position:absolute; top:calc(.6rem + 100px); transform:translateY(-50%); background:#fff; color:#111; border:1px solid var(--border); width:28px; height:28px; border-radius:50%; box-shadow:var(--shadow); display:grid; place-items:center; cursor:pointer }
+.hero-nav{ position:absolute; top:50%; transform:translateY(-50%); background:#fff; color:#111; border:1px solid var(--border); width:28px; height:28px; border-radius:50%; box-shadow:var(--shadow); display:grid; place-items:center; cursor:pointer }
 .hero-nav.prev{ left:8px } .hero-nav.next{ right:8px }
 .hero-dots{ display:flex; gap:.35rem; justify-content:center; padding:.3rem .45rem .35rem; margin-top:auto }
 .hero-dots button{ width:6px; height:6px; border-radius:50%; border:0; background:#cbd5e1; cursor:pointer }
@@ -774,7 +799,7 @@ dialog::backdrop{
       "industry"
       "daily";
   }
-  .hero-nav{ top:calc(.6rem + 110px) }
+  .hero-cluster{ grid-template-columns:1fr }
   .hero-slide .hero-img{ height:220px }
   .daily-list{ grid-template-columns:1fr }
 }
