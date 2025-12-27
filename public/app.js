@@ -973,6 +973,203 @@ function heroImgTag(article, index){
               onerror="if(this.dataset.errored){this.onerror=null;this.classList.add('logo-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';this.classList.add('logo-thumb');this.src=this.dataset.fallback || this.dataset.placeholder;this.alt='';}" alt="">`;
 }
 
+function recentArticlesWithin(articles = [], hours){
+  const now = Date.now();
+  const windowMs = hours * 60 * 60 * 1000;
+  return (articles || []).filter(article => {
+    const ts = new Date(article.publishedAt).getTime();
+    if (Number.isNaN(ts)) return false;
+    const age = now - ts;
+    return age >= 0 && age <= windowMs;
+  });
+}
+
+function sortByPublishedDesc(list = []){
+  return [...list].sort((a, b) =>
+    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+}
+
+function normalizeSimilarityText(text = ""){
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(" ")
+    .filter(token => token && !TOPIC_STOPWORDS.has(token));
+}
+
+function similarityScore(a, b){
+  const tokensA = new Set(normalizeSimilarityText(`${a.title || ""} ${a.description || ""}`));
+  const tokensB = new Set(normalizeSimilarityText(`${b.title || ""} ${b.description || ""}`));
+  if (!tokensA.size || !tokensB.size) return 0;
+  let overlap = 0;
+  tokensA.forEach(token => {
+    if (tokensB.has(token)) overlap += 1;
+  });
+  return overlap / Math.max(tokensA.size, tokensB.size);
+}
+
+function pickRelatedArticles(featured, candidates = [], { maxItems = 4, minItems = 2, prevLinks = new Set() } = {}){
+  const scored = candidates.map(article => ({
+    article,
+    score: similarityScore(featured, article)
+  }));
+  const primary = scored
+    .filter(item => item.score >= 0.18)
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return new Date(b.article.publishedAt).getTime() - new Date(a.article.publishedAt).getTime();
+    })
+    .map(item => item.article);
+  const fallback = sortByPublishedDesc(candidates);
+  const selected = [];
+  const usedLinks = new Set([featured.link]);
+  const usedSources = new Set([featured.source]);
+
+  const pushUnique = (article, allowPrev, allowSameSource) => {
+    if (!article || usedLinks.has(article.link)) return false;
+    if (!allowPrev && prevLinks.has(article.link)) return false;
+    if (!allowSameSource && usedSources.has(article.source)) return false;
+    selected.push(article);
+    usedLinks.add(article.link);
+    if (article.source) usedSources.add(article.source);
+    return true;
+  };
+
+  primary.forEach(article => {
+    if (selected.length >= maxItems) return;
+    pushUnique(article, false, false);
+  });
+  primary.forEach(article => {
+    if (selected.length >= maxItems) return;
+    pushUnique(article, true, false);
+  });
+  fallback.forEach(article => {
+    if (selected.length >= maxItems) return;
+    pushUnique(article, false, true);
+  });
+  fallback.forEach(article => {
+    if (selected.length >= maxItems) return;
+    pushUnique(article, true, true);
+  });
+
+  if (selected.length >= minItems) return selected.slice(0, maxItems);
+  return selected.slice(0, Math.min(maxItems, selected.length));
+}
+
+function buildRecentCluster(articles = [], prevLinks = new Set()){
+  const windows = [4, 8, 12, 24];
+  let candidates = [];
+  for (const hours of windows){
+    candidates = recentArticlesWithin(articles, hours);
+    if (candidates.length >= 3) break;
+  }
+  if (!candidates.length) candidates = articles.slice();
+  const sorted = sortByPublishedDesc(candidates);
+  const fallbackSorted = sortByPublishedDesc(articles);
+  const featured =
+    sorted.find(article => article && !prevLinks.has(article.link)) ||
+    fallbackSorted.find(article => article && !prevLinks.has(article.link)) ||
+    sorted[0];
+  const relatedCandidates = sorted.filter(article => article && article.link !== featured?.link);
+  const related = featured
+    ? pickRelatedArticles(featured, relatedCandidates, { maxItems: 4, minItems: 2, prevLinks })
+    : [];
+  return { mode: "Recent News", featured, related };
+}
+
+function buildEngagedTopics(articles = []){
+  const candidates = extractHeadlinePhrases(articles)
+    .map(scoreTopicCandidate)
+    .filter(Boolean);
+  const topics = candidates.map(topic => {
+    const matches = getTopicArticles(topic, articles);
+    if (!matches.length) return null;
+    const sentiment = aggregateSentiment(matches);
+    const sources = new Set(matches.map(a => a.source).filter(Boolean)).size;
+    const count = matches.length;
+    const polarization = Math.abs(sentiment.pos - sentiment.neg);
+    let score = (count * 2) + (sources * 3) + (polarization * 1.5);
+    const domains = matches.map(a => domainFromUrl(a.link)).filter(Boolean);
+    if (domains.length){
+      const domainCounts = domains.reduce((acc, domain) => {
+        acc[domain] = (acc[domain] || 0) + 1;
+        return acc;
+      }, {});
+      const maxShare = Math.max(...Object.values(domainCounts)) / domains.length;
+      if (maxShare > 0.6) score *= 0.7;
+    }
+    return { topic, matches, score };
+  }).filter(Boolean);
+  return topics.sort((a, b) => b.score - a.score);
+}
+
+function buildEngagedCluster(articles = [], prevLinks = new Set()){
+  const windows = [12, 24];
+  let candidates = [];
+  for (const hours of windows){
+    candidates = recentArticlesWithin(articles, hours);
+    if (candidates.length >= 3) break;
+  }
+  if (!candidates.length) candidates = articles.slice();
+  const rankedTopics = buildEngagedTopics(candidates);
+  let featured = null;
+  let related = [];
+  let selectedMatches = [];
+
+  for (const entry of rankedTopics){
+    const matches = sortByPublishedDesc(entry.matches);
+    const candidateFeatured = matches.find(article => !prevLinks.has(article.link));
+    if (!candidateFeatured) continue;
+    featured = candidateFeatured;
+    selectedMatches = matches.filter(article => article.link !== featured.link);
+    break;
+  }
+
+  if (!featured){
+    const sorted = sortByPublishedDesc(candidates);
+    const fallbackSorted = sortByPublishedDesc(articles);
+    featured =
+      sorted.find(article => !prevLinks.has(article.link)) ||
+      fallbackSorted.find(article => !prevLinks.has(article.link)) ||
+      sorted[0];
+    selectedMatches = sorted.filter(article => article.link !== featured?.link);
+  }
+
+  if (featured){
+    related = pickRelatedArticles(featured, selectedMatches, { maxItems: 4, minItems: 2, prevLinks });
+    if (related.length < 2){
+      const fallback = sortByPublishedDesc(candidates).filter(article => article.link !== featured.link);
+      const supplemental = pickRelatedArticles(featured, fallback, { maxItems: 4, minItems: 2, prevLinks });
+      related = supplemental.length ? supplemental : related;
+    }
+  }
+
+  return { mode: "Most Engaged", featured, related };
+}
+
+function buildHeroSlides(articles = []){
+  const modes = ["Recent News", "Most Engaged", "Recent News", "Most Engaged"];
+  const slides = [];
+  let prevLinks = new Set();
+
+  modes.forEach(mode => {
+    const cluster = mode === "Recent News"
+      ? buildRecentCluster(articles, prevLinks)
+      : buildEngagedCluster(articles, prevLinks);
+    if (!cluster.featured) return;
+    slides.push(cluster);
+    prevLinks = new Set([
+      cluster.featured?.link,
+      ...cluster.related.map(item => item.link)
+    ].filter(Boolean));
+  });
+
+  return slides;
+}
+
 function safeImgTag(src, link, source, cls){
   const fallbackLogo = logoFor(link, source);
   const candidate = (src || "").trim();
@@ -1125,29 +1322,42 @@ function renderDaily(){
 
 /* HERO */
 function renderHero(){
-  const slides = state.articles.slice(0,4);
+  const slides = buildHeroSlides(state.articles);
   const track = $("#heroTrack");
   const dots  = $("#heroDots");
   if (!slides.length){
     track.innerHTML = "";
     dots.innerHTML  = "";
+    const modeLabel = $("#heroModeLabel");
+    if (modeLabel) modeLabel.textContent = "";
     return;
   }
-  track.innerHTML = slides.map(a => `
-    <article class="hero-slide" data-article-link="${a.link}">
-      <div class="hero-media">
-        <div class="hero-img">${heroImgTag(a)}</div>
-      </div>
-      <div class="hero-sentiment">${renderSentiment(a.sentiment, true, getArticleContext(a))}</div>
-      <div class="hero-actions">
-        <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
-      </div>
-      <div class="hero-content">
-        <h3>${a.title}</h3>
-        <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
-        <div class="meta">
-          <span class="source">${a.source}</span>
-          · <span class="meta-time">${formatArticleDate(a.publishedAt)}</span>
+  track.innerHTML = slides.map(cluster => `
+    <article class="hero-slide" data-mode="${cluster.mode}">
+      <div class="hero-cluster">
+        <div class="hero-featured">
+          <a class="hero-featured-link" href="${cluster.featured.link}" target="_blank" rel="noopener" data-article-link="${cluster.featured.link}">
+            <div class="hero-media">
+              <div class="hero-img">${heroImgTag(cluster.featured)}</div>
+            </div>
+            <div class="hero-featured-body">
+              <div class="hero-source">${escapeHtml(cluster.featured.source || "")}</div>
+              <div class="hero-headline">${escapeHtml(cluster.featured.title || "")}</div>
+              <div class="hero-time">${formatArticleDate(cluster.featured.publishedAt)}</div>
+            </div>
+          </a>
+          <div class="hero-sentiment">${renderSentiment(cluster.featured.sentiment, true, getArticleContext(cluster.featured), "mini")}</div>
+        </div>
+        <div class="hero-related">
+          ${cluster.related.map(item => `
+            <div class="hero-related-item">
+              <a href="${item.link}" target="_blank" rel="noopener" data-article-link="${item.link}">
+                <div class="hero-source">${escapeHtml(item.source || "")}</div>
+                <div class="hero-related-headline">${escapeHtml(item.title || "")}</div>
+                <div class="hero-time">${formatArticleDate(item.publishedAt)}</div>
+              </a>
+              <div class="hero-sentiment">${renderSentiment(item.sentiment, true, getArticleContext(item), "mini")}</div>
+            </div>`).join("")}
         </div>
       </div>
     </article>`).join("");
@@ -1184,6 +1394,11 @@ function updateHero(i){
   $$("#heroDots button").forEach((b,bi) =>
     b.classList.toggle("active", bi === state.hero.index)
   );
+  const activeSlide = $$("#heroTrack .hero-slide")[state.hero.index];
+  const modeLabel = $("#heroModeLabel");
+  if (activeSlide && modeLabel){
+    modeLabel.textContent = activeSlide.dataset.mode || "";
+  }
 }
 function startHeroAuto(){
   stopHeroAuto();
