@@ -1005,13 +1005,16 @@ function heroSourceLogo(article, extraClass = ""){
 function renderHeroMeta(article){
   const sourceName = escapeHtml(article?.source || domainFromUrl(article?.link || "") || "Source");
   return `
-    <div class="hero-meta">
-      <span class="hero-source">
-        ${heroSourceLogo(article)}
-        <span class="hero-source-name">${sourceName}</span>
-      </span>
-      <span class="hero-dot">·</span>
-      <span class="hero-time">${formatArticleDate(article?.publishedAt)}</span>
+    <div class="hero-meta ts-meta">
+      <div class="ts-meta-row1">
+        <span class="hero-source ts-source">
+          ${heroSourceLogo(article)}
+          <span class="hero-source-name">${sourceName}</span>
+        </span>
+      </div>
+      <div class="ts-meta-row2">
+        <span class="hero-time ts-date">${formatArticleDate(article?.publishedAt)}</span>
+      </div>
     </div>`;
 }
 
@@ -1091,9 +1094,13 @@ function renderRightStoryMeta(article){
   const sourceName = escapeHtml(article?.source || domainFromUrl(article?.link || "") || "Source");
   const datetime = escapeHtml(formatArticleDate(article?.publishedAt) || "");
   return `
-    <div class="topstories-meta">
-      <div class="source">${sourceName}</div>
-      <div class="datetime">${datetime}</div>
+    <div class="topstories-meta ts-meta">
+      <div class="ts-meta-row1">
+        <span class="source ts-source">${sourceName}</span>
+      </div>
+      <div class="ts-meta-row2">
+        <span class="datetime ts-date">${datetime}</span>
+      </div>
     </div>`;
 }
 
