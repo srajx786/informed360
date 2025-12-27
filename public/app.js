@@ -150,6 +150,12 @@ const ARTICLE_DATE_FORMATTER = new Intl.DateTimeFormat("en-IN", {
   hour12: false,
   timeZone: "Asia/Kolkata"
 });
+const HERO_TREND_TIME_FORMATTER = new Intl.DateTimeFormat("en-IN", {
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+  timeZone: "Asia/Kolkata"
+});
 
 function formatArticleDate(value){
   const date = new Date(value);
@@ -161,6 +167,11 @@ function formatArticleDate(value){
     }, {});
   if (!parts.month || !parts.day || !parts.year) return "";
   return `${parts.month} ${parts.day}, ${parts.year}, ${parts.hour}:${parts.minute} IST`;
+}
+function formatTrendTime(value){
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  return HERO_TREND_TIME_FORMATTER.format(date);
 }
 
 const TOPIC_STOPWORDS = new Set([
@@ -973,6 +984,123 @@ function heroImgTag(article, index){
               onerror="if(this.dataset.errored){this.onerror=null;this.classList.add('logo-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';this.classList.add('logo-thumb');this.src=this.dataset.fallback || this.dataset.placeholder;this.alt='';}" alt="">`;
 }
 
+function heroSourceLogo(article, extraClass = ""){
+  const source = (article?.source || "").trim();
+  const mappedDomain = LOGO_DOMAIN_MAP[source] || "";
+  const domain = mappedDomain || domainFromUrl(article?.link || "");
+  const logo = (article?.sourceLogo || "").trim()
+    || (domain ? `https://www.google.com/s2/favicons?domain=${domain}&sz=64` : "");
+  const initial = (source || domain || "?").trim().charAt(0).toUpperCase() || "?";
+  const safeInitial = escapeHtml(initial);
+  const className = extraClass ? ` ${extraClass}` : "";
+
+  if (!logo){
+    return `<span class="ts-source-logo fallback${className}">${safeInitial}</span>`;
+  }
+  return `<img class="ts-source-logo${className}" src="${logo}" alt="" loading="lazy"
+              data-fallback="${safeInitial}"
+              onerror="const span=document.createElement('span');span.className='ts-source-logo fallback${className}';span.textContent=this.dataset.fallback||'?';this.replaceWith(span);">`;
+}
+
+function renderHeroMeta(article){
+  const sourceName = escapeHtml(article?.source || domainFromUrl(article?.link || "") || "Source");
+  return `
+    <div class="hero-meta">
+      <span class="hero-source">
+        ${heroSourceLogo(article)}
+        <span class="hero-source-name">${sourceName}</span>
+      </span>
+      <span class="hero-dot">·</span>
+      <span class="hero-time">${formatArticleDate(article?.publishedAt)}</span>
+    </div>`;
+}
+
+function buildHeroTrendBuckets(articles = [], bucketMinutes = 30){
+  const { scores, buckets, bucketMinutes: minutes } =
+    buildTopicSparklineBuckets(articles, bucketMinutes);
+  const hasData = buckets.some(bucket => bucket.c > 0);
+  if (hasData) return { scores, buckets, bucketMinutes: minutes };
+
+  const base = aggregateSentiment(articles);
+  const count = Math.max(1, articles.length);
+  const avg = {
+    pos: Math.round(base.pos / count),
+    neu: Math.round(base.neu / count),
+    neg: Math.round(base.neg / count)
+  };
+  const bucketCount = Math.max(4, buckets.length || 8);
+  const bucketMs = minutes * 60 * 1000;
+  const now = Date.now();
+  const fallbackBuckets = Array.from({ length: bucketCount }, (_, i) => {
+    const end = now - (bucketCount - i - 1) * bucketMs;
+    const start = end - bucketMs;
+    return { start, end, pos: avg.pos, neu: avg.neu, neg: avg.neg, c: 0 };
+  });
+  const flatScore = avg.pos - avg.neg;
+  return {
+    scores: Array.from({ length: bucketCount }, () => flatScore),
+    buckets: fallbackBuckets,
+    bucketMinutes: minutes
+  };
+}
+
+function formatHeroTrendTooltip(bucket){
+  const time = formatTrendTime(bucket.start) || "--:--";
+  return `${time} — Positive ${fmtPct(bucket.pos)} · Neutral ${fmtPct(bucket.neu)} · Negative ${fmtPct(bucket.neg)}`;
+}
+
+function dominantTone(bucket){
+  const pos = Number(bucket.pos || 0);
+  const neg = Number(bucket.neg || 0);
+  const threshold = 4;
+  if (pos > neg + threshold) return "pos";
+  if (neg > pos + threshold) return "neg";
+  return "neu";
+}
+
+function renderHeroTrendChart(cluster, index){
+  const articles = [cluster.featured, ...(cluster.related || [])].filter(Boolean);
+  const { scores, buckets } = buildHeroTrendBuckets(articles, 30);
+  const W = 420;
+  const H = 120;
+  const pad = 12;
+  const maxAbs = 20;
+  const steps = Math.max(1, scores.length - 1);
+  const xStep = (W - pad * 2) / steps;
+  const mid = H / 2;
+  const amplitude = (H / 2) - pad;
+  const clamp = value => Math.max(-maxAbs, Math.min(maxAbs, value));
+  const points = scores.map((score, i) => ({
+    x: pad + (xStep * i),
+    y: mid - (clamp(score) / maxAbs) * amplitude
+  }));
+
+  const segments = points.slice(0, -1).map((point, i) => {
+    const next = points[i + 1];
+    const tone = dominantTone(buckets[Math.min(i + 1, buckets.length - 1)] || {});
+    return `<path class="ts-trend-line ${tone}" d="M ${point.x} ${point.y} L ${next.x} ${next.y}" />`;
+  });
+
+  const bucketWidth = (W - pad * 2) / Math.max(1, buckets.length);
+  const hitAreas = buckets.map((bucket, i) => {
+    const tip = escapeHtml(formatHeroTrendTooltip(bucket));
+    return `<rect class="ts-trend-hit" x="${pad + (bucketWidth * i)}" y="0" width="${bucketWidth}" height="${H}" data-tip="${tip}"></rect>`;
+  });
+
+  return `
+    <div class="ts-trend" data-slide="${index}">
+      <div class="ts-trend-label">Trend (Last 4h)</div>
+      <div class="ts-trend-chart">
+        <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Trend curve for last 4 hours">
+          <path class="ts-trend-axis" d="M ${pad} ${mid} L ${W - pad} ${mid}" />
+          ${segments.join("")}
+          ${hitAreas.join("")}
+        </svg>
+        <div class="ts-trend-tooltip" role="tooltip" aria-hidden="true"></div>
+      </div>
+    </div>`;
+}
+
 function recentArticlesWithin(articles = [], hours){
   const now = Date.now();
   const windowMs = hours * 60 * 60 * 1000;
@@ -1351,33 +1479,40 @@ function renderHero(){
     dots.innerHTML  = "";
     return;
   }
-  track.innerHTML = slides.map(cluster => `
+  track.innerHTML = slides.map((cluster, index) => `
     <article class="hero-slide">
-      <div class="hero-cluster">
-        <div class="hero-featured">
-          <a class="hero-featured-link" href="${cluster.featured.link}" target="_blank" rel="noopener" data-article-link="${cluster.featured.link}">
-            <div class="hero-media">
-              <div class="hero-img">${heroImgTag(cluster.featured)}</div>
-            </div>
-            <div class="hero-featured-body">
-              <div class="hero-source">${escapeHtml(cluster.featured.source || "")}</div>
-              <div class="hero-headline">${escapeHtml(cluster.featured.title || "")}</div>
-              <div class="hero-time">${formatArticleDate(cluster.featured.publishedAt)}</div>
-            </div>
-          </a>
-          <div class="hero-sentiment">${renderSentiment(cluster.featured.sentiment, true, getArticleContext(cluster.featured), "mini")}</div>
-        </div>
-        <div class="hero-related">
-          ${cluster.related.map(item => `
-            <div class="hero-related-item">
-              <a href="${item.link}" target="_blank" rel="noopener" data-article-link="${item.link}">
-                <div class="hero-source">${escapeHtml(item.source || "")}</div>
-                <div class="hero-related-headline">${escapeHtml(item.title || "")}</div>
-                <div class="hero-time">${formatArticleDate(item.publishedAt)}</div>
+      <div class="top-stories-slide">
+        <div class="ts-content">
+          <div class="hero-cluster">
+            <div class="hero-featured">
+              <div class="hero-featured-media">
+                <a class="hero-featured-link" href="${cluster.featured.link}" target="_blank" rel="noopener" data-article-link="${cluster.featured.link}">
+                  <div class="hero-media">
+                    <div class="hero-img">${heroImgTag(cluster.featured)}</div>
+                  </div>
+                </a>
+                <button class="pin-toggle ts-pin" type="button" data-link="${cluster.featured.link}" aria-pressed="false">Pin</button>
+              </div>
+              <a class="hero-featured-body" href="${cluster.featured.link}" target="_blank" rel="noopener" data-article-link="${cluster.featured.link}">
+                ${renderHeroMeta(cluster.featured)}
+                <div class="hero-headline">${escapeHtml(cluster.featured.title || "")}</div>
               </a>
-              <div class="hero-sentiment">${renderSentiment(item.sentiment, true, getArticleContext(item), "mini")}</div>
-            </div>`).join("")}
+              <div class="hero-sentiment">${renderSentiment(cluster.featured.sentiment, true, getArticleContext(cluster.featured), "mini")}</div>
+            </div>
+            <div class="hero-related">
+              ${cluster.related.map(item => `
+                <div class="hero-related-item">
+                  <a href="${item.link}" target="_blank" rel="noopener" data-article-link="${item.link}">
+                    ${renderHeroMeta(item)}
+                    <div class="hero-related-headline">${escapeHtml(item.title || "")}</div>
+                  </a>
+                  <button class="pin-toggle ts-pin" type="button" data-link="${item.link}" aria-pressed="false">Pin</button>
+                  <div class="hero-sentiment">${renderSentiment(item.sentiment, true, getArticleContext(item), "mini")}</div>
+                </div>`).join("")}
+            </div>
+          </div>
         </div>
+        ${renderHeroTrendChart(cluster, index)}
       </div>
     </article>`).join("");
 
@@ -1387,6 +1522,53 @@ function renderHero(){
 
   updateHero(0);
   hydrateHeroImages();
+  attachHeroTrendTooltips();
+}
+function attachHeroTrendTooltips(){
+  const trends = $$(".ts-trend");
+  if (!trends.length) return;
+  const showTooltip = (trend, tooltip, event, hit) => {
+    if (!tooltip || !hit) return;
+    const tipText = hit.dataset.tip || "";
+    tooltip.textContent = tipText;
+    tooltip.setAttribute("aria-hidden", "false");
+    tooltip.classList.add("show");
+    const bounds = trend.getBoundingClientRect();
+    const clientX = event?.clientX ?? (event?.touches?.[0]?.clientX);
+    const clientY = event?.clientY ?? (event?.touches?.[0]?.clientY);
+    const x = clientX ? clientX - bounds.left : bounds.width / 2;
+    const y = clientY ? clientY - bounds.top : bounds.height / 2;
+    const tooltipRect = tooltip.getBoundingClientRect();
+    const left = Math.min(
+      Math.max(8, x - (tooltipRect.width / 2)),
+      bounds.width - tooltipRect.width - 8
+    );
+    const top = Math.min(
+      Math.max(8, y - tooltipRect.height - 10),
+      bounds.height - tooltipRect.height - 8
+    );
+    tooltip.style.left = `${left}px`;
+    tooltip.style.top = `${top}px`;
+  };
+
+  trends.forEach(trend => {
+    const tooltip = trend.querySelector(".ts-trend-tooltip");
+    const hits = trend.querySelectorAll(".ts-trend-hit");
+    if (!tooltip || !hits.length) return;
+    hits.forEach(hit => {
+      if (hit.dataset.bound) return;
+      hit.dataset.bound = "1";
+      const handle = event => showTooltip(trend, tooltip, event, hit);
+      hit.addEventListener("mouseenter", handle);
+      hit.addEventListener("mousemove", handle);
+      hit.addEventListener("click", handle);
+      hit.addEventListener("touchstart", handle, { passive: true });
+    });
+    trend.addEventListener("mouseleave", () => {
+      tooltip.classList.remove("show");
+      tooltip.setAttribute("aria-hidden", "true");
+    });
+  });
 }
 async function hydrateHeroImages(){
   const images = $$(".hero-slide img[data-hero-link]");
