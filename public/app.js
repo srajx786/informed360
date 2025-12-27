@@ -630,7 +630,17 @@ function computeLeaderboard(){
   return { pos, neu, neg };
 }
 
-function renderLeaderboard(){
+function loadImage(src){
+  if (!src) return Promise.resolve(false);
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve(true);
+    img.onerror = () => resolve(false);
+    img.src = src;
+  });
+}
+
+async function renderLeaderboard(){
   const grid = $("#leaderboard");
   if (!grid) return;
   const colPos = grid.querySelector(".col-pos");
@@ -642,24 +652,38 @@ function renderLeaderboard(){
   const { pos, neu, neg } = computeLeaderboard();
   const TIERS = [0.35, 0.75];
 
-  function place(col, list){
+  async function place(col, list){
+    const results = await Promise.all(
+      list.map(s => (s.logo ? loadImage(s.logo) : Promise.resolve(false)))
+    );
     let idx = 0;
-    list.forEach(s => {
-      if (!s.logo) return;
+    results.forEach((ok, i) => {
+      if (!ok) return;
+      const s = list[i];
       const b = document.createElement("div");
       b.className = "badge";
       const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
       b.style.left = "50%";
       b.style.top  = `${topPct}%`;
-      b.innerHTML  = `<img src="${s.logo}" alt="${s.source}" onerror="this.remove()">`;
+      const img = document.createElement("img");
+      img.src = s.logo;
+      img.alt = s.source;
+      img.loading = "lazy";
+      img.addEventListener("error", () => {
+        b.remove();
+        empty?.classList.toggle("show", grid.querySelectorAll(".badge").length === 0);
+      });
+      b.appendChild(img);
       col.appendChild(b);
       idx++;
     });
   }
 
-  place(colPos, pos);
-  place(colNeu, neu);
-  place(colNeg, neg);
+  await Promise.all([
+    place(colPos, pos),
+    place(colNeu, neu),
+    place(colNeg, neg)
+  ]);
 
   const hasBadges = grid.querySelectorAll(".badge").length > 0;
   empty?.classList.toggle("show", !hasBadges);
@@ -677,6 +701,22 @@ const INDUSTRY_GROUPS = [
   "Information Tech",
   "Materials"
 ];
+
+const INDUSTRY_ICON_MAP = {
+  Healthcare: "/logo/industry-healthcare.svg",
+  Finance: "/logo/industry-finance.svg",
+  Technology: "/logo/industry-technology.svg",
+  "Information Tech": "/logo/industry-technology.svg",
+  Energy: "/logo/industry-energy.svg",
+  Utilities: "/logo/industry-utilities.svg",
+  Communication: "/logo/industry-communication.svg",
+  Manufacturing: "/logo/industry-manufacturing.svg",
+  "Real Estate": "/logo/industry-realestate.svg",
+  Materials: "/logo/industry-materials.svg"
+};
+const GENERIC_INDUSTRY_ICON = "/logo/industry-generic.svg";
+const industryIconFor = (name = "") =>
+  INDUSTRY_ICON_MAP[name] || GENERIC_INDUSTRY_ICON;
 
 function scoreIndustries(){
   const rows = INDUSTRY_GROUPS.map(name => ({ name, pos:0, neg:0, neu:0, n:0 }));
@@ -727,23 +767,30 @@ function renderIndustryBoard(){
     .slice(0,3);
 
   const TIERS = [0.3, 0.55, 0.8];
-  const placeText = (col, list) => {
+  const placeIcons = (col, list) => {
     let idx = 0;
     list.forEach(item => {
       const badge = document.createElement("div");
-      badge.className = "badge text-badge";
+      badge.className = "badge icon-badge";
       const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
       badge.style.left = "50%";
       badge.style.top  = `${topPct}%`;
-      badge.textContent = item.name;
+      const img = document.createElement("img");
+      img.src = industryIconFor(item.name);
+      img.alt = item.name;
+      img.loading = "lazy";
+      img.addEventListener("error", () => {
+        img.src = GENERIC_INDUSTRY_ICON;
+      });
+      badge.appendChild(img);
       col.appendChild(badge);
       idx++;
     });
   };
 
-  placeText(colPos, pos);
-  placeText(colNeu, neu);
-  placeText(colNeg, neg);
+  placeIcons(colPos, pos);
+  placeIcons(colNeu, neu);
+  placeIcons(colNeg, neg);
 
   const hasBadges = grid.querySelectorAll(".badge").length > 0;
   empty?.classList.toggle("show", !hasBadges);
