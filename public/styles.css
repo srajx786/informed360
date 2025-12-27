@@ -26,11 +26,11 @@
 
 *{ box-sizing:border-box; min-width:0 }
 html,body{ height:100%; overflow-x:hidden }
-body{ margin:0; font-family:"Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; font-size:15px; line-height:1.45; background:var(--bg); color:var(--fg) }
+body{ margin:0; font-family:"Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif; font-size:15px; line-height:1.45; background:var(--bg); color:var(--fg) }
 a{ color:inherit; text-decoration:none }
 h1,h2,h3{ margin:0 0 .6rem }
 
-.display-title, .gn-logo{ font-family:"Bebas Neue","Public Sans",sans-serif; letter-spacing:.2px }
+.display-title{ font-family:"Merriweather", serif; font-weight:700; letter-spacing:.2px }
 
 /* Header */
 .gn-header{ position:sticky; top:0; z-index:30; background:color-mix(in oklab, var(--bg) 92%, #0000 8%); backdrop-filter:saturate(150%) blur(8px); border-bottom:1px solid var(--border) }
@@ -134,7 +134,7 @@ h1,h2,h3{ margin:0 0 .6rem }
 }
 .pinned-block{ grid-area:pinned }
 .hero-block{ grid-area:hero }
-.mood-block{ grid-area:mood }
+.mood-block{ grid-area:mood; display:flex; flex-direction:column; gap:.9rem }
 .source-block{ grid-area:source }
 .news-block{ grid-area:news }
 .trending-block{ grid-area:trending }
@@ -149,11 +149,11 @@ h1,h2,h3{ margin:0 0 .6rem }
 /* Block card */
 .block-card{ background:var(--card); border:1px solid var(--border); border-radius:18px; overflow:hidden; box-shadow:var(--shadow) }
 .block-header{ padding:.65rem .95rem; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between }
-.block-title{ font-family:"Bebas Neue","Public Sans",sans-serif; font-size:1.35rem; letter-spacing:.2px } /* reduced */
+.block-title{ font-family:"Merriweather", serif; font-size:1.2rem; letter-spacing:.1px } /* reduced */
 .block-list{ display:flex; flex-direction:column }
 .block-list .row{ padding:.8rem 1rem; display:flex; flex-direction:column; gap:.35rem; background:var(--card) }
 .block-list .row + .row{ border-top:1px solid var(--border) }
-.row-title{ font-weight:800; line-height:1.25; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden }
+.row-title{ font-family:"Merriweather", serif; font-weight:700; line-height:1.25; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden }
 .row-meta{ color:var(--muted); font-size:.9rem }
 
 /* Card */
@@ -181,10 +181,10 @@ h1,h2,h3{ margin:0 0 .6rem }
 .hero-sentiment .sentiment-line{ font-size:.7rem }
 .hero-actions{ display:flex; align-items:center; margin-top:.2rem }
 .hero-slide .hero-content{ display:flex; flex-direction:column; gap:.35rem; min-width:0; overflow:hidden }
-.hero-slide h3{ font-size:1.18rem; line-height:1.25; font-weight:800; margin:.2rem 0; word-wrap:break-word }
+.hero-slide h3{ font-family:"Merriweather", serif; font-size:1.18rem; line-height:1.25; font-weight:700; margin:.2rem 0; word-wrap:break-word }
 .analysis-link{ display:inline-block; margin:.2rem 0; padding:.45rem .75rem; border-radius:10px; background:var(--brand); color:#fff; font-weight:700; font-size:.9rem }
 .hero-slide .meta{ color:var(--muted); font-size:.9rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; max-width:100%; word-break:break-word }
-.hero-nav{ position:absolute; top:50%; transform:translateY(-50%); background:#fff; color:#111; border:1px solid var(--border); width:28px; height:28px; border-radius:50%; box-shadow:var(--shadow); display:grid; place-items:center; cursor:pointer }
+.hero-nav{ position:absolute; top:calc(.6rem + 90px); transform:translateY(-50%); background:#fff; color:#111; border:1px solid var(--border); width:28px; height:28px; border-radius:50%; box-shadow:var(--shadow); display:grid; place-items:center; cursor:pointer }
 .hero-nav.prev{ left:8px } .hero-nav.next{ right:8px }
 .hero-dots{ display:flex; gap:.35rem; justify-content:center; padding:.45rem }
 .hero-dots button{ width:6px; height:6px; border-radius:50%; border:0; background:#cbd5e1; cursor:pointer }
@@ -201,7 +201,7 @@ h1,h2,h3{ margin:0 0 .6rem }
 .news-item .thumb{ width:88px; height:70px; object-fit:cover; border-radius:10px; background:#edf2f7 }
 .news-item .thumb.logo-thumb{ object-fit:contain; padding:8px; background:#f5f7fb }
 .news-body{ display:flex; flex-direction:column; gap:.35rem; min-width:0 }
-.news-item .title{ font-weight:800; line-height:1.3; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden }
+.news-item .title{ font-family:"Merriweather", serif; font-weight:700; line-height:1.3; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden }
 .meta{ color:var(--muted); font-size:.9rem; display:flex; gap:.5rem; align-items:center; min-width:0; flex-wrap:wrap }
 .meta .meta-time{ flex:1 1 auto; min-width:0; max-width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
 .card-actions{ display:flex; align-items:center }
@@ -239,43 +239,16 @@ h1,h2,h3{ margin:0 0 .6rem }
 /* 4-hour mood — exact look */
 .mood-card{ margin-bottom:.8rem }
 .mood-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; margin-bottom:.25rem }
-.mood-title{ font-weight:800; font-size:1rem }
+.mood-title{ font-family:"Merriweather", serif; font-weight:700; font-size:1rem }
 .mood-legend{ display:flex; gap:.5rem; color:var(--muted); font-size:.78rem }
 .mood-legend .lg.pos{ color:var(--pos) } .mood-legend .lg.neu{ color:#6b7280 } .mood-legend .lg.neg{ color:var(--neg) }
 .mood-spark{ width:100%; height:120px; display:block }
 .mood-summary{ margin-top:.25rem; font-size:.86rem; color:var(--muted) }
-.mood-cloud{
-  position:relative;
-  margin-top:.55rem;
-  height:170px;
-  overflow:hidden;
-  color:var(--muted);
-  border-radius:12px;
-}
-.mood-cloud.is-empty{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.mood-cloud .mood-word{
-  position:absolute;
-  line-height:1;
-  white-space:nowrap;
-  color:color-mix(in oklab, var(--brand) 35%, var(--fg));
-  letter-spacing:.2px;
-  transition:opacity .2s ease;
-}
-.mood-cloud .mood-word-empty{
-  position:static;
-  font-size:.85rem;
-  color:var(--muted);
-  opacity:.9;
-}
 
 /* Leaderboard — exact look */
 .leader-card{ margin-top:.8rem }
 .leader-head{ display:flex; justify-content:space-between; align-items:baseline }
-.leader-title{ font-family:"Bebas Neue","Public Sans",sans-serif; font-size:1.35rem }
+.leader-title{ font-family:"Merriweather", serif; font-size:1.2rem }
 .leader-sub{ color:var(--muted); font-size:.8rem }
 .leader-grid{ position:relative; height:240px; border-radius:16px; overflow:hidden; margin-top:.4rem; border:1px solid var(--border); background:var(--card) }
 .leader-col{ position:absolute; top:8px; bottom:8px; width:calc(33.333% - 12px); border-radius:20px; box-shadow:inset 0 0 0 0 rgba(0,0,0,.02); overflow:hidden }
@@ -458,6 +431,7 @@ h1,h2,h3{ margin:0 0 .6rem }
       "industry"
       "daily";
   }
+  .hero-nav{ top:calc(.6rem + 100px) }
   .hero-slide .hero-img{ height:200px }
   .daily-list{ grid-template-columns:1fr }
 }

@@ -85,6 +85,17 @@ const PLACEHOLDER =
      </svg>`
   );
 
+const ogImageCache = new Map();
+const isFallbackLogo = (url = "") => {
+  const lower = String(url || "").toLowerCase();
+  if (!lower) return true;
+  if (lower.startsWith("data:image")) return true;
+  if (lower.includes("logo.clearbit.com")) return true;
+  if (lower.includes("/logo/")) return true;
+  if (lower.includes("favicon")) return true;
+  return lower.includes("logo.");
+};
+
 /* sentiment meter */
 function renderSentiment(s, slim = false){
   const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
@@ -110,6 +121,8 @@ const state = {
   experimental: false,
   query: "",
   articles: [],
+  allArticles: [],
+  indiaArticles: [],
   topics: [],
   pins: loadPins(),
   profile: loadProfile(),
@@ -425,13 +438,28 @@ async function loadAll(){
   if (state.category && !["home","foryou","local"].includes(state.category))
     qs.set("category", state.category);
 
-  const [news, topics] = await Promise.all([
+  const needsIndiaFetch = !["home", "india"].includes(state.category);
+  const indiaQs = new URLSearchParams();
+  if (state.filter !== "all") indiaQs.set("sentiment", state.filter);
+  if (state.experimental) indiaQs.set("experimental", "1");
+  if (needsIndiaFetch) indiaQs.set("category", "india");
+
+  const [news, topics, india] = await Promise.all([
     fetchJSON(`/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`),
-    fetchJSON(`/api/topics${state.experimental ? "?experimental=1" : ""}`)
+    fetchJSON(`/api/topics${state.experimental ? "?experimental=1" : ""}`),
+    needsIndiaFetch
+      ? fetchJSON(`/api/news${indiaQs.toString() ? ("?" + indiaQs.toString()) : ""}`)
+      : Promise.resolve(null)
   ]);
 
-  state.articles = news.articles || [];
+  state.allArticles = news.articles || [];
+  state.articles = state.allArticles.slice();
   state.topics   = (topics.topics || []).slice(0,8);
+  if (needsIndiaFetch){
+    state.indiaArticles = india?.articles || [];
+  } else {
+    state.indiaArticles = state.allArticles.filter(a => a.category === "india");
+  }
 
   if (state.category === "local" && state.profile?.city){
     const c = state.profile.city.toLowerCase();
@@ -454,6 +482,39 @@ async function loadAll(){
 }
 
 /* image helpers */
+async function fetchOgImage(link = ""){
+  const key = link.trim();
+  if (!key) return "";
+  if (ogImageCache.has(key)) return ogImageCache.get(key);
+  try{
+    const data = await fetchJSON(`/api/og-image?url=${encodeURIComponent(key)}`);
+    const image = (data?.image || "").trim();
+    ogImageCache.set(key, image);
+    return image;
+  }catch{
+    ogImageCache.set(key, "");
+    return "";
+  }
+}
+
+function heroImgTag(article, index){
+  const fallbackLogo = logoFor(article.link, article.source);
+  const fallback = fallbackLogo || PLACEHOLDER;
+  const primary = (article.image || "").trim() || fallback;
+  const useLogoThumb =
+    Boolean(fallbackLogo) &&
+    (primary === fallback || primary === PLACEHOLDER || isFallbackLogo(primary));
+  const classNames = ["hero-photo", useLogoThumb ? "logo-thumb" : ""]
+    .filter(Boolean)
+    .join(" ");
+  const encodedLink = encodeURIComponent(article.link || "");
+
+  return `<img class="${classNames}" src="${primary}" loading="lazy"
+              data-hero-link="${encodedLink}"
+              data-fallback="${fallback}" data-placeholder="${PLACEHOLDER}"
+              onerror="if(this.dataset.errored){this.onerror=null;this.classList.add('logo-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';this.classList.add('logo-thumb');this.src=this.dataset.fallback || this.dataset.placeholder;this.alt='';}" alt="">`;
+}
+
 function safeImgTag(src, link, source, cls){
   const fallbackLogo = logoFor(link, source);
   const fallback = fallbackLogo || PLACEHOLDER;
@@ -603,7 +664,7 @@ function renderHero(){
   track.innerHTML = slides.map(a => `
     <article class="hero-slide">
       <div class="hero-media">
-        <div class="hero-img">${safeImgTag(a.image, a.link, a.source, "")}</div>
+        <div class="hero-img">${heroImgTag(a)}</div>
         <div class="hero-sentiment">${renderSentiment(a.sentiment, true)}</div>
       </div>
       <div class="hero-actions">
@@ -624,6 +685,23 @@ function renderHero(){
   ).join("");
 
   updateHero(0);
+  hydrateHeroImages();
+}
+async function hydrateHeroImages(){
+  const images = $$(".hero-slide img[data-hero-link]");
+  if (!images.length) return;
+
+  await Promise.all(
+    images.map(async (img) => {
+      if (!isFallbackLogo(img.src)) return;
+      const link = decodeURIComponent(img.dataset.heroLink || "");
+      if (!link) return;
+      const ogImage = await fetchOgImage(link);
+      if (!ogImage) return;
+      img.src = ogImage;
+      img.classList.remove("logo-thumb");
+    })
+  );
 }
 function updateHero(i){
   const n = $$("#heroTrack .hero-slide").length;
@@ -670,11 +748,11 @@ function renderTopics(){
   }).join("");
 }
 
-/* ===== 4-hour mood chart – single band + lines like your reference ===== */
-function renderMood4h(){
+/* ===== 4-hour sentiment chart – single band + lines like your reference ===== */
+function renderSentimentTimeline({ sparkEl, summaryEl, titleEl, title, articles }){
   const now = Date.now();
   const fourHrs = 4 * 60 * 60 * 1000;
-  const recent = state.articles.filter(
+  const recent = (articles || []).filter(
     a => now - new Date(a.publishedAt).getTime() <= fourHrs
   );
 
@@ -698,8 +776,12 @@ function renderMood4h(){
     };
   });
 
-  const svg = $("#moodSpark");
+  const svg = typeof sparkEl === "string" ? $(sparkEl) : sparkEl;
   if (!svg) return;
+  const summary = typeof summaryEl === "string" ? $(summaryEl) : summaryEl;
+  const titleNode = typeof titleEl === "string" ? $(titleEl) : titleEl;
+  if (titleNode && title) titleNode.textContent = title;
+
   const W = 300, H = 120;
   const padL = 34, padR = 10, padT = 18, padB = 24;
   const mid  = H / 2;
@@ -764,100 +846,58 @@ function renderMood4h(){
     { pos:0, neu:0, neg:0 }
   );
   const n = pts.length || 1;
-  $("#moodSummary").textContent =
-    `Positive ${fmtPct(avg.pos/n)} · Neutral ${fmtPct(avg.neu/n)} · Negative ${fmtPct(avg.neg/n)}`;
+  if (summary){
+    summary.textContent =
+      `Positive ${fmtPct(avg.pos/n)} · Neutral ${fmtPct(avg.neu/n)} · Negative ${fmtPct(avg.neg/n)}`;
+  }
 }
 
-function renderMoodCloud(){
-  const cloud = $("#moodCloud");
-  if (!cloud) return;
-  const stopwords = new Set([
-    "the","and","for","with","that","this","from","you","your","about","over",
-    "into","after","before","while","where","when","what","who","why","how",
-    "are","was","were","will","has","have","had","but","not","all","its","out",
-    "new","more","less","than","their","they","them","his","her","she","him",
-    "our","us","via","said","says","say","as","at","of","in","on","to","a",
-    "an","by","be","it","is","or","up","off","if","we","i","my","me"
-  ]);
-  const counts = new Map();
-  (state.articles || []).forEach(a => {
-    const text = `${a.title || ""} ${a.description || ""}`.toLowerCase();
-    const words = text.match(/[a-z0-9]+/g) || [];
-    words.forEach(word => {
-      if (word.length < 3 || stopwords.has(word)) return;
-      counts.set(word, (counts.get(word) || 0) + 1);
-    });
-  });
-  const list = [...counts.entries()]
-    .sort((a,b) => b[1] - a[1])
-    .slice(0, 22);
-  if (!list.length){
-    cloud.classList.add("is-empty");
-    cloud.innerHTML = `<span class="mood-word mood-word-empty">No trending keywords yet.</span>`;
-    return;
+function getActiveCategoryLabel(){
+  const active = $(".gn-tabs .tab.active");
+  if (!active) return "World";
+  if (active.dataset.cat === "home") return "World";
+  return (active.textContent || "World").trim();
+}
+
+function formatSentimentTitle(label){
+  if (!label) return "World’s Sentiment (Last 4h)";
+  if (label.toLowerCase() === "for you") return "For You Sentiment (Last 4h)";
+  const possessive = label.endsWith("s") ? `${label}’` : `${label}’s`;
+  return `${possessive} Sentiment (Last 4h)`;
+}
+
+function getIndiaSentimentArticles(){
+  if (state.category === "home"){
+    return (state.allArticles || []).filter(a => a.category === "india");
   }
-  cloud.classList.remove("is-empty");
-  const values = list.map(([,count]) => count);
-  const max = Math.max(...values);
-  const min = Math.min(...values);
-  cloud.innerHTML = "";
-  const rotations = [0, -6, 6];
-  const placed = [];
-  const maxTries = 40;
-  const cloudRect = cloud.getBoundingClientRect();
+  if (state.category === "india") return state.articles || [];
+  return state.indiaArticles || [];
+}
 
-  const intersects = (a, b) =>
-    !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
+function getWorldSentimentArticles(){
+  if (state.category === "home"){
+    return (state.allArticles || []).filter(a => a.category === "world");
+  }
+  return state.articles || [];
+}
 
-  list.forEach(([word, count]) => {
-    const ratio = max === min ? 0.5 : (count - min) / (max - min);
-    const size = 12 + ratio * 16;
-    const weight = Math.round(500 + ratio * 300);
-    const opacity = (0.55 + ratio * 0.35).toFixed(2);
-    const rotation = rotations[Math.floor(Math.random() * rotations.length)];
+function renderIndiaSentiment(){
+  renderSentimentTimeline({
+    sparkEl: "#moodSpark",
+    summaryEl: "#moodSummary",
+    titleEl: "#moodIndiaTitle",
+    title: "India’s Sentiment (Last 4h)",
+    articles: getIndiaSentimentArticles()
+  });
+}
 
-    const span = document.createElement("span");
-    span.className = "mood-word";
-    span.textContent = word;
-    span.style.fontSize = `${size.toFixed(1)}px`;
-    span.style.fontWeight = `${weight}`;
-    span.style.opacity = `${opacity}`;
-    span.style.transform = `rotate(${rotation}deg)`;
-    span.style.visibility = "hidden";
-    cloud.appendChild(span);
-
-    const wordRect = span.getBoundingClientRect();
-    const maxX = Math.max(0, cloud.clientWidth - wordRect.width);
-    const maxY = Math.max(0, cloud.clientHeight - wordRect.height);
-    let placedRect = null;
-
-    for (let attempt = 0; attempt < maxTries; attempt++){
-      const x = Math.round(Math.random() * maxX);
-      const y = Math.round(Math.random() * maxY);
-      span.style.left = `${x}px`;
-      span.style.top = `${y}px`;
-
-      const rect = span.getBoundingClientRect();
-      const withinCloud =
-        rect.left >= cloudRect.left &&
-        rect.right <= cloudRect.right &&
-        rect.top >= cloudRect.top &&
-        rect.bottom <= cloudRect.bottom;
-      if (!withinCloud) continue;
-
-      const collision = placed.some(p => intersects(rect, p));
-      if (!collision){
-        placedRect = rect;
-        break;
-      }
-    }
-
-    if (placedRect){
-      placed.push(placedRect);
-      span.style.visibility = "visible";
-    }else{
-      span.remove();
-    }
+function renderWorldSentiment(){
+  renderSentimentTimeline({
+    sparkEl: "#moodWorldSpark",
+    summaryEl: "#moodWorldSummary",
+    titleEl: "#moodWorldTitle",
+    title: formatSentimentTitle(getActiveCategoryLabel()),
+    articles: getWorldSentimentArticles()
   });
 }
 
@@ -1090,8 +1130,8 @@ function renderAll(){
   renderNews();
   renderDaily();
   renderTopics();
-  renderMood4h();
-  renderMoodCloud();
+  renderIndiaSentiment();
+  renderWorldSentiment();
   renderLeaderboard();
   renderIndustryBoard();
   $("#year").textContent = new Date().getFullYear();

@@ -54,6 +54,24 @@ const firstImgInHtml = (html = "", base = "") => {
   const m = /<img[^>]+src=["']([^"']+)["']/i.exec(html);
   return m ? cleanUrl(m[1], base) : "";
 };
+const findMetaContent = (html = "", attr = "", value = "") => {
+  const patterns = [
+    new RegExp(
+      `<meta[^>]+${attr}=["']${value}["'][^>]+content=["']([^"']+)["']`,
+      "i"
+    ),
+    new RegExp(
+      `<meta[^>]+content=["']([^"']+)["'][^>]+${attr}=["']${value}["']`,
+      "i"
+    )
+  ];
+  for (const pattern of patterns) {
+    const match = pattern.exec(html);
+    if (match?.[1]) return match[1];
+  }
+  return "";
+};
+const ogImageCache = new Map();
 const pickUrls = (v) => {
   if (!v) return [];
   if (Array.isArray(v)) return v.map((x) => x?.url || x).filter(Boolean);
@@ -384,6 +402,38 @@ function buildClusters(arts) {
     .sort((a, b) => b.count - a.count)
     .slice(0, 12);
 }
+
+app.get("/api/og-image", async (req, res) => {
+  const target = (req.query.url || "").toString();
+  if (!target) return res.status(400).json({ image: "" });
+  if (ogImageCache.has(target))
+    return res.json({ image: ogImageCache.get(target) });
+
+  try {
+    const response = await fetch(target, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Informed360Bot/1.0"
+      }
+    });
+    const html = await response.text();
+    const ogImage = cleanUrl(
+      findMetaContent(html, "property", "og:image"),
+      target
+    );
+    const twitterImage = cleanUrl(
+      findMetaContent(html, "name", "twitter:image"),
+      target
+    );
+    const fallback = firstImgInHtml(html, target);
+    const image = ogImage || twitterImage || fallback || "";
+    ogImageCache.set(target, image);
+    return res.json({ image });
+  } catch {
+    ogImageCache.set(target, "");
+    return res.json({ image: "" });
+  }
+});
 
 app.get("/api/news", (req, res) => {
   const limit = Number(req.query.limit || 200);
