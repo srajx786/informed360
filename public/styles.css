@@ -38,7 +38,8 @@ h1,h2,h3{ margin:0 0 .6rem }
 .gn-topbar{ display:grid; grid-template-columns:minmax(160px,220px) 1fr auto; gap:1rem; align-items:center; padding:.6rem 12px }
 .gn-logo-stack{ display:flex; flex-direction:column; gap:.2rem }
 .gn-logo{ font-size:1.55rem; line-height:1; font-weight:800 } /* reduced */
-.gn-actions{ display:flex; justify-content:flex-end; align-items:center; gap:.5rem; flex:0 0 auto }
+.gn-actions{ display:flex; justify-content:flex-end; align-items:flex-start; gap:.75rem; flex:0 0 auto }
+.gn-icon-actions{ display:flex; align-items:center; gap:.5rem }
 .icon-btn{ background:var(--card); border:1px solid var(--border); color:var(--muted); padding:.35rem .55rem; border-radius:12px; cursor:pointer; box-shadow:var(--shadow) }
 .avatar{ width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,#7c3aed,#22d3ee); color:#fff; font-weight:700; display:grid; place-items:center }
 
@@ -122,12 +123,15 @@ body.theme-dark .gn-search{ background:#1a222c }
   align-items:stretch;
   padding:.5rem 12px .7rem;
 }
-.briefing-strip{
+.briefing-row{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  flex-wrap:wrap;
+  width:100%;
+}
+.filter-row{
+  display:flex;
+  justify-content:center;
+  width:100%;
 }
 .briefing-date{ color:var(--muted); font-size:.85rem }
 
@@ -144,11 +148,10 @@ body.theme-dark .gn-search{ background:#1a222c }
 .sentiment-dock{
   display:flex;
   align-items:center;
-  justify-content:flex-end;
+  justify-content:center;
   flex-wrap:wrap;
   gap:.5rem;
   min-height:24px;
-  width:100%;
 }
 .sentiment-dock .controls{ margin:0 }
 .ticker-row{
@@ -180,7 +183,7 @@ body.theme-dark .gn-search{ background:#1a222c }
 }
 
 /* Weather */
-.weather-card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:.7rem .9rem; display:flex; align-items:center; gap:.7rem; justify-self:end; min-width:220px; max-width:280px; box-shadow:var(--shadow); flex:0 0 260px }
+.weather-card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:.7rem .9rem; display:flex; align-items:center; gap:.7rem; justify-self:end; min-width:220px; max-width:280px; box-shadow:var(--shadow); flex:0 0 260px; align-self:flex-start; margin-top:0 }
 .weather-card .wx-icon{ font-size:1.5rem } .weather-card .wx-city{ font-weight:700 } .weather-card .wx-temp{ font-size:1.1rem; font-weight:800 }
 
 /* Layout */
@@ -757,16 +760,7 @@ dialog::backdrop{
 /* Responsive */
 @media (max-width:1100px){
   .gn-topbar{ grid-template-columns:1fr; row-gap:.6rem }
-  .gn-actions{ justify-content:flex-start }
-  .gn-briefing{
-    grid-template-columns:1fr;
-    grid-template-areas:
-      "left"
-      "ticker"
-      "dock"
-      "weather";
-    row-gap:.6rem;
-  }
+  .gn-actions{ justify-content:flex-start; flex-wrap:wrap }
   .weather-card{ justify-self:start }
   .layout{
     grid-template-columns:1fr;
