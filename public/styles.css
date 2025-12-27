@@ -781,3 +781,169 @@ dialog::backdrop{
 @media (max-width:600px){
   .ticker{ grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)) }
 }
+
+/* ================================
+   MOBILE HEADER FIXES (NO OVERLAP)
+   ================================ */
+
+.gn-topbar, .gn-tabs, .gn-briefing, .layout {
+  min-width: 0;
+}
+
+.gn-tabs {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;       /* Firefox */
+}
+.gn-tabs::-webkit-scrollbar {  /* Chrome/Safari */
+  display: none;
+}
+
+.tab {
+  flex: 0 0 auto;              /* prevent shrinking into overlap */
+}
+
+.top-grid {
+  display: contents;
+}
+
+/* Mobile: stack header in a clean vertical order */
+@media (max-width: 720px) {
+  .gn-header {
+    position: sticky;
+    top: 0;
+  }
+
+  /* Topbar becomes 2-row: Logo+actions then Search */
+  .gn-topbar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo actions"
+      "search search";
+    gap: .55rem .6rem;
+    padding: .6rem 12px .45rem;
+    align-items: center;
+  }
+
+  .gn-logo { grid-area: logo; }
+  .gn-actions { grid-area: actions; }
+  .gn-search { grid-area: search; width: 100%; }
+
+  /* Briefing: keep weather visible and not crammed */
+  .gn-briefing {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "weather"
+      "ticker";
+    padding: .55rem 12px .55rem;
+    gap: .55rem;
+  }
+
+  /* Weather card full width on mobile */
+  .weather-card {
+    justify-self: stretch;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    flex: 1 1 auto;
+  }
+
+  /* Tabs: smaller font + better spacing + scroll */
+  .gn-tabs {
+    gap: .85rem;
+    padding: .2rem 12px .55rem;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .tab {
+    font-size: 13px;
+    padding: .35rem 0;
+    font-weight: 700;
+  }
+
+  /* Prevent divider from stealing space on small screens */
+  .tab-divider {
+    display: none;
+  }
+}
+
+/* Extra small phones: even tighter */
+@media (max-width: 420px) {
+  .gn-logo { font-size: 1.35rem; }
+  .icon-btn { padding: .3rem .5rem; border-radius: 10px; }
+  .gn-search input { font-size: .92rem; }
+  .tab { font-size: 12.5px; }
+}
+
+/* ==========================================
+   MOBILE: STACK TOP GRID INTO SINGLE COLUMN
+   (Pinned -> Top Stories -> India -> World)
+   ========================================== */
+
+@media (max-width: 720px) {
+  /* Ensure nothing forces horizontal scroll */
+  html, body { overflow-x: hidden; }
+  .top-grid, .layout, .container, .main { min-width: 0; }
+
+  /* Top area becomes a single column stack */
+  .top-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Cards should become full width */
+  .top-grid > * {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* If right column contains two charts, stack them with spacing */
+  .mood-block {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Make carousel/hero card fit mobile height naturally */
+  .hero-block {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* Ensure images and charts don’t overflow */
+  img, svg, canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Remove any fixed heights that create awkward gaps */
+  .hero-media, .carousel-media, .hero-image {
+    height: auto !important;
+    max-height: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .pinned-block { order: 1; }
+  .hero-block { order: 2; }
+  .mood-block { order: 3; }
+}
+
+@media (max-width: 720px) {
+  .mood-card {
+    padding: 12px !important;
+  }
+
+  .mood-summary {
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+  }
+}

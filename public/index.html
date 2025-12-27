@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <title>Informed360</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
 </head>
@@ -65,48 +65,50 @@
 
   <!-- 3-column layout -->
   <main class="layout">
-    <!-- Pinned topics / pinned news (Grid 5) -->
-    <div class="block-card pinned-block">
-      <div class="block-header">
-        <span class="block-title">Pinned</span>
-      </div>
-      <div class="block-helper">You can pin only 2 items (topics or articles).</div>
-      <div id="pinToast" class="pin-toast" aria-live="polite"></div>
-      <div class="pinned-controls">
-        <input
-          id="pinnedInput"
-          type="text"
-          placeholder="Add topic to track (e.g., US)"
-        />
-        <button id="pinnedAddBtn" type="button">Add</button>
-      </div>
-      <div id="pinnedChips" class="pinned-chips"></div>
-      <div id="pinned" class="block-list"></div>
-    </div>
-
-    <!-- HERO -->
-    <section id="hero" class="hero-carousel hero-block" aria-roledescription="carousel">
-      <div class="hero-track" id="heroTrack" role="group"></div>
-      <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
-      <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
-      <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero slides"></div>
-    </section>
-
-    <!-- 4-hour mood microchart -->
-    <div class="mood-block">
-      <div class="mood-card card" id="mood4h" aria-live="polite">
-        <div class="mood-head">
-          <div class="mood-title" id="moodIndiaTitle">India's Sentiment</div>
+    <div class="top-grid">
+      <!-- Pinned topics / pinned news (Grid 5) -->
+      <div class="block-card pinned-block">
+        <div class="block-header">
+          <span class="block-title">Pinned</span>
         </div>
-        <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
-        <div id="moodSummary" class="mood-summary"></div>
-      </div>
-      <div class="mood-card card" id="moodWorld" aria-live="polite">
-        <div class="mood-head">
-          <div class="mood-title" id="moodWorldTitle">World's Sentiment</div>
+        <div class="block-helper">You can pin only 2 items (topics or articles).</div>
+        <div id="pinToast" class="pin-toast" aria-live="polite"></div>
+        <div class="pinned-controls">
+          <input
+            id="pinnedInput"
+            type="text"
+            placeholder="Add topic to track (e.g., US)"
+          />
+          <button id="pinnedAddBtn" type="button">Add</button>
         </div>
-        <svg id="moodWorldSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
-        <div id="moodWorldSummary" class="mood-summary"></div>
+        <div id="pinnedChips" class="pinned-chips"></div>
+        <div id="pinned" class="block-list"></div>
+      </div>
+
+      <!-- HERO -->
+      <section id="hero" class="hero-carousel hero-block" aria-roledescription="carousel">
+        <div class="hero-track" id="heroTrack" role="group"></div>
+        <button class="hero-nav prev" id="heroPrev" aria-label="Previous">‹</button>
+        <button class="hero-nav next" id="heroNext" aria-label="Next">›</button>
+        <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero slides"></div>
+      </section>
+
+      <!-- 4-hour mood microchart -->
+      <div class="mood-block">
+        <div class="mood-card card" id="mood4h" aria-live="polite">
+          <div class="mood-head">
+            <div class="mood-title" id="moodIndiaTitle">India's Sentiment</div>
+          </div>
+          <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
+          <div id="moodSummary" class="mood-summary"></div>
+        </div>
+        <div class="mood-card card" id="moodWorld" aria-live="polite">
+          <div class="mood-head">
+            <div class="mood-title" id="moodWorldTitle">World's Sentiment</div>
+          </div>
+          <svg id="moodWorldSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
+          <div id="moodWorldSummary" class="mood-summary"></div>
+        </div>
       </div>
     </div>
 
