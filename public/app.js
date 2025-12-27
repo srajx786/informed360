@@ -205,6 +205,36 @@ const TOPIC_VERBS = new Set([
   "seek","seeks","sought","sets","set","sign","signs","signed","slam","slams",
   "target","targets","targeted","warn","warns","warned","win","wins","won"
 ]);
+const PREFERRED_TOPICS_KEY = "preferredTopics";
+const TOPIC_OPTIONS = [
+  "India","World","Business","Technology","Entertainment","Sports","Science",
+  "Health","Politics","Economy","Crime","Climate","AI","Markets","Startups"
+];
+const TOPIC_KEYWORDS = {
+  india: ["india","indian","bharat","delhi","mumbai","bengaluru"],
+  world: ["world","global","international","foreign","overseas"],
+  business: ["business","corporate","company","industry","enterprise"],
+  technology: ["technology","tech","software","internet","gadget","digital"],
+  entertainment: ["entertainment","bollywood","hollywood","film","music","celebrity"],
+  sports: ["sport","sports","cricket","football","match","tournament","ipl"],
+  science: ["science","research","space","nasa","isro","laboratory"],
+  health: ["health","medical","hospital","disease","wellness","covid"],
+  politics: ["politics","election","government","minister","parliament","bjp","congress"],
+  economy: ["economy","gdp","inflation","fiscal","growth","policy"],
+  crime: ["crime","police","arrest","murder","fraud","scam","assault"],
+  climate: ["climate","environment","weather","carbon","emissions","flood"],
+  ai: ["ai","artificial intelligence","machine learning","automation"],
+  markets: ["market","markets","stocks","shares","sensex","nifty","trading"],
+  startups: ["startup","start-up","founder","venture","funding","seed","series"]
+};
+const POSITIVE_CUES = [
+  "win","growth","record","breakthrough","approval","peace","success","boost",
+  "deal","launch","surge","recovery","investment","expansion","milestone"
+];
+const NEGATIVE_CUES = [
+  "rape","death","killed","attack","crash","violence","fraud","scam","crisis",
+  "war","conflict","accused","assault","arrest","collapse","shooting","terror"
+];
 const normalizeTopicText = (t = "") =>
   t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
 const formatTopicTokens = (tokens = []) =>
@@ -464,12 +494,13 @@ function selectTrendingTopics(topics = [], articles = []){
 }
 
 /* sentiment meter */
-function renderSentiment(s, slim = false){
+function renderSentiment(s, slim = false, context = "", variant = ""){
   const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
   const neu = Math.max(0, Number(s.neuP ?? s.neu ?? 0));
   const neg = Math.max(0, Number(s.negP ?? s.neg ?? 0));
+  const classes = ["sentiment", slim ? "slim" : "", variant].filter(Boolean).join(" ");
   return `
-    <div class="sentiment ${slim ? "slim" : ""}">
+    <div class="${classes}" data-context="${escapeHtml(context)}" data-pos="${pos}" data-neu="${neu}" data-neg="${neg}">
       <div class="bar">
         <span class="segment pos" style="width:${pos}%"></span>
         <span class="segment neu" style="width:${neu}%"></span>
@@ -494,6 +525,7 @@ const state = {
   pins: loadPins(),
   profile: loadProfile(),
   theme: localStorage.getItem("theme") || "light",
+  preferredTopics: loadPreferredTopics(),
   hero: { index: 0, timer: null, pause: false },
   lastLeaderboardAt: 0
 };
@@ -558,7 +590,20 @@ function savePins(list){
   state.pins = cleaned;
 }
 function applyTheme(){
-  document.documentElement.setAttribute("data-theme", state.theme);
+  document.body.classList.toggle("theme-dark", state.theme === "dark");
+}
+function loadPreferredTopics(){
+  try{
+    const raw = JSON.parse(localStorage.getItem(PREFERRED_TOPICS_KEY) || "[]");
+    return Array.isArray(raw) ? raw : [];
+  }catch{
+    return [];
+  }
+}
+function savePreferredTopics(list){
+  const cleaned = (list || []).filter(Boolean);
+  localStorage.setItem(PREFERRED_TOPICS_KEY, JSON.stringify(cleaned));
+  state.preferredTopics = cleaned;
 }
 function getPins(){
   return Array.isArray(state.pins) ? state.pins.slice(0,2) : [];
@@ -578,6 +623,18 @@ function snapshotArticle(a){
     description: a.description
   };
 }
+function getArticleContext(a){
+  if (!a) return "";
+  return `${a.title || ""} ${a.description || ""}`.trim();
+}
+function shuffleArticles(list = []){
+  const arr = list.slice();
+  for (let i = arr.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 function showPinToast(message){
   const toast = $("#pinToast");
   if (!toast) return;
@@ -593,6 +650,32 @@ function matchesTopic(a, topic){
   const hay =
     `${a.title || ""} ${a.source || ""} ${a.description || ""}`.toLowerCase();
   return hay.includes(topic.toLowerCase());
+}
+function normalizePreferredTopic(topic){
+  return String(topic || "").trim().toLowerCase();
+}
+function getPreferredTopicKeywords(topic){
+  const key = normalizePreferredTopic(topic);
+  return TOPIC_KEYWORDS[key] || [key];
+}
+function articleMatchesPreferredTopic(article, topic){
+  if (!article || !topic) return false;
+  const key = normalizePreferredTopic(topic);
+  if (!key) return false;
+  const tags = Array.isArray(article.tags)
+    ? article.tags.join(" ")
+    : (article.tags || "");
+  const haystack = [
+    article.category,
+    article.section,
+    article.topic,
+    article.title,
+    article.description,
+    tags
+  ].filter(Boolean).join(" ").toLowerCase();
+  return getPreferredTopicKeywords(key).some(keyword =>
+    haystack.includes(keyword.toLowerCase())
+  );
 }
 function timeAgo(ts){
   if (!ts) return "";
@@ -805,7 +888,7 @@ async function loadAll(){
   const qs = new URLSearchParams();
   if (state.filter !== "all") qs.set("sentiment", state.filter);
   if (state.experimental) qs.set("experimental", "1");
-  if (state.category && !["home","foryou","local"].includes(state.category))
+  if (state.category && !["home","foryou","local","showcase","following"].includes(state.category))
     qs.set("category", state.category);
 
   const needsIndiaFetch = !["home", "india"].includes(state.category);
@@ -837,13 +920,17 @@ async function loadAll(){
       (a.title || "").toLowerCase().includes(c) ||
       (a.link  || "").toLowerCase().includes(c)
     );
-  } else if (
-    state.category === "foryou" &&
-    Array.isArray(state.profile?.interests) &&
-    state.profile.interests.length
-  ){
-    const wanted = new Set(state.profile.interests);
-    state.articles = state.articles.filter(a => wanted.has(a.category));
+  } else if (state.category === "showcase"){
+    state.articles = shuffleArticles(state.allArticles || []).slice(0, 20);
+  } else if (["foryou","following"].includes(state.category)){
+    const topics = state.preferredTopics || [];
+    if (topics.length){
+      state.articles = state.articles.filter(article =>
+        topics.some(topic => articleMatchesPreferredTopic(article, topic))
+      );
+    } else if (state.category === "following"){
+      state.articles = [];
+    }
   }
 
   syncPinsWithArticles();
@@ -909,7 +996,7 @@ function safeImgTag(src, link, source, cls){
 /* card renderers */
 function card(a){
   return `
-    <a class="news-item" href="${a.link}" target="_blank" rel="noopener">
+    <a class="news-item" href="${a.link}" target="_blank" rel="noopener" data-article-link="${a.link}">
       <div class="news-side">
         ${safeImgTag(a.image, a.link, a.source, "thumb")}
         <div class="card-actions">
@@ -922,7 +1009,7 @@ function card(a){
           <span class="source">${a.source}</span>
           · <span class="meta-time">${formatArticleDate(a.publishedAt)}</span>
         </div>
-        ${renderSentiment(a.sentiment)}
+        ${renderSentiment(a.sentiment, false, getArticleContext(a))}
       </div>
     </a>`;
 }
@@ -966,7 +1053,7 @@ function renderPinned(){
           · <span>${formatArticleDate(article.publishedAt)}</span>
         </div>
         ${ageLine}
-        ${renderSentiment(article.sentiment, true)}
+        ${renderSentiment(article.sentiment, true, getArticleContext(article))}
       </div>`;
   }).join("");
 }
@@ -1020,8 +1107,16 @@ function toggleArticlePin(article){
 
 /* Grid 9: only 4 main news stories */
 function renderNews(){
-  $("#newsList").innerHTML =
-    state.articles.slice(4, 8).map(card).join("");
+  const list = $("#newsList");
+  if (state.category === "following" && !(state.preferredTopics || []).length){
+    list.innerHTML = `
+      <div class="news-empty">
+        Choose topics to build your Following feed.
+        <div><button type="button" id="chooseTopicsBtn">Choose topics</button></div>
+      </div>`;
+    return;
+  }
+  list.innerHTML = state.articles.slice(4, 8).map(card).join("");
 }
 function renderDaily(){
   $("#daily").innerHTML =
@@ -1039,11 +1134,11 @@ function renderHero(){
     return;
   }
   track.innerHTML = slides.map(a => `
-    <article class="hero-slide">
+    <article class="hero-slide" data-article-link="${a.link}">
       <div class="hero-media">
         <div class="hero-img">${heroImgTag(a)}</div>
       </div>
-      <div class="hero-sentiment">${renderSentiment(a.sentiment, true)}</div>
+      <div class="hero-sentiment">${renderSentiment(a.sentiment, true, getArticleContext(a))}</div>
       <div class="hero-actions">
         <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
       </div>
@@ -1200,6 +1295,94 @@ function attachTrendTooltips(){
   });
 }
 
+function getSourceInitials(source = ""){
+  return source.split(/\s+/).slice(0,2).map(word => word[0] || "").join("").toUpperCase();
+}
+function renderTopicSourceLogos(matches = []){
+  const sourceMap = new Map();
+  matches.forEach(article => {
+    if (!article?.source || sourceMap.has(article.source)) return;
+    sourceMap.set(article.source, article.link || "");
+  });
+  const entries = [...sourceMap.entries()];
+  const max = 5;
+  const extra = Math.max(0, entries.length - max);
+  const items = entries.slice(0, max).map(([source, link]) => {
+    const logo = logoFor(link, source);
+    const initials = getSourceInitials(source || "News");
+    if (!logo){
+      return `<span class="topic-logo-fallback" aria-label="${escapeHtml(source)}">${initials}</span>`;
+    }
+    return `<img class="topic-logo" src="${logo}" alt="${escapeHtml(source)}" loading="lazy"
+      onerror="const span=document.createElement('span');span.className='topic-logo-fallback';span.textContent='${initials}';this.replaceWith(span);">`;
+  }).join("");
+  const extraBadge = extra ? `<span class="logo-count">+${extra}</span>` : "";
+  return `<span class="topic-logos">${items}${extraBadge}</span>`;
+}
+function getTopicContext(topic, matches = []){
+  const base = topic?.displayTitle || topic?.title || "";
+  const sample = matches[0];
+  return `${base} ${sample?.title || ""} ${sample?.description || ""}`.trim();
+}
+
+function getSentimentTooltip(){
+  let tooltip = document.querySelector(".sentiment-tooltip");
+  if (!tooltip){
+    tooltip = document.createElement("div");
+    tooltip.className = "sentiment-tooltip";
+    tooltip.setAttribute("role", "tooltip");
+    tooltip.style.display = "none";
+    document.body.appendChild(tooltip);
+  }
+  return tooltip;
+}
+function sentimentTone(pos, neg){
+  const threshold = 5;
+  if (pos > neg + threshold) return "pos";
+  if (neg > pos + threshold) return "neg";
+  return "neu";
+}
+function findCue(text, cues){
+  const lower = text.toLowerCase();
+  return cues.find(cue => lower.includes(cue)) || "";
+}
+function buildSentimentExplanation(text, pos, neg){
+  const tone = sentimentTone(pos, neg);
+  if (tone === "pos"){
+    const cue = findCue(text || "", POSITIVE_CUES);
+    return cue
+      ? `Positive cues like “${cue}” suggest upbeat framing.`
+      : "Positive framing with growth or success language.";
+  }
+  if (tone === "neg"){
+    const cue = findCue(text || "", NEGATIVE_CUES);
+    return cue
+      ? `Negative cues like “${cue}” suggest concerning framing.`
+      : "Negative framing with crisis or conflict language.";
+  }
+  return "Mostly factual/neutral language with few emotional cues.";
+}
+function attachSentimentTooltips(){
+  const tooltip = getSentimentTooltip();
+  $$(".sentiment").forEach(el => {
+    if (el.dataset.tooltipBound) return;
+    el.dataset.tooltipBound = "1";
+    el.addEventListener("mousemove", (event) => {
+      const context = el.dataset.context || "";
+      const pos = Number(el.dataset.pos || 0);
+      const neg = Number(el.dataset.neg || 0);
+      tooltip.textContent = buildSentimentExplanation(context, pos, neg);
+      tooltip.style.display = "block";
+      const position = clampTooltipPosition(event.clientX + 12, event.clientY + 12, tooltip);
+      tooltip.style.left = `${position.x}px`;
+      tooltip.style.top = `${position.y}px`;
+    });
+    el.addEventListener("mouseleave", () => {
+      tooltip.style.display = "none";
+    });
+  });
+}
+
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t => {
     const total =
@@ -1211,9 +1394,12 @@ function renderTopics(){
       neuP: total ? (t.sentiment.neu/total)*100 : 0,
       negP: total ? (t.sentiment.neg/total)*100 : 0
     };
-    const trend = t.trend || computeTopicTrend(t, getTopicArticles(t, state.allArticles));
+    const matches = getTopicArticles(t, state.allArticles);
+    const trend = t.trend || computeTopicTrend(t, matches);
     const trendLabel = "Sentiment trend (last 4 hours)";
     const sparkline = renderTopicSparkline(trend.scores || []);
+    const logos = renderTopicSourceLogos(matches);
+    const context = getTopicContext(t, matches);
     return `
       <div class="row">
         <div class="row-title">
@@ -1226,8 +1412,9 @@ function renderTopics(){
         <div class="row-meta">
           <span>${t.count} articles</span>
           · <span>${t.sources} sources</span>
+          ${logos}
         </div>
-        ${renderSentiment(sent, true)}
+        ${renderSentiment(sent, true, context)}
       </div>`;
   }).join("");
   attachTrendTooltips();
@@ -1651,14 +1838,123 @@ function renderAll(){
   renderHero();
   renderPinned();
   renderNews();
+  $("#chooseTopicsBtn")?.addEventListener("click", openTopicPicker);
   renderDaily();
   renderTopics();
   renderIndiaSentiment();
   renderWorldSentiment();
   renderLeaderboard();
   renderIndustryBoard();
+  attachSentimentTooltips();
   $("#year").textContent = new Date().getFullYear();
   updatePinButtons();
+}
+
+function getSearchMatches(query){
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  return (state.allArticles || []).filter(article => {
+    const tags = Array.isArray(article.tags) ? article.tags.join(" ") : (article.tags || "");
+    const haystack = [
+      article.title,
+      article.source,
+      article.description,
+      article.category,
+      article.section,
+      article.topic,
+      tags
+    ].filter(Boolean).join(" ").toLowerCase();
+    return haystack.includes(q);
+  }).slice(0, 8);
+}
+function renderSearchResults(){
+  const panel = $("#searchResults");
+  if (!panel) return;
+  const query = $("#searchInput")?.value || "";
+  const matches = getSearchMatches(query);
+  if (!query.trim()){
+    panel.classList.remove("show");
+    panel.innerHTML = "";
+    return;
+  }
+  if (!matches.length){
+    panel.innerHTML = `<div class="search-result">No matching articles yet.</div>`;
+    panel.classList.add("show");
+    return;
+  }
+  panel.innerHTML = matches.map(article => {
+    const context = getArticleContext(article);
+    return `
+      <div class="search-result" role="option" tabindex="0" data-link="${article.link}">
+        <div class="search-thumb">
+          ${safeImgTag(article.image, article.link, article.source, "search-thumb-img")}
+        </div>
+        <div class="search-body">
+          <div class="search-title">${escapeHtml(article.title)}</div>
+          <div class="search-meta">
+            <span>${escapeHtml(article.source)}</span>
+            · <span>${formatArticleDate(article.publishedAt)}</span>
+          </div>
+          <div class="search-sentiment">
+            ${renderSentiment(article.sentiment, true, context, "mini")}
+          </div>
+        </div>
+      </div>`;
+  }).join("");
+  panel.classList.add("show");
+  panel.querySelectorAll(".search-result").forEach(row => {
+    if (row.dataset.bound) return;
+    row.dataset.bound = "1";
+    const handle = () => handleSearchResultClick(row.dataset.link || "");
+    row.addEventListener("click", handle);
+    row.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") handle();
+    });
+  });
+  attachSentimentTooltips();
+}
+function closeSearchResults(){
+  const panel = $("#searchResults");
+  if (!panel) return;
+  panel.classList.remove("show");
+}
+function handleSearchResultClick(link){
+  if (!link) return;
+  const safeLink = (window.CSS && CSS.escape)
+    ? CSS.escape(link)
+    : link.replace(/"/g, '\\"');
+  const target = document.querySelector(`[data-article-link="${safeLink}"]`);
+  if (target){
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  } else {
+    window.open(link, "_blank", "noopener");
+  }
+  closeSearchResults();
+}
+
+function renderTopicPickerOptions(){
+  const wrap = $("#topicPickerList");
+  if (!wrap) return;
+  wrap.innerHTML = TOPIC_OPTIONS.map(topic => {
+    const value = normalizePreferredTopic(topic);
+    return `
+      <label class="topic-chip">
+        <input type="checkbox" value="${value}">
+        ${topic}
+      </label>`;
+  }).join("");
+}
+function syncTopicPickerSelections(){
+  const selected = new Set((state.preferredTopics || []).map(normalizePreferredTopic));
+  $("#topicPickerList")?.querySelectorAll('input[type="checkbox"]').forEach(input => {
+    input.checked = selected.has(input.value);
+  });
+}
+function openTopicPicker(){
+  const modal = $("#topicPickerModal");
+  if (!modal) return;
+  syncTopicPickerSelections();
+  modal.showModal();
 }
 
 /* interactions */
@@ -1684,12 +1980,22 @@ $("#expChip")?.addEventListener("click", () => {
 });
 $("#searchForm")?.addEventListener("submit", (e)=>{
   e.preventDefault();
-  state.query = $("#searchInput").value.trim();
-  renderAll();
+  renderSearchResults();
 });
 $("#searchInput")?.addEventListener("input", (e)=>{
-  state.query = e.target.value.trim();
-  renderAll();
+  renderSearchResults();
+  if (!e.target.value.trim()) closeSearchResults();
+});
+$("#searchInput")?.addEventListener("keydown", (e) => {
+  if (e.key === "Escape"){
+    closeSearchResults();
+    e.target.blur();
+  }
+});
+document.addEventListener("click", (e) => {
+  const wrap = $(".gn-search-wrap");
+  if (!wrap || wrap.contains(e.target)) return;
+  closeSearchResults();
 });
 
 /* pinned topic input wiring */
@@ -1742,7 +2048,12 @@ $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
   tab.addEventListener("click", () => {
     $$(".gn-tabs .tab").forEach(t => t.classList.remove("active"));
     tab.classList.add("active");
-    state.category = tab.dataset.cat;
+    const category = tab.dataset.cat;
+    if (category === "foryou" && !(state.preferredTopics || []).length){
+      openTopicPicker();
+      return;
+    }
+    state.category = category;
     loadAll();
   });
 });
@@ -1783,9 +2094,41 @@ $("#savePrefs")?.addEventListener("click", (e)=>{
   if (forYouTab) forYouTab.click();
 });
 
+/* Help + Settings */
+const helpModal = $("#helpModal");
+const settingsModal = $("#settingsModal");
+$("#helpBtn")?.addEventListener("click", () => helpModal?.showModal());
+$("#settingsBtn")?.addEventListener("click", () => {
+  settingsModal?.querySelectorAll('input[name="theme"]').forEach(input => {
+    input.checked = input.value === state.theme;
+  });
+  settingsModal?.showModal();
+});
+settingsModal?.addEventListener("change", (e) => {
+  if (e.target?.name !== "theme") return;
+  state.theme = e.target.value;
+  localStorage.setItem("theme", state.theme);
+  applyTheme();
+});
+
+/* Topic picker */
+$("#saveTopics")?.addEventListener("click", (e) => {
+  e.preventDefault();
+  const selected = [...$("#topicPickerList")?.querySelectorAll('input[type="checkbox"]:checked') || []]
+    .map(input => input.value);
+  savePreferredTopics(selected);
+  $("#topicPickerModal")?.close();
+  const active = $(".gn-tabs .tab.active");
+  if (active && ["foryou","following"].includes(active.dataset.cat)){
+    state.category = active.dataset.cat;
+    loadAll();
+  }
+});
+
 /* boot */
 document.getElementById("year").textContent = new Date().getFullYear();
 applyTheme();
+renderTopicPickerOptions();
 moveSentimentControls();
 renderPinnedChips();
 $("#briefingDate").textContent = todayStr();

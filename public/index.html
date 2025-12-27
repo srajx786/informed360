@@ -16,16 +16,18 @@
         <div id="briefingDate" class="briefing-date"></div>
       </div>
 
-      <form id="searchForm" class="gn-search" role="search" aria-label="Search">
-        <span class="icon" aria-hidden="true">🔍</span>
-        <input id="searchInput" type="search" placeholder="Search for topics, locations & sources" autocomplete="off"/>
-        <button type="button" class="chevron" tabindex="-1" aria-hidden="true">▾</button>
-      </form>
+      <div class="gn-search-wrap">
+        <form id="searchForm" class="gn-search" role="search" aria-label="Search">
+          <span class="icon" aria-hidden="true">🔍</span>
+          <input id="searchInput" type="search" placeholder="Search for topics, locations & sources" autocomplete="off"/>
+          <button type="button" class="chevron" tabindex="-1" aria-hidden="true">▾</button>
+        </form>
+        <div id="searchResults" class="search-results" role="listbox" aria-label="Search results"></div>
+      </div>
 
       <div class="gn-actions">
-        <button class="icon-btn" title="Help" aria-label="Help">❔</button>
-        <button class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
-        <button class="icon-btn" title="Apps" aria-label="Apps">▦</button>
+        <button id="helpBtn" class="icon-btn" title="Help" aria-label="Help">❔</button>
+        <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
         <button id="avatarBtn" class="avatar" title="Sign in">S</button>
       </div>
     </div>
@@ -33,8 +35,8 @@
     <nav class="gn-tabs" aria-label="Sections">
       <button class="tab active" data-cat="home">Home</button>
       <button class="tab" data-cat="foryou">For you</button>
-      <button class="tab" data-cat="following" disabled>Following</button>
-      <button class="tab" disabled>News Showcase</button>
+      <button class="tab" data-cat="following">Following</button>
+      <button class="tab" data-cat="showcase">News Showcase</button>
       <span class="tab-divider"></span>
       <button class="tab" data-cat="india">India</button>
       <button class="tab" data-cat="world">World</button>
@@ -235,6 +237,57 @@
       <menu class="actions">
         <button value="cancel" class="btn ghost">Cancel</button>
         <button id="savePrefs" value="default" class="btn">Save</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <dialog id="helpModal" class="info-modal">
+    <form method="dialog" class="info-card">
+      <header>
+        <h2>How sentiment is calculated</h2>
+      </header>
+      <div class="info-body">
+        <p>We analyze the article headline + snippet/summary.</p>
+        <p>We compute positive/neutral/negative tone using a sentiment model.</p>
+        <p>We aggregate across recent articles to show topic/country mood.</p>
+        <p class="muted">Sentiment is a signal, not a fact.</p>
+      </div>
+      <menu class="actions">
+        <button value="cancel" class="btn">Close</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <dialog id="settingsModal" class="info-modal">
+    <form method="dialog" class="info-card">
+      <header>
+        <h2>Settings</h2>
+      </header>
+      <div class="info-body">
+        <div class="toggle-row">
+          <span>Theme</span>
+          <div class="toggle-group" role="radiogroup" aria-label="Theme">
+            <label><input type="radio" name="theme" value="light"> Light</label>
+            <label><input type="radio" name="theme" value="dark"> Dark</label>
+          </div>
+        </div>
+      </div>
+      <menu class="actions">
+        <button value="cancel" class="btn">Close</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <dialog id="topicPickerModal" class="info-modal">
+    <form method="dialog" class="info-card topic-card">
+      <header>
+        <h2>Choose your topics</h2>
+        <p class="muted">Pick a few interests to personalize your feed.</p>
+      </header>
+      <div id="topicPickerList" class="topic-grid" role="group" aria-label="Topics"></div>
+      <menu class="actions">
+        <button value="cancel" class="btn ghost">Cancel</button>
+        <button id="saveTopics" value="default" class="btn">Save</button>
       </menu>
     </form>
   </dialog>
