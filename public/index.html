@@ -11,7 +11,10 @@
   <!-- Header -->
   <header class="gn-header">
     <div class="gn-topbar">
-      <div class="gn-logo" aria-label="Informed360">Informed360</div>
+      <div class="gn-logo-stack" aria-label="Informed360">
+        <div class="gn-logo">Informed360</div>
+        <div id="briefingDate" class="briefing-date"></div>
+      </div>
 
       <form id="searchForm" class="gn-search" role="search" aria-label="Search">
         <span class="icon" aria-hidden="true">🔍</span>
@@ -45,15 +48,13 @@
     </nav>
   </header>
 
-  <!-- Briefing row: Date (left), Ticker (center), Weather (right) -->
+  <!-- Briefing row: Ticker (left), Weather (right), Filters below -->
   <section class="gn-briefing">
-    <div class="briefing-left">
-      <h1 class="display-title">Your briefing</h1>
-      <div id="briefingDate" class="briefing-date"></div>
+    <div class="briefing-strip">
+      <div id="marketTicker" class="ticker" aria-live="polite"></div>
+      <div id="weatherCard" class="weather-card" aria-live="polite"></div>
     </div>
-    <div id="marketTicker" class="ticker" aria-live="polite"></div>
     <div id="sentimentDock" class="sentiment-dock"></div>
-    <div id="weatherCard" class="weather-card" aria-live="polite"></div>
   </section>
 
   <!-- 3-column layout -->
