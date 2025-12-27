@@ -26,9 +26,12 @@
       </div>
 
       <div class="gn-actions">
-        <button id="helpBtn" class="icon-btn" title="Help" aria-label="Help">❔</button>
-        <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
-        <button id="avatarBtn" class="avatar" title="Sign in">S</button>
+        <div class="gn-icon-actions">
+          <button id="helpBtn" class="icon-btn" title="Help" aria-label="Help">❔</button>
+          <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
+          <button id="avatarBtn" class="avatar" title="Sign in">S</button>
+        </div>
+        <div id="weatherCard" class="weather-card" aria-live="polite"></div>
       </div>
     </div>
 
@@ -50,13 +53,14 @@
     </nav>
   </header>
 
-  <!-- Briefing row: Ticker (left), Weather (right), Filters below -->
+  <!-- Briefing row: Ticker full-width, Filters centered below -->
   <section class="gn-briefing">
-    <div class="briefing-strip">
+    <div class="briefing-row">
       <div id="marketTicker" class="ticker" aria-live="polite"></div>
-      <div id="weatherCard" class="weather-card" aria-live="polite"></div>
     </div>
-    <div id="sentimentDock" class="sentiment-dock"></div>
+    <div class="filter-row">
+      <div id="sentimentDock" class="sentiment-dock"></div>
+    </div>
   </section>
 
   <!-- 3-column layout -->
