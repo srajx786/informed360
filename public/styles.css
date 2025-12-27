@@ -155,6 +155,21 @@ h1,h2,h3{ margin:0 0 .6rem }
 .block-list .row + .row{ border-top:1px solid var(--border) }
 .row-title{ font-family:"Merriweather", serif; font-weight:700; line-height:1.25; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden }
 .row-meta{ color:var(--muted); font-size:.9rem }
+#topicsList .row-title{
+  display:flex;
+  align-items:baseline;
+  gap:6px;
+  -webkit-line-clamp:unset;
+  overflow:visible;
+}
+#topicsList .topic-title-text{
+  flex:1;
+  min-width:0;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
 
 /* Card */
 .card{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius-xl); padding:.85rem; box-shadow:var(--shadow) }
@@ -254,23 +269,42 @@ h1,h2,h3{ margin:0 0 .6rem }
 .mood-card{ margin-bottom:.8rem }
 .mood-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; margin-bottom:.25rem }
 .mood-title{ font-family:"Merriweather", serif; font-weight:700; font-size:1rem }
-.mood-legend{ display:flex; gap:.5rem; flex-wrap:wrap; color:var(--muted); font-size:.72rem }
-.mood-legend .lg.pos{ color:var(--pos) } .mood-legend .lg.neu{ color:#6b7280 } .mood-legend .lg.neg{ color:var(--neg) }
 .mood-spark{ width:100%; height:120px; display:block }
 .mood-summary{ margin-top:.25rem; font-size:.86rem; color:var(--muted) }
+.mood-summary .sentiment-label{ font-weight:600 }
+.mood-summary .sentiment-label.pos{ color:var(--pos) }
+.mood-summary .sentiment-label.neu{ color:var(--muted) }
+.mood-summary .sentiment-label.neg{ color:var(--neg) }
 
 /* Leaderboard — exact look */
 .leader-card{ margin-top:.8rem }
 .leader-head{ display:flex; justify-content:space-between; align-items:baseline }
 .leader-title{ font-family:"Merriweather", serif; font-size:1.2rem }
 .leader-sub{ color:var(--muted); font-size:.8rem }
-.leader-grid{ position:relative; height:240px; border-radius:16px; overflow:hidden; margin-top:.4rem; border:1px solid var(--border); background:var(--card) }
-.leader-col{ position:absolute; top:8px; bottom:8px; width:calc(33.333% - 12px); border-radius:20px; box-shadow:inset 0 0 0 0 rgba(0,0,0,.02); overflow:hidden }
-.col-pos{ left:8px; background:var(--leader-green) }
-.col-neu{ left:calc(33.333% + 2px); background:var(--leader-grey) }
-.col-neg{ left:calc(66.666% + 12px); right:8px; width:auto; background:var(--leader-peach) }
+.leader-grid{
+  position:relative;
+  height:240px;
+  border-radius:16px;
+  overflow:hidden;
+  margin-top:.4rem;
+  border:1px solid var(--border);
+  background:var(--card);
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:12px;
+  padding:8px;
+}
+.leader-col{
+  position:relative;
+  border-radius:20px;
+  box-shadow:inset 0 0 0 0 rgba(0,0,0,.02);
+  overflow:hidden;
+}
+.col-pos{ background:var(--leader-green) }
+.col-neu{ background:var(--leader-grey) }
+.col-neg{ background:var(--leader-peach) }
 
-.leader-lines{ position:absolute; inset:0; pointer-events:none; }
+.leader-lines{ display:none; }
 .leader-lines::before{
   content:""; position:absolute; left:8px; right:8px; top:0; bottom:0; border-radius:16px;
   background:
@@ -333,6 +367,19 @@ h1,h2,h3{ margin:0 0 .6rem }
   overflow:hidden;
   text-overflow:ellipsis;
 }
+.topic-trend{
+  display:inline-flex;
+  align-items:center;
+  margin-left:6px;
+  vertical-align:baseline;
+}
+.topic-trend svg{
+  width:14px;
+  height:14px;
+}
+.topic-trend.pos{ color:var(--pos) }
+.topic-trend.neu{ color:var(--muted) }
+.topic-trend.neg{ color:var(--neg) }
 .board-empty{ position:absolute; inset:0; display:none; align-items:center; justify-content:center; color:var(--muted); font-size:.9rem; padding:0 1rem; text-align:center; background:linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
 .board-empty.show{ display:flex }
 .leader-foot{ display:grid; grid-template-columns:repeat(3,1fr); color:var(--muted); font-size:.85rem; text-align:center; margin-top:.25rem }

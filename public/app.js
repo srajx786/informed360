@@ -104,6 +104,142 @@ const escapeHtml = (value = "") =>
     "'": "&#39;"
   }[char]));
 
+const TOPIC_STOPWORDS = new Set([
+  "a","an","the","and","or","but","if","then","else","when","while","for","to","of",
+  "in","on","at","by","from","with","without","over","under","into","onto","off",
+  "up","down","out","about","as","is","are","was","were","be","been","being",
+  "this","that","these","those","it","its","their","his","her","our","your","my",
+  "not","no","yes","new","news","latest","live","update","updates","today","day"
+]);
+const TOPIC_BLACKLIST = new Set([
+  "search results",
+  "producer sends",
+  "colluded with",
+  "breaking news",
+  "latest news",
+  "live updates",
+  "news update",
+  "news updates"
+]);
+const normalizeTopicText = (t = "") =>
+  t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+const titleCase = (t = "") =>
+  t.split(" ").map(w => (w ? w[0].toUpperCase() + w.slice(1) : "")).join(" ").trim();
+
+function scoreTopicSegment(segment = ""){
+  const normalized = normalizeTopicText(segment);
+  if (!normalized) return { score: -100, title: "" };
+  if (TOPIC_BLACKLIST.has(normalized)) return { score: -100, title: "" };
+  const tokens = normalized.split(" ").filter(Boolean);
+  const meaningful = tokens.filter(t => !TOPIC_STOPWORDS.has(t));
+  if (!meaningful.length) return { score: -100, title: "" };
+  let score = meaningful.length * 2;
+  if (normalized.length < 4) score -= 4;
+  if (meaningful.length === 1) score -= 2;
+  const properNouns = segment.split(" ").filter(word => /^[A-Z][a-z]/.test(word)).length;
+  score += properNouns;
+  return { score, title: titleCase(meaningful.join(" ")) };
+}
+
+function scoreTopic(topic){
+  const segments = String(topic.title || "")
+    .split("|")
+    .map(s => s.trim())
+    .filter(Boolean);
+  const best = segments.reduce((acc, seg) => {
+    const scored = scoreTopicSegment(seg);
+    return scored.score > acc.score ? scored : acc;
+  }, { score: -100, title: "" });
+  if (!best.title) return null;
+  let score = best.score;
+  score += Math.min(topic.count || 0, 20);
+  score += Math.min(topic.sources || 0, 10) * 1.5;
+  return { ...topic, displayTitle: best.title, qualityScore: score };
+}
+
+function topicTokens(topic){
+  const normalized = normalizeTopicText(topic.displayTitle || topic.title || "");
+  return normalized.split(" ").filter(t => t && !TOPIC_STOPWORDS.has(t));
+}
+
+function getTopicArticles(topic, articles){
+  const tokens = topicTokens(topic);
+  if (!tokens.length) return [];
+  return (articles || []).filter(a => {
+    const title = normalizeTopicText(a.title || "");
+    return tokens.every(t => title.includes(t));
+  });
+}
+
+function computeTopicTrend(topic, articles){
+  const pos = Number(topic.sentiment?.pos ?? 0);
+  const neg = Number(topic.sentiment?.neg ?? 0);
+  const threshold = 5;
+  const tone =
+    pos > neg + threshold ? "pos" :
+    neg > pos + threshold ? "neg" : "neu";
+
+  const now = Date.now();
+  const windowMs = 4 * 60 * 60 * 1000;
+  const recent = [];
+  const prior = [];
+  (articles || []).forEach(a => {
+    const ts = new Date(a.publishedAt).getTime();
+    const age = now - ts;
+    if (Number.isNaN(ts) || age < 0 || age > windowMs) return;
+    if (age <= windowMs / 2) recent.push(a);
+    else prior.push(a);
+  });
+
+  const bucketScore = list => {
+    if (!list.length) return null;
+    const sums = list.reduce((acc, a) => ({
+      pos: acc.pos + (a.sentiment?.posP || 0),
+      neg: acc.neg + (a.sentiment?.negP || 0)
+    }), { pos: 0, neg: 0 });
+    const n = Math.max(1, list.length);
+    return {
+      net: (sums.pos - sums.neg) / n,
+      posShare: sums.pos / n,
+      negShare: sums.neg / n
+    };
+  };
+
+  const recentScore = bucketScore(recent);
+  const priorScore = bucketScore(prior);
+  let direction = "up";
+  if (recentScore && priorScore){
+    const improving =
+      recentScore.net > priorScore.net + 1 ||
+      recentScore.posShare > priorScore.posShare + 1;
+    const worsening =
+      recentScore.net < priorScore.net - 1 ||
+      recentScore.negShare > priorScore.negShare + 1;
+    if (improving && !worsening) direction = "up";
+    else if (worsening && !improving) direction = "down";
+    else direction = recentScore.net >= priorScore.net ? "up" : "down";
+  } else {
+    direction = tone === "neg" ? "down" : "up";
+  }
+  return { tone, direction };
+}
+
+function selectTrendingTopics(topics = [], articles = []){
+  return topics
+    .map(scoreTopic)
+    .filter(Boolean)
+    .filter(t => t.qualityScore >= 6)
+    .sort((a, b) => {
+      if (b.qualityScore !== a.qualityScore) return b.qualityScore - a.qualityScore;
+      return (b.count || 0) - (a.count || 0);
+    })
+    .slice(0, 7)
+    .map(topic => ({
+      ...topic,
+      trend: computeTopicTrend(topic, getTopicArticles(topic, articles))
+    }));
+}
+
 /* sentiment meter */
 function renderSentiment(s, slim = false){
   const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
@@ -462,7 +598,7 @@ async function loadAll(){
 
   state.allArticles = news.articles || [];
   state.articles = state.allArticles.slice();
-  state.topics   = (topics.topics || []).slice(0,8);
+  state.topics   = selectTrendingTopics(topics.topics || [], state.allArticles);
   if (needsIndiaFetch){
     state.indiaArticles = india?.articles || [];
   } else {
@@ -749,9 +885,21 @@ function renderTopics(){
       neuP: total ? (t.sentiment.neu/total)*100 : 0,
       negP: total ? (t.sentiment.neg/total)*100 : 0
     };
+    const trend = t.trend || computeTopicTrend(t, getTopicArticles(t, state.allArticles));
+    const trendLabel = trend.direction === "up" ? "Trending up" : "Trending down";
+    const trendPath = trend.direction === "up"
+      ? "M2 11 L7 6 L10 9 L14 5"
+      : "M2 5 L7 10 L10 7 L14 11";
     return `
       <div class="row">
-        <div class="row-title">${t.title.split("|")[0]}</div>
+        <div class="row-title">
+          <span class="topic-title-text">${escapeHtml(t.displayTitle || t.title.split("|")[0])}</span>
+          <span class="topic-trend ${trend.tone} ${trend.direction}" aria-label="${trendLabel}">
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <path d="${trendPath}" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+        </div>
         <div class="row-meta">
           <span>${t.count} articles</span>
           · <span>${t.sources} sources</span>
@@ -860,8 +1008,10 @@ function renderSentimentTimeline({ sparkEl, summaryEl, titleEl, title, articles 
   );
   const n = pts.length || 1;
   if (summary){
-    summary.textContent =
-      `Positive ${fmtPct(avg.pos/n)} · Neutral ${fmtPct(avg.neu/n)} · Negative ${fmtPct(avg.neg/n)}`;
+    summary.innerHTML =
+      `<span class="sentiment-label pos">Positive</span> ${fmtPct(avg.pos/n)} · ` +
+      `<span class="sentiment-label neu">Neutral</span> ${fmtPct(avg.neu/n)} · ` +
+      `<span class="sentiment-label neg">Negative</span> ${fmtPct(avg.neg/n)}`;
   }
 }
 
