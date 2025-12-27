@@ -109,15 +109,17 @@
         <div class="leader-title">News Source Sentiment</div>
         <div class="leader-sub">(Updated every hour)</div>
       </div>
-      <div id="leaderboard" class="leader-grid" aria-live="polite">
-        <div class="leader-col col-pos"></div>
-        <div class="leader-col col-neu"></div>
-        <div class="leader-col col-neg"></div>
-        <div class="leader-lines"></div>
-        <div class="leader-ylabels">
+      <div class="lb-wrap">
+        <div class="lb-axis">
           <span>75%</span><span>50%</span><span>25%</span>
         </div>
-        <div class="board-empty" aria-live="polite">Not enough recent articles to rank sources yet.</div>
+        <div id="leaderboard" class="leader-grid lb-board" aria-live="polite">
+          <div class="leader-col col-pos"></div>
+          <div class="leader-col col-neu"></div>
+          <div class="leader-col col-neg"></div>
+          <div class="leader-lines"></div>
+          <div class="board-empty" aria-live="polite">Not enough recent articles to rank sources yet.</div>
+        </div>
       </div>
       <div class="leader-foot">
         <span>Positive</span><span>Neutral</span><span>Negative</span>
@@ -151,15 +153,17 @@
         <div class="leader-title">Industry Sentiment Leaderboard</div>
         <div class="leader-sub">(Updated every hour)</div>
       </div>
-      <div id="industryBoard" class="leader-grid industry-grid" aria-live="polite">
-        <div class="leader-col col-pos"></div>
-        <div class="leader-col col-neu"></div>
-        <div class="leader-col col-neg"></div>
-        <div class="leader-lines"></div>
-        <div class="leader-ylabels">
+      <div class="lb-wrap">
+        <div class="lb-axis">
           <span>75%</span><span>50%</span><span>25%</span>
         </div>
-        <div class="board-empty" aria-live="polite">Waiting for enough industry-tagged news.</div>
+        <div id="industryBoard" class="leader-grid industry-grid lb-board" aria-live="polite">
+          <div class="leader-col col-pos"></div>
+          <div class="leader-col col-neu"></div>
+          <div class="leader-col col-neg"></div>
+          <div class="leader-lines"></div>
+          <div class="board-empty" aria-live="polite">Waiting for enough industry-tagged news.</div>
+        </div>
       </div>
       <div class="leader-foot">
         <span>Positive</span><span>Neutral</span><span>Negative</span>
