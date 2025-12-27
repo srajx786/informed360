@@ -281,12 +281,27 @@ h1,h2,h3{ margin:0 0 .6rem }
 .leader-head{ display:flex; justify-content:space-between; align-items:baseline }
 .leader-title{ font-family:"Merriweather", serif; font-size:1.2rem }
 .leader-sub{ color:var(--muted); font-size:.8rem }
+.lb-wrap{
+  display:flex;
+  align-items:stretch;
+  gap:8px;
+  margin-top:.4rem;
+}
+.lb-axis{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:flex-start;
+  color:#6b7280;
+  font-size:.82rem;
+  padding:8px 0;
+  min-width:36px;
+}
 .leader-grid{
   position:relative;
   height:240px;
   border-radius:16px;
   overflow:hidden;
-  margin-top:.4rem;
   border:1px solid var(--border);
   background:var(--card);
   display:grid;
@@ -294,6 +309,7 @@ h1,h2,h3{ margin:0 0 .6rem }
   gap:12px;
   padding:8px;
 }
+.lb-board{ flex:1; }
 .leader-col{
   position:relative;
   border-radius:20px;
@@ -313,7 +329,6 @@ h1,h2,h3{ margin:0 0 .6rem }
                                   #0000 74%, #cbd5e1 74%, #cbd5e1 75%, #0000 75%);
   opacity:.7;
 }
-.leader-ylabels{ position:absolute; left:12px; top:0; bottom:0; display:flex; flex-direction:column; justify-content:space-around; align-items:flex-start; color:#6b7280; font-size:.82rem; pointer-events:none }
 .leader-grid .badge{
   position:absolute;
   transform:translate(-50%,-50%);

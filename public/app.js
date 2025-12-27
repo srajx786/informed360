@@ -86,6 +86,24 @@ const PLACEHOLDER =
   );
 
 const ogImageCache = new Map();
+const IMAGE_EXT_RE = /\.(jpe?g|png|webp|gif)(\?|#|$)/i;
+const IMAGE_HOST_HINTS = [
+  "images",
+  "img",
+  "cdn",
+  "media",
+  "static",
+  "cloudfront.net",
+  "akamai",
+  "gstatic.com",
+  "googleusercontent.com",
+  "twimg.com",
+  "fbcdn.net",
+  "unsplash.com",
+  "wp-content",
+  "imgur.com"
+];
+const IMAGE_REJECT_FRAGMENTS = ["/sitemap/", "/archive/"];
 const isFallbackLogo = (url = "") => {
   const lower = String(url || "").toLowerCase();
   if (!lower) return true;
@@ -94,6 +112,25 @@ const isFallbackLogo = (url = "") => {
   if (lower.includes("/logo/")) return true;
   if (lower.includes("favicon")) return true;
   return lower.includes("logo.");
+};
+const isLikelyImageUrl = (url = "") => {
+  const cleaned = String(url || "").trim();
+  if (!cleaned) return false;
+  if (cleaned.length > 220) return false;
+  if (/\s/.test(cleaned)) return false;
+  const lower = cleaned.toLowerCase();
+  if (IMAGE_REJECT_FRAGMENTS.some(fragment => lower.includes(fragment))) return false;
+  let parsed;
+  try{
+    parsed = new URL(cleaned);
+  }catch{
+    return false;
+  }
+  if (IMAGE_EXT_RE.test(parsed.pathname)) return true;
+  const host = parsed.hostname.toLowerCase();
+  if (IMAGE_HOST_HINTS.some(hint => host.includes(hint) || lower.includes(`/${hint}/`)))
+    return true;
+  return lower.includes("og:image");
 };
 const escapeHtml = (value = "") =>
   String(value).replace(/[&<>"']/g, (char) => ({
@@ -109,7 +146,8 @@ const TOPIC_STOPWORDS = new Set([
   "in","on","at","by","from","with","without","over","under","into","onto","off",
   "up","down","out","about","as","is","are","was","were","be","been","being",
   "this","that","these","those","it","its","their","his","her","our","your","my",
-  "not","no","yes","new","news","latest","live","update","updates","today","day"
+  "not","no","yes","new","news","latest","live","update","updates","today","day",
+  "http","https","www","com","net","org","site","archive","sitemap","sends","legal"
 ]);
 const TOPIC_BLACKLIST = new Set([
   "search results",
@@ -121,21 +159,30 @@ const TOPIC_BLACKLIST = new Set([
   "news update",
   "news updates"
 ]);
+const TOPIC_URL_TOKENS = new Set([
+  "http","https","www","com","net","org","site","archive","sitemap","frontline"
+]);
 const normalizeTopicText = (t = "") =>
   t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
 const titleCase = (t = "") =>
   t.split(" ").map(w => (w ? w[0].toUpperCase() + w.slice(1) : "")).join(" ").trim();
+const looksLikeUrl = (t = "") =>
+  /https?:\/\//i.test(t) ||
+  /www\./i.test(t) ||
+  /\b[a-z0-9-]+\.(com|net|org|in|co|gov|edu|io|info)\b/i.test(t) ||
+  /\/(sitemap|archive)\//i.test(t);
 
 function scoreTopicSegment(segment = ""){
+  const urlish = looksLikeUrl(segment);
   const normalized = normalizeTopicText(segment);
   if (!normalized) return { score: -100, title: "" };
   if (TOPIC_BLACKLIST.has(normalized)) return { score: -100, title: "" };
   const tokens = normalized.split(" ").filter(Boolean);
-  const meaningful = tokens.filter(t => !TOPIC_STOPWORDS.has(t));
-  if (!meaningful.length) return { score: -100, title: "" };
+  const cleanedTokens = tokens.filter(t => !TOPIC_STOPWORDS.has(t));
+  const meaningful = cleanedTokens.filter(t => !(urlish && TOPIC_URL_TOKENS.has(t)));
+  if (meaningful.length < 2) return { score: -100, title: "" };
   let score = meaningful.length * 2;
   if (normalized.length < 4) score -= 4;
-  if (meaningful.length === 1) score -= 2;
   const properNouns = segment.split(" ").filter(word => /^[A-Z][a-z]/.test(word)).length;
   score += properNouns;
   return { score, title: titleCase(meaningful.join(" ")) };
@@ -644,7 +691,8 @@ async function fetchOgImage(link = ""){
 function heroImgTag(article, index){
   const fallbackLogo = logoFor(article.link, article.source);
   const fallback = fallbackLogo || PLACEHOLDER;
-  const primary = (article.image || "").trim() || fallback;
+  const candidate = (article.image || "").trim();
+  const primary = isLikelyImageUrl(candidate) ? candidate : fallback;
   const useLogoThumb =
     Boolean(fallbackLogo) &&
     (primary === fallback || primary === PLACEHOLDER || isFallbackLogo(primary));
@@ -661,7 +709,8 @@ function heroImgTag(article, index){
 
 function safeImgTag(src, link, source, cls){
   const fallbackLogo = logoFor(link, source);
-  const primary = (src || "").trim();
+  const candidate = (src || "").trim();
+  const primary = isLikelyImageUrl(candidate) ? candidate : "";
   const fallback = fallbackLogo || "";
   const fallbackText = escapeHtml(source || domainFromUrl(link) || "Source");
   if (!primary && !fallback){
@@ -846,7 +895,7 @@ async function hydrateHeroImages(){
       const link = decodeURIComponent(img.dataset.heroLink || "");
       if (!link) return;
       const ogImage = await fetchOgImage(link);
-      if (!ogImage) return;
+      if (!isLikelyImageUrl(ogImage)) return;
       img.src = ogImage;
       img.classList.remove("logo-thumb");
     })
@@ -1166,6 +1215,8 @@ const INDUSTRY_GROUPS = [
   "Utilities",
   "Communication",
   "Healthcare",
+  "Finance",
+  "Technology",
   "Manufacturing",
   "Real Estate",
   "Information Tech",
@@ -1202,13 +1253,30 @@ const INDUSTRY_LABEL_MAP = {
 const industryLabelFor = (name = "") =>
   INDUSTRY_LABEL_MAP[name] || "Other";
 
+const INDUSTRY_KEYWORDS = {
+  Energy: ["energy","oil","gas","petrol","diesel","fuel","renewable","solar","wind","power"],
+  Utilities: ["utilities","grid","electricity","power supply","water","pipeline"],
+  Communication: ["telecom","communication","wireless","mobile","broadband","5g","network"],
+  Healthcare: ["health","hospital","pharma","pharmaceutical","medical","vaccine","drug"],
+  Finance: ["bank","banking","finance","financial","nbfc","loan","lending","stock","market"],
+  Technology: ["technology","tech","ai","artificial intelligence","software","it","chip","semiconductor"],
+  Manufacturing: ["manufacturing","factory","industrial","production","auto","automobile","vehicle"],
+  "Real Estate": ["real estate","property","housing","realty","construction","builder"],
+  "Information Tech": ["information tech","information technology","it services","software services"],
+  Materials: ["materials","steel","metal","cement","mining","coal","aluminium"]
+};
+
 function scoreIndustries(){
   const rows = INDUSTRY_GROUPS.map(name => ({ name, pos:0, neg:0, neu:0, n:0 }));
   const byName = new Map(rows.map(r => [r.name, r]));
 
   state.articles.forEach(a => {
     const text = `${a.title} ${a.description}`.toLowerCase();
-    const matches = rows.filter(r => text.includes(r.name.toLowerCase()));
+    const category = String(a.category || "").toLowerCase();
+    const matches = rows.filter(r => {
+      const keywords = INDUSTRY_KEYWORDS[r.name] || [];
+      return keywords.some(k => text.includes(k)) || (category && keywords.some(k => category.includes(k)));
+    });
     if (!matches.length) return;
     matches.forEach(r => {
       r.n++;
@@ -1226,7 +1294,11 @@ function scoreIndustries(){
       return { name:r.name, pos, neg, neu, bias, n:r.n };
     })
     .filter(r => r.n > 0)
-    .sort((a,b) => Math.abs(b.bias) - Math.abs(a.bias));
+    .sort((a,b) => {
+      if (Math.abs(b.bias) !== Math.abs(a.bias))
+        return Math.abs(b.bias) - Math.abs(a.bias);
+      return (b.n || 0) - (a.n || 0);
+    });
 }
 
 function renderIndustryBoard(){
@@ -1244,11 +1316,24 @@ function renderIndustryBoard(){
     return;
   }
 
-  const pos = scored.filter(x => x.bias > 3).slice(0,3);
-  const neg = scored.filter(x => x.bias < -3).slice(0,3);
+  const threshold = 2;
+  const pos = scored.filter(x => x.bias > threshold).slice(0,3);
+  const neg = scored.filter(x => x.bias < -threshold).slice(0,3);
   const neu = scored
     .filter(x => !pos.includes(x) && !neg.includes(x))
     .slice(0,3);
+
+  const fillRemaining = (list, pool) => {
+    pool.forEach(item => {
+      if (list.length >= 3) return;
+      if (list.includes(item)) return;
+      list.push(item);
+    });
+  };
+  const remaining = scored.filter(x => !pos.includes(x) && !neg.includes(x) && !neu.includes(x));
+  fillRemaining(pos, remaining);
+  fillRemaining(neu, remaining);
+  fillRemaining(neg, remaining);
 
   const TIERS = [0.3, 0.55, 0.8];
   const placeIcons = (col, list) => {
