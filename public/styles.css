@@ -1048,3 +1048,102 @@ dialog::backdrop{
   .gn-logo { font-size: 1.45rem; }
   .icon-btn { padding: .3rem .45rem; border-radius: 10px; }
 }
+
+/* =========================================
+   MOBILE: STOP WEATHER/ACTIONS OVERLAPPING TITLE
+   ========================================= */
+
+@media (max-width: 720px){
+
+  /* Make sure nothing "floats" over the title */
+  .gn-header, .gn-topbar, .gn-briefing {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* If any header elements were absolutely positioned, neutralize on mobile */
+  .gn-actions, .weather-card {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  /* Topbar becomes explicit grid */
+  .gn-topbar{
+    display: grid !important;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "logo actions"
+      "search search"
+      "weather weather"
+      "tabs tabs";
+    gap: .55rem .6rem;
+    padding: .65rem 12px .6rem;
+    align-items: center;
+  }
+
+  .gn-logo{
+    grid-area: logo;
+    min-width: 0;
+  }
+
+  .gn-actions{
+    grid-area: actions;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .45rem;
+  }
+
+  .gn-search{
+    grid-area: search;
+    width: 100%;
+  }
+
+  /* Weather should live in the header flow, under search */
+  .weather-card{
+    grid-area: weather;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  /* Tabs move into header flow too */
+  .gn-tabs{
+    grid-area: tabs;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    gap: .9rem;
+    padding: .15rem 0 .2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .gn-tabs::-webkit-scrollbar{ display:none; }
+
+  .gn-tabs .tab{
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 13px;
+    padding: .35rem 0;
+  }
+
+  .tab-divider{ display:none; }
+
+  /* Ensure logo/date don't collide with anything */
+  .gn-logo .date,
+  .gn-date{
+    display: block;
+    margin-top: .15rem;
+    font-size: 12.5px;
+    opacity: .75;
+  }
+}
+
+/* Very small phones: slightly reduce logo size */
+@media (max-width: 420px){
+  .gn-logo{ font-size: 1.32rem; }
+}
