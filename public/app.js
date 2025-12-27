@@ -1049,6 +1049,27 @@ function formatHeroTrendTooltip(bucket){
   return `${time} — Positive ${fmtPct(bucket.pos)} · Neutral ${fmtPct(bucket.neu)} · Negative ${fmtPct(bucket.neg)}`;
 }
 
+function formatTrendPercent(value){
+  const rounded = Math.round(Number(value) || 0);
+  const clamped = Math.max(-100, Math.min(100, rounded));
+  return `${clamped}%`;
+}
+
+function selectTrendBuckets(buckets = [], minPoints = 4, maxPoints = 6){
+  if (!buckets.length) return [];
+  if (buckets.length <= maxPoints) return buckets;
+  const target = Math.min(maxPoints, Math.max(minPoints, buckets.length));
+  const picks = new Map();
+  if (target === 1) return [buckets[0]];
+  for (let i = 0; i < target; i += 1){
+    const idx = Math.round((buckets.length - 1) * (i / (target - 1)));
+    picks.set(idx, buckets[idx]);
+  }
+  return [...picks.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([, bucket]) => bucket);
+}
+
 function dominantTone(bucket){
   const pos = Number(bucket.pos || 0);
   const neg = Number(bucket.neg || 0);
@@ -1058,45 +1079,91 @@ function dominantTone(bucket){
   return "neu";
 }
 
+function trendSegmentTone(current, next){
+  if (next > current && next > 0) return "green";
+  if (next < current && next < 0) return "red";
+  if (current > 0 && next > 0) return "green";
+  if (current < 0 && next < 0) return "red";
+  return "gray";
+}
+
+function renderRightStoryMeta(article){
+  const sourceName = escapeHtml(article?.source || domainFromUrl(article?.link || "") || "Source");
+  const datetime = escapeHtml(formatArticleDate(article?.publishedAt) || "");
+  return `
+    <div class="topstories-meta">
+      <div class="source">${sourceName}</div>
+      <div class="datetime">${datetime}</div>
+    </div>`;
+}
+
 function renderHeroTrendChart(cluster, index){
   const articles = [cluster.featured, ...(cluster.related || [])].filter(Boolean);
-  const { scores, buckets } = buildHeroTrendBuckets(articles, 30);
-  const W = 420;
-  const H = 120;
-  const pad = 12;
-  const maxAbs = 20;
-  const steps = Math.max(1, scores.length - 1);
-  const xStep = (W - pad * 2) / steps;
-  const mid = H / 2;
-  const amplitude = (H / 2) - pad;
+  const { buckets } = buildHeroTrendBuckets(articles, 30);
+  const selectedBuckets = selectTrendBuckets(buckets, 4, 6);
+  const W = 520;
+  const H = 140;
+  const padX = 30;
+  const padTop = 18;
+  const padBottom = 28;
+  const chartTop = padTop;
+  const chartBottom = H - padBottom;
+  const chartHeight = chartBottom - chartTop;
+  const mid = chartTop + (chartHeight / 2);
+  const amplitude = chartHeight / 2;
+  const values = selectedBuckets.map(bucket => (Number(bucket.pos || 0) - Number(bucket.neg || 0)));
+  const maxAbs = Math.max(12, ...values.map(value => Math.abs(value)));
+  const steps = Math.max(1, selectedBuckets.length - 1);
+  const xStep = (W - padX * 2) / steps;
   const clamp = value => Math.max(-maxAbs, Math.min(maxAbs, value));
-  const points = scores.map((score, i) => ({
-    x: pad + (xStep * i),
-    y: mid - (clamp(score) / maxAbs) * amplitude
-  }));
-
-  const segments = points.slice(0, -1).map((point, i) => {
-    const next = points[i + 1];
-    const tone = dominantTone(buckets[Math.min(i + 1, buckets.length - 1)] || {});
-    return `<path class="ts-trend-line ${tone}" d="M ${point.x} ${point.y} L ${next.x} ${next.y}" />`;
+  const points = selectedBuckets.map((bucket, i) => {
+    const value = values[i] ?? 0;
+    return {
+      t: formatTrendTime(bucket.start) || "--:--",
+      v: value,
+      bucket,
+      x: padX + (xStep * i),
+      y: mid - (clamp(value) / maxAbs) * amplitude
+    };
   });
 
-  const bucketWidth = (W - pad * 2) / Math.max(1, buckets.length);
-  const hitAreas = buckets.map((bucket, i) => {
-    const tip = escapeHtml(formatHeroTrendTooltip(bucket));
-    return `<rect class="ts-trend-hit" x="${pad + (bucketWidth * i)}" y="0" width="${bucketWidth}" height="${H}" data-tip="${tip}"></rect>`;
+  const gridLines = points.map(point =>
+    `<line class="grid" x1="${point.x}" y1="${chartTop}" x2="${point.x}" y2="${chartBottom}" />`
+  );
+  const segments = points.slice(0, -1).map((point, i) => {
+    const next = points[i + 1];
+    const tone = trendSegmentTone(point.v, next.v);
+    return `<path class="line-${tone}" d="M ${point.x} ${point.y} L ${next.x} ${next.y}" />`;
+  });
+  const percentLabels = points.map(point => {
+    const label = escapeHtml(formatTrendPercent(point.v));
+    const offset = point.v >= 0 ? -8 : 14;
+    const y = Math.max(chartTop + 10, Math.min(chartBottom - 8, point.y + offset));
+    return `<text x="${point.x}" y="${y}" text-anchor="middle">${label}</text>`;
+  });
+  const timeLabels = points.map(point =>
+    `<text x="${point.x}" y="${H - 8}" text-anchor="middle">${escapeHtml(point.t)}</text>`
+  );
+  const hitWidth = steps ? xStep : (W - padX * 2);
+  const hitAreas = points.map((point, i) => {
+    const x = Math.max(0, point.x - hitWidth / 2);
+    const tip = escapeHtml(formatHeroTrendTooltip(point.bucket));
+    return `<rect class="trend-hit" x="${x}" y="0" width="${hitWidth}" height="${H}" data-tip="${tip}"></rect>`;
   });
 
   return `
-    <div class="ts-trend" data-slide="${index}">
-      <div class="ts-trend-label">Trend (Last 4h)</div>
-      <div class="ts-trend-chart">
-        <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Trend curve for last 4 hours">
-          <path class="ts-trend-axis" d="M ${pad} ${mid} L ${W - pad} ${mid}" />
+    <div class="topstories-trend" data-slide="${index}">
+      <div class="trend-title">Trend (Last 4h)</div>
+      <div class="trend-chart-wrap">
+        <svg class="trend-chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none"
+          role="img" aria-label="Trend curve for last 4 hours">
+          ${gridLines.join("")}
           ${segments.join("")}
+          ${percentLabels.join("")}
+          ${timeLabels.join("")}
           ${hitAreas.join("")}
         </svg>
-        <div class="ts-trend-tooltip" role="tooltip" aria-hidden="true"></div>
+        <div class="trend-tooltip" role="tooltip" aria-hidden="true"></div>
       </div>
     </div>`;
 }
@@ -1499,11 +1566,11 @@ function renderHero(){
               </a>
               <div class="hero-sentiment">${renderSentiment(cluster.featured.sentiment, true, getArticleContext(cluster.featured), "mini")}</div>
             </div>
-            <div class="hero-related">
+          <div class="hero-related">
               ${cluster.related.map(item => `
-                <div class="hero-related-item">
+                <div class="hero-related-item topstories-right-item">
                   <a href="${item.link}" target="_blank" rel="noopener" data-article-link="${item.link}">
-                    ${renderHeroMeta(item)}
+                    ${renderRightStoryMeta(item)}
                     <div class="hero-related-headline">${escapeHtml(item.title || "")}</div>
                   </a>
                   <button class="pin-toggle ts-pin" type="button" data-link="${item.link}" aria-pressed="false">Pin</button>
@@ -1511,6 +1578,11 @@ function renderHero(){
                 </div>`).join("")}
             </div>
           </div>
+        </div>
+        <div class="topstories-controls">
+          <button class="nav-btn prev" type="button" aria-label="Previous">‹</button>
+          <div class="controls-spacer"></div>
+          <button class="nav-btn next" type="button" aria-label="Next">›</button>
         </div>
         ${renderHeroTrendChart(cluster, index)}
       </div>
@@ -1523,17 +1595,18 @@ function renderHero(){
   updateHero(0);
   hydrateHeroImages();
   attachHeroTrendTooltips();
+  bindHeroControls();
 }
 function attachHeroTrendTooltips(){
-  const trends = $$(".ts-trend");
+  const trends = $$(".topstories-trend");
   if (!trends.length) return;
-  const showTooltip = (trend, tooltip, event, hit) => {
-    if (!tooltip || !hit) return;
+  const showTooltip = (boundsEl, tooltip, event, hit) => {
+    if (!tooltip || !hit || !boundsEl) return;
     const tipText = hit.dataset.tip || "";
     tooltip.textContent = tipText;
     tooltip.setAttribute("aria-hidden", "false");
     tooltip.classList.add("show");
-    const bounds = trend.getBoundingClientRect();
+    const bounds = boundsEl.getBoundingClientRect();
     const clientX = event?.clientX ?? (event?.touches?.[0]?.clientX);
     const clientY = event?.clientY ?? (event?.touches?.[0]?.clientY);
     const x = clientX ? clientX - bounds.left : bounds.width / 2;
@@ -1552,13 +1625,14 @@ function attachHeroTrendTooltips(){
   };
 
   trends.forEach(trend => {
-    const tooltip = trend.querySelector(".ts-trend-tooltip");
-    const hits = trend.querySelectorAll(".ts-trend-hit");
-    if (!tooltip || !hits.length) return;
+    const chartWrap = trend.querySelector(".trend-chart-wrap");
+    const tooltip = trend.querySelector(".trend-tooltip");
+    const hits = trend.querySelectorAll(".trend-hit");
+    if (!tooltip || !hits.length || !chartWrap) return;
     hits.forEach(hit => {
       if (hit.dataset.bound) return;
       hit.dataset.bound = "1";
-      const handle = event => showTooltip(trend, tooltip, event, hit);
+      const handle = event => showTooltip(chartWrap, tooltip, event, hit);
       hit.addEventListener("mouseenter", handle);
       hit.addEventListener("mousemove", handle);
       hit.addEventListener("click", handle);
@@ -1568,6 +1642,19 @@ function attachHeroTrendTooltips(){
       tooltip.classList.remove("show");
       tooltip.setAttribute("aria-hidden", "true");
     });
+  });
+}
+
+function bindHeroControls(){
+  $$(".topstories-controls .nav-btn.prev").forEach(btn => {
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", () => updateHero(state.hero.index - 1));
+  });
+  $$(".topstories-controls .nav-btn.next").forEach(btn => {
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", () => updateHero(state.hero.index + 1));
   });
 }
 async function hydrateHeroImages(){

@@ -418,6 +418,105 @@ body.theme-dark .gn-search{ background:#1a222c }
   cursor:pointer;
   box-shadow:var(--shadow);
 }
+
+/* Top Stories - right column meta row: prevent overlap */
+.topstories-right-item{ padding:10px 0; }
+.topstories-right-item + .topstories-right-item{ border-top:1px solid rgba(0,0,0,0.06); }
+
+.topstories-meta{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  align-items:baseline;
+  min-width:0;
+}
+
+.topstories-meta .source{
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.topstories-meta .datetime{
+  justify-self:end;
+  white-space:nowrap;
+  font-size:12px;
+  opacity:.8;
+}
+
+/* On small widths allow date to drop below instead of colliding */
+@media (max-width:520px){
+  .topstories-meta{
+    grid-template-columns:1fr;
+    gap:2px;
+  }
+  .topstories-meta .datetime{
+    justify-self:start;
+    white-space:nowrap;
+  }
+}
+
+/* Top Stories carousel controls row */
+.topstories-controls{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:8px 0 6px;
+  padding:0 .95rem;
+}
+
+.topstories-controls .nav-btn{
+  width:34px;
+  height:34px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,0.12);
+  background:#fff;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.topstories-controls .nav-btn:active{ transform:scale(0.98); }
+.topstories-controls .controls-spacer{ flex:1; }
+.hero-nav.ts-nav{ display:none; }
+
+.topstories-trend .trend-title{
+  margin-top:6px;
+  font-size:12px;
+  opacity:.85;
+  padding:0 .95rem;
+}
+
+.trend-chart-wrap{ position:relative; padding:0 .95rem .45rem; min-height:100px; }
+.trend-chart{ width:100%; height:140px; display:block; }
+.trend-chart text{ font-size:11px; fill:rgba(0,0,0,0.65); }
+.trend-chart .grid{
+  stroke:rgba(0,0,0,0.18);
+  stroke-dasharray:4 4;
+}
+
+.trend-chart .line-gray{ stroke:rgba(120,130,150,0.8); stroke-width:3; fill:none; }
+.trend-chart .line-green{ stroke:rgba(0,160,80,0.95); stroke-width:3; fill:none; }
+.trend-chart .line-red{ stroke:rgba(220,60,60,0.95); stroke-width:3; fill:none; }
+.trend-hit{ fill:transparent; cursor:pointer; }
+
+.trend-tooltip{
+  position:absolute;
+  left:12px;
+  top:8px;
+  background:rgba(15, 23, 42, 0.92);
+  color:#fff;
+  font-size:11px;
+  padding:6px 8px;
+  border-radius:8px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .15s ease;
+  max-width:220px;
+}
+.trend-tooltip.show{ opacity:1; }
 .ts-pin{ padding:.15rem .5rem; font-size:.7rem }
 .pin-toggle.active{
   color:var(--brand);
