@@ -89,14 +89,14 @@
     <div class="mood-block">
       <div class="mood-card card" id="mood4h" aria-live="polite">
         <div class="mood-head">
-          <div class="mood-title" id="moodIndiaTitle">India’s Sentiment (Last 4h)</div>
+          <div class="mood-title" id="moodIndiaTitle">India's Sentiment</div>
         </div>
         <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
         <div id="moodSummary" class="mood-summary"></div>
       </div>
       <div class="mood-card card" id="moodWorld" aria-live="polite">
         <div class="mood-head">
-          <div class="mood-title" id="moodWorldTitle">World’s Sentiment (Last 4h)</div>
+          <div class="mood-title" id="moodWorldTitle">World's Sentiment</div>
         </div>
         <svg id="moodWorldSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
         <div id="moodWorldSummary" class="mood-summary"></div>
@@ -107,7 +107,7 @@
     <div class="leader-card card source-block" id="leaderWrap">
       <div class="leader-head">
         <div class="leader-title">News Source Sentiment</div>
-        <div class="leader-sub">(Updated every hour)</div>
+        <div class="leader-sub">Updated every hour</div>
       </div>
       <div class="lb-wrap">
         <div class="lb-axis source-axis">
@@ -121,8 +121,11 @@
           <div class="board-empty" aria-live="polite">Not enough recent articles to rank sources yet.</div>
         </div>
       </div>
-      <div class="leader-foot">
-        <span>Positive</span><span>Neutral</span><span>Negative</span>
+      <div class="lb-foot-wrap">
+        <div class="lb-axis-spacer" aria-hidden="true"></div>
+        <div class="leader-foot">
+          <span>Positive</span><span>Neutral</span><span>Negative</span>
+        </div>
       </div>
     </div>
 
@@ -150,12 +153,12 @@
     <!-- Industry sentiment board -->
     <div class="leader-card card industry-block" id="industryWrap">
       <div class="leader-head">
-        <div class="leader-title">Industry Sentiment Leaderboard</div>
-        <div class="leader-sub">(Updated every hour)</div>
+        <div class="leader-title">Industry Sentiment</div>
+        <div class="leader-sub">Updated every hour</div>
       </div>
       <div class="lb-wrap">
         <div class="lb-axis">
-          <span>75%</span><span>50%</span><span>25%</span>
+          <span>100%</span><span>75%</span><span>50%</span><span>25%</span>
         </div>
         <div id="industryBoard" class="leader-grid industry-grid lb-board" aria-live="polite">
           <div class="leader-col col-pos"></div>
@@ -165,8 +168,11 @@
           <div class="board-empty" aria-live="polite">Waiting for enough industry-tagged news.</div>
         </div>
       </div>
-      <div class="leader-foot">
-        <span>Positive</span><span>Neutral</span><span>Negative</span>
+      <div class="lb-foot-wrap">
+        <div class="lb-axis-spacer" aria-hidden="true"></div>
+        <div class="leader-foot">
+          <span>Positive</span><span>Neutral</span><span>Negative</span>
+        </div>
       </div>
     </div>
 
