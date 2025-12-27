@@ -418,7 +418,7 @@ function renderNews(){
 }
 function renderDaily(){
   $("#daily").innerHTML =
-    state.articles.slice(12, 20).map(card).join("");
+    state.articles.slice(12, 18).map(card).join("");
 }
 
 /* HERO */
@@ -717,6 +717,20 @@ const INDUSTRY_ICON_MAP = {
 const GENERIC_INDUSTRY_ICON = "/logo/industry-generic.svg";
 const industryIconFor = (name = "") =>
   INDUSTRY_ICON_MAP[name] || GENERIC_INDUSTRY_ICON;
+const INDUSTRY_LABEL_MAP = {
+  Healthcare: "Health",
+  Finance: "Finance",
+  Technology: "Tech",
+  "Information Tech": "Tech",
+  Energy: "Energy",
+  Utilities: "Infra",
+  Communication: "Comms",
+  Manufacturing: "Mfg",
+  "Real Estate": "Real Estate",
+  Materials: "Materials"
+};
+const industryLabelFor = (name = "") =>
+  INDUSTRY_LABEL_MAP[name] || "Other";
 
 function scoreIndustries(){
   const rows = INDUSTRY_GROUPS.map(name => ({ name, pos:0, neg:0, neu:0, n:0 }));
@@ -776,13 +790,18 @@ function renderIndustryBoard(){
       badge.style.left = "50%";
       badge.style.top  = `${topPct}%`;
       const img = document.createElement("img");
-      img.src = industryIconFor(item.name);
-      img.alt = item.name;
+      const label = industryLabelFor(item.name);
+      img.src = label === "Other" ? GENERIC_INDUSTRY_ICON : industryIconFor(item.name);
+      img.alt = label;
       img.loading = "lazy";
       img.addEventListener("error", () => {
         img.src = GENERIC_INDUSTRY_ICON;
       });
+      const caption = document.createElement("span");
+      caption.className = "icon-label";
+      caption.textContent = label;
       badge.appendChild(img);
+      badge.appendChild(caption);
       col.appendChild(badge);
       idx++;
     });
