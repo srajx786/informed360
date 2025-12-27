@@ -1151,21 +1151,42 @@ function buildEngagedCluster(articles = [], prevLinks = new Set()){
 }
 
 function buildHeroSlides(articles = []){
-  const modes = ["Recent News", "Most Engaged", "Recent News", "Most Engaged"];
+  const sorted = sortByPublishedDesc(articles);
+  const usedLinks = new Set();
   const slides = [];
-  let prevLinks = new Set();
 
-  modes.forEach(mode => {
-    const cluster = mode === "Recent News"
-      ? buildRecentCluster(articles, prevLinks)
-      : buildEngagedCluster(articles, prevLinks);
-    if (!cluster.featured) return;
-    slides.push(cluster);
-    prevLinks = new Set([
-      cluster.featured?.link,
-      ...cluster.related.map(item => item.link)
-    ].filter(Boolean));
-  });
+  const nextUnused = (predicate) => {
+    for (const article of sorted){
+      if (!article || usedLinks.has(article.link)) continue;
+      if (predicate && !predicate(article)) continue;
+      return article;
+    }
+    return null;
+  };
+
+  const pickRightItem = (usedSources) => {
+    let candidate = nextUnused(article => !usedSources.has(article.source));
+    if (!candidate) candidate = nextUnused();
+    return candidate;
+  };
+
+  while (slides.length < 4){
+    const featured = nextUnused();
+    if (!featured) break;
+    usedLinks.add(featured.link);
+    const usedSources = new Set([featured.source].filter(Boolean));
+    const related = [];
+
+    for (let i = 0; i < 2; i += 1){
+      const item = pickRightItem(usedSources);
+      if (!item) break;
+      related.push(item);
+      usedLinks.add(item.link);
+      if (item.source) usedSources.add(item.source);
+    }
+
+    slides.push({ mode: "Recent News", featured, related });
+  }
 
   return slides;
 }
@@ -1328,12 +1349,10 @@ function renderHero(){
   if (!slides.length){
     track.innerHTML = "";
     dots.innerHTML  = "";
-    const modeLabel = $("#heroModeLabel");
-    if (modeLabel) modeLabel.textContent = "";
     return;
   }
   track.innerHTML = slides.map(cluster => `
-    <article class="hero-slide" data-mode="${cluster.mode}">
+    <article class="hero-slide">
       <div class="hero-cluster">
         <div class="hero-featured">
           <a class="hero-featured-link" href="${cluster.featured.link}" target="_blank" rel="noopener" data-article-link="${cluster.featured.link}">
@@ -1394,11 +1413,6 @@ function updateHero(i){
   $$("#heroDots button").forEach((b,bi) =>
     b.classList.toggle("active", bi === state.hero.index)
   );
-  const activeSlide = $$("#heroTrack .hero-slide")[state.hero.index];
-  const modeLabel = $("#heroModeLabel");
-  if (activeSlide && modeLabel){
-    modeLabel.textContent = activeSlide.dataset.mode || "";
-  }
 }
 function startHeroAuto(){
   stopHeroAuto();
