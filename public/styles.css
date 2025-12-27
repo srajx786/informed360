@@ -134,7 +134,7 @@ h1,h2,h3{ margin:0 0 .6rem }
 }
 .pinned-block{ grid-area:pinned }
 .hero-block{ grid-area:hero }
-.mood-block{ grid-area:mood; display:flex; flex-direction:column; gap:.9rem }
+.mood-block{ grid-area:mood; display:flex; flex-direction:column; gap:.9rem; height:100%; align-self:stretch }
 .source-block{ grid-area:source }
 .news-block{ grid-area:news }
 .trending-block{ grid-area:trending }
@@ -175,9 +175,9 @@ h1,h2,h3{ margin:0 0 .6rem }
 .card{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius-xl); padding:.85rem; box-shadow:var(--shadow) }
 
 /* HERO */
-.hero-carousel{ position:relative; overflow:hidden; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-xl); box-shadow:var(--shadow) }
+.hero-carousel{ position:relative; overflow:hidden; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-xl); box-shadow:var(--shadow); align-self:start }
 .hero-track{ display:flex; transition:transform .4s ease }
-.hero-slide{ min-width:100%; display:flex; flex-direction:column; gap:.4rem; padding:.5rem .7rem .55rem; overflow:hidden }
+.hero-slide{ min-width:100%; display:flex; flex-direction:column; gap:.4rem; padding:.5rem .7rem .35rem; overflow:hidden }
 .hero-slide > *{ min-width:0 }
 .hero-media{ position:relative; border-radius:12px; overflow:hidden; background:#edf2f7 }
 .hero-slide .hero-img{ height:200px }
@@ -201,7 +201,7 @@ h1,h2,h3{ margin:0 0 .6rem }
 .hero-slide .meta{ color:var(--muted); font-size:.9rem; display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; max-width:100%; word-break:break-word }
 .hero-nav{ position:absolute; top:calc(.6rem + 100px); transform:translateY(-50%); background:#fff; color:#111; border:1px solid var(--border); width:28px; height:28px; border-radius:50%; box-shadow:var(--shadow); display:grid; place-items:center; cursor:pointer }
 .hero-nav.prev{ left:8px } .hero-nav.next{ right:8px }
-.hero-dots{ display:flex; gap:.35rem; justify-content:center; padding:.45rem }
+.hero-dots{ display:flex; gap:.35rem; justify-content:center; padding:.3rem .45rem .35rem }
 .hero-dots button{ width:6px; height:6px; border-radius:50%; border:0; background:#cbd5e1; cursor:pointer }
 .hero-dots button.active{ background:var(--brand) }
 
@@ -266,10 +266,10 @@ h1,h2,h3{ margin:0 0 .6rem }
 .segment{ height:100%; float:left } .segment.pos{ background:var(--pos) } .segment.neu{ background:var(--neu) } .segment.neg{ background:var(--neg) }
 
 /* 4-hour mood — exact look */
-.mood-card{ margin-bottom:.8rem }
+.mood-card{ margin-bottom:0; display:flex; flex-direction:column; flex:1 }
 .mood-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; margin-bottom:.25rem }
 .mood-title{ font-family:"Merriweather", serif; font-weight:700; font-size:1rem }
-.mood-spark{ width:100%; height:120px; display:block }
+.mood-spark{ width:100%; height:auto; min-height:140px; display:block; flex:1 }
 .mood-summary{ margin-top:.25rem; font-size:.86rem; color:var(--muted) }
 .mood-summary .sentiment-label{ font-weight:600 }
 .mood-summary .sentiment-label.pos{ color:var(--pos) }
@@ -394,9 +394,33 @@ h1,h2,h3{ margin:0 0 .6rem }
   vertical-align:baseline;
 }
 .topic-trend svg{
-  width:32px;
-  height:12px;
+  width:72px;
+  height:24px;
 }
+.trend-tooltip{
+  position:fixed;
+  z-index:60;
+  background:var(--fg);
+  color:var(--card);
+  padding:.45rem .6rem;
+  border-radius:10px;
+  font-size:.72rem;
+  box-shadow:var(--shadow);
+  pointer-events:none;
+  max-width:220px;
+}
+.trend-tooltip .trend-tooltip-time{
+  font-weight:700;
+  margin-bottom:.25rem;
+}
+.trend-tooltip .trend-tooltip-values{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35rem;
+}
+.trend-tooltip .pos{ color:var(--pos) }
+.trend-tooltip .neu{ color:var(--neu) }
+.trend-tooltip .neg{ color:var(--neg) }
 .topic-trend .trend-sparkline{
   display:block;
 }

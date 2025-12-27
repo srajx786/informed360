@@ -141,6 +141,28 @@ const escapeHtml = (value = "") =>
     "'": "&#39;"
   }[char]));
 
+const ARTICLE_DATE_FORMATTER = new Intl.DateTimeFormat("en-IN", {
+  month: "short",
+  day: "2-digit",
+  year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+  timeZone: "Asia/Kolkata"
+});
+
+function formatArticleDate(value){
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  const parts = ARTICLE_DATE_FORMATTER.formatToParts(date)
+    .reduce((acc, part) => {
+      acc[part.type] = part.value;
+      return acc;
+    }, {});
+  if (!parts.month || !parts.day || !parts.year) return "";
+  return `${parts.month} ${parts.day}, ${parts.year}, ${parts.hour}:${parts.minute} IST`;
+}
+
 const TOPIC_STOPWORDS = new Set([
   "a","an","the","and","or","but","if","then","else","when","while","for","to","of",
   "in","on","at","by","from","with","without","over","under","into","onto","off",
@@ -165,6 +187,10 @@ const TOPIC_BLACKLIST = new Set([
   "click here",
   "full story"
 ]);
+const ALLOWED_ACRONYMS = new Set([
+  "AI","BJP","RSS","IPL","ISRO","GDP","NASA","PM","UPI","RBI","SEBI","NSE","BSE",
+  "US","UK","UAE","UN","EU","IMF","WHO"
+]);
 const TOPIC_URL_TOKENS = new Set([
   "http","https","www","com","net","org","site","archive","sitemap","frontline"
 ]);
@@ -184,6 +210,8 @@ const normalizeTopicText = (t = "") =>
 const formatTopicTokens = (tokens = []) =>
   tokens.map(word => {
     if (!word) return "";
+    const upper = word.toUpperCase();
+    if (ALLOWED_ACRONYMS.has(upper)) return upper;
     if (word.toUpperCase() === word) return word;
     if (/[a-z][A-Z]/.test(word)) return word;
     return word[0].toUpperCase() + word.slice(1).toLowerCase();
@@ -194,6 +222,24 @@ const looksLikeUrl = (t = "") =>
   /\b[a-z0-9-]+\.(com|net|org|in|co|gov|edu|io|info)\b/i.test(t) ||
   /\/(sitemap|archive)\//i.test(t);
 
+function filterTopicTokens(tokens = []){
+  const cleaned = tokens.filter(Boolean);
+  if (!cleaned.length) return [];
+  const allSingle = cleaned.every(token => token.length === 1);
+  if (allSingle){
+    const acronym = cleaned.join("").toUpperCase();
+    return ALLOWED_ACRONYMS.has(acronym) ? [acronym] : [];
+  }
+  return cleaned.filter(token => {
+    const upper = token.toUpperCase();
+    if (token.length === 1) return false;
+    if (token.length <= 2 && token === upper){
+      return ALLOWED_ACRONYMS.has(upper);
+    }
+    return true;
+  });
+}
+
 function scoreTopicSegment(segment = ""){
   const normalized = normalizeTopicText(segment);
   if (!normalized) return { score: -100, title: "" };
@@ -202,20 +248,25 @@ function scoreTopicSegment(segment = ""){
   if (rawTokens.length < 2) return { score: -100, title: "" };
   const lowerTokens = rawTokens.map(t => t.toLowerCase());
   const cleanedTokens = rawTokens.filter((t, i) => !TOPIC_STOPWORDS.has(lowerTokens[i]));
-  const cleanedLower = cleanedTokens.map(t => t.toLowerCase());
-  if (cleanedTokens.length < 2) return { score: -100, title: "" };
+  const filteredTokens = filterTopicTokens(cleanedTokens);
+  const cleanedLower = filteredTokens.map(t => t.toLowerCase());
+  if (filteredTokens.length < 2) return { score: -100, title: "" };
   const startsWithVerb =
-    TOPIC_VERBS.has(cleanedLower[0]) && !/^[A-Z]/.test(cleanedTokens[0]);
+    TOPIC_VERBS.has(cleanedLower[0]) && !/^[A-Z]/.test(filteredTokens[0]);
   if (startsWithVerb) return { score: -100, title: "" };
   const hasProper =
-    cleanedTokens.some(token => /^[A-Z][a-z]/.test(token) || /^[A-Z]{2,}$/.test(token) || /\d/.test(token));
-  const meaningful = cleanedTokens.filter(t => !TOPIC_URL_TOKENS.has(t.toLowerCase()));
-  if (meaningful.length < 2) return { score: -100, title: "" };
-  let score = meaningful.length * 2;
+    filteredTokens.some(token => /^[A-Z][a-z]/.test(token) || /^[A-Z]{2,}$/.test(token) || /\d/.test(token));
+  const meaningful = filteredTokens.filter(t => !TOPIC_URL_TOKENS.has(t.toLowerCase()));
+  if (!meaningful.length) return { score: -100, title: "" };
+  const trimmed = meaningful.slice(0, 4);
+  if (trimmed.length < 2 && !ALLOWED_ACRONYMS.has(trimmed[0]?.toUpperCase())) return { score: -100, title: "" };
+  const title = formatTopicTokens(trimmed);
+  if (title.length < 6 && !ALLOWED_ACRONYMS.has(title.toUpperCase())) return { score: -100, title: "" };
+  let score = trimmed.length * 2;
   if (!hasProper) score -= 2;
   if (normalized.length < 4) score -= 4;
-  score += cleanedTokens.filter(word => /^[A-Z][a-z]/.test(word)).length;
-  return { score, title: formatTopicTokens(meaningful) };
+  score += filteredTokens.filter(word => /^[A-Z][a-z]/.test(word)).length;
+  return { score, title };
 }
 
 function scoreTopic(topic){
@@ -280,11 +331,12 @@ function extractHeadlinePhrases(articles = []){
       if (rawTokens.length < 2) return;
       const lowerTokens = rawTokens.map(t => t.toLowerCase());
       const filtered = rawTokens.filter((t, i) => !TOPIC_STOPWORDS.has(lowerTokens[i]));
-      const filteredLower = filtered.map(t => t.toLowerCase());
-      if (filtered.length < 2) return;
+      const cleaned = filterTopicTokens(filtered);
+      const filteredLower = cleaned.map(t => t.toLowerCase());
+      if (cleaned.length < 2) return;
       for (let len = 2; len <= 3; len++){
-        for (let i = 0; i <= filtered.length - len; i++){
-          const windowTokens = filtered.slice(i, i + len);
+        for (let i = 0; i <= cleaned.length - len; i++){
+          const windowTokens = cleaned.slice(i, i + len);
           const windowLower = filteredLower.slice(i, i + len);
           if (windowLower.some(t => TOPIC_URL_TOKENS.has(t))) continue;
           const startsWithVerb =
@@ -296,6 +348,7 @@ function extractHeadlinePhrases(articles = []){
           const titleText = formatTopicTokens(windowTokens);
           const normalized = normalizeTopicText(titleText);
           if (!normalized || TOPIC_BLACKLIST.has(normalized)) continue;
+          if (titleText.length < 6 && !ALLOWED_ACRONYMS.has(titleText.toUpperCase())) continue;
           const entry = results.get(normalized) || {
             title: titleText,
             count: 0,
@@ -315,23 +368,44 @@ function extractHeadlinePhrases(articles = []){
   }));
 }
 
-function buildTopicSparklineScores(articles = []){
+function buildTopicSparklineBuckets(articles = [], bucketMinutes = 15){
   const now = Date.now();
   const windowMs = 4 * 60 * 60 * 1000;
-  const bucketMs = 60 * 60 * 1000;
-  const buckets = Array.from({ length: 4 }, () => ({ pos: 0, neg: 0, c: 0 }));
+  const bucketMs = bucketMinutes * 60 * 1000;
+  const bucketCount = Math.ceil(windowMs / bucketMs);
+  const buckets = Array.from({ length: bucketCount }, () => ({
+    pos: 0,
+    neg: 0,
+    neu: 0,
+    c: 0
+  }));
   articles.forEach(a => {
     const ts = new Date(a.publishedAt).getTime();
     const age = now - ts;
     if (Number.isNaN(ts) || age < 0 || age > windowMs) return;
-    const idx = Math.min(3, Math.floor(age / bucketMs));
-    const slot = 3 - idx;
+    const idx = Math.min(bucketCount - 1, Math.floor(age / bucketMs));
+    const slot = (bucketCount - 1) - idx;
     const s = a.sentiment || {};
     buckets[slot].pos += Number(s.posP ?? s.pos ?? 0);
+    buckets[slot].neu += Number(s.neuP ?? s.neu ?? 0);
     buckets[slot].neg += Number(s.negP ?? s.neg ?? 0);
     buckets[slot].c += 1;
   });
-  return buckets.map(bucket => bucket.c ? (bucket.pos - bucket.neg) / bucket.c : 0);
+  const scores = buckets.map(bucket => bucket.c ? (bucket.pos - bucket.neg) / bucket.c : 0);
+  const ranges = buckets.map((bucket, i) => {
+    const end = now - (bucketCount - i - 1) * bucketMs;
+    const start = end - bucketMs;
+    const n = Math.max(1, bucket.c);
+    return {
+      start,
+      end,
+      pos: Math.round(bucket.pos / n),
+      neu: Math.round(bucket.neu / n),
+      neg: Math.round(bucket.neg / n),
+      c: bucket.c
+    };
+  });
+  return { scores, buckets: ranges, bucketMinutes };
 }
 
 function computeTopicTrend(topic, articles){
@@ -341,8 +415,8 @@ function computeTopicTrend(topic, articles){
   const tone =
     pos > neg + threshold ? "pos" :
     neg > pos + threshold ? "neg" : "neu";
-  const scores = buildTopicSparklineScores(articles);
-  return { tone, scores };
+  const { scores, buckets, bucketMinutes } = buildTopicSparklineBuckets(articles);
+  return { tone, scores, buckets, bucketMinutes };
 }
 
 function selectTrendingTopics(topics = [], articles = []){
@@ -378,7 +452,6 @@ function selectTrendingTopics(topics = [], articles = []){
     })
     .map(scoreTopicCandidate)
     .filter(Boolean)
-    .filter(t => t.qualityScore >= 6)
     .sort((a, b) => {
       if (b.qualityScore !== a.qualityScore) return b.qualityScore - a.qualityScore;
       return (b.count || 0) - (a.count || 0);
@@ -844,7 +917,7 @@ function card(a){
         <div class="title">${a.title}</div>
         <div class="meta">
           <span class="source">${a.source}</span>
-          · <span class="meta-time">${new Date(a.publishedAt).toLocaleString()}</span>
+          · <span class="meta-time">${formatArticleDate(a.publishedAt)}</span>
         </div>
         ${renderSentiment(a.sentiment)}
       </div>
@@ -887,7 +960,7 @@ function renderPinned(){
         <a class="row-title" href="${article.link}" target="_blank" rel="noopener">${article.title}</a>
         <div class="row-meta">
           <span class="source">${article.source}</span>
-          · <span>${new Date(article.publishedAt).toLocaleString()}</span>
+          · <span>${formatArticleDate(article.publishedAt)}</span>
         </div>
         ${ageLine}
         ${renderSentiment(article.sentiment, true)}
@@ -976,7 +1049,7 @@ function renderHero(){
         <a href="${a.link}" target="_blank" class="analysis-link" rel="noopener">Read Analysis</a>
         <div class="meta">
           <span class="source">${a.source}</span>
-          · <span class="meta-time">${new Date(a.publishedAt).toLocaleString()}</span>
+          · <span class="meta-time">${formatArticleDate(a.publishedAt)}</span>
         </div>
       </div>
     </article>`).join("");
@@ -1028,9 +1101,10 @@ function stopHeroAuto(){
 /* Trending topics */
 function renderTopicSparkline(scores = []){
   const safeScores = scores.length ? scores : [0, 0, 0, 0];
-  const W = 32, H = 12, pad = 1;
+  const W = 72, H = 24, pad = 2;
   const maxAbs = 20;
-  const xStep = (W - pad * 2) / 3;
+  const steps = Math.max(1, safeScores.length - 1);
+  const xStep = (W - pad * 2) / steps;
   const mid = H / 2;
   const amplitude = (H / 2) - pad;
   const clamp = value => Math.max(-maxAbs, Math.min(maxAbs, value));
@@ -1054,6 +1128,75 @@ function renderTopicSparkline(scores = []){
     </svg>`;
 }
 
+function getTrendTooltip(){
+  let tooltip = document.querySelector(".trend-tooltip");
+  if (!tooltip){
+    tooltip = document.createElement("div");
+    tooltip.className = "trend-tooltip";
+    tooltip.setAttribute("role", "tooltip");
+    tooltip.style.display = "none";
+    document.body.appendChild(tooltip);
+  }
+  return tooltip;
+}
+
+function formatTrendBucketTime(start, end){
+  const opts = { hour: "2-digit", minute: "2-digit", hour12: false };
+  const startLabel = new Date(start).toLocaleTimeString("en-IN", opts);
+  const endLabel = new Date(end).toLocaleTimeString("en-IN", opts);
+  return `${startLabel}–${endLabel}`;
+}
+
+function clampTooltipPosition(x, y, tooltip){
+  const padding = 12;
+  const rect = tooltip.getBoundingClientRect();
+  const maxX = window.innerWidth - rect.width - padding;
+  const maxY = window.innerHeight - rect.height - padding;
+  return {
+    x: Math.min(maxX, Math.max(padding, x)),
+    y: Math.min(maxY, Math.max(padding, y))
+  };
+}
+
+function attachTrendTooltips(){
+  const tooltip = getTrendTooltip();
+  const trendEls = $$(".topic-trend");
+  trendEls.forEach(el => {
+    if (el.dataset.tooltipBound) return;
+    el.dataset.tooltipBound = "1";
+    el.addEventListener("mousemove", (event) => {
+      const bucketsRaw = el.dataset.buckets;
+      if (!bucketsRaw) return;
+      let buckets = [];
+      try{
+        buckets = JSON.parse(bucketsRaw);
+      }catch{
+        return;
+      }
+      if (!buckets.length) return;
+      const rect = el.getBoundingClientRect();
+      const ratio = Math.min(0.999, Math.max(0, (event.clientX - rect.left) / rect.width));
+      const idx = Math.min(buckets.length - 1, Math.floor(ratio * buckets.length));
+      const bucket = buckets[idx];
+      if (!bucket) return;
+      tooltip.innerHTML = `
+        <div class="trend-tooltip-time">${formatTrendBucketTime(bucket.start, bucket.end)}</div>
+        <div class="trend-tooltip-values">
+          <span class="pos">Positive ${fmtPct(bucket.pos)}</span>
+          <span class="neu">Neutral ${fmtPct(bucket.neu)}</span>
+          <span class="neg">Negative ${fmtPct(bucket.neg)}</span>
+        </div>`;
+      tooltip.style.display = "block";
+      const position = clampTooltipPosition(event.clientX + 12, event.clientY + 12, tooltip);
+      tooltip.style.left = `${position.x}px`;
+      tooltip.style.top = `${position.y}px`;
+    });
+    el.addEventListener("mouseleave", () => {
+      tooltip.style.display = "none";
+    });
+  });
+}
+
 function renderTopics(){
   $("#topicsList").innerHTML = state.topics.map(t => {
     const total =
@@ -1072,7 +1215,8 @@ function renderTopics(){
       <div class="row">
         <div class="row-title">
           <span class="topic-title-text">${escapeHtml(t.displayTitle || t.title.split("|")[0])}</span>
-          <span class="topic-trend ${trend.tone}" aria-label="${trendLabel}">
+          <span class="topic-trend ${trend.tone}" aria-label="${trendLabel}"
+            data-buckets='${JSON.stringify(trend.buckets || [])}'>
             ${sparkline}
           </span>
         </div>
@@ -1083,6 +1227,7 @@ function renderTopics(){
         ${renderSentiment(sent, true)}
       </div>`;
   }).join("");
+  attachTrendTooltips();
 }
 
 /* ===== 4-hour sentiment chart – single band + lines like your reference ===== */
