@@ -52,6 +52,7 @@
       <div id="briefingDate" class="briefing-date"></div>
     </div>
     <div id="marketTicker" class="ticker" aria-live="polite"></div>
+    <div id="sentimentDock" class="sentiment-dock"></div>
     <div id="weatherCard" class="weather-card" aria-live="polite"></div>
   </section>
 
@@ -62,6 +63,8 @@
       <div class="block-header">
         <span class="block-title">Pinned</span>
       </div>
+      <div class="block-helper">You can pin only 2 items (topics or articles).</div>
+      <div id="pinToast" class="pin-toast" aria-live="polite"></div>
       <div class="pinned-controls">
         <input
           id="pinnedInput"
@@ -94,6 +97,7 @@
       </div>
       <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour mood trend"></svg>
       <div id="moodSummary" class="mood-summary"></div>
+      <div id="moodCloud" class="mood-cloud" aria-label="Trending keywords"></div>
     </div>
 
     <!-- News source sentiment leaderboard (Grid 8) -->
