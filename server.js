@@ -858,6 +858,22 @@ const storyTokens = (text = "") =>
   tokenize(text).filter((token) => token.length > 2);
 const normalizeStoryTitleTokens = (title = "") =>
   tokenize(title).filter((token) => token.length > 2);
+const strongTokenOverlap = (a = {}, b = {}) => {
+  const tokensA = new Set(
+    tokenize(`${a.title || ""} ${a.description || ""}`).filter((token) => token.length > 3)
+  );
+  const tokensB = new Set(
+    tokenize(`${b.title || ""} ${b.description || ""}`).filter((token) => token.length > 3)
+  );
+  if (!tokensA.size || !tokensB.size) return false;
+  let overlap = 0;
+  tokensA.forEach((token) => {
+    if (tokensB.has(token)) overlap += 1;
+  });
+  if (overlap >= 3) return true;
+  const minSize = Math.max(1, Math.min(tokensA.size, tokensB.size));
+  return overlap >= 2 && overlap / minSize >= 0.6;
+};
 const storySimilarity = (a, b) => {
   let tokensA = new Set(normalizeStoryTitleTokens(a.title));
   let tokensB = new Set(normalizeStoryTitleTokens(b.title));
@@ -908,7 +924,7 @@ const buildStories = (articles = []) => {
     (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
   );
   const stories = [];
-  const windowMs = 36 * 60 * 60 * 1000;
+  const windowMs = 48 * 60 * 60 * 1000;
 
   sorted.forEach((article) => {
     const canonical = canonicalizeUrl(article.link || "");
@@ -1047,7 +1063,9 @@ const buildTopStoryClusters = (articles = []) => {
         ) || 0;
       if (timeDiff > windowMs) return false;
       if (canonical && cluster.canonicalUrls.has(canonical)) return true;
-      return storySimilarity(cluster.articles[0], article) >= 0.36;
+      const similarity = storySimilarity(cluster.articles[0], article);
+      if (similarity >= 0.35) return true;
+      return strongTokenOverlap(cluster.articles[0], article);
     });
     if (!match) {
       match = {
