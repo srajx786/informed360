@@ -1727,32 +1727,30 @@ function renderDaily(){
 function renderHero(){
   const container = $("#heroCarousels");
   if (!container) return;
-  const carousels = buildTopStoriesCarousels();
-  if (!carousels.length){
+  const topStoriesSlides = buildTopStoriesSlides();
+  if (!topStoriesSlides.length){
     container.innerHTML = `<div class="topstories-empty">No top stories available right now.</div>`;
     return;
   }
 
-  container.innerHTML = carousels.map((carousel, index) =>
-    renderTopStoriesCarousel(carousel, index)
-  ).join("");
+  container.innerHTML = renderTopStoriesCarousel(topStoriesSlides);
 
   bindTopStoriesCarousels();
 }
 
-function buildTopStoriesCarousels(){
+function buildTopStoriesSlides(){
   const recentSorted = sortByPublishedDesc(state.articles || []);
   const engagedItems = buildEngagedArticles();
-  const carousels = [
-    { title: "Recent News", items: recentSorted.slice(0, 16) },
-    { title: "Most Engaged", items: engagedItems.slice(0, 16) },
-    { title: "Recent News", items: recentSorted.slice(16, 32) },
-    { title: "Most Engaged", items: engagedItems.slice(16, 32) }
+  const slides = [
+    { title: "Recent News", items: recentSorted.slice(0, 4) },
+    { title: "Most Engaged", items: engagedItems.slice(0, 4) },
+    { title: "Recent News", items: recentSorted.slice(4, 8) },
+    { title: "Most Engaged", items: engagedItems.slice(4, 8) }
   ];
   if (state.category !== "home"){
-    return carousels.slice(0, 1);
+    return slides.slice(0, 1);
   }
-  return carousels;
+  return slides;
 }
 
 function buildEngagedArticles(){
@@ -1772,8 +1770,7 @@ function buildEngagedArticles(){
   });
 }
 
-function renderTopStoriesCarousel(carousel, index){
-  const slides = chunkItems(carousel.items || [], 4);
+function renderTopStoriesCarousel(slides){
   const hasSlides = slides.length > 0;
   const dots = slides.length > 1
     ? `<div class="topstories-dots" role="tablist">
@@ -1789,27 +1786,24 @@ function renderTopStoriesCarousel(carousel, index){
       </div>`
     : "";
   return `
-    <div class="topstories-carousel" data-carousel="${index}">
+    <div class="topstories-carousel" data-carousel="0">
       <div class="topstories-carousel-head">
-        <div class="topstories-carousel-title">${escapeHtml(carousel.title)}</div>
+        <div class="topstories-carousel-spacer" aria-hidden="true"></div>
         ${controls}
       </div>
       <div class="topstories-track">
-        ${hasSlides ? slides.map(group => `
+        ${hasSlides ? slides.map(slide => `
           <div class="topstories-slide">
-            ${group.length ? group.map(renderTopStoriesItem).join("") : `<div class="topstories-empty">No stories yet.</div>`}
+            <div class="topstories-slide-head">
+              <div class="topstories-slide-title">${escapeHtml(slide.title)}</div>
+            </div>
+            <div class="topstories-grid">
+              ${slide.items?.length ? slide.items.map(renderTopStoriesItem).join("") : `<div class="topstories-empty">No stories yet.</div>`}
+            </div>
           </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
       </div>
       ${dots}
     </div>`;
-}
-
-function chunkItems(items = [], size = 4){
-  const chunks = [];
-  for (let i = 0; i < items.length; i += size){
-    chunks.push(items.slice(i, i + size));
-  }
-  return chunks;
 }
 
 function renderTopStoriesItem(article){
