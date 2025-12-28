@@ -841,6 +841,24 @@ const buildStories = (articles = []) => {
     .slice(0, 12);
 };
 
+const buildEngagedStories = (articles = []) => {
+  const stories = buildStories(articles);
+  const scoreStory = (story) => {
+    const sources = new Set(
+      (story.articles || [])
+        .map((article) => article.source || domainFromUrl(article.link || ""))
+        .filter(Boolean)
+    );
+    return (story.articles || []).length + sources.size * 1.5;
+  };
+  return stories
+    .map((story) => ({
+      ...story,
+      engagementScore: Number(scoreStory(story).toFixed(2))
+    }))
+    .sort((a, b) => b.engagementScore - a.engagementScore);
+};
+
 const gdeltBaseUrl = "https://api.gdeltproject.org/api/v2/doc/doc";
 const gdeltQueryDefaults =
   '(India OR Indian OR "South Asia" OR world OR global OR international)';
@@ -990,6 +1008,15 @@ app.get("/api/stories", (req, res) => {
     : CORE.articles;
   const stories = buildStories(articles);
   STORY_CACHE.set(cacheKey, { at: Date.now(), stories });
+  res.json({ fetchedAt: Date.now(), stories });
+});
+
+app.get("/api/engaged", (req, res) => {
+  const includeExp = req.query.experimental === "1";
+  const articles = includeExp
+    ? uniqueMerge(CORE.articles, EXP.articles)
+    : CORE.articles;
+  const stories = buildEngagedStories(articles);
   res.json({ fetchedAt: Date.now(), stories });
 });
 

@@ -7,9 +7,39 @@ const LEGACY_PIN_STORAGE_KEY = "i360_pins";
 const CREDIBILITY_STORAGE_KEY = "i360_credibility_badges";
 const PRICING_MAILTO =
   "mailto:info.shrirajnair@gmail.com?subject=Informed360%20Demo%20Request&body=Hi%20Informed360%20team%2C%0A%0AWe%20would%20like%20a%20demo%20of%20the%20PR%2FTeams%20tier.%0ACompany%3A%0AUse%20case%3A%0AExpected%20seats%3A%0APreferred%20time%3A%0A%0AThanks!";
-async function fetchJSON(u){
-  const r = await fetch(u);
-  if (!r.ok) throw new Error(await r.text());
+const normalizeApiBase = (value = "") =>
+  String(value || "").trim().replace(/\/$/, "");
+let API_BASE = "";
+const FALLBACK_API_BASE = normalizeApiBase(window.__API_BASE__ || "");
+const buildApiUrl = (path = "", base = API_BASE) => {
+  const cleanPath = String(path || "");
+  if (/^https?:\/\//i.test(cleanPath)) return cleanPath;
+  const cleanBase = normalizeApiBase(base);
+  if (!cleanBase) return cleanPath;
+  return `${cleanBase}${cleanPath.startsWith("/") ? "" : "/"}${cleanPath}`;
+};
+const logApiError = (error, endpoint) => {
+  const status = error?.status ?? "unknown";
+  console.error("API request failed", { endpoint, status, error });
+};
+async function fetchJSON(path){
+  const url = buildApiUrl(path);
+  let r;
+  try{
+    r = await fetch(url);
+  }catch(error){
+    const err = new Error(`Network error for ${url}`);
+    err.status = 0;
+    err.endpoint = url;
+    err.cause = error;
+    throw err;
+  }
+  if (!r.ok){
+    const err = new Error(await r.text());
+    err.status = r.status;
+    err.endpoint = url;
+    throw err;
+  }
   return r.json();
 }
 const domainFromUrl = (u = "") => {
@@ -555,12 +585,13 @@ const state = {
   indiaArticles: [],
   stories: [],
   topics: [],
+  engagedStories: [],
+  newsEmptyMessage: "",
   pins: loadPins(),
   profile: loadProfile(),
   theme: localStorage.getItem("theme") || "light",
   preferredTopics: loadPreferredTopics(),
   showCredibilityBadges: loadCredibilitySetting(),
-  hero: { index: 0, timer: null, pause: false },
   lastLeaderboardAt: 0
 };
 
@@ -930,62 +961,122 @@ function renderPinnedChips(){
   });
 }
 
+function setApiBanner(visible){
+  const banner = $("#apiBanner");
+  if (!banner) return;
+  banner.classList.toggle("show", visible);
+  banner.hidden = !visible;
+}
+
 /* load news + topics */
 async function loadAll(){
-  const qs = new URLSearchParams();
-  if (state.filter !== "all") qs.set("sentiment", state.filter);
-  if (state.experimental) qs.set("experimental", "1");
-  if (state.category && !["home","foryou","local","showcase","following"].includes(state.category))
-    qs.set("category", state.category);
+  state.newsEmptyMessage = "";
+  setApiBanner(false);
+  try{
+    const qs = new URLSearchParams();
+    if (state.filter !== "all") qs.set("sentiment", state.filter);
+    if (state.experimental) qs.set("experimental", "1");
+    if (state.category && !["home","foryou","local","showcase","following"].includes(state.category))
+      qs.set("category", state.category);
 
-  const needsIndiaFetch = !["home", "india"].includes(state.category);
-  const indiaQs = new URLSearchParams();
-  if (state.filter !== "all") indiaQs.set("sentiment", state.filter);
-  if (state.experimental) indiaQs.set("experimental", "1");
-  if (needsIndiaFetch) indiaQs.set("category", "india");
+    const needsIndiaFetch = !["home", "india"].includes(state.category);
+    const indiaQs = new URLSearchParams();
+    if (state.filter !== "all") indiaQs.set("sentiment", state.filter);
+    if (state.experimental) indiaQs.set("experimental", "1");
+    if (needsIndiaFetch) indiaQs.set("category", "india");
 
-  const [news, topics, india, stories] = await Promise.all([
-    fetchJSON(`/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`),
-    fetchJSON(`/api/topics${state.experimental ? "?experimental=1" : ""}`),
-    needsIndiaFetch
-      ? fetchJSON(`/api/news${indiaQs.toString() ? ("?" + indiaQs.toString()) : ""}`)
-      : Promise.resolve(null),
-    fetchJSON(`/api/stories${state.experimental ? "?experimental=1" : ""}`)
-      .catch(() => ({ stories: [] }))
-  ]);
-
-  state.allArticles = news.articles || [];
-  state.articles = state.allArticles.slice();
-  state.stories = stories?.stories || [];
-  state.topics   = selectTrendingTopics(topics.topics || [], state.allArticles);
-  if (needsIndiaFetch){
-    state.indiaArticles = india?.articles || [];
-  } else {
-    state.indiaArticles = state.allArticles.filter(a => a.category === "india");
-  }
-
-  if (state.category === "local" && state.profile?.city){
-    const c = state.profile.city.toLowerCase();
-    state.articles = state.articles.filter(a =>
-      (a.title || "").toLowerCase().includes(c) ||
-      (a.link  || "").toLowerCase().includes(c)
-    );
-  } else if (state.category === "showcase"){
-    state.articles = shuffleArticles(state.allArticles || []).slice(0, 20);
-  } else if (["foryou","following"].includes(state.category)){
-    const topics = state.preferredTopics || [];
-    if (topics.length){
-      state.articles = state.articles.filter(article =>
-        topics.some(topic => articleMatchesPreferredTopic(article, topic))
-      );
-    } else if (state.category === "following"){
-      state.articles = [];
+    const newsEndpoint = `/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`;
+    let news;
+    try{
+      news = await fetchJSON(newsEndpoint);
+    }catch(error){
+      logApiError(error, error?.endpoint || newsEndpoint);
+      const shouldRetry =
+        API_BASE === "" &&
+        FALLBACK_API_BASE &&
+        (error?.status === 0 || error?.status === 404);
+      if (shouldRetry){
+        API_BASE = FALLBACK_API_BASE;
+        try{
+          news = await fetchJSON(newsEndpoint);
+        }catch(retryError){
+          logApiError(retryError, retryError?.endpoint || newsEndpoint);
+          setApiBanner(true);
+          throw retryError;
+        }
+      }else{
+        if (error?.status === 0 || error?.status === 404){
+          setApiBanner(true);
+        }
+        throw error;
+      }
     }
-  }
 
-  syncPinsWithArticles();
-  renderPinnedChips();
-  renderAll();
+    const [topics, india, stories, engaged] = await Promise.all([
+      fetchJSON(`/api/topics${state.experimental ? "?experimental=1" : ""}`)
+        .catch(() => ({ topics: [] })),
+      needsIndiaFetch
+        ? fetchJSON(`/api/news${indiaQs.toString() ? ("?" + indiaQs.toString()) : ""}`)
+          .catch(() => ({ articles: [] }))
+        : Promise.resolve(null),
+      fetchJSON(`/api/stories${state.experimental ? "?experimental=1" : ""}`)
+        .catch(() => ({ stories: [] })),
+      fetchJSON(`/api/engaged${state.experimental ? "?experimental=1" : ""}`)
+        .catch(() => ({ stories: [] }))
+    ]);
+
+    state.allArticles = news.articles || [];
+    state.articles = state.allArticles.slice();
+    state.stories = stories?.stories || [];
+    state.engagedStories = engaged?.stories || [];
+    state.topics   = selectTrendingTopics(topics.topics || [], state.allArticles);
+    if (needsIndiaFetch){
+      state.indiaArticles = india?.articles || [];
+    } else {
+      state.indiaArticles = state.allArticles.filter(a => a.category === "india");
+    }
+
+    if (state.category === "local" && state.profile?.city){
+      const c = state.profile.city.toLowerCase();
+      state.articles = state.articles.filter(a =>
+        (a.title || "").toLowerCase().includes(c) ||
+        (a.link  || "").toLowerCase().includes(c)
+      );
+    } else if (state.category === "showcase"){
+      state.articles = shuffleArticles(state.allArticles || []).slice(0, 20);
+    } else if (["foryou","following"].includes(state.category)){
+      const topics = state.preferredTopics || [];
+      if (topics.length){
+        state.articles = state.articles.filter(article =>
+          topics.some(topic => articleMatchesPreferredTopic(article, topic))
+        );
+      } else if (state.category === "following"){
+        state.articles = [];
+      }
+    }
+
+    if (!state.allArticles.length){
+      state.newsEmptyMessage = "No news available right now. Please check back soon.";
+    }
+
+    syncPinsWithArticles();
+    renderPinnedChips();
+    renderAll();
+  }catch(error){
+    state.allArticles = [];
+    state.articles = [];
+    state.stories = [];
+    state.engagedStories = [];
+    state.indiaArticles = [];
+    state.topics = [];
+    state.newsEmptyMessage = "We couldn’t load the latest news. Please try again soon.";
+    logApiError(error, error?.endpoint || "/api/news");
+    if (error?.status === 0 || error?.status === 404){
+      setApiBanner(true);
+    }
+    renderPinnedChips();
+    renderAll();
+  }
 }
 
 /* image helpers */
@@ -1613,6 +1704,10 @@ function toggleArticlePin(article){
 /* Grid 9: only 4 main news stories */
 function renderNews(){
   const list = $("#newsList");
+  if (state.newsEmptyMessage){
+    list.innerHTML = `<div class="news-empty">${escapeHtml(state.newsEmptyMessage)}</div>`;
+    return;
+  }
   if (state.category === "following" && !(state.preferredTopics || []).length){
     list.innerHTML = `
       <div class="news-empty">
@@ -1630,169 +1725,154 @@ function renderDaily(){
 
 /* HERO */
 function renderHero(){
-  const slides = buildHeroSlides(state.stories, state.articles);
-  const track = $("#heroTrack");
-  const dots  = $("#heroDots");
-  if (!slides.length){
-    track.innerHTML = "";
-    dots.innerHTML  = "";
+  const container = $("#heroCarousels");
+  if (!container) return;
+  const carousels = buildTopStoriesCarousels();
+  if (!carousels.length){
+    container.innerHTML = `<div class="topstories-empty">No top stories available right now.</div>`;
     return;
   }
-  track.innerHTML = slides.map((cluster, index) => {
-    const storySentiment = storySentimentObject(cluster);
-    const storyContext = [cluster.canonicalTitle, ...(cluster.storyTopPhrases || [])].filter(Boolean).join(" ");
-    return `
-    <article class="hero-slide">
-      <div class="top-stories-slide">
-        <div class="ts-content">
-          <div class="hero-cluster">
-            <div class="hero-featured">
-              <div class="hero-featured-media">
-                <a class="hero-featured-link" href="${cluster.featured.link}" target="_blank" rel="noopener" data-article-link="${cluster.featured.link}">
-                  <div class="hero-media">
-                    <div class="hero-img">${heroImgTag(cluster.featured)}</div>
-                  </div>
-                </a>
-                <button class="pin-toggle ts-pin" type="button" data-link="${cluster.featured.link}" aria-pressed="false">Pin</button>
-              </div>
-              <a class="hero-featured-body" href="${cluster.featured.link}" target="_blank" rel="noopener" data-article-link="${cluster.featured.link}">
-                ${renderHeroMeta(cluster.featured)}
-                <div class="hero-story-label">${escapeHtml(cluster.canonicalTitle || "Top story")}</div>
-                <div class="hero-headline">${escapeHtml(cluster.featured.title || "")}</div>
-              </a>
-              <div class="hero-sentiment">${renderSentiment(cluster.featured.sentiment, true, getArticleContext(cluster.featured), "mini")}</div>
-              <div class="hero-story-sentiment">
-                <div class="hero-story-sentiment-title">Story sentiment</div>
-                ${renderSentiment(storySentiment, true, storyContext, "mini")}
-              </div>
-            </div>
-          <div class="hero-related">
-              ${cluster.related.map(item => `
-                <div class="hero-related-item topstories-right-item">
-                  <a href="${item.link}" target="_blank" rel="noopener" data-article-link="${item.link}">
-                    ${renderRightStoryMeta(item)}
-                    <div class="hero-related-headline">${escapeHtml(item.title || "")}</div>
-                  </a>
-                  <button class="pin-toggle ts-pin" type="button" data-link="${item.link}" aria-pressed="false">Pin</button>
-                  <div class="hero-sentiment">${renderSentiment(item.sentiment, true, getArticleContext(item), "mini")}</div>
-                </div>`).join("")}
-            </div>
-          </div>
-        </div>
-        <div class="topstories-controls">
-          <button class="nav-btn prev" type="button" aria-label="Previous">‹</button>
-          <div class="controls-spacer"></div>
-          <button class="nav-btn next" type="button" aria-label="Next">›</button>
-        </div>
-        ${renderHeroTrendChart(cluster, index)}
-      </div>
-    </article>`).join("");
-  }).join("");
 
-  dots.innerHTML = slides.map((_,i) =>
-    `<button data-i="${i}" aria-label="Go to slide ${i+1}"></button>`
+  container.innerHTML = carousels.map((carousel, index) =>
+    renderTopStoriesCarousel(carousel, index)
   ).join("");
 
-  updateHero(0);
-  hydrateHeroImages();
-  attachHeroTrendTooltips();
-  bindHeroControls();
+  bindTopStoriesCarousels();
 }
-function attachHeroTrendTooltips(){
-  const trends = $$(".topstories-trend");
-  if (!trends.length) return;
-  const showTooltip = (boundsEl, tooltip, event, hit) => {
-    if (!tooltip || !hit || !boundsEl) return;
-    const tipText = hit.dataset.tip || "";
-    tooltip.textContent = tipText;
-    tooltip.setAttribute("aria-hidden", "false");
-    tooltip.classList.add("show");
-    const bounds = boundsEl.getBoundingClientRect();
-    const clientX = event?.clientX ?? (event?.touches?.[0]?.clientX);
-    const clientY = event?.clientY ?? (event?.touches?.[0]?.clientY);
-    const x = clientX ? clientX - bounds.left : bounds.width / 2;
-    const y = clientY ? clientY - bounds.top : bounds.height / 2;
-    const tooltipRect = tooltip.getBoundingClientRect();
-    const left = Math.min(
-      Math.max(8, x - (tooltipRect.width / 2)),
-      bounds.width - tooltipRect.width - 8
+
+function buildTopStoriesCarousels(){
+  const recentSorted = sortByPublishedDesc(state.articles || []);
+  const engagedItems = buildEngagedArticles();
+  const carousels = [
+    { title: "Recent News", items: recentSorted.slice(0, 16) },
+    { title: "Most Engaged", items: engagedItems.slice(0, 16) },
+    { title: "Recent News", items: recentSorted.slice(16, 32) },
+    { title: "Most Engaged", items: engagedItems.slice(16, 32) }
+  ];
+  if (state.category !== "home"){
+    return carousels.slice(0, 1);
+  }
+  return carousels;
+}
+
+function buildEngagedArticles(){
+  const sourceStories = state.engagedStories?.length
+    ? state.engagedStories
+    : (state.stories || []);
+  const items = sourceStories
+    .map(story => story?.featured || story?.articles?.[0])
+    .filter(Boolean);
+  const fallback = sortByPublishedDesc(state.articles || []);
+  const seen = new Set();
+  return [...items, ...fallback].filter(item => {
+    const key = item.link || item.title || "";
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function renderTopStoriesCarousel(carousel, index){
+  const slides = chunkItems(carousel.items || [], 4);
+  const hasSlides = slides.length > 0;
+  const dots = slides.length > 1
+    ? `<div class="topstories-dots" role="tablist">
+        ${slides.map((_, i) =>
+          `<button data-i="${i}" aria-label="Go to slide ${i + 1}"></button>`
+        ).join("")}
+      </div>`
+    : "";
+  const controls = slides.length > 1
+    ? `<div class="topstories-controls">
+        <button class="nav-btn prev" type="button" aria-label="Previous">‹</button>
+        <button class="nav-btn next" type="button" aria-label="Next">›</button>
+      </div>`
+    : "";
+  return `
+    <div class="topstories-carousel" data-carousel="${index}">
+      <div class="topstories-carousel-head">
+        <div class="topstories-carousel-title">${escapeHtml(carousel.title)}</div>
+        ${controls}
+      </div>
+      <div class="topstories-track">
+        ${hasSlides ? slides.map(group => `
+          <div class="topstories-slide">
+            ${group.length ? group.map(renderTopStoriesItem).join("") : `<div class="topstories-empty">No stories yet.</div>`}
+          </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
+      </div>
+      ${dots}
+    </div>`;
+}
+
+function chunkItems(items = [], size = 4){
+  const chunks = [];
+  for (let i = 0; i < items.length; i += size){
+    chunks.push(items.slice(i, i + size));
+  }
+  return chunks;
+}
+
+function renderTopStoriesItem(article){
+  const sourceName = escapeHtml(article?.source || domainFromUrl(article?.link || "") || "Source");
+  const time = escapeHtml(formatArticleDate(article?.publishedAt) || "");
+  return `
+    <article class="topstories-item">
+      <div class="topstories-item-main">
+        <a class="topstories-link" href="${article.link}" target="_blank" rel="noopener" data-article-link="${article.link}">
+          <div class="topstories-thumb-wrap">
+            ${topStoryThumb(article)}
+          </div>
+          <div class="topstories-text">
+            <div class="topstories-headline">${escapeHtml(article.title || "")}</div>
+            <div class="topstories-meta">
+              <span class="source">${sourceName}${renderCredibilityBadge(article, "inline")}</span>
+              <span class="datetime">${time}</span>
+            </div>
+          </div>
+        </a>
+        <button class="pin-toggle ts-pin" type="button" data-link="${article.link}" aria-pressed="false">Pin</button>
+      </div>
+      <div class="topstories-sentiment">${renderSentiment(article.sentiment, true, getArticleContext(article), "mini")}</div>
+    </article>`;
+}
+
+function topStoryThumb(article){
+  const sourceName = escapeHtml(article?.source || domainFromUrl(article?.link || "") || "Source");
+  const candidate = (article?.image || "").trim();
+  const validImage = candidate && isLikelyImageUrl(candidate) && !isFallbackLogo(candidate);
+  if (!validImage){
+    return `<div class="topstories-thumb-fallback">${sourceName}</div>`;
+  }
+  return `<img class="topstories-thumb" src="${candidate}" loading="lazy" alt=""
+              data-fallback-text="${sourceName}"
+              onerror="const div=document.createElement('div');div.className='topstories-thumb-fallback';div.textContent=this.dataset.fallbackText||'Source';this.replaceWith(div);">`;
+}
+
+function bindTopStoriesCarousels(){
+  $$(".topstories-carousel").forEach(carousel => {
+    if (carousel.dataset.bound) return;
+    carousel.dataset.bound = "1";
+    const track = carousel.querySelector(".topstories-track");
+    const slides = [...carousel.querySelectorAll(".topstories-slide")];
+    const dots = [...carousel.querySelectorAll(".topstories-dots button")];
+    const update = (next) => {
+      if (!slides.length) return;
+      const nextIndex = (next + slides.length) % slides.length;
+      carousel.dataset.index = String(nextIndex);
+      track.style.transform = `translateX(-${nextIndex * 100}%)`;
+      dots.forEach((dot, idx) => dot.classList.toggle("active", idx === nextIndex));
+    };
+    carousel.querySelector(".nav-btn.prev")?.addEventListener("click", () =>
+      update((Number(carousel.dataset.index) || 0) - 1)
     );
-    const top = Math.min(
-      Math.max(8, y - tooltipRect.height - 10),
-      bounds.height - tooltipRect.height - 8
+    carousel.querySelector(".nav-btn.next")?.addEventListener("click", () =>
+      update((Number(carousel.dataset.index) || 0) + 1)
     );
-    tooltip.style.left = `${left}px`;
-    tooltip.style.top = `${top}px`;
-  };
-
-  trends.forEach(trend => {
-    const chartWrap = trend.querySelector(".trend-chart-wrap");
-    const tooltip = trend.querySelector(".trend-tooltip");
-    const hits = trend.querySelectorAll(".trend-hit");
-    if (!tooltip || !hits.length || !chartWrap) return;
-    hits.forEach(hit => {
-      if (hit.dataset.bound) return;
-      hit.dataset.bound = "1";
-      const handle = event => showTooltip(chartWrap, tooltip, event, hit);
-      hit.addEventListener("mouseenter", handle);
-      hit.addEventListener("mousemove", handle);
-      hit.addEventListener("click", handle);
-      hit.addEventListener("touchstart", handle, { passive: true });
+    dots.forEach(dot => {
+      dot.addEventListener("click", () => update(Number(dot.dataset.i || 0)));
     });
-    trend.addEventListener("mouseleave", () => {
-      tooltip.classList.remove("show");
-      tooltip.setAttribute("aria-hidden", "true");
-    });
+    update(0);
   });
-}
-
-function bindHeroControls(){
-  $$(".topstories-controls .nav-btn.prev").forEach(btn => {
-    if (btn.dataset.bound) return;
-    btn.dataset.bound = "1";
-    btn.addEventListener("click", () => updateHero(state.hero.index - 1));
-  });
-  $$(".topstories-controls .nav-btn.next").forEach(btn => {
-    if (btn.dataset.bound) return;
-    btn.dataset.bound = "1";
-    btn.addEventListener("click", () => updateHero(state.hero.index + 1));
-  });
-}
-async function hydrateHeroImages(){
-  const images = $$(".hero-slide img[data-hero-link]");
-  if (!images.length) return;
-
-  await Promise.all(
-    images.map(async (img) => {
-      if (!isFallbackLogo(img.src)) return;
-      const link = decodeURIComponent(img.dataset.heroLink || "");
-      if (!link) return;
-      const ogImage = await fetchOgImage(link);
-      if (!isLikelyImageUrl(ogImage)) return;
-      img.src = ogImage;
-      img.classList.remove("logo-thumb");
-    })
-  );
-}
-function updateHero(i){
-  const n = $$("#heroTrack .hero-slide").length;
-  if (!n) return;
-  state.hero.index = (i + n) % n;
-  $("#heroTrack").style.transform =
-    `translateX(-${state.hero.index * 100}%)`;
-  $$("#heroDots button").forEach((b,bi) =>
-    b.classList.toggle("active", bi === state.hero.index)
-  );
-}
-function startHeroAuto(){
-  stopHeroAuto();
-  state.hero.timer = setInterval(()=>{
-    if (!state.hero.pause) updateHero(state.hero.index + 1);
-  }, 6000);
-}
-function stopHeroAuto(){
-  if (state.hero.timer) clearInterval(state.hero.timer);
-  state.hero.timer = null;
 }
 
 /* Trending topics */
@@ -2693,15 +2773,6 @@ $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
     loadAll();
   });
 });
-$("#heroPrev")?.addEventListener("click", () =>
-  updateHero(state.hero.index - 1)
-);
-$("#heroNext")?.addEventListener("click", () =>
-  updateHero(state.hero.index + 1)
-);
-$("#hero")?.addEventListener("mouseenter", () => { state.hero.pause = true; });
-$("#hero")?.addEventListener("mouseleave", () => { state.hero.pause = false; });
-
 /* Sign-in */
 const modal = $("#signinModal");
 $("#avatarBtn")?.addEventListener("click", () => {

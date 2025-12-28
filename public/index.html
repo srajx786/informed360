@@ -52,6 +52,9 @@
       <button class="tab" data-cat="health">Health</button>
     </nav>
   </header>
+  <div id="apiBanner" class="api-banner" role="alert" hidden>
+    Backend not reachable. Configure API base URL.
+  </div>
 
   <!-- Briefing row: Ticker full-width, Filters centered below -->
   <section class="gn-briefing">
@@ -90,10 +93,7 @@
         <div class="hero-title">Top Stories</div>
         <div class="hero-divider"></div>
       </div>
-      <div class="hero-track" id="heroTrack" role="group"></div>
-      <button class="hero-nav ts-nav prev" id="heroPrev" aria-label="Previous">‹</button>
-      <button class="hero-nav ts-nav next" id="heroNext" aria-label="Next">›</button>
-      <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero slides"></div>
+      <div class="hero-carousels" id="heroCarousels" role="group"></div>
     </section>
 
     <!-- 4-hour mood microchart -->
@@ -350,6 +350,7 @@
     </form>
   </dialog>
 
+  <script>window.__API_BASE__="";</script>
   <script src="app.js" defer></script>
 </body>
 </html>
