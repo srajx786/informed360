@@ -99,22 +99,33 @@ const LOCAL_LOGOS = {
 };
 
 const clearbit = (d) => d ? `https://logo.clearbit.com/${d}` : "";
-const logoFor = (link = "", source = "") => {
-  const mapDom = LOGO_DOMAIN_MAP[source?.trim()] || "";
-  const d = mapDom || domainFromUrl(link) || "";
+const getSourceLogoUrl = (sourceDomain = "", sourceName = "") => {
+  const mapDom = LOGO_DOMAIN_MAP[String(sourceName || "").trim()] || "";
+  const d = sourceDomain || mapDom || domainFromUrl(sourceName) || "";
   if (LOCAL_LOGOS[d]) return LOCAL_LOGOS[d];
   return clearbit(d);
 };
+const logoFor = (link = "", source = "") =>
+  getSourceLogoUrl(domainFromUrl(link), source);
 
 const PLACEHOLDER =
   "data:image/svg+xml;base64," +
   btoa(
     `<svg xmlns='http://www.w3.org/2000/svg' width='400' height='260'>
-       <rect width='100%' height='100%' fill='#e5edf7'/>
-       <text x='50%' y='48%' text-anchor='middle'
-             font-family='sans-serif' font-weight='700'
-             fill='#8aa3c4' font-size='18'>News</text>
-       <image href='cid:logo' x='168' y='130' width='64' height='64' preserveAspectRatio='xMidYMid meet'/>
+       <rect width='100%' height='100%' rx='18' ry='18' fill='#f5f7fb'/>
+       <rect x='120' y='70' width='160' height='120' rx='12' ry='12' fill='none' stroke='#9fb3c8' stroke-width='8'/>
+       <circle cx='170' cy='120' r='18' fill='none' stroke='#9fb3c8' stroke-width='8'/>
+       <path d='M140 168 L178 132 L214 168' fill='none' stroke='#9fb3c8' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/>
+     </svg>`
+  );
+const LOGO_PLACEHOLDER =
+  "data:image/svg+xml;base64," +
+  btoa(
+    `<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'>
+       <rect width='64' height='64' rx='12' ry='12' fill='#f5f7fb'/>
+       <rect x='16' y='18' width='32' height='24' rx='6' ry='6' fill='none' stroke='#9fb3c8' stroke-width='4'/>
+       <circle cx='28' cy='30' r='4' fill='none' stroke='#9fb3c8' stroke-width='3'/>
+       <path d='M22 40 L30 32 L42 42' fill='none' stroke='#9fb3c8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>
      </svg>`
   );
 
@@ -1595,12 +1606,30 @@ function safeImgTag(src, link, source, cls){
               onerror="if(this.dataset.errored){const text=this.dataset.fallbackText||'Source';const div=document.createElement('div');div.className='thumb-fallback ${cls || ""}';div.textContent=text;this.replaceWith(div);}else{this.dataset.errored='1';if(this.dataset.fallback){this.classList.add('logo-thumb');this.src=this.dataset.fallback;this.alt='';}else{const text=this.dataset.fallbackText||'Source';const div=document.createElement('div');div.className='thumb-fallback ${cls || ""}';div.textContent=text;this.replaceWith(div);}}" alt="">`;
 }
 
+function safeNewsThumbTag(src, link, source, cls){
+  const candidate = (src || "").trim();
+  const primary = isLikelyImageUrl(candidate) ? candidate : "";
+  const fallbackLogo = getSourceLogoUrl(domainFromUrl(link), source);
+  const fallback = fallbackLogo || "";
+  const placeholder = PLACEHOLDER;
+  const initialSrc = primary || fallback || placeholder;
+  const useLogoThumb = (!primary || primary === fallback) && Boolean(fallbackLogo);
+  const usePlaceholder = !primary && !fallback;
+  const classNames = [cls, useLogoThumb ? "logo-thumb" : "", usePlaceholder ? "placeholder-thumb" : ""]
+    .filter(Boolean)
+    .join(" ");
+
+  return `<img class="${classNames}" src="${initialSrc}" loading="lazy"
+              data-fallback="${fallback}" data-placeholder="${placeholder}"
+              onerror="if(this.dataset.errored){this.onerror=null;this.classList.remove('logo-thumb');this.classList.add('placeholder-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';if(this.dataset.fallback){this.classList.add('logo-thumb');this.src=this.dataset.fallback;this.alt='';}else{this.classList.remove('logo-thumb');this.classList.add('placeholder-thumb');this.src=this.dataset.placeholder;this.alt='';}}" alt="">`;
+}
+
 /* card renderers */
 function card(a){
   return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener" data-article-link="${a.link}">
       <div class="news-side">
-        ${safeImgTag(a.image, a.link, a.source, "thumb")}
+        ${safeNewsThumbTag(a.image || a.imageUrl, a.link, a.source, "thumb")}
         <div class="card-actions">
           <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
         </div>
@@ -1658,6 +1687,31 @@ function renderPinned(){
         ${renderSentiment(article.sentiment, true, getArticleContext(article))}
       </div>`;
   }).join("");
+}
+
+function collectActiveSources(articles = []){
+  const names = new Set();
+  articles.forEach(article => {
+    const source = String(article?.source || "").trim();
+    if (source){
+      names.add(source);
+      return;
+    }
+    const domain = domainFromUrl(article?.link || article?.url || "");
+    if (domain) names.add(domain);
+  });
+  return [...names].sort((a, b) => a.localeCompare(b));
+}
+
+function updateActiveSources(){
+  const el = $("#activeSources");
+  if (!el) return;
+  const sources = collectActiveSources(state.allArticles || []);
+  if (!sources.length){
+    el.textContent = "Current News Sources: —";
+    return;
+  }
+  el.textContent = `Current News Sources: ${sources.join(", ")}`;
 }
 
 function updatePinButtons(){
@@ -2008,16 +2062,17 @@ function renderTopicSourceLogos(matches = []){
     sourceMap.set(article.source, article.link || "");
   });
   const entries = [...sourceMap.entries()];
-  const max = 5;
+  const max = 4;
   const extra = Math.max(0, entries.length - max);
   const items = entries.slice(0, max).map(([source, link]) => {
-    const logo = logoFor(link, source);
-    const initials = getSourceInitials(source || "News");
-    if (!logo){
-      return `<span class="topic-logo-fallback" aria-label="${escapeHtml(source)}">${initials}</span>`;
-    }
-    return `<img class="topic-logo" src="${logo}" alt="${escapeHtml(source)}" loading="lazy"
-      onerror="const span=document.createElement('span');span.className='topic-logo-fallback';span.textContent='${initials}';this.replaceWith(span);">`;
+    const logo = getSourceLogoUrl(domainFromUrl(link), source);
+    const placeholder = LOGO_PLACEHOLDER;
+    const classNames = ["topic-logo", logo ? "" : "topic-logo-fallback"]
+      .filter(Boolean)
+      .join(" ");
+    return `<img class="${classNames}" src="${logo || placeholder}" alt="${escapeHtml(source)}" loading="lazy"
+      data-placeholder="${placeholder}"
+      onerror="this.onerror=null;this.classList.add('topic-logo-fallback');this.src=this.dataset.placeholder;">`;
   }).join("");
   const extraBadge = extra ? `<span class="logo-count">+${extra}</span>` : "";
   return `<span class="topic-logos">${items}${extraBadge}</span>`;
@@ -2588,6 +2643,7 @@ function renderAll(){
   attachSentimentTooltips();
   $("#year").textContent = new Date().getFullYear();
   updatePinButtons();
+  updateActiveSources();
 }
 
 function getSearchMatches(query){
@@ -2627,7 +2683,7 @@ function renderSearchResults(){
     return `
       <div class="search-result" role="option" tabindex="0" data-link="${article.link}">
         <div class="search-thumb">
-          ${safeImgTag(article.image, article.link, article.source, "search-thumb-img")}
+          ${safeImgTag(article.image || article.imageUrl, article.link, article.source, "search-thumb-img")}
         </div>
         <div class="search-body">
           <div class="search-title">${escapeHtml(article.title)}</div>
@@ -2902,6 +2958,7 @@ startHeroAuto();
 /* periodic refresh */
 setInterval(loadAll,     1000 * 60 * 5);
 setInterval(loadMarkets, 1000 * 60 * 2);
+setInterval(updateActiveSources, 1000 * 60);
 setInterval(() => {
   if (Date.now() - state.lastLeaderboardAt > 1000 * 60 * 60)
     renderLeaderboard();
