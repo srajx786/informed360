@@ -1974,34 +1974,11 @@ function buildTopStoriesSections(){
   const safe = (clusters = [], backup = []) =>
     Array.isArray(clusters) && clusters.length ? clusters : (backup || []);
   const topStories = state.topStories || {};
-  const indiaRecent = safe(topStories.indiaRecent, topStories.worldRecent);
-  const indiaEngaged = safe(topStories.indiaEngaged, indiaRecent);
-  const worldRecent = safe(topStories.worldRecent, indiaRecent);
-  const worldEngaged = safe(topStories.worldEngaged, worldRecent);
+  const recent = safe(topStories.indiaRecent, topStories.worldRecent);
   const sections = [
     {
-      id: "recent-india",
-      title: "Recent News",
-      scope: "India",
-      clusters: indiaRecent
-    },
-    {
-      id: "engaged-india",
-      title: "Most Engaged",
-      scope: "India",
-      clusters: indiaEngaged
-    },
-    {
-      id: "recent-world",
-      title: "Recent News",
-      scope: "World",
-      clusters: worldRecent
-    },
-    {
-      id: "engaged-world",
-      title: "Most Engaged",
-      scope: "World",
-      clusters: worldEngaged
+      id: "recent",
+      clusters: recent
     }
   ];
   if (!sections.some(section => (section.clusters || []).length)){
@@ -2030,12 +2007,6 @@ function renderTopStoriesSection(section){
   return `
     <div class="topstories-carousel-shell" data-carousel="${escapeHtml(section.id)}">
       <div class="topstories-carousel">
-        <div class="topstories-carousel-head">
-          <div class="topstories-carousel-title">
-            ${escapeHtml(section.title)}
-            <span class="topstories-carousel-scope">(${escapeHtml(section.scope)})</span>
-          </div>
-        </div>
         <div class="topstories-carousel-body">
           <div class="topstories-track">
             ${hasSlides ? clusters.map(cluster => `
