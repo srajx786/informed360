@@ -1845,10 +1845,8 @@ function renderTopStoriesSection(section){
       </div>`
     : "";
   const controls = clusters.length > 1
-    ? `<div class="topstories-controls-overlay">
-        <button class="nav-btn prev" type="button" aria-label="Previous">‹</button>
-        <button class="nav-btn next" type="button" aria-label="Next">›</button>
-      </div>`
+    ? `<button class="nav-btn topstories-prev" type="button" aria-label="Previous">‹</button>
+       <button class="nav-btn topstories-next" type="button" aria-label="Next">›</button>`
     : "";
   return `
     <div class="topstories-carousel-shell" data-carousel="${escapeHtml(section.id)}">
@@ -1859,8 +1857,8 @@ function renderTopStoriesSection(section){
               ${renderTopStoriesCluster(cluster)}
             </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
         </div>
+        ${controls}
       </div>
-      ${controls}
       ${dots}
     </div>`;
 }
@@ -1961,10 +1959,10 @@ function bindTopStoriesCarousels(){
       track.style.transform = `translateX(-${nextIndex * 100}%)`;
       dots.forEach((dot, idx) => dot.classList.toggle("active", idx === nextIndex));
     };
-    carousel.querySelector(".nav-btn.prev")?.addEventListener("click", () =>
+    carousel.querySelector(".topstories-prev")?.addEventListener("click", () =>
       update((Number(carousel.dataset.index) || 0) - 1)
     );
-    carousel.querySelector(".nav-btn.next")?.addEventListener("click", () =>
+    carousel.querySelector(".topstories-next")?.addEventListener("click", () =>
       update((Number(carousel.dataset.index) || 0) + 1)
     );
     dots.forEach(dot => {

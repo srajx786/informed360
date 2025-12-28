@@ -237,6 +237,7 @@ body.theme-dark .gn-search{ background:#1a222c }
 }
 .pinned-block{ grid-area:pinned }
 .hero-block{ grid-area:hero }
+.hero-block.block-card{ background:transparent; border:0; border-radius:0; box-shadow:none }
 .mood-block{ grid-area:mood; display:flex; flex-direction:column; gap:.9rem; height:100%; align-self:stretch }
 .source-block{ grid-area:source }
 .news-block{ grid-area:news }
@@ -336,13 +337,13 @@ body.theme-dark .gn-search{ background:#1a222c }
 /* HERO */
 .hero-title{ font-family:"Merriweather", serif; font-size:16px; font-weight:600; letter-spacing:.1px; white-space:nowrap }
 .hero-mode{ font-family:"Inter", sans-serif; font-size:12px; font-weight:500; color:var(--muted); margin-top:.35rem }
-.hero-carousels{ display:flex; flex-direction:column; gap:.85rem; padding:.2rem .9rem .9rem }
+.hero-carousels{ display:flex; flex-direction:column; gap:.5rem; padding:.2rem .9rem .4rem }
 .topstories-carousel-shell{ display:flex; flex-direction:column; gap:.5rem; position:relative; overflow:visible }
 .topstories-carousel{ border:1px solid var(--border); border-radius:14px; padding:.65rem .75rem .75rem; background:color-mix(in oklab, var(--card) 92%, var(--chip) 8%); overflow:hidden; display:flex; flex-direction:column; gap:.5rem }
 .topstories-carousel-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding-bottom:.4rem; border-bottom:1px solid var(--border) }
 .topstories-carousel-title{ font-family:"Merriweather", serif; font-size:14px; font-weight:700; display:flex; align-items:center; gap:.35rem }
 .topstories-carousel-scope{ font-family:"Inter", sans-serif; font-size:12px; font-weight:500; color:var(--muted) }
-.topstories-carousel-body{ overflow:hidden }
+.topstories-carousel-body{ overflow:hidden; position:relative }
 .topstories-track{ display:flex; transition:transform .4s ease; gap:0 }
 .topstories-slide{ min-width:100%; display:flex; flex-direction:column }
 .topstories-cluster{ display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); gap:.9rem; border:1px solid var(--border); border-radius:12px; padding:.65rem; background:var(--card) }
@@ -377,17 +378,16 @@ body.theme-dark .gn-search{ background:#1a222c }
   overflow:hidden;
 }
 .topstories-related-row .sentiment-line{ font-size:.65rem }
-.topstories-controls-overlay{
+.topstories-prev,
+.topstories-next{
   position:absolute;
   top:50%;
-  right:-12px;
   transform:translateY(-50%);
-  display:flex;
-  flex-direction:column;
-  gap:.4rem;
   z-index:2;
 }
-.topstories-controls-overlay .nav-btn{
+.topstories-prev{ left:10px; }
+.topstories-next{ right:10px; }
+.nav-btn{
   width:28px;
   height:28px;
   border-radius:999px;
@@ -396,8 +396,8 @@ body.theme-dark .gn-search{ background:#1a222c }
   box-shadow:var(--shadow);
   cursor:pointer;
 }
-.topstories-controls-overlay .nav-btn:active{ transform:scale(0.98); }
-.topstories-dots{ display:flex; justify-content:center; gap:.35rem; padding-top:.5rem; flex:0 0 auto }
+.nav-btn:active{ transform:translateY(-50%) scale(0.98); }
+.topstories-dots{ display:flex; justify-content:center; gap:.35rem; padding-top:.35rem; flex:0 0 auto }
 .topstories-dots button{ width:6px; height:6px; border-radius:50%; border:0; background:#cbd5e1; cursor:pointer }
 .topstories-dots button.active{ background:var(--brand) }
 .topstories-empty{ padding:.8rem; border:1px dashed var(--border); border-radius:12px; text-align:center; color:var(--muted); font-size:.85rem }
