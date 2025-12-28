@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>API Docs · Informed360</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="page-header">
+      <a class="page-logo" href="/">Informed360</a>
+      <nav class="page-nav">
+        <a href="/">Home</a>
+        <a href="/methodology">Methodology</a>
+      </nav>
+    </header>
+
+    <main class="page-content">
+      <h1 class="page-title">API Docs</h1>
+      <p class="page-lede">
+        All endpoints return JSON. Use query parameters for filtering. Quotas and benchmarks below
+        are placeholders and should be confirmed for production.
+      </p>
+
+      <section class="page-card">
+        <h2>Endpoints</h2>
+        <div class="api-endpoint">
+          <h3>/api/news</h3>
+          <pre><code>{
+  "fetchedAt": 1710000000000,
+  "articles": [
+    {
+      "title": "Headline",
+      "link": "https://...",
+      "source": "Reuters",
+      "publishedAt": "2024-05-01T10:12:00Z",
+      "sentiment_label": "Positive",
+      "sentiment_scores": { "pos": 52, "neu": 33, "neg": 15 },
+      "confidence": 0.72,
+      "top_phrases": ["market rally", "record high", "earnings"],
+      "description": "...",
+      "image": "..."
+    }
+  ]
+}</code></pre>
+        </div>
+        <div class="api-endpoint">
+          <h3>/api/stories</h3>
+          <pre><code>{
+  "fetchedAt": 1710000000000,
+  "stories": [
+    {
+      "storyId": "abcd1234",
+      "canonicalTitle": "Election campaign begins",
+      "storySentiment": { "pos": 44, "neu": 38, "neg": 18 },
+      "storyConfidence": 0.63,
+      "storyTopPhrases": ["campaign launch", "voter outreach", "manifesto"],
+      "articles": ["..."]
+    }
+  ]
+}</code></pre>
+        </div>
+        <div class="api-endpoint">
+          <h3>/api/explain</h3>
+          <pre><code>{
+  "url": "https://...",
+  "model": "transformer",
+  "sentiment_label": "Neutral",
+  "sentiment_scores": { "pos": 29, "neu": 50, "neg": 21 },
+  "confidence": 0.58,
+  "top_phrases": ["policy update", "minister said", "growth outlook"],
+  "generatedAt": "2024-05-01T10:12:00Z"
+}</code></pre>
+        </div>
+        <div class="api-endpoint">
+          <h3>/api/gdelt</h3>
+          <pre><code>{
+  "fetchedAt": 1710000000000,
+  "articles": [
+    {
+      "title": "Global markets steady",
+      "link": "https://...",
+      "source": "BBC",
+      "publishedAt": "2024-05-01T10:12:00Z",
+      "description": "..."
+    }
+  ]
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="page-card">
+        <h2>Benchmarks (placeholders)</h2>
+        <table class="api-table">
+          <thead>
+            <tr>
+              <th>Plan</th>
+              <th>Daily quota</th>
+              <th>Latency SLA</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sandbox</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Pro</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td>Teams</td>
+              <td>—</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>Informed360 © <span id="year"></span></span>
+      <span class="dot">•</span>
+      <a href="/">Back to homepage</a>
+    </footer>
+  </div>
+
+  <script src="page.js" defer></script>
+</body>
+</html>

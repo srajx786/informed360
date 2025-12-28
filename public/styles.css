@@ -222,6 +222,34 @@ body.theme-dark .gn-search{ background:#1a222c }
 .block-list .row + .row{ border-top:1px solid var(--border) }
 .row-title{ font-family:"Merriweather", serif; font-weight:700; line-height:1.25; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden }
 .row-meta{ color:var(--muted); font-size:.9rem; display:flex; flex-wrap:wrap; gap:.35rem; align-items:center }
+.cred-badge{
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  padding:.1rem .45rem;
+  font-size:.65rem;
+  font-weight:700;
+  margin-left:.35rem;
+  border:1px solid transparent;
+}
+.cred-badge.high{
+  background:rgba(34,197,94,.15);
+  color:#16a34a;
+  border-color:rgba(34,197,94,.3);
+}
+.cred-badge.medium{
+  background:rgba(251,191,36,.18);
+  color:#d97706;
+  border-color:rgba(251,191,36,.3);
+}
+.cred-badge.low{
+  background:rgba(239,68,68,.16);
+  color:#dc2626;
+  border-color:rgba(239,68,68,.3);
+}
+.cred-badge.inline{
+  margin-left:.4rem;
+}
 .topic-logos{
   display:inline-flex;
   align-items:center;
@@ -348,6 +376,26 @@ body.theme-dark .gn-search{ background:#1a222c }
   -webkit-line-clamp:2;
   -webkit-box-orient:vertical;
   overflow:hidden;
+}
+.hero-story-label{
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
+  font-weight:600;
+}
+.hero-story-sentiment{
+  margin-top:.4rem;
+  padding:.5rem .6rem;
+  background:var(--chip);
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.hero-story-sentiment-title{
+  font-size:.72rem;
+  font-weight:600;
+  color:var(--muted);
+  margin-bottom:.35rem;
 }
 .hero-related{ display:flex; flex-direction:column; gap:.65rem }
 .hero-related-item{ display:flex; flex-direction:column; gap:.35rem }
@@ -704,6 +752,29 @@ body.theme-dark .gn-search{ background:#1a222c }
   pointer-events:none;
   max-width:240px;
 }
+.sentiment-tooltip .tooltip-title{
+  font-weight:700;
+  margin-bottom:.2rem;
+}
+.sentiment-tooltip .tooltip-sub{
+  color:color-mix(in oklab, var(--card) 70%, var(--muted) 30%);
+  margin-bottom:.35rem;
+}
+.sentiment-tooltip .tooltip-phrases{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.25rem;
+  margin-bottom:.35rem;
+}
+.sentiment-tooltip .tooltip-phrases span{
+  background:rgba(255,255,255,.12);
+  border-radius:999px;
+  padding:.15rem .4rem;
+  font-size:.68rem;
+}
+.sentiment-tooltip .tooltip-summary{
+  line-height:1.35;
+}
 .topic-trend .trend-sparkline{
   display:block;
 }
@@ -917,6 +988,18 @@ dialog::backdrop{
   align-items:center;
   gap:.35rem;
   cursor:pointer;
+}
+.toggle-inline{
+  display:flex;
+  align-items:center;
+  gap:.45rem;
+  font-weight:600;
+}
+.settings-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+  margin-top:.5rem;
 }
 .topic-card{
   min-width:min(640px, 92vw);
@@ -1185,6 +1268,181 @@ dialog::backdrop{
 
 /* If you still want "source · date" on desktop, remove this.
    But user asked date can be taken to next line, so keep it consistent. */
+
+.drawer-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(15,23,42,.35);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease;
+  z-index:90;
+}
+.drawer-overlay.show{
+  opacity:1;
+  pointer-events:auto;
+}
+.pricing-drawer{
+  position:fixed;
+  top:0;
+  right:0;
+  width:min(360px, 92vw);
+  height:100%;
+  background:var(--card);
+  border-left:1px solid var(--border);
+  box-shadow:var(--shadow);
+  transform:translateX(100%);
+  transition:transform .2s ease;
+  z-index:100;
+  display:flex;
+  flex-direction:column;
+  padding:1rem 1.1rem;
+  gap:1rem;
+}
+.pricing-drawer.open{
+  transform:translateX(0);
+}
+.drawer-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem;
+}
+.drawer-title{
+  font-family:"Merriweather", serif;
+  font-size:1.2rem;
+  font-weight:700;
+}
+.drawer-sub{
+  color:var(--muted);
+  font-size:.82rem;
+}
+.drawer-body{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+}
+.pricing-tier{
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:.9rem 1rem;
+  background:color-mix(in oklab, var(--card) 90%, var(--chip) 10%);
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+}
+.pricing-tier.highlight{
+  border-color:color-mix(in oklab, var(--brand) 30%, var(--border) 70%);
+  background:color-mix(in oklab, var(--brand) 10%, var(--card) 90%);
+}
+.tier-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.5rem;
+}
+.tier-title{
+  font-weight:700;
+}
+.tier-price{
+  font-weight:700;
+  color:var(--brand);
+}
+.pricing-tier ul{
+  margin:0;
+  padding-left:1.1rem;
+  color:var(--muted);
+  font-size:.85rem;
+}
+.btn.primary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--brand);
+  color:#fff;
+  text-decoration:none;
+  border:1px solid transparent;
+}
+
+.page-shell{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+  padding:1.2rem 1.2rem 2rem;
+  max-width:960px;
+  margin:0 auto;
+}
+.page-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.page-logo{
+  font-size:1.4rem;
+  font-weight:800;
+}
+.page-nav{
+  display:flex;
+  gap:.8rem;
+  color:var(--muted);
+  font-weight:600;
+}
+.page-content{
+  display:flex;
+  flex-direction:column;
+  gap:1.2rem;
+}
+.page-title{
+  font-family:"Merriweather", serif;
+  font-size:2rem;
+}
+.page-lede{
+  color:var(--muted);
+  max-width:680px;
+}
+.page-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:1rem 1.1rem;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+}
+.page-card ul{
+  margin:0;
+  padding-left:1.2rem;
+  color:var(--muted);
+}
+.page-footer{
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+  color:var(--muted);
+  font-size:.9rem;
+}
+.api-endpoint pre{
+  margin:0;
+  background:color-mix(in oklab, var(--card) 86%, var(--chip) 14%);
+  border-radius:12px;
+  padding:.8rem;
+  font-size:.8rem;
+  overflow:auto;
+}
+.api-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.9rem;
+}
+.api-table th,
+.api-table td{
+  text-align:left;
+  border-bottom:1px solid var(--border);
+  padding:.5rem 0;
+}
 
 @media (max-width: 720px){
   .ts-date{
