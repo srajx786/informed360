@@ -1032,10 +1032,12 @@ const pickPrimaryArticle = (articles = []) => {
       (now - new Date(article.publishedAt).getTime()) / (1000 * 60 * 60)
     );
     const recencyScore = 1 / ageHours;
+    const confidence = Number(article?.sentiment?.confidence ?? 0.35) || 0.35;
     const score =
       (hasImage ? 3 : 0) +
       (article.description ? 1 : 0) +
       (article.title ? 1 : 0) +
+      confidence * 2 +
       recencyScore;
     if (score > bestScore) {
       bestScore = score;
@@ -1045,28 +1047,65 @@ const pickPrimaryArticle = (articles = []) => {
   return best || articles[0] || null;
 };
 
+const TOP_STORY_STOPWORDS = new Set([
+  ...STOPWORDS,
+  "live",
+  "updates",
+  "update",
+  "breaking",
+  "highlights",
+  "recap",
+  "explained",
+  "watch"
+]);
+const normalizeTopStoryTitle = (title = "") => {
+  const tokens = tokenize(title).filter((token) => !TOP_STORY_STOPWORDS.has(token));
+  if (!tokens.length) return "";
+  return tokens.slice(0, 8).join(" ");
+};
+
 const buildTopStoryClusters = (articles = []) => {
   const sorted = [...articles].sort(
     (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
   );
   const clusters = [];
+  const clusterKeyMap = new Map();
   const windowMs = 36 * 60 * 60 * 1000;
 
   sorted.forEach((article) => {
     const canonical = canonicalizeUrl(article.link || "");
-    let match = clusters.find((cluster) => {
-      if (!cluster.articles.length) return false;
+    const normalizedTitle = normalizeTopStoryTitle(article.title || "");
+    let match = null;
+    if (canonical) {
+      match = clusters.find((cluster) => cluster.canonicalUrls.has(canonical));
+    }
+    if (!match && normalizedTitle && clusterKeyMap.has(normalizedTitle)) {
+      const candidate = clusterKeyMap.get(normalizedTitle);
       const timeDiff =
         Math.abs(
-          new Date(cluster.latestAt).getTime() -
+          new Date(candidate.latestAt).getTime() -
             new Date(article.publishedAt).getTime()
         ) || 0;
-      if (timeDiff > windowMs) return false;
-      if (canonical && cluster.canonicalUrls.has(canonical)) return true;
-      const similarity = storySimilarity(cluster.articles[0], article);
-      if (similarity >= 0.35) return true;
-      return strongTokenOverlap(cluster.articles[0], article);
-    });
+      if (timeDiff <= windowMs) {
+        match = candidate;
+      }
+    }
+    if (!match) {
+      match = clusters.find((cluster) => {
+        if (!cluster.articles.length) return false;
+        const timeDiff =
+          Math.abs(
+            new Date(cluster.latestAt).getTime() -
+              new Date(article.publishedAt).getTime()
+          ) || 0;
+        if (timeDiff > windowMs) return false;
+        if (canonical && cluster.canonicalUrls.has(canonical)) return true;
+        if (normalizedTitle && cluster.keys.has(normalizedTitle)) return true;
+        const similarity = storySimilarity(cluster.articles[0], article);
+        if (similarity >= 0.35) return true;
+        return strongTokenOverlap(cluster.articles[0], article);
+      });
+    }
     if (!match) {
       match = {
         storyId: crypto
@@ -1076,12 +1115,17 @@ const buildTopStoryClusters = (articles = []) => {
           .slice(0, 10),
         canonicalTitle: article.title || "Top story",
         canonicalUrls: new Set(canonical ? [canonical] : []),
+        keys: new Set(normalizedTitle ? [normalizedTitle] : []),
         latestAt: article.publishedAt,
         articles: []
       };
       clusters.push(match);
     }
     if (canonical) match.canonicalUrls.add(canonical);
+    if (normalizedTitle) {
+      match.keys.add(normalizedTitle);
+      clusterKeyMap.set(normalizedTitle, match);
+    }
     match.articles.push(article);
     if (new Date(article.publishedAt) > new Date(match.latestAt))
       match.latestAt = article.publishedAt;
@@ -1096,7 +1140,7 @@ const buildTopStoryClusters = (articles = []) => {
     const related = [];
     const usedSources = new Set(primaryDomain ? [primaryDomain] : []);
     articlesSorted.forEach((article) => {
-      if (related.length >= 3) return;
+      if (related.length >= 4) return;
       if (article.link === primary?.link) return;
       const sourceKey = sourceDomainForArticle(article) || article.source || "";
       if (!sourceKey || usedSources.has(sourceKey)) return;
@@ -1106,20 +1150,30 @@ const buildTopStoryClusters = (articles = []) => {
         sourceLogo: logoForArticle(article || {}),
         publishedAt: article.publishedAt,
         url: article.link,
+        title: article.title || "",
+        description: article.description || "",
+        image: pickStoryImage(article),
         sentiment: article.sentiment || { pos: 0, neu: 0, neg: 0 }
       });
     });
     const { sentiment } = weightedSentiment(articlesSorted);
+    const fallbackImage =
+      pickStoryImage(primary) ||
+      pickStoryImage(articlesSorted[0] || {}) ||
+      "";
     return {
       storyId: cluster.storyId,
       headline: primary?.title || cluster.canonicalTitle,
-      imageUrl: pickStoryImage(primary),
+      imageUrl: fallbackImage,
       sentiment,
       primary: {
         source: primary?.source || primaryDomain || "Source",
         sourceLogo: logoForArticle(primary || {}),
         publishedAt: primary?.publishedAt || cluster.latestAt,
         url: primary?.link || "",
+        title: primary?.title || cluster.canonicalTitle,
+        description: primary?.description || "",
+        image: pickStoryImage(primary),
         sentiment: primary?.sentiment || sentiment
       },
       related,
