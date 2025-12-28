@@ -1091,6 +1091,7 @@ async function loadAll(){
       worldRecent: topWorldRecent?.clusters || [],
       worldEngaged: topWorldEngaged?.clusters || []
     };
+    recordTopStoriesTrend();
     state.topics   = selectTrendingTopics(topics.topics || [], state.allArticles);
     if (needsIndiaFetch){
       state.indiaArticles = india?.articles || [];
@@ -1840,14 +1841,33 @@ function formatTopStoriesHourLabel(date){
 }
 
 function getTopStoriesNetScore(story){
-  const sentiment = story?.sentiment || story?.storySentiment || story?.primary?.sentiment || {};
+  const sentiment =
+    story?.sentiment ||
+    story?.storySentiment ||
+    story?.primary?.sentiment ||
+    story?.primary?.storySentiment ||
+    {};
   const pos = Math.max(0, Number(sentiment.posP ?? sentiment.pos ?? 0));
   const neg = Math.max(0, Number(sentiment.negP ?? sentiment.neg ?? 0));
   return pos - neg;
 }
 
+function getPrimaryTopStory(){
+  const topStories = state.topStories || {};
+  const pools = [
+    topStories.indiaRecent,
+    topStories.indiaEngaged,
+    topStories.worldRecent,
+    topStories.worldEngaged
+  ];
+  for (const list of pools){
+    if (Array.isArray(list) && list.length) return list[0];
+  }
+  return null;
+}
+
 function recordTopStoriesTrend(){
-  const topStory = (state.topStories || [])[0];
+  const topStory = getPrimaryTopStory();
   if (!topStory) return;
   const value = getTopStoriesNetScore(topStory);
   const now = Date.now();
@@ -2005,7 +2025,8 @@ function renderTopStoriesSection(section){
   const controls = clusters.length > 1
     ? `<button class="nav-btn topstories-prev" type="button" aria-label="Previous">‹</button>
        <button class="nav-btn topstories-next" type="button" aria-label="Next">›</button>`
-    : `<span class="nav-btn spacer" aria-hidden="true"></span>`;
+    : `<span class="nav-btn spacer" aria-hidden="true"></span>
+       <span class="nav-btn spacer" aria-hidden="true"></span>`;
   return `
     <div class="topstories-carousel-shell" data-carousel="${escapeHtml(section.id)}">
       <div class="topstories-carousel">
@@ -2013,9 +2034,6 @@ function renderTopStoriesSection(section){
           <div class="topstories-carousel-title">
             ${escapeHtml(section.title)}
             <span class="topstories-carousel-scope">(${escapeHtml(section.scope)})</span>
-          </div>
-          <div class="topstories-nav">
-            ${controls}
           </div>
         </div>
         <div class="topstories-carousel-body">
@@ -2026,7 +2044,11 @@ function renderTopStoriesSection(section){
               </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
           </div>
         </div>
+        ${renderTopStoriesTrendMiniChart()}
         <div class="topstories-footer">
+          <div class="topstories-nav">
+            ${controls}
+          </div>
           ${dots}
         </div>
       </div>

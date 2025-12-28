@@ -370,15 +370,16 @@ body.theme-dark .gn-search{ background:#1a222c }
   min-height:0;
 }
 .topstories-carousel{
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:.55rem .7rem .6rem;
-  background:color-mix(in oklab, var(--card) 92%, var(--chip) 8%);
+  border:0;
+  border-radius:0;
+  padding:0;
+  background:transparent;
   overflow:hidden;
   display:flex;
   flex-direction:column;
   gap:.5rem;
-  height:var(--topstories-carousel-height);
+  height:auto;
+  min-height:0;
 }
 .topstories-carousel-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding-bottom:.4rem; border-bottom:1px solid var(--border) }
 .topstories-carousel-title{ font-family:"Merriweather", serif; font-size:13px; font-weight:700; display:flex; align-items:center; gap:.35rem }
@@ -439,7 +440,14 @@ body.theme-dark .gn-search{ background:#1a222c }
   min-height:0;
 }
 .topstories-related-title{ font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted) }
-.topstories-related-list{ display:flex; flex-direction:column; gap:.45rem; overflow:auto; padding-right:2px }
+.topstories-related-list{
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+  overflow:auto;
+  padding-right:2px;
+  max-height:180px;
+}
 .topstories-related-row{ display:flex; gap:.6rem; padding:.4rem 0; text-decoration:none; color:inherit }
 .topstories-related-row + .topstories-related-row{ border-top:1px solid var(--border) }
 .topstories-related-thumb{ width:52px; height:52px; border-radius:12px; overflow:hidden; background:#eef2f7; flex:0 0 auto; display:flex; align-items:center; justify-content:center }
@@ -484,12 +492,13 @@ body.theme-dark .gn-search{ background:#1a222c }
   display:flex;
   flex-direction:column;
   gap:.35rem;
-  padding:.1rem .1rem .2rem;
+  padding:.2rem .1rem .2rem;
+  margin-top:auto;
 }
 .topstories-nav{
   display:flex;
   align-items:center;
-  justify-content:flex-end;
+  justify-content:space-between;
   min-height:28px;
   gap:.35rem;
 }
@@ -498,7 +507,7 @@ body.theme-dark .gn-search{ background:#1a222c }
   justify-content:center;
   gap:.35rem;
   margin-top:0;
-  padding-bottom:0;
+  padding-bottom:.1rem;
   flex:0 0 auto;
 }
 .topstories-dots button{ width:6px; height:6px; border-radius:50%; border:0; background:#cbd5e1; cursor:pointer }
