@@ -205,7 +205,9 @@
         >Feedback</a>
       </div>
       <span class="dot">•</span>
-      <button class="linkish" type="button">About</button>
+      <a class="linkish" href="/methodology">Methodology</a>
+      <span class="dot">•</span>
+      <a class="linkish" href="/api">API Docs</a>
     </div>
     <div class="footer-right">
       <span>Made for balanced, sentiment-aware news</span>
@@ -279,12 +281,60 @@
             <label><input type="radio" name="theme" value="dark"> Dark</label>
           </div>
         </div>
+        <div class="toggle-row">
+          <span>Credibility badges</span>
+          <label class="toggle-inline">
+            <input id="credibilityToggle" type="checkbox">
+            <span>Show</span>
+          </label>
+        </div>
+        <div class="settings-links">
+          <button id="pricingEntry" class="linkish" type="button">Pricing</button>
+          <a class="linkish" href="/methodology">Methodology</a>
+          <a class="linkish" href="/api">API Docs</a>
+        </div>
       </div>
       <menu class="actions">
         <button value="cancel" class="btn">Close</button>
       </menu>
     </form>
   </dialog>
+
+  <div id="pricingOverlay" class="drawer-overlay" aria-hidden="true"></div>
+  <aside id="pricingDrawer" class="pricing-drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <div>
+        <div class="drawer-title">Pricing</div>
+        <div class="drawer-sub">Flexible tiers for individuals and teams.</div>
+      </div>
+      <button id="pricingClose" class="icon-btn" type="button" aria-label="Close pricing">✕</button>
+    </div>
+    <div class="drawer-body">
+      <div class="pricing-tier">
+        <div class="tier-header">
+          <div class="tier-title">B2C (Pro)</div>
+          <div class="tier-price">₹—/month</div>
+        </div>
+        <ul>
+          <li>Personalized sentiment dashboard</li>
+          <li>Unlimited saved stories</li>
+          <li>Email briefing + alerts</li>
+        </ul>
+      </div>
+      <div class="pricing-tier highlight">
+        <div class="tier-header">
+          <div class="tier-title">PR / Teams</div>
+          <div class="tier-price">Request demo</div>
+        </div>
+        <ul>
+          <li>Team-wide story monitoring</li>
+          <li>Brand sentiment + alerts</li>
+          <li>Custom source registry</li>
+        </ul>
+        <a id="pricingDemo" class="btn primary" href="mailto:info.shrirajnair@gmail.com">Request demo</a>
+      </div>
+    </div>
+  </aside>
 
   <dialog id="topicPickerModal" class="info-modal">
     <form method="dialog" class="info-card topic-card">

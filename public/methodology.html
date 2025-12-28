@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Methodology · Informed360</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="page-header">
+      <a class="page-logo" href="/">Informed360</a>
+      <nav class="page-nav">
+        <a href="/">Home</a>
+        <a href="/api">API Docs</a>
+      </nav>
+    </header>
+
+    <main class="page-content">
+      <h1 class="page-title">Methodology</h1>
+      <p class="page-lede">
+        We combine curated RSS feeds with the GDELT 2.1 document API to keep a balanced, real-time
+        view of Indian and global coverage.
+      </p>
+
+      <section class="page-card">
+        <h2>Source collection</h2>
+        <ul>
+          <li>RSS feeds from national, business, tech, and world outlets.</li>
+          <li>GDELT query expansion for breaking headlines and global coverage.</li>
+          <li>Feed health checks ensure broken feeds are skipped, not fatal.</li>
+        </ul>
+      </section>
+
+      <section class="page-card">
+        <h2>Deduplication & threading</h2>
+        <ul>
+          <li>URLs are canonicalized to detect duplicates.</li>
+          <li>Title similarity + time proximity groups articles into story threads.</li>
+          <li>Story sentiment aggregates article scores with recency & confidence weighting.</li>
+        </ul>
+      </section>
+
+      <section class="page-card">
+        <h2>Sentiment scoring</h2>
+        <ul>
+          <li>Transformer sentiment (when enabled) generates positive/neutral/negative scores.</li>
+          <li>Short or failed transformer inputs fall back to VADER for stability.</li>
+          <li>“Why this score” surfaces top phrases and model confidence.</li>
+        </ul>
+      </section>
+
+      <section class="page-card">
+        <h2>Credibility badges</h2>
+        <p>
+          Credibility badges are optional and reflect general ratings concepts inspired by
+          AllSides or Ad Fontes. We do not claim their data unless it is explicitly imported.
+        </p>
+      </section>
+
+      <section class="page-card">
+        <h2>Limitations</h2>
+        <ul>
+          <li>Sentiment is a directional signal, not a factual assessment.</li>
+          <li>Coverage depends on feed freshness and GDELT availability.</li>
+          <li>Story clustering can occasionally merge similar but distinct events.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <span>Informed360 © <span id="year"></span></span>
+      <span class="dot">•</span>
+      <a href="/">Back to homepage</a>
+    </footer>
+  </div>
+
+  <script src="page.js" defer></script>
+</body>
+</html>

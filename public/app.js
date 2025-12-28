@@ -4,6 +4,9 @@ const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
 const PIN_STORAGE_KEY = "i360_pins_v2";
 const LEGACY_PIN_STORAGE_KEY = "i360_pins";
+const CREDIBILITY_STORAGE_KEY = "i360_credibility_badges";
+const PRICING_MAILTO =
+  "mailto:info.shrirajnair@gmail.com?subject=Informed360%20Demo%20Request&body=Hi%20Informed360%20team%2C%0A%0AWe%20would%20like%20a%20demo%20of%20the%20PR%2FTeams%20tier.%0ACompany%3A%0AUse%20case%3A%0AExpected%20seats%3A%0APreferred%20time%3A%0A%0AThanks!";
 async function fetchJSON(u){
   const r = await fetch(u);
   if (!r.ok) throw new Error(await r.text());
@@ -505,13 +508,31 @@ function selectTrendingTopics(topics = [], articles = []){
 }
 
 /* sentiment meter */
+function formatSentimentLabel(label = ""){
+  if (!label) return "Neutral";
+  const lower = String(label).toLowerCase();
+  if (lower.startsWith("pos")) return "Positive";
+  if (lower.startsWith("neg")) return "Negative";
+  return "Neutral";
+}
+function buildWhyPayload(sentiment = {}, context = "", pos = 0, neg = 0){
+  const phrases = sentiment.topPhrases || sentiment.top_phrases || [];
+  const confidence = Number(sentiment.confidence ?? 0);
+  const label = formatSentimentLabel(sentiment.sentimentLabel || sentiment.label);
+  const model = sentiment.model || "vader";
+  const summary = buildSentimentExplanation(context || "", pos, neg);
+  if (!phrases.length && !confidence) return null;
+  return { label, confidence, phrases, model, summary };
+}
 function renderSentiment(s, slim = false, context = "", variant = ""){
   const pos = Math.max(0, Number(s.posP ?? s.pos ?? 0));
   const neu = Math.max(0, Number(s.neuP ?? s.neu ?? 0));
   const neg = Math.max(0, Number(s.negP ?? s.neg ?? 0));
   const classes = ["sentiment", slim ? "slim" : "", variant].filter(Boolean).join(" ");
+  const why = buildWhyPayload(s, context, pos, neg);
+  const whyAttr = why ? ` data-why="${encodeURIComponent(JSON.stringify(why))}"` : "";
   return `
-    <div class="${classes}" data-context="${escapeHtml(context)}" data-pos="${pos}" data-neu="${neu}" data-neg="${neg}">
+    <div class="${classes}" data-context="${escapeHtml(context)}" data-pos="${pos}" data-neu="${neu}" data-neg="${neg}"${whyAttr}>
       <div class="bar">
         <span class="segment pos" style="width:${pos}%"></span>
         <span class="segment neu" style="width:${neu}%"></span>
@@ -532,11 +553,13 @@ const state = {
   articles: [],
   allArticles: [],
   indiaArticles: [],
+  stories: [],
   topics: [],
   pins: loadPins(),
   profile: loadProfile(),
   theme: localStorage.getItem("theme") || "light",
   preferredTopics: loadPreferredTopics(),
+  showCredibilityBadges: loadCredibilitySetting(),
   hero: { index: 0, timer: null, pause: false },
   lastLeaderboardAt: 0
 };
@@ -549,6 +572,19 @@ function loadProfile(){
   }catch{
     return { pinnedTopics: [] };
   }
+}
+function loadCredibilitySetting(){
+  try{
+    const raw = localStorage.getItem(CREDIBILITY_STORAGE_KEY);
+    return raw === "1";
+  }catch{
+    return false;
+  }
+}
+function saveCredibilitySetting(value){
+  const flag = value ? "1" : "0";
+  localStorage.setItem(CREDIBILITY_STORAGE_KEY, flag);
+  state.showCredibilityBadges = value;
 }
 function saveProfile(p){
   localStorage.setItem("i360_profile", JSON.stringify(p || {}));
@@ -908,16 +944,19 @@ async function loadAll(){
   if (state.experimental) indiaQs.set("experimental", "1");
   if (needsIndiaFetch) indiaQs.set("category", "india");
 
-  const [news, topics, india] = await Promise.all([
+  const [news, topics, india, stories] = await Promise.all([
     fetchJSON(`/api/news${qs.toString() ? ("?" + qs.toString()) : ""}`),
     fetchJSON(`/api/topics${state.experimental ? "?experimental=1" : ""}`),
     needsIndiaFetch
       ? fetchJSON(`/api/news${indiaQs.toString() ? ("?" + indiaQs.toString()) : ""}`)
-      : Promise.resolve(null)
+      : Promise.resolve(null),
+    fetchJSON(`/api/stories${state.experimental ? "?experimental=1" : ""}`)
+      .catch(() => ({ stories: [] }))
   ]);
 
   state.allArticles = news.articles || [];
   state.articles = state.allArticles.slice();
+  state.stories = stories?.stories || [];
   state.topics   = selectTrendingTopics(topics.topics || [], state.allArticles);
   if (needsIndiaFetch){
     state.indiaArticles = india?.articles || [];
@@ -1002,6 +1041,15 @@ function heroSourceLogo(article, extraClass = ""){
               onerror="const span=document.createElement('span');span.className='ts-source-logo fallback${className}';span.textContent=this.dataset.fallback||'?';this.replaceWith(span);">`;
 }
 
+function renderCredibilityBadge(article, extraClass = ""){
+  if (!state.showCredibilityBadges) return "";
+  const cred = (article?.sourceCredibility || "").trim();
+  if (!cred) return "";
+  const tone = cred.toLowerCase().replace(/\s+/g, "-");
+  const cls = extraClass ? ` ${extraClass}` : "";
+  return `<span class="cred-badge ${escapeHtml(tone)}${cls}">${escapeHtml(cred)}</span>`;
+}
+
 function renderHeroMeta(article){
   const sourceName = escapeHtml(article?.source || domainFromUrl(article?.link || "") || "Source");
   return `
@@ -1010,6 +1058,7 @@ function renderHeroMeta(article){
         <span class="hero-source ts-source">
           ${heroSourceLogo(article)}
           <span class="hero-source-name">${sourceName}</span>
+          ${renderCredibilityBadge(article)}
         </span>
       </div>
       <div class="ts-meta-row2">
@@ -1096,7 +1145,7 @@ function renderRightStoryMeta(article){
   return `
     <div class="topstories-meta ts-meta">
       <div class="ts-meta-row1">
-        <span class="source ts-source">${sourceName}</span>
+        <span class="source ts-source">${sourceName}${renderCredibilityBadge(article, "inline")}</span>
       </div>
       <div class="ts-meta-row2">
         <span class="datetime ts-date">${datetime}</span>
@@ -1173,6 +1222,23 @@ function renderHeroTrendChart(cluster, index){
         <div class="trend-tooltip" role="tooltip" aria-hidden="true"></div>
       </div>
     </div>`;
+}
+
+function storySentimentObject(story){
+  const base = story?.storySentiment || {};
+  const pos = Number(base.pos ?? 0);
+  const neu = Number(base.neu ?? 0);
+  const neg = Number(base.neg ?? 0);
+  const label =
+    pos > neg + 5 ? "positive" : neg > pos + 5 ? "negative" : "neutral";
+  return {
+    posP: pos,
+    neuP: neu,
+    negP: neg,
+    label,
+    confidence: Number(story?.storyConfidence ?? 0),
+    topPhrases: story?.storyTopPhrases || []
+  };
 }
 
 function recentArticlesWithin(articles = [], hours){
@@ -1352,7 +1418,7 @@ function buildEngagedCluster(articles = [], prevLinks = new Set()){
   return { mode: "Most Engaged", featured, related };
 }
 
-function buildHeroSlides(articles = []){
+function buildLegacyHeroSlides(articles = []){
   const sorted = sortByPublishedDesc(articles);
   const usedLinks = new Set();
   const slides = [];
@@ -1393,6 +1459,25 @@ function buildHeroSlides(articles = []){
   return slides;
 }
 
+function buildHeroSlides(stories = [], articles = []){
+  if (stories && stories.length){
+    return stories.slice(0, 4).map(story => {
+      const storyArticles = Array.isArray(story.articles) ? story.articles : [];
+      const featured = story.featured || storyArticles[0] || {};
+      const related = storyArticles
+        .filter(item => item.link && item.link !== featured.link)
+        .slice(0, 4);
+      return {
+        ...story,
+        featured,
+        related,
+        mode: story.mode || "Top Story"
+      };
+    });
+  }
+  return buildLegacyHeroSlides(articles);
+}
+
 function safeImgTag(src, link, source, cls){
   const fallbackLogo = logoFor(link, source);
   const candidate = (src || "").trim();
@@ -1426,7 +1511,7 @@ function card(a){
       <div class="news-body">
         <div class="title">${a.title}</div>
         <div class="meta">
-          <span class="source">${a.source}</span>
+          <span class="source">${a.source}${renderCredibilityBadge(a, "inline")}</span>
           · <span class="meta-time">${formatArticleDate(a.publishedAt)}</span>
         </div>
         ${renderSentiment(a.sentiment, false, getArticleContext(a))}
@@ -1469,7 +1554,7 @@ function renderPinned(){
         ${topicLabel}
         <a class="row-title" href="${article.link}" target="_blank" rel="noopener">${article.title}</a>
         <div class="row-meta">
-          <span class="source">${article.source}</span>
+          <span class="source">${article.source}${renderCredibilityBadge(article, "inline")}</span>
           · <span>${formatArticleDate(article.publishedAt)}</span>
         </div>
         ${ageLine}
@@ -1545,7 +1630,7 @@ function renderDaily(){
 
 /* HERO */
 function renderHero(){
-  const slides = buildHeroSlides(state.articles);
+  const slides = buildHeroSlides(state.stories, state.articles);
   const track = $("#heroTrack");
   const dots  = $("#heroDots");
   if (!slides.length){
@@ -1553,7 +1638,10 @@ function renderHero(){
     dots.innerHTML  = "";
     return;
   }
-  track.innerHTML = slides.map((cluster, index) => `
+  track.innerHTML = slides.map((cluster, index) => {
+    const storySentiment = storySentimentObject(cluster);
+    const storyContext = [cluster.canonicalTitle, ...(cluster.storyTopPhrases || [])].filter(Boolean).join(" ");
+    return `
     <article class="hero-slide">
       <div class="top-stories-slide">
         <div class="ts-content">
@@ -1569,9 +1657,14 @@ function renderHero(){
               </div>
               <a class="hero-featured-body" href="${cluster.featured.link}" target="_blank" rel="noopener" data-article-link="${cluster.featured.link}">
                 ${renderHeroMeta(cluster.featured)}
+                <div class="hero-story-label">${escapeHtml(cluster.canonicalTitle || "Top story")}</div>
                 <div class="hero-headline">${escapeHtml(cluster.featured.title || "")}</div>
               </a>
               <div class="hero-sentiment">${renderSentiment(cluster.featured.sentiment, true, getArticleContext(cluster.featured), "mini")}</div>
+              <div class="hero-story-sentiment">
+                <div class="hero-story-sentiment-title">Story sentiment</div>
+                ${renderSentiment(storySentiment, true, storyContext, "mini")}
+              </div>
             </div>
           <div class="hero-related">
               ${cluster.related.map(item => `
@@ -1594,6 +1687,7 @@ function renderHero(){
         ${renderHeroTrendChart(cluster, index)}
       </div>
     </article>`).join("");
+  }).join("");
 
   dots.innerHTML = slides.map((_,i) =>
     `<button data-i="${i}" aria-label="Go to slide ${i+1}"></button>`
@@ -1867,21 +1961,55 @@ function buildSentimentExplanation(text, pos, neg){
   }
   return "Mostly factual/neutral language with few emotional cues.";
 }
+function formatSentimentTooltip(el, context, pos, neg){
+  const encoded = el.dataset.why || "";
+  if (encoded){
+    try{
+      const data = JSON.parse(decodeURIComponent(encoded));
+      const label = escapeHtml(data.label || "Neutral");
+      const confidence = Number(data.confidence ?? 0);
+      const confText = Number.isFinite(confidence)
+        ? `${Math.round(confidence * 100)}% confidence`
+        : "";
+      const phrases = Array.isArray(data.phrases) ? data.phrases : [];
+      const phraseList = phrases.slice(0, 6)
+        .map(phrase => `<span>${escapeHtml(phrase)}</span>`)
+        .join("");
+      const summary = escapeHtml(data.summary || buildSentimentExplanation(context, pos, neg));
+      return `
+        <div class="tooltip-title">Why this score</div>
+        <div class="tooltip-sub">${label}${confText ? ` · ${confText}` : ""}</div>
+        ${phraseList ? `<div class="tooltip-phrases">${phraseList}</div>` : ""}
+        <div class="tooltip-summary">${summary}</div>
+      `;
+    }catch{
+      return escapeHtml(buildSentimentExplanation(context, pos, neg));
+    }
+  }
+  return escapeHtml(buildSentimentExplanation(context, pos, neg));
+}
 function attachSentimentTooltips(){
   const tooltip = getSentimentTooltip();
   $$(".sentiment").forEach(el => {
     if (el.dataset.tooltipBound) return;
     el.dataset.tooltipBound = "1";
-    el.addEventListener("mousemove", (event) => {
+    const show = (event) => {
       const context = el.dataset.context || "";
       const pos = Number(el.dataset.pos || 0);
       const neg = Number(el.dataset.neg || 0);
-      tooltip.textContent = buildSentimentExplanation(context, pos, neg);
+      tooltip.innerHTML = formatSentimentTooltip(el, context, pos, neg);
       tooltip.style.display = "block";
       const position = clampTooltipPosition(event.clientX + 12, event.clientY + 12, tooltip);
       tooltip.style.left = `${position.x}px`;
       tooltip.style.top = `${position.y}px`;
-    });
+    };
+    el.addEventListener("mousemove", show);
+    el.addEventListener("click", show);
+    el.addEventListener("touchstart", (event) => {
+      if (event.touches?.length){
+        show(event.touches[0]);
+      }
+    }, { passive: true });
     el.addEventListener("mouseleave", () => {
       tooltip.style.display = "none";
     });
@@ -2240,10 +2368,13 @@ function scoreIndustries(){
   state.articles.forEach(a => {
     const text = `${a.title} ${a.description}`.toLowerCase();
     const category = String(a.category || "").toLowerCase();
-    const matches = rows.filter(r => {
-      const keywords = INDUSTRY_KEYWORDS[r.name] || [];
-      return keywords.some(k => text.includes(k)) || (category && keywords.some(k => category.includes(k)));
-    });
+    const sourceIndustry = String(a.industry || "").trim();
+    const matches = sourceIndustry && byName.has(sourceIndustry)
+      ? [byName.get(sourceIndustry)]
+      : rows.filter(r => {
+        const keywords = INDUSTRY_KEYWORDS[r.name] || [];
+        return keywords.some(k => text.includes(k)) || (category && keywords.some(k => category.includes(k)));
+      });
     if (!matches.length) return;
     matches.forEach(r => {
       r.n++;
@@ -2397,7 +2528,7 @@ function renderSearchResults(){
         <div class="search-body">
           <div class="search-title">${escapeHtml(article.title)}</div>
           <div class="search-meta">
-            <span>${escapeHtml(article.source)}</span>
+            <span>${escapeHtml(article.source)}${renderCredibilityBadge(article, "inline")}</span>
             · <span>${formatArticleDate(article.publishedAt)}</span>
           </div>
           <div class="search-sentiment">
@@ -2602,18 +2733,49 @@ $("#savePrefs")?.addEventListener("click", (e)=>{
 /* Help + Settings */
 const helpModal = $("#helpModal");
 const settingsModal = $("#settingsModal");
+const credibilityToggle = $("#credibilityToggle");
+const pricingDrawer = $("#pricingDrawer");
+const pricingOverlay = $("#pricingOverlay");
+const pricingEntry = $("#pricingEntry");
+const pricingClose = $("#pricingClose");
+const pricingDemo = $("#pricingDemo");
 $("#helpBtn")?.addEventListener("click", () => helpModal?.showModal());
 $("#settingsBtn")?.addEventListener("click", () => {
   settingsModal?.querySelectorAll('input[name="theme"]').forEach(input => {
     input.checked = input.value === state.theme;
   });
+  if (credibilityToggle) credibilityToggle.checked = state.showCredibilityBadges;
   settingsModal?.showModal();
 });
 settingsModal?.addEventListener("change", (e) => {
-  if (e.target?.name !== "theme") return;
-  state.theme = e.target.value;
-  localStorage.setItem("theme", state.theme);
-  applyTheme();
+  if (e.target?.name === "theme") {
+    state.theme = e.target.value;
+    localStorage.setItem("theme", state.theme);
+    applyTheme();
+    return;
+  }
+  if (e.target?.id === "credibilityToggle") {
+    saveCredibilitySetting(e.target.checked);
+    renderAll();
+  }
+});
+const openPricing = () => {
+  if (!pricingDrawer) return;
+  pricingDrawer.classList.add("open");
+  pricingDrawer.setAttribute("aria-hidden", "false");
+  pricingOverlay?.classList.add("show");
+};
+const closePricing = () => {
+  pricingDrawer?.classList.remove("open");
+  pricingDrawer?.setAttribute("aria-hidden", "true");
+  pricingOverlay?.classList.remove("show");
+};
+pricingEntry?.addEventListener("click", openPricing);
+pricingClose?.addEventListener("click", closePricing);
+pricingOverlay?.addEventListener("click", closePricing);
+pricingDemo?.addEventListener("click", (event) => {
+  event.preventDefault();
+  window.location.href = PRICING_MAILTO;
 });
 
 /* Topic picker */
