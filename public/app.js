@@ -586,6 +586,7 @@ const state = {
   stories: [],
   topics: [],
   engagedStories: [],
+  topStories: [],
   newsEmptyMessage: "",
   pins: loadPins(),
   profile: loadProfile(),
@@ -1012,7 +1013,8 @@ async function loadAll(){
       }
     }
 
-    const [topics, india, stories, engaged] = await Promise.all([
+    const topStoriesQs = state.experimental ? "&experimental=1" : "";
+    const [topics, india, stories, engaged, topIndiaRecent] = await Promise.all([
       fetchJSON(`/api/topics${state.experimental ? "?experimental=1" : ""}`)
         .catch(() => ({ topics: [] })),
       needsIndiaFetch
@@ -1022,13 +1024,16 @@ async function loadAll(){
       fetchJSON(`/api/stories${state.experimental ? "?experimental=1" : ""}`)
         .catch(() => ({ stories: [] })),
       fetchJSON(`/api/engaged${state.experimental ? "?experimental=1" : ""}`)
-        .catch(() => ({ stories: [] }))
+        .catch(() => ({ stories: [] })),
+      fetchJSON(`/api/top-stories?scope=india&type=recent${topStoriesQs}`)
+        .catch(() => ({ clusters: [] }))
     ]);
 
     state.allArticles = news.articles || [];
     state.articles = state.allArticles.slice();
     state.stories = stories?.stories || [];
     state.engagedStories = engaged?.stories || [];
+    state.topStories = topIndiaRecent?.clusters || [];
     state.topics   = selectTrendingTopics(topics.topics || [], state.allArticles);
     if (needsIndiaFetch){
       state.indiaArticles = india?.articles || [];
@@ -1067,6 +1072,7 @@ async function loadAll(){
     state.articles = [];
     state.stories = [];
     state.engagedStories = [];
+    state.topStories = [];
     state.indiaArticles = [];
     state.topics = [];
     state.newsEmptyMessage = "We couldn’t load the latest news. Please try again soon.";
@@ -1727,119 +1733,136 @@ function renderDaily(){
 function renderHero(){
   const container = $("#heroCarousels");
   if (!container) return;
-  const topStoriesSlides = buildTopStoriesSlides();
-  if (!topStoriesSlides.length){
+  const sections = buildTopStoriesSections();
+  if (!sections.length){
     container.innerHTML = `<div class="topstories-empty">No top stories available right now.</div>`;
     return;
   }
 
-  container.innerHTML = renderTopStoriesCarousel(topStoriesSlides);
+  container.innerHTML = sections.map(renderTopStoriesSection).join("");
 
   bindTopStoriesCarousels();
 }
 
-function buildTopStoriesSlides(){
-  const recentSorted = sortByPublishedDesc(state.articles || []);
-  const engagedItems = buildEngagedArticles();
-  const slides = [
-    { title: "Recent News", items: recentSorted.slice(0, 4) },
-    { title: "Most Engaged", items: engagedItems.slice(0, 4) },
-    { title: "Recent News", items: recentSorted.slice(4, 8) },
-    { title: "Most Engaged", items: engagedItems.slice(4, 8) }
+function buildTopStoriesSections(){
+  const topStories = state.topStories || [];
+  return [
+    {
+      id: "recent-news",
+      title: "Recent News",
+      scope: "",
+      clusters: topStories
+    }
   ];
-  if (state.category !== "home"){
-    return slides.slice(0, 1);
-  }
-  return slides;
 }
 
-function buildEngagedArticles(){
-  const sourceStories = state.engagedStories?.length
-    ? state.engagedStories
-    : (state.stories || []);
-  const items = sourceStories
-    .map(story => story?.featured || story?.articles?.[0])
-    .filter(Boolean);
-  const fallback = sortByPublishedDesc(state.articles || []);
-  const seen = new Set();
-  return [...items, ...fallback].filter(item => {
-    const key = item.link || item.title || "";
-    if (!key || seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-}
-
-function renderTopStoriesCarousel(slides){
-  const hasSlides = slides.length > 0;
-  const dots = slides.length > 1
+function renderTopStoriesSection(section){
+  const clusters = section.clusters || [];
+  const hasSlides = clusters.length > 0;
+  const dots = clusters.length > 1
     ? `<div class="topstories-dots" role="tablist">
-        ${slides.map((_, i) =>
+        ${clusters.map((_, i) =>
           `<button data-i="${i}" aria-label="Go to slide ${i + 1}"></button>`
         ).join("")}
       </div>`
     : "";
-  const controls = slides.length > 1
+  const controls = clusters.length > 1
     ? `<div class="topstories-controls">
         <button class="nav-btn prev" type="button" aria-label="Previous">‹</button>
         <button class="nav-btn next" type="button" aria-label="Next">›</button>
       </div>`
     : "";
   return `
-    <div class="topstories-carousel" data-carousel="0">
+    <div class="topstories-carousel" data-carousel="${escapeHtml(section.id)}">
       <div class="topstories-carousel-head">
-        <div class="topstories-carousel-spacer" aria-hidden="true"></div>
+        <div class="topstories-carousel-title">${escapeHtml(section.title)} ${section.scope ? `<span class="topstories-carousel-scope">(${escapeHtml(section.scope)})</span>` : ""}</div>
         ${controls}
       </div>
-      <div class="topstories-track">
-        ${hasSlides ? slides.map(slide => `
-          <div class="topstories-slide">
-            <div class="topstories-slide-head">
-              <div class="topstories-slide-title">${escapeHtml(slide.title)}</div>
-            </div>
-            <div class="topstories-grid">
-              ${slide.items?.length ? slide.items.map(renderTopStoriesItem).join("") : `<div class="topstories-empty">No stories yet.</div>`}
-            </div>
-          </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
+      <div class="topstories-carousel-body">
+        <div class="topstories-track">
+          ${hasSlides ? clusters.map(cluster => `
+            <div class="topstories-slide">
+              ${renderTopStoriesCluster(cluster)}
+            </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
+        </div>
       </div>
       ${dots}
     </div>`;
 }
 
-function renderTopStoriesItem(article){
-  const sourceName = escapeHtml(article?.source || domainFromUrl(article?.link || "") || "Source");
-  const time = escapeHtml(formatArticleDate(article?.publishedAt) || "");
+function renderTopStoriesCluster(cluster){
+  const headline = escapeHtml(cluster?.headline || "");
+  const primary = cluster?.primary || {};
+  const related = (cluster?.related || []).slice(0, 2);
+  const sourceName = escapeHtml(primary?.source || "Source");
+  const time = escapeHtml(formatArticleDate(primary?.publishedAt) || "");
+  const primaryUrl = primary?.url || "#";
+  const imageUrl = (cluster?.imageUrl || "").trim();
+  const sourceLogo = (primary?.sourceLogo || logoFor(primary?.url, primary?.source || "")).trim();
+  const hasRealImage = imageUrl && isLikelyImageUrl(imageUrl) && !isFallbackLogo(imageUrl);
+  const fallbackLogo = sourceLogo || "";
+  const imageMarkup = hasRealImage
+    ? `<img class="topstories-cluster-image" src="${imageUrl}" loading="lazy" alt=""
+         data-fallback-logo="${fallbackLogo}"
+         data-fallback-text="${sourceName}"
+         onerror="const logo=this.dataset.fallbackLogo; if(logo){this.src=logo; this.classList.add('logo-fallback'); this.onerror=null;} else {const div=document.createElement('div');div.className='topstories-thumb-fallback';div.textContent=this.dataset.fallbackText||'Source';this.replaceWith(div);}">`
+    : renderClusterLogoFallback(fallbackLogo, sourceName);
+
   return `
-    <article class="topstories-item">
-      <div class="topstories-item-main">
-        <a class="topstories-link" href="${article.link}" target="_blank" rel="noopener" data-article-link="${article.link}">
-          <div class="topstories-thumb-wrap">
-            ${topStoryThumb(article)}
+    <article class="topstories-cluster">
+      <div class="topstories-cluster-primary">
+        <a class="topstories-cluster-link" href="${primaryUrl}" target="_blank" rel="noopener">
+          <div class="topstories-cluster-media">
+            ${imageMarkup}
           </div>
-          <div class="topstories-text">
-            <div class="topstories-headline">${escapeHtml(article.title || "")}</div>
-            <div class="topstories-meta">
-              <span class="source">${sourceName}${renderCredibilityBadge(article, "inline")}</span>
-              <span class="datetime">${time}</span>
-            </div>
+          <div class="topstories-cluster-sentiment">
+            ${renderSentiment(cluster?.sentiment || primary?.sentiment || {}, true, "")}
+          </div>
+          <div class="topstories-cluster-headline">${headline}</div>
+          <div class="topstories-cluster-meta">
+            <span class="source">${sourceName}</span>
+            <span class="datetime">${time}</span>
           </div>
         </a>
-        <button class="pin-toggle ts-pin" type="button" data-link="${article.link}" aria-pressed="false">Pin</button>
       </div>
-      <div class="topstories-sentiment">${renderSentiment(article.sentiment, true, getArticleContext(article), "mini")}</div>
+      <div class="topstories-cluster-related">
+        ${related.length ? related.map(item => renderTopStoriesRelated(item)).join("") : `<div class="topstories-empty topstories-related-empty">No related sources yet.</div>`}
+      </div>
     </article>`;
 }
 
-function topStoryThumb(article){
-  const sourceName = escapeHtml(article?.source || domainFromUrl(article?.link || "") || "Source");
-  const candidate = (article?.image || "").trim();
-  const validImage = candidate && isLikelyImageUrl(candidate) && !isFallbackLogo(candidate);
-  if (!validImage){
-    return `<div class="topstories-thumb-fallback">${sourceName}</div>`;
+function renderTopStoriesRelated(item){
+  const sourceName = escapeHtml(item?.source || "Source");
+  const time = escapeHtml(formatArticleDate(item?.publishedAt) || "");
+  const logo = (item?.sourceLogo || logoFor(item?.url, item?.source || "")).trim();
+  const logoMarkup = logo
+    ? `<img class="topstories-related-logo" src="${logo}" loading="lazy" alt="${sourceName} logo"
+         data-fallback-text="${sourceName}"
+         onerror="const div=document.createElement('div');div.className='topstories-related-logo topstories-logo-fallback';div.textContent=this.dataset.fallbackText||'Source';this.replaceWith(div);">`
+    : `<div class="topstories-related-logo topstories-logo-fallback">${sourceName.slice(0, 2)}</div>`;
+  return `
+    <a class="topstories-related-row" href="${item?.url || "#"}" target="_blank" rel="noopener">
+      ${logoMarkup}
+      <div class="topstories-related-body">
+        <div class="topstories-related-meta">
+          <span class="source">${sourceName}</span>
+          <span class="datetime">${time}</span>
+        </div>
+        ${renderSentiment(item?.sentiment || {}, true, "", "mini")}
+      </div>
+    </a>`;
+}
+
+function renderClusterLogoFallback(logo, sourceName){
+  if (logo){
+    return `
+      <div class="topstories-thumb-fallback">
+        <img class="topstories-cluster-logo" src="${logo}" loading="lazy" alt="${sourceName} logo"
+          data-fallback-text="${sourceName}"
+          onerror="this.closest('.topstories-thumb-fallback').textContent=this.dataset.fallbackText||'Source';">
+      </div>`;
   }
-  return `<img class="topstories-thumb" src="${candidate}" loading="lazy" alt=""
-              data-fallback-text="${sourceName}"
-              onerror="const div=document.createElement('div');div.className='topstories-thumb-fallback';div.textContent=this.dataset.fallbackText||'Source';this.replaceWith(div);">`;
+  return `<div class="topstories-thumb-fallback">${sourceName}</div>`;
 }
 
 function bindTopStoriesCarousels(){
