@@ -202,8 +202,25 @@ body.theme-dark .gn-search{ background:#1a222c }
 }
 
 /* Weather */
-.weather-card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:.7rem .9rem; display:flex; align-items:center; gap:.7rem; justify-self:end; min-width:220px; max-width:280px; box-shadow:var(--shadow); flex:0 0 260px; align-self:flex-start; margin-top:0 }
-.weather-card .wx-icon{ font-size:1.5rem } .weather-card .wx-city{ font-weight:700 } .weather-card .wx-temp{ font-size:1.1rem; font-weight:800 }
+.weather-card{
+  background:transparent;
+  border:0;
+  border-radius:999px;
+  padding:.35rem .55rem;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  justify-self:end;
+  min-width:0;
+  max-width:220px;
+  box-shadow:none;
+  flex:0 0 auto;
+  align-self:flex-start;
+  margin-top:0;
+}
+.weather-card .wx-icon{ font-size:1.2rem }
+.weather-card .wx-city{ font-weight:600; font-size:.85rem }
+.weather-card .wx-temp{ font-size:.95rem; font-weight:800 }
 
 /* Layout */
 .layout{
@@ -317,15 +334,10 @@ body.theme-dark .gn-search{ background:#1a222c }
 .card{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius-xl); padding:.85rem; box-shadow:var(--shadow) }
 
 /* HERO */
-.hero-carousel{ position:relative; overflow:hidden; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-xl); box-shadow:var(--shadow); align-self:stretch; display:flex; flex-direction:column }
-.top-stories-card{ height:auto; overflow:hidden; }
-.hero-header{ padding:.6rem .95rem .35rem }
 .hero-title{ font-family:"Merriweather", serif; font-size:16px; font-weight:600; letter-spacing:.1px; white-space:nowrap }
-.hero-divider{ height:1px; background:var(--border); margin-top:.45rem }
 .hero-mode{ font-family:"Inter", sans-serif; font-size:12px; font-weight:500; color:var(--muted); margin-top:.35rem }
 .hero-carousels{ display:flex; flex-direction:column; gap:.85rem; padding:.2rem .9rem .9rem }
-.topstories-carousel-shell{ display:flex; flex-direction:column; gap:.5rem }
-.topstories-controls-row{ display:flex; justify-content:flex-end }
+.topstories-carousel-shell{ display:flex; flex-direction:column; gap:.5rem; position:relative; overflow:visible }
 .topstories-carousel{ border:1px solid var(--border); border-radius:14px; padding:.65rem .75rem .75rem; background:color-mix(in oklab, var(--card) 92%, var(--chip) 8%); overflow:hidden; display:flex; flex-direction:column; gap:.5rem }
 .topstories-carousel-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding-bottom:.4rem; border-bottom:1px solid var(--border) }
 .topstories-carousel-title{ font-family:"Merriweather", serif; font-size:14px; font-weight:700; display:flex; align-items:center; gap:.35rem }
@@ -365,8 +377,17 @@ body.theme-dark .gn-search{ background:#1a222c }
   overflow:hidden;
 }
 .topstories-related-row .sentiment-line{ font-size:.65rem }
-.topstories-controls{ display:flex; gap:.4rem }
-.topstories-controls .nav-btn{
+.topstories-controls-overlay{
+  position:absolute;
+  top:50%;
+  right:-12px;
+  transform:translateY(-50%);
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
+  z-index:2;
+}
+.topstories-controls-overlay .nav-btn{
   width:28px;
   height:28px;
   border-radius:999px;
@@ -375,7 +396,7 @@ body.theme-dark .gn-search{ background:#1a222c }
   box-shadow:var(--shadow);
   cursor:pointer;
 }
-.topstories-controls .nav-btn:active{ transform:scale(0.98); }
+.topstories-controls-overlay .nav-btn:active{ transform:scale(0.98); }
 .topstories-dots{ display:flex; justify-content:center; gap:.35rem; padding-top:.5rem; flex:0 0 auto }
 .topstories-dots button{ width:6px; height:6px; border-radius:50%; border:0; background:#cbd5e1; cursor:pointer }
 .topstories-dots button.active{ background:var(--brand) }
@@ -1060,9 +1081,9 @@ dialog::backdrop{
     gap:.45rem;
   }
   .weather-card{
-    flex:1 1 100%;
-    width:100%;
-    max-width:none;
+    flex:0 0 auto;
+    width:auto;
+    max-width:240px;
     margin:0;
   }
   .gn-tabs{

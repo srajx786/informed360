@@ -604,7 +604,8 @@ const state = {
   theme: localStorage.getItem("theme") || "light",
   preferredTopics: loadPreferredTopics(),
   showCredibilityBadges: loadCredibilitySetting(),
-  lastLeaderboardAt: 0
+  lastLeaderboardAt: 0,
+  weatherLocationName: ""
 };
 
 function loadProfile(){
@@ -783,15 +784,33 @@ const todayStr = () =>
   new Date().toLocaleDateString(undefined,{
     weekday:"long", day:"numeric", month:"long"
   });
+const WEATHER_LOCATION_KEY = "i360_weather_location";
+
+function getCachedWeatherLocation(){
+  if (state.weatherLocationName) return state.weatherLocationName;
+  try{
+    return localStorage.getItem(WEATHER_LOCATION_KEY) || "";
+  }catch{
+    return "";
+  }
+}
+function setCachedWeatherLocation(name){
+  const trimmed = String(name || "").trim();
+  if (!trimmed) return;
+  state.weatherLocationName = trimmed;
+  try{
+    localStorage.setItem(WEATHER_LOCATION_KEY, trimmed);
+  }catch{}
+}
 
 async function getWeather(){
   try{
     const coords = await new Promise((res)=>{
       if (!navigator.geolocation)
-        return res({ latitude:19.0760, longitude:72.8777 });
+        return res({ latitude:19.0760, longitude:72.8777, allowed:false });
       navigator.geolocation.getCurrentPosition(
-        p => res({ latitude:p.coords.latitude, longitude:p.coords.longitude }),
-        () => res({ latitude:19.0760, longitude:72.8777 })
+        p => res({ latitude:p.coords.latitude, longitude:p.coords.longitude, allowed:true }),
+        () => res({ latitude:19.0760, longitude:72.8777, allowed:false })
       );
     });
 
@@ -800,14 +819,19 @@ async function getWeather(){
       `&longitude=${coords.longitude}&current=temperature_2m,weather_code&timezone=auto`
     );
 
-    let city = state.profile?.city || "Your area";
-    if (!state.profile?.city){
+    const cachedLocation = getCachedWeatherLocation();
+    let city = state.profile?.city || cachedLocation || "Weather";
+    if (coords.allowed && !state.profile?.city){
       try{
         const rev = await fetchJSON(
           `https://geocoding-api.open-meteo.com/v1/reverse?latitude=${coords.latitude}` +
           `&longitude=${coords.longitude}&language=en`
         );
-        city = rev?.results?.[0]?.name || city;
+        const locationName = rev?.results?.[0]?.name;
+        if (locationName){
+          city = locationName;
+          setCachedWeatherLocation(locationName);
+        }
       }catch{}
     }
 
@@ -1821,14 +1845,13 @@ function renderTopStoriesSection(section){
       </div>`
     : "";
   const controls = clusters.length > 1
-    ? `<div class="topstories-controls">
+    ? `<div class="topstories-controls-overlay">
         <button class="nav-btn prev" type="button" aria-label="Previous">‹</button>
         <button class="nav-btn next" type="button" aria-label="Next">›</button>
       </div>`
     : "";
   return `
     <div class="topstories-carousel-shell" data-carousel="${escapeHtml(section.id)}">
-      ${controls ? `<div class="topstories-controls-row">${controls}</div>` : ""}
       <div class="topstories-carousel-body">
         <div class="topstories-track">
           ${hasSlides ? clusters.map(cluster => `
@@ -1837,6 +1860,7 @@ function renderTopStoriesSection(section){
             </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
         </div>
       </div>
+      ${controls}
       ${dots}
     </div>`;
 }
@@ -2850,6 +2874,14 @@ $$(".gn-tabs .tab[data-cat]").forEach(tab=>{
     loadAll();
   });
 });
+
+function setDefaultHomeTab(){
+  const homeTab = $('.gn-tabs .tab[data-cat="home"]');
+  if (!homeTab) return;
+  $$(".gn-tabs .tab").forEach(t => t.classList.remove("active"));
+  homeTab.classList.add("active");
+  state.category = "home";
+}
 /* Sign-in */
 const modal = $("#signinModal");
 $("#avatarBtn")?.addEventListener("click", () => {
@@ -2947,6 +2979,7 @@ renderTopicPickerOptions();
 moveSentimentControls();
 renderPinnedChips();
 $("#briefingDate").textContent = todayStr();
+setDefaultHomeTab();
 getWeather();
 loadMarkets();
 loadAll();
