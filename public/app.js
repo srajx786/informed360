@@ -1793,7 +1793,7 @@ function renderTopStoriesSection(section){
 function renderTopStoriesCluster(cluster){
   const headline = escapeHtml(cluster?.headline || "");
   const primary = cluster?.primary || {};
-  const related = (cluster?.related || []).slice(0, 2);
+  const related = (cluster?.related || []).slice(0, 3);
   const sourceName = escapeHtml(primary?.source || "Source");
   const time = escapeHtml(formatArticleDate(primary?.publishedAt) || "");
   const primaryUrl = primary?.url || "#";
@@ -1826,7 +1826,7 @@ function renderTopStoriesCluster(cluster){
         </a>
       </div>
       <div class="topstories-cluster-related">
-        ${related.length ? related.map(item => renderTopStoriesRelated(item)).join("") : `<div class="topstories-empty topstories-related-empty">No related sources yet.</div>`}
+        ${related.length ? related.map(item => renderTopStoriesRelated(item)).join("") : `<div class="topstories-empty topstories-related-empty">No matching coverage yet — try again in a few minutes.</div>`}
       </div>
     </article>`;
 }

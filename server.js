@@ -73,6 +73,14 @@ const domainFromUrl = (u = "") => {
     return "";
   }
 };
+const publisherDomainFromFeed = (u = "") => {
+  const host = domainFromUrl(u);
+  if (!host) return "";
+  if (!host.includes("feedburner.com")) return host;
+  const lower = String(u || "").toLowerCase();
+  if (lower.includes("ndtv")) return "ndtv.com";
+  return host;
+};
 const cleanUrl = (u = "", base = "") => {
   if (!u) return "";
   const normalized = u
@@ -572,8 +580,20 @@ const CAT_RULES = [
 function inferCategory({ title = "", link = "", source = "" }) {
   const hay = `${title} ${link} ${source}`.toLowerCase();
   for (const r of CAT_RULES) if (r.patterns.some((p) => p.test(hay))) return r.name;
-  if (/\.(in)(\/|$)/i.test(link)) return "india";
-  return "india";
+  const domain = domainFromUrl(link || "");
+  const override = [
+    { match: /bbc\.co\.uk$/i, category: "world" },
+    { match: /bbc\.com$/i, category: "world" },
+    { match: /reuters\.com$/i, category: "world" },
+    { match: /aljazeera\.com$/i, category: "world" },
+    { match: /theguardian\.com$/i, category: "world" },
+    { match: /wsj\.com$/i, category: "world" },
+    { match: /ft\.com$/i, category: "world" },
+    { match: /techcrunch\.com$/i, category: "technology" }
+  ].find((entry) => entry.match.test(domain));
+  if (override) return override.category;
+  if (domain.endsWith(".in")) return "india";
+  return "world";
 }
 
 /* concurrency */
@@ -604,7 +624,7 @@ async function fetchDirect(url) {
   }
 }
 async function fetchWithFallback(url) {
-  const domain = domainFromUrl(url);
+  const domain = publisherDomainFromFeed(url);
   try {
     if (shouldSkipFeed(url)) {
       return { title: domain, items: [] };
@@ -639,7 +659,7 @@ async function fetchList(urls) {
 
   await Promise.all(
     urls.map(async (url) => {
-      const domain = domainFromUrl(url);
+      const domain = publisherDomainFromFeed(url);
       const feed = await fetchWithFallback(url);
       const items = (feed.items || []).slice(0, 30);
 
@@ -752,6 +772,37 @@ setInterval(refreshCore, REFRESH_MS);
 setInterval(refreshExp, REFRESH_MS);
 setInterval(validateFeeds, 60 * 60 * 1000);
 
+const countArticlesByDomain = (articles = []) => {
+  const counts = new Map();
+  articles.forEach((article) => {
+    const domain = sourceDomainForArticle(article) || domainFromUrl(article.link || "");
+    if (!domain) return;
+    counts.set(domain, (counts.get(domain) || 0) + 1);
+  });
+  return counts;
+};
+
+const buildFeedStatus = (url, counts) => {
+  const health = FEED_HEALTH.get(url) || {
+    failures: 0,
+    lastFailedAt: 0,
+    lastOkAt: 0,
+    lastError: ""
+  };
+  const domain = publisherDomainFromFeed(url);
+  return {
+    url,
+    domain,
+    health: {
+      failures: health.failures || 0,
+      lastOkAt: health.lastOkAt || 0,
+      lastFailedAt: health.lastFailedAt || 0,
+      lastError: health.lastError || null
+    },
+    recentCount: counts.get(domain) || 0
+  };
+};
+
 /* topics */
 const normalize = (t = "") =>
   t.toLowerCase().replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
@@ -805,15 +856,22 @@ function buildClusters(arts) {
 
 const storyTokens = (text = "") =>
   tokenize(text).filter((token) => token.length > 2);
+const normalizeStoryTitleTokens = (title = "") =>
+  tokenize(title).filter((token) => token.length > 2);
 const storySimilarity = (a, b) => {
-  const tokensA = new Set(storyTokens(`${a.title} ${a.description}`));
-  const tokensB = new Set(storyTokens(`${b.title} ${b.description}`));
+  let tokensA = new Set(normalizeStoryTitleTokens(a.title));
+  let tokensB = new Set(normalizeStoryTitleTokens(b.title));
+  if (!tokensA.size || !tokensB.size) {
+    tokensA = new Set(storyTokens(`${a.title} ${a.description}`));
+    tokensB = new Set(storyTokens(`${b.title} ${b.description}`));
+  }
   if (!tokensA.size || !tokensB.size) return 0;
   let overlap = 0;
   tokensA.forEach((token) => {
     if (tokensB.has(token)) overlap += 1;
   });
-  return overlap / Math.max(tokensA.size, tokensB.size);
+  const union = tokensA.size + tokensB.size - overlap;
+  return union ? overlap / union : 0;
 };
 const weightedSentiment = (articles = []) => {
   const now = Date.now();
@@ -850,7 +908,7 @@ const buildStories = (articles = []) => {
     (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
   );
   const stories = [];
-  const windowMs = 24 * 60 * 60 * 1000;
+  const windowMs = 36 * 60 * 60 * 1000;
 
   sorted.forEach((article) => {
     const canonical = canonicalizeUrl(article.link || "");
@@ -863,7 +921,7 @@ const buildStories = (articles = []) => {
         ) || 0;
       if (timeDiff > windowMs) return false;
       if (canonical && story.canonicalUrls.has(canonical)) return true;
-      return storySimilarity(story.articles[0], article) >= 0.4;
+      return storySimilarity(story.articles[0], article) >= 0.34;
     });
     if (!match) {
       match = {
@@ -904,6 +962,29 @@ const buildStories = (articles = []) => {
     })
     .sort((a, b) => new Date(b.featured?.publishedAt) - new Date(a.featured?.publishedAt))
     .slice(0, 12);
+};
+
+const buildRelatedLookup = (articles = []) => {
+  const stories = buildStories(articles);
+  const relatedMap = new Map();
+  stories.forEach((story) => {
+    const primary = pickPrimaryArticle(story.articles || []);
+    if (!primary?.link) return;
+    const related = [];
+    const usedSources = new Set();
+    const primarySource = sourceDomainForArticle(primary) || primary.source;
+    if (primarySource) usedSources.add(primarySource);
+    (story.articles || []).forEach((article) => {
+      if (related.length >= 3) return;
+      if (article.link === primary.link) return;
+      const sourceKey = sourceDomainForArticle(article) || article.source;
+      if (!sourceKey || usedSources.has(sourceKey)) return;
+      usedSources.add(sourceKey);
+      related.push(article);
+    });
+    relatedMap.set(primary.link, related);
+  });
+  return relatedMap;
 };
 
 const buildEngagedStories = (articles = []) => {
@@ -953,7 +1034,7 @@ const buildTopStoryClusters = (articles = []) => {
     (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
   );
   const clusters = [];
-  const windowMs = 24 * 60 * 60 * 1000;
+  const windowMs = 36 * 60 * 60 * 1000;
 
   sorted.forEach((article) => {
     const canonical = canonicalizeUrl(article.link || "");
@@ -966,7 +1047,7 @@ const buildTopStoryClusters = (articles = []) => {
         ) || 0;
       if (timeDiff > windowMs) return false;
       if (canonical && cluster.canonicalUrls.has(canonical)) return true;
-      return storySimilarity(cluster.articles[0], article) >= 0.42;
+      return storySimilarity(cluster.articles[0], article) >= 0.36;
     });
     if (!match) {
       match = {
@@ -1249,7 +1330,26 @@ app.get("/api/news", (req, res) => {
     arts = arts.filter((a) => a.category === category);
   if (sentiment) arts = arts.filter((a) => a.sentiment?.label === sentiment);
 
-  res.json({ fetchedAt: Date.now(), articles: arts.slice(0, limit) });
+  const relatedLookup = buildRelatedLookup(arts);
+  const payload = arts.slice(0, limit).map((article) => {
+    const related = relatedLookup.get(article.link);
+    return related?.length ? { ...article, related } : article;
+  });
+
+  res.json({ fetchedAt: Date.now(), articles: payload });
+});
+
+app.get("/api/sources", (_req, res) => {
+  const counts = countArticlesByDomain(CORE.articles || []);
+  res.json({
+    refreshMinutes: FEEDS.refreshMinutes || 10,
+    feeds: {
+      core: (FEEDS.feeds || []).map((url) => buildFeedStatus(url, counts)),
+      experimental: (FEEDS.experimental || []).map((url) =>
+        buildFeedStatus(url, counts)
+      )
+    }
+  });
 });
 
 app.get("/api/status", (_req, res) => {
