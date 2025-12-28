@@ -317,16 +317,20 @@ body.theme-dark .gn-search{ background:#1a222c }
 
 /* HERO */
 .hero-carousel{ position:relative; overflow:hidden; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-xl); box-shadow:var(--shadow); align-self:stretch; height:100%; display:flex; flex-direction:column }
+.top-stories-card{ height:600px; overflow:hidden; }
 .hero-header{ padding:.6rem .95rem .35rem }
 .hero-title{ font-family:"Merriweather", serif; font-size:16px; font-weight:600; letter-spacing:.1px; white-space:nowrap }
 .hero-divider{ height:1px; background:var(--border); margin-top:.45rem }
 .hero-mode{ font-family:"Inter", sans-serif; font-size:12px; font-weight:500; color:var(--muted); margin-top:.35rem }
-.hero-carousels{ display:flex; flex-direction:column; gap:.7rem; padding:.2rem .75rem .7rem }
-.topstories-carousel{ border:1px solid var(--border); border-radius:14px; padding:.65rem .7rem; background:color-mix(in oklab, var(--card) 92%, var(--chip) 8%); overflow:hidden }
-.topstories-carousel-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding-bottom:.4rem; border-bottom:1px solid var(--border); margin-bottom:.55rem }
-.topstories-carousel-title{ font-family:"Merriweather", serif; font-size:15px; font-weight:700 }
-.topstories-track{ display:flex; transition:transform .4s ease; gap:0 }
-.topstories-slide{ min-width:100%; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:.65rem }
+.hero-carousels{ display:flex; flex-direction:column; flex:1 1 auto; padding:.2rem .75rem .7rem; min-height:0 }
+.topstories-carousel{ border:1px solid var(--border); border-radius:14px; padding:.65rem .7rem; background:color-mix(in oklab, var(--card) 92%, var(--chip) 8%); overflow:hidden; display:flex; flex-direction:column; height:100% }
+.topstories-carousel-head{ display:flex; align-items:center; justify-content:flex-end; gap:.5rem; padding-bottom:.4rem; border-bottom:1px solid var(--border); margin-bottom:.55rem }
+.topstories-carousel-spacer{ flex:1 1 auto }
+.topstories-track{ display:flex; transition:transform .4s ease; gap:0; flex:1 1 auto; min-height:0 }
+.topstories-slide{ min-width:100%; display:flex; flex-direction:column; gap:.5rem; min-height:0 }
+.topstories-slide-head{ flex:0 0 auto }
+.topstories-slide-title{ font-family:"Merriweather", serif; font-size:14px; font-weight:700 }
+.topstories-grid{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:.65rem; flex:1 1 auto; min-height:0; grid-auto-rows:minmax(0, 1fr) }
 .topstories-item{ display:flex; flex-direction:column; gap:.35rem; border:1px solid var(--border); border-radius:12px; padding:.6rem; background:var(--card) }
 .topstories-item-main{ display:flex; gap:.6rem; align-items:flex-start }
 .topstories-item-main .ts-pin{ margin-left:auto; align-self:flex-start; }
@@ -351,7 +355,7 @@ body.theme-dark .gn-search{ background:#1a222c }
   cursor:pointer;
 }
 .topstories-controls .nav-btn:active{ transform:scale(0.98); }
-.topstories-dots{ display:flex; justify-content:center; gap:.35rem; padding-top:.5rem }
+.topstories-dots{ display:flex; justify-content:center; gap:.35rem; padding-top:.5rem; flex:0 0 auto }
 .topstories-dots button{ width:6px; height:6px; border-radius:50%; border:0; background:#cbd5e1; cursor:pointer }
 .topstories-dots button.active{ background:var(--brand) }
 .topstories-empty{ padding:.8rem; border:1px dashed var(--border); border-radius:12px; text-align:center; color:var(--muted); font-size:.85rem }
@@ -997,6 +1001,7 @@ dialog::backdrop{
   .hero-cluster{ grid-template-columns:1fr }
   .hero-slide .hero-img{ height:220px }
   .daily-list{ grid-template-columns:1fr }
+  .top-stories-card{ height:580px; }
 }
 @media (max-width:600px){
   .ticker{ grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)) }
@@ -1050,7 +1055,9 @@ dialog::backdrop{
   }
   .ticker-row::-webkit-scrollbar{ display:none; }
   .filter-row{ justify-content:center; }
-  .topstories-slide{ grid-template-columns:1fr; }
+  .top-stories-card{ height:520px; }
+  .topstories-grid{ grid-template-columns:1fr; }
+  .topstories-grid .topstories-item:nth-child(n+3){ display:none; }
   .topstories-item-main{
     flex-direction:column;
     align-items:flex-start;
