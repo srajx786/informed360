@@ -324,6 +324,8 @@ body.theme-dark .gn-search{ background:#1a222c }
 .hero-divider{ height:1px; background:var(--border); margin-top:.45rem }
 .hero-mode{ font-family:"Inter", sans-serif; font-size:12px; font-weight:500; color:var(--muted); margin-top:.35rem }
 .hero-carousels{ display:flex; flex-direction:column; gap:.85rem; padding:.2rem .9rem .9rem }
+.topstories-carousel-shell{ display:flex; flex-direction:column; gap:.5rem }
+.topstories-controls-row{ display:flex; justify-content:flex-end }
 .topstories-carousel{ border:1px solid var(--border); border-radius:14px; padding:.65rem .75rem .75rem; background:color-mix(in oklab, var(--card) 92%, var(--chip) 8%); overflow:hidden; display:flex; flex-direction:column; gap:.5rem }
 .topstories-carousel-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding-bottom:.4rem; border-bottom:1px solid var(--border) }
 .topstories-carousel-title{ font-family:"Merriweather", serif; font-size:14px; font-weight:700; display:flex; align-items:center; gap:.35rem }
