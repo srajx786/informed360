@@ -1091,7 +1091,6 @@ async function loadAll(){
       worldRecent: topWorldRecent?.clusters || [],
       worldEngaged: topWorldEngaged?.clusters || []
     };
-    recordTopStoriesTrend();
     state.topics   = selectTrendingTopics(topics.topics || [], state.allArticles);
     if (needsIndiaFetch){
       state.indiaArticles = india?.articles || [];
@@ -1439,7 +1438,7 @@ function similarityScore(a, b){
   return overlap / Math.max(tokensA.size, tokensB.size);
 }
 
-function pickRelatedArticles(featured, candidates = [], { maxItems = 4, minItems = 2, prevLinks = new Set() } = {}){
+function pickRelatedArticles(featured, candidates = [], { maxItems = 2, minItems = 2, prevLinks = new Set() } = {}){
   const scored = candidates.map(article => ({
     article,
     score: similarityScore(featured, article)
@@ -1456,10 +1455,10 @@ function pickRelatedArticles(featured, candidates = [], { maxItems = 4, minItems
   const usedLinks = new Set([featured.link]);
   const usedSources = new Set([featured.source]);
 
-  const pushUnique = (article, allowPrev, allowSameSource) => {
+  const pushUnique = (article, allowPrev) => {
     if (!article || usedLinks.has(article.link)) return false;
     if (!allowPrev && prevLinks.has(article.link)) return false;
-    if (!allowSameSource && usedSources.has(article.source)) return false;
+    if (usedSources.has(article.source)) return false;
     selected.push(article);
     usedLinks.add(article.link);
     if (article.source) usedSources.add(article.source);
@@ -1468,19 +1467,15 @@ function pickRelatedArticles(featured, candidates = [], { maxItems = 4, minItems
 
   primary.forEach(article => {
     if (selected.length >= maxItems) return;
-    pushUnique(article, false, false);
+    pushUnique(article, false);
   });
   primary.forEach(article => {
     if (selected.length >= maxItems) return;
-    pushUnique(article, true, false);
+    pushUnique(article, true);
   });
   fallback.forEach(article => {
     if (selected.length >= maxItems) return;
-    pushUnique(article, false, true);
-  });
-  fallback.forEach(article => {
-    if (selected.length >= maxItems) return;
-    pushUnique(article, true, true);
+    pushUnique(article, false);
   });
 
   if (selected.length >= minItems) return selected.slice(0, maxItems);
@@ -1503,7 +1498,7 @@ function buildRecentCluster(articles = [], prevLinks = new Set()){
     sorted[0];
   const relatedCandidates = sorted.filter(article => article && article.link !== featured?.link);
   const related = featured
-    ? pickRelatedArticles(featured, relatedCandidates, { maxItems: 4, minItems: 2, prevLinks })
+    ? pickRelatedArticles(featured, relatedCandidates, { maxItems: 2, minItems: 2, prevLinks })
     : [];
   return { mode: "Recent News", featured, related };
 }
@@ -1567,10 +1562,10 @@ function buildEngagedCluster(articles = [], prevLinks = new Set()){
   }
 
   if (featured){
-    related = pickRelatedArticles(featured, selectedMatches, { maxItems: 4, minItems: 2, prevLinks });
+    related = pickRelatedArticles(featured, selectedMatches, { maxItems: 2, minItems: 2, prevLinks });
     if (related.length < 2){
       const fallback = sortByPublishedDesc(candidates).filter(article => article.link !== featured.link);
-      const supplemental = pickRelatedArticles(featured, fallback, { maxItems: 4, minItems: 2, prevLinks });
+      const supplemental = pickRelatedArticles(featured, fallback, { maxItems: 2, minItems: 2, prevLinks });
       related = supplemental.length ? supplemental : related;
     }
   }
@@ -1835,127 +1830,6 @@ function renderDaily(){
     state.articles.slice(12, 18).map(card).join("");
 }
 
-function formatTopStoriesHourLabel(date){
-  const opts = { hour: "2-digit", minute: "2-digit", hour12: false };
-  return date.toLocaleTimeString("en-IN", opts);
-}
-
-function getTopStoriesNetScore(story){
-  const sentiment =
-    story?.sentiment ||
-    story?.storySentiment ||
-    story?.primary?.sentiment ||
-    story?.primary?.storySentiment ||
-    {};
-  const pos = Math.max(0, Number(sentiment.posP ?? sentiment.pos ?? 0));
-  const neg = Math.max(0, Number(sentiment.negP ?? sentiment.neg ?? 0));
-  return pos - neg;
-}
-
-function getPrimaryTopStory(){
-  const topStories = state.topStories || {};
-  const pools = [
-    topStories.indiaRecent,
-    topStories.indiaEngaged,
-    topStories.worldRecent,
-    topStories.worldEngaged
-  ];
-  for (const list of pools){
-    if (Array.isArray(list) && list.length) return list[0];
-  }
-  return null;
-}
-
-function recordTopStoriesTrend(){
-  const topStory = getPrimaryTopStory();
-  if (!topStory) return;
-  const value = getTopStoriesNetScore(topStory);
-  const now = Date.now();
-  if (!Array.isArray(state.topStoriesTrendHistory)){
-    state.topStoriesTrendHistory = [];
-  }
-  state.topStoriesTrendHistory.push({ timestamp: now, value });
-  const cutoff = now - (6 * 60 * 60 * 1000);
-  state.topStoriesTrendHistory = state.topStoriesTrendHistory.filter(entry => entry.timestamp >= cutoff);
-}
-
-function getTopStoriesTrendBuckets(){
-  const history = Array.isArray(state.topStoriesTrendHistory) ? state.topStoriesTrendHistory : [];
-  const now = new Date();
-  const currentHour = new Date(now);
-  currentHour.setMinutes(0, 0, 0);
-  const fallback = history.length ? history[history.length - 1].value : 0;
-  const buckets = [];
-  let lastValue = null;
-
-  for (let i = 3; i >= 0; i -= 1){
-    const start = new Date(currentHour);
-    start.setHours(start.getHours() - i);
-    const end = new Date(start);
-    end.setHours(end.getHours() + 1);
-    const startMs = start.getTime();
-    const endMs = end.getTime();
-    const entries = history.filter(entry => entry.timestamp >= startMs && entry.timestamp < endMs);
-    if (entries.length){
-      lastValue = entries[entries.length - 1].value;
-    }
-    const value = lastValue ?? fallback;
-    buckets.push({ start, value });
-  }
-  return buckets;
-}
-
-function renderTopStoriesTrendMiniChart(){
-  const buckets = getTopStoriesTrendBuckets();
-  const values = buckets.map(bucket => bucket.value);
-  const maxAbs = Math.max(5, ...values.map(value => Math.abs(value)));
-  const width = 320;
-  const height = 120;
-  const padX = 24;
-  const padY = 16;
-  const mid = height / 2;
-  const amplitude = (height / 2) - padY;
-  const steps = Math.max(1, buckets.length - 1);
-  const xStep = (width - padX * 2) / steps;
-  const points = values.map((value, index) => {
-    const clamped = Math.max(-maxAbs, Math.min(maxAbs, value));
-    return {
-      x: padX + (xStep * index),
-      y: mid - (clamped / maxAbs) * amplitude
-    };
-  });
-  const path = points.map((point, index) => {
-    const cmd = index === 0 ? "M" : "L";
-    return `${cmd}${point.x.toFixed(1)} ${point.y.toFixed(1)}`;
-  }).join(" ");
-  const tone = values[values.length - 1] ?? 0;
-  const toneClass = tone > 2 ? "pos" : tone < -2 ? "neg" : "neu";
-  const gridLines = [padY, mid, height - padY].map(y =>
-    `<line class="topstories-trend-grid" x1="${padX}" y1="${y}" x2="${width - padX}" y2="${y}"></line>`
-  ).join("");
-  const dots = points.map(point =>
-    `<circle class="topstories-trend-point" cx="${point.x.toFixed(1)}" cy="${point.y.toFixed(1)}" r="2.8"></circle>`
-  ).join("");
-  const labels = buckets.map((bucket, index) => {
-    const x = padX + (xStep * index);
-    const label = formatTopStoriesHourLabel(bucket.start);
-    return `<text class="topstories-trend-label" x="${x.toFixed(1)}" y="${height - 4}" text-anchor="middle">${label}</text>`;
-  }).join("");
-
-  return `
-    <div class="topstories-trend">
-      <div class="topstories-trend-title">4-hour sentiment trend</div>
-      <div class="topstories-trend-chart">
-        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Top Stories sentiment trend over the last 4 hours">
-          ${gridLines}
-          <path class="topstories-trend-line ${toneClass}" d="${path}"></path>
-          ${dots}
-          ${labels}
-        </svg>
-      </div>
-    </div>`;
-}
-
 /* HERO */
 function renderHero(){
   const container = $("#heroCarousels");
@@ -2015,7 +1889,6 @@ function renderTopStoriesSection(section){
               </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
           </div>
         </div>
-        ${renderTopStoriesTrendMiniChart()}
         <div class="topstories-footer">
           <div class="topstories-nav">
             ${controls}
@@ -2058,7 +1931,8 @@ function renderTopStoryMedia({
 function renderTopStoriesCluster(cluster){
   const primary = cluster?.primary || {};
   const headline = escapeHtml(primary?.title || cluster?.headline || "");
-  const related = (cluster?.related || []).slice(0, 4);
+  const related = (cluster?.related || []).slice(0, 2);
+  const relatedSlots = Array.from({ length: 2 }, (_, index) => related[index] || null);
   const sourceName = escapeHtml(primary?.source || "Source");
   const time = escapeHtml(formatArticleDate(primary?.publishedAt) || "");
   const primaryUrl = primary?.url || "#";
@@ -2091,9 +1965,13 @@ function renderTopStoriesCluster(cluster){
         </a>
       </div>
       <div class="topstories-cluster-related">
-        <div class="topstories-related-title">More coverage</div>
+        <div class="topstories-related-title">Related sources</div>
         <div class="topstories-related-list">
-          ${related.length ? related.map(item => renderTopStoriesRelated(item)).join("") : `<div class="topstories-empty topstories-related-empty">No matching coverage yet — try again in a few minutes.</div>`}
+          ${relatedSlots.map(item =>
+            item
+              ? renderTopStoriesRelated(item)
+              : `<div class="topstories-empty topstories-related-empty">No matching coverage yet — try again in a few minutes.</div>`
+          ).join("")}
         </div>
       </div>
     </article>`;
