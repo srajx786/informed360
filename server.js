@@ -40,6 +40,12 @@ const SOURCE_MAP = new Map(
     info
   ])
 );
+const SOURCE_NAME_MAP = new Map(
+  Object.entries(SOURCE_REGISTRY.sources || {}).map(([domain, info]) => [
+    info?.name?.toLowerCase?.() || "",
+    domain
+  ])
+);
 
 const TRANSFORMER_ENABLED = process.env.TRANSFORMER_ENABLED === "1";
 const TRANSFORMER_MODEL =
@@ -139,6 +145,65 @@ const extractImage = (item) => {
 
   const d = domainFromUrl(item.link || "");
   return d ? `https://logo.clearbit.com/${d}` : "";
+};
+
+const LOCAL_LOGOS = {
+  "indiatoday.in": "/logo/indiatoday.png",
+  "thehindu.com": "/logo/thehindu.png",
+  "scroll.in": "/logo/scroll.png",
+  "news18.com": "/logo/news18.png",
+  "deccanherald.com": "/logo/deccanherald.png",
+  "theprint.in": "/logo/theprint.png",
+  "hindustantimes.com": "/logo/hindustantimes.png",
+  "timesofindia.indiatimes.com": "/logo/toi.png",
+  "indiatoday.com": "/logo/indiatoday.png",
+  "indianexpress.com": "/logo/indianexpress.png",
+  "ndtv.com": "/logo/ndtv.png",
+  "firstpost.com": "/logo/firstpost.png",
+  "business-standard.com": "/logo/businessstandard.png",
+  "economictimes.indiatimes.com": "/logo/economictimes.png",
+  "reuters.com": "/logo/reuters.png",
+  "bbc.com": "/logo/bbc.png",
+  "aljazeera.com": "/logo/aljazeera.png",
+  "thewire.in": "/logo/thewire.png",
+  "livemint.com": "/logo/livemint.png",
+  "theguardian.com": "/logo/guardian.png",
+  "pib.gov.in": "/logo/pib.png"
+};
+
+const logoForDomain = (domain = "") => {
+  if (!domain) return "";
+  if (LOCAL_LOGOS[domain]) return LOCAL_LOGOS[domain];
+  return `https://logo.clearbit.com/${domain}`;
+};
+
+const sourceDomainForArticle = (article = {}) => {
+  const safeArticle = article || {};
+  const fromArticle =
+    safeArticle.sourceDomain ||
+    domainFromUrl(safeArticle.link || "") ||
+    SOURCE_NAME_MAP.get((safeArticle.source || "").toLowerCase());
+  return fromArticle || "";
+};
+
+const logoForArticle = (article = {}) =>
+  logoForDomain(sourceDomainForArticle(article));
+
+const isLogoImage = (url = "") => {
+  const lower = String(url || "").toLowerCase();
+  if (!lower) return true;
+  if (lower.startsWith("data:image")) return true;
+  if (lower.includes("logo.clearbit.com")) return true;
+  if (lower.includes("/logo/")) return true;
+  if (lower.includes("favicon")) return true;
+  return lower.includes("logo.");
+};
+
+const pickStoryImage = (article = {}) => {
+  const candidate = String(article.image || "").trim();
+  if (!candidate) return "";
+  if (isLogoImage(candidate)) return "";
+  return candidate;
 };
 
 const SOURCE_FALLBACKS = [
@@ -859,6 +924,117 @@ const buildEngagedStories = (articles = []) => {
     .sort((a, b) => b.engagementScore - a.engagementScore);
 };
 
+const pickPrimaryArticle = (articles = []) => {
+  const now = Date.now();
+  let best = null;
+  let bestScore = -Infinity;
+  articles.forEach((article) => {
+    const hasImage = Boolean(pickStoryImage(article));
+    const ageHours = Math.max(
+      0.5,
+      (now - new Date(article.publishedAt).getTime()) / (1000 * 60 * 60)
+    );
+    const recencyScore = 1 / ageHours;
+    const score =
+      (hasImage ? 3 : 0) +
+      (article.description ? 1 : 0) +
+      (article.title ? 1 : 0) +
+      recencyScore;
+    if (score > bestScore) {
+      bestScore = score;
+      best = article;
+    }
+  });
+  return best || articles[0] || null;
+};
+
+const buildTopStoryClusters = (articles = []) => {
+  const sorted = [...articles].sort(
+    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+  );
+  const clusters = [];
+  const windowMs = 24 * 60 * 60 * 1000;
+
+  sorted.forEach((article) => {
+    const canonical = canonicalizeUrl(article.link || "");
+    let match = clusters.find((cluster) => {
+      if (!cluster.articles.length) return false;
+      const timeDiff =
+        Math.abs(
+          new Date(cluster.latestAt).getTime() -
+            new Date(article.publishedAt).getTime()
+        ) || 0;
+      if (timeDiff > windowMs) return false;
+      if (canonical && cluster.canonicalUrls.has(canonical)) return true;
+      return storySimilarity(cluster.articles[0], article) >= 0.42;
+    });
+    if (!match) {
+      match = {
+        storyId: crypto
+          .createHash("md5")
+          .update(`${article.title}-${article.link}`)
+          .digest("hex")
+          .slice(0, 10),
+        canonicalTitle: article.title || "Top story",
+        canonicalUrls: new Set(canonical ? [canonical] : []),
+        latestAt: article.publishedAt,
+        articles: []
+      };
+      clusters.push(match);
+    }
+    if (canonical) match.canonicalUrls.add(canonical);
+    match.articles.push(article);
+    if (new Date(article.publishedAt) > new Date(match.latestAt))
+      match.latestAt = article.publishedAt;
+  });
+
+  return clusters.map((cluster) => {
+    const articlesSorted = cluster.articles.sort(
+      (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+    );
+    const primary = pickPrimaryArticle(articlesSorted);
+    const primaryDomain = sourceDomainForArticle(primary || {});
+    const related = [];
+    const usedSources = new Set(primaryDomain ? [primaryDomain] : []);
+    articlesSorted.forEach((article) => {
+      if (related.length >= 3) return;
+      if (article.link === primary?.link) return;
+      const sourceKey = sourceDomainForArticle(article) || article.source || "";
+      if (!sourceKey || usedSources.has(sourceKey)) return;
+      usedSources.add(sourceKey);
+      related.push({
+        source: article.source || sourceKey || "Source",
+        sourceLogo: logoForArticle(article || {}),
+        publishedAt: article.publishedAt,
+        url: article.link,
+        sentiment: article.sentiment || { pos: 0, neu: 0, neg: 0 }
+      });
+    });
+    const { sentiment } = weightedSentiment(articlesSorted);
+    return {
+      storyId: cluster.storyId,
+      headline: primary?.title || cluster.canonicalTitle,
+      imageUrl: pickStoryImage(primary),
+      sentiment,
+      primary: {
+        source: primary?.source || primaryDomain || "Source",
+        sourceLogo: logoForArticle(primary || {}),
+        publishedAt: primary?.publishedAt || cluster.latestAt,
+        url: primary?.link || "",
+        sentiment: primary?.sentiment || sentiment
+      },
+      related,
+      sourceCount: new Set(
+        articlesSorted
+          .map((article) => sourceDomainForArticle(article) || article.source)
+          .filter(Boolean)
+      ).size,
+      articleCount: articlesSorted.length,
+      latestAt: cluster.latestAt
+    };
+  });
+};
+
 const gdeltBaseUrl = "https://api.gdeltproject.org/api/v2/doc/doc";
 const gdeltQueryDefaults =
   '(India OR Indian OR "South Asia" OR world OR global OR international)';
@@ -995,6 +1171,36 @@ app.get("/api/gdelt", async (req, res) => {
     })
   );
   res.json({ fetchedAt: gdelt.fetchedAt, articles: enriched });
+});
+
+app.get("/api/top-stories", (req, res) => {
+  const scope = (req.query.scope || "india").toString().toLowerCase();
+  const type = (req.query.type || "recent").toString().toLowerCase();
+  const includeExp = req.query.experimental === "1";
+  let articles = includeExp
+    ? uniqueMerge(CORE.articles, EXP.articles)
+    : CORE.articles;
+  if (scope === "world") {
+    articles = articles.filter((article) => article.category === "world");
+  } else if (scope === "india") {
+    articles = articles.filter((article) => article.category === "india");
+  }
+  const clusters = buildTopStoryClusters(articles);
+  const sorted = clusters.sort((a, b) => {
+    const aTime = new Date(a.latestAt).getTime();
+    const bTime = new Date(b.latestAt).getTime();
+    if (type === "engaged") {
+      if (b.sourceCount !== a.sourceCount) return b.sourceCount - a.sourceCount;
+      if (bTime !== aTime) return bTime - aTime;
+      return (b.articleCount || 0) - (a.articleCount || 0);
+    }
+    return bTime - aTime;
+  });
+  const trimmed = sorted.slice(0, 8).map((cluster) => {
+    const { sourceCount, articleCount, latestAt, ...payload } = cluster;
+    return payload;
+  });
+  res.json({ fetchedAt: Date.now(), clusters: trimmed });
 });
 
 app.get("/api/stories", (req, res) => {
