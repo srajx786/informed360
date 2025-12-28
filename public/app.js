@@ -204,12 +204,17 @@ const HERO_TREND_TIME_FORMATTER = new Intl.DateTimeFormat("en-IN", {
 function formatArticleDate(value){
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "";
+  const raw = typeof value === "string" ? value : "";
+  const hasTime = raw ? /(\d{1,2}:\d{2})/.test(raw) || /T\d{2}:\d{2}/.test(raw) : true;
   const parts = ARTICLE_DATE_FORMATTER.formatToParts(date)
     .reduce((acc, part) => {
       acc[part.type] = part.value;
       return acc;
     }, {});
   if (!parts.month || !parts.day || !parts.year) return "";
+  if (!hasTime || !parts.hour || !parts.minute){
+    return `${parts.month} ${parts.day}, ${parts.year}, IST`;
+  }
   return `${parts.month} ${parts.day}, ${parts.year}, ${parts.hour}:${parts.minute} IST`;
 }
 function formatTrendTime(value){
@@ -597,7 +602,12 @@ const state = {
   stories: [],
   topics: [],
   engagedStories: [],
-  topStories: [],
+  topStories: {
+    indiaRecent: [],
+    indiaEngaged: [],
+    worldRecent: [],
+    worldEngaged: []
+  },
   topStoriesTrendHistory: [],
   newsEmptyMessage: "",
   pins: loadPins(),
@@ -1050,7 +1060,7 @@ async function loadAll(){
     }
 
     const topStoriesQs = state.experimental ? "&experimental=1" : "";
-    const [topics, india, stories, engaged, topIndiaRecent] = await Promise.all([
+    const [topics, india, stories, engaged, topIndiaRecent, topIndiaEngaged, topWorldRecent, topWorldEngaged] = await Promise.all([
       fetchJSON(`/api/topics${state.experimental ? "?experimental=1" : ""}`)
         .catch(() => ({ topics: [] })),
       needsIndiaFetch
@@ -1062,6 +1072,12 @@ async function loadAll(){
       fetchJSON(`/api/engaged${state.experimental ? "?experimental=1" : ""}`)
         .catch(() => ({ stories: [] })),
       fetchJSON(`/api/top-stories?scope=india&type=recent${topStoriesQs}`)
+        .catch(() => ({ clusters: [] })),
+      fetchJSON(`/api/top-stories?scope=india&type=engaged${topStoriesQs}`)
+        .catch(() => ({ clusters: [] })),
+      fetchJSON(`/api/top-stories?scope=world&type=recent${topStoriesQs}`)
+        .catch(() => ({ clusters: [] })),
+      fetchJSON(`/api/top-stories?scope=world&type=engaged${topStoriesQs}`)
         .catch(() => ({ clusters: [] }))
     ]);
 
@@ -1069,7 +1085,12 @@ async function loadAll(){
     state.articles = state.allArticles.slice();
     state.stories = stories?.stories || [];
     state.engagedStories = engaged?.stories || [];
-    state.topStories = topIndiaRecent?.clusters || [];
+    state.topStories = {
+      indiaRecent: topIndiaRecent?.clusters || [],
+      indiaEngaged: topIndiaEngaged?.clusters || [],
+      worldRecent: topWorldRecent?.clusters || [],
+      worldEngaged: topWorldEngaged?.clusters || []
+    };
     state.topics   = selectTrendingTopics(topics.topics || [], state.allArticles);
     if (needsIndiaFetch){
       state.indiaArticles = india?.articles || [];
@@ -1108,7 +1129,12 @@ async function loadAll(){
     state.articles = [];
     state.stories = [];
     state.engagedStories = [];
-    state.topStories = [];
+    state.topStories = {
+      indiaRecent: [],
+      indiaEngaged: [],
+      worldRecent: [],
+      worldEngaged: []
+    };
     state.indiaArticles = [];
     state.topics = [];
     state.newsEmptyMessage = "We couldn’t load the latest news. Please try again soon.";
@@ -1919,22 +1945,50 @@ function renderHero(){
     container.innerHTML = `<div class="topstories-empty">No top stories available right now.</div>`;
     return;
   }
-
-  recordTopStoriesTrend();
   container.innerHTML = sections.map(renderTopStoriesSection).join("");
 
   bindTopStoriesCarousels();
 }
 
 function buildTopStoriesSections(){
-  const topStories = state.topStories || [];
-  return [
+  const safe = (clusters = [], backup = []) =>
+    Array.isArray(clusters) && clusters.length ? clusters : (backup || []);
+  const topStories = state.topStories || {};
+  const indiaRecent = safe(topStories.indiaRecent, topStories.worldRecent);
+  const indiaEngaged = safe(topStories.indiaEngaged, indiaRecent);
+  const worldRecent = safe(topStories.worldRecent, indiaRecent);
+  const worldEngaged = safe(topStories.worldEngaged, worldRecent);
+  const sections = [
     {
-      id: "recent-news",
+      id: "recent-india",
       title: "Recent News",
-      scope: "",
-      clusters: topStories
+      scope: "India",
+      clusters: indiaRecent
+    },
+    {
+      id: "engaged-india",
+      title: "Most Engaged",
+      scope: "India",
+      clusters: indiaEngaged
+    },
+    {
+      id: "recent-world",
+      title: "Recent News",
+      scope: "World",
+      clusters: worldRecent
+    },
+    {
+      id: "engaged-world",
+      title: "Most Engaged",
+      scope: "World",
+      clusters: worldEngaged
     }
+  ];
+  if (!sections.some(section => (section.clusters || []).length)){
+    return [];
+  }
+  return [
+    ...sections
   ];
 }
 
@@ -1951,44 +2005,79 @@ function renderTopStoriesSection(section){
   const controls = clusters.length > 1
     ? `<button class="nav-btn topstories-prev" type="button" aria-label="Previous">‹</button>
        <button class="nav-btn topstories-next" type="button" aria-label="Next">›</button>`
-    : "";
+    : `<span class="nav-btn spacer" aria-hidden="true"></span>`;
   return `
     <div class="topstories-carousel-shell" data-carousel="${escapeHtml(section.id)}">
-      <div class="topstories-carousel-body">
-        <div class="topstories-track">
-          ${hasSlides ? clusters.map(cluster => `
-            <div class="topstories-slide">
-              ${renderTopStoriesCluster(cluster)}
-            </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
+      <div class="topstories-carousel">
+        <div class="topstories-carousel-head">
+          <div class="topstories-carousel-title">
+            ${escapeHtml(section.title)}
+            <span class="topstories-carousel-scope">(${escapeHtml(section.scope)})</span>
+          </div>
+          <div class="topstories-nav">
+            ${controls}
+          </div>
         </div>
-      </div>
-      ${renderTopStoriesTrendMiniChart()}
-      <div class="topstories-footer">
-        <div class="topstories-nav">
-          ${controls}
+        <div class="topstories-carousel-body">
+          <div class="topstories-track">
+            ${hasSlides ? clusters.map(cluster => `
+              <div class="topstories-slide">
+                ${renderTopStoriesCluster(cluster)}
+              </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
+          </div>
         </div>
-        ${dots}
+        <div class="topstories-footer">
+          ${dots}
+        </div>
       </div>
     </div>`;
 }
 
+function resolveTopStoryImage(url = ""){
+  const candidate = String(url || "").trim();
+  if (!candidate) return "";
+  if (!isLikelyImageUrl(candidate)) return "";
+  if (isFallbackLogo(candidate)) return "";
+  return candidate;
+}
+
+function renderTopStoryMedia({
+  imageUrl,
+  fallbackLogo,
+  fallbackText,
+  className = "",
+  fallbackClass = "topstories-thumb-fallback",
+  logoClass = "topstories-cluster-logo"
+} = {}){
+  const image = resolveTopStoryImage(imageUrl);
+  const safeText = escapeHtml(fallbackText || "Source");
+  const safeLogo = String(fallbackLogo || "").trim();
+  const imgClass = className ? ` ${className}` : "";
+  if (image){
+    return `<img class="${imgClass.trim()}" src="${image}" loading="lazy" alt=""
+      data-fallback-logo="${safeLogo}"
+      data-fallback-text="${safeText}"
+      onerror="const logo=this.dataset.fallbackLogo; if(logo){this.src=logo; this.classList.add('logo-fallback'); this.onerror=null;} else {const div=document.createElement('div');div.className='${fallbackClass}';div.textContent=this.dataset.fallbackText||'Source';this.replaceWith(div);}">`;
+  }
+  return renderClusterLogoFallback(safeLogo, safeText, fallbackClass, logoClass);
+}
+
 function renderTopStoriesCluster(cluster){
-  const headline = escapeHtml(cluster?.headline || "");
   const primary = cluster?.primary || {};
-  const related = (cluster?.related || []).slice(0, 3);
+  const headline = escapeHtml(primary?.title || cluster?.headline || "");
+  const related = (cluster?.related || []).slice(0, 4);
   const sourceName = escapeHtml(primary?.source || "Source");
   const time = escapeHtml(formatArticleDate(primary?.publishedAt) || "");
   const primaryUrl = primary?.url || "#";
-  const imageUrl = (cluster?.imageUrl || "").trim();
+  const imageUrl = primary?.image || cluster?.imageUrl || "";
   const sourceLogo = (primary?.sourceLogo || logoFor(primary?.url, primary?.source || "")).trim();
-  const hasRealImage = imageUrl && isLikelyImageUrl(imageUrl) && !isFallbackLogo(imageUrl);
-  const fallbackLogo = sourceLogo || "";
-  const imageMarkup = hasRealImage
-    ? `<img class="topstories-cluster-image" src="${imageUrl}" loading="lazy" alt=""
-         data-fallback-logo="${fallbackLogo}"
-         data-fallback-text="${sourceName}"
-         onerror="const logo=this.dataset.fallbackLogo; if(logo){this.src=logo; this.classList.add('logo-fallback'); this.onerror=null;} else {const div=document.createElement('div');div.className='topstories-thumb-fallback';div.textContent=this.dataset.fallbackText||'Source';this.replaceWith(div);}">`
-    : renderClusterLogoFallback(fallbackLogo, sourceName);
+  const imageMarkup = renderTopStoryMedia({
+    imageUrl,
+    fallbackLogo: sourceLogo,
+    fallbackText: sourceName,
+    className: "topstories-cluster-image"
+  });
+  const context = getArticleContext(primary);
 
   return `
     <article class="topstories-cluster">
@@ -1998,17 +2087,21 @@ function renderTopStoriesCluster(cluster){
             ${imageMarkup}
           </div>
           <div class="topstories-cluster-sentiment">
-            ${renderSentiment(cluster?.sentiment || primary?.sentiment || {}, true, "")}
+            ${renderSentiment(primary?.sentiment || cluster?.sentiment || {}, true, context)}
           </div>
           <div class="topstories-cluster-headline">${headline}</div>
           <div class="topstories-cluster-meta">
             <span class="source">${sourceName}</span>
+            <span class="dot">·</span>
             <span class="datetime">${time}</span>
           </div>
         </a>
       </div>
       <div class="topstories-cluster-related">
-        ${related.length ? related.map(item => renderTopStoriesRelated(item)).join("") : `<div class="topstories-empty topstories-related-empty">No matching coverage yet — try again in a few minutes.</div>`}
+        <div class="topstories-related-title">More coverage</div>
+        <div class="topstories-related-list">
+          ${related.length ? related.map(item => renderTopStoriesRelated(item)).join("") : `<div class="topstories-empty topstories-related-empty">No matching coverage yet — try again in a few minutes.</div>`}
+        </div>
       </div>
     </article>`;
 }
@@ -2016,42 +2109,46 @@ function renderTopStoriesCluster(cluster){
 function renderTopStoriesRelated(item){
   const sourceName = escapeHtml(item?.source || "Source");
   const time = escapeHtml(formatArticleDate(item?.publishedAt) || "");
-  const title = escapeHtml(item?.title || item?.headline || "");
   const logo = (item?.sourceLogo || logoFor(item?.url, item?.source || "")).trim();
+  const imageUrl = item?.image || "";
   const isPinned = Boolean(item?.url && isArticlePinned(item.url));
   const pinBadge = isPinned ? `<span class="ts-pin">Pinned</span>` : "";
-  const logoMarkup = logo
-    ? `<img class="topstories-related-logo" src="${logo}" loading="lazy" alt="${sourceName} logo"
-         data-fallback-text="${sourceName}"
-         onerror="const div=document.createElement('div');div.className='topstories-related-logo topstories-logo-fallback';div.textContent=this.dataset.fallbackText||'Source';this.replaceWith(div);">`
-    : `<div class="topstories-related-logo topstories-logo-fallback">${sourceName.slice(0, 2)}</div>`;
+  const logoMarkup = renderTopStoryMedia({
+    imageUrl,
+    fallbackLogo: logo,
+    fallbackText: sourceName,
+    className: "topstories-related-thumb-image",
+    fallbackClass: "topstories-related-thumb-fallback",
+    logoClass: "topstories-related-logo"
+  });
+  const context = getArticleContext(item);
   return `
     <a class="topstories-related-row" href="${item?.url || "#"}" target="_blank" rel="noopener">
-      ${logoMarkup}
+      <div class="topstories-related-thumb">${logoMarkup}</div>
       <div class="topstories-related-body">
         <div class="topstories-related-meta">
           <div class="topstories-related-meta-row">
+            ${heroSourceLogo({ source: item?.source, link: item?.url || "", sourceLogo: logo }, "topstories-inline-logo")}
             <span class="source">${sourceName}</span>
-            <span class="datetime">${time}</span>
           </div>
+          <div class="topstories-related-meta-row datetime">${time}</div>
           ${pinBadge ? `<div class="topstories-related-pin">${pinBadge}</div>` : ""}
         </div>
-        <div class="topstories-related-title">${title}</div>
-        ${renderSentiment(item?.sentiment || {}, true, "", "mini")}
+        ${renderSentiment(item?.sentiment || {}, true, context, "mini")}
       </div>
     </a>`;
 }
 
-function renderClusterLogoFallback(logo, sourceName){
+function renderClusterLogoFallback(logo, sourceName, fallbackClass = "topstories-thumb-fallback", logoClass = "topstories-cluster-logo"){
   if (logo){
     return `
-      <div class="topstories-thumb-fallback">
-        <img class="topstories-cluster-logo" src="${logo}" loading="lazy" alt="${sourceName} logo"
+      <div class="${fallbackClass}">
+        <img class="${logoClass}" src="${logo}" loading="lazy" alt="${sourceName} logo"
           data-fallback-text="${sourceName}"
-          onerror="this.closest('.topstories-thumb-fallback').textContent=this.dataset.fallbackText||'Source';">
+          onerror="this.closest('.${fallbackClass}').textContent=this.dataset.fallbackText||'Source';">
       </div>`;
   }
-  return `<div class="topstories-thumb-fallback">${sourceName}</div>`;
+  return `<div class="${fallbackClass}">${sourceName}</div>`;
 }
 
 function bindTopStoriesCarousels(){
@@ -2270,10 +2367,18 @@ function formatSentimentTooltip(el, context, pos, neg){
         <div class="tooltip-summary">${summary}</div>
       `;
     }catch{
-      return escapeHtml(buildSentimentExplanation(context, pos, neg));
+      const summary = context ? buildSentimentExplanation(context, pos, neg) : "Explanation coming soon.";
+      return `
+        <div class="tooltip-title">Why this score</div>
+        <div class="tooltip-summary">${escapeHtml(summary)}</div>
+      `;
     }
   }
-  return escapeHtml(buildSentimentExplanation(context, pos, neg));
+  const summary = context ? buildSentimentExplanation(context, pos, neg) : "Explanation coming soon.";
+  return `
+    <div class="tooltip-title">Why this score</div>
+    <div class="tooltip-summary">${escapeHtml(summary)}</div>
+  `;
 }
 function attachSentimentTooltips(){
   const tooltip = getSentimentTooltip();

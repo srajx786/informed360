@@ -5,6 +5,7 @@
   --pos:#22c55e; --neu:#cbd5e1; --neg:#ef4444;
   --shadow:0 6px 18px rgba(16,24,40,.06);
   --radius-xl:18px; --container:1200px;
+  --topstories-carousel-height:190px;
 
   /* leaderboard columns */
   --leader-green:#e9f6ea;   /* light green */
@@ -353,23 +354,34 @@ body.theme-dark .gn-search{ background:#1a222c }
 .hero-carousels{
   display:flex;
   flex-direction:column;
-  gap:.5rem;
-  padding:.2rem .9rem .4rem;
+  gap:.6rem;
+  padding:.4rem .9rem .6rem;
   flex:1 1 auto;
   min-height:0;
+  overflow:auto;
 }
 .topstories-carousel-shell{
   display:flex;
   flex-direction:column;
-  gap:.6rem;
+  gap:.4rem;
   position:relative;
   overflow:visible;
-  flex:1 1 auto;
+  flex:0 0 auto;
   min-height:0;
 }
-.topstories-carousel{ border:1px solid var(--border); border-radius:14px; padding:.65rem .75rem .75rem; background:color-mix(in oklab, var(--card) 92%, var(--chip) 8%); overflow:hidden; display:flex; flex-direction:column; gap:.5rem }
+.topstories-carousel{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:.55rem .7rem .6rem;
+  background:color-mix(in oklab, var(--card) 92%, var(--chip) 8%);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  height:var(--topstories-carousel-height);
+}
 .topstories-carousel-head{ display:flex; align-items:center; justify-content:space-between; gap:.5rem; padding-bottom:.4rem; border-bottom:1px solid var(--border) }
-.topstories-carousel-title{ font-family:"Merriweather", serif; font-size:14px; font-weight:700; display:flex; align-items:center; gap:.35rem }
+.topstories-carousel-title{ font-family:"Merriweather", serif; font-size:13px; font-weight:700; display:flex; align-items:center; gap:.35rem }
 .topstories-carousel-scope{ font-family:"Inter", sans-serif; font-size:12px; font-weight:500; color:var(--muted) }
 .topstories-carousel-body{
   overflow:hidden;
@@ -395,11 +407,11 @@ body.theme-dark .gn-search{ background:#1a222c }
 }
 .topstories-cluster{
   display:grid;
-  grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
-  gap:.9rem;
+  grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr);
+  gap:.75rem;
   border:1px solid var(--border);
   border-radius:12px;
-  padding:.65rem;
+  padding:.55rem;
   background:var(--card);
   align-items:stretch;
   flex:1 1 auto;
@@ -407,43 +419,43 @@ body.theme-dark .gn-search{ background:#1a222c }
   height:100%;
 }
 .topstories-cluster-link{ display:flex; flex-direction:column; gap:.55rem; color:inherit; text-decoration:none }
-.topstories-cluster-media{ width:100%; border-radius:12px; overflow:hidden; background:#edf2f7; aspect-ratio:16 / 9; display:flex; align-items:center; justify-content:center }
+.topstories-cluster-media{ width:100%; border-radius:12px; overflow:hidden; background:#edf2f7; height:120px; display:flex; align-items:center; justify-content:center }
 .topstories-cluster-image{ width:100%; height:100%; object-fit:cover; display:block }
 .topstories-cluster-image.logo-fallback{ object-fit:contain; width:70%; height:70% }
 .topstories-thumb-fallback{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:10px; font-size:.75rem; font-weight:700; color:#64748b; text-align:center; background:#eef2f7 }
 .topstories-cluster-logo{ width:64px; height:64px; object-fit:contain }
 .topstories-cluster-sentiment .bar{ background:transparent }
-.topstories-cluster-headline{ font-family:"Merriweather", serif; font-weight:700; font-size:1rem; line-height:1.25 }
-.topstories-cluster-meta{ font-size:.8rem; color:var(--muted); display:flex; flex-direction:column; gap:2px }
+.topstories-cluster-headline{ font-family:"Merriweather", serif; font-weight:700; font-size:.98rem; line-height:1.25 }
+.topstories-cluster-meta{ font-size:.78rem; color:var(--muted); display:flex; flex-wrap:wrap; gap:.35rem; align-items:center }
+.topstories-cluster-meta .dot{ opacity:.6 }
 .topstories-cluster-meta .source{ font-weight:600 }
 .topstories-cluster-meta .datetime{ white-space:normal }
 .topstories-cluster-related{
   display:flex;
   flex-direction:column;
-  gap:0;
-  max-height:240px;
-  overflow:auto;
+  gap:.45rem;
+  max-height:100%;
+  overflow:hidden;
   min-height:0;
 }
-.topstories-related-row{ display:flex; gap:.6rem; padding:.55rem 0; text-decoration:none; color:inherit }
+.topstories-related-title{ font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--muted) }
+.topstories-related-list{ display:flex; flex-direction:column; gap:.45rem; overflow:auto; padding-right:2px }
+.topstories-related-row{ display:flex; gap:.6rem; padding:.4rem 0; text-decoration:none; color:inherit }
 .topstories-related-row + .topstories-related-row{ border-top:1px solid var(--border) }
-.topstories-related-logo{ width:28px; height:28px; border-radius:50%; object-fit:cover; flex:0 0 auto; background:#eef2f7; display:flex; align-items:center; justify-content:center; font-size:.6rem; font-weight:700; color:#64748b }
+.topstories-related-thumb{ width:52px; height:52px; border-radius:12px; overflow:hidden; background:#eef2f7; flex:0 0 auto; display:flex; align-items:center; justify-content:center }
+.topstories-related-thumb-image{ width:100%; height:100%; object-fit:cover; display:block }
+.topstories-related-thumb-image.logo-fallback{ object-fit:contain; width:70%; height:70% }
+.topstories-related-thumb-fallback{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:.6rem; font-weight:700; color:#64748b; text-align:center; padding:4px; background:#eef2f7 }
+.topstories-related-logo{ width:24px; height:24px; object-fit:contain; border-radius:50%; background:#eef2f7; padding:3px }
+.topstories-inline-logo{ width:16px; height:16px; border-radius:50%; margin-right:4px; display:inline-block }
 .topstories-related-body{ display:flex; flex-direction:column; gap:.35rem; min-width:0 }
 .topstories-related-meta{ display:flex; flex-direction:column; gap:2px }
-.topstories-related-meta-row{ font-size:.74rem; color:var(--muted); display:flex; align-items:center; gap:.35rem; flex-wrap:wrap; min-width:0 }
+.topstories-related-meta-row{ font-size:.72rem; color:var(--muted); display:flex; align-items:center; gap:.35rem; flex-wrap:wrap; min-width:0 }
 .topstories-related-meta-row .source{ font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:160px }
-.topstories-related-meta-row .datetime{ white-space:nowrap }
+.topstories-related-meta-row.datetime{ white-space:normal }
 .topstories-related-pin{ display:flex; }
-.topstories-related-title{
-  font-size:.88rem;
-  font-weight:600;
-  line-height:1.25;
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-}
-.topstories-related-row .sentiment-line{ font-size:.65rem }
+.topstories-related-row .sentiment-line{ font-size:.65rem; line-height:1.2 }
+.topstories-cluster .sentiment-line{ font-size:.7rem; line-height:1.2 }
 .topstories-prev,
 .topstories-next{
   position:static;
@@ -461,18 +473,25 @@ body.theme-dark .gn-search{ background:#1a222c }
   box-shadow:var(--shadow);
   cursor:pointer;
 }
+.nav-btn.spacer{
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  pointer-events:none;
+}
 .nav-btn:active{ transform:scale(0.98); }
 .topstories-footer{
   display:flex;
   flex-direction:column;
   gap:.35rem;
-  padding:.15rem .1rem .4rem;
+  padding:.1rem .1rem .2rem;
 }
 .topstories-nav{
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:flex-end;
   min-height:28px;
+  gap:.35rem;
 }
 .topstories-dots{
   display:flex;
@@ -1163,6 +1182,7 @@ dialog::backdrop{
   .hero-cluster{ grid-template-columns:1fr }
   .hero-slide .hero-img{ height:220px }
   .daily-list{ grid-template-columns:1fr }
+  .topstories-carousel{ height:auto; }
   .topstories-cluster{ grid-template-columns:1fr }
 }
 @media (max-width:600px){
@@ -1188,15 +1208,16 @@ dialog::backdrop{
   .gn-search-wrap{ grid-column:1 / -1; }
   .gn-actions{
     display:flex;
-    flex-wrap:wrap;
-    justify-content:flex-end;
-    gap:.45rem;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:.35rem;
   }
   .weather-card{
     flex:0 0 auto;
     width:auto;
     max-width:240px;
     margin:0;
+    align-self:flex-end;
   }
   .gn-tabs{
     overflow-x:auto;
@@ -1223,6 +1244,8 @@ dialog::backdrop{
   .topstories-cluster-meta{ flex-direction:column; }
   .topstories-related-row{ padding:.4rem; }
   .topstories-related-meta{ flex-direction:column; }
+  .topstories-cluster-media{ height:170px; }
+  .topstories-related-thumb{ width:64px; height:64px; }
 }
 /* ==========================================
    MOBILE FIX: Header + Tabs must NOT overlap
