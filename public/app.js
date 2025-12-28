@@ -1827,11 +1827,8 @@ function renderTopStoriesSection(section){
       </div>`
     : "";
   return `
-    <div class="topstories-carousel" data-carousel="${escapeHtml(section.id)}">
-      <div class="topstories-carousel-head">
-        <div class="topstories-carousel-title">${escapeHtml(section.title)} ${section.scope ? `<span class="topstories-carousel-scope">(${escapeHtml(section.scope)})</span>` : ""}</div>
-        ${controls}
-      </div>
+    <div class="topstories-carousel-shell" data-carousel="${escapeHtml(section.id)}">
+      ${controls ? `<div class="topstories-controls-row">${controls}</div>` : ""}
       <div class="topstories-carousel-body">
         <div class="topstories-track">
           ${hasSlides ? clusters.map(cluster => `
@@ -1927,7 +1924,7 @@ function renderClusterLogoFallback(logo, sourceName){
 }
 
 function bindTopStoriesCarousels(){
-  $$(".topstories-carousel").forEach(carousel => {
+  $$(".topstories-carousel-shell").forEach(carousel => {
     if (carousel.dataset.bound) return;
     carousel.dataset.bound = "1";
     const track = carousel.querySelector(".topstories-track");
