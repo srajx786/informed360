@@ -1834,7 +1834,10 @@ function renderTopStoriesCluster(cluster){
 function renderTopStoriesRelated(item){
   const sourceName = escapeHtml(item?.source || "Source");
   const time = escapeHtml(formatArticleDate(item?.publishedAt) || "");
+  const title = escapeHtml(item?.title || item?.headline || "");
   const logo = (item?.sourceLogo || logoFor(item?.url, item?.source || "")).trim();
+  const isPinned = Boolean(item?.url && isArticlePinned(item.url));
+  const pinBadge = isPinned ? `<span class="ts-pin">Pinned</span>` : "";
   const logoMarkup = logo
     ? `<img class="topstories-related-logo" src="${logo}" loading="lazy" alt="${sourceName} logo"
          data-fallback-text="${sourceName}"
@@ -1845,9 +1848,13 @@ function renderTopStoriesRelated(item){
       ${logoMarkup}
       <div class="topstories-related-body">
         <div class="topstories-related-meta">
-          <span class="source">${sourceName}</span>
-          <span class="datetime">${time}</span>
+          <div class="topstories-related-meta-row">
+            <span class="source">${sourceName}</span>
+            <span class="datetime">${time}</span>
+          </div>
+          ${pinBadge ? `<div class="topstories-related-pin">${pinBadge}</div>` : ""}
         </div>
+        <div class="topstories-related-title">${title}</div>
         ${renderSentiment(item?.sentiment || {}, true, "", "mini")}
       </div>
     </a>`;
