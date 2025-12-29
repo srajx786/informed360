@@ -201,6 +201,8 @@ const sourceDomainForArticle = (article = {}) => {
 
 const logoForArticle = (article = {}) =>
   logoForDomain(sourceDomainForArticle(article));
+const domainFromSourceName = (name = "") =>
+  SOURCE_NAME_MAP.get(String(name || "").toLowerCase()) || "";
 
 const isLogoImage = (url = "") => {
   const lower = String(url || "").toLowerCase();
@@ -1407,6 +1409,17 @@ const fetchGoogleNewsSearch = async (query = "") => {
 
 const normalizeRelatedCacheKey = (headline = "") => normalize(headline);
 const GDELT_EMPTY_LOGGED = new Set();
+const uniqueRelatedByDomain = (items = []) => {
+  const seen = new Set();
+  return (items || []).filter((item) => {
+    const url = item?.url || item?.link || "";
+    const domain = domainFromUrl(url);
+    if (!domain) return false;
+    if (seen.has(domain)) return false;
+    seen.add(domain);
+    return true;
+  });
+};
 const shouldSkipRelatedCandidate = ({
   domain,
   primaryDomain,
@@ -1584,6 +1597,42 @@ async function fillRelatedSources({
   return related.slice(0, 2);
 }
 
+async function ensureRelatedSources(cluster = {}) {
+  const primaryUrl = cluster.primary?.url || cluster.primary?.link || "";
+  const primaryDomain =
+    domainFromUrl(primaryUrl) || domainFromSourceName(cluster.primary?.source);
+  const headline = cluster.headline || cluster.primary?.title || "";
+  let related = (cluster.related || []).filter((item) => {
+    const url = item?.url || item?.link || "";
+    const domain = domainFromUrl(url);
+    return domain && domain !== primaryDomain;
+  });
+  related = uniqueRelatedByDomain(related).slice(0, 2);
+  let tried = ["rss"];
+
+  if (related.length < 2) {
+    const fetched = await fillRelatedSources({
+      headline,
+      primaryUrl,
+      primaryDomain,
+      existingRelated: related,
+      hours: 24
+    });
+    related = uniqueRelatedByDomain([...(related || []), ...(fetched || [])]).slice(0, 2);
+    tried = ["rss", "gdelt", "googlerss"];
+  }
+
+  if (related.length < 2) {
+    cluster.relatedDebug = {
+      primaryDomain,
+      found: related.length,
+      tried
+    };
+  }
+
+  return related.slice(0, 2);
+}
+
 const buildGdeltRelated = async (headline = "") => {
   const query = buildTopStoryQuery(headline);
   if (!query) return [];
@@ -1753,15 +1802,7 @@ app.get("/api/top-stories", async (req, res) => {
   const trimmed = await Promise.all(
     sorted.slice(0, 8).map(async (cluster) => {
       const { sourceCount, articleCount, latestAt, ...payload } = cluster;
-      const primaryDomain = relatedSourceKey(payload.primary || {});
-      const related = await fillRelatedSources({
-        headline: payload.headline || payload.primary?.title || "",
-        primaryUrl: payload.primary?.url || payload.primary?.link || "",
-        primaryDomain,
-        existingRelated: payload.related || [],
-        hours: 24
-      });
-
+      const related = await ensureRelatedSources(payload);
       return { ...payload, related: related.slice(0, 2) };
     })
   );

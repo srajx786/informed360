@@ -148,6 +148,13 @@ const isFallbackLogo = (url = "") => {
   if (lower.includes("favicon")) return true;
   return lower.includes("logo.");
 };
+const normalizeDailyThumbSrc = (value = "") => {
+  const cleaned = String(value || "").trim();
+  if (!cleaned) return "";
+  if (cleaned.startsWith("/")) return cleaned;
+  if (/^https?:\/\//i.test(cleaned)) return cleaned;
+  return "";
+};
 const isLikelyImageUrl = (url = "") => {
   const cleaned = String(url || "").trim();
   if (!cleaned) return false;
@@ -1645,36 +1652,35 @@ function safeImgTag(src, link, source, cls){
 }
 
 function resolveDailyThumbnail(article = {}){
-  const primary = [article.image, article.imageUrl, article.imageUrl1]
-    .map(value => String(value || "").trim())
-    .find(value => isLikelyImageUrl(value)) || "";
-  const fallbackLogo = String(
-    article.sourceLogo || getSourceLogoUrl(domainFromUrl(article.link), article.source)
-  ).trim();
-  return { primary, fallbackLogo };
+  const primary = [article.image, article.imageUrl, article.thumbnail, article.imageUrl1]
+    .map(value => normalizeDailyThumbSrc(value))
+    .find(Boolean) || "";
+  const sourceLogo = normalizeDailyThumbSrc(article.sourceLogo);
+  const thumb = primary || sourceLogo || PLACEHOLDER;
+  return { primary, sourceLogo, thumb };
 }
 
-function safeNewsThumbTag({ primary = "", fallbackLogo = "", cls = "" } = {}){
+function safeNewsThumbTag({ primary = "", sourceLogo = "", thumb = "", cls = "" } = {}){
   const placeholder = PLACEHOLDER;
-  const initialSrc = primary || fallbackLogo || placeholder;
-  const useLogoThumb = !primary && Boolean(fallbackLogo);
-  const usePlaceholder = !primary && !fallbackLogo;
+  const initialSrc = thumb || primary || sourceLogo || placeholder;
+  const useLogoThumb = !primary && Boolean(sourceLogo);
+  const usePlaceholder = !primary && !sourceLogo;
   const classNames = [cls, useLogoThumb ? "logo-thumb" : "", usePlaceholder ? "placeholder-thumb" : ""]
     .filter(Boolean)
     .join(" ");
 
   return `<img class="${classNames}" src="${initialSrc}" loading="lazy"
-              data-fallback="${fallbackLogo}" data-placeholder="${placeholder}"
-              onerror="if(this.dataset.errored){this.onerror=null;this.classList.remove('logo-thumb');this.classList.add('placeholder-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';if(this.dataset.fallback){this.classList.add('logo-thumb');this.src=this.dataset.fallback;this.alt='';}else{this.classList.remove('logo-thumb');this.classList.add('placeholder-thumb');this.src=this.dataset.placeholder;this.alt='';}}" alt="">`;
+              data-source-logo="${sourceLogo}" data-placeholder="${placeholder}"
+              onerror="const logo=this.dataset.sourceLogo||'';const placeholder=this.dataset.placeholder||'';if(logo && this.src!==logo){this.classList.add('logo-thumb');this.classList.remove('placeholder-thumb');this.src=logo;this.alt='';return;}if(placeholder && this.src!==placeholder){this.classList.remove('logo-thumb');this.classList.add('placeholder-thumb');this.src=placeholder;this.alt='';}" alt="">`;
 }
 
 /* card renderers */
 function card(a){
-  const { primary, fallbackLogo } = resolveDailyThumbnail(a || {});
+  const { primary, sourceLogo, thumb } = resolveDailyThumbnail(a || {});
   return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener" data-article-link="${a.link}">
       <div class="news-side">
-        ${safeNewsThumbTag({ primary, fallbackLogo, cls: "thumb" })}
+        ${safeNewsThumbTag({ primary, sourceLogo, thumb, cls: "thumb" })}
         <div class="card-actions">
           <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
         </div>
