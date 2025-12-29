@@ -239,7 +239,7 @@ body.theme-dark .gn-search{ background:#1a222c }
 .layout > .pinned-block,
 .layout > .hero-block,
 .layout > .mood-block{
-  height:100%;
+  align-self:start;
 }
 .pinned-block{ grid-area:pinned }
 .hero-block{ grid-area:hero }
@@ -250,7 +250,6 @@ body.theme-dark .gn-search{ background:#1a222c }
   box-shadow:var(--shadow);
   display:flex;
   flex-direction:column;
-  height:100%;
 }
 .mood-block{ grid-area:mood; display:flex; flex-direction:column; gap:.9rem; height:100%; align-self:stretch }
 .source-block{ grid-area:source }

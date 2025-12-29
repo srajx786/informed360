@@ -108,16 +108,7 @@ const getSourceLogoUrl = (sourceDomain = "", sourceName = "") => {
 const logoFor = (link = "", source = "") =>
   getSourceLogoUrl(domainFromUrl(link), source);
 
-const PLACEHOLDER =
-  "data:image/svg+xml;base64," +
-  btoa(
-    `<svg xmlns='http://www.w3.org/2000/svg' width='400' height='260'>
-       <rect width='100%' height='100%' rx='18' ry='18' fill='#f5f7fb'/>
-       <rect x='120' y='70' width='160' height='120' rx='12' ry='12' fill='none' stroke='#9fb3c8' stroke-width='8'/>
-       <circle cx='170' cy='120' r='18' fill='none' stroke='#9fb3c8' stroke-width='8'/>
-       <path d='M140 168 L178 132 L214 168' fill='none' stroke='#9fb3c8' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/>
-     </svg>`
-  );
+const PLACEHOLDER = "/img/placeholder-news.svg";
 const LOGO_PLACEHOLDER =
   "data:image/svg+xml;base64," +
   btoa(
@@ -1653,30 +1644,37 @@ function safeImgTag(src, link, source, cls){
               onerror="if(this.dataset.errored){const text=this.dataset.fallbackText||'Source';const div=document.createElement('div');div.className='thumb-fallback ${cls || ""}';div.textContent=text;this.replaceWith(div);}else{this.dataset.errored='1';if(this.dataset.fallback){this.classList.add('logo-thumb');this.src=this.dataset.fallback;this.alt='';}else{const text=this.dataset.fallbackText||'Source';const div=document.createElement('div');div.className='thumb-fallback ${cls || ""}';div.textContent=text;this.replaceWith(div);}}" alt="">`;
 }
 
-function safeNewsThumbTag(src, link, source, cls){
-  const candidate = (src || "").trim();
-  const primary = isLikelyImageUrl(candidate) ? candidate : "";
-  const fallbackLogo = getSourceLogoUrl(domainFromUrl(link), source);
-  const fallback = fallbackLogo || "";
+function resolveDailyThumbnail(article = {}){
+  const primary = [article.image, article.imageUrl, article.imageUrl1]
+    .map(value => String(value || "").trim())
+    .find(value => isLikelyImageUrl(value)) || "";
+  const fallbackLogo = String(
+    article.sourceLogo || getSourceLogoUrl(domainFromUrl(article.link), article.source)
+  ).trim();
+  return { primary, fallbackLogo };
+}
+
+function safeNewsThumbTag({ primary = "", fallbackLogo = "", cls = "" } = {}){
   const placeholder = PLACEHOLDER;
-  const initialSrc = primary || fallback || placeholder;
-  const useLogoThumb = (!primary || primary === fallback) && Boolean(fallbackLogo);
-  const usePlaceholder = !primary && !fallback;
+  const initialSrc = primary || fallbackLogo || placeholder;
+  const useLogoThumb = !primary && Boolean(fallbackLogo);
+  const usePlaceholder = !primary && !fallbackLogo;
   const classNames = [cls, useLogoThumb ? "logo-thumb" : "", usePlaceholder ? "placeholder-thumb" : ""]
     .filter(Boolean)
     .join(" ");
 
   return `<img class="${classNames}" src="${initialSrc}" loading="lazy"
-              data-fallback="${fallback}" data-placeholder="${placeholder}"
+              data-fallback="${fallbackLogo}" data-placeholder="${placeholder}"
               onerror="if(this.dataset.errored){this.onerror=null;this.classList.remove('logo-thumb');this.classList.add('placeholder-thumb');this.src=this.dataset.placeholder;this.alt='';}else{this.dataset.errored='1';if(this.dataset.fallback){this.classList.add('logo-thumb');this.src=this.dataset.fallback;this.alt='';}else{this.classList.remove('logo-thumb');this.classList.add('placeholder-thumb');this.src=this.dataset.placeholder;this.alt='';}}" alt="">`;
 }
 
 /* card renderers */
 function card(a){
+  const { primary, fallbackLogo } = resolveDailyThumbnail(a || {});
   return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener" data-article-link="${a.link}">
       <div class="news-side">
-        ${safeNewsThumbTag(a.image || a.imageUrl, a.link, a.source, "thumb")}
+        ${safeNewsThumbTag({ primary, fallbackLogo, cls: "thumb" })}
         <div class="card-actions">
           <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
         </div>
@@ -1865,15 +1863,16 @@ function buildTopStoriesSections(){
 
 function renderTopStoriesSection(section){
   const clusters = section.clusters || [];
-  const hasSlides = clusters.length > 0;
-  const dots = clusters.length > 1
+  const clustersToRender = clusters.slice(0, 4);
+  const hasSlides = clustersToRender.length > 0;
+  const dots = clustersToRender.length > 1
     ? `<div class="topstories-dots" role="tablist">
-        ${clusters.map((_, i) =>
+        ${clustersToRender.map((_, i) =>
           `<button data-i="${i}" aria-label="Go to slide ${i + 1}"></button>`
         ).join("")}
       </div>`
     : "";
-  const controls = clusters.length > 1
+  const controls = clustersToRender.length > 1
     ? `<button class="nav-btn topstories-prev" type="button" aria-label="Previous">‹</button>
        <button class="nav-btn topstories-next" type="button" aria-label="Next">›</button>`
     : `<span class="nav-btn spacer" aria-hidden="true"></span>
@@ -1883,7 +1882,7 @@ function renderTopStoriesSection(section){
       <div class="topstories-carousel">
         <div class="topstories-carousel-body">
           <div class="topstories-track">
-            ${hasSlides ? clusters.map(cluster => `
+            ${hasSlides ? clustersToRender.map(cluster => `
               <div class="topstories-slide">
                 ${renderTopStoriesCluster(cluster)}
               </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
@@ -2031,7 +2030,8 @@ function bindTopStoriesCarousels(){
     const dots = [...carousel.querySelectorAll(".topstories-dots button")];
     const update = (next) => {
       if (!slides.length) return;
-      const nextIndex = (next + slides.length) % slides.length;
+      const total = slides.length;
+      const nextIndex = Math.max(0, Math.min(next, total - 1));
       carousel.dataset.index = String(nextIndex);
       track.style.transform = `translateX(-${nextIndex * 100}%)`;
       dots.forEach((dot, idx) => dot.classList.toggle("active", idx === nextIndex));
