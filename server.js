@@ -1193,18 +1193,24 @@ const gdeltQueryDefaults =
   '(India OR Indian OR "South Asia" OR world OR global OR international)';
 const gdeltSortForMode = (mode = "") =>
   mode === "top" ? "HybridRel" : "DateDesc";
-const fetchGdelt = async ({ query, mode = "latest", hours = 24 }) => {
+const fetchGdelt = async ({
+  query,
+  mode = "latest",
+  hours = 24,
+  max = 50
+}) => {
   const safeMode = mode === "top" ? "top" : "latest";
   const safeHours = Math.min(72, Math.max(1, Number(hours || 24)));
+  const safeMax = Math.min(100, Math.max(5, Number(max || 50)));
   const finalQuery = query?.trim() || gdeltQueryDefaults;
-  const cacheKey = `${finalQuery}|${safeMode}|${safeHours}`;
+  const cacheKey = `${finalQuery}|${safeMode}|${safeHours}|${safeMax}`;
   const cached = GDELT_CACHE.get(cacheKey);
   if (cached && Date.now() - cached.at < GDELT_CACHE_TTL) return cached.payload;
 
   const params = new URLSearchParams({
     query: finalQuery,
     mode: "ArtList",
-    maxrecords: "50",
+    maxrecords: String(safeMax),
     format: "json",
     timespan: `${safeHours}h`,
     sort: gdeltSortForMode(safeMode)
@@ -1213,10 +1219,45 @@ const fetchGdelt = async ({ query, mode = "latest", hours = 24 }) => {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 12000);
-    const response = await fetch(url, { signal: controller.signal });
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Informed360Bot/1.0",
+        Accept: "application/json, text/plain;q=0.9, */*;q=0.8",
+        "Accept-Language": "en-IN,en;q=0.9"
+      }
+    });
     clearTimeout(timeout);
-    const data = await response.json();
-    const articles = (data?.articles || []).map((item) => {
+    const bodyText = await response.text();
+    if (!response.ok) {
+      console.log("GDELT HTTP", response.status, url);
+      const payload = {
+        fetchedAt: Date.now(),
+        articles: [],
+        error: "gdelt-http",
+        status: response.status,
+        bodySnippet: bodyText.slice(0, 200)
+      };
+      GDELT_CACHE.set(cacheKey, { at: Date.now(), payload });
+      return payload;
+    }
+    let data;
+    try {
+      data = JSON.parse(bodyText);
+    } catch (error) {
+      console.log("GDELT JSON parse error", bodyText.slice(0, 200));
+      const payload = {
+        fetchedAt: Date.now(),
+        articles: [],
+        error: "gdelt-json",
+        bodySnippet: bodyText.slice(0, 200)
+      };
+      GDELT_CACHE.set(cacheKey, { at: Date.now(), payload });
+      return payload;
+    }
+    const rawArticles = data?.articles || data?.data?.articles || [];
+    const articles = rawArticles.map((item) => {
       const link = cleanUrl(item.url || "");
       const sourceInfo = lookupSourceInfo({
         source: item.sourceCountry || item.sourceName || item.domain || "",
@@ -1240,7 +1281,11 @@ const fetchGdelt = async ({ query, mode = "latest", hours = 24 }) => {
     GDELT_CACHE.set(cacheKey, { at: Date.now(), payload });
     return payload;
   } catch (error) {
-    const payload = { fetchedAt: Date.now(), articles: [], error: "gdelt-error" };
+    const payload = {
+      fetchedAt: Date.now(),
+      articles: [],
+      error: "gdelt-error"
+    };
     GDELT_CACHE.set(cacheKey, { at: Date.now(), payload });
     return payload;
   }
@@ -1287,10 +1332,11 @@ app.get("/api/og-image", async (req, res) => {
 });
 
 app.get("/api/gdelt", async (req, res) => {
-  const query = (req.query.query || "").toString();
+  const query = (req.query.q || req.query.query || "").toString();
   const mode = (req.query.mode || "latest").toString();
   const hours = Number(req.query.hours || 24);
-  const gdelt = await fetchGdelt({ query, mode, hours });
+  const max = Number(req.query.max || 50);
+  const gdelt = await fetchGdelt({ query, mode, hours, max });
   const enriched = await Promise.all(
     (gdelt.articles || []).map(async (article) => {
       if (!article.link) return article;
@@ -1323,7 +1369,13 @@ app.get("/api/gdelt", async (req, res) => {
       return enrichedArticle;
     })
   );
-  res.json({ fetchedAt: gdelt.fetchedAt, articles: enriched });
+  res.json({
+    fetchedAt: gdelt.fetchedAt,
+    articles: enriched,
+    error: gdelt.error,
+    status: gdelt.status,
+    bodySnippet: gdelt.bodySnippet
+  });
 });
 
 app.get("/api/top-stories", (req, res) => {
