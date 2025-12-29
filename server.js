@@ -67,6 +67,7 @@ const EXPLANATION_CACHE = new Map();
 const STORY_CACHE = new Map();
 const GDELT_CACHE = new Map();
 const TOP_STORY_RELATED_CACHE = new Map();
+const RELATED_COVERAGE_CACHE = new Map();
 const FEED_HEALTH = new Map();
 
 let transformerPipeline = null;
@@ -1073,6 +1074,18 @@ const buildTopStoryQuery = (headline = "") => {
   const count = Math.min(10, Math.max(6, tokens.length));
   return tokens.slice(0, count).join(" ");
 };
+const buildHeadlineQuery = (headline = "") => {
+  const tokens = tokenize(headline).filter((token) => !TOP_STORY_STOPWORDS.has(token));
+  if (!tokens.length) return "";
+  const counts = new Map();
+  tokens.forEach((token) => counts.set(token, (counts.get(token) || 0) + 1));
+  const sorted = [...counts.entries()].sort((a, b) => {
+    if (b[1] !== a[1]) return b[1] - a[1];
+    return b[0].length - a[0].length;
+  });
+  const targetCount = Math.min(10, Math.max(6, sorted.length));
+  return sorted.slice(0, targetCount).map(([token]) => token).join(" ");
+};
 const normalizeRelatedTitle = (title = "") => {
   const tokens = tokenize(title).filter((token) => !TOP_STORY_STOPWORDS.has(token));
   if (!tokens.length) return "";
@@ -1089,6 +1102,20 @@ const getRelatedCache = (key = "") => {
 };
 const setRelatedCache = (key = "", related = []) => {
   TOP_STORY_RELATED_CACHE.set(key, { at: Date.now(), related });
+};
+const getRelatedCoverageCache = (key = "") => {
+  if (!key) return null;
+  const cached = RELATED_COVERAGE_CACHE.get(key);
+  if (!cached) return null;
+  if (Date.now() - cached.ts > TOP_STORY_RELATED_CACHE_TTL) {
+    RELATED_COVERAGE_CACHE.delete(key);
+    return null;
+  }
+  return cached.related || [];
+};
+const setRelatedCoverageCache = (key = "", related = []) => {
+  if (!key) return;
+  RELATED_COVERAGE_CACHE.set(key, { ts: Date.now(), related });
 };
 
 const buildTopStoryClusters = (articles = []) => {
@@ -1174,6 +1201,7 @@ const buildTopStoryClusters = (articles = []) => {
       usedSources.add(sourceKey);
       related.push({
         source: article.source || sourceKey || "Source",
+        sourceDomain: sourceDomainForArticle(article),
         sourceLogo: logoForArticle(article || {}),
         publishedAt: article.publishedAt,
         url: article.link,
@@ -1327,6 +1355,7 @@ const relatedSourceKey = (item = {}) =>
 
 const buildRelatedPayload = (article = {}, sentiment) => ({
   source: article.source || sourceDomainForArticle(article) || "Source",
+  sourceDomain: article.sourceDomain || sourceDomainForArticle(article),
   sourceLogo: article.sourceLogo || logoForArticle(article || {}),
   publishedAt: article.publishedAt,
   url: article.link || "",
@@ -1335,6 +1364,225 @@ const buildRelatedPayload = (article = {}, sentiment) => ({
   image: pickStoryImage(article),
   sentiment: sentiment || article.sentiment || { pos: 0, neu: 0, neg: 0 }
 });
+
+const GOOGLE_NEWS_HOST = "news.google.com";
+const extractGoogleNewsTarget = (link = "") => {
+  if (!link) return "";
+  try {
+    const url = new URL(link);
+    if (!url.hostname.includes(GOOGLE_NEWS_HOST)) return link;
+    const target = url.searchParams.get("url");
+    if (target) return cleanUrl(target, target);
+    return link;
+  } catch {
+    return link;
+  }
+};
+const buildGoogleNewsSearchUrl = (query = "") =>
+  `https://news.google.com/rss/search?q=${encodeURIComponent(
+    query
+  )}&hl=en-IN&gl=IN&ceid=IN:en`;
+const fetchGoogleNewsSearch = async (query = "") => {
+  if (!query) return [];
+  try {
+    const feed = await parseURL(buildGoogleNewsSearchUrl(query));
+    return (feed.items || []).map((item) => {
+      const link = cleanUrl(item.link || item.guid || "", item.link || "");
+      const resolved = extractGoogleNewsTarget(link);
+      const sourceUrl = item.source?.url || "";
+      return {
+        title: item.title || "",
+        link: resolved,
+        source: item.source?.title || domainFromUrl(sourceUrl) || "Source",
+        sourceDomain: domainFromUrl(sourceUrl || resolved),
+        description: item.contentSnippet || item.summary || "",
+        image: extractImage(item),
+        publishedAt: item.isoDate || item.pubDate || new Date().toISOString()
+      };
+    });
+  } catch {
+    return [];
+  }
+};
+
+const normalizeRelatedCacheKey = (headline = "") => normalize(headline);
+const GDELT_EMPTY_LOGGED = new Set();
+const shouldSkipRelatedCandidate = ({
+  domain,
+  primaryDomain,
+  usedDomains,
+  url,
+  usedUrls,
+  title,
+  usedTitles
+}) => {
+  if (!domain || domain === GOOGLE_NEWS_HOST) return true;
+  if (primaryDomain && domain === primaryDomain) return true;
+  if (usedDomains.has(domain)) return true;
+  const canonical = canonicalizeUrl(url || "");
+  if (canonical && usedUrls.has(canonical)) return true;
+  const normalizedTitle = normalizeRelatedTitle(title || "");
+  if (normalizedTitle && usedTitles.has(normalizedTitle)) return true;
+  return false;
+};
+const registerRelatedCandidate = ({
+  domain,
+  usedDomains,
+  url,
+  usedUrls,
+  title,
+  usedTitles
+}) => {
+  usedDomains.add(domain);
+  const canonical = canonicalizeUrl(url || "");
+  if (canonical) usedUrls.add(canonical);
+  const normalizedTitle = normalizeRelatedTitle(title || "");
+  if (normalizedTitle) usedTitles.add(normalizedTitle);
+};
+const enrichRelatedCandidate = async (article = {}) => {
+  if (!article?.link) return null;
+  const cachedArticle = getCachedArticle(article.link);
+  if (cachedArticle) return buildRelatedPayload(cachedArticle, cachedArticle.sentiment);
+  const text = `${article.title || ""}. ${article.description || ""}`.trim();
+  const { sentiment, explanation } = await scoreSentiment(text, {
+    url: article.link
+  });
+  const category = inferCategory({
+    title: article.title,
+    link: article.link,
+    source: article.source
+  });
+  const enrichedArticle = {
+    ...article,
+    category,
+    sentiment: {
+      ...sentiment,
+      sentimentLabel: explanation.sentiment_label,
+      topPhrases: explanation.top_phrases,
+      confidence: explanation.confidence
+    }
+  };
+  setCachedArticle(article.link, enrichedArticle, explanation);
+  return buildRelatedPayload(enrichedArticle, enrichedArticle.sentiment);
+};
+
+async function fillRelatedSources({
+  headline = "",
+  primaryUrl = "",
+  primaryDomain = "",
+  existingRelated = [],
+  hours = 24
+}) {
+  const cacheKey = normalizeRelatedCacheKey(headline || primaryUrl || "");
+  const cached = getRelatedCoverageCache(cacheKey);
+  if (cached) return cached.slice(0, 2);
+
+  const related = [];
+  const usedDomains = new Set(primaryDomain ? [primaryDomain] : []);
+  const usedTitles = new Set();
+  const usedUrls = new Set();
+
+  (existingRelated || []).forEach((item) => {
+    if (related.length >= 2) return;
+    const domain = relatedSourceKey(item);
+    if (
+      shouldSkipRelatedCandidate({
+        domain,
+        primaryDomain,
+        usedDomains,
+        url: item.url,
+        usedUrls,
+        title: item.title,
+        usedTitles
+      })
+    )
+      return;
+    registerRelatedCandidate({
+      domain,
+      usedDomains,
+      url: item.url,
+      usedUrls,
+      title: item.title,
+      usedTitles
+    });
+    related.push(item);
+  });
+
+  if (related.length < 2) {
+    const query = buildHeadlineQuery(headline);
+    const gdelt = await fetchGdelt({ query, hours, max: 50 });
+    const gdeltArticles = gdelt.articles || [];
+    if (!gdeltArticles.length && query && !GDELT_EMPTY_LOGGED.has(query)) {
+      console.warn("[Top Stories] GDELT returned 0", { query, count: 0 });
+      GDELT_EMPTY_LOGGED.add(query);
+    }
+    for (const article of gdeltArticles.slice(0, 20)) {
+      if (related.length >= 2) break;
+      const domain = sourceDomainForArticle(article) || domainFromUrl(article.link || "");
+      if (
+        shouldSkipRelatedCandidate({
+          domain,
+          primaryDomain,
+          usedDomains,
+          url: article.link,
+          usedUrls,
+          title: article.title,
+          usedTitles
+        })
+      )
+        continue;
+      const enriched = await enrichRelatedCandidate(article);
+      if (!enriched) continue;
+      registerRelatedCandidate({
+        domain,
+        usedDomains,
+        url: enriched.url,
+        usedUrls,
+        title: enriched.title,
+        usedTitles
+      });
+      related.push(enriched);
+      if (related.length >= 2) break;
+    }
+  }
+
+  if (related.length < 2) {
+    const query = buildHeadlineQuery(headline);
+    const rssArticles = await fetchGoogleNewsSearch(query);
+    for (const article of rssArticles.slice(0, 20)) {
+      if (related.length >= 2) break;
+      if (!article?.link) continue;
+      const domain = article.sourceDomain || domainFromUrl(article.link || "");
+      if (
+        shouldSkipRelatedCandidate({
+          domain,
+          primaryDomain,
+          usedDomains,
+          url: article.link,
+          usedUrls,
+          title: article.title,
+          usedTitles
+        })
+      )
+        continue;
+      const enriched = await enrichRelatedCandidate(article);
+      if (!enriched) continue;
+      registerRelatedCandidate({
+        domain,
+        usedDomains,
+        url: enriched.url,
+        usedUrls,
+        title: enriched.title,
+        usedTitles
+      });
+      related.push(enriched);
+      if (related.length >= 2) break;
+    }
+  }
+
+  setRelatedCoverageCache(cacheKey, related.slice(0, 2));
+  return related.slice(0, 2);
+}
 
 const buildGdeltRelated = async (headline = "") => {
   const query = buildTopStoryQuery(headline);
@@ -1505,48 +1753,16 @@ app.get("/api/top-stories", async (req, res) => {
   const trimmed = await Promise.all(
     sorted.slice(0, 8).map(async (cluster) => {
       const { sourceCount, articleCount, latestAt, ...payload } = cluster;
-      const baseRelated = Array.isArray(payload.related) ? payload.related : [];
-      const related = [];
-      const usedDomains = new Set();
-      const usedTitles = new Set();
-      const usedUrls = new Set();
       const primaryDomain = relatedSourceKey(payload.primary || {});
-      if (primaryDomain) usedDomains.add(primaryDomain);
-
-      baseRelated.forEach((item) => {
-        if (!item?.url) return;
-        const domain = relatedSourceKey(item);
-        if (!domain || usedDomains.has(domain)) return;
-        const canonical = canonicalizeUrl(item.url || "");
-        if (canonical && usedUrls.has(canonical)) return;
-        const normalizedTitle = normalizeRelatedTitle(item.title || "");
-        if (normalizedTitle && usedTitles.has(normalizedTitle)) return;
-        usedDomains.add(domain);
-        if (canonical) usedUrls.add(canonical);
-        if (normalizedTitle) usedTitles.add(normalizedTitle);
-        related.push(item);
+      const related = await fillRelatedSources({
+        headline: payload.headline || payload.primary?.title || "",
+        primaryUrl: payload.primary?.url || payload.primary?.link || "",
+        primaryDomain,
+        existingRelated: payload.related || [],
+        hours: 24
       });
 
-      if (related.length < 2) {
-        const headline = payload.headline || payload.primary?.title || "";
-        const gdeltRelated = await buildGdeltRelated(headline);
-        gdeltRelated.forEach((item) => {
-          if (related.length >= 2) return;
-          if (!item?.url) return;
-          const domain = relatedSourceKey(item);
-          if (!domain || usedDomains.has(domain)) return;
-          const canonical = canonicalizeUrl(item.url || "");
-          if (canonical && usedUrls.has(canonical)) return;
-          const normalizedTitle = normalizeRelatedTitle(item.title || "");
-          if (normalizedTitle && usedTitles.has(normalizedTitle)) return;
-          usedDomains.add(domain);
-          if (canonical) usedUrls.add(canonical);
-          if (normalizedTitle) usedTitles.add(normalizedTitle);
-          related.push(item);
-        });
-      }
-
-      return { ...payload, related };
+      return { ...payload, related: related.slice(0, 2) };
     })
   );
   res.json({ fetchedAt: Date.now(), clusters: trimmed });
