@@ -1070,13 +1070,13 @@ async function loadAll(){
       fetchJSON(`/api/engaged${state.experimental ? "?experimental=1" : ""}`)
         .catch(() => ({ stories: [] })),
       fetchJSON(`/api/top-stories?scope=india&type=recent${topStoriesQs}`)
-        .catch(() => ({ clusters: [] })),
+        .catch(() => ({ topStories: [] })),
       fetchJSON(`/api/top-stories?scope=india&type=engaged${topStoriesQs}`)
-        .catch(() => ({ clusters: [] })),
+        .catch(() => ({ topStories: [] })),
       fetchJSON(`/api/top-stories?scope=world&type=recent${topStoriesQs}`)
-        .catch(() => ({ clusters: [] })),
+        .catch(() => ({ topStories: [] })),
       fetchJSON(`/api/top-stories?scope=world&type=engaged${topStoriesQs}`)
-        .catch(() => ({ clusters: [] }))
+        .catch(() => ({ topStories: [] }))
     ]);
 
     state.allArticles = news.articles || [];
@@ -1084,10 +1084,10 @@ async function loadAll(){
     state.stories = stories?.stories || [];
     state.engagedStories = engaged?.stories || [];
     state.topStories = {
-      indiaRecent: topIndiaRecent?.clusters || [],
-      indiaEngaged: topIndiaEngaged?.clusters || [],
-      worldRecent: topWorldRecent?.clusters || [],
-      worldEngaged: topWorldEngaged?.clusters || []
+      indiaRecent: topIndiaRecent?.topStories || [],
+      indiaEngaged: topIndiaEngaged?.topStories || [],
+      worldRecent: topWorldRecent?.topStories || [],
+      worldEngaged: topWorldEngaged?.topStories || []
     };
     state.topics   = selectTrendingTopics(topics.topics || [], state.allArticles);
     if (needsIndiaFetch){
@@ -1868,17 +1868,17 @@ function buildTopStoriesSections(){
 }
 
 function renderTopStoriesSection(section){
-  const clusters = section.clusters || [];
-  const clustersToRender = clusters.slice(0, 4);
-  const hasSlides = clustersToRender.length > 0;
-  const dots = clustersToRender.length > 1
+  const slides = section.clusters || [];
+  const slidesToRender = slides.slice(0, 4);
+  const hasSlides = slidesToRender.length > 0;
+  const dots = slidesToRender.length > 1
     ? `<div class="topstories-dots" role="tablist">
-        ${clustersToRender.map((_, i) =>
+        ${slidesToRender.map((_, i) =>
           `<button data-i="${i}" aria-label="Go to slide ${i + 1}"></button>`
         ).join("")}
       </div>`
     : "";
-  const controls = clustersToRender.length > 1
+  const controls = slidesToRender.length > 1
     ? `<button class="nav-btn topstories-prev" type="button" aria-label="Previous">‹</button>
        <button class="nav-btn topstories-next" type="button" aria-label="Next">›</button>`
     : `<span class="nav-btn spacer" aria-hidden="true"></span>
@@ -1888,7 +1888,7 @@ function renderTopStoriesSection(section){
       <div class="topstories-carousel">
         <div class="topstories-carousel-body">
           <div class="topstories-track">
-            ${hasSlides ? clustersToRender.map(cluster => `
+            ${hasSlides ? slidesToRender.map(cluster => `
               <div class="topstories-slide">
                 ${renderTopStoriesCluster(cluster)}
               </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
@@ -1936,13 +1936,12 @@ function renderTopStoryMedia({
 function renderTopStoriesCluster(cluster){
   const primary = cluster?.primary || {};
   const headline = escapeHtml(primary?.title || cluster?.headline || "");
-  const related = (cluster?.related || []).slice(0, 2);
-  const relatedSlots = Array.from({ length: 2 }, (_, index) => related[index] || null);
+  const related = (cluster?.related || []).slice(0, 3);
   const sourceName = escapeHtml(primary?.source || "Source");
   const time = escapeHtml(formatArticleDate(primary?.publishedAt) || "");
-  const primaryUrl = primary?.url || "#";
+  const primaryUrl = primary?.url || primary?.link || "#";
   const imageUrl = primary?.image || cluster?.imageUrl || "";
-  const sourceLogo = (primary?.sourceLogo || logoFor(primary?.url, primary?.source || "")).trim();
+  const sourceLogo = (primary?.sourceLogo || logoFor(primary?.url || primary?.link, primary?.source || "")).trim();
   const imageMarkup = renderTopStoryMedia({
     imageUrl,
     fallbackLogo: sourceLogo,
@@ -1963,20 +1962,19 @@ function renderTopStoriesCluster(cluster){
           </div>
           <div class="topstories-cluster-headline">${headline}</div>
           <div class="topstories-cluster-meta">
-            <span class="source">${sourceName}</span>
-            <span class="dot">·</span>
-            <span class="datetime">${time}</span>
+            <div class="topstories-cluster-meta-row">
+              <span class="source">${sourceName}</span>
+            </div>
+            <div class="topstories-cluster-meta-row datetime">${time}</div>
           </div>
         </a>
       </div>
       <div class="topstories-cluster-related">
-        <div class="topstories-related-title">Related sources</div>
+        <div class="topstories-related-title">Related stories</div>
         <div class="topstories-related-list">
-          ${relatedSlots.map(item =>
-            item
-              ? renderTopStoriesRelated(item)
-              : `<div class="topstories-empty topstories-related-empty">No matching coverage yet — try again in a few minutes.</div>`
-          ).join("")}
+          ${related.length
+            ? related.map(item => renderTopStoriesRelated(item)).join("")
+            : `<div class="topstories-empty topstories-related-empty">No matching coverage yet — try again in a few minutes.</div>`}
         </div>
       </div>
     </article>`;
@@ -1985,9 +1983,11 @@ function renderTopStoriesCluster(cluster){
 function renderTopStoriesRelated(item){
   const sourceName = escapeHtml(item?.source || "Source");
   const time = escapeHtml(formatArticleDate(item?.publishedAt) || "");
-  const logo = (item?.sourceLogo || logoFor(item?.url, item?.source || "")).trim();
+  const headline = escapeHtml(item?.title || "");
+  const logo = (item?.sourceLogo || logoFor(itemUrl, item?.source || "")).trim();
   const imageUrl = item?.image || "";
-  const isPinned = Boolean(item?.url && isArticlePinned(item.url));
+  const itemUrl = item?.url || item?.link || "";
+  const isPinned = Boolean(itemUrl && isArticlePinned(itemUrl));
   const pinBadge = isPinned ? `<span class="ts-pin">Pinned</span>` : "";
   const logoMarkup = renderTopStoryMedia({
     imageUrl,
@@ -1999,17 +1999,18 @@ function renderTopStoriesRelated(item){
   });
   const context = getArticleContext(item);
   return `
-    <a class="topstories-related-row" href="${item?.url || "#"}" target="_blank" rel="noopener">
+    <a class="topstories-related-row" href="${item?.url || item?.link || "#"}" target="_blank" rel="noopener">
       <div class="topstories-related-thumb">${logoMarkup}</div>
       <div class="topstories-related-body">
         <div class="topstories-related-meta">
           <div class="topstories-related-meta-row">
-            ${heroSourceLogo({ source: item?.source, link: item?.url || "", sourceLogo: logo }, "topstories-inline-logo")}
+            ${heroSourceLogo({ source: item?.source, link: item?.url || item?.link || "", sourceLogo: logo }, "topstories-inline-logo")}
             <span class="source">${sourceName}</span>
           </div>
           <div class="topstories-related-meta-row datetime">${time}</div>
           ${pinBadge ? `<div class="topstories-related-pin">${pinBadge}</div>` : ""}
         </div>
+        <div class="topstories-related-headline">${headline}</div>
         ${renderSentiment(item?.sentiment || {}, true, context, "mini")}
       </div>
     </a>`;

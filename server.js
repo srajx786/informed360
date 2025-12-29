@@ -1065,6 +1065,9 @@ const TOP_STORY_STOPWORDS = new Set([
   "explained",
   "watch"
 ]);
+const TOP_STORY_DUPLICATE_THRESHOLD = 0.85;
+const TOP_STORY_MIN_SIMILARITY = 0.2;
+const TOP_STORY_LOOKBACK_HOURS = 24;
 const normalizeTopStoryTitle = (title = "") => {
   const tokens = tokenize(title).filter((token) => !TOP_STORY_STOPWORDS.has(token));
   if (!tokens.length) return "";
@@ -1093,6 +1096,38 @@ const normalizeRelatedTitle = (title = "") => {
   if (!tokens.length) return "";
   return tokens.slice(0, 10).join(" ");
 };
+const normalizeTopStoryIdentity = (title = "") => {
+  const tokens = tokenize(title).filter((token) => !TOP_STORY_STOPWORDS.has(token));
+  if (!tokens.length) return "";
+  return tokens.join(" ");
+};
+const storyTokenSet = (article = {}) => {
+  const text = `${article.title || ""} ${article.description || ""}`.trim();
+  return new Set(
+    tokenize(text)
+      .map((token) => token.trim())
+      .filter(Boolean)
+  );
+};
+const jaccardSimilarity = (setA, setB) => {
+  if (!setA?.size || !setB?.size) return 0;
+  let overlap = 0;
+  setA.forEach((token) => {
+    if (setB.has(token)) overlap += 1;
+  });
+  const union = setA.size + setB.size - overlap;
+  return union ? overlap / union : 0;
+};
+const isDuplicateStory = (a, b, tokensA, tokensB) => {
+  const canonicalA = canonicalizeUrl(a?.link || "");
+  const canonicalB = canonicalizeUrl(b?.link || "");
+  if (canonicalA && canonicalB && canonicalA === canonicalB) return true;
+  const titleKeyA = normalizeTopStoryIdentity(a?.title || "");
+  const titleKeyB = normalizeTopStoryIdentity(b?.title || "");
+  if (titleKeyA && titleKeyB && titleKeyA === titleKeyB) return true;
+  const similarity = jaccardSimilarity(tokensA || storyTokenSet(a), tokensB || storyTokenSet(b));
+  return similarity >= TOP_STORY_DUPLICATE_THRESHOLD;
+};
 const getRelatedCache = (key = "") => {
   const cached = TOP_STORY_RELATED_CACHE.get(key);
   if (!cached) return null;
@@ -1118,6 +1153,118 @@ const getRelatedCoverageCache = (key = "") => {
 const setRelatedCoverageCache = (key = "", related = []) => {
   if (!key) return;
   RELATED_COVERAGE_CACHE.set(key, { ts: Date.now(), related });
+};
+
+const buildTopStoryPrimary = (article = {}) => ({
+  source: article.source || sourceDomainForArticle(article) || "Source",
+  sourceDomain: article.sourceDomain || sourceDomainForArticle(article),
+  sourceLogo: article.sourceLogo || logoForArticle(article || {}),
+  publishedAt: article.publishedAt,
+  url: article.link || "",
+  title: article.title || "",
+  description: article.description || "",
+  image: pickStoryImage(article),
+  sentiment: article.sentiment || { pos: 0, neu: 0, neg: 0 }
+});
+
+const buildTopStoryRelated = (article = {}) =>
+  buildRelatedPayload(article, article.sentiment || { pos: 0, neu: 0, neg: 0 });
+
+const buildRelatedForPrimary = (primary = {}, candidates = [], limit = 3, tokensCache) => {
+  const primaryTokens = tokensCache.get(primary.link) || storyTokenSet(primary);
+  const primaryDomain = sourceDomainForArticle(primary);
+  const usedDomains = new Set(primaryDomain ? [primaryDomain] : []);
+  const usedTitles = new Set([normalizeTopStoryIdentity(primary.title || "")].filter(Boolean));
+  const usedUrls = new Set();
+  const canonicalPrimary = canonicalizeUrl(primary.link || "");
+  if (canonicalPrimary) usedUrls.add(canonicalPrimary);
+
+  const scored = candidates
+    .filter((article) => article?.link && article.link !== primary.link)
+    .map((article) => {
+      const tokens = tokensCache.get(article.link) || storyTokenSet(article);
+      const similarity = jaccardSimilarity(primaryTokens, tokens);
+      return { article, similarity, tokens };
+    })
+    .filter(({ similarity }) => similarity >= TOP_STORY_MIN_SIMILARITY)
+    .sort((a, b) => {
+      if (b.similarity !== a.similarity) return b.similarity - a.similarity;
+      return new Date(b.article.publishedAt) - new Date(a.article.publishedAt);
+    });
+
+  const related = [];
+  const tryAdd = ({ article, tokens }, allowSameDomain = false) => {
+    const domain = sourceDomainForArticle(article) || article.source || "";
+    if (!domain) return false;
+    if (!allowSameDomain && usedDomains.has(domain)) return false;
+    const canonical = canonicalizeUrl(article.link || "");
+    if (canonical && usedUrls.has(canonical)) return false;
+    const titleKey = normalizeTopStoryIdentity(article.title || "");
+    if (titleKey && usedTitles.has(titleKey)) return false;
+    if (isDuplicateStory(primary, article, primaryTokens, tokens)) return false;
+    usedDomains.add(domain);
+    if (canonical) usedUrls.add(canonical);
+    if (titleKey) usedTitles.add(titleKey);
+    related.push(buildTopStoryRelated(article));
+    return true;
+  };
+
+  scored.forEach((entry) => {
+    if (related.length >= limit) return;
+    tryAdd(entry, false);
+  });
+  if (related.length < limit) {
+    scored.forEach((entry) => {
+      if (related.length >= limit) return;
+      tryAdd(entry, true);
+    });
+  }
+  return related.slice(0, limit);
+};
+
+const buildTopStories = (articles = [], { limit = 8, relatedLimit = 3, hours = TOP_STORY_LOOKBACK_HOURS } = {}) => {
+  const now = Date.now();
+  const recentCandidates = articles.filter((article) => {
+    const time = new Date(article.publishedAt).getTime();
+    if (Number.isNaN(time)) return false;
+    return now - time <= hours * 60 * 60 * 1000;
+  });
+  const sorted = [...articles].sort(
+    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+  );
+  const tokensCache = new Map();
+  recentCandidates.forEach((article) => {
+    if (article?.link) tokensCache.set(article.link, storyTokenSet(article));
+  });
+  const selected = [];
+  const selectedTokens = [];
+  const usedTitles = new Set();
+  const usedUrls = new Set();
+
+  for (const article of sorted) {
+    if (selected.length >= limit) break;
+    if (!article?.link) continue;
+    const canonical = canonicalizeUrl(article.link || "");
+    if (canonical && usedUrls.has(canonical)) continue;
+    const titleKey = normalizeTopStoryIdentity(article.title || "");
+    if (titleKey && usedTitles.has(titleKey)) continue;
+    const tokens = tokensCache.get(article.link) || storyTokenSet(article);
+    if (
+      selectedTokens.some(
+        (existing) => jaccardSimilarity(existing, tokens) >= TOP_STORY_DUPLICATE_THRESHOLD
+      )
+    )
+      continue;
+    const related = buildRelatedForPrimary(article, recentCandidates, relatedLimit, tokensCache);
+    selected.push({
+      primary: buildTopStoryPrimary(article),
+      related
+    });
+    if (canonical) usedUrls.add(canonical);
+    if (titleKey) usedTitles.add(titleKey);
+    selectedTokens.push(tokens);
+  }
+  return selected;
 };
 
 const buildTopStoryClusters = (articles = []) => {
@@ -1788,25 +1935,16 @@ app.get("/api/top-stories", async (req, res) => {
   } else if (scope === "india") {
     articles = articles.filter((article) => article.category === "india");
   }
-  const clusters = buildTopStoryClusters(articles);
-  const sorted = clusters.sort((a, b) => {
-    const aTime = new Date(a.latestAt).getTime();
-    const bTime = new Date(b.latestAt).getTime();
-    if (type === "engaged") {
-      if (b.sourceCount !== a.sourceCount) return b.sourceCount - a.sourceCount;
-      if (bTime !== aTime) return bTime - aTime;
-      return (b.articleCount || 0) - (a.articleCount || 0);
-    }
-    return bTime - aTime;
+  const topStories = buildTopStories(articles, {
+    limit: 8,
+    relatedLimit: 3,
+    hours: TOP_STORY_LOOKBACK_HOURS
   });
-  const trimmed = await Promise.all(
-    sorted.slice(0, 8).map(async (cluster) => {
-      const { sourceCount, articleCount, latestAt, ...payload } = cluster;
-      const related = await ensureRelatedSources(payload);
-      return { ...payload, related: related.slice(0, 2) };
-    })
-  );
-  res.json({ fetchedAt: Date.now(), clusters: trimmed });
+  res.json({
+    fetchedAt: Date.now(),
+    topStories,
+    mode: type
+  });
 });
 
 app.get("/api/stories", (req, res) => {
