@@ -57,12 +57,16 @@ const ARTICLE_CACHE_TTL = Number(process.env.ARTICLE_CACHE_TTL_MS || 6 * 60 * 60
 const ARTICLE_CACHE_MAX = Number(process.env.ARTICLE_CACHE_MAX || 1200);
 const STORY_CACHE_TTL = Number(process.env.STORY_CACHE_TTL_MS || 120000);
 const GDELT_CACHE_TTL = Number(process.env.GDELT_CACHE_TTL_MS || 600000);
+const TOP_STORY_RELATED_CACHE_TTL = Number(
+  process.env.TOP_STORY_RELATED_CACHE_TTL_MS || 10 * 60 * 1000
+);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const ARTICLE_CACHE = new Map();
 const EXPLANATION_CACHE = new Map();
 const STORY_CACHE = new Map();
 const GDELT_CACHE = new Map();
+const TOP_STORY_RELATED_CACHE = new Map();
 const FEED_HEALTH = new Map();
 
 let transformerPipeline = null;
@@ -1063,6 +1067,29 @@ const normalizeTopStoryTitle = (title = "") => {
   if (!tokens.length) return "";
   return tokens.slice(0, 8).join(" ");
 };
+const buildTopStoryQuery = (headline = "") => {
+  const tokens = tokenize(headline).filter((token) => !TOP_STORY_STOPWORDS.has(token));
+  if (!tokens.length) return "";
+  const count = Math.min(10, Math.max(6, tokens.length));
+  return tokens.slice(0, count).join(" ");
+};
+const normalizeRelatedTitle = (title = "") => {
+  const tokens = tokenize(title).filter((token) => !TOP_STORY_STOPWORDS.has(token));
+  if (!tokens.length) return "";
+  return tokens.slice(0, 10).join(" ");
+};
+const getRelatedCache = (key = "") => {
+  const cached = TOP_STORY_RELATED_CACHE.get(key);
+  if (!cached) return null;
+  if (Date.now() - cached.at > TOP_STORY_RELATED_CACHE_TTL) {
+    TOP_STORY_RELATED_CACHE.delete(key);
+    return null;
+  }
+  return cached.related || [];
+};
+const setRelatedCache = (key = "", related = []) => {
+  TOP_STORY_RELATED_CACHE.set(key, { at: Date.now(), related });
+};
 
 const buildTopStoryClusters = (articles = []) => {
   const sorted = [...articles].sort(
@@ -1291,6 +1318,80 @@ const fetchGdelt = async ({
   }
 };
 
+const relatedSourceKey = (item = {}) =>
+  sourceDomainForArticle({
+    link: item.url || item.link || "",
+    source: item.source || "",
+    sourceDomain: item.sourceDomain || ""
+  }) || domainFromUrl(item.url || item.link || "") || item.source || "";
+
+const buildRelatedPayload = (article = {}, sentiment) => ({
+  source: article.source || sourceDomainForArticle(article) || "Source",
+  sourceLogo: article.sourceLogo || logoForArticle(article || {}),
+  publishedAt: article.publishedAt,
+  url: article.link || "",
+  title: article.title || "",
+  description: article.description || "",
+  image: pickStoryImage(article),
+  sentiment: sentiment || article.sentiment || { pos: 0, neu: 0, neg: 0 }
+});
+
+const buildGdeltRelated = async (headline = "") => {
+  const query = buildTopStoryQuery(headline);
+  if (!query) return [];
+  const cached = getRelatedCache(query);
+  if (cached) return cached;
+
+  const gdelt = await fetchGdelt({ query, mode: "latest", hours: 24, max: 30 });
+  const candidates = [];
+  const seenTitles = new Set();
+  const seenUrls = new Set();
+
+  for (const article of gdelt.articles || []) {
+    if (!article?.link) continue;
+    const canonical = canonicalizeUrl(article.link);
+    if (canonical && seenUrls.has(canonical)) continue;
+    const normalizedTitle = normalizeRelatedTitle(article.title || "");
+    if (normalizedTitle && seenTitles.has(normalizedTitle)) continue;
+    if (canonical) seenUrls.add(canonical);
+    if (normalizedTitle) seenTitles.add(normalizedTitle);
+    candidates.push(article);
+  }
+
+  const enriched = [];
+  for (const article of candidates) {
+    const cachedArticle = getCachedArticle(article.link);
+    if (cachedArticle) {
+      enriched.push(buildRelatedPayload(cachedArticle, cachedArticle.sentiment));
+      continue;
+    }
+    const text = `${article.title || ""}. ${article.description || ""}`.trim();
+    const { sentiment, explanation } = await scoreSentiment(text, {
+      url: article.link
+    });
+    const category = inferCategory({
+      title: article.title,
+      link: article.link,
+      source: article.source
+    });
+    const enrichedArticle = {
+      ...article,
+      category,
+      sentiment: {
+        ...sentiment,
+        sentimentLabel: explanation.sentiment_label,
+        topPhrases: explanation.top_phrases,
+        confidence: explanation.confidence
+      }
+    };
+    setCachedArticle(article.link, enrichedArticle, explanation);
+    enriched.push(buildRelatedPayload(enrichedArticle, enrichedArticle.sentiment));
+  }
+
+  setRelatedCache(query, enriched);
+  return enriched;
+};
+
 app.get("/methodology", (_req, res) => {
   res.sendFile(path.join(__dirname, "public", "methodology.html"));
 });
@@ -1378,7 +1479,7 @@ app.get("/api/gdelt", async (req, res) => {
   });
 });
 
-app.get("/api/top-stories", (req, res) => {
+app.get("/api/top-stories", async (req, res) => {
   const scope = (req.query.scope || "india").toString().toLowerCase();
   const type = (req.query.type || "recent").toString().toLowerCase();
   const includeExp = req.query.experimental === "1";
@@ -1401,10 +1502,53 @@ app.get("/api/top-stories", (req, res) => {
     }
     return bTime - aTime;
   });
-  const trimmed = sorted.slice(0, 8).map((cluster) => {
-    const { sourceCount, articleCount, latestAt, ...payload } = cluster;
-    return payload;
-  });
+  const trimmed = await Promise.all(
+    sorted.slice(0, 8).map(async (cluster) => {
+      const { sourceCount, articleCount, latestAt, ...payload } = cluster;
+      const baseRelated = Array.isArray(payload.related) ? payload.related : [];
+      const related = [];
+      const usedDomains = new Set();
+      const usedTitles = new Set();
+      const usedUrls = new Set();
+      const primaryDomain = relatedSourceKey(payload.primary || {});
+      if (primaryDomain) usedDomains.add(primaryDomain);
+
+      baseRelated.forEach((item) => {
+        if (!item?.url) return;
+        const domain = relatedSourceKey(item);
+        if (!domain || usedDomains.has(domain)) return;
+        const canonical = canonicalizeUrl(item.url || "");
+        if (canonical && usedUrls.has(canonical)) return;
+        const normalizedTitle = normalizeRelatedTitle(item.title || "");
+        if (normalizedTitle && usedTitles.has(normalizedTitle)) return;
+        usedDomains.add(domain);
+        if (canonical) usedUrls.add(canonical);
+        if (normalizedTitle) usedTitles.add(normalizedTitle);
+        related.push(item);
+      });
+
+      if (related.length < 2) {
+        const headline = payload.headline || payload.primary?.title || "";
+        const gdeltRelated = await buildGdeltRelated(headline);
+        gdeltRelated.forEach((item) => {
+          if (related.length >= 2) return;
+          if (!item?.url) return;
+          const domain = relatedSourceKey(item);
+          if (!domain || usedDomains.has(domain)) return;
+          const canonical = canonicalizeUrl(item.url || "");
+          if (canonical && usedUrls.has(canonical)) return;
+          const normalizedTitle = normalizeRelatedTitle(item.title || "");
+          if (normalizedTitle && usedTitles.has(normalizedTitle)) return;
+          usedDomains.add(domain);
+          if (canonical) usedUrls.add(canonical);
+          if (normalizedTitle) usedTitles.add(normalizedTitle);
+          related.push(item);
+        });
+      }
+
+      return { ...payload, related };
+    })
+  );
   res.json({ fetchedAt: Date.now(), clusters: trimmed });
 });
 
