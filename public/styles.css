@@ -419,6 +419,11 @@ body.theme-dark .gn-search{ background:#1a222c }
   min-height:0;
   height:100%;
 }
+.topstories-hero .topstories-cluster{
+  border:none !important;
+  box-shadow:none !important;
+  outline:none !important;
+}
 .topstories-cluster-link{ display:flex; flex-direction:column; gap:.55rem; color:inherit; text-decoration:none }
 .topstories-cluster-media{ width:100%; border-radius:12px; overflow:hidden; background:#edf2f7; height:220px; display:flex; align-items:center; justify-content:center }
 .topstories-cluster-image{ width:100%; height:100%; object-fit:cover; display:block }
