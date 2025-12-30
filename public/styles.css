@@ -393,6 +393,7 @@ body.theme-dark .gn-search{ background:#1a222c }
   display:flex;
   flex-direction:column;
   max-height:var(--topstories-carousel-height);
+  padding-bottom:28px;
 }
 .topstories-track{
   display:flex;
@@ -426,6 +427,47 @@ body.theme-dark .gn-search{ background:#1a222c }
   box-shadow:none !important;
   outline:none !important;
 }
+.topStoriesGrid{
+  display:grid;
+  grid-template-columns:1.35fr 0.65fr;
+  gap:16px;
+  align-items:start;
+}
+.topStoriesGrid .heroCard{
+  position:relative;
+  border:0;
+  background:transparent;
+  padding:0;
+}
+.topStoriesGrid .heroLink{
+  gap:.5rem;
+}
+.topStoriesGrid .heroMedia{
+  height:auto;
+  aspect-ratio:16 / 9;
+  border-radius:14px;
+  overflow:hidden;
+}
+.topStoriesGrid .hero-thumbnail{
+  border-radius:14px;
+}
+.topStoriesGrid .heroHeadline{
+  font-size:1.02rem;
+}
+.topStoriesGrid .heroMeta{
+  gap:.15rem;
+}
+.relatedList{
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+  min-width:0;
+}
+.relatedItems{
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+}
 .topstories-cluster-link{ display:flex; flex-direction:column; gap:.55rem; color:inherit; text-decoration:none }
 .topstories-cluster-media{ width:100%; border-radius:12px; overflow:hidden; background:#edf2f7; height:220px; display:flex; align-items:center; justify-content:center }
 .topstories-cluster-image{ width:100%; height:100%; object-fit:cover; display:block }
@@ -453,19 +495,38 @@ body.theme-dark .gn-search{ background:#1a222c }
   gap:.45rem;
   padding-right:2px;
 }
-.topstories-related-row{ display:flex; gap:.6rem; padding:.4rem 2.6rem .4rem 0; text-decoration:none; color:inherit }
-.topstories-related-row + .topstories-related-row{ border-top:1px solid var(--border) }
-.topstories-related-thumb{ width:52px; height:52px; border-radius:12px; overflow:hidden; background:#eef2f7; flex:0 0 auto; display:flex; align-items:center; justify-content:center }
-.topstories-related-thumb-image{ width:100%; height:100%; object-fit:cover; display:block }
-.topstories-related-thumb-image.logo-fallback{ object-fit:contain; width:70%; height:70% }
-.topstories-related-thumb-fallback{ width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:.6rem; font-weight:700; color:#64748b; text-align:center; padding:4px; background:#eef2f7 }
-.topstories-related-logo{ width:24px; height:24px; object-fit:contain; border-radius:50%; background:#eef2f7; padding:3px }
+.topstories-related-row{
+  display:flex;
+  flex-direction:column;
+  gap:.35rem;
+  padding:.4rem 2.2rem .4rem 0;
+  text-decoration:none;
+  color:inherit;
+}
+.topstories-related-row + .topstories-related-row{
+  border-top:1px solid var(--border);
+  padding-top:.6rem;
+}
+.topstories-related-logo{
+  width:20px;
+  height:20px;
+  object-fit:contain;
+  border-radius:4px;
+  background:#eef2f7;
+  padding:3px;
+}
 .topstories-inline-logo{ width:16px; height:16px; border-radius:50%; margin-right:4px; display:inline-block }
 .topstories-related-body{ display:flex; flex-direction:column; gap:.35rem; min-width:0 }
 .topstories-related-meta{ display:flex; flex-direction:column; gap:2px }
 .topstories-related-meta-row{ font-size:.72rem; color:var(--muted); display:flex; align-items:center; gap:.35rem; flex-wrap:wrap; min-width:0 }
 .topstories-related-meta-row .source{ font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:160px }
 .topstories-related-meta-row.datetime{ white-space:normal }
+.topstories-related-time{
+  margin-left:auto;
+  color:var(--muted);
+  font-size:.7rem;
+  white-space:nowrap;
+}
 .topstories-related-pin{ display:flex; align-self:flex-start }
 .topstories-related-headline{
   font-size:.82rem;
@@ -483,7 +544,7 @@ body.theme-dark .gn-search{ background:#1a222c }
 .topstories-next{
   position:static;
   transform:none;
-  z-index:2;
+  z-index:3;
 }
 .topstories-prev{ left:auto; }
 .topstories-next{ right:auto; }
@@ -511,13 +572,27 @@ body.theme-dark .gn-search{ background:#1a222c }
   margin-top:auto;
 }
 .topstories-nav{
+  position:absolute;
+  top:50%;
+  left:0;
+  right:0;
+  transform:translateY(-50%);
   display:flex;
   align-items:center;
   justify-content:space-between;
   min-height:28px;
+  padding:0 .4rem;
   gap:.35rem;
+  pointer-events:none;
+}
+.topstories-nav .nav-btn{
+  pointer-events:auto;
 }
 .topstories-dots{
+  position:absolute;
+  bottom:8px;
+  left:0;
+  right:0;
   display:flex;
   justify-content:center;
   gap:.35rem;
@@ -528,7 +603,7 @@ body.theme-dark .gn-search{ background:#1a222c }
 .topstories-dots button{ width:6px; height:6px; border-radius:50%; border:0; background:#cbd5e1; cursor:pointer }
 .topstories-dots button.active{ background:var(--brand) }
 .topstories-empty{ padding:.8rem; border:1px dashed var(--border); border-radius:12px; text-align:center; color:var(--muted); font-size:.85rem }
-.topstories-related-empty{ padding:.6rem }
+.topstories-related-empty{ padding:.2rem 0; color:var(--muted); font-size:.75rem }
 .top-stories-slide{ display:flex; flex-direction:column; height:100%; min-height:100%; position:relative }
 .ts-content{ flex:0 0 auto; padding:.2rem .95rem .4rem; display:flex; flex-direction:column; gap:.4rem }
 .ts-trend{ flex:1 1 auto; padding:.2rem .95rem .45rem; display:flex; flex-direction:column; gap:.3rem; min-height:100px }
@@ -1300,6 +1375,7 @@ dialog::backdrop{
   .daily-list{ grid-template-columns:1fr }
   .topstories-carousel{ height:auto; }
   .topstories-cluster{ grid-template-columns:1fr }
+  .topStoriesGrid{ grid-template-columns:1fr; }
   .topstories-carousel-body{ max-height:none; }
 }
 @media (max-width:600px){
@@ -1361,10 +1437,10 @@ dialog::backdrop{
   .topstories-carousel{ padding:.6rem; }
   .topstories-cluster{ padding:.6rem; }
   .topstories-cluster-meta{ flex-direction:column; }
-  .topstories-related-row{ padding:.4rem 2.6rem .4rem .4rem; }
+  .topstories-related-row{ padding:.4rem 2.2rem .4rem .4rem; }
   .topstories-related-meta{ flex-direction:column; }
   .topstories-cluster-media{ height:200px; }
-  .topstories-related-thumb{ width:64px; height:64px; }
+  .topStoriesGrid{ grid-template-columns:1fr; }
   .topstories-carousel-body{ max-height:none; }
 }
 /* ==========================================
