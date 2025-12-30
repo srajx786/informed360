@@ -25,7 +25,7 @@ app.use(cors());
 app.use(express.json());
 
 const __dirname = path.resolve();
-const LOGO_PATH = path.join(__dirname, "Main logo.png");
+const LOGO_PATH = path.join(__dirname, "public", "logo.png");
 const escapeHtml = (value = "") =>
   String(value).replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
@@ -48,7 +48,13 @@ const absoluteUrl = (req, value = "") => {
 };
 
 app.get("/logo.png", (req, res) => {
-  res.sendFile(LOGO_PATH);
+  res.setHeader("Content-Type", "image/png");
+  res.setHeader("Cache-Control", "no-store");
+  res.sendFile(LOGO_PATH, (err) => {
+    if (err) {
+      res.status(404).send("logo not found");
+    }
+  });
 });
 
 app.get("/s", (req, res) => {
