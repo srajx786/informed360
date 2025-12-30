@@ -565,7 +565,6 @@ function buildWhyPayload(sentiment = {}, context = "", pos = 0, neg = 0){
   const label = formatSentimentLabel(sentiment.sentimentLabel || sentiment.label);
   const model = sentiment.model || "vader";
   const summary = buildSentimentExplanation(context || "", pos, neg);
-  if (!phrases.length && !confidence) return null;
   return { label, confidence, phrases, model, summary };
 }
 function renderSentiment(s, slim = false, context = "", variant = ""){
@@ -586,6 +585,56 @@ function renderSentiment(s, slim = false, context = "", variant = ""){
         Positive ${fmtPct(pos)} · Neutral ${fmtPct(neu)} · Negative ${fmtPct(neg)}
       </div>
     </div>`;
+}
+
+function renderInfoButton(sentiment = {}, context = "", extraClass = ""){
+  const pos = Math.max(0, Number(sentiment.posP ?? sentiment.pos ?? 0));
+  const neu = Math.max(0, Number(sentiment.neuP ?? sentiment.neu ?? 0));
+  const neg = Math.max(0, Number(sentiment.negP ?? sentiment.neg ?? 0));
+  const why = buildWhyPayload(sentiment, context, pos, neg);
+  const whyAttr = why ? ` data-why="${encodeURIComponent(JSON.stringify(why))}"` : "";
+  const classes = ["tile-info", extraClass].filter(Boolean).join(" ");
+  return `
+    <button class="${classes}" type="button" aria-label="Why this score"
+      data-context="${escapeHtml(context)}" data-pos="${pos}" data-neu="${neu}" data-neg="${neg}"${whyAttr}>
+      i
+    </button>`;
+}
+
+function normalizeShareImage(value = ""){
+  if (!value) return "";
+  const trimmed = String(value || "").trim();
+  if (!trimmed) return "";
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  if (trimmed.startsWith("/")){
+    return new URL(trimmed, window.location.origin).href;
+  }
+  return "";
+}
+
+function buildShareUrl({ url = "", title = "", image = "", source = "" } = {}){
+  if (!url) return "";
+  const shareUrl = new URL("/s", window.location.origin);
+  shareUrl.searchParams.set("u", url);
+  if (title) shareUrl.searchParams.set("t", title);
+  if (image) shareUrl.searchParams.set("img", image);
+  if (source) shareUrl.searchParams.set("src", source);
+  return shareUrl.toString();
+}
+
+function renderShareButton(article = {}, imageOverride = "", extraClass = ""){
+  const url = article?.url || article?.link || "";
+  if (!url || url === "#") return "";
+  const title = article?.title || "";
+  const source = article?.source || "";
+  const image = normalizeShareImage(imageOverride || article?.image || article?.imageUrl || article?.thumbnail || article?.imageUrl1 || "");
+  const shareUrl = buildShareUrl({ url, title, image, source });
+  const classes = ["share-btn", extraClass].filter(Boolean).join(" ");
+  return `
+    <button class="${classes}" type="button" data-share-url="${escapeHtml(shareUrl)}"
+      data-share-title="${escapeHtml(title)}" data-share-text="${escapeHtml(source)}" aria-label="Share">
+      <span>Share</span>
+    </button>`;
 }
 
 /* state */
@@ -1677,11 +1726,13 @@ function safeNewsThumbTag({ primary = "", sourceLogo = "", thumb = "", cls = "" 
 /* card renderers */
 function card(a){
   const { primary, sourceLogo, thumb } = resolveDailyThumbnail(a || {});
+  const context = getArticleContext(a);
   return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener" data-article-link="${a.link}">
       <div class="news-side">
         ${safeNewsThumbTag({ primary, sourceLogo, thumb, cls: "thumb" })}
         <div class="card-actions">
+          ${renderShareButton(a, primary)}
           <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
         </div>
       </div>
@@ -1691,8 +1742,9 @@ function card(a){
           <span class="source">${a.source}${renderCredibilityBadge(a, "inline")}</span>
           · <span class="meta-time">${formatArticleDate(a.publishedAt)}</span>
         </div>
-        ${renderSentiment(a.sentiment, false, getArticleContext(a))}
+        ${renderSentiment(a.sentiment, false, context)}
       </div>
+      ${renderInfoButton(a.sentiment, context)}
     </a>`;
 }
 
@@ -1726,6 +1778,7 @@ function renderPinned(){
     const ageLine = isStale && pin.lastSeenAt
       ? `<div class="pin-age">Last updated ${timeAgo(pin.lastSeenAt)}</div>`
       : "";
+    const context = getArticleContext(article);
     return `
       <div class="row">
         ${topicLabel}
@@ -1735,9 +1788,13 @@ function renderPinned(){
           · <span>${formatArticleDate(article.publishedAt)}</span>
         </div>
         ${ageLine}
-        ${renderSentiment(article.sentiment, true, getArticleContext(article))}
+        ${renderSentiment(article.sentiment, true, context)}
+        ${renderShareButton(article, article.image || article.imageUrl || "", "tile-share")}
+        ${renderInfoButton(article.sentiment, context)}
       </div>`;
   }).join("");
+  attachInfoButtons();
+  attachShareButtons();
 }
 
 function collectActiveSources(articles = []){
@@ -1953,6 +2010,10 @@ function renderTopStoriesCluster(cluster){
   return `
     <article class="topstories-cluster">
       <div class="topstories-cluster-primary">
+        <div class="tile-action-group">
+          ${renderShareButton(primary, imageUrl, "icon-only")}
+          ${renderInfoButton(primary?.sentiment || cluster?.sentiment || {}, context)}
+        </div>
         <a class="topstories-cluster-link" href="${primaryUrl}" target="_blank" rel="noopener">
           <div class="topstories-cluster-media">
             ${imageMarkup}
@@ -1984,9 +2045,9 @@ function renderTopStoriesRelated(item){
   const sourceName = escapeHtml(item?.source || "Source");
   const time = escapeHtml(formatArticleDate(item?.publishedAt) || "");
   const headline = escapeHtml(item?.title || "");
+  const itemUrl = item?.url || item?.link || "";
   const logo = (item?.sourceLogo || logoFor(itemUrl, item?.source || "")).trim();
   const imageUrl = item?.image || "";
-  const itemUrl = item?.url || item?.link || "";
   const isPinned = Boolean(itemUrl && isArticlePinned(itemUrl));
   const pinBadge = isPinned ? `<span class="ts-pin">Pinned</span>` : "";
   const logoMarkup = renderTopStoryMedia({
@@ -2000,6 +2061,10 @@ function renderTopStoriesRelated(item){
   const context = getArticleContext(item);
   return `
     <a class="topstories-related-row" href="${item?.url || item?.link || "#"}" target="_blank" rel="noopener">
+      <div class="tile-action-group">
+        ${renderShareButton(item, imageUrl, "icon-only")}
+        ${renderInfoButton(item?.sentiment || {}, context)}
+      </div>
       <div class="topstories-related-thumb">${logoMarkup}</div>
       <div class="topstories-related-body">
         <div class="topstories-related-meta">
@@ -2223,7 +2288,7 @@ function buildSentimentExplanation(text, pos, neg){
   }
   return "Mostly factual/neutral language with few emotional cues.";
 }
-function formatSentimentTooltip(el, context, pos, neg){
+function formatSentimentTooltip(el, context, pos, neg, includeTitle = true){
   const encoded = el.dataset.why || "";
   if (encoded){
     try{
@@ -2239,26 +2304,30 @@ function formatSentimentTooltip(el, context, pos, neg){
         .join("");
       const summary = escapeHtml(data.summary || buildSentimentExplanation(context, pos, neg));
       return `
-        <div class="tooltip-title">Why this score</div>
+        ${includeTitle ? `<div class="tooltip-title">Why this score</div>` : ""}
         <div class="tooltip-sub">${label}${confText ? ` · ${confText}` : ""}</div>
-        ${phraseList ? `<div class="tooltip-phrases">${phraseList}</div>` : ""}
+        ${phraseList
+          ? `<div class="tooltip-phrases">${phraseList}</div>`
+          : `<div class="tooltip-phrases"><span>Not enough keywords yet</span></div>`}
         <div class="tooltip-summary">${summary}</div>
       `;
     }catch{
       const summary = context ? buildSentimentExplanation(context, pos, neg) : "Explanation coming soon.";
       return `
-        <div class="tooltip-title">Why this score</div>
+        ${includeTitle ? `<div class="tooltip-title">Why this score</div>` : ""}
         <div class="tooltip-summary">${escapeHtml(summary)}</div>
       `;
     }
   }
   const summary = context ? buildSentimentExplanation(context, pos, neg) : "Explanation coming soon.";
   return `
-    <div class="tooltip-title">Why this score</div>
+    ${includeTitle ? `<div class="tooltip-title">Why this score</div>` : ""}
     <div class="tooltip-summary">${escapeHtml(summary)}</div>
   `;
 }
 function attachSentimentTooltips(){
+  const supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (!supportsHover) return;
   const tooltip = getSentimentTooltip();
   $$(".sentiment").forEach(el => {
     if (el.dataset.tooltipBound) return;
@@ -2267,7 +2336,7 @@ function attachSentimentTooltips(){
       const context = el.dataset.context || "";
       const pos = Number(el.dataset.pos || 0);
       const neg = Number(el.dataset.neg || 0);
-      tooltip.innerHTML = formatSentimentTooltip(el, context, pos, neg);
+      tooltip.innerHTML = formatSentimentTooltip(el, context, pos, neg, true);
       tooltip.style.display = "block";
       const position = clampTooltipPosition(event.clientX + 12, event.clientY + 12, tooltip);
       tooltip.style.left = `${position.x}px`;
@@ -2275,13 +2344,131 @@ function attachSentimentTooltips(){
     };
     el.addEventListener("mousemove", show);
     el.addEventListener("click", show);
-    el.addEventListener("touchstart", (event) => {
-      if (event.touches?.length){
-        show(event.touches[0]);
-      }
-    }, { passive: true });
     el.addEventListener("mouseleave", () => {
       tooltip.style.display = "none";
+    });
+  });
+}
+
+function getSentimentSheet(){
+  return {
+    sheet: $("#sentimentSheet"),
+    overlay: $("#sentimentSheetOverlay"),
+    content: $("#sentimentSheetContent"),
+    closeBtn: $("#sentimentSheetClose")
+  };
+}
+
+function openSentimentSheet(el){
+  const { sheet, overlay, content } = getSentimentSheet();
+  if (!sheet || !overlay || !content) return;
+  const context = el.dataset.context || "";
+  const pos = Number(el.dataset.pos || 0);
+  const neg = Number(el.dataset.neg || 0);
+  content.innerHTML = formatSentimentTooltip(el, context, pos, neg, false);
+  overlay.classList.add("show");
+  sheet.classList.add("show");
+  overlay.setAttribute("aria-hidden", "false");
+  sheet.setAttribute("aria-hidden", "false");
+}
+
+function closeSentimentSheet(){
+  const { sheet, overlay } = getSentimentSheet();
+  if (!sheet || !overlay) return;
+  overlay.classList.remove("show");
+  sheet.classList.remove("show");
+  overlay.setAttribute("aria-hidden", "true");
+  sheet.setAttribute("aria-hidden", "true");
+}
+
+function attachInfoButtons(){
+  const supportsHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const tooltip = getSentimentTooltip();
+  $$(".tile-info").forEach(btn => {
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (!supportsHover) openSentimentSheet(btn);
+    });
+    if (!supportsHover) return;
+    const show = (event) => {
+      const context = btn.dataset.context || "";
+      const pos = Number(btn.dataset.pos || 0);
+      const neg = Number(btn.dataset.neg || 0);
+      tooltip.innerHTML = formatSentimentTooltip(btn, context, pos, neg, true);
+      tooltip.style.display = "block";
+      const position = clampTooltipPosition(event.clientX + 12, event.clientY + 12, tooltip);
+      tooltip.style.left = `${position.x}px`;
+      tooltip.style.top = `${position.y}px`;
+    };
+    btn.addEventListener("mouseenter", show);
+    btn.addEventListener("mousemove", show);
+    btn.addEventListener("mouseleave", () => {
+      tooltip.style.display = "none";
+    });
+  });
+}
+
+async function copyShareLink(link){
+  if (!link) return false;
+  try{
+    if (navigator.clipboard?.writeText){
+      await navigator.clipboard.writeText(link);
+      return true;
+    }
+  }catch{}
+  try{
+    const temp = document.createElement("textarea");
+    temp.value = link;
+    temp.setAttribute("readonly", "");
+    temp.style.position = "fixed";
+    temp.style.top = "-9999px";
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand("copy");
+    temp.remove();
+    return true;
+  }catch{
+    return false;
+  }
+}
+
+function flashCopied(btn){
+  if (!btn) return;
+  const isIconOnly = btn.classList.contains("icon-only");
+  const original = btn.textContent;
+  btn.classList.add("copied");
+  if (!isIconOnly) btn.textContent = "Copied";
+  window.setTimeout(() => {
+    btn.classList.remove("copied");
+    if (!isIconOnly) btn.textContent = original || "Share";
+  }, 1500);
+}
+
+function attachShareButtons(){
+  const allowWebShare = navigator.share && window.matchMedia("(pointer: coarse)").matches;
+  $$(".share-btn").forEach(btn => {
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = "1";
+    btn.addEventListener("click", async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const url = btn.dataset.shareUrl || "";
+      const title = btn.dataset.shareTitle || "Informed360";
+      const textSource = btn.dataset.shareText || "";
+      const text = textSource
+        ? `${textSource} · Informed360 — News + Sentiment`
+        : "Informed360 — News + Sentiment";
+      if (allowWebShare){
+        try{
+          await navigator.share({ title, text, url });
+          return;
+        }catch{}
+      }
+      const copied = await copyShareLink(url);
+      if (copied) flashCopied(btn);
     });
   });
 }
@@ -2752,6 +2939,8 @@ function renderAll(){
   renderLeaderboard();
   renderIndustryBoard();
   attachSentimentTooltips();
+  attachInfoButtons();
+  attachShareButtons();
   $("#year").textContent = new Date().getFullYear();
   updatePinButtons();
   updateActiveSources();
@@ -2903,6 +3092,14 @@ document.addEventListener("click", (e) => {
   const wrap = $(".gn-search-wrap");
   if (!wrap || wrap.contains(e.target)) return;
   closeSearchResults();
+});
+
+const sentimentSheetOverlay = $("#sentimentSheetOverlay");
+const sentimentSheetClose = $("#sentimentSheetClose");
+sentimentSheetOverlay?.addEventListener("click", closeSentimentSheet);
+sentimentSheetClose?.addEventListener("click", closeSentimentSheet);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeSentimentSheet();
 });
 
 /* pinned topic input wiring */
@@ -3074,6 +3271,12 @@ getWeather();
 loadMarkets();
 loadAll();
 startHeroAuto();
+
+if ("serviceWorker" in navigator){
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  });
+}
 
 /* periodic refresh */
 setInterval(loadAll,     1000 * 60 * 5);

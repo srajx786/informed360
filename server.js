@@ -11,6 +11,79 @@ app.use(cors());
 app.use(express.json());
 
 const __dirname = path.resolve();
+const LOGO_PATH = path.join(__dirname, "Main logo.png");
+const escapeHtml = (value = "") =>
+  String(value).replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
+const absoluteUrl = (req, value = "") => {
+  if (!value) return "";
+  const trimmed = String(value || "").trim();
+  if (!trimmed) return "";
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  const base = `${req.protocol}://${req.get("host")}`;
+  try {
+    return new URL(trimmed, base).href;
+  } catch {
+    return "";
+  }
+};
+
+app.get("/logo.png", (req, res) => {
+  res.sendFile(LOGO_PATH);
+});
+
+app.get("/s", (req, res) => {
+  const originalUrl = String(req.query.u || "").trim();
+  const title = String(req.query.t || "").trim() || "Informed360";
+  const source = String(req.query.src || "").trim();
+  const imgParam = String(req.query.img || "").trim();
+  const baseUrl = `${req.protocol}://${req.get("host")}`;
+  const shareUrl = new URL(req.originalUrl, baseUrl).href;
+  const ogImage = absoluteUrl(req, imgParam) || absoluteUrl(req, "/logo.png");
+  const description = `${source ? `${source} · ` : ""}Informed360 — News + Sentiment`;
+  const safeTitle = escapeHtml(title);
+  const safeDescription = escapeHtml(description);
+  const safeShareUrl = escapeHtml(shareUrl);
+  const safeImage = escapeHtml(ogImage);
+  const openUrl = originalUrl || baseUrl;
+  const safeOpenUrl = escapeHtml(openUrl);
+  res.type("html").send(`<!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>${safeTitle}</title>
+        <meta property="og:title" content="${safeTitle}"/>
+        <meta property="og:description" content="${safeDescription}"/>
+        <meta property="og:image" content="${safeImage}"/>
+        <meta property="og:url" content="${safeShareUrl}"/>
+        <meta property="og:site_name" content="Informed360"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <style>
+          body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:#f3f4f6;color:#0f172a;margin:0;padding:24px;}
+          .card{max-width:520px;margin:32px auto;background:#fff;border-radius:16px;padding:24px;border:1px solid #e5e7eb;box-shadow:0 10px 24px rgba(16,24,40,.08);}
+          .logo{height:40px;width:auto;margin-bottom:12px;}
+          h1{font-size:1.2rem;margin:0 0 8px;}
+          p{color:#64748b;margin:0 0 20px;}
+          .btn{display:inline-block;background:#1f4fd6;color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:600;}
+        </style>
+      </head>
+      <body>
+        <div class="card">
+          <img class="logo" src="/logo.png" alt="Informed360 logo"/>
+          <h1>${safeTitle}</h1>
+          <p>${safeDescription}</p>
+          <a class="btn" href="${safeOpenUrl}" target="_blank" rel="noopener">Open article</a>
+        </div>
+      </body>
+    </html>`);
+});
+
 app.use(express.static(path.join(__dirname, "public")));
 
 const FEEDS = JSON.parse(
