@@ -9,6 +9,28 @@
   <link rel="manifest" href="/manifest.webmanifest"/>
   <link rel="icon" href="/logo.png"/>
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta property="og:title" content="Informed360 – Sentiment-aware News" />
+  <meta
+    property="og:description"
+    content="Balanced, sentiment-aware news from multiple trusted sources."
+  />
+  <meta property="og:image" content="https://informed360.news/og-image.png" />
+  <meta property="og:url" content="https://informed360.news" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Informed360" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Informed360 – Sentiment-aware News" />
+  <meta
+    name="twitter:description"
+    content="Balanced, sentiment-aware news from multiple trusted sources."
+  />
+  <meta
+    name="twitter:image"
+    content="https://informed360.news/og-image.png"
+  />
 </head>
 <body>
   <!-- Header -->
@@ -367,5 +389,12 @@
 
   <script>window.__API_BASE__="";</script>
   <script src="app.js" defer></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/sw.js").catch(function () {});
+      });
+    }
+  </script>
 </body>
 </html>
