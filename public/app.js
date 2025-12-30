@@ -1682,31 +1682,21 @@ function buildHeroSlides(stories = [], articles = []){
 }
 
 function safeImgTag(src, link, source, cls){
-  const fallbackLogo = logoFor(link, source);
   const candidate = (src || "").trim();
   const primary = isLikelyImageUrl(candidate) ? candidate : "";
-  const fallback = fallbackLogo || "";
   const fallbackText = escapeHtml(source || domainFromUrl(link) || "Source");
-  if (!primary && !fallback){
-    return `<div class="thumb-fallback ${cls || ""}">${fallbackText}</div>`;
-  }
-  const initialSrc = primary || fallback;
-  const useLogoThumb = (!primary || primary === fallback) && Boolean(fallbackLogo);
-  const classNames = [cls, useLogoThumb ? "logo-thumb" : ""]
+  const initialSrc = primary || THUMB_PLACEHOLDER;
+  const classNames = [cls, !primary ? "placeholder-thumb" : ""]
     .filter(Boolean)
     .join(" ");
 
   return `<img class="${classNames}" src="${initialSrc}" loading="lazy"
-              data-fallback="${fallback}" data-fallback-text="${fallbackText}"
-              onerror="if(this.dataset.errored){const text=this.dataset.fallbackText||'Source';const div=document.createElement('div');div.className='thumb-fallback ${cls || ""}';div.textContent=text;this.replaceWith(div);}else{this.dataset.errored='1';if(this.dataset.fallback){this.classList.add('logo-thumb');this.src=this.dataset.fallback;this.alt='';}else{const text=this.dataset.fallbackText||'Source';const div=document.createElement('div');div.className='thumb-fallback ${cls || ""}';div.textContent=text;this.replaceWith(div);}}" alt="">`;
+              data-placeholder="${THUMB_PLACEHOLDER}" data-fallback-text="${fallbackText}"
+              onerror="this.onerror=null;this.classList.add('placeholder-thumb');this.src=this.dataset.placeholder;" alt="">`;
 }
 
 function resolveDailyThumbnail(article = {}){
-  const candidates = [article.imageUrl, article.image, article.thumbnail, article.imageUrl1];
-  const primary = candidates
-    .map(value => normalizeDailyThumbSrc(value))
-    .find(value => value && !isFallbackLogo(value) && (isLikelyImageUrl(value) || value === THUMB_PLACEHOLDER))
-    || "";
+  const primary = (article.image || "").trim();
   const thumb = primary || THUMB_PLACEHOLDER;
   return { primary, thumb };
 }
@@ -1721,7 +1711,7 @@ function safeNewsThumbTag({ primary = "", thumb = "", cls = "" } = {}){
 
   return `<img class="${classNames}" src="${initialSrc}" loading="lazy"
               data-placeholder="${placeholder}"
-              onerror="const placeholder=this.dataset.placeholder||'';if(placeholder && this.src!==placeholder){this.classList.add('placeholder-thumb');this.src=placeholder;this.alt='';}" alt="">`;
+              onerror="this.onerror=null;const placeholder=this.dataset.placeholder||'';if(placeholder){this.classList.add('placeholder-thumb');this.src=placeholder;this.alt='';}" alt="">`;
 }
 
 /* card renderers */
@@ -1997,7 +1987,7 @@ function renderTopStoriesCluster(cluster){
   const sourceName = escapeHtml(primary?.source || "Source");
   const time = escapeHtml(formatArticleDate(primary?.publishedAt) || "");
   const primaryUrl = primary?.url || primary?.link || "#";
-  const imageUrl = primary?.imageUrl || primary?.image || cluster?.imageUrl || THUMB_PLACEHOLDER;
+  const imageUrl = primary?.image || cluster?.imageUrl || THUMB_PLACEHOLDER;
   const sourceLogo = (primary?.sourceLogo || logoFor(primary?.url || primary?.link, primary?.source || "")).trim();
   const imageMarkup = renderTopStoryMedia({
     imageUrl,
@@ -2054,7 +2044,7 @@ function renderTopStoriesRelated(item){
   return `
     <a class="topstories-related-row relatedItem" href="${item?.url || item?.link || "#"}" target="_blank" rel="noopener">
       <div class="tile-action-group">
-        ${renderShareButton(item, item?.imageUrl || "", "icon-only")}
+        ${renderShareButton(item, item?.image || "", "icon-only")}
         ${renderInfoButton(item?.sentiment || {}, context)}
       </div>
       <div class="topstories-related-body">
@@ -2976,7 +2966,7 @@ function renderSearchResults(){
     return `
       <div class="search-result" role="option" tabindex="0" data-link="${article.link}">
         <div class="search-thumb">
-          ${safeImgTag(article.image || article.imageUrl, article.link, article.source, "search-thumb-img")}
+          ${safeImgTag(article.image, article.link, article.source, "search-thumb-img")}
         </div>
         <div class="search-body">
           <div class="search-title">${escapeHtml(article.title)}</div>
