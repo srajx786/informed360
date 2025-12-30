@@ -157,9 +157,8 @@ const ARTICLE_CACHE_TTL = Number(process.env.ARTICLE_CACHE_TTL_MS || 6 * 60 * 60
 const ARTICLE_CACHE_MAX = Number(process.env.ARTICLE_CACHE_MAX || 1200);
 const STORY_CACHE_TTL = Number(process.env.STORY_CACHE_TTL_MS || 120000);
 const GDELT_CACHE_TTL = Number(process.env.GDELT_CACHE_TTL_MS || 600000);
-const OG_IMAGE_CACHE_TTL = Number(
-  process.env.OG_IMAGE_CACHE_TTL_MS || 6 * 60 * 60 * 1000
-);
+const OG_IMAGE_POSITIVE_TTL = 6 * 60 * 60 * 1000;
+const OG_IMAGE_NEGATIVE_TTL = 30 * 60 * 1000;
 const TOP_STORY_RELATED_CACHE_TTL = Number(
   process.env.TOP_STORY_RELATED_CACHE_TTL_MS || 10 * 60 * 1000
 );
@@ -236,6 +235,31 @@ const findMetaContent = (html = "", attr = "", value = "") => {
   return "";
 };
 const ogImageCache = new Map();
+const getOgImageCache = (url = "") => {
+  const cached = ogImageCache.get(url);
+  if (!cached) return null;
+  if (Date.now() > cached.exp) {
+    ogImageCache.delete(url);
+    return null;
+  }
+  return cached;
+};
+const setOgImageCache = (url = "", image = "") => {
+  if (!url) return;
+  const ttl = image ? OG_IMAGE_POSITIVE_TTL : OG_IMAGE_NEGATIVE_TTL;
+  ogImageCache.set(url, { image, exp: Date.now() + ttl });
+};
+const absolutizeUrl = (candidate = "", pageUrl = "") => {
+  const trimmed = String(candidate || "").trim();
+  if (!trimmed) return "";
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  if (!pageUrl) return "";
+  try {
+    return new URL(trimmed, pageUrl).href;
+  } catch {
+    return "";
+  }
+};
 const pickUrls = (v) => {
   if (!v) return [];
   if (Array.isArray(v)) return v.map((x) => x?.url || x).filter(Boolean);
@@ -251,27 +275,14 @@ const isLogoImage = (url = "") => {
   if (lower.includes("favicon")) return true;
   return lower.includes("logo.");
 };
-const getOgImageCache = (url = "") => {
-  const cached = ogImageCache.get(url);
-  if (!cached) return null;
-  if (Date.now() - cached.ts > OG_IMAGE_CACHE_TTL) {
-    ogImageCache.delete(url);
-    return null;
-  }
-  return cached;
-};
-const setOgImageCache = (url = "", image = "") => {
-  if (!url) return;
-  ogImageCache.set(url, { image, ts: Date.now() });
-};
-const resolveOgImage = async (target = "") => {
-  if (!target) return "";
-  const cached = getOgImageCache(target);
+const resolveOgImage = async (pageUrl = "") => {
+  if (!pageUrl) return "";
+  const cached = getOgImageCache(pageUrl);
   if (cached) return cached.image || "";
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
-    const response = await fetch(target, {
+    const timeout = setTimeout(() => controller.abort(), 6000);
+    const response = await fetch(pageUrl, {
       signal: controller.signal,
       headers: {
         "User-Agent":
@@ -279,16 +290,28 @@ const resolveOgImage = async (target = "") => {
       }
     });
     clearTimeout(timeout);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const html = await response.text();
-    const og = cleanUrl(findMetaContent(html, "property", "og:image"), target);
-    const twitter = cleanUrl(findMetaContent(html, "name", "twitter:image"), target);
-    const twitterSrc = cleanUrl(findMetaContent(html, "name", "twitter:image:src"), target);
-    const fallback = firstImgInHtml(html, target);
-    const image = og || twitter || twitterSrc || fallback || "";
-    setOgImageCache(target, image);
-    return image;
+    const candidates = [
+      /<meta[^>]+property=["']og:image["'][^>]*content=["']([^"']+)["']/i,
+      /<meta[^>]+name=["']twitter:image["'][^>]*content=["']([^"']+)["']/i,
+      /<meta[^>]+property=["']twitter:image["'][^>]*content=["']([^"']+)["']/i,
+      /<link[^>]+rel=["']image_src["'][^>]*href=["']([^"']+)["']/i
+    ];
+    let image = "";
+    for (const pattern of candidates) {
+      const match = pattern.exec(html);
+      if (!match?.[1]) continue;
+      const absolute = absolutizeUrl(match[1], pageUrl);
+      if (absolute) {
+        image = absolute;
+        break;
+      }
+    }
+    setOgImageCache(pageUrl, image || "");
+    return image || "";
   } catch {
-    setOgImageCache(target, "");
+    setOgImageCache(pageUrl, "");
     return "";
   }
 };
@@ -313,16 +336,40 @@ const extractImage = (item) => {
   return "";
 };
 
-const getBestImageForArticle = async (article = {}) => {
+const getBestImage = async (article = {}) => {
   const baseUrl = article.link || article.url || "";
-  const explicit = cleanUrl(article.imageUrl || article.image || "", baseUrl);
+  const explicit = cleanUrl(article.image || article.imageUrl || "", baseUrl);
   if (explicit && !isLogoImage(explicit)) return explicit;
   const extracted = extractImage(article);
   const cleaned = cleanUrl(extracted, baseUrl);
   if (cleaned && !isLogoImage(cleaned)) return cleaned;
   const og = await resolveOgImage(baseUrl);
-  if (og && !isLogoImage(og)) return og;
+  if (og) return og;
   return "/img/thumb-placeholder.svg";
+};
+const mapInChunks = async (items = [], size = 10, mapper) => {
+  const results = [];
+  for (let i = 0; i < items.length; i += size) {
+    const chunk = items.slice(i, i + size);
+    const mapped = await Promise.all(chunk.map(mapper));
+    results.push(...mapped);
+  }
+  return results;
+};
+const normalizeImageCandidate = (value = "", baseUrl = "") => {
+  const cleaned = cleanUrl(value, baseUrl);
+  if (!cleaned || isLogoImage(cleaned)) return "";
+  return cleaned;
+};
+const ensureImageField = async (item = {}) => {
+  const link = item.link || item.url || "";
+  const candidate = normalizeImageCandidate(
+    item.image || item.imageUrl || "",
+    link
+  );
+  if (candidate) return { ...item, image: candidate, imageUrl: candidate };
+  const image = await getBestImage({ ...item, link });
+  return { ...item, image, imageUrl: image };
 };
 
 const LOCAL_LOGOS = {
@@ -843,7 +890,7 @@ async function fetchList(urls) {
         const description = item.contentSnippet || item.summary || "";
         const publishedAt =
           item.isoDate || item.pubDate || new Date().toISOString();
-        const image = await getBestImageForArticle(item);
+        const image = await getBestImage(item);
         const text = `${title}. ${description}`.trim();
         const { sentiment, explanation } = await scoreSentiment(text, {
           url: link
@@ -1360,7 +1407,13 @@ const setCoverageCache = (key = "", related = []) => {
   COVERAGE_CACHE.set(key, { ts: Date.now(), related });
 };
 
-const buildTopStoryPrimary = (article = {}) => ({
+const buildTopStoryPrimary = (article = {}) => {
+  const image =
+    pickStoryImage(article) ||
+    article.image ||
+    article.imageUrl ||
+    "/img/thumb-placeholder.svg";
+  return {
   source: article.source || sourceDomainForArticle(article) || "Source",
   sourceDomain: article.sourceDomain || sourceDomainForArticle(article),
   sourceLogo: article.sourceLogo || logoForArticle(article || {}),
@@ -1369,10 +1422,11 @@ const buildTopStoryPrimary = (article = {}) => ({
   title: article.title || "",
   headline: article.title || "",
   description: article.description || "",
-  image: pickStoryImage(article),
-  imageUrl: pickStoryImage(article) || article.imageUrl || "",
+  image,
+  imageUrl: image,
   sentiment: article.sentiment || { pos: 0, neu: 0, neg: 0 }
-});
+  };
+};
 
 const buildTopStoryRelated = (article = {}) =>
   buildRelatedPayload(article, article.sentiment || { pos: 0, neu: 0, neg: 0 });
@@ -1382,10 +1436,10 @@ const normalizeTopStoryRelatedItem = (item = {}) => {
   const sourceDomain =
     item.sourceDomain || sourceDomainForArticle(item) || domainFromUrl(url);
   const source = item.source || sourceDomain || "Source";
-  const imageUrl =
+  const image =
     pickStoryImage(item) ||
-    item.imageUrl ||
     item.image ||
+    item.imageUrl ||
     "/img/thumb-placeholder.svg";
   return {
     source,
@@ -1395,7 +1449,8 @@ const normalizeTopStoryRelatedItem = (item = {}) => {
     url,
     title: item.title || item.headline || "",
     headline: item.headline || item.title || "",
-    imageUrl,
+    image,
+    imageUrl: image,
     sentiment: item.sentiment || { pos: 0, neu: 0, neg: 0 }
   };
 };
@@ -1698,7 +1753,7 @@ const fetchGdelt = async ({
           source: item.sourceCountry || item.sourceName || item.domain || "",
           link
         });
-        const image = await getBestImageForArticle({
+        const image = await getBestImage({
           link,
           image: item.image || ""
         });
@@ -1739,7 +1794,13 @@ const relatedSourceKey = (item = {}) =>
     sourceDomain: item.sourceDomain || ""
   }) || domainFromUrl(item.url || item.link || "") || item.source || "";
 
-const buildRelatedPayload = (article = {}, sentiment) => ({
+const buildRelatedPayload = (article = {}, sentiment) => {
+  const image =
+    pickStoryImage(article) ||
+    article.image ||
+    article.imageUrl ||
+    "/img/thumb-placeholder.svg";
+  return {
   source: article.source || sourceDomainForArticle(article) || "Source",
   sourceDomain: article.sourceDomain || sourceDomainForArticle(article),
   sourceLogo: article.sourceLogo || logoForArticle(article || {}),
@@ -1748,10 +1809,11 @@ const buildRelatedPayload = (article = {}, sentiment) => ({
   title: article.title || "",
   headline: article.title || "",
   description: article.description || "",
-  image: pickStoryImage(article),
-  imageUrl: pickStoryImage(article) || article.imageUrl || "",
+  image,
+  imageUrl: image,
   sentiment: sentiment || article.sentiment || { pos: 0, neu: 0, neg: 0 }
-});
+  };
+};
 
 const buildCoverageCacheKey = (headline = "", hours = 72, max = 20) =>
   `coverage:${normalize(headline)}:${hours}:${max}`;
@@ -1845,7 +1907,7 @@ const fetchGoogleNewsSearch = async (query = "") => {
         const link = cleanUrl(item.link || item.guid || "", item.link || "");
         const resolved = extractGoogleNewsTarget(link);
         const sourceUrl = item.source?.url || "";
-        const image = await getBestImageForArticle({ ...item, link: resolved });
+        const image = await getBestImage({ ...item, link: resolved });
         return {
           title: item.title || "",
           link: resolved,
@@ -1917,7 +1979,7 @@ const enrichRelatedCandidate = async (article = {}) => {
   const { sentiment, explanation } = await scoreSentiment(text, {
     url: article.link
   });
-  const imageUrl = await getBestImageForArticle(article);
+  const imageUrl = await getBestImage(article);
   const category = inferCategory({
     title: article.title,
     link: article.link,
@@ -2230,8 +2292,7 @@ app.get("/api/top-stories", async (req, res) => {
     relatedLimit: 3,
     hours: TOP_STORY_LOOKBACK_HOURS
   });
-  const enriched = [];
-  for (const cluster of topStories) {
+  const enriched = await mapInChunks(topStories, 10, async (cluster) => {
     const primary = cluster?.primary || {};
     const primaryUrl = primary.url || primary.link || "";
     const primaryDomain =
@@ -2270,19 +2331,22 @@ app.get("/api/top-stories", async (req, res) => {
       });
     }
     related = related.slice(0, 2);
-    enriched.push({
+    const enrichedPrimary = await ensureImageField(primary);
+    const enrichedRelated = await mapInChunks(
+      related,
+      10,
+      async (item) => ensureImageField(item)
+    );
+    return {
       ...cluster,
       primary: {
-        ...primary,
-        imageUrl:
-          pickStoryImage(primary) ||
-          primary.imageUrl ||
-          primary.image ||
-          "/img/thumb-placeholder.svg"
+        ...enrichedPrimary,
+        image: enrichedPrimary.image || "/img/thumb-placeholder.svg",
+        imageUrl: enrichedPrimary.image || "/img/thumb-placeholder.svg"
       },
-      related
-    });
-  }
+      related: enrichedRelated
+    };
+  });
   res.json({
     fetchedAt: Date.now(),
     topStories: enriched,
@@ -2323,7 +2387,7 @@ app.get("/api/explain", (req, res) => {
   return res.json(explanation);
 });
 
-app.get("/api/news", (req, res) => {
+app.get("/api/news", async (req, res) => {
   const limit = Number(req.query.limit || 200);
   const sentiment = req.query.sentiment;
   const category = (req.query.category || "").toLowerCase();
@@ -2337,15 +2401,17 @@ app.get("/api/news", (req, res) => {
   if (sentiment) arts = arts.filter((a) => a.sentiment?.label === sentiment);
 
   const relatedLookup = buildRelatedLookup(arts);
-  const payload = arts.slice(0, limit).map((article) => {
+  const slice = arts.slice(0, limit);
+  const payload = await mapInChunks(slice, 10, async (article) => {
     const related = relatedLookup.get(article.link);
-    const imageUrl =
-      article.imageUrl ||
-      article.image ||
-      pickStoryImage(article) ||
-      "/img/thumb-placeholder.svg";
-    const normalized = { ...article, imageUrl, image: imageUrl };
-    return related?.length ? { ...normalized, related } : normalized;
+    const normalized = await ensureImageField(article);
+    if (!related?.length) return normalized;
+    const normalizedRelated = await mapInChunks(
+      related,
+      10,
+      async (item) => ensureImageField(item)
+    );
+    return { ...normalized, related: normalizedRelated };
   });
 
   res.json({ fetchedAt: Date.now(), articles: payload });
