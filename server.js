@@ -157,6 +157,9 @@ const ARTICLE_CACHE_TTL = Number(process.env.ARTICLE_CACHE_TTL_MS || 6 * 60 * 60
 const ARTICLE_CACHE_MAX = Number(process.env.ARTICLE_CACHE_MAX || 1200);
 const STORY_CACHE_TTL = Number(process.env.STORY_CACHE_TTL_MS || 120000);
 const GDELT_CACHE_TTL = Number(process.env.GDELT_CACHE_TTL_MS || 600000);
+const OG_IMAGE_CACHE_TTL = Number(
+  process.env.OG_IMAGE_CACHE_TTL_MS || 6 * 60 * 60 * 1000
+);
 const TOP_STORY_RELATED_CACHE_TTL = Number(
   process.env.TOP_STORY_RELATED_CACHE_TTL_MS || 10 * 60 * 1000
 );
@@ -168,6 +171,7 @@ const STORY_CACHE = new Map();
 const GDELT_CACHE = new Map();
 const TOP_STORY_RELATED_CACHE = new Map();
 const RELATED_COVERAGE_CACHE = new Map();
+const COVERAGE_CACHE = new Map();
 const FEED_HEALTH = new Map();
 
 let transformerPipeline = null;
@@ -238,6 +242,56 @@ const pickUrls = (v) => {
   if (typeof v === "object" && v.url) return [v.url];
   return [];
 };
+const isLogoImage = (url = "") => {
+  const lower = String(url || "").toLowerCase();
+  if (!lower) return true;
+  if (lower.startsWith("data:image")) return true;
+  if (lower.includes("logo.clearbit.com")) return true;
+  if (lower.includes("/logo/")) return true;
+  if (lower.includes("favicon")) return true;
+  return lower.includes("logo.");
+};
+const getOgImageCache = (url = "") => {
+  const cached = ogImageCache.get(url);
+  if (!cached) return null;
+  if (Date.now() - cached.ts > OG_IMAGE_CACHE_TTL) {
+    ogImageCache.delete(url);
+    return null;
+  }
+  return cached;
+};
+const setOgImageCache = (url = "", image = "") => {
+  if (!url) return;
+  ogImageCache.set(url, { image, ts: Date.now() });
+};
+const resolveOgImage = async (target = "") => {
+  if (!target) return "";
+  const cached = getOgImageCache(target);
+  if (cached) return cached.image || "";
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    const response = await fetch(target, {
+      signal: controller.signal,
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Informed360Bot/1.0"
+      }
+    });
+    clearTimeout(timeout);
+    const html = await response.text();
+    const og = cleanUrl(findMetaContent(html, "property", "og:image"), target);
+    const twitter = cleanUrl(findMetaContent(html, "name", "twitter:image"), target);
+    const twitterSrc = cleanUrl(findMetaContent(html, "name", "twitter:image:src"), target);
+    const fallback = firstImgInHtml(html, target);
+    const image = og || twitter || twitterSrc || fallback || "";
+    setOgImageCache(target, image);
+    return image;
+  } catch {
+    setOgImageCache(target, "");
+    return "";
+  }
+};
 const extractImage = (item) => {
   const candidates = [
     ...pickUrls(item.enclosure),
@@ -256,8 +310,19 @@ const extractImage = (item) => {
       .find((u) => typeof u === "string" && u.startsWith("http")) || "";
   if (chosen) return chosen;
 
-  const d = domainFromUrl(item.link || "");
-  return d ? `https://logo.clearbit.com/${d}` : "";
+  return "";
+};
+
+const getBestImageForArticle = async (article = {}) => {
+  const baseUrl = article.link || article.url || "";
+  const explicit = cleanUrl(article.imageUrl || article.image || "", baseUrl);
+  if (explicit && !isLogoImage(explicit)) return explicit;
+  const extracted = extractImage(article);
+  const cleaned = cleanUrl(extracted, baseUrl);
+  if (cleaned && !isLogoImage(cleaned)) return cleaned;
+  const og = await resolveOgImage(baseUrl);
+  if (og && !isLogoImage(og)) return og;
+  return "/img/thumb-placeholder.svg";
 };
 
 const LOCAL_LOGOS = {
@@ -304,18 +369,8 @@ const logoForArticle = (article = {}) =>
 const domainFromSourceName = (name = "") =>
   SOURCE_NAME_MAP.get(String(name || "").toLowerCase()) || "";
 
-const isLogoImage = (url = "") => {
-  const lower = String(url || "").toLowerCase();
-  if (!lower) return true;
-  if (lower.startsWith("data:image")) return true;
-  if (lower.includes("logo.clearbit.com")) return true;
-  if (lower.includes("/logo/")) return true;
-  if (lower.includes("favicon")) return true;
-  return lower.includes("logo.");
-};
-
 const pickStoryImage = (article = {}) => {
-  const candidate = String(article.image || "").trim();
+  const candidate = String(article.imageUrl || article.image || "").trim();
   if (!candidate) return "";
   if (isLogoImage(candidate)) return "";
   return candidate;
@@ -788,7 +843,7 @@ async function fetchList(urls) {
         const description = item.contentSnippet || item.summary || "";
         const publishedAt =
           item.isoDate || item.pubDate || new Date().toISOString();
-        const image = extractImage(item);
+        const image = await getBestImageForArticle(item);
         const text = `${title}. ${description}`.trim();
         const { sentiment, explanation } = await scoreSentiment(text, {
           url: link
@@ -808,6 +863,7 @@ async function fetchList(urls) {
           industry: sourceInfo.industry || null,
           description,
           image,
+          imageUrl: image,
           publishedAt,
           sentiment: {
             ...sentiment,
@@ -1191,6 +1247,41 @@ const buildHeadlineQuery = (headline = "") => {
   const targetCount = Math.min(10, Math.max(6, sorted.length));
   return sorted.slice(0, targetCount).map(([token]) => token).join(" ");
 };
+const buildCoverageQueryFromHeadline = (headline = "") => {
+  const words = String(headline || "").match(/[A-Za-z0-9]+/g) || [];
+  if (!words.length) return "";
+  const counts = new Map();
+  const meta = new Map();
+  words.forEach((word) => {
+    const lower = word.toLowerCase();
+    if (STOPWORDS.has(lower)) return;
+    if (lower.length < 3) return;
+    counts.set(lower, (counts.get(lower) || 0) + 1);
+    const isProper = /^[A-Z][a-z]/.test(word) || /^[A-Z]{2,}$/.test(word);
+    const existing = meta.get(lower);
+    if (!existing || (isProper && !existing.isProper)) {
+      meta.set(lower, { token: word, isProper });
+    }
+  });
+  const ranked = [...counts.entries()]
+    .map(([lower, count]) => {
+      const info = meta.get(lower) || { token: lower, isProper: false };
+      const score =
+        count * 2 +
+        (info.isProper ? 3 : 0) +
+        Math.min(8, info.token.length) * 0.2;
+      return { token: info.token, lower, score };
+    })
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      return b.token.length - a.token.length;
+    });
+  const sliceCount = Math.min(
+    ranked.length,
+    Math.max(4, Math.min(7, ranked.length))
+  );
+  return ranked.slice(0, sliceCount).map((item) => item.token).join(" ");
+};
 const normalizeRelatedTitle = (title = "") => {
   const tokens = tokenize(title).filter((token) => !TOP_STORY_STOPWORDS.has(token));
   if (!tokens.length) return "";
@@ -1254,6 +1345,20 @@ const setRelatedCoverageCache = (key = "", related = []) => {
   if (!key) return;
   RELATED_COVERAGE_CACHE.set(key, { ts: Date.now(), related });
 };
+const getCoverageCache = (key = "") => {
+  if (!key) return null;
+  const cached = COVERAGE_CACHE.get(key);
+  if (!cached) return null;
+  if (Date.now() - cached.ts > TOP_STORY_RELATED_CACHE_TTL) {
+    COVERAGE_CACHE.delete(key);
+    return null;
+  }
+  return cached.related || [];
+};
+const setCoverageCache = (key = "", related = []) => {
+  if (!key) return;
+  COVERAGE_CACHE.set(key, { ts: Date.now(), related });
+};
 
 const buildTopStoryPrimary = (article = {}) => ({
   source: article.source || sourceDomainForArticle(article) || "Source",
@@ -1262,13 +1367,38 @@ const buildTopStoryPrimary = (article = {}) => ({
   publishedAt: article.publishedAt,
   url: article.link || "",
   title: article.title || "",
+  headline: article.title || "",
   description: article.description || "",
   image: pickStoryImage(article),
+  imageUrl: pickStoryImage(article) || article.imageUrl || "",
   sentiment: article.sentiment || { pos: 0, neu: 0, neg: 0 }
 });
 
 const buildTopStoryRelated = (article = {}) =>
   buildRelatedPayload(article, article.sentiment || { pos: 0, neu: 0, neg: 0 });
+
+const normalizeTopStoryRelatedItem = (item = {}) => {
+  const url = item.url || item.link || "";
+  const sourceDomain =
+    item.sourceDomain || sourceDomainForArticle(item) || domainFromUrl(url);
+  const source = item.source || sourceDomain || "Source";
+  const imageUrl =
+    pickStoryImage(item) ||
+    item.imageUrl ||
+    item.image ||
+    "/img/thumb-placeholder.svg";
+  return {
+    source,
+    sourceDomain,
+    sourceLogo: item.sourceLogo || logoForDomain(sourceDomain) || logoForArticle(item || {}),
+    publishedAt: item.publishedAt,
+    url,
+    title: item.title || item.headline || "",
+    headline: item.headline || item.title || "",
+    imageUrl,
+    sentiment: item.sentiment || { pos: 0, neu: 0, neg: 0 }
+  };
+};
 
 const buildRelatedForPrimary = (primary = {}, candidates = [], limit = 3, tokensCache) => {
   const primaryTokens = tokensCache.get(primary.link) || storyTokenSet(primary);
@@ -1561,26 +1691,33 @@ const fetchGdelt = async ({
       return payload;
     }
     const rawArticles = data?.articles || data?.data?.articles || [];
-    const articles = rawArticles.map((item) => {
-      const link = cleanUrl(item.url || "");
-      const sourceInfo = lookupSourceInfo({
-        source: item.sourceCountry || item.sourceName || item.domain || "",
-        link
-      });
-      return {
-        title: item.title || item.seendate || "Untitled",
-        link,
-        source: sourceInfo.name,
-        sourceDomain: sourceInfo.domain,
-        sourceCredibility: sourceInfo.credibility || null,
-        industry: sourceInfo.industry || null,
-        description: item.excerpt || item.snippet || "",
-        image: item.image || "",
-        publishedAt: item.seendate
-          ? new Date(item.seendate).toISOString()
-          : new Date().toISOString()
-      };
-    });
+    const articles = await Promise.all(
+      rawArticles.map(async (item) => {
+        const link = cleanUrl(item.url || "");
+        const sourceInfo = lookupSourceInfo({
+          source: item.sourceCountry || item.sourceName || item.domain || "",
+          link
+        });
+        const image = await getBestImageForArticle({
+          link,
+          image: item.image || ""
+        });
+        return {
+          title: item.title || item.seendate || "Untitled",
+          link,
+          source: sourceInfo.name,
+          sourceDomain: sourceInfo.domain,
+          sourceCredibility: sourceInfo.credibility || null,
+          industry: sourceInfo.industry || null,
+          description: item.excerpt || item.snippet || "",
+          image,
+          imageUrl: image,
+          publishedAt: item.seendate
+            ? new Date(item.seendate).toISOString()
+            : new Date().toISOString()
+        };
+      })
+    );
     const payload = { fetchedAt: Date.now(), articles };
     GDELT_CACHE.set(cacheKey, { at: Date.now(), payload });
     return payload;
@@ -1609,10 +1746,77 @@ const buildRelatedPayload = (article = {}, sentiment) => ({
   publishedAt: article.publishedAt,
   url: article.link || "",
   title: article.title || "",
+  headline: article.title || "",
   description: article.description || "",
   image: pickStoryImage(article),
+  imageUrl: pickStoryImage(article) || article.imageUrl || "",
   sentiment: sentiment || article.sentiment || { pos: 0, neu: 0, neg: 0 }
 });
+
+const buildCoverageCacheKey = (headline = "", hours = 72, max = 20) =>
+  `coverage:${normalize(headline)}:${hours}:${max}`;
+
+const fetchCoverageForHeadline = async (
+  headline = "",
+  { hours = 72, max = 20 } = {}
+) => {
+  const query = buildCoverageQueryFromHeadline(headline);
+  const cacheKey = buildCoverageCacheKey(headline, hours, max);
+  const cached = getCoverageCache(cacheKey);
+  if (cached) return cached;
+
+  const merged = [];
+  const usedDomains = new Set();
+  const usedUrls = new Set();
+  const tokens = new Set(tokenize(headline).filter((token) => token.length > 2));
+  const now = Date.now();
+  const windowMs = hours * 60 * 60 * 1000;
+
+  const addCandidate = (item) => {
+    if (!item?.url && !item?.link) return;
+    const url = item.url || item.link;
+    const domain = relatedSourceKey(item);
+    const canonical = canonicalizeUrl(url);
+    if (!domain) return;
+    if (usedDomains.has(domain)) return;
+    if (canonical && usedUrls.has(canonical)) return;
+    usedDomains.add(domain);
+    if (canonical) usedUrls.add(canonical);
+    merged.push(item);
+  };
+
+  const localArticles = uniqueMerge(CORE.articles || [], EXP.articles || []);
+  const localMatches = localArticles.filter((article) => {
+    const publishedAt = new Date(article.publishedAt).getTime();
+    if (!Number.isNaN(publishedAt) && now - publishedAt > windowMs) return false;
+    const articleTokens = storyTokenSet(article);
+    let overlap = 0;
+    tokens.forEach((token) => {
+      if (articleTokens.has(token)) overlap += 1;
+    });
+    return overlap >= 2;
+  });
+  localMatches.forEach((article) => {
+    addCandidate(buildRelatedPayload(article, article.sentiment));
+  });
+
+  if (query) {
+    const gdelt = await fetchGdelt({ query, hours, max });
+    for (const article of gdelt.articles || []) {
+      if (merged.length >= max) break;
+      const enriched = await enrichRelatedCandidate({
+        ...article,
+        imageUrl: article.imageUrl || article.image
+      });
+      if (!enriched) continue;
+      addCandidate(enriched);
+    }
+  }
+
+  const limited = merged.slice(0, max);
+  setCoverageCache(cacheKey, limited);
+  return limited;
+};
 
 const GOOGLE_NEWS_HOST = "news.google.com";
 const extractGoogleNewsTarget = (link = "") => {
@@ -1635,20 +1839,26 @@ const fetchGoogleNewsSearch = async (query = "") => {
   if (!query) return [];
   try {
     const feed = await parseURL(buildGoogleNewsSearchUrl(query));
-    return (feed.items || []).map((item) => {
-      const link = cleanUrl(item.link || item.guid || "", item.link || "");
-      const resolved = extractGoogleNewsTarget(link);
-      const sourceUrl = item.source?.url || "";
-      return {
-        title: item.title || "",
-        link: resolved,
-        source: item.source?.title || domainFromUrl(sourceUrl) || "Source",
-        sourceDomain: domainFromUrl(sourceUrl || resolved),
-        description: item.contentSnippet || item.summary || "",
-        image: extractImage(item),
-        publishedAt: item.isoDate || item.pubDate || new Date().toISOString()
-      };
-    });
+    const items = feed.items || [];
+    const enriched = await Promise.all(
+      items.map(async (item) => {
+        const link = cleanUrl(item.link || item.guid || "", item.link || "");
+        const resolved = extractGoogleNewsTarget(link);
+        const sourceUrl = item.source?.url || "";
+        const image = await getBestImageForArticle({ ...item, link: resolved });
+        return {
+          title: item.title || "",
+          link: resolved,
+          source: item.source?.title || domainFromUrl(sourceUrl) || "Source",
+          sourceDomain: domainFromUrl(sourceUrl || resolved),
+          description: item.contentSnippet || item.summary || "",
+          image,
+          imageUrl: image,
+          publishedAt: item.isoDate || item.pubDate || new Date().toISOString()
+        };
+      })
+    );
+    return enriched;
   } catch {
     return [];
   }
@@ -1707,6 +1917,7 @@ const enrichRelatedCandidate = async (article = {}) => {
   const { sentiment, explanation } = await scoreSentiment(text, {
     url: article.link
   });
+  const imageUrl = await getBestImageForArticle(article);
   const category = inferCategory({
     title: article.title,
     link: article.link,
@@ -1715,6 +1926,8 @@ const enrichRelatedCandidate = async (article = {}) => {
   const enrichedArticle = {
     ...article,
     category,
+    image: imageUrl,
+    imageUrl,
     sentiment: {
       ...sentiment,
       sentimentLabel: explanation.sentiment_label,
@@ -1947,33 +2160,10 @@ app.get("/api", (_req, res) => {
 app.get("/api/og-image", async (req, res) => {
   const target = (req.query.url || "").toString();
   if (!target) return res.status(400).json({ image: "" });
-  if (ogImageCache.has(target))
-    return res.json({ image: ogImageCache.get(target) });
-
-  try {
-    const response = await fetch(target, {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Informed360Bot/1.0"
-      }
-    });
-    const html = await response.text();
-    const ogImage = cleanUrl(
-      findMetaContent(html, "property", "og:image"),
-      target
-    );
-    const twitterImage = cleanUrl(
-      findMetaContent(html, "name", "twitter:image"),
-      target
-    );
-    const fallback = firstImgInHtml(html, target);
-    const image = ogImage || twitterImage || fallback || "";
-    ogImageCache.set(target, image);
-    return res.json({ image });
-  } catch {
-    ogImageCache.set(target, "");
-    return res.json({ image: "" });
-  }
+  const cached = getOgImageCache(target);
+  if (cached) return res.json({ image: cached.image || "" });
+  const image = await resolveOgImage(target);
+  return res.json({ image });
 });
 
 app.get("/api/gdelt", async (req, res) => {
@@ -2036,13 +2226,66 @@ app.get("/api/top-stories", async (req, res) => {
     articles = articles.filter((article) => article.category === "india");
   }
   const topStories = buildTopStories(articles, {
-    limit: 8,
+    limit: 4,
     relatedLimit: 3,
     hours: TOP_STORY_LOOKBACK_HOURS
   });
+  const enriched = [];
+  for (const cluster of topStories) {
+    const primary = cluster?.primary || {};
+    const primaryUrl = primary.url || primary.link || "";
+    const primaryDomain =
+      primary.sourceDomain || sourceDomainForArticle(primary) || domainFromUrl(primaryUrl);
+    const normalizedRelated = (cluster.related || []).map((item) =>
+      normalizeTopStoryRelatedItem(item)
+    );
+    let related = [];
+    const usedDomains = new Set(primaryDomain ? [primaryDomain] : []);
+    const usedUrls = new Set();
+    const canonicalPrimary = canonicalizeUrl(primaryUrl);
+    if (canonicalPrimary) usedUrls.add(canonicalPrimary);
+    const addRelated = (item) => {
+      const url = item.url || item.link || "";
+      const domain = item.sourceDomain || relatedSourceKey(item);
+      if (!domain || usedDomains.has(domain)) return false;
+      const canonical = canonicalizeUrl(url);
+      if (canonical && usedUrls.has(canonical)) return false;
+      usedDomains.add(domain);
+      if (canonical) usedUrls.add(canonical);
+      related.push(item);
+      return true;
+    };
+    normalizedRelated.forEach((item) => {
+      if (related.length >= 2) return;
+      addRelated(item);
+    });
+    if (related.length < 2) {
+      const coverage = await fetchCoverageForHeadline(primary?.title || "", {
+        hours: 72,
+        max: 20
+      });
+      coverage.map(normalizeTopStoryRelatedItem).forEach((item) => {
+        if (related.length >= 2) return;
+        addRelated(item);
+      });
+    }
+    related = related.slice(0, 2);
+    enriched.push({
+      ...cluster,
+      primary: {
+        ...primary,
+        imageUrl:
+          pickStoryImage(primary) ||
+          primary.imageUrl ||
+          primary.image ||
+          "/img/thumb-placeholder.svg"
+      },
+      related
+    });
+  }
   res.json({
     fetchedAt: Date.now(),
-    topStories,
+    topStories: enriched,
     mode: type
   });
 });
@@ -2096,7 +2339,13 @@ app.get("/api/news", (req, res) => {
   const relatedLookup = buildRelatedLookup(arts);
   const payload = arts.slice(0, limit).map((article) => {
     const related = relatedLookup.get(article.link);
-    return related?.length ? { ...article, related } : article;
+    const imageUrl =
+      article.imageUrl ||
+      article.image ||
+      pickStoryImage(article) ||
+      "/img/thumb-placeholder.svg";
+    const normalized = { ...article, imageUrl, image: imageUrl };
+    return related?.length ? { ...normalized, related } : normalized;
   });
 
   res.json({ fetchedAt: Date.now(), articles: payload });

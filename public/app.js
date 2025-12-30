@@ -109,6 +109,7 @@ const logoFor = (link = "", source = "") =>
   getSourceLogoUrl(domainFromUrl(link), source);
 
 const PLACEHOLDER = "/img/placeholder-news.svg";
+const THUMB_PLACEHOLDER = "/img/thumb-placeholder.svg";
 const LOGO_PLACEHOLDER =
   "data:image/svg+xml;base64," +
   btoa(
@@ -1701,36 +1702,36 @@ function safeImgTag(src, link, source, cls){
 }
 
 function resolveDailyThumbnail(article = {}){
-  const primary = [article.image, article.imageUrl, article.thumbnail, article.imageUrl1]
+  const candidates = [article.imageUrl, article.image, article.thumbnail, article.imageUrl1];
+  const primary = candidates
     .map(value => normalizeDailyThumbSrc(value))
-    .find(Boolean) || "";
-  const sourceLogo = normalizeDailyThumbSrc(article.sourceLogo);
-  const thumb = primary || sourceLogo || PLACEHOLDER;
-  return { primary, sourceLogo, thumb };
+    .find(value => value && !isFallbackLogo(value) && (isLikelyImageUrl(value) || value === THUMB_PLACEHOLDER))
+    || "";
+  const thumb = primary || THUMB_PLACEHOLDER;
+  return { primary, thumb };
 }
 
-function safeNewsThumbTag({ primary = "", sourceLogo = "", thumb = "", cls = "" } = {}){
-  const placeholder = PLACEHOLDER;
-  const initialSrc = thumb || primary || sourceLogo || placeholder;
-  const useLogoThumb = !primary && Boolean(sourceLogo);
-  const usePlaceholder = !primary && !sourceLogo;
-  const classNames = [cls, useLogoThumb ? "logo-thumb" : "", usePlaceholder ? "placeholder-thumb" : ""]
+function safeNewsThumbTag({ primary = "", thumb = "", cls = "" } = {}){
+  const placeholder = THUMB_PLACEHOLDER;
+  const initialSrc = thumb || primary || placeholder;
+  const usePlaceholder = !primary;
+  const classNames = [cls, usePlaceholder ? "placeholder-thumb" : ""]
     .filter(Boolean)
     .join(" ");
 
   return `<img class="${classNames}" src="${initialSrc}" loading="lazy"
-              data-source-logo="${sourceLogo}" data-placeholder="${placeholder}"
-              onerror="const logo=this.dataset.sourceLogo||'';const placeholder=this.dataset.placeholder||'';if(logo && this.src!==logo){this.classList.add('logo-thumb');this.classList.remove('placeholder-thumb');this.src=logo;this.alt='';return;}if(placeholder && this.src!==placeholder){this.classList.remove('logo-thumb');this.classList.add('placeholder-thumb');this.src=placeholder;this.alt='';}" alt="">`;
+              data-placeholder="${placeholder}"
+              onerror="const placeholder=this.dataset.placeholder||'';if(placeholder && this.src!==placeholder){this.classList.add('placeholder-thumb');this.src=placeholder;this.alt='';}" alt="">`;
 }
 
 /* card renderers */
 function card(a){
-  const { primary, sourceLogo, thumb } = resolveDailyThumbnail(a || {});
+  const { primary, thumb } = resolveDailyThumbnail(a || {});
   const context = getArticleContext(a);
   return `
     <a class="news-item" href="${a.link}" target="_blank" rel="noopener" data-article-link="${a.link}">
       <div class="news-side">
-        ${safeNewsThumbTag({ primary, sourceLogo, thumb, cls: "thumb" })}
+        ${safeNewsThumbTag({ primary, thumb, cls: "thumb" })}
         <div class="card-actions">
           ${renderShareButton(a, primary)}
           <button class="pin-toggle" type="button" data-link="${a.link}" aria-pressed="false">Pin</button>
@@ -1950,8 +1951,6 @@ function renderTopStoriesSection(section){
                 ${renderTopStoriesCluster(cluster)}
               </div>`).join("") : `<div class="topstories-slide"><div class="topstories-empty">No stories yet.</div></div>`}
           </div>
-        </div>
-        <div class="topstories-footer">
           <div class="topstories-nav">
             ${controls}
           </div>
@@ -1964,6 +1963,7 @@ function renderTopStoriesSection(section){
 function resolveTopStoryImage(url = ""){
   const candidate = String(url || "").trim();
   if (!candidate) return "";
+  if (candidate.startsWith("/")) return candidate;
   if (!isLikelyImageUrl(candidate)) return "";
   if (isFallbackLogo(candidate)) return "";
   return candidate;
@@ -1993,36 +1993,36 @@ function renderTopStoryMedia({
 function renderTopStoriesCluster(cluster){
   const primary = cluster?.primary || {};
   const headline = escapeHtml(primary?.title || cluster?.headline || "");
-  const related = (cluster?.related || []).slice(0, 3);
+  const related = (cluster?.related || []).slice(0, 2);
   const sourceName = escapeHtml(primary?.source || "Source");
   const time = escapeHtml(formatArticleDate(primary?.publishedAt) || "");
   const primaryUrl = primary?.url || primary?.link || "#";
-  const imageUrl = primary?.image || cluster?.imageUrl || "";
+  const imageUrl = primary?.imageUrl || primary?.image || cluster?.imageUrl || THUMB_PLACEHOLDER;
   const sourceLogo = (primary?.sourceLogo || logoFor(primary?.url || primary?.link, primary?.source || "")).trim();
   const imageMarkup = renderTopStoryMedia({
     imageUrl,
     fallbackLogo: sourceLogo,
     fallbackText: sourceName,
-    className: "topstories-cluster-image"
+    className: "topstories-cluster-image hero-thumbnail"
   });
   const context = getArticleContext(primary);
 
   return `
-    <article class="topstories-cluster">
-      <div class="topstories-cluster-primary">
+    <article class="topstories-cluster topStoriesGrid">
+      <div class="heroCard">
         <div class="tile-action-group">
           ${renderShareButton(primary, imageUrl, "icon-only")}
           ${renderInfoButton(primary?.sentiment || cluster?.sentiment || {}, context)}
         </div>
-        <a class="topstories-cluster-link" href="${primaryUrl}" target="_blank" rel="noopener">
-          <div class="topstories-cluster-media">
+        <a class="topstories-cluster-link heroLink" href="${primaryUrl}" target="_blank" rel="noopener">
+          <div class="topstories-cluster-media heroMedia">
             ${imageMarkup}
           </div>
-          <div class="topstories-cluster-sentiment">
+          <div class="topstories-cluster-sentiment heroSentiment">
             ${renderSentiment(primary?.sentiment || cluster?.sentiment || {}, true, context)}
           </div>
-          <div class="topstories-cluster-headline">${headline}</div>
-          <div class="topstories-cluster-meta">
+          <div class="topstories-cluster-headline heroHeadline">${headline}</div>
+          <div class="topstories-cluster-meta heroMeta">
             <div class="topstories-cluster-meta-row">
               <span class="source">${sourceName}</span>
             </div>
@@ -2030,12 +2030,12 @@ function renderTopStoriesCluster(cluster){
           </div>
         </a>
       </div>
-      <div class="topstories-cluster-related">
+      <div class="relatedList">
         <div class="topstories-related-title">Related stories</div>
-        <div class="topstories-related-list">
+        <div class="topstories-related-list relatedItems">
           ${related.length
             ? related.map(item => renderTopStoriesRelated(item)).join("")
-            : `<div class="topstories-empty topstories-related-empty">No matching coverage yet — try again in a few minutes.</div>`}
+            : `<div class="topstories-related-empty">No other coverage found yet</div>`}
         </div>
       </div>
     </article>`;
@@ -2044,35 +2044,28 @@ function renderTopStoriesCluster(cluster){
 function renderTopStoriesRelated(item){
   const sourceName = escapeHtml(item?.source || "Source");
   const time = escapeHtml(formatArticleDate(item?.publishedAt) || "");
-  const headline = escapeHtml(item?.title || "");
+  const headline = escapeHtml(item?.headline || item?.title || "");
   const itemUrl = item?.url || item?.link || "";
   const logo = (item?.sourceLogo || logoFor(itemUrl, item?.source || "")).trim();
-  const imageUrl = item?.image || "";
   const isPinned = Boolean(itemUrl && isArticlePinned(itemUrl));
   const pinBadge = isPinned ? `<span class="ts-pin">Pinned</span>` : "";
-  const logoMarkup = renderTopStoryMedia({
-    imageUrl,
-    fallbackLogo: logo,
-    fallbackText: sourceName,
-    className: "topstories-related-thumb-image",
-    fallbackClass: "topstories-related-thumb-fallback",
-    logoClass: "topstories-related-logo"
-  });
+  const safeLogo = logo || LOGO_PLACEHOLDER;
   const context = getArticleContext(item);
   return `
-    <a class="topstories-related-row" href="${item?.url || item?.link || "#"}" target="_blank" rel="noopener">
+    <a class="topstories-related-row relatedItem" href="${item?.url || item?.link || "#"}" target="_blank" rel="noopener">
       <div class="tile-action-group">
-        ${renderShareButton(item, imageUrl, "icon-only")}
+        ${renderShareButton(item, item?.imageUrl || "", "icon-only")}
         ${renderInfoButton(item?.sentiment || {}, context)}
       </div>
-      <div class="topstories-related-thumb">${logoMarkup}</div>
       <div class="topstories-related-body">
         <div class="topstories-related-meta">
           <div class="topstories-related-meta-row">
-            ${heroSourceLogo({ source: item?.source, link: item?.url || item?.link || "", sourceLogo: logo }, "topstories-inline-logo")}
+            <img class="topstories-related-logo" src="${safeLogo}" alt="${sourceName} logo" loading="lazy"
+              data-placeholder="${LOGO_PLACEHOLDER}"
+              onerror="this.onerror=null;this.src=this.dataset.placeholder;">
             <span class="source">${sourceName}</span>
+            <span class="topstories-related-time">${time}</span>
           </div>
-          <div class="topstories-related-meta-row datetime">${time}</div>
           ${pinBadge ? `<div class="topstories-related-pin">${pinBadge}</div>` : ""}
         </div>
         <div class="topstories-related-headline">${headline}</div>
