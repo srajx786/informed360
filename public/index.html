@@ -300,6 +300,29 @@
     </form>
   </dialog>
 
+  <dialog id="loginModal" class="info-modal">
+    <form id="loginForm" method="dialog" class="info-card">
+      <header>
+        <h2>Log in to Pro</h2>
+      </header>
+      <div class="info-body">
+        <label class="login-field">
+          <span>Username</span>
+          <input id="loginUsername" type="text" autocomplete="username" placeholder="Admin">
+        </label>
+        <label class="login-field">
+          <span>Password</span>
+          <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Admin">
+        </label>
+        <div id="loginError" class="login-error" role="alert"></div>
+      </div>
+      <menu class="actions">
+        <button value="cancel" class="btn ghost">Cancel</button>
+        <button type="submit" class="btn">Log in</button>
+      </menu>
+    </form>
+  </dialog>
+
   <dialog id="settingsModal" class="info-modal">
     <form method="dialog" class="info-card">
       <header>
@@ -324,6 +347,7 @@
           <button id="pricingEntry" class="linkish" type="button">Pricing</button>
           <a class="linkish" href="/methodology">Methodology</a>
           <a class="linkish" href="/api">API Docs</a>
+          <button id="logoutBtn" class="linkish" type="button">Log out</button>
         </div>
       </div>
       <menu class="actions">
