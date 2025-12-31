@@ -13,6 +13,9 @@ Server runs on `http://localhost:3000` by default.
 
 Transformer sentiment is optional and disabled by default. To enable it:
 
+To run VADER-only (recommended for low memory): set `TRANSFORMER_ENABLED=0`.
+To enable transformer: set `TRANSFORMER_ENABLED=1` (requires higher-memory instance).
+
 1. Install the optional dependency:
    ```bash
    npm install @xenova/transformers

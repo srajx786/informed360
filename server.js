@@ -147,7 +147,11 @@ const SOURCE_NAME_MAP = new Map(
   ])
 );
 
-const TRANSFORMER_ENABLED = process.env.TRANSFORMER_ENABLED === "1";
+const TRANSFORMER_ENABLED = String(process.env.TRANSFORMER_ENABLED || "").toLowerCase();
+const USE_TRANSFORMER = ["1", "true", "yes", "on"].includes(TRANSFORMER_ENABLED);
+if (!USE_TRANSFORMER) {
+  console.log("Transformer disabled (TRANSFORMER_ENABLED=0). Using VADER only.");
+}
 const TRANSFORMER_MODEL =
   process.env.TRANSFORMER_MODEL ||
   "Xenova/distilbert-base-uncased-finetuned-sst-2-english";
@@ -518,7 +522,7 @@ const scoreVader = (text = "") => {
 };
 
 const loadTransformer = async () => {
-  if (!TRANSFORMER_ENABLED) return null;
+  if (!USE_TRANSFORMER) return null;
   if (transformerPipeline) return transformerPipeline;
   transformerPipeline = await import("@xenova/transformers")
     .then(({ pipeline }) =>
@@ -591,6 +595,7 @@ const scoreSentiment = async (text = "", context = {}) => {
     };
   };
 
+  if (!USE_TRANSFORMER) return fallback("transformer-disabled");
   if (tokenCount < 20) return fallback("text-too-short");
   const pipeline = await loadTransformer();
   if (!pipeline) return fallback("transformer-unavailable");
@@ -975,12 +980,6 @@ async function validateFeeds() {
     })
   );
 }
-await refreshCore();
-await refreshExp();
-await validateFeeds();
-setInterval(refreshCore, REFRESH_MS);
-setInterval(refreshExp, REFRESH_MS);
-setInterval(validateFeeds, 60 * 60 * 1000);
 
 const countArticlesByDomain = (articles = []) => {
   const counts = new Map();
@@ -2434,7 +2433,7 @@ app.get("/api/status", (_req, res) => {
   res.json({
     ok: true,
     at: Date.now(),
-    transformer: TRANSFORMER_ENABLED,
+    transformer: USE_TRANSFORMER,
     cachedArticles: ARTICLE_CACHE.size,
     feeds: Object.fromEntries(FEED_HEALTH.entries())
   });
@@ -2503,3 +2502,12 @@ app.get("/health", (_req, res) => res.json({ ok: true, at: Date.now() }));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Informed360 running on :${PORT}`));
+
+setTimeout(() => {
+  refreshCore().catch(console.error);
+  refreshExp().catch(console.error);
+  validateFeeds().catch(console.error);
+}, 2000);
+setInterval(refreshCore, REFRESH_MS);
+setInterval(refreshExp, REFRESH_MS);
+setInterval(validateFeeds, 60 * 60 * 1000);
