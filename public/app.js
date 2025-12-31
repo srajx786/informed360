@@ -5,6 +5,7 @@ const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
 const PIN_STORAGE_KEY = "i360_pins_v2";
 const LEGACY_PIN_STORAGE_KEY = "i360_pins";
 const CREDIBILITY_STORAGE_KEY = "i360_credibility_badges";
+const PRO_USER_STORAGE_KEY = "proUser";
 const PRICING_MAILTO =
   "mailto:info.shrirajnair@gmail.com?subject=Informed360%20Demo%20Request&body=Hi%20Informed360%20team%2C%0A%0AWe%20would%20like%20a%20demo%20of%20the%20PR%2FTeams%20tier.%0ACompany%3A%0AUse%20case%3A%0AExpected%20seats%3A%0APreferred%20time%3A%0A%0AThanks!";
 const normalizeApiBase = (value = "") =>
@@ -45,6 +46,44 @@ async function fetchJSON(path){
 const domainFromUrl = (u = "") => {
   try { return new URL(u).hostname.replace(/^www\./, ""); }
   catch { return ""; }
+};
+
+const ATTRIBUTE_RULES = {
+  proGovt: {
+    icon: "🏛️",
+    label: "Government",
+    keywords: ["government","govt","minister","ministry","parliament","cabinet","policy","state","federal","regulation","regulator","administration"]
+  },
+  proCitizen: {
+    icon: "👥",
+    label: "Citizen",
+    keywords: ["citizen","public","community","people","voter","rights","protest","union","labor","worker","civil","grassroots"]
+  },
+  proBusiness: {
+    icon: "💼",
+    label: "Business",
+    keywords: ["business","company","corporate","industry","enterprise","startup","trade","commerce","investment","profit"]
+  },
+  proOpposition: {
+    icon: "🏳️",
+    label: "Opposition",
+    keywords: ["opposition","critic","criticism","dissent","boycott","resign","scandal","allegation","backlash"]
+  },
+  proEnvironment: {
+    icon: "🌱",
+    label: "Environment",
+    keywords: ["environment","climate","green","sustainability","carbon","emissions","renewable","pollution","biodiversity","wildlife"]
+  },
+  proNationalSecurity: {
+    icon: "🛡️",
+    label: "National Security",
+    keywords: ["security","defense","military","army","navy","air force","border","terror","intelligence","cyber","nuclear"]
+  },
+  proFreeMarket: {
+    icon: "📈",
+    label: "Free Market",
+    keywords: ["market","deregulation","privatization","competition","free trade","liberalization","capital","investment","stock","entrepreneur"]
+  }
 };
 
 /* Canonical domains for clean logos */
@@ -660,6 +699,7 @@ const state = {
   newsEmptyMessage: "",
   pins: loadPins(),
   profile: loadProfile(),
+  proUser: loadProUser(),
   theme: localStorage.getItem("theme") || "light",
   preferredTopics: loadPreferredTopics(),
   showCredibilityBadges: loadCredibilitySetting(),
@@ -675,6 +715,9 @@ function loadProfile(){
   }catch{
     return { pinnedTopics: [] };
   }
+}
+function loadProUser(){
+  return localStorage.getItem(PRO_USER_STORAGE_KEY) === "true";
 }
 function loadCredibilitySetting(){
   try{
@@ -692,6 +735,16 @@ function saveCredibilitySetting(value){
 function saveProfile(p){
   localStorage.setItem("i360_profile", JSON.stringify(p || {}));
   state.profile = p || {};
+}
+function setProUser(value){
+  if (value){
+    localStorage.setItem(PRO_USER_STORAGE_KEY, "true");
+  }else{
+    localStorage.removeItem(PRO_USER_STORAGE_KEY);
+  }
+  state.proUser = value;
+  updateProControls();
+  refreshProTiles();
 }
 function loadLegacyPinnedTopics(){
   try{
@@ -1776,6 +1829,62 @@ function safeNewsThumbTag({ primary = "", thumb = "", cls = "" } = {}){
               onerror="this.onerror=null;const placeholder=this.dataset.placeholder||'';if(placeholder){this.classList.add('placeholder-thumb');this.src=placeholder;this.alt='';}" alt="">`;
 }
 
+function buildArticleAttributeText(article = {}){
+  const parts = [
+    article.title,
+    article.headline,
+    article.summary,
+    article.description,
+    article.content,
+    article.text,
+    article.fullText,
+    article.source,
+    article.section,
+    article.topic
+  ];
+  return parts.filter(Boolean).join(" ").toLowerCase();
+}
+
+function computeArticleAttributes(article = {}){
+  const text = buildArticleAttributeText(article);
+  return Object.values(ATTRIBUTE_RULES).map(rule => {
+    const matches = rule.keywords.filter(keyword => text.includes(keyword));
+    const hits = matches.length;
+    const score = Math.min(1, hits / 3);
+    const aligned = score > 0.5;
+    return {
+      icon: rule.icon,
+      label: rule.label,
+      aligned,
+      matches: matches.slice(0, 2)
+    };
+  });
+}
+
+function renderProAttributes(article = {}){
+  if (!state.proUser) return "";
+  const attrs = computeArticleAttributes(article);
+  return `
+    <div class="pro-attributes" aria-label="Pro alignment attributes">
+      ${attrs.map(attr => {
+        const tooltip = attr.matches.length
+          ? `Pro ${attr.label} alignment · Matched: ${attr.matches.join(", ")}`
+          : `Pro ${attr.label} alignment`;
+        const statusClass = attr.aligned ? "is-green" : "is-red";
+        return `<span class="pro-attr ${statusClass}" title="${escapeHtml(tooltip)}" aria-label="${escapeHtml(tooltip)}">${attr.icon}</span>`;
+      }).join("")}
+    </div>`;
+}
+
+function renderProLockButton(){
+  const icon = state.proUser ? "🔓" : "🔒";
+  const title = state.proUser ? "Pro active" : "Login for Pro";
+  return `
+    <button class="tile-lock" type="button" aria-label="${title}" title="${title}">
+      ${icon}
+    </button>`;
+}
+
 /* card renderers */
 function card(a){
   const { primary, thumb } = resolveDailyThumbnail(a || {});
@@ -1791,13 +1900,17 @@ function card(a){
       </div>
       <div class="news-body">
         <div class="title">${a.title}</div>
+        ${renderProAttributes(a)}
         <div class="meta">
           <span class="source">${a.source}${renderCredibilityBadge(a, "inline")}</span>
           · <span class="meta-time">${formatArticleDate(a.publishedAt)}</span>
         </div>
         ${renderSentiment(a.sentiment, false, context)}
       </div>
-      ${renderInfoButton(a.sentiment, context)}
+      <div class="news-tile-actions">
+        ${renderInfoButton(a.sentiment, context, "inline")}
+        ${renderProLockButton()}
+      </div>
     </a>`;
 }
 
@@ -2991,6 +3104,21 @@ function renderAll(){
   updateActiveSources();
 }
 
+function refreshProTiles(){
+  renderNews();
+  renderDaily();
+  attachInfoButtons();
+  attachShareButtons();
+  updatePinButtons();
+}
+
+function updateProControls(){
+  const logoutBtn = $("#logoutBtn");
+  if (logoutBtn){
+    logoutBtn.style.display = state.proUser ? "inline-flex" : "none";
+  }
+}
+
 function getSearchMatches(query){
   const q = query.trim().toLowerCase();
   if (!q) return [];
@@ -3251,6 +3379,37 @@ const pricingOverlay = $("#pricingOverlay");
 const pricingEntry = $("#pricingEntry");
 const pricingClose = $("#pricingClose");
 const pricingDemo = $("#pricingDemo");
+const loginModal = $("#loginModal");
+const loginForm = $("#loginForm");
+const loginError = $("#loginError");
+const loginUsername = $("#loginUsername");
+const loginPassword = $("#loginPassword");
+const logoutBtn = $("#logoutBtn");
+
+function openLoginModal(){
+  if (!loginModal) return;
+  if (loginForm) loginForm.reset();
+  if (loginError) loginError.textContent = "";
+  loginModal.showModal();
+  loginUsername?.focus();
+}
+
+loginForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const username = loginUsername?.value.trim() || "";
+  const password = loginPassword?.value.trim() || "";
+  if (username === "Admin" && password === "Admin"){
+    setProUser(true);
+    loginModal?.close();
+    return;
+  }
+  if (loginError) loginError.textContent = "Invalid credentials. Try Admin / Admin.";
+});
+logoutBtn?.addEventListener("click", () => {
+  setProUser(false);
+  settingsModal?.close();
+});
+
 $("#helpBtn")?.addEventListener("click", () => helpModal?.showModal());
 $("#settingsBtn")?.addEventListener("click", () => {
   settingsModal?.querySelectorAll('input[name="theme"]').forEach(input => {
@@ -3258,6 +3417,15 @@ $("#settingsBtn")?.addEventListener("click", () => {
   });
   if (credibilityToggle) credibilityToggle.checked = state.showCredibilityBadges;
   settingsModal?.showModal();
+});
+document.addEventListener("click", (e) => {
+  const lockButton = e.target?.closest(".tile-lock");
+  if (!lockButton) return;
+  e.preventDefault();
+  e.stopPropagation();
+  if (!state.proUser){
+    openLoginModal();
+  }
 });
 settingsModal?.addEventListener("change", (e) => {
   if (e.target?.name === "theme") {
@@ -3312,6 +3480,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* boot */
 document.getElementById("year").textContent = new Date().getFullYear();
 applyTheme();
+updateProControls();
 renderTopicPickerOptions();
 moveSentimentControls();
 renderPinnedChips();
