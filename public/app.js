@@ -899,13 +899,20 @@ const HEADER_DATE_OPTIONS = {
 };
 const formatHeaderDate = (dateObj) =>
   dateObj.toLocaleDateString(undefined, HEADER_DATE_OPTIONS);
-const formatHeaderDateTime = (dateObj) => {
-  const date = formatHeaderDate(dateObj);
-  const time = dateObj.toLocaleTimeString(undefined, {
+const formatHeaderTime = (dateObj) => {
+  const parts = new Intl.DateTimeFormat(undefined, {
     hour:"numeric",
     minute:"2-digit",
     hour12:true
-  });
+  }).formatToParts(dateObj);
+  return parts.map(part => {
+    if (part.type === "dayPeriod") return part.value.toLowerCase();
+    return part.value;
+  }).join("");
+};
+const formatHeaderDateTime = (dateObj) => {
+  const date = formatHeaderDate(dateObj);
+  const time = formatHeaderTime(dateObj);
   return `${date} • ${time}`;
 };
 const updateHeaderDateTime = () => {
@@ -1364,9 +1371,10 @@ function heroSourceLogo(article, extraClass = ""){
 }
 
 function renderCredibilityBadge(article, extraClass = ""){
-  if (!state.showCredibilityBadges) return "";
   const cred = (article?.sourceCredibility || "").trim();
   if (!cred) return "";
+  const normalized = cred.toLowerCase();
+  if (!["high", "medium"].includes(normalized)) return "";
   const tone = cred.toLowerCase().replace(/\s+/g, "-");
   const cls = extraClass ? ` ${extraClass}` : "";
   return `<span class="cred-badge ${escapeHtml(tone)}${cls}">${escapeHtml(cred)}</span>`;
@@ -1829,50 +1837,21 @@ function safeNewsThumbTag({ primary = "", thumb = "", cls = "" } = {}){
               onerror="this.onerror=null;const placeholder=this.dataset.placeholder||'';if(placeholder){this.classList.add('placeholder-thumb');this.src=placeholder;this.alt='';}" alt="">`;
 }
 
-function buildArticleAttributeText(article = {}){
-  const parts = [
-    article.title,
-    article.headline,
-    article.summary,
-    article.description,
-    article.content,
-    article.text,
-    article.fullText,
-    article.source,
-    article.section,
-    article.topic
-  ];
-  return parts.filter(Boolean).join(" ").toLowerCase();
-}
-
-function computeArticleAttributes(article = {}){
-  const text = buildArticleAttributeText(article);
-  return Object.values(ATTRIBUTE_RULES).map(rule => {
-    const matches = rule.keywords.filter(keyword => text.includes(keyword));
-    const hits = matches.length;
-    const score = Math.min(1, hits / 3);
-    const aligned = score > 0.5;
-    return {
-      icon: rule.icon,
-      label: rule.label,
-      aligned,
-      matches: matches.slice(0, 2)
-    };
-  });
-}
-
 function renderProAttributes(article = {}){
   if (!state.proUser) return "";
-  const attrs = computeArticleAttributes(article);
+  const sentiment = article?.sentiment || {};
+  const positiveScore = Number(
+    sentiment.posP ?? sentiment.scores?.pos ?? sentiment.pos ?? 0
+  );
+  const isPro = Number.isFinite(positiveScore) && positiveScore > 50;
+  const statusClass = isPro ? "is-green" : "is-red";
+  const attrs = Object.values(ATTRIBUTE_RULES);
+  const label = isPro ? "Pro alignment attributes" : "Not Pro alignment attributes";
   return `
-    <div class="pro-attributes" aria-label="Pro alignment attributes">
-      ${attrs.map(attr => {
-        const tooltip = attr.matches.length
-          ? `Pro ${attr.label} alignment · Matched: ${attr.matches.join(", ")}`
-          : `Pro ${attr.label} alignment`;
-        const statusClass = attr.aligned ? "is-green" : "is-red";
-        return `<span class="pro-attr ${statusClass}" title="${escapeHtml(tooltip)}" aria-label="${escapeHtml(tooltip)}">${attr.icon}</span>`;
-      }).join("")}
+    <div class="pro-attributes ${statusClass}" aria-label="${escapeHtml(label)}">
+      ${attrs.map(attr =>
+        `<span class="pro-attr" title="${escapeHtml(label)}" aria-label="${escapeHtml(label)}">${attr.icon}</span>`
+      ).join("")}
     </div>`;
 }
 
@@ -2160,6 +2139,7 @@ function renderTopStoriesCluster(cluster){
   const headline = escapeHtml(primary?.title || cluster?.headline || "");
   const related = (cluster?.related || []).slice(0, 2);
   const sourceName = escapeHtml(primary?.source || "Source");
+  const sourceBadge = renderCredibilityBadge(primary, "inline");
   const time = escapeHtml(formatArticleDate(primary?.publishedAt) || "");
   const primaryUrl = primary?.url || primary?.link || "#";
   const imageUrl = primary?.image || cluster?.imageUrl || THUMB_PLACEHOLDER;
@@ -2189,7 +2169,7 @@ function renderTopStoriesCluster(cluster){
           <div class="topstories-cluster-headline heroHeadline">${headline}</div>
           <div class="topstories-cluster-meta heroMeta">
             <div class="topstories-cluster-meta-row">
-              <span class="source">${sourceName}</span>
+              <span class="source">${sourceName}${sourceBadge}</span>
             </div>
             <div class="topstories-cluster-meta-row datetime">${time}</div>
           </div>
@@ -2208,6 +2188,7 @@ function renderTopStoriesCluster(cluster){
 
 function renderTopStoriesRelated(item){
   const sourceName = escapeHtml(item?.source || "Source");
+  const sourceBadge = renderCredibilityBadge(item, "inline");
   const time = escapeHtml(formatArticleDate(item?.publishedAt) || "");
   const headline = escapeHtml(item?.headline || item?.title || "");
   const itemUrl = item?.url || item?.link || "";
@@ -2228,7 +2209,7 @@ function renderTopStoriesRelated(item){
             <img class="topstories-related-logo" src="${safeLogo}" alt="${sourceName} logo" loading="lazy"
               data-placeholder="${LOGO_PLACEHOLDER}"
               onerror="this.onerror=null;this.src=this.dataset.placeholder;">
-            <span class="source">${sourceName}</span>
+            <span class="source">${sourceName}${sourceBadge}</span>
             <span class="topstories-related-time">${time}</span>
           </div>
           ${pinBadge ? `<div class="topstories-related-pin">${pinBadge}</div>` : ""}
@@ -3117,6 +3098,14 @@ function updateProControls(){
   if (logoutBtn){
     logoutBtn.style.display = state.proUser ? "inline-flex" : "none";
   }
+  if (proLockBtn){
+    const icon = state.proUser ? "🔓" : "🔒";
+    const title = state.proUser ? "Pro active" : "Login for Pro";
+    proLockBtn.textContent = icon;
+    proLockBtn.setAttribute("title", title);
+    proLockBtn.setAttribute("aria-label", title);
+  }
+  syncLoginModalState();
 }
 
 function getSearchMatches(query){
@@ -3385,13 +3374,37 @@ const loginError = $("#loginError");
 const loginUsername = $("#loginUsername");
 const loginPassword = $("#loginPassword");
 const logoutBtn = $("#logoutBtn");
+const proLockBtn = $("#proLockBtn");
+const loginLogoutBtn = $("#loginLogoutBtn");
+const loginStatus = $("#loginStatus");
+const loginFields = loginModal?.querySelector(".login-fields");
+
+function syncLoginModalState(){
+  if (!loginModal) return;
+  const isPro = state.proUser;
+  if (loginStatus){
+    loginStatus.textContent = isPro ? "Pro access is active." : "";
+    loginStatus.classList.toggle("show", isPro);
+  }
+  if (loginFields){
+    loginFields.classList.toggle("hidden", isPro);
+  }
+  if (loginLogoutBtn){
+    loginLogoutBtn.style.display = isPro ? "inline-flex" : "none";
+  }
+}
 
 function openLoginModal(){
   if (!loginModal) return;
   if (loginForm) loginForm.reset();
   if (loginError) loginError.textContent = "";
+  syncLoginModalState();
   loginModal.showModal();
-  loginUsername?.focus();
+  if (state.proUser){
+    loginLogoutBtn?.focus();
+  } else {
+    loginUsername?.focus();
+  }
 }
 
 loginForm?.addEventListener("submit", (e) => {
@@ -3405,9 +3418,18 @@ loginForm?.addEventListener("submit", (e) => {
   }
   if (loginError) loginError.textContent = "Invalid credentials. Try Admin / Admin.";
 });
+loginLogoutBtn?.addEventListener("click", () => {
+  setProUser(false);
+  loginModal?.close();
+});
 logoutBtn?.addEventListener("click", () => {
   setProUser(false);
   settingsModal?.close();
+});
+
+proLockBtn?.addEventListener("click", (event) => {
+  event.preventDefault();
+  openLoginModal();
 });
 
 $("#helpBtn")?.addEventListener("click", () => helpModal?.showModal());
@@ -3415,7 +3437,10 @@ $("#settingsBtn")?.addEventListener("click", () => {
   settingsModal?.querySelectorAll('input[name="theme"]').forEach(input => {
     input.checked = input.value === state.theme;
   });
-  if (credibilityToggle) credibilityToggle.checked = state.showCredibilityBadges;
+  if (credibilityToggle){
+    credibilityToggle.checked = true;
+    credibilityToggle.disabled = true;
+  }
   settingsModal?.showModal();
 });
 document.addEventListener("click", (e) => {
@@ -3474,7 +3499,7 @@ $("#saveTopics")?.addEventListener("click", (e) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   updateHeaderDateTime();
-  setInterval(updateHeaderDateTime, 30000);
+  setInterval(updateHeaderDateTime, 60000);
 });
 
 /* boot */
