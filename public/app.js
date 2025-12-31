@@ -839,32 +839,87 @@ function timeAgo(ts){
 }
 
 /* date + weather */
-const todayStr = () =>
-  new Date().toLocaleDateString(undefined,{
-    weekday:"long", day:"numeric", month:"long"
+const HEADER_DATE_OPTIONS = {
+  weekday:"long",
+  day:"numeric",
+  month:"long"
+};
+const formatHeaderDate = (dateObj) =>
+  dateObj.toLocaleDateString(undefined, HEADER_DATE_OPTIONS);
+const formatHeaderDateTime = (dateObj) => {
+  const date = formatHeaderDate(dateObj);
+  const time = dateObj.toLocaleTimeString(undefined, {
+    hour:"numeric",
+    minute:"2-digit",
+    hour12:true
   });
-const WEATHER_LOCATION_KEY = "i360_weather_location";
+  return `${date} • ${time}`;
+};
+const updateHeaderDateTime = () => {
+  const el = $("#briefingDate");
+  if (!el) return;
+  el.textContent = formatHeaderDateTime(new Date());
+};
+const GEO_NAME_KEY = "i360_geo_name";
+const GEO_TS_KEY = "i360_geo_ts";
+const GEO_TTL_MS = 1000 * 60 * 60 * 6;
 
 function getCachedWeatherLocation(){
   if (state.weatherLocationName) return state.weatherLocationName;
   try{
-    return localStorage.getItem(WEATHER_LOCATION_KEY) || "";
+    const name = localStorage.getItem(GEO_NAME_KEY) || "";
+    const ts = Number(localStorage.getItem(GEO_TS_KEY) || 0);
+    if (name && ts && (Date.now() - ts) < GEO_TTL_MS){
+      state.weatherLocationName = name;
+      return name;
+    }
   }catch{
     return "";
   }
+  return "";
 }
 function setCachedWeatherLocation(name){
   const trimmed = String(name || "").trim();
   if (!trimmed) return;
   state.weatherLocationName = trimmed;
   try{
-    localStorage.setItem(WEATHER_LOCATION_KEY, trimmed);
+    localStorage.setItem(GEO_NAME_KEY, trimmed);
+    localStorage.setItem(GEO_TS_KEY, String(Date.now()));
   }catch{}
+}
+function getWeatherConditionLabel(code){
+  if (!Number.isFinite(code)) return "";
+  const rainCodes = new Set([51,53,55,56,57,61,63,65,66,67,80,81,82,95,96,99]);
+  const cloudCodes = new Set([1,2,3,45,48]);
+  if (rainCodes.has(code)) return "rain";
+  if (cloudCodes.has(code)) return "cloud";
+  if (code === 0) return "clear";
+  return "";
+}
+function pickWeatherIcon(conditionText = "", isDaytime = true){
+  const lower = String(conditionText || "").toLowerCase();
+  if (lower.includes("rain")) return "🌧️";
+  if (lower.includes("cloud")) return "☁️";
+  return isDaytime ? "☀️" : "🌙";
+}
+function pickGeoName(data){
+  const address = data?.address || {};
+  return (
+    address.city ||
+    address.town ||
+    address.village ||
+    address.hamlet ||
+    address.state ||
+    ""
+  );
 }
 
 async function getWeather(){
+  const weatherCard = $("#weatherCard");
+  if (!weatherCard) return;
+  let coords = { latitude:19.0760, longitude:72.8777, allowed:false };
   try{
-    const coords = await new Promise((res)=>{
+    coords = await new Promise((res)=>{
       if (!navigator.geolocation)
         return res({ latitude:19.0760, longitude:72.8777, allowed:false });
       navigator.geolocation.getCurrentPosition(
@@ -872,41 +927,48 @@ async function getWeather(){
         () => res({ latitude:19.0760, longitude:72.8777, allowed:false })
       );
     });
+  }catch{}
 
+  const now = new Date();
+  const isDaytime = now.getHours() >= 6 && now.getHours() < 18;
+  let tempLabel = "—°C";
+  let conditionText = "";
+  try{
     const wx = await fetchJSON(
       `https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}` +
       `&longitude=${coords.longitude}&current=temperature_2m,weather_code&timezone=auto`
     );
+    const temp = Math.round(wx?.current?.temperature_2m ?? NaN);
+    if (Number.isFinite(temp)) tempLabel = `${temp}°C`;
+    const code = Number(wx?.current?.weather_code ?? wx?.current_weather?.weathercode);
+    conditionText = getWeatherConditionLabel(code);
+  }catch{}
 
+  let city = "Weather";
+  if (coords.allowed){
     const cachedLocation = getCachedWeatherLocation();
-    let city = state.profile?.city || cachedLocation || "Weather";
-    if (coords.allowed && !state.profile?.city){
+    if (cachedLocation) city = cachedLocation;
+    if (!cachedLocation){
       try{
         const rev = await fetchJSON(
-          `https://geocoding-api.open-meteo.com/v1/reverse?latitude=${coords.latitude}` +
-          `&longitude=${coords.longitude}&language=en`
+          `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${coords.latitude}&lon=${coords.longitude}`
         );
-        const locationName = rev?.results?.[0]?.name;
+        const locationName = pickGeoName(rev);
         if (locationName){
           city = locationName;
           setCachedWeatherLocation(locationName);
         }
       }catch{}
     }
-
-    const t = Math.round(wx?.current?.temperature_2m ?? 0);
-    const code = wx?.current?.weather_code ?? 0;
-    const icon = code>=0 && code<3 ? "🌙" : (code<50 ? "⛅" : "🌧️");
-
-    $("#weatherCard").innerHTML =
-      `<div class="wx-icon">${icon}</div>
-       <div>
-         <div class="wx-city">${city}</div>
-         <div class="wx-temp">${t}°C</div>
-       </div>`;
-  }catch{
-    $("#weatherCard").textContent = "Weather unavailable";
   }
+
+  const icon = pickWeatherIcon(conditionText, isDaytime);
+  weatherCard.innerHTML =
+    `<div class="wx-icon">${icon}</div>
+     <div>
+       <div class="wx-city">${city}</div>
+       <div class="wx-temp">${tempLabel}</div>
+     </div>`;
 }
 
 /* markets – Grid 3 ticker */
@@ -2910,7 +2972,7 @@ function renderIndustryBoard(){
 
 /* glue */
 function renderAll(){
-  $("#briefingDate").textContent = todayStr();
+  updateHeaderDateTime();
   renderHero();
   renderPinned();
   renderNews();
@@ -3242,13 +3304,18 @@ $("#saveTopics")?.addEventListener("click", (e) => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  updateHeaderDateTime();
+  setInterval(updateHeaderDateTime, 30000);
+});
+
 /* boot */
 document.getElementById("year").textContent = new Date().getFullYear();
 applyTheme();
 renderTopicPickerOptions();
 moveSentimentControls();
 renderPinnedChips();
-$("#briefingDate").textContent = todayStr();
+updateHeaderDateTime();
 setDefaultHomeTab();
 getWeather();
 loadMarkets();

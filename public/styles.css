@@ -209,21 +209,21 @@ body.theme-dark .gn-search{ background:#1a222c }
   background:transparent;
   border:0;
   border-radius:999px;
-  padding:.35rem .55rem;
+  padding:.2rem .45rem;
   display:flex;
   align-items:center;
-  gap:.5rem;
+  gap:.35rem;
   justify-self:end;
   min-width:0;
-  max-width:220px;
+  max-width:200px;
   box-shadow:none;
   flex:0 0 auto;
   align-self:flex-start;
   margin-top:0;
 }
-.weather-card .wx-icon{ font-size:1.2rem }
-.weather-card .wx-city{ font-weight:600; font-size:.85rem }
-.weather-card .wx-temp{ font-size:.95rem; font-weight:800 }
+.weather-card .wx-icon{ font-size:1rem }
+.weather-card .wx-city{ font-weight:600; font-size:.75rem }
+.weather-card .wx-temp{ font-size:.85rem; font-weight:800 }
 
 /* Layout */
 .layout{
@@ -1410,7 +1410,7 @@ dialog::backdrop{
   .weather-card{
     flex:0 0 auto;
     width:auto;
-    max-width:240px;
+    max-width:200px;
     margin:0;
     align-self:flex-end;
   }
