@@ -228,38 +228,14 @@ body.theme-dark .gn-search{ background:#1a222c }
 
 /* Layout */
 .layout{
-  display:grid;
-  grid-template-columns:300px minmax(0,1fr) 340px;
-  grid-template-rows: auto minmax(0, auto) minmax(0, auto) auto;
-  grid-template-areas:
-    "pinned hero narrative"
-    "source news india"
-    "industry news trending"
-    "daily daily daily";
-  gap:.9rem;
-  padding:.9rem 12px 1rem;
-  align-items:stretch;
-}
-.layout > .pinned-block,
-.layout > .hero-block,
-.layout > .narrative-block,
-.layout > .india-block,
-.layout > .source-block,
-.layout > .news-block,
-.layout > .industry-block,
-.layout > .trending-block{
-  align-self:stretch;
-}
-.pinned-block{ grid-area:pinned }
-.hero-block{ grid-area:hero }
-.hero-block.block-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  box-shadow:var(--shadow);
   display:flex;
   flex-direction:column;
+  gap:.9rem;
+  padding:.9rem 12px 1rem;
 }
+.layout > *{ align-self:stretch; }
+.pinned-block{ grid-area:pinned }
+.hero-block{ grid-area:hero }
 .narrative-block{ grid-area:narrative }
 .india-block{ grid-area:india }
 .source-block{ grid-area:source }
@@ -273,27 +249,21 @@ body.theme-dark .gn-search{ background:#1a222c }
 .layout .leader-card,
 .layout .mood-card{ margin-top:0; margin-bottom:0 }
 
-.narrative-card{ display:flex; flex-direction:column; gap:.55rem }
-.narrative-carousel{ position:relative; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:.4rem }
-.narrative-track-wrap{ overflow:hidden; border-radius:12px; border:0; background:#f9fafb }
-.narrative-track{ display:flex; transition:transform .35s ease; width:100% }
-.narrative-slide{ min-width:100%; padding:.5rem .6rem; display:flex; flex-direction:column; gap:.3rem }
-.narrative-slide .narrative-source{ font-size:.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em }
-.narrative-slide .narrative-title{ font-family:"Merriweather", serif; font-size:.95rem; font-weight:700; line-height:1.25 }
-.narrative-slide.narrative-empty{ color:var(--muted); font-size:.85rem }
-.narrative-nav{ background:#fff; border:1px solid var(--border); border-radius:50%; width:26px; height:26px; display:grid; place-items:center; cursor:pointer; box-shadow:var(--shadow); color:#111 }
-.narrative-nav[hidden]{ display:none }
-.narrative-dots{ display:flex; justify-content:center; gap:.3rem; padding-top:.3rem; grid-column:1 / -1 }
-.narrative-dot{ width:6px; height:6px; border-radius:50%; background:#d1d5db }
-.narrative-dot.active{ background:#111827 }
-.narrative-dots[hidden]{ display:none }
-.narrative-attributes{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:.45rem }
-.narrative-attribute{ display:flex; flex-direction:column; align-items:center; gap:.35rem }
-.narrative-attribute-label{ display:flex; align-items:center; gap:.25rem; font-size:11px; color:#111; font-weight:600 }
-.narrative-attribute-label svg{ width:14px; height:14px; fill:#111 }
-.narrative-bar{ width:10px; height:38px; border-radius:8px; background:rgba(156,163,175,0.5) }
-.narrative-bar.status-pro{ background:rgba(34,197,94,0.5) }
-.narrative-bar.status-anti{ background:rgba(239,68,68,0.5) }
+.topRow{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+}
+.rightCol{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+}
+.lowerGrid{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+}
 
 /* Block card */
 .block-card{ background:var(--card); border:1px solid var(--border); border-radius:18px; overflow:hidden; box-shadow:var(--shadow) }
@@ -378,6 +348,113 @@ body.theme-dark .gn-search{ background:#1a222c }
 
 /* Card */
 .card{ background:var(--card); border:1px solid var(--border); border-radius:var(--radius-xl); padding:.85rem; box-shadow:var(--shadow) }
+.card-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:.65rem .95rem;
+  border-bottom:1px solid var(--border);
+  min-height:54px;
+}
+.card-header h3{
+  font-family:"Merriweather", serif;
+  font-size:16px;
+  font-weight:600;
+  letter-spacing:.1px;
+  margin:0;
+}
+.card-body{ padding:.65rem .95rem; }
+.pinnedCard,
+.topStoriesCard,
+.narrativeCard,
+.indiaSentimentCard{ padding:0; }
+.topStoriesCard{ display:flex; flex-direction:column; }
+.pinnedCard .card-body,
+.topStoriesCard .card-body{ padding:0; }
+.indiaSentimentCard .card-body{ padding:.65rem .95rem; }
+
+.narrativeCard{ background:#fff; }
+.nbIcons{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+  margin-bottom:10px;
+  text-align:center;
+}
+.nbSvg svg{ width:18px; height:18px; fill:#111; stroke:#111; }
+.nbLbl{ display:block; font-size:12px; color:#111; margin-top:6px; }
+
+.nbMain{ display:grid; grid-template-columns:52px 1fr; gap:10px; align-items:stretch; }
+.nbY{ position:relative; }
+.nbPro{ position:absolute; top:10px; left:0; font-size:12px; color:#6b7280; }
+.nbNotPro{ position:absolute; bottom:10px; left:0; font-size:12px; color:#6b7280; }
+
+.nbBars{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:16px;
+  align-items:stretch;
+  padding-right:6px;
+}
+.nbBar{
+  position:relative;
+  height:240px;
+  border-radius:18px;
+  overflow:hidden;
+  background:linear-gradient(#c9efd2 0 50%, #f6bcbc 50% 100%);
+}
+.nbSource{
+  position:absolute;
+  left:50%;
+  top:55%;
+  transform:translate(-50%,-50%);
+  background:rgba(255,255,255,.75);
+  border-radius:10px;
+  padding:6px 8px;
+}
+.nbSource img{ width:34px; height:34px; border-radius:8px; object-fit:contain; display:block; }
+
+@media(min-width:1024px){
+  .topRow{
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap:16px;
+    align-items:stretch;
+  }
+  .pinnedCard,.topStoriesCard{
+    height:520px;
+    overflow:hidden;
+  }
+  .pinnedCard .card-body,.topStoriesCard .card-body{
+    height:calc(520px - 54px); /* header space */
+    overflow:auto;
+  }
+  .rightCol{
+    height:520px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .rightCol .card{
+    flex:1 1 0;
+    min-height:0;
+    overflow:hidden;
+  }
+  .rightCol .card .card-body{
+    height:calc(100% - 54px);
+    overflow:hidden;
+  }
+  .lowerGrid{
+    display:grid;
+    grid-template-columns:300px minmax(0,1fr) 340px;
+    grid-template-areas:
+      "source news trending"
+      "industry news trending"
+      "daily daily daily";
+    gap:.9rem;
+    align-items:stretch;
+  }
+}
 
 /* HERO */
 .hero-title{ font-family:"Merriweather", serif; font-size:16px; font-weight:600; letter-spacing:.1px; white-space:nowrap }
@@ -1457,19 +1534,8 @@ dialog::backdrop{
   .gn-topbar{ grid-template-columns:1fr; row-gap:.6rem }
   .gn-actions{ justify-content:flex-start; flex-wrap:wrap }
   .weather-card{ justify-self:start }
-  .layout{
-    grid-template-columns:1fr;
-    grid-template-areas:
-      "hero"
-      "pinned"
-      "narrative"
-      "source"
-      "news"
-      "india"
-      "trending"
-      "industry"
-      "daily";
-  }
+  .topRow,
+  .lowerGrid{ gap:.9rem; }
   .hero-cluster{ grid-template-columns:1fr }
   .hero-slide .hero-img{ height:220px }
   .daily-list{ grid-template-columns:1fr }
@@ -1791,123 +1857,4 @@ dialog::backdrop{
   .ts-date{
     font-size: 12px;
   }
-}
-
-/* ========= Narrative Balance (Sentiment Leaderboard) ========= */
-:root{
-  --nb-pro: #22c55e;
-  --nb-notpro: #ef4444;
-  --nb-ink: #111827;
-  --nb-muted: #6b7280;
-  --nb-card-bg: #ffffff;
-  --nb-border: rgba(17,24,39,0.08);
-}
-
-.narrative-card.card{
-  padding: 0;
-  border: none;
-  background: transparent;
-  box-shadow: none;
-}
-
-.sentiment-leaderboard.leader-card{
-  margin-top: 0;
-  height: 100%;
-}
-
-.nb-cats{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  padding: 10px 12px 6px;
-  color: var(--nb-ink);
-}
-
-.nb-cat{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--nb-ink);
-}
-.nb-cat-ic{
-  display: inline-flex;
-  width: 20px;
-  height: 20px;
-  color: var(--nb-ink);
-  line-height: 1;
-}
-.nb-cat-ic svg{
-  width: 100%;
-  height: 100%;
-  fill: #111827;
-}
-
-.sentiment-leaderboard .nb-bars{
-  grid-template-columns: repeat(5, 1fr);
-  height: 220px;
-  padding: 10px 12px 12px;
-  gap: 16px;
-}
-
-.sentiment-leaderboard .nb-bar-track{
-  display: flex;
-  flex-direction: column;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: inset 0 0 0 1px rgba(17,24,39,0.08);
-}
-
-.sentiment-leaderboard .nb-bar-half{
-  flex: 1;
-}
-
-.sentiment-leaderboard .nb-bar-half.col-pos{
-  background: linear-gradient(180deg, #22c55e 0%, #86efac 100%);
-}
-
-.sentiment-leaderboard .nb-bar-half.col-neg{
-  background: linear-gradient(180deg, #f87171 0%, #ef4444 100%);
-}
-
-.sentiment-leaderboard .nb-bar-logo{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  background: #fff;
-  object-fit: contain;
-  box-shadow: 0 8px 16px rgba(17,24,39,0.16);
-}
-
-.sentiment-leaderboard .nb-bar-logo-fallback{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 26px;
-  height: 26px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.9);
-  display: grid;
-  place-items: center;
-  font-size: 16px;
-  color: rgba(17,24,39,0.35);
-  box-shadow: 0 8px 16px rgba(17,24,39,0.16);
-}
-
-.sentiment-leaderboard .nb-foot{
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 12px 2px;
-  color: var(--nb-ink);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-@media (max-width: 720px){
-  .sentiment-leaderboard .nb-bars{ gap: 10px; height: 180px; }
 }
