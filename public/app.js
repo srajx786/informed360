@@ -2809,158 +2809,178 @@ function renderWorldSentiment(){
   });
 }
 
-const NARRATIVE_ATTRIBUTES = [
-  {
-    key: "gov",
-    keywords: ["government", "ministry", "parliament", "policy", "regulation", "election", "cabinet", "law", "court", "state", "prime minister"]
-  },
-  {
-    key: "citizen",
-    keywords: ["citizen", "public", "community", "residents", "people", "workers", "protest", "education", "health", "rights", "welfare"]
-  },
-  {
-    key: "finance",
-    keywords: ["economy", "economic", "inflation", "gdp", "market", "stock", "bank", "finance", "budget", "investment", "tax", "trade", "rupee"]
-  },
-  {
-    key: "environment",
-    keywords: ["climate", "environment", "pollution", "emissions", "carbon", "renewable", "energy", "biodiversity", "wildlife", "forest", "water", "weather"]
-  }
-];
+/** ========= Narrative Balance (Google News-like card + Pro/Not Pro chart) ========= **/
 
-function narrativeArticleText(article = {}){
-  return [
-    article.title,
-    article.description,
-    article.content
-  ].filter(Boolean).join(" ").toLowerCase();
+function clamp01(n) {
+  const x = Number(n);
+  if (!Number.isFinite(x)) return 0;
+  return Math.max(0, Math.min(1, x));
 }
 
-function isNarrativeRelevant(text, keywords = []){
-  if (!text) return false;
-  return keywords.some(keyword => text.includes(keyword));
+/**
+ * We represent each category as a "proScore" 0..1.
+ * proScore=1 => fully Pro (green)
+ * proScore=0 => fully Not Pro (red)
+ *
+ * Replace mapping below with YOUR real scoring logic.
+ */
+function getNarrativeBalanceModel(story) {
+  const defaultScore = 0.5;
+  const sourceLogo = story?.primary?.sourceLogo || "";
+
+  const cats = [
+    { key: "govt", label: "Govt", icon: "🏛️", proScore: defaultScore, sourceLogo },
+    { key: "citizen", label: "Citizen", icon: "👤", proScore: defaultScore, sourceLogo },
+    { key: "finance", label: "Finance", icon: "💲", proScore: defaultScore, sourceLogo },
+    { key: "environment", label: "Environment", icon: "🌿", proScore: defaultScore, sourceLogo },
+    { key: "security", label: "Security", icon: "🛡️", proScore: defaultScore, sourceLogo }
+  ];
+
+  return cats.map(c => ({ ...c, proScore: clamp01(c.proScore) }));
 }
 
-function classifyNarrativeTone(articles = []){
-  const totals = aggregateSentiment(articles);
-  const n = Math.max(1, articles.length);
-  const pos = totals.pos / n;
-  const neg = totals.neg / n;
-  const threshold = 5;
-  if (pos > neg + threshold) return "pro";
-  if (neg > pos + threshold) return "anti";
-  return "neutral";
-}
+function renderNarrativeBalanceCard(containerEl, story, opts = {}) {
+  const {
+    isProUser = false,
+    onRequestProLogin = null
+  } = opts;
 
-function getNarrativeBalanceArticles(){
-  const pool = state.category === "home" ? (state.allArticles || []) : (state.articles || []);
-  return pool.slice(0, 2);
-}
+  const title = story?.headline || story?.title || "Narrative Balance";
+  const source = story?.primary?.source || story?.source || "";
+  const publishedAt = story?.primary?.publishedAt || story?.publishedAt || "";
+  const imageUrl = story?.imageUrl || story?.image || story?.imageUrl1 || "";
 
-function classifyNarrativeBalance(articles = []){
-  const results = {};
-  NARRATIVE_ATTRIBUTES.forEach(attr => {
-    const relevant = articles.filter(article => {
-      const text = narrativeArticleText(article);
-      return isNarrativeRelevant(text, attr.keywords);
-    });
-    if (!relevant.length){
-      results[attr.key] = "neutral";
-      return;
-    }
-    results[attr.key] = classifyNarrativeTone(relevant);
-  });
-  return results;
-}
+  const cats = getNarrativeBalanceModel(story);
 
-function updateNarrativeCarousel(container, nextIndex = 0){
-  if (!container) return;
-  const track = container.querySelector(".narrative-track");
-  const slides = [...container.querySelectorAll(".narrative-slide")];
-  const dots = [...container.querySelectorAll(".narrative-dot")];
-  const total = slides.length;
-  if (!track || !total) return;
-  const index = ((nextIndex % total) + total) % total;
-  container.dataset.index = String(index);
-  track.style.transform = `translateX(-${index * 100}%)`;
-  dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
-}
+  const lockHtml = !isProUser
+    ? `<button class="nb-lock" type="button" aria-label="Unlock Pro" title="Pro feature">
+         <span class="nb-lock-icon">🔒</span>
+       </button>`
+    : "";
 
-function renderNarrativeBalance(){
-  const container = $("#narrativeBalance");
-  if (!container) return;
-  const track = container.querySelector(".narrative-track");
-  const dotsWrap = container.querySelector(".narrative-dots");
-  const prevBtn = container.querySelector(".narrative-prev");
-  const nextBtn = container.querySelector(".narrative-next");
-  const attributes = classifyNarrativeBalance(getNarrativeBalanceArticles());
+  const barsHtml = cats.map(c => {
+    const pro = clamp01(c.proScore);
+    const notPro = 1 - pro;
+    const bg = `linear-gradient(to top,
+      var(--nb-notpro) 0%,
+      var(--nb-notpro) ${Math.round(notPro * 100)}%,
+      var(--nb-pro) ${Math.round(notPro * 100)}%,
+      var(--nb-pro) 100%)`;
 
-  container.querySelectorAll(".narrative-attribute").forEach(attr => {
-    const key = attr.dataset.attr;
-    const bar = attr.querySelector(".narrative-bar");
-    const status = attributes[key] || "neutral";
-    bar.classList.remove("status-pro", "status-anti");
-    if (status === "pro") bar.classList.add("status-pro");
-    if (status === "anti") bar.classList.add("status-anti");
-  });
+    const logo = c.sourceLogo
+      ? `<img class="nb-bar-logo" src="${escapeHtmlAttr(c.sourceLogo)}" alt="" loading="lazy" />`
+      : `<div class="nb-bar-logo-fallback">•</div>`;
 
-  const articles = getNarrativeBalanceArticles();
-  if (!track || !dotsWrap || !prevBtn || !nextBtn) return;
-
-  if (!articles.length){
-    track.innerHTML = `<div class="narrative-slide narrative-empty">No stories yet.</div>`;
-    dotsWrap.innerHTML = "";
-    dotsWrap.hidden = true;
-    prevBtn.hidden = true;
-    nextBtn.hidden = true;
-    updateNarrativeCarousel(container, 0);
-    return;
-  }
-
-  track.innerHTML = articles.map(article => {
-    const title = escapeHtml(article.title || "Untitled");
-    const source = escapeHtml(article.source || "Unknown source");
     return `
-      <div class="narrative-slide">
-        <div class="narrative-source">${source}</div>
-        <div class="narrative-title">${title}</div>
-      </div>`;
+      <div class="nb-bar-col">
+        <div class="nb-bar-track" style="background:${bg}">
+          ${logo}
+        </div>
+      </div>
+    `;
   }).join("");
 
-  if (articles.length > 1){
-    dotsWrap.hidden = false;
-    prevBtn.hidden = false;
-    nextBtn.hidden = false;
-    dotsWrap.innerHTML = articles.map((_, index) =>
-      `<button class="narrative-dot${index === 0 ? " active" : ""}" type="button" aria-label="Go to story"></button>`
-    ).join("");
-  }else{
-    dotsWrap.innerHTML = "";
-    dotsWrap.hidden = true;
-    prevBtn.hidden = true;
-    nextBtn.hidden = true;
-  }
+  const catsRowHtml = cats.map(c => {
+    return `
+      <div class="nb-cat">
+        <span class="nb-cat-ic" aria-hidden="true">${escapeHtml(String(c.icon || ""))}</span>
+        <span class="nb-cat-tx">${escapeHtml(String(c.label || ""))}</span>
+      </div>
+    `;
+  }).join("");
 
-  updateNarrativeCarousel(container, 0);
+  containerEl.innerHTML = `
+    <div class="nb-card">
+      <div class="nb-head">
+        <div class="nb-hero">
+          <div class="nb-hero-img">
+            ${imageUrl
+              ? `<img src="${escapeHtmlAttr(imageUrl)}" alt="" loading="lazy" />`
+              : `<div class="nb-hero-img-placeholder"></div>`}
+            ${lockHtml}
+          </div>
 
-  if (!container.dataset.bound){
-    container.dataset.bound = "1";
-    prevBtn.addEventListener("click", () => {
-      const current = Number(container.dataset.index) || 0;
-      updateNarrativeCarousel(container, current - 1);
-    });
-    nextBtn.addEventListener("click", () => {
-      const current = Number(container.dataset.index) || 0;
-      updateNarrativeCarousel(container, current + 1);
-    });
-    dotsWrap.addEventListener("click", (event) => {
-      const target = event.target.closest(".narrative-dot");
-      if (!target) return;
-      const dots = [...container.querySelectorAll(".narrative-dot")];
-      const index = dots.indexOf(target);
-      if (index >= 0) updateNarrativeCarousel(container, index);
-    });
+          <div class="nb-hero-meta">
+            <div class="nb-hero-source">${escapeHtml(source)}</div>
+            <div class="nb-hero-title">${escapeHtml(title)}</div>
+            <div class="nb-hero-time">${escapeHtml(formatLocalTime(publishedAt))}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nb-cats">
+        ${catsRowHtml}
+      </div>
+
+      <div class="nb-chart">
+        <div class="nb-yaxis">
+          <div class="nb-yaxis-top">Pro</div>
+          <div class="nb-yaxis-bot">Not Pro</div>
+        </div>
+
+        <div class="nb-bars">
+          ${barsHtml}
+        </div>
+      </div>
+    </div>
+  `;
+
+  if (!isProUser) {
+    const btn = containerEl.querySelector(".nb-lock");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        if (typeof onRequestProLogin === "function") onRequestProLogin();
+      });
+    }
   }
+}
+
+function escapeHtmlAttr(str) { return escapeHtml(str); }
+
+function formatLocalTime(isoOrDate) {
+  try {
+    const d = isoOrDate ? new Date(isoOrDate) : new Date();
+    if (Number.isNaN(d.getTime())) return "";
+    return d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }).toLowerCase();
+  } catch {
+    return "";
+  }
+}
+
+function getNarrativeBalanceStory() {
+  const candidate =
+    state.stories?.[0]?.primary ||
+    state.stories?.[0] ||
+    state.allArticles?.[0] ||
+    state.articles?.[0] ||
+    {};
+  if (candidate?.primary) {
+    const primary = candidate.primary;
+    const sourceLogo = (primary?.sourceLogo || logoFor(primary?.url || primary?.link, primary?.source || "")).trim();
+    return {
+      ...candidate,
+      headline: candidate.headline || primary?.title || primary?.headline || "",
+      primary: { ...primary, sourceLogo },
+      imageUrl: primary?.image || candidate?.imageUrl || ""
+    };
+  }
+  const sourceLogo = (candidate?.sourceLogo || logoFor(candidate?.url || candidate?.link, candidate?.source || "")).trim();
+  return {
+    ...candidate,
+    headline: candidate?.title || candidate?.headline || "",
+    primary: { ...candidate, sourceLogo },
+    imageUrl: candidate?.image || candidate?.imageUrl || candidate?.imageUrl1 || candidate?.thumbnail || ""
+  };
+}
+
+function renderNarrativeBalance() {
+  const container = $("#narrativeBalance");
+  if (!container) return;
+  const story = getNarrativeBalanceStory();
+  renderNarrativeBalanceCard(container, story, {
+    isProUser: state.proUser,
+    onRequestProLogin: () => openLoginModal()
+  });
 }
 
 /* ===== Sentiment Leaderboard (logic unchanged) ===== */
