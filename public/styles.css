@@ -234,6 +234,22 @@ body.theme-dark .gn-search{ background:#1a222c }
   padding:.9rem 12px 1rem;
 }
 .layout > *{ align-self:stretch; }
+.dash-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:.9rem;
+  align-items:start;
+  margin-top:16px;
+}
+.dash-left,
+.dash-middle,
+.dash-right{ min-width:0; }
+.dash-right-stack{
+  display:flex;
+  flex-direction:column;
+  gap:.9rem;
+}
+.dash-right-stack .card{ width:100%; }
 .pinned-block{ grid-area:pinned }
 .hero-block{ grid-area:hero }
 .narrative-block{ grid-area:narrative }
@@ -415,11 +431,10 @@ body.theme-dark .gn-search{ background:#1a222c }
 .nbSource img{ width:34px; height:34px; border-radius:8px; object-fit:contain; display:block; }
 
 @media(min-width:1024px){
-  .topRow{
-    display:grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap:16px;
-    align-items:stretch;
+  .dash-grid{
+    grid-template-columns:320px minmax(0, 1fr) 360px;
+    gap:18px;
+    align-items:start;
   }
   .pinnedCard,.topStoriesCard{
     height:520px;
@@ -429,20 +444,20 @@ body.theme-dark .gn-search{ background:#1a222c }
     height:calc(520px - 54px); /* header space */
     overflow:auto;
   }
-  .rightCol{
+  .dash-right-stack{
     height:520px;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
+    gap:18px;
   }
-  .rightCol .card{
-    flex:1 1 0;
+  .dash-right-stack .card{
     min-height:0;
     overflow:hidden;
+    display:flex;
+    flex-direction:column;
   }
-  .rightCol .card .card-body{
+  .dash-right-stack .card .card-body{
     height:calc(100% - 54px);
     overflow:hidden;
+    flex:1 1 auto;
   }
   .lowerGrid{
     display:grid;
@@ -453,6 +468,12 @@ body.theme-dark .gn-search{ background:#1a222c }
       "daily daily daily";
     gap:.9rem;
     align-items:stretch;
+  }
+}
+
+@media (max-width: 980px){
+  .dash-grid{
+    grid-template-columns:1fr;
   }
 }
 
@@ -1007,28 +1028,34 @@ body.theme-dark .gn-search{ background:#1a222c }
   opacity:0;
   pointer-events:none;
   transition:opacity .2s ease;
+  display:none;
 }
 .sentiment-sheet-overlay.show{
   opacity:1;
   pointer-events:auto;
+  display:block;
 }
 .sentiment-sheet{
-  position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
+  position:static;
   background:var(--card);
-  border-radius:16px 16px 0 0;
+  border-radius:16px;
   box-shadow:var(--shadow);
   z-index:90;
-  transform:translateY(100%);
+  transform:none;
   transition:transform .2s ease;
   padding:1rem;
-  max-height:70vh;
+  max-height:none;
   overflow:auto;
+  display:none;
 }
 .sentiment-sheet.show{
-  transform:translateY(0);
+  display:block;
+  position:fixed;
+  left:50%;
+  bottom:12px;
+  transform:translateX(-50%);
+  width:min(520px, calc(100% - 24px));
+  max-height:180px;
 }
 .sentiment-sheet-header{
   display:flex;
