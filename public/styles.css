@@ -231,8 +231,8 @@ body.theme-dark .gn-search{ background:#1a222c }
   display:grid;
   grid-template-columns:300px minmax(0,1fr) 340px;
   grid-template-areas:
-    "pinned hero mood"
-    "source news trending"
+    "pinned hero narrative"
+    "source news india"
     "industry news trending"
     "daily daily daily";
   gap:.9rem;
@@ -241,7 +241,8 @@ body.theme-dark .gn-search{ background:#1a222c }
 }
 .layout > .pinned-block,
 .layout > .hero-block,
-.layout > .mood-block{
+.layout > .narrative-block,
+.layout > .india-block{
   align-self:start;
 }
 .pinned-block{ grid-area:pinned }
@@ -254,7 +255,8 @@ body.theme-dark .gn-search{ background:#1a222c }
   display:flex;
   flex-direction:column;
 }
-.mood-block{ grid-area:mood; display:flex; flex-direction:column; gap:.9rem; height:100%; align-self:stretch }
+.narrative-block{ grid-area:narrative }
+.india-block{ grid-area:india }
 .source-block{ grid-area:source }
 .news-block{ grid-area:news }
 .trending-block{ grid-area:trending }
@@ -266,25 +268,25 @@ body.theme-dark .gn-search{ background:#1a222c }
 .layout .leader-card,
 .layout .mood-card{ margin-top:0; margin-bottom:0 }
 
-.narrative-card{ display:flex; flex-direction:column; gap:.75rem }
+.narrative-card{ display:flex; flex-direction:column; gap:.55rem }
 .narrative-carousel{ position:relative; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:.4rem }
-.narrative-track-wrap{ overflow:hidden; border-radius:12px; border:1px solid var(--border); background:#f9fafb }
+.narrative-track-wrap{ overflow:hidden; border-radius:12px; border:0; background:#f9fafb }
 .narrative-track{ display:flex; transition:transform .35s ease; width:100% }
-.narrative-slide{ min-width:100%; padding:.6rem .75rem; display:flex; flex-direction:column; gap:.35rem }
+.narrative-slide{ min-width:100%; padding:.5rem .6rem; display:flex; flex-direction:column; gap:.3rem }
 .narrative-slide .narrative-source{ font-size:.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em }
 .narrative-slide .narrative-title{ font-family:"Merriweather", serif; font-size:.95rem; font-weight:700; line-height:1.25 }
 .narrative-slide.narrative-empty{ color:var(--muted); font-size:.85rem }
 .narrative-nav{ background:#fff; border:1px solid var(--border); border-radius:50%; width:26px; height:26px; display:grid; place-items:center; cursor:pointer; box-shadow:var(--shadow); color:#111 }
 .narrative-nav[hidden]{ display:none }
-.narrative-dots{ display:flex; justify-content:center; gap:.35rem; padding-top:.4rem; grid-column:1 / -1 }
+.narrative-dots{ display:flex; justify-content:center; gap:.3rem; padding-top:.3rem; grid-column:1 / -1 }
 .narrative-dot{ width:6px; height:6px; border-radius:50%; background:#d1d5db }
 .narrative-dot.active{ background:#111827 }
 .narrative-dots[hidden]{ display:none }
-.narrative-attributes{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:.6rem }
+.narrative-attributes{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:.45rem }
 .narrative-attribute{ display:flex; flex-direction:column; align-items:center; gap:.35rem }
 .narrative-attribute-label{ display:flex; align-items:center; gap:.25rem; font-size:11px; color:#111; font-weight:600 }
 .narrative-attribute-label svg{ width:14px; height:14px; fill:#111 }
-.narrative-bar{ width:10px; height:42px; border-radius:8px; background:rgba(156,163,175,0.5) }
+.narrative-bar{ width:10px; height:38px; border-radius:8px; background:rgba(156,163,175,0.5) }
 .narrative-bar.status-pro{ background:rgba(34,197,94,0.5) }
 .narrative-bar.status-anti{ background:rgba(239,68,68,0.5) }
 
@@ -1455,9 +1457,10 @@ dialog::backdrop{
     grid-template-areas:
       "hero"
       "pinned"
-      "mood"
+      "narrative"
       "source"
       "news"
+      "india"
       "trending"
       "industry"
       "daily";
