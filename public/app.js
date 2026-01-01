@@ -2809,137 +2809,101 @@ function renderWorldSentiment(){
   });
 }
 
-/** ========= Narrative Balance (Google News-like card + Pro/Not Pro chart) ========= **/
+/** ========= Narrative Balance ========= **/
 
-function clamp01(n) {
-  const x = Number(n);
-  if (!Number.isFinite(x)) return 0;
-  return Math.max(0, Math.min(1, x));
+const NARRATIVE_FALLBACK_SOURCES = [
+  { name: "Hindustan Times", logo: "/logo/hindustantimes.png" },
+  { name: "NDTV", logo: "/logo/ndtv.png" },
+  { name: "India Today", logo: "/logo/indiatoday.png" },
+  { name: "Mint", logo: "/logo/livemint.png" },
+  { name: "The Hindu", logo: "/logo/thehindu.png" }
+];
+
+const NARRATIVE_ICONS = {
+  govt: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-6 9 6v2H3V9zm2 4h2v6H5v-6zm4 0h2v6H9v-6zm4 0h2v6h-2v-6zm4 0h2v6h-2v-6zM3 21h18v-2H3v2z"></path></svg>`,
+  citizen: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.33 0-8 1.67-8 5v3h16v-3c0-3.33-4.67-5-8-5z"></path></svg>`,
+  finance: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-1.93 0-3.5 1.57-3.5 3.5 0 1.35.78 2.52 1.92 3.1-1.75.56-3.42 1.95-3.42 4.4 0 2.53 2.06 4.2 4.5 4.43V21h2v-2.55c1.9-.28 3.5-1.58 3.5-3.45 0-1.34-.82-2.43-2.02-3.01 1.72-.6 3.02-2.08 3.02-3.99C18 4.57 15.93 3 13.5 3H12zm1.5 4.5h-1.5c-.83 0-1.5-.67-1.5-1.5S11.17 4.5 12 4.5h1.5c1.1 0 2 .67 2 1.5s-.9 1.5-2 1.5zm-1.5 9.5h-1.5c-1.4 0-2.5-.9-2.5-2s1.1-2 2.5-2H12c1.4 0 2.5.9 2.5 2s-1.1 2-2.5 2z"></path></svg>`,
+  environment: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4.42 0 8 2.69 8 6.5 0 4.53-4.5 8.9-8 11.5-3.5-2.6-8-6.97-8-11.5C4 5.69 7.58 3 12 3zm0 4.5c-2.76 0-5 1.57-5 3.5 0 2.35 2.46 4.92 5 6.88 2.54-1.96 5-4.53 5-6.88 0-1.93-2.24-3.5-5-3.5z"></path></svg>`,
+  security: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5.25-3.5 9.74-8 10.93C7.5 21.74 4 17.25 4 12V6l8-4zm0 2.18L6 7v5c0 4.07 2.62 7.74 6 8.82 3.38-1.08 6-4.75 6-8.82V7l-6-2.82z"></path></svg>`
+};
+
+function normalizeNarrativeSource(item = {}) {
+  const primary = item?.primary || item;
+  const sourceName = String(primary?.source || primary?.sourceName || item?.source || "").trim();
+  if (!sourceName) return null;
+  const sourceUrl = primary?.url || primary?.link || item?.url || item?.link || "";
+  const sourceLogo = (primary?.sourceLogo || item?.sourceLogo || logoFor(sourceUrl, sourceName)).trim();
+  return { name: sourceName, logo: sourceLogo || LOGO_PLACEHOLDER };
 }
 
-/**
- * We represent each category as a "proScore" 0..1.
- * proScore=1 => fully Pro (green)
- * proScore=0 => fully Not Pro (red)
- *
- * Replace mapping below with YOUR real scoring logic.
- */
-function getNarrativeBalanceModel(story) {
-  const defaultScore = 0.5;
-  const sourceLogo = story?.primary?.sourceLogo || "";
-
-  const cats = [
-    { key: "govt", label: "Govt", proScore: defaultScore, sourceLogo },
-    { key: "citizen", label: "Citizen", proScore: defaultScore, sourceLogo },
-    { key: "finance", label: "Finance", proScore: defaultScore, sourceLogo },
-    { key: "environment", label: "Environment", proScore: defaultScore, sourceLogo },
-    { key: "security", label: "Security", proScore: defaultScore, sourceLogo }
-  ];
-
-  return cats.map(c => ({ ...c, proScore: clamp01(c.proScore) }));
-}
-
-function renderNarrativeBalanceCard(containerEl, story, opts = {}) {
-  const cats = getNarrativeBalanceModel(story);
-
-  const icons = {
-    govt: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-6 9 6v2H3V9zm2 4h2v6H5v-6zm4 0h2v6H9v-6zm4 0h2v6h-2v-6zm4 0h2v6h-2v-6zM3 21h18v-2H3v2z"></path></svg>`,
-    citizen: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.33 0-8 1.67-8 5v3h16v-3c0-3.33-4.67-5-8-5z"></path></svg>`,
-    finance: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-1.93 0-3.5 1.57-3.5 3.5 0 1.35.78 2.52 1.92 3.1-1.75.56-3.42 1.95-3.42 4.4 0 2.53 2.06 4.2 4.5 4.43V21h2v-2.55c1.9-.28 3.5-1.58 3.5-3.45 0-1.34-.82-2.43-2.02-3.01 1.72-.6 3.02-2.08 3.02-3.99C18 4.57 15.93 3 13.5 3H12zm1.5 4.5h-1.5c-.83 0-1.5-.67-1.5-1.5S11.17 4.5 12 4.5h1.5c1.1 0 2 .67 2 1.5s-.9 1.5-2 1.5zm-1.5 9.5h-1.5c-1.4 0-2.5-.9-2.5-2s1.1-2 2.5-2H12c1.4 0 2.5.9 2.5 2s-1.1 2-2.5 2z"></path></svg>`,
-    environment: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4.42 0 8 2.69 8 6.5 0 4.53-4.5 8.9-8 11.5-3.5-2.6-8-6.97-8-11.5C4 5.69 7.58 3 12 3zm0 4.5c-2.76 0-5 1.57-5 3.5 0 2.35 2.46 4.92 5 6.88 2.54-1.96 5-4.53 5-6.88 0-1.93-2.24-3.5-5-3.5z"></path></svg>`,
-    security: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5.25-3.5 9.74-8 10.93C7.5 21.74 4 17.25 4 12V6l8-4zm0 2.18L6 7v5c0 4.07 2.62 7.74 6 8.82 3.38-1.08 6-4.75 6-8.82V7l-6-2.82z"></path></svg>`
+function getNarrativeSources() {
+  const sources = [];
+  const seen = new Set();
+  const addSource = (entry) => {
+    if (!entry?.name) return;
+    const key = entry.name.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    sources.push(entry);
   };
 
-  const barsHtml = cats.map(c => {
-    const logo = c.sourceLogo
-      ? `<img class="nb-bar-logo" src="${escapeHtmlAttr(c.sourceLogo)}" alt="" loading="lazy" />`
-      : `<div class="nb-bar-logo-fallback">•</div>`;
+  const primaryList = Array.isArray(window.__TOP_STORIES_PRIMARY__)
+    ? window.__TOP_STORIES_PRIMARY__
+    : [];
+  primaryList.forEach(item => addSource(normalizeNarrativeSource(item)));
 
-    return `
-      <div class="leader-col nb-bar-track">
-        <div class="nb-bar-half col-pos"></div>
-        <div class="nb-bar-half col-neg"></div>
-        ${logo}
-      </div>
-    `;
-  }).join("");
+  const topStories = state.topStories || {};
+  [
+    topStories.indiaRecent,
+    topStories.indiaEngaged,
+    topStories.worldRecent,
+    topStories.worldEngaged
+  ].forEach(list => {
+    (list || []).forEach(item => addSource(normalizeNarrativeSource(item)));
+  });
 
-  const catsRowHtml = cats.map(c => {
-    return `
-      <div class="nb-cat" aria-label="${escapeHtmlAttr(String(c.label || ""))}">
-        <span class="nb-cat-ic" aria-hidden="true">${icons[c.key] || ""}</span>
-      </div>
-    `;
-  }).join("");
+  NARRATIVE_FALLBACK_SOURCES.forEach(item => addSource(item));
 
-  containerEl.innerHTML = `
-    <div class="leader-card sentiment-leaderboard">
-      <div class="leader-head">
-        <div class="leader-title">Narrative Balance</div>
-      </div>
-
-      <div class="nb-cats">
-        ${catsRowHtml}
-      </div>
-
-      <div class="leader-grid nb-bars">
-        ${barsHtml}
-      </div>
-
-      <div class="nb-foot">
-        <span class="nb-foot-pro">Pro</span>
-        <span class="nb-foot-notpro">Not Pro</span>
-      </div>
-    </div>
-  `;
+  return sources.slice(0, 5);
 }
 
 function escapeHtmlAttr(str) { return escapeHtml(str); }
 
-function formatLocalTime(isoOrDate) {
-  try {
-    const d = isoOrDate ? new Date(isoOrDate) : new Date();
-    if (Number.isNaN(d.getTime())) return "";
-    return d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }).toLowerCase();
-  } catch {
-    return "";
-  }
-}
-
-function getNarrativeBalanceStory() {
-  const candidate =
-    state.stories?.[0]?.primary ||
-    state.stories?.[0] ||
-    state.allArticles?.[0] ||
-    state.articles?.[0] ||
-    {};
-  if (candidate?.primary) {
-    const primary = candidate.primary;
-    const sourceLogo = (primary?.sourceLogo || logoFor(primary?.url || primary?.link, primary?.source || "")).trim();
-    return {
-      ...candidate,
-      headline: candidate.headline || primary?.title || primary?.headline || "",
-      primary: { ...primary, sourceLogo },
-      imageUrl: primary?.image || candidate?.imageUrl || ""
-    };
-  }
-  const sourceLogo = (candidate?.sourceLogo || logoFor(candidate?.url || candidate?.link, candidate?.source || "")).trim();
-  return {
-    ...candidate,
-    headline: candidate?.title || candidate?.headline || "",
-    primary: { ...candidate, sourceLogo },
-    imageUrl: candidate?.image || candidate?.imageUrl || candidate?.imageUrl1 || candidate?.thumbnail || ""
-  };
-}
-
 function renderNarrativeBalance() {
-  const container = $("#narrativeBalance");
+  const container = $("#narrativeCard") || $("#narrativeBalance");
   if (!container) return;
-  const story = getNarrativeBalanceStory();
-  renderNarrativeBalanceCard(container, story, {
-    isProUser: state.proUser,
-    onRequestProLogin: () => openLoginModal()
-  });
+  const sources = getNarrativeSources();
+  const barsHtml = sources.map(source => `
+    <div class="nbBar">
+      <div class="nbSource">
+        <img src="${escapeHtmlAttr(source.logo)}" alt="${escapeHtmlAttr(source.name)}" loading="lazy" />
+      </div>
+    </div>
+  `).join("");
+
+  container.innerHTML = `
+    <div class="card-header"><h3>Narrative Balance</h3></div>
+    <div class="card-body">
+      <div class="nbIcons">
+        <div class="nbIcon"><span class="nbSvg">${NARRATIVE_ICONS.govt}</span><span class="nbLbl">Govt</span></div>
+        <div class="nbIcon"><span class="nbSvg">${NARRATIVE_ICONS.citizen}</span><span class="nbLbl">Citizen</span></div>
+        <div class="nbIcon"><span class="nbSvg">${NARRATIVE_ICONS.finance}</span><span class="nbLbl">Finance</span></div>
+        <div class="nbIcon"><span class="nbSvg">${NARRATIVE_ICONS.environment}</span><span class="nbLbl">Environment</span></div>
+        <div class="nbIcon"><span class="nbSvg">${NARRATIVE_ICONS.security}</span><span class="nbLbl">Security</span></div>
+      </div>
+
+      <div class="nbMain">
+        <div class="nbY">
+          <div class="nbPro">Pro</div>
+          <div class="nbNotPro">Not Pro</div>
+        </div>
+
+        <div class="nbBars">
+          ${barsHtml}
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 /* ===== Sentiment Leaderboard (logic unchanged) ===== */
