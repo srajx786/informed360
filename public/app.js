@@ -2618,7 +2618,7 @@ function attachShareButtons(){
 }
 
 function renderTopics(){
-  $("#topicsList").innerHTML = state.topics.map(t => {
+  $("#topicsList").innerHTML = state.topics.slice(0, 4).map(t => {
     const total =
       (t.sentiment.pos || 0) +
       (t.sentiment.neu || 0) +
@@ -2807,6 +2807,160 @@ function renderWorldSentiment(){
     title: formatSentimentTitle(getActiveCategoryLabel()),
     articles: getWorldSentimentArticles()
   });
+}
+
+const NARRATIVE_ATTRIBUTES = [
+  {
+    key: "gov",
+    keywords: ["government", "ministry", "parliament", "policy", "regulation", "election", "cabinet", "law", "court", "state", "prime minister"]
+  },
+  {
+    key: "citizen",
+    keywords: ["citizen", "public", "community", "residents", "people", "workers", "protest", "education", "health", "rights", "welfare"]
+  },
+  {
+    key: "finance",
+    keywords: ["economy", "economic", "inflation", "gdp", "market", "stock", "bank", "finance", "budget", "investment", "tax", "trade", "rupee"]
+  },
+  {
+    key: "environment",
+    keywords: ["climate", "environment", "pollution", "emissions", "carbon", "renewable", "energy", "biodiversity", "wildlife", "forest", "water", "weather"]
+  }
+];
+
+function narrativeArticleText(article = {}){
+  return [
+    article.title,
+    article.description,
+    article.content
+  ].filter(Boolean).join(" ").toLowerCase();
+}
+
+function isNarrativeRelevant(text, keywords = []){
+  if (!text) return false;
+  return keywords.some(keyword => text.includes(keyword));
+}
+
+function classifyNarrativeTone(articles = []){
+  const totals = aggregateSentiment(articles);
+  const n = Math.max(1, articles.length);
+  const pos = totals.pos / n;
+  const neg = totals.neg / n;
+  const threshold = 5;
+  if (pos > neg + threshold) return "pro";
+  if (neg > pos + threshold) return "anti";
+  return "neutral";
+}
+
+function getNarrativeBalanceArticles(){
+  const pool = state.category === "home" ? (state.allArticles || []) : (state.articles || []);
+  return pool.slice(0, 2);
+}
+
+function classifyNarrativeBalance(articles = []){
+  const results = {};
+  NARRATIVE_ATTRIBUTES.forEach(attr => {
+    const relevant = articles.filter(article => {
+      const text = narrativeArticleText(article);
+      return isNarrativeRelevant(text, attr.keywords);
+    });
+    if (!relevant.length){
+      results[attr.key] = "neutral";
+      return;
+    }
+    results[attr.key] = classifyNarrativeTone(relevant);
+  });
+  return results;
+}
+
+function updateNarrativeCarousel(container, nextIndex = 0){
+  if (!container) return;
+  const track = container.querySelector(".narrative-track");
+  const slides = [...container.querySelectorAll(".narrative-slide")];
+  const dots = [...container.querySelectorAll(".narrative-dot")];
+  const total = slides.length;
+  if (!track || !total) return;
+  const index = ((nextIndex % total) + total) % total;
+  container.dataset.index = String(index);
+  track.style.transform = `translateX(-${index * 100}%)`;
+  dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+}
+
+function renderNarrativeBalance(){
+  const container = $("#narrativeBalance");
+  if (!container) return;
+  const track = container.querySelector(".narrative-track");
+  const dotsWrap = container.querySelector(".narrative-dots");
+  const prevBtn = container.querySelector(".narrative-prev");
+  const nextBtn = container.querySelector(".narrative-next");
+  const attributes = classifyNarrativeBalance(getNarrativeBalanceArticles());
+
+  container.querySelectorAll(".narrative-attribute").forEach(attr => {
+    const key = attr.dataset.attr;
+    const bar = attr.querySelector(".narrative-bar");
+    const status = attributes[key] || "neutral";
+    bar.classList.remove("status-pro", "status-anti");
+    if (status === "pro") bar.classList.add("status-pro");
+    if (status === "anti") bar.classList.add("status-anti");
+  });
+
+  const articles = getNarrativeBalanceArticles();
+  if (!track || !dotsWrap || !prevBtn || !nextBtn) return;
+
+  if (!articles.length){
+    track.innerHTML = `<div class="narrative-slide narrative-empty">No stories yet.</div>`;
+    dotsWrap.innerHTML = "";
+    dotsWrap.hidden = true;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+    updateNarrativeCarousel(container, 0);
+    return;
+  }
+
+  track.innerHTML = articles.map(article => {
+    const title = escapeHtml(article.title || "Untitled");
+    const source = escapeHtml(article.source || "Unknown source");
+    return `
+      <div class="narrative-slide">
+        <div class="narrative-source">${source}</div>
+        <div class="narrative-title">${title}</div>
+      </div>`;
+  }).join("");
+
+  if (articles.length > 1){
+    dotsWrap.hidden = false;
+    prevBtn.hidden = false;
+    nextBtn.hidden = false;
+    dotsWrap.innerHTML = articles.map((_, index) =>
+      `<button class="narrative-dot${index === 0 ? " active" : ""}" type="button" aria-label="Go to story"></button>`
+    ).join("");
+  }else{
+    dotsWrap.innerHTML = "";
+    dotsWrap.hidden = true;
+    prevBtn.hidden = true;
+    nextBtn.hidden = true;
+  }
+
+  updateNarrativeCarousel(container, 0);
+
+  if (!container.dataset.bound){
+    container.dataset.bound = "1";
+    prevBtn.addEventListener("click", () => {
+      const current = Number(container.dataset.index) || 0;
+      updateNarrativeCarousel(container, current - 1);
+    });
+    nextBtn.addEventListener("click", () => {
+      const current = Number(container.dataset.index) || 0;
+      updateNarrativeCarousel(container, current + 1);
+    });
+    dotsWrap.addEventListener("click", (event) => {
+      const target = event.target.closest(".narrative-dot");
+      if (!target) return;
+      const dots = [...container.querySelectorAll(".narrative-dot")];
+      const index = dots.indexOf(target);
+      if (index >= 0) updateNarrativeCarousel(container, index);
+    });
+  }
 }
 
 /* ===== Sentiment Leaderboard (logic unchanged) ===== */
@@ -3079,7 +3233,7 @@ function renderAll(){
   renderDaily();
   renderTopics();
   renderIndiaSentiment();
-  renderWorldSentiment();
+  renderNarrativeBalance();
   renderLeaderboard();
   renderIndustryBoard();
   attachSentimentTooltips();
