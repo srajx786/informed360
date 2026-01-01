@@ -5,8 +5,7 @@ const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
 const PIN_STORAGE_KEY = "i360_pins_v2";
 const LEGACY_PIN_STORAGE_KEY = "i360_pins";
 const CREDIBILITY_STORAGE_KEY = "i360_credibility_badges";
-const PRO_USER_STORAGE_KEY = "informed360:isProUser";
-const LEGACY_PRO_USER_STORAGE_KEY = "proUser";
+const PRO_USER_STORAGE_KEY = "proUser";
 const PRICING_MAILTO =
   "mailto:info.shrirajnair@gmail.com?subject=Informed360%20Demo%20Request&body=Hi%20Informed360%20team%2C%0A%0AWe%20would%20like%20a%20demo%20of%20the%20PR%2FTeams%20tier.%0ACompany%3A%0AUse%20case%3A%0AExpected%20seats%3A%0APreferred%20time%3A%0A%0AThanks!";
 const normalizeApiBase = (value = "") =>
@@ -718,9 +717,6 @@ function loadProfile(){
   }
 }
 function loadProUser(){
-  if (localStorage.getItem(LEGACY_PRO_USER_STORAGE_KEY) !== null){
-    localStorage.removeItem(LEGACY_PRO_USER_STORAGE_KEY);
-  }
   return localStorage.getItem(PRO_USER_STORAGE_KEY) === "true";
 }
 function loadCredibilitySetting(){
@@ -746,7 +742,6 @@ function setProUser(value){
   }else{
     localStorage.removeItem(PRO_USER_STORAGE_KEY);
   }
-  localStorage.removeItem(LEGACY_PRO_USER_STORAGE_KEY);
   state.proUser = value;
   updateProControls();
   refreshProTiles();
