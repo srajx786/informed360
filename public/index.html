@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <link rel="manifest" href="/manifest.webmanifest"/>
   <link rel="icon" href="/logo.png"/>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css?v=2024.05.14"/>
   <link rel="icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" href="/icon-192.png" />
   <link rel="manifest" href="/manifest.json" />
@@ -101,52 +101,58 @@
 
   <!-- 3-column layout -->
   <main class="layout">
-    <div class="topRow">
-      <!-- Pinned topics / pinned news (Grid 5) -->
-      <section id="pinnedCard" class="card pinnedCard pinned-block">
-        <div class="card-header">
-          <span class="block-title">Pinned</span>
-        </div>
-        <div class="card-body">
-          <div class="block-helper">You can pin only 2 items (topics or articles).</div>
-          <div id="pinToast" class="pin-toast" aria-live="polite"></div>
-          <div class="pinned-controls">
-            <input
-              id="pinnedInput"
-              type="text"
-              placeholder="Add topic to track (e.g., US)"
-            />
-            <button id="pinnedAddBtn" type="button">Add</button>
-          </div>
-          <div id="pinnedChips" class="pinned-chips"></div>
-          <div id="pinned" class="block-list"></div>
-        </div>
-      </section>
-
-      <!-- HERO -->
-      <section id="topStoriesCard" class="card topStoriesCard hero-block topstories-hero" aria-roledescription="carousel">
-        <div class="card-header hero-header">
-          <div class="block-title hero-title">Top Stories</div>
-        </div>
-        <div class="card-body hero-carousels" id="heroCarousels" role="group"></div>
-      </section>
-
-      <div class="rightCol">
-        <!-- Narrative Balance -->
-        <section id="narrativeCard" class="card narrativeCard narrative-card narrative-block" aria-live="polite"></section>
-
-        <!-- 4-hour mood microchart -->
-        <section id="indiaSentimentCard" class="card indiaSentimentCard mood-card india-block" aria-live="polite">
+    <section class="top-grid">
+      <div class="dash-left">
+        <!-- Pinned topics / pinned news (Grid 5) -->
+        <section id="pinnedCard" class="card pinnedCard pinned-block">
           <div class="card-header">
-            <div class="mood-title" id="moodIndiaTitle">India's Sentiment</div>
+            <span class="block-title">Pinned</span>
           </div>
           <div class="card-body">
-            <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
-            <div id="moodSummary" class="mood-summary"></div>
+            <div class="block-helper">You can pin only 2 items (topics or articles).</div>
+            <div id="pinToast" class="pin-toast" aria-live="polite"></div>
+            <div class="pinned-controls">
+              <input
+                id="pinnedInput"
+                type="text"
+                placeholder="Add topic to track (e.g., US)"
+              />
+              <button id="pinnedAddBtn" type="button">Add</button>
+            </div>
+            <div id="pinnedChips" class="pinned-chips"></div>
+            <div id="pinned" class="block-list"></div>
           </div>
         </section>
       </div>
-    </div>
+
+      <div class="dash-middle">
+        <!-- HERO -->
+        <section id="topStoriesCard" class="card topStoriesCard hero-block topstories-hero" aria-roledescription="carousel">
+          <div class="card-header hero-header">
+            <div class="block-title hero-title">Top Stories</div>
+          </div>
+          <div class="card-body hero-carousels" id="heroCarousels" role="group"></div>
+        </section>
+      </div>
+
+      <div class="dash-right">
+        <div class="right-stack">
+          <!-- Narrative Balance -->
+          <section id="narrativeCard" class="card narrativeCard narrative-card narrative-block" aria-live="polite"></section>
+
+          <!-- 4-hour mood microchart -->
+          <section id="indiaSentimentCard" class="card indiaSentimentCard mood-card india-block" aria-live="polite">
+            <div class="card-header">
+              <div class="mood-title" id="moodIndiaTitle">India's Sentiment</div>
+            </div>
+            <div class="card-body">
+              <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
+              <div id="moodSummary" class="mood-summary"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
 
     <div class="lowerGrid">
       <!-- News source sentiment leaderboard (Grid 8) -->
@@ -425,13 +431,6 @@
   </aside>
 
   <script>window.__API_BASE__="";</script>
-  <script src="app.js" defer></script>
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/sw.js").catch(function () {});
-      });
-    }
-  </script>
+  <script src="app.js?v=2024.05.14" defer></script>
 </body>
 </html>

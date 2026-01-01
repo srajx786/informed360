@@ -1,4 +1,5 @@
 /* helpers */
+const APP_VERSION = "2024.05.14";
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
@@ -3615,7 +3616,7 @@ startHeroAuto();
 
 if ("serviceWorker" in navigator){
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js").catch(() => {});
+    navigator.serviceWorker.register(`/sw.js?v=${APP_VERSION}`).catch(() => {});
   });
 }
 
