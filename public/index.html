@@ -137,12 +137,56 @@
         <svg id="moodSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
         <div id="moodSummary" class="mood-summary"></div>
       </div>
-      <div class="mood-card card" id="moodWorld" aria-live="polite">
+      <div class="narrative-card card" id="narrativeBalance" aria-live="polite">
         <div class="mood-head">
-          <div class="mood-title" id="moodWorldTitle">World's Sentiment</div>
+          <div class="mood-title">Narrative Balance</div>
         </div>
-        <svg id="moodWorldSpark" class="mood-spark" viewBox="0 0 300 120" role="img" aria-label="4 hour sentiment trend"></svg>
-        <div id="moodWorldSummary" class="mood-summary"></div>
+        <div class="narrative-carousel" aria-roledescription="carousel">
+          <button class="narrative-nav narrative-prev" type="button" aria-label="Previous">‹</button>
+          <div class="narrative-track-wrap">
+            <div class="narrative-track" id="narrativeTrack"></div>
+          </div>
+          <button class="narrative-nav narrative-next" type="button" aria-label="Next">›</button>
+          <div class="narrative-dots" id="narrativeDots" role="tablist"></div>
+        </div>
+        <div class="narrative-attributes" id="narrativeAttributes">
+          <div class="narrative-attribute" data-attr="gov">
+            <div class="narrative-attribute-label">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 9l9-6 9 6v2H3V9zm2 4h2v6H5v-6zm4 0h2v6H9v-6zm4 0h2v6h-2v-6zm4 0h2v6h-2v-6zM3 21h18v-2H3v2z"></path>
+              </svg>
+              <span>Gov</span>
+            </div>
+            <div class="narrative-bar"></div>
+          </div>
+          <div class="narrative-attribute" data-attr="citizen">
+            <div class="narrative-attribute-label">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.33 0-8 1.67-8 5v3h16v-3c0-3.33-4.67-5-8-5z"></path>
+              </svg>
+              <span>Citizen</span>
+            </div>
+            <div class="narrative-bar"></div>
+          </div>
+          <div class="narrative-attribute" data-attr="finance">
+            <div class="narrative-attribute-label">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3C7.58 3 4 4.79 4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7c0-2.21-3.58-4-8-4zm0 2c3.87 0 6 .96 6 2s-2.13 2-6 2-6-.96-6-2 2.13-2 6-2zm0 14c-3.87 0-6-.96-6-2v-2.2c1.5 1.06 3.93 1.7 6 1.7s4.5-.64 6-1.7V17c0 1.04-2.13 2-6 2zm0-6c-3.87 0-6-.96-6-2V8.8c1.5 1.06 3.93 1.7 6 1.7s4.5-.64 6-1.7V11c0 1.04-2.13 2-6 2z"></path>
+              </svg>
+              <span>Finance</span>
+            </div>
+            <div class="narrative-bar"></div>
+          </div>
+          <div class="narrative-attribute" data-attr="environment">
+            <div class="narrative-attribute-label">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 5 11 7 13 2-2 7-7.75 7-13 0-3.87-3.13-7-7-7zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"></path>
+              </svg>
+              <span>Environment</span>
+            </div>
+            <div class="narrative-bar"></div>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -266,6 +266,28 @@ body.theme-dark .gn-search{ background:#1a222c }
 .layout .leader-card,
 .layout .mood-card{ margin-top:0; margin-bottom:0 }
 
+.narrative-card{ display:flex; flex-direction:column; gap:.75rem }
+.narrative-carousel{ position:relative; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:.4rem }
+.narrative-track-wrap{ overflow:hidden; border-radius:12px; border:1px solid var(--border); background:#f9fafb }
+.narrative-track{ display:flex; transition:transform .35s ease; width:100% }
+.narrative-slide{ min-width:100%; padding:.6rem .75rem; display:flex; flex-direction:column; gap:.35rem }
+.narrative-slide .narrative-source{ font-size:.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em }
+.narrative-slide .narrative-title{ font-family:"Merriweather", serif; font-size:.95rem; font-weight:700; line-height:1.25 }
+.narrative-slide.narrative-empty{ color:var(--muted); font-size:.85rem }
+.narrative-nav{ background:#fff; border:1px solid var(--border); border-radius:50%; width:26px; height:26px; display:grid; place-items:center; cursor:pointer; box-shadow:var(--shadow); color:#111 }
+.narrative-nav[hidden]{ display:none }
+.narrative-dots{ display:flex; justify-content:center; gap:.35rem; padding-top:.4rem; grid-column:1 / -1 }
+.narrative-dot{ width:6px; height:6px; border-radius:50%; background:#d1d5db }
+.narrative-dot.active{ background:#111827 }
+.narrative-dots[hidden]{ display:none }
+.narrative-attributes{ display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:.6rem }
+.narrative-attribute{ display:flex; flex-direction:column; align-items:center; gap:.35rem }
+.narrative-attribute-label{ display:flex; align-items:center; gap:.25rem; font-size:11px; color:#111; font-weight:600 }
+.narrative-attribute-label svg{ width:14px; height:14px; fill:#111 }
+.narrative-bar{ width:10px; height:42px; border-radius:8px; background:rgba(156,163,175,0.5) }
+.narrative-bar.status-pro{ background:rgba(34,197,94,0.5) }
+.narrative-bar.status-anti{ background:rgba(239,68,68,0.5) }
+
 /* Block card */
 .block-card{ background:var(--card); border:1px solid var(--border); border-radius:18px; overflow:hidden; box-shadow:var(--shadow) }
 .block-header{ padding:.65rem .95rem; border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between }
