@@ -2829,110 +2829,69 @@ function getNarrativeBalanceModel(story) {
   const sourceLogo = story?.primary?.sourceLogo || "";
 
   const cats = [
-    { key: "govt", label: "Govt", icon: "🏛️", proScore: defaultScore, sourceLogo },
-    { key: "citizen", label: "Citizen", icon: "👤", proScore: defaultScore, sourceLogo },
-    { key: "finance", label: "Finance", icon: "💲", proScore: defaultScore, sourceLogo },
-    { key: "environment", label: "Environment", icon: "🌿", proScore: defaultScore, sourceLogo },
-    { key: "security", label: "Security", icon: "🛡️", proScore: defaultScore, sourceLogo }
+    { key: "govt", label: "Govt", proScore: defaultScore, sourceLogo },
+    { key: "citizen", label: "Citizen", proScore: defaultScore, sourceLogo },
+    { key: "finance", label: "Finance", proScore: defaultScore, sourceLogo },
+    { key: "environment", label: "Environment", proScore: defaultScore, sourceLogo },
+    { key: "security", label: "Security", proScore: defaultScore, sourceLogo }
   ];
 
   return cats.map(c => ({ ...c, proScore: clamp01(c.proScore) }));
 }
 
 function renderNarrativeBalanceCard(containerEl, story, opts = {}) {
-  const {
-    isProUser = false,
-    onRequestProLogin = null
-  } = opts;
-
-  const title = story?.headline || story?.title || "Narrative Balance";
-  const source = story?.primary?.source || story?.source || "";
-  const publishedAt = story?.primary?.publishedAt || story?.publishedAt || "";
-  const imageUrl = story?.imageUrl || story?.image || story?.imageUrl1 || "";
-
   const cats = getNarrativeBalanceModel(story);
 
-  const lockHtml = !isProUser
-    ? `<button class="nb-lock" type="button" aria-label="Unlock Pro" title="Pro feature">
-         <span class="nb-lock-icon">🔒</span>
-       </button>`
-    : "";
+  const icons = {
+    govt: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9l9-6 9 6v2H3V9zm2 4h2v6H5v-6zm4 0h2v6H9v-6zm4 0h2v6h-2v-6zm4 0h2v6h-2v-6zM3 21h18v-2H3v2z"></path></svg>`,
+    citizen: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.33 0-8 1.67-8 5v3h16v-3c0-3.33-4.67-5-8-5z"></path></svg>`,
+    finance: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-1.93 0-3.5 1.57-3.5 3.5 0 1.35.78 2.52 1.92 3.1-1.75.56-3.42 1.95-3.42 4.4 0 2.53 2.06 4.2 4.5 4.43V21h2v-2.55c1.9-.28 3.5-1.58 3.5-3.45 0-1.34-.82-2.43-2.02-3.01 1.72-.6 3.02-2.08 3.02-3.99C18 4.57 15.93 3 13.5 3H12zm1.5 4.5h-1.5c-.83 0-1.5-.67-1.5-1.5S11.17 4.5 12 4.5h1.5c1.1 0 2 .67 2 1.5s-.9 1.5-2 1.5zm-1.5 9.5h-1.5c-1.4 0-2.5-.9-2.5-2s1.1-2 2.5-2H12c1.4 0 2.5.9 2.5 2s-1.1 2-2.5 2z"></path></svg>`,
+    environment: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4.42 0 8 2.69 8 6.5 0 4.53-4.5 8.9-8 11.5-3.5-2.6-8-6.97-8-11.5C4 5.69 7.58 3 12 3zm0 4.5c-2.76 0-5 1.57-5 3.5 0 2.35 2.46 4.92 5 6.88 2.54-1.96 5-4.53 5-6.88 0-1.93-2.24-3.5-5-3.5z"></path></svg>`,
+    security: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5.25-3.5 9.74-8 10.93C7.5 21.74 4 17.25 4 12V6l8-4zm0 2.18L6 7v5c0 4.07 2.62 7.74 6 8.82 3.38-1.08 6-4.75 6-8.82V7l-6-2.82z"></path></svg>`
+  };
 
   const barsHtml = cats.map(c => {
-    const pro = clamp01(c.proScore);
-    const notPro = 1 - pro;
-    const bg = `linear-gradient(to top,
-      var(--nb-notpro) 0%,
-      var(--nb-notpro) ${Math.round(notPro * 100)}%,
-      var(--nb-pro) ${Math.round(notPro * 100)}%,
-      var(--nb-pro) 100%)`;
-
     const logo = c.sourceLogo
       ? `<img class="nb-bar-logo" src="${escapeHtmlAttr(c.sourceLogo)}" alt="" loading="lazy" />`
       : `<div class="nb-bar-logo-fallback">•</div>`;
 
     return `
-      <div class="nb-bar-col">
-        <div class="nb-bar-track" style="background:${bg}">
-          ${logo}
-        </div>
+      <div class="leader-col nb-bar-track">
+        <div class="nb-bar-half col-pos"></div>
+        <div class="nb-bar-half col-neg"></div>
+        ${logo}
       </div>
     `;
   }).join("");
 
   const catsRowHtml = cats.map(c => {
     return `
-      <div class="nb-cat">
-        <span class="nb-cat-ic" aria-hidden="true">${escapeHtml(String(c.icon || ""))}</span>
-        <span class="nb-cat-tx">${escapeHtml(String(c.label || ""))}</span>
+      <div class="nb-cat" aria-label="${escapeHtmlAttr(String(c.label || ""))}">
+        <span class="nb-cat-ic" aria-hidden="true">${icons[c.key] || ""}</span>
       </div>
     `;
   }).join("");
 
   containerEl.innerHTML = `
-    <div class="nb-card">
-      <div class="nb-head">
-        <div class="nb-hero">
-          <div class="nb-hero-img">
-            ${imageUrl
-              ? `<img src="${escapeHtmlAttr(imageUrl)}" alt="" loading="lazy" />`
-              : `<div class="nb-hero-img-placeholder"></div>`}
-            ${lockHtml}
-          </div>
-
-          <div class="nb-hero-meta">
-            <div class="nb-hero-source">${escapeHtml(source)}</div>
-            <div class="nb-hero-title">${escapeHtml(title)}</div>
-            <div class="nb-hero-time">${escapeHtml(formatLocalTime(publishedAt))}</div>
-          </div>
-        </div>
+    <div class="leader-card sentiment-leaderboard">
+      <div class="leader-head">
+        <div class="leader-title">Narrative Balance</div>
       </div>
 
       <div class="nb-cats">
         ${catsRowHtml}
       </div>
 
-      <div class="nb-chart">
-        <div class="nb-yaxis">
-          <div class="nb-yaxis-top">Pro</div>
-          <div class="nb-yaxis-bot">Not Pro</div>
-        </div>
+      <div class="leader-grid nb-bars">
+        ${barsHtml}
+      </div>
 
-        <div class="nb-bars">
-          ${barsHtml}
-        </div>
+      <div class="nb-foot">
+        <span class="nb-foot-pro">Pro</span>
+        <span class="nb-foot-notpro">Not Pro</span>
       </div>
     </div>
   `;
-
-  if (!isProUser) {
-    const btn = containerEl.querySelector(".nb-lock");
-    if (btn) {
-      btn.addEventListener("click", () => {
-        if (typeof onRequestProLogin === "function") onRequestProLogin();
-      });
-    }
-  }
 }
 
 function escapeHtmlAttr(str) { return escapeHtml(str); }
