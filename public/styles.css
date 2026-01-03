@@ -436,12 +436,17 @@ body.theme-dark .gn-search{ background:#1a222c }
     gap:18px;
     align-items:start;
   }
-  .pinnedCard,.topStoriesCard{
+  .topStoriesCard{
     height:520px;
     overflow:hidden;
   }
-  .pinnedCard .card-body,.topStoriesCard .card-body{
-    height:calc(520px - 54px); /* header space */
+  .pinnedCard{
+    height:520px;
+    overflow:hidden;
+  }
+  .pinnedCard .card-body,
+  .topStoriesCard .card-body{
+    height:calc(100% - 54px);
     overflow:auto;
   }
   .dash-right-stack{
