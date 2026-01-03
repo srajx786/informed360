@@ -44,7 +44,6 @@ h1,h2,h3{ margin:0 0 .6rem }
 .gn-actions{ display:flex; justify-content:flex-end; align-items:flex-start; gap:.75rem; flex:0 0 auto }
 .gn-icon-actions{ display:flex; align-items:center; gap:.5rem }
 .icon-btn{ background:var(--card); border:1px solid var(--border); color:var(--muted); padding:.35rem .55rem; border-radius:12px; cursor:pointer; box-shadow:var(--shadow) }
-.pro-lock-btn{ font-size:.95rem }
 .avatar{ width:32px; height:32px; border-radius:50%; background:linear-gradient(135deg,#7c3aed,#22d3ee); color:#fff; font-weight:700; display:grid; place-items:center }
 
 /* Search */
@@ -911,20 +910,9 @@ body.theme-dark .gn-search{ background:#1a222c }
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:26px;
-  height:26px;
-  border-radius:999px;
 }
-.pro-attributes.is-green .pro-attr{
-  color:#16a34a;
-  background:rgba(22, 163, 74, 0.12);
-  border:1px solid rgba(22, 163, 74, 0.25);
-}
-.pro-attributes.is-red .pro-attr{
-  color:#dc2626;
-  background:rgba(220, 38, 38, 0.12);
-  border:1px solid rgba(220, 38, 38, 0.25);
-}
+.pro-attr.is-green{ color:#16a34a }
+.pro-attr.is-red{ color:#dc2626 }
 .meta{ color:var(--muted); font-size:.9rem; display:flex; gap:.5rem; align-items:center; min-width:0; flex-wrap:wrap }
 .meta .meta-time{ flex-basis:100%; min-width:0; max-width:100%; white-space:normal; overflow-wrap:anywhere }
 .card-actions{ display:flex; align-items:center; gap:.35rem }
@@ -1496,13 +1484,6 @@ dialog::backdrop{
   background:var(--card);
   color:var(--fg);
 }
-.login-status{
-  font-size:.9rem;
-  color:var(--muted);
-  display:none;
-}
-.login-status.show{ display:block }
-.login-fields.hidden{ display:none }
 .login-error{
   color:#b91c1c;
   font-size:.85rem;
