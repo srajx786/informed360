@@ -159,8 +159,37 @@ const TRANSFORMER_TIMEOUT_MS = Number(process.env.TRANSFORMER_TIMEOUT_MS || 1400
 const TRANSFORMER_MAX_TOKENS = Number(process.env.TRANSFORMER_MAX_TOKENS || 256);
 const ARTICLE_CACHE_TTL = Number(process.env.ARTICLE_CACHE_TTL_MS || 6 * 60 * 60 * 1000);
 const ARTICLE_CACHE_MAX = Number(process.env.ARTICLE_CACHE_MAX || 1200);
+const EXPLANATION_CACHE_MAX = Number(
+  process.env.EXPLANATION_CACHE_MAX || ARTICLE_CACHE_MAX
+);
 const STORY_CACHE_TTL = Number(process.env.STORY_CACHE_TTL_MS || 120000);
+const STORY_CACHE_MAX = Number(process.env.STORY_CACHE_MAX || 6);
 const GDELT_CACHE_TTL = Number(process.env.GDELT_CACHE_TTL_MS || 600000);
+const GDELT_CACHE_MAX = Number(process.env.GDELT_CACHE_MAX || 80);
+const TOP_STORY_RELATED_CACHE_MAX = Number(
+  process.env.TOP_STORY_RELATED_CACHE_MAX || 200
+);
+const RELATED_COVERAGE_CACHE_MAX = Number(
+  process.env.RELATED_COVERAGE_CACHE_MAX || 200
+);
+const COVERAGE_CACHE_MAX = Number(process.env.COVERAGE_CACHE_MAX || 200);
+const OG_IMAGE_CACHE_MAX = Number(process.env.OG_IMAGE_CACHE_MAX || 400);
+const MAX_ARTICLES_TOTAL = Number(process.env.MAX_ARTICLES_TOTAL || 500);
+const INGEST_CONCURRENCY = Math.max(
+  1,
+  Number(process.env.INGEST_CONCURRENCY || 4)
+);
+const INGEST_TIMEOUT_MS = Math.max(
+  1000,
+  Number(process.env.INGEST_TIMEOUT_MS || 10000)
+);
+const FALLBACK_MIN_INTERVAL_MS = Number(
+  process.env.FALLBACK_MIN_INTERVAL_MS || 60 * 60 * 1000
+);
+const FALLBACK_SEEN_MAX = Number(process.env.FALLBACK_SEEN_MAX || 200);
+const FINANCE_ENABLED = ["1", "true", "yes", "on"].includes(
+  String(process.env.FINANCE_ENABLED || "0").toLowerCase()
+);
 const OG_IMAGE_POSITIVE_TTL = 6 * 60 * 60 * 1000;
 const OG_IMAGE_NEGATIVE_TTL = 30 * 60 * 1000;
 const TOP_STORY_RELATED_CACHE_TTL = Number(
@@ -176,6 +205,8 @@ const TOP_STORY_RELATED_CACHE = new Map();
 const RELATED_COVERAGE_CACHE = new Map();
 const COVERAGE_CACHE = new Map();
 const FEED_HEALTH = new Map();
+const FALLBACK_RATE = new Map();
+const FALLBACK_SEEN = new Map();
 
 let transformerPipeline = null;
 const domainFromUrl = (u = "") => {
@@ -252,6 +283,7 @@ const setOgImageCache = (url = "", image = "") => {
   if (!url) return;
   const ttl = image ? OG_IMAGE_POSITIVE_TTL : OG_IMAGE_NEGATIVE_TTL;
   ogImageCache.set(url, { image, exp: Date.now() + ttl });
+  capMapSize(ogImageCache, OG_IMAGE_CACHE_MAX);
 };
 const absolutizeUrl = (candidate = "", pageUrl = "") => {
   const trimmed = String(candidate || "").trim();
@@ -359,6 +391,12 @@ const mapInChunks = async (items = [], size = 10, mapper) => {
     results.push(...mapped);
   }
   return results;
+};
+const capMapSize = (map, max) => {
+  if (!max || max <= 0) return;
+  while (map.size > max) {
+    map.delete(map.keys().next().value);
+  }
 };
 const normalizeImageCandidate = (value = "", baseUrl = "") => {
   const cleaned = cleanUrl(value, baseUrl);
@@ -646,7 +684,10 @@ const pruneCache = () => {
     (a, b) => (a[1].updatedAt || 0) - (b[1].updatedAt || 0)
   );
   const removeCount = Math.max(0, entries.length - ARTICLE_CACHE_MAX);
-  entries.slice(0, removeCount).forEach(([key]) => ARTICLE_CACHE.delete(key));
+  entries.slice(0, removeCount).forEach(([key]) => {
+    ARTICLE_CACHE.delete(key);
+    EXPLANATION_CACHE.delete(key);
+  });
 };
 
 const getCachedArticle = (link) => {
@@ -663,6 +704,7 @@ const setCachedArticle = (link, article, explanation) => {
   ARTICLE_CACHE.set(link, { article, updatedAt: Date.now() });
   if (explanation) EXPLANATION_CACHE.set(link, explanation);
   pruneCache();
+  capMapSize(EXPLANATION_CACHE, EXPLANATION_CACHE_MAX);
 };
 
 const recordFeedHealth = (url, ok, message = "") => {
@@ -821,7 +863,9 @@ const release = (host) =>
   hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
 
 async function parseURL(u) {
-  return parser.parseURL(u);
+  const xml = await fetchFeedXml(u);
+  const parsed = await parseFeedXml(xml);
+  return parsed;
 }
 const gNewsForDomain = (domain) =>
   `https://news.google.com/rss/search?q=site:${encodeURIComponent(
@@ -846,13 +890,21 @@ async function fetchWithFallback(url) {
     const feed = await fetchDirect(url);
     recordFeedHealth(url, true);
     if (feed?.items?.length) return feed;
+    if (!shouldUseFallback(domain)) {
+      return { title: domain, items: [] };
+    }
     const g = await parseURL(gNewsForDomain(domain));
     g.title = g.title || domain;
+    g.items = filterFallbackItems(domain, g.items || []);
     return g;
   } catch (e) {
     try {
+      if (!shouldUseFallback(domain)) {
+        return { title: domain, items: [] };
+      }
       const g = await parseURL(gNewsForDomain(domain));
       g.title = g.title || domain;
+      g.items = filterFallbackItems(domain, g.items || []);
       recordFeedHealth(url, true);
       console.warn("[FEED Fallback]", domain, "-> Google News RSS");
       return g;
@@ -867,15 +919,93 @@ async function fetchWithFallback(url) {
   }
 }
 
+const shouldUseFallback = (domain = "") => {
+  if (!domain) return false;
+  const last = FALLBACK_RATE.get(domain) || 0;
+  if (Date.now() - last < FALLBACK_MIN_INTERVAL_MS) return false;
+  FALLBACK_RATE.set(domain, Date.now());
+  return true;
+};
+
+const filterFallbackItems = (domain = "", items = []) => {
+  if (!domain) return items || [];
+  const seen = FALLBACK_SEEN.get(domain) || new Map();
+  const filtered = [];
+  const now = Date.now();
+  for (const item of items || []) {
+    const rawLink = item.link || item.guid || "";
+    const link = cleanUrl(rawLink, rawLink);
+    if (!link) continue;
+    const key = canonicalizeUrl(link) || link;
+    if (seen.has(key)) continue;
+    seen.set(key, now);
+    filtered.push({ ...item, link });
+  }
+  FALLBACK_SEEN.set(domain, seen);
+  capMapSize(seen, FALLBACK_SEEN_MAX);
+  return filtered;
+};
+
+const fetchFeedXml = async (url = "") => {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), INGEST_TIMEOUT_MS);
+  const response = await fetch(url, {
+    signal: controller.signal,
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Informed360Bot/1.0",
+      Accept: "application/rss+xml, application/xml;q=0.9, */*;q=0.8",
+      "Accept-Language": "en-IN,en;q=0.9"
+    }
+  });
+  clearTimeout(timeout);
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  const xml = await response.text();
+  return xml;
+};
+
+const parseFeedXml = async (xml = "") => {
+  if (!xml) return { items: [] };
+  return parser.parseString(xml);
+};
+
+const sanitizeFeedItem = (item = {}) => ({
+  title: item.title || "",
+  link: item.link || "",
+  guid: item.guid || "",
+  source: item.source || {},
+  contentSnippet: item.contentSnippet || "",
+  summary: item.summary || "",
+  content: String(item.content || "").slice(0, 2000),
+  "content:encoded": String(item["content:encoded"] || "").slice(0, 2000),
+  enclosure: item.enclosure,
+  "media:content": item["media:content"],
+  "media:thumbnail": item["media:thumbnail"],
+  isoDate: item.isoDate,
+  pubDate: item.pubDate
+});
+
+const runWithConcurrency = async (items = [], limit = 4, worker) => {
+  const results = [];
+  let index = 0;
+  const workers = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (index < items.length) {
+      const current = index++;
+      results[current] = await worker(items[current], current);
+    }
+  });
+  await Promise.all(workers);
+  return results;
+};
+
 async function fetchList(urls) {
   const articles = [];
   const seen = new Set();
 
-  await Promise.all(
-    urls.map(async (url) => {
+  await runWithConcurrency(urls, INGEST_CONCURRENCY, async (url) => {
       const domain = publisherDomainFromFeed(url);
       const feed = await fetchWithFallback(url);
-      const items = (feed.items || []).slice(0, 30);
+      const items = (feed.items || []).slice(0, 30).map(sanitizeFeedItem);
 
       for (const item of items) {
         const rawLink = item.link || item.guid || "";
@@ -934,8 +1064,7 @@ async function fetchList(urls) {
         articles.push(article);
         setCachedArticle(link, article, explanation);
       }
-    })
-  );
+    });
 
   articles.sort(
     (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
@@ -960,10 +1089,12 @@ const uniqueMerge = (a, b) => {
 async function refreshCore() {
   CORE = await fetchList(FEEDS.feeds || []);
   STORY_CACHE.delete("core");
+  applyGlobalArticleCap();
 }
 async function refreshExp() {
   EXP = await fetchList(FEEDS.experimental || []);
   STORY_CACHE.delete("exp");
+  applyGlobalArticleCap();
 }
 async function validateFeeds() {
   const urls = [...(FEEDS.feeds || []), ...(FEEDS.experimental || [])];
@@ -1010,6 +1141,36 @@ const buildFeedStatus = (url, counts) => {
     },
     recentCount: counts.get(domain) || 0
   };
+};
+
+const buildArticleKey = (article = {}) => {
+  const link = article.link || article.url || "";
+  return canonicalizeUrl(link) || link;
+};
+
+const applyGlobalArticleCap = () => {
+  if (!MAX_ARTICLES_TOTAL) return;
+  const combined = [...(CORE.articles || []), ...(EXP.articles || [])];
+  const map = new Map();
+  combined.forEach((article) => {
+    const key = buildArticleKey(article);
+    if (!key) return;
+    const existing = map.get(key);
+    if (!existing) {
+      map.set(key, article);
+      return;
+    }
+    const existingDate = new Date(existing.publishedAt).getTime();
+    const nextDate = new Date(article.publishedAt).getTime();
+    if (nextDate > existingDate) map.set(key, article);
+  });
+  const sorted = [...map.values()].sort(
+    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+  );
+  const trimmed = sorted.slice(0, MAX_ARTICLES_TOTAL);
+  const keepKeys = new Set(trimmed.map((article) => buildArticleKey(article)));
+  CORE = { ...CORE, articles: (CORE.articles || []).filter((a) => keepKeys.has(buildArticleKey(a))) };
+  EXP = { ...EXP, articles: (EXP.articles || []).filter((a) => keepKeys.has(buildArticleKey(a))) };
 };
 
 /* topics */
@@ -1376,6 +1537,7 @@ const getRelatedCache = (key = "") => {
 };
 const setRelatedCache = (key = "", related = []) => {
   TOP_STORY_RELATED_CACHE.set(key, { at: Date.now(), related });
+  capMapSize(TOP_STORY_RELATED_CACHE, TOP_STORY_RELATED_CACHE_MAX);
 };
 const getRelatedCoverageCache = (key = "") => {
   if (!key) return null;
@@ -1390,6 +1552,7 @@ const getRelatedCoverageCache = (key = "") => {
 const setRelatedCoverageCache = (key = "", related = []) => {
   if (!key) return;
   RELATED_COVERAGE_CACHE.set(key, { ts: Date.now(), related });
+  capMapSize(RELATED_COVERAGE_CACHE, RELATED_COVERAGE_CACHE_MAX);
 };
 const getCoverageCache = (key = "") => {
   if (!key) return null;
@@ -1404,6 +1567,7 @@ const getCoverageCache = (key = "") => {
 const setCoverageCache = (key = "", related = []) => {
   if (!key) return;
   COVERAGE_CACHE.set(key, { ts: Date.now(), related });
+  capMapSize(COVERAGE_CACHE, COVERAGE_CACHE_MAX);
 };
 
 const buildTopStoryPrimary = (article = {}) => {
@@ -1728,6 +1892,7 @@ const fetchGdelt = async ({
         bodySnippet: bodyText.slice(0, 200)
       };
       GDELT_CACHE.set(cacheKey, { at: Date.now(), payload });
+      capMapSize(GDELT_CACHE, GDELT_CACHE_MAX);
       return payload;
     }
     let data;
@@ -1742,6 +1907,7 @@ const fetchGdelt = async ({
         bodySnippet: bodyText.slice(0, 200)
       };
       GDELT_CACHE.set(cacheKey, { at: Date.now(), payload });
+      capMapSize(GDELT_CACHE, GDELT_CACHE_MAX);
       return payload;
     }
     const rawArticles = data?.articles || data?.data?.articles || [];
@@ -1774,6 +1940,7 @@ const fetchGdelt = async ({
     );
     const payload = { fetchedAt: Date.now(), articles };
     GDELT_CACHE.set(cacheKey, { at: Date.now(), payload });
+    capMapSize(GDELT_CACHE, GDELT_CACHE_MAX);
     return payload;
   } catch (error) {
     const payload = {
@@ -1782,6 +1949,7 @@ const fetchGdelt = async ({
       error: "gdelt-error"
     };
     GDELT_CACHE.set(cacheKey, { at: Date.now(), payload });
+    capMapSize(GDELT_CACHE, GDELT_CACHE_MAX);
     return payload;
   }
 };
@@ -1937,6 +2105,17 @@ const uniqueRelatedByDomain = (items = []) => {
     seen.add(domain);
     return true;
   });
+};
+const logMemoryDiagnostics = () => {
+  const mem = process.memoryUsage();
+  const combined = [...(CORE.articles || []), ...(EXP.articles || [])];
+  const uniqueUrls = new Set(combined.map((article) => buildArticleKey(article)).filter(Boolean));
+  console.log(
+    `[mem] heapUsed=${Math.round(mem.heapUsed / 1024 / 1024)}MB ` +
+      `heapTotal=${Math.round(mem.heapTotal / 1024 / 1024)}MB ` +
+      `rss=${Math.round(mem.rss / 1024 / 1024)}MB ` +
+      `articles=${combined.length} uniqueUrls=${uniqueUrls.size}`
+  );
 };
 const shouldSkipRelatedCandidate = ({
   domain,
@@ -2364,6 +2543,7 @@ app.get("/api/stories", (req, res) => {
     : CORE.articles;
   const stories = buildStories(articles);
   STORY_CACHE.set(cacheKey, { at: Date.now(), stories });
+  capMapSize(STORY_CACHE, STORY_CACHE_MAX);
   res.json({ fetchedAt: Date.now(), stories });
 });
 
@@ -2455,6 +2635,7 @@ app.get("/api/pinned", (_req, res) => {
 let yfModule = null;
 async function loadYF() {
   try {
+    if (!FINANCE_ENABLED) return null;
     if (yfModule) return yfModule;
     const mod = await import("yahoo-finance2");
     yfModule = mod?.default || mod;
@@ -2465,7 +2646,6 @@ async function loadYF() {
 }
 app.get("/api/markets", async (_req, res) => {
   try {
-    const yf = await loadYF();
     const symbols = [
       { s: "^BSESN", pretty: "BSE Sensex" },
       { s: "^NSEI", pretty: "NSE Nifty" },
@@ -2473,6 +2653,19 @@ app.get("/api/markets", async (_req, res) => {
       { s: "CL=F", pretty: "Crude Oil" },
       { s: "USDINR=X", pretty: "USD/INR" }
     ];
+    if (!FINANCE_ENABLED) {
+      return res.json({
+        updatedAt: Date.now(),
+        quotes: symbols.map((x) => ({
+          symbol: x.s,
+          pretty: x.pretty,
+          price: null,
+          change: null,
+          changePercent: null
+        }))
+      });
+    }
+    const yf = await loadYF();
     if (!yf)
       return res.json({
         updatedAt: Date.now(),
@@ -2503,11 +2696,18 @@ app.get("/health", (_req, res) => res.json({ ok: true, at: Date.now() }));
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Informed360 running on :${PORT}`));
 
-setTimeout(() => {
-  refreshCore().catch(console.error);
-  refreshExp().catch(console.error);
-  validateFeeds().catch(console.error);
-}, 2000);
-setInterval(refreshCore, REFRESH_MS);
-setInterval(refreshExp, REFRESH_MS);
-setInterval(validateFeeds, 60 * 60 * 1000);
+const startIngestion = () => {
+  if (global.__ingestionStarted) return;
+  global.__ingestionStarted = true;
+  setTimeout(() => {
+    refreshCore().catch(console.error);
+    refreshExp().catch(console.error);
+    validateFeeds().catch(console.error);
+  }, 2000);
+  setInterval(refreshCore, REFRESH_MS);
+  setInterval(refreshExp, REFRESH_MS);
+  setInterval(validateFeeds, 60 * 60 * 1000);
+  setInterval(logMemoryDiagnostics, 5 * 60 * 1000);
+};
+
+startIngestion();
