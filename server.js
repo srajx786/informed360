@@ -888,6 +888,18 @@ async function fetchDirect(url) {
     release(host);
   }
 }
+const attemptFallback = async (domain, url, { logFallback = false } = {}) => {
+  if (!shouldUseFallback(domain, url)) {
+    return { title: domain, items: [] };
+  }
+  const g = await parseURL(gNewsForDomain(domain));
+  g.title = g.title || domain;
+  g.items = filterFallbackItems(domain, g.items || []);
+  if (logFallback) {
+    console.warn("[FEED Fallback]", domain, "-> Google News RSS");
+  }
+  return g;
+};
 async function fetchWithFallback(url) {
   const domain = publisherDomainFromFeed(url);
   try {
@@ -915,8 +927,7 @@ async function fetchWithFallback(url) {
       g.title = g.title || domain;
       g.items = filterFallbackItems(domain, g.items || []);
       recordFeedHealth(url, true);
-      console.warn("[FEED Fallback]", domain, "-> Google News RSS");
-      return g;
+      return await attemptFallback(domain, url, { logFallback: true });
     } catch (e2) {
       const msg = e?.statusCode
         ? `Status ${e.statusCode}`
