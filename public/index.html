@@ -59,7 +59,6 @@
 
       <div class="gn-actions">
         <div class="gn-icon-actions">
-          <button id="proLockBtn" class="icon-btn pro-lock-btn" title="Login for Pro" aria-label="Login for Pro">🔒</button>
           <button id="helpBtn" class="icon-btn" title="Help" aria-label="Help">❔</button>
           <button id="settingsBtn" class="icon-btn" title="Settings" aria-label="Settings">⚙️</button>
           <button id="avatarBtn" class="avatar" title="Sign in">S</button>
@@ -317,22 +316,18 @@
         <h2>Log in to Pro</h2>
       </header>
       <div class="info-body">
-        <div id="loginStatus" class="login-status" role="status" aria-live="polite"></div>
-        <div class="login-fields">
-          <label class="login-field">
-            <span>Username</span>
-            <input id="loginUsername" type="text" autocomplete="username" placeholder="Admin">
-          </label>
-          <label class="login-field">
-            <span>Password</span>
-            <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Admin">
-          </label>
-        </div>
+        <label class="login-field">
+          <span>Username</span>
+          <input id="loginUsername" type="text" autocomplete="username" placeholder="Admin">
+        </label>
+        <label class="login-field">
+          <span>Password</span>
+          <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Admin">
+        </label>
         <div id="loginError" class="login-error" role="alert"></div>
       </div>
       <menu class="actions">
         <button value="cancel" class="btn ghost">Cancel</button>
-        <button id="loginLogoutBtn" type="button" class="btn ghost">Log out</button>
         <button type="submit" class="btn">Log in</button>
       </menu>
     </form>
