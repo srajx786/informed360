@@ -1266,7 +1266,7 @@ async function loadAll(){
     if (needsIndiaFetch){
       state.indiaArticles = india?.articles || [];
     } else {
-      state.indiaArticles = state.allArticles.filter(a => a.category === "india");
+      state.indiaArticles = state.allArticles.filter(isIndiaArticle);
     }
 
     if (state.category === "local" && state.profile?.city){
@@ -2651,7 +2651,7 @@ function renderTopics(){
 }
 
 /* ===== 4-hour sentiment chart – single band + lines like your reference ===== */
-function renderSentimentTimeline({ sparkEl, summaryEl, titleEl, title, articles }){
+function renderSentimentTimeline({ sparkEl, summaryEl, titleEl, title, articles, emptyMessage }){
   const now = Date.now();
   const fourHrs = 4 * 60 * 60 * 1000;
   const recent = (articles || []).filter(
@@ -2683,6 +2683,11 @@ function renderSentimentTimeline({ sparkEl, summaryEl, titleEl, title, articles 
   const summary = typeof summaryEl === "string" ? $(summaryEl) : summaryEl;
   const titleNode = typeof titleEl === "string" ? $(titleEl) : titleEl;
   if (titleNode && title) titleNode.textContent = title;
+  if (!recent.length && emptyMessage && summary){
+    svg.innerHTML = "";
+    summary.textContent = emptyMessage;
+    return;
+  }
 
   const W = 300, H = 120;
   const padL = 34, padR = 10, padT = 18, padB = 24;
@@ -2770,9 +2775,15 @@ function formatSentimentTitle(label){
   return `${possessive} Sentiment`;
 }
 
+function isIndiaArticle(article = {}){
+  const category = String(article.category || "").toLowerCase();
+  const section = String(article.section || "").toLowerCase();
+  return category === "india" || section === "india" || category.includes("india") || section.includes("india");
+}
+
 function getIndiaSentimentArticles(){
   if (state.category === "home"){
-    return (state.allArticles || []).filter(a => a.category === "india");
+    return (state.allArticles || []).filter(isIndiaArticle);
   }
   if (state.category === "india") return state.articles || [];
   return state.indiaArticles || [];
@@ -2786,12 +2797,24 @@ function getWorldSentimentArticles(){
 }
 
 function renderIndiaSentiment(){
+  const articles = getIndiaSentimentArticles();
+  const sparkEl = $("#moodSpark");
+  const summaryEl = $("#moodSummary");
+  const titleEl = $("#moodIndiaTitle");
+  if (titleEl) titleEl.textContent = "India's Sentiment";
+  if (!sparkEl || !summaryEl) return;
+  if (!articles.length){
+    sparkEl.innerHTML = "";
+    summaryEl.textContent = "No sentiment data yet — try again soon.";
+    return;
+  }
   renderSentimentTimeline({
-    sparkEl: "#moodSpark",
-    summaryEl: "#moodSummary",
-    titleEl: "#moodIndiaTitle",
+    sparkEl,
+    summaryEl,
+    titleEl,
     title: "India's Sentiment",
-    articles: getIndiaSentimentArticles()
+    articles,
+    emptyMessage: "No sentiment data yet — try again soon."
   });
 }
 
@@ -2823,6 +2846,44 @@ const NARRATIVE_ICONS = {
   security: `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 4v6c0 5.25-3.5 9.74-8 10.93C7.5 21.74 4 17.25 4 12V6l8-4zm0 2.18L6 7v5c0 4.07 2.62 7.74 6 8.82 3.38-1.08 6-4.75 6-8.82V7l-6-2.82z"></path></svg>`
 };
 
+const NARRATIVE_CATEGORY_ORDER = ["govt", "citizen", "finance", "environment", "security"];
+const NARRATIVE_CATEGORIES = {
+  govt: {
+    label: "Govt",
+    keywords: ["government","govt","minister","parliament","policy","administration","cabinet","prime minister","election","vote","law","bill","supreme court","high court"]
+  },
+  citizen: {
+    label: "Citizen",
+    keywords: ["citizen","community","public","people","workers","students","union","protest","rights","activist","protesters","civil","welfare","education","healthcare"]
+  },
+  finance: {
+    label: "Finance",
+    keywords: ["finance","financial","bank","banking","market","stock","economy","economic","inflation","tax","budget","gdp","rupee","trade","investment","startup"]
+  },
+  environment: {
+    label: "Environment",
+    keywords: ["climate","environment","pollution","wildlife","forest","emission","carbon","renewable","solar","wind","green","biodiversity","conservation","flood","heatwave","drought"]
+  },
+  security: {
+    label: "Security",
+    keywords: ["security","defense","military","terror","border","police","crime","attack","war","army","navy","air force","intelligence","cyber"]
+  }
+};
+
+function getNarrativeArticles(){
+  return (state.articles && state.articles.length) ? state.articles : (state.allArticles || []);
+}
+
+function getArticleSentimentScore(article = {}){
+  const direct = Number(article.sentimentScore ?? article.sentiment?.score ?? article.sentiment?.compound);
+  if (Number.isFinite(direct)) return direct;
+  const sentiment = article.sentiment || {};
+  const pos = Number(sentiment.posP ?? sentiment.pos ?? 0);
+  const neg = Number(sentiment.negP ?? sentiment.neg ?? 0);
+  if (!pos && !neg) return 0;
+  return (pos - neg) / 100;
+}
+
 function normalizeNarrativeSource(item = {}) {
   const primary = item?.primary || item;
   const sourceName = String(primary?.source || primary?.sourceName || item?.source || "").trim();
@@ -2832,74 +2893,139 @@ function normalizeNarrativeSource(item = {}) {
   return { name: sourceName, logo: sourceLogo || LOGO_PLACEHOLDER };
 }
 
-function getNarrativeSources() {
-  const sources = [];
-  const seen = new Set();
-  const addSource = (entry) => {
-    if (!entry?.name) return;
-    const key = entry.name.toLowerCase();
-    if (seen.has(key)) return;
-    seen.add(key);
-    sources.push(entry);
-  };
-
-  const primaryList = Array.isArray(window.__TOP_STORIES_PRIMARY__)
-    ? window.__TOP_STORIES_PRIMARY__
-    : [];
-  primaryList.forEach(item => addSource(normalizeNarrativeSource(item)));
-
-  const topStories = state.topStories || {};
-  [
-    topStories.indiaRecent,
-    topStories.indiaEngaged,
-    topStories.worldRecent,
-    topStories.worldEngaged
-  ].forEach(list => {
-    (list || []).forEach(item => addSource(normalizeNarrativeSource(item)));
-  });
-
-  NARRATIVE_FALLBACK_SOURCES.forEach(item => addSource(item));
-
-  return sources.slice(0, 5);
-}
-
 function escapeHtmlAttr(str) { return escapeHtml(str); }
 
-function renderNarrativeBalance() {
+function pickNarrativeTopSources(sourceMap = new Map()){
+  const list = [...sourceMap.values()];
+  if (!list.length) return [];
+  const proLeaders = list.filter(item => item.pro > 0).sort((a,b) => b.pro - a.pro);
+  const notLeaders = list.filter(item => item.notPro > 0).sort((a,b) => b.notPro - a.notPro);
+  const picks = [];
+  if (proLeaders.length) picks.push(proLeaders[0]);
+  if (notLeaders.length && (!picks.length || notLeaders[0].name !== picks[0]?.name)) picks.push(notLeaders[0]);
+  if (picks.length < 2){
+    const remaining = list
+      .filter(item => !picks.some(p => p.name === item.name))
+      .sort((a,b) => (b.pro + b.notPro) - (a.pro + a.notPro));
+    remaining.forEach(item => {
+      if (picks.length < 2) picks.push(item);
+    });
+  }
+  return picks.map(item => ({ name: item.name, logo: item.logo || LOGO_PLACEHOLDER }));
+}
+
+function computeNarrativeBalance(articles = []){
+  const stats = {};
+  const result = {};
+  NARRATIVE_CATEGORY_ORDER.forEach(key => {
+    stats[key] = { pro:0, notPro:0, sources: new Map() };
+    result[key] = { proRatio: 0.5, topSources: [], hasData: false };
+  });
+
+  (articles || []).forEach(article => {
+    const text = `${article.title || ""} ${article.description || ""} ${article.category || ""} ${article.section || ""}`.toLowerCase();
+    if (!text.trim()) return;
+    const score = getArticleSentimentScore(article);
+    const sentimentClass = score > 0.05 ? "pro" : score < -0.05 ? "notPro" : "neutral";
+    if (sentimentClass === "neutral") return;
+    const source = normalizeNarrativeSource(article);
+    NARRATIVE_CATEGORY_ORDER.forEach(key => {
+      const config = NARRATIVE_CATEGORIES[key];
+      if (!config.keywords.some(word => text.includes(word))) return;
+      const entry = stats[key];
+      if (sentimentClass === "pro") entry.pro += 1;
+      if (sentimentClass === "notPro") entry.notPro += 1;
+      if (source?.name){
+        const id = source.name.toLowerCase();
+        const sourceEntry = entry.sources.get(id) || {
+          name: source.name,
+          logo: source.logo || LOGO_PLACEHOLDER,
+          pro: 0,
+          notPro: 0
+        };
+        if (sentimentClass === "pro") sourceEntry.pro += 1;
+        if (sentimentClass === "notPro") sourceEntry.notPro += 1;
+        entry.sources.set(id, sourceEntry);
+      }
+    });
+  });
+
+  NARRATIVE_CATEGORY_ORDER.forEach(key => {
+    const entry = stats[key];
+    const denom = entry.pro + entry.notPro;
+    if (denom > 0){
+      result[key].proRatio = entry.pro / denom;
+      result[key].hasData = true;
+    }
+    result[key].topSources = pickNarrativeTopSources(entry.sources);
+  });
+
+  return result;
+}
+
+function renderNarrativeBalance(balance) {
   const container = $("#narrativeCard") || $("#narrativeBalance");
   if (!container) return;
-  const sources = getNarrativeSources();
-  const barsHtml = sources.map(source => `
-    <div class="nbBar">
-      <div class="nbSource">
-        <img src="${escapeHtmlAttr(source.logo)}" alt="${escapeHtmlAttr(source.name)}" loading="lazy" />
+  if (!container.dataset.ready){
+    const barsHtml = NARRATIVE_CATEGORY_ORDER.map(key => `
+      <div class="nbBar" data-cat="${key}">
+        <div class="nbSource"></div>
+        <div class="nbEmpty">No data yet</div>
       </div>
-    </div>
-  `).join("");
-
-  container.innerHTML = `
-    <div class="card-header"><h3>Narrative Balance</h3></div>
-    <div class="card-body">
-      <div class="nbIcons">
-        <div class="nbIcon"><span class="nbSvg">${NARRATIVE_ICONS.govt}</span><span class="nbLbl">Govt</span></div>
-        <div class="nbIcon"><span class="nbSvg">${NARRATIVE_ICONS.citizen}</span><span class="nbLbl">Citizen</span></div>
-        <div class="nbIcon"><span class="nbSvg">${NARRATIVE_ICONS.finance}</span><span class="nbLbl">Finance</span></div>
-        <div class="nbIcon"><span class="nbSvg">${NARRATIVE_ICONS.environment}</span><span class="nbLbl">Environment</span></div>
-        <div class="nbIcon"><span class="nbSvg">${NARRATIVE_ICONS.security}</span><span class="nbLbl">Security</span></div>
-      </div>
-
-      <div class="nbMain">
-        <div class="nbY">
-          <div class="nbPro">Pro</div>
-          <div class="nbNotPro">Not Pro</div>
+    `).join("");
+    container.innerHTML = `
+      <div class="card-header"><h3>Narrative Balance</h3></div>
+      <div class="card-body">
+        <div class="nbIcons">
+          ${NARRATIVE_CATEGORY_ORDER.map(key => `
+            <div class="nbIcon">
+              <span class="nbSvg">${NARRATIVE_ICONS[key]}</span>
+              <span class="nbLbl">${NARRATIVE_CATEGORIES[key].label}</span>
+            </div>`).join("")}
         </div>
 
-        <div class="nbBars">
-          ${barsHtml}
+        <div class="nbMain">
+          <div class="nbY">
+            <div class="nbPro">Pro</div>
+            <div class="nbNotPro">Not Pro</div>
+          </div>
+
+          <div class="nbBars">
+            ${barsHtml}
+          </div>
         </div>
       </div>
-    </div>
-  `;
+    `;
+    container.dataset.ready = "1";
+  }
+
+  const bars = container.querySelectorAll(".nbBar");
+  bars.forEach(bar => {
+    const key = bar.dataset.cat;
+    const entry = balance?.[key] || {};
+    const ratio = Math.min(1, Math.max(0, Number(entry.proRatio ?? 0.5)));
+    const pct = Math.round(ratio * 100);
+    bar.style.background = `linear-gradient(#c9efd2 0 ${pct}%, #f6bcbc ${pct}% 100%)`;
+
+    const sourceWrap = bar.querySelector(".nbSource");
+    const emptyNote = bar.querySelector(".nbEmpty");
+    const topSources = entry.topSources || [];
+    if (sourceWrap){
+      if (topSources.length){
+        sourceWrap.innerHTML = topSources.map(source =>
+          `<img src="${escapeHtmlAttr(source.logo)}" alt="${escapeHtmlAttr(source.name)}" loading="lazy" />`
+        ).join("");
+        sourceWrap.classList.remove("is-empty");
+      } else {
+        sourceWrap.innerHTML = "";
+        sourceWrap.classList.add("is-empty");
+      }
+    }
+    if (emptyNote){
+      const hasData = Boolean(entry.hasData);
+      emptyNote.classList.toggle("show", !hasData);
+    }
+  });
 }
 
 /* ===== Sentiment Leaderboard (logic unchanged) ===== */
@@ -3172,7 +3298,7 @@ function renderAll(){
   renderDaily();
   renderTopics();
   renderIndiaSentiment();
-  renderNarrativeBalance();
+  renderNarrativeBalance(computeNarrativeBalance(getNarrativeArticles()));
   renderLeaderboard();
   renderIndustryBoard();
   attachSentimentTooltips();
