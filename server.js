@@ -174,10 +174,7 @@ const RELATED_COVERAGE_CACHE_MAX = Number(
 );
 const COVERAGE_CACHE_MAX = Number(process.env.COVERAGE_CACHE_MAX || 200);
 const OG_IMAGE_CACHE_MAX = Number(process.env.OG_IMAGE_CACHE_MAX || 400);
-const MAX_ARTICLES_TOTAL = Number(process.env.MAX_ARTICLES_TOTAL || 200);
-const MAX_ARTICLES_PER_FEED_PER_CYCLE = Number(
-  process.env.MAX_ARTICLES_PER_FEED_PER_CYCLE || 20
-);
+const MAX_ARTICLES_TOTAL = Number(process.env.MAX_ARTICLES_TOTAL || 500);
 const INGEST_CONCURRENCY = Math.max(
   1,
   Number(process.env.INGEST_CONCURRENCY || 4)
@@ -188,9 +185,6 @@ const INGEST_TIMEOUT_MS = Math.max(
 );
 const FALLBACK_MIN_INTERVAL_MS = Number(
   process.env.FALLBACK_MIN_INTERVAL_MS || 60 * 60 * 1000
-);
-const FEED_FALLBACK_COOLDOWN_MS = Number(
-  process.env.FEED_FALLBACK_COOLDOWN_MS || 60 * 60 * 1000
 );
 const FALLBACK_SEEN_MAX = Number(process.env.FALLBACK_SEEN_MAX || 200);
 const FINANCE_ENABLED = ["1", "true", "yes", "on"].includes(
@@ -213,7 +207,6 @@ const COVERAGE_CACHE = new Map();
 const FEED_HEALTH = new Map();
 const FALLBACK_RATE = new Map();
 const FALLBACK_SEEN = new Map();
-const FALLBACK_COOLDOWN = new Map();
 
 let transformerPipeline = null;
 const domainFromUrl = (u = "") => {
@@ -897,7 +890,7 @@ async function fetchWithFallback(url) {
     const feed = await fetchDirect(url);
     recordFeedHealth(url, true);
     if (feed?.items?.length) return feed;
-    if (!shouldUseFallback(domain, url)) {
+    if (!shouldUseFallback(domain)) {
       return { title: domain, items: [] };
     }
     const g = await parseURL(gNewsForDomain(domain));
@@ -906,9 +899,7 @@ async function fetchWithFallback(url) {
     return g;
   } catch (e) {
     try {
-      const cooldownKey = url || domain;
-      FALLBACK_COOLDOWN.set(cooldownKey, Date.now() + FEED_FALLBACK_COOLDOWN_MS);
-      if (!shouldUseFallback(domain, url)) {
+      if (!shouldUseFallback(domain)) {
         return { title: domain, items: [] };
       }
       const g = await parseURL(gNewsForDomain(domain));
@@ -928,11 +919,8 @@ async function fetchWithFallback(url) {
   }
 }
 
-const shouldUseFallback = (domain = "", url = "") => {
+const shouldUseFallback = (domain = "") => {
   if (!domain) return false;
-  const cooldownKey = url || domain;
-  const cooldownUntil = FALLBACK_COOLDOWN.get(cooldownKey) || 0;
-  if (Date.now() < cooldownUntil) return false;
   const last = FALLBACK_RATE.get(domain) || 0;
   if (Date.now() - last < FALLBACK_MIN_INTERVAL_MS) return false;
   FALLBACK_RATE.set(domain, Date.now());
@@ -988,32 +976,14 @@ const sanitizeFeedItem = (item = {}) => ({
   source: item.source || {},
   contentSnippet: item.contentSnippet || "",
   summary: item.summary || "",
-  content: "",
-  "content:encoded": "",
+  content: String(item.content || "").slice(0, 2000),
+  "content:encoded": String(item["content:encoded"] || "").slice(0, 2000),
   enclosure: item.enclosure,
   "media:content": item["media:content"],
   "media:thumbnail": item["media:thumbnail"],
   isoDate: item.isoDate,
   pubDate: item.pubDate
 });
-
-const normalizeArticle = (raw = {}) => {
-  const summary = String(raw.summary || raw.description || "")
-    .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, 400);
-  const tags = Array.isArray(raw.tags) ? raw.tags.filter(Boolean).slice(0, 5) : [];
-  return {
-    id: raw.id || raw.link || raw.url || "",
-    title: raw.title || "",
-    source: raw.source || "",
-    url: raw.link || raw.url || "",
-    publishedAt: raw.publishedAt || new Date().toISOString(),
-    summary,
-    sentiment: raw.sentiment || null,
-    tags
-  };
-};
 
 const runWithConcurrency = async (items = [], limit = 4, worker) => {
   const results = [];
@@ -1035,9 +1005,7 @@ async function fetchList(urls) {
   await runWithConcurrency(urls, INGEST_CONCURRENCY, async (url) => {
       const domain = publisherDomainFromFeed(url);
       const feed = await fetchWithFallback(url);
-      const items = (feed.items || [])
-        .slice(0, MAX_ARTICLES_PER_FEED_PER_CYCLE)
-        .map(sanitizeFeedItem);
+      const items = (feed.items || []).slice(0, 30).map(sanitizeFeedItem);
 
       for (const item of items) {
         const rawLink = item.link || item.guid || "";
@@ -1222,18 +1190,8 @@ const applyGlobalArticleCap = () => {
   );
   const trimmed = sorted.slice(0, MAX_ARTICLES_TOTAL);
   const keepKeys = new Set(trimmed.map((article) => buildArticleKey(article)));
-  CORE = {
-    ...CORE,
-    articles: (CORE.articles || [])
-      .filter((a) => keepKeys.has(buildArticleKey(a)))
-      .map(normalizeArticle)
-  };
-  EXP = {
-    ...EXP,
-    articles: (EXP.articles || [])
-      .filter((a) => keepKeys.has(buildArticleKey(a)))
-      .map(normalizeArticle)
-  };
+  CORE = { ...CORE, articles: (CORE.articles || []).filter((a) => keepKeys.has(buildArticleKey(a))) };
+  EXP = { ...EXP, articles: (EXP.articles || []).filter((a) => keepKeys.has(buildArticleKey(a))) };
 };
 
 /* topics */
@@ -2173,17 +2131,11 @@ const logMemoryDiagnostics = () => {
   const mem = process.memoryUsage();
   const combined = [...(CORE.articles || []), ...(EXP.articles || [])];
   const uniqueUrls = new Set(combined.map((article) => buildArticleKey(article)).filter(Boolean));
-  const avgSummarySize = combined.length
-    ? Math.round(
-        combined.reduce((acc, article) => acc + String(article.summary || "").length, 0) /
-          combined.length
-      )
-    : 0;
   console.log(
     `[mem] heapUsed=${Math.round(mem.heapUsed / 1024 / 1024)}MB ` +
       `heapTotal=${Math.round(mem.heapTotal / 1024 / 1024)}MB ` +
       `rss=${Math.round(mem.rss / 1024 / 1024)}MB ` +
-      `articles=${combined.length} uniqueUrls=${uniqueUrls.size} avgSummary=${avgSummarySize}`
+      `articles=${combined.length} uniqueUrls=${uniqueUrls.size}`
   );
 };
 const shouldSkipRelatedCandidate = ({
@@ -2776,7 +2728,7 @@ const startIngestion = () => {
   setInterval(refreshCore, REFRESH_MS);
   setInterval(refreshExp, REFRESH_MS);
   setInterval(validateFeeds, 60 * 60 * 1000);
-  setInterval(logMemoryDiagnostics, 3 * 60 * 1000);
+  setInterval(logMemoryDiagnostics, 5 * 60 * 1000);
 };
 
 startIngestion();
