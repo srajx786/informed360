@@ -1010,12 +1010,23 @@ async function fetchList(urls) {
       for (const item of items) {
         const rawLink = item.link || item.guid || "";
         const link = cleanUrl(rawLink, rawLink);
-        if (!link || seen.has(link)) continue;
+        const canonical = canonicalizeUrl(link) || link;
+        if (!link || seen.has(canonical)) continue;
 
         const cached = getCachedArticle(link);
         if (cached) {
-          seen.add(link);
-          articles.push(cached);
+          const cachedLean = normalizeArticle({
+            id: cached.link || cached.url || link,
+            title: cached.title,
+            source: cached.source,
+            link: cached.link || link,
+            publishedAt: cached.publishedAt,
+            summary: cached.description || "",
+            sentiment: cached.sentiment,
+            tags: cached.top_phrases
+          });
+          seen.add(canonical);
+          articles.push(cachedLean);
           continue;
         }
 
@@ -1059,9 +1070,19 @@ async function fetchList(urls) {
           top_phrases: explanation.top_phrases,
           category
         };
+        const leanArticle = normalizeArticle({
+          id: article.link,
+          title: article.title,
+          source: article.source,
+          link: article.link,
+          publishedAt: article.publishedAt,
+          summary: article.description,
+          sentiment: article.sentiment,
+          tags: article.top_phrases
+        });
 
-        seen.add(link);
-        articles.push(article);
+        seen.add(canonical);
+        articles.push(leanArticle);
         setCachedArticle(link, article, explanation);
       }
     });
