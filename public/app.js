@@ -839,16 +839,60 @@ function timeAgo(ts){
 }
 
 /* date + weather */
-const todayStr = () =>
-  new Date().toLocaleDateString(undefined,{
-    weekday:"long", day:"numeric", month:"long"
-  });
+const BRIEFING_DATE_PARTS = new Intl.DateTimeFormat("en-IN", {
+  weekday: "short",
+  day: "numeric",
+  month: "short"
+});
+const BRIEFING_TIME_PARTS = new Intl.DateTimeFormat("en-IN", {
+  hour: "numeric",
+  minute: "2-digit",
+  hour12: true,
+  timeZoneName: "short"
+});
+const LOCAL_TIMEZONE = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const formatBriefingDateTime = (date = new Date()) => {
+  const dateParts = BRIEFING_DATE_PARTS.formatToParts(date);
+  const weekday = dateParts.find(part => part.type === "weekday")?.value || "";
+  const day = dateParts.find(part => part.type === "day")?.value || "";
+  const month = dateParts.find(part => part.type === "month")?.value || "";
+  const timeParts = BRIEFING_TIME_PARTS.formatToParts(date);
+  const hour = timeParts.find(part => part.type === "hour")?.value || "";
+  const minute = timeParts.find(part => part.type === "minute")?.value || "";
+  const dayPeriod = timeParts.find(part => part.type === "dayPeriod")?.value || "";
+  const rawTimeZone = timeParts.find(part => part.type === "timeZoneName")?.value || "";
+  const timeZone =
+    LOCAL_TIMEZONE === "Asia/Kolkata" && /GMT\+5:30/.test(rawTimeZone)
+      ? "IST"
+      : rawTimeZone;
+  const timeLabel = `${hour}:${minute} ${dayPeriod.toUpperCase()} ${timeZone}`.trim();
+  return `${weekday}, ${day} ${month} · ${timeLabel}`.replace(/\s+/g, " ").trim();
+};
+const updateBriefingDateTime = () => {
+  const el = $("#briefingDate");
+  if (!el) return;
+  el.textContent = formatBriefingDateTime();
+};
+
 const WEATHER_LOCATION_KEY = "i360_weather_location";
+const WEATHER_CACHE_KEY = "i360_weather_cache_v1";
+const WEATHER_CACHE_TTL = 1000 * 60 * 10;
+const DEFAULT_WEATHER = {
+  tempC: 28,
+  condition: "Clear",
+  icon: "☀️",
+  location: "India"
+};
 
 function getCachedWeatherLocation(){
   if (state.weatherLocationName) return state.weatherLocationName;
   try{
-    return localStorage.getItem(WEATHER_LOCATION_KEY) || "";
+    const stored = localStorage.getItem(WEATHER_LOCATION_KEY) || "";
+    const trimmed = stored.trim();
+    if (!trimmed) return "";
+    if (trimmed.toLowerCase() === "india") return "India";
+    if (!trimmed.includes(",")) return `${trimmed}, IN`;
+    return trimmed;
   }catch{
     return "";
   }
@@ -862,24 +906,76 @@ function setCachedWeatherLocation(name){
   }catch{}
 }
 
+function getCachedWeather(){
+  try{
+    const raw = localStorage.getItem(WEATHER_CACHE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed?.timestamp || !parsed?.data) return null;
+    if (Date.now() - parsed.timestamp > WEATHER_CACHE_TTL) return null;
+    return parsed.data;
+  }catch{
+    return null;
+  }
+}
+
+function setCachedWeather(data){
+  try{
+    localStorage.setItem(WEATHER_CACHE_KEY, JSON.stringify({
+      timestamp: Date.now(),
+      data
+    }));
+  }catch{}
+}
+
+function getWeatherPresentation(code = 0, isDay = true){
+  const dayIcon = (iconDay, iconNight) => (isDay ? iconDay : iconNight);
+  if (code === 0) return { condition: "Clear", icon: dayIcon("☀️", "🌙") };
+  if (code >= 1 && code <= 3) return { condition: "Cloudy", icon: dayIcon("⛅", "☁️") };
+  if (code >= 45 && code <= 48) return { condition: "Fog", icon: dayIcon("🌫️", "🌫️") };
+  if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82))
+    return { condition: "Rain", icon: dayIcon("🌧️", "🌧️") };
+  if (code >= 71 && code <= 77) return { condition: "Snow", icon: dayIcon("❄️", "❄️") };
+  if (code >= 95) return { condition: "Thunderstorm", icon: dayIcon("⛈️", "⛈️") };
+  return { condition: "Clear", icon: dayIcon("☀️", "🌙") };
+}
+
+function renderWeatherCard(data){
+  const el = $("#weatherCard");
+  if (!el) return;
+  const location = escapeHtml(data.location || DEFAULT_WEATHER.location);
+  const condition = escapeHtml(data.condition || DEFAULT_WEATHER.condition);
+  const tempC = Number.isFinite(data.tempC) ? Math.round(data.tempC) : DEFAULT_WEATHER.tempC;
+  const icon = data.icon || DEFAULT_WEATHER.icon;
+  el.innerHTML =
+    `<div class="wx-icon">${icon}</div>
+     <div>
+       <div class="wx-city">${location}</div>
+       <div class="wx-temp">${tempC}°C · ${condition}</div>
+     </div>`;
+}
+
 async function getWeather(){
+  const cached = getCachedWeather();
+  renderWeatherCard(cached || DEFAULT_WEATHER);
   try{
     const coords = await new Promise((res)=>{
       if (!navigator.geolocation)
         return res({ latitude:19.0760, longitude:72.8777, allowed:false });
       navigator.geolocation.getCurrentPosition(
         p => res({ latitude:p.coords.latitude, longitude:p.coords.longitude, allowed:true }),
-        () => res({ latitude:19.0760, longitude:72.8777, allowed:false })
+        () => res({ latitude:19.0760, longitude:72.8777, allowed:false }),
+        { timeout: 6000, maximumAge: 60000 }
       );
     });
 
     const wx = await fetchJSON(
       `https://api.open-meteo.com/v1/forecast?latitude=${coords.latitude}` +
-      `&longitude=${coords.longitude}&current=temperature_2m,weather_code&timezone=auto`
+      `&longitude=${coords.longitude}` +
+      `&current=temperature_2m,weather_code,is_day&timezone=auto`
     );
 
-    const cachedLocation = getCachedWeatherLocation();
-    let city = state.profile?.city || cachedLocation || "Weather";
+    let locationLabel = coords.allowed ? getCachedWeatherLocation() : "India";
     if (coords.allowed && !state.profile?.city){
       try{
         const rev = await fetchJSON(
@@ -887,25 +983,33 @@ async function getWeather(){
           `&longitude=${coords.longitude}&language=en`
         );
         const locationName = rev?.results?.[0]?.name;
+        const countryCode = rev?.results?.[0]?.country_code;
         if (locationName){
-          city = locationName;
-          setCachedWeatherLocation(locationName);
+          const normalizedCountry = String(countryCode || "IN").toUpperCase();
+          locationLabel = `${locationName}, ${normalizedCountry}`;
+          setCachedWeatherLocation(locationLabel);
         }
       }catch{}
     }
 
-    const t = Math.round(wx?.current?.temperature_2m ?? 0);
-    const code = wx?.current?.weather_code ?? 0;
-    const icon = code>=0 && code<3 ? "🌙" : (code<50 ? "⛅" : "🌧️");
+    if (!locationLabel){
+      locationLabel = coords.allowed ? "India" : "India";
+    }
 
-    $("#weatherCard").innerHTML =
-      `<div class="wx-icon">${icon}</div>
-       <div>
-         <div class="wx-city">${city}</div>
-         <div class="wx-temp">${t}°C</div>
-       </div>`;
+    const tempC = Number(wx?.current?.temperature_2m ?? DEFAULT_WEATHER.tempC);
+    const code = Number(wx?.current?.weather_code ?? 0);
+    const isDay = wx?.current?.is_day === 1;
+    const presentation = getWeatherPresentation(code, isDay);
+    const payload = {
+      tempC,
+      condition: presentation.condition,
+      icon: presentation.icon,
+      location: coords.allowed ? locationLabel : "India"
+    };
+    renderWeatherCard(payload);
+    setCachedWeather(payload);
   }catch{
-    $("#weatherCard").textContent = "Weather unavailable";
+    renderWeatherCard(cached || DEFAULT_WEATHER);
   }
 }
 
@@ -2920,7 +3024,7 @@ function renderIndustryBoard(){
 
 /* glue */
 function renderAll(){
-  $("#briefingDate").textContent = todayStr();
+  updateBriefingDateTime();
   renderHero();
   renderPinned();
   renderNews();
@@ -3258,7 +3362,7 @@ applyTheme();
 renderTopicPickerOptions();
 moveSentimentControls();
 renderPinnedChips();
-$("#briefingDate").textContent = todayStr();
+updateBriefingDateTime();
 setDefaultHomeTab();
 getWeather();
 loadMarkets();
@@ -3275,6 +3379,7 @@ if ("serviceWorker" in navigator){
 setInterval(loadAll,     1000 * 60 * 5);
 setInterval(loadMarkets, 1000 * 60 * 2);
 setInterval(updateActiveSources, 1000 * 60);
+setInterval(updateBriefingDateTime, 1000 * 60);
 setInterval(() => {
   if (Date.now() - state.lastLeaderboardAt > 1000 * 60 * 60)
     renderLeaderboard();
