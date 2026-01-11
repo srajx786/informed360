@@ -1015,9 +1015,25 @@ async function getWeather(){
 
 /* markets – Grid 3 ticker */
 async function loadMarkets(){
+  const el = $("#marketTicker");
+  if (!el) return;
   try{
-    const data = await fetchJSON("/api/markets");
-    const el = $("#marketTicker");
+    let data;
+    try{
+      data = await fetchJSON("/api/markets");
+    }catch(error){
+      logApiError(error, error?.endpoint || "/api/markets");
+      const shouldRetry =
+        API_BASE === "" &&
+        FALLBACK_API_BASE &&
+        (error?.status === 0 || error?.status === 404);
+      if (shouldRetry){
+        API_BASE = FALLBACK_API_BASE;
+        data = await fetchJSON("/api/markets");
+      }else{
+        throw error;
+      }
+    }
     const updatedAt = new Date(data.updatedAt || Date.now());
     const updatedLabel = updatedAt.toLocaleTimeString([], {
       hour: "2-digit",
@@ -1063,8 +1079,66 @@ async function loadMarkets(){
     }).join("");
     el.innerHTML = `
       <div class="ticker-row" role="list">${items || ""}</div>`;
+    localStorage.setItem("i360_market_cache", JSON.stringify({
+      updatedAt: data.updatedAt || Date.now(),
+      quotes: data.quotes || []
+    }));
   }catch{
     // If API fails, show static labels so the bar is never empty
+    const cached = (() => {
+      try{
+        return JSON.parse(localStorage.getItem("i360_market_cache") || "null");
+      }catch{
+        return null;
+      }
+    })();
+    if (cached?.quotes?.length){
+      const data = cached;
+      const updatedAt = new Date(data.updatedAt || Date.now());
+      const updatedLabel = updatedAt.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+      const updatedDate = updatedAt.toLocaleDateString();
+      const statusText = `Website updated on ${updatedDate} · ${updatedLabel}`;
+      const updatedEl = $("#updatedAt");
+      if (updatedEl){
+        updatedEl.textContent = statusText;
+      }
+      const defaults = [
+        { symbol: "^BSESN", pretty: "BSE Sensex" },
+        { symbol: "^NSEI", pretty: "NSE Nifty" },
+        { symbol: "GC=F", pretty: "Gold" },
+        { symbol: "CL=F", pretty: "Crude Oil" },
+        { symbol: "USDINR=X", pretty: "USD/INR" }
+      ];
+      const bySymbol = new Map((data.quotes || []).map(q => [q.symbol, q]));
+      const items = defaults.map(d => {
+        const q = bySymbol.get(d.symbol) || {};
+        const price = (q.price ?? "—");
+        const pct = Number(q.changePercent ?? 0);
+        const cls = pct >= 0 ? "up" : "down";
+        const sign = pct >= 0 ? "▲" : "▼";
+        const pctTxt = isFinite(pct)
+          ? `${sign} ${Math.abs(pct).toFixed(2)}%`
+          : "—";
+        const changeTxt = typeof q.change === "number"
+          ? q.change.toLocaleString(undefined,{ maximumFractionDigits:2 })
+          : null;
+        const pTxt = typeof price === "number"
+          ? price.toLocaleString(undefined,{ maximumFractionDigits:2 })
+          : price;
+        return `
+          <div class="qpill">
+            <span class="sym">${d.pretty || q.pretty || q.symbol || d.symbol}</span>
+            <span class="price">${pTxt}${changeTxt ? ` (${changeTxt})` : ""}</span>
+            <span class="chg ${cls}">${pctTxt}</span>
+          </div>`;
+      }).join("");
+      el.innerHTML = `
+        <div class="ticker-row" role="list">${items || ""}</div>`;
+      return;
+    }
     const fallback = [
       "BSE Sensex","NSE Nifty","Gold","Crude Oil","USD/INR"
     ];
