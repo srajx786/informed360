@@ -2389,16 +2389,6 @@ app.get("/api/pinned", (_req, res) => {
 /* markets */
 let yfModule = null;
 const lastKnownQuotes = new Map();
-const toNumber = (value) => {
-  // robust numeric parsing
-  if (typeof value === "number") return Number.isFinite(value) ? value : null;
-  if (typeof value === "string") {
-    const cleaned = value.replace(/,/g, "").trim();
-    const parsed = Number(cleaned);
-    return Number.isFinite(parsed) ? parsed : null;
-  }
-  return null;
-};
 async function loadYF() {
   try {
     if (yfModule) return yfModule;
@@ -2438,7 +2428,7 @@ app.get("/api/markets", async (_req, res) => {
       // Always return the fixed symbol set with cached fallbacks.
       const cached = lastKnownQuotes.get(x.s);
       const q = fetchedBySymbol.get(x.s);
-      const price = toNumber(q?.regularMarketPrice);
+      const price = q?.regularMarketPrice;
       const hasValidPrice = Number.isFinite(price);
       const marketState = q?.marketState || q?.regularMarketState;
       const isClosed =
@@ -2449,8 +2439,12 @@ app.get("/api/markets", async (_req, res) => {
           symbol: x.s,
           pretty: x.pretty,
           price,
-          change: toNumber(q?.regularMarketChange),
-          changePercent: toNumber(q?.regularMarketChangePercent) ?? 0,
+          change: Number.isFinite(q?.regularMarketChange)
+            ? q.regularMarketChange
+            : null,
+          changePercent: Number.isFinite(q?.regularMarketChangePercent)
+            ? q.regularMarketChangePercent
+            : 0,
           status: "live",
           updatedAt: now
         };
@@ -2462,22 +2456,20 @@ app.get("/api/markets", async (_req, res) => {
           symbol: x.s,
           pretty: x.pretty,
           price: cached?.price ?? (hasValidPrice ? price : null),
-          change: cached?.change ?? toNumber(q?.regularMarketChange),
-          changePercent: cached?.changePercent ?? (toNumber(q?.regularMarketChangePercent) ?? 0),
+          change: cached?.change ?? (Number.isFinite(q?.regularMarketChange) ? q.regularMarketChange : null),
+          changePercent:
+            cached?.changePercent ??
+            (Number.isFinite(q?.regularMarketChangePercent)
+              ? q.regularMarketChangePercent
+              : 0),
           status: isClosed ? "closed" : cached?.status || "live",
           updatedAt: cached?.updatedAt || now
         };
       }
-      const seedPrices = {
-        "USDINR=X": 83.0,
-        "GC=F": 2000.0,
-        "CL=F": 75.0
-      };
-      const seedPrice = seedPrices[x.s];
       return {
         symbol: x.s,
         pretty: x.pretty,
-        price: seedPrice ?? null, // seed fallback to avoid cold-start blanks on Render restarts
+        price: null,
         change: null,
         changePercent: 0,
         status: "unavailable",
