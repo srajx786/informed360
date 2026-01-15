@@ -1014,27 +1014,38 @@ async function getWeather(){
 }
 
 /* markets – Grid 3 ticker */
+function normalizeMarketSymbol(value){
+  if (!value) return "";
+  return String(value).replace(/[^a-z0-9]/gi, "").toUpperCase();
+}
+function readMarketCache(){
+  try{
+    return JSON.parse(localStorage.getItem("i360_market_cache") || "null");
+  }catch{
+    return null;
+  }
+}
+function writeMarketCache(payload){
+  localStorage.setItem("i360_market_cache", JSON.stringify({
+    updatedAt: payload.updatedAt || Date.now(),
+    quotes: payload.quotes || []
+  }));
+}
+
 async function loadMarkets(){
   const el = $("#marketTicker");
   if (!el) return;
-  try{
-    let data;
-    try{
-      data = await fetchJSON("/api/markets");
-    }catch(error){
-      logApiError(error, error?.endpoint || "/api/markets");
-      const shouldRetry =
-        API_BASE === "" &&
-        FALLBACK_API_BASE &&
-        (error?.status === 0 || error?.status === 404);
-      if (shouldRetry){
-        API_BASE = FALLBACK_API_BASE;
-        data = await fetchJSON("/api/markets");
-      }else{
-        throw error;
-      }
-    }
-    const updatedAt = new Date(data.updatedAt || Date.now());
+
+  const instruments = [
+    { label: "BSE Sensex", aliases: ["^BSESN", "BSESN", "SENSEX"] },
+    { label: "NSE Nifty", aliases: ["^NSEI", "NSEI", "NIFTY", "NIFTY_50"] },
+    { label: "Gold", aliases: ["GC=F", "GOLD", "XAUUSD", "XAU/USD"] },
+    { label: "Crude Oil", aliases: ["CL=F", "CRUDE", "WTI", "OIL", "BRN=F", "BRENT"] },
+    { label: "USD/INR", aliases: ["USDINR=X", "USDINR", "USD/INR", "INR=X"] }
+  ];
+
+  const renderMarkets = (data, logMissing) => {
+    const updatedAt = new Date(data?.updatedAt || Date.now());
     const updatedLabel = updatedAt.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit"
@@ -1046,112 +1057,108 @@ async function loadMarkets(){
       updatedEl.textContent = statusText;
     }
 
-    const defaults = [
-      { symbol: "^BSESN", pretty: "BSE Sensex" },
-      { symbol: "^NSEI", pretty: "NSE Nifty" },
-      { symbol: "GC=F", pretty: "Gold" },
-      { symbol: "CL=F", pretty: "Crude Oil" },
-      { symbol: "USDINR=X", pretty: "USD/INR" }
-    ];
-    const bySymbol = new Map((data.quotes || []).map(q => [q.symbol, q]));
+    const quotes = Array.isArray(data?.quotes) ? data.quotes : [];
+    const bySymbol = new Map();
+    quotes.forEach(q => {
+      [q.symbol, q.pretty, q.name].forEach(key => {
+        const normalized = normalizeMarketSymbol(key);
+        if (normalized && !bySymbol.has(normalized)){
+          bySymbol.set(normalized, q);
+        }
+      });
+    });
 
-    const items = defaults.map(d => {
-      const q = bySymbol.get(d.symbol) || {};
-      const price = (q.price ?? "—");
-      const pct = Number(q.changePercent ?? 0);
-      const cls = pct >= 0 ? "up" : "down";
-      const sign = pct >= 0 ? "▲" : "▼";
-      const pctTxt = isFinite(pct)
-        ? `${sign} ${Math.abs(pct).toFixed(2)}%`
-        : "—";
-      const changeTxt = typeof q.change === "number"
-        ? q.change.toLocaleString(undefined,{ maximumFractionDigits:2 })
+    const items = instruments.map(inst => {
+      const match = inst.aliases
+        .map(alias => bySymbol.get(normalizeMarketSymbol(alias)))
+        .find(Boolean);
+      if (!match && logMissing){
+        console.warn("[markets] missing instrument:", inst.label);
+      }
+      const priceValue = match?.price;
+      const hasPrice = typeof priceValue === "number" || (typeof priceValue === "string" && priceValue.trim() !== "");
+      const pctValue = Number(match?.changePercent);
+      const hasPct = Number.isFinite(pctValue);
+      const cls = hasPct ? (pctValue >= 0 ? "up" : "down") : "";
+      const sign = pctValue >= 0 ? "▲" : "▼";
+      const pctTxt = hasPct ? `${sign} ${Math.abs(pctValue).toFixed(2)}%` : "—";
+      const changeTxt = typeof match?.change === "number"
+        ? match.change.toLocaleString(undefined,{ maximumFractionDigits:2 })
         : null;
-      const pTxt = typeof price === "number"
-        ? price.toLocaleString(undefined,{ maximumFractionDigits:2 })
-        : price;
+      const pTxt = hasPrice
+        ? (typeof priceValue === "number"
+          ? priceValue.toLocaleString(undefined,{ maximumFractionDigits:2 })
+          : priceValue)
+        : "—";
       return `
         <div class="qpill">
-          <span class="sym">${d.pretty || q.pretty || q.symbol || d.symbol}</span>
+          <span class="sym">${inst.label}</span>
           <span class="price">${pTxt}${changeTxt ? ` (${changeTxt})` : ""}</span>
           <span class="chg ${cls}">${pctTxt}</span>
         </div>`;
     }).join("");
     el.innerHTML = `
-      <div class="ticker-row" role="list">${items || ""}</div>`;
-    localStorage.setItem("i360_market_cache", JSON.stringify({
-      updatedAt: data.updatedAt || Date.now(),
-      quotes: data.quotes || []
-    }));
-  }catch{
-    // If API fails, show static labels so the bar is never empty
-    const cached = (() => {
+      <div class="ticker-row" role="list">${items}</div>`;
+  };
+
+  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+  const fetchMarkets = async () => {
+    const endpoint = `/api/markets?t=${Date.now()}`;
+    const backoffs = [0, 300, 800];
+    let lastError;
+    for (let i = 0; i < backoffs.length; i += 1){
+      if (backoffs[i]){
+        await sleep(backoffs[i]);
+      }
       try{
-        return JSON.parse(localStorage.getItem("i360_market_cache") || "null");
-      }catch{
-        return null;
+        return await fetchJSON(endpoint);
+      }catch(error){
+        logApiError(error, error?.endpoint || endpoint);
+        const shouldRetry =
+          API_BASE === "" &&
+          FALLBACK_API_BASE &&
+          (error?.status === 0 || error?.status === 404);
+        if (shouldRetry){
+          API_BASE = FALLBACK_API_BASE;
+          try{
+            return await fetchJSON(endpoint);
+          }catch(nextError){
+            logApiError(nextError, nextError?.endpoint || endpoint);
+            lastError = nextError;
+          }
+        }else{
+          lastError = error;
+        }
       }
-    })();
-    if (cached?.quotes?.length){
-      const data = cached;
-      const updatedAt = new Date(data.updatedAt || Date.now());
-      const updatedLabel = updatedAt.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit"
-      });
-      const updatedDate = updatedAt.toLocaleDateString();
-      const statusText = `Website updated on ${updatedDate} · ${updatedLabel}`;
-      const updatedEl = $("#updatedAt");
-      if (updatedEl){
-        updatedEl.textContent = statusText;
-      }
-      const defaults = [
-        { symbol: "^BSESN", pretty: "BSE Sensex" },
-        { symbol: "^NSEI", pretty: "NSE Nifty" },
-        { symbol: "GC=F", pretty: "Gold" },
-        { symbol: "CL=F", pretty: "Crude Oil" },
-        { symbol: "USDINR=X", pretty: "USD/INR" }
-      ];
-      const bySymbol = new Map((data.quotes || []).map(q => [q.symbol, q]));
-      const items = defaults.map(d => {
-        const q = bySymbol.get(d.symbol) || {};
-        const price = (q.price ?? "—");
-        const pct = Number(q.changePercent ?? 0);
-        const cls = pct >= 0 ? "up" : "down";
-        const sign = pct >= 0 ? "▲" : "▼";
-        const pctTxt = isFinite(pct)
-          ? `${sign} ${Math.abs(pct).toFixed(2)}%`
-          : "—";
-        const changeTxt = typeof q.change === "number"
-          ? q.change.toLocaleString(undefined,{ maximumFractionDigits:2 })
-          : null;
-        const pTxt = typeof price === "number"
-          ? price.toLocaleString(undefined,{ maximumFractionDigits:2 })
-          : price;
-        return `
-          <div class="qpill">
-            <span class="sym">${d.pretty || q.pretty || q.symbol || d.symbol}</span>
-            <span class="price">${pTxt}${changeTxt ? ` (${changeTxt})` : ""}</span>
-            <span class="chg ${cls}">${pctTxt}</span>
-          </div>`;
-      }).join("");
-      el.innerHTML = `
-        <div class="ticker-row" role="list">${items || ""}</div>`;
+    }
+    throw lastError;
+  };
+
+  try{
+    const data = await fetchMarkets();
+    console.info("[markets] received quotes:", data?.quotes?.map(q => q.symbol || q.pretty || q.name));
+    if (Array.isArray(data?.quotes) && data.quotes.length){
+      renderMarkets(data, true);
+      writeMarketCache(data);
       return;
     }
-    const fallback = [
-      "BSE Sensex","NSE Nifty","Gold","Crude Oil","USD/INR"
-    ];
+    throw new Error("Invalid market payload");
+  }catch{
+    const cached = readMarketCache();
+    if (cached?.quotes?.length){
+      renderMarkets(cached, true);
+      return;
+    }
     const now = new Date();
     const fallbackStatus = `Website updated on ${now.toLocaleDateString()} · ${now.toLocaleTimeString([], { hour:"2-digit", minute:"2-digit" })}`;
     const updatedEl = $("#updatedAt");
     if (updatedEl){
       updatedEl.textContent = fallbackStatus;
     }
-    $("#marketTicker").innerHTML = `
-      <div class="ticker-row" role="list">${fallback.map(n => `
+    el.innerHTML = `
+      <div class="ticker-row" role="list">${instruments.map(inst => `
         <div class="qpill">
-          <span class="sym">${n}</span>
+          <span class="sym">${inst.label}</span>
           <span class="price">—</span>
           <span class="chg">—</span>
         </div>`).join("")}</div>
