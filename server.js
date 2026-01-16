@@ -2387,49 +2387,133 @@ app.get("/api/pinned", (_req, res) => {
 });
 
 /* markets */
-let yfModule = null;
-async function loadYF() {
-  try {
-    if (yfModule) return yfModule;
-    const mod = await import("yahoo-finance2");
-    yfModule = mod?.default || mod;
-    return yfModule;
-  } catch {
-    return null;
+const lastKnownQuotes = new Map();
+const toNumber = (value) => {
+  // robust numeric parsing
+  if (typeof value === "number") return Number.isFinite(value) ? value : null;
+  if (typeof value === "string") {
+    const cleaned = value.replace(/,/g, "").trim();
+    const parsed = Number(cleaned);
+    return Number.isFinite(parsed) ? parsed : null;
   }
-}
+  return null;
+};
 app.get("/api/markets", async (_req, res) => {
+  const symbols = [
+    { s: "^BSESN", pretty: "BSE Sensex" },
+    { s: "^NSEI", pretty: "NSE Nifty" },
+    { s: "GC=F", pretty: "Gold" },
+    { s: "CL=F", pretty: "Crude Oil" },
+    { s: "USDINR=X", pretty: "USD/INR" }
+  ];
+  const now = Date.now();
+  const upstreamBase = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=";
+  const upstreamUrl = `${upstreamBase}${encodeURIComponent(symbols.map((x) => x.s).join(","))}`;
+  const seedPrices = {
+    "USDINR=X": 83.0,
+    "GC=F": 2000.0,
+    "CL=F": 75.0
+  };
+  const logUpstreamFailure = (symbol, status, contentType, bodySnippet) => {
+    const snippet = bodySnippet ? ` body=${bodySnippet}` : "";
+    console.error(`[markets] upstream failure symbol=${symbol} url=${upstreamUrl} status=${status} contentType=${contentType}${snippet}`); // debug upstream failure
+  };
   try {
-    const yf = await loadYF();
-    const symbols = [
-      { s: "^BSESN", pretty: "BSE Sensex" },
-      { s: "^NSEI", pretty: "NSE Nifty" },
-      { s: "GC=F", pretty: "Gold" },
-      { s: "CL=F", pretty: "Crude Oil" },
-      { s: "USDINR=X", pretty: "USD/INR" }
-    ];
-    if (!yf)
-      return res.json({
-        updatedAt: Date.now(),
-        quotes: symbols.map((x) => ({
+    let fetched = [];
+    let response;
+    let bodyText = "";
+    let contentType = "unknown";
+    try {
+      response = await fetch(upstreamUrl);
+      contentType = response.headers.get("content-type") || "unknown";
+      bodyText = await response.text();
+      const isHtmlBlocked = !contentType.includes("application/json") || bodyText.trim().startsWith("<"); // detect HTML block
+      if (isHtmlBlocked) {
+        symbols.forEach((x) => logUpstreamFailure(x.s, response.status, contentType));
+      } else {
+        try {
+          const parsed = JSON.parse(bodyText);
+          fetched = Array.isArray(parsed?.quoteResponse?.result)
+            ? parsed.quoteResponse.result
+            : [];
+        } catch {
+          const snippet = bodyText.replace(/\s+/g, " ").slice(0, 200);
+          symbols.forEach((x) => logUpstreamFailure(x.s, response.status, contentType, snippet));
+          fetched = [];
+        }
+      }
+    } catch {
+      symbols.forEach((x) => logUpstreamFailure(x.s, "fetch_error", "unknown"));
+      fetched = [];
+    }
+    const fetchedBySymbol = new Map(
+      fetched
+        .filter((q) => q?.symbol)
+        .map((q) => [q.symbol, q])
+    );
+    const out = symbols.map((x) => {
+      // Always return the fixed symbol set with cached fallbacks.
+      const cached = lastKnownQuotes.get(x.s);
+      const q = fetchedBySymbol.get(x.s);
+      const price = toNumber(q?.regularMarketPrice);
+      const hasValidPrice = Number.isFinite(price);
+      const marketState = q?.marketState || q?.regularMarketState;
+      const isClosed =
+        typeof marketState === "string" &&
+        marketState.toUpperCase() !== "REGULAR";
+      if (hasValidPrice && !isClosed) {
+        const liveQuote = {
           symbol: x.s,
           pretty: x.pretty,
-          price: null,
-          change: null,
-          changePercent: null
-        }))
-      });
-    const quotes = await yf.quote(symbols.map((x) => x.s));
-    const out = quotes.map((q, i) => ({
-      symbol: q.symbol,
-      pretty: symbols[i].pretty,
-      price: q.regularMarketPrice,
-      change: q.regularMarketChange,
-      changePercent: q.regularMarketChangePercent
-    }));
-    res.json({ updatedAt: Date.now(), quotes: out });
+          price,
+          change: toNumber(q?.regularMarketChange),
+          changePercent: toNumber(q?.regularMarketChangePercent) ?? 0,
+          status: "live",
+          updatedAt: now
+        };
+        lastKnownQuotes.set(x.s, liveQuote); // Cache only confirmed live prices.
+        return liveQuote;
+      }
+      if ((hasValidPrice && isClosed) || cached) {
+        return {
+          symbol: x.s,
+          pretty: x.pretty,
+          price: cached?.price ?? (hasValidPrice ? price : null),
+          change: cached?.change ?? toNumber(q?.regularMarketChange),
+          changePercent: cached?.changePercent ?? (toNumber(q?.regularMarketChangePercent) ?? 0),
+          status: isClosed ? "closed" : cached?.status || "live",
+          updatedAt: cached?.updatedAt || now
+        };
+      }
+      const seedPrice = seedPrices[x.s];
+      return {
+        symbol: x.s,
+        pretty: x.pretty,
+        price: seedPrice ?? null, // seed fallback to avoid cold-start blanks on Render restarts
+        change: null,
+        changePercent: 0,
+        status: "unavailable",
+        updatedAt: now
+      };
+    });
+    res.json({ updatedAt: now, quotes: out });
   } catch {
-    res.json({ updatedAt: Date.now(), quotes: [] });
+    const fallback = symbols.map((x) => {
+      const cached = lastKnownQuotes.get(x.s);
+      if (cached) {
+        return { ...cached, pretty: x.pretty, status: cached.status || "live" };
+      }
+      return {
+        symbol: x.s,
+        pretty: x.pretty,
+        price: seedPrices[x.s] ?? null,
+        change: null,
+        changePercent: 0,
+        status: "unavailable",
+        updatedAt: now
+      };
+    });
+    res.json({ updatedAt: now, quotes: fallback });
   }
 });
 
