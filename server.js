@@ -2398,7 +2398,8 @@ async function loadYF() {
   } catch {
     return null;
   }
-}
+  return null;
+};
 app.get("/api/markets", async (_req, res) => {
   const symbols = [
     { s: "^BSESN", pretty: "BSE Sensex" },
