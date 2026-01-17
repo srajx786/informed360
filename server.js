@@ -2388,15 +2388,101 @@ app.get("/api/pinned", (_req, res) => {
 
 /* markets */
 /* markets */
+/**
+ * Fix: Stop relying on Yahoo (often bot-blocked on Render IPs).
+ * Use IndianAPI + strong caching so /api/markets NEVER returns empty and rarely calls upstream.
+ * Also enforces a monthly request cap (default 400) to stay under your 500/mo plan.
+ *
+ * REQUIRED ENV VARS on Render:
+ * - INDIANAPI_KEY = <your key>   (DO NOT hardcode)
+ * Optional:
+ * - MARKET_REQ_CAP = 400
+ */
 
-// single in-memory cache (per process)
-const lastKnownQuotes = new Map();
+const MARKET_API_BASE = "https://stock.indianapi.in";
+const MARKET_CACHE_PATH = path.join(__dirname, "Backup", "market_cache.json");
+const MARKET_REQ_CAP = Number(process.env.MARKET_REQ_CAP || 400);
 
-// persisted cache survives Render restarts
-const marketCachePath = path.join(__dirname, "Backup", "market_cache.json");
+// In-memory last-known-good (survives within a single Render instance lifetime)
+const MARKET_LAST_KNOWN = new Map();
+
+const monthKey = (ts = Date.now()) => {
+  const d = new Date(ts);
+  const y = d.getUTCFullYear();
+  const m = String(d.getUTCMonth() + 1).padStart(2, "0");
+  return `${y}-${m}`;
+};
+
+const safeJsonParse = (text, fallback) => {
+  try {
+    return JSON.parse(text);
+  } catch {
+    return fallback;
+  }
+};
+
+const ensureCacheDir = () => {
+  try {
+    fs.mkdirSync(path.dirname(MARKET_CACHE_PATH), { recursive: true });
+  } catch {
+    // ignore
+  }
+};
+
+const readMarketCache = () => {
+  ensureCacheDir();
+  try {
+    const raw = fs.readFileSync(MARKET_CACHE_PATH, "utf8");
+    const parsed = safeJsonParse(raw, null);
+    if (!parsed || typeof parsed !== "object") return null;
+    // normalize usage
+    const usage = parsed.usage && typeof parsed.usage === "object" ? parsed.usage : {};
+    const mk = monthKey();
+    if (usage.month !== mk) {
+      usage.month = mk;
+      usage.count = 0;
+    }
+    parsed.usage = { month: usage.month, count: Number(usage.count || 0) };
+    parsed.quotes = Array.isArray(parsed.quotes) ? parsed.quotes : [];
+    parsed.updatedAt = Number(parsed.updatedAt || 0);
+    return parsed;
+  } catch {
+    return {
+      updatedAt: 0,
+      quotes: [],
+      usage: { month: monthKey(), count: 0 }
+    };
+  }
+};
+
+const writeMarketCache = (cacheObj) => {
+  ensureCacheDir();
+  try {
+    fs.writeFileSync(MARKET_CACHE_PATH, JSON.stringify(cacheObj, null, 2));
+  } catch {
+    // ignore
+  }
+};
+
+const canCallUpstream = (cacheObj) => {
+  const mk = monthKey();
+  if (!cacheObj || !cacheObj.usage) return true;
+  if (cacheObj.usage.month !== mk) {
+    cacheObj.usage.month = mk;
+    cacheObj.usage.count = 0;
+  }
+  return Number(cacheObj.usage.count || 0) < MARKET_REQ_CAP;
+};
+
+const bumpUpstreamCount = (cacheObj) => {
+  const mk = monthKey();
+  if (!cacheObj.usage) cacheObj.usage = { month: mk, count: 0 };
+  if (cacheObj.usage.month !== mk) cacheObj.usage = { month: mk, count: 0 };
+  cacheObj.usage.count = Number(cacheObj.usage.count || 0) + 1;
+};
 
 const toNumber = (v) => {
-  if (typeof v === "number" && Number.isFinite(v)) return v;
+  if (typeof v === "number") return Number.isFinite(v) ? v : null;
   if (typeof v === "string") {
     const n = Number(v.replace(/,/g, "").trim());
     return Number.isFinite(n) ? n : null;
@@ -2404,146 +2490,228 @@ const toNumber = (v) => {
   return null;
 };
 
-const readPersistedCache = () => {
-  try {
-    const raw = fs.readFileSync(marketCachePath, "utf8");
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed?.quotes) ? parsed.quotes : [];
-  } catch {
-    return [];
-  }
+// Heuristic extraction because providers vary field names
+const extractPrice = (obj) => {
+  if (!obj || typeof obj !== "object") return null;
+  return (
+    toNumber(obj.price) ??
+    toNumber(obj.lastPrice) ??
+    toNumber(obj.ltp) ??
+    toNumber(obj.close) ??
+    toNumber(obj.value) ??
+    toNumber(obj.current) ??
+    toNumber(obj.rate) ??
+    null
+  );
 };
 
-const writePersistedCache = (quotes) => {
-  try {
-    fs.mkdirSync(path.dirname(marketCachePath), { recursive: true });
-    fs.writeFileSync(
-      marketCachePath,
-      JSON.stringify({ updatedAt: Date.now(), quotes }, null, 2)
-    );
-  } catch {
-    // ignore on free tier
-  }
+const extractChange = (obj) => {
+  if (!obj || typeof obj !== "object") return null;
+  return toNumber(obj.change) ?? toNumber(obj.netChange) ?? toNumber(obj.diff) ?? null;
 };
 
+const extractChangePct = (obj) => {
+  if (!obj || typeof obj !== "object") return null;
+  return (
+    toNumber(obj.changePercent) ??
+    toNumber(obj.pChange) ??
+    toNumber(obj.percentChange) ??
+    null
+  );
+};
+
+const indianApiFetchJson = async (url) => {
+  const apiKey = process.env.INDIANAPI_KEY;
+  if (!apiKey) throw new Error("missing INDIANAPI_KEY");
+
+  const controller = new AbortController();
+  const t = setTimeout(() => controller.abort(), 12000);
+
+  const resp = await fetch(url, {
+    signal: controller.signal,
+    headers: {
+      "X-Api-Key": apiKey,
+      Accept: "application/json"
+    }
+  });
+
+  clearTimeout(t);
+
+  const text = await resp.text();
+  const data = safeJsonParse(text, null);
+
+  if (!resp.ok) {
+    // Keep this small to avoid noisy logs
+    throw new Error(`indianapi_http_${resp.status}`);
+  }
+  if (!data) throw new Error("indianapi_non_json");
+  return data;
+};
+
+const normalizeQuote = ({ symbol, pretty, price, change, changePercent, status, updatedAt }) => ({
+  symbol,
+  pretty,
+  price: typeof price === "number" ? price : null,
+  change: typeof change === "number" ? change : null,
+  changePercent: typeof changePercent === "number" ? changePercent : 0,
+  status: status || "unavailable",
+  updatedAt: Number(updatedAt || Date.now())
+});
+
+// IMPORTANT: fixed symbol list (your requirement)
+const MARKET_SYMBOLS = [
+  { symbol: "^BSESN", pretty: "BSE Sensex", kind: "index", apiName: "SENSEX" },
+  { symbol: "^NSEI", pretty: "NSE Nifty", kind: "index", apiName: "NIFTY 50" },
+  { symbol: "GC=F", pretty: "Gold", kind: "commodity", apiName: "Gold" },
+  { symbol: "CL=F", pretty: "Crude Oil", kind: "commodity", apiName: "Crude Oil" },
+  { symbol: "USDINR=X", pretty: "USD/INR", kind: "fx", apiName: "USDINR" }
+];
+
+/**
+ * Strategy:
+ * 1) Always return all 5 symbols.
+ * 2) Prefer in-memory last known.
+ * 3) Else prefer persisted file cache (yesterday/last snapshot).
+ * 4) Only call upstream if cache is stale AND monthly cap allows.
+ */
 app.get("/api/markets", async (_req, res) => {
-  const symbols = [
-    { s: "^BSESN", pretty: "BSE Sensex" },
-    { s: "^NSEI", pretty: "NSE Nifty" },
-    { s: "GC=F", pretty: "Gold" },
-    { s: "CL=F", pretty: "Crude Oil" },
-    { s: "USDINR=X", pretty: "USD/INR" }
-  ];
-
   const now = Date.now();
-  const url =
-    "https://query1.finance.yahoo.com/v7/finance/quote?symbols=" +
-    encodeURIComponent(symbols.map((x) => x.s).join(","));
-
-  const persisted = readPersistedCache();
+  const cacheObj = readMarketCache() || { updatedAt: 0, quotes: [], usage: { month: monthKey(), count: 0 } };
   const persistedBySymbol = new Map(
-    persisted.map((q) => [q.symbol, q])
+    (cacheObj.quotes || []).filter((q) => q && q.symbol).map((q) => [q.symbol, q])
   );
 
-  let fetched = [];
-  try {
-    const r = await fetch(url, {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  // If we have persisted values and they are "recent enough", don't call upstream.
+  // (6h TTL keeps calls low: ~120 calls/month if hit once per 6h)
+  const STALE_MS = 6 * 60 * 60 * 1000;
+  const isStale = !cacheObj.updatedAt || now - cacheObj.updatedAt > STALE_MS;
+
+  let upstreamOk = false;
+  let upstreamResults = {
+    commodities: null,
+    sensex: null,
+    nifty: null
+  };
+
+  const tryUpstream = async () => {
+    if (!isStale) return;
+    if (!canCallUpstream(cacheObj)) return;
+
+    // Each full refresh should be 3 calls max (commodities + 2 stocks)
+    // We bump count per API call to respect your 400/mo cap.
+    const doCall = async (url) => {
+      bumpUpstreamCount(cacheObj); // comment: request accounting for monthly cap
+      return indianApiFetchJson(url);
+    };
+
+    try {
+      // 1) commodities (gold/crude/fx may be inside)
+      upstreamResults.commodities = await doCall(`${MARKET_API_BASE}/commodities`);
+
+      // 2) indices via /stock (names can vary; we store whatever comes back)
+      upstreamResults.sensex = await doCall(`${MARKET_API_BASE}/stock?name=${encodeURIComponent("SENSEX")}`);
+      upstreamResults.nifty = await doCall(`${MARKET_API_BASE}/stock?name=${encodeURIComponent("NIFTY 50")}`);
+
+      upstreamOk = true;
+    } catch {
+      upstreamOk = false;
+    }
+  };
+
+  await tryUpstream();
+
+  // Helper: find commodity item by name/symbol-ish
+  const findCommodity = (payload, needle) => {
+    if (!payload) return null;
+    const arr =
+      Array.isArray(payload) ? payload :
+      Array.isArray(payload.data) ? payload.data :
+      Array.isArray(payload.commodities) ? payload.commodities :
+      Array.isArray(payload.result) ? payload.result :
+      [];
+    const n = String(needle || "").toLowerCase();
+    return arr.find((x) => {
+      const hay = `${x?.name || ""} ${x?.symbol || ""} ${x?.ticker || ""}`.toLowerCase();
+      return hay.includes(n);
+    }) || null;
+  };
+
+  const buildOut = () => {
+    let anyPrice = false;
+
+    const out = MARKET_SYMBOLS.map((cfg) => {
+      const mem = MARKET_LAST_KNOWN.get(cfg.symbol);
+      const persisted = persistedBySymbol.get(cfg.symbol);
+
+      // 1) attempt upstream parse
+      let upstreamObj = null;
+      if (upstreamOk) {
+        if (cfg.kind === "commodity") upstreamObj = findCommodity(upstreamResults.commodities, cfg.apiName);
+        if (cfg.kind === "fx") upstreamObj = findCommodity(upstreamResults.commodities, "usd") || findCommodity(upstreamResults.commodities, "inr") || null;
+        if (cfg.kind === "index" && cfg.symbol === "^BSESN") upstreamObj = upstreamResults.sensex;
+        if (cfg.kind === "index" && cfg.symbol === "^NSEI") upstreamObj = upstreamResults.nifty;
       }
-    });
-    const ct = r.headers.get("content-type") || "";
-    const body = await r.text();
 
-    if (!ct.includes("application/json") || body.trim().startsWith("<")) {
-      console.error("[markets blocked]", body.slice(0, 200));
-    } else {
-      const parsed = JSON.parse(body);
-      fetched = parsed?.quoteResponse?.result || [];
-    }
-  } catch (e) {
-    console.error("[markets fetch error]", e?.message);
-  }
+      const price = extractPrice(upstreamObj);
+      const change = extractChange(upstreamObj);
+      const changePercent = extractChangePct(upstreamObj);
 
-  const fetchedBySymbol = new Map(
-    fetched.filter((q) => q?.symbol).map((q) => [q.symbol, q])
-  );
+      if (typeof price === "number") {
+        anyPrice = true;
+        const q = normalizeQuote({
+          symbol: cfg.symbol,
+          pretty: cfg.pretty,
+          price,
+          change,
+          changePercent: typeof changePercent === "number" ? changePercent : 0,
+          status: "live",
+          updatedAt: now
+        });
+        MARKET_LAST_KNOWN.set(cfg.symbol, q); // comment: keep last-known-good in memory
+        return q;
+      }
 
-  // USD/INR fallback (always works)
-  let fxFallback = null;
-  try {
-    const fx = await fetch(
-      "https://api.exchangerate.host/latest?base=USD&symbols=INR"
-    ).then((r) => r.json());
-    fxFallback = toNumber(fx?.rates?.INR);
-  } catch {}
+      // 2) memory fallback
+      if (mem && typeof mem.price === "number") {
+        anyPrice = true;
+        return normalizeQuote({ ...mem, pretty: cfg.pretty, status: mem.status || "closed" });
+      }
 
-  const out = symbols.map((x) => {
-    const q = fetchedBySymbol.get(x.s);
-    const cached = lastKnownQuotes.get(x.s);
-    const persistedQ = persistedBySymbol.get(x.s);
+      // 3) persisted fallback
+      if (persisted && typeof persisted.price === "number") {
+        anyPrice = true;
+        return normalizeQuote({ ...persisted, pretty: cfg.pretty, status: "closed" });
+      }
 
-    const price = toNumber(q?.regularMarketPrice);
-    const change = toNumber(q?.regularMarketChange);
-    const changePct = toNumber(q?.regularMarketChangePercent) ?? 0;
-    const state = String(q?.marketState || "").toUpperCase();
-
-    if (price !== null) {
-      const live = {
-        symbol: x.s,
-        pretty: x.pretty,
-        price,
-        change,
-        changePercent: changePct,
-        status: state && state !== "REGULAR" ? "closed" : "live",
-        updatedAt: now
-      };
-      lastKnownQuotes.set(x.s, live);
-      return live;
-    }
-
-    if (persistedQ?.price != null) {
-      return {
-        ...persistedQ,
-        pretty: x.pretty,
-        status: "closed"
-      };
-    }
-
-    if (cached?.price != null) {
-      return { ...cached, pretty: x.pretty };
-    }
-
-    if (x.s === "USDINR=X" && fxFallback != null) {
-      return {
-        symbol: x.s,
-        pretty: x.pretty,
-        price: fxFallback,
+      // 4) placeholder (never hide the label/symbol)
+      return normalizeQuote({
+        symbol: cfg.symbol,
+        pretty: cfg.pretty,
+        price: null,
         change: null,
         changePercent: 0,
         status: "unavailable",
         updatedAt: now
-      };
+      });
+    });
+
+    // If upstream gave at least one price, persist the whole set (including nulls)
+    // so the next run at least shows yesterday/last-known for the ones that worked.
+    if (upstreamOk && anyPrice) {
+      cacheObj.updatedAt = now;
+      cacheObj.quotes = out;
+      writeMarketCache(cacheObj); // comment: persisted cache for cold starts / restarts
+    } else {
+      // still persist usage count changes so the cap tracking is accurate
+      writeMarketCache(cacheObj); // comment: persist request counter even on failures
     }
 
-    return {
-      symbol: x.s,
-      pretty: x.pretty,
-      price: null,
-      change: null,
-      changePercent: 0,
-      status: "unavailable",
-      updatedAt: now
-    };
-  });
+    return out;
+  };
 
-  const numeric = out.filter((q) => Number.isFinite(q.price));
-  if (numeric.length) writePersistedCache(numeric);
-
-  res.json({ updatedAt: now, quotes: out });
+  const quotes = buildOut();
+  res.json({ updatedAt: now, quotes });
 });
-
 
 app.get("/health", (_req, res) => res.json({ ok: true, at: Date.now() }));
 
