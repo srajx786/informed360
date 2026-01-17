@@ -2391,6 +2391,9 @@ const lastKnownQuotes = new Map();
 const fs = require("fs");
 const marketCachePath = "Backup/market_cache.json";
 const readPersistedCache = () => {
+let yfModule = null;
+const lastKnownQuotes = new Map();
+async function loadYF() {
   try {
     const raw = fs.readFileSync(marketCachePath, "utf8"); // persisted cache
     const parsed = JSON.parse(raw);
@@ -2489,6 +2492,15 @@ app.get("/api/markets", async (_req, res) => {
         }
       } catch {
         teFallbacks = new Map();
+  try {
+    const yf = await loadYF();
+    let fetched = [];
+    if (yf) {
+      try {
+        const raw = await yf.quote(symbols.map((x) => x.s));
+        fetched = Array.isArray(raw) ? raw : raw ? [raw] : [];
+      } catch {
+        fetched = [];
       }
     }
     const fetchedBySymbol = new Map(
@@ -2502,6 +2514,7 @@ app.get("/api/markets", async (_req, res) => {
       const cached = lastKnownQuotes.get(x.s);
       const q = fetchedBySymbol.get(x.s);
       const price = toNumber(q?.regularMarketPrice);
+      const price = q?.regularMarketPrice;
       const hasValidPrice = Number.isFinite(price);
       const marketState = q?.marketState || q?.regularMarketState;
       const isClosed =
@@ -2572,6 +2585,40 @@ app.get("/api/markets", async (_req, res) => {
         symbol: x.s,
         pretty: x.pretty,
         price: seedPrice ?? null, // seed fallback to avoid cold-start blanks on Render restarts
+          symbol: x.s,
+          pretty: x.pretty,
+          price,
+          change: Number.isFinite(q?.regularMarketChange)
+            ? q.regularMarketChange
+            : null,
+          changePercent: Number.isFinite(q?.regularMarketChangePercent)
+            ? q.regularMarketChangePercent
+            : 0,
+          status: "live",
+          updatedAt: now
+        };
+        lastKnownQuotes.set(x.s, liveQuote); // Cache only confirmed live prices.
+        return liveQuote;
+      }
+      if ((hasValidPrice && isClosed) || cached) {
+        return {
+          symbol: x.s,
+          pretty: x.pretty,
+          price: cached?.price ?? (hasValidPrice ? price : null),
+          change: cached?.change ?? (Number.isFinite(q?.regularMarketChange) ? q.regularMarketChange : null),
+          changePercent:
+            cached?.changePercent ??
+            (Number.isFinite(q?.regularMarketChangePercent)
+              ? q.regularMarketChangePercent
+              : 0),
+          status: isClosed ? "closed" : cached?.status || "live",
+          updatedAt: cached?.updatedAt || now
+        };
+      }
+      return {
+        symbol: x.s,
+        pretty: x.pretty,
+        price: null,
         change: null,
         changePercent: 0,
         status: "unavailable",
@@ -2608,6 +2655,17 @@ app.get("/api/markets", async (_req, res) => {
         symbol: x.s,
         pretty: x.pretty,
         price: seedPrices[x.s] ?? null,
+    res.json({ updatedAt: now, quotes: out });
+  } catch {
+    const fallback = symbols.map((x) => {
+      const cached = lastKnownQuotes.get(x.s);
+      if (cached) {
+        return { ...cached, pretty: x.pretty, status: cached.status || "live" };
+      }
+      return {
+        symbol: x.s,
+        pretty: x.pretty,
+        price: null,
         change: null,
         changePercent: 0,
         status: "unavailable",
