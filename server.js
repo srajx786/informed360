@@ -2387,49 +2387,234 @@ app.get("/api/pinned", (_req, res) => {
 });
 
 /* markets */
-let yfModule = null;
-async function loadYF() {
+const lastKnownQuotes = new Map();
+const fs = require("fs");
+const marketCachePath = "Backup/market_cache.json";
+const readPersistedCache = () => {
   try {
-    if (yfModule) return yfModule;
-    const mod = await import("yahoo-finance2");
-    yfModule = mod?.default || mod;
-    return yfModule;
+    const raw = fs.readFileSync(marketCachePath, "utf8"); // persisted cache
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed?.quotes) ? parsed.quotes : [];
+  } catch {
+    return [];
+  }
+};
+const writePersistedCache = (quotes) => {
+  try {
+    fs.writeFileSync(
+      marketCachePath,
+      JSON.stringify({ updatedAt: Date.now(), quotes }, null, 2)
+    ); // persisted cache
   } catch {
     return null;
   }
-}
+};
+const toNumber = (value) => {
+  // robust numeric parsing
+  if (typeof value === "number") return Number.isFinite(value) ? value : null;
+  if (typeof value === "string") {
+    const cleaned = value.replace(/,/g, "").trim();
+    const parsed = Number(cleaned);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+  return null;
+};
 app.get("/api/markets", async (_req, res) => {
+  const symbols = [
+    { s: "^BSESN", pretty: "BSE Sensex" },
+    { s: "^NSEI", pretty: "NSE Nifty" },
+    { s: "GC=F", pretty: "Gold" },
+    { s: "CL=F", pretty: "Crude Oil" },
+    { s: "USDINR=X", pretty: "USD/INR" }
+  ];
+  const now = Date.now();
+  const upstreamBase = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=";
+  const upstreamUrl = `${upstreamBase}${encodeURIComponent(symbols.map((x) => x.s).join(","))}`;
+  const seedPrices = {
+    "USDINR=X": 83.0,
+    "GC=F": 2000.0,
+    "CL=F": 75.0
+  };
   try {
-    const yf = await loadYF();
-    const symbols = [
-      { s: "^BSESN", pretty: "BSE Sensex" },
-      { s: "^NSEI", pretty: "NSE Nifty" },
-      { s: "GC=F", pretty: "Gold" },
-      { s: "CL=F", pretty: "Crude Oil" },
-      { s: "USDINR=X", pretty: "USD/INR" }
-    ];
-    if (!yf)
-      return res.json({
-        updatedAt: Date.now(),
-        quotes: symbols.map((x) => ({
+    let fetched = [];
+    let response;
+    let bodyText = "";
+    let contentType = "unknown";
+    const persisted = readPersistedCache();
+    const persistedBySymbol = new Map(
+      persisted.filter((q) => q?.symbol).map((q) => [q.symbol, q])
+    );
+    try {
+      response = await fetch(upstreamUrl);
+      contentType = response.headers.get("content-type") || "unknown";
+      bodyText = await response.text();
+      const isHtmlBlocked = !contentType.includes("application/json") || bodyText.trim().startsWith("<"); // detect HTML block
+      if (isHtmlBlocked) {
+        symbols.forEach((x) => console.error("[markets upstream blocked]", { symbol: x.s, url: upstreamUrl, status: response.status, contentType, bodyHead: bodyText.slice(0, 200) })); // debug upstream failure
+      } else {
+        try {
+          const parsed = JSON.parse(bodyText);
+          fetched = Array.isArray(parsed?.quoteResponse?.result)
+            ? parsed.quoteResponse.result
+            : [];
+        } catch {
+          symbols.forEach((x) => console.error("[markets json parse fail]", { symbol: x.s, url: upstreamUrl, status: response.status, contentType, bodyHead: bodyText.slice(0, 200) })); // debug upstream failure
+          fetched = [];
+        }
+      }
+    } catch {
+      symbols.forEach((x) => console.error("[markets upstream blocked]", { symbol: x.s, url: upstreamUrl, status: "fetch_error", contentType: "unknown", bodyHead: "" })); // debug upstream failure
+      fetched = [];
+    }
+    let fxFallback = null;
+    try {
+      const fxResponse = await fetch("https://api.exchangerate.host/latest?base=USD&symbols=INR");
+      const fxBody = await fxResponse.json();
+      fxFallback = toNumber(fxBody?.rates?.INR);
+    } catch {
+      fxFallback = null;
+    }
+    let teFallbacks = new Map();
+    const teKey = process.env.TRADING_ECONOMICS_KEY;
+    if (teKey) {
+      try {
+        const teResponse = await fetch(`https://api.tradingeconomics.com/markets/snapshots?c=${encodeURIComponent(teKey)}&f=json`);
+        const teBody = await teResponse.json();
+        if (Array.isArray(teBody)) {
+          teFallbacks = new Map(
+            teBody
+              .filter((item) => item?.Symbol || item?.Ticker)
+              .map((item) => [item.Symbol || item.Ticker, item])
+          );
+        }
+      } catch {
+        teFallbacks = new Map();
+      }
+    }
+    const fetchedBySymbol = new Map(
+      fetched
+        .filter((q) => q?.symbol)
+        .map((q) => [q.symbol, q])
+    );
+    let anyNumericPrice = false;
+    const out = symbols.map((x) => {
+      // Always return the fixed symbol set with cached fallbacks.
+      const cached = lastKnownQuotes.get(x.s);
+      const q = fetchedBySymbol.get(x.s);
+      const price = toNumber(q?.regularMarketPrice);
+      const hasValidPrice = Number.isFinite(price);
+      const marketState = q?.marketState || q?.regularMarketState;
+      const isClosed =
+        typeof marketState === "string" &&
+        marketState.toUpperCase() !== "REGULAR";
+      if (hasValidPrice && !isClosed) {
+        const liveQuote = {
           symbol: x.s,
           pretty: x.pretty,
-          price: null,
+          price,
+          change: toNumber(q?.regularMarketChange),
+          changePercent: toNumber(q?.regularMarketChangePercent) ?? 0,
+          status: "live",
+          updatedAt: now
+        };
+        lastKnownQuotes.set(x.s, liveQuote); // Cache only confirmed live prices.
+        anyNumericPrice = true;
+        return liveQuote;
+      }
+      if ((hasValidPrice && isClosed) || cached) {
+        if (!hasValidPrice) {
+          console.error("[markets no numeric price]", { symbol: x.s, parsedKeys: Object.keys(q || {}) }); // debug upstream failure
+        }
+        anyNumericPrice = true;
+        return {
+          symbol: x.s,
+          pretty: x.pretty,
+          price: cached?.price ?? (hasValidPrice ? price : null),
+          change: cached?.change ?? toNumber(q?.regularMarketChange),
+          changePercent: cached?.changePercent ?? (toNumber(q?.regularMarketChangePercent) ?? 0),
+          status: isClosed ? "closed" : cached?.status || "live",
+          updatedAt: cached?.updatedAt || now
+        };
+      }
+      if (x.s === "USDINR=X" && Number.isFinite(fxFallback)) {
+        anyNumericPrice = true;
+        return {
+          symbol: x.s,
+          pretty: x.pretty,
+          price: fxFallback, // API fallback
           change: null,
-          changePercent: null
-        }))
-      });
-    const quotes = await yf.quote(symbols.map((x) => x.s));
-    const out = quotes.map((q, i) => ({
-      symbol: q.symbol,
-      pretty: symbols[i].pretty,
-      price: q.regularMarketPrice,
-      change: q.regularMarketChange,
-      changePercent: q.regularMarketChangePercent
-    }));
-    res.json({ updatedAt: Date.now(), quotes: out });
+          changePercent: 0,
+          status: "unavailable",
+          updatedAt: now
+        };
+      }
+      if ((x.s === "GC=F" || x.s === "CL=F") && teFallbacks.size) {
+        const teItem = teFallbacks.get(x.s);
+        const tePrice = toNumber(teItem?.Last || teItem?.Value || teItem?.Price);
+        if (Number.isFinite(tePrice)) {
+          anyNumericPrice = true;
+          return {
+            symbol: x.s,
+            pretty: x.pretty,
+            price: tePrice, // API fallback
+            change: null,
+            changePercent: 0,
+            status: "unavailable",
+            updatedAt: now
+          };
+        }
+      }
+      if (q && !hasValidPrice) {
+        console.error("[markets no numeric price]", { symbol: x.s, parsedKeys: Object.keys(q || {}) }); // debug upstream failure
+      }
+      const seedPrice = seedPrices[x.s];
+      return {
+        symbol: x.s,
+        pretty: x.pretty,
+        price: seedPrice ?? null, // seed fallback to avoid cold-start blanks on Render restarts
+        change: null,
+        changePercent: 0,
+        status: "unavailable",
+        updatedAt: now
+      };
+    });
+    const persistedFallback = out.map((quote) => {
+      const cached = persistedBySymbol.get(quote.symbol);
+      if (cached?.price != null) {
+        return { ...quote, price: cached.price, change: cached.change ?? quote.change, changePercent: cached.changePercent ?? quote.changePercent, status: "closed", updatedAt: cached.updatedAt || now };
+      }
+      return quote;
+    });
+    const responseQuotes = anyNumericPrice ? out : persistedFallback;
+    if (anyNumericPrice) {
+      writePersistedCache(out.filter((q) => typeof q?.price === "number")); // persisted cache
+    }
+    res.json({ updatedAt: now, quotes: responseQuotes });
   } catch {
-    res.json({ updatedAt: Date.now(), quotes: [] });
+    const persisted = readPersistedCache();
+    const persistedBySymbol = new Map(
+      persisted.filter((q) => q?.symbol).map((q) => [q.symbol, q])
+    );
+    const fallback = symbols.map((x) => {
+      const cached = lastKnownQuotes.get(x.s);
+      const persistedQuote = persistedBySymbol.get(x.s);
+      if (cached) {
+        return { ...cached, pretty: x.pretty, status: cached.status || "live" };
+      }
+      if (persistedQuote) {
+        return { ...persistedQuote, pretty: x.pretty, status: "closed" };
+      }
+      return {
+        symbol: x.s,
+        pretty: x.pretty,
+        price: seedPrices[x.s] ?? null,
+        change: null,
+        changePercent: 0,
+        status: "unavailable",
+        updatedAt: now
+      };
+    });
+    res.json({ updatedAt: now, quotes: fallback });
   }
 });
 
