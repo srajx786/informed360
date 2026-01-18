@@ -2388,9 +2388,6 @@ app.get("/api/pinned", (_req, res) => {
 
 /* markets */
 const MARKET_CACHE_PATH = path.join(__dirname, "Backup", "market_cache.json");
-const MARKET_USAGE_PATH = path.join(__dirname, "Backup", "market_api_usage.json");
-const MARKET_REQ_CAP = Number(process.env.MARKET_REQ_CAP || 400);
-const MARKET_REFRESH_STALE_MS = 6 * 60 * 60 * 1000;
 const MARKET_REFRESH_TIMES_IST = [
   { hour: 9, minute: 30 },
   { hour: 12, minute: 30 },
@@ -2404,6 +2401,7 @@ const NSE_ALL_INDICES = "https://www.nseindia.com/api/allIndices";
 const MARKET_LAST_KNOWN = new Map();
 let marketCacheUpdatedAt = 0;
 let marketRefreshPromise = null;
+let marketRefreshTimer = null;
 
 const MARKET_SYMBOLS = [
   { symbol: "^BSESN", pretty: "BSE Sensex", kind: "sensex" },
@@ -2454,36 +2452,6 @@ const atomicWriteJson = (filePath, payload) => {
   }
 };
 
-const monthKey = (ts = Date.now()) => {
-  const d = new Date(ts);
-  const y = d.getUTCFullYear();
-  const m = String(d.getUTCMonth() + 1).padStart(2, "0");
-  return `${y}-${m}`;
-};
-
-const readMarketUsage = () => {
-  const usage = readJsonFile(MARKET_USAGE_PATH, { month: monthKey(), count: 0 });
-  if (!usage || typeof usage !== "object") return { month: monthKey(), count: 0 };
-  const currentMonth = monthKey();
-  if (usage.month !== currentMonth) return { month: currentMonth, count: 0 };
-  return { month: usage.month, count: Number(usage.count || 0) };
-};
-
-const writeMarketUsage = (usage) => {
-  atomicWriteJson(MARKET_USAGE_PATH, usage);
-};
-
-const canCallIndianApi = () => {
-  const usage = readMarketUsage();
-  return usage.count < MARKET_REQ_CAP;
-};
-
-const bumpIndianApiUsage = () => {
-  const usage = readMarketUsage();
-  usage.count += 1;
-  writeMarketUsage(usage);
-};
-
 const toNumber = (value) => {
   if (typeof value === "number") return Number.isFinite(value) ? value : null;
   if (typeof value === "string") {
@@ -2493,18 +2461,10 @@ const toNumber = (value) => {
   return null;
 };
 
-const computeChangePercent = (price, prevClose) => {
-  if (typeof price !== "number" || typeof prevClose !== "number" || prevClose === 0) {
-    return null;
-  }
-  return ((price - prevClose) / prevClose) * 100;
-};
-
 const normalizeQuote = ({
   symbol,
   pretty,
   price,
-  prevClose,
   change,
   changePercent,
   status,
@@ -2513,7 +2473,6 @@ const normalizeQuote = ({
   symbol,
   pretty,
   price: typeof price === "number" ? price : null,
-  prevClose: typeof prevClose === "number" ? prevClose : null,
   change: typeof change === "number" ? change : null,
   changePercent: typeof changePercent === "number" ? changePercent : 0,
   status: status || "cached",
@@ -2527,24 +2486,25 @@ const resolveQuote = (payload, previous, overrides = {}) => {
       ? payload.prevClose
       : typeof previous?.price === "number"
         ? previous.price
-        : typeof previous?.prevClose === "number"
-          ? previous.prevClose
-          : null;
-  const changePercent =
-    typeof payload.changePercent === "number"
-      ? payload.changePercent
-      : computeChangePercent(price, prevClose);
+        : null;
   const change =
     typeof payload.change === "number"
       ? payload.change
       : typeof price === "number" && typeof prevClose === "number"
         ? price - prevClose
         : null;
+  const changePercent =
+    typeof payload.changePercent === "number"
+      ? payload.changePercent
+      : typeof price === "number" && typeof prevClose === "number" && prevClose !== 0
+        ? ((price - prevClose) / prevClose) * 100
+        : 0;
   return normalizeQuote({
     ...payload,
-    prevClose,
     changePercent,
     change,
+    updatedAt:
+      overrides.updatedAt ?? payload.updatedAt ?? previous?.updatedAt ?? Date.now(),
     ...overrides
   });
 };
@@ -2555,7 +2515,10 @@ const loadMarketCache = () => {
   marketCacheUpdatedAt = Number(cache?.updatedAt || 0);
   quotes.forEach((quote) => {
     if (quote?.symbol) {
-      MARKET_LAST_KNOWN.set(quote.symbol, normalizeQuote(quote));
+      MARKET_LAST_KNOWN.set(
+        quote.symbol,
+        normalizeQuote({ ...quote, status: "cached" })
+      );
     }
   });
 };
@@ -2618,6 +2581,16 @@ const fetchNseJson = async (url) => {
   const data = safeJsonParse(text, null);
   if (!data) throw new Error("nse_non_json");
   return data;
+};
+
+const isSameIstDay = (a, b = Date.now()) => {
+  const istA = new Date(a + IST_OFFSET_MS);
+  const istB = new Date(b + IST_OFFSET_MS);
+  return (
+    istA.getUTCFullYear() === istB.getUTCFullYear() &&
+    istA.getUTCMonth() === istB.getUTCMonth() &&
+    istA.getUTCDate() === istB.getUTCDate()
+  );
 };
 
 const extractIndexQuote = (obj) => ({
@@ -2700,23 +2673,7 @@ const fetchSensexQuote = async () => {
       // try next endpoint
     }
   }
-  const { resp, text } = await fetchWithTimeout(
-    "https://www.bseindia.com/indices/IndexArchiveData.html?indexcode=1",
-    {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-        Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-IN,en;q=0.9",
-        Referer: "https://www.bseindia.com/"
-      }
-    }
-  );
-  if (!resp.ok) throw new Error(`bse_html_http_${resp.status}`);
-  const match = /SENSEX[^0-9]*([0-9,]+(?:\.\d+)?)/i.exec(text) || /([0-9]{2,3},[0-9]{3}(?:\.\d+)?)/.exec(text);
-  const price = match ? toNumber(match[1]) : null;
-  if (!price) throw new Error("bse_html_missing");
-  return { price, prevClose: null, change: null, changePercent: null };
+  throw new Error("bse_quote_missing");
 };
 
 const fetchUsdInrQuote = async () => {
@@ -2730,6 +2687,18 @@ const fetchUsdInrQuote = async () => {
   return { price: rate, prevClose: null, change: null, changePercent: null };
 };
 
+const normalizeCommodityName = (value = "") =>
+  String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "");
+
+const parseCommodityTime = (value) => {
+  if (!value) return null;
+  if (typeof value === "number") return value;
+  const parsed = Date.parse(String(value));
+  return Number.isNaN(parsed) ? null : parsed;
+};
+
 const findCommodity = (payload, needle) => {
   if (!payload) return null;
   const arr =
@@ -2738,22 +2707,34 @@ const findCommodity = (payload, needle) => {
     Array.isArray(payload.commodities) ? payload.commodities :
     Array.isArray(payload.result) ? payload.result :
     [];
-  const n = String(needle || "").toLowerCase();
-  return (
-    arr.find((item) => {
-      const hay = `${item?.name || ""} ${item?.symbol || ""} ${item?.ticker || ""}`.toLowerCase();
-      return hay.includes(n);
-    }) || null
-  );
+  const n = normalizeCommodityName(needle);
+  const matches = arr.filter((item) => {
+    const hay = normalizeCommodityName(
+      `${item?.name || ""} ${item?.symbol || ""} ${item?.ticker || ""}`
+    );
+    return hay.includes(n);
+  });
+  if (matches.length === 0) return null;
+  return matches.reduce((best, item) => {
+    if (!best) return item;
+    const bestPrice = toNumber(best?.last_traded_price);
+    const itemPrice = toNumber(item?.last_traded_price);
+    if (itemPrice !== null && bestPrice === null) return item;
+    const bestTime = parseCommodityTime(best?.messageTime ?? best?.message_time);
+    const itemTime = parseCommodityTime(item?.messageTime ?? item?.message_time);
+    if (itemPrice !== null && bestPrice !== null) {
+      if (itemTime && bestTime) return itemTime > bestTime ? item : best;
+      if (itemTime && !bestTime) return item;
+    }
+    return best;
+  }, null);
 };
 
 const fetchIndianApiCommodities = async () => {
   if (!process.env.INDIANAPI_KEY) throw new Error("missing_indianapi_key");
-  if (!canCallIndianApi()) throw new Error("indianapi_cap_reached");
-  bumpIndianApiUsage();
   const { resp, text } = await fetchWithTimeout(`${MARKET_API_BASE}/commodities`, {
     headers: {
-      "X-Api-Key": process.env.INDIANAPI_KEY,
+      "x-api-key": process.env.INDIANAPI_KEY,
       Accept: "application/json"
     }
   });
@@ -2767,16 +2748,19 @@ const buildQuotesFromCache = () =>
   MARKET_SYMBOLS.map((cfg) => {
     const existing = MARKET_LAST_KNOWN.get(cfg.symbol);
     if (existing && typeof existing.price === "number") {
-      return resolveQuote({ ...existing, status: existing.status || "cached" }, existing);
+      const today = isSameIstDay(existing.updatedAt);
+      const status = today && existing.status === "live" ? "live" : "cached";
+      return resolveQuote({ ...existing, status }, existing, {
+        updatedAt: existing.updatedAt
+      });
     }
     return normalizeQuote({
       symbol: cfg.symbol,
       pretty: cfg.pretty,
       price: null,
-      prevClose: null,
       change: null,
       changePercent: 0,
-      status: "cached",
+      status: "unavailable",
       updatedAt: Date.now()
     });
   });
@@ -2819,7 +2803,7 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
       )
     ];
 
-    if (process.env.INDIANAPI_KEY && canCallIndianApi()) {
+    if (process.env.INDIANAPI_KEY) {
       tasks.push(
         fetchIndianApiCommodities().then(
           (payload) => {
@@ -2889,22 +2873,16 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
         const found = findCommodity(payload, needle);
         const quote = found
           ? {
-              price:
-                toNumber(found?.price) ??
-                toNumber(found?.lastPrice) ??
-                toNumber(found?.ltp) ??
-                null,
-              prevClose:
-                toNumber(found?.prevClose) ??
-                toNumber(found?.previousClose) ??
-                null,
+              price: toNumber(found?.last_traded_price),
               change:
                 toNumber(found?.change) ??
                 toNumber(found?.netChange) ??
+                toNumber(found?.chg) ??
                 null,
               changePercent:
                 toNumber(found?.changePercent) ??
                 toNumber(found?.pChange) ??
+                toNumber(found?.percent_change) ??
                 null
             }
           : null;
@@ -2921,17 +2899,26 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
       }
 
       if (previous && typeof previous.price === "number") {
-        quotes.push(resolveQuote({ ...previous, status: "cached" }, previous));
+        const status =
+          isSameIstDay(previous.updatedAt, now) && previous.status === "live"
+            ? "live"
+            : "cached";
+        quotes.push(
+          resolveQuote(
+            { ...previous, status },
+            previous,
+            { updatedAt: previous.updatedAt }
+          )
+        );
       } else {
         quotes.push(
           normalizeQuote({
             symbol: cfg.symbol,
             pretty: cfg.pretty,
             price: null,
-            prevClose: null,
             change: null,
             changePercent: 0,
-            status: "cached",
+            status: "unavailable",
             updatedAt: now
           })
         );
@@ -2972,26 +2959,27 @@ const getNextScheduledRefreshMs = (now = Date.now()) => {
 };
 
 const scheduleMarketRefresh = () => {
+  if (marketRefreshTimer) {
+    clearTimeout(marketRefreshTimer);
+    marketRefreshTimer = null;
+  }
   const next = getNextScheduledRefreshMs();
   const delay = Math.max(1000, next - Date.now());
-  setTimeout(async () => {
+  marketRefreshTimer = setTimeout(async () => {
     await refreshMarketData({ reason: "scheduled" });
     scheduleMarketRefresh();
   }, delay);
 };
 
 loadMarketCache();
+refreshMarketData({ reason: "startup" }).catch((error) => {
+  console.warn("[markets] startup refresh failed", error?.message || error);
+});
 scheduleMarketRefresh();
 
-app.get("/api/markets", async (_req, res) => {
+app.get("/api/markets", (_req, res) => {
   const now = Date.now();
-  const isStale = !marketCacheUpdatedAt || now - marketCacheUpdatedAt > MARKET_REFRESH_STALE_MS;
-  if (isStale) {
-    await refreshMarketData({ reason: "on-demand" });
-  }
   const quotes = buildQuotesFromCache();
-  const liveCount = quotes.filter((q) => q.status === "live").length;
-  console.log(`[markets] response live:${liveCount} cached:${quotes.length - liveCount}`);
   res.json({ updatedAt: marketCacheUpdatedAt || now, quotes });
 });
 
