@@ -2398,17 +2398,16 @@ const MARKET_API_BASE = "https://stock.indianapi.in";
 const NSE_HOME = "https://www.nseindia.com/";
 const NSE_ALL_INDICES = "https://www.nseindia.com/api/allIndices";
 
-const MARKET_LAST_KNOWN = new Map();
 let marketCacheUpdatedAt = 0;
+const MARKET_LAST_KNOWN = new Map();
 let marketRefreshPromise = null;
 let marketRefreshTimer = null;
 
 const MARKET_SYMBOLS = [
-  { symbol: "^BSESN", pretty: "BSE Sensex", kind: "sensex" },
-  { symbol: "^NSEI", pretty: "NSE Nifty", kind: "nifty" },
-  { symbol: "GC=F", pretty: "Gold", kind: "gold" },
-  { symbol: "CL=F", pretty: "Crude Oil", kind: "crude" },
-  { symbol: "USDINR=X", pretty: "USD/INR", kind: "fx" }
+  { symbol: "NSE:NIFTY", pretty: "NSE Nifty", kind: "nifty" },
+  { symbol: "IN:GOLD", pretty: "Gold", kind: "gold" },
+  { symbol: "IN:CRUDE", pretty: "Crude Oil", kind: "crude" },
+  { symbol: "FX:USDINR", pretty: "USD/INR", kind: "fx" }
 ];
 
 const safeJsonParse = (text, fallback) => {
@@ -2433,6 +2432,13 @@ const readJsonFile = (filePath, fallback) => {
     return safeJsonParse(raw, fallback);
   } catch {
     return fallback;
+  }
+};
+
+const ensureMarketCacheFile = () => {
+  ensureBackupDir();
+  if (!fs.existsSync(MARKET_CACHE_PATH)) {
+    atomicWriteJson(MARKET_CACHE_PATH, { updatedAt: 0, quotes: [] });
   }
 };
 
@@ -2478,36 +2484,6 @@ const normalizeQuote = ({
   status: status || "cached",
   updatedAt: Number(updatedAt || Date.now())
 });
-
-const resolveQuote = (payload, previous, overrides = {}) => {
-  const price = typeof payload.price === "number" ? payload.price : null;
-  const prevClose =
-    typeof payload.prevClose === "number"
-      ? payload.prevClose
-      : typeof previous?.price === "number"
-        ? previous.price
-        : null;
-  const change =
-    typeof payload.change === "number"
-      ? payload.change
-      : typeof price === "number" && typeof prevClose === "number"
-        ? price - prevClose
-        : null;
-  const changePercent =
-    typeof payload.changePercent === "number"
-      ? payload.changePercent
-      : typeof price === "number" && typeof prevClose === "number" && prevClose !== 0
-        ? ((price - prevClose) / prevClose) * 100
-        : 0;
-  return normalizeQuote({
-    ...payload,
-    changePercent,
-    change,
-    updatedAt:
-      overrides.updatedAt ?? payload.updatedAt ?? previous?.updatedAt ?? Date.now(),
-    ...overrides
-  });
-};
 
 const loadMarketCache = () => {
   const cache = readJsonFile(MARKET_CACHE_PATH, { updatedAt: 0, quotes: [] });
@@ -2583,16 +2559,6 @@ const fetchNseJson = async (url) => {
   return data;
 };
 
-const isSameIstDay = (a, b = Date.now()) => {
-  const istA = new Date(a + IST_OFFSET_MS);
-  const istB = new Date(b + IST_OFFSET_MS);
-  return (
-    istA.getUTCFullYear() === istB.getUTCFullYear() &&
-    istA.getUTCMonth() === istB.getUTCMonth() &&
-    istA.getUTCDate() === istB.getUTCDate()
-  );
-};
-
 const extractIndexQuote = (obj) => ({
   price:
     toNumber(obj?.last) ??
@@ -2632,50 +2598,6 @@ const fetchNiftyQuote = async () => {
   return extractIndexQuote(nifty);
 };
 
-const fetchBseJson = async (url) => {
-  const { resp, text } = await fetchWithTimeout(url, {
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-      Accept: "application/json, text/plain, */*",
-      "Accept-Language": "en-IN,en;q=0.9",
-      Referer: "https://www.bseindia.com/"
-    }
-  });
-  if (!resp.ok) throw new Error(`bse_http_${resp.status}`);
-  const data = safeJsonParse(text, null);
-  if (!data) throw new Error("bse_non_json");
-  return data;
-};
-
-const findSensexInPayload = (payload) => {
-  if (!payload) return null;
-  if (Array.isArray(payload)) return payload[0];
-  const data = Array.isArray(payload?.data) ? payload.data[0] : null;
-  if (data) return data;
-  if (payload?.IndexValue || payload?.indexValue) return payload;
-  return null;
-};
-
-const fetchSensexQuote = async () => {
-  const endpoints = [
-    "https://api.bseindia.com/BseIndiaAPI/api/IndexHeader/w?indexCode=1",
-    "https://api.bseindia.com/BseIndiaAPI/api/IndexHighlightData/w?indexcode=1",
-    "https://api.bseindia.com/BseIndiaAPI/api/IndexHighLow/w?indexcode=1"
-  ];
-  for (const endpoint of endpoints) {
-    try {
-      const data = await fetchBseJson(endpoint);
-      const picked = findSensexInPayload(data);
-      const quote = extractIndexQuote(picked);
-      if (typeof quote.price === "number") return quote;
-    } catch {
-      // try next endpoint
-    }
-  }
-  throw new Error("bse_quote_missing");
-};
-
 const fetchUsdInrQuote = async () => {
   const { resp, text } = await fetchWithTimeout(
     "https://api.exchangerate.host/latest?base=USD&symbols=INR"
@@ -2710,7 +2632,7 @@ const findCommodity = (payload, needle) => {
   const n = normalizeCommodityName(needle);
   const matches = arr.filter((item) => {
     const hay = normalizeCommodityName(
-      `${item?.name || ""} ${item?.symbol || ""} ${item?.ticker || ""}`
+      `${item?.product || ""} ${item?.name || ""} ${item?.symbol || ""} ${item?.ticker || ""}`
     );
     return hay.includes(n);
   });
@@ -2748,11 +2670,7 @@ const buildQuotesFromCache = () =>
   MARKET_SYMBOLS.map((cfg) => {
     const existing = MARKET_LAST_KNOWN.get(cfg.symbol);
     if (existing && typeof existing.price === "number") {
-      const today = isSameIstDay(existing.updatedAt);
-      const status = today && existing.status === "live" ? "live" : "cached";
-      return resolveQuote({ ...existing, status }, existing, {
-        updatedAt: existing.updatedAt
-      });
+      return normalizeQuote({ ...existing, status: existing.status || "cached" });
     }
     return normalizeQuote({
       symbol: cfg.symbol,
@@ -2771,7 +2689,6 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
     const now = Date.now();
     const results = {
       nifty: { status: "skipped", quote: null },
-      sensex: { status: "skipped", quote: null },
       fx: { status: "skipped", quote: null },
       commodities: { status: "skipped", payload: null }
     };
@@ -2785,14 +2702,6 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
           results.nifty = { status: `error:${error.message || "nifty"}`, quote: null };
         }
       ),
-      fetchSensexQuote().then(
-        (quote) => {
-          results.sensex = { status: "live", quote };
-        },
-        (error) => {
-          results.sensex = { status: `error:${error.message || "sensex"}`, quote: null };
-        }
-      ),
       fetchUsdInrQuote().then(
         (quote) => {
           results.fx = { status: "live", quote };
@@ -2800,30 +2709,22 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
         (error) => {
           results.fx = { status: `error:${error.message || "fx"}`, quote: null };
         }
+      ),
+      fetchIndianApiCommodities().then(
+        (payload) => {
+          results.commodities = { status: "live", payload };
+        },
+        (error) => {
+          results.commodities = { status: `error:${error.message || "commodities"}`, payload: null };
+        }
       )
     ];
-
-    if (process.env.INDIANAPI_KEY) {
-      tasks.push(
-        fetchIndianApiCommodities().then(
-          (payload) => {
-            results.commodities = { status: "live", payload };
-          },
-          (error) => {
-            results.commodities = { status: `error:${error.message || "commodities"}`, payload: null };
-          }
-        )
-      );
-    } else {
-      results.commodities = {
-        status: process.env.INDIANAPI_KEY ? "skipped:cap" : "skipped:no_key",
-        payload: null
-      };
-    }
 
     await Promise.allSettled(tasks);
 
     const quotes = [];
+    const okSymbols = [];
+    const failedSymbols = [];
     let anyLive = false;
 
     for (const cfg of MARKET_SYMBOLS) {
@@ -2831,25 +2732,16 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
       if (cfg.kind === "nifty") {
         const quote = results.nifty.quote;
         if (quote?.price) {
-          const resolved = resolveQuote(
-            { symbol: cfg.symbol, pretty: cfg.pretty, ...quote, status: "live", updatedAt: now },
-            previous
-          );
+          const resolved = normalizeQuote({
+            symbol: cfg.symbol,
+            pretty: cfg.pretty,
+            ...quote,
+            status: "live",
+            updatedAt: now
+          });
           MARKET_LAST_KNOWN.set(cfg.symbol, resolved);
           quotes.push(resolved);
-          anyLive = true;
-          continue;
-        }
-      }
-      if (cfg.kind === "sensex") {
-        const quote = results.sensex.quote;
-        if (quote?.price) {
-          const resolved = resolveQuote(
-            { symbol: cfg.symbol, pretty: cfg.pretty, ...quote, status: "live", updatedAt: now },
-            previous
-          );
-          MARKET_LAST_KNOWN.set(cfg.symbol, resolved);
-          quotes.push(resolved);
+          okSymbols.push(cfg.symbol);
           anyLive = true;
           continue;
         }
@@ -2857,12 +2749,16 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
       if (cfg.kind === "fx") {
         const quote = results.fx.quote;
         if (quote?.price) {
-          const resolved = resolveQuote(
-            { symbol: cfg.symbol, pretty: cfg.pretty, ...quote, status: "live", updatedAt: now },
-            previous
-          );
+          const resolved = normalizeQuote({
+            symbol: cfg.symbol,
+            pretty: cfg.pretty,
+            ...quote,
+            status: "live",
+            updatedAt: now
+          });
           MARKET_LAST_KNOWN.set(cfg.symbol, resolved);
           quotes.push(resolved);
+          okSymbols.push(cfg.symbol);
           anyLive = true;
           continue;
         }
@@ -2883,33 +2779,33 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
                 toNumber(found?.changePercent) ??
                 toNumber(found?.pChange) ??
                 toNumber(found?.percent_change) ??
-                null
+                0
             }
           : null;
         if (quote?.price) {
-          const resolved = resolveQuote(
-            { symbol: cfg.symbol, pretty: cfg.pretty, ...quote, status: "live", updatedAt: now },
-            previous
-          );
+          const resolved = normalizeQuote({
+            symbol: cfg.symbol,
+            pretty: cfg.pretty,
+            ...quote,
+            status: "live",
+            updatedAt: now
+          });
           MARKET_LAST_KNOWN.set(cfg.symbol, resolved);
           quotes.push(resolved);
+          okSymbols.push(cfg.symbol);
           anyLive = true;
           continue;
         }
       }
 
       if (previous && typeof previous.price === "number") {
-        const status =
-          isSameIstDay(previous.updatedAt, now) && previous.status === "live"
-            ? "live"
-            : "cached";
-        quotes.push(
-          resolveQuote(
-            { ...previous, status },
-            previous,
-            { updatedAt: previous.updatedAt }
-          )
-        );
+        const resolved = normalizeQuote({
+          ...previous,
+          status: "cached"
+        });
+        MARKET_LAST_KNOWN.set(cfg.symbol, resolved);
+        quotes.push(resolved);
+        failedSymbols.push(cfg.symbol);
       } else {
         quotes.push(
           normalizeQuote({
@@ -2922,15 +2818,24 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
             updatedAt: now
           })
         );
+        failedSymbols.push(cfg.symbol);
       }
     }
 
     if (anyLive) {
       marketCacheUpdatedAt = now;
     }
-    persistMarketCache(quotes, marketCacheUpdatedAt || now);
+
+    const shouldPersist = quotes.some((quote) => typeof quote.price === "number");
+    if (shouldPersist) {
+      persistMarketCache(quotes, marketCacheUpdatedAt || now);
+    }
+
     console.log(
-      `[markets] refresh (${reason}) NSE:${results.nifty.status} BSE:${results.sensex.status} FX:${results.fx.status} COM:${results.commodities.status}`
+      `[markets] refreshed ${JSON.stringify({
+        okSymbols,
+        failedSymbols
+      })}`
     );
     return quotes;
   })();
@@ -2971,6 +2876,7 @@ const scheduleMarketRefresh = () => {
   }, delay);
 };
 
+ensureMarketCacheFile();
 loadMarketCache();
 refreshMarketData({ reason: "startup" }).catch((error) => {
   console.warn("[markets] startup refresh failed", error?.message || error);
