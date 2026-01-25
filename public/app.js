@@ -1037,11 +1037,10 @@ async function loadMarkets(){
   if (!el) return;
 
   const instruments = [
-    { label: "BSE Sensex", aliases: ["^BSESN", "BSESN", "SENSEX"] },
-    { label: "NSE Nifty", aliases: ["^NSEI", "NSEI", "NIFTY", "NIFTY_50"] },
-    { label: "Gold", aliases: ["GC=F", "GOLD", "XAUUSD", "XAU/USD"] },
-    { label: "Crude Oil", aliases: ["CL=F", "CRUDE", "WTI", "OIL", "BRN=F", "BRENT"] },
-    { label: "USD/INR", aliases: ["USDINR=X", "USDINR", "USD/INR", "INR=X"] }
+    { label: "NSE Nifty", symbol: "NIFTY" },
+    { label: "Gold", symbol: "GOLDTEN" },
+    { label: "Crude Oil", symbol: "CRUDE" },
+    { label: "USD/INR", symbol: "USDINR" }
   ];
 
   const renderMarkets = (data, logMissing) => {
@@ -1057,21 +1056,9 @@ async function loadMarkets(){
       updatedEl.textContent = statusText;
     }
 
-    const quotes = Array.isArray(data?.quotes) ? data.quotes : [];
-    const bySymbol = new Map();
-    quotes.forEach(q => {
-      [q.symbol, q.pretty, q.name].forEach(key => {
-        const normalized = normalizeMarketSymbol(key);
-        if (normalized && !bySymbol.has(normalized)){
-          bySymbol.set(normalized, q);
-        }
-      });
-    });
-
     const items = instruments.map(inst => {
-      const match = inst.aliases
-        .map(alias => bySymbol.get(normalizeMarketSymbol(alias)))
-        .find(Boolean);
+      const match = (Array.isArray(data?.quotes) ? data.quotes : [])
+        .find(q => normalizeMarketSymbol(q?.symbol) === normalizeMarketSymbol(inst.symbol));
       if (!match && logMissing){
         console.warn("[markets] missing instrument:", inst.label);
       }

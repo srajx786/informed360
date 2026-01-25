@@ -2395,20 +2395,22 @@ const MARKET_REFRESH_TIMES_IST = [
 ];
 const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
 const MARKET_API_BASE = "https://stock.indianapi.in";
-const NSE_HOME = "https://www.nseindia.com/";
-const NSE_ALL_INDICES = "https://www.nseindia.com/api/allIndices";
-
-let marketCacheUpdatedAt = 0;
-const MARKET_LAST_KNOWN = new Map();
-let marketRefreshPromise = null;
-let marketRefreshTimer = null;
 
 const MARKET_SYMBOLS = [
-  { symbol: "NSE:NIFTY", pretty: "NSE Nifty", kind: "nifty" },
-  { symbol: "IN:GOLD", pretty: "Gold", kind: "gold" },
-  { symbol: "IN:CRUDE", pretty: "Crude Oil", kind: "crude" },
-  { symbol: "FX:USDINR", pretty: "USD/INR", kind: "fx" }
+  { symbol: "NIFTY", pretty: "NSE Nifty", kind: "nifty" },
+  { symbol: "GOLDTEN", pretty: "Gold", kind: "gold" },
+  { symbol: "CRUDE", pretty: "Crude Oil", kind: "crude" },
+  { symbol: "USDINR", pretty: "USD/INR", kind: "fx" }
 ];
+
+const marketCache = {
+  updatedAt: 0,
+  quotes: [],
+  lastFetchAttemptAt: 0,
+  statusBySymbol: {}
+};
+let marketRefreshPromise = null;
+let marketRefreshTimer = null;
 
 const safeJsonParse = (text, fallback) => {
   try {
@@ -2426,22 +2428,6 @@ const ensureBackupDir = () => {
   }
 };
 
-const readJsonFile = (filePath, fallback) => {
-  try {
-    const raw = fs.readFileSync(filePath, "utf8");
-    return safeJsonParse(raw, fallback);
-  } catch {
-    return fallback;
-  }
-};
-
-const ensureMarketCacheFile = () => {
-  ensureBackupDir();
-  if (!fs.existsSync(MARKET_CACHE_PATH)) {
-    atomicWriteJson(MARKET_CACHE_PATH, { updatedAt: 0, quotes: [] });
-  }
-};
-
 const atomicWriteJson = (filePath, payload) => {
   ensureBackupDir();
   const tempPath = `${filePath}.${crypto.randomUUID()}.tmp`;
@@ -2455,6 +2441,27 @@ const atomicWriteJson = (filePath, payload) => {
       // ignore
     }
     console.warn("[markets] Failed to persist cache", error?.message || error);
+  }
+};
+
+const readJsonFile = (filePath, fallback) => {
+  try {
+    const raw = fs.readFileSync(filePath, "utf8");
+    return safeJsonParse(raw, fallback);
+  } catch {
+    return fallback;
+  }
+};
+
+const ensureMarketCacheFile = () => {
+  ensureBackupDir();
+  if (!fs.existsSync(MARKET_CACHE_PATH)) {
+    atomicWriteJson(MARKET_CACHE_PATH, {
+      updatedAt: 0,
+      quotes: [],
+      lastFetchAttemptAt: 0,
+      statusBySymbol: {}
+    });
   }
 };
 
@@ -2479,32 +2486,36 @@ const normalizeQuote = ({
   symbol,
   pretty,
   price: typeof price === "number" ? price : null,
-  change: typeof change === "number" ? change : null,
+  change: typeof change === "number" ? change : 0,
   changePercent: typeof changePercent === "number" ? changePercent : 0,
   status: status || "cached",
   updatedAt: Number(updatedAt || Date.now())
 });
 
 const loadMarketCache = () => {
-  const cache = readJsonFile(MARKET_CACHE_PATH, { updatedAt: 0, quotes: [] });
-  const quotes = Array.isArray(cache?.quotes) ? cache.quotes : [];
-  marketCacheUpdatedAt = Number(cache?.updatedAt || 0);
-  quotes.forEach((quote) => {
-    if (quote?.symbol) {
-      MARKET_LAST_KNOWN.set(
-        quote.symbol,
-        normalizeQuote({ ...quote, status: "cached" })
-      );
-    }
+  const cache = readJsonFile(MARKET_CACHE_PATH, {
+    updatedAt: 0,
+    quotes: [],
+    lastFetchAttemptAt: 0,
+    statusBySymbol: {}
   });
+  marketCache.updatedAt = Number(cache?.updatedAt || 0);
+  marketCache.quotes = Array.isArray(cache?.quotes)
+    ? cache.quotes.map((quote) => normalizeQuote(quote))
+    : [];
+  marketCache.lastFetchAttemptAt = Number(cache?.lastFetchAttemptAt || 0);
+  marketCache.statusBySymbol = typeof cache?.statusBySymbol === "object"
+    ? { ...cache.statusBySymbol }
+    : {};
 };
 
-const persistMarketCache = (quotes, updatedAt) => {
-  const payload = {
-    updatedAt: Number(updatedAt || Date.now()),
-    quotes: quotes.map((quote) => normalizeQuote(quote))
-  };
-  atomicWriteJson(MARKET_CACHE_PATH, payload);
+const persistMarketCache = () => {
+  atomicWriteJson(MARKET_CACHE_PATH, {
+    updatedAt: Number(marketCache.updatedAt || 0),
+    quotes: marketCache.quotes.map((quote) => normalizeQuote(quote)),
+    lastFetchAttemptAt: Number(marketCache.lastFetchAttemptAt || 0),
+    statusBySymbol: marketCache.statusBySymbol || {}
+  });
 };
 
 const fetchWithTimeout = async (url, options = {}, timeoutMs = 12000) => {
@@ -2519,83 +2530,55 @@ const fetchWithTimeout = async (url, options = {}, timeoutMs = 12000) => {
   }
 };
 
-const getSetCookies = (resp) => {
-  if (resp?.headers?.getSetCookie) return resp.headers.getSetCookie();
-  const raw = resp?.headers?.raw?.();
-  if (raw?.["set-cookie"]) return raw["set-cookie"];
-  const single = resp?.headers?.get?.("set-cookie");
-  return single ? [single] : [];
-};
-
-const buildCookieHeader = (setCookies) =>
-  setCookies
-    .map((cookie) => String(cookie || "").split(";")[0]?.trim())
-    .filter(Boolean)
-    .join("; ");
-
-const fetchNseJson = async (url) => {
-  const { resp: homeResp } = await fetchWithTimeout(NSE_HOME, {
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-      "Accept-Language": "en-IN,en;q=0.9"
+const fetchIndianApiJson = async (pathSuffix) => {
+  if (!process.env.INDIANAPI_KEY) throw new Error("missing_indianapi_key");
+  const { resp, text } = await fetchWithTimeout(
+    `${MARKET_API_BASE}${pathSuffix}`,
+    {
+      headers: {
+        "x-api-key": process.env.INDIANAPI_KEY,
+        Accept: "application/json"
+      }
     }
-  });
-  const cookies = buildCookieHeader(getSetCookies(homeResp));
-  const { resp, text } = await fetchWithTimeout(url, {
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-      Accept: "application/json, text/plain, */*",
-      "Accept-Language": "en-IN,en;q=0.9",
-      Referer: NSE_HOME,
-      Cookie: cookies
-    }
-  });
-  if (!resp.ok) throw new Error(`nse_http_${resp.status}`);
+  );
+  if (!resp.ok) throw new Error(`indianapi_http_${resp.status}`);
   const data = safeJsonParse(text, null);
-  if (!data) throw new Error("nse_non_json");
+  if (!data) throw new Error("indianapi_non_json");
   return data;
 };
 
-const extractIndexQuote = (obj) => ({
-  price:
-    toNumber(obj?.last) ??
-    toNumber(obj?.lastPrice) ??
-    toNumber(obj?.ltp) ??
-    toNumber(obj?.value) ??
-    toNumber(obj?.currentValue) ??
-    toNumber(obj?.indexValue) ??
-    null,
-  prevClose:
-    toNumber(obj?.previousClose) ??
-    toNumber(obj?.prevClose) ??
-    toNumber(obj?.prev) ??
-    null,
-  change:
-    toNumber(obj?.change) ??
-    toNumber(obj?.netChange) ??
-    toNumber(obj?.chg) ??
-    toNumber(obj?.diff) ??
-    null,
-  changePercent:
-    toNumber(obj?.pChange) ??
-    toNumber(obj?.percentChange) ??
-    toNumber(obj?.perChange) ??
-    toNumber(obj?.chgPer) ??
-    null
-});
+const normalizeIndexName = (value = "") =>
+  String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+const extractIndexPrice = (obj) =>
+  toNumber(obj?.last) ??
+  toNumber(obj?.lastPrice) ??
+  toNumber(obj?.ltp) ??
+  toNumber(obj?.value) ??
+  toNumber(obj?.currentValue) ??
+  toNumber(obj?.indexValue) ??
+  toNumber(obj?.price) ??
+  null;
 
 const fetchNiftyQuote = async () => {
-  const data = await fetchNseJson(NSE_ALL_INDICES);
-  const indices = Array.isArray(data?.data) ? data.data : [];
-  const nifty = indices.find((item) => {
-    const name = String(item?.index || item?.indexName || "").toLowerCase();
+  const data = await fetchIndianApiJson("/indices");
+  const list = Array.isArray(data?.data)
+    ? data.data
+    : Array.isArray(data?.indices)
+      ? data.indices
+      : Array.isArray(data)
+        ? data
+        : [];
+  const nifty = list.find((item) => {
+    const name = normalizeIndexName(item?.index || item?.indexName || item?.name);
     return name.includes("nifty 50") || name === "nifty";
   });
-  if (!nifty) throw new Error("nse_nifty_missing");
-  return extractIndexQuote(nifty);
+  const price = extractIndexPrice(nifty);
+  if (!price) throw new Error("nifty_missing");
+  return { price };
 };
 
 const fetchUsdInrQuote = async () => {
@@ -2606,80 +2589,57 @@ const fetchUsdInrQuote = async () => {
   const data = safeJsonParse(text, null);
   const rate = toNumber(data?.rates?.INR);
   if (!rate) throw new Error("fx_rate_missing");
-  return { price: rate, prevClose: null, change: null, changePercent: null };
+  return { price: rate };
 };
 
-const normalizeCommodityName = (value = "") =>
-  String(value || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "");
-
-const parseCommodityTime = (value) => {
-  if (!value) return null;
-  if (typeof value === "number") return value;
-  const parsed = Date.parse(String(value));
-  return Number.isNaN(parsed) ? null : parsed;
+const extractCommodityArray = (payload) => {
+  if (!payload) return [];
+  if (Array.isArray(payload)) return payload;
+  if (Array.isArray(payload.data)) return payload.data;
+  if (Array.isArray(payload.commodities)) return payload.commodities;
+  if (Array.isArray(payload.result)) return payload.result;
+  return [];
 };
 
-const findCommodity = (payload, needle) => {
-  if (!payload) return null;
-  const arr =
-    Array.isArray(payload) ? payload :
-    Array.isArray(payload.data) ? payload.data :
-    Array.isArray(payload.commodities) ? payload.commodities :
-    Array.isArray(payload.result) ? payload.result :
-    [];
-  const n = normalizeCommodityName(needle);
-  const matches = arr.filter((item) => {
-    const hay = normalizeCommodityName(
-      `${item?.product || ""} ${item?.name || ""} ${item?.symbol || ""} ${item?.ticker || ""}`
-    );
-    return hay.includes(n);
+const findGoldCommodity = (payload) => {
+  const list = extractCommodityArray(payload);
+  return list.find((item) => {
+    const product = String(item?.product || item?.name || item?.symbol || "").toUpperCase();
+    return product === "GOLDTEN";
   });
-  if (matches.length === 0) return null;
-  return matches.reduce((best, item) => {
-    if (!best) return item;
-    const bestPrice = toNumber(best?.last_traded_price);
-    const itemPrice = toNumber(item?.last_traded_price);
-    if (itemPrice !== null && bestPrice === null) return item;
-    const bestTime = parseCommodityTime(best?.messageTime ?? best?.message_time);
-    const itemTime = parseCommodityTime(item?.messageTime ?? item?.message_time);
-    if (itemPrice !== null && bestPrice !== null) {
-      if (itemTime && bestTime) return itemTime > bestTime ? item : best;
-      if (itemTime && !bestTime) return item;
-    }
-    return best;
-  }, null);
 };
 
-const fetchIndianApiCommodities = async () => {
-  if (!process.env.INDIANAPI_KEY) throw new Error("missing_indianapi_key");
-  const { resp, text } = await fetchWithTimeout(`${MARKET_API_BASE}/commodities`, {
-    headers: {
-      "x-api-key": process.env.INDIANAPI_KEY,
-      Accept: "application/json"
-    }
+const findCrudeCommodity = (payload) => {
+  const list = extractCommodityArray(payload);
+  return list.find((item) => {
+    const product = String(item?.product || item?.name || item?.symbol || "").toUpperCase();
+    if (!product) return false;
+    if (!/CRUDE|OIL/.test(product)) return false;
+    return toNumber(item?.last_traded_price) !== null;
   });
-  if (!resp.ok) throw new Error(`indianapi_http_${resp.status}`);
-  const data = safeJsonParse(text, null);
-  if (!data) throw new Error("indianapi_non_json");
-  return data;
 };
+
+const getCachedQuote = (symbol) =>
+  marketCache.quotes.find((quote) => quote.symbol === symbol);
 
 const buildQuotesFromCache = () =>
   MARKET_SYMBOLS.map((cfg) => {
-    const existing = MARKET_LAST_KNOWN.get(cfg.symbol);
+    const existing = getCachedQuote(cfg.symbol);
     if (existing && typeof existing.price === "number") {
-      return normalizeQuote({ ...existing, status: existing.status || "cached" });
+      return normalizeQuote({
+        ...existing,
+        symbol: cfg.symbol,
+        pretty: cfg.pretty
+      });
     }
     return normalizeQuote({
       symbol: cfg.symbol,
       pretty: cfg.pretty,
       price: null,
-      change: null,
+      change: 0,
       changePercent: 0,
       status: "unavailable",
-      updatedAt: Date.now()
+      updatedAt: marketCache.updatedAt || Date.now()
     });
   });
 
@@ -2687,154 +2647,132 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
   if (marketRefreshPromise) return marketRefreshPromise;
   marketRefreshPromise = (async () => {
     const now = Date.now();
+    marketCache.lastFetchAttemptAt = now;
     const results = {
-      nifty: { status: "skipped", quote: null },
-      fx: { status: "skipped", quote: null },
-      commodities: { status: "skipped", payload: null }
+      nifty: null,
+      fx: null,
+      commodities: null
     };
 
-    const tasks = [
-      fetchNiftyQuote().then(
-        (quote) => {
-          results.nifty = { status: "live", quote };
-        },
-        (error) => {
-          results.nifty = { status: `error:${error.message || "nifty"}`, quote: null };
-        }
-      ),
-      fetchUsdInrQuote().then(
-        (quote) => {
-          results.fx = { status: "live", quote };
-        },
-        (error) => {
-          results.fx = { status: `error:${error.message || "fx"}`, quote: null };
-        }
-      ),
-      fetchIndianApiCommodities().then(
-        (payload) => {
-          results.commodities = { status: "live", payload };
-        },
-        (error) => {
-          results.commodities = { status: `error:${error.message || "commodities"}`, payload: null };
-        }
-      )
-    ];
+    await Promise.allSettled([
+      fetchNiftyQuote().then((quote) => {
+        results.nifty = quote;
+      }),
+      fetchUsdInrQuote().then((quote) => {
+        results.fx = quote;
+      }),
+      fetchIndianApiJson("/commodities").then((payload) => {
+        results.commodities = payload;
+      })
+    ]);
 
-    await Promise.allSettled(tasks);
-
+    const statusBySymbol = { ...marketCache.statusBySymbol };
     const quotes = [];
-    const okSymbols = [];
-    const failedSymbols = [];
-    let anyLive = false;
+    let hasLive = false;
 
     for (const cfg of MARKET_SYMBOLS) {
-      const previous = MARKET_LAST_KNOWN.get(cfg.symbol);
-      if (cfg.kind === "nifty") {
-        const quote = results.nifty.quote;
-        if (quote?.price) {
-          const resolved = normalizeQuote({
+      const previous = getCachedQuote(cfg.symbol);
+      const previousPrice = toNumber(previous?.price);
+      let nextQuote = null;
+      let status = "unavailable";
+
+      if (cfg.kind === "nifty" && results.nifty?.price) {
+        const price = toNumber(results.nifty.price);
+        if (price !== null) {
+          const change = previousPrice !== null ? price - previousPrice : 0;
+          const changePercent = previousPrice ? (change / previousPrice) * 100 : 0;
+          nextQuote = normalizeQuote({
             symbol: cfg.symbol,
             pretty: cfg.pretty,
-            ...quote,
+            price,
+            change,
+            changePercent,
             status: "live",
             updatedAt: now
           });
-          MARKET_LAST_KNOWN.set(cfg.symbol, resolved);
-          quotes.push(resolved);
-          okSymbols.push(cfg.symbol);
-          anyLive = true;
-          continue;
-        }
-      }
-      if (cfg.kind === "fx") {
-        const quote = results.fx.quote;
-        if (quote?.price) {
-          const resolved = normalizeQuote({
-            symbol: cfg.symbol,
-            pretty: cfg.pretty,
-            ...quote,
-            status: "live",
-            updatedAt: now
-          });
-          MARKET_LAST_KNOWN.set(cfg.symbol, resolved);
-          quotes.push(resolved);
-          okSymbols.push(cfg.symbol);
-          anyLive = true;
-          continue;
-        }
-      }
-      if (cfg.kind === "gold" || cfg.kind === "crude") {
-        const payload = results.commodities.payload;
-        const needle = cfg.kind === "gold" ? "gold" : "crude";
-        const found = findCommodity(payload, needle);
-        const quote = found
-          ? {
-              price: toNumber(found?.last_traded_price),
-              change:
-                toNumber(found?.change) ??
-                toNumber(found?.netChange) ??
-                toNumber(found?.chg) ??
-                null,
-              changePercent:
-                toNumber(found?.changePercent) ??
-                toNumber(found?.pChange) ??
-                toNumber(found?.percent_change) ??
-                0
-            }
-          : null;
-        if (quote?.price) {
-          const resolved = normalizeQuote({
-            symbol: cfg.symbol,
-            pretty: cfg.pretty,
-            ...quote,
-            status: "live",
-            updatedAt: now
-          });
-          MARKET_LAST_KNOWN.set(cfg.symbol, resolved);
-          quotes.push(resolved);
-          okSymbols.push(cfg.symbol);
-          anyLive = true;
-          continue;
+          status = "live";
         }
       }
 
-      if (previous && typeof previous.price === "number") {
-        const resolved = normalizeQuote({
-          ...previous,
-          status: "cached"
-        });
-        MARKET_LAST_KNOWN.set(cfg.symbol, resolved);
-        quotes.push(resolved);
-        failedSymbols.push(cfg.symbol);
-      } else {
-        quotes.push(
-          normalizeQuote({
+      if (cfg.kind === "fx" && results.fx?.price && !nextQuote) {
+        const price = toNumber(results.fx.price);
+        if (price !== null) {
+          const change = previousPrice !== null ? price - previousPrice : 0;
+          const changePercent = previousPrice ? (change / previousPrice) * 100 : 0;
+          nextQuote = normalizeQuote({
+            symbol: cfg.symbol,
+            pretty: cfg.pretty,
+            price,
+            change,
+            changePercent,
+            status: "live",
+            updatedAt: now
+          });
+          status = "live";
+        }
+      }
+
+      if ((cfg.kind === "gold" || cfg.kind === "crude") && !nextQuote) {
+        const payload = results.commodities;
+        const commodity =
+          cfg.kind === "gold" ? findGoldCommodity(payload) : findCrudeCommodity(payload);
+        const price = toNumber(commodity?.last_traded_price);
+        if (price !== null) {
+          const change = previousPrice !== null ? price - previousPrice : 0;
+          const changePercent = previousPrice ? (change / previousPrice) * 100 : 0;
+          nextQuote = normalizeQuote({
+            symbol: cfg.symbol,
+            pretty: cfg.pretty,
+            price,
+            change,
+            changePercent,
+            status: "live",
+            updatedAt: now
+          });
+          status = "live";
+        } else if (cfg.kind === "crude") {
+          status = "unavailable";
+        }
+      }
+
+      if (!nextQuote) {
+        if (previous && typeof previous.price === "number") {
+          nextQuote = normalizeQuote({
+            ...previous,
+            symbol: cfg.symbol,
+            pretty: cfg.pretty,
+            status
+          });
+        } else {
+          nextQuote = normalizeQuote({
             symbol: cfg.symbol,
             pretty: cfg.pretty,
             price: null,
-            change: null,
+            change: 0,
             changePercent: 0,
-            status: "unavailable",
+            status,
             updatedAt: now
-          })
-        );
-        failedSymbols.push(cfg.symbol);
+          });
+        }
       }
+
+      statusBySymbol[cfg.symbol] = status;
+      quotes.push(nextQuote);
+      if (status === "live") hasLive = true;
     }
 
-    if (anyLive) {
-      marketCacheUpdatedAt = now;
+    if (hasLive) {
+      marketCache.updatedAt = now;
     }
-
-    const shouldPersist = quotes.some((quote) => typeof quote.price === "number");
-    if (shouldPersist) {
-      persistMarketCache(quotes, marketCacheUpdatedAt || now);
-    }
+    marketCache.quotes = quotes;
+    marketCache.statusBySymbol = statusBySymbol;
+    persistMarketCache();
 
     console.log(
       `[markets] refreshed ${JSON.stringify({
-        okSymbols,
-        failedSymbols
+        reason,
+        updatedAt: marketCache.updatedAt,
+        statusBySymbol
       })}`
     );
     return quotes;
@@ -2878,15 +2816,16 @@ const scheduleMarketRefresh = () => {
 
 ensureMarketCacheFile();
 loadMarketCache();
-refreshMarketData({ reason: "startup" }).catch((error) => {
-  console.warn("[markets] startup refresh failed", error?.message || error);
-});
+if (marketCache.quotes.length === 0) {
+  refreshMarketData({ reason: "startup" }).catch((error) => {
+    console.warn("[markets] startup refresh failed", error?.message || error);
+  });
+}
 scheduleMarketRefresh();
 
 app.get("/api/markets", (_req, res) => {
-  const now = Date.now();
   const quotes = buildQuotesFromCache();
-  res.json({ updatedAt: marketCacheUpdatedAt || now, quotes });
+  res.json({ updatedAt: marketCache.updatedAt || Date.now(), quotes });
 });
 
 app.get("/health", (_req, res) => res.json({ ok: true, at: Date.now() }));
