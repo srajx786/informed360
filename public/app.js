@@ -283,7 +283,7 @@ const TOPIC_KEYWORDS = {
   crime: ["crime","police","arrest","murder","fraud","scam","assault"],
   climate: ["climate","environment","weather","carbon","emissions","flood"],
   ai: ["ai","artificial intelligence","machine learning","automation"],
-  markets: ["market","markets","stocks","shares","sensex","nifty","trading"],
+  markets: ["market","markets","stocks","shares","nifty","trading"],
   startups: ["startup","start-up","founder","venture","funding","seed","series"]
 };
 const POSITIVE_CUES = [
@@ -1037,10 +1037,10 @@ async function loadMarkets(){
   if (!el) return;
 
   const instruments = [
-    { label: "NSE Nifty", symbol: "NIFTY" },
-    { label: "Gold", symbol: "GOLDTEN" },
-    { label: "Crude Oil", symbol: "CRUDE" },
-    { label: "USD/INR", symbol: "USDINR" }
+    { label: "NSE Nifty", symbol: "^NSEI" },
+    { label: "Gold", symbol: "GC=F" },
+    { label: "Crude Oil", symbol: "CL=F" },
+    { label: "USD/INR", symbol: "USDINR=X" }
   ];
 
   const renderMarkets = (data, logMissing) => {

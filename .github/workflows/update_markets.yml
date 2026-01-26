@@ -1,0 +1,39 @@
+name: Update markets.json
+
+on:
+  schedule:
+    - cron: "0 4,7,10,15 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-markets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Update markets data
+        run: python scripts/update_markets.py
+
+      - name: Commit updated markets.json
+        run: |
+          if [[ -n "$(git status --porcelain public/markets.json)" ]]; then
+            git config user.name "informed360-bot"
+            git config user.email "informed360-bot@users.noreply.github.com"
+            git add public/markets.json
+            git commit -m "Update markets.json"
+            git push
+          else
+            echo "No changes to commit"
+          fi
