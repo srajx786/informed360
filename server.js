@@ -3,6 +3,7 @@ import cors from "cors";
 import Parser from "rss-parser";
 import vader from "vader-sentiment";
 import fs from "fs";
+import fsPromises from "fs/promises";
 import path from "path";
 import crypto from "crypto";
 
@@ -33,6 +34,16 @@ app.use(express.json());
 
 const __dirname = path.resolve();
 const LOGO_PATH = path.join(__dirname, "public", "logo.png");
+const CACHE_DIR = path.join(__dirname, "data", "cache");
+const CACHE_FILES = {
+  news: path.join(CACHE_DIR, "news.json"),
+  stories: path.join(CACHE_DIR, "stories.json")
+};
+const CACHE_STATE = {
+  news: { entries: new Map(), lastSuccessfulFetchAt: 0 },
+  stories: { entries: new Map(), lastSuccessfulFetchAt: 0 }
+};
+const SERVER_STARTED_AT = Date.now();
 const escapeHtml = (value = "") =>
   String(value).replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
@@ -111,7 +122,11 @@ app.get("/s", (req, res) => {
     </html>`);
 });
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"), { maxAge: "1h" }));
+app.use("/api", (_req, res, next) => {
+  res.setHeader("Cache-Control", "no-store");
+  next();
+});
 
 const FEEDS = JSON.parse(
   fs.readFileSync(path.join(__dirname, "rss-feeds.json"), "utf-8")
@@ -165,6 +180,122 @@ const TOP_STORY_RELATED_CACHE_TTL = Number(
 );
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const ensureCacheDir = async () => {
+  await fsPromises.mkdir(CACHE_DIR, { recursive: true });
+};
+const loadCacheFile = async (name) => {
+  const filePath = CACHE_FILES[name];
+  if (!filePath) return;
+  try {
+    const raw = await fsPromises.readFile(filePath, "utf8");
+    const parsed = JSON.parse(raw);
+    const entries = parsed?.entries || {};
+    const state = CACHE_STATE[name];
+    state.entries.clear();
+    Object.entries(entries).forEach(([key, value]) => {
+      if (value?.payload) {
+        state.entries.set(key, {
+          payload: value.payload,
+          cachedAt: Number(value.cachedAt || 0)
+        });
+      }
+    });
+    state.lastSuccessfulFetchAt = Number(parsed?.lastSuccessfulFetchAt || 0);
+    const latest = Math.max(
+      0,
+      ...[...state.entries.values()].map((entry) => entry.cachedAt || 0)
+    );
+    if (latest) {
+      console.log(
+        `cache loaded: ${name} (age ${Date.now() - latest}ms)`
+      );
+    }
+  } catch (error) {
+    if (error?.code !== "ENOENT") {
+      console.warn(`cache load error: ${name}`, error?.message || error);
+    }
+  }
+};
+const writeCacheFile = async (name) => {
+  const filePath = CACHE_FILES[name];
+  if (!filePath) return;
+  const state = CACHE_STATE[name];
+  const entries = Object.fromEntries(
+    [...state.entries.entries()].map(([key, value]) => [
+      key,
+      {
+        payload: value.payload,
+        cachedAt: value.cachedAt
+      }
+    ])
+  );
+  const body = JSON.stringify(
+    {
+      entries,
+      lastSuccessfulFetchAt: state.lastSuccessfulFetchAt || 0
+    },
+    null,
+    2
+  );
+  const tmpPath = `${filePath}.${crypto.randomUUID()}.tmp`;
+  await fsPromises.writeFile(tmpPath, body, "utf8");
+  await fsPromises.rename(tmpPath, filePath);
+};
+const storeCacheEntry = (name, key, payload) => {
+  if (!CACHE_STATE[name]) return;
+  const now = Date.now();
+  CACHE_STATE[name].entries.set(key, { payload, cachedAt: now });
+  void writeCacheFile(name);
+};
+const noteSuccessfulFetch = (name, fetchedAt = Date.now()) => {
+  if (!CACHE_STATE[name]) return;
+  CACHE_STATE[name].lastSuccessfulFetchAt = fetchedAt;
+  void writeCacheFile(name);
+};
+const cacheKeyForNews = ({
+  sentiment = "",
+  category = "",
+  includeExp = false,
+  limit = 200
+} = {}) =>
+  [includeExp ? "exp" : "core", category || "all", sentiment || "all", limit]
+    .join("|");
+const cacheKeyForStories = ({ includeExp = false } = {}) =>
+  includeExp ? "exp" : "core";
+const getCacheEntry = (name, key) =>
+  CACHE_STATE[name]?.entries.get(key) || null;
+const fetchWithRetry = async (
+  url,
+  options = {},
+  { timeoutMs = 5000, retries = 3, backoffMs = [250, 750, 1500] } = {}
+) => {
+  let lastError;
+  for (let attempt = 0; attempt < retries; attempt += 1) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const response = await fetch(url, {
+        ...options,
+        signal: controller.signal
+      });
+      clearTimeout(timeout);
+      return response;
+    } catch (error) {
+      clearTimeout(timeout);
+      lastError = error;
+      if (attempt < retries - 1) {
+        const delay = backoffMs[attempt] ?? backoffMs[backoffMs.length - 1] ?? 500;
+        await sleep(delay);
+      }
+    }
+  }
+  throw lastError;
+};
+const latestSuccessfulFetchAt = () =>
+  Math.max(
+    CACHE_STATE.news.lastSuccessfulFetchAt || 0,
+    CACHE_STATE.stories.lastSuccessfulFetchAt || 0
+  );
 const ARTICLE_CACHE = new Map();
 const EXPLANATION_CACHE = new Map();
 const STORY_CACHE = new Map();
@@ -269,16 +400,12 @@ const resolveOgImage = async (target = "") => {
   const cached = getOgImageCache(target);
   if (cached) return cached.image || "";
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10000);
-    const response = await fetch(target, {
-      signal: controller.signal,
+    const response = await fetchWithRetry(target, {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Informed360Bot/1.0"
       }
     });
-    clearTimeout(timeout);
     const html = await response.text();
     const og = cleanUrl(findMetaContent(html, "property", "og:image"), target);
     const twitter = cleanUrl(findMetaContent(html, "name", "twitter:image"), target);
@@ -906,12 +1033,46 @@ const uniqueMerge = (a, b) => {
 };
 
 async function refreshCore() {
-  CORE = await fetchList(FEEDS.feeds || []);
-  STORY_CACHE.delete("core");
+  const next = await fetchList(FEEDS.feeds || []);
+  if (next?.articles?.length || !CORE?.articles?.length) {
+    CORE = next;
+  }
+  if (next?.articles?.length) {
+    STORY_CACHE.delete("core");
+    noteSuccessfulFetch("news", next.fetchedAt);
+    noteSuccessfulFetch("stories", next.fetchedAt);
+    storeCacheEntry("news", cacheKeyForNews(), {
+      fetchedAt: next.fetchedAt,
+      articles: next.articles
+    });
+    const storiesPayload = {
+      fetchedAt: next.fetchedAt,
+      stories: buildStories(next.articles)
+    };
+    STORY_CACHE.set("core", { at: next.fetchedAt, stories: storiesPayload.stories });
+    storeCacheEntry("stories", cacheKeyForStories(), storiesPayload);
+    console.log("refresh success: /api/news");
+    console.log("refresh success: /api/stories");
+  }
 }
 async function refreshExp() {
-  EXP = await fetchList(FEEDS.experimental || []);
-  STORY_CACHE.delete("exp");
+  const next = await fetchList(FEEDS.experimental || []);
+  if (next?.articles?.length || !EXP?.articles?.length) {
+    EXP = next;
+  }
+  if (next?.articles?.length) {
+    STORY_CACHE.delete("exp");
+    storeCacheEntry("news", cacheKeyForNews({ includeExp: true }), {
+      fetchedAt: next.fetchedAt,
+      articles: next.articles
+    });
+    const storiesPayload = {
+      fetchedAt: next.fetchedAt,
+      stories: buildStories(next.articles)
+    };
+    STORY_CACHE.set("exp", { at: next.fetchedAt, stories: storiesPayload.stories });
+    storeCacheEntry("stories", cacheKeyForStories({ includeExp: true }), storiesPayload);
+  }
 }
 async function validateFeeds() {
   const urls = [...(FEEDS.feeds || []), ...(FEEDS.experimental || [])];
@@ -928,12 +1089,6 @@ async function validateFeeds() {
     })
   );
 }
-await refreshCore();
-await refreshExp();
-await validateFeeds();
-setInterval(refreshCore, REFRESH_MS);
-setInterval(refreshExp, REFRESH_MS);
-setInterval(validateFeeds, 60 * 60 * 1000);
 
 const countArticlesByDomain = (articles = []) => {
   const counts = new Map();
@@ -1142,6 +1297,48 @@ const buildStories = (articles = []) => {
     .sort((a, b) => new Date(b.featured?.publishedAt) - new Date(a.featured?.publishedAt))
     .slice(0, 12);
 };
+
+const hydrateFromDiskCache = () => {
+  const newsEntry = getCacheEntry("news", cacheKeyForNews());
+  if (newsEntry?.payload?.articles?.length) {
+    CORE = {
+      fetchedAt: Number(newsEntry.payload.fetchedAt || newsEntry.cachedAt || 0),
+      articles: newsEntry.payload.articles
+    };
+  }
+  const expEntry = getCacheEntry("news", cacheKeyForNews({ includeExp: true }));
+  if (expEntry?.payload?.articles?.length) {
+    EXP = {
+      fetchedAt: Number(expEntry.payload.fetchedAt || expEntry.cachedAt || 0),
+      articles: expEntry.payload.articles
+    };
+  }
+  const coreStories = getCacheEntry("stories", cacheKeyForStories());
+  if (coreStories?.payload?.stories?.length) {
+    STORY_CACHE.set("core", {
+      at: Number(coreStories.payload.fetchedAt || coreStories.cachedAt || 0),
+      stories: coreStories.payload.stories
+    });
+  }
+  const expStories = getCacheEntry("stories", cacheKeyForStories({ includeExp: true }));
+  if (expStories?.payload?.stories?.length) {
+    STORY_CACHE.set("exp", {
+      at: Number(expStories.payload.fetchedAt || expStories.cachedAt || 0),
+      stories: expStories.payload.stories
+    });
+  }
+};
+
+await ensureCacheDir();
+await loadCacheFile("news");
+await loadCacheFile("stories");
+hydrateFromDiskCache();
+void refreshCore();
+void refreshExp();
+void validateFeeds();
+setInterval(() => void refreshCore(), REFRESH_MS);
+setInterval(() => void refreshExp(), REFRESH_MS);
+setInterval(() => void validateFeeds(), 60 * 60 * 1000);
 
 const buildRelatedLookup = (articles = []) => {
   const stories = buildStories(articles);
@@ -1651,10 +1848,7 @@ const fetchGdelt = async ({
   });
   const url = `${gdeltBaseUrl}?${params.toString()}`;
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 12000);
-    const response = await fetch(url, {
-      signal: controller.signal,
+    const response = await fetchWithRetry(url, {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Informed360Bot/1.0",
@@ -1662,7 +1856,6 @@ const fetchGdelt = async ({
         "Accept-Language": "en-IN,en;q=0.9"
       }
     });
-    clearTimeout(timeout);
     const bodyText = await response.text();
     if (!response.ok) {
       console.log("GDELT HTTP", response.status, url);
@@ -2293,15 +2486,61 @@ app.get("/api/top-stories", async (req, res) => {
 app.get("/api/stories", (req, res) => {
   const includeExp = req.query.experimental === "1";
   const cacheKey = includeExp ? "exp" : "core";
+  const diskKey = cacheKeyForStories({ includeExp });
   const cached = STORY_CACHE.get(cacheKey);
-  if (cached && Date.now() - cached.at < STORY_CACHE_TTL)
-    return res.json({ fetchedAt: cached.at, stories: cached.stories });
-  const articles = includeExp
+  if (cached && Date.now() - cached.at < STORY_CACHE_TTL) {
+    const lastFetchAt = CACHE_STATE.stories.lastSuccessfulFetchAt || cached.at;
+    return res.json({
+      fetchedAt: cached.at,
+      stories: cached.stories,
+      _meta: {
+        stale: false,
+        cacheAgeMs: Math.max(0, Date.now() - lastFetchAt),
+        lastSuccessfulFetchISO: lastFetchAt
+          ? new Date(lastFetchAt).toISOString()
+          : null
+      }
+    });
+  }
+  const baseArticles = includeExp
     ? uniqueMerge(CORE.articles, EXP.articles)
     : CORE.articles;
-  const stories = buildStories(articles);
-  STORY_CACHE.set(cacheKey, { at: Date.now(), stories });
-  res.json({ fetchedAt: Date.now(), stories });
+  if (!baseArticles?.length) {
+    const diskEntry = getCacheEntry("stories", diskKey);
+    if (diskEntry?.payload?.stories?.length) {
+      console.log("served stale: /api/stories");
+      STORY_CACHE.set(cacheKey, {
+        at: diskEntry.cachedAt,
+        stories: diskEntry.payload.stories
+      });
+      return res.json({
+        ...diskEntry.payload,
+        _meta: {
+          stale: true,
+          cacheAgeMs: Math.max(0, Date.now() - diskEntry.cachedAt),
+          lastSuccessfulFetchISO: CACHE_STATE.stories.lastSuccessfulFetchAt
+            ? new Date(CACHE_STATE.stories.lastSuccessfulFetchAt).toISOString()
+            : null
+        }
+      });
+    }
+  }
+  const stories = buildStories(baseArticles);
+  const payload = { fetchedAt: Date.now(), stories };
+  STORY_CACHE.set(cacheKey, { at: payload.fetchedAt, stories });
+  storeCacheEntry("stories", diskKey, payload);
+  res.json({
+    ...payload,
+    _meta: {
+      stale: false,
+      cacheAgeMs: CACHE_STATE.stories.lastSuccessfulFetchAt
+        ? Math.max(0, Date.now() - CACHE_STATE.stories.lastSuccessfulFetchAt)
+        : 0,
+      lastSuccessfulFetchISO: CACHE_STATE.stories.lastSuccessfulFetchAt
+        ? new Date(CACHE_STATE.stories.lastSuccessfulFetchAt).toISOString()
+        : null
+    }
+  });
 });
 
 app.get("/api/engaged", (req, res) => {
@@ -2328,10 +2567,17 @@ app.get("/api/news", (req, res) => {
   const sentiment = req.query.sentiment;
   const category = (req.query.category || "").toLowerCase();
   const includeExp = req.query.experimental === "1";
+  const diskKey = cacheKeyForNews({
+    sentiment,
+    category,
+    includeExp,
+    limit
+  });
 
-  let arts = includeExp
+  const baseArticles = includeExp
     ? uniqueMerge(CORE.articles, EXP.articles)
     : CORE.articles;
+  let arts = baseArticles;
   if (category && category !== "home")
     arts = arts.filter((a) => a.category === category);
   if (sentiment) arts = arts.filter((a) => a.sentiment?.label === sentiment);
@@ -2347,8 +2593,36 @@ app.get("/api/news", (req, res) => {
     const normalized = { ...article, imageUrl, image: imageUrl };
     return related?.length ? { ...normalized, related } : normalized;
   });
-
-  res.json({ fetchedAt: Date.now(), articles: payload });
+  if (!baseArticles?.length) {
+    const diskEntry = getCacheEntry("news", diskKey);
+    if (diskEntry?.payload?.articles?.length) {
+      console.log("served stale: /api/news");
+      return res.json({
+        ...diskEntry.payload,
+        _meta: {
+          stale: true,
+          cacheAgeMs: Math.max(0, Date.now() - diskEntry.cachedAt),
+          lastSuccessfulFetchISO: CACHE_STATE.news.lastSuccessfulFetchAt
+            ? new Date(CACHE_STATE.news.lastSuccessfulFetchAt).toISOString()
+            : null
+        }
+      });
+    }
+  }
+  const responsePayload = { fetchedAt: Date.now(), articles: payload };
+  storeCacheEntry("news", diskKey, responsePayload);
+  res.json({
+    ...responsePayload,
+    _meta: {
+      stale: false,
+      cacheAgeMs: CACHE_STATE.news.lastSuccessfulFetchAt
+        ? Math.max(0, Date.now() - CACHE_STATE.news.lastSuccessfulFetchAt)
+        : 0,
+      lastSuccessfulFetchISO: CACHE_STATE.news.lastSuccessfulFetchAt
+        ? new Date(CACHE_STATE.news.lastSuccessfulFetchAt).toISOString()
+        : null
+    }
+  });
 });
 
 app.get("/api/sources", (_req, res) => {
@@ -2361,6 +2635,17 @@ app.get("/api/sources", (_req, res) => {
         buildFeedStatus(url, counts)
       )
     }
+  });
+});
+
+app.get("/api/health", (_req, res) => {
+  const lastFetch = latestSuccessfulFetchAt();
+  res.json({
+    ok: true,
+    hasCache:
+      CACHE_STATE.news.entries.size > 0 || CACHE_STATE.stories.entries.size > 0,
+    lastSuccessfulFetchISO: lastFetch ? new Date(lastFetch).toISOString() : null,
+    uptimeSec: Math.floor((Date.now() - SERVER_STARTED_AT) / 1000)
   });
 });
 
