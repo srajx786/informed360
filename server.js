@@ -2486,7 +2486,7 @@ const normalizeQuote = ({
   symbol,
   pretty,
   price: typeof price === "number" ? price : null,
-  change: typeof change === "number" ? change : 0,
+  change: change === null ? null : typeof change === "number" ? change : 0,
   changePercent: typeof changePercent === "number" ? changePercent : 0,
   status: status || "cached",
   updatedAt: Number(updatedAt || Date.now())
@@ -2622,8 +2622,33 @@ const findCrudeCommodity = (payload) => {
 const getCachedQuote = (symbol) =>
   marketCache.quotes.find((quote) => quote.symbol === symbol);
 
+const buildStaticQuote = ({ symbol, pretty, price }) =>
+  normalizeQuote({
+    symbol,
+    pretty,
+    price,
+    change: null,
+    changePercent: 0,
+    status: "static",
+    updatedAt: Date.now()
+  });
+
 const buildQuotesFromCache = () =>
   MARKET_SYMBOLS.map((cfg) => {
+    if (cfg.symbol === "CRUDE") {
+      return buildStaticQuote({
+        symbol: cfg.symbol,
+        pretty: cfg.pretty,
+        price: 62.24
+      });
+    }
+    if (cfg.symbol === "USDINR") {
+      return buildStaticQuote({
+        symbol: cfg.symbol,
+        pretty: cfg.pretty,
+        price: 91.56
+      });
+    }
     const existing = getCachedQuote(cfg.symbol);
     if (existing && typeof existing.price === "number") {
       return normalizeQuote({
@@ -2650,16 +2675,12 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
     marketCache.lastFetchAttemptAt = now;
     const results = {
       nifty: null,
-      fx: null,
       commodities: null
     };
 
     await Promise.allSettled([
       fetchNiftyQuote().then((quote) => {
         results.nifty = quote;
-      }),
-      fetchUsdInrQuote().then((quote) => {
-        results.fx = quote;
       }),
       fetchIndianApiJson("/commodities").then((payload) => {
         results.commodities = payload;
@@ -2694,8 +2715,19 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
         }
       }
 
-      if (cfg.kind === "fx" && results.fx?.price && !nextQuote) {
-        const price = toNumber(results.fx.price);
+      if (cfg.kind === "fx" && !nextQuote) {
+        nextQuote = buildStaticQuote({
+          symbol: cfg.symbol,
+          pretty: cfg.pretty,
+          price: 91.56
+        });
+        status = "static";
+      }
+
+      if (cfg.kind === "gold" && !nextQuote) {
+        const payload = results.commodities;
+        const commodity = findGoldCommodity(payload);
+        const price = toNumber(commodity?.last_traded_price);
         if (price !== null) {
           const change = previousPrice !== null ? price - previousPrice : 0;
           const changePercent = previousPrice ? (change / previousPrice) * 100 : 0;
@@ -2712,27 +2744,13 @@ const refreshMarketData = async ({ reason = "scheduled" } = {}) => {
         }
       }
 
-      if ((cfg.kind === "gold" || cfg.kind === "crude") && !nextQuote) {
-        const payload = results.commodities;
-        const commodity =
-          cfg.kind === "gold" ? findGoldCommodity(payload) : findCrudeCommodity(payload);
-        const price = toNumber(commodity?.last_traded_price);
-        if (price !== null) {
-          const change = previousPrice !== null ? price - previousPrice : 0;
-          const changePercent = previousPrice ? (change / previousPrice) * 100 : 0;
-          nextQuote = normalizeQuote({
-            symbol: cfg.symbol,
-            pretty: cfg.pretty,
-            price,
-            change,
-            changePercent,
-            status: "live",
-            updatedAt: now
-          });
-          status = "live";
-        } else if (cfg.kind === "crude") {
-          status = "unavailable";
-        }
+      if (cfg.kind === "crude" && !nextQuote) {
+        nextQuote = buildStaticQuote({
+          symbol: cfg.symbol,
+          pretty: cfg.pretty,
+          price: 62.24
+        });
+        status = "static";
       }
 
       if (!nextQuote) {
