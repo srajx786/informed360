@@ -5,6 +5,8 @@ const fmtPct = (n) => `${Math.max(0, Math.min(100, Math.round(n)))}%`;
 const PIN_STORAGE_KEY = "i360_pins_v2";
 const LEGACY_PIN_STORAGE_KEY = "i360_pins";
 const CREDIBILITY_STORAGE_KEY = "i360_credibility_badges";
+const NEWS_CACHE_KEY = "informed360_news_cache";
+const STORIES_CACHE_KEY = "informed360_stories_cache";
 const PRICING_MAILTO =
   "mailto:info.shrirajnair@gmail.com?subject=Informed360%20Demo%20Request&body=Hi%20Informed360%20team%2C%0A%0AWe%20would%20like%20a%20demo%20of%20the%20PR%2FTeams%20tier.%0ACompany%3A%0AUse%20case%3A%0AExpected%20seats%3A%0APreferred%20time%3A%0A%0AThanks!";
 const normalizeApiBase = (value = "") =>
@@ -42,6 +44,47 @@ async function fetchJSON(path){
   }
   return r.json();
 }
+const readLocalCache = (key) => {
+  try{
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    return JSON.parse(raw);
+  }catch{
+    return null;
+  }
+};
+const writeLocalCache = (key, value) => {
+  try{
+    localStorage.setItem(key, JSON.stringify(value));
+  }catch{
+    // ignore storage quota errors
+  }
+};
+const fetchWithRetry = async (
+  path,
+  { timeoutMs = 5000, retries = 3, backoffMs = [250, 750, 1500] } = {}
+) => {
+  const url = buildApiUrl(path);
+  let lastError;
+  for (let attempt = 0; attempt < retries; attempt += 1){
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), timeoutMs);
+    try{
+      const response = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeout);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    }catch(error){
+      clearTimeout(timeout);
+      lastError = error;
+      if (attempt < retries - 1){
+        const delay = backoffMs[attempt] ?? backoffMs[backoffMs.length - 1] ?? 500;
+        await new Promise((resolve) => setTimeout(resolve, delay));
+      }
+    }
+  }
+  throw lastError;
+};
 const domainFromUrl = (u = "") => {
   try { return new URL(u).hostname.replace(/^www\./, ""); }
   catch { return ""; }
@@ -666,6 +709,7 @@ const state = {
   lastLeaderboardAt: 0,
   weatherLocationName: ""
 };
+let hasCachedContent = false;
 
 function loadProfile(){
   try{
@@ -1235,6 +1279,53 @@ function setApiBanner(visible){
   banner.hidden = !visible;
 }
 
+function applyCachedContent(){
+  const cachedNews = readLocalCache(NEWS_CACHE_KEY);
+  const cachedStories = readLocalCache(STORIES_CACHE_KEY);
+  const cacheMatchesState = (cache) => {
+    if (!cache) return false;
+    if (cache.category && cache.category !== state.category) return false;
+    if (cache.filter && cache.filter !== state.filter) return false;
+    if (typeof cache.experimental === "boolean" && cache.experimental !== state.experimental)
+      return false;
+    return true;
+  };
+  const safeNewsCache = cacheMatchesState(cachedNews) ? cachedNews : null;
+  const safeStoriesCache = cacheMatchesState(cachedStories) ? cachedStories : null;
+  const newsPayload = safeNewsCache?.payload;
+  const storiesPayload = safeStoriesCache?.payload;
+  if (!newsPayload && !storiesPayload) return false;
+  if (newsPayload?.articles?.length){
+    state.allArticles = newsPayload.articles || [];
+    state.articles = state.allArticles.slice();
+    state.indiaArticles = state.allArticles.filter(a => a.category === "india");
+    state.newsEmptyMessage = "";
+  }
+  if (storiesPayload?.stories?.length){
+    state.stories = storiesPayload.stories || [];
+  }
+  if (state.category === "showcase"){
+    state.articles = shuffleArticles(state.allArticles || []).slice(0, 20);
+  }
+  hasCachedContent = Boolean(state.allArticles.length || state.stories.length);
+  if (hasCachedContent){
+    syncPinsWithArticles();
+    renderPinnedChips();
+    renderAll();
+  }
+  return hasCachedContent;
+}
+
+async function checkHealthWithRetry(){
+  try{
+    await fetchWithRetry("/api/health");
+  }catch{
+    setTimeout(() => {
+      checkHealthWithRetry();
+    }, 5000);
+  }
+}
+
 /* load news + topics */
 async function loadAll(){
   state.newsEmptyMessage = "";
@@ -1268,11 +1359,11 @@ async function loadAll(){
           news = await fetchJSON(newsEndpoint);
         }catch(retryError){
           logApiError(retryError, retryError?.endpoint || newsEndpoint);
-          setApiBanner(true);
+          if (!hasCachedContent) setApiBanner(true);
           throw retryError;
         }
       }else{
-        if (error?.status === 0 || error?.status === 404){
+        if (!hasCachedContent && (error?.status === 0 || error?.status === 404)){
           setApiBanner(true);
         }
         throw error;
@@ -1344,22 +1435,39 @@ async function loadAll(){
     syncPinsWithArticles();
     renderPinnedChips();
     renderAll();
+    writeLocalCache(NEWS_CACHE_KEY, {
+      payload: news,
+      cachedAt: Date.now(),
+      category: state.category,
+      filter: state.filter,
+      experimental: state.experimental
+    });
+    writeLocalCache(STORIES_CACHE_KEY, {
+      payload: stories,
+      cachedAt: Date.now(),
+      category: state.category,
+      filter: state.filter,
+      experimental: state.experimental
+    });
+    hasCachedContent = true;
   }catch(error){
-    state.allArticles = [];
-    state.articles = [];
-    state.stories = [];
-    state.engagedStories = [];
-    state.topStories = {
-      indiaRecent: [],
-      indiaEngaged: [],
-      worldRecent: [],
-      worldEngaged: []
-    };
-    state.indiaArticles = [];
-    state.topics = [];
-    state.newsEmptyMessage = "We couldn’t load the latest news. Please try again soon.";
+    if (!hasCachedContent){
+      state.allArticles = [];
+      state.articles = [];
+      state.stories = [];
+      state.engagedStories = [];
+      state.topStories = {
+        indiaRecent: [],
+        indiaEngaged: [],
+        worldRecent: [],
+        worldEngaged: []
+      };
+      state.indiaArticles = [];
+      state.topics = [];
+      state.newsEmptyMessage = "We couldn’t load the latest news. Please try again soon.";
+    }
     logApiError(error, error?.endpoint || "/api/news");
-    if (error?.status === 0 || error?.status === 404){
+    if (!hasCachedContent && (error?.status === 0 || error?.status === 404)){
       setApiBanner(true);
     }
     renderPinnedChips();
@@ -3434,6 +3542,8 @@ updateBriefingDateTime();
 setDefaultHomeTab();
 getWeather();
 loadMarkets();
+applyCachedContent();
+checkHealthWithRetry();
 loadAll();
 startHeroAuto();
 
