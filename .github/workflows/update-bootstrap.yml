@@ -1,0 +1,48 @@
+name: Update bootstrap cache
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+
+concurrency:
+  group: bootstrap-cache-update
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  update-bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Generate bootstrap snapshot
+        run: node scripts/update_bootstrap.js
+
+      - name: Commit bootstrap snapshot if changed
+        run: |
+          git add public/data/bootstrap.json
+          if git diff --cached --quiet; then
+            echo "No bootstrap changes detected"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh bootstrap cache"
+          git push

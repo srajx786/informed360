@@ -7,6 +7,7 @@ const LEGACY_PIN_STORAGE_KEY = "i360_pins";
 const CREDIBILITY_STORAGE_KEY = "i360_credibility_badges";
 const NEWS_CACHE_KEY = "informed360_news_cache";
 const STORIES_CACHE_KEY = "informed360_stories_cache";
+const BOOTSTRAP_CACHE_KEY = "informed360_bootstrap_cache";
 const PRICING_MAILTO =
   "mailto:info.shrirajnair@gmail.com?subject=Informed360%20Demo%20Request&body=Hi%20Informed360%20team%2C%0A%0AWe%20would%20like%20a%20demo%20of%20the%20PR%2FTeams%20tier.%0ACompany%3A%0AUse%20case%3A%0AExpected%20seats%3A%0APreferred%20time%3A%0A%0AThanks!";
 const normalizeApiBase = (value = "") =>
@@ -60,6 +61,77 @@ const writeLocalCache = (key, value) => {
     // ignore storage quota errors
   }
 };
+const isValidBootstrapSnapshot = (payload) => {
+  if (!payload || typeof payload !== "object") return false;
+  if (!payload.generatedAt || Number.isNaN(new Date(payload.generatedAt).getTime())) return false;
+  if (!payload.news || !Array.isArray(payload.news.articles)) return false;
+  if (!payload.sentiment || typeof payload.sentiment !== "object") return false;
+  if (!payload.plots || typeof payload.plots !== "object") return false;
+  if (!payload.industryLeaderboard || typeof payload.industryLeaderboard !== "object") return false;
+  return true;
+};
+const bootstrapTime = (payload) => new Date(payload?.generatedAt || 0).getTime() || 0;
+function applyBootstrapSnapshot(snapshot, { persist = false } = {}){
+  if (!isValidBootstrapSnapshot(snapshot)) return false;
+  const news = snapshot.news || {};
+  state.allArticles = Array.isArray(news.articles) ? news.articles : [];
+  state.articles = state.allArticles.slice();
+  state.indiaArticles = state.allArticles.filter(a => a.category === "india");
+  state.topics = Array.isArray(news.topics)
+    ? selectTrendingTopics(news.topics, state.allArticles)
+    : [];
+  state.stories = Array.isArray(news.stories) ? news.stories : [];
+  state.engagedStories = Array.isArray(news.engagedStories) ? news.engagedStories : [];
+  state.topStories = {
+    indiaRecent: news.topStories?.indiaRecent || [],
+    indiaEngaged: news.topStories?.indiaEngaged || [],
+    worldRecent: news.topStories?.worldRecent || [],
+    worldEngaged: news.topStories?.worldEngaged || []
+  };
+  state.newsEmptyMessage = state.allArticles.length
+    ? ""
+    : "No news available right now. Please check back soon.";
+
+  if (snapshot?.meta?.markets?.quotes?.length){
+    writeMarketCache(snapshot.meta.markets);
+  }
+  if (persist){
+    writeLocalCache(BOOTSTRAP_CACHE_KEY, snapshot);
+  }
+  hasCachedContent = Boolean(
+    state.allArticles.length || state.stories.length || state.topics.length
+  );
+  syncPinsWithArticles();
+  renderPinnedChips();
+  renderAll();
+  return hasCachedContent;
+}
+function applyBootstrapCache(){
+  const cached = readLocalCache(BOOTSTRAP_CACHE_KEY);
+  if (!isValidBootstrapSnapshot(cached)) return false;
+  return applyBootstrapSnapshot(cached);
+}
+async function refreshBootstrapSnapshot(){
+  const endpoint = `/data/bootstrap.json?t=${Date.now()}`;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 4000);
+  try{
+    const response = await fetch(endpoint, { signal: controller.signal, cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const incoming = await response.json();
+    if (!isValidBootstrapSnapshot(incoming)) return false;
+    const current = readLocalCache(BOOTSTRAP_CACHE_KEY);
+    if (!isValidBootstrapSnapshot(current) || bootstrapTime(incoming) > bootstrapTime(current)){
+      applyBootstrapSnapshot(incoming, { persist: true });
+      return true;
+    }
+    return false;
+  }catch{
+    return false;
+  }finally{
+    clearTimeout(timeout);
+  }
+}
 const fetchWithRetry = async (
   path,
   { timeoutMs = 5000, retries = 3, backoffMs = [250, 750, 1500] } = {}
@@ -3541,10 +3613,14 @@ renderPinnedChips();
 updateBriefingDateTime();
 setDefaultHomeTab();
 getWeather();
-loadMarkets();
+applyBootstrapCache();
 applyCachedContent();
+loadMarkets();
+void refreshBootstrapSnapshot().finally(() => {
+  if (!hasCachedContent) loadAll();
+});
 checkHealthWithRetry();
-loadAll();
+if (!hasCachedContent) loadAll();
 startHeroAuto();
 
 if ("serviceWorker" in navigator){
@@ -3554,7 +3630,7 @@ if ("serviceWorker" in navigator){
 }
 
 /* periodic refresh */
-setInterval(loadAll,     1000 * 60 * 5);
+setInterval(() => { void refreshBootstrapSnapshot().finally(() => loadAll()); }, 1000 * 60 * 5);
 setInterval(loadMarkets, 1000 * 60 * 2);
 setInterval(updateActiveSources, 1000 * 60);
 setInterval(updateBriefingDateTime, 1000 * 60);
