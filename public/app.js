@@ -70,6 +70,11 @@ const isValidBootstrapSnapshot = (payload) => {
   if (!payload.industryLeaderboard || typeof payload.industryLeaderboard !== "object") return false;
   return true;
 };
+const isValidTimeline = (timeline) =>
+  Array.isArray(timeline) && timeline.length === 4 && timeline.every(point =>
+    point && typeof point === "object" &&
+    ["pos", "neu", "neg"].every((key) => Number.isFinite(Number(point[key])))
+  );
 const bootstrapTime = (payload) => new Date(payload?.generatedAt || 0).getTime() || 0;
 function applyBootstrapSnapshot(snapshot, { persist = false } = {}){
   if (!isValidBootstrapSnapshot(snapshot)) return false;
@@ -91,6 +96,10 @@ function applyBootstrapSnapshot(snapshot, { persist = false } = {}){
   state.newsEmptyMessage = state.allArticles.length
     ? ""
     : "No news available right now. Please check back soon.";
+  state.bootstrapSentiment = snapshot.sentiment || null;
+  state.bootstrapPlots = snapshot.plots || null;
+  state.bootstrapIndustryLeaderboard = snapshot.industryLeaderboard || null;
+  state.bootstrapGeneratedAt = snapshot.generatedAt || "";
 
   if (snapshot?.meta?.markets?.quotes?.length){
     writeMarketCache(snapshot.meta.markets);
@@ -779,7 +788,11 @@ const state = {
   preferredTopics: loadPreferredTopics(),
   showCredibilityBadges: loadCredibilitySetting(),
   lastLeaderboardAt: 0,
-  weatherLocationName: ""
+  weatherLocationName: "",
+  bootstrapSentiment: null,
+  bootstrapPlots: null,
+  bootstrapIndustryLeaderboard: null,
+  bootstrapGeneratedAt: ""
 };
 let hasCachedContent = false;
 
@@ -2856,32 +2869,41 @@ function renderTopics(){
 }
 
 /* ===== 4-hour sentiment chart – single band + lines like your reference ===== */
-function renderSentimentTimeline({ sparkEl, summaryEl, titleEl, title, articles }){
+function renderSentimentTimeline({ sparkEl, summaryEl, titleEl, title, articles, timelineOverride = null }){
   const now = Date.now();
   const fourHrs = 4 * 60 * 60 * 1000;
-  const recent = (articles || []).filter(
-    a => now - new Date(a.publishedAt).getTime() <= fourHrs
-  );
+  let pts;
+  if (isValidTimeline(timelineOverride)){
+    pts = timelineOverride.map(point => ({
+      pos: Math.round(Number(point.pos) || 0),
+      neg: Math.round(Number(point.neg) || 0),
+      neu: Math.round(Number(point.neu) || 0)
+    }));
+  } else {
+    const recent = (articles || []).filter(
+      a => now - new Date(a.publishedAt).getTime() <= fourHrs
+    );
 
-  const buckets = [0,1,2,3].map(() => ({ pos:0, neg:0, neu:0, c:0 }));
-  recent.forEach(a => {
-    const dt  = now - new Date(a.publishedAt).getTime();
-    const idx = Math.min(3, Math.floor(dt / (60 * 60 * 1000))); // 0..3
-    const bi  = 3 - idx; // oldest on the left
-    buckets[bi].pos += a.sentiment.posP;
-    buckets[bi].neg += a.sentiment.negP;
-    buckets[bi].neu += a.sentiment.neuP;
-    buckets[bi].c++;
-  });
+    const buckets = [0,1,2,3].map(() => ({ pos:0, neg:0, neu:0, c:0 }));
+    recent.forEach(a => {
+      const dt  = now - new Date(a.publishedAt).getTime();
+      const idx = Math.min(3, Math.floor(dt / (60 * 60 * 1000))); // 0..3
+      const bi  = 3 - idx; // oldest on the left
+      buckets[bi].pos += a.sentiment.posP;
+      buckets[bi].neg += a.sentiment.negP;
+      buckets[bi].neu += a.sentiment.neuP;
+      buckets[bi].c++;
+    });
 
-  const pts = buckets.map(b => {
-    const n = Math.max(1, b.c);
-    return {
-      pos: Math.round(b.pos / n),
-      neg: Math.round(b.neg / n),
-      neu: Math.round(b.neu / n)
-    };
-  });
+    pts = buckets.map(b => {
+      const n = Math.max(1, b.c);
+      return {
+        pos: Math.round(b.pos / n),
+        neg: Math.round(b.neg / n),
+        neu: Math.round(b.neu / n)
+      };
+    });
+  }
 
   const svg = typeof sparkEl === "string" ? $(sparkEl) : sparkEl;
   if (!svg) return;
@@ -2991,22 +3013,30 @@ function getWorldSentimentArticles(){
 }
 
 function renderIndiaSentiment(){
+  const timeline = state.category === "home"
+    ? state.bootstrapPlots?.indiaSentimentTimeline
+    : null;
   renderSentimentTimeline({
     sparkEl: "#moodSpark",
     summaryEl: "#moodSummary",
     titleEl: "#moodIndiaTitle",
     title: "India's Sentiment",
-    articles: getIndiaSentimentArticles()
+    articles: getIndiaSentimentArticles(),
+    timelineOverride: timeline
   });
 }
 
 function renderWorldSentiment(){
+  const timeline = state.category === "home"
+    ? state.bootstrapPlots?.worldSentimentTimeline
+    : null;
   renderSentimentTimeline({
     sparkEl: "#moodWorldSpark",
     summaryEl: "#moodWorldSummary",
     titleEl: "#moodWorldTitle",
     title: formatSentimentTitle(getActiveCategoryLabel()),
-    articles: getWorldSentimentArticles()
+    articles: getWorldSentimentArticles(),
+    timelineOverride: timeline
   });
 }
 
@@ -3210,18 +3240,23 @@ function renderIndustryBoard(){
   const empty = grid.querySelector(".board-empty");
   [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
 
+  const cachedBoard = state.category === "home" ? state.bootstrapIndustryLeaderboard : null;
+  const cachedPos = Array.isArray(cachedBoard?.pos) ? cachedBoard.pos : null;
+  const cachedNeu = Array.isArray(cachedBoard?.neu) ? cachedBoard.neu : null;
+  const cachedNeg = Array.isArray(cachedBoard?.neg) ? cachedBoard.neg : null;
+
   const scored = scoreIndustries();
-  if (!scored.length){
+  if (!scored.length && !(cachedPos || cachedNeu || cachedNeg)){
     empty?.classList.add("show");
     return;
   }
 
   const threshold = 2;
-  const pos = scored.filter(x => x.bias > threshold).slice(0,3);
-  const neg = scored.filter(x => x.bias < -threshold).slice(0,3);
-  const neu = scored
+  const pos = (cachedPos ? cachedPos.slice(0,3) : scored.filter(x => x.bias > threshold).slice(0,3));
+  const neg = (cachedNeg ? cachedNeg.slice(0,3) : scored.filter(x => x.bias < -threshold).slice(0,3));
+  const neu = (cachedNeu ? cachedNeu.slice(0,3) : scored
     .filter(x => !pos.includes(x) && !neg.includes(x))
-    .slice(0,3);
+    .slice(0,3));
 
   const fillRemaining = (list, pool) => {
     pool.forEach(item => {
@@ -3630,7 +3665,11 @@ if ("serviceWorker" in navigator){
 }
 
 /* periodic refresh */
-setInterval(() => { void refreshBootstrapSnapshot().finally(() => loadAll()); }, 1000 * 60 * 5);
+setInterval(() => {
+  void refreshBootstrapSnapshot().then((updated) => {
+    if (!hasCachedContent || updated) loadAll();
+  });
+}, 1000 * 60 * 5);
 setInterval(loadMarkets, 1000 * 60 * 2);
 setInterval(updateActiveSources, 1000 * 60);
 setInterval(updateBriefingDateTime, 1000 * 60);
