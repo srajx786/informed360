@@ -10,6 +10,20 @@ const STORIES_CACHE_KEY = "informed360_stories_cache";
 const BOOTSTRAP_CACHE_KEY = "informed360_bootstrap_cache";
 const USA_CATEGORY = "usa";
 const POTUS_CATEGORY = "potus";
+const MIN_SOURCE_ARTICLES = 2;
+const USA_SECTION_SOURCES = new Set([
+  "CNN",
+  "Fox News",
+  "Reuters",
+  "AP",
+  "NYT",
+  "NBC News",
+  "CBS News",
+  "ABC News",
+  "CNBC",
+  "Washington Post",
+  "WSJ"
+]);
 const PRICING_MAILTO =
   "mailto:info.shrirajnair@gmail.com?subject=Informed360%20Demo%20Request&body=Hi%20Informed360%20team%2C%0A%0AWe%20would%20like%20a%20demo%20of%20the%20PR%2FTeams%20tier.%0ACompany%3A%0AUse%20case%3A%0AExpected%20seats%3A%0APreferred%20time%3A%0A%0AThanks!";
 const normalizeApiBase = (value = "") =>
@@ -153,6 +167,23 @@ const classifyPotusTopic = (article = {}) => {
     if (keywords.some((kw) => text.includes(kw))) return label;
   }
   return "Campaign / Politics";
+};
+const normalizeSourceName = (source = "") => {
+  const clean = String(source || "").trim();
+  if (!clean) return "";
+  const lowered = clean.toLowerCase();
+  if (/(^|\b)associated press|\bap\b/.test(lowered)) return "AP";
+  if (/(^|\b)new york times|\bnyt\b/.test(lowered)) return "NYT";
+  if (/washington post/.test(lowered)) return "Washington Post";
+  if (/wall street journal|\bwsj\b/.test(lowered)) return "WSJ";
+  if (/fox/.test(lowered)) return "Fox News";
+  if (/cbs/.test(lowered)) return "CBS News";
+  if (/abc/.test(lowered)) return "ABC News";
+  if (/nbc/.test(lowered)) return "NBC News";
+  if (/cnn/.test(lowered)) return "CNN";
+  if (/reuters/.test(lowered)) return "Reuters";
+  if (/cnbc/.test(lowered)) return "CNBC";
+  return clean;
 };
 const isValidTimeline = (timeline) =>
   Array.isArray(timeline) && timeline.length === 4 && timeline.every(point =>
@@ -3184,8 +3215,10 @@ function getLeaderboardArticles(){
 function computeLeaderboard(){
   const bySource = new Map();
   getLeaderboardArticles().forEach(a => {
-    const key = (a.source || "").trim();
+    const key = normalizeSourceName(a.source || "");
     if (!key) return;
+    if (state.category === USA_CATEGORY && !USA_SECTION_SOURCES.has(key)) return;
+    if (state.category === POTUS_CATEGORY && !USA_SECTION_SOURCES.has(key)) return;
     const s = bySource.get(key) || {
       n:0, pos:0, neg:0, neu:0, link:a.link
     };
@@ -3202,8 +3235,32 @@ function computeLeaderboard(){
     const pos = v.pos/n, neg = v.neg/n, neu = v.neu/n;
     const bias = pos - neg;
     const logo = logoFor(v.link, src);
-    return { source:src, pos, neg, neu, bias, logo };
-  }).filter(x => (x.pos + x.neg + x.neu) > 0.1);
+    return { source:src, pos, neg, neu, bias, logo, count: v.n };
+  }).filter(x => (x.pos + x.neg + x.neu) > 0.1 && x.count >= MIN_SOURCE_ARTICLES);
+
+  if (!arr.length){
+    const fallback = state.category === USA_CATEGORY
+      ? state.bootstrapUsa?.leaderboard
+      : state.category === POTUS_CATEGORY
+        ? state.bootstrapPotus?.sourceLeaderboard
+        : null;
+    if (Array.isArray(fallback) && fallback.length){
+      fallback.forEach((row) => {
+        const source = normalizeSourceName(row.source || "");
+        if (!source) return;
+        const bias = Number(row.pos || 0) - Number(row.neg || 0);
+        arr.push({
+          source,
+          pos: Number(row.pos || 0),
+          neu: Number(row.neu || 0),
+          neg: Number(row.neg || 0),
+          bias,
+          logo: logoFor("", source),
+          count: Number(row.count || MIN_SOURCE_ARTICLES)
+        });
+      });
+    }
+  }
 
   const pos = arr.filter(x => x.bias > 3)
     .sort((a,b) => b.bias - a.bias).slice(0,2);
@@ -3337,7 +3394,11 @@ function scoreIndustries(){
   const rows = INDUSTRY_GROUPS.map(name => ({ name, pos:0, neg:0, neu:0, n:0 }));
   const byName = new Map(rows.map(r => [r.name, r]));
 
-  getLeaderboardArticles().forEach(a => {
+  const source = getLeaderboardArticles();
+  const inScope = state.category === USA_CATEGORY
+    ? source.filter((a) => USA_SECTION_SOURCES.has(normalizeSourceName(a.source || "")))
+    : source;
+  inScope.forEach(a => {
     const text = `${a.title} ${a.description}`.toLowerCase();
     const category = String(a.category || "").toLowerCase();
     const sourceIndustry = String(a.industry || "").trim();
@@ -3449,7 +3510,11 @@ function renderIndustryBoard(){
   const empty = grid.querySelector(".board-empty");
   [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
 
-  const cachedBoard = state.category === "home" ? state.bootstrapIndustryLeaderboard : null;
+  const cachedBoard = state.category === "home"
+    ? state.bootstrapIndustryLeaderboard
+    : state.category === USA_CATEGORY
+      ? state.bootstrapUsa?.industryLeaderboard
+      : null;
   const cachedPos = Array.isArray(cachedBoard?.pos) ? cachedBoard.pos : null;
   const cachedNeu = Array.isArray(cachedBoard?.neu) ? cachedBoard.neu : null;
   const cachedNeg = Array.isArray(cachedBoard?.neg) ? cachedBoard.neg : null;

@@ -1,11 +1,30 @@
 import fs from "fs/promises";
 import path from "path";
+import Parser from "rss-parser";
+import vader from "vader-sentiment";
 
 const ROOT = process.cwd();
 const OUTPUT_PATH = path.join(ROOT, "public", "data", "bootstrap.json");
 const REMOTE_BASE = (process.env.BOOTSTRAP_SOURCE_BASE || "https://www.informed360.news").replace(/\/$/, "");
 const VERSION = 1;
 const SCHEMA_VERSION = 1;
+const parser = new Parser({ timeout: 12000 });
+const MIN_SOURCE_ARTICLES = 2;
+const MIN_SECTION_ARTICLES = 8;
+
+const USA_ONLY_SOURCES = [
+  { name: "CNN", match: /cnn\.com$/i, feed: "https://rss.cnn.com/rss/cnn_latest.rss" },
+  { name: "Fox News", match: /foxnews\.com$/i, feed: "https://moxie.foxnews.com/google-publisher/latest.xml" },
+  { name: "Reuters", match: /reuters\.com$/i, feed: "https://feeds.reuters.com/reuters/worldNews" },
+  { name: "AP", match: /apnews\.com$/i, feed: "https://apnews.com/hub/apf-topnews?output=rss" },
+  { name: "NYT", match: /nytimes\.com$/i, feed: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml" },
+  { name: "NBC News", match: /nbcnews\.com$/i, feed: "https://feeds.nbcnews.com/nbcnews/public/news" },
+  { name: "CBS News", match: /cbsnews\.com$/i, feed: "https://www.cbsnews.com/latest/rss/main" },
+  { name: "ABC News", match: /abcnews\.go\.com$/i, feed: "https://abcnews.go.com/abcnews/topstories" },
+  { name: "CNBC", match: /cnbc\.com$/i, feed: "https://www.cnbc.com/id/100003114/device/rss/rss.html" },
+  { name: "Washington Post", match: /washingtonpost\.com$/i, feed: "https://feeds.washingtonpost.com/rss/politics" },
+  { name: "WSJ", match: /wsj\.com$/i, feed: "https://feeds.a.dj.com/rss/RSSWorldNews.xml" }
+];
 
 const fetchJson = async (endpoint, { timeoutMs = 12000 } = {}) => {
   const controller = new AbortController();
@@ -48,7 +67,7 @@ const normalizeSentiment = (sentiment = {}) => ({
 const pickArticle = (article = {}) => ({
   title: article.title || "",
   link: article.link || article.url || "",
-  source: article.source || "",
+  source: normalizeSourceName(article.source || article.sourceName || ""),
   sourceDomain: article.sourceDomain || "",
   sourceCredibility: article.sourceCredibility || "",
   industry: article.industry || "",
@@ -59,6 +78,106 @@ const pickArticle = (article = {}) => ({
   sentiment: normalizeSentiment(article.sentiment || article.sentiment_scores || {}),
   category: article.category || "world"
 });
+
+const normalizeSourceName = (source = "") => {
+  const clean = String(source || "").trim();
+  if (!clean) return "";
+  const lowered = clean.toLowerCase();
+  if (/(^|\b)associated press|\bap\b/.test(lowered)) return "AP";
+  if (/(^|\b)new york times|\bnyt\b/.test(lowered)) return "NYT";
+  if (/washington post/.test(lowered)) return "Washington Post";
+  if (/wall street journal|\bwsj\b/.test(lowered)) return "WSJ";
+  if (/fox/.test(lowered)) return "Fox News";
+  if (/cbs/.test(lowered)) return "CBS News";
+  if (/abc/.test(lowered)) return "ABC News";
+  if (/nbc/.test(lowered)) return "NBC News";
+  if (/cnn/.test(lowered)) return "CNN";
+  if (/reuters/.test(lowered)) return "Reuters";
+  if (/cnbc/.test(lowered)) return "CNBC";
+  return clean;
+};
+
+const normalizeSourceFromDomain = (domain = "") => {
+  const match = USA_ONLY_SOURCES.find((src) => src.match.test(domain || ""));
+  return match ? match.name : "";
+};
+
+const domainFromUrl = (u = "") => {
+  try {
+    return new URL(u).hostname.replace(/^www\./, "");
+  } catch {
+    return "";
+  }
+};
+
+const dedupeArticles = (articles = []) => {
+  const byUrl = new Set();
+  const byTitle = new Set();
+  const out = [];
+  for (const article of articles) {
+    const link = String(article.link || article.url || "").trim();
+    const titleKey = String(article.title || "")
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, " ")
+      .split(/\s+/)
+      .filter((w) => w.length > 3)
+      .slice(0, 12)
+      .join(" ");
+    if (link && byUrl.has(link)) continue;
+    if (titleKey && byTitle.has(titleKey)) continue;
+    if (link) byUrl.add(link);
+    if (titleKey) byTitle.add(titleKey);
+    out.push(article);
+  }
+  return out;
+};
+
+const fallbackSentiment = (text = "") => {
+  const score = vader.SentimentIntensityAnalyzer.polarity_scores(text || "");
+  const posP = Number(((score.pos || 0) * 100).toFixed(2));
+  const negP = Number(((score.neg || 0) * 100).toFixed(2));
+  const neuP = Number(Math.max(0, 100 - posP - negP).toFixed(2));
+  return {
+    posP,
+    negP,
+    neuP,
+    label: score.compound >= 0.2 ? "positive" : score.compound <= -0.2 ? "negative" : "neutral",
+    confidence: Number(Math.min(1, Math.abs(score.compound || 0)).toFixed(2))
+  };
+};
+
+const ingestUsaFeeds = async () => {
+  const collected = [];
+  await Promise.all(USA_ONLY_SOURCES.map(async (src) => {
+    try {
+      const feed = await parser.parseURL(src.feed);
+      (feed.items || []).slice(0, 20).forEach((item) => {
+        const title = String(item.title || "").trim();
+        const description = String(item.contentSnippet || item.content || item.summary || "").trim();
+        const link = String(item.link || item.guid || "").trim();
+        if (!title || !link) return;
+        const sentiment = fallbackSentiment(`${title}. ${description}`);
+        collected.push({
+          title,
+          link,
+          source: src.name,
+          sourceDomain: domainFromUrl(link),
+          sourceCredibility: "High",
+          industry: "",
+          description,
+          image: "",
+          imageUrl: "",
+          publishedAt: item.isoDate || item.pubDate || new Date().toISOString(),
+          sentiment,
+          category: "usa"
+        });
+      });
+    } catch (error) {
+      console.error(`failed: usa-feed ${src.name} (${error?.message || error})`);
+    }
+  }));
+  return dedupeArticles(collected);
+};
 
 const normalizeStory = (story = {}) => ({
   title: story.title || "",
@@ -255,6 +374,9 @@ const usaScore = (article = {}) => {
   return score;
 };
 const filterUsaArticles = (articles = []) => articles.filter((article) => {
+  const domain = article.sourceDomain || domainFromUrl(article.link || "");
+  const sourceName = normalizeSourceName(article.source || normalizeSourceFromDomain(domain));
+  if (USA_ONLY_SOURCES.some((src) => src.name === sourceName)) return true;
   const category = String(article.category || "").toLowerCase();
   if (category === "usa" || category === "potus") return true;
   return usaScore(article) >= 2;
@@ -276,7 +398,7 @@ const classifyPotusTopic = (article = {}) => {
 const buildSourceLeaderboard = (articles = []) => {
   const bySource = new Map();
   articles.forEach((article) => {
-    const source = String(article.source || "").trim();
+    const source = normalizeSourceName(article.source || normalizeSourceFromDomain(article.sourceDomain || domainFromUrl(article.link || "")));
     if (!source) return;
     const row = bySource.get(source) || { source, pos: 0, neg: 0, neu: 0, n: 0 };
     const sent = normalizeSentiment(article.sentiment || {});
@@ -286,7 +408,9 @@ const buildSourceLeaderboard = (articles = []) => {
     row.n += 1;
     bySource.set(source, row);
   });
-  return [...bySource.values()].map((row) => {
+  return [...bySource.values()]
+  .filter((row) => row.n >= MIN_SOURCE_ARTICLES)
+  .map((row) => {
     const n = Math.max(1, row.n);
     return { source: row.source, pos: Number((row.pos / n).toFixed(2)), neu: Number((row.neu / n).toFixed(2)), neg: Number((row.neg / n).toFixed(2)), count: row.n };
   }).sort((a,b) => b.count - a.count).slice(0, 12);
@@ -373,8 +497,14 @@ const main = async () => {
   const indiaArticles = allArticles.filter((article) => article.category === "india");
   const worldArticles = allArticles.filter((article) => article.category !== "india");
 
-  const usaArticles = filterUsaArticles(allArticles);
-  const potusArticles = filterPotusArticles(allArticles);
+  const feedUsaArticles = await ingestUsaFeeds();
+  const usaArticles = dedupeArticles(filterUsaArticles([...allArticles, ...feedUsaArticles]));
+  const potusArticles = dedupeArticles(filterPotusArticles(usaArticles));
+
+  const safeUsa = usaArticles.length >= MIN_SECTION_ARTICLES ? usaArticles : (Array.isArray(previous?.usa?.dailyNews) ? previous.usa.dailyNews : usaArticles);
+  const safePotus = potusArticles.length >= MIN_SOURCE_ARTICLES ? potusArticles : (Array.isArray(previous?.potus?.dailyNews) ? previous.potus.dailyNews : potusArticles);
+  const nextUsaLeaderboard = buildSourceLeaderboard(safeUsa);
+  const nextUsaIndustry = buildIndustryLeaderboard(safeUsa);
 
   const snapshot = {
     generatedAt: new Date().toISOString(),
@@ -398,20 +528,21 @@ const main = async () => {
       }
     },
     usa: {
-      topStories: usaArticles.slice(0, 12),
-      dailyNews: usaArticles.slice(0, 24),
-      sentiment: sentimentAverage(usaArticles),
-      leaderboard: buildSourceLeaderboard(usaArticles),
+      topStories: safeUsa.slice(0, 12),
+      dailyNews: safeUsa.slice(0, 24),
+      sentiment: sentimentAverage(safeUsa),
+      leaderboard: nextUsaLeaderboard.length ? nextUsaLeaderboard : (previous?.usa?.leaderboard || []),
+      industryLeaderboard: nextUsaIndustry.rows?.length ? nextUsaIndustry : (previous?.usa?.industryLeaderboard || { rows: [], pos: [], neu: [], neg: [] }),
       plots: {
-        sentimentTimeline: buildTimeline(usaArticles)
+        sentimentTimeline: safeUsa.length ? buildTimeline(safeUsa) : (previous?.usa?.plots?.sentimentTimeline || buildTimeline([]))
       }
     },
     potus: {
-      topStories: potusArticles.slice(0, 12),
-      dailyNews: potusArticles.slice(0, 24),
-      sentiment: sentimentAverage(potusArticles),
-      sourceLeaderboard: buildSourceLeaderboard(potusArticles),
-      topicSentiment: buildPotusTopicSentiment(potusArticles)
+      topStories: safePotus.slice(0, 12),
+      dailyNews: safePotus.slice(0, 24),
+      sentiment: sentimentAverage(safePotus),
+      sourceLeaderboard: buildSourceLeaderboard(safePotus).length ? buildSourceLeaderboard(safePotus) : (previous?.potus?.sourceLeaderboard || []),
+      topicSentiment: buildPotusTopicSentiment(safePotus).length ? buildPotusTopicSentiment(safePotus) : (previous?.potus?.topicSentiment || [])
     },
     sentiment: {
       overall: sentimentAverage(allArticles),
