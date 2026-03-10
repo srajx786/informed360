@@ -190,6 +190,125 @@ const baseNews = (payload = {}) => ({
   }
 });
 
+
+const USA_REGEX = [
+  /\bunited states\b/i,
+  /\bu\.?s\.?a?\b/i,
+  /\bamerica(n)?\b/i,
+  /\bwhite house\b/i,
+  /\bcongress\b/i,
+  /\bsenate\b/i,
+  /\bhouse of representatives\b/i,
+  /\bsupreme court\b/i,
+  /\bfederal\b/i,
+  /\bwashington\b/i,
+  /\bcalifornia\b/i,
+  /\btexas\b/i,
+  /\bnew york\b/i,
+  /\bflorida\b/i,
+  /\bchicago\b/i,
+  /\blos angeles\b/i
+];
+const POTUS_REGEX = [
+  /\bpotus\b/i,
+  /\bpresident trump\b/i,
+  /\bdonald trump\b/i,
+  /\btrump\b/i,
+  /\bu\.?s\.? president\b/i,
+  /\bpresident of the united states\b/i,
+  /\bwhite house\b/i,
+  /\boval office\b/i,
+  /\bexecutive order\b/i,
+  /\bpresident\b/i
+];
+const NON_US_DOMESTIC_REGEX = [
+  /\bindia\b/i,
+  /\bindian\b/i,
+  /\bdelhi\b/i,
+  /\bmumbai\b/i,
+  /\bbengaluru\b/i,
+  /\bhyderabad\b/i,
+  /\bkolkata\b/i,
+  /\bchennai\b/i,
+  /\bmaharashtra\b/i,
+  /\bkerala\b/i,
+  /\btelangana\b/i,
+  /\bwest bengal\b/i
+];
+const POTUS_TOPICS = {
+  Policy: ["policy","executive order","administration","regulation","bill"],
+  Legal: ["court","judge","legal","lawsuit","trial","indictment"],
+  Economy: ["economy","inflation","jobs","tax","trade","market"],
+  "Foreign Policy": ["foreign","diplomacy","nato","china","russia","ukraine"],
+  "Campaign / Politics": ["campaign","election","poll","republican","democrat","rally"],
+  "Public Statements": ["statement","speech","remarks","interview","press"]
+};
+const articleText = (article = {}) =>
+  `${article.title || ""} ${article.description || ""} ${article.source || ""}`;
+const hasRegex = (text = "", patterns = []) => patterns.some((pattern) => pattern.test(text));
+const usaScore = (article = {}) => {
+  const text = articleText(article);
+  let score = 0;
+  if (hasRegex(text, POTUS_REGEX)) score += 3;
+  if (hasRegex(text, USA_REGEX)) score += 2;
+  if (hasRegex(text, NON_US_DOMESTIC_REGEX)) score -= 2;
+  return score;
+};
+const filterUsaArticles = (articles = []) => articles.filter((article) => {
+  const category = String(article.category || "").toLowerCase();
+  if (category === "usa" || category === "potus") return true;
+  return usaScore(article) >= 2;
+});
+const filterPotusArticles = (articles = []) => articles.filter((article) => {
+  const category = String(article.category || "").toLowerCase();
+  if (category === "potus") return true;
+  const text = articleText(article);
+  if (!hasRegex(text, POTUS_REGEX)) return false;
+  return !/\btrumpet\b/i.test(text);
+});
+const classifyPotusTopic = (article = {}) => {
+  const text = articleText(article).toLowerCase();
+  for (const [topic, keys] of Object.entries(POTUS_TOPICS)) {
+    if (keys.some((key) => text.includes(key))) return topic;
+  }
+  return "Campaign / Politics";
+};
+const buildSourceLeaderboard = (articles = []) => {
+  const bySource = new Map();
+  articles.forEach((article) => {
+    const source = String(article.source || "").trim();
+    if (!source) return;
+    const row = bySource.get(source) || { source, pos: 0, neg: 0, neu: 0, n: 0 };
+    const sent = normalizeSentiment(article.sentiment || {});
+    row.pos += sent.posP;
+    row.neg += sent.negP;
+    row.neu += sent.neuP;
+    row.n += 1;
+    bySource.set(source, row);
+  });
+  return [...bySource.values()].map((row) => {
+    const n = Math.max(1, row.n);
+    return { source: row.source, pos: Number((row.pos / n).toFixed(2)), neu: Number((row.neu / n).toFixed(2)), neg: Number((row.neg / n).toFixed(2)), count: row.n };
+  }).sort((a,b) => b.count - a.count).slice(0, 12);
+};
+const buildPotusTopicSentiment = (articles = []) => {
+  const buckets = new Map();
+  articles.forEach((article) => {
+    const topic = classifyPotusTopic(article);
+    const row = buckets.get(topic) || { topic, pos: 0, neg: 0, neu: 0, n: 0 };
+    const sent = normalizeSentiment(article.sentiment || {});
+    row.pos += sent.posP;
+    row.neg += sent.negP;
+    row.neu += sent.neuP;
+    row.n += 1;
+    buckets.set(topic, row);
+  });
+  return [...buckets.values()].map((row) => {
+    const n = Math.max(1, row.n);
+    return { topic: row.topic, pos: Number((row.pos / n).toFixed(2)), neu: Number((row.neu / n).toFixed(2)), neg: Number((row.neg / n).toFixed(2)), count: row.n };
+  }).sort((a,b) => b.count - a.count);
+};
+
 const isValidBootstrap = (payload) => {
   if (!payload || typeof payload !== "object") return false;
   if (!payload.generatedAt || Number.isNaN(new Date(payload.generatedAt).getTime())) return false;
@@ -254,11 +373,46 @@ const main = async () => {
   const indiaArticles = allArticles.filter((article) => article.category === "india");
   const worldArticles = allArticles.filter((article) => article.category !== "india");
 
+  const usaArticles = filterUsaArticles(allArticles);
+  const potusArticles = filterPotusArticles(allArticles);
+
   const snapshot = {
     generatedAt: new Date().toISOString(),
     version: VERSION,
     topStories: normalizedNews.topStories.worldRecent,
     news: normalizedNews,
+    home: {
+      topStories: normalizedNews.topStories.worldRecent.slice(0, 12),
+      sentiment: {
+        overall: sentimentAverage(allArticles),
+        india: sentimentAverage(indiaArticles),
+        world: sentimentAverage(worldArticles)
+      },
+      plots: {
+        indiaSentimentTimeline: buildTimeline(indiaArticles),
+        worldSentimentTimeline: buildTimeline(worldArticles)
+      },
+      leaderboards: {
+        industry: buildIndustryLeaderboard(allArticles),
+        sources: buildSourceLeaderboard(allArticles)
+      }
+    },
+    usa: {
+      topStories: usaArticles.slice(0, 12),
+      dailyNews: usaArticles.slice(0, 24),
+      sentiment: sentimentAverage(usaArticles),
+      leaderboard: buildSourceLeaderboard(usaArticles),
+      plots: {
+        sentimentTimeline: buildTimeline(usaArticles)
+      }
+    },
+    potus: {
+      topStories: potusArticles.slice(0, 12),
+      dailyNews: potusArticles.slice(0, 24),
+      sentiment: sentimentAverage(potusArticles),
+      sourceLeaderboard: buildSourceLeaderboard(potusArticles),
+      topicSentiment: buildPotusTopicSentiment(potusArticles)
+    },
     sentiment: {
       overall: sentimentAverage(allArticles),
       india: sentimentAverage(indiaArticles),

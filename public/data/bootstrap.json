@@ -3684,5 +3684,1397 @@
         }
       ]
     }
+  },
+  "home": {
+    "topStories": [
+      {
+        "title": "",
+        "link": "",
+        "source": "",
+        "sourceDomain": "",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "",
+        "link": "",
+        "source": "",
+        "sourceDomain": "",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "",
+        "link": "",
+        "source": "",
+        "sourceDomain": "",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "",
+        "link": "",
+        "source": "",
+        "sourceDomain": "",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      }
+    ],
+    "sentiment": {
+      "overall": {
+        "pos": 7.58,
+        "neu": 81.43,
+        "neg": 10.99,
+        "count": 120
+      },
+      "india": {
+        "pos": 5.52,
+        "neu": 83.48,
+        "neg": 11,
+        "count": 23
+      },
+      "world": {
+        "pos": 8.06,
+        "neu": 80.95,
+        "neg": 10.99,
+        "count": 97
+      }
+    },
+    "plots": {
+      "indiaSentimentTimeline": [
+        {
+          "label": "2026-03-10T12:36:03.073Z",
+          "pos": 5,
+          "neu": 76,
+          "neg": 19,
+          "count": 6
+        },
+        {
+          "label": "2026-03-10T13:36:03.073Z",
+          "pos": 9,
+          "neu": 87,
+          "neg": 4,
+          "count": 6
+        },
+        {
+          "label": "2026-03-10T14:36:03.073Z",
+          "pos": 1,
+          "neu": 93,
+          "neg": 6,
+          "count": 6
+        },
+        {
+          "label": "2026-03-10T15:36:03.073Z",
+          "pos": 8,
+          "neu": 77,
+          "neg": 15,
+          "count": 5
+        }
+      ],
+      "worldSentimentTimeline": [
+        {
+          "label": "2026-03-10T12:36:03.074Z",
+          "pos": 6,
+          "neu": 83,
+          "neg": 11,
+          "count": 23
+        },
+        {
+          "label": "2026-03-10T13:36:03.074Z",
+          "pos": 6,
+          "neu": 83,
+          "neg": 11,
+          "count": 15
+        },
+        {
+          "label": "2026-03-10T14:36:03.074Z",
+          "pos": 10,
+          "neu": 76,
+          "neg": 14,
+          "count": 21
+        },
+        {
+          "label": "2026-03-10T15:36:03.074Z",
+          "pos": 9,
+          "neu": 82,
+          "neg": 9,
+          "count": 38
+        }
+      ]
+    },
+    "leaderboards": {
+      "industry": {
+        "rows": [
+          {
+            "name": "Energy",
+            "bias": -6.33,
+            "count": 3
+          },
+          {
+            "name": "Communication",
+            "bias": -4.46,
+            "count": 80
+          },
+          {
+            "name": "Finance",
+            "bias": -2.63,
+            "count": 19
+          },
+          {
+            "name": "Technology",
+            "bias": -0.53,
+            "count": 19
+          },
+          {
+            "name": "Materials",
+            "bias": 0,
+            "count": 1
+          }
+        ],
+        "pos": [],
+        "neu": [
+          {
+            "name": "Technology",
+            "bias": -0.53,
+            "count": 19
+          },
+          {
+            "name": "Materials",
+            "bias": 0,
+            "count": 1
+          }
+        ],
+        "neg": [
+          {
+            "name": "Energy",
+            "bias": -6.33,
+            "count": 3
+          },
+          {
+            "name": "Communication",
+            "bias": -4.46,
+            "count": 80
+          },
+          {
+            "name": "Finance",
+            "bias": -2.63,
+            "count": 19
+          }
+        ]
+      },
+      "sources": [
+        {
+          "source": "The Hindu",
+          "pos": 7.33,
+          "neu": 83.47,
+          "neg": 9.2,
+          "count": 30
+        },
+        {
+          "source": "Mint",
+          "pos": 8.19,
+          "neu": 79.75,
+          "neg": 12.06,
+          "count": 16
+        },
+        {
+          "source": "NDTV News- Special",
+          "pos": 11.5,
+          "neu": 78.43,
+          "neg": 10.07,
+          "count": 14
+        },
+        {
+          "source": "Hindustan Times",
+          "pos": 9,
+          "neu": 81.5,
+          "neg": 9.5,
+          "count": 14
+        },
+        {
+          "source": "Al Jazeera",
+          "pos": 3.62,
+          "neu": 80.38,
+          "neg": 16,
+          "count": 13
+        },
+        {
+          "source": "India Today",
+          "pos": 7,
+          "neu": 83.08,
+          "neg": 9.92,
+          "count": 12
+        },
+        {
+          "source": "NDTV",
+          "pos": 11.17,
+          "neu": 65.17,
+          "neg": 23.67,
+          "count": 6
+        },
+        {
+          "source": "\"site:indianexpress.com\" - Google News",
+          "pos": 4.5,
+          "neu": 88.5,
+          "neg": 7,
+          "count": 4
+        },
+        {
+          "source": "BBC",
+          "pos": 5,
+          "neu": 83.25,
+          "neg": 11.75,
+          "count": 4
+        },
+        {
+          "source": "\"site:techcrunch.com\" - Google News",
+          "pos": 2.75,
+          "neu": 97.25,
+          "neg": 0,
+          "count": 4
+        },
+        {
+          "source": "\"site:business-standard.com\" - Google News",
+          "pos": 0,
+          "neu": 84,
+          "neg": 16,
+          "count": 2
+        },
+        {
+          "source": "The Economic Times",
+          "pos": 24,
+          "neu": 76,
+          "neg": 0,
+          "count": 1
+        }
+      ]
+    }
+  },
+  "usa": {
+    "topStories": [
+      {
+        "title": "Rajnath releases ‘Defence Forces Vision 2047’ roadmap for future-ready military",
+        "link": "https://www.thehindu.com/news/national/rajnath-releases-defence-forces-vision-2047-roadmap-for-future-ready-military/article70727672.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Plan stresses joint operations, emerging technologies and indigenous defence capabilities",
+        "image": "https://th-i.thgim.com/public/incoming/sp5ydj/article70728042.ece/alternates/LANDSCAPE_1200/20260310308L.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/sp5ydj/article70728042.ece/alternates/LANDSCAPE_1200/20260310308L.jpg",
+        "publishedAt": "2026-03-10T16:17:09.000Z",
+        "sentiment": {
+          "posP": 14,
+          "neuP": 73,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.1531
+        },
+        "category": "world"
+      },
+      {
+        "title": "BRS to introduce Private Member Bill in Assembly seeking legal backing to six guarantees",
+        "link": "https://www.thehindu.com/news/national/telangana/brs-to-introduce-private-member-bill-in-assembly-seeking-legal-backing-to-six-guarantees/article70727957.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Working president of BRS KTR says half of the Congress government’s tenure lapsed with most of the promises remaining unkept",
+        "image": "https://th-i.thgim.com/public/news/national/telangana/daesfk/article70727952.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-03-10%20at%205.34.34%20PM.jpeg",
+        "imageUrl": "https://th-i.thgim.com/public/news/national/telangana/daesfk/article70727952.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-03-10%20at%205.34.34%20PM.jpeg",
+        "publishedAt": "2026-03-10T16:00:05.000Z",
+        "sentiment": {
+          "posP": 15,
+          "neuP": 85,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.5367
+        },
+        "category": "world"
+      },
+      {
+        "title": "Supreme Court asks for special tribunals to hear appeals of voters excluded in West Bengal SIR",
+        "link": "https://www.thehindu.com/news/national/west-bengal/supreme-court-asks-for-special-tribunals-to-hear-appeals-of-voters-excluded-in-west-bengal-sir/article70727502.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The Supreme Court asked the Chief Justice of Calcutta High Court to request former Chief Justices and judges of High Courts to preside over the Benches of the appellate tribunals once they are notified by the Election Commission",
+        "image": "https://th-i.thgim.com/public/incoming/p4tihv/article70727925.ece/alternates/LANDSCAPE_1200/PTI03_05_2026_000191A.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/p4tihv/article70727925.ece/alternates/LANDSCAPE_1200/PTI03_05_2026_000191A.jpg",
+        "publishedAt": "2026-03-10T15:55:27.000Z",
+        "sentiment": {
+          "posP": 21,
+          "neuP": 75,
+          "negP": 4,
+          "label": "positive",
+          "confidence": 0.8979
+        },
+        "category": "world"
+      },
+      {
+        "title": "Iran fires back at Trump over threats to new Supreme Leader: ‘Be careful not to be eliminated’",
+        "link": "https://www.livemint.com/news/world/iran-fires-back-at-trump-over-threats-to-new-supreme-leader-be-careful-not-to-be-eliminated-11773155924214.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Iran has warned Trump after he threatened severe consequences if Tehran disrupts oil shipments through the Strait of Hormuz. Trump also claimed the country’s new Supreme Leader, Mojtaba Khamenei, would not be able to “live in peace.”",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:53:21.000Z",
+        "sentiment": {
+          "posP": 13,
+          "neuP": 71,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.1779
+        },
+        "category": "world"
+      },
+      {
+        "title": "Amazon Wins US Court Order Blocking Perplexity's AI Shopping Bots",
+        "link": "https://www.ndtvprofit.com/technology/amazon-wins-us-court-order-blocking-perplexitys-ai-shopping-bots-11196549",
+        "source": "NDTV News- Special",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Amazon in November filed a lawsuit against the artificial intelligence startup accusing Perplexity of committing computer fraud by failing to disclose when Comet is shopping on a real person's behalf,...",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:44:23.000Z",
+        "sentiment": {
+          "posP": 22,
+          "neuP": 53,
+          "negP": 25,
+          "label": "negative",
+          "confidence": 0.4215
+        },
+        "category": "technology"
+      },
+      {
+        "title": "US-Israel-Iran war: Defence Secretary Pete Hegseth warns Tuesday will be ‘most intense day of strikes’",
+        "link": "https://www.livemint.com/news/usisraeliran-war-defence-secretary-pete-hegseth-warns-tuesday-will-be-most-intense-day-of-strikes-11773152128135.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "US Defence Secretary Pete Hegseth said Tuesday would be the most intense day yet of US strikes inside Iran as the conflict entered its 11th day. Israel’s PM vowed to topple Iran’s regime, while Tehran named Mojtaba Khamenei as supreme leader and warned Donald Trump against escalating threats.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:32:42.000Z",
+        "sentiment": {
+          "posP": 12,
+          "neuP": 68,
+          "negP": 20,
+          "label": "negative",
+          "confidence": 0.7722
+        },
+        "category": "world"
+      },
+      {
+        "title": "Video: Iran Deploys Lego-Style Animation In Propaganda War With US, Israel",
+        "link": "https://www.ndtv.com/world-news/iran-israel-war-video-iran-deploys-lego-style-animation-in-propaganda-war-with-us-israel-11196433",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "While Iran hits back against US and Israeli attacks with missiles and drones, it is also fighting a propaganda war with a Lego-style animation video complete with toy renditions...",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:19:28.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 65,
+          "negP": 35,
+          "label": "negative",
+          "confidence": 0.9451
+        },
+        "category": "world"
+      },
+      {
+        "title": "Pete Hegseth vows ‘most intense day’ of US strikes against Iran",
+        "link": "https://www.aljazeera.com/news/2026/3/10/pete-hegseth-vows-most-intense-day-of-us-strikes-against-iran?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Pete Hegseth says Donald Trump controls the pace of the war, but acknowledges that Israel has its own objectives.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-10T012012Z_2129532936_RC2D1KAGAVPW_RTRMADP_3_IRAN-CRISIS-TRANSFER-USA-1773152709.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-10T012012Z_2129532936_RC2D1KAGAVPW_RTRMADP_3_IRAN-CRISIS-TRANSFER-USA-1773152709.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-10T15:08:32.000Z",
+        "sentiment": {
+          "posP": 4,
+          "neuP": 83,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.4678
+        },
+        "category": "world"
+      },
+      {
+        "title": "Protesters block Iran’s women’s football team bus en route to airport",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/10/protesters-block-irans-womens-football-team-bus-en-route-to-airport?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Protesters blocked a bus carrying Iran’s women’s football team in Australia after 5 players slipped away to seek asylum.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1773153788.jpg?resize=1920%2C1080&amp;quality=80",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1773153788.jpg?resize=1920%2C1080&amp;quality=80",
+        "publishedAt": "2026-03-10T14:43:51.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 73,
+          "negP": 27,
+          "label": "negative",
+          "confidence": 0.7783
+        },
+        "category": "sports"
+      },
+      {
+        "title": "US defence chief ends Iran war briefing with prayer for troops",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/10/us-defence-chief-ends-iran-war-briefing-with-prayer-for-troops?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Secretary of War Pete Hegseth recited a prayer for US troops attacking Iran, asking for strength and protection.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/WIDE-THUMB-Prayer-for-troops-1773153342.png?resize=1920%2C1286",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/WIDE-THUMB-Prayer-for-troops-1773153342.png?resize=1920%2C1286",
+        "publishedAt": "2026-03-10T14:36:28.000Z",
+        "sentiment": {
+          "posP": 12,
+          "neuP": 60,
+          "negP": 28,
+          "label": "negative",
+          "confidence": 0.802
+        },
+        "category": "world"
+      },
+      {
+        "title": "Quote of the Day: ‘A man who procrastinates…’ — The life lesson behind Hunter S. Thompson’s famous words",
+        "link": "https://www.livemint.com/news/trends/quote-of-the-day-a-man-who-procrastinates-the-life-lesson-behind-hunter-s-thompson-s-famous-words-11773151347338.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Hunter S. Thompson’s quote, “A man who procrastinates in his choosing will inevitably have his choice made for him by circumstance,” highlights the dangers of delaying decisions.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T14:31:52.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 93,
+          "negP": 7,
+          "label": "negative",
+          "confidence": 0.4939
+        },
+        "category": "world"
+      },
+      {
+        "title": "Poll shows majority Americans oppose attack on Iran, 77% fear terror attack on US soil in retaliation",
+        "link": "https://www.livemint.com/news/us-news/poll-shows-majority-americans-oppose-attack-on-iran-77-fear-terror-attack-on-us-soil-in-retaliation-11773149287451.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "A majority of American voters do not support sending ground troops into Iran, but they also do not expect the conflict to end quickly. While most do not support US attack on Iran, many fear a terror attack on US soil in retaliation",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T14:18:02.000Z",
+        "sentiment": {
+          "posP": 7,
+          "neuP": 60,
+          "negP": 33,
+          "label": "negative",
+          "confidence": 0.9617
+        },
+        "category": "world"
+      }
+    ],
+    "dailyNews": [
+      {
+        "title": "Rajnath releases ‘Defence Forces Vision 2047’ roadmap for future-ready military",
+        "link": "https://www.thehindu.com/news/national/rajnath-releases-defence-forces-vision-2047-roadmap-for-future-ready-military/article70727672.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Plan stresses joint operations, emerging technologies and indigenous defence capabilities",
+        "image": "https://th-i.thgim.com/public/incoming/sp5ydj/article70728042.ece/alternates/LANDSCAPE_1200/20260310308L.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/sp5ydj/article70728042.ece/alternates/LANDSCAPE_1200/20260310308L.jpg",
+        "publishedAt": "2026-03-10T16:17:09.000Z",
+        "sentiment": {
+          "posP": 14,
+          "neuP": 73,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.1531
+        },
+        "category": "world"
+      },
+      {
+        "title": "BRS to introduce Private Member Bill in Assembly seeking legal backing to six guarantees",
+        "link": "https://www.thehindu.com/news/national/telangana/brs-to-introduce-private-member-bill-in-assembly-seeking-legal-backing-to-six-guarantees/article70727957.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Working president of BRS KTR says half of the Congress government’s tenure lapsed with most of the promises remaining unkept",
+        "image": "https://th-i.thgim.com/public/news/national/telangana/daesfk/article70727952.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-03-10%20at%205.34.34%20PM.jpeg",
+        "imageUrl": "https://th-i.thgim.com/public/news/national/telangana/daesfk/article70727952.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-03-10%20at%205.34.34%20PM.jpeg",
+        "publishedAt": "2026-03-10T16:00:05.000Z",
+        "sentiment": {
+          "posP": 15,
+          "neuP": 85,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.5367
+        },
+        "category": "world"
+      },
+      {
+        "title": "Supreme Court asks for special tribunals to hear appeals of voters excluded in West Bengal SIR",
+        "link": "https://www.thehindu.com/news/national/west-bengal/supreme-court-asks-for-special-tribunals-to-hear-appeals-of-voters-excluded-in-west-bengal-sir/article70727502.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The Supreme Court asked the Chief Justice of Calcutta High Court to request former Chief Justices and judges of High Courts to preside over the Benches of the appellate tribunals once they are notified by the Election Commission",
+        "image": "https://th-i.thgim.com/public/incoming/p4tihv/article70727925.ece/alternates/LANDSCAPE_1200/PTI03_05_2026_000191A.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/p4tihv/article70727925.ece/alternates/LANDSCAPE_1200/PTI03_05_2026_000191A.jpg",
+        "publishedAt": "2026-03-10T15:55:27.000Z",
+        "sentiment": {
+          "posP": 21,
+          "neuP": 75,
+          "negP": 4,
+          "label": "positive",
+          "confidence": 0.8979
+        },
+        "category": "world"
+      },
+      {
+        "title": "Iran fires back at Trump over threats to new Supreme Leader: ‘Be careful not to be eliminated’",
+        "link": "https://www.livemint.com/news/world/iran-fires-back-at-trump-over-threats-to-new-supreme-leader-be-careful-not-to-be-eliminated-11773155924214.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Iran has warned Trump after he threatened severe consequences if Tehran disrupts oil shipments through the Strait of Hormuz. Trump also claimed the country’s new Supreme Leader, Mojtaba Khamenei, would not be able to “live in peace.”",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:53:21.000Z",
+        "sentiment": {
+          "posP": 13,
+          "neuP": 71,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.1779
+        },
+        "category": "world"
+      },
+      {
+        "title": "Amazon Wins US Court Order Blocking Perplexity's AI Shopping Bots",
+        "link": "https://www.ndtvprofit.com/technology/amazon-wins-us-court-order-blocking-perplexitys-ai-shopping-bots-11196549",
+        "source": "NDTV News- Special",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Amazon in November filed a lawsuit against the artificial intelligence startup accusing Perplexity of committing computer fraud by failing to disclose when Comet is shopping on a real person's behalf,...",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:44:23.000Z",
+        "sentiment": {
+          "posP": 22,
+          "neuP": 53,
+          "negP": 25,
+          "label": "negative",
+          "confidence": 0.4215
+        },
+        "category": "technology"
+      },
+      {
+        "title": "US-Israel-Iran war: Defence Secretary Pete Hegseth warns Tuesday will be ‘most intense day of strikes’",
+        "link": "https://www.livemint.com/news/usisraeliran-war-defence-secretary-pete-hegseth-warns-tuesday-will-be-most-intense-day-of-strikes-11773152128135.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "US Defence Secretary Pete Hegseth said Tuesday would be the most intense day yet of US strikes inside Iran as the conflict entered its 11th day. Israel’s PM vowed to topple Iran’s regime, while Tehran named Mojtaba Khamenei as supreme leader and warned Donald Trump against escalating threats.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:32:42.000Z",
+        "sentiment": {
+          "posP": 12,
+          "neuP": 68,
+          "negP": 20,
+          "label": "negative",
+          "confidence": 0.7722
+        },
+        "category": "world"
+      },
+      {
+        "title": "Video: Iran Deploys Lego-Style Animation In Propaganda War With US, Israel",
+        "link": "https://www.ndtv.com/world-news/iran-israel-war-video-iran-deploys-lego-style-animation-in-propaganda-war-with-us-israel-11196433",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "While Iran hits back against US and Israeli attacks with missiles and drones, it is also fighting a propaganda war with a Lego-style animation video complete with toy renditions...",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:19:28.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 65,
+          "negP": 35,
+          "label": "negative",
+          "confidence": 0.9451
+        },
+        "category": "world"
+      },
+      {
+        "title": "Pete Hegseth vows ‘most intense day’ of US strikes against Iran",
+        "link": "https://www.aljazeera.com/news/2026/3/10/pete-hegseth-vows-most-intense-day-of-us-strikes-against-iran?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Pete Hegseth says Donald Trump controls the pace of the war, but acknowledges that Israel has its own objectives.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-10T012012Z_2129532936_RC2D1KAGAVPW_RTRMADP_3_IRAN-CRISIS-TRANSFER-USA-1773152709.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-10T012012Z_2129532936_RC2D1KAGAVPW_RTRMADP_3_IRAN-CRISIS-TRANSFER-USA-1773152709.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-10T15:08:32.000Z",
+        "sentiment": {
+          "posP": 4,
+          "neuP": 83,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.4678
+        },
+        "category": "world"
+      },
+      {
+        "title": "Protesters block Iran’s women’s football team bus en route to airport",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/10/protesters-block-irans-womens-football-team-bus-en-route-to-airport?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Protesters blocked a bus carrying Iran’s women’s football team in Australia after 5 players slipped away to seek asylum.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1773153788.jpg?resize=1920%2C1080&amp;quality=80",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1773153788.jpg?resize=1920%2C1080&amp;quality=80",
+        "publishedAt": "2026-03-10T14:43:51.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 73,
+          "negP": 27,
+          "label": "negative",
+          "confidence": 0.7783
+        },
+        "category": "sports"
+      },
+      {
+        "title": "US defence chief ends Iran war briefing with prayer for troops",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/10/us-defence-chief-ends-iran-war-briefing-with-prayer-for-troops?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Secretary of War Pete Hegseth recited a prayer for US troops attacking Iran, asking for strength and protection.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/WIDE-THUMB-Prayer-for-troops-1773153342.png?resize=1920%2C1286",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/WIDE-THUMB-Prayer-for-troops-1773153342.png?resize=1920%2C1286",
+        "publishedAt": "2026-03-10T14:36:28.000Z",
+        "sentiment": {
+          "posP": 12,
+          "neuP": 60,
+          "negP": 28,
+          "label": "negative",
+          "confidence": 0.802
+        },
+        "category": "world"
+      },
+      {
+        "title": "Quote of the Day: ‘A man who procrastinates…’ — The life lesson behind Hunter S. Thompson’s famous words",
+        "link": "https://www.livemint.com/news/trends/quote-of-the-day-a-man-who-procrastinates-the-life-lesson-behind-hunter-s-thompson-s-famous-words-11773151347338.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Hunter S. Thompson’s quote, “A man who procrastinates in his choosing will inevitably have his choice made for him by circumstance,” highlights the dangers of delaying decisions.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T14:31:52.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 93,
+          "negP": 7,
+          "label": "negative",
+          "confidence": 0.4939
+        },
+        "category": "world"
+      },
+      {
+        "title": "Poll shows majority Americans oppose attack on Iran, 77% fear terror attack on US soil in retaliation",
+        "link": "https://www.livemint.com/news/us-news/poll-shows-majority-americans-oppose-attack-on-iran-77-fear-terror-attack-on-us-soil-in-retaliation-11773149287451.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "A majority of American voters do not support sending ground troops into Iran, but they also do not expect the conflict to end quickly. While most do not support US attack on Iran, many fear a terror attack on US soil in retaliation",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T14:18:02.000Z",
+        "sentiment": {
+          "posP": 7,
+          "neuP": 60,
+          "negP": 33,
+          "label": "negative",
+          "confidence": 0.9617
+        },
+        "category": "world"
+      },
+      {
+        "title": "Cabinet increases Jal Jeevan Mission outlay by  ₹1.51 tn, approves projects to Tamil Nadu, Bengal",
+        "link": "https://www.livemint.com/news/india/union-cabinet-approves-8-7-trillion-outlay-jal-jeevan-mission-2028-road-rail-8-300-crore-ccea-11773148836899.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "The Union Cabinet has increased the Jal Jeevan Mission budget to  ₹8.7 trillion, approved road and rail projects, and granted international status to Madurai airport.&nbsp;",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T14:08:47.000Z",
+        "sentiment": {
+          "posP": 21,
+          "neuP": 79,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.8225
+        },
+        "category": "india"
+      },
+      {
+        "title": "‘Muslims don’t belong in American society’: Republican Rep. Ogles pushes ban on immigration from Muslim-majority nations",
+        "link": "https://www.livemint.com/news/us-news/muslims-don-t-belong-in-american-society-republican-rep-ogles-pushes-ban-on-immigration-from-muslim-majority-nations-11773148997840.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Ogles announced plans to introduce legislation that would halt immigration from several countries with predominantly Muslim populations.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T13:58:03.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 90,
+          "negP": 10,
+          "label": "negative",
+          "confidence": 0.5574
+        },
+        "category": "world"
+      },
+      {
+        "title": "Gunshots reported outside US consulate in Toronto, Canada; police probing incident",
+        "link": "https://www.livemint.com/news/world/gunshots-reported-outside-us-consulate-in-toronto-canada-police-probing-incident-11773149018161.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Gunshots were fired outside the US Consulate in Canada's Toronto on Tuesday (local time), The Guardian reported.",
+        "image": "https://www.livemint.com/lm-img/img/2026/03/10/1600x900/breaking_news_1545650155659_1773149376816.jpg",
+        "imageUrl": "https://www.livemint.com/lm-img/img/2026/03/10/1600x900/breaking_news_1545650155659_1773149376816.jpg",
+        "publishedAt": "2026-03-10T13:28:07.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 88,
+          "negP": 12,
+          "label": "negative",
+          "confidence": 0.5574
+        },
+        "category": "world"
+      },
+      {
+        "title": "'I just want to be able to sleep': Attacks in Iran rock cities and cut power",
+        "link": "https://www.bbc.com/news/articles/cev7llekwllo?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Iranians in Tehran and Karaj tel the BBC they are exhausted and struggling to sleep after 10 days of Israeli and US attacks.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/c358/live/94c81d10-1c75-11f1-a7bf-efb6e72f87e6.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/c358/live/94c81d10-1c75-11f1-a7bf-efb6e72f87e6.jpg",
+        "publishedAt": "2026-03-10T13:26:17.000Z",
+        "sentiment": {
+          "posP": 3,
+          "neuP": 69,
+          "negP": 28,
+          "label": "negative",
+          "confidence": 0.8979
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump boasts ‘more fun to sink Iranian ships’, says 46 lying at the bottom of the ocean",
+        "link": "https://www.livemint.com/news/us-news/trump-boasts-more-fun-to-sink-iranian-ships-says-46-lying-at-the-bottom-of-the-ocean-11773145725615.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Donald Trump has also claimed that they have won the war against Iran, but ‘have not won enough.’ He also vowed ‘ultimate victory’ against the Persian Gulf country.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T12:55:44.000Z",
+        "sentiment": {
+          "posP": 9,
+          "neuP": 75,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.6306
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump's big U-turn days after saying it's 'too late' for talks with Iran",
+        "link": "https://www.indiatoday.in/world/story/us-president-trump-open-to-iran-talks-warns-stronger-military-strikes-strait-of-hormuz-after-saying-its-too-late-for-talks-with-iran-2879970-2026-03-10?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Trumps big Uturn days after saying its too late for talks with Iran",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/trump-said-the-us-would-take-them-if-australia-did-not-105032693-16x9_0.png?VersionId=Gs3GQsshFG_Wf9B1SZn3cm04.4IIQUrs",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/trump-said-the-us-would-take-them-if-australia-did-not-105032693-16x9_0.png?VersionId=Gs3GQsshFG_Wf9B1SZn3cm04.4IIQUrs",
+        "publishedAt": "2026-03-10T12:50:42.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "Could Trump ‘take over’ the Strait of Hormuz as oil prices rise?",
+        "link": "https://www.aljazeera.com/economy/2026/3/10/could-trump-take-over-the-strait-of-hormuz-as-oil-prices-rise?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Oil prices spiked after shipments through the Strait of Hormuz were disrupted amid the Iran war.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/afp_69aff4484d6e-1773139016.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/afp_69aff4484d6e-1773139016.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-10T12:50:26.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 87,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.5994
+        },
+        "category": "business"
+      },
+      {
+        "title": "Tees Maar Khan: Biography of Trump as the most dangerous fool in the world",
+        "link": "https://www.indiatoday.in/world/us-news/story/donald-trump-us-president-tees-mar-khan-fool-maga-tarrifs-white-house-2879968-2026-03-10?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Tees Maar Khan Biography of Trump as the most dangerous fool in the world",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/us-president-donald-trump-105532148-16x9_0.jpg?VersionId=UD3Fo_fV_Kz45dwjzPHmjvKF9RP0fjlE",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/us-president-donald-trump-105532148-16x9_0.jpg?VersionId=UD3Fo_fV_Kz45dwjzPHmjvKF9RP0fjlE",
+        "publishedAt": "2026-03-10T12:45:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 65,
+          "negP": 35,
+          "label": "negative",
+          "confidence": 0.9208
+        },
+        "category": "world"
+      },
+      {
+        "title": "Today will be the most intense day of strikes, US warns Iran",
+        "link": "https://www.indiatoday.in/world/us-news/story/us-israel-iran-today-will-be-the-most-intense-day-of-strikes-says-us-defence-secretary-2879965-2026-03-10?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Today will be the most intense day of strikes US warns Iran",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/pete-hegseth-045924341-16x9_2.jpg?VersionId=.tCCM4ECkN_DLi5_tJaricHCxqcGZC9B",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/pete-hegseth-045924341-16x9_2.jpg?VersionId=.tCCM4ECkN_DLi5_tJaricHCxqcGZC9B",
+        "publishedAt": "2026-03-10T12:41:50.000Z",
+        "sentiment": {
+          "posP": 11,
+          "neuP": 62,
+          "negP": 27,
+          "label": "negative",
+          "confidence": 0.5594
+        },
+        "category": "world"
+      }
+    ],
+    "sentiment": {
+      "pos": 7.81,
+      "neu": 74.95,
+      "neg": 17.24,
+      "count": 21
+    },
+    "leaderboard": [
+      {
+        "source": "Mint",
+        "pos": 7.75,
+        "neu": 78,
+        "neg": 14.25,
+        "count": 8
+      },
+      {
+        "source": "Al Jazeera",
+        "pos": 4,
+        "neu": 75.75,
+        "neg": 20.25,
+        "count": 4
+      },
+      {
+        "source": "The Hindu",
+        "pos": 16.67,
+        "neu": 77.67,
+        "neg": 5.67,
+        "count": 3
+      },
+      {
+        "source": "India Today",
+        "pos": 3.67,
+        "neu": 75.67,
+        "neg": 20.67,
+        "count": 3
+      },
+      {
+        "source": "NDTV News- Special",
+        "pos": 22,
+        "neu": 53,
+        "neg": 25,
+        "count": 1
+      },
+      {
+        "source": "NDTV",
+        "pos": 0,
+        "neu": 65,
+        "neg": 35,
+        "count": 1
+      },
+      {
+        "source": "BBC",
+        "pos": 3,
+        "neu": 69,
+        "neg": 28,
+        "count": 1
+      }
+    ],
+    "plots": {
+      "sentimentTimeline": [
+        {
+          "label": "2026-03-10T12:36:03.074Z",
+          "pos": 6,
+          "neu": 83,
+          "neg": 11,
+          "count": 23
+        },
+        {
+          "label": "2026-03-10T13:36:03.074Z",
+          "pos": 6,
+          "neu": 83,
+          "neg": 11,
+          "count": 15
+        },
+        {
+          "label": "2026-03-10T14:36:03.074Z",
+          "pos": 10,
+          "neu": 76,
+          "neg": 14,
+          "count": 21
+        },
+        {
+          "label": "2026-03-10T15:36:03.074Z",
+          "pos": 9,
+          "neu": 82,
+          "neg": 9,
+          "count": 38
+        }
+      ]
+    }
+  },
+  "potus": {
+    "topStories": [
+      {
+        "title": "Iran fires back at Trump over threats to new Supreme Leader: ‘Be careful not to be eliminated’",
+        "link": "https://www.livemint.com/news/world/iran-fires-back-at-trump-over-threats-to-new-supreme-leader-be-careful-not-to-be-eliminated-11773155924214.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Iran has warned Trump after he threatened severe consequences if Tehran disrupts oil shipments through the Strait of Hormuz. Trump also claimed the country’s new Supreme Leader, Mojtaba Khamenei, would not be able to “live in peace.”",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:53:21.000Z",
+        "sentiment": {
+          "posP": 13,
+          "neuP": 71,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.1779
+        },
+        "category": "world"
+      },
+      {
+        "title": "US-Israel-Iran war: Defence Secretary Pete Hegseth warns Tuesday will be ‘most intense day of strikes’",
+        "link": "https://www.livemint.com/news/usisraeliran-war-defence-secretary-pete-hegseth-warns-tuesday-will-be-most-intense-day-of-strikes-11773152128135.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "US Defence Secretary Pete Hegseth said Tuesday would be the most intense day yet of US strikes inside Iran as the conflict entered its 11th day. Israel’s PM vowed to topple Iran’s regime, while Tehran named Mojtaba Khamenei as supreme leader and warned Donald Trump against escalating threats.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:32:42.000Z",
+        "sentiment": {
+          "posP": 12,
+          "neuP": 68,
+          "negP": 20,
+          "label": "negative",
+          "confidence": 0.7722
+        },
+        "category": "world"
+      },
+      {
+        "title": "Pete Hegseth vows ‘most intense day’ of US strikes against Iran",
+        "link": "https://www.aljazeera.com/news/2026/3/10/pete-hegseth-vows-most-intense-day-of-us-strikes-against-iran?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Pete Hegseth says Donald Trump controls the pace of the war, but acknowledges that Israel has its own objectives.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-10T012012Z_2129532936_RC2D1KAGAVPW_RTRMADP_3_IRAN-CRISIS-TRANSFER-USA-1773152709.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-10T012012Z_2129532936_RC2D1KAGAVPW_RTRMADP_3_IRAN-CRISIS-TRANSFER-USA-1773152709.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-10T15:08:32.000Z",
+        "sentiment": {
+          "posP": 4,
+          "neuP": 83,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.4678
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump boasts ‘more fun to sink Iranian ships’, says 46 lying at the bottom of the ocean",
+        "link": "https://www.livemint.com/news/us-news/trump-boasts-more-fun-to-sink-iranian-ships-says-46-lying-at-the-bottom-of-the-ocean-11773145725615.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Donald Trump has also claimed that they have won the war against Iran, but ‘have not won enough.’ He also vowed ‘ultimate victory’ against the Persian Gulf country.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T12:55:44.000Z",
+        "sentiment": {
+          "posP": 9,
+          "neuP": 75,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.6306
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump's big U-turn days after saying it's 'too late' for talks with Iran",
+        "link": "https://www.indiatoday.in/world/story/us-president-trump-open-to-iran-talks-warns-stronger-military-strikes-strait-of-hormuz-after-saying-its-too-late-for-talks-with-iran-2879970-2026-03-10?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Trumps big Uturn days after saying its too late for talks with Iran",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/trump-said-the-us-would-take-them-if-australia-did-not-105032693-16x9_0.png?VersionId=Gs3GQsshFG_Wf9B1SZn3cm04.4IIQUrs",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/trump-said-the-us-would-take-them-if-australia-did-not-105032693-16x9_0.png?VersionId=Gs3GQsshFG_Wf9B1SZn3cm04.4IIQUrs",
+        "publishedAt": "2026-03-10T12:50:42.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "Could Trump ‘take over’ the Strait of Hormuz as oil prices rise?",
+        "link": "https://www.aljazeera.com/economy/2026/3/10/could-trump-take-over-the-strait-of-hormuz-as-oil-prices-rise?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Oil prices spiked after shipments through the Strait of Hormuz were disrupted amid the Iran war.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/afp_69aff4484d6e-1773139016.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/afp_69aff4484d6e-1773139016.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-10T12:50:26.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 87,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.5994
+        },
+        "category": "business"
+      },
+      {
+        "title": "Tees Maar Khan: Biography of Trump as the most dangerous fool in the world",
+        "link": "https://www.indiatoday.in/world/us-news/story/donald-trump-us-president-tees-mar-khan-fool-maga-tarrifs-white-house-2879968-2026-03-10?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Tees Maar Khan Biography of Trump as the most dangerous fool in the world",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/us-president-donald-trump-105532148-16x9_0.jpg?VersionId=UD3Fo_fV_Kz45dwjzPHmjvKF9RP0fjlE",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/us-president-donald-trump-105532148-16x9_0.jpg?VersionId=UD3Fo_fV_Kz45dwjzPHmjvKF9RP0fjlE",
+        "publishedAt": "2026-03-10T12:45:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 65,
+          "negP": 35,
+          "label": "negative",
+          "confidence": 0.9208
+        },
+        "category": "world"
+      }
+    ],
+    "dailyNews": [
+      {
+        "title": "Iran fires back at Trump over threats to new Supreme Leader: ‘Be careful not to be eliminated’",
+        "link": "https://www.livemint.com/news/world/iran-fires-back-at-trump-over-threats-to-new-supreme-leader-be-careful-not-to-be-eliminated-11773155924214.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Iran has warned Trump after he threatened severe consequences if Tehran disrupts oil shipments through the Strait of Hormuz. Trump also claimed the country’s new Supreme Leader, Mojtaba Khamenei, would not be able to “live in peace.”",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:53:21.000Z",
+        "sentiment": {
+          "posP": 13,
+          "neuP": 71,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.1779
+        },
+        "category": "world"
+      },
+      {
+        "title": "US-Israel-Iran war: Defence Secretary Pete Hegseth warns Tuesday will be ‘most intense day of strikes’",
+        "link": "https://www.livemint.com/news/usisraeliran-war-defence-secretary-pete-hegseth-warns-tuesday-will-be-most-intense-day-of-strikes-11773152128135.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "US Defence Secretary Pete Hegseth said Tuesday would be the most intense day yet of US strikes inside Iran as the conflict entered its 11th day. Israel’s PM vowed to topple Iran’s regime, while Tehran named Mojtaba Khamenei as supreme leader and warned Donald Trump against escalating threats.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T15:32:42.000Z",
+        "sentiment": {
+          "posP": 12,
+          "neuP": 68,
+          "negP": 20,
+          "label": "negative",
+          "confidence": 0.7722
+        },
+        "category": "world"
+      },
+      {
+        "title": "Pete Hegseth vows ‘most intense day’ of US strikes against Iran",
+        "link": "https://www.aljazeera.com/news/2026/3/10/pete-hegseth-vows-most-intense-day-of-us-strikes-against-iran?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Pete Hegseth says Donald Trump controls the pace of the war, but acknowledges that Israel has its own objectives.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-10T012012Z_2129532936_RC2D1KAGAVPW_RTRMADP_3_IRAN-CRISIS-TRANSFER-USA-1773152709.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-10T012012Z_2129532936_RC2D1KAGAVPW_RTRMADP_3_IRAN-CRISIS-TRANSFER-USA-1773152709.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-10T15:08:32.000Z",
+        "sentiment": {
+          "posP": 4,
+          "neuP": 83,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.4678
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump boasts ‘more fun to sink Iranian ships’, says 46 lying at the bottom of the ocean",
+        "link": "https://www.livemint.com/news/us-news/trump-boasts-more-fun-to-sink-iranian-ships-says-46-lying-at-the-bottom-of-the-ocean-11773145725615.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Donald Trump has also claimed that they have won the war against Iran, but ‘have not won enough.’ He also vowed ‘ultimate victory’ against the Persian Gulf country.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-10T12:55:44.000Z",
+        "sentiment": {
+          "posP": 9,
+          "neuP": 75,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.6306
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump's big U-turn days after saying it's 'too late' for talks with Iran",
+        "link": "https://www.indiatoday.in/world/story/us-president-trump-open-to-iran-talks-warns-stronger-military-strikes-strait-of-hormuz-after-saying-its-too-late-for-talks-with-iran-2879970-2026-03-10?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Trumps big Uturn days after saying its too late for talks with Iran",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/trump-said-the-us-would-take-them-if-australia-did-not-105032693-16x9_0.png?VersionId=Gs3GQsshFG_Wf9B1SZn3cm04.4IIQUrs",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/trump-said-the-us-would-take-them-if-australia-did-not-105032693-16x9_0.png?VersionId=Gs3GQsshFG_Wf9B1SZn3cm04.4IIQUrs",
+        "publishedAt": "2026-03-10T12:50:42.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "Could Trump ‘take over’ the Strait of Hormuz as oil prices rise?",
+        "link": "https://www.aljazeera.com/economy/2026/3/10/could-trump-take-over-the-strait-of-hormuz-as-oil-prices-rise?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Oil prices spiked after shipments through the Strait of Hormuz were disrupted amid the Iran war.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/afp_69aff4484d6e-1773139016.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/afp_69aff4484d6e-1773139016.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-10T12:50:26.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 87,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.5994
+        },
+        "category": "business"
+      },
+      {
+        "title": "Tees Maar Khan: Biography of Trump as the most dangerous fool in the world",
+        "link": "https://www.indiatoday.in/world/us-news/story/donald-trump-us-president-tees-mar-khan-fool-maga-tarrifs-white-house-2879968-2026-03-10?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Tees Maar Khan Biography of Trump as the most dangerous fool in the world",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/us-president-donald-trump-105532148-16x9_0.jpg?VersionId=UD3Fo_fV_Kz45dwjzPHmjvKF9RP0fjlE",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/us-president-donald-trump-105532148-16x9_0.jpg?VersionId=UD3Fo_fV_Kz45dwjzPHmjvKF9RP0fjlE",
+        "publishedAt": "2026-03-10T12:45:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 65,
+          "negP": 35,
+          "label": "negative",
+          "confidence": 0.9208
+        },
+        "category": "world"
+      }
+    ],
+    "sentiment": {
+      "pos": 5.43,
+      "neu": 78.43,
+      "neg": 16.14,
+      "count": 7
+    },
+    "sourceLeaderboard": [
+      {
+        "source": "Mint",
+        "pos": 11.33,
+        "neu": 71.33,
+        "neg": 17.33,
+        "count": 3
+      },
+      {
+        "source": "Al Jazeera",
+        "pos": 2,
+        "neu": 85,
+        "neg": 13,
+        "count": 2
+      },
+      {
+        "source": "India Today",
+        "pos": 0,
+        "neu": 82.5,
+        "neg": 17.5,
+        "count": 2
+      }
+    ],
+    "topicSentiment": [
+      {
+        "topic": "Campaign / Politics",
+        "pos": 5.43,
+        "neu": 78.43,
+        "neg": 16.14,
+        "count": 7
+      }
+    ]
   }
 }

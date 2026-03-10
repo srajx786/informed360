@@ -8,6 +8,8 @@ const CREDIBILITY_STORAGE_KEY = "i360_credibility_badges";
 const NEWS_CACHE_KEY = "informed360_news_cache";
 const STORIES_CACHE_KEY = "informed360_stories_cache";
 const BOOTSTRAP_CACHE_KEY = "informed360_bootstrap_cache";
+const USA_CATEGORY = "usa";
+const POTUS_CATEGORY = "potus";
 const PRICING_MAILTO =
   "mailto:info.shrirajnair@gmail.com?subject=Informed360%20Demo%20Request&body=Hi%20Informed360%20team%2C%0A%0AWe%20would%20like%20a%20demo%20of%20the%20PR%2FTeams%20tier.%0ACompany%3A%0AUse%20case%3A%0AExpected%20seats%3A%0APreferred%20time%3A%0A%0AThanks!";
 const normalizeApiBase = (value = "") =>
@@ -70,6 +72,88 @@ const isValidBootstrapSnapshot = (payload) => {
   if (!payload.industryLeaderboard || typeof payload.industryLeaderboard !== "object") return false;
   return true;
 };
+const USA_REGEX = [
+  /\bunited states\b/i,
+  /\bu\.?s\.?a?\b/i,
+  /\bamerica(n)?\b/i,
+  /\bwhite house\b/i,
+  /\bcongress\b/i,
+  /\bsenate\b/i,
+  /\bhouse of representatives\b/i,
+  /\bsupreme court\b/i,
+  /\bfederal\b/i,
+  /\bwashington\b/i,
+  /\bcalifornia\b/i,
+  /\btexas\b/i,
+  /\bnew york\b/i,
+  /\bflorida\b/i,
+  /\bchicago\b/i,
+  /\blos angeles\b/i
+];
+const POTUS_REGEX = [
+  /\bpotus\b/i,
+  /\bpresident trump\b/i,
+  /\bdonald trump\b/i,
+  /\btrump\b/i,
+  /\bu\.?s\.? president\b/i,
+  /\bpresident of the united states\b/i,
+  /\bwhite house\b/i,
+  /\boval office\b/i,
+  /\bexecutive order\b/i,
+  /\bpresident\b/i
+];
+const NON_US_DOMESTIC_REGEX = [
+  /\bindia\b/i,
+  /\bindian\b/i,
+  /\bdelhi\b/i,
+  /\bmumbai\b/i,
+  /\bbengaluru\b/i,
+  /\bhyderabad\b/i,
+  /\bkolkata\b/i,
+  /\bchennai\b/i,
+  /\bmaharashtra\b/i,
+  /\bkerala\b/i,
+  /\btelangana\b/i,
+  /\bwest bengal\b/i
+];
+const POTUS_TOPIC_BUCKETS = {
+  Policy: ["policy","executive order","administration","regulation","bill","reform"],
+  Legal: ["court","judge","lawsuit","legal","indictment","trial","supreme court"],
+  Economy: ["economy","inflation","jobs","trade","tax","market","fed"],
+  "Foreign Policy": ["foreign","diplomacy","nato","china","russia","ukraine","middle east"],
+  "Campaign / Politics": ["campaign","election","poll","republican","democrat","rally"],
+  "Public Statements": ["said","statement","speech","remarks","interview","press"],
+};
+const articleText = (article = {}) =>
+  `${article.title || ""} ${article.description || ""} ${article.source || ""}`;
+const hasRegex = (text = "", patterns = []) => patterns.some((pattern) => pattern.test(text));
+const usaScore = (article = {}) => {
+  const text = articleText(article);
+  let score = 0;
+  if (hasRegex(text, POTUS_REGEX)) score += 3;
+  if (hasRegex(text, USA_REGEX)) score += 2;
+  if (hasRegex(text, NON_US_DOMESTIC_REGEX)) score -= 2;
+  return score;
+};
+const isUsaArticle = (article = {}) => {
+  const category = String(article.category || "").toLowerCase();
+  if (category === USA_CATEGORY || category === POTUS_CATEGORY) return true;
+  return usaScore(article) >= 2;
+};
+const isPotusArticle = (article = {}) => {
+  const category = String(article.category || "").toLowerCase();
+  if (category === POTUS_CATEGORY) return true;
+  const text = articleText(article);
+  if (!hasRegex(text, POTUS_REGEX)) return false;
+  return !/\btrumpet\b/i.test(text);
+};
+const classifyPotusTopic = (article = {}) => {
+  const text = articleText(article).toLowerCase();
+  for (const [label, keywords] of Object.entries(POTUS_TOPIC_BUCKETS)) {
+    if (keywords.some((kw) => text.includes(kw))) return label;
+  }
+  return "Campaign / Politics";
+};
 const isValidTimeline = (timeline) =>
   Array.isArray(timeline) && timeline.length === 4 && timeline.every(point =>
     point && typeof point === "object" &&
@@ -100,6 +184,8 @@ function applyBootstrapSnapshot(snapshot, { persist = false } = {}){
   state.bootstrapPlots = snapshot.plots || null;
   state.bootstrapIndustryLeaderboard = snapshot.industryLeaderboard || null;
   state.bootstrapGeneratedAt = snapshot.generatedAt || "";
+  state.bootstrapUsa = snapshot.usa || null;
+  state.bootstrapPotus = snapshot.potus || null;
 
   if (snapshot?.meta?.markets?.quotes?.length){
     writeMarketCache(snapshot.meta.markets);
@@ -792,7 +878,9 @@ const state = {
   bootstrapSentiment: null,
   bootstrapPlots: null,
   bootstrapIndustryLeaderboard: null,
-  bootstrapGeneratedAt: ""
+  bootstrapGeneratedAt: "",
+  bootstrapUsa: null,
+  bootstrapPotus: null
 };
 let hasCachedContent = false;
 
@@ -1419,10 +1507,10 @@ async function loadAll(){
     const qs = new URLSearchParams();
     if (state.filter !== "all") qs.set("sentiment", state.filter);
     if (state.experimental) qs.set("experimental", "1");
-    if (state.category && !["home","foryou","local","showcase","following"].includes(state.category))
+    if (state.category && !["home","foryou","local","showcase","following",USA_CATEGORY,POTUS_CATEGORY].includes(state.category))
       qs.set("category", state.category);
 
-    const needsIndiaFetch = !["home", "india"].includes(state.category);
+    const needsIndiaFetch = !["home", "india", USA_CATEGORY, POTUS_CATEGORY].includes(state.category);
     const indiaQs = new URLSearchParams();
     if (state.filter !== "all") indiaQs.set("sentiment", state.filter);
     if (state.experimental) indiaQs.set("experimental", "1");
@@ -1494,7 +1582,15 @@ async function loadAll(){
       state.indiaArticles = state.allArticles.filter(a => a.category === "india");
     }
 
-    if (state.category === "local" && state.profile?.city){
+    const usaCandidates = state.allArticles.filter(isUsaArticle);
+    const potusCandidates = state.allArticles.filter(isPotusArticle);
+    if (state.category === USA_CATEGORY){
+      state.articles = usaCandidates.length ? usaCandidates : state.allArticles;
+      state.newsEmptyMessage = usaCandidates.length ? "" : "Showing broader coverage while USA-specific stories refresh.";
+    } else if (state.category === POTUS_CATEGORY){
+      state.articles = potusCandidates.length ? potusCandidates : state.allArticles;
+      state.newsEmptyMessage = potusCandidates.length ? "" : "Showing broader coverage while POTUS-specific stories refresh.";
+    } else if (state.category === "local" && state.profile?.city){
       const c = state.profile.city.toLowerCase();
       state.articles = state.articles.filter(a =>
         (a.title || "").toLowerCase().includes(c) ||
@@ -2271,9 +2367,35 @@ function renderHero(){
   bindTopStoriesCarousels();
 }
 
+function asTopStoryCluster(article = {}){
+  const safe = article || {};
+  return {
+    headline: safe.title || "",
+    primary: {
+      title: safe.title || "",
+      source: safe.source || "",
+      publishedAt: safe.publishedAt || "",
+      url: safe.link || safe.url || "#",
+      link: safe.link || safe.url || "#",
+      imageUrl: safe.imageUrl || safe.image || "",
+      image: safe.image || safe.imageUrl || "",
+      sentiment: safe.sentiment || { posP: 0, neuP: 100, negP: 0 }
+    },
+    related: []
+  };
+}
+
 function buildTopStoriesSections(){
   const safe = (clusters = [], backup = []) =>
     Array.isArray(clusters) && clusters.length ? clusters : (backup || []);
+  if (state.category === USA_CATEGORY){
+    const usaTop = state.bootstrapUsa?.topStories || (state.articles || []).slice(0, 12);
+    return [{ id: "usa-recent", clusters: usaTop.map(asTopStoryCluster) }];
+  }
+  if (state.category === POTUS_CATEGORY){
+    const potusTop = state.bootstrapPotus?.topStories || (state.articles || []).slice(0, 12);
+    return [{ id: "potus-recent", clusters: potusTop.map(asTopStoryCluster) }];
+  }
   const topStories = state.topStories || {};
   const recent = safe(topStories.indiaRecent, topStories.worldRecent);
   const sections = [
@@ -3009,6 +3131,12 @@ function getWorldSentimentArticles(){
   if (state.category === "home"){
     return (state.allArticles || []).filter(a => a.category === "world");
   }
+  if (state.category === USA_CATEGORY){
+    return (state.articles || []).filter(isUsaArticle);
+  }
+  if (state.category === POTUS_CATEGORY){
+    return (state.articles || []).filter(isPotusArticle);
+  }
   return state.articles || [];
 }
 
@@ -3040,10 +3168,22 @@ function renderWorldSentiment(){
   });
 }
 
-/* ===== Sentiment Leaderboard (logic unchanged) ===== */
+/* ===== Sentiment Leaderboard ===== */
+function getLeaderboardArticles(){
+  if (state.category === USA_CATEGORY){
+    const fromBootstrap = Array.isArray(state.bootstrapUsa?.dailyNews) ? state.bootstrapUsa.dailyNews : [];
+    return fromBootstrap.length ? fromBootstrap : (state.articles || []).filter(isUsaArticle);
+  }
+  if (state.category === POTUS_CATEGORY){
+    const fromBootstrap = Array.isArray(state.bootstrapPotus?.dailyNews) ? state.bootstrapPotus.dailyNews : [];
+    return fromBootstrap.length ? fromBootstrap : (state.articles || []).filter(isPotusArticle);
+  }
+  return state.articles || [];
+}
+
 function computeLeaderboard(){
   const bySource = new Map();
-  state.articles.forEach(a => {
+  getLeaderboardArticles().forEach(a => {
     const key = (a.source || "").trim();
     if (!key) return;
     const s = bySource.get(key) || {
@@ -3197,7 +3337,7 @@ function scoreIndustries(){
   const rows = INDUSTRY_GROUPS.map(name => ({ name, pos:0, neg:0, neu:0, n:0 }));
   const byName = new Map(rows.map(r => [r.name, r]));
 
-  state.articles.forEach(a => {
+  getLeaderboardArticles().forEach(a => {
     const text = `${a.title} ${a.description}`.toLowerCase();
     const category = String(a.category || "").toLowerCase();
     const sourceIndustry = String(a.industry || "").trim();
@@ -3231,9 +3371,78 @@ function scoreIndustries(){
     });
 }
 
+function renderPotusTopicBoard(){
+  const grid = $("#industryBoard");
+  if (!grid) return;
+  const colPos = grid.querySelector(".col-pos");
+  const colNeu = grid.querySelector(".col-neu");
+  const colNeg = grid.querySelector(".col-neg");
+  const empty = grid.querySelector(".board-empty");
+  [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
+
+  const articles = (state.articles || []).filter(isPotusArticle);
+  const buckets = new Map();
+  articles.forEach((article) => {
+    const name = classifyPotusTopic(article);
+    const row = buckets.get(name) || { name, pos: 0, neg: 0, neu: 0, n: 0 };
+    row.n += 1;
+    row.pos += article.sentiment?.posP || 0;
+    row.neg += article.sentiment?.negP || 0;
+    row.neu += article.sentiment?.neuP || 0;
+    buckets.set(name, row);
+  });
+
+  const scored = [...buckets.values()].map((row) => {
+    const n = Math.max(1, row.n);
+    return { ...row, bias: (row.pos / n) - (row.neg / n) };
+  }).sort((a,b) => Math.abs(b.bias) - Math.abs(a.bias));
+
+  if (!scored.length){
+    empty?.classList.add("show");
+    return;
+  }
+
+  const pos = scored.filter((x) => x.bias > 3).slice(0, 3);
+  const neg = scored.filter((x) => x.bias < -3).slice(0, 3);
+  const neu = scored.filter((x) => !pos.includes(x) && !neg.includes(x)).slice(0, 3);
+  const TIERS = [0.3, 0.55, 0.8];
+  const place = (col, list) => list.forEach((item, idx) => {
+    const badge = document.createElement("div");
+    badge.className = "badge icon-badge";
+    badge.style.left = "50%";
+    badge.style.top = `${TIERS[Math.min(idx, TIERS.length - 1)] * 100}%`;
+    const caption = document.createElement("span");
+    caption.className = "icon-label";
+    caption.textContent = item.name;
+    badge.appendChild(caption);
+    col.appendChild(badge);
+  });
+
+  place(colPos, pos);
+  place(colNeu, neu);
+  place(colNeg, neg);
+  empty?.classList.toggle("show", grid.querySelectorAll(".badge").length === 0);
+}
+
 function renderIndustryBoard(){
   const grid = $("#industryBoard");
   if (!grid) return;
+  if (state.category === POTUS_CATEGORY){
+    const title = document.querySelector("#industryWrap .leader-title");
+    if (title) title.textContent = "POTUS Topic Sentiment";
+    const subtitle = document.querySelector("#industryWrap .leader-sub");
+    if (subtitle) subtitle.textContent = "Updated every hour";
+    const empty = grid.querySelector(".board-empty");
+    if (empty) empty.textContent = "Waiting for enough POTUS-tagged news.";
+    renderPotusTopicBoard();
+    return;
+  }
+  const title = document.querySelector("#industryWrap .leader-title");
+  if (title) title.textContent = "Industry Sentiment";
+  const subtitle = document.querySelector("#industryWrap .leader-sub");
+  if (subtitle) subtitle.textContent = "Updated every hour";
+  const emptyText = grid.querySelector(".board-empty");
+  if (emptyText) emptyText.textContent = "Waiting for enough industry-tagged news.";
   const colPos = grid.querySelector(".col-pos");
   const colNeu = grid.querySelector(".col-neu");
   const colNeg = grid.querySelector(".col-neg");
@@ -3317,6 +3526,8 @@ function renderAll(){
   renderIndiaSentiment();
   renderWorldSentiment();
   renderLeaderboard();
+  const leaderTitle = document.querySelector("#leaderWrap .leader-title");
+  if (leaderTitle) leaderTitle.textContent = state.category === POTUS_CATEGORY ? "POTUS Source Sentiment" : "News Source Sentiment";
   renderIndustryBoard();
   attachSentimentTooltips();
   attachInfoButtons();
