@@ -35,6 +35,13 @@ app.use(express.json());
 const __dirname = path.resolve();
 const LOGO_PATH = path.join(__dirname, "public", "logo.png");
 const CACHE_DIR = path.join(__dirname, "data", "cache");
+const PUBLIC_DATA_DIR = path.join(__dirname, "public", "data");
+const SENTIMENT_STATIC_FILES = {
+  sentiment: path.join(PUBLIC_DATA_DIR, "sentiment_cache.json"),
+  sources: path.join(PUBLIC_DATA_DIR, "source_leaderboard.json"),
+  industries: path.join(PUBLIC_DATA_DIR, "industry_sentiment.json"),
+  topics: path.join(PUBLIC_DATA_DIR, "topic_sentiment.json")
+};
 const CACHE_FILES = {
   news: path.join(CACHE_DIR, "news.json"),
   stories: path.join(CACHE_DIR, "stories.json")
@@ -44,6 +51,8 @@ const CACHE_STATE = {
   stories: { entries: new Map(), lastSuccessfulFetchAt: 0 }
 };
 const SERVER_STARTED_AT = Date.now();
+const SENTIMENT_REFRESH_MS = 15 * 60 * 1000;
+const MIN_SENTIMENT_ROWS = 3;
 const escapeHtml = (value = "") =>
   String(value).replace(/[&<>"']/g, (char) => ({
     "&": "&amp;",
@@ -180,6 +189,14 @@ const TOP_STORY_RELATED_CACHE_TTL = Number(
 );
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const readJsonFile = async (filePath) => {
+  try {
+    const raw = await fsPromises.readFile(filePath, "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+};
 const ensureCacheDir = async () => {
   await fsPromises.mkdir(CACHE_DIR, { recursive: true });
 };
@@ -1053,6 +1070,7 @@ async function refreshCore() {
     storeCacheEntry("stories", cacheKeyForStories(), storiesPayload);
     console.log("refresh success: /api/news");
     console.log("refresh success: /api/stories");
+    void refreshSentimentCache();
   }
 }
 async function refreshExp() {
@@ -1072,6 +1090,7 @@ async function refreshExp() {
     };
     STORY_CACHE.set("exp", { at: next.fetchedAt, stories: storiesPayload.stories });
     storeCacheEntry("stories", cacheKeyForStories({ includeExp: true }), storiesPayload);
+    void refreshSentimentCache();
   }
 }
 async function validateFeeds() {
@@ -1171,6 +1190,251 @@ function buildClusters(arts) {
     .sort((a, b) => b.count - a.count)
     .slice(0, 12);
 }
+
+const sentimentAverage = (articles = []) => {
+  const totals = (articles || []).reduce((acc, article) => {
+    const s = article?.sentiment || {};
+    acc.pos += Number(s.posP || s.pos || 0);
+    acc.neu += Number(s.neuP || s.neu || 0);
+    acc.neg += Number(s.negP || s.neg || 0);
+    return acc;
+  }, { pos: 0, neu: 0, neg: 0 });
+  const n = Math.max(1, (articles || []).length);
+  return {
+    pos: Number((totals.pos / n).toFixed(2)),
+    neu: Number((totals.neu / n).toFixed(2)),
+    neg: Number((totals.neg / n).toFixed(2)),
+    count: (articles || []).length
+  };
+};
+
+const buildTimeline = (articles = []) => {
+  const now = Date.now();
+  const HOUR = 60 * 60 * 1000;
+  return Array.from({ length: 4 }, (_, i) => {
+    const start = now - (4 - i) * HOUR;
+    const end = start + HOUR;
+    const selected = (articles || []).filter((article) => {
+      const ts = new Date(article.publishedAt || 0).getTime();
+      return Number.isFinite(ts) && ts >= start && ts < end;
+    });
+    const avg = sentimentAverage(selected);
+    return {
+      label: new Date(start).toISOString(),
+      pos: Math.round(avg.pos),
+      neu: Math.round(avg.neu),
+      neg: Math.round(avg.neg)
+    };
+  });
+};
+
+const toSourceLeaderboard = (articles = [], limit = 12) => {
+  const map = new Map();
+  (articles || []).forEach((article) => {
+    const source = String(article.source || "").trim();
+    if (!source) return;
+    const row = map.get(source) || {
+      source,
+      sourceDomain: sourceDomainForArticle(article),
+      count: 0,
+      pos: 0,
+      neu: 0,
+      neg: 0
+    };
+    const s = article?.sentiment || {};
+    row.count += 1;
+    row.pos += Number(s.posP || s.pos || 0);
+    row.neu += Number(s.neuP || s.neu || 0);
+    row.neg += Number(s.negP || s.neg || 0);
+    map.set(source, row);
+  });
+  return [...map.values()]
+    .map((row) => {
+      const n = Math.max(1, row.count);
+      return {
+        source: row.source,
+        sourceDomain: row.sourceDomain || "",
+        count: row.count,
+        pos: Number((row.pos / n).toFixed(2)),
+        neu: Number((row.neu / n).toFixed(2)),
+        neg: Number((row.neg / n).toFixed(2)),
+        bias: Number(((row.pos - row.neg) / n).toFixed(2))
+      };
+    })
+    .sort((a, b) => b.count - a.count)
+    .slice(0, limit);
+};
+
+const toIndustrySentiment = (articles = [], limit = 12) => {
+  const map = new Map();
+  (articles || []).forEach((article) => {
+    const industry = String(article.industry || "").trim() || "Other";
+    const row = map.get(industry) || { name: industry, count: 0, pos: 0, neu: 0, neg: 0 };
+    const s = article?.sentiment || {};
+    row.count += 1;
+    row.pos += Number(s.posP || s.pos || 0);
+    row.neu += Number(s.neuP || s.neu || 0);
+    row.neg += Number(s.negP || s.neg || 0);
+    map.set(industry, row);
+  });
+  return [...map.values()]
+    .map((row) => {
+      const n = Math.max(1, row.count);
+      return {
+        name: row.name,
+        count: row.count,
+        pos: Number((row.pos / n).toFixed(2)),
+        neu: Number((row.neu / n).toFixed(2)),
+        neg: Number((row.neg / n).toFixed(2)),
+        bias: Number(((row.pos - row.neg) / n).toFixed(2))
+      };
+    })
+    .sort((a, b) => b.count - a.count)
+    .slice(0, limit);
+};
+
+const buildSentimentPlaceholder = () => {
+  const timeline = Array.from({ length: 4 }, (_, i) => ({
+    label: new Date(Date.now() - (3 - i) * 60 * 60 * 1000).toISOString(),
+    pos: 34,
+    neu: 52,
+    neg: 14
+  }));
+  return {
+    generatedAt: new Date().toISOString(),
+    fetchedAt: Date.now(),
+    articleCount: 0,
+    message: "Collecting enough articles for sentiment calculation",
+    timelines: { world: timeline, india: timeline },
+    summary: {
+      world: { pos: 34, neu: 52, neg: 14, count: 0 },
+      india: { pos: 34, neu: 52, neg: 14, count: 0 }
+    },
+    sourceLeaderboard: [
+      { source: "Reuters", sourceDomain: "reuters.com", count: 2, pos: 36, neu: 50, neg: 14, bias: 22 },
+      { source: "BBC", sourceDomain: "bbc.com", count: 2, pos: 33, neu: 53, neg: 14, bias: 19 },
+      { source: "The Hindu", sourceDomain: "thehindu.com", count: 2, pos: 31, neu: 56, neg: 13, bias: 18 }
+    ],
+    industrySentiment: [
+      { name: "Communication", count: 3, pos: 34, neu: 52, neg: 14, bias: 20 },
+      { name: "Finance", count: 2, pos: 32, neu: 54, neg: 14, bias: 18 },
+      { name: "Technology", count: 2, pos: 35, neu: 50, neg: 15, bias: 20 }
+    ],
+    topicSentiment: []
+  };
+};
+
+const buildSentimentDataset = (articles = []) => {
+  const rows = (articles || []).map((article) => ({
+    ...article,
+    sentiment: {
+      ...(article.sentiment || {}),
+      posP: Number(article?.sentiment?.posP || article?.sentiment?.pos || 0),
+      neuP: Number(article?.sentiment?.neuP || article?.sentiment?.neu || 0),
+      negP: Number(article?.sentiment?.negP || article?.sentiment?.neg || 0)
+    }
+  }));
+  const india = rows.filter((article) => article.category === "india");
+  const world = rows.filter((article) => article.category !== "india");
+  return {
+    generatedAt: new Date().toISOString(),
+    fetchedAt: Date.now(),
+    articleCount: rows.length,
+    timelines: {
+      world: buildTimeline(world.length ? world : rows),
+      india: buildTimeline(india.length ? india : rows)
+    },
+    summary: {
+      world: sentimentAverage(world.length ? world : rows),
+      india: sentimentAverage(india.length ? india : rows)
+    },
+    sourceLeaderboard: toSourceLeaderboard(rows, 12),
+    industrySentiment: toIndustrySentiment(rows, 12),
+    topicSentiment: buildClusters(rows).map((topic) => ({
+      title: topic.title,
+      count: topic.count,
+      sources: topic.sources,
+      sentiment: topic.sentiment
+    }))
+  };
+};
+
+const isArrayWithRows = (arr = [], min = 1) => Array.isArray(arr) && arr.length >= min;
+
+const mergeSentimentWithFallback = (live, cached, placeholder) => {
+  const liveHasArticles = Number(live?.articleCount || 0) > 0;
+  return {
+    ...(cached || {}),
+    ...(live || {}),
+    timelines: {
+      world: liveHasArticles && isArrayWithRows(live?.timelines?.world, 4)
+        ? live.timelines.world
+        : cached?.timelines?.world || placeholder.timelines.world,
+      india: liveHasArticles && isArrayWithRows(live?.timelines?.india, 4)
+        ? live.timelines.india
+        : cached?.timelines?.india || placeholder.timelines.india
+    },
+    sourceLeaderboard: liveHasArticles && isArrayWithRows(live?.sourceLeaderboard, MIN_SENTIMENT_ROWS)
+      ? live.sourceLeaderboard
+      : cached?.sourceLeaderboard || placeholder.sourceLeaderboard,
+    industrySentiment: liveHasArticles && isArrayWithRows(live?.industrySentiment, MIN_SENTIMENT_ROWS)
+      ? live.industrySentiment
+      : cached?.industrySentiment || placeholder.industrySentiment,
+    topicSentiment: liveHasArticles && isArrayWithRows(live?.topicSentiment, 1)
+      ? live.topicSentiment
+      : cached?.topicSentiment || placeholder.topicSentiment
+  };
+};
+
+const readStaticSentimentFallback = async () => {
+  const [sentiment, sources, industries, topics] = await Promise.all([
+    readJsonFile(SENTIMENT_STATIC_FILES.sentiment),
+    readJsonFile(SENTIMENT_STATIC_FILES.sources),
+    readJsonFile(SENTIMENT_STATIC_FILES.industries),
+    readJsonFile(SENTIMENT_STATIC_FILES.topics)
+  ]);
+  if (!sentiment) return null;
+  return {
+    ...sentiment,
+    sourceLeaderboard: sentiment.sourceLeaderboard || sources || [],
+    industrySentiment: sentiment.industrySentiment || industries || [],
+    topicSentiment: sentiment.topicSentiment || topics || []
+  };
+};
+
+const withSentimentMeta = (payload, source = "live") => {
+  const timestamp = Number(payload?.fetchedAt || new Date(payload?.generatedAt || 0).getTime() || Date.now());
+  const staleAgeMs = Math.max(0, Date.now() - timestamp);
+  return {
+    ...payload,
+    _meta: {
+      source,
+      staleDataTimestamp: timestamp,
+      staleDataTimestampISO: new Date(timestamp).toISOString(),
+      staleAgeMs
+    }
+  };
+};
+
+let SENTIMENT_CACHE = buildSentimentPlaceholder();
+
+const refreshSentimentCache = async () => {
+  const placeholder = buildSentimentPlaceholder();
+  const staticFallback = await readStaticSentimentFallback();
+  try {
+    const baseArticles = uniqueMerge(CORE.articles || [], EXP.articles || []);
+    const live = buildSentimentDataset(baseArticles);
+    const finalPayload = mergeSentimentWithFallback(live, staticFallback, placeholder);
+    finalPayload.generatedAt = new Date().toISOString();
+    SENTIMENT_CACHE = finalPayload;
+    return finalPayload;
+  } catch {
+    const fallback = mergeSentimentWithFallback(null, staticFallback, placeholder);
+    fallback.generatedAt = new Date().toISOString();
+    SENTIMENT_CACHE = fallback;
+    return fallback;
+  }
+};
 
 const storyTokens = (text = "") =>
   tokenize(text).filter((token) => token.length > 2);
@@ -1333,12 +1597,22 @@ await ensureCacheDir();
 await loadCacheFile("news");
 await loadCacheFile("stories");
 hydrateFromDiskCache();
+const sentimentFromStatic = await readStaticSentimentFallback();
+if (sentimentFromStatic) {
+  SENTIMENT_CACHE = mergeSentimentWithFallback(
+    sentimentFromStatic,
+    SENTIMENT_CACHE,
+    buildSentimentPlaceholder()
+  );
+}
 void refreshCore();
 void refreshExp();
 void validateFeeds();
+void refreshSentimentCache();
 setInterval(() => void refreshCore(), REFRESH_MS);
 setInterval(() => void refreshExp(), REFRESH_MS);
 setInterval(() => void validateFeeds(), 60 * 60 * 1000);
+setInterval(() => void refreshSentimentCache(), SENTIMENT_REFRESH_MS);
 
 const buildRelatedLookup = (articles = []) => {
   const stories = buildStories(articles);
@@ -2657,6 +2931,22 @@ app.get("/api/status", (_req, res) => {
     cachedArticles: ARTICLE_CACHE.size,
     feeds: Object.fromEntries(FEED_HEALTH.entries())
   });
+});
+
+app.get("/api/sentiment", async (_req, res) => {
+  const placeholder = buildSentimentPlaceholder();
+  const live = SENTIMENT_CACHE || placeholder;
+  const hasLive = isArrayWithRows(live?.sourceLeaderboard, MIN_SENTIMENT_ROWS);
+  if (hasLive) {
+    return res.json(withSentimentMeta(mergeSentimentWithFallback(live, null, placeholder), "live"));
+  }
+  const fromStatic = await readStaticSentimentFallback();
+  if (fromStatic) {
+    const merged = mergeSentimentWithFallback(fromStatic, null, placeholder);
+    SENTIMENT_CACHE = merged;
+    return res.json(withSentimentMeta(merged, "static"));
+  }
+  return res.json(withSentimentMeta(placeholder, "placeholder"));
 });
 
 app.get("/api/topics", (req, res) => {

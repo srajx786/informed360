@@ -8,6 +8,7 @@ const CREDIBILITY_STORAGE_KEY = "i360_credibility_badges";
 const NEWS_CACHE_KEY = "informed360_news_cache";
 const STORIES_CACHE_KEY = "informed360_stories_cache";
 const BOOTSTRAP_CACHE_KEY = "informed360_bootstrap_cache";
+const SENTIMENT_CACHE_KEY = "informed360_sentiment_cache";
 const USA_CATEGORY = "usa";
 const POTUS_CATEGORY = "potus";
 const MIN_SOURCE_ARTICLES = 2;
@@ -283,6 +284,94 @@ const fetchWithRetry = async (
   }
   throw lastError;
 };
+const isNonEmptyArray = (v) => Array.isArray(v) && v.length > 0;
+
+const readSentimentLocalCache = () => {
+  const cached = readLocalCache(SENTIMENT_CACHE_KEY);
+  return cached && typeof cached === "object" ? cached : null;
+};
+
+const writeSentimentLocalCache = (payload) => {
+  if (!payload || typeof payload !== "object") return;
+  writeLocalCache(SENTIMENT_CACHE_KEY, payload);
+};
+
+const normalizeSentimentPayload = (payload) => {
+  if (!payload || typeof payload !== "object") return null;
+  const worldTimeline = isNonEmptyArray(payload?.timelines?.world) ? payload.timelines.world : null;
+  const indiaTimeline = isNonEmptyArray(payload?.timelines?.india) ? payload.timelines.india : null;
+  const sourceLeaderboard = isNonEmptyArray(payload?.sourceLeaderboard) ? payload.sourceLeaderboard : [];
+  const industrySentiment = isNonEmptyArray(payload?.industrySentiment) ? payload.industrySentiment : [];
+  const topicSentiment = isNonEmptyArray(payload?.topicSentiment) ? payload.topicSentiment : [];
+  if (!worldTimeline && !indiaTimeline && !sourceLeaderboard.length && !industrySentiment.length) return null;
+  const staleDataTimestamp = Number(
+    payload?._meta?.staleDataTimestamp ||
+    payload?.fetchedAt ||
+    new Date(payload?.generatedAt || 0).getTime() ||
+    Date.now()
+  );
+  return {
+    ...payload,
+    timelines: {
+      world: worldTimeline || [],
+      india: indiaTimeline || []
+    },
+    sourceLeaderboard,
+    industrySentiment,
+    topicSentiment,
+    staleDataTimestamp,
+    staleDataTimestampISO:
+      payload?._meta?.staleDataTimestampISO ||
+      new Date(staleDataTimestamp).toISOString(),
+    message: payload.message || "Collecting enough articles for sentiment calculation"
+  };
+};
+
+async function loadSentimentData(){
+  const localCached = normalizeSentimentPayload(readSentimentLocalCache());
+  try{
+    const live = normalizeSentimentPayload(await fetchJSON('/api/sentiment'));
+    if (live){
+      state.sentimentData = live;
+      state.sentimentStaleDataTimestamp = Number(live.staleDataTimestamp || 0);
+      state.sentimentStaleDataTimestampISO = live.staleDataTimestampISO || "";
+      writeSentimentLocalCache(live);
+      return live;
+    }
+  }catch{}
+  for (const staticPath of ["/data/sentiment_cache.json"]){
+    try{
+      const response = await fetch(`${staticPath}?t=${Date.now()}`, { cache: "no-store" });
+      if (!response.ok) continue;
+      const staticPayload = normalizeSentimentPayload(await response.json());
+      if (!staticPayload) continue;
+      state.sentimentData = staticPayload;
+      state.sentimentStaleDataTimestamp = Number(staticPayload.staleDataTimestamp || 0);
+      state.sentimentStaleDataTimestampISO = staticPayload.staleDataTimestampISO || "";
+      writeSentimentLocalCache(staticPayload);
+      return staticPayload;
+    }catch{}
+  }
+  if (localCached){
+    state.sentimentData = localCached;
+    state.sentimentStaleDataTimestamp = Number(localCached.staleDataTimestamp || 0);
+    state.sentimentStaleDataTimestampISO = localCached.staleDataTimestampISO || "";
+    return localCached;
+  }
+  state.sentimentData = {
+    message: "Collecting enough articles for sentiment calculation",
+    timelines: { world: [], india: [] },
+    sourceLeaderboard: [],
+    industrySentiment: [],
+    topicSentiment: [],
+    staleDataTimestamp: Date.now(),
+    staleDataTimestampISO: new Date().toISOString()
+  };
+  state.sentimentStaleDataTimestamp = state.sentimentData.staleDataTimestamp;
+  state.sentimentStaleDataTimestampISO = state.sentimentData.staleDataTimestampISO;
+  return state.sentimentData;
+}
+
 const domainFromUrl = (u = "") => {
   try { return new URL(u).hostname.replace(/^www\./, ""); }
   catch { return ""; }
@@ -911,7 +1000,10 @@ const state = {
   bootstrapIndustryLeaderboard: null,
   bootstrapGeneratedAt: "",
   bootstrapUsa: null,
-  bootstrapPotus: null
+  bootstrapPotus: null,
+  sentimentData: null,
+  sentimentStaleDataTimestamp: 0,
+  sentimentStaleDataTimestampISO: ""
 };
 let hasCachedContent = false;
 
@@ -1534,6 +1626,7 @@ async function checkHealthWithRetry(){
 async function loadAll(){
   state.newsEmptyMessage = "";
   setApiBanner(false);
+  await loadSentimentData();
   try{
     const qs = new URLSearchParams();
     if (state.filter !== "all") qs.set("sentiment", state.filter);
@@ -1676,7 +1769,7 @@ async function loadAll(){
       };
       state.indiaArticles = [];
       state.topics = [];
-      state.newsEmptyMessage = "We couldn’t load the latest news. Please try again soon.";
+      state.newsEmptyMessage = state.sentimentData?.message || "Collecting enough articles for sentiment calculation";
     }
     logApiError(error, error?.endpoint || "/api/news");
     if (!hasCachedContent && (error?.status === 0 || error?.status === 404)){
@@ -3173,7 +3266,7 @@ function getWorldSentimentArticles(){
 
 function renderIndiaSentiment(){
   const timeline = state.category === "home"
-    ? state.bootstrapPlots?.indiaSentimentTimeline
+    ? (state.sentimentData?.timelines?.india || state.bootstrapPlots?.indiaSentimentTimeline)
     : null;
   renderSentimentTimeline({
     sparkEl: "#moodSpark",
@@ -3187,7 +3280,7 @@ function renderIndiaSentiment(){
 
 function renderWorldSentiment(){
   const timeline = state.category === "home"
-    ? state.bootstrapPlots?.worldSentimentTimeline
+    ? (state.sentimentData?.timelines?.world || state.bootstrapPlots?.worldSentimentTimeline)
     : null;
   renderSentimentTimeline({
     sparkEl: "#moodWorldSpark",
@@ -3243,7 +3336,7 @@ function computeLeaderboard(){
       ? state.bootstrapUsa?.leaderboard
       : state.category === POTUS_CATEGORY
         ? state.bootstrapPotus?.sourceLeaderboard
-        : null;
+        : state.sentimentData?.sourceLeaderboard || null;
     if (Array.isArray(fallback) && fallback.length){
       fallback.forEach((row) => {
         const source = normalizeSourceName(row.source || "");
@@ -3329,6 +3422,7 @@ async function renderLeaderboard(){
   ]);
 
   const hasBadges = grid.querySelectorAll(".badge").length > 0;
+  if (!hasBadges && empty) empty.textContent = state.sentimentData?.message || "Collecting enough articles for sentiment calculation";
   empty?.classList.toggle("show", !hasBadges);
 
   state.lastLeaderboardAt = Date.now();
@@ -3503,7 +3597,7 @@ function renderIndustryBoard(){
   const subtitle = document.querySelector("#industryWrap .leader-sub");
   if (subtitle) subtitle.textContent = "Updated every hour";
   const emptyText = grid.querySelector(".board-empty");
-  if (emptyText) emptyText.textContent = "Waiting for enough industry-tagged news.";
+  if (emptyText) emptyText.textContent = state.sentimentData?.message || "Collecting enough articles for sentiment calculation";
   const colPos = grid.querySelector(".col-pos");
   const colNeu = grid.querySelector(".col-neu");
   const colNeg = grid.querySelector(".col-neg");
@@ -3511,7 +3605,11 @@ function renderIndustryBoard(){
   [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
 
   const cachedBoard = state.category === "home"
-    ? state.bootstrapIndustryLeaderboard
+    ? {
+      pos: state.sentimentData?.industrySentiment?.filter(x => Number(x.bias || 0) > 2) || state.bootstrapIndustryLeaderboard?.pos,
+      neu: state.sentimentData?.industrySentiment?.filter(x => Math.abs(Number(x.bias || 0)) <= 2) || state.bootstrapIndustryLeaderboard?.neu,
+      neg: state.sentimentData?.industrySentiment?.filter(x => Number(x.bias || 0) < -2) || state.bootstrapIndustryLeaderboard?.neg
+    }
     : state.category === USA_CATEGORY
       ? state.bootstrapUsa?.industryLeaderboard
       : null;
