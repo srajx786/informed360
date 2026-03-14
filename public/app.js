@@ -302,6 +302,9 @@ const normalizeSentimentPayload = (payload) => {
   const indiaTimeline = isNonEmptyArray(payload?.timelines?.india) ? payload.timelines.india : null;
   const sourceLeaderboard = isNonEmptyArray(payload?.sourceLeaderboard) ? payload.sourceLeaderboard : [];
   const industrySentiment = isNonEmptyArray(payload?.industrySentiment) ? payload.industrySentiment : [];
+  const industryBuckets = payload?.industryBuckets && typeof payload.industryBuckets === "object"
+    ? payload.industryBuckets
+    : { minTaggedArticles: 2, bucketTaggedCounts: { pos: 0, neu: 0, neg: 0 }, hasEnoughTaggedArticles: false, pos: [], neu: [], neg: [] };
   const topicSentiment = isNonEmptyArray(payload?.topicSentiment) ? payload.topicSentiment : [];
   if (!worldTimeline && !indiaTimeline && !sourceLeaderboard.length && !industrySentiment.length) return null;
   const staleDataTimestamp = Number(
@@ -318,6 +321,13 @@ const normalizeSentimentPayload = (payload) => {
     },
     sourceLeaderboard,
     industrySentiment,
+    industryBuckets: {
+      ...industryBuckets,
+      pos: isNonEmptyArray(industryBuckets?.pos) ? industryBuckets.pos : [],
+      neu: isNonEmptyArray(industryBuckets?.neu) ? industryBuckets.neu : [],
+      neg: isNonEmptyArray(industryBuckets?.neg) ? industryBuckets.neg : [],
+      bucketTaggedCounts: industryBuckets?.bucketTaggedCounts || { pos: 0, neu: 0, neg: 0 }
+    },
     topicSentiment,
     staleDataTimestamp,
     staleDataTimestampISO:
@@ -3604,43 +3614,32 @@ function renderIndustryBoard(){
   const empty = grid.querySelector(".board-empty");
   [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
 
-  const cachedBoard = state.category === "home"
-    ? {
-      pos: state.sentimentData?.industrySentiment?.filter(x => Number(x.bias || 0) > 2) || state.bootstrapIndustryLeaderboard?.pos,
-      neu: state.sentimentData?.industrySentiment?.filter(x => Math.abs(Number(x.bias || 0)) <= 2) || state.bootstrapIndustryLeaderboard?.neu,
-      neg: state.sentimentData?.industrySentiment?.filter(x => Number(x.bias || 0) < -2) || state.bootstrapIndustryLeaderboard?.neg
-    }
-    : state.category === USA_CATEGORY
-      ? state.bootstrapUsa?.industryLeaderboard
-      : null;
-  const cachedPos = Array.isArray(cachedBoard?.pos) ? cachedBoard.pos : null;
-  const cachedNeu = Array.isArray(cachedBoard?.neu) ? cachedBoard.neu : null;
-  const cachedNeg = Array.isArray(cachedBoard?.neg) ? cachedBoard.neg : null;
+  const minTaggedArticles = Number(state.sentimentData?.industryBuckets?.minTaggedArticles || 2);
+  const taggedCounts = state.sentimentData?.industryBuckets?.bucketTaggedCounts || { pos: 0, neu: 0, neg: 0 };
+  const hasEnoughTagged = Number(taggedCounts.pos || 0) >= minTaggedArticles
+    || Number(taggedCounts.neu || 0) >= minTaggedArticles
+    || Number(taggedCounts.neg || 0) >= minTaggedArticles;
 
-  const scored = scoreIndustries();
-  if (!scored.length && !(cachedPos || cachedNeu || cachedNeg)){
+  if (!hasEnoughTagged) {
+    if (empty) empty.textContent = "Collecting enough industry-tagged articles";
     empty?.classList.add("show");
     return;
   }
 
-  const threshold = 2;
-  const pos = (cachedPos ? cachedPos.slice(0,3) : scored.filter(x => x.bias > threshold).slice(0,3));
-  const neg = (cachedNeg ? cachedNeg.slice(0,3) : scored.filter(x => x.bias < -threshold).slice(0,3));
-  const neu = (cachedNeu ? cachedNeu.slice(0,3) : scored
-    .filter(x => !pos.includes(x) && !neg.includes(x))
-    .slice(0,3));
-
-  const fillRemaining = (list, pool) => {
-    pool.forEach(item => {
-      if (list.length >= 3) return;
-      if (list.includes(item)) return;
-      list.push(item);
-    });
+  const dedupeByLabel = (list = []) => {
+    const seen = new Set();
+    return (list || []).filter((item) => {
+      const label = industryLabelFor(item?.name || "");
+      if (!label || label === "Other") return false;
+      if (seen.has(label)) return false;
+      seen.add(label);
+      return true;
+    }).slice(0, 3);
   };
-  const remaining = scored.filter(x => !pos.includes(x) && !neg.includes(x) && !neu.includes(x));
-  fillRemaining(pos, remaining);
-  fillRemaining(neu, remaining);
-  fillRemaining(neg, remaining);
+
+  const pos = dedupeByLabel(state.sentimentData?.industryBuckets?.pos || []);
+  const neu = dedupeByLabel(state.sentimentData?.industryBuckets?.neu || []);
+  const neg = dedupeByLabel(state.sentimentData?.industryBuckets?.neg || []);
 
   const TIERS = [0.3, 0.55, 0.8];
   const placeIcons = (col, list) => {

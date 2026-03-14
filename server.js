@@ -1265,32 +1265,159 @@ const toSourceLeaderboard = (articles = [], limit = 12) => {
     .slice(0, limit);
 };
 
+const INDUSTRY_CANONICAL = [
+  "Energy",
+  "Utilities",
+  "Communication",
+  "Healthcare",
+  "Finance",
+  "Technology",
+  "Manufacturing",
+  "Real Estate",
+  "Materials"
+];
+
+const INDUSTRY_ALIASES = {
+  "information tech": "Technology",
+  "information technology": "Technology",
+  "it": "Technology",
+  "it services": "Technology",
+  "communications": "Communication",
+  "telecom": "Communication",
+  "realty": "Real Estate",
+  "health": "Healthcare",
+  "pharma": "Healthcare",
+  "financials": "Finance"
+};
+
+const INDUSTRY_KEYWORDS = {
+  Energy: ["energy","oil","gas","petrol","diesel","fuel","renewable","solar","wind","power"],
+  Utilities: ["utilities","grid","electricity","power supply","water","pipeline"],
+  Communication: ["telecom","communication","wireless","mobile","broadband","5g","network"],
+  Healthcare: ["health","hospital","pharma","pharmaceutical","medical","vaccine","drug"],
+  Finance: ["bank","banking","finance","financial","nbfc","loan","lending","stock","market"],
+  Technology: ["technology","tech","ai","artificial intelligence","software","it","chip","semiconductor"],
+  Manufacturing: ["manufacturing","factory","industrial","production","auto","automobile","vehicle"],
+  "Real Estate": ["real estate","property","housing","realty","construction","builder"],
+  Materials: ["materials","steel","metal","cement","mining","coal","aluminium"]
+};
+
+const MIN_TAGGED_INDUSTRY_BUCKET_ARTICLES = 2;
+
+const normalizeIndustryName = (name = "") => {
+  const value = String(name || "").trim();
+  if (!value) return "";
+  if (INDUSTRY_CANONICAL.includes(value)) return value;
+  const lower = value.toLowerCase();
+  if (INDUSTRY_ALIASES[lower]) return INDUSTRY_ALIASES[lower];
+  const title = lower
+    .split(/\s+/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+  if (INDUSTRY_CANONICAL.includes(title)) return title;
+  return "";
+};
+
+const inferArticleIndustry = (article = {}) => {
+  const fromSource = normalizeIndustryName(article.industry || "");
+  const text = `${article.title || ""} ${article.description || ""} ${article.category || ""}`
+    .toLowerCase();
+  const scores = INDUSTRY_CANONICAL.reduce((acc, name) => {
+    const score = (INDUSTRY_KEYWORDS[name] || []).reduce(
+      (count, keyword) => count + (text.includes(keyword) ? 1 : 0),
+      0
+    );
+    if (score > 0) acc.push({ name, score });
+    return acc;
+  }, []);
+  scores.sort((a, b) => b.score - a.score);
+  if (scores[0]?.score > 0) {
+    if (fromSource && fromSource === scores[0].name) return fromSource;
+    if (fromSource && scores[0].score === 1) return fromSource;
+    return scores[0].name;
+  }
+  return fromSource || "";
+};
+
 const toIndustrySentiment = (articles = [], limit = 12) => {
   const map = new Map();
   (articles || []).forEach((article) => {
-    const industry = String(article.industry || "").trim() || "Other";
-    const row = map.get(industry) || { name: industry, count: 0, pos: 0, neu: 0, neg: 0 };
+    const industry = inferArticleIndustry(article);
+    if (!industry) return;
+    const row = map.get(industry) || { name: industry, count: 0, pos: 0, neu: 0, neg: 0, weight: 0 };
     const s = article?.sentiment || {};
+    const confidence = Number(s.confidence ?? 0.4) || 0.4;
     row.count += 1;
     row.pos += Number(s.posP || s.pos || 0);
     row.neu += Number(s.neuP || s.neu || 0);
     row.neg += Number(s.negP || s.neg || 0);
+    row.weight += confidence;
     map.set(industry, row);
   });
   return [...map.values()]
     .map((row) => {
       const n = Math.max(1, row.count);
+      const bias = (row.pos - row.neg) / n;
       return {
         name: row.name,
         count: row.count,
+        taggedArticles: row.count,
+        weightedScore: Number((bias * Math.max(0.5, row.weight / n)).toFixed(2)),
         pos: Number((row.pos / n).toFixed(2)),
         neu: Number((row.neu / n).toFixed(2)),
         neg: Number((row.neg / n).toFixed(2)),
-        bias: Number(((row.pos - row.neg) / n).toFixed(2))
+        bias: Number(bias.toFixed(2))
       };
     })
-    .sort((a, b) => b.count - a.count)
+    .sort((a, b) => {
+      if (b.count !== a.count) return b.count - a.count;
+      return Math.abs(b.bias) - Math.abs(a.bias);
+    })
     .slice(0, limit);
+};
+
+const toIndustryBuckets = (industryRows = [], limit = 3) => {
+  const unique = { pos: new Map(), neu: new Map(), neg: new Map() };
+  const targetBucket = (item) => {
+    if (Number(item.bias || 0) > 2) return "pos";
+    if (Number(item.bias || 0) < -2) return "neg";
+    return "neu";
+  };
+  (industryRows || []).forEach((item) => {
+    const key = normalizeIndustryName(item.name || "") || String(item.name || "").trim();
+    if (!key) return;
+    const bucket = targetBucket(item);
+    const existing = unique[bucket].get(key);
+    if (!existing || Number(item.count || 0) > Number(existing.count || 0)) {
+      unique[bucket].set(key, { ...item, name: key });
+    }
+  });
+  const sortRows = (rows = []) => rows
+    .sort((a, b) => {
+      if (Number(b.count || 0) !== Number(a.count || 0)) return Number(b.count || 0) - Number(a.count || 0);
+      return Math.abs(Number(b.weightedScore || 0)) - Math.abs(Number(a.weightedScore || 0));
+    })
+    .slice(0, limit);
+
+  const pos = sortRows([...unique.pos.values()]);
+  const neu = sortRows([...unique.neu.values()]);
+  const neg = sortRows([...unique.neg.values()]);
+  const bucketCounts = {
+    pos: pos.reduce((n, row) => n + Number(row.taggedArticles || row.count || 0), 0),
+    neu: neu.reduce((n, row) => n + Number(row.taggedArticles || row.count || 0), 0),
+    neg: neg.reduce((n, row) => n + Number(row.taggedArticles || row.count || 0), 0)
+  };
+  const hasEnoughTaggedArticles = Object.values(bucketCounts).some(
+    (count) => count >= MIN_TAGGED_INDUSTRY_BUCKET_ARTICLES
+  );
+  return {
+    minTaggedArticles: MIN_TAGGED_INDUSTRY_BUCKET_ARTICLES,
+    bucketTaggedCounts: bucketCounts,
+    hasEnoughTaggedArticles,
+    pos,
+    neu,
+    neg
+  };
 };
 
 const buildSentimentPlaceholder = () => {
@@ -1310,16 +1437,16 @@ const buildSentimentPlaceholder = () => {
       world: { pos: 34, neu: 52, neg: 14, count: 0 },
       india: { pos: 34, neu: 52, neg: 14, count: 0 }
     },
-    sourceLeaderboard: [
-      { source: "Reuters", sourceDomain: "reuters.com", count: 2, pos: 36, neu: 50, neg: 14, bias: 22 },
-      { source: "BBC", sourceDomain: "bbc.com", count: 2, pos: 33, neu: 53, neg: 14, bias: 19 },
-      { source: "The Hindu", sourceDomain: "thehindu.com", count: 2, pos: 31, neu: 56, neg: 13, bias: 18 }
-    ],
-    industrySentiment: [
-      { name: "Communication", count: 3, pos: 34, neu: 52, neg: 14, bias: 20 },
-      { name: "Finance", count: 2, pos: 32, neu: 54, neg: 14, bias: 18 },
-      { name: "Technology", count: 2, pos: 35, neu: 50, neg: 15, bias: 20 }
-    ],
+    sourceLeaderboard: [],
+    industrySentiment: [],
+    industryBuckets: {
+      minTaggedArticles: MIN_TAGGED_INDUSTRY_BUCKET_ARTICLES,
+      bucketTaggedCounts: { pos: 0, neu: 0, neg: 0 },
+      hasEnoughTaggedArticles: false,
+      pos: [],
+      neu: [],
+      neg: []
+    },
     topicSentiment: []
   };
 };
@@ -1336,6 +1463,7 @@ const buildSentimentDataset = (articles = []) => {
   }));
   const india = rows.filter((article) => article.category === "india");
   const world = rows.filter((article) => article.category !== "india");
+  const industrySentiment = toIndustrySentiment(rows, 12);
   return {
     generatedAt: new Date().toISOString(),
     fetchedAt: Date.now(),
@@ -1349,7 +1477,8 @@ const buildSentimentDataset = (articles = []) => {
       india: sentimentAverage(india.length ? india : rows)
     },
     sourceLeaderboard: toSourceLeaderboard(rows, 12),
-    industrySentiment: toIndustrySentiment(rows, 12),
+    industrySentiment,
+    industryBuckets: toIndustryBuckets(industrySentiment, 3),
     topicSentiment: buildClusters(rows).map((topic) => ({
       title: topic.title,
       count: topic.count,
@@ -1377,9 +1506,12 @@ const mergeSentimentWithFallback = (live, cached, placeholder) => {
     sourceLeaderboard: liveHasArticles && isArrayWithRows(live?.sourceLeaderboard, MIN_SENTIMENT_ROWS)
       ? live.sourceLeaderboard
       : cached?.sourceLeaderboard || placeholder.sourceLeaderboard,
-    industrySentiment: liveHasArticles && isArrayWithRows(live?.industrySentiment, MIN_SENTIMENT_ROWS)
+    industrySentiment: liveHasArticles && isArrayWithRows(live?.industrySentiment, 1)
       ? live.industrySentiment
       : cached?.industrySentiment || placeholder.industrySentiment,
+    industryBuckets: liveHasArticles && live?.industryBuckets
+      ? live.industryBuckets
+      : cached?.industryBuckets || placeholder.industryBuckets,
     topicSentiment: liveHasArticles && isArrayWithRows(live?.topicSentiment, 1)
       ? live.topicSentiment
       : cached?.topicSentiment || placeholder.topicSentiment
@@ -1398,6 +1530,14 @@ const readStaticSentimentFallback = async () => {
     ...sentiment,
     sourceLeaderboard: sentiment.sourceLeaderboard || sources || [],
     industrySentiment: sentiment.industrySentiment || industries || [],
+    industryBuckets: sentiment.industryBuckets || {
+      minTaggedArticles: MIN_TAGGED_INDUSTRY_BUCKET_ARTICLES,
+      bucketTaggedCounts: { pos: 0, neu: 0, neg: 0 },
+      hasEnoughTaggedArticles: false,
+      pos: [],
+      neu: [],
+      neg: []
+    },
     topicSentiment: sentiment.topicSentiment || topics || []
   };
 };

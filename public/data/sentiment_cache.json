@@ -1,130 +1,25 @@
 {
-  "generatedAt": "2026-03-12T03:05:54.414Z",
-  "fetchedAt": 1773284754328,
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "fetchedAt": 0,
   "articleCount": 0,
-  "message": "Collecting enough articles for sentiment calculation",
+  "message": "Collecting enough industry-tagged articles",
   "timelines": {
-    "world": [
-      {
-        "label": "2026-03-11T23:05:29.556Z",
-        "pos": 0,
-        "neu": 0,
-        "neg": 0
-      },
-      {
-        "label": "2026-03-12T00:05:29.556Z",
-        "pos": 0,
-        "neu": 0,
-        "neg": 0
-      },
-      {
-        "label": "2026-03-12T01:05:29.556Z",
-        "pos": 0,
-        "neu": 0,
-        "neg": 0
-      },
-      {
-        "label": "2026-03-12T02:05:29.556Z",
-        "pos": 0,
-        "neu": 0,
-        "neg": 0
-      }
-    ],
-    "india": [
-      {
-        "label": "2026-03-11T23:05:29.557Z",
-        "pos": 0,
-        "neu": 0,
-        "neg": 0
-      },
-      {
-        "label": "2026-03-12T00:05:29.557Z",
-        "pos": 0,
-        "neu": 0,
-        "neg": 0
-      },
-      {
-        "label": "2026-03-12T01:05:29.557Z",
-        "pos": 0,
-        "neu": 0,
-        "neg": 0
-      },
-      {
-        "label": "2026-03-12T02:05:29.557Z",
-        "pos": 0,
-        "neu": 0,
-        "neg": 0
-      }
-    ]
+    "world": [],
+    "india": []
   },
   "summary": {
-    "world": {
-      "pos": 0,
-      "neu": 0,
-      "neg": 0,
-      "count": 0
-    },
-    "india": {
-      "pos": 0,
-      "neu": 0,
-      "neg": 0,
-      "count": 0
-    }
+    "world": { "pos": 0, "neu": 0, "neg": 0, "count": 0 },
+    "india": { "pos": 0, "neu": 0, "neg": 0, "count": 0 }
   },
-  "sourceLeaderboard": [
-    {
-      "source": "Reuters",
-      "sourceDomain": "reuters.com",
-      "count": 2,
-      "pos": 36,
-      "neu": 50,
-      "neg": 14,
-      "bias": 22
-    },
-    {
-      "source": "BBC",
-      "sourceDomain": "bbc.com",
-      "count": 2,
-      "pos": 33,
-      "neu": 53,
-      "neg": 14,
-      "bias": 19
-    },
-    {
-      "source": "The Hindu",
-      "sourceDomain": "thehindu.com",
-      "count": 2,
-      "pos": 31,
-      "neu": 56,
-      "neg": 13,
-      "bias": 18
-    }
-  ],
-  "industrySentiment": [
-    {
-      "name": "Communication",
-      "count": 3,
-      "pos": 34,
-      "neu": 52,
-      "neg": 14,
-      "bias": 20
-    },
-    {
-      "name": "Finance",
-      "count": 2,
-      "pos": 32,
-      "neu": 54,
-      "neg": 14,
-      "bias": 18
-    },
-    {
-      "name": "Technology",
-      "count": 2,
-      "pos": 35,
-      "neu": 50,
-      "neg": 15,
-      "bias": 20
-    }
-  ],
+  "sourceLeaderboard": [],
+  "industrySentiment": [],
+  "industryBuckets": {
+    "minTaggedArticles": 2,
+    "bucketTaggedCounts": { "pos": 0, "neu": 0, "neg": 0 },
+    "hasEnoughTaggedArticles": false,
+    "pos": [],
+    "neu": [],
+    "neg": []
+  },
   "topicSentiment": []
 }
