@@ -1245,6 +1245,14 @@ body.theme-dark .gn-search{ background:#1a222c }
 .footer-updated{
   font-size:.85rem;
 }
+.footer-visitor-stats{
+  display:flex;
+  flex-direction:column;
+  gap:.15rem;
+  font-size:.8rem;
+  color:var(--muted);
+  line-height:1.35;
+}
 .footer-sources{
   flex-basis:100%;
   font-size:.56rem;
