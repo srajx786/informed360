@@ -1382,6 +1382,30 @@ function writeMarketCache(payload){
   }));
 }
 
+const formatVisitorMetric = (value) => (Number.isFinite(Number(value)) ? Number(value).toLocaleString() : "—");
+function renderVisitorStats(payload = {}){
+  const todayEl = $("#visitorStatsToday");
+  const last7El = $("#visitorStatsLast7");
+  if (!todayEl || !last7El) return;
+  const todayUnique = formatVisitorMetric(payload?.today?.unique);
+  const todayVisits = formatVisitorMetric(payload?.today?.visits);
+  const last7Unique = formatVisitorMetric(payload?.last7Days?.unique);
+  const last7Visits = formatVisitorMetric(payload?.last7Days?.visits);
+  todayEl.textContent = `Today: ${todayUnique} unique • ${todayVisits} visits`;
+  last7El.textContent = `Last 7 days: ${last7Unique} unique • ${last7Visits} visits`;
+}
+async function loadVisitorStats(){
+  renderVisitorStats();
+  const endpoint = `/api/visitor-stats?t=${Date.now()}`;
+  try{
+    const data = await fetchJSON(endpoint);
+    renderVisitorStats(data);
+  }catch(error){
+    logApiError(error, error?.endpoint || endpoint);
+    renderVisitorStats();
+  }
+}
+
 async function loadMarkets(){
   const el = $("#marketTicker");
   if (!el) return;
@@ -4024,6 +4048,7 @@ getWeather();
 applyBootstrapCache();
 applyCachedContent();
 loadMarkets();
+loadVisitorStats();
 void refreshBootstrapSnapshot().finally(() => {
   if (!hasCachedContent) loadAll();
 });

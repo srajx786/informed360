@@ -9,6 +9,16 @@ import crypto from "crypto";
 
 const app = express();
 
+const GOATCOUNTER_CACHE_TTL_MS = 10 * 60 * 1000;
+const GOATCOUNTER_FALLBACK_SOURCE = "fallback";
+const GOATCOUNTER_SOURCE = "goatcounter";
+const GOATCOUNTER_HOSTED_BASE = "https://www.goatcounter.com";
+const VISITOR_STATS_CACHE = {
+  payload: null,
+  cachedAt: 0,
+  inFlight: null
+};
+
 const OG_IMAGE_PNG_BASE64 =
   "iVBORw0KGgoAAAANSUhEUgAAASwAAACWCAYAAABkW7XSAAAACXBIWXMAAAsSAAALEgHS3X78AAABc0lEQVR4nO3QQQ0AAAgDIN8/9K3hHBQ0m2gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4GgkAATx3cGQAAAAASUVORK5CYII=";
 
@@ -187,8 +197,123 @@ const OG_IMAGE_CACHE_TTL = Number(
 const TOP_STORY_RELATED_CACHE_TTL = Number(
   process.env.TOP_STORY_RELATED_CACHE_TTL_MS || 10 * 60 * 1000
 );
+const GOATCOUNTER_SITE = String(process.env.GOATCOUNTER_SITE || "informed360").trim();
+const GOATCOUNTER_API_KEY = String(process.env.GOATCOUNTER_API_KEY || "").trim();
+const GOATCOUNTER_SITE_URL = String(
+  process.env.GOATCOUNTER_SITE_URL || `${GOATCOUNTER_SITE ? `https://${GOATCOUNTER_SITE}.goatcounter.com` : ""}`
+).trim().replace(/\/$/, "");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const buildVisitorStatsPayload = ({
+  todayUnique = null,
+  todayVisits = null,
+  last7Unique = null,
+  last7Visits = null,
+  source = GOATCOUNTER_FALLBACK_SOURCE,
+  cached = false
+} = {}) => ({
+  today: { unique: todayUnique, visits: todayVisits },
+  last7Days: { unique: last7Unique, visits: last7Visits },
+  updatedAt: new Date().toISOString(),
+  _meta: { source, cached }
+});
+const buildGoatcounterBaseUrl = () => {
+  if (GOATCOUNTER_SITE_URL) return GOATCOUNTER_SITE_URL;
+  if (GOATCOUNTER_SITE) return `https://${GOATCOUNTER_SITE}.goatcounter.com`;
+  return "";
+};
+const buildGoatcounterApiUrl = (pathname, params = {}) => {
+  const siteBase = buildGoatcounterBaseUrl();
+  if (!siteBase) return "";
+  const siteUrl = new URL(siteBase);
+  const url = new URL(pathname, `${siteUrl.protocol}//${siteUrl.host}`);
+  Object.entries(params).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== "") {
+      url.searchParams.set(key, value);
+    }
+  });
+  return url.toString();
+};
+const isoHour = (date) => {
+  const stamp = new Date(date);
+  stamp.setUTCMinutes(0, 0, 0);
+  return stamp.toISOString();
+};
+const extractMetric = (payload, keys = [], fallback = 0) => {
+  for (const key of keys) {
+    const value = payload?.[key];
+    if (typeof value === "number" && Number.isFinite(value)) return value;
+    const asNumber = Number(value);
+    if (Number.isFinite(asNumber)) return asNumber;
+  }
+  return fallback;
+};
+const normalizeGoatcounterTotals = ({ todayTotals, last7Totals }) => ({
+  todayUnique: extractMetric(todayTotals, ["unique", "unique_visitors", "visitors", "count_unique", "count", "total_unique", "total"]),
+  todayVisits: extractMetric(todayTotals, ["visits", "pageviews", "total_visits", "total_pageviews", "count", "total"]),
+  last7Unique: extractMetric(last7Totals, ["unique", "unique_visitors", "visitors", "count_unique", "count", "total_unique", "total"]),
+  last7Visits: extractMetric(last7Totals, ["visits", "pageviews", "total_visits", "total_pageviews", "count", "total"])
+});
+const fetchGoatcounterJson = async (pathname, params = {}) => {
+  const url = buildGoatcounterApiUrl(pathname, params);
+  if (!url || !GOATCOUNTER_API_KEY) {
+    throw new Error("Missing GoatCounter configuration");
+  }
+  const response = await fetch(url, {
+    headers: {
+      Authorization: `Bearer ${GOATCOUNTER_API_KEY}`,
+      "Content-Type": "application/json"
+    }
+  });
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`GoatCounter API ${response.status}: ${body || response.statusText}`);
+  }
+  return response.json();
+};
+const fetchGoatcounterVisitorStats = async () => {
+  const now = new Date();
+  const startOfToday = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  const startOfSevenDayWindow = new Date(startOfToday);
+  startOfSevenDayWindow.setUTCDate(startOfSevenDayWindow.getUTCDate() - 6);
+  const [todayTotals, last7Totals] = await Promise.all([
+    fetchGoatcounterJson("/api/v0/stats/total", { start: isoHour(startOfToday), end: isoHour(now) }),
+    fetchGoatcounterJson("/api/v0/stats/total", { start: isoHour(startOfSevenDayWindow), end: isoHour(now) })
+  ]);
+  return buildVisitorStatsPayload({
+    ...normalizeGoatcounterTotals({ todayTotals, last7Totals }),
+    source: GOATCOUNTER_SOURCE,
+    cached: false
+  });
+};
+const getVisitorStats = async () => {
+  const now = Date.now();
+  if (VISITOR_STATS_CACHE.payload && now - VISITOR_STATS_CACHE.cachedAt < GOATCOUNTER_CACHE_TTL_MS) {
+    return {
+      ...VISITOR_STATS_CACHE.payload,
+      _meta: { ...VISITOR_STATS_CACHE.payload._meta, cached: true }
+    };
+  }
+  if (!GOATCOUNTER_API_KEY || !buildGoatcounterBaseUrl()) {
+    return buildVisitorStatsPayload({ source: GOATCOUNTER_FALLBACK_SOURCE, cached: false });
+  }
+  if (!VISITOR_STATS_CACHE.inFlight) {
+    VISITOR_STATS_CACHE.inFlight = fetchGoatcounterVisitorStats()
+      .then((payload) => {
+        VISITOR_STATS_CACHE.payload = payload;
+        VISITOR_STATS_CACHE.cachedAt = Date.now();
+        return payload;
+      })
+      .catch((error) => {
+        console.warn("visitor stats unavailable", error?.message || error);
+        return buildVisitorStatsPayload({ source: GOATCOUNTER_FALLBACK_SOURCE, cached: false });
+      })
+      .finally(() => {
+        VISITOR_STATS_CACHE.inFlight = null;
+      });
+  }
+  return VISITOR_STATS_CACHE.inFlight;
+};
 const readJsonFile = async (filePath) => {
   try {
     const raw = await fsPromises.readFile(filePath, "utf8");
@@ -3141,6 +3266,11 @@ app.get("/api/markets", (_req, res) => {
     return;
   }
   res.json(buildMarketFallbackPayload());
+});
+
+app.get("/api/visitor-stats", async (_req, res) => {
+  res.setHeader("Cache-Control", "no-store");
+  res.json(await getVisitorStats());
 });
 
 app.get("/health", (_req, res) => res.json({ ok: true, at: Date.now() }));
