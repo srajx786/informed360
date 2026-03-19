@@ -2889,6 +2889,10 @@ app.get("/api", (_req, res) => {
   res.sendFile(path.join(__dirname, "public", "api.html"));
 });
 
+app.get("/legal", (_req, res) => {
+  res.sendFile(path.join(__dirname, "public", "legal.html"));
+});
+
 app.get("/api/og-image", async (req, res) => {
   const target = (req.query.url || "").toString();
   if (!target) return res.status(400).json({ image: "" });
