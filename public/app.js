@@ -928,10 +928,6 @@ function renderSentiment(s, slim = false, context = "", variant = ""){
     </div>`;
 }
 
-function renderAiInsightDisclaimer(){
-  return '<div class="ai-insight-disclaimer">🧠 AI Insight: Sentiment and bias indicators are machine-generated interpretations based on available data signals and may not reflect objective reality. Interpret with discretion.</div>';
-}
-
 function renderInfoButton(sentiment = {}, context = "", extraClass = ""){
   const pos = Math.max(0, Number(sentiment.posP ?? sentiment.pos ?? 0));
   const neu = Math.max(0, Number(sentiment.neuP ?? sentiment.neu ?? 0));
@@ -2367,7 +2363,6 @@ function card(a){
           · <span class="meta-time">${formatArticleDate(a.publishedAt)}</span>
         </div>
         ${renderSentiment(a.sentiment, false, context)}
-        ${renderAiInsightDisclaimer()}
       </div>
       ${renderInfoButton(a.sentiment, context)}
     </a>`;
@@ -2414,7 +2409,6 @@ function renderPinned(){
         </div>
         ${ageLine}
         ${renderSentiment(article.sentiment, true, context)}
-        ${renderAiInsightDisclaimer()}
         ${renderShareButton(article, article.image || article.imageUrl || "", "tile-share")}
         ${renderInfoButton(article.sentiment, context)}
       </div>`;
@@ -2549,6 +2543,11 @@ function asTopStoryCluster(article = {}){
   };
 }
 
+function normalizeTopStoryCluster(cluster = {}){
+  if (cluster?.primary) return cluster;
+  return asTopStoryCluster(cluster);
+}
+
 function buildTopStoriesSections(){
   const safe = (clusters = [], backup = []) =>
     Array.isArray(clusters) && clusters.length ? clusters : (backup || []);
@@ -2561,7 +2560,7 @@ function buildTopStoriesSections(){
     return [{ id: "potus-recent", clusters: potusTop.map(asTopStoryCluster) }];
   }
   const topStories = state.topStories || {};
-  const recent = safe(topStories.indiaRecent, topStories.worldRecent);
+  const recent = safe(topStories.indiaRecent, topStories.worldRecent).map(normalizeTopStoryCluster);
   const sections = [
     {
       id: "recent",
@@ -2671,7 +2670,6 @@ function renderTopStoriesCluster(cluster){
           </div>
           <div class="topstories-cluster-sentiment heroSentiment">
             ${renderSentiment(primary?.sentiment || cluster?.sentiment || {}, true, context)}
-            ${renderAiInsightDisclaimer()}
           </div>
           <div class="topstories-cluster-headline heroHeadline">${headline}</div>
           <div class="topstories-cluster-meta heroMeta">
@@ -2722,7 +2720,6 @@ function renderTopStoriesRelated(item){
         </div>
         <div class="topstories-related-headline">${headline}</div>
         ${renderSentiment(item?.sentiment || {}, true, context, "mini")}
-        ${renderAiInsightDisclaimer()}
       </div>
     </a>`;
 }
@@ -3778,7 +3775,6 @@ function renderSearchResults(){
           </div>
           <div class="search-sentiment">
             ${renderSentiment(article.sentiment, true, context, "mini")}
-            ${renderAiInsightDisclaimer()}
           </div>
         </div>
       </div>`;
