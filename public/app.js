@@ -78,6 +78,25 @@ const writeLocalCache = (key, value) => {
     // ignore storage quota errors
   }
 };
+const EMPTY_STATE_MESSAGE = "Data temporarily unavailable. Please check back soon.";
+const SNAPSHOT_FALLBACK_MESSAGE = "Data temporarily unavailable. Showing latest available snapshot.";
+const safeArray = (value) => Array.isArray(value) ? value.filter(Boolean) : [];
+const getSafeSentiment = (sentiment = {}) => ({
+  posP: Number(sentiment?.posP ?? sentiment?.pos ?? 0) || 0,
+  neuP: Number(sentiment?.neuP ?? sentiment?.neu ?? 0) || 0,
+  negP: Number(sentiment?.negP ?? sentiment?.neg ?? 0) || 0
+});
+const formatLastUpdated = (value) => {
+  const ts = typeof value === "number" ? value : new Date(value || 0).getTime();
+  if (!ts || Number.isNaN(ts)) return "";
+  return new Date(ts).toLocaleString([], {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+};
 const isValidBootstrapSnapshot = (payload) => {
   if (!payload || typeof payload !== "object") return false;
   if (!payload.generatedAt || Number.isNaN(new Date(payload.generatedAt).getTime())) return false;
@@ -192,7 +211,7 @@ const isValidTimeline = (timeline) =>
     ["pos", "neu", "neg"].every((key) => Number.isFinite(Number(point[key])))
   );
 const bootstrapTime = (payload) => new Date(payload?.generatedAt || 0).getTime() || 0;
-function applyBootstrapSnapshot(snapshot, { persist = false } = {}){
+function applyBootstrapSnapshot(snapshot, { persist = false, source = "snapshot" } = {}){
   if (!isValidBootstrapSnapshot(snapshot)) return false;
   const news = snapshot.news || {};
   state.allArticles = Array.isArray(news.articles) ? news.articles : [];
@@ -218,6 +237,9 @@ function applyBootstrapSnapshot(snapshot, { persist = false } = {}){
   state.bootstrapGeneratedAt = snapshot.generatedAt || "";
   state.bootstrapUsa = snapshot.usa || null;
   state.bootstrapPotus = snapshot.potus || null;
+  state.usingFallbackSnapshot = source !== "live";
+  state.fallbackUpdatedAt = snapshot.generatedAt || state.fallbackUpdatedAt || "";
+  state.fallbackMessage = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : "";
 
   if (snapshot?.meta?.markets?.quotes?.length){
     writeMarketCache(snapshot.meta.markets);
@@ -236,7 +258,17 @@ function applyBootstrapSnapshot(snapshot, { persist = false } = {}){
 function applyBootstrapCache(){
   const cached = readLocalCache(BOOTSTRAP_CACHE_KEY);
   if (!isValidBootstrapSnapshot(cached)) return false;
-  return applyBootstrapSnapshot(cached);
+  return applyBootstrapSnapshot(cached, { source: "local-cache" });
+}
+async function applyStaticBootstrapSnapshot(){
+  try{
+    const response = await fetch(`/data/bootstrap.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) return false;
+    const snapshot = await response.json();
+    return applyBootstrapSnapshot(snapshot, { persist: true, source: "static-cache" });
+  }catch{
+    return false;
+  }
 }
 async function refreshBootstrapSnapshot(){
   const endpoint = `/data/bootstrap.json?t=${Date.now()}`;
@@ -249,7 +281,7 @@ async function refreshBootstrapSnapshot(){
     if (!isValidBootstrapSnapshot(incoming)) return false;
     const current = readLocalCache(BOOTSTRAP_CACHE_KEY);
     if (!isValidBootstrapSnapshot(current) || bootstrapTime(incoming) > bootstrapTime(current)){
-      applyBootstrapSnapshot(incoming, { persist: true });
+      applyBootstrapSnapshot(incoming, { persist: true, source: "live" });
       return true;
     }
     return false;
@@ -1013,7 +1045,10 @@ const state = {
   bootstrapPotus: null,
   sentimentData: null,
   sentimentStaleDataTimestamp: 0,
-  sentimentStaleDataTimestampISO: ""
+  sentimentStaleDataTimestampISO: "",
+  usingFallbackSnapshot: false,
+  fallbackUpdatedAt: "",
+  fallbackMessage: ""
 };
 let hasCachedContent = false;
 
@@ -1602,9 +1637,13 @@ function renderPinnedChips(){
   });
 }
 
-function setApiBanner(visible){
+function setApiBanner(visible, message = SNAPSHOT_FALLBACK_MESSAGE){
   const banner = $("#apiBanner");
   if (!banner) return;
+  const updatedAt = formatLastUpdated(state.fallbackUpdatedAt);
+  banner.textContent = visible && updatedAt
+    ? `${message} Last updated: ${updatedAt}`
+    : message;
   banner.classList.toggle("show", visible);
   banner.hidden = !visible;
 }
@@ -1639,6 +1678,10 @@ function applyCachedContent(){
   }
   hasCachedContent = Boolean(state.allArticles.length || state.stories.length);
   if (hasCachedContent){
+    state.usingFallbackSnapshot = true;
+    state.fallbackUpdatedAt = safeNewsCache?.cachedAt || safeStoriesCache?.cachedAt || state.bootstrapGeneratedAt || state.fallbackUpdatedAt;
+    state.fallbackMessage = SNAPSHOT_FALLBACK_MESSAGE;
+    setApiBanner(true, state.fallbackMessage);
     syncPinsWithArticles();
     renderPinnedChips();
     renderAll();
@@ -1659,6 +1702,8 @@ async function checkHealthWithRetry(){
 /* load news + topics */
 async function loadAll(){
   state.newsEmptyMessage = "";
+  state.usingFallbackSnapshot = false;
+  state.fallbackMessage = "";
   setApiBanner(false);
   await loadSentimentData();
   try{
@@ -1788,6 +1833,10 @@ async function loadAll(){
       filter: state.filter,
       experimental: state.experimental
     });
+    state.usingFallbackSnapshot = false;
+    state.fallbackMessage = "";
+    state.fallbackUpdatedAt = "";
+    setApiBanner(false);
     hasCachedContent = true;
   }catch(error){
     if (!hasCachedContent){
@@ -1803,11 +1852,17 @@ async function loadAll(){
       };
       state.indiaArticles = [];
       state.topics = [];
-      state.newsEmptyMessage = state.sentimentData?.message || "Collecting enough articles for sentiment calculation";
+      state.newsEmptyMessage = EMPTY_STATE_MESSAGE;
+    }
+    if (hasCachedContent){
+      state.usingFallbackSnapshot = true;
+      state.fallbackMessage = SNAPSHOT_FALLBACK_MESSAGE;
+      state.fallbackUpdatedAt = state.fallbackUpdatedAt || state.bootstrapGeneratedAt || Date.now();
+      setApiBanner(true, state.fallbackMessage);
     }
     logApiError(error, error?.endpoint || "/api/news");
     if (!hasCachedContent && (error?.status === 0 || error?.status === 404)){
-      setApiBanner(true);
+      setApiBanner(true, SNAPSHOT_FALLBACK_MESSAGE);
     }
     renderPinnedChips();
     renderAll();
@@ -2504,11 +2559,18 @@ function renderNews(){
       </div>`;
     return;
   }
-  list.innerHTML = state.articles.slice(4, 9).map(card).join("");
+  const cards = safeArray(state.articles).slice(4, 9);
+  list.innerHTML = cards.length
+    ? cards.map(card).join("")
+    : `<div class="news-empty">${escapeHtml(state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE)}</div>`;
 }
 function renderDaily(){
-  $("#daily").innerHTML =
-    state.articles.slice(12, 18).map(card).join("");
+  const daily = $("#daily");
+  if (!daily) return;
+  const cards = safeArray(state.articles).slice(12, 18);
+  daily.innerHTML = cards.length
+    ? cards.map(card).join("")
+    : `<div class="news-empty">${escapeHtml(state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE)}</div>`;
 }
 
 /* HERO */
@@ -2517,7 +2579,9 @@ function renderHero(){
   if (!container) return;
   const sections = buildTopStoriesSections();
   if (!sections.length){
-    container.innerHTML = `<div class="topstories-empty">No top stories available right now.</div>`;
+    const message = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE;
+    const updatedAt = formatLastUpdated(state.fallbackUpdatedAt || state.bootstrapGeneratedAt);
+    container.innerHTML = `<div class="topstories-empty">${escapeHtml(message)}${updatedAt ? `<div class="hero-fallback-updated">Last updated: ${escapeHtml(updatedAt)}</div>` : ""}</div>`;
     return;
   }
   container.innerHTML = sections.map(renderTopStoriesSection).join("");
@@ -3117,7 +3181,13 @@ function attachShareButtons(){
 }
 
 function renderTopics(){
-  $("#topicsList").innerHTML = state.topics.map(t => {
+  const topicsList = $("#topicsList");
+  if (!topicsList) return;
+  if (!safeArray(state.topics).length){
+    topicsList.innerHTML = `<div class="news-empty">${escapeHtml(state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE)}</div>`;
+    return;
+  }
+  topicsList.innerHTML = state.topics.map(t => {
     const total =
       (t.sentiment.pos || 0) +
       (t.sentiment.neu || 0) +
@@ -3354,10 +3424,11 @@ function computeLeaderboard(){
     const s = bySource.get(key) || {
       n:0, pos:0, neg:0, neu:0, link:a.link
     };
+    const sentiment = getSafeSentiment(a.sentiment);
     s.n++;
-    s.pos += a.sentiment.posP;
-    s.neg += a.sentiment.negP;
-    s.neu += a.sentiment.neuP;
+    s.pos += sentiment.posP;
+    s.neg += sentiment.negP;
+    s.neu += sentiment.neuP;
     s.link = a.link || s.link;
     bySource.set(key, s);
   });
@@ -3461,7 +3532,12 @@ async function renderLeaderboard(){
   ]);
 
   const hasBadges = grid.querySelectorAll(".badge").length > 0;
-  if (!hasBadges && empty) empty.textContent = state.sentimentData?.message || "Collecting enough articles for sentiment calculation";
+  if (!hasBadges && empty) {
+    const updatedAt = formatLastUpdated(state.fallbackUpdatedAt || state.sentimentStaleDataTimestampISO || state.bootstrapGeneratedAt);
+    empty.textContent = updatedAt && state.usingFallbackSnapshot
+      ? `${SNAPSHOT_FALLBACK_MESSAGE} Last updated: ${updatedAt}`
+      : (state.sentimentData?.message || EMPTY_STATE_MESSAGE);
+  }
   empty?.classList.toggle("show", !hasBadges);
 
   state.lastLeaderboardAt = Date.now();
@@ -3543,10 +3619,11 @@ function scoreIndustries(){
       });
     if (!matches.length) return;
     matches.forEach(r => {
+      const sentiment = getSafeSentiment(a.sentiment);
       r.n++;
-      r.pos += a.sentiment.posP;
-      r.neg += a.sentiment.negP;
-      r.neu += a.sentiment.neuP;
+      r.pos += sentiment.posP;
+      r.neg += sentiment.negP;
+      r.neu += sentiment.neuP;
     });
   });
 
@@ -3592,6 +3669,12 @@ function renderPotusTopicBoard(){
   }).sort((a,b) => Math.abs(b.bias) - Math.abs(a.bias));
 
   if (!scored.length){
+    if (empty) {
+      const updatedAt = formatLastUpdated(state.fallbackUpdatedAt || state.bootstrapGeneratedAt);
+      empty.textContent = updatedAt && state.usingFallbackSnapshot
+        ? `${SNAPSHOT_FALLBACK_MESSAGE} Last updated: ${updatedAt}`
+        : EMPTY_STATE_MESSAGE;
+    }
     empty?.classList.add("show");
     return;
   }
@@ -3636,7 +3719,7 @@ function renderIndustryBoard(){
   const subtitle = document.querySelector("#industryWrap .leader-sub");
   if (subtitle) subtitle.textContent = "Updated every hour";
   const emptyText = grid.querySelector(".board-empty");
-  if (emptyText) emptyText.textContent = state.sentimentData?.message || "Collecting enough articles for sentiment calculation";
+  if (emptyText) emptyText.textContent = state.sentimentData?.message || EMPTY_STATE_MESSAGE;
   const colPos = grid.querySelector(".col-pos");
   const colNeu = grid.querySelector(".col-neu");
   const colNeg = grid.querySelector(".col-neg");
@@ -3650,7 +3733,44 @@ function renderIndustryBoard(){
     || Number(taggedCounts.neg || 0) >= minTaggedArticles;
 
   if (!hasEnoughTagged) {
-    if (empty) empty.textContent = "Collecting enough industry-tagged articles";
+    const fallbackRows = safeArray(state.bootstrapUsa?.industryLeaderboard || state.bootstrapIndustryLeaderboard || state.sentimentData?.industrySentiment);
+    if (fallbackRows.length){
+      const toBucketRows = (items = []) => ({
+        pos: safeArray(items).filter((item) => Number(item?.bias ?? (Number(item?.pos || 0) - Number(item?.neg || 0))) > 3).slice(0, 3),
+        neu: safeArray(items).filter((item) => Math.abs(Number(item?.bias ?? (Number(item?.pos || 0) - Number(item?.neg || 0)))) <= 3).slice(0, 3),
+        neg: safeArray(items).filter((item) => Number(item?.bias ?? (Number(item?.pos || 0) - Number(item?.neg || 0))) < -3).slice(0, 3)
+      });
+      const fallbackBuckets = toBucketRows(fallbackRows);
+      const placeFallbackIcons = (col, list) => {
+        list.forEach((item, idx) => {
+          const badge = document.createElement("div");
+          badge.className = "badge icon-badge";
+          badge.style.left = "50%";
+          badge.style.top = `${[0.3, 0.55, 0.8][Math.min(idx, 2)] * 100}%`;
+          const img = document.createElement("img");
+          img.src = industryIconFor(item.name || item.industry || "");
+          img.alt = industryLabelFor(item.name || item.industry || "");
+          img.loading = "lazy";
+          const caption = document.createElement("span");
+          caption.className = "icon-label";
+          caption.textContent = industryLabelFor(item.name || item.industry || "");
+          badge.appendChild(img);
+          badge.appendChild(caption);
+          col.appendChild(badge);
+        });
+      };
+      placeFallbackIcons(colPos, fallbackBuckets.pos);
+      placeFallbackIcons(colNeu, fallbackBuckets.neu);
+      placeFallbackIcons(colNeg, fallbackBuckets.neg);
+      empty?.classList.toggle("show", grid.querySelectorAll(".badge").length === 0);
+      if (grid.querySelectorAll(".badge").length > 0) return;
+    }
+    if (empty) {
+      const updatedAt = formatLastUpdated(state.fallbackUpdatedAt || state.sentimentStaleDataTimestampISO || state.bootstrapGeneratedAt);
+      empty.textContent = updatedAt && state.usingFallbackSnapshot
+        ? `${SNAPSHOT_FALLBACK_MESSAGE} Last updated: ${updatedAt}`
+        : "Collecting enough industry-tagged articles";
+    }
     empty?.classList.add("show");
     return;
   }
@@ -4054,9 +4174,11 @@ applyBootstrapCache();
 applyCachedContent();
 loadMarkets();
 loadVisitorStats();
-void refreshBootstrapSnapshot().finally(() => {
+void (async () => {
+  if (!hasCachedContent) await applyStaticBootstrapSnapshot();
+  await refreshBootstrapSnapshot();
   if (!hasCachedContent) loadAll();
-});
+})();
 checkHealthWithRetry();
 if (!hasCachedContent) loadAll();
 startHeroAuto();
