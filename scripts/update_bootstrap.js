@@ -5,12 +5,31 @@ import vader from "vader-sentiment";
 
 const ROOT = process.cwd();
 const OUTPUT_PATH = path.join(ROOT, "public", "data", "bootstrap.json");
+const DATA_DIR = path.join(ROOT, "public", "data");
+const SNAPSHOT_FILES = {
+  bootstrap: OUTPUT_PATH,
+  latestNews: path.join(DATA_DIR, "latest-news.json"),
+  sourceSentiment: path.join(DATA_DIR, "source-sentiment.json"),
+  industrySentiment: path.join(DATA_DIR, "industry-sentiment.json"),
+  usaNews: path.join(DATA_DIR, "usa-news.json"),
+  potusNews: path.join(DATA_DIR, "potus-news.json"),
+  trendingHistory: path.join(DATA_DIR, "trending-history.json")
+};
 const REMOTE_BASE = (process.env.BOOTSTRAP_SOURCE_BASE || "https://www.informed360.news").replace(/\/$/, "");
 const VERSION = 1;
 const SCHEMA_VERSION = 1;
 const parser = new Parser({ timeout: 12000 });
 const MIN_SOURCE_ARTICLES = 2;
 const MIN_SECTION_ARTICLES = 8;
+const SNAPSHOT_THRESHOLDS = {
+  bootstrapArticlesMin: 24,
+  latestNewsMin: 18,
+  usaNewsMin: 12,
+  potusNewsMin: 8,
+  sourceRowsMin: 4,
+  industryRowsMin: 4,
+  trendingPointsMin: 4
+};
 
 const USA_ONLY_SOURCES = [
   { name: "CNN", match: /cnn\.com$/i, feed: "https://rss.cnn.com/rss/cnn_latest.rss" },
@@ -45,6 +64,14 @@ const fetchJson = async (endpoint, { timeoutMs = 12000 } = {}) => {
 const readPrevious = async () => {
   try {
     const raw = await fs.readFile(OUTPUT_PATH, "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+};
+const readJson = async (filePath) => {
+  try {
+    const raw = await fs.readFile(filePath, "utf8");
     return JSON.parse(raw);
   } catch {
     return null;
@@ -443,6 +470,90 @@ const isValidBootstrap = (payload) => {
   return true;
 };
 
+const getCount = (value) => (Array.isArray(value) ? value.length : 0);
+const addSnapshotMeta = (payload = {}, counts = {}) => ({
+  ...payload,
+  generatedAt: payload.generatedAt || new Date().toISOString(),
+  counts
+});
+const bootstrapQuality = (payload = {}) => getCount(payload?.news?.articles);
+const latestNewsQuality = (payload = {}) => getCount(payload?.articles);
+const sourceSentimentQuality = (payload = {}) => getCount(payload?.rows);
+const industrySentimentQuality = (payload = {}) => getCount(payload?.rows);
+const usaNewsQuality = (payload = {}) => getCount(payload?.articles);
+const potusNewsQuality = (payload = {}) => getCount(payload?.articles);
+const trendingHistoryQuality = (payload = {}) => getCount(payload?.points);
+const ensureBootstrapCounts = (payload = {}) => ({
+  ...payload,
+  generatedAt: payload.generatedAt || new Date().toISOString(),
+  counts: payload.counts || {
+    articles: getCount(payload?.news?.articles),
+    topics: getCount(payload?.news?.topics),
+    stories: getCount(payload?.news?.stories),
+    usaArticles: getCount(payload?.usa?.dailyNews),
+    potusArticles: getCount(payload?.potus?.dailyNews)
+  }
+});
+
+const chooseSnapshot = ({ label, nextPayload, previousPayload, qualityFn, minThreshold }) => {
+  const nextScore = qualityFn(nextPayload);
+  const prevScore = qualityFn(previousPayload || {});
+  const nextGood = nextScore >= minThreshold;
+  const prevGood = prevScore >= minThreshold;
+  if (nextGood || !prevGood) {
+    if (!nextGood) {
+      console.warn(`[snapshot:${label}] below threshold (${nextScore}/${minThreshold}); no prior strong snapshot found, writing new payload.`);
+    }
+    return { payload: nextPayload, retainedPrevious: false, score: nextScore };
+  }
+  console.warn(`[snapshot:${label}] weak run (${nextScore}/${minThreshold}); retaining previous strong snapshot (${prevScore}).`);
+  return { payload: previousPayload, retainedPrevious: true, score: prevScore };
+};
+
+const buildSplitSnapshots = (snapshot) => {
+  const allArticles = snapshot?.news?.articles || [];
+  const latestArticles = allArticles.slice(0, 36);
+  const sourceRows = (snapshot?.home?.leaderboards?.sources || []).slice(0, 20);
+  const industryRows = (snapshot?.home?.leaderboards?.industry?.rows || []).slice(0, 20);
+  const usaArticles = (snapshot?.usa?.dailyNews || []).slice(0, 36);
+  const potusArticles = (snapshot?.potus?.dailyNews || []).slice(0, 30);
+  const worldTimeline = snapshot?.plots?.worldSentimentTimeline || [];
+  const indiaTimeline = snapshot?.plots?.indiaSentimentTimeline || [];
+  const usaTimeline = snapshot?.usa?.plots?.sentimentTimeline || [];
+  const points = [...worldTimeline, ...indiaTimeline, ...usaTimeline];
+  const pointCount = points.length;
+  return {
+    latestNews: addSnapshotMeta({
+      articles: latestArticles,
+      topStories: (snapshot?.home?.topStories || []).slice(0, 12)
+    }, { articles: latestArticles.length, topStories: getCount(snapshot?.home?.topStories) }),
+    sourceSentiment: addSnapshotMeta({
+      rows: sourceRows
+    }, { rows: sourceRows.length }),
+    industrySentiment: addSnapshotMeta({
+      rows: industryRows,
+      buckets: snapshot?.home?.leaderboards?.industry || { rows: [], pos: [], neu: [], neg: [] }
+    }, { rows: industryRows.length }),
+    usaNews: addSnapshotMeta({
+      articles: usaArticles,
+      topStories: (snapshot?.usa?.topStories || []).slice(0, 12),
+      sentiment: snapshot?.usa?.sentiment || {}
+    }, { articles: usaArticles.length, topStories: getCount(snapshot?.usa?.topStories) }),
+    potusNews: addSnapshotMeta({
+      articles: potusArticles,
+      topStories: (snapshot?.potus?.topStories || []).slice(0, 12),
+      sourceLeaderboard: snapshot?.potus?.sourceLeaderboard || [],
+      topicSentiment: snapshot?.potus?.topicSentiment || []
+    }, { articles: potusArticles.length, topStories: getCount(snapshot?.potus?.topStories) }),
+    trendingHistory: addSnapshotMeta({
+      points,
+      world: worldTimeline,
+      india: indiaTimeline,
+      usa: usaTimeline
+    }, { points: pointCount, world: worldTimeline.length, india: indiaTimeline.length, usa: usaTimeline.length })
+  };
+};
+
 const main = async () => {
   await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
   const previous = await readPrevious();
@@ -475,7 +586,18 @@ const main = async () => {
   }));
 
   if (successfulModules === 0 && isValidBootstrap(previous)) {
-    console.error("All modules failed. Keeping existing bootstrap.json intact.");
+    console.error("All modules failed. Re-publishing previous strong snapshot files.");
+    const previousWithCounts = ensureBootstrapCounts(previous);
+    const splitFromPrevious = buildSplitSnapshots(previousWithCounts);
+    await Promise.all([
+      fs.writeFile(SNAPSHOT_FILES.bootstrap, `${JSON.stringify(previousWithCounts, null, 2)}\n`, "utf8"),
+      fs.writeFile(SNAPSHOT_FILES.latestNews, `${JSON.stringify(splitFromPrevious.latestNews, null, 2)}\n`, "utf8"),
+      fs.writeFile(SNAPSHOT_FILES.sourceSentiment, `${JSON.stringify(splitFromPrevious.sourceSentiment, null, 2)}\n`, "utf8"),
+      fs.writeFile(SNAPSHOT_FILES.industrySentiment, `${JSON.stringify(splitFromPrevious.industrySentiment, null, 2)}\n`, "utf8"),
+      fs.writeFile(SNAPSHOT_FILES.usaNews, `${JSON.stringify(splitFromPrevious.usaNews, null, 2)}\n`, "utf8"),
+      fs.writeFile(SNAPSHOT_FILES.potusNews, `${JSON.stringify(splitFromPrevious.potusNews, null, 2)}\n`, "utf8"),
+      fs.writeFile(SNAPSHOT_FILES.trendingHistory, `${JSON.stringify(splitFromPrevious.trendingHistory, null, 2)}\n`, "utf8")
+    ]);
     return;
   }
 
@@ -508,6 +630,13 @@ const main = async () => {
 
   const snapshot = {
     generatedAt: new Date().toISOString(),
+    counts: {
+      articles: allArticles.length,
+      topics: normalizedNews.topics.length,
+      stories: normalizedNews.stories.length,
+      usaArticles: safeUsa.length,
+      potusArticles: safePotus.length
+    },
     version: VERSION,
     topStories: normalizedNews.topStories.worldRecent,
     news: normalizedNews,
@@ -557,6 +686,16 @@ const main = async () => {
     meta: {
       source: "bootstrap-cache",
       schemaVersion: SCHEMA_VERSION,
+      thresholds: SNAPSHOT_THRESHOLDS,
+      counts: {
+        articles: allArticles.length,
+        latestNews: Math.min(36, allArticles.length),
+        usaArticles: safeUsa.length,
+        potusArticles: safePotus.length,
+        sourceRows: buildSourceLeaderboard(allArticles).length,
+        industryRows: buildIndustryLeaderboard(allArticles).rows.length,
+        trendingPoints: 12
+      },
       markets: collected.markets?.quotes?.length
         ? collected.markets
         : (previous?.meta?.markets || { quotes: [], updatedAt: Date.now() })
@@ -567,8 +706,82 @@ const main = async () => {
     throw new Error("Generated snapshot failed validation");
   }
 
-  await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(snapshot, null, 2)}\n`, "utf8");
-  console.log(`wrote ${OUTPUT_PATH}`);
+  const previousFiles = {
+    bootstrap: previous,
+    latestNews: await readJson(SNAPSHOT_FILES.latestNews),
+    sourceSentiment: await readJson(SNAPSHOT_FILES.sourceSentiment),
+    industrySentiment: await readJson(SNAPSHOT_FILES.industrySentiment),
+    usaNews: await readJson(SNAPSHOT_FILES.usaNews),
+    potusNews: await readJson(SNAPSHOT_FILES.potusNews),
+    trendingHistory: await readJson(SNAPSHOT_FILES.trendingHistory)
+  };
+  const split = buildSplitSnapshots(snapshot);
+  const decisions = {
+    bootstrap: chooseSnapshot({
+      label: "bootstrap",
+      nextPayload: ensureBootstrapCounts(snapshot),
+      previousPayload: ensureBootstrapCounts(previousFiles.bootstrap || {}),
+      qualityFn: bootstrapQuality,
+      minThreshold: SNAPSHOT_THRESHOLDS.bootstrapArticlesMin
+    }),
+    latestNews: chooseSnapshot({
+      label: "latest-news",
+      nextPayload: split.latestNews,
+      previousPayload: previousFiles.latestNews,
+      qualityFn: latestNewsQuality,
+      minThreshold: SNAPSHOT_THRESHOLDS.latestNewsMin
+    }),
+    sourceSentiment: chooseSnapshot({
+      label: "source-sentiment",
+      nextPayload: split.sourceSentiment,
+      previousPayload: previousFiles.sourceSentiment,
+      qualityFn: sourceSentimentQuality,
+      minThreshold: SNAPSHOT_THRESHOLDS.sourceRowsMin
+    }),
+    industrySentiment: chooseSnapshot({
+      label: "industry-sentiment",
+      nextPayload: split.industrySentiment,
+      previousPayload: previousFiles.industrySentiment,
+      qualityFn: industrySentimentQuality,
+      minThreshold: SNAPSHOT_THRESHOLDS.industryRowsMin
+    }),
+    usaNews: chooseSnapshot({
+      label: "usa-news",
+      nextPayload: split.usaNews,
+      previousPayload: previousFiles.usaNews,
+      qualityFn: usaNewsQuality,
+      minThreshold: SNAPSHOT_THRESHOLDS.usaNewsMin
+    }),
+    potusNews: chooseSnapshot({
+      label: "potus-news",
+      nextPayload: split.potusNews,
+      previousPayload: previousFiles.potusNews,
+      qualityFn: potusNewsQuality,
+      minThreshold: SNAPSHOT_THRESHOLDS.potusNewsMin
+    }),
+    trendingHistory: chooseSnapshot({
+      label: "trending-history",
+      nextPayload: split.trendingHistory,
+      previousPayload: previousFiles.trendingHistory,
+      qualityFn: trendingHistoryQuality,
+      minThreshold: SNAPSHOT_THRESHOLDS.trendingPointsMin
+    })
+  };
+
+  await Promise.all([
+    fs.writeFile(SNAPSHOT_FILES.bootstrap, `${JSON.stringify(decisions.bootstrap.payload, null, 2)}\n`, "utf8"),
+    fs.writeFile(SNAPSHOT_FILES.latestNews, `${JSON.stringify(decisions.latestNews.payload, null, 2)}\n`, "utf8"),
+    fs.writeFile(SNAPSHOT_FILES.sourceSentiment, `${JSON.stringify(decisions.sourceSentiment.payload, null, 2)}\n`, "utf8"),
+    fs.writeFile(SNAPSHOT_FILES.industrySentiment, `${JSON.stringify(decisions.industrySentiment.payload, null, 2)}\n`, "utf8"),
+    fs.writeFile(SNAPSHOT_FILES.usaNews, `${JSON.stringify(decisions.usaNews.payload, null, 2)}\n`, "utf8"),
+    fs.writeFile(SNAPSHOT_FILES.potusNews, `${JSON.stringify(decisions.potusNews.payload, null, 2)}\n`, "utf8"),
+    fs.writeFile(SNAPSHOT_FILES.trendingHistory, `${JSON.stringify(decisions.trendingHistory.payload, null, 2)}\n`, "utf8")
+  ]);
+  Object.entries(SNAPSHOT_FILES).forEach(([key, value]) => {
+    const payload = decisions[key]?.payload;
+    const counts = payload?.counts ? JSON.stringify(payload.counts) : "{}";
+    console.log(`wrote ${value} counts=${counts}`);
+  });
 };
 
 main().catch((error) => {

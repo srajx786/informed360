@@ -9,6 +9,7 @@ const NEWS_CACHE_KEY = "informed360_news_cache";
 const STORIES_CACHE_KEY = "informed360_stories_cache";
 const BOOTSTRAP_CACHE_KEY = "informed360_bootstrap_cache";
 const SENTIMENT_CACHE_KEY = "informed360_sentiment_cache";
+const SNAPSHOT_SPLIT_CACHE_KEY = "informed360_snapshot_split_cache";
 const USA_CATEGORY = "usa";
 const POTUS_CATEGORY = "potus";
 const MIN_SOURCE_ARTICLES = 2;
@@ -31,6 +32,7 @@ const normalizeApiBase = (value = "") =>
   String(value || "").trim().replace(/\/$/, "");
 let API_BASE = "";
 const FALLBACK_API_BASE = normalizeApiBase(window.__API_BASE__ || "");
+const DEBUG_MODE = new URLSearchParams(window.location.search).get("debug") === "1";
 const buildApiUrl = (path = "", base = API_BASE) => {
   const cleanPath = String(path || "");
   if (/^https?:\/\//i.test(cleanPath)) return cleanPath;
@@ -42,6 +44,7 @@ const logApiError = (error, endpoint) => {
   const status = error?.status ?? "unknown";
   console.error("API request failed", { endpoint, status, error });
 };
+const countOf = (value) => Array.isArray(value) ? value.length : 0;
 async function fetchJSON(path){
   const url = buildApiUrl(path);
   let r;
@@ -78,6 +81,40 @@ const writeLocalCache = (key, value) => {
     // ignore storage quota errors
   }
 };
+const debugState = {
+  files: {},
+  sections: {},
+  degraded: []
+};
+const setDebugFile = (file, meta = {}) => {
+  if (!DEBUG_MODE) return;
+  debugState.files[file] = meta;
+};
+const setDebugSection = (section, source, detail = {}) => {
+  if (!DEBUG_MODE) return;
+  debugState.sections[section] = { source, ...detail };
+};
+const pushDegradedReason = (section, reason) => {
+  if (!DEBUG_MODE) return;
+  debugState.degraded.push({ section, reason, at: new Date().toISOString() });
+};
+const renderDebugPanel = () => {
+  if (!DEBUG_MODE) return;
+  let el = document.getElementById("debugPanel");
+  if (!el){
+    el = document.createElement("pre");
+    el.id = "debugPanel";
+    el.style.cssText = "position:fixed;right:8px;bottom:8px;max-width:38vw;max-height:45vh;overflow:auto;background:#0b1220;color:#dbeafe;padding:10px;border-radius:8px;font:12px/1.4 ui-monospace,monospace;z-index:9999;white-space:pre-wrap;";
+    document.body.appendChild(el);
+  }
+  el.textContent = JSON.stringify(debugState, null, 2);
+};
+const hasHealthySnapshotData = () =>
+  countOf(state?.splitSnapshots?.latestNews?.articles) > 0 ||
+  countOf(state?.splitSnapshots?.sourceSentiment?.rows) > 0 ||
+  countOf(state?.splitSnapshots?.industrySentiment?.rows) > 0 ||
+  countOf(state?.splitSnapshots?.trendingHistory?.points) > 0 ||
+  countOf(state?.allArticles) > 0;
 const EMPTY_STATE_MESSAGE = "Data temporarily unavailable. Please check back soon.";
 const SNAPSHOT_FALLBACK_MESSAGE = "Data temporarily unavailable. Showing latest available snapshot.";
 const safeArray = (value) => Array.isArray(value) ? value.filter(Boolean) : [];
@@ -290,6 +327,60 @@ async function refreshBootstrapSnapshot(){
   }finally{
     clearTimeout(timeout);
   }
+}
+const isUsefulSplitPayload = (payload, key) => {
+  if (!payload || typeof payload !== "object" || !payload.generatedAt) return false;
+  if (["latestNews", "usaNews", "potusNews"].includes(key)) return Array.isArray(payload.articles) && payload.articles.length > 0;
+  if (["sourceSentiment", "industrySentiment"].includes(key)) return Array.isArray(payload.rows) && payload.rows.length > 0;
+  if (key === "trendingHistory") return Array.isArray(payload.points) && payload.points.length > 0;
+  return true;
+};
+async function loadSplitSnapshots(){
+  const files = {
+    latestNews: "/data/latest-news.json",
+    sourceSentiment: "/data/source-sentiment.json",
+    industrySentiment: "/data/industry-sentiment.json",
+    usaNews: "/data/usa-news.json",
+    potusNews: "/data/potus-news.json",
+    trendingHistory: "/data/trending-history.json"
+  };
+  const next = {};
+  await Promise.all(Object.entries(files).map(async ([key, file]) => {
+    try{
+      const response = await fetch(`${file}?t=${Date.now()}`, { cache: "no-store" });
+      if (!response.ok){
+        setDebugFile(file, { loaded: false, status: response.status });
+        return;
+      }
+      const payload = await response.json();
+      if (isUsefulSplitPayload(payload, key)){
+        next[key] = payload;
+        setDebugFile(file, {
+          loaded: true,
+          generatedAt: payload.generatedAt || "",
+          counts: payload.counts || {},
+          source: "snapshot-file"
+        });
+      } else {
+        setDebugFile(file, { loaded: false, reason: "invalid-or-empty-payload" });
+      }
+    }catch(error){
+      setDebugFile(file, { loaded: false, reason: error?.message || "fetch-failed" });
+    }
+  }));
+  if (Object.keys(next).length){
+    state.splitSnapshots = { ...(state.splitSnapshots || {}), ...next };
+    writeLocalCache(SNAPSHOT_SPLIT_CACHE_KEY, state.splitSnapshots);
+    return state.splitSnapshots;
+  }
+  const cached = readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY);
+  if (cached && typeof cached === "object"){
+    state.splitSnapshots = cached;
+    Object.entries(files).forEach(([, file]) => {
+      setDebugFile(file, { loaded: true, source: "local-cache" });
+    });
+  }
+  return state.splitSnapshots;
 }
 const fetchWithRetry = async (
   path,
@@ -1048,7 +1139,8 @@ const state = {
   sentimentStaleDataTimestampISO: "",
   usingFallbackSnapshot: false,
   fallbackUpdatedAt: "",
-  fallbackMessage: ""
+  fallbackMessage: "",
+  splitSnapshots: readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY) || {}
 };
 let hasCachedContent = false;
 
@@ -1419,9 +1511,20 @@ function writeMarketCache(payload){
 
 const formatVisitorMetric = (value) => (Number.isFinite(Number(value)) ? Number(value).toLocaleString() : "—");
 function renderVisitorStats(payload = {}){
+  const wrap = $("#visitorStats");
   const todayEl = $("#visitorStatsToday");
   const last7El = $("#visitorStatsLast7");
   if (!todayEl || !last7El) return;
+  const hasAny =
+    Number.isFinite(Number(payload?.today?.unique)) ||
+    Number.isFinite(Number(payload?.today?.visits)) ||
+    Number.isFinite(Number(payload?.last7Days?.unique)) ||
+    Number.isFinite(Number(payload?.last7Days?.visits));
+  if (!hasAny){
+    if (wrap) wrap.hidden = true;
+    return;
+  }
+  if (wrap) wrap.hidden = false;
   const todayUnique = formatVisitorMetric(payload?.today?.unique);
   const todayVisits = formatVisitorMetric(payload?.today?.visits);
   const last7Unique = formatVisitorMetric(payload?.last7Days?.unique);
@@ -1477,7 +1580,7 @@ async function loadMarkets(){
       const hasPct = Number.isFinite(pctValue);
       const cls = hasPct ? (pctValue >= 0 ? "up" : "down") : "";
       const sign = pctValue >= 0 ? "▲" : "▼";
-      const pctTxt = hasPct ? `${sign} ${Math.abs(pctValue).toFixed(2)}%` : "—";
+      const pctTxt = hasPct ? `${sign} ${Math.abs(pctValue).toFixed(2)}%` : "Updating";
       const changeTxt = typeof match?.change === "number"
         ? match.change.toLocaleString(undefined,{ maximumFractionDigits:2 })
         : null;
@@ -1485,7 +1588,7 @@ async function loadMarkets(){
         ? (typeof priceValue === "number"
           ? priceValue.toLocaleString(undefined,{ maximumFractionDigits:2 })
           : priceValue)
-        : "—";
+        : "Updating";
       return `
         <div class="qpill">
           <span class="sym">${inst.label}</span>
@@ -1640,12 +1743,19 @@ function renderPinnedChips(){
 function setApiBanner(visible, message = SNAPSHOT_FALLBACK_MESSAGE){
   const banner = $("#apiBanner");
   if (!banner) return;
+  const allowBanner = visible && !hasHealthySnapshotData();
   const updatedAt = formatLastUpdated(state.fallbackUpdatedAt);
-  banner.textContent = visible && updatedAt
+  banner.textContent = allowBanner && updatedAt
     ? `${message} Last updated: ${updatedAt}`
     : message;
-  banner.classList.toggle("show", visible);
-  banner.hidden = !visible;
+  banner.classList.toggle("show", allowBanner);
+  banner.hidden = !allowBanner;
+  if (visible && !allowBanner){
+    setDebugSection("banner", "suppressed", { reason: "healthy-snapshot-data-available" });
+  } else if (allowBanner){
+    setDebugSection("banner", "shown", { reason: message });
+    pushDegradedReason("banner", message);
+  }
 }
 
 function applyCachedContent(){
@@ -1785,14 +1895,16 @@ async function loadAll(){
       state.indiaArticles = state.allArticles.filter(a => a.category === "india");
     }
 
+    const usaSnapshotArticles = safeArray(state.splitSnapshots?.usaNews?.articles);
+    const potusSnapshotArticles = safeArray(state.splitSnapshots?.potusNews?.articles);
     const usaCandidates = state.allArticles.filter(isUsaArticle);
     const potusCandidates = state.allArticles.filter(isPotusArticle);
     if (state.category === USA_CATEGORY){
-      state.articles = usaCandidates.length ? usaCandidates : state.allArticles;
-      state.newsEmptyMessage = usaCandidates.length ? "" : "Showing broader coverage while USA-specific stories refresh.";
+      state.articles = usaCandidates.length ? usaCandidates : (usaSnapshotArticles.length ? usaSnapshotArticles : state.allArticles);
+      state.newsEmptyMessage = state.articles.length ? "" : "Showing broader coverage while USA-specific stories refresh.";
     } else if (state.category === POTUS_CATEGORY){
-      state.articles = potusCandidates.length ? potusCandidates : state.allArticles;
-      state.newsEmptyMessage = potusCandidates.length ? "" : "Showing broader coverage while POTUS-specific stories refresh.";
+      state.articles = potusCandidates.length ? potusCandidates : (potusSnapshotArticles.length ? potusSnapshotArticles : state.allArticles);
+      state.newsEmptyMessage = state.articles.length ? "" : "Showing broader coverage while POTUS-specific stories refresh.";
     } else if (state.category === "local" && state.profile?.city){
       const c = state.profile.city.toLowerCase();
       state.articles = state.articles.filter(a =>
@@ -2491,9 +2603,10 @@ function updateActiveSources(){
   if (!el) return;
   const sources = collectActiveSources(state.allArticles || []);
   if (!sources.length){
-    el.textContent = "Current News Sources: —";
+    el.hidden = true;
     return;
   }
+  el.hidden = false;
   el.textContent = `Current News Sources: ${sources.join(", ")}`;
 }
 
@@ -2559,15 +2672,26 @@ function renderNews(){
       </div>`;
     return;
   }
-  const cards = safeArray(state.articles).slice(4, 9);
+  const homeArticles = state.category === "home"
+    ? safeArray(state.splitSnapshots?.latestNews?.articles).concat(safeArray(state.articles))
+    : safeArray(state.articles);
+  setDebugSection("news", state.category === "home" && safeArray(state.splitSnapshots?.latestNews?.articles).length ? "snapshot:latest-news" : "live-or-bootstrap", { articles: homeArticles.length });
+  const cards = homeArticles.slice(4, 9);
   list.innerHTML = cards.length
     ? cards.map(card).join("")
     : `<div class="news-empty">${escapeHtml(state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE)}</div>`;
+  if (!cards.length){
+    pushDegradedReason("news", state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE);
+  }
 }
 function renderDaily(){
   const daily = $("#daily");
   if (!daily) return;
-  const cards = safeArray(state.articles).slice(12, 18);
+  const homeArticles = state.category === "home"
+    ? safeArray(state.splitSnapshots?.latestNews?.articles).concat(safeArray(state.articles))
+    : safeArray(state.articles);
+  setDebugSection("daily", state.category === "home" && safeArray(state.splitSnapshots?.latestNews?.articles).length ? "snapshot:latest-news" : "live-or-bootstrap", { articles: homeArticles.length });
+  const cards = homeArticles.slice(12, 18);
   daily.innerHTML = cards.length
     ? cards.map(card).join("")
     : `<div class="news-empty">${escapeHtml(state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE)}</div>`;
@@ -2582,8 +2706,11 @@ function renderHero(){
     const message = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE;
     const updatedAt = formatLastUpdated(state.fallbackUpdatedAt || state.bootstrapGeneratedAt);
     container.innerHTML = `<div class="topstories-empty">${escapeHtml(message)}${updatedAt ? `<div class="hero-fallback-updated">Last updated: ${escapeHtml(updatedAt)}</div>` : ""}</div>`;
+    pushDegradedReason("hero", message);
+    setDebugSection("hero", "fallback-empty");
     return;
   }
+  setDebugSection("hero", safeArray(state.splitSnapshots?.latestNews?.topStories).length ? "snapshot:latest-news/bootstrap" : "live-or-bootstrap", { sections: sections.length });
   container.innerHTML = sections.map(renderTopStoriesSection).join("");
 
   bindTopStoriesCarousels();
@@ -2616,15 +2743,16 @@ function buildTopStoriesSections(){
   const safe = (clusters = [], backup = []) =>
     Array.isArray(clusters) && clusters.length ? clusters : (backup || []);
   if (state.category === USA_CATEGORY){
-    const usaTop = state.bootstrapUsa?.topStories || (state.articles || []).slice(0, 12);
+    const usaTop = state.splitSnapshots?.usaNews?.topStories || state.bootstrapUsa?.topStories || (state.articles || []).slice(0, 12);
     return [{ id: "usa-recent", clusters: usaTop.map(asTopStoryCluster) }];
   }
   if (state.category === POTUS_CATEGORY){
-    const potusTop = state.bootstrapPotus?.topStories || (state.articles || []).slice(0, 12);
+    const potusTop = state.splitSnapshots?.potusNews?.topStories || state.bootstrapPotus?.topStories || (state.articles || []).slice(0, 12);
     return [{ id: "potus-recent", clusters: potusTop.map(asTopStoryCluster) }];
   }
   const topStories = state.topStories || {};
-  const recent = safe(topStories.indiaRecent, topStories.worldRecent).map(normalizeTopStoryCluster);
+  const splitTop = safeArray(state.splitSnapshots?.latestNews?.topStories).map(asTopStoryCluster);
+  const recent = (splitTop.length ? splitTop : safe(topStories.indiaRecent, topStories.worldRecent)).map(normalizeTopStoryCluster);
   const sections = [
     {
       id: "recent",
@@ -3388,9 +3516,11 @@ function renderIndiaSentiment(){
 }
 
 function renderWorldSentiment(){
+  const splitTimeline = state.splitSnapshots?.trendingHistory?.world;
   const timeline = state.category === "home"
-    ? (state.sentimentData?.timelines?.world || state.bootstrapPlots?.worldSentimentTimeline)
+    ? (splitTimeline || state.sentimentData?.timelines?.world || state.bootstrapPlots?.worldSentimentTimeline)
     : null;
+  setDebugSection("trending", splitTimeline ? "snapshot:trending-history" : "live-or-bootstrap", { points: countOf(splitTimeline || timeline || []) });
   renderSentimentTimeline({
     sparkEl: "#moodWorldSpark",
     summaryEl: "#moodWorldSummary",
@@ -3415,6 +3545,28 @@ function getLeaderboardArticles(){
 }
 
 function computeLeaderboard(){
+  const splitRows = safeArray(state.splitSnapshots?.sourceSentiment?.rows);
+  if (splitRows.length){
+    const arr = splitRows.map((row) => {
+      const source = normalizeSourceName(row.source || "");
+      const pos = Number(row.pos || 0);
+      const neg = Number(row.neg || 0);
+      return {
+        source,
+        pos,
+        neu: Number(row.neu || 0),
+        neg,
+        bias: pos - neg,
+        logo: logoFor("", source),
+        count: Number(row.count || MIN_SOURCE_ARTICLES)
+      };
+    }).filter((row) => row.source);
+    return {
+      pos: arr.filter(x => x.bias > 3).sort((a,b) => b.bias - a.bias).slice(0,2),
+      neu: arr.slice().sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias)).slice(0,2),
+      neg: arr.filter(x => x.bias < -3).sort((a,b) => a.bias - b.bias).slice(0,2)
+    };
+  }
   const bySource = new Map();
   getLeaderboardArticles().forEach(a => {
     const key = normalizeSourceName(a.source || "");
@@ -3442,11 +3594,12 @@ function computeLeaderboard(){
   }).filter(x => (x.pos + x.neg + x.neu) > 0.1 && x.count >= MIN_SOURCE_ARTICLES);
 
   if (!arr.length){
+    const splitRows = state.splitSnapshots?.sourceSentiment?.rows;
     const fallback = state.category === USA_CATEGORY
-      ? state.bootstrapUsa?.leaderboard
+      ? (state.bootstrapUsa?.leaderboard || splitRows)
       : state.category === POTUS_CATEGORY
-        ? state.bootstrapPotus?.sourceLeaderboard
-        : state.sentimentData?.sourceLeaderboard || null;
+        ? (state.bootstrapPotus?.sourceLeaderboard || splitRows)
+        : (splitRows || state.sentimentData?.sourceLeaderboard || null);
     if (Array.isArray(fallback) && fallback.length){
       fallback.forEach((row) => {
         const source = normalizeSourceName(row.source || "");
@@ -3499,27 +3652,24 @@ async function renderLeaderboard(){
   const TIERS = [0.35, 0.75];
 
   async function place(col, list){
-    const results = await Promise.all(
-      list.map(s => (s.logo ? loadImage(s.logo) : Promise.resolve(false)))
-    );
+    const results = await Promise.all(list.map(s => (s.logo ? loadImage(s.logo) : Promise.resolve(false))));
     let idx = 0;
     results.forEach((ok, i) => {
-      if (!ok) return;
       const s = list[i];
       const b = document.createElement("div");
       b.className = "badge";
       const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
       b.style.left = "50%";
       b.style.top  = `${topPct}%`;
-      const img = document.createElement("img");
-      img.src = s.logo;
-      img.alt = s.source;
-      img.loading = "lazy";
-      img.addEventListener("error", () => {
-        b.remove();
-        empty?.classList.toggle("show", grid.querySelectorAll(".badge").length === 0);
-      });
-      b.appendChild(img);
+      if (ok && s.logo){
+        const img = document.createElement("img");
+        img.src = s.logo;
+        img.alt = s.source;
+        img.loading = "lazy";
+        b.appendChild(img);
+      } else {
+        b.textContent = getSourceInitials(s.source || "?");
+      }
       col.appendChild(b);
       idx++;
     });
@@ -3533,10 +3683,14 @@ async function renderLeaderboard(){
 
   const hasBadges = grid.querySelectorAll(".badge").length > 0;
   if (!hasBadges && empty) {
+    setDebugSection("sourceSentiment", "fallback-empty", { rows: countOf(state.splitSnapshots?.sourceSentiment?.rows) });
     const updatedAt = formatLastUpdated(state.fallbackUpdatedAt || state.sentimentStaleDataTimestampISO || state.bootstrapGeneratedAt);
     empty.textContent = updatedAt && state.usingFallbackSnapshot
       ? `${SNAPSHOT_FALLBACK_MESSAGE} Last updated: ${updatedAt}`
       : (state.sentimentData?.message || EMPTY_STATE_MESSAGE);
+    pushDegradedReason("sourceSentiment", empty.textContent);
+  } else {
+    setDebugSection("sourceSentiment", countOf(state.splitSnapshots?.sourceSentiment?.rows) ? "snapshot:source-sentiment" : "live-or-bootstrap", { badges: grid.querySelectorAll(".badge").length });
   }
   empty?.classList.toggle("show", !hasBadges);
 
@@ -3731,9 +3885,47 @@ function renderIndustryBoard(){
   const hasEnoughTagged = Number(taggedCounts.pos || 0) >= minTaggedArticles
     || Number(taggedCounts.neu || 0) >= minTaggedArticles
     || Number(taggedCounts.neg || 0) >= minTaggedArticles;
+  const splitIndustryRows = safeArray(state.splitSnapshots?.industrySentiment?.rows);
+
+  if (splitIndustryRows.length){
+    const toBucketRows = (items = []) => ({
+      pos: safeArray(items).filter((item) => Number(item?.bias ?? (Number(item?.pos || 0) - Number(item?.neg || 0))) > 3).slice(0, 3),
+      neu: safeArray(items).filter((item) => Math.abs(Number(item?.bias ?? (Number(item?.pos || 0) - Number(item?.neg || 0)))) <= 3).slice(0, 3),
+      neg: safeArray(items).filter((item) => Number(item?.bias ?? (Number(item?.pos || 0) - Number(item?.neg || 0))) < -3).slice(0, 3)
+    });
+    const buckets = toBucketRows(splitIndustryRows);
+    const place = (col, list) => list.forEach((item, idx) => {
+      const badge = document.createElement("div");
+      badge.className = "badge icon-badge";
+      badge.style.left = "50%";
+      badge.style.top = `${[0.3, 0.55, 0.8][Math.min(idx, 2)] * 100}%`;
+      const img = document.createElement("img");
+      img.src = industryIconFor(item.name || item.industry || "");
+      img.alt = industryLabelFor(item.name || item.industry || "");
+      const caption = document.createElement("span");
+      caption.className = "icon-label";
+      caption.textContent = industryLabelFor(item.name || item.industry || "");
+      badge.appendChild(img);
+      badge.appendChild(caption);
+      col.appendChild(badge);
+    });
+    place(colPos, buckets.pos);
+    place(colNeu, buckets.neu);
+    place(colNeg, buckets.neg);
+    empty?.classList.toggle("show", grid.querySelectorAll(".badge").length === 0);
+    if (grid.querySelectorAll(".badge").length > 0){
+      setDebugSection("industrySentiment", "snapshot:industry-sentiment", { rows: splitIndustryRows.length });
+      return;
+    }
+  }
 
   if (!hasEnoughTagged) {
-    const fallbackRows = safeArray(state.bootstrapUsa?.industryLeaderboard || state.bootstrapIndustryLeaderboard || state.sentimentData?.industrySentiment);
+    const fallbackRows = safeArray(
+      state.splitSnapshots?.industrySentiment?.rows ||
+      state.bootstrapUsa?.industryLeaderboard ||
+      state.bootstrapIndustryLeaderboard ||
+      state.sentimentData?.industrySentiment
+    );
     if (fallbackRows.length){
       const toBucketRows = (items = []) => ({
         pos: safeArray(items).filter((item) => Number(item?.bias ?? (Number(item?.pos || 0) - Number(item?.neg || 0))) > 3).slice(0, 3),
@@ -3770,6 +3962,8 @@ function renderIndustryBoard(){
       empty.textContent = updatedAt && state.usingFallbackSnapshot
         ? `${SNAPSHOT_FALLBACK_MESSAGE} Last updated: ${updatedAt}`
         : "Collecting enough industry-tagged articles";
+      pushDegradedReason("industrySentiment", empty.textContent);
+      setDebugSection("industrySentiment", "fallback-empty", { hasEnoughTagged, taggedCounts });
     }
     empty?.classList.add("show");
     return;
@@ -3823,6 +4017,9 @@ function renderIndustryBoard(){
 
   const hasBadges = grid.querySelectorAll(".badge").length > 0;
   empty?.classList.toggle("show", !hasBadges);
+  if (hasBadges){
+    setDebugSection("industrySentiment", "live-or-bootstrap", { hasEnoughTagged, taggedCounts });
+  }
 }
 
 /* glue */
@@ -3846,6 +4043,7 @@ function renderAll(){
   $("#year").textContent = new Date().getFullYear();
   updatePinButtons();
   updateActiveSources();
+  renderDebugPanel();
 }
 
 function getSearchMatches(query){
@@ -4174,7 +4372,9 @@ applyBootstrapCache();
 applyCachedContent();
 loadMarkets();
 loadVisitorStats();
+loadSplitSnapshots();
 void (async () => {
+  await loadSplitSnapshots();
   if (!hasCachedContent) await applyStaticBootstrapSnapshot();
   await refreshBootstrapSnapshot();
   if (!hasCachedContent) loadAll();
