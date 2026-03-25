@@ -162,7 +162,7 @@
           <div class="leader-col col-neu"></div>
           <div class="leader-col col-neg"></div>
           <div class="leader-lines"></div>
-          <div class="board-empty" aria-live="polite">Not enough recent articles to rank sources yet.</div>
+          <div class="board-empty" aria-live="polite">Loading source sentiment…</div>
         </div>
       </div>
       <div class="lb-foot-wrap">
@@ -208,7 +208,7 @@
           <div class="leader-col col-neu"></div>
           <div class="leader-col col-neg"></div>
           <div class="leader-lines"></div>
-          <div class="board-empty" aria-live="polite">Waiting for enough industry-tagged news.</div>
+          <div class="board-empty" aria-live="polite">Loading industry sentiment…</div>
         </div>
       </div>
       <div class="lb-foot-wrap">
@@ -231,10 +231,10 @@
       <span>Informed360 © <span id="year"></span></span>
       <span class="dot">•</span>
       <div class="footer-updated-group">
-        <span id="updatedAt" class="footer-updated">Website updated on —</span>
-        <div id="visitorStats" class="footer-visitor-stats" aria-live="polite">
-          <span id="visitorStatsToday">Today: — unique • — visits</span>
-          <span id="visitorStatsLast7">Last 7 days: — unique • — visits</span>
+        <span id="updatedAt" class="footer-updated">Website updated on loading…</span>
+        <div id="visitorStats" class="footer-visitor-stats" aria-live="polite" hidden>
+          <span id="visitorStatsToday"></span>
+          <span id="visitorStatsLast7"></span>
         </div>
         <div class="footer-legal-block">
           <span class="footer-disclaimer">⚠️ Disclaimer: Informed360 aggregates content from third-party news sources. All sentiment scores, bias indicators, and analytical insights are generated algorithmically and are intended for informational purposes only. They do not represent factual assertions, political positions, or financial advice. Users are encouraged to verify information from original sources. Informed360 assumes no liability for decisions made based on this content.</span>
@@ -246,7 +246,7 @@
       <a class="linkish" href="/methodology">Methodology</a>
       <span class="dot">•</span>
       <a class="linkish" href="/api">API Docs</a>
-      <span id="activeSources" class="footer-sources">Current News Sources: —</span>
+      <span id="activeSources" class="footer-sources" hidden></span>
     </div>
     <div class="footer-right">
       <span>Made for balanced, sentiment-aware news</span>
@@ -352,7 +352,7 @@
       <div class="pricing-tier">
         <div class="tier-header">
           <div class="tier-title">B2C (Pro)</div>
-          <div class="tier-price">₹—/month</div>
+          <div class="tier-price">₹9,999/month*</div>
         </div>
         <ul>
           <li>Personalized sentiment dashboard</li>
@@ -372,6 +372,7 @@
         </ul>
         <a id="pricingDemo" class="btn primary" href="mailto:info.shrirajnair@gmail.com">Request demo</a>
       </div>
+      <p class="drawer-sub" style="margin-top:12px;">*Indicative launch pricing. Final enterprise terms shared during onboarding.</p>
     </div>
   </aside>
 

@@ -1,0 +1,108 @@
+{
+  "rows": [
+    {
+      "name": "Energy",
+      "bias": 21,
+      "count": 3
+    },
+    {
+      "name": "Materials",
+      "bias": -9,
+      "count": 1
+    },
+    {
+      "name": "Communication",
+      "bias": -4.87,
+      "count": 78
+    },
+    {
+      "name": "Technology",
+      "bias": 3.22,
+      "count": 27
+    },
+    {
+      "name": "Finance",
+      "bias": 3,
+      "count": 17
+    },
+    {
+      "name": "Manufacturing",
+      "bias": 0,
+      "count": 1
+    }
+  ],
+  "buckets": {
+    "rows": [
+      {
+        "name": "Energy",
+        "bias": 21,
+        "count": 3
+      },
+      {
+        "name": "Materials",
+        "bias": -9,
+        "count": 1
+      },
+      {
+        "name": "Communication",
+        "bias": -4.87,
+        "count": 78
+      },
+      {
+        "name": "Technology",
+        "bias": 3.22,
+        "count": 27
+      },
+      {
+        "name": "Finance",
+        "bias": 3,
+        "count": 17
+      },
+      {
+        "name": "Manufacturing",
+        "bias": 0,
+        "count": 1
+      }
+    ],
+    "pos": [
+      {
+        "name": "Energy",
+        "bias": 21,
+        "count": 3
+      },
+      {
+        "name": "Technology",
+        "bias": 3.22,
+        "count": 27
+      },
+      {
+        "name": "Finance",
+        "bias": 3,
+        "count": 17
+      }
+    ],
+    "neu": [
+      {
+        "name": "Manufacturing",
+        "bias": 0,
+        "count": 1
+      }
+    ],
+    "neg": [
+      {
+        "name": "Materials",
+        "bias": -9,
+        "count": 1
+      },
+      {
+        "name": "Communication",
+        "bias": -4.87,
+        "count": 78
+      }
+    ]
+  },
+  "generatedAt": "2026-03-25T18:33:33.969Z",
+  "counts": {
+    "rows": 6
+  }
+}
