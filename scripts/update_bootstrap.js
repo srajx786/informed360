@@ -8,6 +8,7 @@ const OUTPUT_PATH = path.join(ROOT, "public", "data", "bootstrap.json");
 const DATA_DIR = path.join(ROOT, "public", "data");
 const SNAPSHOT_FILES = {
   bootstrap: OUTPUT_PATH,
+  homepage: path.join(DATA_DIR, "homepage.json"),
   latestNews: path.join(DATA_DIR, "latest-news.json"),
   sourceSentiment: path.join(DATA_DIR, "source-sentiment.json"),
   industrySentiment: path.join(DATA_DIR, "industry-sentiment.json"),
@@ -23,12 +24,31 @@ const MIN_SOURCE_ARTICLES = 2;
 const MIN_SECTION_ARTICLES = 8;
 const SNAPSHOT_THRESHOLDS = {
   bootstrapArticlesMin: 24,
+  homepageHeroMin: 3,
+  homepageLatestMin: 18,
   latestNewsMin: 18,
   usaNewsMin: 12,
   potusNewsMin: 8,
   sourceRowsMin: 4,
   industryRowsMin: 4,
   trendingPointsMin: 4
+};
+const DEFAULT_IMAGE = "/img/placeholder-news.svg";
+const SOURCE_LOGO_MAP = {
+  "India Today": "/logo/indiatoday.png",
+  "The Hindu": "/logo/thehindu.png",
+  Scroll: "/logo/scroll.png",
+  "Scroll.in": "/logo/scroll.png",
+  News18: "/logo/news18.png",
+  Reuters: "/logo/reuters.png",
+  BBC: "/logo/bbc.png",
+  "Fox News": "/logo/industry-communication.svg",
+  CNN: "/logo/industry-communication.svg",
+  CNBC: "/logo/industry-finance.svg",
+  AP: "/logo/industry-generic.svg",
+  NYT: "/logo/industry-generic.svg",
+  "Washington Post": "/logo/industry-generic.svg",
+  WSJ: "/logo/industry-finance.svg"
 };
 
 const USA_ONLY_SOURCES = [
@@ -105,6 +125,24 @@ const pickArticle = (article = {}) => ({
   sentiment: normalizeSentiment(article.sentiment || article.sentiment_scores || {}),
   category: article.category || "world"
 });
+const normalizeImageUrl = (value = "") => {
+  const candidate = String(value || "").trim();
+  if (!candidate) return "";
+  if (candidate.startsWith("/")) return candidate;
+  if (/^https?:\/\//i.test(candidate)) return candidate;
+  return "";
+};
+const fallbackLogoForSource = (source = "") => SOURCE_LOGO_MAP[source] || "/logo/industry-generic.svg";
+const enrichArticleMedia = (article = {}) => {
+  const imageUrl = normalizeImageUrl(article.imageUrl || article.image || "");
+  const fallbackImageUrl = fallbackLogoForSource(normalizeSourceName(article.source || ""));
+  return {
+    ...article,
+    imageUrl: imageUrl || fallbackImageUrl || DEFAULT_IMAGE,
+    image: imageUrl || fallbackImageUrl || DEFAULT_IMAGE,
+    fallbackImageUrl: fallbackImageUrl || DEFAULT_IMAGE
+  };
+};
 
 const normalizeSourceName = (source = "") => {
   const clean = String(source || "").trim();
@@ -157,6 +195,22 @@ const dedupeArticles = (articles = []) => {
     out.push(article);
   }
   return out;
+};
+const tokenize = (value = "") =>
+  String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .split(/\s+/)
+    .filter((token) => token.length > 2);
+const similarityScore = (a = {}, b = {}) => {
+  const tokensA = new Set(tokenize(`${a.title || ""} ${a.description || ""}`));
+  const tokensB = new Set(tokenize(`${b.title || ""} ${b.description || ""}`));
+  if (!tokensA.size || !tokensB.size) return 0;
+  let overlap = 0;
+  tokensA.forEach((token) => {
+    if (tokensB.has(token)) overlap += 1;
+  });
+  return overlap / Math.max(tokensA.size, tokensB.size);
 };
 
 const fallbackSentiment = (text = "") => {
@@ -553,6 +607,122 @@ const buildSplitSnapshots = (snapshot) => {
     }, { points: pointCount, world: worldTimeline.length, india: indiaTimeline.length, usa: usaTimeline.length })
   };
 };
+const heroSentimentSummary = (article = {}) => {
+  const s = normalizeSentiment(article.sentiment || {});
+  const label = s.posP > s.negP + 5 ? "positive" : s.negP > s.posP + 5 ? "negative" : "neutral";
+  return { posP: s.posP, neuP: s.neuP, negP: s.negP, label };
+};
+const buildHeroSlides = (articles = []) => {
+  const sorted = dedupeArticles(articles).slice(0, 24).map(enrichArticleMedia);
+  const usedLinks = new Set();
+  const slides = [];
+  for (const primary of sorted) {
+    if (slides.length >= 4) break;
+    if (!primary?.link || usedLinks.has(primary.link)) continue;
+    usedLinks.add(primary.link);
+    const related = sorted
+      .filter((candidate) => candidate.link && candidate.link !== primary.link && !usedLinks.has(candidate.link))
+      .map((candidate) => ({ candidate, score: similarityScore(primary, candidate) }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 2)
+      .map(({ candidate }) => {
+        usedLinks.add(candidate.link);
+        return {
+          title: candidate.title || "",
+          headline: candidate.title || "",
+          source: normalizeSourceName(candidate.source || ""),
+          link: candidate.link || "",
+          url: candidate.link || "",
+          publishedAt: candidate.publishedAt || "",
+          imageUrl: candidate.imageUrl || candidate.image || DEFAULT_IMAGE,
+          image: candidate.image || candidate.imageUrl || DEFAULT_IMAGE,
+          fallbackImageUrl: candidate.fallbackImageUrl || DEFAULT_IMAGE,
+          sentiment: heroSentimentSummary(candidate)
+        };
+      });
+    slides.push({
+      id: primary.link || `${slides.length}`,
+      title: primary.title || "",
+      source: normalizeSourceName(primary.source || ""),
+      imageUrl: primary.imageUrl || primary.image || DEFAULT_IMAGE,
+      fallbackImageUrl: primary.fallbackImageUrl || DEFAULT_IMAGE,
+      sentimentSummary: heroSentimentSummary(primary),
+      primary: {
+        title: primary.title || "",
+        source: normalizeSourceName(primary.source || ""),
+        link: primary.link || "",
+        url: primary.link || "",
+        publishedAt: primary.publishedAt || "",
+        imageUrl: primary.imageUrl || primary.image || DEFAULT_IMAGE,
+        image: primary.image || primary.imageUrl || DEFAULT_IMAGE,
+        fallbackImageUrl: primary.fallbackImageUrl || DEFAULT_IMAGE,
+        sentiment: heroSentimentSummary(primary)
+      },
+      related
+    });
+  }
+  return slides;
+};
+const buildHomepageSnapshot = (snapshot = {}) => {
+  const latest = (snapshot?.news?.articles || []).slice(0, 36).map(pickArticle).map(enrichArticleMedia);
+  const homeTopStories = (snapshot?.home?.topStories || [])
+    .map(pickArticle)
+    .filter((item) => (item?.title || "").trim() && (item?.link || "").trim());
+  const heroSlides = buildHeroSlides(homeTopStories.length ? homeTopStories : latest);
+  return {
+    generatedAt: snapshot.generatedAt || new Date().toISOString(),
+    version: VERSION,
+    source: "daily-snapshot",
+    metadata: {
+      generatedAt: snapshot.generatedAt || new Date().toISOString(),
+      source: "public/data/homepage.json",
+      articleCount: latest.length
+    },
+    sections: {
+      hero: { slides: heroSlides },
+      latestNews: { articles: latest },
+      sourceSentiment: { rows: (snapshot?.home?.leaderboards?.sources || []).slice(0, 20) },
+      industrySentiment: {
+        rows: (snapshot?.home?.leaderboards?.industry?.rows || []).slice(0, 20),
+        buckets: snapshot?.home?.leaderboards?.industry || { rows: [], pos: [], neu: [], neg: [] }
+      },
+      trending: {
+        preview: latest.slice(0, 8),
+        points: [
+          ...(snapshot?.plots?.worldSentimentTimeline || []),
+          ...(snapshot?.plots?.indiaSentimentTimeline || []),
+          ...(snapshot?.usa?.plots?.sentimentTimeline || [])
+        ],
+        world: snapshot?.plots?.worldSentimentTimeline || [],
+        india: snapshot?.plots?.indiaSentimentTimeline || [],
+        usa: snapshot?.usa?.plots?.sentimentTimeline || []
+      },
+      usa: {
+        topStories: (snapshot?.usa?.topStories || []).slice(0, 12).map(pickArticle).map(enrichArticleMedia),
+        articles: (snapshot?.usa?.dailyNews || []).slice(0, 36).map(pickArticle).map(enrichArticleMedia),
+        sentiment: snapshot?.usa?.sentiment || {}
+      },
+      potus: {
+        topStories: (snapshot?.potus?.topStories || []).slice(0, 12).map(pickArticle).map(enrichArticleMedia),
+        articles: (snapshot?.potus?.dailyNews || []).slice(0, 30).map(pickArticle).map(enrichArticleMedia),
+        sourceLeaderboard: snapshot?.potus?.sourceLeaderboard || [],
+        topicSentiment: snapshot?.potus?.topicSentiment || []
+      }
+    },
+    counts: {
+      heroSlides: heroSlides.length,
+      latestNews: latest.length,
+      sourceRows: getCount(snapshot?.home?.leaderboards?.sources),
+      industryRows: getCount(snapshot?.home?.leaderboards?.industry?.rows),
+      trendingPoints: getCount(snapshot?.plots?.worldSentimentTimeline) + getCount(snapshot?.plots?.indiaSentimentTimeline) + getCount(snapshot?.usa?.plots?.sentimentTimeline),
+      usaArticles: getCount(snapshot?.usa?.dailyNews),
+      potusArticles: getCount(snapshot?.potus?.dailyNews)
+    }
+  };
+};
+const homepageQuality = (payload = {}) =>
+  Math.min(getCount(payload?.sections?.hero?.slides), 4) * 5 +
+  Math.min(getCount(payload?.sections?.latestNews?.articles), 24);
 
 const main = async () => {
   await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
@@ -589,8 +759,10 @@ const main = async () => {
     console.error("All modules failed. Re-publishing previous strong snapshot files.");
     const previousWithCounts = ensureBootstrapCounts(previous);
     const splitFromPrevious = buildSplitSnapshots(previousWithCounts);
+    const homepageFromPrevious = buildHomepageSnapshot(previousWithCounts);
     await Promise.all([
       fs.writeFile(SNAPSHOT_FILES.bootstrap, `${JSON.stringify(previousWithCounts, null, 2)}\n`, "utf8"),
+      fs.writeFile(SNAPSHOT_FILES.homepage, `${JSON.stringify(homepageFromPrevious, null, 2)}\n`, "utf8"),
       fs.writeFile(SNAPSHOT_FILES.latestNews, `${JSON.stringify(splitFromPrevious.latestNews, null, 2)}\n`, "utf8"),
       fs.writeFile(SNAPSHOT_FILES.sourceSentiment, `${JSON.stringify(splitFromPrevious.sourceSentiment, null, 2)}\n`, "utf8"),
       fs.writeFile(SNAPSHOT_FILES.industrySentiment, `${JSON.stringify(splitFromPrevious.industrySentiment, null, 2)}\n`, "utf8"),
@@ -708,6 +880,7 @@ const main = async () => {
 
   const previousFiles = {
     bootstrap: previous,
+    homepage: await readJson(SNAPSHOT_FILES.homepage),
     latestNews: await readJson(SNAPSHOT_FILES.latestNews),
     sourceSentiment: await readJson(SNAPSHOT_FILES.sourceSentiment),
     industrySentiment: await readJson(SNAPSHOT_FILES.industrySentiment),
@@ -716,6 +889,7 @@ const main = async () => {
     trendingHistory: await readJson(SNAPSHOT_FILES.trendingHistory)
   };
   const split = buildSplitSnapshots(snapshot);
+  const homepage = buildHomepageSnapshot(snapshot);
   const decisions = {
     bootstrap: chooseSnapshot({
       label: "bootstrap",
@@ -723,6 +897,13 @@ const main = async () => {
       previousPayload: ensureBootstrapCounts(previousFiles.bootstrap || {}),
       qualityFn: bootstrapQuality,
       minThreshold: SNAPSHOT_THRESHOLDS.bootstrapArticlesMin
+    }),
+    homepage: chooseSnapshot({
+      label: "homepage",
+      nextPayload: homepage,
+      previousPayload: previousFiles.homepage,
+      qualityFn: homepageQuality,
+      minThreshold: (SNAPSHOT_THRESHOLDS.homepageHeroMin * 5) + SNAPSHOT_THRESHOLDS.homepageLatestMin
     }),
     latestNews: chooseSnapshot({
       label: "latest-news",
@@ -770,6 +951,7 @@ const main = async () => {
 
   await Promise.all([
     fs.writeFile(SNAPSHOT_FILES.bootstrap, `${JSON.stringify(decisions.bootstrap.payload, null, 2)}\n`, "utf8"),
+    fs.writeFile(SNAPSHOT_FILES.homepage, `${JSON.stringify(decisions.homepage.payload, null, 2)}\n`, "utf8"),
     fs.writeFile(SNAPSHOT_FILES.latestNews, `${JSON.stringify(decisions.latestNews.payload, null, 2)}\n`, "utf8"),
     fs.writeFile(SNAPSHOT_FILES.sourceSentiment, `${JSON.stringify(decisions.sourceSentiment.payload, null, 2)}\n`, "utf8"),
     fs.writeFile(SNAPSHOT_FILES.industrySentiment, `${JSON.stringify(decisions.industrySentiment.payload, null, 2)}\n`, "utf8"),
