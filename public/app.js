@@ -10,6 +10,7 @@ const STORIES_CACHE_KEY = "informed360_stories_cache";
 const BOOTSTRAP_CACHE_KEY = "informed360_bootstrap_cache";
 const SENTIMENT_CACHE_KEY = "informed360_sentiment_cache";
 const SNAPSHOT_SPLIT_CACHE_KEY = "informed360_snapshot_split_cache";
+const HOMEPAGE_CACHE_KEY = "informed360_homepage_cache";
 const USA_CATEGORY = "usa";
 const POTUS_CATEGORY = "potus";
 const MIN_SOURCE_ARTICLES = 2;
@@ -142,6 +143,20 @@ const isValidBootstrapSnapshot = (payload) => {
   if (!payload.plots || typeof payload.plots !== "object") return false;
   if (!payload.industryLeaderboard || typeof payload.industryLeaderboard !== "object") return false;
   return true;
+};
+const isValidHomepageSnapshot = (payload) => {
+  if (!payload || typeof payload !== "object") return false;
+  if (!payload.generatedAt || Number.isNaN(new Date(payload.generatedAt).getTime())) return false;
+  const sections = payload.sections || {};
+  return (
+    Array.isArray(sections?.hero?.slides) &&
+    Array.isArray(sections?.latestNews?.articles) &&
+    sections?.sourceSentiment &&
+    sections?.industrySentiment &&
+    sections?.trending &&
+    sections?.usa &&
+    sections?.potus
+  );
 };
 const USA_REGEX = [
   /\bunited states\b/i,
@@ -354,6 +369,12 @@ async function loadSplitSnapshots(){
       }
       const payload = await response.json();
       if (isUsefulSplitPayload(payload, key)){
+        if (key === "latestNews"){
+          const existingTopStories = safeArray(state.splitSnapshots?.latestNews?.topStories);
+          if (!safeArray(payload?.topStories).length && existingTopStories.length){
+            payload.topStories = existingTopStories;
+          }
+        }
         next[key] = payload;
         setDebugFile(file, {
           loaded: true,
@@ -381,6 +402,74 @@ async function loadSplitSnapshots(){
     });
   }
   return state.splitSnapshots;
+}
+function applyHomepageSnapshot(snapshot, { persist = false, source = "homepage" } = {}){
+  if (!isValidHomepageSnapshot(snapshot)) return false;
+  const sections = snapshot.sections || {};
+  const splitFromHomepage = {
+    latestNews: {
+      generatedAt: snapshot.generatedAt,
+      articles: safeArray(sections.latestNews?.articles),
+      topStories: safeArray(sections.hero?.slides)
+    },
+    sourceSentiment: {
+      generatedAt: snapshot.generatedAt,
+      rows: safeArray(sections.sourceSentiment?.rows)
+    },
+    industrySentiment: {
+      generatedAt: snapshot.generatedAt,
+      rows: safeArray(sections.industrySentiment?.rows),
+      buckets: sections.industrySentiment?.buckets || { rows: [], pos: [], neu: [], neg: [] }
+    },
+    trendingHistory: {
+      generatedAt: snapshot.generatedAt,
+      points: safeArray(sections.trending?.points),
+      world: safeArray(sections.trending?.world),
+      india: safeArray(sections.trending?.india),
+      usa: safeArray(sections.trending?.usa)
+    },
+    usaNews: {
+      generatedAt: snapshot.generatedAt,
+      articles: safeArray(sections.usa?.articles),
+      topStories: safeArray(sections.usa?.topStories),
+      sentiment: sections.usa?.sentiment || {}
+    },
+    potusNews: {
+      generatedAt: snapshot.generatedAt,
+      articles: safeArray(sections.potus?.articles),
+      topStories: safeArray(sections.potus?.topStories),
+      sourceLeaderboard: safeArray(sections.potus?.sourceLeaderboard),
+      topicSentiment: safeArray(sections.potus?.topicSentiment)
+    }
+  };
+  state.splitSnapshots = { ...(state.splitSnapshots || {}), ...splitFromHomepage };
+  state.fallbackUpdatedAt = snapshot.generatedAt || state.fallbackUpdatedAt;
+  state.usingFallbackSnapshot = source !== "live";
+  state.fallbackMessage = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : "";
+  hasCachedContent = hasCachedContent || hasHealthySnapshotData();
+  if (persist){
+    writeLocalCache(HOMEPAGE_CACHE_KEY, snapshot);
+    writeLocalCache(SNAPSHOT_SPLIT_CACHE_KEY, state.splitSnapshots);
+  }
+  syncPinsWithArticles();
+  renderPinnedChips();
+  renderAll();
+  return true;
+}
+function applyHomepageCache(){
+  const cached = readLocalCache(HOMEPAGE_CACHE_KEY);
+  if (!isValidHomepageSnapshot(cached)) return false;
+  return applyHomepageSnapshot(cached, { source: "local-homepage-cache" });
+}
+async function applyStaticHomepageSnapshot(){
+  try{
+    const response = await fetch(`/data/homepage.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) return false;
+    const snapshot = await response.json();
+    return applyHomepageSnapshot(snapshot, { persist: true, source: "static-homepage" });
+  }catch{
+    return false;
+  }
 }
 const fetchWithRetry = async (
   path,
@@ -2718,6 +2807,17 @@ function renderHero(){
 
 function asTopStoryCluster(article = {}){
   const safe = article || {};
+  if (safe?.primary){
+    return {
+      ...safe,
+      primary: {
+        ...safe.primary,
+        imageUrl: safe.primary.imageUrl || safe.primary.image || safe.imageUrl || THUMB_PLACEHOLDER,
+        image: safe.primary.image || safe.primary.imageUrl || safe.imageUrl || THUMB_PLACEHOLDER
+      },
+      related: safeArray(safe.related)
+    };
+  }
   return {
     headline: safe.title || "",
     primary: {
@@ -4370,17 +4470,22 @@ setDefaultHomeTab();
 getWeather();
 applyBootstrapCache();
 applyCachedContent();
+applyHomepageCache();
 loadMarkets();
 loadVisitorStats();
-loadSplitSnapshots();
 void (async () => {
-  await loadSplitSnapshots();
+  await applyStaticHomepageSnapshot();
   if (!hasCachedContent) await applyStaticBootstrapSnapshot();
+  await loadSplitSnapshots();
   await refreshBootstrapSnapshot();
-  if (!hasCachedContent) loadAll();
+  if (!hasCachedContent){
+    await loadAll();
+  } else {
+    void loadAll();
+  }
 })();
 checkHealthWithRetry();
-if (!hasCachedContent) loadAll();
+if (!hasCachedContent) renderAll();
 startHeroAuto();
 
 if ("serviceWorker" in navigator){
