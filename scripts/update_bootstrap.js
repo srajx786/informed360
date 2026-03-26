@@ -418,8 +418,17 @@ const POTUS_REGEX = [
   /\bpresident of the united states\b/i,
   /\bwhite house\b/i,
   /\boval office\b/i,
+  /\btrump administration\b/i
+];
+const POTUS_CONTEXT_REGEX = [
+  /\badministration\b/i,
   /\bexecutive order\b/i,
-  /\bpresident\b/i
+  /\bpresidency\b/i,
+  /\bcampaign\b/i,
+  /\bpress secretary\b/i
+];
+const POTUS_EXCLUDE_REGEX = [
+  /\btrumpet\b/i
 ];
 const NON_US_DOMESTIC_REGEX = [
   /\bindia\b/i,
@@ -466,8 +475,11 @@ const filterPotusArticles = (articles = []) => articles.filter((article) => {
   const category = String(article.category || "").toLowerCase();
   if (category === "potus") return true;
   const text = articleText(article);
+  if (hasRegex(text, POTUS_EXCLUDE_REGEX)) return false;
   if (!hasRegex(text, POTUS_REGEX)) return false;
-  return !/\btrumpet\b/i.test(text);
+  if (/\btrump\b/i.test(text)) return true;
+  if (/\b(white house|oval office|president of the united states|u\.?s\.? president)\b/i.test(text)) return true;
+  return hasRegex(text, POTUS_CONTEXT_REGEX);
 });
 const classifyPotusTopic = (article = {}) => {
   const text = articleText(article).toLowerCase();
@@ -794,9 +806,13 @@ const main = async () => {
   const feedUsaArticles = await ingestUsaFeeds();
   const usaArticles = dedupeArticles(filterUsaArticles([...allArticles, ...feedUsaArticles]));
   const potusArticles = dedupeArticles(filterPotusArticles(usaArticles));
+  console.info("[potus] usa candidates:", usaArticles.length, "filtered:", potusArticles.length);
 
   const safeUsa = usaArticles.length >= MIN_SECTION_ARTICLES ? usaArticles : (Array.isArray(previous?.usa?.dailyNews) ? previous.usa.dailyNews : usaArticles);
   const safePotus = potusArticles.length >= MIN_SOURCE_ARTICLES ? potusArticles : (Array.isArray(previous?.potus?.dailyNews) ? previous.potus.dailyNews : potusArticles);
+  if (!potusArticles.length && safePotus.length){
+    console.info("[potus] using cached POTUS dailyNews fallback:", safePotus.length);
+  }
   const nextUsaLeaderboard = buildSourceLeaderboard(safeUsa);
   const nextUsaIndustry = buildIndustryLeaderboard(safeUsa);
 
