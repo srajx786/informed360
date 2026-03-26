@@ -118,6 +118,7 @@ const hasHealthySnapshotData = () =>
   countOf(state?.allArticles) > 0;
 const EMPTY_STATE_MESSAGE = "Data temporarily unavailable. Please check back soon.";
 const SNAPSHOT_FALLBACK_MESSAGE = "Data temporarily unavailable. Showing latest available snapshot.";
+const POTUS_EMPTY_STATE_MESSAGE = "No recent POTUS-specific stories available right now. Please check back soon.";
 const safeArray = (value) => Array.isArray(value) ? value.filter(Boolean) : [];
 const getSafeSentiment = (sentiment = {}) => ({
   posP: Number(sentiment?.posP ?? sentiment?.pos ?? 0) || 0,
@@ -185,8 +186,17 @@ const POTUS_REGEX = [
   /\bpresident of the united states\b/i,
   /\bwhite house\b/i,
   /\boval office\b/i,
+  /\btrump administration\b/i
+];
+const POTUS_CONTEXT_REGEX = [
+  /\badministration\b/i,
   /\bexecutive order\b/i,
-  /\bpresident\b/i
+  /\bpresidency\b/i,
+  /\bcampaign\b/i,
+  /\bpress secretary\b/i
+];
+const POTUS_EXCLUDE_REGEX = [
+  /\btrumpet\b/i
 ];
 const NON_US_DOMESTIC_REGEX = [
   /\bindia\b/i,
@@ -230,8 +240,33 @@ const isPotusArticle = (article = {}) => {
   const category = String(article.category || "").toLowerCase();
   if (category === POTUS_CATEGORY) return true;
   const text = articleText(article);
-  if (!hasRegex(text, POTUS_REGEX)) return false;
-  return !/\btrumpet\b/i.test(text);
+  if (hasRegex(text, POTUS_EXCLUDE_REGEX)) return false;
+  const hasPrimary = hasRegex(text, POTUS_REGEX);
+  if (!hasPrimary) return false;
+  if (/\btrump\b/i.test(text)) return true;
+  if (/\b(white house|oval office|president of the united states|u\.?s\.? president)\b/i.test(text)){
+    return true;
+  }
+  return hasRegex(text, POTUS_CONTEXT_REGEX);
+};
+const resolvePotusArticles = ({ liveArticles = [], splitSnapshots = {}, bootstrapPotus = null } = {}) => {
+  const liveCandidates = safeArray(liveArticles);
+  const liveFiltered = liveCandidates.filter(isPotusArticle);
+  const snapshotPotus = safeArray(splitSnapshots?.potusNews?.articles);
+  const bootstrapDaily = safeArray(bootstrapPotus?.dailyNews);
+  const bootstrapArticles = safeArray(bootstrapPotus?.articles);
+  const fallbackArticles = snapshotPotus.length
+    ? snapshotPotus
+    : (bootstrapDaily.length ? bootstrapDaily : bootstrapArticles);
+  const resolved = liveFiltered.length ? liveFiltered : fallbackArticles;
+  const usedFallback = !liveFiltered.length && fallbackArticles.length > 0;
+  console.info("[potus] candidates:", liveCandidates.length, "filtered:", liveFiltered.length, "fallbackUsed:", usedFallback);
+  return {
+    articles: resolved,
+    hasLiveArticles: liveFiltered.length > 0,
+    hasFallbackArticles: fallbackArticles.length > 0,
+    usedFallback
+  };
 };
 const classifyPotusTopic = (article = {}) => {
   const text = articleText(article).toLowerCase();
@@ -368,6 +403,9 @@ async function loadSplitSnapshots(){
         return;
       }
       const payload = await response.json();
+      if (key === "potusNews" && !safeArray(payload?.articles).length && safeArray(payload?.dailyNews).length){
+        payload.articles = safeArray(payload.dailyNews);
+      }
       if (isUsefulSplitPayload(payload, key)){
         if (key === "latestNews"){
           const existingTopStories = safeArray(state.splitSnapshots?.latestNews?.topStories);
@@ -436,7 +474,9 @@ function applyHomepageSnapshot(snapshot, { persist = false, source = "homepage" 
     },
     potusNews: {
       generatedAt: snapshot.generatedAt,
-      articles: safeArray(sections.potus?.articles),
+      articles: safeArray(sections.potus?.articles).length
+        ? safeArray(sections.potus?.articles)
+        : safeArray(sections.potus?.dailyNews),
       topStories: safeArray(sections.potus?.topStories),
       sourceLeaderboard: safeArray(sections.potus?.sourceLeaderboard),
       topicSentiment: safeArray(sections.potus?.topicSentiment)
@@ -1985,15 +2025,22 @@ async function loadAll(){
     }
 
     const usaSnapshotArticles = safeArray(state.splitSnapshots?.usaNews?.articles);
-    const potusSnapshotArticles = safeArray(state.splitSnapshots?.potusNews?.articles);
     const usaCandidates = state.allArticles.filter(isUsaArticle);
-    const potusCandidates = state.allArticles.filter(isPotusArticle);
+    const potusResolution = resolvePotusArticles({
+      liveArticles: state.allArticles,
+      splitSnapshots: state.splitSnapshots,
+      bootstrapPotus: state.bootstrapPotus
+    });
+    const potusCandidates = potusResolution.articles;
     if (state.category === USA_CATEGORY){
       state.articles = usaCandidates.length ? usaCandidates : (usaSnapshotArticles.length ? usaSnapshotArticles : state.allArticles);
       state.newsEmptyMessage = state.articles.length ? "" : "Showing broader coverage while USA-specific stories refresh.";
     } else if (state.category === POTUS_CATEGORY){
-      state.articles = potusCandidates.length ? potusCandidates : (potusSnapshotArticles.length ? potusSnapshotArticles : state.allArticles);
-      state.newsEmptyMessage = state.articles.length ? "" : "Showing broader coverage while POTUS-specific stories refresh.";
+      state.articles = potusCandidates;
+      state.newsEmptyMessage = state.articles.length ? "" : POTUS_EMPTY_STATE_MESSAGE;
+      if (potusResolution.usedFallback){
+        console.info("[potus] using cached snapshot/bootstrap articles");
+      }
     } else if (state.category === "local" && state.profile?.city){
       const c = state.profile.city.toLowerCase();
       state.articles = state.articles.filter(a =>
@@ -2013,7 +2060,7 @@ async function loadAll(){
       }
     }
 
-    if (!state.allArticles.length){
+    if (!state.allArticles.length && state.category !== POTUS_CATEGORY){
       state.newsEmptyMessage = "No news available right now. Please check back soon.";
     }
 
@@ -2765,12 +2812,14 @@ function renderNews(){
     ? safeArray(state.splitSnapshots?.latestNews?.articles).concat(safeArray(state.articles))
     : safeArray(state.articles);
   setDebugSection("news", state.category === "home" && safeArray(state.splitSnapshots?.latestNews?.articles).length ? "snapshot:latest-news" : "live-or-bootstrap", { articles: homeArticles.length });
-  const cards = homeArticles.slice(4, 9);
+  const cards = state.category === POTUS_CATEGORY
+    ? homeArticles.slice(0, 5)
+    : homeArticles.slice(4, 9);
   list.innerHTML = cards.length
     ? cards.map(card).join("")
-    : `<div class="news-empty">${escapeHtml(state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE)}</div>`;
+    : `<div class="news-empty">${escapeHtml(state.category === POTUS_CATEGORY ? POTUS_EMPTY_STATE_MESSAGE : (state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE))}</div>`;
   if (!cards.length){
-    pushDegradedReason("news", state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE);
+    pushDegradedReason("news", state.category === POTUS_CATEGORY ? POTUS_EMPTY_STATE_MESSAGE : (state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE));
   }
 }
 function renderDaily(){
@@ -2779,11 +2828,16 @@ function renderDaily(){
   const homeArticles = state.category === "home"
     ? safeArray(state.splitSnapshots?.latestNews?.articles).concat(safeArray(state.articles))
     : safeArray(state.articles);
+  if (state.category === POTUS_CATEGORY){
+    console.info("[potus] frontend daily articles:", homeArticles.length);
+  }
   setDebugSection("daily", state.category === "home" && safeArray(state.splitSnapshots?.latestNews?.articles).length ? "snapshot:latest-news" : "live-or-bootstrap", { articles: homeArticles.length });
-  const cards = homeArticles.slice(12, 18);
+  const cards = state.category === POTUS_CATEGORY
+    ? homeArticles.slice(0, 6)
+    : homeArticles.slice(12, 18);
   daily.innerHTML = cards.length
     ? cards.map(card).join("")
-    : `<div class="news-empty">${escapeHtml(state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE)}</div>`;
+    : `<div class="news-empty">${escapeHtml(state.category === POTUS_CATEGORY ? POTUS_EMPTY_STATE_MESSAGE : (state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE))}</div>`;
 }
 
 /* HERO */
@@ -3596,7 +3650,7 @@ function getWorldSentimentArticles(){
     return (state.articles || []).filter(isUsaArticle);
   }
   if (state.category === POTUS_CATEGORY){
-    return (state.articles || []).filter(isPotusArticle);
+    return state.articles || [];
   }
   return state.articles || [];
 }
