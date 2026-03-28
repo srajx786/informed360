@@ -11,6 +11,7 @@ const BOOTSTRAP_CACHE_KEY = "informed360_bootstrap_cache";
 const SENTIMENT_CACHE_KEY = "informed360_sentiment_cache";
 const SNAPSHOT_SPLIT_CACHE_KEY = "informed360_snapshot_split_cache";
 const HOMEPAGE_CACHE_KEY = "informed360_homepage_cache";
+const HERO_SNAPSHOT_KEY = "informed360_hero_snapshot_v1";
 const USA_CATEGORY = "usa";
 const POTUS_CATEGORY = "potus";
 const MIN_SOURCE_ARTICLES = 2;
@@ -81,6 +82,57 @@ const writeLocalCache = (key, value) => {
   }catch{
     // ignore storage quota errors
   }
+};
+const HERO_QUALITY_RANK = {
+  empty: 0,
+  weak: 1,
+  strong: 2
+};
+const heroQualityRank = (quality = "empty") => HERO_QUALITY_RANK[quality] ?? 0;
+const getHeroPrimary = (cluster = {}) => {
+  if (cluster?.primary && typeof cluster.primary === "object") return cluster.primary;
+  return cluster || {};
+};
+function normalizeHeroCluster(cluster = {}){
+  const normalized = normalizeTopStoryCluster(cluster || {});
+  const primary = getHeroPrimary(normalized);
+  const fallbackLogo = logoFor(primary?.url || primary?.link || "", primary?.source || "");
+  const imageUrl = primary?.imageUrl || primary?.image || normalized?.imageUrl || fallbackLogo || THUMB_PLACEHOLDER;
+  const nextPrimary = {
+    ...primary,
+    imageUrl,
+    image: primary?.image || imageUrl
+  };
+  return {
+    ...normalized,
+    primary: nextPrimary,
+    related: safeArray(normalized?.related)
+  };
+}
+function evaluateHeroPayloadQuality(clusters = []){
+  const list = safeArray(clusters).map(normalizeHeroCluster);
+  if (!list.length){
+    return { quality: "empty", usableCount: 0, total: 0 };
+  }
+  let usableCount = 0;
+  list.forEach((cluster) => {
+    const primary = getHeroPrimary(cluster);
+    const hasTitle = Boolean(String(primary?.title || cluster?.headline || "").trim());
+    const hasSource = Boolean(String(primary?.source || "").trim());
+    const hasUrl = Boolean(String(primary?.url || primary?.link || "").trim());
+    const hasImage = Boolean(String(primary?.imageUrl || primary?.image || "").trim());
+    if (hasTitle && hasSource && hasUrl && hasImage){
+      usableCount += 1;
+    }
+  });
+  if (usableCount >= 1){
+    return { quality: "strong", usableCount, total: list.length };
+  }
+  return { quality: "weak", usableCount, total: list.length };
+}
+const readHeroSnapshot = () => {
+  const cached = readLocalCache(HERO_SNAPSHOT_KEY);
+  return safeArray(cached).map(normalizeHeroCluster);
 };
 const debugState = {
   files: {},
@@ -315,6 +367,7 @@ function applyBootstrapSnapshot(snapshot, { persist = false, source = "snapshot"
     worldRecent: news.topStories?.worldRecent || [],
     worldEngaged: news.topStories?.worldEngaged || []
   };
+  syncHeroSnapshot(`bootstrap:${source}`);
   state.newsEmptyMessage = state.allArticles.length
     ? ""
     : "No news available right now. Please check back soon.";
@@ -409,8 +462,15 @@ async function loadSplitSnapshots(){
       if (isUsefulSplitPayload(payload, key)){
         if (key === "latestNews"){
           const existingTopStories = safeArray(state.splitSnapshots?.latestNews?.topStories);
-          if (!safeArray(payload?.topStories).length && existingTopStories.length){
+          const incomingTopStories = safeArray(payload?.topStories);
+          const incomingQuality = evaluateHeroPayloadQuality(incomingTopStories.map(asTopStoryCluster));
+          const existingQuality = evaluateHeroPayloadQuality(existingTopStories.map(asTopStoryCluster));
+          if (heroQualityRank(incomingQuality.quality) < heroQualityRank(existingQuality.quality)){
             payload.topStories = existingTopStories;
+            logHeroUpdate(`split:${key}`, incomingQuality, existingQuality, false, "kept-existing-stronger-split");
+          } else if (!incomingTopStories.length && existingTopStories.length){
+            payload.topStories = existingTopStories;
+            logHeroUpdate(`split:${key}`, incomingQuality, existingQuality, false, "kept-existing-non-empty-split");
           }
         }
         next[key] = payload;
@@ -429,12 +489,14 @@ async function loadSplitSnapshots(){
   }));
   if (Object.keys(next).length){
     state.splitSnapshots = { ...(state.splitSnapshots || {}), ...next };
+    syncHeroSnapshot("split-snapshot:merge");
     writeLocalCache(SNAPSHOT_SPLIT_CACHE_KEY, state.splitSnapshots);
     return state.splitSnapshots;
   }
   const cached = readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY);
   if (cached && typeof cached === "object"){
     state.splitSnapshots = cached;
+    syncHeroSnapshot("split-snapshot:cache");
     Object.entries(files).forEach(([, file]) => {
       setDebugFile(file, { loaded: true, source: "local-cache" });
     });
@@ -483,6 +545,7 @@ function applyHomepageSnapshot(snapshot, { persist = false, source = "homepage" 
     }
   };
   state.splitSnapshots = { ...(state.splitSnapshots || {}), ...splitFromHomepage };
+  syncHeroSnapshot(`homepage:${source}`);
   state.fallbackUpdatedAt = snapshot.generatedAt || state.fallbackUpdatedAt;
   state.usingFallbackSnapshot = source !== "live";
   state.fallbackMessage = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : "";
@@ -1269,9 +1332,56 @@ const state = {
   usingFallbackSnapshot: false,
   fallbackUpdatedAt: "",
   fallbackMessage: "",
-  splitSnapshots: readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY) || {}
+  splitSnapshots: readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY) || {},
+  currentHeroSnapshot: readHeroSnapshot(),
+  currentHeroQuality: "empty"
 };
 let hasCachedContent = false;
+function logHeroUpdate(source, incoming, current, accepted, reason = ""){
+  console.debug("[hero-update]", {
+    source,
+    incoming: incoming.quality,
+    incomingUsable: `${incoming.usableCount}/${incoming.total}`,
+    current: current.quality,
+    currentUsable: `${current.usableCount}/${current.total}`,
+    accepted,
+    reason
+  });
+}
+function updateCurrentHeroSnapshot(clusters = [], { source = "unknown", persist = true } = {}){
+  const normalized = safeArray(clusters).map(normalizeHeroCluster);
+  const incomingQuality = evaluateHeroPayloadQuality(normalized);
+  const currentQuality = evaluateHeroPayloadQuality(state.currentHeroSnapshot);
+  const incomingRank = heroQualityRank(incomingQuality.quality);
+  const currentRank = heroQualityRank(currentQuality.quality);
+  if (currentRank > incomingRank){
+    logHeroUpdate(source, incomingQuality, currentQuality, false, "blocked-weaker-overwrite");
+    return false;
+  }
+  if (!normalized.length && state.currentHeroSnapshot.length){
+    logHeroUpdate(source, incomingQuality, currentQuality, false, "blocked-empty-overwrite");
+    return false;
+  }
+  state.currentHeroSnapshot = normalized;
+  state.currentHeroQuality = incomingQuality.quality;
+  if (persist && incomingRank >= HERO_QUALITY_RANK.strong){
+    writeLocalCache(HERO_SNAPSHOT_KEY, normalized);
+  }
+  logHeroUpdate(source, incomingQuality, currentQuality, true, currentRank === incomingRank ? "equal-or-better" : "upgrade");
+  return true;
+}
+function getHomeHeroCandidates(){
+  const topStories = state.topStories || {};
+  const splitTop = safeArray(state.splitSnapshots?.latestNews?.topStories).map(asTopStoryCluster);
+  if (splitTop.length) return splitTop;
+  return safeArray(topStories.indiaRecent).length
+    ? safeArray(topStories.indiaRecent).map(asTopStoryCluster)
+    : safeArray(topStories.worldRecent).map(asTopStoryCluster);
+}
+function syncHeroSnapshot(source = "state-sync"){
+  updateCurrentHeroSnapshot(getHomeHeroCandidates(), { source, persist: true });
+}
+state.currentHeroQuality = evaluateHeroPayloadQuality(state.currentHeroSnapshot).quality;
 
 function loadProfile(){
   try{
@@ -2017,6 +2127,7 @@ async function loadAll(){
       worldRecent: topWorldRecent?.topStories || [],
       worldEngaged: topWorldEngaged?.topStories || []
     };
+    syncHeroSnapshot("live-api:top-stories");
     state.topics   = selectTrendingTopics(topics.topics || [], state.allArticles);
     if (needsIndiaFetch){
       state.indiaArticles = india?.articles || [];
@@ -2098,6 +2209,7 @@ async function loadAll(){
         worldRecent: [],
         worldEngaged: []
       };
+      syncHeroSnapshot("live-api:error-empty");
       state.indiaArticles = [];
       state.topics = [];
       state.newsEmptyMessage = EMPTY_STATE_MESSAGE;
@@ -2844,6 +2956,7 @@ function renderDaily(){
 function renderHero(){
   const container = $("#heroCarousels");
   if (!container) return;
+  syncHeroSnapshot("render:preflight");
   const sections = buildTopStoriesSections();
   if (!sections.length){
     const message = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE;
@@ -2880,8 +2993,8 @@ function asTopStoryCluster(article = {}){
       publishedAt: safe.publishedAt || "",
       url: safe.link || safe.url || "#",
       link: safe.link || safe.url || "#",
-      imageUrl: safe.imageUrl || safe.image || "",
-      image: safe.image || safe.imageUrl || "",
+      imageUrl: safe.imageUrl || safe.image || THUMB_PLACEHOLDER,
+      image: safe.image || safe.imageUrl || THUMB_PLACEHOLDER,
       sentiment: safe.sentiment || { posP: 0, neuP: 100, negP: 0 }
     },
     related: []
@@ -2906,7 +3019,9 @@ function buildTopStoriesSections(){
   }
   const topStories = state.topStories || {};
   const splitTop = safeArray(state.splitSnapshots?.latestNews?.topStories).map(asTopStoryCluster);
-  const recent = (splitTop.length ? splitTop : safe(topStories.indiaRecent, topStories.worldRecent)).map(normalizeTopStoryCluster);
+  const fallbackRecent = (splitTop.length ? splitTop : safe(topStories.indiaRecent, topStories.worldRecent)).map(normalizeTopStoryCluster);
+  const preservedRecent = safeArray(state.currentHeroSnapshot).map(normalizeTopStoryCluster);
+  const recent = preservedRecent.length ? preservedRecent : fallbackRecent;
   const sections = [
     {
       id: "recent",
