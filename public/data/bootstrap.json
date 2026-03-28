@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-03-28T23:16:10.592Z",
+  "generatedAt": "2026-03-28T23:48:28.487Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 172,
+    "usaArticles": 173,
     "potusArticles": 36
   },
   "version": 1,
@@ -111,6 +111,26 @@
           "confidence": 0.4019
         },
         "category": "technology"
+      },
+      {
+        "title": "Key moments in first month of US-Israeli war on Iran",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/28/key-moments-in-first-month-of-us-israeli-war-on-iran?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "One month after US and Israel launched strikes on Iran, the conflict has escalated across the Middle East.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80",
+        "publishedAt": "2026-03-28T22:50:55.000Z",
+        "sentiment": {
+          "posP": 4,
+          "neuP": 71,
+          "negP": 25,
+          "label": "negative",
+          "confidence": 0.802
+        },
+        "category": "world"
       },
       {
         "title": "Foiled BofA Bombing in Paris Linked to Mideast War, France Says",
@@ -2471,26 +2491,6 @@
           "confidence": 0.2023
         },
         "category": "sports"
-      },
-      {
-        "title": "Why RCB has kept 11 seats vacant for IPL 2026 match vs SRH",
-        "link": "https://www.hindustantimes.com/india-news/why-rcb-has-kept-11-seats-vacant-for-ipl-match-ipl-2026-srh-virat-kohli-abhishek-sharma-ishan-kishan-101774705384097.html",
-        "source": "Hindustan Times",
-        "sourceDomain": "hindustantimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "In June last year, 11 RCB fans died in a stampede during the team’s victory parade outside the M Chinnaswamy stadium after they won their maiden IPL title",
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/03/28/550x309/rcb_empty_seats_1774707706234_1774707721410.png",
-        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/03/28/550x309/rcb_empty_seats_1774707706234_1774707721410.png",
-        "publishedAt": "2026-03-28T14:25:13.000Z",
-        "sentiment": {
-          "posP": 8,
-          "neuP": 78,
-          "negP": 14,
-          "label": "negative",
-          "confidence": 0.4019
-        },
-        "category": "sports"
       }
     ],
     "topics": [
@@ -2515,6 +2515,17 @@
           "neu": 91
         },
         "image": "https://techcrunch.com/wp-content/uploads/2025/01/bluesky-GettyImages-2185142051.jpg?resize=1200,800"
+      },
+      {
+        "title": "key moments | first month | israeli war",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 4,
+          "neg": 25,
+          "neu": 71
+        },
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80"
       },
       {
         "title": "foiled bofa | bofa bombing | paris linked",
@@ -2614,17 +2625,6 @@
           "neu": 74
         },
         "image": "https://ichef.bbci.co.uk/news/1024/branded_news/839b/live/13ea1e70-2aba-11f1-a79a-77e93010d956.jpg"
-      },
-      {
-        "title": "kuwait airport | airport hit | iranian drone",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 35,
-          "neu": 65
-        },
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774731426.jpg?resize=1920%2C1080&amp;quality=80"
       }
     ],
     "stories": [
@@ -2659,6 +2659,40 @@
               "confidence": 0.4019
             },
             "category": "technology"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Key moments in first month of US-Israeli war on Iran",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/28/key-moments-in-first-month-of-us-israeli-war-on-iran?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "One month after US and Israel launched strikes on Iran, the conflict has escalated across the Middle East.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80",
+            "publishedAt": "2026-03-28T22:50:55.000Z",
+            "sentiment": {
+              "posP": 4,
+              "neuP": 71,
+              "negP": 25,
+              "label": "negative",
+              "confidence": 0.802
+            },
+            "category": "world"
           }
         ]
       },
@@ -2881,40 +2915,6 @@
               "negP": 0,
               "label": "positive",
               "confidence": 0.3182
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "OBC and EBC voters are not happy with Nitish Kumar moving to Rajya Sabha, says Anand Mohan",
-            "link": "https://www.thehindu.com/news/national/bihar/obc-and-ebc-voters-are-not-happy-with-nitish-kumar-moving-to-rajya-sabha-says-anand-mohan/article70796405.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "Expressing his apprehension, Mr. Mohan added that in days to come or in near future, the ruling parties will not get any benefit from the decision of Nitish Kumar leaving Bihar politics and moving to Rajya Sabha",
-            "image": "https://th-i.thgim.com/public/incoming/6w2ihr/article70797648.ece/alternates/LANDSCAPE_1200/20260326195L.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/6w2ihr/article70797648.ece/alternates/LANDSCAPE_1200/20260326195L.jpg",
-            "publishedAt": "2026-03-28T21:55:23.000Z",
-            "sentiment": {
-              "posP": 4,
-              "neuP": 82,
-              "negP": 14,
-              "label": "negative",
-              "confidence": 0.7076
             },
             "category": "world"
           }
@@ -3077,6 +3077,40 @@
         },
         "articles": [
           {
+            "title": "Key moments in first month of US-Israeli war on Iran",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/28/key-moments-in-first-month-of-us-israeli-war-on-iran?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "One month after US and Israel launched strikes on Iran, the conflict has escalated across the Middle East.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80",
+            "publishedAt": "2026-03-28T22:50:55.000Z",
+            "sentiment": {
+              "posP": 4,
+              "neuP": 71,
+              "negP": 25,
+              "label": "negative",
+              "confidence": 0.802
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
             "title": "Foiled BofA Bombing in Paris Linked to Mideast War, France Says",
             "link": "https://www.livemint.com/news/foiled-bofa-bombing-in-paris-linked-to-mideast-war-france-says-11774738028291.html",
             "source": "Mint",
@@ -3195,40 +3229,6 @@
               "negP": 23,
               "label": "negative",
               "confidence": 0.7579
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Pakistan secures Iran deal to send 20 ships through Strait of Hormuz",
-            "link": "https://www.aljazeera.com/news/2026/3/28/pakistan-secures-iran-deal-to-send-20-ships-through-strait-of-hormuz?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Islamabad's diplomatic push bears fruit as the world watches for signs of a broader breakthrough.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-28T121601Z_1865699068_RC23ZHAXRGUO_RTRMADP_3_IRAN-CRISIS-PAKISTAN-PRESIDENT-1774733553.jpg?resize=1920%2C1440",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-28T121601Z_1865699068_RC23ZHAXRGUO_RTRMADP_3_IRAN-CRISIS-PAKISTAN-PRESIDENT-1774733553.jpg?resize=1920%2C1440",
-            "publishedAt": "2026-03-28T21:56:30.000Z",
-            "sentiment": {
-              "posP": 8,
-              "neuP": 92,
-              "negP": 0,
-              "label": "positive",
-              "confidence": 0.3182
             },
             "category": "world"
           }
@@ -3651,9 +3651,9 @@
     ],
     "sentiment": {
       "overall": {
-        "pos": 6.55,
-        "neu": 81.76,
-        "neg": 11.69,
+        "pos": 6.52,
+        "neu": 81.7,
+        "neg": 11.78,
         "count": 120
       },
       "india": {
@@ -3663,37 +3663,37 @@
         "count": 19
       },
       "world": {
-        "pos": 6.97,
-        "neu": 81.38,
-        "neg": 11.65,
+        "pos": 6.93,
+        "neu": 81.31,
+        "neg": 11.76,
         "count": 101
       }
     },
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-03-28T19:16:10.592Z",
+          "label": "2026-03-28T19:48:28.488Z",
           "pos": 17,
           "neu": 83,
           "neg": 0,
           "count": 1
         },
         {
-          "label": "2026-03-28T20:16:10.592Z",
+          "label": "2026-03-28T20:48:28.488Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-03-28T21:16:10.592Z",
+          "label": "2026-03-28T21:48:28.488Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-03-28T22:16:10.592Z",
+          "label": "2026-03-28T22:48:28.488Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3702,32 +3702,32 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-03-28T19:16:10.592Z",
-          "pos": 4,
-          "neu": 86,
-          "neg": 10,
-          "count": 7
+          "label": "2026-03-28T19:48:28.488Z",
+          "pos": 5,
+          "neu": 84,
+          "neg": 12,
+          "count": 6
         },
         {
-          "label": "2026-03-28T20:16:10.592Z",
-          "pos": 6,
-          "neu": 85,
-          "neg": 9,
-          "count": 7
-        },
-        {
-          "label": "2026-03-28T21:16:10.592Z",
+          "label": "2026-03-28T20:48:28.488Z",
           "pos": 9,
-          "neu": 80,
-          "neg": 11,
+          "neu": 79,
+          "neg": 12,
           "count": 5
         },
         {
-          "label": "2026-03-28T22:16:10.592Z",
-          "pos": 5,
-          "neu": 78,
-          "neg": 18,
-          "count": 4
+          "label": "2026-03-28T21:48:28.488Z",
+          "pos": 6,
+          "neu": 77,
+          "neg": 17,
+          "count": 7
+        },
+        {
+          "label": "2026-03-28T22:48:28.488Z",
+          "pos": 7,
+          "neu": 81,
+          "neg": 13,
+          "count": 2
         }
       ]
     },
@@ -3746,7 +3746,7 @@
           },
           {
             "name": "Communication",
-            "bias": -8.47,
+            "bias": -8.64,
             "count": 88
           },
           {
@@ -3787,7 +3787,7 @@
         "neg": [
           {
             "name": "Communication",
-            "bias": -8.47,
+            "bias": -8.64,
             "count": 88
           }
         ]
@@ -3801,6 +3801,13 @@
           "count": 30
         },
         {
+          "source": "Al Jazeera",
+          "pos": 4.72,
+          "neu": 72.83,
+          "neg": 22.44,
+          "count": 18
+        },
+        {
           "source": "India Today",
           "pos": 6.33,
           "neu": 78.06,
@@ -3812,13 +3819,6 @@
           "pos": 7.06,
           "neu": 85.18,
           "neg": 7.76,
-          "count": 17
-        },
-        {
-          "source": "Al Jazeera",
-          "pos": 4.76,
-          "neu": 72.94,
-          "neg": 22.29,
           "count": 17
         },
         {
@@ -3851,16 +3851,36 @@
         },
         {
           "source": "Hindustan Times",
-          "pos": 8.25,
-          "neu": 75.5,
-          "neg": 16.25,
-          "count": 4
+          "pos": 8.33,
+          "neu": 74.67,
+          "neg": 17,
+          "count": 3
         }
       ]
     }
   },
   "usa": {
     "topStories": [
+      {
+        "title": "Key moments in first month of US-Israeli war on Iran",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/28/key-moments-in-first-month-of-us-israeli-war-on-iran?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "One month after US and Israel launched strikes on Iran, the conflict has escalated across the Middle East.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80",
+        "publishedAt": "2026-03-28T22:50:55.000Z",
+        "sentiment": {
+          "posP": 4,
+          "neuP": 71,
+          "negP": 25,
+          "label": "negative",
+          "confidence": 0.802
+        },
+        "category": "world"
+      },
       {
         "title": "Foiled BofA Bombing in Paris Linked to Mideast War, France Says",
         "link": "https://www.livemint.com/news/foiled-bofa-bombing-in-paris-linked-to-mideast-war-france-says-11774738028291.html",
@@ -4080,29 +4100,29 @@
           "confidence": 0.6124
         },
         "category": "world"
-      },
+      }
+    ],
+    "dailyNews": [
       {
-        "title": "As war rages, Iranian politicians push for exit from nuclear weapons treaty",
-        "link": "https://www.aljazeera.com/news/2026/3/28/lawmakers-push-npt-exit-as-us-israel-hit-irans-nuclear-sites-steel-plants?traffic_source=rss",
+        "title": "Key moments in first month of US-Israeli war on Iran",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/28/key-moments-in-first-month-of-us-israeli-war-on-iran?traffic_source=rss",
         "source": "Al Jazeera",
         "sourceDomain": "aljazeera.com",
         "sourceCredibility": "Medium",
         "industry": "Communication",
-        "description": "While US-Israeli attacks hit key infrastructure, hardliners demand withdrawal from Nuclear Non-Proliferation Treaty.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/AP26061384129728-1774712035.jpg?resize=1200%2C675",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/AP26061384129728-1774712035.jpg?resize=1200%2C675",
-        "publishedAt": "2026-03-28T17:48:55.000Z",
+        "description": "One month after US and Israel launched strikes on Iran, the conflict has escalated across the Middle East.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774738229.jpg?resize=1920%2C1080&amp;quality=80",
+        "publishedAt": "2026-03-28T22:50:55.000Z",
         "sentiment": {
-          "posP": 3,
-          "neuP": 55,
-          "negP": 42,
+          "posP": 4,
+          "neuP": 71,
+          "negP": 25,
           "label": "negative",
-          "confidence": 0.9217
+          "confidence": 0.802
         },
         "category": "world"
-      }
-    ],
-    "dailyNews": [
+      },
       {
         "title": "Foiled BofA Bombing in Paris Linked to Mideast War, France Says",
         "link": "https://www.livemint.com/news/foiled-bofa-bombing-in-paris-linked-to-mideast-war-france-says-11774738028291.html",
@@ -4544,79 +4564,52 @@
         "category": "world"
       },
       {
-        "title": "Nate Smith admits he threw a drink at Morgan Wallen on stage, calling him 'a very forgiving person'",
-        "link": "https://www.foxnews.com/entertainment/nate-smith-admits-threw-drink-morgan-wallen-stage-calling-him-forgiving-person",
+        "title": "New study reveals most stressed US states — and they aren't where you'd expect",
+        "link": "https://www.foxnews.com/travel/stress-crisis-explodes-across-america-states-suffer-most",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Nate Smith admits he threw a drink at Morgan Wallen on stage during their tour, saying Wallen forgave him and that he thought he was being funny.",
+        "description": "A new WalletHub study ranks Louisiana as the most stressed U.S. state in 2026, citing poverty, limited health care access and high unemployment rates.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-28T23:01:58.000Z",
+        "publishedAt": "2026-03-28T23:18:51.000Z",
         "sentiment": {
-          "posP": 25.3,
-          "negP": 0,
-          "neuP": 74.7,
-          "label": "positive",
-          "confidence": 0.9
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Hormone therapy boosts weight loss drug results by 35% in women, study finds",
-        "link": "https://www.foxnews.com/health/pairing-hormone-therapy-popular-glp-1-based-drug-boosted-weight-loss-study-finds",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A Mayo Clinic study suggests postmenopausal women lost 35% more weight combining hormone therapy with tirzepatide, though experts urge caution on the findings.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-28T23:01:46.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 11.8,
-          "neuP": 82.3,
+          "posP": 6.9,
+          "negP": 28.9,
+          "neuP": 64.2,
           "label": "negative",
-          "confidence": 0.32
+          "confidence": 0.85
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.97,
-      "neu": 79.28,
-      "neg": 13.75,
-      "count": 172
+      "pos": 7.24,
+      "neu": 78.88,
+      "neg": 13.88,
+      "count": 173
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.25,
-        "neu": 77.83,
-        "neg": 14.93,
+        "pos": 7.24,
+        "neu": 77.77,
+        "neg": 14.99,
         "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 12.11,
-        "neu": 73.28,
-        "neg": 14.61,
+        "pos": 12.46,
+        "neu": 74.09,
+        "neg": 13.46,
         "count": 20
       },
       {
         "source": "CBS News",
-        "pos": 2.59,
-        "neu": 85.77,
-        "neg": 11.64,
-        "count": 20
-      },
-      {
-        "source": "WSJ",
-        "pos": 6.34,
-        "neu": 79.08,
-        "neg": 14.58,
+        "pos": 4.75,
+        "neu": 82.02,
+        "neg": 13.23,
         "count": 20
       },
       {
@@ -4624,6 +4617,13 @@
         "pos": 7.64,
         "neu": 79.81,
         "neg": 12.54,
+        "count": 20
+      },
+      {
+        "source": "WSJ",
+        "pos": 6.34,
+        "neu": 79.08,
+        "neg": 14.58,
         "count": 20
       },
       {
@@ -4649,10 +4649,10 @@
       },
       {
         "source": "Al Jazeera",
-        "pos": 2.33,
-        "neu": 65.83,
-        "neg": 31.83,
-        "count": 6
+        "pos": 2.57,
+        "neu": 66.57,
+        "neg": 30.86,
+        "count": 7
       },
       {
         "source": "The Hindu",
@@ -4685,8 +4685,28 @@
         },
         {
           "name": "Communication",
-          "bias": -15.83,
-          "count": 12
+          "bias": -16.23,
+          "count": 13
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -15,
+          "count": 1
+        },
+        {
+          "name": "Healthcare",
+          "bias": -8.68,
+          "count": 5
+        },
+        {
+          "name": "Energy",
+          "bias": -7.56,
+          "count": 16
+        },
+        {
+          "name": "Finance",
+          "bias": -6.89,
+          "count": 18
         },
         {
           "name": "Materials",
@@ -4695,23 +4715,8 @@
         },
         {
           "name": "Technology",
-          "bias": -5.9,
-          "count": 125
-        },
-        {
-          "name": "Finance",
-          "bias": -5.56,
-          "count": 17
-        },
-        {
-          "name": "Healthcare",
-          "bias": -5.35,
-          "count": 4
-        },
-        {
-          "name": "Energy",
-          "bias": -5.32,
-          "count": 16
+          "bias": -5.55,
+          "count": 126
         },
         {
           "name": "Utilities",
@@ -4722,19 +4727,19 @@
       "pos": [],
       "neu": [
         {
-          "name": "Technology",
-          "bias": -5.9,
-          "count": 125
+          "name": "Healthcare",
+          "bias": -8.68,
+          "count": 5
+        },
+        {
+          "name": "Energy",
+          "bias": -7.56,
+          "count": 16
         },
         {
           "name": "Finance",
-          "bias": -5.56,
-          "count": 17
-        },
-        {
-          "name": "Healthcare",
-          "bias": -5.35,
-          "count": 4
+          "bias": -6.89,
+          "count": 18
         }
       ],
       "neg": [
@@ -4745,45 +4750,45 @@
         },
         {
           "name": "Communication",
-          "bias": -15.83,
-          "count": 12
+          "bias": -16.23,
+          "count": 13
         },
         {
-          "name": "Materials",
-          "bias": -6.4,
-          "count": 4
+          "name": "Manufacturing",
+          "bias": -15,
+          "count": 1
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-03-28T19:16:10.594Z",
+          "label": "2026-03-28T19:48:28.489Z",
+          "pos": 10,
+          "neu": 78,
+          "neg": 13,
+          "count": 12
+        },
+        {
+          "label": "2026-03-28T20:48:28.489Z",
           "pos": 11,
-          "neu": 75,
-          "neg": 14,
-          "count": 15
-        },
-        {
-          "label": "2026-03-28T20:16:10.594Z",
-          "pos": 5,
           "neu": 80,
+          "neg": 9,
+          "count": 8
+        },
+        {
+          "label": "2026-03-28T21:48:28.489Z",
+          "pos": 8,
+          "neu": 76,
+          "neg": 16,
+          "count": 9
+        },
+        {
+          "label": "2026-03-28T22:48:28.489Z",
+          "pos": 8,
+          "neu": 77,
           "neg": 15,
-          "count": 10
-        },
-        {
-          "label": "2026-03-28T21:16:10.594Z",
-          "pos": 16,
-          "neu": 73,
-          "neg": 11,
-          "count": 7
-        },
-        {
-          "label": "2026-03-28T22:16:10.594Z",
-          "pos": 7,
-          "neu": 79,
-          "neg": 14,
-          "count": 18
+          "count": 24
         }
       ]
     }
@@ -5273,6 +5278,66 @@
         "category": "usa"
       },
       {
+        "title": "Millions turn out for \"No Kings\" rallies held worldwide to protest against Trump",
+        "link": "https://www.cbsnews.com/news/no-kings-rallies-protest-trump-millions/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Organizers estimated that at least 8 million people took part in more than 3,300 \"No Kings\" events worldwide.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-28T23:38:23.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 19.8,
+          "neuP": 80.2,
+          "label": "negative",
+          "confidence": 0.69
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Houthis enter Iran war, more U.S. troops arrive to Middle East",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-strait-of-hormuz-oil-tanker-israel/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration is awaiting Iran's formal response to its 15-point peace proposal, as Tehran continues blocking the Strait of Hormuz.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-28T23:18:27.000Z",
+        "sentiment": {
+          "posP": 9,
+          "negP": 16.7,
+          "neuP": 74.3,
+          "label": "negative",
+          "confidence": 0.46
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Third round of \"No Kings\" protests held worldwide",
+        "link": "https://www.cbsnews.com/video/third-round-no-kings-protests-held-worldwide/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Protesters across the U.S. and the world took to the streets as part of the latest \"No Kings\" rallies against President Trump and his administration. Among the biggest was in St. Paul, Minnesota. Cristian Benavides reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-28T22:45:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17,
+          "neuP": 83,
+          "label": "negative",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
         "title": "Wild Ultimatums and ‘Bombing Our Little Hearts Out’: A Portrait of Trump at War",
         "link": "https://www.nytimes.com/2026/03/28/us/politics/trump-iran-war.html",
         "source": "NYT",
@@ -5302,7 +5367,7 @@
         "description": "Thousands of organized demonstrations stretched across the country. Minnesota was a focal point of the protests after a tumultuous immigration crackdown.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-28T21:20:04.000Z",
+        "publishedAt": "2026-03-28T23:46:05.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 13.2,
@@ -5322,7 +5387,7 @@
         "description": "It’s the third time that the coalition behind the “No Kings” movement has organized events to protest President Trump and his policies. In the United States, more than 3,000 demonstrations were planned.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-28T22:37:47.000Z",
+        "publishedAt": "2026-03-28T23:35:02.000Z",
         "sentiment": {
           "posP": 6,
           "negP": 13,
@@ -5393,62 +5458,22 @@
         "category": "usa"
       },
       {
-        "title": "\"No Kings\" rallies held worldwide to protest against Trump",
-        "link": "https://www.cbsnews.com/news/no-kings-rallies-protest-trump-millions/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "How the big oil and gas CEOs think the Iran war supply disruption will play out",
+        "link": "https://www.cnbc.com/2026/03/28/iran-war-oil-companies-price-gas-diesel-strait-hormuz.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Organizers say more than 3,100 events were registered in the U.S., with more than 9 million people expected to participate.",
+        "description": "The oil industry's grim outlook for global oil and gas supplies stands in contrast to the Trump administration's promise that the disruption is short term.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-28T23:13:09.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 13.9,
-          "neuP": 86.1,
-          "label": "negative",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Third round of \"No Kings\" protests held worldwide",
-        "link": "https://www.cbsnews.com/video/third-round-no-kings-protests-held-worldwide/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Protesters across the U.S. and the world took to the streets as part of the latest \"No Kings\" rallies against President Trump and his administration. Among the biggest was in St. Paul, Minnesota. Cristian Benavides reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-28T22:45:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 17,
-          "neuP": 83,
-          "label": "negative",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Houthis enter Iran war, more U.S. troops arrive to Middle East",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-strait-of-hormuz-oil-tanker-israel/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration is awaiting Iran's formal response to its 15-point peace proposal, as Tehran continues blocking the Strait of Hormuz.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-28T22:18:58.000Z",
+        "publishedAt": "2026-03-28T19:35:46.000Z",
         "sentiment": {
           "posP": 9,
-          "negP": 16.7,
-          "neuP": 74.3,
+          "negP": 24.1,
+          "neuP": 66.9,
           "label": "negative",
-          "confidence": 0.46
+          "confidence": 0.84
         },
         "category": "usa"
       },
@@ -5473,50 +5498,30 @@
         "category": "usa"
       },
       {
-        "title": "How the big oil and gas CEOs think the Iran war supply disruption will play out",
-        "link": "https://www.cnbc.com/2026/03/28/iran-war-oil-companies-price-gas-diesel-strait-hormuz.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "UFC brings cage-match bout to the White House, home of a president who favors cage-match politics",
+        "link": "https://abcnews.com/Sports/wireStory/ufc-brings-cage-match-bout-white-house-home-131498557",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The oil industry's grim outlook for global oil and gas supplies stands in contrast to the Trump administration's promise that the disruption is short term.",
+        "description": "Trump is hosting a UFC fight at the White House to celebrate his 80th birthday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-28T19:35:46.000Z",
+        "publishedAt": "2026-03-28T14:42:46.000Z",
         "sentiment": {
-          "posP": 9,
-          "negP": 24.1,
-          "neuP": 66.9,
-          "label": "negative",
-          "confidence": 0.84
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
+          "posP": 16.6,
+          "negP": 7.6,
+          "neuP": 75.8,
+          "label": "positive",
+          "confidence": 0.48
         },
         "category": "usa"
       }
     ],
     "sentiment": {
       "pos": 6.41,
-      "neu": 81.93,
-      "neg": 11.66,
+      "neu": 81.77,
+      "neg": 11.83,
       "count": 36
     },
     "sourceLeaderboard": [
@@ -5551,8 +5556,8 @@
       {
         "source": "CBS News",
         "pos": 3,
-        "neu": 81.13,
-        "neg": 15.87,
+        "neu": 79.17,
+        "neg": 17.83,
         "count": 3
       },
       {
@@ -5581,8 +5586,8 @@
       {
         "topic": "Campaign / Politics",
         "pos": 5.71,
-        "neu": 83.7,
-        "neg": 10.6,
+        "neu": 83.4,
+        "neg": 10.89,
         "count": 20
       },
       {
@@ -5617,9 +5622,9 @@
   },
   "sentiment": {
     "overall": {
-      "pos": 6.55,
-      "neu": 81.76,
-      "neg": 11.69,
+      "pos": 6.52,
+      "neu": 81.7,
+      "neg": 11.78,
       "count": 120
     },
     "india": {
@@ -5629,37 +5634,37 @@
       "count": 19
     },
     "world": {
-      "pos": 6.97,
-      "neu": 81.38,
-      "neg": 11.65,
+      "pos": 6.93,
+      "neu": 81.31,
+      "neg": 11.76,
       "count": 101
     }
   },
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-03-28T19:16:10.597Z",
+        "label": "2026-03-28T19:48:28.491Z",
         "pos": 17,
         "neu": 83,
         "neg": 0,
         "count": 1
       },
       {
-        "label": "2026-03-28T20:16:10.597Z",
+        "label": "2026-03-28T20:48:28.491Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-03-28T21:16:10.597Z",
+        "label": "2026-03-28T21:48:28.491Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-03-28T22:16:10.597Z",
+        "label": "2026-03-28T22:48:28.491Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5668,32 +5673,32 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-03-28T19:16:10.597Z",
-        "pos": 4,
-        "neu": 86,
-        "neg": 10,
-        "count": 7
+        "label": "2026-03-28T19:48:28.491Z",
+        "pos": 5,
+        "neu": 84,
+        "neg": 12,
+        "count": 6
       },
       {
-        "label": "2026-03-28T20:16:10.597Z",
-        "pos": 6,
-        "neu": 85,
-        "neg": 9,
-        "count": 7
-      },
-      {
-        "label": "2026-03-28T21:16:10.597Z",
+        "label": "2026-03-28T20:48:28.491Z",
         "pos": 9,
-        "neu": 80,
-        "neg": 11,
+        "neu": 79,
+        "neg": 12,
         "count": 5
       },
       {
-        "label": "2026-03-28T22:16:10.597Z",
-        "pos": 5,
-        "neu": 78,
-        "neg": 18,
-        "count": 4
+        "label": "2026-03-28T21:48:28.491Z",
+        "pos": 6,
+        "neu": 77,
+        "neg": 17,
+        "count": 7
+      },
+      {
+        "label": "2026-03-28T22:48:28.491Z",
+        "pos": 7,
+        "neu": 81,
+        "neg": 13,
+        "count": 2
       }
     ]
   },
@@ -5711,7 +5716,7 @@
       },
       {
         "name": "Communication",
-        "bias": -8.47,
+        "bias": -8.64,
         "count": 88
       },
       {
@@ -5752,7 +5757,7 @@
     "neg": [
       {
         "name": "Communication",
-        "bias": -8.47,
+        "bias": -8.64,
         "count": 88
       }
     ]
@@ -5774,7 +5779,7 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 172,
+      "usaArticles": 173,
       "potusArticles": 36,
       "sourceRows": 9,
       "industryRows": 5,
