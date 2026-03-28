@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-03-28T19:37:57.319Z",
+  "generatedAt": "2026-03-28T20:01:54.996Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 170,
-    "potusArticles": 38
+    "usaArticles": 169,
+    "potusArticles": 37
   },
   "version": 1,
   "topStories": [
@@ -92,6 +92,26 @@
   ],
   "news": {
     "articles": [
+      {
+        "title": "Iran-Backed Houthis Join War as More US Troops Reach Region",
+        "link": "https://www.livemint.com/news/world/iranbacked-houthis-join-war-as-more-us-troops-reach-region-11774727374196.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Houthi militants launched ballistic missiles at Israel on Saturday morning, marking their entry into the month-long Iran war that has already caused chaos in energy markets and killed thousands of people.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-28T19:49:33.000Z",
+        "sentiment": {
+          "posP": 13,
+          "neuP": 59,
+          "negP": 28,
+          "label": "negative",
+          "confidence": 0.9159
+        },
+        "category": "world"
+      },
       {
         "title": "T.N. Assembly election: Palaniswami claims Stalin is campaigning for Udhayanidhi to become CM",
         "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/tn-assembly-election-palaniswami-claims-stalin-is-campaigning-for-udhayanidhi-to-become-cm/article70797103.ece",
@@ -2471,29 +2491,20 @@
           "confidence": 0.8109
         },
         "category": "world"
-      },
-      {
-        "title": "'If you think you can do it better...': Marco Rubio, EU official had heated exchange over Russia at G7 meet, says report",
-        "link": "https://www.livemint.com/news/world/if-you-think-you-can-do-it-better-marco-rubio-eu-official-had-heated-exchange-over-russia-at-g7-meet-says-report-11774703550176.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "During a discussion at the G7 meeting on Friday, United States Secretary of State Marco Rubio reportedly fired back at EU foreign policy chief Kaja Kallas over a question on Russia-Ukraine war.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-03-28T13:25:34.000Z",
-        "sentiment": {
-          "posP": 5,
-          "neuP": 82,
-          "negP": 13,
-          "label": "negative",
-          "confidence": 0.6908
-        },
-        "category": "world"
       }
     ],
     "topics": [
+      {
+        "title": "iran backed | backed houthis | houthis join",
+        "count": 2,
+        "sources": 2,
+        "sentiment": {
+          "pos": 10,
+          "neg": 35,
+          "neu": 56
+        },
+        "image": "/img/thumb-placeholder.svg"
+      },
       {
         "title": "finance minister | minister nirmala | nirmala sitharaman",
         "count": 2,
@@ -2504,17 +2515,6 @@
           "neu": 85
         },
         "image": "https://img.etimg.com/thumb/msid-129853854,width-1200,height-630,imgsize-129616,overlay-economictimes/articleshow.jpg"
-      },
-      {
-        "title": "rbse 10th | 10th result | result 2026",
-        "count": 2,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 0,
-          "neu": 100
-        },
-        "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
       },
       {
         "title": "assembly election | election palaniswami | palaniswami claims",
@@ -2628,6 +2628,60 @@
       }
     ],
     "stories": [
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Iran-Backed Houthis Join War as More US Troops Reach Region",
+            "link": "https://www.livemint.com/news/world/iranbacked-houthis-join-war-as-more-us-troops-reach-region-11774727374196.html",
+            "source": "Mint",
+            "sourceDomain": "livemint.com",
+            "sourceCredibility": "High",
+            "industry": "Finance",
+            "description": "Houthi militants launched ballistic missiles at Israel on Saturday morning, marking their entry into the month-long Iran war that has already caused chaos in energy markets and killed thousands of people.",
+            "image": "/img/thumb-placeholder.svg",
+            "imageUrl": "/img/thumb-placeholder.svg",
+            "publishedAt": "2026-03-28T19:49:33.000Z",
+            "sentiment": {
+              "posP": 13,
+              "neuP": 59,
+              "negP": 28,
+              "label": "negative",
+              "confidence": 0.9159
+            },
+            "category": "world"
+          },
+          {
+            "title": "Iran-backed Houthis join war with attack against Israel",
+            "link": "https://www.bbc.com/news/articles/cd6l5n8jv4yo?at_medium=RSS&at_campaign=rss",
+            "source": "BBC",
+            "sourceDomain": "bbc.com",
+            "sourceCredibility": "High",
+            "industry": "Communication",
+            "description": "There are fears the Iranian proxy may attack shipping in the Red Sea, adding to global economic woes.",
+            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/3340/live/d8ed27d0-2ac9-11f1-934f-036468834728.jpg",
+            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/3340/live/d8ed27d0-2ac9-11f1-934f-036468834728.jpg",
+            "publishedAt": "2026-03-28T18:18:32.000Z",
+            "sentiment": {
+              "posP": 6,
+              "neuP": 52,
+              "negP": 42,
+              "label": "negative",
+              "confidence": 0.9274
+            },
+            "category": "world"
+          }
+        ]
+      },
       {
         "title": "",
         "summary": "",
@@ -2865,40 +2919,6 @@
             "category": "world"
           }
         ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "T.N. Assembly election: VCK gives away Nagappatinam and Vanur; CPI (M) seeks Vilavancode",
-            "link": "https://www.thehindu.com/news/national/tamil-nadu/tn-assembly-election-vck-gives-away-nagappatinam-and-vanur-cpi-m-seeks-vilavancode/article70797181.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "",
-            "image": "https://www.thehindu.com/theme/images/og-image.png",
-            "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
-            "publishedAt": "2026-03-28T18:55:20.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "world"
-          }
-        ]
       }
     ],
     "engagedStories": [
@@ -2915,44 +2935,44 @@
         },
         "articles": [
           {
-            "title": "RCB vs SRH: Virat Kohli not surprised by Devdutt Padikkal's Bengaluru blitz",
-            "link": "https://www.indiatoday.in/sports/cricket/story/virat-kohli-praises-devdutt-padikkal-explosive-innings-rcb-beat-srh-ipl-2026-opener-2888559-2026-03-29?utm_source=rss",
-            "source": "India Today",
-            "sourceDomain": "indiatoday.in",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "RCB vs SRH Virat Kohli not surprised by Devdutt Padikkals Bengaluru blitz",
-            "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/devdutt-padikkal-284242837-16x9_0.png?VersionId=SS7VmM_aF3YtF313LdCWekYruHaoOK8f",
-            "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/devdutt-padikkal-284242837-16x9_0.png?VersionId=SS7VmM_aF3YtF313LdCWekYruHaoOK8f",
-            "publishedAt": "2026-03-28T18:44:22.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 87,
-              "negP": 13,
-              "label": "negative",
-              "confidence": 0.3252
-            },
-            "category": "sports"
-          },
-          {
-            "title": "IPL 2026: Devdutt Padikkal, Virat Kohli Star In RCB's Record Chase vs SRH",
-            "link": "https://sports.ndtv.com/cricket/ipl-2026-devdutt-padikkal-virat-kohli-jacob-duffy-star-in-rcbs-six-wicket-win-over-srh-11280127",
-            "source": "NDTV News- Special",
-            "sourceDomain": "sports.ndtv.com",
-            "sourceCredibility": "",
-            "industry": "",
-            "description": "Devdutt Padikkal's 26-ball-61 crusted with class and Virat Kohli's masterly unbeaten half-century powered RCB to a dominant six-wicket victory over SRH.",
+            "title": "Iran-Backed Houthis Join War as More US Troops Reach Region",
+            "link": "https://www.livemint.com/news/world/iranbacked-houthis-join-war-as-more-us-troops-reach-region-11774727374196.html",
+            "source": "Mint",
+            "sourceDomain": "livemint.com",
+            "sourceCredibility": "High",
+            "industry": "Finance",
+            "description": "Houthi militants launched ballistic missiles at Israel on Saturday morning, marking their entry into the month-long Iran war that has already caused chaos in energy markets and killed thousands of people.",
             "image": "/img/thumb-placeholder.svg",
             "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-03-28T18:16:30.000Z",
+            "publishedAt": "2026-03-28T19:49:33.000Z",
             "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
+              "posP": 13,
+              "neuP": 59,
+              "negP": 28,
+              "label": "negative",
+              "confidence": 0.9159
             },
-            "category": "sports"
+            "category": "world"
+          },
+          {
+            "title": "Iran-backed Houthis join war with attack against Israel",
+            "link": "https://www.bbc.com/news/articles/cd6l5n8jv4yo?at_medium=RSS&at_campaign=rss",
+            "source": "BBC",
+            "sourceDomain": "bbc.com",
+            "sourceCredibility": "High",
+            "industry": "Communication",
+            "description": "There are fears the Iranian proxy may attack shipping in the Red Sea, adding to global economic woes.",
+            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/3340/live/d8ed27d0-2ac9-11f1-934f-036468834728.jpg",
+            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/3340/live/d8ed27d0-2ac9-11f1-934f-036468834728.jpg",
+            "publishedAt": "2026-03-28T18:18:32.000Z",
+            "sentiment": {
+              "posP": 6,
+              "neuP": 52,
+              "negP": 42,
+              "label": "negative",
+              "confidence": 0.9274
+            },
+            "category": "world"
           }
         ]
       },
@@ -3611,9 +3631,9 @@
     ],
     "sentiment": {
       "overall": {
-        "pos": 7.24,
-        "neu": 81.42,
-        "neg": 11.33,
+        "pos": 7.31,
+        "neu": 81.23,
+        "neg": 11.46,
         "count": 120
       },
       "india": {
@@ -3623,71 +3643,71 @@
         "count": 21
       },
       "world": {
-        "pos": 7.95,
-        "neu": 80.72,
-        "neg": 11.33,
+        "pos": 8.03,
+        "neu": 80.48,
+        "neg": 11.48,
         "count": 99
       }
     },
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-03-28T15:37:57.319Z",
-          "pos": 13,
-          "neu": 77,
-          "neg": 11,
-          "count": 2
+          "label": "2026-03-28T16:01:54.997Z",
+          "pos": 8,
+          "neu": 73,
+          "neg": 18,
+          "count": 3
         },
         {
-          "label": "2026-03-28T16:37:57.319Z",
-          "pos": 2,
-          "neu": 80,
-          "neg": 19,
-          "count": 4
+          "label": "2026-03-28T17:01:54.997Z",
+          "pos": 5,
+          "neu": 87,
+          "neg": 8,
+          "count": 9
         },
         {
-          "label": "2026-03-28T17:37:57.319Z",
-          "pos": 6,
-          "neu": 90,
-          "neg": 4,
-          "count": 7
-        },
-        {
-          "label": "2026-03-28T18:37:57.319Z",
+          "label": "2026-03-28T18:01:54.997Z",
           "pos": 0,
           "neu": 100,
           "neg": 0,
-          "count": 1
+          "count": 2
+        },
+        {
+          "label": "2026-03-28T19:01:54.997Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
         }
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-03-28T15:37:57.320Z",
-          "pos": 10,
-          "neu": 75,
-          "neg": 14,
-          "count": 20
-        },
-        {
-          "label": "2026-03-28T16:37:57.320Z",
+          "label": "2026-03-28T16:01:54.997Z",
           "pos": 11,
-          "neu": 83,
-          "neg": 6,
+          "neu": 81,
+          "neg": 8,
           "count": 15
         },
         {
-          "label": "2026-03-28T17:37:57.320Z",
-          "pos": 7,
-          "neu": 79,
-          "neg": 15,
-          "count": 31
+          "label": "2026-03-28T17:01:54.997Z",
+          "pos": 8,
+          "neu": 80,
+          "neg": 12,
+          "count": 24
         },
         {
-          "label": "2026-03-28T18:37:57.320Z",
-          "pos": 3,
+          "label": "2026-03-28T18:01:54.997Z",
+          "pos": 6,
+          "neu": 81,
+          "neg": 14,
+          "count": 24
+        },
+        {
+          "label": "2026-03-28T19:01:54.997Z",
+          "pos": 5,
           "neu": 88,
-          "neg": 9,
-          "count": 12
+          "neg": 7,
+          "count": 8
         }
       ]
     },
@@ -3716,7 +3736,7 @@
           },
           {
             "name": "Finance",
-            "bias": 1.55,
+            "bias": 1.2,
             "count": 20
           }
         ],
@@ -3740,7 +3760,7 @@
         "neu": [
           {
             "name": "Finance",
-            "bias": 1.55,
+            "bias": 1.2,
             "count": 20
           }
         ],
@@ -3762,9 +3782,9 @@
         },
         {
           "source": "Mint",
-          "pos": 8.5,
-          "neu": 84.55,
-          "neg": 6.95,
+          "pos": 8.9,
+          "neu": 83.4,
+          "neg": 7.7,
           "count": 20
         },
         {
@@ -3828,6 +3848,26 @@
   },
   "usa": {
     "topStories": [
+      {
+        "title": "Iran-Backed Houthis Join War as More US Troops Reach Region",
+        "link": "https://www.livemint.com/news/world/iranbacked-houthis-join-war-as-more-us-troops-reach-region-11774727374196.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Houthi militants launched ballistic missiles at Israel on Saturday morning, marking their entry into the month-long Iran war that has already caused chaos in energy markets and killed thousands of people.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-03-28T19:49:33.000Z",
+        "sentiment": {
+          "posP": 13,
+          "neuP": 59,
+          "negP": 28,
+          "label": "negative",
+          "confidence": 0.9159
+        },
+        "category": "world"
+      },
       {
         "title": "effigy spotted on Washington streets as thousands across NYC, Boston join ‘No Kings’ protest - Watch",
         "link": "https://www.livemint.com/news/us-news/trump-inflatable-effigy-spotted-on-washington-streets-as-thousands-across-nyc-boston-no-kings-protest-watch-video-11774723025893.html",
@@ -4047,29 +4087,29 @@
           "confidence": 0.6597
         },
         "category": "world"
-      },
+      }
+    ],
+    "dailyNews": [
       {
-        "title": "France: Paris police detain man while trying to detonate explosive device near Bank of America",
-        "link": "https://www.livemint.com/news/world/france-paris-police-detain-man-while-trying-to-detonate-explosive-device-near-bank-of-america-11774713029521.html",
+        "title": "Iran-Backed Houthis Join War as More US Troops Reach Region",
+        "link": "https://www.livemint.com/news/world/iranbacked-houthis-join-war-as-more-us-troops-reach-region-11774727374196.html",
         "source": "Mint",
         "sourceDomain": "livemint.com",
         "sourceCredibility": "High",
         "industry": "Finance",
-        "description": "The national counter-terrorism prosecution department has initiated a formal inquiry into the matter,&nbsp;French Interior Minister Laurent Nunez said",
+        "description": "Houthi militants launched ballistic missiles at Israel on Saturday morning, marking their entry into the month-long Iran war that has already caused chaos in energy markets and killed thousands of people.",
         "image": "/img/thumb-placeholder.svg",
         "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-03-28T16:09:41.000Z",
+        "publishedAt": "2026-03-28T19:49:33.000Z",
         "sentiment": {
-          "posP": 0,
-          "neuP": 83,
-          "negP": 17,
+          "posP": 13,
+          "neuP": 59,
+          "negP": 28,
           "label": "negative",
-          "confidence": 0.7184
+          "confidence": 0.9159
         },
         "category": "world"
-      }
-    ],
-    "dailyNews": [
+      },
       {
         "title": "effigy spotted on Washington streets as thousands across NYC, Boston join ‘No Kings’ protest - Watch",
         "link": "https://www.livemint.com/news/us-news/trump-inflatable-effigy-spotted-on-washington-streets-as-thousands-across-nyc-boston-no-kings-protest-watch-video-11774723025893.html",
@@ -4451,132 +4491,112 @@
         "category": "sports"
       },
       {
-        "title": "'If you think you can do it better...': Marco Rubio, EU official had heated exchange over Russia at G7 meet, says report",
-        "link": "https://www.livemint.com/news/world/if-you-think-you-can-do-it-better-marco-rubio-eu-official-had-heated-exchange-over-russia-at-g7-meet-says-report-11774703550176.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "During a discussion at the G7 meeting on Friday, United States Secretary of State Marco Rubio reportedly fired back at EU foreign policy chief Kaja Kallas over a question on Russia-Ukraine war.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-03-28T13:25:34.000Z",
-        "sentiment": {
-          "posP": 5,
-          "neuP": 82,
-          "negP": 13,
-          "label": "negative",
-          "confidence": 0.6908
-        },
-        "category": "world"
-      },
-      {
-        "title": "Rick Pitino offers sharp suggestion to NCAA after St John's crushing loss to Duke: 'Left us disappointed'",
-        "link": "https://www.foxnews.com/sports/rick-pitino-offers-sharp-suggestion-ncaa-st-johns-crushing-loss-duke-left-us-disappointed",
+        "title": "'Quad God' Ilia Malinin avenges Olympic disappointment with backflip for third straight world title",
+        "link": "https://www.foxnews.com/sports/quad-god-ilia-malinin-avenges-olympic-disappointment-backflip-third-straight-world-title",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Rick Pitino says the NCAA should let losing teams speak first after St. John's was left waiting while Duke celebrated its 80-75 Sweet 16 victory.",
+        "description": "Ilia Malinin rebounded from Olympic disappointment to win a third straight world title, showcasing resilience and dominance on the ice.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-28T19:21:34.000Z",
+        "publishedAt": "2026-03-28T19:53:28.000Z",
         "sentiment": {
-          "posP": 13.1,
-          "negP": 14.5,
-          "neuP": 72.4,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Jeffries declines to break with indicted Democrat after ethics panel's guilty verdict",
-        "link": "https://www.foxnews.com/politics/jeffries-declines-break-with-indicted-democrats-fate-after-ethics-panel-guilty-verdict",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Rep. Sheila Cherfilus-McCormick was found guilty of over two dozen ethics violations, but Democratic leaders have so far withheld condemnation.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-28T19:08:20.000Z",
-        "sentiment": {
-          "posP": 3.3,
-          "negP": 29.1,
-          "neuP": 67.6,
-          "label": "negative",
-          "confidence": 0.88
-        },
-        "category": "usa"
-      },
-      {
-        "title": "From legacy news to liberal punditry: the journalists who dropped the pretense after leaving corporate media",
-        "link": "https://www.foxnews.com/media/from-legacy-news-liberal-punditry-journalists-who-dropped-pretense-after-leaving-corporate-media",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Scott MacFarlane joins MeidasTouch, continuing a trend of ex-mainstream journalists like Don Lemon, Jim Acosta, and Katie Couric embracing far-left media.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-28T19:00:57.000Z",
-        "sentiment": {
-          "posP": 6.7,
-          "negP": 0,
-          "neuP": 93.3,
+          "posP": 26.1,
+          "negP": 15,
+          "neuP": 58.9,
           "label": "positive",
-          "confidence": 0.36
+          "confidence": 0.44
         },
         "category": "usa"
       },
       {
-        "title": "Jimmy Kimmel refuses to back down after mocking Secretary Mullin over plumbing background",
-        "link": "https://www.foxnews.com/media/jimmy-kimmel-refuses-back-down-after-mocking-secretary-mullin-over-plumbing-background",
+        "title": "IndyCar driver miraculously walks away from wreck after crashing into course fence",
+        "link": "https://www.foxnews.com/sports/indycar-driver-miraculously-walks-away-from-wreck-after-crashing-course-fence",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Jimmy Kimmel defends Markwayne Mullin plumber jokes, says critics misinterpreted remarks as Republicans accuse him of mocking blue-collar workers.",
+        "description": "IndyCar driver Scott McLaughlin walked away from a high-speed crash ahead of the Grand Prix of Alabama after losing control and hitting the wall rear-end first.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-28T18:52:03.000Z",
+        "publishedAt": "2026-03-28T19:44:26.000Z",
         "sentiment": {
-          "posP": 5,
-          "negP": 29.5,
-          "neuP": 65.5,
+          "posP": 6.8,
+          "negP": 18.6,
+          "neuP": 74.6,
           "label": "negative",
-          "confidence": 0.83
+          "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Jane Fonda warns America faces 'existential' crisis as she urges turnout at 'No Kings' protests",
+        "link": "https://www.foxnews.com/media/jane-fonda-warns-america-faces-existential-crisis-she-urges-turnout-no-kings-protests",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Jane Fonda urges Americans to join the No Kings protests, saying to bring five new people and warning the country faces \"existential\" threats under Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-28T19:42:52.000Z",
+        "sentiment": {
+          "posP": 4.2,
+          "negP": 36.3,
+          "neuP": 59.5,
+          "label": "negative",
+          "confidence": 0.93
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Michigan State coach Tom Izzo, 71, emphatically shuts down retirement talk after Sweet 16 loss",
+        "link": "https://www.foxnews.com/sports/michigan-state-coach-tom-izzo-71-emphatically-shuts-down-retirement-talk-after-sweet-16-loss",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Michigan State's Tom Izzo said retirement is off the table after the Spartans' loss to UConn in the Sweet 16 on Friday night, saying he still has things to accomplish.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-28T19:31:31.000Z",
+        "sentiment": {
+          "posP": 16.5,
+          "negP": 8.6,
+          "neuP": 74.9,
+          "label": "positive",
+          "confidence": 0.64
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.72,
-      "neu": 80.49,
-      "neg": 12.78,
-      "count": 170
+      "pos": 6.86,
+      "neu": 79.84,
+      "neg": 13.3,
+      "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.98,
-        "neu": 79.77,
-        "neg": 13.26,
+        "pos": 6.78,
+        "neu": 79.43,
+        "neg": 13.79,
         "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 6.85,
-        "neu": 78.65,
-        "neg": 14.5,
+        "pos": 7.35,
+        "neu": 75.94,
+        "neg": 16.71,
         "count": 20
       },
       {
         "source": "CBS News",
-        "pos": 5.87,
-        "neu": 81.91,
-        "neg": 12.22,
+        "pos": 6.13,
+        "neu": 80.45,
+        "neg": 13.42,
         "count": 20
       },
       {
@@ -4595,23 +4615,23 @@
       },
       {
         "source": "Washington Post",
-        "pos": 5.64,
-        "neu": 82.14,
-        "neg": 12.22,
-        "count": 17
+        "pos": 5.99,
+        "neu": 81.54,
+        "neg": 12.47,
+        "count": 16
       },
       {
         "source": "NYT",
         "pos": 7.79,
-        "neu": 80.36,
-        "neg": 11.84,
+        "neu": 81.83,
+        "neg": 10.38,
         "count": 14
       },
       {
         "source": "Mint",
-        "pos": 5.5,
-        "neu": 88.38,
-        "neg": 6.13,
+        "pos": 6.5,
+        "neu": 85.5,
+        "neg": 8,
         "count": 8
       },
       {
@@ -4667,17 +4687,17 @@
         },
         {
           "name": "Technology",
-          "bias": -6.85,
-          "count": 129
+          "bias": -6.84,
+          "count": 127
         },
         {
           "name": "Finance",
-          "bias": -4.24,
-          "count": 21
+          "bias": -5.02,
+          "count": 20
         },
         {
           "name": "Healthcare",
-          "bias": -0.1,
+          "bias": 2.52,
           "count": 4
         },
         {
@@ -4686,7 +4706,13 @@
           "count": 2
         }
       ],
-      "pos": [],
+      "pos": [
+        {
+          "name": "Healthcare",
+          "bias": 2.52,
+          "count": 4
+        }
+      ],
       "neu": [
         {
           "name": "Energy",
@@ -4695,13 +4721,13 @@
         },
         {
           "name": "Technology",
-          "bias": -6.85,
-          "count": 129
+          "bias": -6.84,
+          "count": 127
         },
         {
           "name": "Finance",
-          "bias": -4.24,
-          "count": 21
+          "bias": -5.02,
+          "count": 20
         }
       ],
       "neg": [
@@ -4725,32 +4751,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-03-28T15:37:57.321Z",
-          "pos": 6,
-          "neu": 78,
-          "neg": 16,
+          "label": "2026-03-28T16:01:54.998Z",
+          "pos": 7,
+          "neu": 75,
+          "neg": 18,
+          "count": 10
+        },
+        {
+          "label": "2026-03-28T17:01:54.998Z",
+          "pos": 4,
+          "neu": 82,
+          "neg": 14,
           "count": 15
         },
         {
-          "label": "2026-03-28T16:37:57.321Z",
-          "pos": 7,
-          "neu": 83,
-          "neg": 10,
-          "count": 13
-        },
-        {
-          "label": "2026-03-28T17:37:57.321Z",
+          "label": "2026-03-28T18:01:54.998Z",
           "pos": 6,
-          "neu": 79,
-          "neg": 15,
-          "count": 14
+          "neu": 81,
+          "neg": 13,
+          "count": 19
         },
         {
-          "label": "2026-03-28T18:37:57.321Z",
-          "pos": 4,
-          "neu": 81,
-          "neg": 14,
-          "count": 23
+          "label": "2026-03-28T19:01:54.998Z",
+          "pos": 7,
+          "neu": 75,
+          "neg": 18,
+          "count": 19
         }
       ]
     }
@@ -4918,6 +4944,26 @@
         "category": "world"
       },
       {
+        "title": "Jane Fonda warns America faces 'existential' crisis as she urges turnout at 'No Kings' protests",
+        "link": "https://www.foxnews.com/media/jane-fonda-warns-america-faces-existential-crisis-she-urges-turnout-no-kings-protests",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Jane Fonda urges Americans to join the No Kings protests, saying to bring five new people and warning the country faces \"existential\" threats under Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-28T19:42:52.000Z",
+        "sentiment": {
+          "posP": 4.2,
+          "negP": 36.3,
+          "neuP": 59.5,
+          "label": "negative",
+          "confidence": 0.93
+        },
+        "category": "usa"
+      },
+      {
         "title": "Stephen A Smith says some have ‘a lot of damn nerve’ for hammering Trump on Iran after fretting about country",
         "link": "https://www.foxnews.com/media/stephen-smith-says-some-have-a-lot-damn-nerve-hammering-trump-iran-after-fretting-about-country",
         "source": "Fox News",
@@ -4934,26 +4980,6 @@
           "neuP": 82.2,
           "label": "positive",
           "confidence": 0.51
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump critics Kathy Griffin and Rosie O'Donnell 'threw it all away' to fight president, Adam Carolla says",
-        "link": "https://www.foxnews.com/entertainment/trump-critics-kathy-griffin-rosie-odonnell-threw-all-away-fight-president-adam-carolla-says",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Adam Carolla says Rosie O'Donnell and Kathy Griffin threw away their comedy careers to fight Trump, with Dr. Drew calling the fixation unhealthy.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-28T16:10:31.000Z",
-        "sentiment": {
-          "posP": 5.2,
-          "negP": 22.4,
-          "neuP": 72.4,
-          "label": "negative",
-          "confidence": 0.81
         },
         "category": "usa"
       },
@@ -5160,6 +5186,26 @@
         "category": "world"
       },
       {
+        "title": "Jane Fonda warns America faces 'existential' crisis as she urges turnout at 'No Kings' protests",
+        "link": "https://www.foxnews.com/media/jane-fonda-warns-america-faces-existential-crisis-she-urges-turnout-no-kings-protests",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Jane Fonda urges Americans to join the No Kings protests, saying to bring five new people and warning the country faces \"existential\" threats under Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-28T19:42:52.000Z",
+        "sentiment": {
+          "posP": 4.2,
+          "negP": 36.3,
+          "neuP": 59.5,
+          "label": "negative",
+          "confidence": 0.93
+        },
+        "category": "usa"
+      },
+      {
         "title": "Stephen A Smith says some have ‘a lot of damn nerve’ for hammering Trump on Iran after fretting about country",
         "link": "https://www.foxnews.com/media/stephen-smith-says-some-have-a-lot-damn-nerve-hammering-trump-iran-after-fretting-about-country",
         "source": "Fox News",
@@ -5176,26 +5222,6 @@
           "neuP": 82.2,
           "label": "positive",
           "confidence": 0.51
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump critics Kathy Griffin and Rosie O'Donnell 'threw it all away' to fight president, Adam Carolla says",
-        "link": "https://www.foxnews.com/entertainment/trump-critics-kathy-griffin-rosie-odonnell-threw-all-away-fight-president-adam-carolla-says",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Adam Carolla says Rosie O'Donnell and Kathy Griffin threw away their comedy careers to fight Trump, with Dr. Drew calling the fixation unhealthy.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-28T16:10:31.000Z",
-        "sentiment": {
-          "posP": 5.2,
-          "negP": 22.4,
-          "neuP": 72.4,
-          "label": "negative",
-          "confidence": 0.81
         },
         "category": "usa"
       },
@@ -5349,7 +5375,7 @@
         "description": "The Trump administration is awaiting Iran's formal response to its 15-point peace proposal, as Tehran continues blocking the Strait of Hormuz.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-28T15:58:14.000Z",
+        "publishedAt": "2026-03-28T19:37:38.000Z",
         "sentiment": {
           "posP": 9,
           "negP": 16.7,
@@ -5400,46 +5426,6 @@
         "category": "usa"
       },
       {
-        "title": "UFC brings cage-match bout to the White House, home of a president who favors cage-match politics",
-        "link": "https://abcnews.com/Sports/wireStory/ufc-brings-cage-match-bout-white-house-home-131498557",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump is hosting a UFC fight at the White House to celebrate his 80th birthday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-28T14:42:46.000Z",
-        "sentiment": {
-          "posP": 16.6,
-          "negP": 7.6,
-          "neuP": 75.8,
-          "label": "positive",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "WATCH:  Johnson said the government \"will reduce the lines and the waits at the airlines\" after Trump announced that he will sign an executive order instructing DHS Sec. Mullin to pay TSA workers immediately.",
-        "link": "https://abcnews.com/video/131483572/",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Johnson said the government \"will reduce the lines and the waits at the airlines\" after Trump announced that he will sign an executive order instructing DHS Sec. Mullin to pay TSA workers immediately.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-27T22:14:58.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 4.1,
-          "neuP": 95.9,
-          "label": "negative",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
         "title": "Markets plunge and U.S. oil hits $100 as Trump's attempt to reassure Wall Street fails",
         "link": "https://www.nbcnews.com/business/markets/markets-plunge-oil-iran-war-trump-rcna265454",
         "source": "NBC News",
@@ -5478,21 +5464,61 @@
           "confidence": 0.61
         },
         "category": "usa"
+      },
+      {
+        "title": "UFC brings cage-match bout to the White House, home of a president who favors cage-match politics",
+        "link": "https://abcnews.com/Sports/wireStory/ufc-brings-cage-match-bout-white-house-home-131498557",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump is hosting a UFC fight at the White House to celebrate his 80th birthday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-28T14:42:46.000Z",
+        "sentiment": {
+          "posP": 16.6,
+          "negP": 7.6,
+          "neuP": 75.8,
+          "label": "positive",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "WATCH:  Johnson said the government \"will reduce the lines and the waits at the airlines\" after Trump announced that he will sign an executive order instructing DHS Sec. Mullin to pay TSA workers immediately.",
+        "link": "https://abcnews.com/video/131483572/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Johnson said the government \"will reduce the lines and the waits at the airlines\" after Trump announced that he will sign an executive order instructing DHS Sec. Mullin to pay TSA workers immediately.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-27T22:14:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 4.1,
+          "neuP": 95.9,
+          "label": "negative",
+          "confidence": 0.2
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.36,
-      "neu": 82.93,
-      "neg": 10.71,
-      "count": 38
+      "pos": 6.51,
+      "neu": 82.34,
+      "neg": 11.15,
+      "count": 37
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 5.99,
-        "neu": 82.07,
-        "neg": 11.94,
-        "count": 10
+        "pos": 6.66,
+        "neu": 80.99,
+        "neg": 12.36,
+        "count": 9
       },
       {
         "source": "NYT",
@@ -5524,9 +5550,9 @@
       },
       {
         "source": "Fox News",
-        "pos": 8.75,
-        "neu": 77.3,
-        "neg": 13.95,
+        "pos": 8.25,
+        "neu": 70.85,
+        "neg": 20.9,
         "count": 2
       },
       {
@@ -5547,10 +5573,10 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.53,
-        "neu": 84.3,
-        "neg": 9.16,
-        "count": 23
+        "pos": 6.79,
+        "neu": 83.38,
+        "neg": 9.84,
+        "count": 22
       },
       {
         "topic": "Policy",
@@ -5584,9 +5610,9 @@
   },
   "sentiment": {
     "overall": {
-      "pos": 7.24,
-      "neu": 81.42,
-      "neg": 11.33,
+      "pos": 7.31,
+      "neu": 81.23,
+      "neg": 11.46,
       "count": 120
     },
     "india": {
@@ -5596,71 +5622,71 @@
       "count": 21
     },
     "world": {
-      "pos": 7.95,
-      "neu": 80.72,
-      "neg": 11.33,
+      "pos": 8.03,
+      "neu": 80.48,
+      "neg": 11.48,
       "count": 99
     }
   },
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-03-28T15:37:57.323Z",
-        "pos": 13,
-        "neu": 77,
-        "neg": 11,
-        "count": 2
+        "label": "2026-03-28T16:01:55.000Z",
+        "pos": 8,
+        "neu": 73,
+        "neg": 18,
+        "count": 3
       },
       {
-        "label": "2026-03-28T16:37:57.323Z",
-        "pos": 2,
-        "neu": 80,
-        "neg": 19,
-        "count": 4
+        "label": "2026-03-28T17:01:55.000Z",
+        "pos": 5,
+        "neu": 87,
+        "neg": 8,
+        "count": 9
       },
       {
-        "label": "2026-03-28T17:37:57.323Z",
-        "pos": 6,
-        "neu": 90,
-        "neg": 4,
-        "count": 7
-      },
-      {
-        "label": "2026-03-28T18:37:57.323Z",
+        "label": "2026-03-28T18:01:55.000Z",
         "pos": 0,
         "neu": 100,
         "neg": 0,
-        "count": 1
+        "count": 2
+      },
+      {
+        "label": "2026-03-28T19:01:55.000Z",
+        "pos": 0,
+        "neu": 0,
+        "neg": 0,
+        "count": 0
       }
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-03-28T15:37:57.323Z",
-        "pos": 10,
-        "neu": 75,
-        "neg": 14,
-        "count": 20
-      },
-      {
-        "label": "2026-03-28T16:37:57.323Z",
+        "label": "2026-03-28T16:01:55.000Z",
         "pos": 11,
-        "neu": 83,
-        "neg": 6,
+        "neu": 81,
+        "neg": 8,
         "count": 15
       },
       {
-        "label": "2026-03-28T17:37:57.323Z",
-        "pos": 7,
-        "neu": 79,
-        "neg": 15,
-        "count": 31
+        "label": "2026-03-28T17:01:55.000Z",
+        "pos": 8,
+        "neu": 80,
+        "neg": 12,
+        "count": 24
       },
       {
-        "label": "2026-03-28T18:37:57.323Z",
-        "pos": 3,
+        "label": "2026-03-28T18:01:55.000Z",
+        "pos": 6,
+        "neu": 81,
+        "neg": 14,
+        "count": 24
+      },
+      {
+        "label": "2026-03-28T19:01:55.000Z",
+        "pos": 5,
         "neu": 88,
-        "neg": 9,
-        "count": 12
+        "neg": 7,
+        "count": 8
       }
     ]
   },
@@ -5688,7 +5714,7 @@
       },
       {
         "name": "Finance",
-        "bias": 1.55,
+        "bias": 1.2,
         "count": 20
       }
     ],
@@ -5712,7 +5738,7 @@
     "neu": [
       {
         "name": "Finance",
-        "bias": 1.55,
+        "bias": 1.2,
         "count": 20
       }
     ],
@@ -5741,8 +5767,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 170,
-      "potusArticles": 38,
+      "usaArticles": 169,
+      "potusArticles": 37,
       "sourceRows": 10,
       "industryRows": 5,
       "trendingPoints": 12
