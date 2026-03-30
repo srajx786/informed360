@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-03-30T19:44:14.269Z",
+  "generatedAt": "2026-03-30T20:29:47.982Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 173,
-    "potusArticles": 43
+    "usaArticles": 174,
+    "potusArticles": 45
   },
   "version": 1,
   "topStories": [
@@ -93,6 +93,106 @@
   "news": {
     "articles": [
       {
+        "title": "US embassy reopens in Venezuela months after Maduro abduction",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/us-embassy-reopens-in-venezuela-months-after-maduro-abduction?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "The US has reopened its embassy in Venezuela, nearly three months after it abducted the former leader Nicolas Maduro.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80",
+        "publishedAt": "2026-03-30T20:16:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 78,
+          "negP": 22,
+          "label": "negative",
+          "confidence": 0.7964
+        },
+        "category": "world"
+      },
+      {
+        "title": "US Stocks: S&amp;P, Nasdaq end lower as investors weigh Middle East conflict outlook ",
+        "link": "https://economictimes.indiatimes.com/markets/us-stocks/us-stocks-today-sp-nasdaq-end-lower-as-investors-weigh-middle-east-conflict-outlook/articleshow/129910977.cms",
+        "source": "The Economic Times",
+        "sourceDomain": "economictimes.indiatimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Finance",
+        "description": "U.S. stocks closed mostly lower as President Trump's conflicting messages on Iran and escalating Middle East conflict weighed on markets.  Despite optimism over discussions, threats to the Strait of Hormuz and Iranian oil facilities fueled investor concerns.  Fed Chair Powell's comments on inflation offered some support, while financial stocks rose on new 401(k) guidelines.",
+        "image": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+        "imageUrl": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+        "publishedAt": "2026-03-30T20:04:52.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 74,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.743
+        },
+        "category": "business"
+      },
+      {
+        "title": "Trump puts a face to Iran talks, says US negotiating with parliamentary speaker",
+        "link": "https://www.indiatoday.in/world/story/donald-trump-puts-face-iran-talks-us-negotiating-with-parliamentary-speaker-bagher-ghalibaf-2889357-2026-03-31?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Trump puts a face to Iran talks says US negotiating with parliamentary speaker",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+        "publishedAt": "2026-03-30T20:01:38.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "Rubio denies US actions punitive, blames Cuba for economic failures",
+        "link": "https://www.aljazeera.com/news/2026/3/30/rubio-denies-us-punitive-actions-blames-cuba-for-economic-failures?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "In exclusive interview with Al Jazeera, the US secretary of state downplays US role in the island nation's fuel crisis.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-30T19:50:00.000Z",
+        "sentiment": {
+          "posP": 4,
+          "neuP": 58,
+          "negP": 38,
+          "label": "negative",
+          "confidence": 0.9371
+        },
+        "category": "business"
+      },
+      {
+        "title": "Bastar close to being considered Naxal-free, possibility of revival extremely remote: IGP",
+        "link": "https://www.thehindu.com/news/national/bastar-close-to-being-considered-naxal-free-possibility-of-revival-extremely-remote-igp/article70803561.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The statement came on the eve of the Centre’s deadline to eliminate Maoism in the country",
+        "image": "https://th-i.thgim.com/public/news/cities/Delhi/iows1e/article70804572.ece/alternates/LANDSCAPE_1200/GetImageContent.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/news/cities/Delhi/iows1e/article70804572.ece/alternates/LANDSCAPE_1200/GetImageContent.jpg",
+        "publishedAt": "2026-03-30T19:37:56.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
         "title": "BJP trying to change West Bengal's demography via voter rolls: Abhishek Banerjee",
         "link": "https://www.indiatoday.in/elections/assembly/story/trinamool-congress-alleges-bjp-bulk-voter-form-submission-west-bengal-2889355-2026-03-31?utm_source=rss",
         "source": "India Today",
@@ -169,6 +269,26 @@
           "negP": 0,
           "label": "neutral",
           "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "What we know about attack on key Israeli oil refinery",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/what-we-know-about-attack-on-key-israeli-oil-refinery?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Israeli authorities said they were containing a large fire at an oil refinery in Haifa after it was hit by debris.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-30T150813Z_1894254242_RC20FKAJJXUY_RTRMADP_3_IRAN-CRISIS-ISRAEL-HAIFA-1774898366.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-30T150813Z_1894254242_RC20FKAJJXUY_RTRMADP_3_IRAN-CRISIS-ISRAEL-HAIFA-1774898366.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-30T19:19:50.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 84,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.6705
         },
         "category": "world"
       },
@@ -753,6 +873,46 @@
         "category": "sports"
       },
       {
+        "title": "How Amit Shah built and unleashed a 90-minute takedown on Naxalism debate",
+        "link": "https://www.indiatoday.in/india/story/amit-shah-lok-sabha-naxalism-political-debate-timeline-roadmap-left-extremism-speech-congress-2889321-2026-03-30?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "How Amit Shah built and unleashed a minute takedown on Naxalism debate",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/amit-shah-addressed-lok-sabha-on-efforts-to-free-the-country-from-left-wing-extremism-lwe-300434407-16x9_0.jpg?VersionId=QAhK.A83037KmhIA6Lr_exE.2ObxkSiD",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/amit-shah-addressed-lok-sabha-on-efforts-to-free-the-country-from-left-wing-extremism-lwe-300434407-16x9_0.jpg?VersionId=QAhK.A83037KmhIA6Lr_exE.2ObxkSiD",
+        "publishedAt": "2026-03-30T18:19:03.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "india"
+      },
+      {
+        "title": "More than 85,000 cases disposed of in Chamarajanagar during this year’s Mega Lok Adalat",
+        "link": "https://www.thehindu.com/news/national/karnataka/more-than-85000-cases-disposed-of-in-chamarajanagar-during-this-years-mega-lok-adalat/article70802988.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Principal District and Sessions Judge G. Prabhavati, who is also the chairperson of Chamarajanagar District Legal Services Authority, says the cases included 2,950 court and 82,957 pre-litigation cases.",
+        "image": "https://th-i.thgim.com/public/incoming/r6a0md/article70804509.ece/alternates/LANDSCAPE_1200/5964_30_3_2026_20_40_8_1_IMG_20260330_WA0058.JPG",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/r6a0md/article70804509.ece/alternates/LANDSCAPE_1200/5964_30_3_2026_20_40_8_1_IMG_20260330_WA0058.JPG",
+        "publishedAt": "2026-03-30T18:18:10.000Z",
+        "sentiment": {
+          "posP": 7,
+          "neuP": 93,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.2023
+        },
+        "category": "world"
+      },
+      {
         "title": "Water Shortage To Tanker Issues: Delhi's Summer Action Plan To Tackle Heat",
         "link": "https://www.ndtv.com/india-news/water-shortage-to-tanker-issues-delhis-summer-action-plan-to-tackle-heat-11288295",
         "source": "NDTV",
@@ -791,6 +951,46 @@
           "confidence": 0.6808
         },
         "category": "india"
+      },
+      {
+        "title": "Mahaveer Jayanti celebrated",
+        "link": "https://www.thehindu.com/news/national/karnataka/mahavir-jayanthi-celebrated/article70803047.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "C.T. Ravi, BJP MLC, highlights that true religion is about duty and righteousness, and it can never promote violence.",
+        "image": "https://th-i.thgim.com/public/incoming/7g0c7t/article70803077.ece/alternates/LANDSCAPE_1200/9911_30_3_2026_18_19_56_1_MAHAVIR_JAYANTHI.JPEG",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/7g0c7t/article70803077.ece/alternates/LANDSCAPE_1200/9911_30_3_2026_18_19_56_1_MAHAVIR_JAYANTHI.JPEG",
+        "publishedAt": "2026-03-30T18:16:08.000Z",
+        "sentiment": {
+          "posP": 33,
+          "neuP": 60,
+          "negP": 7,
+          "label": "positive",
+          "confidence": 0.8229
+        },
+        "category": "world"
+      },
+      {
+        "title": "Bus falls into stream near Bhadravati; several injured",
+        "link": "https://www.thehindu.com/news/national/karnataka/bus-falls-into-stream-several-injured-near-bhadravathi/article70803058.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "",
+        "image": "https://www.thehindu.com/theme/images/og-image.png",
+        "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
+        "publishedAt": "2026-03-30T18:15:59.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 72,
+          "negP": 28,
+          "label": "negative",
+          "confidence": 0.4019
+        },
+        "category": "world"
       },
       {
         "title": "Actor Sunil Lahri Recalls How A Fan Posed As A Relative To Enter His Building",
@@ -1253,6 +1453,26 @@
         "category": "world"
       },
       {
+        "title": "Top Maoist leader Narayana Rao surrenders before A.P. police, regrets violence",
+        "link": "https://www.thehindu.com/news/national/andhra-pradesh/top-maoist-leader-narayana-rao-surrenders-before-ap-police-regret-killings/article70802752.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The Maoist movement has lost public support as the ideology has failed to keep pace with time, says Narayana Rao",
+        "image": "https://th-i.thgim.com/public/incoming/1tks9u/article70803465.ece/alternates/LANDSCAPE_1200/DSC_0871.JPG",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/1tks9u/article70803465.ece/alternates/LANDSCAPE_1200/DSC_0871.JPG",
+        "publishedAt": "2026-03-30T17:41:13.000Z",
+        "sentiment": {
+          "posP": 11,
+          "neuP": 60,
+          "negP": 29,
+          "label": "negative",
+          "confidence": 0.8271
+        },
+        "category": "world"
+      },
+      {
         "title": "Museum being planned on life and work of H.D. Deve Gowda near his native village ",
         "link": "https://www.thehindu.com/news/national/karnataka/museum-being-planned-on-life-and-work-of-hd-deve-gowda-near-his-native-village/article70802997.ece",
         "source": "The Hindu",
@@ -1371,26 +1591,6 @@
           "confidence": 0.7269
         },
         "category": "world"
-      },
-      {
-        "title": "Traffic curbs in view of India-Hong Kong football match",
-        "link": "https://www.thehindu.com/news/national/kerala/traffic-curbs-in-view-of-india-hong-kong-football-match/article70804224.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "",
-        "image": "https://www.thehindu.com/theme/images/og-image.png",
-        "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
-        "publishedAt": "2026-03-30T17:18:29.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "sports"
       },
       {
         "title": "Sooryavanshi storm blows in Guwahati, familiar woes haunt new-look Chennai",
@@ -1973,26 +2173,6 @@
         "category": "business"
       },
       {
-        "title": "Heavy rain, floods kill at least 45 people in Afghanistan, Pakistan",
-        "link": "https://www.aljazeera.com/news/2026/3/30/heavy-rain-floods-kill-at-least-45-people-in-afghanistan-pakistan?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "At least 28 people are killed in Afghanistan and 17 in Pakistan after heavy rainfall causes severe flooding.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/ap_69ca8cf2d1928-1774882034.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/ap_69ca8cf2d1928-1774882034.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-03-30T16:04:49.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 69,
-          "negP": 31,
-          "label": "negative",
-          "confidence": 0.9153
-        },
-        "category": "world"
-      },
-      {
         "title": "India Census 2027: When will Houselisting, Housing Census and self-enumeration begin? Check state, UT-wise dates",
         "link": "https://www.livemint.com/news/india/india-census-2027-when-will-houselisting-housing-census-and-self-enumeration-begin-check-state-ut-wise-dates-11774878906985.html",
         "source": "Mint",
@@ -2011,6 +2191,26 @@
           "confidence": 0
         },
         "category": "india"
+      },
+      {
+        "title": "Heavy rain, floods kill at least 45 people in Afghanistan, Pakistan",
+        "link": "https://www.aljazeera.com/news/2026/3/30/heavy-rain-floods-kill-at-least-45-people-in-afghanistan-pakistan?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "At least 28 people are killed in Afghanistan and 17 in Pakistan after heavy rainfall causes severe flooding.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/ap_69ca8cf2d1928-1774882034.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/ap_69ca8cf2d1928-1774882034.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-30T16:04:49.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 69,
+          "negP": 31,
+          "label": "negative",
+          "confidence": 0.9153
+        },
+        "category": "world"
       },
       {
         "title": "Delhi Police arrests Lashkar-e-Taiba operative",
@@ -2291,206 +2491,6 @@
           "confidence": 0.09
         },
         "category": "technology"
-      },
-      {
-        "title": "Marco Rubio says President Trump prefers diplomatic solution to war on Iran",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/marco-rubio-says-president-trump-prefers-diplomatic-solution-to-war-on-iran?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "US Secretary of State Marco Rubio said that President Donald Trump still prefers a diplomatic outcome for war on Iran.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774884788.jpg?resize=1920%2C1080&amp;quality=80",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774884788.jpg?resize=1920%2C1080&amp;quality=80",
-        "publishedAt": "2026-03-30T15:33:24.000Z",
-        "sentiment": {
-          "posP": 6,
-          "neuP": 73,
-          "negP": 21,
-          "label": "negative",
-          "confidence": 0.7579
-        },
-        "category": "sports"
-      },
-      {
-        "title": "Spain closes airspace to US aircraft involved in Iran war",
-        "link": "https://www.bbc.com/news/articles/cwy368j1e3lo?at_medium=RSS&at_campaign=rss",
-        "source": "BBC",
-        "sourceDomain": "bbc.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "It follows a decision by the Spanish government to deny the US use of the two jointly run military bases in Andalusia.",
-        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/a516/live/5f6b8700-2c34-11f1-b8c9-f5058c0aec9a.jpg",
-        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/a516/live/5f6b8700-2c34-11f1-b8c9-f5058c0aec9a.jpg",
-        "publishedAt": "2026-03-30T15:29:15.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 82,
-          "negP": 18,
-          "label": "negative",
-          "confidence": 0.743
-        },
-        "category": "science"
-      },
-      {
-        "title": "‘Iran will never acquire nuclear weapons’ Rubio tells Al Jazeera",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/iran-will-never-acquire-nuclear-weapons-rubio-tells-al-jazeera?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Secretary of State Marco Rubio has outlines what the US’s main demands are for Iran.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774884502.jpg?resize=1920%2C1080&amp;quality=80",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774884502.jpg?resize=1920%2C1080&amp;quality=80",
-        "publishedAt": "2026-03-30T15:29:15.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
-      },
-      {
-        "title": "Rahul Gandhi bats for woman CM in Kerala, rides bicycle",
-        "link": "https://www.hindustantimes.com/india-news/rahul-gandhi-bats-for-woman-cm-in-kerala-rides-bicycle-101774883285075.html",
-        "source": "Hindustan Times",
-        "sourceDomain": "hindustantimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "In a rally in Puthuppally, Rahul Gandhi emphasized the need for a woman chief minister in Kerala, promising support for women's empowerment.",
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/03/30/550x309/Rahul_Gandhi_r_1774883937859_1774883937975.jpg",
-        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/03/30/550x309/Rahul_Gandhi_r_1774883937859_1774883937975.jpg",
-        "publishedAt": "2026-03-30T15:20:23.000Z",
-        "sentiment": {
-          "posP": 16,
-          "neuP": 84,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.6597
-        },
-        "category": "india"
-      },
-      {
-        "title": "India assures welfare of Indian seafarers, students in Middle East; missions working 24/7 to provide assistance",
-        "link": "https://www.hindustantimes.com/india-news/india-assures-welfare-of-indian-seafarers-students-in-middle-east-missions-working-24-7-to-provide-assistance-101774883330836.html",
-        "source": "Hindustan Times",
-        "sourceDomain": "hindustantimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "India said that particular attention is being given to the welfare of Indian seafarers in the region as the conflict in West Asia entered its 2nd month.",
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/03/30/550x309/PTI03-25-2026-000322B-0_1774883582529_1774883604944.jpg",
-        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/03/30/550x309/PTI03-25-2026-000322B-0_1774883582529_1774883604944.jpg",
-        "publishedAt": "2026-03-30T15:15:50.000Z",
-        "sentiment": {
-          "posP": 5,
-          "neuP": 90,
-          "negP": 5,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
-      },
-      {
-        "title": "Fuel rations and free buses: How countries are responding to rising oil prices",
-        "link": "https://www.bbc.com/news/articles/cjr9yr73xyeo?at_medium=RSS&at_campaign=rss",
-        "source": "BBC",
-        "sourceDomain": "bbc.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "Governments around the world have introduced measures to limit the impact of price increases.",
-        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/0891/live/c771c0a0-2b8d-11f1-b297-95b0a0a8331e.jpg",
-        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/0891/live/c771c0a0-2b8d-11f1-b297-95b0a0a8331e.jpg",
-        "publishedAt": "2026-03-30T15:07:13.000Z",
-        "sentiment": {
-          "posP": 11,
-          "neuP": 89,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.5106
-        },
-        "category": "world"
-      },
-      {
-        "title": "China’s birthrate falls. But the child-care business is booming.",
-        "link": "https://www.livemint.com/news/chinas-birthrate-falls-but-the-child-care-business-is-booming-11774882748854.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "China is creating spending channels across healthcare, fertility, and infant nutrition, boosting some companies.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-03-30T15:05:26.000Z",
-        "sentiment": {
-          "posP": 18,
-          "neuP": 82,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.5574
-        },
-        "category": "business"
-      },
-      {
-        "title": "People searching for godman Kharat's 'table of sleaze' lap up explicit AI videos",
-        "link": "https://www.indiatoday.in/fact-check/story/ashok-kharat-arrest-maharashtra-godman-rape-case-ai-obscene-videos-online-sale-2889246-2026-03-30?utm_source=rss",
-        "source": "India Today",
-        "sourceDomain": "indiatoday.in",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "People searching for godman Kharats table of sleaze lap up explicit AI videos",
-        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/according-to-google-trends--people-seem-to-be-looking-for-allegedly-explicit-videos-of-ashok-kharat-304423503-16x9_0.jpeg?VersionId=q6V24PBsJL_tw4B.XyZrNLIt355DeC1s",
-        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/according-to-google-trends--people-seem-to-be-looking-for-allegedly-explicit-videos-of-ashok-kharat-304423503-16x9_0.jpeg?VersionId=q6V24PBsJL_tw4B.XyZrNLIt355DeC1s",
-        "publishedAt": "2026-03-30T15:04:39.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "technology"
-      },
-      {
-        "title": "BDA calls tender for Peripheral Ring Road-1 project",
-        "link": "https://www.thehindu.com/news/national/karnataka/bda-calls-tender-for-peripheral-ring-road-1-project/article70803161.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "The peripheral ring road will be 23 km in length, of which only a 19.80 km stretch has been taken up for construction in package-1",
-        "image": "https://th-i.thgim.com/public/incoming/ydp1c1/article70803780.ece/alternates/LANDSCAPE_1200/IMG_02BG_BDA_2_1_LF979SEL.jpg",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/ydp1c1/article70803780.ece/alternates/LANDSCAPE_1200/IMG_02BG_BDA_2_1_LF979SEL.jpg",
-        "publishedAt": "2026-03-30T15:01:25.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
-      },
-      {
-        "title": "‘Unworthy, uninformed’: BJP’s Nishikant Dubey comes under fire from party colleague Baijayant Panda over Biju Patnaik remarks - The Indian Express",
-        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNUERmZGtGNUE0cXNvRnRxWEM1MWlXeUtLczREel9rSWZpbEcxUXhTZVZ4ejFjc0s2N2lZTFhKUnRsSk1NbFNMOC1XeC1wb3ZaTXJVaGl1Znpkd1hiTVRXUm9jeDl3a2JxOU1acllacWV6YkRJSkU0TlZzVU9VR25CdF9zM3JvbkcxNlJNUy0yR1JzeHQtTWNVb25nSUsyQ0N3M2JEdTNDdmpPaFpmeWNZQWp5WnjSAbsBQVVfeXFMUHMtUlBrdUtUMGxEN1pDakJxbVYxZ3FHc1RyUmZPMV8xc0ZwWTN1akJWZ2pjSHcxRHdqa2NWR1M2OHZlV1FNd2EyNGI3WksxZl93TzVtYmp5bU5RbXY3LXd4Tl9YRXVNZW1pQnNfX005dXp2UDhEVTVTN3J6UHFQT0dJbENkYkM3ZnhJa3A0WUhfWFp6dGdkVk9qQUlEcjZ5aTR3a0V0ZmlsT1NWYlEwSzlsT2RXTXZ5VnViQQ?oc=5",
-        "source": "\"site:indianexpress.com\" - Google News",
-        "sourceDomain": "news.google.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "‘Unworthy, uninformed’: BJP’s Nishikant Dubey comes under fire from party colleague Baijayant Panda over Biju Patnaik remarks  The Indian Express",
-        "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-        "imageUrl": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-        "publishedAt": "2026-03-30T15:01:11.000Z",
-        "sentiment": {
-          "posP": 12,
-          "neuP": 78,
-          "negP": 10,
-          "label": "positive",
-          "confidence": 0.1531
-        },
-        "category": "india"
       }
     ],
     "topics": [
@@ -2528,6 +2528,61 @@
         "image": "https://img.etimg.com/thumb/msid-129853854,width-1200,height-630,imgsize-129616,overlay-economictimes/articleshow.jpg"
       },
       {
+        "title": "embassy reopens | venezuela months | months after",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 22,
+          "neu": 78
+        },
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80"
+      },
+      {
+        "title": "nasdaq end | end lower | investors weigh",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 8,
+          "neg": 18,
+          "neu": 74
+        },
+        "image": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg"
+      },
+      {
+        "title": "trump puts | iran talks | talks says",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 0,
+          "neu": 100
+        },
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0"
+      },
+      {
+        "title": "rubio denies | actions punitive | punitive blames",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 4,
+          "neg": 38,
+          "neu": 58
+        },
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440"
+      },
+      {
+        "title": "bastar close | being considered | considered naxal",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 0,
+          "neu": 100
+        },
+        "image": "https://th-i.thgim.com/public/news/cities/Delhi/iows1e/article70804572.ece/alternates/LANDSCAPE_1200/GetImageContent.jpg"
+      },
+      {
         "title": "bjp trying | change west | west bengal",
         "count": 1,
         "sources": 1,
@@ -2550,6 +2605,17 @@
         "image": "https://th-i.thgim.com/public/incoming/r15fab/article70804556.ece/alternates/LANDSCAPE_1200/NIV_Seat-swap-oG4VFPGLKJ.4.jpg.jpg"
       },
       {
+        "title": "know about | about attack | key israeli",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 16,
+          "neu": 84
+        },
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-30T150813Z_1894254242_RC20FKAJJXUY_RTRMADP_3_IRAN-CRISIS-ISRAEL-HAIFA-1774898366.jpg?resize=1920%2C1440"
+      },
+      {
         "title": "trump warns | warns iran | immediately reopen",
         "count": 1,
         "sources": 1,
@@ -2559,75 +2625,179 @@
           "neu": 77
         },
         "image": "/img/thumb-placeholder.svg"
-      },
-      {
-        "title": "assembly election | election tamil | tamil nadu",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 23,
-          "neg": 12,
-          "neu": 65
-        },
-        "image": "https://th-i.thgim.com/public/incoming/j82342/article70804553.ece/alternates/LANDSCAPE_1200/TLS_5205.JPG"
-      },
-      {
-        "title": "french police | police make | make two",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 38,
-          "neu": 62
-        },
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-30T114854Z_2135234244_RC2YEKAZRWYA_RTRMADP_3_BOFAML-FRANCE-ATTACK-1774890461.jpg?resize=1920%2C1440"
-      },
-      {
-        "title": "two indonesian | peacekeepers killed",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 7,
-          "neg": 22,
-          "neu": 71
-        },
-        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/c4af/live/2d554230-2c64-11f1-88c4-254a3d5fc979.jpg"
-      },
-      {
-        "title": "names candidates | candidates for | for five",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 0,
-          "neu": 100
-        },
-        "image": "https://www.thehindu.com/theme/images/og-image.png"
-      },
-      {
-        "title": "oil refinery | refinery hit | haifa report",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 7,
-          "neu": 93
-        },
-        "image": "/img/thumb-placeholder.svg"
-      },
-      {
-        "title": "israel iran | iran war | war live",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 38,
-          "neu": 62
-        },
-        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202603/irans-approach-reflects-a-shift-away-from-direct-confrontation-toward-endurance-280608354-16x9_0.png?VersionId=ew2dwhMuJQ6arnPGpxaDQMr25ip7O7z."
       }
     ],
     "stories": [
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "US embassy reopens in Venezuela months after Maduro abduction",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/us-embassy-reopens-in-venezuela-months-after-maduro-abduction?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "The US has reopened its embassy in Venezuela, nearly three months after it abducted the former leader Nicolas Maduro.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80",
+            "publishedAt": "2026-03-30T20:16:40.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 78,
+              "negP": 22,
+              "label": "negative",
+              "confidence": 0.7964
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "US Stocks: S&amp;P, Nasdaq end lower as investors weigh Middle East conflict outlook ",
+            "link": "https://economictimes.indiatimes.com/markets/us-stocks/us-stocks-today-sp-nasdaq-end-lower-as-investors-weigh-middle-east-conflict-outlook/articleshow/129910977.cms",
+            "source": "The Economic Times",
+            "sourceDomain": "economictimes.indiatimes.com",
+            "sourceCredibility": "Medium",
+            "industry": "Finance",
+            "description": "U.S. stocks closed mostly lower as President Trump's conflicting messages on Iran and escalating Middle East conflict weighed on markets.  Despite optimism over discussions, threats to the Strait of Hormuz and Iranian oil facilities fueled investor concerns.  Fed Chair Powell's comments on inflation offered some support, while financial stocks rose on new 401(k) guidelines.",
+            "image": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+            "imageUrl": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+            "publishedAt": "2026-03-30T20:04:52.000Z",
+            "sentiment": {
+              "posP": 8,
+              "neuP": 74,
+              "negP": 18,
+              "label": "negative",
+              "confidence": 0.743
+            },
+            "category": "business"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Trump puts a face to Iran talks, says US negotiating with parliamentary speaker",
+            "link": "https://www.indiatoday.in/world/story/donald-trump-puts-face-iran-talks-us-negotiating-with-parliamentary-speaker-bagher-ghalibaf-2889357-2026-03-31?utm_source=rss",
+            "source": "India Today",
+            "sourceDomain": "indiatoday.in",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "Trump puts a face to Iran talks says US negotiating with parliamentary speaker",
+            "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+            "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+            "publishedAt": "2026-03-30T20:01:38.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 100,
+              "negP": 0,
+              "label": "neutral",
+              "confidence": 0
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Rubio denies US actions punitive, blames Cuba for economic failures",
+            "link": "https://www.aljazeera.com/news/2026/3/30/rubio-denies-us-punitive-actions-blames-cuba-for-economic-failures?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "In exclusive interview with Al Jazeera, the US secretary of state downplays US role in the island nation's fuel crisis.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440",
+            "publishedAt": "2026-03-30T19:50:00.000Z",
+            "sentiment": {
+              "posP": 4,
+              "neuP": 58,
+              "negP": 38,
+              "label": "negative",
+              "confidence": 0.9371
+            },
+            "category": "business"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Bastar close to being considered Naxal-free, possibility of revival extremely remote: IGP",
+            "link": "https://www.thehindu.com/news/national/bastar-close-to-being-considered-naxal-free-possibility-of-revival-extremely-remote-igp/article70803561.ece",
+            "source": "The Hindu",
+            "sourceDomain": "thehindu.com",
+            "sourceCredibility": "High",
+            "industry": "Communication",
+            "description": "The statement came on the eve of the Centre’s deadline to eliminate Maoism in the country",
+            "image": "https://th-i.thgim.com/public/news/cities/Delhi/iows1e/article70804572.ece/alternates/LANDSCAPE_1200/GetImageContent.jpg",
+            "imageUrl": "https://th-i.thgim.com/public/news/cities/Delhi/iows1e/article70804572.ece/alternates/LANDSCAPE_1200/GetImageContent.jpg",
+            "publishedAt": "2026-03-30T19:37:56.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 100,
+              "negP": 0,
+              "label": "neutral",
+              "confidence": 0
+            },
+            "category": "world"
+          }
+        ]
+      },
       {
         "title": "",
         "summary": "",
@@ -2725,216 +2895,6 @@
               "negP": 0,
               "label": "positive",
               "confidence": 0.6124
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "T.N. Assembly election: candidates to be announced soon, says Selvaperunthagai",
-            "link": "https://www.thehindu.com/news/national/tamil-nadu/tn-assembly-election-candidates-to-be-announced-soon-says-selvaperunthagai/article70803554.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "",
-            "image": "https://th-i.thgim.com/public/incoming/r15fab/article70804556.ece/alternates/LANDSCAPE_1200/NIV_Seat-swap-oG4VFPGLKJ.4.jpg.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/r15fab/article70804556.ece/alternates/LANDSCAPE_1200/NIV_Seat-swap-oG4VFPGLKJ.4.jpg.jpg",
-            "publishedAt": "2026-03-30T19:22:08.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Trump warns Iran to ‘immediately’ reopen Strait of Hormuz, threatens strikes on oil sites, power plants &amp; Kharg Island",
-            "link": "https://www.livemint.com/news/us-news/trump-again-warns-iran-to-immedi-reopen-strait-of-hormuz-threatens-strikes-on-oil-sites-power-plants-kharg-islan-11774895699728.html",
-            "source": "Mint",
-            "sourceDomain": "livemint.com",
-            "sourceCredibility": "High",
-            "industry": "Finance",
-            "description": "President Trump warned Iran that the US may escalate its response if a deal is not reached soon regarding the Strait of Hormuz. He mentioned potential strikes on key Iranian infrastructure while expressing confidence in ongoing discussions with ‘new’ leadership in Iran.",
-            "image": "/img/thumb-placeholder.svg",
-            "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-03-30T19:19:04.000Z",
-            "sentiment": {
-              "posP": 5,
-              "neuP": 77,
-              "negP": 18,
-              "label": "negative",
-              "confidence": 0.7266
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "T.N. Assembly election: Tamil Nadu needs to be saved from the DMK, says Vijay",
-            "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/tn-assembly-election-tamil-nadu-needs-to-be-saved-from-the-dmk-says-vijay/article70803224.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "The TVK president criticises the government for failing to provide safety and employment opportunities, and calls the ruling party am ‘evil force’",
-            "image": "https://th-i.thgim.com/public/incoming/j82342/article70804553.ece/alternates/LANDSCAPE_1200/TLS_5205.JPG",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/j82342/article70804553.ece/alternates/LANDSCAPE_1200/TLS_5205.JPG",
-            "publishedAt": "2026-03-30T19:18:00.000Z",
-            "sentiment": {
-              "posP": 23,
-              "neuP": 65,
-              "negP": 12,
-              "label": "positive",
-              "confidence": 0.6486
-            },
-            "category": "world"
-          },
-          {
-            "title": "Tamil Nadu Assembly election 2026: Constituency Watch – a compilation",
-            "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/tamil-nadu-assembly-election-constituency-watch-a-package/article70761075.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "Tune in to The Hindu’s Constituency Watch segment to follow our on-ground Assembly election coverage",
-            "image": "https://th-i.thgim.com/public/incoming/amin7h/article70796460.ece/alternates/LANDSCAPE_1200/Traffic%20thanjavur%201.jpg.jpeg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/amin7h/article70796460.ece/alternates/LANDSCAPE_1200/Traffic%20thanjavur%201.jpg.jpeg",
-            "publishedAt": "2026-03-30T18:58:58.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "French police make two more arrests over foiled attack on Bank of America",
-            "link": "https://www.aljazeera.com/news/2026/3/30/french-police-make-2-more-arrests-over-suspected-attack-on-bank-of-america?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Prosecutors investigating suspected link to Iran war due to similarities with other recent attempted attacks in Europe.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-30T114854Z_2135234244_RC2YEKAZRWYA_RTRMADP_3_BOFAML-FRANCE-ATTACK-1774890461.jpg?resize=1920%2C1440",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-30T114854Z_2135234244_RC2YEKAZRWYA_RTRMADP_3_BOFAML-FRANCE-ATTACK-1774890461.jpg?resize=1920%2C1440",
-            "publishedAt": "2026-03-30T19:15:50.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 62,
-              "negP": 38,
-              "label": "negative",
-              "confidence": 0.9324
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Two Indonesian UN peacekeepers killed in explosion in Lebanon",
-            "link": "https://www.bbc.com/news/articles/c4gd20evgp0o?at_medium=RSS&at_campaign=rss",
-            "source": "BBC",
-            "sourceDomain": "bbc.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "It is the second fatal incident in the last 24 hours, Unifil says, after Israel expanded its operation against Hezbollah.",
-            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/c4af/live/2d554230-2c64-11f1-88c4-254a3d5fc979.jpg",
-            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/c4af/live/2d554230-2c64-11f1-88c4-254a3d5fc979.jpg",
-            "publishedAt": "2026-03-30T19:14:12.000Z",
-            "sentiment": {
-              "posP": 7,
-              "neuP": 71,
-              "negP": 22,
-              "label": "negative",
-              "confidence": 0.7506
-            },
-            "category": "world"
-          },
-          {
-            "title": "Two more UN peacekeepers killed in southern Lebanon: UNIFIL",
-            "link": "https://www.aljazeera.com/news/2026/3/30/two-more-un-peacekeepers-killed-in-southern-lebanon-unifil?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "At least three UN peacekeepers killed this week as violence surges amid Israel's expanding invasion of southern Lebanon.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/afp_69caa7d8500e-1774888920.jpg?resize=1920%2C1440",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/afp_69caa7d8500e-1774888920.jpg?resize=1920%2C1440",
-            "publishedAt": "2026-03-30T18:11:15.000Z",
-            "sentiment": {
-              "posP": 13,
-              "neuP": 54,
-              "negP": 33,
-              "label": "negative",
-              "confidence": 0.8716
             },
             "category": "world"
           }
@@ -2955,114 +2915,6 @@
         },
         "articles": [
           {
-            "title": "Two Indonesian UN peacekeepers killed in explosion in Lebanon",
-            "link": "https://www.bbc.com/news/articles/c4gd20evgp0o?at_medium=RSS&at_campaign=rss",
-            "source": "BBC",
-            "sourceDomain": "bbc.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "It is the second fatal incident in the last 24 hours, Unifil says, after Israel expanded its operation against Hezbollah.",
-            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/c4af/live/2d554230-2c64-11f1-88c4-254a3d5fc979.jpg",
-            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/c4af/live/2d554230-2c64-11f1-88c4-254a3d5fc979.jpg",
-            "publishedAt": "2026-03-30T19:14:12.000Z",
-            "sentiment": {
-              "posP": 7,
-              "neuP": 71,
-              "negP": 22,
-              "label": "negative",
-              "confidence": 0.7506
-            },
-            "category": "world"
-          },
-          {
-            "title": "Two more UN peacekeepers killed in southern Lebanon: UNIFIL",
-            "link": "https://www.aljazeera.com/news/2026/3/30/two-more-un-peacekeepers-killed-in-southern-lebanon-unifil?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "At least three UN peacekeepers killed this week as violence surges amid Israel's expanding invasion of southern Lebanon.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/afp_69caa7d8500e-1774888920.jpg?resize=1920%2C1440",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/afp_69caa7d8500e-1774888920.jpg?resize=1920%2C1440",
-            "publishedAt": "2026-03-30T18:11:15.000Z",
-            "sentiment": {
-              "posP": 13,
-              "neuP": 54,
-              "negP": 33,
-              "label": "negative",
-              "confidence": 0.8716
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Oil Refinery Hit In Israel's Haifa: Report",
-            "link": "https://www.ndtv.com/world-news/israel-iran-war-oil-refinery-hit-in-israels-haifa-report-11288430",
-            "source": "NDTV",
-            "sourceDomain": "ndtv.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "It was not immediately clear whether the refinery had been directly hit by a missile from Iran or Lebanon, or by debris from an interception.",
-            "image": "/img/thumb-placeholder.svg",
-            "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-03-30T19:03:45.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 93,
-              "negP": 7,
-              "label": "negative",
-              "confidence": 0.2924
-            },
-            "category": "world"
-          },
-          {
-            "title": "Fire contained after missile attack on oil refinery in Israel’s Haifa",
-            "link": "https://www.aljazeera.com/news/2026/3/30/fire-contained-after-missile-attack-on-oil-refinery-in-israels-haifa?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Attack marks second time Oil Refineries facility in northern Israel targeted during US-Israeli war on Iran.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-30T101121Z_154796050_RC2YEKASO3CP_RTRMADP_3_IRAN-CRISIS-ISRAEL-HAIFA-1-1774867175.jpg?resize=1920%2C1440",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-30T101121Z_154796050_RC2YEKASO3CP_RTRMADP_3_IRAN-CRISIS-ISRAEL-HAIFA-1-1774867175.jpg?resize=1920%2C1440",
-            "publishedAt": "2026-03-30T16:25:31.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 65,
-              "negP": 35,
-              "label": "negative",
-              "confidence": 0.91
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
             "title": "T.N. Assembly election: Tamil Nadu needs to be saved from the DMK, says Vijay",
             "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/tn-assembly-election-tamil-nadu-needs-to-be-saved-from-the-dmk-says-vijay/article70803224.ece",
             "source": "The Hindu",
@@ -3093,6 +2945,176 @@
             "image": "https://th-i.thgim.com/public/incoming/amin7h/article70796460.ece/alternates/LANDSCAPE_1200/Traffic%20thanjavur%201.jpg.jpeg",
             "imageUrl": "https://th-i.thgim.com/public/incoming/amin7h/article70796460.ece/alternates/LANDSCAPE_1200/Traffic%20thanjavur%201.jpg.jpeg",
             "publishedAt": "2026-03-30T18:58:58.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 100,
+              "negP": 0,
+              "label": "neutral",
+              "confidence": 0
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "US embassy reopens in Venezuela months after Maduro abduction",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/us-embassy-reopens-in-venezuela-months-after-maduro-abduction?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "The US has reopened its embassy in Venezuela, nearly three months after it abducted the former leader Nicolas Maduro.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80",
+            "publishedAt": "2026-03-30T20:16:40.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 78,
+              "negP": 22,
+              "label": "negative",
+              "confidence": 0.7964
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "US Stocks: S&amp;P, Nasdaq end lower as investors weigh Middle East conflict outlook ",
+            "link": "https://economictimes.indiatimes.com/markets/us-stocks/us-stocks-today-sp-nasdaq-end-lower-as-investors-weigh-middle-east-conflict-outlook/articleshow/129910977.cms",
+            "source": "The Economic Times",
+            "sourceDomain": "economictimes.indiatimes.com",
+            "sourceCredibility": "Medium",
+            "industry": "Finance",
+            "description": "U.S. stocks closed mostly lower as President Trump's conflicting messages on Iran and escalating Middle East conflict weighed on markets.  Despite optimism over discussions, threats to the Strait of Hormuz and Iranian oil facilities fueled investor concerns.  Fed Chair Powell's comments on inflation offered some support, while financial stocks rose on new 401(k) guidelines.",
+            "image": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+            "imageUrl": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+            "publishedAt": "2026-03-30T20:04:52.000Z",
+            "sentiment": {
+              "posP": 8,
+              "neuP": 74,
+              "negP": 18,
+              "label": "negative",
+              "confidence": 0.743
+            },
+            "category": "business"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Trump puts a face to Iran talks, says US negotiating with parliamentary speaker",
+            "link": "https://www.indiatoday.in/world/story/donald-trump-puts-face-iran-talks-us-negotiating-with-parliamentary-speaker-bagher-ghalibaf-2889357-2026-03-31?utm_source=rss",
+            "source": "India Today",
+            "sourceDomain": "indiatoday.in",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "Trump puts a face to Iran talks says US negotiating with parliamentary speaker",
+            "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+            "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+            "publishedAt": "2026-03-30T20:01:38.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 100,
+              "negP": 0,
+              "label": "neutral",
+              "confidence": 0
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Rubio denies US actions punitive, blames Cuba for economic failures",
+            "link": "https://www.aljazeera.com/news/2026/3/30/rubio-denies-us-punitive-actions-blames-cuba-for-economic-failures?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "In exclusive interview with Al Jazeera, the US secretary of state downplays US role in the island nation's fuel crisis.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440",
+            "publishedAt": "2026-03-30T19:50:00.000Z",
+            "sentiment": {
+              "posP": 4,
+              "neuP": 58,
+              "negP": 38,
+              "label": "negative",
+              "confidence": 0.9371
+            },
+            "category": "business"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Bastar close to being considered Naxal-free, possibility of revival extremely remote: IGP",
+            "link": "https://www.thehindu.com/news/national/bastar-close-to-being-considered-naxal-free-possibility-of-revival-extremely-remote-igp/article70803561.ece",
+            "source": "The Hindu",
+            "sourceDomain": "thehindu.com",
+            "sourceCredibility": "High",
+            "industry": "Communication",
+            "description": "The statement came on the eve of the Centre’s deadline to eliminate Maoism in the country",
+            "image": "https://th-i.thgim.com/public/news/cities/Delhi/iows1e/article70804572.ece/alternates/LANDSCAPE_1200/GetImageContent.jpg",
+            "imageUrl": "https://th-i.thgim.com/public/news/cities/Delhi/iows1e/article70804572.ece/alternates/LANDSCAPE_1200/GetImageContent.jpg",
+            "publishedAt": "2026-03-30T19:37:56.000Z",
             "sentiment": {
               "posP": 0,
               "neuP": 100,
@@ -3167,108 +3189,6 @@
               "negP": 0,
               "label": "positive",
               "confidence": 0.7096
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Kerala Assembly Elections 2026: Pinarayi signals willingness to accept Satheesan’s challenge for a one-to-one debate on LDF governance",
-            "link": "https://www.thehindu.com/elections/pinarayi-signals-willingness-to-accept-satheesans-challenge-for-a-one-to-one-debate-on-ldf-governance/article70802958.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "Kerala CM’s Facebook post also lists his government’s achievements. The Leader of the Opposition had repeatedly dared Mr. Vijayan to prove the LDF’s case for a third consecutive term",
-            "image": "https://www.thehindu.com/theme/images/og-image.png",
-            "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
-            "publishedAt": "2026-03-30T19:25:21.000Z",
-            "sentiment": {
-              "posP": 13,
-              "neuP": 87,
-              "negP": 0,
-              "label": "positive",
-              "confidence": 0.6124
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "T.N. Assembly election: candidates to be announced soon, says Selvaperunthagai",
-            "link": "https://www.thehindu.com/news/national/tamil-nadu/tn-assembly-election-candidates-to-be-announced-soon-says-selvaperunthagai/article70803554.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "",
-            "image": "https://th-i.thgim.com/public/incoming/r15fab/article70804556.ece/alternates/LANDSCAPE_1200/NIV_Seat-swap-oG4VFPGLKJ.4.jpg.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/r15fab/article70804556.ece/alternates/LANDSCAPE_1200/NIV_Seat-swap-oG4VFPGLKJ.4.jpg.jpg",
-            "publishedAt": "2026-03-30T19:22:08.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Trump warns Iran to ‘immediately’ reopen Strait of Hormuz, threatens strikes on oil sites, power plants &amp; Kharg Island",
-            "link": "https://www.livemint.com/news/us-news/trump-again-warns-iran-to-immedi-reopen-strait-of-hormuz-threatens-strikes-on-oil-sites-power-plants-kharg-islan-11774895699728.html",
-            "source": "Mint",
-            "sourceDomain": "livemint.com",
-            "sourceCredibility": "High",
-            "industry": "Finance",
-            "description": "President Trump warned Iran that the US may escalate its response if a deal is not reached soon regarding the Strait of Hormuz. He mentioned potential strikes on key Iranian infrastructure while expressing confidence in ongoing discussions with ‘new’ leadership in Iran.",
-            "image": "/img/thumb-placeholder.svg",
-            "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-03-30T19:19:04.000Z",
-            "sentiment": {
-              "posP": 5,
-              "neuP": 77,
-              "negP": 18,
-              "label": "negative",
-              "confidence": 0.7266
             },
             "category": "world"
           }
@@ -3691,49 +3611,49 @@
     ],
     "sentiment": {
       "overall": {
-        "pos": 7.65,
-        "neu": 82.4,
-        "neg": 9.95,
+        "pos": 7.61,
+        "neu": 81.58,
+        "neg": 10.82,
         "count": 120
       },
       "india": {
-        "pos": 7.47,
-        "neu": 81.94,
-        "neg": 10.59,
-        "count": 17
+        "pos": 6.19,
+        "neu": 83.19,
+        "neg": 10.63,
+        "count": 16
       },
       "world": {
-        "pos": 7.68,
-        "neu": 82.48,
-        "neg": 9.84,
-        "count": 103
+        "pos": 7.83,
+        "neu": 81.33,
+        "neg": 10.85,
+        "count": 104
       }
     },
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-03-30T15:44:14.270Z",
-          "pos": 4,
-          "neu": 87,
-          "neg": 9,
-          "count": 4
-        },
-        {
-          "label": "2026-03-30T16:44:14.270Z",
+          "label": "2026-03-30T16:29:47.983Z",
           "pos": 9,
-          "neu": 77,
-          "neg": 14,
-          "count": 4
-        },
-        {
-          "label": "2026-03-30T17:44:14.270Z",
-          "pos": 9,
-          "neu": 75,
-          "neg": 16,
+          "neu": 79,
+          "neg": 12,
           "count": 5
         },
         {
-          "label": "2026-03-30T18:44:14.270Z",
+          "label": "2026-03-30T17:29:47.983Z",
+          "pos": 7,
+          "neu": 82,
+          "neg": 11,
+          "count": 5
+        },
+        {
+          "label": "2026-03-30T18:29:47.983Z",
+          "pos": 11,
+          "neu": 65,
+          "neg": 24,
+          "count": 1
+        },
+        {
+          "label": "2026-03-30T19:29:47.983Z",
           "pos": 0,
           "neu": 100,
           "neg": 0,
@@ -3742,32 +3662,32 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-03-30T15:44:14.270Z",
-          "pos": 9,
-          "neu": 79,
+          "label": "2026-03-30T16:29:47.983Z",
+          "pos": 6,
+          "neu": 82,
           "neg": 12,
-          "count": 20
+          "count": 18
         },
         {
-          "label": "2026-03-30T16:44:14.270Z",
-          "pos": 6,
-          "neu": 83,
-          "neg": 12,
+          "label": "2026-03-30T17:29:47.983Z",
+          "pos": 10,
+          "neu": 80,
+          "neg": 10,
+          "count": 39
+        },
+        {
+          "label": "2026-03-30T18:29:47.983Z",
+          "pos": 7,
+          "neu": 84,
+          "neg": 9,
           "count": 21
         },
         {
-          "label": "2026-03-30T17:44:14.270Z",
-          "pos": 9,
-          "neu": 81,
-          "neg": 10,
-          "count": 31
-        },
-        {
-          "label": "2026-03-30T18:44:14.270Z",
-          "pos": 8,
-          "neu": 85,
-          "neg": 8,
-          "count": 19
+          "label": "2026-03-30T19:29:47.983Z",
+          "pos": 2,
+          "neu": 82,
+          "neg": 16,
+          "count": 5
         }
       ]
     },
@@ -3780,26 +3700,26 @@
             "count": 1
           },
           {
+            "name": "Finance",
+            "bias": -3.72,
+            "count": 18
+          },
+          {
             "name": "Communication",
-            "bias": -2.77,
-            "count": 86
+            "bias": -3.64,
+            "count": 87
           },
           {
             "name": "Technology",
-            "bias": 2.53,
-            "count": 15
-          },
-          {
-            "name": "Finance",
-            "bias": -2.17,
-            "count": 18
+            "bias": 2.57,
+            "count": 14
           }
         ],
         "pos": [
           {
             "name": "Technology",
-            "bias": 2.53,
-            "count": 15
+            "bias": 2.57,
+            "count": 14
           }
         ],
         "neu": [],
@@ -3810,31 +3730,31 @@
             "count": 1
           },
           {
-            "name": "Communication",
-            "bias": -2.77,
-            "count": 86
+            "name": "Finance",
+            "bias": -3.72,
+            "count": 18
           },
           {
-            "name": "Finance",
-            "bias": -2.17,
-            "count": 18
+            "name": "Communication",
+            "bias": -3.64,
+            "count": 87
           }
         ]
       },
       "sources": [
         {
           "source": "The Hindu",
-          "pos": 7.35,
-          "neu": 87.13,
-          "neg": 5.52,
-          "count": 23
+          "pos": 8.46,
+          "neu": 84.19,
+          "neg": 7.35,
+          "count": 26
         },
         {
           "source": "Al Jazeera",
-          "pos": 4.95,
-          "neu": 78.9,
-          "neg": 16.15,
-          "count": 20
+          "pos": 4.62,
+          "neu": 77.38,
+          "neg": 18,
+          "count": 21
         },
         {
           "source": "NDTV",
@@ -3844,32 +3764,32 @@
           "count": 12
         },
         {
-          "source": "Hindustan Times",
-          "pos": 9.58,
-          "neu": 83.83,
-          "neg": 6.58,
-          "count": 12
-        },
-        {
-          "source": "Mint",
-          "pos": 5.09,
-          "neu": 87.91,
-          "neg": 7,
-          "count": 11
-        },
-        {
-          "source": "BBC",
-          "pos": 11.2,
-          "neu": 74.7,
-          "neg": 14.1,
+          "source": "India Today",
+          "pos": 7.2,
+          "neu": 74.6,
+          "neg": 18.2,
           "count": 10
         },
         {
-          "source": "India Today",
-          "pos": 8,
-          "neu": 71.78,
-          "neg": 20.22,
-          "count": 9
+          "source": "Mint",
+          "pos": 3.8,
+          "neu": 88.5,
+          "neg": 7.7,
+          "count": 10
+        },
+        {
+          "source": "Hindustan Times",
+          "pos": 9.4,
+          "neu": 83.2,
+          "neg": 7.4,
+          "count": 10
+        },
+        {
+          "source": "BBC",
+          "pos": 12.63,
+          "neu": 72,
+          "neg": 15.38,
+          "count": 8
         },
         {
           "source": "NDTV News- Special",
@@ -3877,6 +3797,13 @@
           "neu": 83.63,
           "neg": 7.13,
           "count": 8
+        },
+        {
+          "source": "The Economic Times",
+          "pos": 5.4,
+          "neu": 84.6,
+          "neg": 10,
+          "count": 5
         },
         {
           "source": "TechCrunch",
@@ -3891,19 +3818,92 @@
           "neu": 81.8,
           "neg": 11.6,
           "count": 5
-        },
-        {
-          "source": "The Economic Times",
-          "pos": 4.75,
-          "neu": 87.25,
-          "neg": 8,
-          "count": 4
         }
       ]
     }
   },
   "usa": {
     "topStories": [
+      {
+        "title": "US embassy reopens in Venezuela months after Maduro abduction",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/us-embassy-reopens-in-venezuela-months-after-maduro-abduction?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "The US has reopened its embassy in Venezuela, nearly three months after it abducted the former leader Nicolas Maduro.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80",
+        "publishedAt": "2026-03-30T20:16:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 78,
+          "negP": 22,
+          "label": "negative",
+          "confidence": 0.7964
+        },
+        "category": "world"
+      },
+      {
+        "title": "US Stocks: S&amp;P, Nasdaq end lower as investors weigh Middle East conflict outlook ",
+        "link": "https://economictimes.indiatimes.com/markets/us-stocks/us-stocks-today-sp-nasdaq-end-lower-as-investors-weigh-middle-east-conflict-outlook/articleshow/129910977.cms",
+        "source": "The Economic Times",
+        "sourceDomain": "economictimes.indiatimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Finance",
+        "description": "U.S. stocks closed mostly lower as President Trump's conflicting messages on Iran and escalating Middle East conflict weighed on markets.  Despite optimism over discussions, threats to the Strait of Hormuz and Iranian oil facilities fueled investor concerns.  Fed Chair Powell's comments on inflation offered some support, while financial stocks rose on new 401(k) guidelines.",
+        "image": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+        "imageUrl": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+        "publishedAt": "2026-03-30T20:04:52.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 74,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.743
+        },
+        "category": "business"
+      },
+      {
+        "title": "Trump puts a face to Iran talks, says US negotiating with parliamentary speaker",
+        "link": "https://www.indiatoday.in/world/story/donald-trump-puts-face-iran-talks-us-negotiating-with-parliamentary-speaker-bagher-ghalibaf-2889357-2026-03-31?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Trump puts a face to Iran talks says US negotiating with parliamentary speaker",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+        "publishedAt": "2026-03-30T20:01:38.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "Rubio denies US actions punitive, blames Cuba for economic failures",
+        "link": "https://www.aljazeera.com/news/2026/3/30/rubio-denies-us-punitive-actions-blames-cuba-for-economic-failures?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "In exclusive interview with Al Jazeera, the US secretary of state downplays US role in the island nation's fuel crisis.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-30T19:50:00.000Z",
+        "sentiment": {
+          "posP": 4,
+          "neuP": 58,
+          "negP": 38,
+          "label": "negative",
+          "confidence": 0.9371
+        },
+        "category": "business"
+      },
       {
         "title": "Trump warns Iran to ‘immediately’ reopen Strait of Hormuz, threatens strikes on oil sites, power plants &amp; Kharg Island",
         "link": "https://www.livemint.com/news/us-news/trump-again-warns-iran-to-immedi-reopen-strait-of-hormuz-threatens-strikes-on-oil-sites-power-plants-kharg-islan-11774895699728.html",
@@ -4063,18 +4063,60 @@
           "confidence": 0.3182
         },
         "category": "world"
+      }
+    ],
+    "dailyNews": [
+      {
+        "title": "US embassy reopens in Venezuela months after Maduro abduction",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/us-embassy-reopens-in-venezuela-months-after-maduro-abduction?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "The US has reopened its embassy in Venezuela, nearly three months after it abducted the former leader Nicolas Maduro.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/us-embassy-caracas-wide-clean-1774901753.jpg?resize=1920%2C1080&amp;quality=80",
+        "publishedAt": "2026-03-30T20:16:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 78,
+          "negP": 22,
+          "label": "negative",
+          "confidence": 0.7964
+        },
+        "category": "world"
       },
       {
-        "title": "Parliament Budget Session updates: Maoism has been almost eradicated from Bastar, the region is now on the path of development, says Amit Shah",
-        "link": "https://www.thehindu.com/news/national/parliament-budget-session-live-updates-march-30-2026-lok-sabha-insolvency-bankruptcy-code-capf-bill/article70801775.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
+        "title": "US Stocks: S&amp;P, Nasdaq end lower as investors weigh Middle East conflict outlook ",
+        "link": "https://economictimes.indiatimes.com/markets/us-stocks/us-stocks-today-sp-nasdaq-end-lower-as-investors-weigh-middle-east-conflict-outlook/articleshow/129910977.cms",
+        "source": "The Economic Times",
+        "sourceDomain": "economictimes.indiatimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Finance",
+        "description": "U.S. stocks closed mostly lower as President Trump's conflicting messages on Iran and escalating Middle East conflict weighed on markets.  Despite optimism over discussions, threats to the Strait of Hormuz and Iranian oil facilities fueled investor concerns.  Fed Chair Powell's comments on inflation offered some support, while financial stocks rose on new 401(k) guidelines.",
+        "image": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+        "imageUrl": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+        "publishedAt": "2026-03-30T20:04:52.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 74,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.743
+        },
+        "category": "business"
+      },
+      {
+        "title": "Trump puts a face to Iran talks, says US negotiating with parliamentary speaker",
+        "link": "https://www.indiatoday.in/world/story/donald-trump-puts-face-iran-talks-us-negotiating-with-parliamentary-speaker-bagher-ghalibaf-2889357-2026-03-31?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
         "industry": "Communication",
-        "description": "Congress MP Digvijaya Singh says CAPF Bill will make the discriminations faced by the officials permanent as RS takes up discussion on CAPF (General Administration) Bill, 2026",
-        "image": "https://th-i.thgim.com/public/incoming/pdolrt/article70803119.ece/alternates/LANDSCAPE_1200/Screenshot%202026-03-30%20183559.png",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/pdolrt/article70803119.ece/alternates/LANDSCAPE_1200/Screenshot%202026-03-30%20183559.png",
-        "publishedAt": "2026-03-30T17:57:41.000Z",
+        "description": "Trump puts a face to Iran talks says US negotiating with parliamentary speaker",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+        "publishedAt": "2026-03-30T20:01:38.000Z",
         "sentiment": {
           "posP": 0,
           "neuP": 100,
@@ -4085,67 +4127,25 @@
         "category": "world"
       },
       {
-        "title": "Trump interested in Arab partners footing Iran war bill: White House",
-        "link": "https://www.indiatoday.in/world/story/trump-interested-in-arab-partners-footing-iran-war-bill-white-house-2889320-2026-03-30?utm_source=rss",
-        "source": "India Today",
-        "sourceDomain": "indiatoday.in",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Trump interested in Arab partners footing Iran war bill White House",
-        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_story_image/202603/2026-03-30T005608Z_1555136098_RC2OEKAYLE5Q_RTRMADP_3_USA-TRUMP.JPG%3FVersionId%3DPlrjtVmG9tkKy99xhCxjrZQ9XVcz9Fsn?VersionId=g0aCJuiKl27nR6_EDVR4Yrdr4w0dkCoQ",
-        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_story_image/202603/2026-03-30T005608Z_1555136098_RC2OEKAYLE5Q_RTRMADP_3_USA-TRUMP.JPG%3FVersionId%3DPlrjtVmG9tkKy99xhCxjrZQ9XVcz9Fsn?VersionId=g0aCJuiKl27nR6_EDVR4Yrdr4w0dkCoQ",
-        "publishedAt": "2026-03-30T17:43:10.000Z",
-        "sentiment": {
-          "posP": 17,
-          "neuP": 58,
-          "negP": 25,
-          "label": "negative",
-          "confidence": 0.5267
-        },
-        "category": "world"
-      },
-      {
-        "title": "Watch | ‘Loser’ Lego Trump receives Iran’s message in satirical video: ‘Come closer’",
-        "link": "https://www.livemint.com/news/world/loser-lego-trump-receives-iran-s-message-in-satirical-video-come-closer-11774889883381.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "The animation opens with a Lego version of Trump seated in the Oval Office, appearing under pressure as he gazes out at large crowds protesting outside.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-03-30T17:42:38.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 87,
-          "negP": 13,
-          "label": "negative",
-          "confidence": 0.6124
-        },
-        "category": "world"
-      },
-      {
-        "title": "ICE announces death of another Mexican detainee in US immigration custody",
-        "link": "https://www.aljazeera.com/news/2026/3/30/ice-announces-death-of-another-mexican-detainee-in-us-immigration-custody?traffic_source=rss",
+        "title": "Rubio denies US actions punitive, blames Cuba for economic failures",
+        "link": "https://www.aljazeera.com/news/2026/3/30/rubio-denies-us-punitive-actions-blames-cuba-for-economic-failures?traffic_source=rss",
         "source": "Al Jazeera",
         "sourceDomain": "aljazeera.com",
         "sourceCredibility": "Medium",
         "industry": "Communication",
-        "description": "Mexico's President Claudia Sheinbaum says her country will take steps to protest death of another Mexican citizen in US.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-29T230722Z_143807002_RC20EKA4JC7L_RTRMADP_3_USA-TRUMP-PROTESTS-1774888152.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-29T230722Z_143807002_RC20EKA4JC7L_RTRMADP_3_USA-TRUMP-PROTESTS-1774888152.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-03-30T17:20:51.000Z",
+        "description": "In exclusive interview with Al Jazeera, the US secretary of state downplays US role in the island nation's fuel crisis.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/epa_69cac67c939b-1774896764.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-03-30T19:50:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "neuP": 73,
-          "negP": 27,
+          "posP": 4,
+          "neuP": 58,
+          "negP": 38,
           "label": "negative",
-          "confidence": 0.8689
+          "confidence": 0.9371
         },
-        "category": "world"
-      }
-    ],
-    "dailyNews": [
+        "category": "business"
+      },
       {
         "title": "Trump warns Iran to ‘immediately’ reopen Strait of Hormuz, threatens strikes on oil sites, power plants &amp; Kharg Island",
         "link": "https://www.livemint.com/news/us-news/trump-again-warns-iran-to-immedi-reopen-strait-of-hormuz-threatens-strikes-on-oil-sites-power-plants-kharg-islan-11774895699728.html",
@@ -4545,121 +4545,41 @@
           "confidence": 0.7184
         },
         "category": "world"
-      },
-      {
-        "title": "Is the US ready to invade Iran? What Trump’s moves tell us so far",
-        "link": "https://www.aljazeera.com/news/2026/3/30/is-the-us-ready-to-invade-iran-what-trumps-moves-tell-us-so-far?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Seizing strategic islands and destroying Iran's stock of enriched uranium are options the US is considering.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2019-05-28T042720Z_966337166_RC1B7DA03490_RTRMADP_3_JAPAN-USA-TRUMP-NAVY-1772540852.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2019-05-28T042720Z_966337166_RC1B7DA03490_RTRMADP_3_JAPAN-USA-TRUMP-NAVY-1772540852.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-03-30T15:46:04.000Z",
-        "sentiment": {
-          "posP": 7,
-          "neuP": 82,
-          "negP": 11,
-          "label": "negative",
-          "confidence": 0.2732
-        },
-        "category": "world"
-      },
-      {
-        "title": "‘Loyalty campaign’: Iraqi armed groups in Iran as US talks of ground war",
-        "link": "https://www.aljazeera.com/news/2026/3/30/loyalty-campaign-iraqi-armed-groups-in-iran-as-us-talks-of-ground?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Fighters from a major Iraqi pro-Iran armed group have entered the country, carrying aid — and a signal of support.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-14T193716Z_637526361_RC2H4KASOEI8_RTRMADP_3_IRAN-CRISIS-IRAQ-1774884480.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/2026-03-14T193716Z_637526361_RC2H4KASOEI8_RTRMADP_3_IRAN-CRISIS-IRAQ-1774884480.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-03-30T15:40:26.000Z",
-        "sentiment": {
-          "posP": 8,
-          "neuP": 77,
-          "negP": 15,
-          "label": "negative",
-          "confidence": 0.34
-        },
-        "category": "world"
-      },
-      {
-        "title": "Apple will hide your email address from apps and websites, but not cops",
-        "link": "https://techcrunch.com/2026/03/30/apple-will-hide-your-email-address-from-apps-and-websites-but-not-cops/",
-        "source": "TechCrunch",
-        "sourceDomain": "techcrunch.com",
-        "sourceCredibility": "Medium",
-        "industry": "Technology",
-        "description": "Demands for Apple customer records by federal agents in recent months underscore the privacy limitations of email.",
-        "image": "https://techcrunch.com/wp-content/uploads/2021/08/icloud-pattern-with-key-red.jpg?resize=1200,675",
-        "imageUrl": "https://techcrunch.com/wp-content/uploads/2021/08/icloud-pattern-with-key-red.jpg?resize=1200,675",
-        "publishedAt": "2026-03-30T15:34:41.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 96,
-          "negP": 4,
-          "label": "negative",
-          "confidence": 0.09
-        },
-        "category": "technology"
-      },
-      {
-        "title": "Marco Rubio says President Trump prefers diplomatic solution to war on Iran",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/marco-rubio-says-president-trump-prefers-diplomatic-solution-to-war-on-iran?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "US Secretary of State Marco Rubio said that President Donald Trump still prefers a diplomatic outcome for war on Iran.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774884788.jpg?resize=1920%2C1080&amp;quality=80",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774884788.jpg?resize=1920%2C1080&amp;quality=80",
-        "publishedAt": "2026-03-30T15:33:24.000Z",
-        "sentiment": {
-          "posP": 6,
-          "neuP": 73,
-          "negP": 21,
-          "label": "negative",
-          "confidence": 0.7579
-        },
-        "category": "sports"
       }
     ],
     "sentiment": {
-      "pos": 6.69,
-      "neu": 82.94,
-      "neg": 10.37,
-      "count": 173
+      "pos": 6.81,
+      "neu": 82.53,
+      "neg": 10.66,
+      "count": 174
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.94,
-        "neu": 83.21,
-        "neg": 8.85,
+        "pos": 7.95,
+        "neu": 83.32,
+        "neg": 8.73,
         "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 6.54,
-        "neu": 81.84,
-        "neg": 11.62,
+        "pos": 8.83,
+        "neu": 81.13,
+        "neg": 10.04,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 8.2,
+        "pos": 7.97,
         "neu": 81.37,
-        "neg": 10.44,
+        "neg": 10.65,
         "count": 20
       },
       {
         "source": "CBS News",
-        "pos": 6.86,
-        "neu": 84.78,
-        "neg": 8.37,
+        "pos": 6.97,
+        "neu": 82.83,
+        "neg": 10.2,
         "count": 20
       },
       {
@@ -4671,16 +4591,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.17,
-        "neu": 88.52,
-        "neg": 5.31,
+        "pos": 5.07,
+        "neu": 88.77,
+        "neg": 6.16,
         "count": 20
       },
       {
         "source": "Al Jazeera",
-        "pos": 2.69,
-        "neu": 81.08,
-        "neg": 16.23,
+        "pos": 2.54,
+        "neu": 78.23,
+        "neg": 19.23,
         "count": 13
       },
       {
@@ -4699,10 +4619,10 @@
       },
       {
         "source": "India Today",
-        "pos": 8.5,
-        "neu": 60,
-        "neg": 31.5,
-        "count": 2
+        "pos": 5.67,
+        "neu": 73.33,
+        "neg": 21,
+        "count": 3
       },
       {
         "source": "NDTV",
@@ -4712,10 +4632,10 @@
         "count": 2
       },
       {
-        "source": "BBC",
-        "pos": 10,
-        "neu": 75,
-        "neg": 15,
+        "source": "The Hindu",
+        "pos": 0,
+        "neu": 94,
+        "neg": 6,
         "count": 2
       }
     ],
@@ -4728,7 +4648,7 @@
         },
         {
           "name": "Communication",
-          "bias": -11.62,
+          "bias": -12.71,
           "count": 21
         },
         {
@@ -4738,27 +4658,27 @@
         },
         {
           "name": "Energy",
-          "bias": -5.34,
-          "count": 14
+          "bias": -5.77,
+          "count": 15
         },
         {
           "name": "Technology",
-          "bias": -3.35,
-          "count": 120
+          "bias": -3.16,
+          "count": 122
         },
         {
           "name": "Finance",
-          "bias": -2.4,
+          "bias": -2.65,
           "count": 16
+        },
+        {
+          "name": "Healthcare",
+          "bias": -1.68,
+          "count": 5
         },
         {
           "name": "Real Estate",
           "bias": 0.55,
-          "count": 4
-        },
-        {
-          "name": "Healthcare",
-          "bias": 0.17,
           "count": 4
         },
         {
@@ -4771,17 +4691,17 @@
       "neu": [
         {
           "name": "Energy",
-          "bias": -5.34,
-          "count": 14
+          "bias": -5.77,
+          "count": 15
         },
         {
           "name": "Technology",
-          "bias": -3.35,
-          "count": 120
+          "bias": -3.16,
+          "count": 122
         },
         {
           "name": "Finance",
-          "bias": -2.4,
+          "bias": -2.65,
           "count": 16
         }
       ],
@@ -4793,7 +4713,7 @@
         },
         {
           "name": "Communication",
-          "bias": -11.62,
+          "bias": -12.71,
           "count": 21
         },
         {
@@ -4806,32 +4726,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-03-30T15:44:14.271Z",
-          "pos": 5,
-          "neu": 78,
-          "neg": 17,
+          "label": "2026-03-30T16:29:47.984Z",
+          "pos": 11,
+          "neu": 81,
+          "neg": 7,
           "count": 13
         },
         {
-          "label": "2026-03-30T16:44:14.271Z",
+          "label": "2026-03-30T17:29:47.984Z",
           "pos": 8,
-          "neu": 84,
-          "neg": 8,
-          "count": 27
+          "neu": 82,
+          "neg": 10,
+          "count": 28
         },
         {
-          "label": "2026-03-30T17:44:14.271Z",
-          "pos": 8,
-          "neu": 83,
-          "neg": 9,
-          "count": 30
-        },
-        {
-          "label": "2026-03-30T18:44:14.271Z",
-          "pos": 6,
-          "neu": 81,
+          "label": "2026-03-30T18:29:47.984Z",
+          "pos": 7,
+          "neu": 80,
           "neg": 13,
-          "count": 30
+          "count": 26
+        },
+        {
+          "label": "2026-03-30T19:29:47.984Z",
+          "pos": 6,
+          "neu": 83,
+          "neg": 10,
+          "count": 34
         }
       ]
     }
@@ -4839,6 +4759,46 @@
   "potus": {
     "topStories": [
       {
+        "title": "US Stocks: S&amp;P, Nasdaq end lower as investors weigh Middle East conflict outlook ",
+        "link": "https://economictimes.indiatimes.com/markets/us-stocks/us-stocks-today-sp-nasdaq-end-lower-as-investors-weigh-middle-east-conflict-outlook/articleshow/129910977.cms",
+        "source": "The Economic Times",
+        "sourceDomain": "economictimes.indiatimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Finance",
+        "description": "U.S. stocks closed mostly lower as President Trump's conflicting messages on Iran and escalating Middle East conflict weighed on markets.  Despite optimism over discussions, threats to the Strait of Hormuz and Iranian oil facilities fueled investor concerns.  Fed Chair Powell's comments on inflation offered some support, while financial stocks rose on new 401(k) guidelines.",
+        "image": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+        "imageUrl": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+        "publishedAt": "2026-03-30T20:04:52.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 74,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.743
+        },
+        "category": "business"
+      },
+      {
+        "title": "Trump puts a face to Iran talks, says US negotiating with parliamentary speaker",
+        "link": "https://www.indiatoday.in/world/story/donald-trump-puts-face-iran-talks-us-negotiating-with-parliamentary-speaker-bagher-ghalibaf-2889357-2026-03-31?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Trump puts a face to Iran talks says US negotiating with parliamentary speaker",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+        "publishedAt": "2026-03-30T20:01:38.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
         "title": "Trump warns Iran to ‘immediately’ reopen Strait of Hormuz, threatens strikes on oil sites, power plants &amp; Kharg Island",
         "link": "https://www.livemint.com/news/us-news/trump-again-warns-iran-to-immedi-reopen-strait-of-hormuz-threatens-strikes-on-oil-sites-power-plants-kharg-islan-11774895699728.html",
         "source": "Mint",
@@ -4999,88 +4959,88 @@
         "category": "world"
       },
       {
-        "title": "Marco Rubio says President Trump prefers diplomatic solution to war on Iran",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/marco-rubio-says-president-trump-prefers-diplomatic-solution-to-war-on-iran?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "US Secretary of State Marco Rubio said that President Donald Trump still prefers a diplomatic outcome for war on Iran.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774884788.jpg?resize=1920%2C1080&amp;quality=80",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774884788.jpg?resize=1920%2C1080&amp;quality=80",
-        "publishedAt": "2026-03-30T15:33:24.000Z",
-        "sentiment": {
-          "posP": 6,
-          "neuP": 73,
-          "negP": 21,
-          "label": "negative",
-          "confidence": 0.7579
-        },
-        "category": "sports"
-      },
-      {
-        "title": "Trump speaks with the family of Sheridan Gorman, college student allegedly slain by illegal immigrant",
-        "link": "https://www.foxnews.com/politics/trump-speaks-family-sheridan-gorman-college-student-allegedly-slain-illegal-immigrant",
+        "title": "Emanuel pushes back on ‘straight White man’ question, says ideas matter most in 2028",
+        "link": "https://www.foxnews.com/politics/emanuel-pushes-back-straight-white-man-question-says-ideas-matter-most-2028",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump spoke with the family of Sheridan Gorman, an 18-year-old allegedly killed by an illegal immigrant in Chicago, a White House official confirmed to Fox News.",
+        "description": "Rahm Emanuel says the 2028 Democratic race should be about ideas, not gender, as he mulls a White House bid and pushes a middle-class-focused platform.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-30T18:27:18.000Z",
+        "publishedAt": "2026-03-30T20:10:50.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 23.1,
-          "neuP": 76.9,
-          "label": "negative",
-          "confidence": 0.91
+          "posP": 3,
+          "negP": 0,
+          "neuP": 97,
+          "label": "neutral",
+          "confidence": 0.03
         },
         "category": "usa"
       },
       {
-        "title": "Key US ally blocks airspace to military flights over Iran, escalating standoff with Trump",
-        "link": "https://www.foxnews.com/politics/key-us-ally-blocks-airspace-military-flights-over-iran-escalating-standoff-trump",
+        "title": "SEE THE DIFFERENCE: Emergency TSA lanes undergo drastic transformation at major airport after Trump action",
+        "link": "https://www.foxnews.com/politics/see-difference-emergency-tsa-lanes-undergo-drastic-transformation-major-airport-after-trump-action",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Spain denied U.S. military aircraft access to its airspace and bases for Iran conflict operations, with Defense Minister Robles calling the war \"illegal.\"",
+        "description": "Emergency security lanes at Houston’s George Bush Intercontinental Airport were seen being cleared by staff on Monday after President Donald Trump signed an executive order to pay TSA.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-30T18:08:18.000Z",
+        "publishedAt": "2026-03-30T20:00:10.000Z",
         "sentiment": {
-          "posP": 3.4,
-          "negP": 24.7,
-          "neuP": 71.9,
+          "posP": 7.9,
+          "negP": 13.6,
+          "neuP": 78.5,
           "label": "negative",
-          "confidence": 0.86
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Leavitt calls on Congress to end Easter recess to work on DHS shutdown",
-        "link": "https://www.foxnews.com/politics/leavitt-calls-congress-end-easter-recess-work-dhs-shutdown",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The White House urges Congress to return from Easter recess to fund DHS, as TSA staffing shortages and long airport security lines persist nationwide.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-30T17:58:48.000Z",
-        "sentiment": {
-          "posP": 6.2,
-          "negP": 4.1,
-          "neuP": 89.7,
-          "label": "positive",
-          "confidence": 0.2
+          "confidence": 0.42
         },
         "category": "usa"
       }
     ],
     "dailyNews": [
       {
+        "title": "US Stocks: S&amp;P, Nasdaq end lower as investors weigh Middle East conflict outlook ",
+        "link": "https://economictimes.indiatimes.com/markets/us-stocks/us-stocks-today-sp-nasdaq-end-lower-as-investors-weigh-middle-east-conflict-outlook/articleshow/129910977.cms",
+        "source": "The Economic Times",
+        "sourceDomain": "economictimes.indiatimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Finance",
+        "description": "U.S. stocks closed mostly lower as President Trump's conflicting messages on Iran and escalating Middle East conflict weighed on markets.  Despite optimism over discussions, threats to the Strait of Hormuz and Iranian oil facilities fueled investor concerns.  Fed Chair Powell's comments on inflation offered some support, while financial stocks rose on new 401(k) guidelines.",
+        "image": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+        "imageUrl": "https://img.etimg.com/thumb/msid-129910985,width-1200,height-630,imgsize-243302,overlay-etmarkets/articleshow.jpg",
+        "publishedAt": "2026-03-30T20:04:52.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 74,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.743
+        },
+        "category": "business"
+      },
+      {
+        "title": "Trump puts a face to Iran talks, says US negotiating with parliamentary speaker",
+        "link": "https://www.indiatoday.in/world/story/donald-trump-puts-face-iran-talks-us-negotiating-with-parliamentary-speaker-bagher-ghalibaf-2889357-2026-03-31?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Trump puts a face to Iran talks says US negotiating with parliamentary speaker",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202603/iran-parliament-speaker-mohammad-bagher-ghalibaf--us-president-donald-trump-235309147-16x9_1.jpg?VersionId=.i7BzJxWHD8ep.PbCubNQMxaT8hRN5v0",
+        "publishedAt": "2026-03-30T20:01:38.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
         "title": "Trump warns Iran to ‘immediately’ reopen Strait of Hormuz, threatens strikes on oil sites, power plants &amp; Kharg Island",
         "link": "https://www.livemint.com/news/us-news/trump-again-warns-iran-to-immedi-reopen-strait-of-hormuz-threatens-strikes-on-oil-sites-power-plants-kharg-islan-11774895699728.html",
         "source": "Mint",
@@ -5241,24 +5201,44 @@
         "category": "world"
       },
       {
-        "title": "Marco Rubio says President Trump prefers diplomatic solution to war on Iran",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/3/30/marco-rubio-says-president-trump-prefers-diplomatic-solution-to-war-on-iran?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "US Secretary of State Marco Rubio said that President Donald Trump still prefers a diplomatic outcome for war on Iran.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774884788.jpg?resize=1920%2C1080&amp;quality=80",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/image-1774884788.jpg?resize=1920%2C1080&amp;quality=80",
-        "publishedAt": "2026-03-30T15:33:24.000Z",
+        "title": "Emanuel pushes back on ‘straight White man’ question, says ideas matter most in 2028",
+        "link": "https://www.foxnews.com/politics/emanuel-pushes-back-straight-white-man-question-says-ideas-matter-most-2028",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Rahm Emanuel says the 2028 Democratic race should be about ideas, not gender, as he mulls a White House bid and pushes a middle-class-focused platform.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-30T20:10:50.000Z",
         "sentiment": {
-          "posP": 6,
-          "neuP": 73,
-          "negP": 21,
-          "label": "negative",
-          "confidence": 0.7579
+          "posP": 3,
+          "negP": 0,
+          "neuP": 97,
+          "label": "neutral",
+          "confidence": 0.03
         },
-        "category": "sports"
+        "category": "usa"
+      },
+      {
+        "title": "SEE THE DIFFERENCE: Emergency TSA lanes undergo drastic transformation at major airport after Trump action",
+        "link": "https://www.foxnews.com/politics/see-difference-emergency-tsa-lanes-undergo-drastic-transformation-major-airport-after-trump-action",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Emergency security lanes at Houston’s George Bush Intercontinental Airport were seen being cleared by staff on Monday after President Donald Trump signed an executive order to pay TSA.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-03-30T20:00:10.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 13.6,
+          "neuP": 78.5,
+          "label": "negative",
+          "confidence": 0.42
+        },
+        "category": "usa"
       },
       {
         "title": "Trump speaks with the family of Sheridan Gorman, college student allegedly slain by illegal immigrant",
@@ -5341,26 +5321,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump DOJ files lawsuit against Minnesota over trans athlete policy",
-        "link": "https://www.foxnews.com/sports/trump-doj-files-lawsuit-against-minnesota-over-trans-athlete-policy",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Justice Department on Monday filed a lawsuit against Minnesota over its policy to have transgender athletes compete in girls' and women's sports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-30T17:24:09.000Z",
-        "sentiment": {
-          "posP": 9.4,
-          "negP": 10.5,
-          "neuP": 80.1,
-          "label": "neutral",
-          "confidence": 0.15
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump Claims ‘Regime Change’ in Iran Is Already Complete",
         "link": "https://www.nytimes.com/2026/03/30/world/middleeast/trump-regime-change-iran.html",
         "source": "NYT",
@@ -5410,7 +5370,7 @@
         "description": "The Navy base at Guantánamo Bay sparkles at night while neighbors across a Cuban minefield struggle in darkness driven by a Trump fuel embargo.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-30T18:25:58.000Z",
+        "publishedAt": "2026-03-30T20:20:26.000Z",
         "sentiment": {
           "posP": 6.6,
           "negP": 12.4,
@@ -5470,7 +5430,7 @@
         "description": "Before President Trump’s order to limit birthright citizenship, there was widespread agreement that the 14th Amendment guaranteed citizenship for U.S.-born babies.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-30T13:15:25.000Z",
+        "publishedAt": "2026-03-30T20:09:06.000Z",
         "sentiment": {
           "posP": 19,
           "negP": 0,
@@ -5490,7 +5450,7 @@
         "description": "Energy markets remain volatile as President Trump threatens Iran with an invasion to seize its oil while also suggesting a deal could soon end the war.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-30T18:56:43.000Z",
+        "publishedAt": "2026-03-30T20:21:39.000Z",
         "sentiment": {
           "posP": 9.9,
           "negP": 21.5,
@@ -5501,79 +5461,46 @@
         "category": "usa"
       },
       {
-        "title": "Latest on U.S. troop buildup in Middle East as Trump says there are \"lots of alternatives\" in Iran",
-        "link": "https://www.cbsnews.com/video/latest-on-us-troop-buildup-in-middle-east-as-trump-says-there-are-lots-of-alternatives-in-iran/",
+        "title": "Karoline Leavitt gives update on Iran talks in White House press briefing",
+        "link": "https://www.cbsnews.com/video/karoline-leavitt-gives-update-on-iran-talks/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Thousands more U.S. forces are arriving in the Middle East as the war in Iran enters its second month. CBS News Pentagon reporter Eleanor Watson has more.",
+        "description": "White House press secretary Karoline Leavitt spoke to reporters Monday about negotiations concerning the Iran war. CBS News White House reporter Aaron Navarro has more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-03-30T18:56:00.000Z",
+        "publishedAt": "2026-03-30T19:49:00.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 8.1,
-          "neuP": 91.9,
+          "negP": 9.8,
+          "neuP": 90.2,
           "label": "negative",
           "confidence": 0.6
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump administration scaling back asylum crackdown, sources say",
-        "link": "https://www.cbsnews.com/news/trump-administration-scaling-back-asylum-crackdown-national-guard-shooting/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The unprecedented move amounted to an indefinite suspension of all asylum requests filed outside of immigration court, regardless of the applicant's nationality.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-30T18:00:49.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "3/30: Face the Nation",
-        "link": "https://www.cbsnews.com/video/330-face-the-nation/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "This week on \"Face the Nation with Margaret Brennan,\" Major Garrett speaks to UAW president Shawn Fain as the Trump administration deals with upcoming tariffs with the markets sliding up and down and consumer confidence sliding. Plus, Sen. Mark Warner joins to discuss the Trump administration's mistake of its own making — sharing attack plans over an app.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-03-30T18:00:39.000Z",
-        "sentiment": {
-          "posP": 8.9,
-          "negP": 8,
-          "neuP": 83.1,
-          "label": "neutral",
-          "confidence": 0.15
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.15,
-      "neu": 81.79,
-      "neg": 12.06,
-      "count": 43
+      "pos": 5.62,
+      "neu": 82.68,
+      "neg": 11.7,
+      "count": 45
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.69,
-        "neu": 85.56,
-        "neg": 7.75,
+        "pos": 7.41,
+        "neu": 84.08,
+        "neg": 8.51,
         "count": 8
+      },
+      {
+        "source": "Fox News",
+        "pos": 7.95,
+        "neu": 80.03,
+        "neg": 12.02,
+        "count": 6
       },
       {
         "source": "NYT",
@@ -5584,24 +5511,10 @@
       },
       {
         "source": "CBS News",
-        "pos": 5.62,
-        "neu": 85.9,
-        "neg": 8.48,
-        "count": 6
-      },
-      {
-        "source": "Fox News",
-        "pos": 9.24,
-        "neu": 76.96,
-        "neg": 13.8,
+        "pos": 3.76,
+        "neu": 86.76,
+        "neg": 9.48,
         "count": 5
-      },
-      {
-        "source": "Al Jazeera",
-        "pos": 4.5,
-        "neu": 74.5,
-        "neg": 21,
-        "count": 4
       },
       {
         "source": "WSJ",
@@ -5611,10 +5524,31 @@
         "count": 4
       },
       {
+        "source": "India Today",
+        "pos": 5.67,
+        "neu": 73.33,
+        "neg": 21,
+        "count": 3
+      },
+      {
         "source": "Mint",
         "pos": 1.67,
         "neu": 88,
         "neg": 10.33,
+        "count": 3
+      },
+      {
+        "source": "Al Jazeera",
+        "pos": 4,
+        "neu": 75,
+        "neg": 21,
+        "count": 3
+      },
+      {
+        "source": "ABC News",
+        "pos": 0,
+        "neu": 90.27,
+        "neg": 9.73,
         "count": 3
       },
       {
@@ -5623,36 +5557,29 @@
         "neu": 79.77,
         "neg": 14.13,
         "count": 3
-      },
-      {
-        "source": "India Today",
-        "pos": 8.5,
-        "neu": 60,
-        "neg": 31.5,
-        "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 3,
-        "neu": 85.05,
-        "neg": 11.95,
-        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.79,
-        "neu": 82.46,
-        "neg": 11.75,
+        "pos": 4.89,
+        "neu": 85.35,
+        "neg": 9.76,
         "count": 20
       },
       {
         "topic": "Policy",
-        "pos": 8.14,
-        "neu": 82.55,
-        "neg": 9.31,
-        "count": 10
+        "pos": 8.88,
+        "neu": 80.43,
+        "neg": 10.69,
+        "count": 9
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 0.83,
+        "neu": 86.32,
+        "neg": 12.85,
+        "count": 6
       },
       {
         "topic": "Legal",
@@ -5662,17 +5589,10 @@
         "count": 6
       },
       {
-        "topic": "Public Statements",
-        "pos": 1.67,
-        "neu": 81.53,
-        "neg": 16.8,
-        "count": 3
-      },
-      {
         "topic": "Economy",
-        "pos": 4.95,
-        "neu": 84.3,
-        "neg": 10.75,
+        "pos": 8.95,
+        "neu": 71.3,
+        "neg": 19.75,
         "count": 2
       },
       {
@@ -5686,49 +5606,49 @@
   },
   "sentiment": {
     "overall": {
-      "pos": 7.65,
-      "neu": 82.4,
-      "neg": 9.95,
+      "pos": 7.61,
+      "neu": 81.58,
+      "neg": 10.82,
       "count": 120
     },
     "india": {
-      "pos": 7.47,
-      "neu": 81.94,
-      "neg": 10.59,
-      "count": 17
+      "pos": 6.19,
+      "neu": 83.19,
+      "neg": 10.63,
+      "count": 16
     },
     "world": {
-      "pos": 7.68,
-      "neu": 82.48,
-      "neg": 9.84,
-      "count": 103
+      "pos": 7.83,
+      "neu": 81.33,
+      "neg": 10.85,
+      "count": 104
     }
   },
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-03-30T15:44:14.273Z",
-        "pos": 4,
-        "neu": 87,
-        "neg": 9,
-        "count": 4
-      },
-      {
-        "label": "2026-03-30T16:44:14.273Z",
+        "label": "2026-03-30T16:29:47.985Z",
         "pos": 9,
-        "neu": 77,
-        "neg": 14,
-        "count": 4
-      },
-      {
-        "label": "2026-03-30T17:44:14.273Z",
-        "pos": 9,
-        "neu": 75,
-        "neg": 16,
+        "neu": 79,
+        "neg": 12,
         "count": 5
       },
       {
-        "label": "2026-03-30T18:44:14.273Z",
+        "label": "2026-03-30T17:29:47.985Z",
+        "pos": 7,
+        "neu": 82,
+        "neg": 11,
+        "count": 5
+      },
+      {
+        "label": "2026-03-30T18:29:47.985Z",
+        "pos": 11,
+        "neu": 65,
+        "neg": 24,
+        "count": 1
+      },
+      {
+        "label": "2026-03-30T19:29:47.985Z",
         "pos": 0,
         "neu": 100,
         "neg": 0,
@@ -5737,32 +5657,32 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-03-30T15:44:14.273Z",
-        "pos": 9,
-        "neu": 79,
+        "label": "2026-03-30T16:29:47.985Z",
+        "pos": 6,
+        "neu": 82,
         "neg": 12,
-        "count": 20
+        "count": 18
       },
       {
-        "label": "2026-03-30T16:44:14.273Z",
-        "pos": 6,
-        "neu": 83,
-        "neg": 12,
+        "label": "2026-03-30T17:29:47.985Z",
+        "pos": 10,
+        "neu": 80,
+        "neg": 10,
+        "count": 39
+      },
+      {
+        "label": "2026-03-30T18:29:47.985Z",
+        "pos": 7,
+        "neu": 84,
+        "neg": 9,
         "count": 21
       },
       {
-        "label": "2026-03-30T17:44:14.273Z",
-        "pos": 9,
-        "neu": 81,
-        "neg": 10,
-        "count": 31
-      },
-      {
-        "label": "2026-03-30T18:44:14.273Z",
-        "pos": 8,
-        "neu": 85,
-        "neg": 8,
-        "count": 19
+        "label": "2026-03-30T19:29:47.985Z",
+        "pos": 2,
+        "neu": 82,
+        "neg": 16,
+        "count": 5
       }
     ]
   },
@@ -5774,26 +5694,26 @@
         "count": 1
       },
       {
+        "name": "Finance",
+        "bias": -3.72,
+        "count": 18
+      },
+      {
         "name": "Communication",
-        "bias": -2.77,
-        "count": 86
+        "bias": -3.64,
+        "count": 87
       },
       {
         "name": "Technology",
-        "bias": 2.53,
-        "count": 15
-      },
-      {
-        "name": "Finance",
-        "bias": -2.17,
-        "count": 18
+        "bias": 2.57,
+        "count": 14
       }
     ],
     "pos": [
       {
         "name": "Technology",
-        "bias": 2.53,
-        "count": 15
+        "bias": 2.57,
+        "count": 14
       }
     ],
     "neu": [],
@@ -5804,14 +5724,14 @@
         "count": 1
       },
       {
-        "name": "Communication",
-        "bias": -2.77,
-        "count": 86
+        "name": "Finance",
+        "bias": -3.72,
+        "count": 18
       },
       {
-        "name": "Finance",
-        "bias": -2.17,
-        "count": 18
+        "name": "Communication",
+        "bias": -3.64,
+        "count": 87
       }
     ]
   },
@@ -5832,8 +5752,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 173,
-      "potusArticles": 43,
+      "usaArticles": 174,
+      "potusArticles": 45,
       "sourceRows": 11,
       "industryRows": 4,
       "trendingPoints": 12
