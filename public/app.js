@@ -12,6 +12,19 @@ const SENTIMENT_CACHE_KEY = "informed360_sentiment_cache";
 const SNAPSHOT_SPLIT_CACHE_KEY = "informed360_snapshot_split_cache";
 const HOMEPAGE_CACHE_KEY = "informed360_homepage_cache";
 const HERO_SNAPSHOT_KEY = "informed360_hero_snapshot_v1";
+const APP_VERSION_STORAGE_KEY = "informed360_app_version";
+const APP_VERSION = String(window.__APP_VERSION__ || "dev");
+const FALLBACK_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+const STALE_DATA_MESSAGE = "Live data is temporarily unavailable, and the latest snapshot is older than 24 hours.";
+const SNAPSHOT_CACHE_KEYS = [
+  NEWS_CACHE_KEY,
+  STORIES_CACHE_KEY,
+  BOOTSTRAP_CACHE_KEY,
+  SENTIMENT_CACHE_KEY,
+  SNAPSHOT_SPLIT_CACHE_KEY,
+  HOMEPAGE_CACHE_KEY,
+  HERO_SNAPSHOT_KEY
+];
 const USA_CATEGORY = "usa";
 const POTUS_CATEGORY = "potus";
 const MIN_SOURCE_ARTICLES = 2;
@@ -83,6 +96,36 @@ const writeLocalCache = (key, value) => {
     // ignore storage quota errors
   }
 };
+const parseTimestampMs = (value) => {
+  if (!value) return 0;
+  const ts = typeof value === "number" ? value : new Date(value).getTime();
+  return Number.isFinite(ts) ? ts : 0;
+};
+const evaluateFreshness = (payload, { maxAgeMs = FALLBACK_MAX_AGE_MS } = {}) => {
+  const ts = parseTimestampMs(payload?.generatedAt || payload?.updatedAt);
+  if (!ts) return { fresh: false, reason: "missing-or-invalid-timestamp", timestampMs: 0 };
+  const ageMs = Date.now() - ts;
+  if (ageMs > maxAgeMs) return { fresh: false, reason: "older-than-24h", timestampMs: ts, ageMs };
+  return { fresh: true, reason: "within-24h", timestampMs: ts, ageMs };
+};
+const extractPayloadTimestamp = (payload) =>
+  payload?.generatedAt ||
+  payload?.updatedAt ||
+  payload?._meta?.generatedAt ||
+  payload?._meta?.updatedAt ||
+  "";
+const runCacheVersionGuard = () => {
+  try{
+    const cachedVersion = localStorage.getItem(APP_VERSION_STORAGE_KEY);
+    if (cachedVersion === APP_VERSION) return;
+    SNAPSHOT_CACHE_KEYS.forEach((key) => localStorage.removeItem(key));
+    localStorage.setItem(APP_VERSION_STORAGE_KEY, APP_VERSION);
+    console.info("[cache-version] rotated snapshot cache keys", { from: cachedVersion || "none", to: APP_VERSION });
+  }catch{
+    // ignore storage access failures
+  }
+};
+runCacheVersionGuard();
 const HERO_QUALITY_RANK = {
   empty: 0,
   weak: 1,
@@ -132,7 +175,17 @@ function evaluateHeroPayloadQuality(clusters = []){
 }
 const readHeroSnapshot = () => {
   const cached = readLocalCache(HERO_SNAPSHOT_KEY);
-  return safeArray(cached).map(normalizeHeroCluster);
+  const legacyClusters = safeArray(cached);
+  if (legacyClusters.length){
+    console.info("[freshness] snapshot rejected", { key: HERO_SNAPSHOT_KEY, reason: "legacy-missing-timestamp" });
+    return [];
+  }
+  const freshness = evaluateFreshness(cached || {});
+  if (!freshness.fresh){
+    console.info("[freshness] snapshot rejected", { key: HERO_SNAPSHOT_KEY, reason: freshness.reason });
+    return [];
+  }
+  return safeArray(cached?.clusters).map(normalizeHeroCluster);
 };
 const debugState = {
   files: {},
@@ -352,6 +405,15 @@ const isValidTimeline = (timeline) =>
 const bootstrapTime = (payload) => new Date(payload?.generatedAt || 0).getTime() || 0;
 function applyBootstrapSnapshot(snapshot, { persist = false, source = "snapshot" } = {}){
   if (!isValidBootstrapSnapshot(snapshot)) return false;
+  const freshness = evaluateFreshness(snapshot);
+  if (source !== "live" && !freshness.fresh){
+    console.info("[freshness] snapshot rejected", { source, key: BOOTSTRAP_CACHE_KEY, reason: freshness.reason });
+    return false;
+  }
+  console.info(`[freshness] ${source === "live" ? "live accepted" : "snapshot accepted"}`, {
+    source,
+    generatedAt: snapshot.generatedAt || ""
+  });
   const news = snapshot.news || {};
   state.allArticles = Array.isArray(news.articles) ? news.articles : [];
   state.articles = state.allArticles.slice();
@@ -378,6 +440,7 @@ function applyBootstrapSnapshot(snapshot, { persist = false, source = "snapshot"
   state.bootstrapUsa = snapshot.usa || null;
   state.bootstrapPotus = snapshot.potus || null;
   state.usingFallbackSnapshot = source !== "live";
+  state.isStaleMode = false;
   state.fallbackUpdatedAt = snapshot.generatedAt || state.fallbackUpdatedAt || "";
   state.fallbackMessage = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : "";
 
@@ -433,6 +496,7 @@ async function refreshBootstrapSnapshot(){
 }
 const isUsefulSplitPayload = (payload, key) => {
   if (!payload || typeof payload !== "object" || !payload.generatedAt) return false;
+  if (!evaluateFreshness(payload).fresh) return false;
   if (["latestNews", "usaNews", "potusNews"].includes(key)) return Array.isArray(payload.articles) && payload.articles.length > 0;
   if (["sourceSentiment", "industrySentiment"].includes(key)) return Array.isArray(payload.rows) && payload.rows.length > 0;
   if (key === "trendingHistory") return Array.isArray(payload.points) && payload.points.length > 0;
@@ -495,7 +559,14 @@ async function loadSplitSnapshots(){
   }
   const cached = readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY);
   if (cached && typeof cached === "object"){
-    state.splitSnapshots = cached;
+    const filtered = Object.fromEntries(
+      Object.entries(cached).filter(([key, payload]) => isUsefulSplitPayload(payload, key))
+    );
+    if (!Object.keys(filtered).length){
+      console.info("[freshness] snapshot rejected", { source: "local-cache", key: SNAPSHOT_SPLIT_CACHE_KEY, reason: "all-sections-stale" });
+      return state.splitSnapshots;
+    }
+    state.splitSnapshots = filtered;
     syncHeroSnapshot("split-snapshot:cache");
     Object.entries(files).forEach(([, file]) => {
       setDebugFile(file, { loaded: true, source: "local-cache" });
@@ -505,6 +576,15 @@ async function loadSplitSnapshots(){
 }
 function applyHomepageSnapshot(snapshot, { persist = false, source = "homepage" } = {}){
   if (!isValidHomepageSnapshot(snapshot)) return false;
+  const freshness = evaluateFreshness(snapshot);
+  if (source !== "live" && !freshness.fresh){
+    console.info("[freshness] snapshot rejected", { source, key: HOMEPAGE_CACHE_KEY, reason: freshness.reason });
+    return false;
+  }
+  console.info(`[freshness] ${source === "live" ? "live accepted" : "snapshot accepted"}`, {
+    source,
+    generatedAt: snapshot.generatedAt || ""
+  });
   const sections = snapshot.sections || {};
   const splitFromHomepage = {
     latestNews: {
@@ -548,6 +628,7 @@ function applyHomepageSnapshot(snapshot, { persist = false, source = "homepage" 
   syncHeroSnapshot(`homepage:${source}`);
   state.fallbackUpdatedAt = snapshot.generatedAt || state.fallbackUpdatedAt;
   state.usingFallbackSnapshot = source !== "live";
+  state.isStaleMode = false;
   state.fallbackMessage = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : "";
   hasCachedContent = hasCachedContent || hasHealthySnapshotData();
   if (persist){
@@ -1330,6 +1411,7 @@ const state = {
   sentimentStaleDataTimestamp: 0,
   sentimentStaleDataTimestampISO: "",
   usingFallbackSnapshot: false,
+  isStaleMode: false,
   fallbackUpdatedAt: "",
   fallbackMessage: "",
   splitSnapshots: readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY) || {},
@@ -1365,7 +1447,10 @@ function updateCurrentHeroSnapshot(clusters = [], { source = "unknown", persist 
   state.currentHeroSnapshot = normalized;
   state.currentHeroQuality = incomingQuality.quality;
   if (persist && incomingRank >= HERO_QUALITY_RANK.strong){
-    writeLocalCache(HERO_SNAPSHOT_KEY, normalized);
+    writeLocalCache(HERO_SNAPSHOT_KEY, {
+      updatedAt: state.fallbackUpdatedAt || state.bootstrapGeneratedAt || new Date().toISOString(),
+      clusters: normalized
+    });
   }
   logHeroUpdate(source, incomingQuality, currentQuality, true, currentRank === incomingRank ? "equal-or-better" : "upgrade");
   return true;
@@ -1743,7 +1828,7 @@ function readMarketCache(){
 }
 function writeMarketCache(payload){
   localStorage.setItem("i360_market_cache", JSON.stringify({
-    updatedAt: payload.updatedAt || Date.now(),
+    updatedAt: payload?.updatedAt || "",
     quotes: payload.quotes || []
   }));
 }
@@ -1795,13 +1880,11 @@ async function loadMarkets(){
   ];
 
   const renderMarkets = (data, logMissing) => {
-    const updatedAt = new Date(data?.updatedAt || Date.now());
-    const updatedLabel = updatedAt.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit"
-    });
-    const updatedDate = updatedAt.toLocaleDateString();
-    const statusText = `Website updated on ${updatedDate} · ${updatedLabel}`;
+    const updatedTs = parseTimestampMs(data?.updatedAt);
+    const updatedAt = updatedTs ? new Date(updatedTs) : null;
+    const statusText = updatedAt
+      ? `Website updated on ${updatedAt.toLocaleDateString()} · ${updatedAt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`
+      : "Website update time unavailable";
     const updatedEl = $("#updatedAt");
     if (updatedEl){
       updatedEl.textContent = statusText;
@@ -1887,8 +1970,7 @@ async function loadMarkets(){
       renderMarkets(cached, true);
       return;
     }
-    const now = new Date();
-    const fallbackStatus = `Website updated on ${now.toLocaleDateString()} · ${now.toLocaleTimeString([], { hour:"2-digit", minute:"2-digit" })}`;
+    const fallbackStatus = "Website update time unavailable";
     const updatedEl = $("#updatedAt");
     if (updatedEl){
       updatedEl.textContent = fallbackStatus;
@@ -2010,8 +2092,21 @@ function applyCachedContent(){
   };
   const safeNewsCache = cacheMatchesState(cachedNews) ? cachedNews : null;
   const safeStoriesCache = cacheMatchesState(cachedStories) ? cachedStories : null;
-  const newsPayload = safeNewsCache?.payload;
-  const storiesPayload = safeStoriesCache?.payload;
+  const newsFreshness = evaluateFreshness({ updatedAt: safeNewsCache?.payloadUpdatedAt });
+  const storiesFreshness = evaluateFreshness({ updatedAt: safeStoriesCache?.payloadUpdatedAt });
+  const useNewsCache = Boolean(safeNewsCache && newsFreshness.fresh);
+  const useStoriesCache = Boolean(safeStoriesCache && storiesFreshness.fresh);
+  if (safeNewsCache && !useNewsCache){
+    console.info("[freshness] snapshot rejected", { source: "local-cache", key: NEWS_CACHE_KEY, reason: newsFreshness.reason });
+  }
+  if (safeStoriesCache && !useStoriesCache){
+    console.info("[freshness] snapshot rejected", { source: "local-cache", key: STORIES_CACHE_KEY, reason: storiesFreshness.reason });
+  }
+  if (!useNewsCache && !useStoriesCache){
+    return false;
+  }
+  const newsPayload = useNewsCache ? safeNewsCache?.payload : null;
+  const storiesPayload = useStoriesCache ? safeStoriesCache?.payload : null;
   if (!newsPayload && !storiesPayload) return false;
   if (newsPayload?.articles?.length){
     state.allArticles = newsPayload.articles || [];
@@ -2028,7 +2123,8 @@ function applyCachedContent(){
   hasCachedContent = Boolean(state.allArticles.length || state.stories.length);
   if (hasCachedContent){
     state.usingFallbackSnapshot = true;
-    state.fallbackUpdatedAt = safeNewsCache?.cachedAt || safeStoriesCache?.cachedAt || state.bootstrapGeneratedAt || state.fallbackUpdatedAt;
+    state.isStaleMode = false;
+    state.fallbackUpdatedAt = safeNewsCache?.payloadUpdatedAt || safeStoriesCache?.payloadUpdatedAt || state.bootstrapGeneratedAt || state.fallbackUpdatedAt;
     state.fallbackMessage = SNAPSHOT_FALLBACK_MESSAGE;
     setApiBanner(true, state.fallbackMessage);
     syncPinsWithArticles();
@@ -2052,6 +2148,7 @@ async function checkHealthWithRetry(){
 async function loadAll(){
   state.newsEmptyMessage = "";
   state.usingFallbackSnapshot = false;
+  state.isStaleMode = false;
   state.fallbackMessage = "";
   setApiBanner(false);
   await loadSentimentData();
@@ -2180,6 +2277,7 @@ async function loadAll(){
     renderAll();
     writeLocalCache(NEWS_CACHE_KEY, {
       payload: news,
+      payloadUpdatedAt: extractPayloadTimestamp(news),
       cachedAt: Date.now(),
       category: state.category,
       filter: state.filter,
@@ -2187,12 +2285,14 @@ async function loadAll(){
     });
     writeLocalCache(STORIES_CACHE_KEY, {
       payload: stories,
+      payloadUpdatedAt: extractPayloadTimestamp(stories),
       cachedAt: Date.now(),
       category: state.category,
       filter: state.filter,
       experimental: state.experimental
     });
     state.usingFallbackSnapshot = false;
+    state.isStaleMode = false;
     state.fallbackMessage = "";
     state.fallbackUpdatedAt = "";
     setApiBanner(false);
@@ -2216,13 +2316,19 @@ async function loadAll(){
     }
     if (hasCachedContent){
       state.usingFallbackSnapshot = true;
+      state.isStaleMode = false;
       state.fallbackMessage = SNAPSHOT_FALLBACK_MESSAGE;
-      state.fallbackUpdatedAt = state.fallbackUpdatedAt || state.bootstrapGeneratedAt || Date.now();
+      state.fallbackUpdatedAt = state.fallbackUpdatedAt || state.bootstrapGeneratedAt || "";
       setApiBanner(true, state.fallbackMessage);
+    } else {
+      state.isStaleMode = true;
+      state.fallbackMessage = STALE_DATA_MESSAGE;
+      state.fallbackUpdatedAt = "";
+      setApiBanner(true, STALE_DATA_MESSAGE);
     }
     logApiError(error, error?.endpoint || "/api/news");
     if (!hasCachedContent && (error?.status === 0 || error?.status === 404)){
-      setApiBanner(true, SNAPSHOT_FALLBACK_MESSAGE);
+      setApiBanner(true, STALE_DATA_MESSAGE);
     }
     renderPinnedChips();
     renderAll();
@@ -2956,6 +3062,12 @@ function renderDaily(){
 function renderHero(){
   const container = $("#heroCarousels");
   if (!container) return;
+  if (state.isStaleMode){
+    container.innerHTML = `<div class="topstories-empty">${escapeHtml(STALE_DATA_MESSAGE)}</div>`;
+    pushDegradedReason("hero", STALE_DATA_MESSAGE);
+    setDebugSection("hero", "stale-blocked");
+    return;
+  }
   syncHeroSnapshot("render:preflight");
   const sections = buildTopStoriesSections();
   if (!sections.length){
