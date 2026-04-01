@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-04-01T21:53:18.498Z",
+  "generatedAt": "2026-04-01T22:51:46.257Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 172,
-    "potusArticles": 46
+    "usaArticles": 174,
+    "potusArticles": 45
   },
   "version": 1,
   "topStories": [
@@ -92,6 +92,106 @@
   ],
   "news": {
     "articles": [
+      {
+        "title": "World's oldest known tortoise, Jonathan, dies aged 193",
+        "link": "https://www.bbc.com/news/articles/c393xmpzjwko?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The vet who cared for the giant tortoise said he had left behind a \"legacy of resilience and longevity\".",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/e36d/live/5b0027c0-2e0f-11f1-a61b-8f128a2b274b.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/e36d/live/5b0027c0-2e0f-11f1-a61b-8f128a2b274b.jpg",
+        "publishedAt": "2026-04-01T22:20:11.000Z",
+        "sentiment": {
+          "posP": 10,
+          "neuP": 90,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.4215
+        },
+        "category": "world"
+      },
+      {
+        "title": "US removes sanctions on Venezuela’s interim President Delcy Rodriguez",
+        "link": "https://www.aljazeera.com/news/2026/4/1/us-removes-sanctions-on-venezuelas-interim-president-delcy-rodriguez?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "US has exerted growing influence over the Venezuelan government after abducting former President Nicolas Maduro.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-04-01T22:12:46.000Z",
+        "sentiment": {
+          "posP": 7,
+          "neuP": 93,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.1779
+        },
+        "category": "world"
+      },
+      {
+        "title": "Anthropic took down thousands of Github repos trying to yank its leaked source code — a move the company says was an accident",
+        "link": "https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident/",
+        "source": "TechCrunch",
+        "sourceDomain": "techcrunch.com",
+        "sourceCredibility": "Medium",
+        "industry": "Technology",
+        "description": "Anthropic executives said it was an accident and retracted the bulk of the takedown notices.",
+        "image": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261514463.jpg?w=1024",
+        "imageUrl": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261514463.jpg?w=1024",
+        "publishedAt": "2026-04-01T22:12:13.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 79,
+          "negP": 21,
+          "label": "negative",
+          "confidence": 0.8176
+        },
+        "category": "technology"
+      },
+      {
+        "title": "Luigi Mangione's state murder trial delayed until September, throwing federal trial into question",
+        "link": "https://www.hindustantimes.com/india-news/luigi-mangione-s-state-murder-trial-delayed-until-september-throwing-federal-trial-into-question-101775080611092.html",
+        "source": "Hindustan Times",
+        "sourceDomain": "hindustantimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "UNITEDHEALTH-CEO-MANGIONE:Luigi Mangione's state murder trial delayed until September, throwing federal trial into question",
+        "image": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg",
+        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg",
+        "publishedAt": "2026-04-01T21:56:50.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 62,
+          "negP": 38,
+          "label": "negative",
+          "confidence": 0.9217
+        },
+        "category": "india"
+      },
+      {
+        "title": "\"Trump Is Impatient\": JD Vance Issues \"Stern Message\" To Iran Over Deal",
+        "link": "https://www.ndtv.com/world-news/iran-war-us-vice-president-jd-vance-issues-stern-message-to-iran-over-deal-11299338",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "JD Vance warned that there would be \"increased pressure\" on the country's \"infrastructure sites\" \"unless the Iranians made a deal.\"",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-01T21:33:18.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 81,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.296
+        },
+        "category": "world"
+      },
       {
         "title": "The reputation of troubled YC startup Delve has gotten even worse",
         "link": "https://techcrunch.com/2026/04/01/the-reputation-of-troubled-yc-startup-delve-has-gotten-even-worse/",
@@ -1613,26 +1713,6 @@
         "category": "business"
       },
       {
-        "title": "Loud Explosion Heard In Dubai, Authorities Say Impact Of Interceptions By Air Defenses",
-        "link": "https://www.ndtvprofit.com/world/loud-explosion-heard-in-dubai-authorities-say-impact-of-interceptions-by-air-defenses-11298890",
-        "source": "NDTV News- Special",
-        "sourceDomain": "ndtvprofit.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "Dubai authorities and UAE's Defence Ministry confirmed that the sounds heard in various areas were the result of successful interceptions by air defenses.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-01T18:01:21.000Z",
-        "sentiment": {
-          "posP": 21,
-          "neuP": 79,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.765
-        },
-        "category": "world"
-      },
-      {
         "title": "Corporate travel set to drive growth for majors amid global flux - Business Standard",
         "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPdGhyM0tfSkVVbUNvcm56R0lZbVB2ZkxkZ3ZpZzFDREg1VXpqY1dIZ0dSOWQ3RFEzMXN1SVRxR3hsdXd5LV9idUFiNm5fUkc2STRBZnZjWWlEODFNWFpkaFRweFJLRVROMzRyTm5QRUhERmFEMlplSV9EZmlFQjh2Q0xzQnJXYlFWTElxeDgwNXJFUUU3dkVOdlRGQXQ4b1RhYm9qYTJBTFR5cTRRdTBNc1I4aWNZVEhFdy1WREdsNHQ3T2FseXNoakZwbkZ6dGJWa2fSAdIBQVVfeXFMT3RocjNLX0pFVW1Db3JuekdJWW1QdmZMZGd2aWcxQ0RINVV6amNXSGdHUjlkN0RRMzFzdUlUcUd4bHV3eS1fYnVBYjZuX1JHNkk0QWZ2Y1lpRDgxTVhaZGhUcHhSS0VUTjM0ck5uUEVIREZhRDJaZUlfRGZpRUI4dkNMc0JyV2JRVkxJcXg4MDVyRVFFN3ZFTnZURkF0OG9UYWJvamEyQUxUeXE0UXUwTXNSOGljWVRIRXctVkRHbDR0N09hbHlzaGpGcG5GenRiVmtn?oc=5",
         "source": "\"site:business-standard.com\" - Google News",
@@ -1771,6 +1851,26 @@
           "confidence": 0.4588
         },
         "category": "business"
+      },
+      {
+        "title": "Live: Trump to address the nation after saying US will exit Iran pretty quickly",
+        "link": "https://www.indiatoday.in/world/story/donald-trump-speech-live-updates-addresses-us-israel-iran-war-middle-east-conflict-2890388-2026-04-01?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Live Trump to address the nation after saying US will exit Iran pretty quickly",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202604/trump--iran-war-012208115-16x9_0.jpg?VersionId=tOEhYQxBTRUhktk5iHyO_RSNwQ.1CMyC",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202604/trump--iran-war-012208115-16x9_0.jpg?VersionId=tOEhYQxBTRUhktk5iHyO_RSNwQ.1CMyC",
+        "publishedAt": "2026-04-01T17:34:20.000Z",
+        "sentiment": {
+          "posP": 20,
+          "neuP": 80,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7506
+        },
+        "category": "world"
       },
       {
         "title": "PM Modi chairs CCS meet; reviews steps taken to keep essential commodity prices stable, more - Key points discussed",
@@ -2391,106 +2491,6 @@
           "confidence": 0.4588
         },
         "category": "world"
-      },
-      {
-        "title": "Jan Vishwas Bill 2026 clears Lok Sabha, promises to keep citizens out of court for minor errors",
-        "link": "https://www.livemint.com/news/india/jan-vishwas-bill-2026-clears-lok-sabha-promises-to-keep-citizens-out-of-court-for-minor-errors-11775056786001.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "The Lok Sabha has passed the Jan Vishwas Bill 2026, which replaces criminal penalties with civil fines across 79 central Acts to improve the ease of doing business and living.&nbsp;",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-01T16:29:33.000Z",
-        "sentiment": {
-          "posP": 17,
-          "neuP": 73,
-          "negP": 10,
-          "label": "positive",
-          "confidence": 0.3612
-        },
-        "category": "india"
-      },
-      {
-        "title": "Explosions at Burundi ammunition depot kill civilians, witnesses say",
-        "link": "https://www.bbc.com/news/articles/c5y7x7qre0zo?at_medium=RSS&at_campaign=rss",
-        "source": "BBC",
-        "sourceDomain": "bbc.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "Powerful blasts destroyed homes and sparked panic in the city of Bujumbura on Tuesday night.",
-        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/29a9/live/94aacd40-2ddd-11f1-b297-95b0a0a8331e.jpg",
-        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/29a9/live/94aacd40-2ddd-11f1-b297-95b0a0a8331e.jpg",
-        "publishedAt": "2026-04-01T16:26:19.000Z",
-        "sentiment": {
-          "posP": 8,
-          "neuP": 59,
-          "negP": 33,
-          "label": "negative",
-          "confidence": 0.8555
-        },
-        "category": "world"
-      },
-      {
-        "title": "Kenya’s tea industry suffers crisis caused by the US-Israeli war on Iran",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/4/1/kenyas-tea-industry-suffers-crisis-caused-by-the-us-israeli-war-on-iran?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Kenyan tea farmers are facing a crisis after the US-Israeli war on Iran disrupted key export routes to the Middle East.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-01T093434Z_800547133_RC2YEKA2U72S_RTRMADP_3_IRAN-CRISIS-KENYA-TEA-1775060672.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-01T093434Z_800547133_RC2YEKA2U72S_RTRMADP_3_IRAN-CRISIS-KENYA-TEA-1775060672.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-04-01T16:25:47.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 59,
-          "negP": 41,
-          "label": "negative",
-          "confidence": 0.9643
-        },
-        "category": "business"
-      },
-      {
-        "title": "MP Congress MLA Rajendra Bharti convicted for cheating, forgery by Delhi court",
-        "link": "https://www.hindustantimes.com/india-news/mp-congress-mla-rajendra-bharti-convicted-in-cheating-forgery-case-101775060671902.html",
-        "source": "Hindustan Times",
-        "sourceDomain": "hindustantimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "A Delhi court convicted Madhya Pradesh MLA Rajendra Bharti for cheating and forgery involving bank records, with sentencing arguments set for Thursday.",
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/01/550x309/MP-Congress-MLA-Rajendra-Bharti-convicted-in-cheat_1775060666091.jpg",
-        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/01/550x309/MP-Congress-MLA-Rajendra-Bharti-convicted-in-cheat_1775060666091.jpg",
-        "publishedAt": "2026-04-01T16:24:31.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 72,
-          "negP": 28,
-          "label": "negative",
-          "confidence": 0.8885
-        },
-        "category": "india"
-      },
-      {
-        "title": "Over 1,150 Indians exit Iran via land borders amid West Asia conflict: MEA",
-        "link": "https://www.hindustantimes.com/india-news/over-1-150-indians-exit-iran-via-land-borders-amid-west-asia-conflict-mea-101775059774548.html",
-        "source": "Hindustan Times",
-        "sourceDomain": "hindustantimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "It also said that three Indians were injured in attacks in the United Arab Emirates (UAE) on Tuesday.",
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/01/550x309/IGI_1773689906679_1773689936974_1775060446813.jpg",
-        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/01/550x309/IGI_1773689906679_1773689936974_1775060446813.jpg",
-        "publishedAt": "2026-04-01T16:21:40.000Z",
-        "sentiment": {
-          "posP": 7,
-          "neuP": 72,
-          "negP": 21,
-          "label": "negative",
-          "confidence": 0.6249
-        },
-        "category": "india"
       }
     ],
     "topics": [
@@ -2515,6 +2515,61 @@
           "neu": 83
         },
         "image": "https://th-i.thgim.com/public/incoming/hlrw69/article70812877.ece/alternates/LANDSCAPE_1200/PTI04_01_2026_000582B.jpg"
+      },
+      {
+        "title": "oldest known | known tortoise | tortoise jonathan",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 10,
+          "neg": 0,
+          "neu": 90
+        },
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/e36d/live/5b0027c0-2e0f-11f1-a61b-8f128a2b274b.jpg"
+      },
+      {
+        "title": "removes sanctions | interim president | president delcy",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 7,
+          "neg": 0,
+          "neu": 93
+        },
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440"
+      },
+      {
+        "title": "anthropic took | took down | down thousands",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 21,
+          "neu": 79
+        },
+        "image": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261514463.jpg?w=1024"
+      },
+      {
+        "title": "luigi mangione | state murder | murder trial",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 38,
+          "neu": 62
+        },
+        "image": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg"
+      },
+      {
+        "title": "vance issues | issues stern | stern message",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 6,
+          "neg": 13,
+          "neu": 81
+        },
+        "image": "/img/thumb-placeholder.svg"
       },
       {
         "title": "the reputation | startup delve | delve has",
@@ -2570,64 +2625,179 @@
           "neu": 52
         },
         "image": "https://www.hindustantimes.com/ht-img/img/2025/08/06/550x309/Untitled_design_1754465014585_1754465103581.png"
-      },
-      {
-        "title": "spacex files | public paving | paving way",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 7,
-          "neg": 0,
-          "neu": 93
-        },
-        "image": "https://www.aljazeera.com/wp-content/uploads/2024/10/AP24288600076396-1728924530.jpg?resize=1920%2C1440"
-      },
-      {
-        "title": "system failure | failure paralyzes | paralyzes baidu",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 17,
-          "neu": 83
-        },
-        "image": "https://techcrunch.com/wp-content/uploads/2026/04/baidu-robotaxi-getty.jpg?resize=1200,800"
-      },
-      {
-        "title": "smoke and | and embers | embers seen",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 12,
-          "neu": 88
-        },
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/isfahan_iran_strike_explosion_1_apr_2026-1775077147.jpg?resize=1920%2C1080&amp;quality=80"
-      },
-      {
-        "title": "protesters gather | oppose changes | birthright citizenship",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 10,
-          "neg": 26,
-          "neu": 64
-        },
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/birthright-citizenship-protests-wide-1775077067.jpg?resize=1920%2C1080&amp;quality=80"
-      },
-      {
-        "title": "celebrations erupt | congo ends | ends over",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 20,
-          "neg": 0,
-          "neu": 80
-        },
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775076674.jpg?resize=1920%2C1080&amp;quality=80"
       }
     ],
     "stories": [
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "World's oldest known tortoise, Jonathan, dies aged 193",
+            "link": "https://www.bbc.com/news/articles/c393xmpzjwko?at_medium=RSS&at_campaign=rss",
+            "source": "BBC",
+            "sourceDomain": "bbc.com",
+            "sourceCredibility": "High",
+            "industry": "Communication",
+            "description": "The vet who cared for the giant tortoise said he had left behind a \"legacy of resilience and longevity\".",
+            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/e36d/live/5b0027c0-2e0f-11f1-a61b-8f128a2b274b.jpg",
+            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/e36d/live/5b0027c0-2e0f-11f1-a61b-8f128a2b274b.jpg",
+            "publishedAt": "2026-04-01T22:20:11.000Z",
+            "sentiment": {
+              "posP": 10,
+              "neuP": 90,
+              "negP": 0,
+              "label": "positive",
+              "confidence": 0.4215
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "US removes sanctions on Venezuela’s interim President Delcy Rodriguez",
+            "link": "https://www.aljazeera.com/news/2026/4/1/us-removes-sanctions-on-venezuelas-interim-president-delcy-rodriguez?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "US has exerted growing influence over the Venezuelan government after abducting former President Nicolas Maduro.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440",
+            "publishedAt": "2026-04-01T22:12:46.000Z",
+            "sentiment": {
+              "posP": 7,
+              "neuP": 93,
+              "negP": 0,
+              "label": "positive",
+              "confidence": 0.1779
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Anthropic took down thousands of Github repos trying to yank its leaked source code — a move the company says was an accident",
+            "link": "https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident/",
+            "source": "TechCrunch",
+            "sourceDomain": "techcrunch.com",
+            "sourceCredibility": "Medium",
+            "industry": "Technology",
+            "description": "Anthropic executives said it was an accident and retracted the bulk of the takedown notices.",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261514463.jpg?w=1024",
+            "imageUrl": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261514463.jpg?w=1024",
+            "publishedAt": "2026-04-01T22:12:13.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 79,
+              "negP": 21,
+              "label": "negative",
+              "confidence": 0.8176
+            },
+            "category": "technology"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Luigi Mangione's state murder trial delayed until September, throwing federal trial into question",
+            "link": "https://www.hindustantimes.com/india-news/luigi-mangione-s-state-murder-trial-delayed-until-september-throwing-federal-trial-into-question-101775080611092.html",
+            "source": "Hindustan Times",
+            "sourceDomain": "hindustantimes.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "UNITEDHEALTH-CEO-MANGIONE:Luigi Mangione's state murder trial delayed until September, throwing federal trial into question",
+            "image": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg",
+            "imageUrl": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg",
+            "publishedAt": "2026-04-01T21:56:50.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 62,
+              "negP": 38,
+              "label": "negative",
+              "confidence": 0.9217
+            },
+            "category": "india"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "\"Trump Is Impatient\": JD Vance Issues \"Stern Message\" To Iran Over Deal",
+            "link": "https://www.ndtv.com/world-news/iran-war-us-vice-president-jd-vance-issues-stern-message-to-iran-over-deal-11299338",
+            "source": "NDTV",
+            "sourceDomain": "ndtv.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "JD Vance warned that there would be \"increased pressure\" on the country's \"infrastructure sites\" \"unless the Iranians made a deal.\"",
+            "image": "/img/thumb-placeholder.svg",
+            "imageUrl": "/img/thumb-placeholder.svg",
+            "publishedAt": "2026-04-01T21:33:18.000Z",
+            "sentiment": {
+              "posP": 6,
+              "neuP": 81,
+              "negP": 13,
+              "label": "negative",
+              "confidence": 0.296
+            },
+            "category": "world"
+          }
+        ]
+      },
       {
         "title": "",
         "summary": "",
@@ -2725,176 +2895,6 @@
               "negP": 6,
               "label": "negative",
               "confidence": 0.34
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Navy was minutes away from striking Pakistan from sea during Operation Sindoor: Admiral Tripathi",
-            "link": "https://www.thehindu.com/news/national/navy-was-minutes-away-from-striking-pakistan-from-sea-during-operation-sindoor-admiral-tripathi/article70812933.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "Operation Sindoor demonstrated exemplary readiness and resolve of the Indian Navy, as its units undertook swift deployment and maintained a highly aggressive posture throughout the period, says Mr. Tripathi",
-            "image": "https://th-i.thgim.com/public/incoming/ib1lm4/article70813031.ece/alternates/LANDSCAPE_1200/PTI04_01_2026_000527B.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/ib1lm4/article70813031.ece/alternates/LANDSCAPE_1200/PTI04_01_2026_000527B.jpg",
-            "publishedAt": "2026-04-01T21:17:30.000Z",
-            "sentiment": {
-              "posP": 18,
-              "neuP": 78,
-              "negP": 4,
-              "label": "positive",
-              "confidence": 0.701
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Sam Altman's sister amends lawsuit accusing OpenAI CEO of sexual abuse",
-            "link": "https://www.hindustantimes.com/india-news/sam-altman-s-sister-amends-lawsuit-accusing-openai-ceo-of-sexual-abuse-101775077962635.html",
-            "source": "Hindustan Times",
-            "sourceDomain": "hindustantimes.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "OPENAI-ALTMAN/SISTER-LAWSUIT (PIX):Sam Altman's sister amends lawsuit accusing OpenAI CEO of sexual abuse",
-            "image": "https://www.hindustantimes.com/ht-img/img/2025/08/06/550x309/Untitled_design_1754465014585_1754465103581.png",
-            "imageUrl": "https://www.hindustantimes.com/ht-img/img/2025/08/06/550x309/Untitled_design_1754465014585_1754465103581.png",
-            "publishedAt": "2026-04-01T21:12:42.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 52,
-              "negP": 48,
-              "label": "negative",
-              "confidence": 0.9274
-            },
-            "category": "india"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "SpaceX files to go public, paving way to make Elon Musk first trillionaire",
-            "link": "https://www.aljazeera.com/news/2026/4/1/spacex-files-to-go-public-paving-way-to-make-elon-musk-first-trillionaire?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Company has captured public attention through vast network of satellites and focus on space exploration.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2024/10/AP24288600076396-1728924530.jpg?resize=1920%2C1440",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2024/10/AP24288600076396-1728924530.jpg?resize=1920%2C1440",
-            "publishedAt": "2026-04-01T21:12:27.000Z",
-            "sentiment": {
-              "posP": 7,
-              "neuP": 93,
-              "negP": 0,
-              "label": "positive",
-              "confidence": 0.2263
-            },
-            "category": "science"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "‘System failure’ paralyzes Baidu robotaxis in China",
-            "link": "https://techcrunch.com/2026/04/01/system-failure-paralyzes-baidu-robotaxis-in-china/",
-            "source": "TechCrunch",
-            "sourceDomain": "techcrunch.com",
-            "sourceCredibility": "Medium",
-            "industry": "Technology",
-            "description": "Passengers in Baidu's robotaxis were trapped for up to two hours.",
-            "image": "https://techcrunch.com/wp-content/uploads/2026/04/baidu-robotaxi-getty.jpg?resize=1200,800",
-            "imageUrl": "https://techcrunch.com/wp-content/uploads/2026/04/baidu-robotaxi-getty.jpg?resize=1200,800",
-            "publishedAt": "2026-04-01T21:12:14.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 83,
-              "negP": 17,
-              "label": "negative",
-              "confidence": 0.5267
-            },
-            "category": "technology"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Smoke and embers seen over Iran’s Isfahan after strike",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/1/smoke-and-embers-seen-over-irans-isfahan-after-strike?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Video captured a massive column of smoke and burning embers towering over Isfahan, Iran following a US-Israeli strike.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/isfahan_iran_strike_explosion_1_apr_2026-1775077147.jpg?resize=1920%2C1080&amp;quality=80",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/isfahan_iran_strike_explosion_1_apr_2026-1775077147.jpg?resize=1920%2C1080&amp;quality=80",
-            "publishedAt": "2026-04-01T21:01:09.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 88,
-              "negP": 12,
-              "label": "negative",
-              "confidence": 0.25
             },
             "category": "world"
           }
@@ -2915,42 +2915,158 @@
         },
         "articles": [
           {
-            "title": "What are the consequences of Israel’s death penalty law for Palestinians?",
-            "link": "https://www.aljazeera.com/video/inside-story/2026/4/1/what-are-the-consequences-of-israels-death-penalty-law-for-palestinians?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
+            "title": "World's oldest known tortoise, Jonathan, dies aged 193",
+            "link": "https://www.bbc.com/news/articles/c393xmpzjwko?at_medium=RSS&at_campaign=rss",
+            "source": "BBC",
+            "sourceDomain": "bbc.com",
+            "sourceCredibility": "High",
             "industry": "Communication",
-            "description": "Israel has become the first country to vote in favour of capital punishment in the 21st century.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775074427.jpg?resize=1920%2C1061&amp;quality=80",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775074427.jpg?resize=1920%2C1061&amp;quality=80",
-            "publishedAt": "2026-04-01T20:42:14.000Z",
+            "description": "The vet who cared for the giant tortoise said he had left behind a \"legacy of resilience and longevity\".",
+            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/e36d/live/5b0027c0-2e0f-11f1-a61b-8f128a2b274b.jpg",
+            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/e36d/live/5b0027c0-2e0f-11f1-a61b-8f128a2b274b.jpg",
+            "publishedAt": "2026-04-01T22:20:11.000Z",
             "sentiment": {
-              "posP": 8,
-              "neuP": 65,
-              "negP": 27,
-              "label": "negative",
-              "confidence": 0.802
+              "posP": 10,
+              "neuP": 90,
+              "negP": 0,
+              "label": "positive",
+              "confidence": 0.4215
             },
             "category": "world"
-          },
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
           {
-            "title": "‘This is an apartheid regime’: Critics decry Israel’s new death penalty law",
-            "link": "https://www.aljazeera.com/news/2026/4/1/this-is-an-apartheid-regime-critics-decry-israels-new-death-penalty-law?traffic_source=rss",
+            "title": "US removes sanctions on Venezuela’s interim President Delcy Rodriguez",
+            "link": "https://www.aljazeera.com/news/2026/4/1/us-removes-sanctions-on-venezuelas-interim-president-delcy-rodriguez?traffic_source=rss",
             "source": "Al Jazeera",
             "sourceDomain": "aljazeera.com",
             "sourceCredibility": "Medium",
             "industry": "Communication",
-            "description": "Celebrations in the Israeli parliament mark the passing of legislation intended to apply to Palestinians only.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/03/reuters_69cadff6-1774903286.jpg?resize=1200%2C675",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/03/reuters_69cadff6-1774903286.jpg?resize=1200%2C675",
-            "publishedAt": "2026-04-01T17:12:41.000Z",
+            "description": "US has exerted growing influence over the Venezuelan government after abducting former President Nicolas Maduro.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440",
+            "publishedAt": "2026-04-01T22:12:46.000Z",
+            "sentiment": {
+              "posP": 7,
+              "neuP": 93,
+              "negP": 0,
+              "label": "positive",
+              "confidence": 0.1779
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Anthropic took down thousands of Github repos trying to yank its leaked source code — a move the company says was an accident",
+            "link": "https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident/",
+            "source": "TechCrunch",
+            "sourceDomain": "techcrunch.com",
+            "sourceCredibility": "Medium",
+            "industry": "Technology",
+            "description": "Anthropic executives said it was an accident and retracted the bulk of the takedown notices.",
+            "image": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261514463.jpg?w=1024",
+            "imageUrl": "https://techcrunch.com/wp-content/uploads/2026/02/GettyImages-2261514463.jpg?w=1024",
+            "publishedAt": "2026-04-01T22:12:13.000Z",
             "sentiment": {
               "posP": 0,
-              "neuP": 73,
-              "negP": 27,
+              "neuP": 79,
+              "negP": 21,
               "label": "negative",
-              "confidence": 0.8442
+              "confidence": 0.8176
+            },
+            "category": "technology"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Luigi Mangione's state murder trial delayed until September, throwing federal trial into question",
+            "link": "https://www.hindustantimes.com/india-news/luigi-mangione-s-state-murder-trial-delayed-until-september-throwing-federal-trial-into-question-101775080611092.html",
+            "source": "Hindustan Times",
+            "sourceDomain": "hindustantimes.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "UNITEDHEALTH-CEO-MANGIONE:Luigi Mangione's state murder trial delayed until September, throwing federal trial into question",
+            "image": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg",
+            "imageUrl": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg",
+            "publishedAt": "2026-04-01T21:56:50.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 62,
+              "negP": 38,
+              "label": "negative",
+              "confidence": 0.9217
+            },
+            "category": "india"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "\"Trump Is Impatient\": JD Vance Issues \"Stern Message\" To Iran Over Deal",
+            "link": "https://www.ndtv.com/world-news/iran-war-us-vice-president-jd-vance-issues-stern-message-to-iran-over-deal-11299338",
+            "source": "NDTV",
+            "sourceDomain": "ndtv.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "JD Vance warned that there would be \"increased pressure\" on the country's \"infrastructure sites\" \"unless the Iranians made a deal.\"",
+            "image": "/img/thumb-placeholder.svg",
+            "imageUrl": "/img/thumb-placeholder.svg",
+            "publishedAt": "2026-04-01T21:33:18.000Z",
+            "sentiment": {
+              "posP": 6,
+              "neuP": 81,
+              "negP": 13,
+              "label": "negative",
+              "confidence": 0.296
             },
             "category": "world"
           }
@@ -3055,142 +3171,6 @@
               "confidence": 0.34
             },
             "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Navy was minutes away from striking Pakistan from sea during Operation Sindoor: Admiral Tripathi",
-            "link": "https://www.thehindu.com/news/national/navy-was-minutes-away-from-striking-pakistan-from-sea-during-operation-sindoor-admiral-tripathi/article70812933.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "Operation Sindoor demonstrated exemplary readiness and resolve of the Indian Navy, as its units undertook swift deployment and maintained a highly aggressive posture throughout the period, says Mr. Tripathi",
-            "image": "https://th-i.thgim.com/public/incoming/ib1lm4/article70813031.ece/alternates/LANDSCAPE_1200/PTI04_01_2026_000527B.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/ib1lm4/article70813031.ece/alternates/LANDSCAPE_1200/PTI04_01_2026_000527B.jpg",
-            "publishedAt": "2026-04-01T21:17:30.000Z",
-            "sentiment": {
-              "posP": 18,
-              "neuP": 78,
-              "negP": 4,
-              "label": "positive",
-              "confidence": 0.701
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Sam Altman's sister amends lawsuit accusing OpenAI CEO of sexual abuse",
-            "link": "https://www.hindustantimes.com/india-news/sam-altman-s-sister-amends-lawsuit-accusing-openai-ceo-of-sexual-abuse-101775077962635.html",
-            "source": "Hindustan Times",
-            "sourceDomain": "hindustantimes.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "OPENAI-ALTMAN/SISTER-LAWSUIT (PIX):Sam Altman's sister amends lawsuit accusing OpenAI CEO of sexual abuse",
-            "image": "https://www.hindustantimes.com/ht-img/img/2025/08/06/550x309/Untitled_design_1754465014585_1754465103581.png",
-            "imageUrl": "https://www.hindustantimes.com/ht-img/img/2025/08/06/550x309/Untitled_design_1754465014585_1754465103581.png",
-            "publishedAt": "2026-04-01T21:12:42.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 52,
-              "negP": 48,
-              "label": "negative",
-              "confidence": 0.9274
-            },
-            "category": "india"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "SpaceX files to go public, paving way to make Elon Musk first trillionaire",
-            "link": "https://www.aljazeera.com/news/2026/4/1/spacex-files-to-go-public-paving-way-to-make-elon-musk-first-trillionaire?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Company has captured public attention through vast network of satellites and focus on space exploration.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2024/10/AP24288600076396-1728924530.jpg?resize=1920%2C1440",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2024/10/AP24288600076396-1728924530.jpg?resize=1920%2C1440",
-            "publishedAt": "2026-04-01T21:12:27.000Z",
-            "sentiment": {
-              "posP": 7,
-              "neuP": 93,
-              "negP": 0,
-              "label": "positive",
-              "confidence": 0.2263
-            },
-            "category": "science"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "‘System failure’ paralyzes Baidu robotaxis in China",
-            "link": "https://techcrunch.com/2026/04/01/system-failure-paralyzes-baidu-robotaxis-in-china/",
-            "source": "TechCrunch",
-            "sourceDomain": "techcrunch.com",
-            "sourceCredibility": "Medium",
-            "industry": "Technology",
-            "description": "Passengers in Baidu's robotaxis were trapped for up to two hours.",
-            "image": "https://techcrunch.com/wp-content/uploads/2026/04/baidu-robotaxi-getty.jpg?resize=1200,800",
-            "imageUrl": "https://techcrunch.com/wp-content/uploads/2026/04/baidu-robotaxi-getty.jpg?resize=1200,800",
-            "publishedAt": "2026-04-01T21:12:14.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 83,
-              "negP": 17,
-              "label": "negative",
-              "confidence": 0.5267
-            },
-            "category": "technology"
           }
         ]
       }
@@ -3611,83 +3591,83 @@
     ],
     "sentiment": {
       "overall": {
-        "pos": 7.48,
-        "neu": 81.43,
-        "neg": 11.08,
+        "pos": 7.4,
+        "neu": 82.03,
+        "neg": 10.57,
         "count": 120
       },
       "india": {
-        "pos": 5.77,
-        "neu": 83.19,
-        "neg": 11.04,
-        "count": 26
+        "pos": 5.25,
+        "neu": 83.67,
+        "neg": 11.08,
+        "count": 24
       },
       "world": {
-        "pos": 7.96,
-        "neu": 80.95,
-        "neg": 11.1,
-        "count": 94
+        "pos": 7.94,
+        "neu": 81.61,
+        "neg": 10.45,
+        "count": 96
       }
     },
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-04-01T17:53:18.498Z",
-          "pos": 9,
-          "neu": 85,
-          "neg": 6,
-          "count": 5
-        },
-        {
-          "label": "2026-04-01T18:53:18.498Z",
+          "label": "2026-04-01T18:51:46.258Z",
           "pos": 4,
           "neu": 82,
           "neg": 14,
           "count": 5
         },
         {
-          "label": "2026-04-01T19:53:18.498Z",
+          "label": "2026-04-01T19:51:46.258Z",
           "pos": 0,
           "neu": 94,
           "neg": 7,
           "count": 2
         },
         {
-          "label": "2026-04-01T20:53:18.498Z",
+          "label": "2026-04-01T20:51:46.258Z",
           "pos": 0,
           "neu": 52,
           "neg": 48,
+          "count": 1
+        },
+        {
+          "label": "2026-04-01T21:51:46.258Z",
+          "pos": 0,
+          "neu": 62,
+          "neg": 38,
           "count": 1
         }
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-04-01T17:53:18.499Z",
-          "pos": 9,
-          "neu": 85,
-          "neg": 6,
-          "count": 26
+          "label": "2026-04-01T18:51:46.258Z",
+          "pos": 6,
+          "neu": 80,
+          "neg": 13,
+          "count": 23
         },
         {
-          "label": "2026-04-01T18:53:18.499Z",
-          "pos": 4,
-          "neu": 82,
-          "neg": 14,
-          "count": 21
-        },
-        {
-          "label": "2026-04-01T19:53:18.499Z",
+          "label": "2026-04-01T19:51:46.258Z",
           "pos": 9,
           "neu": 77,
           "neg": 14,
           "count": 9
         },
         {
-          "label": "2026-04-01T20:53:18.499Z",
+          "label": "2026-04-01T20:51:46.258Z",
           "pos": 6,
           "neu": 83,
           "neg": 11,
-          "count": 9
+          "count": 10
+        },
+        {
+          "label": "2026-04-01T21:51:46.258Z",
+          "pos": 6,
+          "neu": 87,
+          "neg": 7,
+          "count": 3
         }
       ]
     },
@@ -3701,17 +3681,17 @@
           },
           {
             "name": "Communication",
-            "bias": -6.8,
-            "count": 84
+            "bias": -5.54,
+            "count": 85
           },
           {
             "name": "Finance",
-            "bias": 3.44,
-            "count": 18
+            "bias": 3.24,
+            "count": 17
           },
           {
             "name": "Technology",
-            "bias": 1.33,
+            "bias": -1,
             "count": 18
           },
           {
@@ -3728,14 +3708,14 @@
           },
           {
             "name": "Finance",
-            "bias": 3.44,
-            "count": 18
+            "bias": 3.24,
+            "count": 17
           }
         ],
         "neu": [
           {
             "name": "Technology",
-            "bias": 1.33,
+            "bias": -1,
             "count": 18
           },
           {
@@ -3747,8 +3727,8 @@
         "neg": [
           {
             "name": "Communication",
-            "bias": -6.8,
-            "count": 84
+            "bias": -5.54,
+            "count": 85
           }
         ]
       },
@@ -3762,52 +3742,45 @@
         },
         {
           "source": "Al Jazeera",
-          "pos": 7.48,
-          "neu": 76.95,
-          "neg": 15.57,
+          "pos": 7.81,
+          "neu": 78.57,
+          "neg": 13.62,
           "count": 21
         },
         {
-          "source": "Mint",
-          "pos": 11.33,
-          "neu": 82.6,
-          "neg": 6.07,
-          "count": 15
+          "source": "NDTV",
+          "pos": 4.71,
+          "neu": 88.07,
+          "neg": 7.21,
+          "count": 14
         },
         {
-          "source": "NDTV",
-          "pos": 4.62,
-          "neu": 88.62,
-          "neg": 6.77,
-          "count": 13
+          "source": "Mint",
+          "pos": 10.93,
+          "neu": 83.29,
+          "neg": 5.79,
+          "count": 14
         },
         {
           "source": "India Today",
-          "pos": 6.45,
-          "neu": 80.27,
-          "neg": 13.27,
-          "count": 11
+          "pos": 7.58,
+          "neu": 80.25,
+          "neg": 12.17,
+          "count": 12
         },
         {
           "source": "TechCrunch",
-          "pos": 10.38,
-          "neu": 79.25,
-          "neg": 10.38,
-          "count": 8
+          "pos": 9.22,
+          "neu": 79.22,
+          "neg": 11.56,
+          "count": 9
         },
         {
           "source": "NDTV News- Special",
-          "pos": 10.43,
-          "neu": 85.29,
-          "neg": 4.29,
-          "count": 7
-        },
-        {
-          "source": "Hindustan Times",
-          "pos": 4.8,
-          "neu": 69,
-          "neg": 26.2,
-          "count": 5
+          "pos": 8.67,
+          "neu": 86.33,
+          "neg": 5,
+          "count": 6
         },
         {
           "source": "\"site:business-standard.com\" - Google News",
@@ -3818,9 +3791,16 @@
         },
         {
           "source": "BBC",
-          "pos": 5.5,
-          "neu": 66.25,
-          "neg": 28.25,
+          "pos": 6,
+          "neu": 74,
+          "neg": 20,
+          "count": 4
+        },
+        {
+          "source": "Hindustan Times",
+          "pos": 4.25,
+          "neu": 65.75,
+          "neg": 30,
           "count": 4
         }
       ]
@@ -3828,6 +3808,66 @@
   },
   "usa": {
     "topStories": [
+      {
+        "title": "US removes sanctions on Venezuela’s interim President Delcy Rodriguez",
+        "link": "https://www.aljazeera.com/news/2026/4/1/us-removes-sanctions-on-venezuelas-interim-president-delcy-rodriguez?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "US has exerted growing influence over the Venezuelan government after abducting former President Nicolas Maduro.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-04-01T22:12:46.000Z",
+        "sentiment": {
+          "posP": 7,
+          "neuP": 93,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.1779
+        },
+        "category": "world"
+      },
+      {
+        "title": "Luigi Mangione's state murder trial delayed until September, throwing federal trial into question",
+        "link": "https://www.hindustantimes.com/india-news/luigi-mangione-s-state-murder-trial-delayed-until-september-throwing-federal-trial-into-question-101775080611092.html",
+        "source": "Hindustan Times",
+        "sourceDomain": "hindustantimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "UNITEDHEALTH-CEO-MANGIONE:Luigi Mangione's state murder trial delayed until September, throwing federal trial into question",
+        "image": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg",
+        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg",
+        "publishedAt": "2026-04-01T21:56:50.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 62,
+          "negP": 38,
+          "label": "negative",
+          "confidence": 0.9217
+        },
+        "category": "india"
+      },
+      {
+        "title": "\"Trump Is Impatient\": JD Vance Issues \"Stern Message\" To Iran Over Deal",
+        "link": "https://www.ndtv.com/world-news/iran-war-us-vice-president-jd-vance-issues-stern-message-to-iran-over-deal-11299338",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "JD Vance warned that there would be \"increased pressure\" on the country's \"infrastructure sites\" \"unless the Iranians made a deal.\"",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-01T21:33:18.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 81,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.296
+        },
+        "category": "world"
+      },
       {
         "title": "NASA moon mission a ‘contrast’ to US war on Iran, says US senator",
         "link": "https://www.aljazeera.com/video/newsfeed/2026/4/1/nasa-moon-mission-a-contrast-to-us-war-on-iran-says-us-senator?traffic_source=rss",
@@ -4007,69 +4047,69 @@
           "confidence": 0.7579
         },
         "category": "business"
-      },
+      }
+    ],
+    "dailyNews": [
       {
-        "title": "T.N. Assembly election: Congress ticket aspirants face uncertainty as leadership tries to resolve disputes",
-        "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/tn-assembly-election-congress-ticket-aspirants-face-uncertainty-as-leadership-tries-to-resolve-disputes/article70812180.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
+        "title": "US removes sanctions on Venezuela’s interim President Delcy Rodriguez",
+        "link": "https://www.aljazeera.com/news/2026/4/1/us-removes-sanctions-on-venezuelas-interim-president-delcy-rodriguez?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
         "industry": "Communication",
-        "description": "",
-        "image": "https://www.thehindu.com/theme/images/og-image.png",
-        "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
-        "publishedAt": "2026-04-01T19:39:19.000Z",
+        "description": "US has exerted growing influence over the Venezuelan government after abducting former President Nicolas Maduro.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69cd7aa2d5f3-1775073954.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-04-01T22:12:46.000Z",
         "sentiment": {
-          "posP": 14,
-          "neuP": 61,
-          "negP": 25,
-          "label": "negative",
-          "confidence": 0.2263
-        },
-        "category": "world"
-      },
-      {
-        "title": "Exclusion from rolls doesn’t repeal voting rights forever, says Supreme Court",
-        "link": "https://www.thehindu.com/news/national/west-bengal/supreme-court-west-bengal-sir-hearing-cji-calcutta-high-court/article70810308.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "Court asks Election Commission tribunals to ensure fair adjudication of electoral roll exclusions during Special Intensive Revision",
-        "image": "https://th-i.thgim.com/public/incoming/9t3qx4/article70810360.ece/alternates/LANDSCAPE_1200/Election15.jpg",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/9t3qx4/article70810360.ece/alternates/LANDSCAPE_1200/Election15.jpg",
-        "publishedAt": "2026-04-01T18:52:19.000Z",
-        "sentiment": {
-          "posP": 31,
-          "neuP": 63,
-          "negP": 6,
+          "posP": 7,
+          "neuP": 93,
+          "negP": 0,
           "label": "positive",
-          "confidence": 0.8402
+          "confidence": 0.1779
         },
         "category": "world"
       },
       {
-        "title": "Larger House Not Always Effective: Karti Chidambaram On More Lok Sabha Seats",
-        "link": "https://www.ndtv.com/india-news/larger-house-not-always-effective-karti-chidambaram-on-more-lok-sabha-seats-11299014",
+        "title": "Luigi Mangione's state murder trial delayed until September, throwing federal trial into question",
+        "link": "https://www.hindustantimes.com/india-news/luigi-mangione-s-state-murder-trial-delayed-until-september-throwing-federal-trial-into-question-101775080611092.html",
+        "source": "Hindustan Times",
+        "sourceDomain": "hindustantimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "UNITEDHEALTH-CEO-MANGIONE:Luigi Mangione's state murder trial delayed until September, throwing federal trial into question",
+        "image": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg",
+        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2025/06/30/550x309/ht-generic_india1_1751287243850_1751287256749.jpg",
+        "publishedAt": "2026-04-01T21:56:50.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 62,
+          "negP": 38,
+          "label": "negative",
+          "confidence": 0.9217
+        },
+        "category": "india"
+      },
+      {
+        "title": "\"Trump Is Impatient\": JD Vance Issues \"Stern Message\" To Iran Over Deal",
+        "link": "https://www.ndtv.com/world-news/iran-war-us-vice-president-jd-vance-issues-stern-message-to-iran-over-deal-11299338",
         "source": "NDTV",
         "sourceDomain": "ndtv.com",
         "sourceCredibility": "Medium",
         "industry": "Communication",
-        "description": "\"We will become like the chamber in North Korea or the People's Congress of China, where we will simply come and thump our desks and go away,\" Karti Chidambaram said",
+        "description": "JD Vance warned that there would be \"increased pressure\" on the country's \"infrastructure sites\" \"unless the Iranians made a deal.\"",
         "image": "/img/thumb-placeholder.svg",
         "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-01T18:40:39.000Z",
+        "publishedAt": "2026-04-01T21:33:18.000Z",
         "sentiment": {
-          "posP": 12,
-          "neuP": 88,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.6808
+          "posP": 6,
+          "neuP": 81,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.296
         },
-        "category": "india"
-      }
-    ],
-    "dailyNews": [
+        "category": "world"
+      },
       {
         "title": "NASA moon mission a ‘contrast’ to US war on Iran, says US senator",
         "link": "https://www.aljazeera.com/video/newsfeed/2026/4/1/nasa-moon-mission-a-contrast-to-us-war-on-iran-says-us-senator?traffic_source=rss",
@@ -4411,6 +4451,26 @@
         "category": "world"
       },
       {
+        "title": "Live: Trump to address the nation after saying US will exit Iran pretty quickly",
+        "link": "https://www.indiatoday.in/world/story/donald-trump-speech-live-updates-addresses-us-israel-iran-war-middle-east-conflict-2890388-2026-04-01?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Live Trump to address the nation after saying US will exit Iran pretty quickly",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202604/trump--iran-war-012208115-16x9_0.jpg?VersionId=tOEhYQxBTRUhktk5iHyO_RSNwQ.1CMyC",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202604/trump--iran-war-012208115-16x9_0.jpg?VersionId=tOEhYQxBTRUhktk5iHyO_RSNwQ.1CMyC",
+        "publishedAt": "2026-04-01T17:34:20.000Z",
+        "sentiment": {
+          "posP": 20,
+          "neuP": 80,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7506
+        },
+        "category": "world"
+      },
+      {
         "title": "Iran authorities await war ‘victory’ as supporters mark 1979 anniversary",
         "link": "https://www.aljazeera.com/news/2026/4/1/iran-authorities-await-war-victory-as-supporters-mark-1979-anniversary?traffic_source=rss",
         "source": "Al Jazeera",
@@ -4469,121 +4529,48 @@
           "confidence": 0.836
         },
         "category": "world"
-      },
-      {
-        "title": "Quote of the Day: Leonardo da Vinci on art and knowledge — ‘Where the spirit does not work with the hand…'",
-        "link": "https://www.livemint.com/news/trends/quote-of-the-day-leonardo-da-vinci-on-art-and-knowledge-where-the-spirit-does-not-work-with-the-hand-11775061440014.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "Leonardo da Vinci’s timeless words connect art with science, reminding us that creativity thrives when passion, observation and purpose come together.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-01T17:04:58.000Z",
-        "sentiment": {
-          "posP": 16,
-          "neuP": 84,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.743
-        },
-        "category": "world"
-      },
-      {
-        "title": "Modi America’s slave, has put country in crisis: Priyanka Gandhi Vadra",
-        "link": "https://www.thehindu.com/elections/assam-assembly/modi-americas-slave-has-put-country-in-crisis-priyanka-gandhi-vadra/article70812093.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "Addressing party rallies in eastern Assam, the Congress leader says the people are tired of the ‘mafia and syndicate rule’ of the BJP-led government",
-        "image": "https://th-i.thgim.com/public/incoming/co76w2/article70812759.ece/alternates/LANDSCAPE_1200/PTI04_01_2026_000457A.jpg",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/co76w2/article70812759.ece/alternates/LANDSCAPE_1200/PTI04_01_2026_000457A.jpg",
-        "publishedAt": "2026-04-01T16:57:23.000Z",
-        "sentiment": {
-          "posP": 7,
-          "neuP": 76,
-          "negP": 17,
-          "label": "negative",
-          "confidence": 0.6486
-        },
-        "category": "world"
-      },
-      {
-        "title": "US Supreme Court signals skepticism over Trump’s birthright citizenship order",
-        "link": "https://www.livemint.com/news/us-news/us-supreme-court-signals-skepticism-over-trump-s-birthright-citizenship-order-11775061417208.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "Trump remained for just over an hour, listening as Solicitor General D. John Sauer defended the administration’s position before departing shortly after opposing counsel began presenting.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-01T16:50:38.000Z",
-        "sentiment": {
-          "posP": 9,
-          "neuP": 86,
-          "negP": 5,
-          "label": "positive",
-          "confidence": 0.3818
-        },
-        "category": "world"
-      },
-      {
-        "title": "What do Trump's latest comments on leaving Nato mean for the alliance?",
-        "link": "https://www.bbc.com/news/articles/c79je4vldq5o?at_medium=RSS&at_campaign=rss",
-        "source": "BBC",
-        "sourceDomain": "bbc.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "Trump has criticised Nato members for showing a lack of support for US objectives in Iran.",
-        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/8e7f/live/6b402fe0-2de7-11f1-934f-036468834728.jpg",
-        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/8e7f/live/6b402fe0-2de7-11f1-934f-036468834728.jpg",
-        "publishedAt": "2026-04-01T16:31:17.000Z",
-        "sentiment": {
-          "posP": 9,
-          "neuP": 75,
-          "negP": 16,
-          "label": "negative",
-          "confidence": 0.34
-        },
-        "category": "world"
       }
     ],
     "sentiment": {
-      "pos": 8.06,
-      "neu": 81.53,
-      "neg": 10.41,
-      "count": 172
+      "pos": 7.42,
+      "neu": 82.87,
+      "neg": 9.72,
+      "count": 174
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.57,
-        "neu": 80.37,
-        "neg": 10.06,
-        "count": 39
-      },
-      {
-        "source": "NYT",
-        "pos": 8.24,
-        "neu": 81.64,
-        "neg": 10.12,
-        "count": 20
+        "pos": 8.38,
+        "neu": 81.92,
+        "neg": 9.7,
+        "count": 38
       },
       {
         "source": "Fox News",
-        "pos": 6.99,
-        "neu": 78.92,
-        "neg": 14.1,
+        "pos": 5.31,
+        "neu": 83,
+        "neg": 11.69,
+        "count": 20
+      },
+      {
+        "source": "NYT",
+        "pos": 7.2,
+        "neu": 83.12,
+        "neg": 9.68,
         "count": 20
       },
       {
         "source": "CBS News",
-        "pos": 5.08,
-        "neu": 89.23,
-        "neg": 5.69,
+        "pos": 3.98,
+        "neu": 91.92,
+        "neg": 4.09,
+        "count": 20
+      },
+      {
+        "source": "ABC News",
+        "pos": 6.89,
+        "neu": 84.53,
+        "neg": 8.58,
         "count": 20
       },
       {
@@ -4594,17 +4581,10 @@
         "count": 20
       },
       {
-        "source": "ABC News",
-        "pos": 6.79,
-        "neu": 84.76,
-        "neg": 8.45,
-        "count": 20
-      },
-      {
         "source": "Al Jazeera",
-        "pos": 6.5,
-        "neu": 77.4,
-        "neg": 16.1,
+        "pos": 7.2,
+        "neu": 80.8,
+        "neg": 12,
         "count": 10
       },
       {
@@ -4622,17 +4602,17 @@
         "count": 6
       },
       {
+        "source": "NDTV",
+        "pos": 4.5,
+        "neu": 92.25,
+        "neg": 3.25,
+        "count": 4
+      },
+      {
         "source": "The Hindu",
         "pos": 17.33,
         "neu": 66.67,
         "neg": 16,
-        "count": 3
-      },
-      {
-        "source": "NDTV",
-        "pos": 4,
-        "neu": 96,
-        "neg": 0,
         "count": 3
       },
       {
@@ -4646,29 +4626,19 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -12,
-          "count": 1
-        },
-        {
           "name": "Materials",
-          "bias": 10.25,
-          "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -8.61,
-          "count": 10
+          "bias": 14.9,
+          "count": 3
         },
         {
           "name": "Manufacturing",
-          "bias": -5.8,
+          "bias": -14.1,
           "count": 1
         },
         {
-          "name": "Communication",
-          "bias": -5.54,
-          "count": 19
+          "name": "Energy",
+          "bias": -7.04,
+          "count": 10
         },
         {
           "name": "Finance",
@@ -4676,14 +4646,19 @@
           "count": 13
         },
         {
+          "name": "Communication",
+          "bias": -3.74,
+          "count": 22
+        },
+        {
           "name": "Healthcare",
-          "bias": 4.1,
-          "count": 6
+          "bias": 3.54,
+          "count": 7
         },
         {
           "name": "Technology",
-          "bias": -2.87,
-          "count": 127
+          "bias": -3.08,
+          "count": 123
         },
         {
           "name": "Real Estate",
@@ -4694,8 +4669,8 @@
       "pos": [
         {
           "name": "Materials",
-          "bias": 10.25,
-          "count": 2
+          "bias": 14.9,
+          "count": 3
         },
         {
           "name": "Finance",
@@ -4704,20 +4679,15 @@
         },
         {
           "name": "Healthcare",
-          "bias": 4.1,
-          "count": 6
+          "bias": 3.54,
+          "count": 7
         }
       ],
       "neu": [
         {
-          "name": "Communication",
-          "bias": -5.54,
-          "count": 19
-        },
-        {
           "name": "Technology",
-          "bias": -2.87,
-          "count": 127
+          "bias": -3.08,
+          "count": 123
         },
         {
           "name": "Real Estate",
@@ -4727,51 +4697,51 @@
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -12,
+          "name": "Manufacturing",
+          "bias": -14.1,
           "count": 1
         },
         {
           "name": "Energy",
-          "bias": -8.61,
+          "bias": -7.04,
           "count": 10
         },
         {
-          "name": "Manufacturing",
-          "bias": -5.8,
-          "count": 1
+          "name": "Communication",
+          "bias": -3.74,
+          "count": 22
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-04-01T17:53:18.499Z",
-          "pos": 10,
-          "neu": 83,
-          "neg": 7,
-          "count": 14
-        },
-        {
-          "label": "2026-04-01T18:53:18.499Z",
-          "pos": 9,
-          "neu": 80,
-          "neg": 10,
-          "count": 20
-        },
-        {
-          "label": "2026-04-01T19:53:18.499Z",
-          "pos": 7,
+          "label": "2026-04-01T18:51:46.259Z",
+          "pos": 13,
           "neu": 81,
-          "neg": 11,
-          "count": 33
+          "neg": 6,
+          "count": 10
         },
         {
-          "label": "2026-04-01T20:53:18.499Z",
+          "label": "2026-04-01T19:51:46.259Z",
+          "pos": 8,
+          "neu": 81,
+          "neg": 12,
+          "count": 25
+        },
+        {
+          "label": "2026-04-01T20:51:46.259Z",
           "pos": 5,
-          "neu": 87,
+          "neu": 88,
           "neg": 7,
-          "count": 32
+          "count": 27
+        },
+        {
+          "label": "2026-04-01T21:51:46.259Z",
+          "pos": 5,
+          "neu": 85,
+          "neg": 10,
+          "count": 31
         }
       ]
     }
@@ -4779,6 +4749,26 @@
   "potus": {
     "topStories": [
       {
+        "title": "\"Trump Is Impatient\": JD Vance Issues \"Stern Message\" To Iran Over Deal",
+        "link": "https://www.ndtv.com/world-news/iran-war-us-vice-president-jd-vance-issues-stern-message-to-iran-over-deal-11299338",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "JD Vance warned that there would be \"increased pressure\" on the country's \"infrastructure sites\" \"unless the Iranians made a deal.\"",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-01T21:33:18.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 81,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.296
+        },
+        "category": "world"
+      },
+      {
         "title": "Protesters gather to oppose changes to US birthright citizenship law",
         "link": "https://www.aljazeera.com/video/newsfeed/2026/4/1/protesters-gather-to-oppose-changes-to-us-birthright-citizenship-law?traffic_source=rss",
         "source": "Al Jazeera",
@@ -4879,6 +4869,26 @@
         "category": "world"
       },
       {
+        "title": "Live: Trump to address the nation after saying US will exit Iran pretty quickly",
+        "link": "https://www.indiatoday.in/world/story/donald-trump-speech-live-updates-addresses-us-israel-iran-war-middle-east-conflict-2890388-2026-04-01?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Live Trump to address the nation after saying US will exit Iran pretty quickly",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202604/trump--iran-war-012208115-16x9_0.jpg?VersionId=tOEhYQxBTRUhktk5iHyO_RSNwQ.1CMyC",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202604/trump--iran-war-012208115-16x9_0.jpg?VersionId=tOEhYQxBTRUhktk5iHyO_RSNwQ.1CMyC",
+        "publishedAt": "2026-04-01T17:34:20.000Z",
+        "sentiment": {
+          "posP": 20,
+          "neuP": 80,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7506
+        },
+        "category": "world"
+      },
+      {
         "title": "Trump to give primetime address on war as questions swirl over his next move",
         "link": "https://www.bbc.com/news/articles/c74vqd8k3g1o?at_medium=RSS&at_campaign=rss",
         "source": "BBC",
@@ -4959,68 +4969,48 @@
         "category": "world"
       },
       {
-        "title": "Trump Administration Scales Back Plan to Dismantle Consumer Protection Bureau",
-        "link": "https://www.nytimes.com/2026/04/01/us/politics/cfpb-layoffs.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump admonishes reporter for interrupting his answer on Iran operations: 'Lot of problems with you'",
+        "link": "https://www.foxnews.com/media/trump-admonishes-reporter-interrupting-his-answer-iran-operations-lot-problems-you",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A new filing asks a federal court to allow the White House to dismiss much of the Consumer Financial Protection Bureau’s remaining work force, but not close the bureau entirely.",
+        "description": "President Donald Trump remarked he's \"had a lot of problems\" with NewsNation correspondent Libbey Dean after she interrupted him during a press conference.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-04-01T17:53:34.000Z",
-        "sentiment": {
-          "posP": 3.8,
-          "negP": 0,
-          "neuP": 96.2,
-          "label": "neutral",
-          "confidence": 0.12
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Key Justices Appear Skeptical of Limiting Birthright Citizenship",
-        "link": "https://www.nytimes.com/2026/04/01/us/politics/supreme-court-birthright-citizenship-arguments.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump appeared in court, watching as members of the court’s conservative majority raised questions about his efforts to limit birthright citizenship.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-01T20:53:40.000Z",
+        "publishedAt": "2026-04-01T22:30:20.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.3,
-          "neuP": 92.7,
+          "negP": 23.4,
+          "neuP": 76.6,
           "label": "negative",
-          "confidence": 0.32
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Attends Supreme Court Oral Arguments in a Presidential First",
-        "link": "https://www.nytimes.com/2026/04/01/us/politics/trump-supreme-court-visit.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump’s presence in the court puts him face to face with justices whom he has tried to bully and intimidate.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-01T19:24:24.000Z",
-        "sentiment": {
-          "posP": 9.7,
-          "negP": 20.6,
-          "neuP": 69.7,
-          "label": "negative",
-          "confidence": 0.48
+          "confidence": 0.83
         },
         "category": "usa"
       }
     ],
     "dailyNews": [
       {
+        "title": "\"Trump Is Impatient\": JD Vance Issues \"Stern Message\" To Iran Over Deal",
+        "link": "https://www.ndtv.com/world-news/iran-war-us-vice-president-jd-vance-issues-stern-message-to-iran-over-deal-11299338",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "JD Vance warned that there would be \"increased pressure\" on the country's \"infrastructure sites\" \"unless the Iranians made a deal.\"",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-01T21:33:18.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 81,
+          "negP": 13,
+          "label": "negative",
+          "confidence": 0.296
+        },
+        "category": "world"
+      },
+      {
         "title": "Protesters gather to oppose changes to US birthright citizenship law",
         "link": "https://www.aljazeera.com/video/newsfeed/2026/4/1/protesters-gather-to-oppose-changes-to-us-birthright-citizenship-law?traffic_source=rss",
         "source": "Al Jazeera",
@@ -5121,6 +5111,26 @@
         "category": "world"
       },
       {
+        "title": "Live: Trump to address the nation after saying US will exit Iran pretty quickly",
+        "link": "https://www.indiatoday.in/world/story/donald-trump-speech-live-updates-addresses-us-israel-iran-war-middle-east-conflict-2890388-2026-04-01?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Live Trump to address the nation after saying US will exit Iran pretty quickly",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202604/trump--iran-war-012208115-16x9_0.jpg?VersionId=tOEhYQxBTRUhktk5iHyO_RSNwQ.1CMyC",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_news/202604/trump--iran-war-012208115-16x9_0.jpg?VersionId=tOEhYQxBTRUhktk5iHyO_RSNwQ.1CMyC",
+        "publishedAt": "2026-04-01T17:34:20.000Z",
+        "sentiment": {
+          "posP": 20,
+          "neuP": 80,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7506
+        },
+        "category": "world"
+      },
+      {
         "title": "Trump to give primetime address on war as questions swirl over his next move",
         "link": "https://www.bbc.com/news/articles/c74vqd8k3g1o?at_medium=RSS&at_campaign=rss",
         "source": "BBC",
@@ -5201,102 +5211,22 @@
         "category": "world"
       },
       {
-        "title": "Trump Administration Scales Back Plan to Dismantle Consumer Protection Bureau",
-        "link": "https://www.nytimes.com/2026/04/01/us/politics/cfpb-layoffs.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump admonishes reporter for interrupting his answer on Iran operations: 'Lot of problems with you'",
+        "link": "https://www.foxnews.com/media/trump-admonishes-reporter-interrupting-his-answer-iran-operations-lot-problems-you",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A new filing asks a federal court to allow the White House to dismiss much of the Consumer Financial Protection Bureau’s remaining work force, but not close the bureau entirely.",
+        "description": "President Donald Trump remarked he's \"had a lot of problems\" with NewsNation correspondent Libbey Dean after she interrupted him during a press conference.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-04-01T17:53:34.000Z",
-        "sentiment": {
-          "posP": 3.8,
-          "negP": 0,
-          "neuP": 96.2,
-          "label": "neutral",
-          "confidence": 0.12
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Key Justices Appear Skeptical of Limiting Birthright Citizenship",
-        "link": "https://www.nytimes.com/2026/04/01/us/politics/supreme-court-birthright-citizenship-arguments.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump appeared in court, watching as members of the court’s conservative majority raised questions about his efforts to limit birthright citizenship.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-01T20:53:40.000Z",
+        "publishedAt": "2026-04-01T22:30:20.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.3,
-          "neuP": 92.7,
+          "negP": 23.4,
+          "neuP": 76.6,
           "label": "negative",
-          "confidence": 0.32
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Attends Supreme Court Oral Arguments in a Presidential First",
-        "link": "https://www.nytimes.com/2026/04/01/us/politics/trump-supreme-court-visit.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump’s presence in the court puts him face to face with justices whom he has tried to bully and intimidate.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-01T19:24:24.000Z",
-        "sentiment": {
-          "posP": 9.7,
-          "negP": 20.6,
-          "neuP": 69.7,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iran Is Skeptical About Diplomacy, U.S. Intelligence Says",
-        "link": "https://www.nytimes.com/2026/04/01/us/politics/trump-iran-war.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Any decision by Iran to keep fighting would complicate President Trump’s stated goal of trying to end the war within weeks.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-01T21:18:09.000Z",
-        "sentiment": {
-          "posP": 8.4,
-          "negP": 23.6,
-          "neuP": 68,
-          "label": "negative",
-          "confidence": 0.68
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump-Backed Candidate in Louisiana Primary Also Praised DEI. Will It Hurt Her?",
-        "link": "https://www.nytimes.com/2026/04/01/us/politics/julia-letlow-louisiana-republican-primary.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Representative Julia Letlow of Louisiana, running to challenge Senator Bill Cassidy, is facing conservative blowback over remarks from 2020.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-01T21:39:16.000Z",
-        "sentiment": {
-          "posP": 12.5,
-          "negP": 9.5,
-          "neuP": 78,
-          "label": "neutral",
-          "confidence": 0.03
+          "confidence": 0.83
         },
         "category": "usa"
       },
@@ -5341,42 +5271,122 @@
         "category": "usa"
       },
       {
-        "title": "Trump hypes moon mission as Artemis II prepares to lift off under pressure from past failures",
-        "link": "https://www.foxnews.com/politics/trump-hypes-moon-mission-artemis-ii-prepares-lift-off-under-pressure-from-past-failures",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Administration Scales Back Plan to Dismantle Consumer Protection Bureau",
+        "link": "https://www.nytimes.com/2026/04/01/us/politics/cfpb-layoffs.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump celebrated Artemis II as astronauts including Jeremy Hansen prepare to travel around the moon, the first crewed deep-space mission since 1972.",
+        "description": "A new filing asks a federal court to allow the White House to dismiss much of the Consumer Financial Protection Bureau’s remaining work force, but not close the bureau entirely.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-04-01T19:43:16.000Z",
+        "publishedAt": "2026-04-01T17:53:34.000Z",
         "sentiment": {
-          "posP": 8.4,
-          "negP": 11.8,
-          "neuP": 79.8,
+          "posP": 3.8,
+          "negP": 0,
+          "neuP": 96.2,
           "label": "neutral",
-          "confidence": 0.13
+          "confidence": 0.12
         },
         "category": "usa"
       },
       {
-        "title": "Ukraine signals progress on US security guarantees after call with Trump envoys",
-        "link": "https://www.foxnews.com/world/ukraine-signals-progress-us-security-guarantees-after-call-trump-envoys",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Key Justices Appear Skeptical of Limiting Birthright Citizenship",
+        "link": "https://www.nytimes.com/2026/04/01/us/politics/supreme-court-birthright-citizenship-arguments.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ukrainian President Volodymyr Zelenskyy says talks with Trump envoys Witkoff and Kushner showed progress on Ukraine security guarantees, calling for a leaders' summit to advance peace.",
+        "description": "President Trump appeared in court, watching as members of the court’s conservative majority raised questions about his efforts to limit birthright citizenship.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-04-01T19:41:08.000Z",
+        "publishedAt": "2026-04-01T20:53:40.000Z",
         "sentiment": {
-          "posP": 30.3,
-          "negP": 0,
-          "neuP": 69.7,
-          "label": "positive",
-          "confidence": 0.92
+          "posP": 0,
+          "negP": 7.3,
+          "neuP": 92.7,
+          "label": "negative",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Attends Supreme Court Oral Arguments, Then Leaves an Hour In",
+        "link": "https://www.nytimes.com/2026/04/01/us/politics/trump-supreme-court-visit.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump’s presence in the court, a presidential first, put him face to face with justices whom he has tried to bully and intimidate.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-01T22:45:33.000Z",
+        "sentiment": {
+          "posP": 8.7,
+          "negP": 18.6,
+          "neuP": 72.7,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Iran Is Skeptical About Diplomacy, U.S. Intelligence Says",
+        "link": "https://www.nytimes.com/2026/04/01/us/politics/trump-iran-war.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Any decision by Iran to keep fighting would complicate President Trump’s stated goal of trying to end the war within weeks.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-01T22:35:56.000Z",
+        "sentiment": {
+          "posP": 8.4,
+          "negP": 23.6,
+          "neuP": 68,
+          "label": "negative",
+          "confidence": 0.68
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Officials Try to Fight Foreign Disinformation They Once Dismissed",
+        "link": "https://www.nytimes.com/2026/04/01/business/trump-foreign-disinformation-iran.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The war in Iran has exposed the need to mount a defense against foreign influence campaigns, officials and experts say.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-01T21:56:32.000Z",
+        "sentiment": {
+          "posP": 4.4,
+          "negP": 22.7,
+          "neuP": 72.9,
+          "label": "negative",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump-Backed Candidate in Louisiana Primary Also Praised DEI. Will It Hurt Her?",
+        "link": "https://www.nytimes.com/2026/04/01/us/politics/julia-letlow-louisiana-republican-primary.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Representative Julia Letlow of Louisiana, running to challenge Senator Bill Cassidy, is facing conservative blowback over remarks from 2020.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-01T21:39:16.000Z",
+        "sentiment": {
+          "posP": 12.5,
+          "negP": 9.5,
+          "neuP": 78,
+          "label": "neutral",
+          "confidence": 0.03
         },
         "category": "usa"
       },
@@ -5401,119 +5411,86 @@
         "category": "usa"
       },
       {
-        "title": "State Department overhauls Foreign Service Officer Test",
-        "link": "https://www.cbsnews.com/news/foreign-service-officer-test-state-department-overhaul/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Supreme Court appears skeptical of Trump's effort to limit birthright citizenship",
+        "link": "https://www.nbcnews.com/now/video/supreme-court-appears-skeptical-of-trump-s-effort-to-limit-birthright-citizenship-260525125663",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The State Department announced Wednesday that it is modifying the Foreign Service Officer Test to reflect the foreign policy goals of the Trump administration.",
+        "description": "The Supreme Court appeared skeptical of President Trump's executive order that aimed to limit the scope of birthright citizenship. NBC News' Kelly O'Donnell reports on what questions justices had and how President Trump made history by being in attendance for the arguments.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-04-01T20:43:01.000Z",
+        "publishedAt": "2026-04-01T17:32:05.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 11.5,
+          "negP": 11.7,
+          "neuP": 76.8,
+          "label": "positive",
+          "confidence": 0.23
         },
         "category": "usa"
       },
       {
-        "title": "Trump's address on Iran war tonight will lay out timeframe for ending conflict",
-        "link": "https://www.cbsnews.com/news/trump-primetime-speech-iran-today-2026-04-01/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump's Iran threats alarm war crimes experts",
+        "link": "https://www.nbcnews.com/world/iran/trumps-iran-threats-alarm-war-crimes-experts-rcna265978",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump is updating the nation on U.S. operations in Iran as he threatens to withdraw from NATO.",
+        "description": "Donald Trump risks turning America into a \"rogue state,\" a former U.S. ambassador for war crimes issues warned after the president threatened to bomb power stations and desalination plants in Iran.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-04-01T20:28:37.000Z",
+        "publishedAt": "2026-04-01T18:48:40.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 23.9,
-          "neuP": 76.1,
+          "negP": 45.5,
+          "neuP": 54.5,
+          "label": "negative",
+          "confidence": 0.97
+        },
+        "category": "usa"
+      },
+      {
+        "title": "What the polls say about the Iran war ahead of Trump's speech: From the Politics Desk",
+        "link": "https://www.nbcnews.com/politics/politics-news/polls-iran-war-trump-speech-politics-desk-rcna266303",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In today’s edition, Bridget Bowman breaks down the latest polling on the Iran war as President Donald Trump prepares to address the nation tonight.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-01T21:12:41.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17,
+          "neuP": 83,
           "label": "negative",
           "confidence": 0.83
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump, GOP leaders unveil plan to end DHS shutdown",
-        "link": "https://www.cbsnews.com/news/dhs-shutdown-trump-republicans-congress/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "GOP leaders unveiled a plan to end DHS shutdown, mirroring a framework that the Senate pursued last week before it was quickly batted down by House Republicans.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-01T20:22:12.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he may withdraw U.S. from NATO. The law says he can't without Congress.",
-        "link": "https://www.cbsnews.com/news/trump-withdraw-nato-require-congress-approval/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump says he's considering withdrawing the U.S. from NATO, following years of complaining about the alliance.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-01T19:21:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 5.5,
-          "neuP": 94.5,
-          "label": "negative",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump calls U.S. 'STUPID' for birthright citizenship after attending Supreme Court arguments",
-        "link": "https://www.cnbc.com/2026/04/01/trump-supreme-court-birthright-citizenship.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump's executive order says babies born in the U.S. are not entitled to citizenship if their parents are illegal immigrants or undocumented workers.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-01T16:45:51.000Z",
-        "sentiment": {
-          "posP": 8.4,
-          "negP": 19,
-          "neuP": 72.6,
-          "label": "negative",
-          "confidence": 0.54
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 8.04,
-      "neu": 80.44,
-      "neg": 11.52,
-      "count": 46
+      "pos": 8.32,
+      "neu": 79.55,
+      "neg": 12.13,
+      "count": 45
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.27,
-        "neu": 79.9,
-        "neg": 13.83,
-        "count": 10
+        "pos": 6.97,
+        "neu": 80.45,
+        "neg": 12.57,
+        "count": 11
+      },
+      {
+        "source": "NYT",
+        "pos": 6.3,
+        "neu": 80.08,
+        "neg": 13.62,
+        "count": 6
       },
       {
         "source": "Washington Post",
@@ -5523,31 +5500,10 @@
         "count": 6
       },
       {
-        "source": "NYT",
-        "pos": 6.88,
-        "neu": 80.92,
-        "neg": 12.2,
-        "count": 5
-      },
-      {
-        "source": "CBS News",
-        "pos": 1.02,
-        "neu": 90.36,
-        "neg": 8.62,
-        "count": 5
-      },
-      {
         "source": "Mint",
         "pos": 17.25,
         "neu": 76.5,
         "neg": 6.25,
-        "count": 4
-      },
-      {
-        "source": "Fox News",
-        "pos": 11.7,
-        "neu": 73.63,
-        "neg": 14.68,
         "count": 4
       },
       {
@@ -5558,11 +5514,25 @@
         "count": 4
       },
       {
+        "source": "Fox News",
+        "pos": 2.7,
+        "neu": 73.87,
+        "neg": 23.43,
+        "count": 3
+      },
+      {
         "source": "ABC News",
         "pos": 8.37,
         "neu": 78.83,
         "neg": 12.8,
         "count": 3
+      },
+      {
+        "source": "NDTV",
+        "pos": 3,
+        "neu": 90.5,
+        "neg": 6.5,
+        "count": 2
       },
       {
         "source": "Al Jazeera",
@@ -5581,39 +5551,39 @@
     ],
     "topicSentiment": [
       {
-        "topic": "Policy",
-        "pos": 9.02,
-        "neu": 83.78,
-        "neg": 7.19,
-        "count": 13
-      },
-      {
         "topic": "Campaign / Politics",
-        "pos": 4.33,
-        "neu": 84.11,
+        "pos": 6,
+        "neu": 82.44,
         "neg": 11.56,
         "count": 12
       },
       {
-        "topic": "Foreign Policy",
-        "pos": 7.58,
-        "neu": 78,
-        "neg": 14.43,
-        "count": 8
+        "topic": "Policy",
+        "pos": 9.78,
+        "neu": 82.43,
+        "neg": 7.79,
+        "count": 12
       },
       {
         "topic": "Legal",
-        "pos": 12.11,
-        "neu": 73.94,
-        "neg": 13.94,
-        "count": 7
+        "pos": 12.22,
+        "neu": 75.82,
+        "neg": 11.95,
+        "count": 8
+      },
+      {
+        "topic": "Foreign Policy",
+        "pos": 5.78,
+        "neu": 76.1,
+        "neg": 18.12,
+        "count": 6
       },
       {
         "topic": "Public Statements",
-        "pos": 6.5,
-        "neu": 79.63,
-        "neg": 13.88,
-        "count": 4
+        "pos": 4.72,
+        "neu": 79.26,
+        "neg": 16.02,
+        "count": 5
       },
       {
         "topic": "Economy",
@@ -5626,83 +5596,83 @@
   },
   "sentiment": {
     "overall": {
-      "pos": 7.48,
-      "neu": 81.43,
-      "neg": 11.08,
+      "pos": 7.4,
+      "neu": 82.03,
+      "neg": 10.57,
       "count": 120
     },
     "india": {
-      "pos": 5.77,
-      "neu": 83.19,
-      "neg": 11.04,
-      "count": 26
+      "pos": 5.25,
+      "neu": 83.67,
+      "neg": 11.08,
+      "count": 24
     },
     "world": {
-      "pos": 7.96,
-      "neu": 80.95,
-      "neg": 11.1,
-      "count": 94
+      "pos": 7.94,
+      "neu": 81.61,
+      "neg": 10.45,
+      "count": 96
     }
   },
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-04-01T17:53:18.501Z",
-        "pos": 9,
-        "neu": 85,
-        "neg": 6,
-        "count": 5
-      },
-      {
-        "label": "2026-04-01T18:53:18.501Z",
+        "label": "2026-04-01T18:51:46.261Z",
         "pos": 4,
         "neu": 82,
         "neg": 14,
         "count": 5
       },
       {
-        "label": "2026-04-01T19:53:18.501Z",
+        "label": "2026-04-01T19:51:46.261Z",
         "pos": 0,
         "neu": 94,
         "neg": 7,
         "count": 2
       },
       {
-        "label": "2026-04-01T20:53:18.501Z",
+        "label": "2026-04-01T20:51:46.261Z",
         "pos": 0,
         "neu": 52,
         "neg": 48,
+        "count": 1
+      },
+      {
+        "label": "2026-04-01T21:51:46.261Z",
+        "pos": 0,
+        "neu": 62,
+        "neg": 38,
         "count": 1
       }
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-04-01T17:53:18.501Z",
-        "pos": 9,
-        "neu": 85,
-        "neg": 6,
-        "count": 26
+        "label": "2026-04-01T18:51:46.261Z",
+        "pos": 6,
+        "neu": 80,
+        "neg": 13,
+        "count": 23
       },
       {
-        "label": "2026-04-01T18:53:18.501Z",
-        "pos": 4,
-        "neu": 82,
-        "neg": 14,
-        "count": 21
-      },
-      {
-        "label": "2026-04-01T19:53:18.501Z",
+        "label": "2026-04-01T19:51:46.261Z",
         "pos": 9,
         "neu": 77,
         "neg": 14,
         "count": 9
       },
       {
-        "label": "2026-04-01T20:53:18.501Z",
+        "label": "2026-04-01T20:51:46.261Z",
         "pos": 6,
         "neu": 83,
         "neg": 11,
-        "count": 9
+        "count": 10
+      },
+      {
+        "label": "2026-04-01T21:51:46.261Z",
+        "pos": 6,
+        "neu": 87,
+        "neg": 7,
+        "count": 3
       }
     ]
   },
@@ -5715,17 +5685,17 @@
       },
       {
         "name": "Communication",
-        "bias": -6.8,
-        "count": 84
+        "bias": -5.54,
+        "count": 85
       },
       {
         "name": "Finance",
-        "bias": 3.44,
-        "count": 18
+        "bias": 3.24,
+        "count": 17
       },
       {
         "name": "Technology",
-        "bias": 1.33,
+        "bias": -1,
         "count": 18
       },
       {
@@ -5742,14 +5712,14 @@
       },
       {
         "name": "Finance",
-        "bias": 3.44,
-        "count": 18
+        "bias": 3.24,
+        "count": 17
       }
     ],
     "neu": [
       {
         "name": "Technology",
-        "bias": 1.33,
+        "bias": -1,
         "count": 18
       },
       {
@@ -5761,8 +5731,8 @@
     "neg": [
       {
         "name": "Communication",
-        "bias": -6.8,
-        "count": 84
+        "bias": -5.54,
+        "count": 85
       }
     ]
   },
@@ -5783,8 +5753,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 172,
-      "potusArticles": 46,
+      "usaArticles": 174,
+      "potusArticles": 45,
       "sourceRows": 10,
       "industryRows": 5,
       "trendingPoints": 12
