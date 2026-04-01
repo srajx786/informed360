@@ -12,6 +12,19 @@ const SENTIMENT_CACHE_KEY = "informed360_sentiment_cache";
 const SNAPSHOT_SPLIT_CACHE_KEY = "informed360_snapshot_split_cache";
 const HOMEPAGE_CACHE_KEY = "informed360_homepage_cache";
 const HERO_SNAPSHOT_KEY = "informed360_hero_snapshot_v1";
+const APP_VERSION_STORAGE_KEY = "informed360_app_version";
+const APP_VERSION = String(window.__APP_VERSION__ || "dev");
+const FALLBACK_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+const STALE_DATA_MESSAGE = "Live data is temporarily unavailable, and the latest snapshot is older than 24 hours.";
+const SNAPSHOT_CACHE_KEYS = [
+  NEWS_CACHE_KEY,
+  STORIES_CACHE_KEY,
+  BOOTSTRAP_CACHE_KEY,
+  SENTIMENT_CACHE_KEY,
+  SNAPSHOT_SPLIT_CACHE_KEY,
+  HOMEPAGE_CACHE_KEY,
+  HERO_SNAPSHOT_KEY
+];
 const USA_CATEGORY = "usa";
 const POTUS_CATEGORY = "potus";
 const MIN_SOURCE_ARTICLES = 2;
@@ -83,6 +96,132 @@ const writeLocalCache = (key, value) => {
     // ignore storage quota errors
   }
 };
+const parseTimestampMs = (value) => {
+  if (!value) return 0;
+  const ts = typeof value === "number" ? value : new Date(value).getTime();
+  return Number.isFinite(ts) ? ts : 0;
+};
+const evaluateFreshness = (payload, { maxAgeMs = FALLBACK_MAX_AGE_MS } = {}) => {
+  const ts = parseTimestampMs(payload?.generatedAt || payload?.updatedAt);
+  if (!ts) return { fresh: false, reason: "missing-or-invalid-timestamp", timestampMs: 0 };
+  const ageMs = Date.now() - ts;
+  if (ageMs > maxAgeMs) return { fresh: false, reason: "older-than-24h", timestampMs: ts, ageMs };
+  return { fresh: true, reason: "within-24h", timestampMs: ts, ageMs };
+};
+const extractPayloadTimestamp = (payload) =>
+  payload?.generatedAt ||
+  payload?.updatedAt ||
+  payload?._meta?.generatedAt ||
+  payload?._meta?.updatedAt ||
+  "";
+const runCacheVersionGuard = () => {
+  try{
+    const cachedVersion = localStorage.getItem(APP_VERSION_STORAGE_KEY);
+    if (cachedVersion === APP_VERSION) return;
+    SNAPSHOT_CACHE_KEYS.forEach((key) => localStorage.removeItem(key));
+    localStorage.setItem(APP_VERSION_STORAGE_KEY, APP_VERSION);
+    console.info("[cache-version] rotated snapshot cache keys", { from: cachedVersion || "none", to: APP_VERSION });
+  }catch{
+    // ignore storage access failures
+  }
+};
+runCacheVersionGuard();
+const FOOTER_UPDATED_FALLBACK_TEXT = "Website update time unavailable";
+const footerTimestampState = { ms: 0, source: "" };
+const setFooterUpdatedTimestamp = (value, { source = "unknown", priority = "content" } = {}) => {
+  const updatedEl = $("#updatedAt");
+  if (!updatedEl) return;
+  const ts = parseTimestampMs(value);
+  if (!ts){
+    if (!footerTimestampState.ms){
+      updatedEl.textContent = FOOTER_UPDATED_FALLBACK_TEXT;
+    }
+    return;
+  }
+  if (priority === "market" && footerTimestampState.ms) return;
+  if (footerTimestampState.ms && ts < footerTimestampState.ms) return;
+  footerTimestampState.ms = ts;
+  footerTimestampState.source = source;
+  const dt = new Date(ts);
+  updatedEl.textContent = `Website updated on ${dt.toLocaleDateString()} · ${dt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
+};
+const SOURCE_ALIAS_MAP = new Map([
+  ["associated press", "AP"], ["ap", "AP"], ["ap news", "AP"],
+  ["new york times", "NYT"], ["nyt", "NYT"], ["the new york times", "NYT"],
+  ["wall street journal", "WSJ"], ["wsj", "WSJ"],
+  ["fox", "Fox News"], ["fox news", "Fox News"],
+  ["cnn", "CNN"], ["cnn news", "CNN"],
+  ["cnbc", "CNBC"],
+  ["cbs", "CBS News"], ["cbs news", "CBS News"],
+  ["nbc", "NBC News"], ["nbc news", "NBC News"],
+  ["abc", "ABC News"], ["abc news", "ABC News"],
+  ["washington post", "Washington Post"],
+  ["bbc", "BBC"], ["bbc news", "BBC"],
+  ["reuters", "Reuters"],
+  ["business standard", "Business Standard"],
+  ["ndtv", "NDTV"],
+  ["india today", "India Today"],
+  ["indian express", "The Indian Express"], ["the indian express", "The Indian Express"],
+  ["firstpost", "Firstpost"],
+  ["the print", "ThePrint"], ["theprint", "ThePrint"],
+  ["hindustan times", "Hindustan Times"],
+  ["economic times", "The Economic Times"], ["the economic times", "The Economic Times"],
+  ["al jazeera", "Al Jazeera"],
+  ["the guardian", "Guardian"], ["guardian", "Guardian"],
+  ["mint", "Mint"], ["livemint", "Mint"], ["live mint", "Mint"],
+  ["the hindu", "The Hindu"], ["hindu", "The Hindu"],
+  ["times of india", "TOI"], ["toi", "TOI"]
+]);
+const SOURCE_REGISTRY_FALLBACK_BY_DOMAIN = {
+  "thehindu.com": "The Hindu",
+  "indianexpress.com": "The Indian Express",
+  "hindustantimes.com": "Hindustan Times",
+  "indiatoday.in": "India Today",
+  "ndtv.com": "NDTV",
+  "livemint.com": "Mint",
+  "business-standard.com": "Business Standard",
+  "economictimes.indiatimes.com": "The Economic Times",
+  "reuters.com": "Reuters",
+  "bbc.com": "BBC",
+  "aljazeera.com": "Al Jazeera",
+  "news18.com": "News18",
+  "deccanherald.com": "Deccan Herald",
+  "scroll.in": "Scroll",
+  "cnn.com": "CNN",
+  "foxnews.com": "Fox News",
+  "apnews.com": "AP",
+  "nytimes.com": "NYT",
+  "nbcnews.com": "NBC News",
+  "cbsnews.com": "CBS News",
+  "abcnews.go.com": "ABC News",
+  "cnbc.com": "CNBC",
+  "washingtonpost.com": "Washington Post",
+  "wsj.com": "WSJ",
+  "theguardian.com": "Guardian",
+  "theprint.in": "ThePrint",
+  "firstpost.com": "Firstpost"
+};
+const SOURCE_REGISTRY_NAME_BY_DOMAIN = new Map(Object.entries(SOURCE_REGISTRY_FALLBACK_BY_DOMAIN));
+let sourceRegistryLoaded = false;
+const normalizeDomain = (value = "") => String(value || "").trim().toLowerCase().replace(/^www\./, "");
+async function loadSourceRegistry(){
+  if (sourceRegistryLoaded) return;
+  sourceRegistryLoaded = true;
+  try{
+    const response = await fetch(`/source-registry.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    const entries = Object.entries(payload?.sources || {});
+    entries.forEach(([domain, meta]) => {
+      const normalized = normalizeDomain(domain);
+      if (!normalized) return;
+      SOURCE_REGISTRY_NAME_BY_DOMAIN.set(normalized, String(meta?.name || "").trim() || normalized);
+    });
+    console.info("[source-registry] loaded", { domains: SOURCE_REGISTRY_NAME_BY_DOMAIN.size });
+  }catch(error){
+    console.info("[source-registry] unavailable", { reason: error?.message || "fetch-failed" });
+  }
+}
 const HERO_QUALITY_RANK = {
   empty: 0,
   weak: 1,
@@ -132,7 +271,17 @@ function evaluateHeroPayloadQuality(clusters = []){
 }
 const readHeroSnapshot = () => {
   const cached = readLocalCache(HERO_SNAPSHOT_KEY);
-  return safeArray(cached).map(normalizeHeroCluster);
+  const legacyClusters = safeArray(cached);
+  if (legacyClusters.length){
+    console.info("[freshness] snapshot rejected", { key: HERO_SNAPSHOT_KEY, reason: "legacy-missing-timestamp" });
+    return [];
+  }
+  const freshness = evaluateFreshness(cached || {});
+  if (!freshness.fresh){
+    console.info("[freshness] snapshot rejected", { key: HERO_SNAPSHOT_KEY, reason: freshness.reason });
+    return [];
+  }
+  return safeArray(cached?.clusters).map(normalizeHeroCluster);
 };
 const debugState = {
   files: {},
@@ -327,23 +476,33 @@ const classifyPotusTopic = (article = {}) => {
   }
   return "Campaign / Politics";
 };
-const normalizeSourceName = (source = "") => {
-  const clean = String(source || "").trim();
-  if (!clean) return "";
-  const lowered = clean.toLowerCase();
-  if (/(^|\b)associated press|\bap\b/.test(lowered)) return "AP";
-  if (/(^|\b)new york times|\bnyt\b/.test(lowered)) return "NYT";
-  if (/washington post/.test(lowered)) return "Washington Post";
-  if (/wall street journal|\bwsj\b/.test(lowered)) return "WSJ";
-  if (/fox/.test(lowered)) return "Fox News";
-  if (/cbs/.test(lowered)) return "CBS News";
-  if (/abc/.test(lowered)) return "ABC News";
-  if (/nbc/.test(lowered)) return "NBC News";
-  if (/cnn/.test(lowered)) return "CNN";
-  if (/reuters/.test(lowered)) return "Reuters";
-  if (/cnbc/.test(lowered)) return "CNBC";
-  return clean;
+const sourceIdentityFrom = (source = "", link = "") => {
+  const raw = String(source || "").trim();
+  const linkDomain = normalizeDomain(domainFromUrl(link));
+  const sourceDomain = normalizeDomain(domainFromUrl(raw));
+  const candidateDomain = linkDomain || sourceDomain;
+  if (candidateDomain && SOURCE_REGISTRY_NAME_BY_DOMAIN.has(candidateDomain)){
+    const canonical = SOURCE_REGISTRY_NAME_BY_DOMAIN.get(candidateDomain);
+    if (DEBUG_MODE){
+      console.info("[source-normalize]", { rawSource: raw, domain: candidateDomain, canonical, mode: "registry-hit" });
+    }
+    return { canonical, domain: candidateDomain };
+  }
+  const aliasKey = raw.toLowerCase();
+  if (SOURCE_ALIAS_MAP.has(aliasKey)){
+    const canonical = SOURCE_ALIAS_MAP.get(aliasKey);
+    if (DEBUG_MODE){
+      console.info("[source-normalize]", { rawSource: raw, domain: candidateDomain || "", canonical, mode: "alias-hit" });
+    }
+    return { canonical, domain: candidateDomain };
+  }
+  const fallback = raw || (candidateDomain || "");
+  if (DEBUG_MODE){
+    console.info("[source-normalize]", { rawSource: raw, domain: candidateDomain || "", canonical: fallback, mode: "fallback" });
+  }
+  return { canonical: fallback, domain: candidateDomain };
 };
+const normalizeSourceName = (source = "", link = "") => sourceIdentityFrom(source, link).canonical;
 const isValidTimeline = (timeline) =>
   Array.isArray(timeline) && timeline.length === 4 && timeline.every(point =>
     point && typeof point === "object" &&
@@ -352,6 +511,15 @@ const isValidTimeline = (timeline) =>
 const bootstrapTime = (payload) => new Date(payload?.generatedAt || 0).getTime() || 0;
 function applyBootstrapSnapshot(snapshot, { persist = false, source = "snapshot" } = {}){
   if (!isValidBootstrapSnapshot(snapshot)) return false;
+  const freshness = evaluateFreshness(snapshot);
+  if (source !== "live" && !freshness.fresh){
+    console.info("[freshness] snapshot rejected", { source, key: BOOTSTRAP_CACHE_KEY, reason: freshness.reason });
+    return false;
+  }
+  console.info(`[freshness] ${source === "live" ? "live accepted" : "snapshot accepted"}`, {
+    source,
+    generatedAt: snapshot.generatedAt || ""
+  });
   const news = snapshot.news || {};
   state.allArticles = Array.isArray(news.articles) ? news.articles : [];
   state.articles = state.allArticles.slice();
@@ -378,8 +546,13 @@ function applyBootstrapSnapshot(snapshot, { persist = false, source = "snapshot"
   state.bootstrapUsa = snapshot.usa || null;
   state.bootstrapPotus = snapshot.potus || null;
   state.usingFallbackSnapshot = source !== "live";
+  state.isStaleMode = false;
   state.fallbackUpdatedAt = snapshot.generatedAt || state.fallbackUpdatedAt || "";
   state.fallbackMessage = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : "";
+  if (state.usingFallbackSnapshot){
+    console.info("[render] fallback source chosen", { section: "bootstrap", source });
+  }
+  setFooterUpdatedTimestamp(snapshot.generatedAt, { source: `bootstrap:${source}` });
 
   if (snapshot?.meta?.markets?.quotes?.length){
     writeMarketCache(snapshot.meta.markets);
@@ -433,6 +606,7 @@ async function refreshBootstrapSnapshot(){
 }
 const isUsefulSplitPayload = (payload, key) => {
   if (!payload || typeof payload !== "object" || !payload.generatedAt) return false;
+  if (!evaluateFreshness(payload).fresh) return false;
   if (["latestNews", "usaNews", "potusNews"].includes(key)) return Array.isArray(payload.articles) && payload.articles.length > 0;
   if (["sourceSentiment", "industrySentiment"].includes(key)) return Array.isArray(payload.rows) && payload.rows.length > 0;
   if (key === "trendingHistory") return Array.isArray(payload.points) && payload.points.length > 0;
@@ -495,7 +669,14 @@ async function loadSplitSnapshots(){
   }
   const cached = readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY);
   if (cached && typeof cached === "object"){
-    state.splitSnapshots = cached;
+    const filtered = Object.fromEntries(
+      Object.entries(cached).filter(([key, payload]) => isUsefulSplitPayload(payload, key))
+    );
+    if (!Object.keys(filtered).length){
+      console.info("[freshness] snapshot rejected", { source: "local-cache", key: SNAPSHOT_SPLIT_CACHE_KEY, reason: "all-sections-stale" });
+      return state.splitSnapshots;
+    }
+    state.splitSnapshots = filtered;
     syncHeroSnapshot("split-snapshot:cache");
     Object.entries(files).forEach(([, file]) => {
       setDebugFile(file, { loaded: true, source: "local-cache" });
@@ -505,6 +686,15 @@ async function loadSplitSnapshots(){
 }
 function applyHomepageSnapshot(snapshot, { persist = false, source = "homepage" } = {}){
   if (!isValidHomepageSnapshot(snapshot)) return false;
+  const freshness = evaluateFreshness(snapshot);
+  if (source !== "live" && !freshness.fresh){
+    console.info("[freshness] snapshot rejected", { source, key: HOMEPAGE_CACHE_KEY, reason: freshness.reason });
+    return false;
+  }
+  console.info(`[freshness] ${source === "live" ? "live accepted" : "snapshot accepted"}`, {
+    source,
+    generatedAt: snapshot.generatedAt || ""
+  });
   const sections = snapshot.sections || {};
   const splitFromHomepage = {
     latestNews: {
@@ -548,7 +738,12 @@ function applyHomepageSnapshot(snapshot, { persist = false, source = "homepage" 
   syncHeroSnapshot(`homepage:${source}`);
   state.fallbackUpdatedAt = snapshot.generatedAt || state.fallbackUpdatedAt;
   state.usingFallbackSnapshot = source !== "live";
+  state.isStaleMode = false;
   state.fallbackMessage = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : "";
+  if (state.usingFallbackSnapshot){
+    console.info("[render] fallback source chosen", { section: "homepage", source });
+  }
+  setFooterUpdatedTimestamp(snapshot.generatedAt, { source: `homepage:${source}` });
   hasCachedContent = hasCachedContent || hasHealthySnapshotData();
   if (persist){
     writeLocalCache(HOMEPAGE_CACHE_KEY, snapshot);
@@ -760,8 +955,10 @@ const getSourceLogoUrl = (sourceDomain = "", sourceName = "") => {
   if (LOCAL_LOGOS[d]) return LOCAL_LOGOS[d];
   return clearbit(d);
 };
-const logoFor = (link = "", source = "") =>
-  getSourceLogoUrl(domainFromUrl(link), source);
+const logoFor = (link = "", source = "") => {
+  const identity = sourceIdentityFrom(source, link);
+  return getSourceLogoUrl(identity.domain || domainFromUrl(link), identity.canonical || source);
+};
 
 const PLACEHOLDER = "/img/placeholder-news.svg";
 const THUMB_PLACEHOLDER = "/img/thumb-placeholder.svg";
@@ -1330,6 +1527,7 @@ const state = {
   sentimentStaleDataTimestamp: 0,
   sentimentStaleDataTimestampISO: "",
   usingFallbackSnapshot: false,
+  isStaleMode: false,
   fallbackUpdatedAt: "",
   fallbackMessage: "",
   splitSnapshots: readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY) || {},
@@ -1365,7 +1563,10 @@ function updateCurrentHeroSnapshot(clusters = [], { source = "unknown", persist 
   state.currentHeroSnapshot = normalized;
   state.currentHeroQuality = incomingQuality.quality;
   if (persist && incomingRank >= HERO_QUALITY_RANK.strong){
-    writeLocalCache(HERO_SNAPSHOT_KEY, normalized);
+    writeLocalCache(HERO_SNAPSHOT_KEY, {
+      updatedAt: state.fallbackUpdatedAt || state.bootstrapGeneratedAt || new Date().toISOString(),
+      clusters: normalized
+    });
   }
   logHeroUpdate(source, incomingQuality, currentQuality, true, currentRank === incomingRank ? "equal-or-better" : "upgrade");
   return true;
@@ -1743,7 +1944,7 @@ function readMarketCache(){
 }
 function writeMarketCache(payload){
   localStorage.setItem("i360_market_cache", JSON.stringify({
-    updatedAt: payload.updatedAt || Date.now(),
+    updatedAt: payload?.updatedAt || "",
     quotes: payload.quotes || []
   }));
 }
@@ -1795,17 +1996,7 @@ async function loadMarkets(){
   ];
 
   const renderMarkets = (data, logMissing) => {
-    const updatedAt = new Date(data?.updatedAt || Date.now());
-    const updatedLabel = updatedAt.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit"
-    });
-    const updatedDate = updatedAt.toLocaleDateString();
-    const statusText = `Website updated on ${updatedDate} · ${updatedLabel}`;
-    const updatedEl = $("#updatedAt");
-    if (updatedEl){
-      updatedEl.textContent = statusText;
-    }
+    setFooterUpdatedTimestamp(data?.updatedAt, { source: "markets", priority: "market" });
 
     const items = instruments.map(inst => {
       const match = (Array.isArray(data?.quotes) ? data.quotes : [])
@@ -1887,12 +2078,7 @@ async function loadMarkets(){
       renderMarkets(cached, true);
       return;
     }
-    const now = new Date();
-    const fallbackStatus = `Website updated on ${now.toLocaleDateString()} · ${now.toLocaleTimeString([], { hour:"2-digit", minute:"2-digit" })}`;
-    const updatedEl = $("#updatedAt");
-    if (updatedEl){
-      updatedEl.textContent = fallbackStatus;
-    }
+    setFooterUpdatedTimestamp("", { source: "markets", priority: "market" });
     el.innerHTML = `
       <div class="ticker-row" role="list">${instruments.map(inst => `
         <div class="qpill">
@@ -2010,8 +2196,21 @@ function applyCachedContent(){
   };
   const safeNewsCache = cacheMatchesState(cachedNews) ? cachedNews : null;
   const safeStoriesCache = cacheMatchesState(cachedStories) ? cachedStories : null;
-  const newsPayload = safeNewsCache?.payload;
-  const storiesPayload = safeStoriesCache?.payload;
+  const newsFreshness = evaluateFreshness({ updatedAt: safeNewsCache?.payloadUpdatedAt });
+  const storiesFreshness = evaluateFreshness({ updatedAt: safeStoriesCache?.payloadUpdatedAt });
+  const useNewsCache = Boolean(safeNewsCache && newsFreshness.fresh);
+  const useStoriesCache = Boolean(safeStoriesCache && storiesFreshness.fresh);
+  if (safeNewsCache && !useNewsCache){
+    console.info("[freshness] snapshot rejected", { source: "local-cache", key: NEWS_CACHE_KEY, reason: newsFreshness.reason });
+  }
+  if (safeStoriesCache && !useStoriesCache){
+    console.info("[freshness] snapshot rejected", { source: "local-cache", key: STORIES_CACHE_KEY, reason: storiesFreshness.reason });
+  }
+  if (!useNewsCache && !useStoriesCache){
+    return false;
+  }
+  const newsPayload = useNewsCache ? safeNewsCache?.payload : null;
+  const storiesPayload = useStoriesCache ? safeStoriesCache?.payload : null;
   if (!newsPayload && !storiesPayload) return false;
   if (newsPayload?.articles?.length){
     state.allArticles = newsPayload.articles || [];
@@ -2028,8 +2227,11 @@ function applyCachedContent(){
   hasCachedContent = Boolean(state.allArticles.length || state.stories.length);
   if (hasCachedContent){
     state.usingFallbackSnapshot = true;
-    state.fallbackUpdatedAt = safeNewsCache?.cachedAt || safeStoriesCache?.cachedAt || state.bootstrapGeneratedAt || state.fallbackUpdatedAt;
+    state.isStaleMode = false;
+    state.fallbackUpdatedAt = safeNewsCache?.payloadUpdatedAt || safeStoriesCache?.payloadUpdatedAt || state.bootstrapGeneratedAt || state.fallbackUpdatedAt;
     state.fallbackMessage = SNAPSHOT_FALLBACK_MESSAGE;
+    console.info("[render] fallback source chosen", { section: "local-cache", useNewsCache, useStoriesCache });
+    setFooterUpdatedTimestamp(state.fallbackUpdatedAt, { source: "local-cache" });
     setApiBanner(true, state.fallbackMessage);
     syncPinsWithArticles();
     renderPinnedChips();
@@ -2052,6 +2254,7 @@ async function checkHealthWithRetry(){
 async function loadAll(){
   state.newsEmptyMessage = "";
   state.usingFallbackSnapshot = false;
+  state.isStaleMode = false;
   state.fallbackMessage = "";
   setApiBanner(false);
   await loadSentimentData();
@@ -2180,6 +2383,7 @@ async function loadAll(){
     renderAll();
     writeLocalCache(NEWS_CACHE_KEY, {
       payload: news,
+      payloadUpdatedAt: extractPayloadTimestamp(news),
       cachedAt: Date.now(),
       category: state.category,
       filter: state.filter,
@@ -2187,14 +2391,17 @@ async function loadAll(){
     });
     writeLocalCache(STORIES_CACHE_KEY, {
       payload: stories,
+      payloadUpdatedAt: extractPayloadTimestamp(stories),
       cachedAt: Date.now(),
       category: state.category,
       filter: state.filter,
       experimental: state.experimental
     });
     state.usingFallbackSnapshot = false;
+    state.isStaleMode = false;
     state.fallbackMessage = "";
     state.fallbackUpdatedAt = "";
+    setFooterUpdatedTimestamp(extractPayloadTimestamp(news), { source: "live:/api/news" });
     setApiBanner(false);
     hasCachedContent = true;
   }catch(error){
@@ -2216,13 +2423,21 @@ async function loadAll(){
     }
     if (hasCachedContent){
       state.usingFallbackSnapshot = true;
+      state.isStaleMode = false;
       state.fallbackMessage = SNAPSHOT_FALLBACK_MESSAGE;
-      state.fallbackUpdatedAt = state.fallbackUpdatedAt || state.bootstrapGeneratedAt || Date.now();
+      state.fallbackUpdatedAt = state.fallbackUpdatedAt || state.bootstrapGeneratedAt || "";
+      console.info("[render] fallback source chosen", { section: "loadAll-catch" });
       setApiBanner(true, state.fallbackMessage);
+    } else {
+      state.isStaleMode = true;
+      state.fallbackMessage = STALE_DATA_MESSAGE;
+      state.fallbackUpdatedAt = "";
+      console.info("[stale-mode] entered", { section: "loadAll-catch" });
+      setApiBanner(true, STALE_DATA_MESSAGE);
     }
     logApiError(error, error?.endpoint || "/api/news");
     if (!hasCachedContent && (error?.status === 0 || error?.status === 404)){
-      setApiBanner(true, SNAPSHOT_FALLBACK_MESSAGE);
+      setApiBanner(true, STALE_DATA_MESSAGE);
     }
     renderPinnedChips();
     renderAll();
@@ -2956,9 +3171,17 @@ function renderDaily(){
 function renderHero(){
   const container = $("#heroCarousels");
   if (!container) return;
+  if (state.isStaleMode){
+    console.info("[stale-mode] entered", { section: "hero" });
+    container.innerHTML = `<div class="topstories-empty">${escapeHtml(STALE_DATA_MESSAGE)}</div>`;
+    pushDegradedReason("hero", STALE_DATA_MESSAGE);
+    setDebugSection("hero", "stale-blocked");
+    return;
+  }
   syncHeroSnapshot("render:preflight");
   const sections = buildTopStoriesSections();
   if (!sections.length){
+    console.info("[hero-render]", { status: "empty", fallback: state.usingFallbackSnapshot });
     const message = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE;
     const updatedAt = formatLastUpdated(state.fallbackUpdatedAt || state.bootstrapGeneratedAt);
     container.innerHTML = `<div class="topstories-empty">${escapeHtml(message)}${updatedAt ? `<div class="hero-fallback-updated">Last updated: ${escapeHtml(updatedAt)}</div>` : ""}</div>`;
@@ -2966,6 +3189,7 @@ function renderHero(){
     setDebugSection("hero", "fallback-empty");
     return;
   }
+  console.info("[hero-render]", { status: "rendered", sections: sections.length, fallback: state.usingFallbackSnapshot });
   setDebugSection("hero", safeArray(state.splitSnapshots?.latestNews?.topStories).length ? "snapshot:latest-news/bootstrap" : "live-or-bootstrap", { sections: sections.length });
   container.innerHTML = sections.map(renderTopStoriesSection).join("");
 
@@ -3817,7 +4041,7 @@ function computeLeaderboard(){
   const splitRows = safeArray(state.splitSnapshots?.sourceSentiment?.rows);
   if (splitRows.length){
     const arr = splitRows.map((row) => {
-      const source = normalizeSourceName(row.source || "");
+      const source = normalizeSourceName(row.source || "", row.link || "");
       const pos = Number(row.pos || 0);
       const neg = Number(row.neg || 0);
       return {
@@ -3838,7 +4062,7 @@ function computeLeaderboard(){
   }
   const bySource = new Map();
   getLeaderboardArticles().forEach(a => {
-    const key = normalizeSourceName(a.source || "");
+    const key = normalizeSourceName(a.source || "", a.link || a.url || "");
     if (!key) return;
     if (state.category === USA_CATEGORY && !USA_SECTION_SOURCES.has(key)) return;
     if (state.category === POTUS_CATEGORY && !USA_SECTION_SOURCES.has(key)) return;
@@ -3871,7 +4095,7 @@ function computeLeaderboard(){
         : (splitRows || state.sentimentData?.sourceLeaderboard || null);
     if (Array.isArray(fallback) && fallback.length){
       fallback.forEach((row) => {
-        const source = normalizeSourceName(row.source || "");
+        const source = normalizeSourceName(row.source || "", row.link || "");
         if (!source) return;
         const bias = Number(row.pos || 0) - Number(row.neg || 0);
         arr.push({
@@ -4629,7 +4853,9 @@ $("#saveTopics")?.addEventListener("click", (e) => {
 });
 
 /* boot */
+console.info("[app-version]", { version: APP_VERSION });
 document.getElementById("year").textContent = new Date().getFullYear();
+setFooterUpdatedTimestamp("", { source: "boot" });
 applyTheme();
 renderTopicPickerOptions();
 moveSentimentControls();
@@ -4642,6 +4868,9 @@ applyCachedContent();
 applyHomepageCache();
 loadMarkets();
 loadVisitorStats();
+void loadSourceRegistry().then(() => {
+  renderLeaderboard();
+});
 void (async () => {
   await applyStaticHomepageSnapshot();
   if (!hasCachedContent) await applyStaticBootstrapSnapshot();
@@ -4659,7 +4888,10 @@ startHeroAuto();
 
 if ("serviceWorker" in navigator){
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js").catch(() => {});
+    console.info("[service-worker] register", { script: "/sw.js" });
+    navigator.serviceWorker.register("/sw.js")
+      .then(() => console.info("[service-worker] registered"))
+      .catch((error) => console.info("[service-worker] register-failed", { reason: error?.message || "unknown" }));
   });
 }
 
