@@ -231,7 +231,7 @@
       <span>Informed360 © <span id="year"></span></span>
       <span class="dot">•</span>
       <div class="footer-updated-group">
-        <span id="updatedAt" class="footer-updated">Website updated on loading…</span>
+        <span id="updatedAt" class="footer-updated">Website update time unavailable</span>
         <div id="visitorStats" class="footer-visitor-stats" aria-live="polite" hidden>
           <span id="visitorStatsToday"></span>
           <span id="visitorStatsLast7"></span>
@@ -399,8 +399,11 @@
     <div id="sentimentSheetContent" class="sentiment-sheet-content"></div>
   </aside>
 
-  <script>window.__API_BASE__="";</script>
-  <script src="app.js" defer></script>
+  <script>
+    window.__API_BASE__ = "";
+    window.__APP_VERSION__ = "2026-04-01-1";
+  </script>
+  <script src="app.js?v=2026-04-01-1" defer></script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
