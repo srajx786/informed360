@@ -1997,6 +1997,15 @@ async function loadMarkets(){
 
   const renderMarkets = (data, logMissing) => {
     setFooterUpdatedTimestamp(data?.updatedAt, { source: "markets", priority: "market" });
+    const updatedTs = parseTimestampMs(data?.updatedAt);
+    const updatedAt = updatedTs ? new Date(updatedTs) : null;
+    const statusText = updatedAt
+      ? `Website updated on ${updatedAt.toLocaleDateString()} · ${updatedAt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`
+      : "Website update time unavailable";
+    const updatedEl = $("#updatedAt");
+    if (updatedEl){
+      updatedEl.textContent = statusText;
+    }
 
     const items = instruments.map(inst => {
       const match = (Array.isArray(data?.quotes) ? data.quotes : [])
@@ -2079,6 +2088,11 @@ async function loadMarkets(){
       return;
     }
     setFooterUpdatedTimestamp("", { source: "markets", priority: "market" });
+    const fallbackStatus = "Website update time unavailable";
+    const updatedEl = $("#updatedAt");
+    if (updatedEl){
+      updatedEl.textContent = fallbackStatus;
+    }
     el.innerHTML = `
       <div class="ticker-row" role="list">${instruments.map(inst => `
         <div class="qpill">
