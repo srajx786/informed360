@@ -397,6 +397,28 @@ const normalizeSourceName = (source = "") => {
   if (/cnbc/.test(lowered)) return "CNBC";
   return clean;
 };
+const INVALID_SOURCE_TOKENS = new Set(["na", "n/a", "none", "null", "undefined", "unknown", "source", "-"]);
+const LEADERBOARD_BADGE_MAX_LABEL = 16;
+function isValidSourceName(source = ""){
+  const clean = String(source || "").trim();
+  if (!clean) return false;
+  const lowered = clean.toLowerCase();
+  if (INVALID_SOURCE_TOKENS.has(lowered)) return false;
+  if (/^https?:\/\//i.test(clean)) return false;
+  if (!/[a-z0-9]/i.test(clean)) return false;
+  if (/^[_\W]+$/u.test(clean)) return false;
+  if (/^['"`‘’“”\s._-]+$/u.test(clean)) return false;
+  return true;
+}
+function formatSourceBadgeLabel(source = "", max = LEADERBOARD_BADGE_MAX_LABEL){
+  const clean = String(source || "").trim().replace(/\s+/g, " ");
+  if (clean.length <= max) return clean;
+  return `${clean.slice(0, Math.max(1, max - 1)).trimEnd()}…`;
+}
+function logLeaderboardDebug(event, detail = {}){
+  if (!DEBUG_MODE) return;
+  console.info(`[leaderboard] ${event}`, detail);
+}
 const isValidTimeline = (timeline) =>
   Array.isArray(timeline) && timeline.length === 4 && timeline.every(point =>
     point && typeof point === "object" &&
@@ -3926,6 +3948,31 @@ function getLeaderboardArticles(){
 }
 
 function computeLeaderboard(){
+  const buildBuckets = (entries, label) => {
+    const valid = [];
+    entries.forEach((entry) => {
+      if (!isValidSourceName(entry.source)){
+        logLeaderboardDebug("candidate rejected", { label, source: entry.source || "(empty)" });
+        return;
+      }
+      logLeaderboardDebug("candidate accepted", { label, source: entry.source, bias: Number(entry.bias || 0).toFixed(2) });
+      valid.push(entry);
+    });
+    const pos = valid
+      .filter(x => x.bias > 3)
+      .sort((a,b) => b.bias - a.bias)
+      .slice(0,2);
+    const neg = valid
+      .filter(x => x.bias < -3)
+      .sort((a,b) => a.bias - b.bias)
+      .slice(0,2);
+    const neu = valid
+      .slice()
+      .sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias))
+      .slice(0,2);
+    logLeaderboardDebug("bucket counts", { label, valid: valid.length, pos: pos.length, neu: neu.length, neg: neg.length });
+    return { pos, neu, neg };
+  };
   const splitRows = safeArray(state.splitSnapshots?.sourceSentiment?.rows);
   if (splitRows.length){
     const arr = splitRows.map((row) => {
@@ -3941,12 +3988,8 @@ function computeLeaderboard(){
         logo: logoFor("", source),
         count: Number(row.count || MIN_SOURCE_ARTICLES)
       };
-    }).filter((row) => row.source);
-    return {
-      pos: arr.filter(x => x.bias > 3).sort((a,b) => b.bias - a.bias).slice(0,2),
-      neu: arr.slice().sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias)).slice(0,2),
-      neg: arr.filter(x => x.bias < -3).sort((a,b) => a.bias - b.bias).slice(0,2)
-    };
+    });
+    return buildBuckets(arr, "snapshot");
   }
   const bySource = new Map();
   getLeaderboardArticles().forEach(a => {
@@ -3998,16 +4041,7 @@ function computeLeaderboard(){
       });
     }
   }
-
-  const pos = arr.filter(x => x.bias > 3)
-    .sort((a,b) => b.bias - a.bias).slice(0,2);
-  const neg = arr.filter(x => x.bias < -3)
-    .sort((a,b) => a.bias - b.bias).slice(0,2);
-  const neu = arr.slice()
-    .sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias))
-    .slice(0,2);
-
-  return { pos, neu, neg };
+  return buildBuckets(arr, "aggregated");
 }
 
 function loadImage(src){
@@ -4037,6 +4071,7 @@ async function renderLeaderboard(){
     let idx = 0;
     results.forEach((ok, i) => {
       const s = list[i];
+      if (!isValidSourceName(s.source)) return;
       const b = document.createElement("div");
       b.className = "badge";
       const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
@@ -4049,7 +4084,9 @@ async function renderLeaderboard(){
         img.loading = "lazy";
         b.appendChild(img);
       } else {
-        b.textContent = getSourceInitials(s.source || "?");
+        b.classList.add("text-badge");
+        b.title = s.source;
+        b.textContent = formatSourceBadgeLabel(s.source);
       }
       col.appendChild(b);
       idx++;
