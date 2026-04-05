@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-04-05T21:49:07.008Z",
+  "generatedAt": "2026-04-05T22:03:38.120Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 170,
-    "potusArticles": 36
+    "usaArticles": 169,
+    "potusArticles": 37
   },
   "version": 1,
   "topStories": [
@@ -129,6 +129,26 @@
           "negP": 28,
           "label": "negative",
           "confidence": 0.8885
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump issues expletive-laden threat  to Iran over Hormuz Strait blockage",
+        "link": "https://www.bbc.com/news/articles/cvg0q6wdzp1o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The US president says he will destroy Iranian power plants and bridges if the vital waterway is not reopened.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+        "publishedAt": "2026-04-05T21:10:06.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 74,
+          "negP": 20,
+          "label": "negative",
+          "confidence": 0.6908
         },
         "category": "world"
       },
@@ -2471,26 +2491,6 @@
           "confidence": 0
         },
         "category": "india"
-      },
-      {
-        "title": "DR Congo to receive ‘third-country’ deportees from the US under new deal",
-        "link": "https://www.aljazeera.com/news/2026/4/5/dr-congo-to-receive-third-country-deportees-from-the-us-under-new-deal?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "DRC gov't says deportees will begin to arrive this month, under a 'temporary' arrangment paid for by the US.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/ap_69cec8ba45d8d-1775159482.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/ap_69cec8ba45d8d-1775159482.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-04-05T15:20:03.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
       }
     ],
     "topics": [
@@ -2515,6 +2515,17 @@
           "neu": 72
         },
         "image": "/img/thumb-placeholder.svg"
+      },
+      {
+        "title": "trump issues | issues expletive | expletive laden",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 6,
+          "neg": 20,
+          "neu": 74
+        },
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg"
       },
       {
         "title": "police arrest | arrest seven | seven protesters",
@@ -2614,17 +2625,6 @@
           "neu": 92
         },
         "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-05-at-9.10.39-PM-1775412665.png?resize=1920%2C1440"
-      },
-      {
-        "title": "israeli air | air strike | strike hits",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 19,
-          "neu": 81
-        },
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775419706.jpg?resize=1920%2C1080&amp;quality=80"
       }
     ],
     "stories": [
@@ -2691,6 +2691,40 @@
               "negP": 28,
               "label": "negative",
               "confidence": 0.8885
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Trump issues expletive-laden threat  to Iran over Hormuz Strait blockage",
+            "link": "https://www.bbc.com/news/articles/cvg0q6wdzp1o?at_medium=RSS&at_campaign=rss",
+            "source": "BBC",
+            "sourceDomain": "bbc.com",
+            "sourceCredibility": "High",
+            "industry": "Communication",
+            "description": "The US president says he will destroy Iranian power plants and bridges if the vital waterway is not reopened.",
+            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+            "publishedAt": "2026-04-05T21:10:06.000Z",
+            "sentiment": {
+              "posP": 6,
+              "neuP": 74,
+              "negP": 20,
+              "label": "negative",
+              "confidence": 0.6908
             },
             "category": "world"
           }
@@ -2863,40 +2897,6 @@
               "confidence": 0.4404
             },
             "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "NASA’s Artemis II astronauts set to break Apollo 13 distance record during lunar flyby on April 6",
-            "link": "https://www.livemint.com/news/us-news/nasas-artemis-ii-astronauts-set-to-break-apollo-13-distance-record-during-lunar-flyby-on-april-6-11775417912223.html",
-            "source": "Mint",
-            "sourceDomain": "livemint.com",
-            "sourceCredibility": "High",
-            "industry": "Finance",
-            "description": "Artemis II astronauts are expected to exceed Apollo 13’s distance by nearly 3,400 miles (5,400 km).",
-            "image": "/img/thumb-placeholder.svg",
-            "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-04-05T20:28:10.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "science"
           }
         ]
       }
@@ -3037,6 +3037,40 @@
         },
         "articles": [
           {
+            "title": "Trump issues expletive-laden threat  to Iran over Hormuz Strait blockage",
+            "link": "https://www.bbc.com/news/articles/cvg0q6wdzp1o?at_medium=RSS&at_campaign=rss",
+            "source": "BBC",
+            "sourceDomain": "bbc.com",
+            "sourceCredibility": "High",
+            "industry": "Communication",
+            "description": "The US president says he will destroy Iranian power plants and bridges if the vital waterway is not reopened.",
+            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+            "publishedAt": "2026-04-05T21:10:06.000Z",
+            "sentiment": {
+              "posP": 6,
+              "neuP": 74,
+              "negP": 20,
+              "label": "negative",
+              "confidence": 0.6908
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
             "title": "UK police arrest seven protesters near RAF base used by US",
             "link": "https://www.aljazeera.com/news/2026/4/5/uk-police-arrest-seven-protesters-near-raf-base-used-by-us?traffic_source=rss",
             "source": "Al Jazeera",
@@ -3157,40 +3191,6 @@
               "confidence": 0.4019
             },
             "category": "india"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Driver faces impaired driving charges after Lao New Year incident",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/5/driver-faces-impaired-driving-charges-after-lao-new-year-incident?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "A driver in Louisiana US, was charged with impaired driving after plowing into a crowd, injuring at least 15.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775421923.jpg?resize=1920%2C1080&amp;quality=80",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775421923.jpg?resize=1920%2C1080&amp;quality=80",
-            "publishedAt": "2026-04-05T20:46:04.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 86,
-              "negP": 14,
-              "label": "negative",
-              "confidence": 0.4404
-            },
-            "category": "world"
           }
         ]
       }
@@ -3611,9 +3611,9 @@
     ],
     "sentiment": {
       "overall": {
-        "pos": 7.58,
-        "neu": 80.65,
-        "neg": 11.78,
+        "pos": 7.63,
+        "neu": 80.43,
+        "neg": 11.94,
         "count": 120
       },
       "india": {
@@ -3623,37 +3623,37 @@
         "count": 21
       },
       "world": {
-        "pos": 8.08,
-        "neu": 79.97,
-        "neg": 11.95,
+        "pos": 8.14,
+        "neu": 79.71,
+        "neg": 12.15,
         "count": 99
       }
     },
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-04-05T17:49:07.008Z",
-          "pos": 11,
-          "neu": 78,
+          "label": "2026-04-05T18:03:38.120Z",
+          "pos": 3,
+          "neu": 86,
           "neg": 11,
           "count": 5
         },
         {
-          "label": "2026-04-05T18:49:07.008Z",
+          "label": "2026-04-05T19:03:38.120Z",
           "pos": 0,
-          "neu": 85,
-          "neg": 16,
-          "count": 4
+          "neu": 79,
+          "neg": 21,
+          "count": 3
         },
         {
-          "label": "2026-04-05T19:49:07.008Z",
+          "label": "2026-04-05T20:03:38.120Z",
           "pos": 6,
           "neu": 94,
           "neg": 0,
           "count": 1
         },
         {
-          "label": "2026-04-05T20:49:07.008Z",
+          "label": "2026-04-05T21:03:38.120Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3662,31 +3662,31 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-04-05T17:49:07.008Z",
-          "pos": 8,
+          "label": "2026-04-05T18:03:38.120Z",
+          "pos": 7,
           "neu": 81,
+          "neg": 12,
+          "count": 26
+        },
+        {
+          "label": "2026-04-05T19:03:38.120Z",
+          "pos": 10,
+          "neu": 76,
+          "neg": 14,
+          "count": 19
+        },
+        {
+          "label": "2026-04-05T20:03:38.120Z",
+          "pos": 7,
+          "neu": 82,
           "neg": 11,
-          "count": 31
+          "count": 10
         },
         {
-          "label": "2026-04-05T18:49:07.008Z",
-          "pos": 10,
-          "neu": 77,
-          "neg": 13,
-          "count": 21
-        },
-        {
-          "label": "2026-04-05T19:49:07.008Z",
-          "pos": 10,
-          "neu": 77,
-          "neg": 13,
-          "count": 13
-        },
-        {
-          "label": "2026-04-05T20:49:07.008Z",
-          "pos": 1,
-          "neu": 84,
-          "neg": 16,
+          "label": "2026-04-05T21:03:38.120Z",
+          "pos": 2,
+          "neu": 79,
+          "neg": 19,
           "count": 4
         }
       ]
@@ -3711,7 +3711,7 @@
           },
           {
             "name": "Communication",
-            "bias": -6.09,
+            "bias": -6.26,
             "count": 86
           }
         ],
@@ -3736,7 +3736,7 @@
           },
           {
             "name": "Communication",
-            "bias": -6.09,
+            "bias": -6.26,
             "count": 86
           }
         ]
@@ -3751,10 +3751,10 @@
         },
         {
           "source": "Al Jazeera",
-          "pos": 4.68,
-          "neu": 79.52,
-          "neg": 15.8,
-          "count": 25
+          "pos": 4.88,
+          "neu": 78.67,
+          "neg": 16.46,
+          "count": 24
         },
         {
           "source": "Mint",
@@ -3792,18 +3792,18 @@
           "count": 6
         },
         {
+          "source": "BBC",
+          "pos": 6.2,
+          "neu": 81.6,
+          "neg": 12.2,
+          "count": 5
+        },
+        {
           "source": "TechCrunch",
           "pos": 20.6,
           "neu": 72.4,
           "neg": 7,
           "count": 5
-        },
-        {
-          "source": "BBC",
-          "pos": 6.25,
-          "neu": 83.5,
-          "neg": 10.25,
-          "count": 4
         },
         {
           "source": "\"site:business-standard.com\" - Google News",
@@ -3834,6 +3834,26 @@
           "negP": 28,
           "label": "negative",
           "confidence": 0.8885
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump issues expletive-laden threat  to Iran over Hormuz Strait blockage",
+        "link": "https://www.bbc.com/news/articles/cvg0q6wdzp1o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The US president says he will destroy Iranian power plants and bridges if the vital waterway is not reopened.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+        "publishedAt": "2026-04-05T21:10:06.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 74,
+          "negP": 20,
+          "label": "negative",
+          "confidence": 0.6908
         },
         "category": "world"
       },
@@ -4036,26 +4056,6 @@
           "confidence": 0.9168
         },
         "category": "world"
-      },
-      {
-        "title": "Karnataka bypolls: DKS helping BJP indirectly, says R. Ashok",
-        "link": "https://www.thehindu.com/news/national/karnataka/karnataka-bypolls-dks-helping-bjp-indirectly-says-r-ashok/article70826853.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "Congress Power tussle has entered Bagalkot, says LOP",
-        "image": "https://th-i.thgim.com/public/incoming/5rtola/article70827047.ece/alternates/LANDSCAPE_1200/DSC_6638.JPG",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/5rtola/article70827047.ece/alternates/LANDSCAPE_1200/DSC_6638.JPG",
-        "publishedAt": "2026-04-05T19:27:11.000Z",
-        "sentiment": {
-          "posP": 12,
-          "neuP": 88,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.296
-        },
-        "category": "world"
       }
     ],
     "dailyNews": [
@@ -4076,6 +4076,26 @@
           "negP": 28,
           "label": "negative",
           "confidence": 0.8885
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump issues expletive-laden threat  to Iran over Hormuz Strait blockage",
+        "link": "https://www.bbc.com/news/articles/cvg0q6wdzp1o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The US president says he will destroy Iranian power plants and bridges if the vital waterway is not reopened.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+        "publishedAt": "2026-04-05T21:10:06.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 74,
+          "negP": 20,
+          "label": "negative",
+          "confidence": 0.6908
         },
         "category": "world"
       },
@@ -4518,54 +4538,34 @@
           "confidence": 0.2732
         },
         "category": "sports"
-      },
-      {
-        "title": "OPEC+ agrees to hike oil output, warns of slow recovery after attacks",
-        "link": "https://www.aljazeera.com/news/2026/4/5/opec-agrees-to-hike-oil-output-warns-of-slow-recovery-after-attacks?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "The rise is largely symbolic as some key members are unable to raise ​production amid the US-Israel war on Iran.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/getty_69d28b2746-1775405863.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/getty_69d28b2746-1775405863.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-04-05T17:33:04.000Z",
-        "sentiment": {
-          "posP": 5,
-          "neuP": 73,
-          "negP": 22,
-          "label": "negative",
-          "confidence": 0.7506
-        },
-        "category": "world"
       }
     ],
     "sentiment": {
-      "pos": 7.8,
-      "neu": 81.13,
-      "neg": 11.07,
-      "count": 170
+      "pos": 7.79,
+      "neu": 81.19,
+      "neg": 11.02,
+      "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
         "pos": 9.48,
-        "neu": 83.06,
-        "neg": 7.45,
+        "neu": 83.1,
+        "neg": 7.41,
         "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 10.16,
-        "neu": 78.95,
-        "neg": 10.89,
+        "pos": 9.18,
+        "neu": 81.25,
+        "neg": 9.56,
         "count": 20
       },
       {
         "source": "CBS News",
-        "pos": 4.01,
-        "neu": 87.89,
-        "neg": 8.1,
+        "pos": 4.62,
+        "neu": 86.64,
+        "neg": 8.74,
         "count": 20
       },
       {
@@ -4590,24 +4590,24 @@
         "count": 11
       },
       {
-        "source": "Al Jazeera",
-        "pos": 1.88,
-        "neu": 79.13,
-        "neg": 19,
-        "count": 8
-      },
-      {
-        "source": "Washington Post",
-        "pos": 11.1,
-        "neu": 76.75,
-        "neg": 12.15,
-        "count": 8
-      },
-      {
         "source": "Mint",
         "pos": 6.57,
         "neu": 77.57,
         "neg": 15.86,
+        "count": 7
+      },
+      {
+        "source": "Al Jazeera",
+        "pos": 2.14,
+        "neu": 76.14,
+        "neg": 21.71,
+        "count": 7
+      },
+      {
+        "source": "Washington Post",
+        "pos": 11.43,
+        "neu": 78,
+        "neg": 10.57,
         "count": 7
       },
       {
@@ -4626,10 +4626,10 @@
       },
       {
         "source": "BBC",
-        "pos": 12.5,
-        "neu": 74.5,
-        "neg": 13,
-        "count": 2
+        "pos": 10.33,
+        "neu": 74.33,
+        "neg": 15.33,
+        "count": 3
       }
     ],
     "industryLeaderboard": {
@@ -4646,7 +4646,7 @@
         },
         {
           "name": "Communication",
-          "bias": -9.4,
+          "bias": -9.98,
           "count": 24
         },
         {
@@ -4666,8 +4666,8 @@
         },
         {
           "name": "Technology",
-          "bias": -1.85,
-          "count": 117
+          "bias": -1.7,
+          "count": 115
         },
         {
           "name": "Finance",
@@ -4700,8 +4700,8 @@
         },
         {
           "name": "Technology",
-          "bias": -1.85,
-          "count": 117
+          "bias": -1.7,
+          "count": 115
         }
       ],
       "neg": [
@@ -4712,7 +4712,7 @@
         },
         {
           "name": "Communication",
-          "bias": -9.4,
+          "bias": -9.98,
           "count": 24
         },
         {
@@ -4725,32 +4725,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-04-05T17:49:07.009Z",
-          "pos": 8,
-          "neu": 81,
+          "label": "2026-04-05T18:03:38.121Z",
+          "pos": 7,
+          "neu": 83,
           "neg": 10,
           "count": 13
         },
         {
-          "label": "2026-04-05T18:49:07.009Z",
-          "pos": 9,
-          "neu": 80,
-          "neg": 11,
-          "count": 18
+          "label": "2026-04-05T19:03:38.121Z",
+          "pos": 10,
+          "neu": 77,
+          "neg": 14,
+          "count": 15
         },
         {
-          "label": "2026-04-05T19:49:07.009Z",
+          "label": "2026-04-05T20:03:38.121Z",
           "pos": 8,
           "neu": 80,
-          "neg": 13,
-          "count": 17
+          "neg": 12,
+          "count": 15
         },
         {
-          "label": "2026-04-05T20:49:07.009Z",
-          "pos": 4,
-          "neu": 81,
-          "neg": 15,
-          "count": 9
+          "label": "2026-04-05T21:03:38.121Z",
+          "pos": 3,
+          "neu": 83,
+          "neg": 14,
+          "count": 10
         }
       ]
     }
@@ -4774,6 +4774,26 @@
           "negP": 28,
           "label": "negative",
           "confidence": 0.8885
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump issues expletive-laden threat  to Iran over Hormuz Strait blockage",
+        "link": "https://www.bbc.com/news/articles/cvg0q6wdzp1o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The US president says he will destroy Iranian power plants and bridges if the vital waterway is not reopened.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+        "publishedAt": "2026-04-05T21:10:06.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 74,
+          "negP": 20,
+          "label": "negative",
+          "confidence": 0.6908
         },
         "category": "world"
       },
@@ -4976,26 +4996,6 @@
           "confidence": 0.6486
         },
         "category": "world"
-      },
-      {
-        "title": "Trump threatens ‘hell’ for Iran over Hormuz Strait as deadline approaches",
-        "link": "https://www.aljazeera.com/news/2026/4/5/trump-threatens-hell-for-iran-over-hormuz-strait-as-deadline-approaches?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "US president threatens to strike power plants and bridges on Tuesday in an expletive-laden social media post.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-02T020031Z_1375644378_RC2PGKAV4QSC_RTRMADP_3_IRAN-CRISIS-TRUMP-ADDRESS-1775097587.jpg?resize=1200%2C630",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-02T020031Z_1375644378_RC2PGKAV4QSC_RTRMADP_3_IRAN-CRISIS-TRUMP-ADDRESS-1775097587.jpg?resize=1200%2C630",
-        "publishedAt": "2026-04-05T15:32:02.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 79,
-          "negP": 21,
-          "label": "negative",
-          "confidence": 0.6908
-        },
-        "category": "world"
       }
     ],
     "dailyNews": [
@@ -5016,6 +5016,26 @@
           "negP": 28,
           "label": "negative",
           "confidence": 0.8885
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump issues expletive-laden threat  to Iran over Hormuz Strait blockage",
+        "link": "https://www.bbc.com/news/articles/cvg0q6wdzp1o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The US president says he will destroy Iranian power plants and bridges if the vital waterway is not reopened.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/b501/live/37f5e130-3133-11f1-a79a-77e93010d956.jpg",
+        "publishedAt": "2026-04-05T21:10:06.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 74,
+          "negP": 20,
+          "label": "negative",
+          "confidence": 0.6908
         },
         "category": "world"
       },
@@ -5320,46 +5340,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump vows Iran will be 'living in Hell' by Tuesday if Strait of Hormuz deadline missed",
-        "link": "https://www.cnbc.com/2026/04/05/us-trump-confirms-missing-us-pilot-rescued.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "\"Tuesday will be Power Plant Day, and Bridge Day, all wrapped up in one, in Iran. There will be nothing like it!!!\" Trump said in a Truth Social post.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-05T18:51:20.000Z",
-        "sentiment": {
-          "posP": 4.4,
-          "negP": 18.8,
-          "neuP": 76.8,
-          "label": "negative",
-          "confidence": 0.82
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Warsh nomination moves ahead, putting Trump's competing Fed plans on a collision course",
-        "link": "https://www.cnbc.com/2026/04/04/warsh-fed-nomination-hearing-set-for-mid-april.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A Senate committee will consider Kevin Warsh's nomination even as one of its members still plans to block it.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-04T13:19:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 16.2,
-          "neuP": 83.8,
-          "label": "negative",
-          "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
         "title": "\"WE GOT HIM!,\" Trump declares after U.S. airman rescued deep inside Iran",
         "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-warns-more-coming-oil-gas-strait-hormuz/",
         "source": "CBS News",
@@ -5400,91 +5380,111 @@
         "category": "usa"
       },
       {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
+        "title": "Trump vows Iran will be 'living in Hell' by Tuesday if Strait of Hormuz deadline missed",
+        "link": "https://www.cnbc.com/2026/04/05/us-trump-confirms-missing-us-pilot-rescued.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "description": "\"Tuesday will be Power Plant Day, and Bridge Day, all wrapped up in one, in Iran. There will be nothing like it!!!\" Trump said in a Truth Social post.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "publishedAt": "2026-04-05T18:51:20.000Z",
         "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
+          "posP": 4.4,
+          "negP": 18.8,
+          "neuP": 76.8,
           "label": "negative",
-          "confidence": 0.67
+          "confidence": 0.82
         },
         "category": "usa"
       },
       {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
+        "title": "Warsh nomination moves ahead, putting Trump's competing Fed plans on a collision course",
+        "link": "https://www.cnbc.com/2026/04/04/warsh-fed-nomination-hearing-set-for-mid-april.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "description": "A Senate committee will consider Kevin Warsh's nomination even as one of its members still plans to block it.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
-        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-24T22:56:00.000Z",
+        "publishedAt": "2026-04-04T13:19:30.000Z",
         "sentiment": {
           "posP": 0,
+          "negP": 16.2,
+          "neuP": 83.8,
+          "label": "negative",
+          "confidence": 0.66
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Tim Kaine calls on Trump to 'dial back the rhetoric' after US jet is downed in Iran: Full interview",
+        "link": "https://www.nbcnews.com/meet-the-press/video/tim-kaine-calls-on-trump-to-dial-back-the-rhetoric-after-u-s-jet-is-downed-full-interview-260736581530",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In an interview with Meet the Press, Sen. Tim Kaine (D-Va.) reacts to the latest developments in the war with Iran as the White House asks Congress to approve a major increase to the Pentagon budget.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-05T13:26:26.000Z",
+        "sentiment": {
+          "posP": 4,
+          "negP": 6.7,
+          "neuP": 89.3,
+          "label": "negative",
+          "confidence": 0.38
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Exclusive: Trump reacts to ‘Easter Miracle’ rescue of downed U.S. airman",
+        "link": "https://www.nbcnews.com/meet-the-press/video/exclusive-trump-reacts-to-easter-miracle-rescue-of-downed-u-s-airman-260734533647",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In a text message to Meet the Press moderator Kristen Welker, President Trump reacts to U.S. forces safely rescuing the second F-15E crew member of a two-seat fighter jet that went down over Iran on Friday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-05T13:08:30.000Z",
+        "sentiment": {
+          "posP": 19,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 81,
+          "label": "positive",
+          "confidence": 0.82
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Sen. Kaine skeptical Congress will pass $1.5T military budget",
+        "link": "https://www.nbcnews.com/video/shorts/sen-kaine-skeptical-congress-will-pass-1-5t-military-budget-260737605801",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Sen. Tim Kaine, D-Va., expressed skepticism on “Meet the Press” Sunday about the Trump administration’s 2027 budget plan, which includes a request of $1.5 trillion from Congress to fund the Defense Department.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-05T14:54:26.000Z",
+        "sentiment": {
+          "posP": 3.5,
+          "negP": 10,
+          "neuP": 86.5,
+          "label": "negative",
+          "confidence": 0.42
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.35,
-      "neu": 79.5,
-      "neg": 13.14,
-      "count": 36
+      "pos": 7.32,
+      "neu": 79.35,
+      "neg": 13.33,
+      "count": 37
     },
     "sourceLeaderboard": [
       {
@@ -5514,6 +5514,13 @@
         "neu": 85.3,
         "neg": 9.88,
         "count": 4
+      },
+      {
+        "source": "BBC",
+        "pos": 10.5,
+        "neu": 70,
+        "neg": 19.5,
+        "count": 2
       },
       {
         "source": "Al Jazeera",
@@ -5554,10 +5561,10 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.1,
-        "neu": 79.36,
-        "neg": 13.55,
-        "count": 26
+        "pos": 7.06,
+        "neu": 79.16,
+        "neg": 13.79,
+        "count": 27
       },
       {
         "topic": "Foreign Policy",
@@ -5591,9 +5598,9 @@
   },
   "sentiment": {
     "overall": {
-      "pos": 7.58,
-      "neu": 80.65,
-      "neg": 11.78,
+      "pos": 7.63,
+      "neu": 80.43,
+      "neg": 11.94,
       "count": 120
     },
     "india": {
@@ -5603,37 +5610,37 @@
       "count": 21
     },
     "world": {
-      "pos": 8.08,
-      "neu": 79.97,
-      "neg": 11.95,
+      "pos": 8.14,
+      "neu": 79.71,
+      "neg": 12.15,
       "count": 99
     }
   },
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-04-05T17:49:07.011Z",
-        "pos": 11,
-        "neu": 78,
+        "label": "2026-04-05T18:03:38.123Z",
+        "pos": 3,
+        "neu": 86,
         "neg": 11,
         "count": 5
       },
       {
-        "label": "2026-04-05T18:49:07.011Z",
+        "label": "2026-04-05T19:03:38.123Z",
         "pos": 0,
-        "neu": 85,
-        "neg": 16,
-        "count": 4
+        "neu": 79,
+        "neg": 21,
+        "count": 3
       },
       {
-        "label": "2026-04-05T19:49:07.011Z",
+        "label": "2026-04-05T20:03:38.123Z",
         "pos": 6,
         "neu": 94,
         "neg": 0,
         "count": 1
       },
       {
-        "label": "2026-04-05T20:49:07.011Z",
+        "label": "2026-04-05T21:03:38.123Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5642,31 +5649,31 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-04-05T17:49:07.011Z",
-        "pos": 8,
+        "label": "2026-04-05T18:03:38.123Z",
+        "pos": 7,
         "neu": 81,
+        "neg": 12,
+        "count": 26
+      },
+      {
+        "label": "2026-04-05T19:03:38.123Z",
+        "pos": 10,
+        "neu": 76,
+        "neg": 14,
+        "count": 19
+      },
+      {
+        "label": "2026-04-05T20:03:38.123Z",
+        "pos": 7,
+        "neu": 82,
         "neg": 11,
-        "count": 31
+        "count": 10
       },
       {
-        "label": "2026-04-05T18:49:07.011Z",
-        "pos": 10,
-        "neu": 77,
-        "neg": 13,
-        "count": 21
-      },
-      {
-        "label": "2026-04-05T19:49:07.011Z",
-        "pos": 10,
-        "neu": 77,
-        "neg": 13,
-        "count": 13
-      },
-      {
-        "label": "2026-04-05T20:49:07.011Z",
-        "pos": 1,
-        "neu": 84,
-        "neg": 16,
+        "label": "2026-04-05T21:03:38.123Z",
+        "pos": 2,
+        "neu": 79,
+        "neg": 19,
         "count": 4
       }
     ]
@@ -5690,7 +5697,7 @@
       },
       {
         "name": "Communication",
-        "bias": -6.09,
+        "bias": -6.26,
         "count": 86
       }
     ],
@@ -5715,7 +5722,7 @@
       },
       {
         "name": "Communication",
-        "bias": -6.09,
+        "bias": -6.26,
         "count": 86
       }
     ]
@@ -5737,8 +5744,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 170,
-      "potusArticles": 36,
+      "usaArticles": 169,
+      "potusArticles": 37,
       "sourceRows": 10,
       "industryRows": 4,
       "trendingPoints": 12
