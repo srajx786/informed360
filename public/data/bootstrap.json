@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-04-05T22:03:38.120Z",
+  "generatedAt": "2026-04-05T22:45:27.889Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 169,
+    "usaArticles": 172,
     "potusArticles": 37
   },
   "version": 1,
@@ -92,6 +92,46 @@
   ],
   "news": {
     "articles": [
+      {
+        "title": "NIA launches probe into terror module planning attacks in Delhi, Punjab",
+        "link": "https://www.hindustantimes.com/india-news/nia-launches-probe-into-terror-module-planning-delhi-attack-101775415839350.html",
+        "source": "Hindustan Times",
+        "sourceDomain": "hindustantimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "NIA investigates a Pakistan-backed plot to smuggle arms into India for blasts in Delhi and Punjab, linked to ISI operative Jasvir Chaudhary.",
+        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/The-National-Investigation-Agency--NIA--has-charge_1775425303982_1775425304141.jpg",
+        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/The-National-Investigation-Agency--NIA--has-charge_1775425303982_1775425304141.jpg",
+        "publishedAt": "2026-04-05T22:30:31.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 76,
+          "negP": 24,
+          "label": "negative",
+          "confidence": 0.836
+        },
+        "category": "india"
+      },
+      {
+        "title": "Jackal attack claim unravels into murder, husband, grandsons arrested in Bihar",
+        "link": "https://www.indiatoday.in/india/bihar/story/jackal-attack-claim-unravels-into-murder-husband-grandsons-arrested-in-bihar-2892028-2026-04-06?utm_source=rss",
+        "source": "India Today",
+        "sourceDomain": "indiatoday.in",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Jackal attack claim unravels into murder husband grandsons arrested in Bihar",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/bihar-kathihar-murder-053902378-16x9_0.jpg?VersionId=j15LY.D6KzkSlYfOSBiZpLA2_Kd1SprF",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/bihar-kathihar-murder-053902378-16x9_0.jpg?VersionId=j15LY.D6KzkSlYfOSBiZpLA2_Kd1SprF",
+        "publishedAt": "2026-04-05T21:57:21.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 42,
+          "negP": 58,
+          "label": "negative",
+          "confidence": 0.9712
+        },
+        "category": "india"
+      },
       {
         "title": "'We are at the edge of a battlefield': BBC reports near Strait of Hormuz",
         "link": "https://www.bbc.com/news/videos/c3r3vw4j38do?at_medium=RSS&at_campaign=rss",
@@ -473,6 +513,26 @@
         "category": "world"
       },
       {
+        "title": "Govt. keen to resolve pending issues of employees: Atchannaidu",
+        "link": "https://www.thehindu.com/news/national/andhra-pradesh/govt-keen-to-resolve-pending-issues-of-employees-atchannaidu/article70826655.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Andhra Pradesh Agriculture Minister Atchannaidu said employees’ role was critical in meeting the people’s aspirations",
+        "image": "https://th-i.thgim.com/public/news/national/kihxum/article70827858.ece/alternates/LANDSCAPE_1200/AP.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/news/national/kihxum/article70827858.ece/alternates/LANDSCAPE_1200/AP.jpg",
+        "publishedAt": "2026-04-05T19:48:42.000Z",
+        "sentiment": {
+          "posP": 18,
+          "neuP": 74,
+          "negP": 8,
+          "label": "positive",
+          "confidence": 0.4215
+        },
+        "category": "world"
+      },
+      {
         "title": "Akash Vishwanath More of Congress to contest Baramati Bypoll",
         "link": "https://www.thehindu.com/news/national/maharashtra/akash-vishwanath-more-of-congress-to-contest-baramati-bypoll/article70827469.ece",
         "source": "The Hindu",
@@ -773,6 +833,26 @@
         "category": "world"
       },
       {
+        "title": "Hungary alleges plot to blow up gas pipeline ahead of election",
+        "link": "https://www.bbc.com/news/articles/cj60x206dx1o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The incident comes a week before the polls, and follow warnings of a potential operations staged to influence voters.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/6c1f/live/b9410ce0-310d-11f1-8078-2797c344ad7d.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/6c1f/live/b9410ce0-310d-11f1-8078-2797c344ad7d.jpg",
+        "publishedAt": "2026-04-05T19:17:42.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 92,
+          "negP": 8,
+          "label": "negative",
+          "confidence": 0.296
+        },
+        "category": "world"
+      },
+      {
         "title": "Conversion politics, the challenge to secularism",
         "link": "https://www.thehindu.com/opinion/op-ed/conversion-politics-the-challenge-to-secularism/article70826585.ece",
         "source": "The Hindu",
@@ -809,6 +889,26 @@
           "negP": 10,
           "label": "negative",
           "confidence": 0.4805
+        },
+        "category": "world"
+      },
+      {
+        "title": "Wayanad relief fund issue sets political tone in last lap of electioneering in Kerala Assembly polls",
+        "link": "https://www.thehindu.com/elections/wayanad-relief-fund-scam-sets-political-tone-in-last-lap-of-electioneering-in-kerala-assembly-polls/article70827324.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The Congress has found itself on the defensive, as the CPI (M) has sought the details of the funds collected by the party and its utilisation",
+        "image": "https://www.thehindu.com/theme/images/og-image.png",
+        "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
+        "publishedAt": "2026-04-05T19:08:35.000Z",
+        "sentiment": {
+          "posP": 15,
+          "neuP": 85,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7096
         },
         "category": "world"
       },
@@ -1973,6 +2073,26 @@
         "category": "world"
       },
       {
+        "title": "Chetak Screen Awards 2026: Female celebs who set the red carpet ablaze - The Indian Express",
+        "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUl84N0c4LUNIVHRKLTNSaGJ0dm9teHA4ZHQyUXJZUHBJQnJ6MDlDeEpia2xFQTFMb0FOVlg2QWh2dVdveVZBb2NlUHdfMVVsTHRTY1BuRDN5RlY2ckRmczBzOFo5RXlUOXBna3ItamxaZl9wWUF2NkJaNnBSZF9uWDhXZmlyT2dhODJrcXhoMlcwWW9YYUdET2QzcUVEMVNRZ3BRT0JqeE04ejYxa1JSSmZqT00xaTV1Yllj0gG7AUFVX3lxTE5SXzg3RzgtQ0hUdEotM1JoYnR2b214cDhkdDJRcllQcElCcnowOUN4SmJrbEVBMUxvQU5WWDZBaHZ1V295VkFvY2VQd18xVWxMdFNjUG5EM3lGVjZyRGZzMHM4WjlFeVQ5cGdrci1qbFpmX3BZQXY2Qlo2cFJkX25YOFdmaXJPZ2E4MmtxeGgyVzBZb1hhR0RPZDNxRUQxU1FncFFPQmp4TTh6NjFrUlJKZmpPTTFpNXViWWM?oc=5",
+        "source": "\"site:indianexpress.com\" - Google News",
+        "sourceDomain": "news.google.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Chetak Screen Awards 2026: Female celebs who set the red carpet ablaze  The Indian Express",
+        "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+        "imageUrl": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+        "publishedAt": "2026-04-05T16:58:36.000Z",
+        "sentiment": {
+          "posP": 18,
+          "neuP": 82,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7184
+        },
+        "category": "india"
+      },
+      {
         "title": "Your reckless moves dragging US into living hell: Iran fires back at Trump's expletive-laden rant",
         "link": "https://www.indiatoday.in/world/story/your-reckless-moves-dragging-us-into-living-hell-iran-fires-back-at-trumps-expletive-laden-rant-2891992-2026-04-05?utm_source=rss",
         "source": "India Today",
@@ -2011,46 +2131,6 @@
           "confidence": 0.9081
         },
         "category": "india"
-      },
-      {
-        "title": "Govt. keen to resolve pending issues of employees: Atchannaidu",
-        "link": "https://www.thehindu.com/news/national/andhra-pradesh/govt-keen-to-resolve-pending-issues-of-employees-atchannaidu/article70826655.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "",
-        "image": "https://th-i.thgim.com/public/incoming/8rf0du/article70827320.ece/alternates/LANDSCAPE_1200/10215_4_4_2026_19_6_31_1_WHATSAPPIMAGE2026_04_04AT65630PM.JPEG",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/8rf0du/article70827320.ece/alternates/LANDSCAPE_1200/10215_4_4_2026_19_6_31_1_WHATSAPPIMAGE2026_04_04AT65630PM.JPEG",
-        "publishedAt": "2026-04-05T16:41:08.000Z",
-        "sentiment": {
-          "posP": 42,
-          "neuP": 58,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.6249
-        },
-        "category": "world"
-      },
-      {
-        "title": "Hungary alleges plot to blow up gas pipeline ahead of election",
-        "link": "https://www.bbc.com/news/articles/cj60x206dx1o?at_medium=RSS&at_campaign=rss",
-        "source": "BBC",
-        "sourceDomain": "bbc.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "The incident comes a week before the polls, and follow warnings of a potential operations staged to influence voters.",
-        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/6c1f/live/b9410ce0-310d-11f1-8078-2797c344ad7d.jpg",
-        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/6c1f/live/b9410ce0-310d-11f1-8078-2797c344ad7d.jpg",
-        "publishedAt": "2026-04-05T16:38:06.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 92,
-          "negP": 8,
-          "label": "negative",
-          "confidence": 0.296
-        },
-        "category": "world"
       },
       {
         "title": "Privacy cannot be confined to legal or compliance teams: Ashok Hariharan - Business Standard",
@@ -2153,26 +2233,6 @@
         "category": "india"
       },
       {
-        "title": "Wayanad relief fund scam sets political tone in last lap of electioneering in Kerala Assembly polls",
-        "link": "https://www.thehindu.com/elections/wayanad-relief-fund-scam-sets-political-tone-in-last-lap-of-electioneering-in-kerala-assembly-polls/article70827324.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "The Congress has found itself on the defensive, as the CPI (M) has sought the details of the funds collected by the party and its utilisation",
-        "image": "https://www.thehindu.com/theme/images/og-image.png",
-        "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
-        "publishedAt": "2026-04-05T16:11:59.000Z",
-        "sentiment": {
-          "posP": 14,
-          "neuP": 78,
-          "negP": 8,
-          "label": "positive",
-          "confidence": 0.296
-        },
-        "category": "world"
-      },
-      {
         "title": "Pope warns world is becoming ‘indifferent’ to violence",
         "link": "https://www.aljazeera.com/video/newsfeed/2026/4/5/pope-warns-world-is-becoming-indifferent-to-violence?traffic_source=rss",
         "source": "Al Jazeera",
@@ -2239,16 +2299,16 @@
         "sourceDomain": "livemint.com",
         "sourceCredibility": "High",
         "industry": "Finance",
-        "description": "Punjab Police arrested two more suspects linked to the blast outside BJP headquarters in Chandigarh, increasing total arrests to seven. The accused are believed to be part of an ISI-backed module, receiving directions from handlers in Germany and Portugal.",
+        "description": "Punjab Police arrested two more alleged perpetrators linked to the blast outside BJP headquarters in Chandigarh, increasing total arrests to seven. The accused are believed to be part of an ISI-backed module, receiving directions from handlers in Germany and Portugal.",
         "image": "https://www.livemint.com/lm-img/img/2026/04/05/1600x900/PTI04-05-2026-000293A-0_1775403543089_1775403555753.jpg",
         "imageUrl": "https://www.livemint.com/lm-img/img/2026/04/05/1600x900/PTI04-05-2026-000293A-0_1775403543089_1775403555753.jpg",
         "publishedAt": "2026-04-05T15:49:50.000Z",
         "sentiment": {
           "posP": 0,
-          "neuP": 80,
-          "negP": 20,
+          "neuP": 81,
+          "negP": 19,
           "label": "negative",
-          "confidence": 0.8977
+          "confidence": 0.888
         },
         "category": "india"
       },
@@ -2431,69 +2491,42 @@
           "confidence": 0.128
         },
         "category": "india"
-      },
-      {
-        "title": "Air India suspends flights to Israel till May 31 amid Middle East conflict",
-        "link": "https://www.hindustantimes.com/india-news/air-india-suspends-flights-to-israel-till-may-31-amid-middle-east-conflict-101775394327299.html",
-        "source": "Hindustan Times",
-        "sourceDomain": "hindustantimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Most of the leading airlines have suspended their operations on the Tel Aviv route with only Israeli carriers operating under severe restrictions.",
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/IRAN-CRISIS-INDIA-AIRLINES-0_1774517000401_1774517032423_1775394364219.JPG",
-        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/IRAN-CRISIS-INDIA-AIRLINES-0_1774517000401_1774517032423_1775394364219.JPG",
-        "publishedAt": "2026-04-05T15:29:10.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 80,
-          "negP": 20,
-          "label": "negative",
-          "confidence": 0.7906
-        },
-        "category": "world"
-      },
-      {
-        "title": "Mearsheimer: No signs of quick end to US-Israel war on Iran",
-        "link": "https://www.aljazeera.com/video/the-bottom-line/2026/4/5/mearsheimer-no-signs-of-quick-end-to-us-israel-war-on-iran?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "US political scientist John Mearsheimer argues Israel, not Iran, is the Middle East country that is ‘highly aggressive’.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775402492.jpg?resize=1920%2C1080&amp;quality=80",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775402492.jpg?resize=1920%2C1080&amp;quality=80",
-        "publishedAt": "2026-04-05T15:21:39.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 75,
-          "negP": 25,
-          "label": "negative",
-          "confidence": 0.8271
-        },
-        "category": "world"
-      },
-      {
-        "title": "India's gold imports see 29% hike to $69 billion, says Commerce ministry",
-        "link": "https://www.hindustantimes.com/india-news/indias-gold-imports-see-29-hike-to-69-billion-says-commerce-ministry-101775402084128.html",
-        "source": "Hindustan Times",
-        "sourceDomain": "hindustantimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Prices of the yellow metal are hovering at around  ₹1,51,500 per 10 grams (inclusive of all taxes) in the national capital.",
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/gold_bars_1760584571281_1760584571446_1775402358407.jpg",
-        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/gold_bars_1760584571281_1760584571446_1775402358407.jpg",
-        "publishedAt": "2026-04-05T15:20:15.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "india"
       }
     ],
     "topics": [
+      {
+        "title": "chetak screen | screen awards | awards 2026",
+        "count": 2,
+        "sources": 1,
+        "sentiment": {
+          "pos": 28,
+          "neg": 0,
+          "neu": 72
+        },
+        "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw"
+      },
+      {
+        "title": "nia launches | launches probe | probe into",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 24,
+          "neu": 76
+        },
+        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/The-National-Investigation-Agency--NIA--has-charge_1775425303982_1775425304141.jpg"
+      },
+      {
+        "title": "jackal attack | attack claim | claim unravels",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 58,
+          "neu": 42
+        },
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/bihar-kathihar-murder-053902378-16x9_0.jpg?VersionId=j15LY.D6KzkSlYfOSBiZpLA2_Kd1SprF"
+      },
       {
         "title": "the edge | battlefield bbc | bbc reports",
         "count": 1,
@@ -2592,42 +2625,77 @@
           "neu": 100
         },
         "image": "/img/thumb-placeholder.svg"
-      },
-      {
-        "title": "dhanushkodi athithan | congress veteran | veteran calls",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 17,
-          "neg": 0,
-          "neu": 83
-        },
-        "image": "https://th-i.thgim.com/public/incoming/2ilhfl/article70827516.ece/alternates/LANDSCAPE_1200/2315_4_4_2026_17_5_34_2_DANUSHKODIADITYAN12.JPG"
-      },
-      {
-        "title": "has the | the humanitarian | humanitarian crisis",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 10,
-          "neg": 39,
-          "neu": 51
-        },
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775417506.jpg?resize=1920%2C1080&amp;quality=80"
-      },
-      {
-        "title": "hamas armed | armed wing | wing says",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 8,
-          "neu": 92
-        },
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-05-at-9.10.39-PM-1775412665.png?resize=1920%2C1440"
       }
     ],
     "stories": [
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "NIA launches probe into terror module planning attacks in Delhi, Punjab",
+            "link": "https://www.hindustantimes.com/india-news/nia-launches-probe-into-terror-module-planning-delhi-attack-101775415839350.html",
+            "source": "Hindustan Times",
+            "sourceDomain": "hindustantimes.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "NIA investigates a Pakistan-backed plot to smuggle arms into India for blasts in Delhi and Punjab, linked to ISI operative Jasvir Chaudhary.",
+            "image": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/The-National-Investigation-Agency--NIA--has-charge_1775425303982_1775425304141.jpg",
+            "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/The-National-Investigation-Agency--NIA--has-charge_1775425303982_1775425304141.jpg",
+            "publishedAt": "2026-04-05T22:30:31.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 76,
+              "negP": 24,
+              "label": "negative",
+              "confidence": 0.836
+            },
+            "category": "india"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Jackal attack claim unravels into murder, husband, grandsons arrested in Bihar",
+            "link": "https://www.indiatoday.in/india/bihar/story/jackal-attack-claim-unravels-into-murder-husband-grandsons-arrested-in-bihar-2892028-2026-04-06?utm_source=rss",
+            "source": "India Today",
+            "sourceDomain": "indiatoday.in",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "Jackal attack claim unravels into murder husband grandsons arrested in Bihar",
+            "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/bihar-kathihar-murder-053902378-16x9_0.jpg?VersionId=j15LY.D6KzkSlYfOSBiZpLA2_Kd1SprF",
+            "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/bihar-kathihar-murder-053902378-16x9_0.jpg?VersionId=j15LY.D6KzkSlYfOSBiZpLA2_Kd1SprF",
+            "publishedAt": "2026-04-05T21:57:21.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 42,
+              "negP": 58,
+              "label": "negative",
+              "confidence": 0.9712
+            },
+            "category": "india"
+          }
+        ]
+      },
       {
         "title": "",
         "summary": "",
@@ -2827,74 +2895,6 @@
               "negP": 0,
               "label": "positive",
               "confidence": 0.5423
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Maharashtra Congress set to overhaul organisation in ‘Sangathan Srujan Abhiyan’",
-            "link": "https://www.thehindu.com/news/national/maharashtra/maharashtra-congress-set-to-overhaul-organisation-in-sangathan-srujan-abhiyan/article70827387.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "As part of the exercise, the party is finalising the list of 72 district presidents across the State, and in a departure from past practices, the campaign will also include appointments at the taluka level, covering 675 talukas",
-            "image": "https://th-i.thgim.com/public/incoming/jofjyu/article70827880.ece/alternates/LANDSCAPE_1200/2col_with_pictuG59FCUSU1.3.jpg.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/jofjyu/article70827880.ece/alternates/LANDSCAPE_1200/2col_with_pictuG59FCUSU1.3.jpg.jpg",
-            "publishedAt": "2026-04-05T20:46:26.000Z",
-            "sentiment": {
-              "posP": 6,
-              "neuP": 94,
-              "negP": 0,
-              "label": "positive",
-              "confidence": 0.4019
-            },
-            "category": "india"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Driver faces impaired driving charges after Lao New Year incident",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/5/driver-faces-impaired-driving-charges-after-lao-new-year-incident?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "A driver in Louisiana US, was charged with impaired driving after plowing into a crowd, injuring at least 15.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775421923.jpg?resize=1920%2C1080&amp;quality=80",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775421923.jpg?resize=1920%2C1080&amp;quality=80",
-            "publishedAt": "2026-04-05T20:46:04.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 86,
-              "negP": 14,
-              "label": "negative",
-              "confidence": 0.4404
             },
             "category": "world"
           }
@@ -2915,44 +2915,58 @@
         },
         "articles": [
           {
-            "title": "Hamas armed wing says disarmament demands not acceptable",
-            "link": "https://www.aljazeera.com/news/2026/4/5/hamas-armed-wing-says-disarmament-demands-not-acceptable?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
+            "title": "NIA launches probe into terror module planning attacks in Delhi, Punjab",
+            "link": "https://www.hindustantimes.com/india-news/nia-launches-probe-into-terror-module-planning-delhi-attack-101775415839350.html",
+            "source": "Hindustan Times",
+            "sourceDomain": "hindustantimes.com",
             "sourceCredibility": "Medium",
             "industry": "Communication",
-            "description": "Spokesperson Abu Obeida says calling for the group's disarmament amounts to an attempt to continue Israel's genocide.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-05-at-9.10.39-PM-1775412665.png?resize=1920%2C1440",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-05-at-9.10.39-PM-1775412665.png?resize=1920%2C1440",
-            "publishedAt": "2026-04-05T20:09:24.000Z",
+            "description": "NIA investigates a Pakistan-backed plot to smuggle arms into India for blasts in Delhi and Punjab, linked to ISI operative Jasvir Chaudhary.",
+            "image": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/The-National-Investigation-Agency--NIA--has-charge_1775425303982_1775425304141.jpg",
+            "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/05/550x309/The-National-Investigation-Agency--NIA--has-charge_1775425303982_1775425304141.jpg",
+            "publishedAt": "2026-04-05T22:30:31.000Z",
             "sentiment": {
               "posP": 0,
-              "neuP": 92,
-              "negP": 8,
+              "neuP": 76,
+              "negP": 24,
               "label": "negative",
-              "confidence": 0.2411
+              "confidence": 0.836
             },
-            "category": "world"
-          },
+            "category": "india"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
           {
-            "title": "Hamas armed wing rejects disarmament while Israel continues attacks",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/5/hamas-armed-wing-rejects-disarmament-while-israel-continues-attacks?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
+            "title": "Jackal attack claim unravels into murder, husband, grandsons arrested in Bihar",
+            "link": "https://www.indiatoday.in/india/bihar/story/jackal-attack-claim-unravels-into-murder-husband-grandsons-arrested-in-bihar-2892028-2026-04-06?utm_source=rss",
+            "source": "India Today",
+            "sourceDomain": "indiatoday.in",
             "sourceCredibility": "Medium",
             "industry": "Communication",
-            "description": "Hamas’s armed wing says it will not discuss disarmament before Israel fully implements the first phase of ceasefire.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Hamas-rejects-disarmement-1775419315.png?resize=1884%2C1080",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Hamas-rejects-disarmement-1775419315.png?resize=1884%2C1080",
-            "publishedAt": "2026-04-05T20:03:50.000Z",
+            "description": "Jackal attack claim unravels into murder husband grandsons arrested in Bihar",
+            "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/bihar-kathihar-murder-053902378-16x9_0.jpg?VersionId=j15LY.D6KzkSlYfOSBiZpLA2_Kd1SprF",
+            "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/bihar-kathihar-murder-053902378-16x9_0.jpg?VersionId=j15LY.D6KzkSlYfOSBiZpLA2_Kd1SprF",
+            "publishedAt": "2026-04-05T21:57:21.000Z",
             "sentiment": {
               "posP": 0,
-              "neuP": 80,
-              "negP": 20,
+              "neuP": 42,
+              "negP": 58,
               "label": "negative",
-              "confidence": 0.7269
+              "confidence": 0.9712
             },
-            "category": "world"
+            "category": "india"
           }
         ]
       },
@@ -3157,40 +3171,6 @@
               "confidence": 0.5423
             },
             "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Maharashtra Congress set to overhaul organisation in ‘Sangathan Srujan Abhiyan’",
-            "link": "https://www.thehindu.com/news/national/maharashtra/maharashtra-congress-set-to-overhaul-organisation-in-sangathan-srujan-abhiyan/article70827387.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "As part of the exercise, the party is finalising the list of 72 district presidents across the State, and in a departure from past practices, the campaign will also include appointments at the taluka level, covering 675 talukas",
-            "image": "https://th-i.thgim.com/public/incoming/jofjyu/article70827880.ece/alternates/LANDSCAPE_1200/2col_with_pictuG59FCUSU1.3.jpg.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/jofjyu/article70827880.ece/alternates/LANDSCAPE_1200/2col_with_pictuG59FCUSU1.3.jpg.jpg",
-            "publishedAt": "2026-04-05T20:46:26.000Z",
-            "sentiment": {
-              "posP": 6,
-              "neuP": 94,
-              "negP": 0,
-              "label": "positive",
-              "confidence": 0.4019
-            },
-            "category": "india"
           }
         ]
       }
@@ -3611,83 +3591,83 @@
     ],
     "sentiment": {
       "overall": {
-        "pos": 7.63,
-        "neu": 80.43,
-        "neg": 11.94,
+        "pos": 7.58,
+        "neu": 80.17,
+        "neg": 12.24,
         "count": 120
       },
       "india": {
-        "pos": 5.19,
-        "neu": 83.86,
-        "neg": 10.95,
-        "count": 21
+        "pos": 5.52,
+        "neu": 80.96,
+        "neg": 13.52,
+        "count": 23
       },
       "world": {
-        "pos": 8.14,
-        "neu": 79.71,
-        "neg": 12.15,
-        "count": 99
+        "pos": 8.07,
+        "neu": 79.99,
+        "neg": 11.94,
+        "count": 97
       }
     },
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-04-05T18:03:38.120Z",
-          "pos": 3,
-          "neu": 86,
-          "neg": 11,
-          "count": 5
-        },
-        {
-          "label": "2026-04-05T19:03:38.120Z",
+          "label": "2026-04-05T18:45:27.890Z",
           "pos": 0,
-          "neu": 79,
-          "neg": 21,
+          "neu": 88,
+          "neg": 12,
           "count": 3
         },
         {
-          "label": "2026-04-05T20:03:38.120Z",
+          "label": "2026-04-05T19:45:27.890Z",
+          "pos": 0,
+          "neu": 75,
+          "neg": 25,
+          "count": 1
+        },
+        {
+          "label": "2026-04-05T20:45:27.890Z",
           "pos": 6,
           "neu": 94,
           "neg": 0,
           "count": 1
         },
         {
-          "label": "2026-04-05T21:03:38.120Z",
+          "label": "2026-04-05T21:45:27.890Z",
           "pos": 0,
-          "neu": 0,
-          "neg": 0,
-          "count": 0
+          "neu": 59,
+          "neg": 41,
+          "count": 2
         }
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-04-05T18:03:38.120Z",
-          "pos": 7,
-          "neu": 81,
+          "label": "2026-04-05T18:45:27.890Z",
+          "pos": 9,
+          "neu": 78,
           "neg": 12,
-          "count": 26
+          "count": 23
         },
         {
-          "label": "2026-04-05T19:03:38.120Z",
-          "pos": 10,
-          "neu": 76,
+          "label": "2026-04-05T19:45:27.890Z",
+          "pos": 11,
+          "neu": 75,
+          "neg": 13,
+          "count": 12
+        },
+        {
+          "label": "2026-04-05T20:45:27.890Z",
+          "pos": 4,
+          "neu": 83,
           "neg": 14,
-          "count": 19
+          "count": 7
         },
         {
-          "label": "2026-04-05T20:03:38.120Z",
-          "pos": 7,
-          "neu": 82,
-          "neg": 11,
-          "count": 10
-        },
-        {
-          "label": "2026-04-05T21:03:38.120Z",
-          "pos": 2,
-          "neu": 79,
-          "neg": 19,
-          "count": 4
+          "label": "2026-04-05T21:45:27.890Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
         }
       ]
     },
@@ -3706,13 +3686,13 @@
           },
           {
             "name": "Finance",
-            "bias": -8.63,
+            "bias": -8.56,
             "count": 16
           },
           {
             "name": "Communication",
-            "bias": -6.26,
-            "count": 86
+            "bias": -7.04,
+            "count": 85
           }
         ],
         "pos": [
@@ -3731,36 +3711,36 @@
         "neg": [
           {
             "name": "Finance",
-            "bias": -8.63,
+            "bias": -8.56,
             "count": 16
           },
           {
             "name": "Communication",
-            "bias": -6.26,
-            "count": 86
+            "bias": -7.04,
+            "count": 85
           }
         ]
       },
       "sources": [
         {
           "source": "The Hindu",
-          "pos": 10.2,
-          "neu": 80.9,
+          "pos": 9.43,
+          "neu": 81.67,
           "neg": 8.9,
           "count": 30
         },
         {
           "source": "Al Jazeera",
-          "pos": 4.88,
-          "neu": 78.67,
-          "neg": 16.46,
-          "count": 24
+          "pos": 5.09,
+          "neu": 78.83,
+          "neg": 16.09,
+          "count": 23
         },
         {
           "source": "Mint",
           "pos": 4.13,
-          "neu": 83.13,
-          "neg": 12.75,
+          "neu": 83.19,
+          "neg": 12.69,
           "count": 16
         },
         {
@@ -3772,10 +3752,10 @@
         },
         {
           "source": "India Today",
-          "pos": 6.11,
-          "neu": 72,
-          "neg": 21.89,
-          "count": 9
+          "pos": 5.5,
+          "neu": 69,
+          "neg": 25.5,
+          "count": 10
         },
         {
           "source": "NDTV News- Special",
@@ -3786,10 +3766,10 @@
         },
         {
           "source": "Hindustan Times",
-          "pos": 4.83,
-          "neu": 84.33,
-          "neg": 10.83,
-          "count": 6
+          "pos": 5.8,
+          "neu": 80.4,
+          "neg": 13.8,
+          "count": 5
         },
         {
           "source": "BBC",
@@ -3811,6 +3791,13 @@
           "neu": 90.25,
           "neg": 2.75,
           "count": 4
+        },
+        {
+          "source": "\"site:indianexpress.com\" - Google News",
+          "pos": 28,
+          "neu": 72,
+          "neg": 0,
+          "count": 2
         }
       ]
     }
@@ -4541,24 +4528,24 @@
       }
     ],
     "sentiment": {
-      "pos": 7.79,
-      "neu": 81.19,
-      "neg": 11.02,
-      "count": 169
+      "pos": 8.17,
+      "neu": 81.31,
+      "neg": 10.52,
+      "count": 172
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.48,
-        "neu": 83.1,
-        "neg": 7.41,
-        "count": 40
+        "pos": 10.29,
+        "neu": 82.68,
+        "neg": 7.03,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 9.18,
-        "neu": 81.25,
-        "neg": 9.56,
+        "pos": 9.75,
+        "neu": 82.59,
+        "neg": 7.67,
         "count": 20
       },
       {
@@ -4569,13 +4556,6 @@
         "count": 20
       },
       {
-        "source": "WSJ",
-        "pos": 6.34,
-        "neu": 79.08,
-        "neg": 14.58,
-        "count": 20
-      },
-      {
         "source": "ABC News",
         "pos": 10.72,
         "neu": 79.1,
@@ -4583,11 +4563,18 @@
         "count": 20
       },
       {
+        "source": "WSJ",
+        "pos": 6.34,
+        "neu": 79.08,
+        "neg": 14.58,
+        "count": 20
+      },
+      {
         "source": "NYT",
-        "pos": 6.31,
-        "neu": 81.65,
-        "neg": 12.04,
-        "count": 11
+        "pos": 7.88,
+        "neu": 81.93,
+        "neg": 10.19,
+        "count": 16
       },
       {
         "source": "Mint",
@@ -4597,18 +4584,18 @@
         "count": 7
       },
       {
-        "source": "Al Jazeera",
-        "pos": 2.14,
-        "neu": 76.14,
-        "neg": 21.71,
-        "count": 7
-      },
-      {
         "source": "Washington Post",
         "pos": 11.43,
         "neu": 78,
         "neg": 10.57,
         "count": 7
+      },
+      {
+        "source": "Al Jazeera",
+        "pos": 2.5,
+        "neu": 76.33,
+        "neg": 21.17,
+        "count": 6
       },
       {
         "source": "The Hindu",
@@ -4646,33 +4633,33 @@
         },
         {
           "name": "Communication",
-          "bias": -9.98,
+          "bias": -8.63,
           "count": 24
         },
         {
           "name": "Healthcare",
-          "bias": -9.3,
-          "count": 10
-        },
-        {
-          "name": "Real Estate",
-          "bias": -5.36,
-          "count": 5
+          "bias": -6.9,
+          "count": 8
         },
         {
           "name": "Energy",
-          "bias": -5.18,
-          "count": 12
+          "bias": -6.41,
+          "count": 13
         },
         {
-          "name": "Technology",
-          "bias": -1.7,
-          "count": 115
+          "name": "Real Estate",
+          "bias": -4.99,
+          "count": 7
         },
         {
           "name": "Finance",
           "bias": -1.21,
           "count": 13
+        },
+        {
+          "name": "Technology",
+          "bias": -0.96,
+          "count": 120
         },
         {
           "name": "Utilities",
@@ -4689,19 +4676,19 @@
       ],
       "neu": [
         {
-          "name": "Real Estate",
-          "bias": -5.36,
-          "count": 5
-        },
-        {
           "name": "Energy",
-          "bias": -5.18,
-          "count": 12
+          "bias": -6.41,
+          "count": 13
         },
         {
-          "name": "Technology",
-          "bias": -1.7,
-          "count": 115
+          "name": "Real Estate",
+          "bias": -4.99,
+          "count": 7
+        },
+        {
+          "name": "Finance",
+          "bias": -1.21,
+          "count": 13
         }
       ],
       "neg": [
@@ -4712,45 +4699,45 @@
         },
         {
           "name": "Communication",
-          "bias": -9.98,
+          "bias": -8.63,
           "count": 24
         },
         {
           "name": "Healthcare",
-          "bias": -9.3,
-          "count": 10
+          "bias": -6.9,
+          "count": 8
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-04-05T18:03:38.121Z",
-          "pos": 7,
-          "neu": 83,
+          "label": "2026-04-05T18:45:27.891Z",
+          "pos": 10,
+          "neu": 80,
           "neg": 10,
-          "count": 13
+          "count": 16
         },
         {
-          "label": "2026-04-05T19:03:38.121Z",
-          "pos": 10,
+          "label": "2026-04-05T19:45:27.891Z",
+          "pos": 9,
           "neu": 77,
           "neg": 14,
-          "count": 15
+          "count": 12
         },
         {
-          "label": "2026-04-05T20:03:38.121Z",
-          "pos": 8,
-          "neu": 80,
-          "neg": 12,
-          "count": 15
-        },
-        {
-          "label": "2026-04-05T21:03:38.121Z",
-          "pos": 3,
-          "neu": 83,
+          "label": "2026-04-05T20:45:27.891Z",
+          "pos": 4,
+          "neu": 82,
           "neg": 14,
-          "count": 10
+          "count": 11
+        },
+        {
+          "label": "2026-04-05T21:45:27.891Z",
+          "pos": 9,
+          "neu": 83,
+          "neg": 9,
+          "count": 12
         }
       ]
     }
@@ -5309,7 +5296,7 @@
         "description": "The president said he would bomb Iran “back to the Stone Ages.” Until this administration, American leaders had insisted they were trying to follow international law in war.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-04-05T20:15:57.000Z",
+        "publishedAt": "2026-04-05T22:00:48.000Z",
         "sentiment": {
           "posP": 4.5,
           "negP": 28.2,
@@ -5380,46 +5367,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump vows Iran will be 'living in Hell' by Tuesday if Strait of Hormuz deadline missed",
-        "link": "https://www.cnbc.com/2026/04/05/us-trump-confirms-missing-us-pilot-rescued.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "\"Tuesday will be Power Plant Day, and Bridge Day, all wrapped up in one, in Iran. There will be nothing like it!!!\" Trump said in a Truth Social post.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-05T18:51:20.000Z",
-        "sentiment": {
-          "posP": 4.4,
-          "negP": 18.8,
-          "neuP": 76.8,
-          "label": "negative",
-          "confidence": 0.82
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Warsh nomination moves ahead, putting Trump's competing Fed plans on a collision course",
-        "link": "https://www.cnbc.com/2026/04/04/warsh-fed-nomination-hearing-set-for-mid-april.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A Senate committee will consider Kevin Warsh's nomination even as one of its members still plans to block it.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-04T13:19:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 16.2,
-          "neuP": 83.8,
-          "label": "negative",
-          "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
         "title": "Tim Kaine calls on Trump to 'dial back the rhetoric' after US jet is downed in Iran: Full interview",
         "link": "https://www.nbcnews.com/meet-the-press/video/tim-kaine-calls-on-trump-to-dial-back-the-rhetoric-after-u-s-jet-is-downed-full-interview-260736581530",
         "source": "NBC News",
@@ -5476,6 +5423,46 @@
           "neuP": 86.5,
           "label": "negative",
           "confidence": 0.42
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump calls rescue of F-15E airman an ‘Easter Miracle’",
+        "link": "https://www.nbcnews.com/video/shorts/trump-calls-rescue-of-f-15e-airman-an-easter-miracle-260738629582",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In a text message to “Meet the Press” moderator Kristen Welker, President Trump reacted to U.S. forces safely rescuing the second F-15E crew member of a two-seat fighter jet that went down over Iran on Friday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-05T14:35:46.000Z",
+        "sentiment": {
+          "posP": 16.8,
+          "negP": 0,
+          "neuP": 83.2,
+          "label": "positive",
+          "confidence": 0.8
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump vows Iran will be 'living in Hell' by Tuesday if Strait of Hormuz deadline missed",
+        "link": "https://www.cnbc.com/2026/04/05/us-trump-confirms-missing-us-pilot-rescued.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "\"Tuesday will be Power Plant Day, and Bridge Day, all wrapped up in one, in Iran. There will be nothing like it!!!\" Trump said in a Truth Social post.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-05T18:51:20.000Z",
+        "sentiment": {
+          "posP": 4.4,
+          "negP": 18.8,
+          "neuP": 76.8,
+          "label": "negative",
+          "confidence": 0.82
         },
         "category": "usa"
       }
@@ -5598,83 +5585,83 @@
   },
   "sentiment": {
     "overall": {
-      "pos": 7.63,
-      "neu": 80.43,
-      "neg": 11.94,
+      "pos": 7.58,
+      "neu": 80.17,
+      "neg": 12.24,
       "count": 120
     },
     "india": {
-      "pos": 5.19,
-      "neu": 83.86,
-      "neg": 10.95,
-      "count": 21
+      "pos": 5.52,
+      "neu": 80.96,
+      "neg": 13.52,
+      "count": 23
     },
     "world": {
-      "pos": 8.14,
-      "neu": 79.71,
-      "neg": 12.15,
-      "count": 99
+      "pos": 8.07,
+      "neu": 79.99,
+      "neg": 11.94,
+      "count": 97
     }
   },
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-04-05T18:03:38.123Z",
-        "pos": 3,
-        "neu": 86,
-        "neg": 11,
-        "count": 5
-      },
-      {
-        "label": "2026-04-05T19:03:38.123Z",
+        "label": "2026-04-05T18:45:27.893Z",
         "pos": 0,
-        "neu": 79,
-        "neg": 21,
+        "neu": 88,
+        "neg": 12,
         "count": 3
       },
       {
-        "label": "2026-04-05T20:03:38.123Z",
+        "label": "2026-04-05T19:45:27.893Z",
+        "pos": 0,
+        "neu": 75,
+        "neg": 25,
+        "count": 1
+      },
+      {
+        "label": "2026-04-05T20:45:27.893Z",
         "pos": 6,
         "neu": 94,
         "neg": 0,
         "count": 1
       },
       {
-        "label": "2026-04-05T21:03:38.123Z",
+        "label": "2026-04-05T21:45:27.893Z",
         "pos": 0,
-        "neu": 0,
-        "neg": 0,
-        "count": 0
+        "neu": 59,
+        "neg": 41,
+        "count": 2
       }
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-04-05T18:03:38.123Z",
-        "pos": 7,
-        "neu": 81,
+        "label": "2026-04-05T18:45:27.893Z",
+        "pos": 9,
+        "neu": 78,
         "neg": 12,
-        "count": 26
+        "count": 23
       },
       {
-        "label": "2026-04-05T19:03:38.123Z",
-        "pos": 10,
-        "neu": 76,
+        "label": "2026-04-05T19:45:27.893Z",
+        "pos": 11,
+        "neu": 75,
+        "neg": 13,
+        "count": 12
+      },
+      {
+        "label": "2026-04-05T20:45:27.893Z",
+        "pos": 4,
+        "neu": 83,
         "neg": 14,
-        "count": 19
+        "count": 7
       },
       {
-        "label": "2026-04-05T20:03:38.123Z",
-        "pos": 7,
-        "neu": 82,
-        "neg": 11,
-        "count": 10
-      },
-      {
-        "label": "2026-04-05T21:03:38.123Z",
-        "pos": 2,
-        "neu": 79,
-        "neg": 19,
-        "count": 4
+        "label": "2026-04-05T21:45:27.893Z",
+        "pos": 0,
+        "neu": 0,
+        "neg": 0,
+        "count": 0
       }
     ]
   },
@@ -5692,13 +5679,13 @@
       },
       {
         "name": "Finance",
-        "bias": -8.63,
+        "bias": -8.56,
         "count": 16
       },
       {
         "name": "Communication",
-        "bias": -6.26,
-        "count": 86
+        "bias": -7.04,
+        "count": 85
       }
     ],
     "pos": [
@@ -5717,13 +5704,13 @@
     "neg": [
       {
         "name": "Finance",
-        "bias": -8.63,
+        "bias": -8.56,
         "count": 16
       },
       {
         "name": "Communication",
-        "bias": -6.26,
-        "count": 86
+        "bias": -7.04,
+        "count": 85
       }
     ]
   },
@@ -5744,9 +5731,9 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 169,
+      "usaArticles": 172,
       "potusArticles": 37,
-      "sourceRows": 10,
+      "sourceRows": 11,
       "industryRows": 4,
       "trendingPoints": 12
     },
