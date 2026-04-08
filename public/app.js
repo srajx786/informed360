@@ -126,6 +126,102 @@ const runCacheVersionGuard = () => {
   }
 };
 runCacheVersionGuard();
+const FOOTER_UPDATED_FALLBACK_TEXT = "Website update time unavailable";
+const footerTimestampState = { ms: 0, source: "" };
+const setFooterUpdatedTimestamp = (value, { source = "unknown", priority = "content" } = {}) => {
+  const updatedEl = $("#updatedAt");
+  if (!updatedEl) return;
+  const ts = parseTimestampMs(value);
+  if (!ts){
+    if (!footerTimestampState.ms){
+      updatedEl.textContent = FOOTER_UPDATED_FALLBACK_TEXT;
+    }
+    return;
+  }
+  if (priority === "market" && footerTimestampState.ms) return;
+  if (footerTimestampState.ms && ts < footerTimestampState.ms) return;
+  footerTimestampState.ms = ts;
+  footerTimestampState.source = source;
+  const dt = new Date(ts);
+  updatedEl.textContent = `Website updated on ${dt.toLocaleDateString()} · ${dt.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
+};
+const SOURCE_ALIAS_MAP = new Map([
+  ["associated press", "AP"], ["ap", "AP"], ["ap news", "AP"],
+  ["new york times", "NYT"], ["nyt", "NYT"], ["the new york times", "NYT"],
+  ["wall street journal", "WSJ"], ["wsj", "WSJ"],
+  ["fox", "Fox News"], ["fox news", "Fox News"],
+  ["cnn", "CNN"], ["cnn news", "CNN"],
+  ["cnbc", "CNBC"],
+  ["cbs", "CBS News"], ["cbs news", "CBS News"],
+  ["nbc", "NBC News"], ["nbc news", "NBC News"],
+  ["abc", "ABC News"], ["abc news", "ABC News"],
+  ["washington post", "Washington Post"],
+  ["bbc", "BBC"], ["bbc news", "BBC"],
+  ["reuters", "Reuters"],
+  ["business standard", "Business Standard"],
+  ["ndtv", "NDTV"],
+  ["india today", "India Today"],
+  ["indian express", "The Indian Express"], ["the indian express", "The Indian Express"],
+  ["firstpost", "Firstpost"],
+  ["the print", "ThePrint"], ["theprint", "ThePrint"],
+  ["hindustan times", "Hindustan Times"],
+  ["economic times", "The Economic Times"], ["the economic times", "The Economic Times"],
+  ["al jazeera", "Al Jazeera"],
+  ["the guardian", "Guardian"], ["guardian", "Guardian"],
+  ["mint", "Mint"], ["livemint", "Mint"], ["live mint", "Mint"],
+  ["the hindu", "The Hindu"], ["hindu", "The Hindu"],
+  ["times of india", "TOI"], ["toi", "TOI"]
+]);
+const SOURCE_REGISTRY_FALLBACK_BY_DOMAIN = {
+  "thehindu.com": "The Hindu",
+  "indianexpress.com": "The Indian Express",
+  "hindustantimes.com": "Hindustan Times",
+  "indiatoday.in": "India Today",
+  "ndtv.com": "NDTV",
+  "livemint.com": "Mint",
+  "business-standard.com": "Business Standard",
+  "economictimes.indiatimes.com": "The Economic Times",
+  "reuters.com": "Reuters",
+  "bbc.com": "BBC",
+  "aljazeera.com": "Al Jazeera",
+  "news18.com": "News18",
+  "deccanherald.com": "Deccan Herald",
+  "scroll.in": "Scroll",
+  "cnn.com": "CNN",
+  "foxnews.com": "Fox News",
+  "apnews.com": "AP",
+  "nytimes.com": "NYT",
+  "nbcnews.com": "NBC News",
+  "cbsnews.com": "CBS News",
+  "abcnews.go.com": "ABC News",
+  "cnbc.com": "CNBC",
+  "washingtonpost.com": "Washington Post",
+  "wsj.com": "WSJ",
+  "theguardian.com": "Guardian",
+  "theprint.in": "ThePrint",
+  "firstpost.com": "Firstpost"
+};
+const SOURCE_REGISTRY_NAME_BY_DOMAIN = new Map(Object.entries(SOURCE_REGISTRY_FALLBACK_BY_DOMAIN));
+let sourceRegistryLoaded = false;
+const normalizeDomain = (value = "") => String(value || "").trim().toLowerCase().replace(/^www\./, "");
+async function loadSourceRegistry(){
+  if (sourceRegistryLoaded) return;
+  sourceRegistryLoaded = true;
+  try{
+    const response = await fetch(`/source-registry.json?t=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    const entries = Object.entries(payload?.sources || {});
+    entries.forEach(([domain, meta]) => {
+      const normalized = normalizeDomain(domain);
+      if (!normalized) return;
+      SOURCE_REGISTRY_NAME_BY_DOMAIN.set(normalized, String(meta?.name || "").trim() || normalized);
+    });
+    console.info("[source-registry] loaded", { domains: SOURCE_REGISTRY_NAME_BY_DOMAIN.size });
+  }catch(error){
+    console.info("[source-registry] unavailable", { reason: error?.message || "fetch-failed" });
+  }
+}
 const HERO_QUALITY_RANK = {
   empty: 0,
   weak: 1,
@@ -380,23 +476,33 @@ const classifyPotusTopic = (article = {}) => {
   }
   return "Campaign / Politics";
 };
-const normalizeSourceName = (source = "") => {
-  const clean = String(source || "").trim();
-  if (!clean) return "";
-  const lowered = clean.toLowerCase();
-  if (/(^|\b)associated press|\bap\b/.test(lowered)) return "AP";
-  if (/(^|\b)new york times|\bnyt\b/.test(lowered)) return "NYT";
-  if (/washington post/.test(lowered)) return "Washington Post";
-  if (/wall street journal|\bwsj\b/.test(lowered)) return "WSJ";
-  if (/fox/.test(lowered)) return "Fox News";
-  if (/cbs/.test(lowered)) return "CBS News";
-  if (/abc/.test(lowered)) return "ABC News";
-  if (/nbc/.test(lowered)) return "NBC News";
-  if (/cnn/.test(lowered)) return "CNN";
-  if (/reuters/.test(lowered)) return "Reuters";
-  if (/cnbc/.test(lowered)) return "CNBC";
-  return clean;
+const sourceIdentityFrom = (source = "", link = "") => {
+  const raw = String(source || "").trim();
+  const linkDomain = normalizeDomain(domainFromUrl(link));
+  const sourceDomain = normalizeDomain(domainFromUrl(raw));
+  const candidateDomain = linkDomain || sourceDomain;
+  if (candidateDomain && SOURCE_REGISTRY_NAME_BY_DOMAIN.has(candidateDomain)){
+    const canonical = SOURCE_REGISTRY_NAME_BY_DOMAIN.get(candidateDomain);
+    if (DEBUG_MODE){
+      console.info("[source-normalize]", { rawSource: raw, domain: candidateDomain, canonical, mode: "registry-hit" });
+    }
+    return { canonical, domain: candidateDomain };
+  }
+  const aliasKey = raw.toLowerCase();
+  if (SOURCE_ALIAS_MAP.has(aliasKey)){
+    const canonical = SOURCE_ALIAS_MAP.get(aliasKey);
+    if (DEBUG_MODE){
+      console.info("[source-normalize]", { rawSource: raw, domain: candidateDomain || "", canonical, mode: "alias-hit" });
+    }
+    return { canonical, domain: candidateDomain };
+  }
+  const fallback = raw || (candidateDomain || "");
+  if (DEBUG_MODE){
+    console.info("[source-normalize]", { rawSource: raw, domain: candidateDomain || "", canonical: fallback, mode: "fallback" });
+  }
+  return { canonical: fallback, domain: candidateDomain };
 };
+const normalizeSourceName = (source = "", link = "") => sourceIdentityFrom(source, link).canonical;
 const isValidTimeline = (timeline) =>
   Array.isArray(timeline) && timeline.length === 4 && timeline.every(point =>
     point && typeof point === "object" &&
@@ -443,6 +549,10 @@ function applyBootstrapSnapshot(snapshot, { persist = false, source = "snapshot"
   state.isStaleMode = false;
   state.fallbackUpdatedAt = snapshot.generatedAt || state.fallbackUpdatedAt || "";
   state.fallbackMessage = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : "";
+  if (state.usingFallbackSnapshot){
+    console.info("[render] fallback source chosen", { section: "bootstrap", source });
+  }
+  setFooterUpdatedTimestamp(snapshot.generatedAt, { source: `bootstrap:${source}` });
 
   if (snapshot?.meta?.markets?.quotes?.length){
     writeMarketCache(snapshot.meta.markets);
@@ -630,6 +740,10 @@ function applyHomepageSnapshot(snapshot, { persist = false, source = "homepage" 
   state.usingFallbackSnapshot = source !== "live";
   state.isStaleMode = false;
   state.fallbackMessage = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : "";
+  if (state.usingFallbackSnapshot){
+    console.info("[render] fallback source chosen", { section: "homepage", source });
+  }
+  setFooterUpdatedTimestamp(snapshot.generatedAt, { source: `homepage:${source}` });
   hasCachedContent = hasCachedContent || hasHealthySnapshotData();
   if (persist){
     writeLocalCache(HOMEPAGE_CACHE_KEY, snapshot);
@@ -841,8 +955,10 @@ const getSourceLogoUrl = (sourceDomain = "", sourceName = "") => {
   if (LOCAL_LOGOS[d]) return LOCAL_LOGOS[d];
   return clearbit(d);
 };
-const logoFor = (link = "", source = "") =>
-  getSourceLogoUrl(domainFromUrl(link), source);
+const logoFor = (link = "", source = "") => {
+  const identity = sourceIdentityFrom(source, link);
+  return getSourceLogoUrl(identity.domain || domainFromUrl(link), identity.canonical || source);
+};
 
 const PLACEHOLDER = "/img/placeholder-news.svg";
 const THUMB_PLACEHOLDER = "/img/thumb-placeholder.svg";
@@ -1880,6 +1996,7 @@ async function loadMarkets(){
   ];
 
   const renderMarkets = (data, logMissing) => {
+    setFooterUpdatedTimestamp(data?.updatedAt, { source: "markets", priority: "market" });
     const updatedTs = parseTimestampMs(data?.updatedAt);
     const updatedAt = updatedTs ? new Date(updatedTs) : null;
     const statusText = updatedAt
@@ -1970,6 +2087,7 @@ async function loadMarkets(){
       renderMarkets(cached, true);
       return;
     }
+    setFooterUpdatedTimestamp("", { source: "markets", priority: "market" });
     const fallbackStatus = "Website update time unavailable";
     const updatedEl = $("#updatedAt");
     if (updatedEl){
@@ -2126,6 +2244,8 @@ function applyCachedContent(){
     state.isStaleMode = false;
     state.fallbackUpdatedAt = safeNewsCache?.payloadUpdatedAt || safeStoriesCache?.payloadUpdatedAt || state.bootstrapGeneratedAt || state.fallbackUpdatedAt;
     state.fallbackMessage = SNAPSHOT_FALLBACK_MESSAGE;
+    console.info("[render] fallback source chosen", { section: "local-cache", useNewsCache, useStoriesCache });
+    setFooterUpdatedTimestamp(state.fallbackUpdatedAt, { source: "local-cache" });
     setApiBanner(true, state.fallbackMessage);
     syncPinsWithArticles();
     renderPinnedChips();
@@ -2295,6 +2415,7 @@ async function loadAll(){
     state.isStaleMode = false;
     state.fallbackMessage = "";
     state.fallbackUpdatedAt = "";
+    setFooterUpdatedTimestamp(extractPayloadTimestamp(news), { source: "live:/api/news" });
     setApiBanner(false);
     hasCachedContent = true;
   }catch(error){
@@ -2319,11 +2440,13 @@ async function loadAll(){
       state.isStaleMode = false;
       state.fallbackMessage = SNAPSHOT_FALLBACK_MESSAGE;
       state.fallbackUpdatedAt = state.fallbackUpdatedAt || state.bootstrapGeneratedAt || "";
+      console.info("[render] fallback source chosen", { section: "loadAll-catch" });
       setApiBanner(true, state.fallbackMessage);
     } else {
       state.isStaleMode = true;
       state.fallbackMessage = STALE_DATA_MESSAGE;
       state.fallbackUpdatedAt = "";
+      console.info("[stale-mode] entered", { section: "loadAll-catch" });
       setApiBanner(true, STALE_DATA_MESSAGE);
     }
     logApiError(error, error?.endpoint || "/api/news");
@@ -3063,6 +3186,7 @@ function renderHero(){
   const container = $("#heroCarousels");
   if (!container) return;
   if (state.isStaleMode){
+    console.info("[stale-mode] entered", { section: "hero" });
     container.innerHTML = `<div class="topstories-empty">${escapeHtml(STALE_DATA_MESSAGE)}</div>`;
     pushDegradedReason("hero", STALE_DATA_MESSAGE);
     setDebugSection("hero", "stale-blocked");
@@ -3071,6 +3195,7 @@ function renderHero(){
   syncHeroSnapshot("render:preflight");
   const sections = buildTopStoriesSections();
   if (!sections.length){
+    console.info("[hero-render]", { status: "empty", fallback: state.usingFallbackSnapshot });
     const message = state.usingFallbackSnapshot ? SNAPSHOT_FALLBACK_MESSAGE : EMPTY_STATE_MESSAGE;
     const updatedAt = formatLastUpdated(state.fallbackUpdatedAt || state.bootstrapGeneratedAt);
     container.innerHTML = `<div class="topstories-empty">${escapeHtml(message)}${updatedAt ? `<div class="hero-fallback-updated">Last updated: ${escapeHtml(updatedAt)}</div>` : ""}</div>`;
@@ -3078,6 +3203,7 @@ function renderHero(){
     setDebugSection("hero", "fallback-empty");
     return;
   }
+  console.info("[hero-render]", { status: "rendered", sections: sections.length, fallback: state.usingFallbackSnapshot });
   setDebugSection("hero", safeArray(state.splitSnapshots?.latestNews?.topStories).length ? "snapshot:latest-news/bootstrap" : "live-or-bootstrap", { sections: sections.length });
   container.innerHTML = sections.map(renderTopStoriesSection).join("");
 
@@ -3929,7 +4055,7 @@ function computeLeaderboard(){
   const splitRows = safeArray(state.splitSnapshots?.sourceSentiment?.rows);
   if (splitRows.length){
     const arr = splitRows.map((row) => {
-      const source = normalizeSourceName(row.source || "");
+      const source = normalizeSourceName(row.source || "", row.link || "");
       const pos = Number(row.pos || 0);
       const neg = Number(row.neg || 0);
       return {
@@ -3950,7 +4076,7 @@ function computeLeaderboard(){
   }
   const bySource = new Map();
   getLeaderboardArticles().forEach(a => {
-    const key = normalizeSourceName(a.source || "");
+    const key = normalizeSourceName(a.source || "", a.link || a.url || "");
     if (!key) return;
     if (state.category === USA_CATEGORY && !USA_SECTION_SOURCES.has(key)) return;
     if (state.category === POTUS_CATEGORY && !USA_SECTION_SOURCES.has(key)) return;
@@ -3983,7 +4109,7 @@ function computeLeaderboard(){
         : (splitRows || state.sentimentData?.sourceLeaderboard || null);
     if (Array.isArray(fallback) && fallback.length){
       fallback.forEach((row) => {
-        const source = normalizeSourceName(row.source || "");
+        const source = normalizeSourceName(row.source || "", row.link || "");
         if (!source) return;
         const bias = Number(row.pos || 0) - Number(row.neg || 0);
         arr.push({
@@ -4741,7 +4867,9 @@ $("#saveTopics")?.addEventListener("click", (e) => {
 });
 
 /* boot */
+console.info("[app-version]", { version: APP_VERSION });
 document.getElementById("year").textContent = new Date().getFullYear();
+setFooterUpdatedTimestamp("", { source: "boot" });
 applyTheme();
 renderTopicPickerOptions();
 moveSentimentControls();
@@ -4754,6 +4882,9 @@ applyCachedContent();
 applyHomepageCache();
 loadMarkets();
 loadVisitorStats();
+void loadSourceRegistry().then(() => {
+  renderLeaderboard();
+});
 void (async () => {
   await applyStaticHomepageSnapshot();
   if (!hasCachedContent) await applyStaticBootstrapSnapshot();
@@ -4771,7 +4902,10 @@ startHeroAuto();
 
 if ("serviceWorker" in navigator){
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js").catch(() => {});
+    console.info("[service-worker] register", { script: "/sw.js" });
+    navigator.serviceWorker.register("/sw.js")
+      .then(() => console.info("[service-worker] registered"))
+      .catch((error) => console.info("[service-worker] register-failed", { reason: error?.message || "unknown" }));
   });
 }
 
