@@ -1353,14 +1353,105 @@ const buildTimeline = (articles = []) => {
   });
 };
 
+const SOURCE_SHORT_WHITELIST = new Set(["AP", "NYT", "WSJ", "BBC", "CNN", "TOI", "NDTV"]);
+const SOURCE_PLACEHOLDER_REGEX = /^(unknown|source|news|n\/a|na|null|undefined|_|-+|"+|'+)$/i;
+const SOURCE_ALIAS_RULES = [
+  { regex: /(^|\b)associated press|\bap\b/i, canonical: "AP" },
+  { regex: /(^|\b)new york times|\bnyt\b/i, canonical: "NYT" },
+  { regex: /\bwall street journal\b|\bwsj\b/i, canonical: "WSJ" },
+  { regex: /\bbbc\b|british broadcasting corporation/i, canonical: "BBC" },
+  { regex: /\bcnn\b|cable news network/i, canonical: "CNN" },
+  { regex: /\btimes of india\b|\btoi\b/i, canonical: "TOI" },
+  { regex: /\bndtv\b/i, canonical: "NDTV" }
+];
+
+const cleanSourceLabel = (value = "") =>
+  String(value || "")
+    .replace(/[“”‘’"'`]/g, " ")
+    .replace(/[|_/\\]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const canonicalizeSourceLabel = (value = "") => {
+  const clean = cleanSourceLabel(value);
+  if (!clean) return "";
+  for (const rule of SOURCE_ALIAS_RULES) {
+    if (rule.regex.test(clean)) return rule.canonical;
+  }
+  return clean;
+};
+
+const publisherNameFromDomain = (domain = "") => {
+  const safeDomain = String(domain || "").toLowerCase().replace(/^www\./, "").trim();
+  if (!safeDomain) return "";
+  const registryName = SOURCE_MAP.get(safeDomain)?.name;
+  if (registryName) return canonicalizeSourceLabel(registryName);
+  const parts = safeDomain.split(".").filter(Boolean);
+  if (parts.length < 2) return "";
+  const sld = parts[parts.length - 2] || "";
+  if (!/^[a-z][a-z0-9-]{1,30}$/.test(sld)) return "";
+  if (["co", "com", "net", "org", "gov", "edu", "news", "media"].includes(sld)) return "";
+  return canonicalizeSourceLabel(
+    sld
+      .split("-")
+      .filter(Boolean)
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(" ")
+  );
+};
+
+const validateSourceLabel = (label = "") => {
+  const value = cleanSourceLabel(label);
+  if (!value) return { valid: false, reason: "empty" };
+  if (SOURCE_PLACEHOLDER_REGEX.test(value)) return { valid: false, reason: "placeholder" };
+  const alphaChars = (value.match(/[A-Za-z]/g) || []).length;
+  if (alphaChars === 0) return { valid: false, reason: "no_alpha" };
+  const compact = value.replace(/[^A-Za-z]/g, "");
+  const upperCompact = compact.toUpperCase();
+  if (SOURCE_SHORT_WHITELIST.has(upperCompact)) return { valid: true, reason: "" };
+  if (compact.length <= 2) return { valid: false, reason: "short_not_whitelisted" };
+  if (alphaChars < 3) return { valid: false, reason: "insufficient_alpha" };
+  return { valid: true, reason: "" };
+};
+
+const resolvePublisherIdentity = (article = {}) => {
+  const rawSource = cleanSourceLabel(article.source || "");
+  const domain = sourceDomainForArticle(article) || domainFromUrl(article.link || "");
+  const fromSource = canonicalizeSourceLabel(rawSource);
+  const fromDomain = publisherNameFromDomain(domain);
+  const normalizedSource = fromSource || fromDomain || "";
+  const candidate = validateSourceLabel(normalizedSource).valid
+    ? normalizedSource
+    : fromDomain;
+  const validation = validateSourceLabel(candidate);
+  return {
+    rawSource,
+    normalizedSource: cleanSourceLabel(candidate),
+    domain,
+    valid: validation.valid,
+    reason: validation.reason
+  };
+};
+
 const toSourceLeaderboard = (articles = [], limit = 12) => {
   const map = new Map();
+  let acceptedArticles = 0;
   (articles || []).forEach((article) => {
-    const source = String(article.source || "").trim();
-    if (!source) return;
+    const resolved = resolvePublisherIdentity(article);
+    if (!resolved.valid || !resolved.normalizedSource) {
+      console.info("[source-sentiment] drop", {
+        rawSource: resolved.rawSource || article?.source || "",
+        normalizedSource: resolved.normalizedSource || "",
+        reasonDropped: resolved.reason || "invalid_source",
+        domain: resolved.domain || ""
+      });
+      return;
+    }
+    acceptedArticles += 1;
+    const source = resolved.normalizedSource;
     const row = map.get(source) || {
       source,
-      sourceDomain: sourceDomainForArticle(article),
+      sourceDomain: resolved.domain || sourceDomainForArticle(article),
       count: 0,
       pos: 0,
       neu: 0,
@@ -1373,7 +1464,7 @@ const toSourceLeaderboard = (articles = [], limit = 12) => {
     row.neg += Number(s.negP || s.neg || 0);
     map.set(source, row);
   });
-  return [...map.values()]
+  const rows = [...map.values()]
     .map((row) => {
       const n = Math.max(1, row.count);
       return {
@@ -1388,6 +1479,12 @@ const toSourceLeaderboard = (articles = [], limit = 12) => {
     })
     .sort((a, b) => b.count - a.count)
     .slice(0, limit);
+  console.info("[source-sentiment] accepted", {
+    inputArticles: (articles || []).length,
+    acceptedArticles,
+    acceptedRows: rows.length
+  });
+  return rows;
 };
 
 const INDUSTRY_CANONICAL = [

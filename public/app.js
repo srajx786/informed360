@@ -395,7 +395,21 @@ const normalizeSourceName = (source = "") => {
   if (/cnn/.test(lowered)) return "CNN";
   if (/reuters/.test(lowered)) return "Reuters";
   if (/cnbc/.test(lowered)) return "CNBC";
+  if (/\bbbc\b/.test(lowered)) return "BBC";
+  if (/\btimes of india\b|\btoi\b/.test(lowered)) return "TOI";
+  if (/\bndtv\b/.test(lowered)) return "NDTV";
   return clean;
+};
+const SOURCE_SHORT_WHITELIST = new Set(["AP", "NYT", "WSJ", "BBC", "CNN", "TOI", "NDTV"]);
+const isStrongSourceLabel = (source = "") => {
+  const clean = String(source || "").trim();
+  if (!clean) return false;
+  if (/^(unknown|source|news|n\/a|na|null|undefined|_|-+|"+|'+)$/i.test(clean)) return false;
+  const alphaChars = (clean.match(/[A-Za-z]/g) || []).length;
+  if (!alphaChars) return false;
+  const compact = clean.replace(/[^A-Za-z]/g, "");
+  if (SOURCE_SHORT_WHITELIST.has(compact.toUpperCase())) return true;
+  return compact.length >= 3 && alphaChars >= 3;
 };
 const isValidTimeline = (timeline) =>
   Array.isArray(timeline) && timeline.length === 4 && timeline.every(point =>
@@ -3941,7 +3955,7 @@ function computeLeaderboard(){
         logo: logoFor("", source),
         count: Number(row.count || MIN_SOURCE_ARTICLES)
       };
-    }).filter((row) => row.source);
+    }).filter((row) => row.source && isStrongSourceLabel(row.source));
     return {
       pos: arr.filter(x => x.bias > 3).sort((a,b) => b.bias - a.bias).slice(0,2),
       neu: arr.slice().sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias)).slice(0,2),
@@ -3972,7 +3986,7 @@ function computeLeaderboard(){
     const bias = pos - neg;
     const logo = logoFor(v.link, src);
     return { source:src, pos, neg, neu, bias, logo, count: v.n };
-  }).filter(x => (x.pos + x.neg + x.neu) > 0.1 && x.count >= MIN_SOURCE_ARTICLES);
+  }).filter(x => (x.pos + x.neg + x.neu) > 0.1 && x.count >= MIN_SOURCE_ARTICLES && isStrongSourceLabel(x.source));
 
   if (!arr.length){
     const splitRows = state.splitSnapshots?.sourceSentiment?.rows;
@@ -3984,7 +3998,7 @@ function computeLeaderboard(){
     if (Array.isArray(fallback) && fallback.length){
       fallback.forEach((row) => {
         const source = normalizeSourceName(row.source || "");
-        if (!source) return;
+        if (!source || !isStrongSourceLabel(source)) return;
         const bias = Number(row.pos || 0) - Number(row.neg || 0);
         arr.push({
           source,
