@@ -159,6 +159,9 @@ const normalizeSourceName = (source = "") => {
   if (/cnn/.test(lowered)) return "CNN";
   if (/reuters/.test(lowered)) return "Reuters";
   if (/cnbc/.test(lowered)) return "CNBC";
+  if (/\bbbc\b/.test(lowered)) return "BBC";
+  if (/\btimes of india\b|\btoi\b/.test(lowered)) return "TOI";
+  if (/\bndtv\b/.test(lowered)) return "NDTV";
   return clean;
 };
 
@@ -173,6 +176,70 @@ const domainFromUrl = (u = "") => {
   } catch {
     return "";
   }
+};
+
+const SOURCE_SHORT_WHITELIST = new Set(["AP", "NYT", "WSJ", "BBC", "CNN", "TOI", "NDTV"]);
+const SOURCE_PLACEHOLDER_REGEX = /^(unknown|source|news|n\/a|na|null|undefined|_|-+|"+|'+)$/i;
+const cleanSourceLabel = (value = "") =>
+  String(value || "")
+    .replace(/[“”‘’"'`]/g, " ")
+    .replace(/[|_/\\]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+const titleCaseSourcePart = (value = "") =>
+  value
+    .split("-")
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+const publisherNameFromDomain = (domain = "") => {
+  const safe = String(domain || "").toLowerCase().replace(/^www\./, "").trim();
+  if (!safe) return "";
+  const known = normalizeSourceFromDomain(safe);
+  if (known) return known;
+  if (/apnews\.com$/i.test(safe)) return "AP";
+  if (/nytimes\.com$/i.test(safe)) return "NYT";
+  if (/wsj\.com$/i.test(safe)) return "WSJ";
+  if (/bbc\./i.test(safe)) return "BBC";
+  if (/cnn\.com$/i.test(safe)) return "CNN";
+  if (/timesofindia\.indiatimes\.com$/i.test(safe)) return "TOI";
+  if (/ndtv\.com$/i.test(safe)) return "NDTV";
+  const parts = safe.split(".").filter(Boolean);
+  if (parts.length < 2) return "";
+  const sld = parts[parts.length - 2] || "";
+  if (!/^[a-z][a-z0-9-]{1,30}$/.test(sld)) return "";
+  if (["co", "com", "net", "org", "gov", "edu", "news", "media"].includes(sld)) return "";
+  return titleCaseSourcePart(sld);
+};
+const validateSourceLabel = (source = "") => {
+  const clean = cleanSourceLabel(source);
+  if (!clean) return { valid: false, reason: "empty" };
+  if (SOURCE_PLACEHOLDER_REGEX.test(clean)) return { valid: false, reason: "placeholder" };
+  const alphaChars = (clean.match(/[A-Za-z]/g) || []).length;
+  if (alphaChars === 0) return { valid: false, reason: "no_alpha" };
+  const compact = clean.replace(/[^A-Za-z]/g, "");
+  if (SOURCE_SHORT_WHITELIST.has(compact.toUpperCase())) return { valid: true, reason: "" };
+  if (compact.length <= 2) return { valid: false, reason: "short_not_whitelisted" };
+  if (alphaChars < 3) return { valid: false, reason: "insufficient_alpha" };
+  return { valid: true, reason: "" };
+};
+const resolvePublisherIdentity = (article = {}) => {
+  const domain = article.sourceDomain || domainFromUrl(article.link || "");
+  const rawSource = cleanSourceLabel(article.source || "");
+  const normalizedSource = normalizeSourceName(rawSource || publisherNameFromDomain(domain));
+  const validation = validateSourceLabel(normalizedSource);
+  if (validation.valid) {
+    return { rawSource, normalizedSource, reason: "", domain, valid: true };
+  }
+  const fallbackDomainSource = normalizeSourceName(publisherNameFromDomain(domain));
+  const fallbackValidation = validateSourceLabel(fallbackDomainSource);
+  return {
+    rawSource,
+    normalizedSource: fallbackDomainSource,
+    reason: fallbackValidation.valid ? "" : (fallbackValidation.reason || validation.reason),
+    domain,
+    valid: fallbackValidation.valid
+  };
 };
 
 const dedupeArticles = (articles = []) => {
@@ -490,9 +557,20 @@ const classifyPotusTopic = (article = {}) => {
 };
 const buildSourceLeaderboard = (articles = []) => {
   const bySource = new Map();
+  let acceptedArticles = 0;
   articles.forEach((article) => {
-    const source = normalizeSourceName(article.source || normalizeSourceFromDomain(article.sourceDomain || domainFromUrl(article.link || "")));
-    if (!source) return;
+    const resolved = resolvePublisherIdentity(article);
+    if (!resolved.valid || !resolved.normalizedSource) {
+      console.info("[source-sentiment] drop", {
+        rawSource: resolved.rawSource || article?.source || "",
+        normalizedSource: resolved.normalizedSource || "",
+        reasonDropped: resolved.reason || "invalid_source",
+        domain: resolved.domain || ""
+      });
+      return;
+    }
+    acceptedArticles += 1;
+    const source = resolved.normalizedSource;
     const row = bySource.get(source) || { source, pos: 0, neg: 0, neu: 0, n: 0 };
     const sent = normalizeSentiment(article.sentiment || {});
     row.pos += sent.posP;
@@ -501,12 +579,18 @@ const buildSourceLeaderboard = (articles = []) => {
     row.n += 1;
     bySource.set(source, row);
   });
-  return [...bySource.values()]
+  const rows = [...bySource.values()]
   .filter((row) => row.n >= MIN_SOURCE_ARTICLES)
   .map((row) => {
     const n = Math.max(1, row.n);
     return { source: row.source, pos: Number((row.pos / n).toFixed(2)), neu: Number((row.neu / n).toFixed(2)), neg: Number((row.neg / n).toFixed(2)), count: row.n };
   }).sort((a,b) => b.count - a.count).slice(0, 12);
+  console.info("[source-sentiment] accepted", {
+    inputArticles: articles.length,
+    acceptedArticles,
+    acceptedRows: rows.length
+  });
+  return rows;
 };
 const buildPotusTopicSentiment = (articles = []) => {
   const buckets = new Map();
