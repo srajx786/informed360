@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-04-10T22:05:43.681Z",
+  "generatedAt": "2026-04-10T22:52:19.898Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 187,
-    "potusArticles": 49
+    "potusArticles": 52
   },
   "version": 1,
   "topStories": [
@@ -93,6 +93,86 @@
   "news": {
     "articles": [
       {
+        "title": "OpenAI CEO Sam Altman’s home targeted in Molotov cocktail attack",
+        "link": "https://www.aljazeera.com/news/2026/4/10/openai-ceo-sam-altmans-home-targeted-in-molotov-cocktail-attack?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Police said the suspect targeted Altman's San Francisco residence before dawn and fled the scene on foot.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-03-20T193909Z_1777114240_RC2I2KAPTRYB_RTRMADP_3_OPENAI-ALTMAN-SISTER-LAWSUIT-1775856572.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-03-20T193909Z_1777114240_RC2I2KAPTRYB_RTRMADP_3_OPENAI-ALTMAN-SISTER-LAWSUIT-1775856572.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-04-10T22:29:07.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 82,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.6486
+        },
+        "category": "world"
+      },
+      {
+        "title": "Political slugfest between Congress-BJP in Haryana over crop procurement",
+        "link": "https://www.thehindu.com/news/national/haryana/political-slugfest-between-congress-bjp-in-haryana-over-crop-procurement/article70848374.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Farmers, who sustain the nation through their hard work, are being treated like criminals in the grain markets. It is as if they have arrived carrying illicit goods rather than their harvested crops,” Bhupinder Singh Hooda said",
+        "image": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg",
+        "publishedAt": "2026-04-10T22:16:44.000Z",
+        "sentiment": {
+          "posP": 5,
+          "neuP": 85,
+          "negP": 10,
+          "label": "negative",
+          "confidence": 0.3818
+        },
+        "category": "world"
+      },
+      {
+        "title": "Iranian delegation arrives in Islamabad for talks with US",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/iranian-delegation-arrives-in-islamabad-for-talks-with-us?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "A senior Iranian delegation has arrived in Islamabad for talks with US officials.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440",
+        "publishedAt": "2026-04-10T21:59:21.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "Islamabad on lockdown ahead of US-Iran talks",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/islamabad-on-lockdown-ahead-of-us-iran-talks?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Islamabad has deployed more than 10,000 military and police personnel as US and Iranian delegations arrive.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440",
+        "publishedAt": "2026-04-10T21:58:14.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
         "title": "Prince Harry sued for defamation by charity he co-founded",
         "link": "https://www.livemint.com/news/world/prince-harry-sued-for-defamation-by-charity-he-cofounded-11775854691311.html",
         "source": "Mint",
@@ -151,6 +231,26 @@
           "confidence": 0.872
         },
         "category": "sports"
+      },
+      {
+        "title": "African Charity Sues Prince Harry For Defamation",
+        "link": "https://www.ndtv.com/world-news/african-charity-sues-prince-harry-for-defamation-11341259",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "An African AIDS charity co-founded by Britain's Prince Harry said on Friday it had launched legal proceedings against him for \"reputational harm\", as the royal \"categorically\" rejected the  defamation...",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-10T21:22:41.000Z",
+        "sentiment": {
+          "posP": 20,
+          "neuP": 72,
+          "negP": 8,
+          "label": "positive",
+          "confidence": 0.5106
+        },
+        "category": "world"
       },
       {
         "title": "How to watch NASA’s Artemis II splash back down to Earth",
@@ -1493,26 +1593,6 @@
         "category": "world"
       },
       {
-        "title": "TGE JAC demands PRC announcement by June 2",
-        "link": "https://www.thehindu.com/news/national/telangana/tge-jac-demands-prc-announcement-by-june-2/article70848560.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "",
-        "image": "https://th-i.thgim.com/public/incoming/nrljjw/article70848875.ece/alternates/LANDSCAPE_1200/10042026TGEJAC%2001.jpg",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/nrljjw/article70848875.ece/alternates/LANDSCAPE_1200/10042026TGEJAC%2001.jpg",
-        "publishedAt": "2026-04-10T18:02:50.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
-      },
-      {
         "title": "Is the US-Iran ceasefire already doomed?",
         "link": "https://www.aljazeera.com/opinions/2026/4/10/is-trumps-iran-ceasefire-already-doomed?traffic_source=rss",
         "source": "Al Jazeera",
@@ -1569,26 +1649,6 @@
           "negP": 31,
           "label": "negative",
           "confidence": 0.926
-        },
-        "category": "world"
-      },
-      {
-        "title": "Why A US-Iran Ceasefire Hasn't Restored Normalcy In Global Shipping",
-        "link": "https://www.ndtv.com/world-news/strait-of-hormuz-why-a-us-iran-ceasefire-hasnt-restored-normalcy-in-global-shipping-11340859",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "While delayed vessels have begun moving through the Gulf once again, the maritime community is far from returning to business as usual.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-10T18:00:18.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 88,
-          "negP": 12,
-          "label": "negative",
-          "confidence": 0.4471
         },
         "category": "world"
       },
@@ -2431,72 +2491,12 @@
           "confidence": 0.6597
         },
         "category": "india"
-      },
-      {
-        "title": "Potholes and progress: Mamdani reflects on 100 days as New York’s mayor",
-        "link": "https://www.aljazeera.com/news/2026/4/10/potholes-and-progress-mamdani-reflects-on-100-days-as-new-yorks-mayor?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Mamdani's first 100 days marked by childcare reforms, pothole fixes and polarising debates over affordability policies.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/reuters_69d80d0c-1775766796.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/reuters_69d80d0c-1775766796.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-04-10T15:36:49.000Z",
-        "sentiment": {
-          "posP": 9,
-          "neuP": 91,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.4215
-        },
-        "category": "world"
-      },
-      {
-        "title": "Jio-bp not to raise fuel rates despite spike in international oil prices - Business Standard",
-        "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPU004V3dONThfT3FYX0JuX2FaS1ZyVTlIcHJWNGhxWFg5OEIyYl9pa2tfbTlPa0I4YVJqOXZwQVY1SkRRdDlWOWdxZDdkT3dFMzRjQl9reE8zQTFtaU5meUJOWUZoNEEwamNhV0RKNGRDWG5ORHVrVGpWM0ZHYVNudFVhWnZoR1ctRFlsNkdZS2FfQndSZ2F4Nmp5RTlFcnZlT2dxOGJCTmJpbk5jeUF6WXF0Tl9VWlhMRlBsRHdGVzhnend4dVZqOVE0UXNFREVVT1Y5OVRON2bSAd4BQVVfeXFMTmNnQl90T1RULUdEOFlMTkRZVlRnR1NxanNZaUhwWEpQeF8xQVdITlN2QmNxbVJnRFN5dEZwUS1CNDBpQ1MteTdkOHpyeUw5OU9WY1QzaXo4Q241M1JXYWdUYTJhSlpfTVRib2tZcEVweTlNei1KZE9TbkQtLWNBZXpkUW1kd3FaUTlNWE5OamN6V3p2blVLUzZqN1U0OFVRMGJYWFVTRTVISDZLT3I3N3RXVG9KdFJ5eVltdHhXTmhDMWhfblJHb2dEQzVFVWRaU3pxd05qczJmWmR3dW1B?oc=5",
-        "source": "\"site:business-standard.com\" - Google News",
-        "sourceDomain": "news.google.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "Jio-bp not to raise fuel rates despite spike in international oil prices  Business Standard",
-        "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-        "imageUrl": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-        "publishedAt": "2026-04-10T15:27:45.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "business"
-      },
-      {
-        "title": "Inflation rises in US amid Iran war, Hormuz blockade",
-        "link": "https://www.aljazeera.com/news/2026/4/10/inflation-rises-in-us-amid-iran-war-hormuz-blockade?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Government report shows gasoline going up by 21.2 percent in March as petrol remains above $4 per gallon despite truce.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/AP26097830755805-1775831963.jpg?resize=1200%2C675",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/AP26097830755805-1775831963.jpg?resize=1200%2C675",
-        "publishedAt": "2026-04-10T15:20:38.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 88,
-          "negP": 12,
-          "label": "negative",
-          "confidence": 0.5994
-        },
-        "category": "world"
       }
     ],
     "topics": [
       {
         "title": "https bengali | bengali indianexpress | indianexpress com",
-        "count": 25,
+        "count": 24,
         "sources": 1,
         "sentiment": {
           "pos": 0,
@@ -2515,6 +2515,50 @@
           "neu": 65
         },
         "image": "/img/thumb-placeholder.svg"
+      },
+      {
+        "title": "openai ceo | ceo sam | sam altman",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 18,
+          "neu": 82
+        },
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-03-20T193909Z_1777114240_RC2I2KAPTRYB_RTRMADP_3_OPENAI-ALTMAN-SISTER-LAWSUIT-1775856572.jpg?resize=1920%2C1440"
+      },
+      {
+        "title": "political slugfest | slugfest between | between congress",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 5,
+          "neg": 10,
+          "neu": 85
+        },
+        "image": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg"
+      },
+      {
+        "title": "iranian delegation | delegation arrives | islamabad for",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 0,
+          "neu": 100
+        },
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440"
+      },
+      {
+        "title": "lockdown ahead | iran talks",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 0,
+          "neu": 100
+        },
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440"
       },
       {
         "title": "bsf jawan | jawan killed | unprovoked firing",
@@ -2537,6 +2581,17 @@
           "neu": 72
         },
         "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/GettyImages-2270769561-1775855598.jpg?resize=1200%2C675"
+      },
+      {
+        "title": "african charity | charity sues | sues prince",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 20,
+          "neg": 8,
+          "neu": 72
+        },
+        "image": "/img/thumb-placeholder.svg"
       },
       {
         "title": "watch nasa | splash back | back down",
@@ -2570,64 +2625,165 @@
           "neu": 88
         },
         "image": "https://th-i.thgim.com/public/incoming/xu8s3l/article70848763.ece/alternates/LANDSCAPE_1200/Supreme%20Court%20%203.JPG"
-      },
-      {
-        "title": "melania trump | speech propels | propels epstein",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 12,
-          "neu": 88
-        },
-        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/6e0f/live/3213b020-3521-11f1-879d-1b2f5c3919b8.jpg"
-      },
-      {
-        "title": "arun shifted | shifted modak | modak appointed",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 0,
-          "neu": 100
-        },
-        "image": "https://th-i.thgim.com/public/incoming/qymf3b/article70849029.ece/alternates/LANDSCAPE_1200/IMG_a7dcc9f0-361b-4990-9_2_1_05D6SVVC.jpg"
-      },
-      {
-        "title": "discontinue ladki | ladki bahin | government doesn",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 4,
-          "neg": 8,
-          "neu": 88
-        },
-        "image": "https://th-i.thgim.com/public/incoming/npx1c3/article70848206.ece/alternates/LANDSCAPE_1200/NorthIndia.1.FeGDMFCHPHC.3.jpg.jpg"
-      },
-      {
-        "title": "draft master | master plan | plan for",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 19,
-          "neg": 0,
-          "neu": 81
-        },
-        "image": "https://th-i.thgim.com/public/latest-news/lofd3u/article70849027.ece/alternates/LANDSCAPE_1200/Campbell%20Bay%20at%20Great%20Nicobar%20Island%20on%20March%2026%202026.jpg"
-      },
-      {
-        "title": "the international | international stage",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 18,
-          "neg": 0,
-          "neu": 82
-        },
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775850864.jpg?resize=1920%2C1080&amp;quality=80"
       }
     ],
     "stories": [
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "OpenAI CEO Sam Altman’s home targeted in Molotov cocktail attack",
+            "link": "https://www.aljazeera.com/news/2026/4/10/openai-ceo-sam-altmans-home-targeted-in-molotov-cocktail-attack?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "Police said the suspect targeted Altman's San Francisco residence before dawn and fled the scene on foot.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-03-20T193909Z_1777114240_RC2I2KAPTRYB_RTRMADP_3_OPENAI-ALTMAN-SISTER-LAWSUIT-1775856572.jpg?resize=1920%2C1440",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-03-20T193909Z_1777114240_RC2I2KAPTRYB_RTRMADP_3_OPENAI-ALTMAN-SISTER-LAWSUIT-1775856572.jpg?resize=1920%2C1440",
+            "publishedAt": "2026-04-10T22:29:07.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 82,
+              "negP": 18,
+              "label": "negative",
+              "confidence": 0.6486
+            },
+            "category": "world"
+          },
+          {
+            "title": "Suspect Arrested After Molotov Cocktail Attack At Sam Altman's Home",
+            "link": "https://www.ndtv.com/world-news/suspect-arrested-after-molotov-cocktail-attack-at-openai-ceo-sam-altmans-home-11341055",
+            "source": "NDTV",
+            "sourceDomain": "ndtv.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "A person was arrested by San Francisco police for allegedly throwing a Molotov cocktail at OpenAI CEO Sam Altman's home and for making threats outside the artificial intelligence startup's...",
+            "image": "/img/thumb-placeholder.svg",
+            "imageUrl": "/img/thumb-placeholder.svg",
+            "publishedAt": "2026-04-10T19:18:03.000Z",
+            "sentiment": {
+              "posP": 6,
+              "neuP": 64,
+              "negP": 30,
+              "label": "negative",
+              "confidence": 0.8807
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Political slugfest between Congress-BJP in Haryana over crop procurement",
+            "link": "https://www.thehindu.com/news/national/haryana/political-slugfest-between-congress-bjp-in-haryana-over-crop-procurement/article70848374.ece",
+            "source": "The Hindu",
+            "sourceDomain": "thehindu.com",
+            "sourceCredibility": "High",
+            "industry": "Communication",
+            "description": "Farmers, who sustain the nation through their hard work, are being treated like criminals in the grain markets. It is as if they have arrived carrying illicit goods rather than their harvested crops,” Bhupinder Singh Hooda said",
+            "image": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg",
+            "imageUrl": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg",
+            "publishedAt": "2026-04-10T22:16:44.000Z",
+            "sentiment": {
+              "posP": 5,
+              "neuP": 85,
+              "negP": 10,
+              "label": "negative",
+              "confidence": 0.3818
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Iranian delegation arrives in Islamabad for talks with US",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/iranian-delegation-arrives-in-islamabad-for-talks-with-us?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "A senior Iranian delegation has arrived in Islamabad for talks with US officials.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440",
+            "publishedAt": "2026-04-10T21:59:21.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 100,
+              "negP": 0,
+              "label": "neutral",
+              "confidence": 0
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "Islamabad on lockdown ahead of US-Iran talks",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/islamabad-on-lockdown-ahead-of-us-iran-talks?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "Islamabad has deployed more than 10,000 military and police personnel as US and Iranian delegations arrive.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440",
+            "publishedAt": "2026-04-10T21:58:14.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 100,
+              "negP": 0,
+              "label": "neutral",
+              "confidence": 0
+            },
+            "category": "world"
+          }
+        ]
+      },
       {
         "title": "",
         "summary": "",
@@ -2657,6 +2813,26 @@
               "negP": 15,
               "label": "positive",
               "confidence": 0.128
+            },
+            "category": "world"
+          },
+          {
+            "title": "African Charity Sues Prince Harry For Defamation",
+            "link": "https://www.ndtv.com/world-news/african-charity-sues-prince-harry-for-defamation-11341259",
+            "source": "NDTV",
+            "sourceDomain": "ndtv.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "An African AIDS charity co-founded by Britain's Prince Harry said on Friday it had launched legal proceedings against him for \"reputational harm\", as the royal \"categorically\" rejected the  defamation...",
+            "image": "/img/thumb-placeholder.svg",
+            "imageUrl": "/img/thumb-placeholder.svg",
+            "publishedAt": "2026-04-10T21:22:41.000Z",
+            "sentiment": {
+              "posP": 20,
+              "neuP": 72,
+              "negP": 8,
+              "label": "positive",
+              "confidence": 0.5106
             },
             "category": "world"
           },
@@ -2821,142 +2997,6 @@
               "confidence": 0
             },
             "category": "science"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Muslims hold first Friday prayers at Al-Aqsa Mosque after reopening",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/muslims-hold-first-friday-prayers-at-al-aqsa-mosque-after-reopening?traffic_source=rss",
-            "source": "Al Jazeera",
-            "sourceDomain": "aljazeera.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Thousands of Muslims performed Friday prayers at Al-Aqsa Mosque after it reopened following a 40-day closure by Israel.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775855737.jpg?resize=1920%2C1080&amp;quality=80",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775855737.jpg?resize=1920%2C1080&amp;quality=80",
-            "publishedAt": "2026-04-10T21:15:45.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Tamil Nadu voter deleted from electoral roll reminds Supreme Court of promise to protect in case of ‘mass exclusion’",
-            "link": "https://www.thehindu.com/news/national/tamil-nadu/tn-voter-deleted-from-electoral-roll-reminds-supreme-court-of-promise-to-protect-in-case-of-mass-exclusion/article70847428.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "The petitioner, C. Geetha, said her name had been a mainstay in the State’s electoral roll over the years; she was even intending to contest as an independent candidate in the 51-Uthangarai (SC) Assembly Constituency and 52-Bargur Assembly Constituency in the Tamil Nadu Assembly elections in 2026.",
-            "image": "https://th-i.thgim.com/public/incoming/xu8s3l/article70848763.ece/alternates/LANDSCAPE_1200/Supreme%20Court%20%203.JPG",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/xu8s3l/article70848763.ece/alternates/LANDSCAPE_1200/Supreme%20Court%20%203.JPG",
-            "publishedAt": "2026-04-10T21:14:42.000Z",
-            "sentiment": {
-              "posP": 12,
-              "neuP": 88,
-              "negP": 0,
-              "label": "positive",
-              "confidence": 0.8176
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Melania Trump's speech propels Epstein crisis back to forefront",
-            "link": "https://www.bbc.com/news/articles/cwy3w9y8gyjo?at_medium=RSS&at_campaign=rss",
-            "source": "BBC",
-            "sourceDomain": "bbc.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "She has now placed herself squarely into the Epstein story and at odds with the administration, which wants to end the investigation.",
-            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/6e0f/live/3213b020-3521-11f1-879d-1b2f5c3919b8.jpg",
-            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/6e0f/live/3213b020-3521-11f1-879d-1b2f5c3919b8.jpg",
-            "publishedAt": "2026-04-10T21:13:45.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 88,
-              "negP": 12,
-              "label": "negative",
-              "confidence": 0.6249
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Arun shifted, Modak appointed Chennai Police Commissioner",
-            "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/arun-shifted-modak-appointed-chennai-police-commissioner/article70848050.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "",
-            "image": "https://th-i.thgim.com/public/incoming/qymf3b/article70849029.ece/alternates/LANDSCAPE_1200/IMG_a7dcc9f0-361b-4990-9_2_1_05D6SVVC.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/qymf3b/article70849029.ece/alternates/LANDSCAPE_1200/IMG_a7dcc9f0-361b-4990-9_2_1_05D6SVVC.jpg",
-            "publishedAt": "2026-04-10T21:12:03.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "india"
           }
         ]
       }
@@ -2995,6 +3035,26 @@
             "category": "world"
           },
           {
+            "title": "African Charity Sues Prince Harry For Defamation",
+            "link": "https://www.ndtv.com/world-news/african-charity-sues-prince-harry-for-defamation-11341259",
+            "source": "NDTV",
+            "sourceDomain": "ndtv.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "An African AIDS charity co-founded by Britain's Prince Harry said on Friday it had launched legal proceedings against him for \"reputational harm\", as the royal \"categorically\" rejected the  defamation...",
+            "image": "/img/thumb-placeholder.svg",
+            "imageUrl": "/img/thumb-placeholder.svg",
+            "publishedAt": "2026-04-10T21:22:41.000Z",
+            "sentiment": {
+              "posP": 20,
+              "neuP": 72,
+              "negP": 8,
+              "label": "positive",
+              "confidence": 0.5106
+            },
+            "category": "world"
+          },
+          {
             "title": "Prince Harry sued for defamation by Sentebale charity he co-founded",
             "link": "https://www.aljazeera.com/news/2026/4/10/prince-harry-sued-for-defamation-by-sentebale-charity-he-co-founded?traffic_source=rss",
             "source": "Al Jazeera",
@@ -3011,6 +3071,60 @@
               "negP": 29,
               "label": "negative",
               "confidence": 0.7717
+            },
+            "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "OpenAI CEO Sam Altman’s home targeted in Molotov cocktail attack",
+            "link": "https://www.aljazeera.com/news/2026/4/10/openai-ceo-sam-altmans-home-targeted-in-molotov-cocktail-attack?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "Police said the suspect targeted Altman's San Francisco residence before dawn and fled the scene on foot.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-03-20T193909Z_1777114240_RC2I2KAPTRYB_RTRMADP_3_OPENAI-ALTMAN-SISTER-LAWSUIT-1775856572.jpg?resize=1920%2C1440",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-03-20T193909Z_1777114240_RC2I2KAPTRYB_RTRMADP_3_OPENAI-ALTMAN-SISTER-LAWSUIT-1775856572.jpg?resize=1920%2C1440",
+            "publishedAt": "2026-04-10T22:29:07.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 82,
+              "negP": 18,
+              "label": "negative",
+              "confidence": 0.6486
+            },
+            "category": "world"
+          },
+          {
+            "title": "Suspect Arrested After Molotov Cocktail Attack At Sam Altman's Home",
+            "link": "https://www.ndtv.com/world-news/suspect-arrested-after-molotov-cocktail-attack-at-openai-ceo-sam-altmans-home-11341055",
+            "source": "NDTV",
+            "sourceDomain": "ndtv.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "A person was arrested by San Francisco police for allegedly throwing a Molotov cocktail at OpenAI CEO Sam Altman's home and for making threats outside the artificial intelligence startup's...",
+            "image": "/img/thumb-placeholder.svg",
+            "imageUrl": "/img/thumb-placeholder.svg",
+            "publishedAt": "2026-04-10T19:18:03.000Z",
+            "sentiment": {
+              "posP": 6,
+              "neuP": 64,
+              "negP": 30,
+              "label": "negative",
+              "confidence": 0.8807
             },
             "category": "world"
           }
@@ -3083,60 +3197,6 @@
         },
         "articles": [
           {
-            "title": "Lebanon Says Israel Talks To Take Place Next Week In Washington",
-            "link": "https://www.ndtv.com/world-news/lebanon-says-israel-talks-to-take-place-next-week-in-washington-11341182",
-            "source": "NDTV",
-            "sourceDomain": "ndtv.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Lebanon's presidency said on Friday that a meeting would be held with Israel in Washington next week to discuss a ceasefire in the Israel-Hezbollah war and the potential start of negotiations between...",
-            "image": "/img/thumb-placeholder.svg",
-            "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-04-10T20:34:33.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 91,
-              "negP": 9,
-              "label": "negative",
-              "confidence": 0.5994
-            },
-            "category": "world"
-          },
-          {
-            "title": "Lebanon says ceasefire must be in place before Israel talks",
-            "link": "https://www.bbc.com/news/articles/c93en5q2zl3o?at_medium=RSS&at_campaign=rss",
-            "source": "BBC",
-            "sourceDomain": "bbc.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "Lebanon will only take part in talks with Israel if a ceasefire is already in place, a senior official tells the BBC.",
-            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/3db9/live/f3457360-34c6-11f1-879d-1b2f5c3919b8.jpg",
-            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/3db9/live/f3457360-34c6-11f1-879d-1b2f5c3919b8.jpg",
-            "publishedAt": "2026-04-10T18:21:59.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
             "title": "Real Madrid hand Barcelona huge La Liga title chance after draw with Girona",
             "link": "https://www.aljazeera.com/sports/2026/4/10/real-madrid-hand-barcelona-huge-la-liga-title-chance-after-draw-with-girona?traffic_source=rss",
             "source": "Al Jazeera",
@@ -3191,22 +3251,22 @@
         },
         "articles": [
           {
-            "title": "BSF jawan killed in unprovoked firing in Manipur’s Ukhrul",
-            "link": "https://www.thehindu.com/news/national/manipur/bsf-jawan-killed-in-unprovoked-firing-in-manipurs-ukhrul/article70848785.ece",
+            "title": "Political slugfest between Congress-BJP in Haryana over crop procurement",
+            "link": "https://www.thehindu.com/news/national/haryana/political-slugfest-between-congress-bjp-in-haryana-over-crop-procurement/article70848374.ece",
             "source": "The Hindu",
             "sourceDomain": "thehindu.com",
             "sourceCredibility": "High",
             "industry": "Communication",
-            "description": "Constable Mithun Mandal who hailed from West Bengal, succumbed to his bullet injury at RIMS Hospital, Imphal",
-            "image": "https://th-i.thgim.com/public/incoming/6x6boi/article70848806.ece/alternates/LANDSCAPE_1200/IMG_1300.jpeg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/6x6boi/article70848806.ece/alternates/LANDSCAPE_1200/IMG_1300.jpeg",
-            "publishedAt": "2026-04-10T21:31:26.000Z",
+            "description": "Farmers, who sustain the nation through their hard work, are being treated like criminals in the grain markets. It is as if they have arrived carrying illicit goods rather than their harvested crops,” Bhupinder Singh Hooda said",
+            "image": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg",
+            "imageUrl": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg",
+            "publishedAt": "2026-04-10T22:16:44.000Z",
             "sentiment": {
-              "posP": 6,
-              "neuP": 65,
-              "negP": 29,
+              "posP": 5,
+              "neuP": 85,
+              "negP": 10,
               "label": "negative",
-              "confidence": 0.8316
+              "confidence": 0.3818
             },
             "category": "world"
           }
@@ -3225,16 +3285,16 @@
         },
         "articles": [
           {
-            "title": "Muslims hold first Friday prayers at Al-Aqsa Mosque after reopening",
-            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/muslims-hold-first-friday-prayers-at-al-aqsa-mosque-after-reopening?traffic_source=rss",
+            "title": "Iranian delegation arrives in Islamabad for talks with US",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/iranian-delegation-arrives-in-islamabad-for-talks-with-us?traffic_source=rss",
             "source": "Al Jazeera",
             "sourceDomain": "aljazeera.com",
             "sourceCredibility": "Medium",
             "industry": "Communication",
-            "description": "Thousands of Muslims performed Friday prayers at Al-Aqsa Mosque after it reopened following a 40-day closure by Israel.",
-            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775855737.jpg?resize=1920%2C1080&amp;quality=80",
-            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/image-1775855737.jpg?resize=1920%2C1080&amp;quality=80",
-            "publishedAt": "2026-04-10T21:15:45.000Z",
+            "description": "A senior Iranian delegation has arrived in Islamabad for talks with US officials.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440",
+            "publishedAt": "2026-04-10T21:59:21.000Z",
             "sentiment": {
               "posP": 0,
               "neuP": 100,
@@ -3259,22 +3319,22 @@
         },
         "articles": [
           {
-            "title": "Tamil Nadu voter deleted from electoral roll reminds Supreme Court of promise to protect in case of ‘mass exclusion’",
-            "link": "https://www.thehindu.com/news/national/tamil-nadu/tn-voter-deleted-from-electoral-roll-reminds-supreme-court-of-promise-to-protect-in-case-of-mass-exclusion/article70847428.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
+            "title": "Islamabad on lockdown ahead of US-Iran talks",
+            "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/islamabad-on-lockdown-ahead-of-us-iran-talks?traffic_source=rss",
+            "source": "Al Jazeera",
+            "sourceDomain": "aljazeera.com",
+            "sourceCredibility": "Medium",
             "industry": "Communication",
-            "description": "The petitioner, C. Geetha, said her name had been a mainstay in the State’s electoral roll over the years; she was even intending to contest as an independent candidate in the 51-Uthangarai (SC) Assembly Constituency and 52-Bargur Assembly Constituency in the Tamil Nadu Assembly elections in 2026.",
-            "image": "https://th-i.thgim.com/public/incoming/xu8s3l/article70848763.ece/alternates/LANDSCAPE_1200/Supreme%20Court%20%203.JPG",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/xu8s3l/article70848763.ece/alternates/LANDSCAPE_1200/Supreme%20Court%20%203.JPG",
-            "publishedAt": "2026-04-10T21:14:42.000Z",
+            "description": "Islamabad has deployed more than 10,000 military and police personnel as US and Iranian delegations arrive.",
+            "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440",
+            "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440",
+            "publishedAt": "2026-04-10T21:58:14.000Z",
             "sentiment": {
-              "posP": 12,
-              "neuP": 88,
+              "posP": 0,
+              "neuP": 100,
               "negP": 0,
-              "label": "positive",
-              "confidence": 0.8176
+              "label": "neutral",
+              "confidence": 0
             },
             "category": "world"
           }
@@ -3293,22 +3353,22 @@
         },
         "articles": [
           {
-            "title": "Melania Trump's speech propels Epstein crisis back to forefront",
-            "link": "https://www.bbc.com/news/articles/cwy3w9y8gyjo?at_medium=RSS&at_campaign=rss",
-            "source": "BBC",
-            "sourceDomain": "bbc.com",
+            "title": "BSF jawan killed in unprovoked firing in Manipur’s Ukhrul",
+            "link": "https://www.thehindu.com/news/national/manipur/bsf-jawan-killed-in-unprovoked-firing-in-manipurs-ukhrul/article70848785.ece",
+            "source": "The Hindu",
+            "sourceDomain": "thehindu.com",
             "sourceCredibility": "High",
             "industry": "Communication",
-            "description": "She has now placed herself squarely into the Epstein story and at odds with the administration, which wants to end the investigation.",
-            "image": "https://ichef.bbci.co.uk/news/1024/branded_news/6e0f/live/3213b020-3521-11f1-879d-1b2f5c3919b8.jpg",
-            "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/6e0f/live/3213b020-3521-11f1-879d-1b2f5c3919b8.jpg",
-            "publishedAt": "2026-04-10T21:13:45.000Z",
+            "description": "Constable Mithun Mandal who hailed from West Bengal, succumbed to his bullet injury at RIMS Hospital, Imphal",
+            "image": "https://th-i.thgim.com/public/incoming/6x6boi/article70848806.ece/alternates/LANDSCAPE_1200/IMG_1300.jpeg",
+            "imageUrl": "https://th-i.thgim.com/public/incoming/6x6boi/article70848806.ece/alternates/LANDSCAPE_1200/IMG_1300.jpeg",
+            "publishedAt": "2026-04-10T21:31:26.000Z",
             "sentiment": {
-              "posP": 0,
-              "neuP": 88,
-              "negP": 12,
+              "posP": 6,
+              "neuP": 65,
+              "negP": 29,
               "label": "negative",
-              "confidence": 0.6249
+              "confidence": 0.8316
             },
             "category": "world"
           }
@@ -3731,9 +3791,9 @@
     ],
     "sentiment": {
       "overall": {
-        "pos": 6.63,
-        "neu": 82.92,
-        "neg": 10.46,
+        "pos": 6.76,
+        "neu": 82.68,
+        "neg": 10.56,
         "count": 120
       },
       "india": {
@@ -3743,71 +3803,71 @@
         "count": 16
       },
       "world": {
-        "pos": 6.85,
-        "neu": 82.64,
-        "neg": 10.51,
+        "pos": 7,
+        "neu": 82.38,
+        "neg": 10.63,
         "count": 104
       }
     },
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-04-10T18:05:43.682Z",
-          "pos": 9,
-          "neu": 88,
-          "neg": 3,
-          "count": 5
-        },
-        {
-          "label": "2026-04-10T19:05:43.682Z",
+          "label": "2026-04-10T18:52:19.899Z",
           "pos": 0,
           "neu": 87,
           "neg": 13,
           "count": 1
         },
         {
-          "label": "2026-04-10T20:05:43.682Z",
+          "label": "2026-04-10T19:52:19.899Z",
           "pos": 0,
           "neu": 92,
           "neg": 8,
           "count": 1
         },
         {
-          "label": "2026-04-10T21:05:43.682Z",
+          "label": "2026-04-10T20:52:19.899Z",
           "pos": 2,
           "neu": 94,
           "neg": 4,
           "count": 2
+        },
+        {
+          "label": "2026-04-10T21:52:19.899Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
         }
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-04-10T18:05:43.682Z",
-          "pos": 8,
-          "neu": 84,
-          "neg": 7,
-          "count": 25
-        },
-        {
-          "label": "2026-04-10T19:05:43.682Z",
-          "pos": 6,
-          "neu": 77,
-          "neg": 16,
-          "count": 16
-        },
-        {
-          "label": "2026-04-10T20:05:43.682Z",
-          "pos": 6,
-          "neu": 85,
-          "neg": 9,
-          "count": 12
-        },
-        {
-          "label": "2026-04-10T21:05:43.682Z",
+          "label": "2026-04-10T18:52:19.899Z",
           "pos": 9,
-          "neu": 83,
-          "neg": 8,
-          "count": 7
+          "neu": 80,
+          "neg": 11,
+          "count": 23
+        },
+        {
+          "label": "2026-04-10T19:52:19.899Z",
+          "pos": 5,
+          "neu": 84,
+          "neg": 11,
+          "count": 13
+        },
+        {
+          "label": "2026-04-10T20:52:19.899Z",
+          "pos": 11,
+          "neu": 81,
+          "neg": 7,
+          "count": 9
+        },
+        {
+          "label": "2026-04-10T21:52:19.899Z",
+          "pos": 1,
+          "neu": 92,
+          "neg": 7,
+          "count": 4
         }
       ]
     },
@@ -3826,41 +3886,31 @@
           },
           {
             "name": "Communication",
-            "bias": -4.54,
-            "count": 95
+            "bias": -4.45,
+            "count": 96
           },
           {
             "name": "Technology",
-            "bias": -3.6,
-            "count": 10
+            "bias": -4,
+            "count": 9
           },
           {
             "name": "Finance",
             "bias": 0.47,
             "count": 15
-          },
-          {
-            "name": "Energy",
-            "bias": 0,
-            "count": 1
           }
         ],
         "pos": [],
         "neu": [
           {
             "name": "Technology",
-            "bias": -3.6,
-            "count": 10
+            "bias": -4,
+            "count": 9
           },
           {
             "name": "Finance",
             "bias": 0.47,
             "count": 15
-          },
-          {
-            "name": "Energy",
-            "bias": 0,
-            "count": 1
           }
         ],
         "neg": [
@@ -3876,31 +3926,31 @@
           },
           {
             "name": "Communication",
-            "bias": -4.54,
-            "count": 95
+            "bias": -4.45,
+            "count": 96
           }
         ]
       },
       "sources": [
         {
           "source": "The Hindu",
-          "pos": 8.43,
-          "neu": 83.03,
-          "neg": 8.53,
+          "pos": 8.6,
+          "neu": 82.53,
+          "neg": 8.87,
           "count": 30
         },
         {
           "source": "Al Jazeera",
-          "pos": 6.63,
-          "neu": 80.33,
-          "neg": 13.04,
-          "count": 24
+          "pos": 6,
+          "neu": 81.24,
+          "neg": 12.76,
+          "count": 25
         },
         {
           "source": "NDTV",
-          "pos": 7.5,
-          "neu": 82.85,
-          "neg": 9.65,
+          "pos": 8.5,
+          "neu": 82.05,
+          "neg": 9.45,
           "count": 20
         },
         {
@@ -3943,6 +3993,66 @@
   },
   "usa": {
     "topStories": [
+      {
+        "title": "Political slugfest between Congress-BJP in Haryana over crop procurement",
+        "link": "https://www.thehindu.com/news/national/haryana/political-slugfest-between-congress-bjp-in-haryana-over-crop-procurement/article70848374.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Farmers, who sustain the nation through their hard work, are being treated like criminals in the grain markets. It is as if they have arrived carrying illicit goods rather than their harvested crops,” Bhupinder Singh Hooda said",
+        "image": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg",
+        "publishedAt": "2026-04-10T22:16:44.000Z",
+        "sentiment": {
+          "posP": 5,
+          "neuP": 85,
+          "negP": 10,
+          "label": "negative",
+          "confidence": 0.3818
+        },
+        "category": "world"
+      },
+      {
+        "title": "Iranian delegation arrives in Islamabad for talks with US",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/iranian-delegation-arrives-in-islamabad-for-talks-with-us?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "A senior Iranian delegation has arrived in Islamabad for talks with US officials.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440",
+        "publishedAt": "2026-04-10T21:59:21.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "Islamabad on lockdown ahead of US-Iran talks",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/islamabad-on-lockdown-ahead-of-us-iran-talks?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Islamabad has deployed more than 10,000 military and police personnel as US and Iranian delegations arrive.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440",
+        "publishedAt": "2026-04-10T21:58:14.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
       {
         "title": "Tamil Nadu voter deleted from electoral roll reminds Supreme Court of promise to protect in case of ‘mass exclusion’",
         "link": "https://www.thehindu.com/news/national/tamil-nadu/tn-voter-deleted-from-electoral-roll-reminds-supreme-court-of-promise-to-protect-in-case-of-mass-exclusion/article70847428.ece",
@@ -4122,69 +4232,69 @@
           "confidence": 0.2732
         },
         "category": "world"
+      }
+    ],
+    "dailyNews": [
+      {
+        "title": "Political slugfest between Congress-BJP in Haryana over crop procurement",
+        "link": "https://www.thehindu.com/news/national/haryana/political-slugfest-between-congress-bjp-in-haryana-over-crop-procurement/article70848374.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Farmers, who sustain the nation through their hard work, are being treated like criminals in the grain markets. It is as if they have arrived carrying illicit goods rather than their harvested crops,” Bhupinder Singh Hooda said",
+        "image": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/news/national/other-states/7n6qic/article70848362.ece/alternates/LANDSCAPE_1200/IMG-20260410-WA0009.jpg",
+        "publishedAt": "2026-04-10T22:16:44.000Z",
+        "sentiment": {
+          "posP": 5,
+          "neuP": 85,
+          "negP": 10,
+          "label": "negative",
+          "confidence": 0.3818
+        },
+        "category": "world"
       },
       {
-        "title": "New tensions emerge before US-Iran war ceasefire talks in Pakistan",
-        "link": "https://www.aljazeera.com/news/2026/4/10/new-tensions-emerge-before-us-iran-war-ceasefire-talks-in-pakistan?traffic_source=rss",
+        "title": "Iranian delegation arrives in Islamabad for talks with US",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/iranian-delegation-arrives-in-islamabad-for-talks-with-us?traffic_source=rss",
         "source": "Al Jazeera",
         "sourceDomain": "aljazeera.com",
         "sourceCredibility": "Medium",
         "industry": "Communication",
-        "description": "Iranian official says conditions still not met before talks, as Trump re-ups threat of renewed attacks.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/ap_69d9451a36303-1775846682.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/ap_69d9451a36303-1775846682.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-04-10T19:21:54.000Z",
+        "description": "A senior Iranian delegation has arrived in Islamabad for talks with US officials.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-Islamabad-arrival-1775858236.png?resize=1920%2C1440",
+        "publishedAt": "2026-04-10T21:59:21.000Z",
         "sentiment": {
           "posP": 0,
-          "neuP": 63,
-          "negP": 37,
-          "label": "negative",
-          "confidence": 0.9169
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "world"
       },
       {
-        "title": "Congress Holds High-Level Meet, Discusses Middle East War, Policy Issues",
-        "link": "https://www.ndtv.com/india-news/israel-iran-war-congress-holds-high-level-meet-discusses-middle-east-war-policy-issues-11341051",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
+        "title": "Islamabad on lockdown ahead of US-Iran talks",
+        "link": "https://www.aljazeera.com/video/newsfeed/2026/4/10/islamabad-on-lockdown-ahead-of-us-iran-talks?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
         "sourceCredibility": "Medium",
         "industry": "Communication",
-        "description": "The discussions focused on proposed changes to the women's reservation law, the upcoming delimitation exercise, and the evolving situation in the Middle East.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-10T19:14:19.000Z",
+        "description": "Islamabad has deployed more than 10,000 military and police personnel as US and Iranian delegations arrive.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/Screenshot-2026-04-11-at-12.47.21-AM-1775858209.png?resize=1920%2C1440",
+        "publishedAt": "2026-04-10T21:58:14.000Z",
         "sentiment": {
-          "posP": 7,
-          "neuP": 83,
-          "negP": 10,
-          "label": "negative",
-          "confidence": 0.3182
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "world"
       },
-      {
-        "title": "No US Talks Without Lebanon Ceasefire, Asset Release: Iran Speaker",
-        "link": "https://www.ndtv.com/world-news/no-us-talks-without-lebanon-ceasefire-asset-release-iran-speaker-11341008",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Ghalibaf made the announcement shortly after US Vice President JD Vance had boarded a plane to fly to Islamabad.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-10T18:55:02.000Z",
-        "sentiment": {
-          "posP": 8,
-          "neuP": 85,
-          "negP": 7,
-          "label": "positive",
-          "confidence": 0.0772
-        },
-        "category": "world"
-      }
-    ],
-    "dailyNews": [
       {
         "title": "Tamil Nadu voter deleted from electoral roll reminds Supreme Court of promise to protect in case of ‘mass exclusion’",
         "link": "https://www.thehindu.com/news/national/tamil-nadu/tn-voter-deleted-from-electoral-roll-reminds-supreme-court-of-promise-to-protect-in-case-of-mass-exclusion/article70847428.ece",
@@ -4546,26 +4656,6 @@
         "category": "world"
       },
       {
-        "title": "Why A US-Iran Ceasefire Hasn't Restored Normalcy In Global Shipping",
-        "link": "https://www.ndtv.com/world-news/strait-of-hormuz-why-a-us-iran-ceasefire-hasnt-restored-normalcy-in-global-shipping-11340859",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "While delayed vessels have begun moving through the Gulf once again, the maritime community is far from returning to business as usual.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-10T18:00:18.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 88,
-          "negP": 12,
-          "label": "negative",
-          "confidence": 0.4471
-        },
-        "category": "world"
-      },
-      {
         "title": "YouTube Premium gets pricier as subscription costs rise in the US – Here's how much you have to pay now",
         "link": "https://www.livemint.com/news/trends/youtube-premium-gets-pricier-as-subscription-costs-rise-in-the-us-heres-what-you-have-to-pay-now-11775840614891.html",
         "source": "Mint",
@@ -4624,88 +4714,48 @@
           "confidence": 0
         },
         "category": "world"
-      },
-      {
-        "title": "JD Vance expects ‘positive’ US-Iran war talks as he departs for Pakistan",
-        "link": "https://www.aljazeera.com/news/2026/4/10/jd-vance-expects-positive-us-iran-war-talks-as-he-departs-for-pakistan?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Vice president says Trump gave 'pretty clear guidelines' on talks, which will be productive if Iran does not 'play' US.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69d90a0d2265-1775831565.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69d90a0d2265-1775831565.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-04-10T16:05:36.000Z",
-        "sentiment": {
-          "posP": 15,
-          "neuP": 75,
-          "negP": 10,
-          "label": "positive",
-          "confidence": 0.2263
-        },
-        "category": "world"
-      },
-      {
-        "title": "US-Iran peace talks in Islamabad face massive hurdles",
-        "link": "https://www.aljazeera.com/video/quotable/2026/4/10/us-iran-peace-talks-in-islamabad-face-massive-hurdles?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Ali Vaez, says upcoming talks between the US and Iran may be marred by a deficit of trust.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/REALwide-1775836687.jpg?resize=1920%2C1080&amp;quality=80",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/REALwide-1775836687.jpg?resize=1920%2C1080&amp;quality=80",
-        "publishedAt": "2026-04-10T15:59:47.000Z",
-        "sentiment": {
-          "posP": 22,
-          "neuP": 69,
-          "negP": 9,
-          "label": "positive",
-          "confidence": 0.6249
-        },
-        "category": "world"
       }
     ],
     "sentiment": {
-      "pos": 5.58,
-      "neu": 83.75,
-      "neg": 10.66,
+      "pos": 5.44,
+      "neu": 83.93,
+      "neg": 10.62,
       "count": 187
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 4.63,
-        "neu": 82.66,
-        "neg": 12.71,
+        "pos": 4.55,
+        "neu": 82.83,
+        "neg": 12.62,
         "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 4.54,
-        "neu": 79.49,
-        "neg": 15.97,
-        "count": 20
-      },
-      {
-        "source": "CBS News",
-        "pos": 7.33,
-        "neu": 88.91,
-        "neg": 3.77,
+        "pos": 6.36,
+        "neu": 79.25,
+        "neg": 14.4,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 6.26,
-        "neu": 82.07,
-        "neg": 11.68,
+        "pos": 5.07,
+        "neu": 82.41,
+        "neg": 12.52,
+        "count": 20
+      },
+      {
+        "source": "CBS News",
+        "pos": 5.87,
+        "neu": 90.63,
+        "neg": 3.51,
         "count": 20
       },
       {
         "source": "ABC News",
-        "pos": 7.3,
-        "neu": 87.93,
-        "neg": 4.76,
+        "pos": 7.17,
+        "neu": 86.56,
+        "neg": 6.27,
         "count": 20
       },
       {
@@ -4724,24 +4774,24 @@
       },
       {
         "source": "Al Jazeera",
-        "pos": 7.21,
-        "neu": 81.86,
-        "neg": 10.93,
+        "pos": 6.57,
+        "neu": 83.36,
+        "neg": 10.07,
         "count": 14
       },
       {
         "source": "NDTV",
-        "pos": 5.17,
-        "neu": 81.67,
-        "neg": 13.17,
-        "count": 6
+        "pos": 6.2,
+        "neu": 80.4,
+        "neg": 13.4,
+        "count": 5
       },
       {
         "source": "The Hindu",
-        "pos": 10.5,
-        "neu": 81.5,
-        "neg": 8,
-        "count": 2
+        "pos": 8.67,
+        "neu": 82.67,
+        "neg": 8.67,
+        "count": 3
       },
       {
         "source": "BBC",
@@ -4772,23 +4822,23 @@
         },
         {
           "name": "Energy",
-          "bias": -7.56,
-          "count": 22
+          "bias": -8.28,
+          "count": 21
         },
         {
           "name": "Technology",
-          "bias": -5.55,
-          "count": 131
+          "bias": -5.84,
+          "count": 132
         },
         {
           "name": "Finance",
-          "bias": -4.96,
-          "count": 11
+          "bias": -5.36,
+          "count": 9
         },
         {
           "name": "Communication",
-          "bias": -3.72,
-          "count": 25
+          "bias": -3.39,
+          "count": 27
         },
         {
           "name": "Manufacturing",
@@ -4796,32 +4846,27 @@
           "count": 2
         },
         {
-          "name": "Materials",
-          "bias": -0.5,
-          "count": 1
-        },
-        {
           "name": "Healthcare",
-          "bias": -0.33,
-          "count": 6
+          "bias": -2.48,
+          "count": 5
         }
       ],
       "pos": [],
       "neu": [
         {
           "name": "Technology",
-          "bias": -5.55,
-          "count": 131
+          "bias": -5.84,
+          "count": 132
         },
         {
           "name": "Finance",
-          "bias": -4.96,
-          "count": 11
+          "bias": -5.36,
+          "count": 9
         },
         {
           "name": "Communication",
-          "bias": -3.72,
-          "count": 25
+          "bias": -3.39,
+          "count": 27
         }
       ],
       "neg": [
@@ -4837,40 +4882,40 @@
         },
         {
           "name": "Energy",
-          "bias": -7.56,
-          "count": 22
+          "bias": -8.28,
+          "count": 21
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-04-10T18:05:43.684Z",
-          "pos": 4,
-          "neu": 85,
-          "neg": 11,
-          "count": 21
+          "label": "2026-04-10T18:52:19.900Z",
+          "pos": 6,
+          "neu": 79,
+          "neg": 15,
+          "count": 12
         },
         {
-          "label": "2026-04-10T19:05:43.684Z",
-          "pos": 8,
-          "neu": 81,
-          "neg": 11,
-          "count": 18
-        },
-        {
-          "label": "2026-04-10T20:05:43.684Z",
+          "label": "2026-04-10T19:52:19.900Z",
           "pos": 7,
           "neu": 82,
-          "neg": 11,
-          "count": 30
+          "neg": 12,
+          "count": 25
         },
         {
-          "label": "2026-04-10T21:05:43.684Z",
+          "label": "2026-04-10T20:52:19.900Z",
           "pos": 4,
+          "neu": 87,
+          "neg": 9,
+          "count": 27
+        },
+        {
+          "label": "2026-04-10T21:52:19.900Z",
+          "pos": 6,
           "neu": 86,
           "neg": 9,
-          "count": 29
+          "count": 24
         }
       ]
     }
@@ -5058,6 +5103,46 @@
         "category": "world"
       },
       {
+        "title": "Trump’s birthright citizenship crusade draws backing from cohort of prominent legal scholars",
+        "link": "https://www.foxnews.com/politics/trumps-birthright-citizenship-crusade-draws-backing-from-cohort-prominent-legal-scholars",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A group of law professors mount a campaign challenging birthright citizenship, arguing Trump's executive order to narrow the 14th Amendment is defensible.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-10T22:30:24.000Z",
+        "sentiment": {
+          "posP": 22.3,
+          "negP": 8,
+          "neuP": 69.7,
+          "label": "positive",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Golden eagles, lions and a winged Lady Liberty top Trump's proposed 250-foot DC Triumphal Arch designs",
+        "link": "https://www.foxnews.com/politics/golden-eagles-lions-winged-lady-liberty-top-trumps-proposed-250-foot-dc-triumphal-arch-designs",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Designs for the President Donald Trump-touted 250-foot Triumphal Arch near Arlington National Cemetery were revealed ahead of next week's Commission of Fine Arts vote.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-10T22:21:46.000Z",
+        "sentiment": {
+          "posP": 27.7,
+          "negP": 0,
+          "neuP": 72.3,
+          "label": "positive",
+          "confidence": 0.9
+        },
+        "category": "usa"
+      },
+      {
         "title": "Streamer who said Rick Scott should be ‘killed’ invited to Yale as lawmaker demands funding cut",
         "link": "https://www.foxnews.com/politics/streamer-who-said-rick-scott-should-killed-invited-yale-lawmaker-demands-funding-cut",
         "source": "Fox News",
@@ -5074,46 +5159,6 @@
           "neuP": 90.2,
           "label": "negative",
           "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Court poised to block Trump tariffs again, teeing up new fight",
-        "link": "https://www.foxnews.com/politics/court-poised-block-trump-tariffs-again-teeing-up-new-fight",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The trade court could stymie Trump's revived tariff efforts — dealing another blow the president on a matter he described as 'life or death' for the U.S. economy.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-10T20:02:38.000Z",
-        "sentiment": {
-          "posP": 7,
-          "negP": 21.1,
-          "neuP": 71.9,
-          "label": "negative",
-          "confidence": 0.81
-        },
-        "category": "usa"
-      },
-      {
-        "title": "A mother mourning the son she lost in the Iran war says she told Trump: 'Go get 'em'",
-        "link": "https://www.nbcnews.com/politics/politics-news/mother-son-killed-iran-war-told-trump-go-get-em-cody-khork-rcna267473",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "More than a month after her son, Maj. Cody Khork, died in the Iran war, Donna Burhans has found a routine that helps her cope.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-09T22:25:00.000Z",
-        "sentiment": {
-          "posP": 4.9,
-          "negP": 31.2,
-          "neuP": 63.9,
-          "label": "negative",
-          "confidence": 0.93
         },
         "category": "usa"
       }
@@ -5300,6 +5345,46 @@
         "category": "world"
       },
       {
+        "title": "Trump’s birthright citizenship crusade draws backing from cohort of prominent legal scholars",
+        "link": "https://www.foxnews.com/politics/trumps-birthright-citizenship-crusade-draws-backing-from-cohort-prominent-legal-scholars",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A group of law professors mount a campaign challenging birthright citizenship, arguing Trump's executive order to narrow the 14th Amendment is defensible.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-10T22:30:24.000Z",
+        "sentiment": {
+          "posP": 22.3,
+          "negP": 8,
+          "neuP": 69.7,
+          "label": "positive",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Golden eagles, lions and a winged Lady Liberty top Trump's proposed 250-foot DC Triumphal Arch designs",
+        "link": "https://www.foxnews.com/politics/golden-eagles-lions-winged-lady-liberty-top-trumps-proposed-250-foot-dc-triumphal-arch-designs",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Designs for the President Donald Trump-touted 250-foot Triumphal Arch near Arlington National Cemetery were revealed ahead of next week's Commission of Fine Arts vote.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-10T22:21:46.000Z",
+        "sentiment": {
+          "posP": 27.7,
+          "negP": 0,
+          "neuP": 72.3,
+          "label": "positive",
+          "confidence": 0.9
+        },
+        "category": "usa"
+      },
+      {
         "title": "Streamer who said Rick Scott should be ‘killed’ invited to Yale as lawmaker demands funding cut",
         "link": "https://www.foxnews.com/politics/streamer-who-said-rick-scott-should-killed-invited-yale-lawmaker-demands-funding-cut",
         "source": "Fox News",
@@ -5336,126 +5421,6 @@
           "neuP": 71.9,
           "label": "negative",
           "confidence": 0.81
-        },
-        "category": "usa"
-      },
-      {
-        "title": "A mother mourning the son she lost in the Iran war says she told Trump: 'Go get 'em'",
-        "link": "https://www.nbcnews.com/politics/politics-news/mother-son-killed-iran-war-told-trump-go-get-em-cody-khork-rcna267473",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "More than a month after her son, Maj. Cody Khork, died in the Iran war, Donna Burhans has found a routine that helps her cope.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-09T22:25:00.000Z",
-        "sentiment": {
-          "posP": 4.9,
-          "negP": 31.2,
-          "neuP": 63.9,
-          "label": "negative",
-          "confidence": 0.93
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Hunter Biden open to cage match with Trump sons",
-        "link": "https://www.nbcnews.com/video/shorts/hunter-biden-open-to-cage-match-with-trump-sons-261106245984",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Hunter Biden open to cage match with Trump sons",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-10T16:25:11.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Why a Maine farmer is beating Schumer-backed candidate in Democratic Senate primary polls",
-        "link": "https://www.cbsnews.com/video/why-maine-farmer-beating-chuck-schumer-backed-candidate-in-senate-primary-polls/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Bloomberg's Mario Parker and Axios' Alex Isenstadt join \"The Takeout\" to discuss the midterms, Melania Trump and more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-10T21:50:23.000Z",
-        "sentiment": {
-          "posP": 6.6,
-          "negP": 9,
-          "neuP": 84.4,
-          "label": "negative",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Kamala Harris says she might run for president in 2028: \"I'm thinking about it\"",
-        "link": "https://www.cbsnews.com/news/kamala-harris-2028-president-national-action-network/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Former Vice President Kamala Harris said that she might run for president in 2028, telling a gathering in New York that she is considering mounting a third bid for the White House.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-10T21:44:56.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Planned \"Arc de Trump\" would be over twice as high as Lincoln Memorial",
-        "link": "https://www.cbsnews.com/news/trump-arch-would-dwarf-lincoln-memorial-new-plans-show/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Plans submitted by the Interior Department show the triumphal arch would be 250 feet tall, the tallest triumphal arch in the world.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-10T20:54:47.000Z",
-        "sentiment": {
-          "posP": 15.4,
-          "negP": 0,
-          "neuP": 84.6,
-          "label": "positive",
-          "confidence": 0.72
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump proposes painting executive office building white",
-        "link": "https://www.cbsnews.com/news/trump-proposes-painting-executive-office-building-white/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The building sits across a driveway from the West Wing and was completed in 1888.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-10T19:02:21.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
         },
         "category": "usa"
       },
@@ -5509,7 +5474,7 @@
         "description": "The man seen beating a woman is from Haiti and faces a murder charge in Florida, officials said. President Trump has fought to end protections for Haitian immigrants.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-04-10T20:21:34.000Z",
+        "publishedAt": "2026-04-10T22:13:49.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 27.8,
@@ -5580,31 +5545,111 @@
         "category": "usa"
       },
       {
-        "title": "Trump praises Palantir as stock has worst week in over a year and Iran conflict drags on",
-        "link": "https://www.cnbc.com/2026/04/10/trump-pltr-palantir-stock-iran-war.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Trump Moves Top Aide James Blair to Political Operation Ahead of Midterms",
+        "link": "https://www.nytimes.com/2026/04/10/us/politics/james-blair-trump-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Palantir's Maven platform have reportedly been used in the U.S. military campaign in Iran.",
+        "description": "Mr. Blair will “lead the charge from the outside,” the president said on social media. The move comes as Republicans are bracing for a potentially difficult November election.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-04-10T21:16:19.000Z",
+        "publishedAt": "2026-04-10T22:07:35.000Z",
         "sentiment": {
-          "posP": 9.1,
-          "negP": 21.6,
-          "neuP": 69.3,
+          "posP": 4.4,
+          "negP": 6.1,
+          "neuP": 89.5,
+          "label": "neutral",
+          "confidence": 0.18
+        },
+        "category": "usa"
+      },
+      {
+        "title": "JD Vance says he believes U.S.-Iran talks will be \"positive\" as he heads to Pakistan",
+        "link": "https://www.cbsnews.com/video/jd-vance-believes-u-s-iran-talks-positive-heads-to-pakistan/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump expressed confidence on Friday as senior members of his administration prepared for in-person peace talks with Iran. Vice President JD Vance said he believed the negotiations will be \"positive\" before boarding his flight to Pakistan. CBS News political reporter Zak Hudak reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-10T22:33:00.000Z",
+        "sentiment": {
+          "posP": 13.4,
+          "negP": 0,
+          "neuP": 86.6,
+          "label": "positive",
+          "confidence": 0.83
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Planned \"Arc de Trump\" would be over twice as high as Lincoln Memorial",
+        "link": "https://www.cbsnews.com/news/trump-arch-would-dwarf-lincoln-memorial-new-plans-show/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Plans submitted by the Interior Department show the triumphal arch would be 250 feet tall, the tallest triumphal arch in the world.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-10T22:17:47.000Z",
+        "sentiment": {
+          "posP": 15.4,
+          "negP": 0,
+          "neuP": 84.6,
+          "label": "positive",
+          "confidence": 0.72
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Why a Maine farmer is beating Schumer-backed candidate in Democratic Senate primary polls",
+        "link": "https://www.cbsnews.com/video/why-maine-farmer-beating-chuck-schumer-backed-candidate-in-senate-primary-polls/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Bloomberg's Mario Parker and Axios' Alex Isenstadt join \"The Takeout\" to discuss the midterms, Melania Trump and more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-10T21:50:23.000Z",
+        "sentiment": {
+          "posP": 6.6,
+          "negP": 9,
+          "neuP": 84.4,
           "label": "negative",
-          "confidence": 0.57
+          "confidence": 0.2
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Kamala Harris says she might run for president in 2028: \"I'm thinking about it\"",
+        "link": "https://www.cbsnews.com/news/kamala-harris-2028-president-national-action-network/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Former Vice President Kamala Harris said that she might run for president in 2028, telling a gathering in New York that she is considering mounting a third bid for the White House.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-10T21:44:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.42,
-      "neu": 83.63,
-      "neg": 11.96,
-      "count": 49
+      "pos": 5.62,
+      "neu": 82.87,
+      "neg": 11.52,
+      "count": 52
     },
     "sourceLeaderboard": [
       {
@@ -5622,6 +5667,13 @@
         "count": 10
       },
       {
+        "source": "NYT",
+        "pos": 4,
+        "neu": 85.41,
+        "neg": 10.59,
+        "count": 7
+      },
+      {
         "source": "Al Jazeera",
         "pos": 5.33,
         "neu": 81.83,
@@ -5629,24 +5681,24 @@
         "count": 6
       },
       {
-        "source": "NYT",
-        "pos": 3.93,
-        "neu": 84.73,
-        "neg": 11.33,
-        "count": 6
+        "source": "Fox News",
+        "pos": 14.25,
+        "neu": 76.03,
+        "neg": 9.73,
+        "count": 4
       },
       {
         "source": "CBS News",
-        "pos": 5.5,
-        "neu": 92.25,
+        "pos": 8.85,
+        "neu": 88.9,
         "neg": 2.25,
         "count": 4
       },
       {
         "source": "ABC News",
-        "pos": 3.02,
-        "neu": 86,
-        "neg": 10.97,
+        "pos": 4.97,
+        "neu": 84.3,
+        "neg": 10.72,
         "count": 4
       },
       {
@@ -5655,29 +5707,22 @@
         "neu": 85.3,
         "neg": 9.88,
         "count": 4
-      },
-      {
-        "source": "Fox News",
-        "pos": 3.5,
-        "neu": 81.05,
-        "neg": 15.45,
-        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.44,
-        "neu": 85.09,
-        "neg": 10.47,
-        "count": 34
+        "pos": 5.23,
+        "neu": 84.42,
+        "neg": 10.34,
+        "count": 35
       },
       {
         "topic": "Policy",
-        "pos": 2.96,
-        "neu": 81.82,
-        "neg": 15.22,
-        "count": 5
+        "pos": 7.21,
+        "neu": 80.77,
+        "neg": 12.01,
+        "count": 7
       },
       {
         "topic": "Legal",
@@ -5688,9 +5733,9 @@
       },
       {
         "topic": "Public Statements",
-        "pos": 2.2,
-        "neu": 91.8,
-        "neg": 6,
+        "pos": 4.8,
+        "neu": 89.53,
+        "neg": 5.67,
         "count": 3
       },
       {
@@ -5711,9 +5756,9 @@
   },
   "sentiment": {
     "overall": {
-      "pos": 6.63,
-      "neu": 82.92,
-      "neg": 10.46,
+      "pos": 6.76,
+      "neu": 82.68,
+      "neg": 10.56,
       "count": 120
     },
     "india": {
@@ -5723,71 +5768,71 @@
       "count": 16
     },
     "world": {
-      "pos": 6.85,
-      "neu": 82.64,
-      "neg": 10.51,
+      "pos": 7,
+      "neu": 82.38,
+      "neg": 10.63,
       "count": 104
     }
   },
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-04-10T18:05:43.687Z",
-        "pos": 9,
-        "neu": 88,
-        "neg": 3,
-        "count": 5
-      },
-      {
-        "label": "2026-04-10T19:05:43.687Z",
+        "label": "2026-04-10T18:52:19.903Z",
         "pos": 0,
         "neu": 87,
         "neg": 13,
         "count": 1
       },
       {
-        "label": "2026-04-10T20:05:43.687Z",
+        "label": "2026-04-10T19:52:19.903Z",
         "pos": 0,
         "neu": 92,
         "neg": 8,
         "count": 1
       },
       {
-        "label": "2026-04-10T21:05:43.687Z",
+        "label": "2026-04-10T20:52:19.903Z",
         "pos": 2,
         "neu": 94,
         "neg": 4,
         "count": 2
+      },
+      {
+        "label": "2026-04-10T21:52:19.903Z",
+        "pos": 0,
+        "neu": 0,
+        "neg": 0,
+        "count": 0
       }
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-04-10T18:05:43.687Z",
-        "pos": 8,
-        "neu": 84,
-        "neg": 7,
-        "count": 25
-      },
-      {
-        "label": "2026-04-10T19:05:43.687Z",
-        "pos": 6,
-        "neu": 77,
-        "neg": 16,
-        "count": 16
-      },
-      {
-        "label": "2026-04-10T20:05:43.687Z",
-        "pos": 6,
-        "neu": 85,
-        "neg": 9,
-        "count": 12
-      },
-      {
-        "label": "2026-04-10T21:05:43.687Z",
+        "label": "2026-04-10T18:52:19.903Z",
         "pos": 9,
-        "neu": 83,
-        "neg": 8,
-        "count": 7
+        "neu": 80,
+        "neg": 11,
+        "count": 23
+      },
+      {
+        "label": "2026-04-10T19:52:19.903Z",
+        "pos": 5,
+        "neu": 84,
+        "neg": 11,
+        "count": 13
+      },
+      {
+        "label": "2026-04-10T20:52:19.903Z",
+        "pos": 11,
+        "neu": 81,
+        "neg": 7,
+        "count": 9
+      },
+      {
+        "label": "2026-04-10T21:52:19.903Z",
+        "pos": 1,
+        "neu": 92,
+        "neg": 7,
+        "count": 4
       }
     ]
   },
@@ -5805,41 +5850,31 @@
       },
       {
         "name": "Communication",
-        "bias": -4.54,
-        "count": 95
+        "bias": -4.45,
+        "count": 96
       },
       {
         "name": "Technology",
-        "bias": -3.6,
-        "count": 10
+        "bias": -4,
+        "count": 9
       },
       {
         "name": "Finance",
         "bias": 0.47,
         "count": 15
-      },
-      {
-        "name": "Energy",
-        "bias": 0,
-        "count": 1
       }
     ],
     "pos": [],
     "neu": [
       {
         "name": "Technology",
-        "bias": -3.6,
-        "count": 10
+        "bias": -4,
+        "count": 9
       },
       {
         "name": "Finance",
         "bias": 0.47,
         "count": 15
-      },
-      {
-        "name": "Energy",
-        "bias": 0,
-        "count": 1
       }
     ],
     "neg": [
@@ -5855,8 +5890,8 @@
       },
       {
         "name": "Communication",
-        "bias": -4.54,
-        "count": 95
+        "bias": -4.45,
+        "count": 96
       }
     ]
   },
@@ -5878,9 +5913,9 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 187,
-      "potusArticles": 49,
+      "potusArticles": 52,
       "sourceRows": 8,
-      "industryRows": 6,
+      "industryRows": 5,
       "trendingPoints": 12
     },
     "markets": {
