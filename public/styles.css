@@ -929,6 +929,9 @@ body.theme-dark .gn-search{ background:#1a222c }
 .mood-summary .sentiment-label.pos{ color:var(--pos) }
 .mood-summary .sentiment-label.neu{ color:var(--muted) }
 .mood-summary .sentiment-label.neg{ color:var(--neg) }
+.mood-nifty-strip{ margin-top:.18rem; display:flex; align-items:center; gap:.35rem; color:#d97706 }
+.mood-nifty-label{ font-size:.75rem; line-height:1 }
+.mood-nifty-spark{ width:120px; height:12px; display:block; flex:0 0 auto }
 
 /* Leaderboard — exact look */
 .leader-card{ margin-top:.8rem; padding:.75rem .85rem .6rem }

@@ -25,6 +25,8 @@ TICKERS = [
 ]
 
 LIVE_STATES = {"REGULAR", "OPEN", "TRADING"}
+NIFTY_SYMBOL = "^NSEI"
+NIFTY_HISTORY_LIMIT = 24
 
 logging.basicConfig(level=logging.INFO, format="[markets] %(message)s")
 
@@ -60,6 +62,42 @@ def get_existing_quote(existing: Optional[Dict[str, Any]], symbol: str) -> Optio
         if isinstance(quote, dict) and quote.get("symbol") == symbol:
             return quote
     return None
+
+
+def read_nifty_history(existing: Optional[Dict[str, Any]]) -> list[Dict[str, Any]]:
+    if not existing or not isinstance(existing, dict):
+        return []
+    raw = existing.get("niftyHistory")
+    if not isinstance(raw, list):
+        return []
+    cleaned: list[Dict[str, Any]] = []
+    for point in raw:
+        if not isinstance(point, dict):
+            continue
+        ts = int(point.get("timestamp") or 0)
+        value = coerce_number(point.get("value"))
+        if ts <= 0 or value is None:
+            continue
+        cleaned.append({"timestamp": ts, "value": value})
+    return cleaned
+
+
+def update_nifty_history(
+    history: list[Dict[str, Any]],
+    *,
+    now_ms: int,
+    price: Optional[float],
+) -> list[Dict[str, Any]]:
+    if price is None:
+        return history[-NIFTY_HISTORY_LIMIT:]
+    hour_ms = 60 * 60 * 1000
+    bucket_ts = (now_ms // hour_ms) * hour_ms
+    next_history = list(history)
+    if next_history and int(next_history[-1].get("timestamp") or 0) == bucket_ts:
+        next_history[-1] = {"timestamp": bucket_ts, "value": float(price)}
+    else:
+        next_history.append({"timestamp": bucket_ts, "value": float(price)})
+    return next_history[-NIFTY_HISTORY_LIMIT:]
 
 
 def extract_from_dict(source: Optional[Dict[str, Any]], keys: Tuple[str, ...]) -> Optional[float]:
@@ -147,8 +185,15 @@ def build_quote(
     return quote, valid_fresh
 
 
-def build_payload(quotes: list[Dict[str, Any]], now_ms: int) -> Dict[str, Any]:
-    return {"updatedAt": now_ms, "quotes": quotes}
+def build_payload(
+    quotes: list[Dict[str, Any]],
+    now_ms: int,
+    nifty_history: Optional[list[Dict[str, Any]]] = None,
+) -> Dict[str, Any]:
+    payload = {"updatedAt": now_ms, "quotes": quotes}
+    if nifty_history is not None:
+        payload["niftyHistory"] = nifty_history
+    return payload
 
 
 def build_seed_payload(now_ms: int) -> Dict[str, Any]:
@@ -165,7 +210,7 @@ def build_seed_payload(now_ms: int) -> Dict[str, Any]:
                 "updatedAt": now_ms,
             }
         )
-    return build_payload(quotes, now_ms)
+    return build_payload(quotes, now_ms, [])
 
 
 def write_payload(payload: Dict[str, Any]) -> None:
@@ -176,6 +221,7 @@ def write_payload(payload: Dict[str, Any]) -> None:
 def main() -> int:
     now_ms = int(time.time() * 1000)
     existing = read_existing()
+    nifty_history = read_nifty_history(existing)
     quotes = []
     valid_prices = 0
 
@@ -198,10 +244,16 @@ def main() -> int:
         )
         if valid_fresh:
             valid_prices += 1
+        if cfg["symbol"] == NIFTY_SYMBOL:
+            nifty_history = update_nifty_history(
+                nifty_history,
+                now_ms=now_ms,
+                price=price,
+            )
         quotes.append(quote)
 
     if valid_prices >= 3:
-        write_payload(build_payload(quotes, now_ms))
+        write_payload(build_payload(quotes, now_ms, nifty_history))
         logging.info("updated markets.json with %s fresh prices", valid_prices)
         return 0
 

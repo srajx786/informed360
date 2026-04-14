@@ -1843,8 +1843,35 @@ function readMarketCache(){
 function writeMarketCache(payload){
   localStorage.setItem("i360_market_cache", JSON.stringify({
     updatedAt: payload?.updatedAt || "",
-    quotes: payload.quotes || []
+    quotes: payload.quotes || [],
+    niftyHistory: Array.isArray(payload?.niftyHistory) ? payload.niftyHistory : []
   }));
+}
+
+function getNiftyHistoryPoints(payload){
+  if (!payload || !Array.isArray(payload.niftyHistory)) return [];
+  return payload.niftyHistory
+    .map((point) => ({
+      timestamp: Number(point?.timestamp) || 0,
+      value: Number(point?.value)
+    }))
+    .filter((point) => point.timestamp > 0 && Number.isFinite(point.value))
+    .sort((a, b) => a.timestamp - b.timestamp);
+}
+
+function buildNiftyTimelineFromHistory(history = [], nowMs = Date.now()){
+  if (!Array.isArray(history) || !history.length) return [];
+  const slotTimestamps = [3, 2, 1, 0].map((h) => nowMs - (h * 60 * 60 * 1000));
+  const hourly = slotTimestamps.map((slotTs) => {
+    const match = history.reduce((best, point) => {
+      if (point.timestamp > slotTs) return best;
+      if (!best || point.timestamp > best.timestamp) return point;
+      return best;
+    }, null);
+    return match ? Number(match.value) : null;
+  });
+  if (!hourly.some((value) => Number.isFinite(value))) return [];
+  return hourly;
 }
 
 const formatVisitorMetric = (value) => (Number.isFinite(Number(value)) ? Number(value).toLocaleString() : "—");
@@ -3747,8 +3774,8 @@ function renderTopics(){
 }
 
 /* ===== 4-hour sentiment chart – single band + lines like your reference ===== */
-function renderSentimentTimeline({ sparkEl, summaryEl, titleEl, title, articles, timelineOverride = null }){
-  const now = Date.now();
+function renderSentimentTimeline({ sparkEl, summaryEl, titleEl, title, articles, timelineOverride = null, nowMs = Date.now() }){
+  const now = nowMs;
   const fourHrs = 4 * 60 * 60 * 1000;
   let pts;
   if (isValidTimeline(timelineOverride)){
@@ -3861,6 +3888,33 @@ function renderSentimentTimeline({ sparkEl, summaryEl, titleEl, title, articles,
   }
 }
 
+function renderNiftyMicroStrip(summaryEl, marketPayload, timeline){
+  if (!summaryEl || !Array.isArray(timeline) || !timeline.some((v) => Number.isFinite(v))) return;
+  const quote = safeArray(marketPayload?.quotes).find((q) => normalizeMarketSymbol(q?.symbol) === normalizeMarketSymbol("^NSEI"));
+  const isClosed = quote?.status === "closed";
+  const label = isClosed ? "Nifty — last session" : "Nifty — today";
+  const points = timeline
+    .map((value, i) => ({ i, value: Number(value) }))
+    .filter((point) => Number.isFinite(point.value));
+  if (!points.length) return;
+  const min = Math.min(...points.map((point) => point.value));
+  const max = Math.max(...points.map((point) => point.value));
+  const range = Math.max(1, max - min);
+  const W = 120;
+  const H = 16;
+  const x = (i) => i * ((W - 2) / Math.max(1, timeline.length - 1)) + 1;
+  const y = (value) => (H - 1) - (((value - min) / range) * (H - 2));
+  const d = points.map((point, idx) => `${idx ? "L" : "M"} ${x(point.i)} ${y(point.value)}`).join(" ");
+  summaryEl.insertAdjacentHTML("beforeend", `
+    <div class="mood-nifty-strip">
+      <span class="mood-nifty-label">${escapeHtml(label)}</span>
+      <svg class="mood-nifty-spark" viewBox="0 0 ${W} ${H}" aria-hidden="true">
+        <path d="${d}" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </div>
+  `);
+}
+
 function getActiveCategoryLabel(){
   const active = $(".gn-tabs .tab.active");
   if (!active) return "World";
@@ -3897,17 +3951,24 @@ function getWorldSentimentArticles(){
 }
 
 function renderIndiaSentiment(){
+  const chartNow = Date.now();
   const timeline = state.category === "home"
     ? (state.sentimentData?.timelines?.india || state.bootstrapPlots?.indiaSentimentTimeline)
     : null;
+  const marketPayload = readMarketCache();
+  const niftyHistory = getNiftyHistoryPoints(marketPayload);
+  const niftyTimeline = buildNiftyTimelineFromHistory(niftyHistory, chartNow);
+  const summaryEl = $("#moodSummary");
   renderSentimentTimeline({
     sparkEl: "#moodSpark",
-    summaryEl: "#moodSummary",
+    summaryEl,
     titleEl: "#moodIndiaTitle",
     title: "India's Sentiment",
     articles: getIndiaSentimentArticles(),
-    timelineOverride: timeline
+    timelineOverride: timeline,
+    nowMs: chartNow
   });
+  renderNiftyMicroStrip(summaryEl, marketPayload, niftyTimeline);
 }
 
 function renderWorldSentiment(){
