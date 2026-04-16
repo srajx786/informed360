@@ -1,41 +1,87 @@
 {
-  "updatedAt": 1775885069993,
+  "updatedAt": 1776337404557,
   "quotes": [
     {
       "symbol": "^NSEI",
       "pretty": "NSE Nifty",
-      "price": 24050.6,
-      "change": 275.5,
-      "changePercent": 1.1587753574117459,
+      "price": 24196.75,
+      "change": -34.54999999999927,
+      "changePercent": -0.14258417831482123,
       "status": "closed",
-      "updatedAt": 1775885069993
+      "updatedAt": 1776337404557
     },
     {
       "symbol": "GC=F",
       "pretty": "Gold",
-      "price": 4787.4,
-      "change": -30.600000000000364,
-      "changePercent": -0.6351183063511906,
-      "status": "closed",
-      "updatedAt": 1775885069993
+      "price": 4831.1,
+      "change": 7.5,
+      "changePercent": 0.15548552948005637,
+      "status": "live",
+      "updatedAt": 1776337404557
     },
     {
       "symbol": "CL=F",
       "pretty": "Crude Oil",
-      "price": 96.57,
-      "change": -1.3000000000000114,
-      "changePercent": -1.3282926330847158,
-      "status": "closed",
-      "updatedAt": 1775885069993
+      "price": 89.21,
+      "change": 1.0799999999999983,
+      "changePercent": 1.2254623851128994,
+      "status": "live",
+      "updatedAt": 1776337404557
     },
     {
       "symbol": "USDINR=X",
       "pretty": "USD/INR",
-      "price": 93.048,
-      "change": 0.6099999999999994,
-      "changePercent": 0.6599017719985281,
-      "status": "closed",
-      "updatedAt": 1775885069993
+      "price": 93.221,
+      "change": -0.11399999999999011,
+      "changePercent": -0.12214067605934549,
+      "status": "live",
+      "updatedAt": 1776337404557
+    }
+  ],
+  "niftyHistory": [
+    {
+      "timestamp": 1776146400000,
+      "value": 23842.65
+    },
+    {
+      "timestamp": 1776153600000,
+      "value": 23842.65
+    },
+    {
+      "timestamp": 1776164400000,
+      "value": 23842.65
+    },
+    {
+      "timestamp": 1776182400000,
+      "value": 23842.65
+    },
+    {
+      "timestamp": 1776232800000,
+      "value": 24188.9
+    },
+    {
+      "timestamp": 1776240000000,
+      "value": 24216.9
+    },
+    {
+      "timestamp": 1776247200000,
+      "value": 24231.3
+    },
+    {
+      "timestamp": 1776268800000,
+      "value": 24231.3
+    },
+    {
+      "timestamp": 1776319200000,
+      "value": 24293.65
+    },
+    {
+      "timestamp": 1776326400000,
+      "value": 24175.8
+    },
+    {
+      "timestamp": 1776337200000,
+      "value": 24196.75
     }
   ]
 }
