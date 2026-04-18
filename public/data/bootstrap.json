@@ -1,97 +1,416 @@
 {
-  "generatedAt": "2026-04-18T09:27:55.952Z",
+  "generatedAt": "2026-04-18T10:10:32.819Z",
   "counts": {
     "articles": 120,
-    "topics": 12,
-    "stories": 8,
-    "usaArticles": 175,
-    "potusArticles": 57
+    "topics": 0,
+    "stories": 0,
+    "usaArticles": 177,
+    "potusArticles": 54
   },
   "version": 1,
-  "topStories": [
-    {
-      "title": "",
-      "link": "",
-      "source": "",
-      "sourceDomain": "",
-      "sourceCredibility": "",
-      "industry": "",
-      "description": "",
-      "image": "",
-      "imageUrl": "",
-      "publishedAt": "",
-      "sentiment": {
-        "posP": 0,
-        "neuP": 0,
-        "negP": 0,
-        "label": "neutral",
-        "confidence": 0
-      },
-      "category": "world"
-    },
-    {
-      "title": "",
-      "link": "",
-      "source": "",
-      "sourceDomain": "",
-      "sourceCredibility": "",
-      "industry": "",
-      "description": "",
-      "image": "",
-      "imageUrl": "",
-      "publishedAt": "",
-      "sentiment": {
-        "posP": 0,
-        "neuP": 0,
-        "negP": 0,
-        "label": "neutral",
-        "confidence": 0
-      },
-      "category": "world"
-    },
-    {
-      "title": "",
-      "link": "",
-      "source": "",
-      "sourceDomain": "",
-      "sourceCredibility": "",
-      "industry": "",
-      "description": "",
-      "image": "",
-      "imageUrl": "",
-      "publishedAt": "",
-      "sentiment": {
-        "posP": 0,
-        "neuP": 0,
-        "negP": 0,
-        "label": "neutral",
-        "confidence": 0
-      },
-      "category": "world"
-    },
-    {
-      "title": "",
-      "link": "",
-      "source": "",
-      "sourceDomain": "",
-      "sourceCredibility": "",
-      "industry": "",
-      "description": "",
-      "image": "",
-      "imageUrl": "",
-      "publishedAt": "",
-      "sentiment": {
-        "posP": 0,
-        "neuP": 0,
-        "negP": 0,
-        "label": "neutral",
-        "confidence": 0
-      },
-      "category": "world"
-    }
-  ],
+  "topStories": [],
   "news": {
     "articles": [
+      {
+        "title": "Hyderabad 2026 summer temperature tracker | Maximum temperature 42°C on April 17 ",
+        "link": "https://www.thehindu.com/news/cities/Hyderabad/hyderabad-2026-summer-temperature-tracker/article70864724.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The maximum temperature in urban Telangana crossed 43°C on April 16, 2026",
+        "image": "https://th-i.thgim.com/public/incoming/yhxib1/article70868335.ece/alternates/LANDSCAPE_1200/DSC8350.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/yhxib1/article70868335.ece/alternates/LANDSCAPE_1200/DSC8350.jpg",
+        "publishedAt": "2026-04-18T10:04:34.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "india"
+      },
+      {
+        "title": "Tribal man dies after consuming ‘arishtam’ in Kerala’s Wayanad; probe launched",
+        "link": "https://www.thehindu.com/news/national/kerala/tribal-man-dies-after-consuming-arishtam-in-keralas-wayanad-probe-launched/article70877150.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Hospital authorities reportedly indicated that excessive alcohol consumption, along with the intake of ‘arishtam’, might have caused complications leading to his death",
+        "image": "https://th-i.thgim.com/public/news/national/kerala/xohe6a/article70877175.ece/alternates/LANDSCAPE_1200/arishtam.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/news/national/kerala/xohe6a/article70877175.ece/alternates/LANDSCAPE_1200/arishtam.jpg",
+        "publishedAt": "2026-04-18T10:03:15.000Z",
+        "sentiment": {
+          "posP": 4,
+          "neuP": 85,
+          "negP": 11,
+          "label": "negative",
+          "confidence": 0.5267
+        },
+        "category": "world"
+      },
+      {
+        "title": "DC bowl first against RCB in Bengaluru",
+        "link": "https://www.espncricinfo.com/ci/content/story/1532500.html?ex_cid=OTC-RSS",
+        "source": "ESPN Cricinfo",
+        "sourceDomain": "espncricinfo.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Both sides were unchanged from their previous games for the afternoon fixture in Bengaluru",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:59:30.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "india"
+      },
+      {
+        "title": "Former MLA’s son Raheel Aamir gets conditional bail in Jubilee Hills hit-and-run case",
+        "link": "https://www.thehindu.com/news/national/telangana/former-mlas-son-raheel-aamir-gets-conditional-bail-in-jubilee-hills-hit-and-run-case/article70877096.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "",
+        "image": "https://www.thehindu.com/theme/images/og-image.png",
+        "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
+        "publishedAt": "2026-04-18T09:56:30.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "Opposition defeated an attack on the Constitution, says Rahul Gandhi",
+        "link": "https://www.thehindu.com/news/national/opposition-defeated-an-attack-on-the-constitution-says-rahul-gandhi/article70875008.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Congress leader assures Prime Minister Narendra Modi of Opposition’s ‘unconditional support’ if the government wants to bring the 2023 women’s reservation law into force",
+        "image": "https://th-i.thgim.com/public/incoming/8kfdy5/article70875178.ece/alternates/LANDSCAPE_1200/20260417400L.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/8kfdy5/article70875178.ece/alternates/LANDSCAPE_1200/20260417400L.jpg",
+        "publishedAt": "2026-04-18T09:51:12.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 78,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.5994
+        },
+        "category": "world"
+      },
+      {
+        "title": "Telangana CM seeks greenfield steel plant in Bayyaram, EV battery manufacturing hub in Hyderabad",
+        "link": "https://www.thehindu.com/news/national/telangana/telangana-cm-seeks-greenfield-steel-plant-in-bayyaram-ev-battery-manufacturing-hub-in-hyderabad/article70877059.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "",
+        "image": "https://th-i.thgim.com/public/news/cities/Hyderabad/mamte9/article70877068.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-04-18%20at%202.44.27%20PM.jpeg",
+        "imageUrl": "https://th-i.thgim.com/public/news/cities/Hyderabad/mamte9/article70877068.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-04-18%20at%202.44.27%20PM.jpeg",
+        "publishedAt": "2026-04-18T09:45:50.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "india"
+      },
+      {
+        "title": "RCB ditch lovely red to go ‘Green’ against Delhi Capitals at M Chinnaswamy stadium in IPL 2026; Here's why",
+        "link": "https://www.livemint.com/news/trends/rcb-ditch-lovely-red-to-go-green-against-delhi-capitals-at-m-chinnaswamy-stadium-in-ipl-2026-heres-why-11776504895913.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Royal Challengers Bengaluru are wearing their special green jersey against Delhi Capitals in IPL 2026 at the M Chinnaswamy Stadium.",
+        "image": "https://www.livemint.com/lm-img/img/2026/04/18/1600x900/Rajat_Patidar_1776505113917_1776505114080.jpeg",
+        "imageUrl": "https://www.livemint.com/lm-img/img/2026/04/18/1600x900/Rajat_Patidar_1776505113917_1776505114080.jpeg",
+        "publishedAt": "2026-04-18T09:43:37.000Z",
+        "sentiment": {
+          "posP": 19,
+          "neuP": 81,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7845
+        },
+        "category": "sports"
+      },
+      {
+        "title": "HDFC Bank Dividend Tops Estimates For The Fifth Straight Quarter",
+        "link": "https://www.ndtvprofit.com/markets/hdfc-bank-dividend-tops-estimates-for-the-fifth-straight-quarter-11375379",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "HDFC Bank approved its final dividend of Rs 13 per share for the fiscal 2026, topping estimates for a fifth straight quarter.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:37:21.000Z",
+        "sentiment": {
+          "posP": 32,
+          "neuP": 68,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.8779
+        },
+        "category": "business"
+      },
+      {
+        "title": "PM Modi to address nation tonight at 8.30 pm after women's reservation bill fails to pass Lok Sabha",
+        "link": "https://www.livemint.com/news/india/pm-modi-to-address-nation-tonight-at-8-30-pm-after-womens-reservation-bill-fails-to-pass-lok-sabha-11776504761601.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "PM Modi to address nation tonight at 8.30 pm after women's reservation bill fails to pass Lok Sabha",
+        "image": "https://www.livemint.com/lm-img/img/2026/04/18/1600x900/breaking_news_1545650155659_1776504924668.jpg",
+        "imageUrl": "https://www.livemint.com/lm-img/img/2026/04/18/1600x900/breaking_news_1545650155659_1776504924668.jpg",
+        "publishedAt": "2026-04-18T09:35:22.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 86,
+          "negP": 14,
+          "label": "negative",
+          "confidence": 0.6808
+        },
+        "category": "india"
+      },
+      {
+        "title": "Quote of the day by Johann Wolfgang von Goethe: 'Divide and rule, a sound motto. Unite and lead, a….’",
+        "link": "https://www.livemint.com/news/us-news/quote-of-the-day-by-johann-wolfgang-von-goethe-divide-and-rule-a-sound-motto-unite-and-lead-a-11776501653975.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "Goethe's legacy includes a profound quote emphasizing two leadership styles: 'divide and rule' for temporary control and 'unite and lead' for sustainable progress. His insights challenge leaders to prioritise unity, fostering cooperation and integrity, essential for enduring influence in society.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:31:58.000Z",
+        "sentiment": {
+          "posP": 11,
+          "neuP": 89,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.6908
+        },
+        "category": "world"
+      },
+      {
+        "title": "Chinese proverb of the day: ‘A little fragrance always clings to the hand that gives the roses’ — Lessons on generosity'",
+        "link": "https://www.livemint.com/news/us-news/chinese-proverb-of-the-day-a-little-fragrance-always-clings-to-the-hand-that-gives-the-roses-lessons-on-generosity-11776502749248.html",
+        "source": "Mint",
+        "sourceDomain": "livemint.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "A look at the Chinese proverb 'A little fragrance always clings to the hand that gives the roses” and what it teaches about generosity, business, trust and lasting influence.'",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:31:07.000Z",
+        "sentiment": {
+          "posP": 23,
+          "neuP": 77,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.9186
+        },
+        "category": "world"
+      },
+      {
+        "title": "What We Dream At The End of Life: New Study Offers Insight",
+        "link": "https://www.ndtv.com/science/what-we-dream-at-the-end-of-life-new-study-offers-insight-11375357",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Many patients reported vivid dreams of being reunited with loved ones who had already passed away. Others described visions linked to the idea of crossing over - bright lights, staircases and open...",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:30:41.000Z",
+        "sentiment": {
+          "posP": 26,
+          "neuP": 74,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.9081
+        },
+        "category": "science"
+      },
+      {
+        "title": "The Best Movies to Stream This Month (April 2026)",
+        "link": "https://www.wired.com/story/the-best-movies-to-stream-right-now/",
+        "source": "Wired",
+        "sourceDomain": "wired.com",
+        "sourceCredibility": "Medium",
+        "industry": "Technology",
+        "description": "28 Years Later: The Bone Temple, Crime 101, and Deathstalker are among the films deserving of your eyeballs this month",
+        "image": "https://media.wired.com/photos/69e15d364605cb6e7cbd6490/191:100/w_1280,c_limit/Movie-Guide-Culture-rev-1-WPN-FP-0069_High_Res_JPEG.jpg",
+        "imageUrl": "https://media.wired.com/photos/69e15d364605cb6e7cbd6490/191:100/w_1280,c_limit/Movie-Guide-Culture-rev-1-WPN-FP-0069_High_Res_JPEG.jpg",
+        "publishedAt": "2026-04-18T09:30:00.000Z",
+        "sentiment": {
+          "posP": 12,
+          "neuP": 78,
+          "negP": 10,
+          "label": "positive",
+          "confidence": 0.1779
+        },
+        "category": "entertainment"
+      },
+      {
+        "title": "HDFC Bank Q4 Results: Net profit rises 9% to Rs 19,221 crore; announces Rs 13 dividend for FY26 ",
+        "link": "https://economictimes.indiatimes.com/markets/stocks/earnings/hdfc-bank-q4-results-net-profit-rises-9-to-rs-19221-crore-announces-rs-13-dividend-for-fy26/articleshow/130350665.cms",
+        "source": "The Economic Times",
+        "sourceDomain": "economictimes.indiatimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Finance",
+        "description": "HDFC Bank announced a net profit of Rs 19,221 crore for the March quarter, a 9% rise year-on-year. This growth was achieved despite a slight 1.1% decrease in interest income, which stood at Rs 76,610 crore compared to Rs 77,460 crore in the prior year's corresponding period.",
+        "image": "https://img.etimg.com/thumb/msid-130350653,width-1200,height-630,imgsize-127498,overlay-etmarkets/articleshow.jpg",
+        "imageUrl": "https://img.etimg.com/thumb/msid-130350653,width-1200,height-630,imgsize-127498,overlay-etmarkets/articleshow.jpg",
+        "publishedAt": "2026-04-18T09:29:51.000Z",
+        "sentiment": {
+          "posP": 16,
+          "neuP": 84,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.886
+        },
+        "category": "business"
+      },
+      {
+        "title": "‘It’s my husband’s birthday’: Priyanka Gandhi pauses political attack to mention Robert Vadra",
+        "link": "https://www.hindustantimes.com/india-news/its-my-husband-s-birthday-priyanka-gandhi-pauses-political-attack-to-mention-robert-vadra-101776501002670.html",
+        "source": "Hindustan Times",
+        "sourceDomain": "hindustantimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Priyanka Gandhi paused mid-question session and said with a smile, “Today’s my husband’s birthday, please keep it a bit short.”",
+        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/18/1600x900/priyanka_gandhi_vadra_prfess_1776501487395_1776501493310.png",
+        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/18/1600x900/priyanka_gandhi_vadra_prfess_1776501487395_1776501493310.png",
+        "publishedAt": "2026-04-18T09:27:52.000Z",
+        "sentiment": {
+          "posP": 13,
+          "neuP": 78,
+          "negP": 9,
+          "label": "positive",
+          "confidence": 0.1779
+        },
+        "category": "india"
+      },
+      {
+        "title": "Pakistan PM, army chief wrap up key trips in push for more US-Iran talks",
+        "link": "https://www.aljazeera.com/news/2026/4/18/pakistan-pm-army-chief-wrap-up-key-trips-in-push-for-more-us-iran-talks?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Asim Munir leaves Tehran while PM Shehbaz Sharif heads home from Turkiye with hopes of another round of US-Iran talks.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69e0d64702b4-1776342599.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69e0d64702b4-1776342599.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-04-18T09:27:38.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 92,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.4215
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump Sees Iran Deal As Imminent, Nuclear Issue Remains In Limbo",
+        "link": "https://www.ndtvprofit.com/world/trump-sees-iran-deal-as-imminent-nuclear-issue-remains-in-limbo-11375337",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "The president also floated the threat of resuming strikes on Iran once the current ceasefire expires next week.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:25:31.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 82,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.7096
+        },
+        "category": "world"
+      },
+      {
+        "title": "Mourning in Kerala school as dead bodies of 9 Tamil Nadu mishap victims reach village",
+        "link": "https://www.hindustantimes.com/india-news/mourning-in-kerala-school-as-dead-bodies-of-9-tamil-nadu-mishap-victims-reach-village-101776499864628.html",
+        "source": "Hindustan Times",
+        "sourceDomain": "hindustantimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "A huge crowd gathered on the campus--students in tears, anxious parents, stunned colleagues and villagers who had long shared close bonds with the victims.",
+        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/PTI04-18-2026-000010B-0_1776504147876_1776504158714.jpg",
+        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/PTI04-18-2026-000010B-0_1776504147876_1776504158714.jpg",
+        "publishedAt": "2026-04-18T09:24:49.000Z",
+        "sentiment": {
+          "posP": 12,
+          "neuP": 54,
+          "negP": 34,
+          "label": "negative",
+          "confidence": 0.8834
+        },
+        "category": "india"
+      },
+      {
+        "title": "Iran Reimposes 'Strict Control' On Hormuz After Trump Says US Naval Blockade Will Stay",
+        "link": "https://www.ndtvprofit.com/world/iran-reimposes-strait-of-hormuz-restrictions-after-trump-says-us-blockade-will-stay-11375253",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Tehran has accused Washington of breaching an understanding on reopening the crucial shipping route, saying restrictions will stay in place until the US lifts its blockade of Iranian ports.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:22:10.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 95,
+          "negP": 5,
+          "label": "negative",
+          "confidence": 0.296
+        },
+        "category": "world"
+      },
+      {
+        "title": "Eminem's Daughter Alaina Scott Welcomes First Child, A Baby Girl",
+        "link": "https://www.ndtv.com/entertainment/eminems-daughter-alaina-scott-welcomes-first-baby-reveals-adorable-meaning-behind-name-11373542",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "She also revealed the sweet meaning behind the baby's name",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:20:33.000Z",
+        "sentiment": {
+          "posP": 25,
+          "neuP": 75,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.6908
+        },
+        "category": "entertainment"
+      },
       {
         "title": "PIB fact-checks influencer Sarthak Ahuja's video about income tax clearance certificate for travel abroad",
         "link": "https://www.hindustantimes.com/india-news/pib-fact-checks-influencer-sarthak-ahujas-video-about-income-tax-clearance-certificate-for-travel-abroad-101776502533337.html",
@@ -113,6 +432,26 @@
         "category": "india"
       },
       {
+        "title": "DR Congo accepts first set of deportees from the US",
+        "link": "https://www.bbc.com/news/articles/cp84rye3lg8o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The Congolese government stresses those expelled from the US are only in the country temporarily.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/f8c8/live/1ec1c020-3b07-11f1-874b-f17c73d2ecbd.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/f8c8/live/1ec1c020-3b07-11f1-874b-f17c73d2ecbd.jpg",
+        "publishedAt": "2026-04-18T09:18:16.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 75,
+          "negP": 17,
+          "label": "negative",
+          "confidence": 0.4019
+        },
+        "category": "world"
+      },
+      {
         "title": "We spoke to over 30 central bankers, policymakers and politicians. Here are their top concerns",
         "link": "https://www.cnbc.com/2026/04/18/iran-war-inflation-prices-energy-trump-economy-end.html",
         "source": "NBC News",
@@ -131,26 +470,6 @@
           "confidence": 0.1779
         },
         "category": "business"
-      },
-      {
-        "title": "Thunderstorm forecast in 10 Telangana districts on April 19",
-        "link": "https://www.thehindu.com/news/national/telangana/thunderstorm-forecast-in-10-telangana-districts-on-april-19/article70877031.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "",
-        "image": "https://th-i.thgim.com/public/incoming/iikz4e/article70877033.ece/alternates/LANDSCAPE_1200/HGK6U-ubQAAHDw6.jpg",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/iikz4e/article70877033.ece/alternates/LANDSCAPE_1200/HGK6U-ubQAAHDw6.jpg",
-        "publishedAt": "2026-04-18T09:16:12.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
       },
       {
         "title": "PM Narendra Modi to address the nation at 8:30 pm today",
@@ -193,24 +512,64 @@
         "category": "world"
       },
       {
-        "title": "Have to remove Mamata as Bengal CM, else Bangladeshi Muslims will snatch State from us: Himanta",
-        "link": "https://www.thehindu.com/elections/west-bengal-assembly/have-to-remove-mamata-as-bengal-cm-else-bangladeshi-muslims-will-snatch-state-from-us-himanta/article70877023.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
+        "title": "A rare Supreme Court apology, and some very different doctors on display: The news quiz",
+        "link": "https://www.nbcnews.com/news/news-quiz/supreme-court-apology-news-quiz-rcna332260",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "\"Mamata Banerjee has earmarked the entire treasury of Bengal for Bangladeshi Muslim infiltrators. She sold this land to Bangladeshi Muslims for votes,\" says Assam CM",
-        "image": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg",
-        "publishedAt": "2026-04-18T09:08:29.000Z",
+        "industry": "Media",
+        "description": "Two congressmen resign in disgrace, the president gets in hot water, and Rory McIlroy joins an exclusive club.",
+        "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/250925-news-quiz-grid-lr-830206.png",
+        "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/250925-news-quiz-grid-lr-830206.png",
+        "publishedAt": "2026-04-18T09:15:00.000Z",
         "sentiment": {
-          "posP": 4,
-          "neuP": 96,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.2023
+          "posP": 16,
+          "neuP": 70,
+          "negP": 14,
+          "label": "negative",
+          "confidence": 0.0772
         },
         "category": "world"
+      },
+      {
+        "title": "\"I Was Clueless\": Shreyas Iyer's Honest Take On 'Sarpanch' Title At PBKS",
+        "link": "https://sports.ndtv.com/cricket/i-was-clueless-shreyas-iyers-honest-take-on-sarpanch-nickname-at-punjab-kings-11375277",
+        "source": "NDTV",
+        "sourceDomain": "sports.ndtv.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Fondly known as 'Sarpanch' among the fans of Punjab Kings, the skipper has made 203 runs in four innings so far this year at an astonishing average of 67.67 and strike rate of 187.96.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:10:42.000Z",
+        "sentiment": {
+          "posP": 12,
+          "neuP": 85,
+          "negP": 3,
+          "label": "positive",
+          "confidence": 0.6908
+        },
+        "category": "sports"
+      },
+      {
+        "title": "Which Cancers Does Keytruda Work On? Oncologists Explain Effectiveness",
+        "link": "https://www.ndtv.com/health/which-cancers-does-keytruda-work-on-apollo-oncologists-explain-effectiveness-11375211",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "The Drug Controller General of India (DCGI) has approved Keytruda for multiple cancer types. As of recent approvals, it covers 14 indications across eight tumour types.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:08:22.000Z",
+        "sentiment": {
+          "posP": 7,
+          "neuP": 82,
+          "negP": 11,
+          "label": "negative",
+          "confidence": 0.3818
+        },
+        "category": "health"
       },
       {
         "title": "Iran reimposes 'strict control' over Strait of Hormuz, citing continued U.S. naval blockade",
@@ -253,24 +612,24 @@
         "category": "world"
       },
       {
-        "title": "T.N. Assembly election: AIADMK is just a mask for BJP, says Rahul Gandhi at Ponneri",
-        "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/tn-assembly-election-aiadmk-is-just-a-mask-for-bjp-says-rahul-gandhi-at-ponneri/article70876945.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "“There is no real AIADMK ... So when you see the AIADMK, its flag, its leaders, remember that they are controlled by Narendra Modi [Prime Minister] and Amit Shah [Union Home Minister] and are being used to attack Tamil history, culture, and language,” Mr. Gandhi said",
-        "image": "https://th-i.thgim.com/public/incoming/p3yawa/article70877012.ece/alternates/LANDSCAPE_1200/2501_18_4_2026_13_6_53_2_DSC_7271.JPEG",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/p3yawa/article70877012.ece/alternates/LANDSCAPE_1200/2501_18_4_2026_13_6_53_2_DSC_7271.JPEG",
-        "publishedAt": "2026-04-18T09:03:04.000Z",
+        "title": "Prime Minister Narendra Modi To Address Nation At 8.30 PM Today",
+        "link": "https://www.ndtvprofit.com/india/prime-minister-narendra-modi-to-address-nation-at-8-30-pm-today-11375258",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "The development comes after the Constitution Amendment Bill to tweak women quota law was defeated in Lok Sabha on Friday after division of votes.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:04:11.000Z",
         "sentiment": {
           "posP": 0,
           "neuP": 92,
           "negP": 8,
           "label": "negative",
-          "confidence": 0.6486
+          "confidence": 0.4767
         },
-        "category": "world"
+        "category": "india"
       },
       {
         "title": "Trump says U.S. has 'good news' on Iran, talks to continue over weekend",
@@ -331,6 +690,26 @@
           "confidence": 0.8141
         },
         "category": "world"
+      },
+      {
+        "title": "Killing Of 2 Children Sparks Fresh Protests, Clashes In Manipur",
+        "link": "https://www.ndtv.com/india-news/manipur-bishnupur-blast-killing-of-2-children-sparks-fresh-protests-clashes-in-manipur-11375249",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Fresh protests broke out across Manipur's Valley region on Friday night, with large crowds taking to the streets in Imphal East over the killing of two children in the Tronglaobi incident.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:00:18.000Z",
+        "sentiment": {
+          "posP": 9,
+          "neuP": 62,
+          "negP": 29,
+          "label": "negative",
+          "confidence": 0.8957
+        },
+        "category": "india"
       },
       {
         "title": "Is Congress having a reckoning over sexual misconduct – or just a moment?",
@@ -413,6 +792,26 @@
         "category": "world"
       },
       {
+        "title": "PM Modi To Address Nation At 8:30 PM Today, Suspense Over Subject",
+        "link": "https://www.ndtv.com/india-news/pm-modi-to-address-nation-at-8-30-pm-today-11375243",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "PM Modi To Address Nation At 8:30 PM Today",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T08:59:01.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "india"
+      },
+      {
         "title": "Prime Minister Narendra Modi to address nation at 8.30pm",
         "link": "https://timesofindia.indiatimes.com/india/prime-minister-narendra-modi-to-address-nation-at-8-30pm/articleshow/130350274.cms",
         "source": "TOI",
@@ -451,6 +850,46 @@
           "confidence": 0.7184
         },
         "category": "india"
+      },
+      {
+        "title": "4 Arrests, 3 States, Online Radicalisation: Delhi Cops Bust Terror Module",
+        "link": "https://www.ndtv.com/india-news/delhi-cops-busts-terror-module-linked-to-online-radicalisation-4-arrests-3-states-online-radicalisation-11375122",
+        "source": "NDTV",
+        "sourceDomain": "ndtv.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Four men linked to terror activities and online radicalisation were arrested by Delhi Police Special Cell.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T08:57:24.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 56,
+          "negP": 36,
+          "label": "negative",
+          "confidence": 0.8779
+        },
+        "category": "india"
+      },
+      {
+        "title": "Golmaal Star Ashwini Kalsekar Shows How To Make Kola Chole At Home",
+        "link": "https://food.ndtv.com/news/golmaal-star-ashwini-kalsekar-shows-how-to-make-kola-chole-at-home-11371840",
+        "source": "NDTV",
+        "sourceDomain": "food.ndtv.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "In an Instagram video, Ashwini Kalsekar shared step-by-step instructions to make Kola Chole at home.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T08:56:14.000Z",
+        "sentiment": {
+          "posP": 9,
+          "neuP": 91,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.34
+        },
+        "category": "world"
       },
       {
         "title": "Yes Bank Q4 Results: Net profit rises 45% to Rs 1,068 crore, NII up 16% YoY ",
@@ -493,6 +932,46 @@
         "category": "india"
       },
       {
+        "title": "Union Cabinet Approves Extension Of PMGSY Scheme Till 2028",
+        "link": "https://www.ndtvprofit.com/economy/union-cabinet-approves-extension-of-pmgsy-scheme-till-2028-11375221",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "The meeting chaired by PM Narendra Modi sanctioned an additional allocation of Rs 3,000 crore for the scheme, aimed at improving rural road connectivity across the country.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T08:52:56.000Z",
+        "sentiment": {
+          "posP": 14,
+          "neuP": 86,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.6705
+        },
+        "category": "business"
+      },
+      {
+        "title": "Madonna joins Sabrina Carpenter to surprise Coachella",
+        "link": "https://www.bbc.com/news/articles/c77my6gnpy4o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The Queen of Pop makes a guest appearance during the Espresso singer's headline set.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/3b12/live/a384fdc0-3af0-11f1-9961-936cc21d3655.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/3b12/live/a384fdc0-3af0-11f1-9961-936cc21d3655.jpg",
+        "publishedAt": "2026-04-18T08:52:48.000Z",
+        "sentiment": {
+          "posP": 10,
+          "neuP": 90,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.2732
+        },
+        "category": "world"
+      },
+      {
         "title": "SC cautions HCs against growing tendency to publicly criticise subordinate judicial officers",
         "link": "https://www.hindustantimes.com/india-news/sc-cautions-hcs-against-growing-tendency-to-publicly-criticise-subordinate-judicial-officers-101776502310458.html",
         "source": "Hindustan Times",
@@ -529,26 +1008,6 @@
           "negP": 0,
           "label": "positive",
           "confidence": 0.8658
-        },
-        "category": "world"
-      },
-      {
-        "title": "EC assures High Court of action on complaint regarding distribution of ₹10,000 tokens in Harbour constituency",
-        "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/ec-assures-high-court-of-action-on-complaint-regarding-distribution-of-10000-tokens-in-harbour-constituency/article70873469.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "An advocate had complained about such tokens having been distributed on behalf of AIADMK candidate Royapuram Mano in Harbour constituency",
-        "image": "https://th-i.thgim.com/public/todays-paper/tp-national/tp-tamilnadu/cl02ji/article70871488.ece/alternates/LANDSCAPE_1200/Cases-filed-agaGPMFS16HQ.5.jpg.jpg",
-        "imageUrl": "https://th-i.thgim.com/public/todays-paper/tp-national/tp-tamilnadu/cl02ji/article70871488.ece/alternates/LANDSCAPE_1200/Cases-filed-agaGPMFS16HQ.5.jpg.jpg",
-        "publishedAt": "2026-04-18T08:47:13.000Z",
-        "sentiment": {
-          "posP": 6,
-          "neuP": 82,
-          "negP": 12,
-          "label": "negative",
-          "confidence": 0.3818
         },
         "category": "world"
       },
@@ -593,6 +1052,26 @@
         "category": "india"
       },
       {
+        "title": "Apple iPhone 18 Pro: Cosmic Orange Dropped, Dark Cherry Tipped As New Standout Shade",
+        "link": "https://www.ndtvprofit.com/technology/iphone-18-pro-cosmic-orange-dropped-dark-cherry-tipped-as-new-standout-shade-11374927",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "The iPhone 18 Pro will reportedly be available in four colours.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T08:40:03.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "technology"
+      },
+      {
         "title": "RCB vs DC live: Toss in 30 mins in Bengaluru, it's time for Virat vs KL Rahul",
         "link": "https://www.indiatoday.in/sports/cricket/story/rcb-vs-dc-live-score-today-ipl-2026-match-updates-kl-rahul-virat-kohli-bengaluru-2898119-2026-04-18?utm_source=rss",
         "source": "India Today",
@@ -613,44 +1092,24 @@
         "category": "sports"
       },
       {
-        "title": "GHMC takes up footpath clearance drive",
-        "link": "https://www.thehindu.com/news/cities/Hyderabad/ghmc-takes-up-footpath-clearance-drive/article70876856.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "",
-        "image": "https://th-i.thgim.com/public/news/cities/Hyderabad/bqu9uw/article70876959.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-04-18%20at%2011.56.49%20AM.jpeg",
-        "imageUrl": "https://th-i.thgim.com/public/news/cities/Hyderabad/bqu9uw/article70876959.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-04-18%20at%2011.56.49%20AM.jpeg",
-        "publishedAt": "2026-04-18T08:33:10.000Z",
+        "title": "Piece by Piece Review: Pharrell Williams' Life Told Through LEGO Animation",
+        "link": "https://www.gadgets360.com/entertainment/news/piece-by-piece-pharrell-williams-lego-documentary-now-streaming-on-netflix-11371329",
+        "source": "NDTV",
+        "sourceDomain": "gadgets360.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Piece by Piece is a creative documentary that showcases Pharrell Williams' life through LEGO animation.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T08:30:37.000Z",
         "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "india"
-      },
-      {
-        "title": "Upload orders, verdicts on the day they are passed: Bombay HC directs judges in Maharashtra, Goa",
-        "link": "https://www.thehindu.com/news/national/maharashtra/upload-orders-verdicts-on-the-day-they-are-passed-bombay-hc-directs-judges-in-maharashtra-goa/article70876923.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "The move is expected to streamline the judicial process and provide litigants with immediate access to court rulings, reducing the lag between the pronouncement and the official availability of legal documents.",
-        "image": "https://th-i.thgim.com/public/incoming/i61xgw/article70876958.ece/alternates/LANDSCAPE_1200/11908_12_9_2025_16_27_11_1_DSC_0649.JPEG",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/i61xgw/article70876958.ece/alternates/LANDSCAPE_1200/11908_12_9_2025_16_27_11_1_DSC_0649.JPEG",
-        "publishedAt": "2026-04-18T08:31:37.000Z",
-        "sentiment": {
-          "posP": 6,
+          "posP": 11,
           "neuP": 89,
-          "negP": 5,
-          "label": "negative",
-          "confidence": 0.1531
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.4404
         },
-        "category": "india"
+        "category": "technology"
       },
       {
         "title": "Iran has learned that the Strait of Hormuz is its strongest deterrent",
@@ -773,26 +1232,6 @@
         "category": "world"
       },
       {
-        "title": "Cabinet Approves 2% Dearness Allowance Hike For Government Employees And Pensioners",
-        "link": "https://www.ndtvprofit.com/personal-finance/da-hike-cabinet-approves-2-dearness-allowance-hike-for-government-employees-and-pensioners-11375101",
-        "source": "NDTV",
-        "sourceDomain": "ndtvprofit.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "The Cabinet on Saturday cleared a 2% hike in Dearness Allowance (DA) for central government employees, providing an increase in takehome pay amid rising living costs",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T08:13:18.000Z",
-        "sentiment": {
-          "posP": 28,
-          "neuP": 69,
-          "negP": 3,
-          "label": "positive",
-          "confidence": 0.875
-        },
-        "category": "business"
-      },
-      {
         "title": "Pope Leo heads to Angola in landmark Africa visit amid Trump clash",
         "link": "https://www.aljazeera.com/news/2026/4/18/pope-leo-heads-to-angola-in-landmark-africa-visit-amid-trump-clash?traffic_source=rss",
         "source": "Al Jazeera",
@@ -813,26 +1252,6 @@
         "category": "world"
       },
       {
-        "title": "Cabinet Clears Rs 13,800-Crore Sovereign Maritime Fund For Insurance Cover Of Indian Vesse",
-        "link": "https://www.ndtvprofit.com/economy/cabinet-clears-rs-13-800-crore-sovereign-maritime-fund-for-insurance-cover-of-indian-vessels-11375091",
-        "source": "NDTV",
-        "sourceDomain": "ndtvprofit.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "Cabinet Clears Rs 13,800-Crore Sovereign Maritime Fund For Insurance Cover Of Indian Vessels",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T08:09:23.000Z",
-        "sentiment": {
-          "posP": 10,
-          "neuP": 90,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.1531
-        },
-        "category": "business"
-      },
-      {
         "title": "Bargain buys! Titan, Asian Paints, 8 largecap stocks that make ICICI Securities’ list. Do you own any? ",
         "link": "https://economictimes.indiatimes.com/markets/stocks/news/bargain-buys-titan-asian-paints-8-largecap-stocks-that-make-icici-securities-list-do-you-own-any/slideshow/130349792.cms",
         "source": "The Economic Times",
@@ -851,46 +1270,6 @@
           "confidence": 0.5093
         },
         "category": "business"
-      },
-      {
-        "title": "Kohli Puts 114-Test Veteran Over Gayle, Yuvraj In 'IPL Match-Winners' Debate",
-        "link": "https://sports.ndtv.com/cricket/virat-kohli-puts-114-test-veteran-over-chris-gayle-yuvraj-singh-in-ipl-match-winners-debate-11371802",
-        "source": "NDTV",
-        "sourceDomain": "sports.ndtv.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "RCB great Virat Kohli was asked to leave his chair if he heard the name of a better IPL match-winner than Chris Gayle.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T08:08:51.000Z",
-        "sentiment": {
-          "posP": 18,
-          "neuP": 79,
-          "negP": 3,
-          "label": "positive",
-          "confidence": 0.7783
-        },
-        "category": "sports"
-      },
-      {
-        "title": "Dearness Allowance Raised By 2% For Central Government Employees",
-        "link": "https://www.ndtv.com/india-news/2-per-cent-hike-in-dearness-allowance-da-approved-for-government-staff-effective-january-1-11375085",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "2 Per Cent Hike In Dearness Allowance DA Approved For Government Staff, Effective January 1",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T08:06:51.000Z",
-        "sentiment": {
-          "posP": 40,
-          "neuP": 60,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.8979
-        },
-        "category": "india"
       },
       {
         "title": "'Shouldn't be considered failure of govt ...' Rijiju on women's reservation bill not clearing LS",
@@ -933,24 +1312,24 @@
         "category": "sports"
       },
       {
-        "title": "Rare Cardiac Infections After Stent Procedures Pose Serious Risks",
-        "link": "https://www.ndtv.com/health/do-you-know-about-cardiac-infections-after-stent-surgery-what-patients-must-watch-for-11372910",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
+        "title": "Centre's conspiracy to change federal structure defeated; victory of Opposition unity, says Priyanka",
+        "link": "https://www.thehindu.com/news/national/congress-on-opposition-unity-delimitation-bill-women-reservation/article70876852.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
         "industry": "Communication",
-        "description": "Cardiac infections after heart stent procedures are rare but serious, with mortality rates up to 40 percent and symptoms appearing days to weeks later.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T08:03:52.000Z",
+        "description": "Congress leader Priyanka Gandhi Vadra demanded that the government implement the Women's Reservation Act of 2023 on the current strength of the Lok Sabha.",
+        "image": "https://th-i.thgim.com/public/incoming/8iiwt2/article70876874.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-04-18%20at%2012.49.55%20PM.jpeg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/8iiwt2/article70876874.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-04-18%20at%2012.49.55%20PM.jpeg",
+        "publishedAt": "2026-04-18T08:01:24.000Z",
         "sentiment": {
-          "posP": 0,
-          "neuP": 88,
-          "negP": 12,
+          "posP": 7,
+          "neuP": 74,
+          "negP": 19,
           "label": "negative",
-          "confidence": 0.2846
+          "confidence": 0.6369
         },
-        "category": "health"
+        "category": "world"
       },
       {
         "title": "Dems sidestep past ‘refuse illegal orders’ demands as they challenge Trump’s Iran war authority",
@@ -1053,26 +1432,6 @@
         "category": "business"
       },
       {
-        "title": "SRH vs CSK prediction: Who’ll win, Sunrisers Hyderabad or Chennai Super Kings? Grok, ChatGPT, Google Gemini pick winner",
-        "link": "https://www.livemint.com/news/trends/srh-vs-csk-prediction-who-ll-win-sunrisers-hyderabad-or-chennai-super-kings-grok-chatgpt-google-gemini-pick-winner-11776498863317.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "Sunrisers Hyderabad will take on Chennai Super Kings at home. As both look to fight for a spot in the Top 4, they'll be desperate for a win tonight.&nbsp;",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:59:48.000Z",
-        "sentiment": {
-          "posP": 33,
-          "neuP": 59,
-          "negP": 8,
-          "label": "positive",
-          "confidence": 0.9524
-        },
-        "category": "india"
-      },
-      {
         "title": "Govt approves 2% dearness allowance hike for central govt employees, pensioners",
         "link": "https://www.indiatoday.in/business/story/cabinet-approves-2-dearness-allowance-raise-for-central-govt-employees-pensioners-2898110-2026-04-18?utm_source=rss",
         "source": "India Today",
@@ -1091,46 +1450,6 @@
           "confidence": 0.886
         },
         "category": "business"
-      },
-      {
-        "title": "Trump Sees Iran Deal as Imminent, Nuclear Issue Remains in Limbo",
-        "link": "https://www.bloomberg.com/news/articles/2026-04-18/trump-sees-iran-deal-as-imminent-nuclear-issue-remains-in-limbo",
-        "source": "Bloomberg",
-        "sourceDomain": "bloomberg.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "President Donald Trump said a deal with Iran to end the seven-week war may be imminent though disagreements remain, with Tehran pushing back against US claims that it had agreed to give up its enriched uranium.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:57:28.000Z",
-        "sentiment": {
-          "posP": 4,
-          "neuP": 83,
-          "negP": 13,
-          "label": "negative",
-          "confidence": 0.6808
-        },
-        "category": "world"
-      },
-      {
-        "title": "IT raids TMC leaders ahead of West Bengal election; Mamata Banerjee questions timing",
-        "link": "https://www.hindustantimes.com/india-news/it-raids-tmc-leaders-ahead-of-west-bengal-election-2026-polls-mamata-banerjee-questions-timing-bjp-101776497830877.html",
-        "source": "Hindustan Times",
-        "sourceDomain": "hindustantimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Raids were conducted on premises of TMC MLA Debashish Kumar, who is fighting from Rashbehari, and Miraj Shah, a proposer of Mamata’s candidature from Bhabanipur",
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/TMC-chief-Mamata-Banerjee-claims-growing-oppositio_1776498391525_1776498399492.jpg",
-        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/TMC-chief-Mamata-Banerjee-claims-growing-oppositio_1776498391525_1776498399492.jpg",
-        "publishedAt": "2026-04-18T07:51:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 93,
-          "negP": 7,
-          "label": "negative",
-          "confidence": 0.3612
-        },
-        "category": "india"
       },
       {
         "title": "Suns end Warriors' season, await No. 1 Thunder",
@@ -1253,66 +1572,6 @@
         "category": "world"
       },
       {
-        "title": "‘Hold Parliament on Monday, bring old bill, let's see who is anti-women’: Priyanka leads Oppn charge as govt move fails",
-        "link": "https://www.hindustantimes.com/india-news/hold-parliament-on-monday-bring-old-bill-lets-see-who-is-anti-women-priyanka-leads-oppn-charge-as-govt-move-fails-101776496554823.html",
-        "source": "Hindustan Times",
-        "sourceDomain": "hindustantimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "‘Old bill’ refers to 2023 law that already provides for 33% quota for women in legislatures. It was in fact notified this week. Delimitation is the caveat.",
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/ANI-20260418017-0_1776498318381_1776498332101.jpg",
-        "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/ANI-20260418017-0_1776498318381_1776498332101.jpg",
-        "publishedAt": "2026-04-18T07:46:51.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 94,
-          "negP": 6,
-          "label": "negative",
-          "confidence": 0.4215
-        },
-        "category": "india"
-      },
-      {
-        "title": "\"Wo Bechara Rs 4500 Ki Naukri Kar Raha Hai\": Akshay Kumar On Son Aarav",
-        "link": "https://www.ndtv.com/entertainment/akshay-kumar-reveals-son-aarav-bhatia-doesnt-want-to-do-films-wo-bechara-rs-4500-ki-naukri-kar-raha-hai-11374813",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Akshay Kumar revealed that Aarav is focused on carving his own path in fashion and is currently working a modest job",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:46:43.000Z",
-        "sentiment": {
-          "posP": 7,
-          "neuP": 93,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.3818
-        },
-        "category": "entertainment"
-      },
-      {
-        "title": "'Opposition Made A Mistake, Will Pay Consequences': PM On Women's Quota Bill",
-        "link": "https://www.ndtv.com/india-news/womens-quota-bill-opposition-made-a-mistake-will-face-consequences-pm-narendra-modi-on-womens-quota-bill-failing-parliament-test-11375014",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "The opposition has committed a mistake by not supporting the Women's Reservation Bill, sources cite Prime Minister Narendra Modi as saying, a day after the crucial legislation failed to clear...",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:46:21.000Z",
-        "sentiment": {
-          "posP": 5,
-          "neuP": 70,
-          "negP": 25,
-          "label": "negative",
-          "confidence": 0.8319
-        },
-        "category": "india"
-      },
-      {
         "title": "10 smallcap stocks ace investors Mukul Agrawal, Ashish Kacholia, Radhakishan Damani bought in Q4 ",
         "link": "https://economictimes.indiatimes.com/markets/stocks/news/10-smallcap-stocks-ace-investors-mukul-agrawal-ashish-kacholia-radhakishan-damani-bought-in-q4/slideshow/130349457.cms",
         "source": "The Economic Times",
@@ -1351,206 +1610,6 @@
           "confidence": 0.5106
         },
         "category": "world"
-      },
-      {
-        "title": "Q4 Results Next Week: Nearly 100 Companies To Declare Earnings; Full List",
-        "link": "https://www.ndtvprofit.com/markets/q4-results-next-week-hcltech-groww-reliance-infosys-groww-among-nearly-100-firms-to-declare-earnings-11371019",
-        "source": "NDTV",
-        "sourceDomain": "ndtvprofit.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "Axis Bank, IndusInd Bank, Adani Green Energy, Nestle India and Tata Capital are among the companies that will announce quarterly results next week.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:39:30.000Z",
-        "sentiment": {
-          "posP": 6,
-          "neuP": 94,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.2732
-        },
-        "category": "business"
-      },
-      {
-        "title": "Hardik's Captaincy Receives Brutal Verdict After MI's Loss: \"Looking Worried\"",
-        "link": "https://sports.ndtv.com/cricket/hardik-pandyas-captaincy-receives-brutal-verdict-after-mumbai-indians-loss-looking-worried-11372862",
-        "source": "NDTV",
-        "sourceDomain": "sports.ndtv.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "Irfan Pathan delivered a brutal verdict on Hardik Pandya's captaincy following Mumbai Indians' loss against Punjab Kings in their IPL 2026 match.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:37:50.000Z",
-        "sentiment": {
-          "posP": 8,
-          "neuP": 61,
-          "negP": 31,
-          "label": "negative",
-          "confidence": 0.891
-        },
-        "category": "sports"
-      },
-      {
-        "title": "\"Mission Is To Lift IPL Trophy\": PBKS Captain Shreyas Iyer Reveals Big Plan",
-        "link": "https://sports.ndtv.com/cricket/mission-is-to-lift-the-ipl-trophy-but-more-you-stay-in-present-more-you-stay-in-control-pbks-captain-shreyas-iyer-11374852",
-        "source": "NDTV",
-        "sourceDomain": "sports.ndtv.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "Punjab Kings (PBKS) captain Shreyas Iyer expressed that the team's mission is to lift the Indian Premier League (IPL) 2026 trophy, but also admitted the need to be in the present to stay in control of...",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:36:01.000Z",
-        "sentiment": {
-          "posP": 3,
-          "neuP": 97,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.1531
-        },
-        "category": "sports"
-      },
-      {
-        "title": "'My Kids Were Bullied': Ali Asgar On Quitting Playing Dadi On Kapil Sharma Show",
-        "link": "https://www.ndtv.com/entertainment/ali-asgar-reveals-why-he-quit-playing-dadi-on-kapil-sharma-show-my-kids-were-bullied-in-school-11374476",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Ali Asgar explained why he moved away from performing female comic characters on Kapil Sharma's show.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:32:31.000Z",
-        "sentiment": {
-          "posP": 6,
-          "neuP": 94,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.2023
-        },
-        "category": "entertainment"
-      },
-      {
-        "title": "Ustaad Bhagat Singh OTT Release, Plot, Cast & Review: All You Need to Know",
-        "link": "https://www.gadgets360.com/entertainment/news/ustaad-bhagat-singh-ott-release-when-where-to-watch-pawan-kalyan-s-telugu-film-online-11366246",
-        "source": "NDTV",
-        "sourceDomain": "gadgets360.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "Ustaad Bhagat Singh is a Telugu political drama starring Pawan Kalyan in a powerful role.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:30:20.000Z",
-        "sentiment": {
-          "posP": 10,
-          "neuP": 90,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.4215
-        },
-        "category": "technology"
-      },
-      {
-        "title": "Wounded RR Eye Rebound As Struggling KKR Seek Spin Spark At Eden Gardens",
-        "link": "https://sports.ndtv.com/cricket/wounded-rr-eye-rebound-as-struggling-kkr-seek-spin-spark-at-eden-11374764",
-        "source": "NDTV",
-        "sourceDomain": "sports.ndtv.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "A bruised Rajasthan Royals will look to bounce back strongly and deepen the misery of a floundering Kolkata Knight Riders when the two sides with contrasting fortunes clash in an afternoon IPL fixture...",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:29:50.000Z",
-        "sentiment": {
-          "posP": 8,
-          "neuP": 79,
-          "negP": 13,
-          "label": "negative",
-          "confidence": 0.5423
-        },
-        "category": "sports"
-      },
-      {
-        "title": "Opinion: Trump's Toughest Opponent? His Own Economy",
-        "link": "https://www.ndtv.com/opinion/opinion-trumps-toughest-opponent-his-own-economy-11374961",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Average tax refunds are up only about $350, or 11%, over last year, according to the Treasury Department. That's far lower than the original projections of nearly $1,000.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:28:16.000Z",
-        "sentiment": {
-          "posP": 11,
-          "neuP": 80,
-          "negP": 9,
-          "label": "positive",
-          "confidence": 0.1531
-        },
-        "category": "business"
-      },
-      {
-        "title": "Watch: AC Sleeper Bus Catches Fire In Hyderabad's KPHB Area, Passengers Escape",
-        "link": "https://www.ndtvprofit.com/india/watch-fire-guts-ac-sleeper-bus-in-hyderabad-039-s-kphb-area-11374924",
-        "source": "NDTV",
-        "sourceDomain": "ndtvprofit.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "Flames were seen coming from the driver's cabin, indicating the start of the fire.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:20:29.000Z",
-        "sentiment": {
-          "posP": 6,
-          "neuP": 78,
-          "negP": 16,
-          "label": "negative",
-          "confidence": 0.4767
-        },
-        "category": "india"
-      },
-      {
-        "title": "5 equity mutual funds offer over 15% annualised return on SIP investments in 10 years. Check details ",
-        "link": "https://economictimes.indiatimes.com/mf/analysis/5-equity-mutual-funds-offer-over-15-annualised-return-on-sip-investments-in-10-years-check-details/slideshow/130348910.cms",
-        "source": "The Economic Times",
-        "sourceDomain": "economictimes.indiatimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Finance",
-        "description": "",
-        "image": "https://img.etimg.com/thumb/msid-130348910,width-1200,height-900,overlay-etwealthmutualfunds/slideshow.jpg",
-        "imageUrl": "https://img.etimg.com/thumb/msid-130348910,width-1200,height-900,overlay-etwealthmutualfunds/slideshow.jpg",
-        "publishedAt": "2026-04-18T07:08:35.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "business"
-      },
-      {
-        "title": "Stories Of Evolution In Progress | The Week In The Whys",
-        "link": "https://www.ndtvprofit.com/economy/stories-of-evolution-in-progress-the-week-in-the-whys-11374842",
-        "source": "NDTV",
-        "sourceDomain": "ndtvprofit.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "This week was about three very different things - a humble gavar in Rajasthan, a fancy luxury store in Mumbai, and a (boring-looking) policy document from the World Bank.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:04:31.000Z",
-        "sentiment": {
-          "posP": 8,
-          "neuP": 92,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.4215
-        },
-        "category": "business"
       },
       {
         "title": "Green finds some form, but should be 'far more efficient' at the death ",
@@ -1693,26 +1752,6 @@
         "category": "world"
       },
       {
-        "title": "RCB vs DC prediction: Who’ll win, Bengaluru or Delhi? Grok, ChatGPT, and Google Gemini have no confusion",
-        "link": "https://www.livemint.com/news/trends/rcb-vs-dc-prediction-who-ll-win-bengaluru-or-delhi-grok-chatgpt-and-google-gemini-have-no-confusion-11776493598379.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "Grok, ChatGPT and Google Gemini predict the winner of the Royal Challengers Bengaluru vs Delhi Capitals match in the IPL 2026. The AI tools have no confusion about who'll win today.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T06:33:39.000Z",
-        "sentiment": {
-          "posP": 21,
-          "neuP": 65,
-          "negP": 14,
-          "label": "positive",
-          "confidence": 0.7184
-        },
-        "category": "india"
-      },
-      {
         "title": "Pop Princess, meet the Queen of Pop! Sabrina Carpenter brings out surprise guest Madonna for Coachella set",
         "link": "https://www.nbcnews.com/pop-culture/music/sabrina-carpenter-brings-surprise-guest-madonna-coachella-set-rcna332403",
         "source": "NBC News",
@@ -1749,26 +1788,6 @@
           "negP": 12,
           "label": "negative",
           "confidence": 0.3818
-        },
-        "category": "world"
-      },
-      {
-        "title": "Iran war: What is happening on day 50 of the US-Iran conflict?",
-        "link": "https://www.aljazeera.com/news/2026/4/18/iran-war-what-is-happening-on-day-50-of-the-us-iran-conflict?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Iran reopens the Strait of Hormuz with conditions and threatens closure if the US blockade of Iranian ports continues.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-17T174006Z_1806506982_RC20RKA2BCWW_RTRMADP_3_IRAN-CRISIS-LEBANON-YEMEN-1776484926.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-17T174006Z_1806506982_RC20RKA2BCWW_RTRMADP_3_IRAN-CRISIS-LEBANON-YEMEN-1776484926.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-04-18T06:07:12.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 82,
-          "negP": 18,
-          "label": "negative",
-          "confidence": 0.7579
         },
         "category": "world"
       },
@@ -1833,26 +1852,6 @@
         "category": "world"
       },
       {
-        "title": "RBI announced ‘new rules’ for exchanging old  ₹500 &amp;  ₹1000 notes? PIB Factcheck says…",
-        "link": "https://www.livemint.com/news/india/rbi-announced-new-rules-for-exchanging-old-500-1000-notes-pib-factcheck-says-11776486886253.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "Users are urged to avoid sharing unverified messages and to report suspicious content to the Press Information Bureau.&nbsp;",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T05:38:03.000Z",
-        "sentiment": {
-          "posP": 8,
-          "neuP": 79,
-          "negP": 13,
-          "label": "negative",
-          "confidence": 0.2263
-        },
-        "category": "india"
-      },
-      {
         "title": "'Extra bounce my ally,' says Rabada after three-wicket haul",
         "link": "https://www.espncricinfo.com/ci/content/story/1532466.html?ex_cid=OTC-RSS",
         "source": "ESPN Cricinfo",
@@ -1869,26 +1868,6 @@
           "negP": 0,
           "label": "positive",
           "confidence": 0.7178
-        },
-        "category": "world"
-      },
-      {
-        "title": "Quote of the Day by Maya Angelou on freedom: 'The truth is, no one of us can be free…'",
-        "link": "https://www.livemint.com/news/us-news/quote-of-the-day-by-maya-angelou-on-freedom-the-truth-is-no-one-of-us-can-be-free-11776489419122.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "Maya Angelou’s quote on freedom shows why no team, company, or leader can truly thrive while others remain excluded from opportunity.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T05:26:12.000Z",
-        "sentiment": {
-          "posP": 30,
-          "neuP": 58,
-          "negP": 12,
-          "label": "positive",
-          "confidence": 0.891
         },
         "category": "world"
       },
@@ -2031,26 +2010,6 @@
           "confidence": 0.9828
         },
         "category": "world"
-      },
-      {
-        "title": "Coetzee replaces the injured Payne at SRH for remainder of IPL 2026",
-        "link": "https://www.espncricinfo.com/ci/content/story/1532460.html?ex_cid=OTC-RSS",
-        "source": "ESPN Cricinfo",
-        "sourceDomain": "espncricinfo.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "SRH have had poor luck with their overseas seamers, having to bring in replacements for Jack Edwards and Brydon Carse, and now David Payne, but should get Pat Cummins back soon",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T04:05:58.000Z",
-        "sentiment": {
-          "posP": 4,
-          "neuP": 87,
-          "negP": 9,
-          "label": "negative",
-          "confidence": 0.2263
-        },
-        "category": "sports"
       },
       {
         "title": "A Potent Threat in Strait of Hormuz: Iran’s “Mosquito Fleet”",
@@ -2451,1302 +2410,98 @@
           "confidence": 0.4939
         },
         "category": "world"
-      },
-      {
-        "title": "Deaths of migrants in ICE custody hit record high under Trump",
-        "link": "https://www.npr.org/2026/04/17/nx-s1-5789092/deaths-of-migrants-in-ice-custody-hit-record-high-under-trump",
-        "source": "NPR",
-        "sourceDomain": "npr.org",
-        "sourceCredibility": "High",
-        "industry": "Media",
-        "description": "Twenty-nine people have died in ICE custody since October, the start of the federal government's fiscal year, already surpassing 2004's toll of 28, the previous record, according to government data.",
-        "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/851x656+0+0/resize/851x656!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa4%2F43%2F7969deb44071bde876d78e58c4b8%2Fscreenshot-2026-04-02-at-4-53-17-pm.png",
-        "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/851x656+0+0/resize/851x656!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa4%2F43%2F7969deb44071bde876d78e58c4b8%2Fscreenshot-2026-04-02-at-4-53-17-pm.png",
-        "publishedAt": "2026-04-18T00:39:50.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 92,
-          "negP": 8,
-          "label": "negative",
-          "confidence": 0.5574
-        },
-        "category": "world"
-      },
-      {
-        "title": "Trump came to Arizona to rally young voters. An older crowd greeted him.",
-        "link": "https://www.washingtonpost.com/politics/2026/04/17/trump-turning-point-arizona/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
-        "sourceCredibility": "High",
-        "industry": "Media",
-        "description": "Despite some empty seats, Trump projected confidence in his party’s ability to win the midterm elections. Some in the crowd focused on GOP divisions.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T00:31:58.000Z",
-        "sentiment": {
-          "posP": 30,
-          "neuP": 66,
-          "negP": 4,
-          "label": "positive",
-          "confidence": 0.9062
-        },
-        "category": "world"
       }
     ],
-    "topics": [
-      {
-        "title": "pib fact | fact checks | checks influencer",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 4,
-          "neu": 96
-        },
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/sarthaaak_1776503850631_1776503855037.jpg"
-      },
-      {
-        "title": "central bankers | bankers policymakers | policymakers and",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 15,
-          "neg": 14,
-          "neu": 71
-        },
-        "image": "https://image.cnbcfm.com/api/v1/image/108287368-1775489030380-gettyimages-2269502140-6_april_destruc_3e7a0131.jpeg?v=1775497725&amp;w=1920&amp;h=1080"
-      },
-      {
-        "title": "thunderstorm forecast | telangana districts",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 0,
-          "neu": 100
-        },
-        "image": "https://th-i.thgim.com/public/incoming/iikz4e/article70877033.ece/alternates/LANDSCAPE_1200/HGK6U-ubQAAHDw6.jpg"
-      },
-      {
-        "title": "narendra modi | address the | the nation",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 0,
-          "neu": 100
-        },
-        "image": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/ANI-20260418034-0_1776503842672_1776503862360.jpg"
-      },
-      {
-        "title": "uncertainty over | over the | the strait",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 9,
-          "neg": 11,
-          "neu": 80
-        },
-        "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x683+0+0/resize/1024x683!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F95%2F9f%2Fe40ec65f42bbad8ad2570e1746e7%2Fgettyimages-2271863466.jpg"
-      },
-      {
-        "title": "remove mamata | else bangladeshi | bangladeshi muslims",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 4,
-          "neg": 0,
-          "neu": 96
-        },
-        "image": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg"
-      },
-      {
-        "title": "iran reimposes | reimposes strict | strict control",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 0,
-          "neu": 100
-        },
-        "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-hormuz-nd-63b3e5.jpg"
-      },
-      {
-        "title": "hormuz shut | iran again | again tehran",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 23,
-          "neu": 77
-        },
-        "image": "https://www.livemint.com/lm-img/img/2026/04/18/1600x900/IRAN-CRISIS-STRAIT-0_1776503614840_1776503622162.JPG"
-      },
-      {
-        "title": "assembly election | election aiadmk | mask for",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 8,
-          "neu": 92
-        },
-        "image": "https://th-i.thgim.com/public/incoming/p3yawa/article70877012.ece/alternates/LANDSCAPE_1200/2501_18_4_2026_13_6_53_2_DSC_7271.JPEG"
-      },
-      {
-        "title": "trump says | has good | good news",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 13,
-          "neg": 0,
-          "neu": 87
-        },
-        "image": "https://image.cnbcfm.com/api/v1/image/108293611-1776499230715-gettyimages-2271863754-wm025513_9hx3drvo.jpeg?v=1776499248&amp;w=1920&amp;h=1080"
-      },
-      {
-        "title": "negotiate with | with iran | asked people",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 13,
-          "neg": 0,
-          "neu": 87
-        },
-        "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2995x1997+0+0/resize/2995x1997!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F91%2F10%2F655c7568470dac9a4b8955a31978%2Fgettyimages-2270459652.jpg"
-      },
-      {
-        "title": "china cautiously | cautiously stakes | stakes out",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 12,
-          "neg": 30,
-          "neu": 58
-        },
-        "image": "/img/thumb-placeholder.svg"
-      }
-    ],
-    "stories": [
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "PIB fact-checks influencer Sarthak Ahuja's video about income tax clearance certificate for travel abroad",
-            "link": "https://www.hindustantimes.com/india-news/pib-fact-checks-influencer-sarthak-ahujas-video-about-income-tax-clearance-certificate-for-travel-abroad-101776502533337.html",
-            "source": "Hindustan Times",
-            "sourceDomain": "hindustantimes.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Under Section 230 [of the Income Tax Act, 1961], tax clearance certificates are not mandatory for everyone, says PIB",
-            "image": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/sarthaaak_1776503850631_1776503855037.jpg",
-            "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/sarthaaak_1776503850631_1776503855037.jpg",
-            "publishedAt": "2026-04-18T09:19:06.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 96,
-              "negP": 4,
-              "label": "negative",
-              "confidence": 0.0572
-            },
-            "category": "india"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "We spoke to over 30 central bankers, policymakers and politicians. Here are their top concerns",
-            "link": "https://www.cnbc.com/2026/04/18/iran-war-inflation-prices-energy-trump-economy-end.html",
-            "source": "NBC News",
-            "sourceDomain": "cnbc.com",
-            "sourceCredibility": "High",
-            "industry": "Finance",
-            "description": "From stagflation to energy security, policymakers spoke to CNBC about the biggest risks arising from the ongoing U.S.-Iran war.",
-            "image": "https://image.cnbcfm.com/api/v1/image/108287368-1775489030380-gettyimages-2269502140-6_april_destruc_3e7a0131.jpeg?v=1775497725&amp;w=1920&amp;h=1080",
-            "imageUrl": "https://image.cnbcfm.com/api/v1/image/108287368-1775489030380-gettyimages-2269502140-6_april_destruc_3e7a0131.jpeg?v=1775497725&amp;w=1920&amp;h=1080",
-            "publishedAt": "2026-04-18T09:17:51.000Z",
-            "sentiment": {
-              "posP": 15,
-              "neuP": 71,
-              "negP": 14,
-              "label": "negative",
-              "confidence": 0.1779
-            },
-            "category": "business"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Thunderstorm forecast in 10 Telangana districts on April 19",
-            "link": "https://www.thehindu.com/news/national/telangana/thunderstorm-forecast-in-10-telangana-districts-on-april-19/article70877031.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "",
-            "image": "https://th-i.thgim.com/public/incoming/iikz4e/article70877033.ece/alternates/LANDSCAPE_1200/HGK6U-ubQAAHDw6.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/iikz4e/article70877033.ece/alternates/LANDSCAPE_1200/HGK6U-ubQAAHDw6.jpg",
-            "publishedAt": "2026-04-18T09:16:12.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "PM Narendra Modi to address the nation at 8:30 pm today",
-            "link": "https://www.hindustantimes.com/india-news/pm-narendra-modi-to-address-the-nation-at-8-30-pm-today-101776503690186.html",
-            "source": "Hindustan Times",
-            "sourceDomain": "hindustantimes.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "PM Narendra Modi to address the nation at 8:30 pm today",
-            "image": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/ANI-20260418034-0_1776503842672_1776503862360.jpg",
-            "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/ANI-20260418034-0_1776503842672_1776503862360.jpg",
-            "publishedAt": "2026-04-18T09:16:12.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "india"
-          },
-          {
-            "title": "Prime Minister Narendra Modi to address nation at 8.30pm",
-            "link": "https://timesofindia.indiatimes.com/india/prime-minister-narendra-modi-to-address-nation-at-8-30pm/articleshow/130350274.cms",
-            "source": "TOI",
-            "sourceDomain": "timesofindia.indiatimes.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "",
-            "image": "https://static.toiimg.com/photo/msid-130350268,imgsize-39420.cms",
-            "imageUrl": "https://static.toiimg.com/photo/msid-130350268,imgsize-39420.cms",
-            "publishedAt": "2026-04-18T08:58:15.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "india"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Uncertainty over the Strait of Hormuz remains, as ceasefire nears its end",
-            "link": "https://www.npr.org/2026/04/18/nx-s1-5789780/iran-middle-east-updates",
-            "source": "NPR",
-            "sourceDomain": "npr.org",
-            "sourceCredibility": "High",
-            "industry": "Media",
-            "description": "President Trump said on Friday night the blockade of the Strait of Hormuz will remain and attacks could resume if a ceasefire expires, while also appearing hopeful that a deal will be reached soon.",
-            "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x683+0+0/resize/1024x683!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F95%2F9f%2Fe40ec65f42bbad8ad2570e1746e7%2Fgettyimages-2271863466.jpg",
-            "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x683+0+0/resize/1024x683!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F95%2F9f%2Fe40ec65f42bbad8ad2570e1746e7%2Fgettyimages-2271863466.jpg",
-            "publishedAt": "2026-04-18T09:15:18.000Z",
-            "sentiment": {
-              "posP": 9,
-              "neuP": 80,
-              "negP": 11,
-              "label": "negative",
-              "confidence": 0.1531
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Have to remove Mamata as Bengal CM, else Bangladeshi Muslims will snatch State from us: Himanta",
-            "link": "https://www.thehindu.com/elections/west-bengal-assembly/have-to-remove-mamata-as-bengal-cm-else-bangladeshi-muslims-will-snatch-state-from-us-himanta/article70877023.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "\"Mamata Banerjee has earmarked the entire treasury of Bengal for Bangladeshi Muslim infiltrators. She sold this land to Bangladeshi Muslims for votes,\" says Assam CM",
-            "image": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg",
-            "publishedAt": "2026-04-18T09:08:29.000Z",
-            "sentiment": {
-              "posP": 4,
-              "neuP": 96,
-              "negP": 0,
-              "label": "positive",
-              "confidence": 0.2023
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Iran reimposes 'strict control' over Strait of Hormuz, citing continued U.S. naval blockade",
-            "link": "https://www.nbcnews.com/world/iran/iran-reimposes-strict-control-strait-hormuz-citing-continued-us-naval-rcna340765",
-            "source": "NBC News",
-            "sourceDomain": "nbcnews.com",
-            "sourceCredibility": "High",
-            "industry": "Media",
-            "description": "Iranian military officials said Saturday that conditions in the Strait of Hormuz have reverted to \"strict control,\" citing the continued U.S. blockade of its ports, just one day after declaring the waterway “completely open.”“Control over the Strait of Hormuz has returned to its previous state, and this strategic waterway is now under strict management and control of the armed forces,” a spokesperson for Iran’s Khatam al-Anbiya military command headquarters said.“Until America allows",
-            "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-hormuz-nd-63b3e5.jpg",
-            "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-hormuz-nd-63b3e5.jpg",
-            "publishedAt": "2026-04-18T09:07:26.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Strait of Hormuz shut by Iran again, Tehran accuses US of violating deal to reopen it",
-            "link": "https://www.livemint.com/news/world/strait-of-hormuz-shut-by-iran-again-tehran-accuses-us-of-violating-deal-to-reopen-it-11776501763361.html",
-            "source": "Mint",
-            "sourceDomain": "livemint.com",
-            "sourceCredibility": "High",
-            "industry": "Finance",
-            "description": "Iran warned that it would continue to block transit through the strait as long as the US blockade of Iranian ports remained in effect",
-            "image": "https://www.livemint.com/lm-img/img/2026/04/18/1600x900/IRAN-CRISIS-STRAIT-0_1776503614840_1776503622162.JPG",
-            "imageUrl": "https://www.livemint.com/lm-img/img/2026/04/18/1600x900/IRAN-CRISIS-STRAIT-0_1776503614840_1776503622162.JPG",
-            "publishedAt": "2026-04-18T09:05:21.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 77,
-              "negP": 23,
-              "label": "negative",
-              "confidence": 0.872
-            },
-            "category": "world"
-          },
-          {
-            "title": "Iran reimposes restrictions in Strait of Hormuz, accuses US of violating ceasefire",
-            "link": "https://www.indiatoday.in/world/story/iran-reimposes-restrictions-in-strait-of-hormuz-accuses-us-of-violating-ceasefire-2898124-2026-04-18?utm_source=rss",
-            "source": "India Today",
-            "sourceDomain": "indiatoday.in",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Iran reimposes restrictions in Strait of Hormuz accuses US of violating ceasefire",
-            "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/strait-of-hormuz-184553709-16x9_0.jpg?VersionId=DZ9BIbpIPk1OczBNT.f42MCRZgd5GTxF",
-            "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/strait-of-hormuz-184553709-16x9_0.jpg?VersionId=DZ9BIbpIPk1OczBNT.f42MCRZgd5GTxF",
-            "publishedAt": "2026-04-18T08:43:38.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 63,
-              "negP": 37,
-              "label": "negative",
-              "confidence": 0.8957
-            },
-            "category": "world"
-          }
-        ]
-      }
-    ],
-    "engagedStories": [
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "PM Narendra Modi to address the nation at 8:30 pm today",
-            "link": "https://www.hindustantimes.com/india-news/pm-narendra-modi-to-address-the-nation-at-8-30-pm-today-101776503690186.html",
-            "source": "Hindustan Times",
-            "sourceDomain": "hindustantimes.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "PM Narendra Modi to address the nation at 8:30 pm today",
-            "image": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/ANI-20260418034-0_1776503842672_1776503862360.jpg",
-            "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/ANI-20260418034-0_1776503842672_1776503862360.jpg",
-            "publishedAt": "2026-04-18T09:16:12.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "india"
-          },
-          {
-            "title": "Prime Minister Narendra Modi to address nation at 8.30pm",
-            "link": "https://timesofindia.indiatimes.com/india/prime-minister-narendra-modi-to-address-nation-at-8-30pm/articleshow/130350274.cms",
-            "source": "TOI",
-            "sourceDomain": "timesofindia.indiatimes.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "",
-            "image": "https://static.toiimg.com/photo/msid-130350268,imgsize-39420.cms",
-            "imageUrl": "https://static.toiimg.com/photo/msid-130350268,imgsize-39420.cms",
-            "publishedAt": "2026-04-18T08:58:15.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "india"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Strait of Hormuz shut by Iran again, Tehran accuses US of violating deal to reopen it",
-            "link": "https://www.livemint.com/news/world/strait-of-hormuz-shut-by-iran-again-tehran-accuses-us-of-violating-deal-to-reopen-it-11776501763361.html",
-            "source": "Mint",
-            "sourceDomain": "livemint.com",
-            "sourceCredibility": "High",
-            "industry": "Finance",
-            "description": "Iran warned that it would continue to block transit through the strait as long as the US blockade of Iranian ports remained in effect",
-            "image": "https://www.livemint.com/lm-img/img/2026/04/18/1600x900/IRAN-CRISIS-STRAIT-0_1776503614840_1776503622162.JPG",
-            "imageUrl": "https://www.livemint.com/lm-img/img/2026/04/18/1600x900/IRAN-CRISIS-STRAIT-0_1776503614840_1776503622162.JPG",
-            "publishedAt": "2026-04-18T09:05:21.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 77,
-              "negP": 23,
-              "label": "negative",
-              "confidence": 0.872
-            },
-            "category": "world"
-          },
-          {
-            "title": "Iran reimposes restrictions in Strait of Hormuz, accuses US of violating ceasefire",
-            "link": "https://www.indiatoday.in/world/story/iran-reimposes-restrictions-in-strait-of-hormuz-accuses-us-of-violating-ceasefire-2898124-2026-04-18?utm_source=rss",
-            "source": "India Today",
-            "sourceDomain": "indiatoday.in",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Iran reimposes restrictions in Strait of Hormuz accuses US of violating ceasefire",
-            "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/strait-of-hormuz-184553709-16x9_0.jpg?VersionId=DZ9BIbpIPk1OczBNT.f42MCRZgd5GTxF",
-            "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/strait-of-hormuz-184553709-16x9_0.jpg?VersionId=DZ9BIbpIPk1OczBNT.f42MCRZgd5GTxF",
-            "publishedAt": "2026-04-18T08:43:38.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 63,
-              "negP": 37,
-              "label": "negative",
-              "confidence": 0.8957
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "PIB fact-checks influencer Sarthak Ahuja's video about income tax clearance certificate for travel abroad",
-            "link": "https://www.hindustantimes.com/india-news/pib-fact-checks-influencer-sarthak-ahujas-video-about-income-tax-clearance-certificate-for-travel-abroad-101776502533337.html",
-            "source": "Hindustan Times",
-            "sourceDomain": "hindustantimes.com",
-            "sourceCredibility": "Medium",
-            "industry": "Communication",
-            "description": "Under Section 230 [of the Income Tax Act, 1961], tax clearance certificates are not mandatory for everyone, says PIB",
-            "image": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/sarthaaak_1776503850631_1776503855037.jpg",
-            "imageUrl": "https://www.hindustantimes.com/ht-img/img/2026/04/18/550x309/sarthaaak_1776503850631_1776503855037.jpg",
-            "publishedAt": "2026-04-18T09:19:06.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 96,
-              "negP": 4,
-              "label": "negative",
-              "confidence": 0.0572
-            },
-            "category": "india"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "We spoke to over 30 central bankers, policymakers and politicians. Here are their top concerns",
-            "link": "https://www.cnbc.com/2026/04/18/iran-war-inflation-prices-energy-trump-economy-end.html",
-            "source": "NBC News",
-            "sourceDomain": "cnbc.com",
-            "sourceCredibility": "High",
-            "industry": "Finance",
-            "description": "From stagflation to energy security, policymakers spoke to CNBC about the biggest risks arising from the ongoing U.S.-Iran war.",
-            "image": "https://image.cnbcfm.com/api/v1/image/108287368-1775489030380-gettyimages-2269502140-6_april_destruc_3e7a0131.jpeg?v=1775497725&amp;w=1920&amp;h=1080",
-            "imageUrl": "https://image.cnbcfm.com/api/v1/image/108287368-1775489030380-gettyimages-2269502140-6_april_destruc_3e7a0131.jpeg?v=1775497725&amp;w=1920&amp;h=1080",
-            "publishedAt": "2026-04-18T09:17:51.000Z",
-            "sentiment": {
-              "posP": 15,
-              "neuP": 71,
-              "negP": 14,
-              "label": "negative",
-              "confidence": 0.1779
-            },
-            "category": "business"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Thunderstorm forecast in 10 Telangana districts on April 19",
-            "link": "https://www.thehindu.com/news/national/telangana/thunderstorm-forecast-in-10-telangana-districts-on-april-19/article70877031.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "",
-            "image": "https://th-i.thgim.com/public/incoming/iikz4e/article70877033.ece/alternates/LANDSCAPE_1200/HGK6U-ubQAAHDw6.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/iikz4e/article70877033.ece/alternates/LANDSCAPE_1200/HGK6U-ubQAAHDw6.jpg",
-            "publishedAt": "2026-04-18T09:16:12.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Uncertainty over the Strait of Hormuz remains, as ceasefire nears its end",
-            "link": "https://www.npr.org/2026/04/18/nx-s1-5789780/iran-middle-east-updates",
-            "source": "NPR",
-            "sourceDomain": "npr.org",
-            "sourceCredibility": "High",
-            "industry": "Media",
-            "description": "President Trump said on Friday night the blockade of the Strait of Hormuz will remain and attacks could resume if a ceasefire expires, while also appearing hopeful that a deal will be reached soon.",
-            "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x683+0+0/resize/1024x683!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F95%2F9f%2Fe40ec65f42bbad8ad2570e1746e7%2Fgettyimages-2271863466.jpg",
-            "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x683+0+0/resize/1024x683!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F95%2F9f%2Fe40ec65f42bbad8ad2570e1746e7%2Fgettyimages-2271863466.jpg",
-            "publishedAt": "2026-04-18T09:15:18.000Z",
-            "sentiment": {
-              "posP": 9,
-              "neuP": 80,
-              "negP": 11,
-              "label": "negative",
-              "confidence": 0.1531
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Have to remove Mamata as Bengal CM, else Bangladeshi Muslims will snatch State from us: Himanta",
-            "link": "https://www.thehindu.com/elections/west-bengal-assembly/have-to-remove-mamata-as-bengal-cm-else-bangladeshi-muslims-will-snatch-state-from-us-himanta/article70877023.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "\"Mamata Banerjee has earmarked the entire treasury of Bengal for Bangladeshi Muslim infiltrators. She sold this land to Bangladeshi Muslims for votes,\" says Assam CM",
-            "image": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg",
-            "publishedAt": "2026-04-18T09:08:29.000Z",
-            "sentiment": {
-              "posP": 4,
-              "neuP": 96,
-              "negP": 0,
-              "label": "positive",
-              "confidence": 0.2023
-            },
-            "category": "world"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Iran reimposes 'strict control' over Strait of Hormuz, citing continued U.S. naval blockade",
-            "link": "https://www.nbcnews.com/world/iran/iran-reimposes-strict-control-strait-hormuz-citing-continued-us-naval-rcna340765",
-            "source": "NBC News",
-            "sourceDomain": "nbcnews.com",
-            "sourceCredibility": "High",
-            "industry": "Media",
-            "description": "Iranian military officials said Saturday that conditions in the Strait of Hormuz have reverted to \"strict control,\" citing the continued U.S. blockade of its ports, just one day after declaring the waterway “completely open.”“Control over the Strait of Hormuz has returned to its previous state, and this strategic waterway is now under strict management and control of the armed forces,” a spokesperson for Iran’s Khatam al-Anbiya military command headquarters said.“Until America allows",
-            "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-hormuz-nd-63b3e5.jpg",
-            "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-hormuz-nd-63b3e5.jpg",
-            "publishedAt": "2026-04-18T09:07:26.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 100,
-              "negP": 0,
-              "label": "neutral",
-              "confidence": 0
-            },
-            "category": "world"
-          }
-        ]
-      }
-    ],
+    "topics": [],
+    "stories": [],
+    "engagedStories": [],
     "topStories": {
-      "indiaRecent": [
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        }
-      ],
-      "indiaEngaged": [
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        }
-      ],
-      "worldRecent": [
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        }
-      ],
-      "worldEngaged": [
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        },
-        {
-          "title": "",
-          "link": "",
-          "source": "",
-          "sourceDomain": "",
-          "sourceCredibility": "",
-          "industry": "",
-          "description": "",
-          "image": "",
-          "imageUrl": "",
-          "publishedAt": "",
-          "sentiment": {
-            "posP": 0,
-            "neuP": 0,
-            "negP": 0,
-            "label": "neutral",
-            "confidence": 0
-          },
-          "category": "world"
-        }
-      ]
+      "indiaRecent": [],
+      "indiaEngaged": [],
+      "worldRecent": [],
+      "worldEngaged": []
     }
   },
   "home": {
-    "topStories": [
-      {
-        "title": "",
-        "link": "",
-        "source": "",
-        "sourceDomain": "",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
-      },
-      {
-        "title": "",
-        "link": "",
-        "source": "",
-        "sourceDomain": "",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
-      },
-      {
-        "title": "",
-        "link": "",
-        "source": "",
-        "sourceDomain": "",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
-      },
-      {
-        "title": "",
-        "link": "",
-        "source": "",
-        "sourceDomain": "",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
-      }
-    ],
+    "topStories": [],
     "sentiment": {
       "overall": {
-        "pos": 8.57,
-        "neu": 82.86,
-        "neg": 8.57,
+        "pos": 8.55,
+        "neu": 82.83,
+        "neg": 8.62,
         "count": 120
       },
       "india": {
-        "pos": 7.16,
-        "neu": 82.68,
-        "neg": 10.16,
+        "pos": 4.08,
+        "neu": 84.32,
+        "neg": 11.6,
         "count": 25
       },
       "world": {
-        "pos": 8.94,
-        "neu": 82.91,
-        "neg": 8.16,
+        "pos": 9.73,
+        "neu": 82.44,
+        "neg": 7.83,
         "count": 95
       }
     },
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-04-18T05:27:55.952Z",
-          "pos": 8,
-          "neu": 79,
-          "neg": 13,
-          "count": 1
+          "label": "2026-04-18T06:10:32.819Z",
+          "pos": 6,
+          "neu": 70,
+          "neg": 25,
+          "count": 2
         },
         {
-          "label": "2026-04-18T06:27:55.952Z",
-          "pos": 10,
-          "neu": 71,
-          "neg": 20,
-          "count": 4
-        },
-        {
-          "label": "2026-04-18T07:27:55.952Z",
+          "label": "2026-04-18T07:10:32.819Z",
           "pos": 11,
-          "neu": 79,
-          "neg": 10,
-          "count": 9
+          "neu": 86,
+          "neg": 4,
+          "count": 2
         },
         {
-          "label": "2026-04-18T08:27:55.952Z",
+          "label": "2026-04-18T08:10:32.819Z",
+          "pos": 4,
+          "neu": 81,
+          "neg": 15,
+          "count": 11
+        },
+        {
+          "label": "2026-04-18T09:10:32.819Z",
           "pos": 3,
           "neu": 89,
           "neg": 8,
-          "count": 9
+          "count": 8
         }
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-04-18T05:27:55.952Z",
+          "label": "2026-04-18T06:10:32.819Z",
+          "pos": 11,
+          "neu": 81,
+          "neg": 8,
+          "count": 7
+        },
+        {
+          "label": "2026-04-18T07:10:32.819Z",
+          "pos": 12,
+          "neu": 80,
+          "neg": 8,
+          "count": 17
+        },
+        {
+          "label": "2026-04-18T08:10:32.819Z",
           "pos": 7,
           "neu": 86,
           "neg": 7,
-          "count": 6
+          "count": 23
         },
         {
-          "label": "2026-04-18T06:27:55.952Z",
-          "pos": 10,
-          "neu": 85,
+          "label": "2026-04-18T09:10:32.819Z",
+          "pos": 13,
+          "neu": 81,
           "neg": 6,
-          "count": 8
-        },
-        {
-          "label": "2026-04-18T07:27:55.952Z",
-          "pos": 10,
-          "neu": 84,
-          "neg": 7,
-          "count": 33
-        },
-        {
-          "label": "2026-04-18T08:27:55.952Z",
-          "pos": 8,
-          "neu": 83,
-          "neg": 9,
           "count": 19
         }
       ]
@@ -3760,34 +2515,34 @@
             "count": 3
           },
           {
+            "name": "Finance",
+            "bias": 6.52,
+            "count": 21
+          },
+          {
             "name": "Materials",
             "bias": 5.5,
             "count": 2
           },
           {
-            "name": "Finance",
-            "bias": 4.35,
-            "count": 23
-          },
-          {
-            "name": "Energy",
-            "bias": 2.17,
-            "count": 6
-          },
-          {
             "name": "Communication",
-            "bias": -1.88,
-            "count": 50
-          },
-          {
-            "name": "Technology",
-            "bias": 0.16,
-            "count": 44
+            "bias": -2.13,
+            "count": 52
           },
           {
             "name": "Utilities",
-            "bias": 0,
-            "count": 1
+            "bias": 1,
+            "count": 2
+          },
+          {
+            "name": "Energy",
+            "bias": -0.75,
+            "count": 4
+          },
+          {
+            "name": "Technology",
+            "bias": 0.05,
+            "count": 43
           },
           {
             "name": "Real Estate",
@@ -3802,69 +2557,96 @@
             "count": 3
           },
           {
+            "name": "Finance",
+            "bias": 6.52,
+            "count": 21
+          },
+          {
             "name": "Materials",
             "bias": 5.5,
             "count": 2
-          },
-          {
-            "name": "Finance",
-            "bias": 4.35,
-            "count": 23
           }
         ],
         "neu": [
           {
-            "name": "Energy",
-            "bias": 2.17,
-            "count": 6
+            "name": "Utilities",
+            "bias": 1,
+            "count": 2
           },
           {
-            "name": "Communication",
-            "bias": -1.88,
-            "count": 50
+            "name": "Energy",
+            "bias": -0.75,
+            "count": 4
           },
           {
             "name": "Technology",
-            "bias": 0.16,
-            "count": 44
+            "bias": 0.05,
+            "count": 43
           }
         ],
-        "neg": []
+        "neg": [
+          {
+            "name": "Communication",
+            "bias": -2.13,
+            "count": 52
+          }
+        ]
       },
       "sources": [
         {
           "source": "NDTV",
-          "pos": 10.47,
-          "neu": 82.94,
-          "neg": 6.59,
-          "count": 17
-        },
-        {
-          "source": "Hindustan Times",
-          "pos": 3.33,
-          "neu": 89.17,
-          "neg": 7.5,
-          "count": 6
+          "pos": 9.81,
+          "neu": 83.31,
+          "neg": 6.88,
+          "count": 16
         },
         {
           "source": "The Hindu",
-          "pos": 2.67,
-          "neu": 93.17,
-          "neg": 4.17,
+          "pos": 2.83,
+          "neu": 89.5,
+          "neg": 7.67,
           "count": 6
         },
         {
-          "source": "NPR",
-          "pos": 4.5,
-          "neu": 86.33,
-          "neg": 9.17,
+          "source": "ESPN Cricinfo",
+          "pos": 5.5,
+          "neu": 90,
+          "neg": 4.5,
           "count": 6
         },
         {
           "source": "Mint",
-          "pos": 15.33,
-          "neu": 71.83,
-          "neg": 12.83,
+          "pos": 8.83,
+          "neu": 83.83,
+          "neg": 7.33,
+          "count": 6
+        },
+        {
+          "source": "The Economic Times",
+          "pos": 19.33,
+          "neu": 80.17,
+          "neg": 0.5,
+          "count": 6
+        },
+        {
+          "source": "Hindustan Times",
+          "pos": 7.5,
+          "neu": 80,
+          "neg": 12.5,
+          "count": 6
+        },
+        {
+          "source": "Al Jazeera",
+          "pos": 6.17,
+          "neu": 86.67,
+          "neg": 7.17,
+          "count": 6
+        },
+        {
+          "source": "NBC News",
+          "pos": 12.5,
+          "neu": 82.83,
+          "neg": 4.67,
           "count": 6
         },
         {
@@ -3882,31 +2664,10 @@
           "count": 6
         },
         {
-          "source": "The Economic Times",
-          "pos": 16.67,
-          "neu": 82.83,
-          "neg": 0.5,
-          "count": 6
-        },
-        {
-          "source": "Al Jazeera",
-          "pos": 4.83,
-          "neu": 85,
-          "neg": 10.17,
-          "count": 6
-        },
-        {
           "source": "Fox News",
           "pos": 10,
           "neu": 80.33,
           "neg": 9.67,
-          "count": 6
-        },
-        {
-          "source": "Bloomberg",
-          "pos": 5.17,
-          "neu": 80.33,
-          "neg": 14.5,
           "count": 6
         },
         {
@@ -3922,6 +2683,106 @@
   "usa": {
     "topStories": [
       {
+        "title": "Opposition defeated an attack on the Constitution, says Rahul Gandhi",
+        "link": "https://www.thehindu.com/news/national/opposition-defeated-an-attack-on-the-constitution-says-rahul-gandhi/article70875008.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Congress leader assures Prime Minister Narendra Modi of Opposition’s ‘unconditional support’ if the government wants to bring the 2023 women’s reservation law into force",
+        "image": "https://th-i.thgim.com/public/incoming/8kfdy5/article70875178.ece/alternates/LANDSCAPE_1200/20260417400L.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/8kfdy5/article70875178.ece/alternates/LANDSCAPE_1200/20260417400L.jpg",
+        "publishedAt": "2026-04-18T09:51:12.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 78,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.5994
+        },
+        "category": "world"
+      },
+      {
+        "title": "Pakistan PM, army chief wrap up key trips in push for more US-Iran talks",
+        "link": "https://www.aljazeera.com/news/2026/4/18/pakistan-pm-army-chief-wrap-up-key-trips-in-push-for-more-us-iran-talks?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Asim Munir leaves Tehran while PM Shehbaz Sharif heads home from Turkiye with hopes of another round of US-Iran talks.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69e0d64702b4-1776342599.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69e0d64702b4-1776342599.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-04-18T09:27:38.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 92,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.4215
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump Sees Iran Deal As Imminent, Nuclear Issue Remains In Limbo",
+        "link": "https://www.ndtvprofit.com/world/trump-sees-iran-deal-as-imminent-nuclear-issue-remains-in-limbo-11375337",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "The president also floated the threat of resuming strikes on Iran once the current ceasefire expires next week.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:25:31.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 82,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.7096
+        },
+        "category": "world"
+      },
+      {
+        "title": "Iran Reimposes 'Strict Control' On Hormuz After Trump Says US Naval Blockade Will Stay",
+        "link": "https://www.ndtvprofit.com/world/iran-reimposes-strait-of-hormuz-restrictions-after-trump-says-us-blockade-will-stay-11375253",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Tehran has accused Washington of breaching an understanding on reopening the crucial shipping route, saying restrictions will stay in place until the US lifts its blockade of Iranian ports.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:22:10.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 95,
+          "negP": 5,
+          "label": "negative",
+          "confidence": 0.296
+        },
+        "category": "world"
+      },
+      {
+        "title": "DR Congo accepts first set of deportees from the US",
+        "link": "https://www.bbc.com/news/articles/cp84rye3lg8o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The Congolese government stresses those expelled from the US are only in the country temporarily.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/f8c8/live/1ec1c020-3b07-11f1-874b-f17c73d2ecbd.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/f8c8/live/1ec1c020-3b07-11f1-874b-f17c73d2ecbd.jpg",
+        "publishedAt": "2026-04-18T09:18:16.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 75,
+          "negP": 17,
+          "label": "negative",
+          "confidence": 0.4019
+        },
+        "category": "world"
+      },
+      {
         "title": "We spoke to over 30 central bankers, policymakers and politicians. Here are their top concerns",
         "link": "https://www.cnbc.com/2026/04/18/iran-war-inflation-prices-energy-trump-economy-end.html",
         "source": "NBC News",
@@ -3962,22 +2823,22 @@
         "category": "world"
       },
       {
-        "title": "Have to remove Mamata as Bengal CM, else Bangladeshi Muslims will snatch State from us: Himanta",
-        "link": "https://www.thehindu.com/elections/west-bengal-assembly/have-to-remove-mamata-as-bengal-cm-else-bangladeshi-muslims-will-snatch-state-from-us-himanta/article70877023.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
+        "title": "A rare Supreme Court apology, and some very different doctors on display: The news quiz",
+        "link": "https://www.nbcnews.com/news/news-quiz/supreme-court-apology-news-quiz-rcna332260",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "\"Mamata Banerjee has earmarked the entire treasury of Bengal for Bangladeshi Muslim infiltrators. She sold this land to Bangladeshi Muslims for votes,\" says Assam CM",
-        "image": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg",
-        "publishedAt": "2026-04-18T09:08:29.000Z",
+        "industry": "Media",
+        "description": "Two congressmen resign in disgrace, the president gets in hot water, and Rory McIlroy joins an exclusive club.",
+        "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/250925-news-quiz-grid-lr-830206.png",
+        "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/250925-news-quiz-grid-lr-830206.png",
+        "publishedAt": "2026-04-18T09:15:00.000Z",
         "sentiment": {
-          "posP": 4,
-          "neuP": 96,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.2023
+          "posP": 16,
+          "neuP": 70,
+          "negP": 14,
+          "label": "negative",
+          "confidence": 0.0772
         },
         "category": "world"
       },
@@ -4060,110 +2921,110 @@
           "confidence": 0.8141
         },
         "category": "world"
-      },
-      {
-        "title": "Is Congress having a reckoning over sexual misconduct – or just a moment?",
-        "link": "https://www.washingtonpost.com/politics/2026/04/18/congress-metoo-swalwell-gonzales-resignations/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
-        "sourceCredibility": "High",
-        "industry": "Media",
-        "description": "The resignations of two lawmakers facing ethics investigations have drawn comparisons to the #MeToo movement. Some House members say it’s time to revisit their rules and culture.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T09:00:14.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 94,
-          "negP": 6,
-          "label": "negative",
-          "confidence": 0.296
-        },
-        "category": "world"
-      },
-      {
-        "title": "Not just Trump: Redistricting race will hinge on what these state leaders did",
-        "link": "https://www.npr.org/2026/04/18/nx-s1-5739373/redistricting-virginia-texas-midterm-elections-voting",
-        "source": "NPR",
-        "sourceDomain": "npr.org",
-        "sourceCredibility": "High",
-        "industry": "Media",
-        "description": "An 82-year-old Virginia senator raising the stakes, an Indiana consensus builder and a Texas enforcer are among state officials who have shaped the course of the midterm redistricting race.",
-        "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2995x1954+0+0/resize/2995x1954!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F4e%2Fc2%2F609d991d4c5e9063a8a2b9f9e21f%2Fkaplow-horizontalgrid.jpg",
-        "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2995x1954+0+0/resize/2995x1954!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F4e%2Fc2%2F609d991d4c5e9063a8a2b9f9e21f%2Fkaplow-horizontalgrid.jpg",
-        "publishedAt": "2026-04-18T09:00:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "world"
-      },
-      {
-        "title": "WATCH:  The internet’s favorite monkey continues capturing hearts",
-        "link": "https://abcnews.com/video/132160819/",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "",
-        "industry": "",
-        "description": "Punch the monkey’s fame is growing. Juju Chang traveled to the Ichikawa City Zoo in Japan to see for herself why the world went bananas for the tiny macaque and his heartwarming backstory.",
-        "image": "https://i.abcnewsfe.com/a/453d2ce6-53e5-456b-b676-079867002f9b/260417_ntl_monkey_wild_1244_hpMain_16x9.jpg?w=992",
-        "imageUrl": "https://i.abcnewsfe.com/a/453d2ce6-53e5-456b-b676-079867002f9b/260417_ntl_monkey_wild_1244_hpMain_16x9.jpg?w=992",
-        "publishedAt": "2026-04-18T08:47:28.000Z",
-        "sentiment": {
-          "posP": 22,
-          "neuP": 78,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.8658
-        },
-        "category": "world"
-      },
-      {
-        "title": "Pope Leo heads to Angola in landmark Africa visit amid Trump clash",
-        "link": "https://www.aljazeera.com/news/2026/4/18/pope-leo-heads-to-angola-in-landmark-africa-visit-amid-trump-clash?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Leo is the third pontiff to visit the fossil fuel-rich country after John Paul II in 1992 and Benedict XVI in 2009.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-17T110726Z_824428801_RC2XQKAQ92I2_RTRMADP_3_POPE-AFRICA-CAMEROON-DOUALA-1776425959.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-17T110726Z_824428801_RC2XQKAQ92I2_RTRMADP_3_POPE-AFRICA-CAMEROON-DOUALA-1776425959.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-04-18T08:10:17.000Z",
-        "sentiment": {
-          "posP": 4,
-          "neuP": 96,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.0772
-        },
-        "category": "world"
-      },
-      {
-        "title": "'Shouldn't be considered failure of govt ...' Rijiju on women's reservation bill not clearing LS",
-        "link": "https://timesofindia.indiatimes.com/india/shouldnt-be-considered-failure-of-govt-rijiju-on-womens-reservation-bill-not-clearing-ls/articleshow/130349618.cms",
-        "source": "TOI",
-        "sourceDomain": "timesofindia.indiatimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "The government faced a setback as the women's reservation bill failed to pass in the Lok Sabha, requiring a two-thirds majority. Union Minister Kiren Rijiju blamed the Congress and opposition parties, calling it an anti-women stance and a significant blow to the nation. The opposition, while supporting reservation, opposed its linkage with delimitation and census.",
-        "image": "https://static.toiimg.com/photo/msid-130349607,imgsize-417957.cms",
-        "imageUrl": "https://static.toiimg.com/photo/msid-130349607,imgsize-417957.cms",
-        "publishedAt": "2026-04-18T08:05:17.000Z",
-        "sentiment": {
-          "posP": 13,
-          "neuP": 79,
-          "negP": 8,
-          "label": "positive",
-          "confidence": 0.4023
-        },
-        "category": "india"
       }
     ],
     "dailyNews": [
       {
+        "title": "Opposition defeated an attack on the Constitution, says Rahul Gandhi",
+        "link": "https://www.thehindu.com/news/national/opposition-defeated-an-attack-on-the-constitution-says-rahul-gandhi/article70875008.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Congress leader assures Prime Minister Narendra Modi of Opposition’s ‘unconditional support’ if the government wants to bring the 2023 women’s reservation law into force",
+        "image": "https://th-i.thgim.com/public/incoming/8kfdy5/article70875178.ece/alternates/LANDSCAPE_1200/20260417400L.jpg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/8kfdy5/article70875178.ece/alternates/LANDSCAPE_1200/20260417400L.jpg",
+        "publishedAt": "2026-04-18T09:51:12.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 78,
+          "negP": 16,
+          "label": "negative",
+          "confidence": 0.5994
+        },
+        "category": "world"
+      },
+      {
+        "title": "Pakistan PM, army chief wrap up key trips in push for more US-Iran talks",
+        "link": "https://www.aljazeera.com/news/2026/4/18/pakistan-pm-army-chief-wrap-up-key-trips-in-push-for-more-us-iran-talks?traffic_source=rss",
+        "source": "Al Jazeera",
+        "sourceDomain": "aljazeera.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "Asim Munir leaves Tehran while PM Shehbaz Sharif heads home from Turkiye with hopes of another round of US-Iran talks.",
+        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69e0d64702b4-1776342599.jpg?resize=1920%2C1440",
+        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/afp_69e0d64702b4-1776342599.jpg?resize=1920%2C1440",
+        "publishedAt": "2026-04-18T09:27:38.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 92,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.4215
+        },
+        "category": "world"
+      },
+      {
+        "title": "Trump Sees Iran Deal As Imminent, Nuclear Issue Remains In Limbo",
+        "link": "https://www.ndtvprofit.com/world/trump-sees-iran-deal-as-imminent-nuclear-issue-remains-in-limbo-11375337",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "The president also floated the threat of resuming strikes on Iran once the current ceasefire expires next week.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:25:31.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 82,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.7096
+        },
+        "category": "world"
+      },
+      {
+        "title": "Iran Reimposes 'Strict Control' On Hormuz After Trump Says US Naval Blockade Will Stay",
+        "link": "https://www.ndtvprofit.com/world/iran-reimposes-strait-of-hormuz-restrictions-after-trump-says-us-blockade-will-stay-11375253",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Tehran has accused Washington of breaching an understanding on reopening the crucial shipping route, saying restrictions will stay in place until the US lifts its blockade of Iranian ports.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:22:10.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 95,
+          "negP": 5,
+          "label": "negative",
+          "confidence": 0.296
+        },
+        "category": "world"
+      },
+      {
+        "title": "DR Congo accepts first set of deportees from the US",
+        "link": "https://www.bbc.com/news/articles/cp84rye3lg8o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "The Congolese government stresses those expelled from the US are only in the country temporarily.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/f8c8/live/1ec1c020-3b07-11f1-874b-f17c73d2ecbd.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/f8c8/live/1ec1c020-3b07-11f1-874b-f17c73d2ecbd.jpg",
+        "publishedAt": "2026-04-18T09:18:16.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 75,
+          "negP": 17,
+          "label": "negative",
+          "confidence": 0.4019
+        },
+        "category": "world"
+      },
+      {
         "title": "We spoke to over 30 central bankers, policymakers and politicians. Here are their top concerns",
         "link": "https://www.cnbc.com/2026/04/18/iran-war-inflation-prices-energy-trump-economy-end.html",
         "source": "NBC News",
@@ -4204,22 +3065,22 @@
         "category": "world"
       },
       {
-        "title": "Have to remove Mamata as Bengal CM, else Bangladeshi Muslims will snatch State from us: Himanta",
-        "link": "https://www.thehindu.com/elections/west-bengal-assembly/have-to-remove-mamata-as-bengal-cm-else-bangladeshi-muslims-will-snatch-state-from-us-himanta/article70877023.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
+        "title": "A rare Supreme Court apology, and some very different doctors on display: The news quiz",
+        "link": "https://www.nbcnews.com/news/news-quiz/supreme-court-apology-news-quiz-rcna332260",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "\"Mamata Banerjee has earmarked the entire treasury of Bengal for Bangladeshi Muslim infiltrators. She sold this land to Bangladeshi Muslims for votes,\" says Assam CM",
-        "image": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/4t3ywb/article70877037.ece/alternates/LANDSCAPE_1200/IMG_ASSAM_CM_2_1_BQB9MNAQ.jpg",
-        "publishedAt": "2026-04-18T09:08:29.000Z",
+        "industry": "Media",
+        "description": "Two congressmen resign in disgrace, the president gets in hot water, and Rory McIlroy joins an exclusive club.",
+        "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/250925-news-quiz-grid-lr-830206.png",
+        "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/250925-news-quiz-grid-lr-830206.png",
+        "publishedAt": "2026-04-18T09:15:00.000Z",
         "sentiment": {
-          "posP": 4,
-          "neuP": 96,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.2023
+          "posP": 16,
+          "neuP": 70,
+          "negP": 14,
+          "label": "negative",
+          "confidence": 0.0772
         },
         "category": "world"
       },
@@ -4402,6 +3263,26 @@
           "confidence": 0.4023
         },
         "category": "india"
+      },
+      {
+        "title": "Centre's conspiracy to change federal structure defeated; victory of Opposition unity, says Priyanka",
+        "link": "https://www.thehindu.com/news/national/congress-on-opposition-unity-delimitation-bill-women-reservation/article70876852.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Congress leader Priyanka Gandhi Vadra demanded that the government implement the Women's Reservation Act of 2023 on the current strength of the Lok Sabha.",
+        "image": "https://th-i.thgim.com/public/incoming/8iiwt2/article70876874.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-04-18%20at%2012.49.55%20PM.jpeg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/8iiwt2/article70876874.ece/alternates/LANDSCAPE_1200/WhatsApp%20Image%202026-04-18%20at%2012.49.55%20PM.jpeg",
+        "publishedAt": "2026-04-18T08:01:24.000Z",
+        "sentiment": {
+          "posP": 7,
+          "neuP": 74,
+          "negP": 19,
+          "label": "negative",
+          "confidence": 0.6369
+        },
+        "category": "world"
       },
       {
         "title": "Dems sidestep past ‘refuse illegal orders’ demands as they challenge Trump’s Iran war authority",
@@ -4464,26 +3345,6 @@
         "category": "world"
       },
       {
-        "title": "Trump Sees Iran Deal as Imminent, Nuclear Issue Remains in Limbo",
-        "link": "https://www.bloomberg.com/news/articles/2026-04-18/trump-sees-iran-deal-as-imminent-nuclear-issue-remains-in-limbo",
-        "source": "Bloomberg",
-        "sourceDomain": "bloomberg.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "President Donald Trump said a deal with Iran to end the seven-week war may be imminent though disagreements remain, with Tehran pushing back against US claims that it had agreed to give up its enriched uranium.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:57:28.000Z",
-        "sentiment": {
-          "posP": 4,
-          "neuP": 83,
-          "negP": 13,
-          "label": "negative",
-          "confidence": 0.6808
-        },
-        "category": "world"
-      },
-      {
         "title": "Wesley sparks USWNT to 3-0 victory over Japan",
         "link": "https://www.espn.com/soccer/report/_/gameId/401857908",
         "source": "ESPN",
@@ -4502,26 +3363,6 @@
           "confidence": 0.8689
         },
         "category": "world"
-      },
-      {
-        "title": "Opinion: Trump's Toughest Opponent? His Own Economy",
-        "link": "https://www.ndtv.com/opinion/opinion-trumps-toughest-opponent-his-own-economy-11374961",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Average tax refunds are up only about $350, or 11%, over last year, according to the Treasury Department. That's far lower than the original projections of nearly $1,000.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:28:16.000Z",
-        "sentiment": {
-          "posP": 11,
-          "neuP": 80,
-          "negP": 9,
-          "label": "positive",
-          "confidence": 0.1531
-        },
-        "category": "business"
       },
       {
         "title": "Iran disputes claims of new agreements with Trump",
@@ -4562,107 +3403,34 @@
           "confidence": 0.7964
         },
         "category": "india"
-      },
-      {
-        "title": "Pop Princess, meet the Queen of Pop! Sabrina Carpenter brings out surprise guest Madonna for Coachella set",
-        "link": "https://www.nbcnews.com/pop-culture/music/sabrina-carpenter-brings-surprise-guest-madonna-coachella-set-rcna332403",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "Media",
-        "description": "For die-hard Madonna fans, Sabrina Carpenter's Friday Coachella set was \"like (an answered) prayer\" as the \"Queen of Pop\" was brought out as a surprise guest.",
-        "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-sabrina-carpenter-cc-0230a-cfa363.jpg",
-        "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-sabrina-carpenter-cc-0230a-cfa363.jpg",
-        "publishedAt": "2026-04-18T06:32:33.000Z",
-        "sentiment": {
-          "posP": 15,
-          "neuP": 85,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.7177
-        },
-        "category": "entertainment"
-      },
-      {
-        "title": "Trump says US will ‘start dropping bombs again’ if no Iran deal is reached",
-        "link": "https://www.aljazeera.com/video/newsfeed/2026/4/18/trump-says-us-will-start-dropping-bombs-again-if-no-iran-deal-is-reached?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "US President Donald Trump says the US will “have to start dropping bombs again” if no US-Iran deal is reached.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-start-dropping-bombs-again-1776492591.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/WIDE-THUMB-start-dropping-bombs-again-1776492591.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-04-18T06:10:45.000Z",
-        "sentiment": {
-          "posP": 8,
-          "neuP": 80,
-          "negP": 12,
-          "label": "negative",
-          "confidence": 0.3818
-        },
-        "category": "world"
-      },
-      {
-        "title": "Iran war: What is happening on day 50 of the US-Iran conflict?",
-        "link": "https://www.aljazeera.com/news/2026/4/18/iran-war-what-is-happening-on-day-50-of-the-us-iran-conflict?traffic_source=rss",
-        "source": "Al Jazeera",
-        "sourceDomain": "aljazeera.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Iran reopens the Strait of Hormuz with conditions and threatens closure if the US blockade of Iranian ports continues.",
-        "image": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-17T174006Z_1806506982_RC20RKA2BCWW_RTRMADP_3_IRAN-CRISIS-LEBANON-YEMEN-1776484926.jpg?resize=1920%2C1440",
-        "imageUrl": "https://www.aljazeera.com/wp-content/uploads/2026/04/2026-04-17T174006Z_1806506982_RC20RKA2BCWW_RTRMADP_3_IRAN-CRISIS-LEBANON-YEMEN-1776484926.jpg?resize=1920%2C1440",
-        "publishedAt": "2026-04-18T06:07:12.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 82,
-          "negP": 18,
-          "label": "negative",
-          "confidence": 0.7579
-        },
-        "category": "world"
-      },
-      {
-        "title": "Quote of the Day by Maya Angelou on freedom: 'The truth is, no one of us can be free…'",
-        "link": "https://www.livemint.com/news/us-news/quote-of-the-day-by-maya-angelou-on-freedom-the-truth-is-no-one-of-us-can-be-free-11776489419122.html",
-        "source": "Mint",
-        "sourceDomain": "livemint.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "Maya Angelou’s quote on freedom shows why no team, company, or leader can truly thrive while others remain excluded from opportunity.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T05:26:12.000Z",
-        "sentiment": {
-          "posP": 30,
-          "neuP": 58,
-          "negP": 12,
-          "label": "positive",
-          "confidence": 0.891
-        },
-        "category": "world"
       }
     ],
     "sentiment": {
-      "pos": 8.53,
-      "neu": 81.74,
-      "neg": 9.73,
-      "count": 175
+      "pos": 8.13,
+      "neu": 81.71,
+      "neg": 10.16,
+      "count": 177
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.08,
-        "neu": 86.3,
-        "neg": 7.62,
-        "count": 39
+        "pos": 6.27,
+        "neu": 85.9,
+        "neg": 7.83,
+        "count": 40
+      },
+      {
+        "source": "NYT",
+        "pos": 7.62,
+        "neu": 82.03,
+        "neg": 10.35,
+        "count": 21
       },
       {
         "source": "Washington Post",
-        "pos": 12.12,
-        "neu": 78.23,
-        "neg": 9.64,
+        "pos": 12.13,
+        "neu": 78.24,
+        "neg": 9.63,
         "count": 20
       },
       {
@@ -4687,13 +3455,6 @@
         "count": 20
       },
       {
-        "source": "NYT",
-        "pos": 10.33,
-        "neu": 82.01,
-        "neg": 7.66,
-        "count": 20
-      },
-      {
         "source": "WSJ",
         "pos": 6.34,
         "neu": 79.08,
@@ -4701,24 +3462,31 @@
         "count": 20
       },
       {
-        "source": "NPR",
-        "pos": 2.25,
-        "neu": 88.75,
-        "neg": 9,
-        "count": 4
-      },
-      {
         "source": "Al Jazeera",
-        "pos": 4,
-        "neu": 86,
-        "neg": 10,
+        "pos": 6.67,
+        "neu": 89.33,
+        "neg": 4,
         "count": 3
       },
       {
-        "source": "Mint",
-        "pos": 15,
-        "neu": 67.5,
+        "source": "NPR",
+        "pos": 3,
+        "neu": 87.67,
+        "neg": 9.33,
+        "count": 3
+      },
+      {
+        "source": "The Hindu",
+        "pos": 6.5,
+        "neu": 76,
         "neg": 17.5,
+        "count": 2
+      },
+      {
+        "source": "NDTV",
+        "pos": 0,
+        "neu": 88.5,
+        "neg": 11.5,
         "count": 2
       },
       {
@@ -4737,14 +3505,14 @@
           "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": 3.66,
-          "count": 8
+          "name": "Utilities",
+          "bias": -4.17,
+          "count": 3
         },
         {
-          "name": "Utilities",
-          "bias": -3.07,
-          "count": 3
+          "name": "Healthcare",
+          "bias": 3.26,
+          "count": 9
         },
         {
           "name": "Real Estate",
@@ -4752,24 +3520,24 @@
           "count": 5
         },
         {
-          "name": "Communication",
-          "bias": 2.69,
-          "count": 10
-        },
-        {
           "name": "Finance",
-          "bias": 2.61,
-          "count": 14
+          "bias": 2.29,
+          "count": 12
         },
         {
           "name": "Energy",
-          "bias": -1.41,
-          "count": 17
+          "bias": -1.61,
+          "count": 18
         },
         {
           "name": "Technology",
-          "bias": -0.57,
-          "count": 131
+          "bias": -1.51,
+          "count": 135
+        },
+        {
+          "name": "Communication",
+          "bias": 1.45,
+          "count": 11
         }
       ],
       "pos": [
@@ -4780,36 +3548,36 @@
         },
         {
           "name": "Healthcare",
-          "bias": 3.66,
-          "count": 8
+          "bias": 3.26,
+          "count": 9
         },
         {
-          "name": "Communication",
-          "bias": 2.69,
-          "count": 10
+          "name": "Finance",
+          "bias": 2.29,
+          "count": 12
         }
       ],
       "neu": [
         {
-          "name": "Finance",
-          "bias": 2.61,
-          "count": 14
-        },
-        {
           "name": "Energy",
-          "bias": -1.41,
-          "count": 17
+          "bias": -1.61,
+          "count": 18
         },
         {
           "name": "Technology",
-          "bias": -0.57,
-          "count": 131
+          "bias": -1.51,
+          "count": 135
+        },
+        {
+          "name": "Communication",
+          "bias": 1.45,
+          "count": 11
         }
       ],
       "neg": [
         {
           "name": "Utilities",
-          "bias": -3.07,
+          "bias": -4.17,
           "count": 3
         },
         {
@@ -4822,38 +3590,78 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-04-18T05:27:55.955Z",
-          "pos": 4,
-          "neu": 81,
-          "neg": 15,
-          "count": 2
-        },
-        {
-          "label": "2026-04-18T06:27:55.955Z",
-          "pos": 13,
-          "neu": 78,
-          "neg": 8,
-          "count": 3
-        },
-        {
-          "label": "2026-04-18T07:27:55.955Z",
+          "label": "2026-04-18T06:10:32.821Z",
           "pos": 12,
           "neu": 79,
           "neg": 9,
+          "count": 4
+        },
+        {
+          "label": "2026-04-18T07:10:32.821Z",
+          "pos": 12,
+          "neu": 77,
+          "neg": 11,
           "count": 8
         },
         {
-          "label": "2026-04-18T08:27:55.955Z",
-          "pos": 6,
-          "neu": 84,
-          "neg": 9,
-          "count": 13
+          "label": "2026-04-18T08:10:32.821Z",
+          "pos": 4,
+          "neu": 86,
+          "neg": 10,
+          "count": 15
+        },
+        {
+          "label": "2026-04-18T09:10:32.821Z",
+          "pos": 9,
+          "neu": 78,
+          "neg": 13,
+          "count": 10
         }
       ]
     }
   },
   "potus": {
     "topStories": [
+      {
+        "title": "Trump Sees Iran Deal As Imminent, Nuclear Issue Remains In Limbo",
+        "link": "https://www.ndtvprofit.com/world/trump-sees-iran-deal-as-imminent-nuclear-issue-remains-in-limbo-11375337",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "The president also floated the threat of resuming strikes on Iran once the current ceasefire expires next week.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:25:31.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 82,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.7096
+        },
+        "category": "world"
+      },
+      {
+        "title": "Iran Reimposes 'Strict Control' On Hormuz After Trump Says US Naval Blockade Will Stay",
+        "link": "https://www.ndtvprofit.com/world/iran-reimposes-strait-of-hormuz-restrictions-after-trump-says-us-blockade-will-stay-11375253",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Tehran has accused Washington of breaching an understanding on reopening the crucial shipping route, saying restrictions will stay in place until the US lifts its blockade of Iranian ports.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:22:10.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 95,
+          "negP": 5,
+          "label": "negative",
+          "confidence": 0.296
+        },
+        "category": "world"
+      },
       {
         "title": "Uncertainty over the Strait of Hormuz remains, as ceasefire nears its end",
         "link": "https://www.npr.org/2026/04/18/nx-s1-5789780/iran-middle-east-updates",
@@ -5013,46 +3821,6 @@
           "confidence": 0.8807
         },
         "category": "world"
-      },
-      {
-        "title": "Trump Sees Iran Deal as Imminent, Nuclear Issue Remains in Limbo",
-        "link": "https://www.bloomberg.com/news/articles/2026-04-18/trump-sees-iran-deal-as-imminent-nuclear-issue-remains-in-limbo",
-        "source": "Bloomberg",
-        "sourceDomain": "bloomberg.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "President Donald Trump said a deal with Iran to end the seven-week war may be imminent though disagreements remain, with Tehran pushing back against US claims that it had agreed to give up its enriched uranium.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:57:28.000Z",
-        "sentiment": {
-          "posP": 4,
-          "neuP": 83,
-          "negP": 13,
-          "label": "negative",
-          "confidence": 0.6808
-        },
-        "category": "world"
-      },
-      {
-        "title": "Opinion: Trump's Toughest Opponent? His Own Economy",
-        "link": "https://www.ndtv.com/opinion/opinion-trumps-toughest-opponent-his-own-economy-11374961",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Average tax refunds are up only about $350, or 11%, over last year, according to the Treasury Department. That's far lower than the original projections of nearly $1,000.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:28:16.000Z",
-        "sentiment": {
-          "posP": 11,
-          "neuP": 80,
-          "negP": 9,
-          "label": "positive",
-          "confidence": 0.1531
-        },
-        "category": "business"
       },
       {
         "title": "Iran disputes claims of new agreements with Trump",
@@ -5097,6 +3865,46 @@
     ],
     "dailyNews": [
       {
+        "title": "Trump Sees Iran Deal As Imminent, Nuclear Issue Remains In Limbo",
+        "link": "https://www.ndtvprofit.com/world/trump-sees-iran-deal-as-imminent-nuclear-issue-remains-in-limbo-11375337",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "The president also floated the threat of resuming strikes on Iran once the current ceasefire expires next week.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:25:31.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 82,
+          "negP": 18,
+          "label": "negative",
+          "confidence": 0.7096
+        },
+        "category": "world"
+      },
+      {
+        "title": "Iran Reimposes 'Strict Control' On Hormuz After Trump Says US Naval Blockade Will Stay",
+        "link": "https://www.ndtvprofit.com/world/iran-reimposes-strait-of-hormuz-restrictions-after-trump-says-us-blockade-will-stay-11375253",
+        "source": "NDTV",
+        "sourceDomain": "ndtvprofit.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Tehran has accused Washington of breaching an understanding on reopening the crucial shipping route, saying restrictions will stay in place until the US lifts its blockade of Iranian ports.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T09:22:10.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 95,
+          "negP": 5,
+          "label": "negative",
+          "confidence": 0.296
+        },
+        "category": "world"
+      },
+      {
         "title": "Uncertainty over the Strait of Hormuz remains, as ceasefire nears its end",
         "link": "https://www.npr.org/2026/04/18/nx-s1-5789780/iran-middle-east-updates",
         "source": "NPR",
@@ -5255,46 +4063,6 @@
           "confidence": 0.8807
         },
         "category": "world"
-      },
-      {
-        "title": "Trump Sees Iran Deal as Imminent, Nuclear Issue Remains in Limbo",
-        "link": "https://www.bloomberg.com/news/articles/2026-04-18/trump-sees-iran-deal-as-imminent-nuclear-issue-remains-in-limbo",
-        "source": "Bloomberg",
-        "sourceDomain": "bloomberg.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "President Donald Trump said a deal with Iran to end the seven-week war may be imminent though disagreements remain, with Tehran pushing back against US claims that it had agreed to give up its enriched uranium.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:57:28.000Z",
-        "sentiment": {
-          "posP": 4,
-          "neuP": 83,
-          "negP": 13,
-          "label": "negative",
-          "confidence": 0.6808
-        },
-        "category": "world"
-      },
-      {
-        "title": "Opinion: Trump's Toughest Opponent? His Own Economy",
-        "link": "https://www.ndtv.com/opinion/opinion-trumps-toughest-opponent-his-own-economy-11374961",
-        "source": "NDTV",
-        "sourceDomain": "ndtv.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Average tax refunds are up only about $350, or 11%, over last year, according to the Treasury Department. That's far lower than the original projections of nearly $1,000.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T07:28:16.000Z",
-        "sentiment": {
-          "posP": 11,
-          "neuP": 80,
-          "negP": 9,
-          "label": "positive",
-          "confidence": 0.1531
-        },
-        "category": "business"
       },
       {
         "title": "Iran disputes claims of new agreements with Trump",
@@ -5537,66 +4305,59 @@
         "category": "world"
       },
       {
-        "title": "Deaths of migrants in ICE custody hit record high under Trump",
-        "link": "https://www.npr.org/2026/04/17/nx-s1-5789092/deaths-of-migrants-in-ice-custody-hit-record-high-under-trump",
-        "source": "NPR",
-        "sourceDomain": "npr.org",
+        "title": "RFK Jr clashes with Dem lawmaker over Trump’s mental fitness in heated exchange",
+        "link": "https://www.foxnews.com/politics/rfk-jr-clashes-dem-lawmaker-trumps-mental-fitness-heated-exchange",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
-        "industry": "Media",
-        "description": "Twenty-nine people have died in ICE custody since October, the start of the federal government's fiscal year, already surpassing 2004's toll of 28, the previous record, according to government data.",
-        "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/851x656+0+0/resize/851x656!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa4%2F43%2F7969deb44071bde876d78e58c4b8%2Fscreenshot-2026-04-02-at-4-53-17-pm.png",
-        "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/851x656+0+0/resize/851x656!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa4%2F43%2F7969deb44071bde876d78e58c4b8%2Fscreenshot-2026-04-02-at-4-53-17-pm.png",
-        "publishedAt": "2026-04-18T00:39:50.000Z",
+        "industry": "",
+        "description": "RFK Jr. defended Trump's mental health during a tense congressional hearing, rejecting calls for a fitness assessment or invoking the 25th Amendment.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-18T01:54:14.000Z",
         "sentiment": {
-          "posP": 0,
-          "neuP": 92,
-          "negP": 8,
+          "posP": 10.9,
+          "negP": 14,
+          "neuP": 75.1,
           "label": "negative",
-          "confidence": 0.5574
+          "confidence": 0.3
         },
-        "category": "world"
+        "category": "usa"
       },
       {
-        "title": "Trump came to Arizona to rally young voters. An older crowd greeted him.",
-        "link": "https://www.washingtonpost.com/politics/2026/04/17/trump-turning-point-arizona/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
+        "title": "Trump says first releases from Pentagon UFO study will come out 'very, very soon' after Phoenix rally tease",
+        "link": "https://www.foxnews.com/politics/trump-says-first-releases-pentagon-ufo-study-come-soon-phoenix-rally-tease",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
-        "industry": "Media",
-        "description": "Despite some empty seats, Trump projected confidence in his party’s ability to win the midterm elections. Some in the crowd focused on GOP divisions.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T00:31:58.000Z",
+        "industry": "",
+        "description": "President Trump says the first releases from a Pentagon study on UFOs will come out \"very, very soon,\" teasing interesting documents found by officials.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-04-18T01:12:48.000Z",
         "sentiment": {
-          "posP": 30,
-          "neuP": 66,
-          "negP": 4,
-          "label": "positive",
-          "confidence": 0.9062
+          "posP": 6.6,
+          "negP": 8.6,
+          "neuP": 84.8,
+          "label": "neutral",
+          "confidence": 0.02
         },
-        "category": "world"
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 8.32,
-      "neu": 82.69,
-      "neg": 9,
-      "count": 57
+      "pos": 8.26,
+      "neu": 82.59,
+      "neg": 9.15,
+      "count": 54
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 12.92,
+        "pos": 12.93,
         "neu": 77.84,
-        "neg": 9.24,
+        "neg": 9.23,
         "count": 16
-      },
-      {
-        "source": "NYT",
-        "pos": 9.04,
-        "neu": 82.7,
-        "neg": 8.26,
-        "count": 9
       },
       {
         "source": "CBS News",
@@ -5604,6 +4365,13 @@
         "neu": 90.16,
         "neg": 6.56,
         "count": 8
+      },
+      {
+        "source": "NYT",
+        "pos": 9.77,
+        "neu": 81.26,
+        "neg": 8.97,
+        "count": 7
       },
       {
         "source": "NBC News",
@@ -5627,11 +4395,18 @@
         "count": 4
       },
       {
+        "source": "NDTV",
+        "pos": 0,
+        "neu": 88.5,
+        "neg": 11.5,
+        "count": 2
+      },
+      {
         "source": "NPR",
-        "pos": 3,
-        "neu": 90.67,
-        "neg": 6.33,
-        "count": 3
+        "pos": 4.5,
+        "neu": 90,
+        "neg": 5.5,
+        "count": 2
       },
       {
         "source": "Al Jazeera",
@@ -5644,10 +4419,10 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 8.85,
-        "neu": 83.25,
-        "neg": 7.9,
-        "count": 37
+        "pos": 8.63,
+        "neu": 83.37,
+        "neg": 8.01,
+        "count": 36
       },
       {
         "topic": "Policy",
@@ -5672,10 +4447,10 @@
       },
       {
         "topic": "Economy",
-        "pos": 2.75,
-        "neu": 85.52,
-        "neg": 11.73,
-        "count": 4
+        "pos": 0,
+        "neu": 83.9,
+        "neg": 16.1,
+        "count": 2
       },
       {
         "topic": "Public Statements",
@@ -5688,82 +4463,82 @@
   },
   "sentiment": {
     "overall": {
-      "pos": 8.57,
-      "neu": 82.86,
-      "neg": 8.57,
+      "pos": 8.55,
+      "neu": 82.83,
+      "neg": 8.62,
       "count": 120
     },
     "india": {
-      "pos": 7.16,
-      "neu": 82.68,
-      "neg": 10.16,
+      "pos": 4.08,
+      "neu": 84.32,
+      "neg": 11.6,
       "count": 25
     },
     "world": {
-      "pos": 8.94,
-      "neu": 82.91,
-      "neg": 8.16,
+      "pos": 9.73,
+      "neu": 82.44,
+      "neg": 7.83,
       "count": 95
     }
   },
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-04-18T05:27:55.958Z",
-        "pos": 8,
-        "neu": 79,
-        "neg": 13,
-        "count": 1
+        "label": "2026-04-18T06:10:32.825Z",
+        "pos": 6,
+        "neu": 70,
+        "neg": 25,
+        "count": 2
       },
       {
-        "label": "2026-04-18T06:27:55.958Z",
-        "pos": 10,
-        "neu": 71,
-        "neg": 20,
-        "count": 4
-      },
-      {
-        "label": "2026-04-18T07:27:55.958Z",
+        "label": "2026-04-18T07:10:32.825Z",
         "pos": 11,
-        "neu": 79,
-        "neg": 10,
-        "count": 9
+        "neu": 86,
+        "neg": 4,
+        "count": 2
       },
       {
-        "label": "2026-04-18T08:27:55.958Z",
+        "label": "2026-04-18T08:10:32.825Z",
+        "pos": 4,
+        "neu": 81,
+        "neg": 15,
+        "count": 11
+      },
+      {
+        "label": "2026-04-18T09:10:32.825Z",
         "pos": 3,
         "neu": 89,
         "neg": 8,
-        "count": 9
+        "count": 8
       }
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-04-18T05:27:55.959Z",
+        "label": "2026-04-18T06:10:32.825Z",
+        "pos": 11,
+        "neu": 81,
+        "neg": 8,
+        "count": 7
+      },
+      {
+        "label": "2026-04-18T07:10:32.825Z",
+        "pos": 12,
+        "neu": 80,
+        "neg": 8,
+        "count": 17
+      },
+      {
+        "label": "2026-04-18T08:10:32.825Z",
         "pos": 7,
         "neu": 86,
         "neg": 7,
-        "count": 6
+        "count": 23
       },
       {
-        "label": "2026-04-18T06:27:55.959Z",
-        "pos": 10,
-        "neu": 85,
+        "label": "2026-04-18T09:10:32.825Z",
+        "pos": 13,
+        "neu": 81,
         "neg": 6,
-        "count": 8
-      },
-      {
-        "label": "2026-04-18T07:27:55.959Z",
-        "pos": 10,
-        "neu": 84,
-        "neg": 7,
-        "count": 33
-      },
-      {
-        "label": "2026-04-18T08:27:55.959Z",
-        "pos": 8,
-        "neu": 83,
-        "neg": 9,
         "count": 19
       }
     ]
@@ -5776,34 +4551,34 @@
         "count": 3
       },
       {
+        "name": "Finance",
+        "bias": 6.52,
+        "count": 21
+      },
+      {
         "name": "Materials",
         "bias": 5.5,
         "count": 2
       },
       {
-        "name": "Finance",
-        "bias": 4.35,
-        "count": 23
-      },
-      {
-        "name": "Energy",
-        "bias": 2.17,
-        "count": 6
-      },
-      {
         "name": "Communication",
-        "bias": -1.88,
-        "count": 50
-      },
-      {
-        "name": "Technology",
-        "bias": 0.16,
-        "count": 44
+        "bias": -2.13,
+        "count": 52
       },
       {
         "name": "Utilities",
-        "bias": 0,
-        "count": 1
+        "bias": 1,
+        "count": 2
+      },
+      {
+        "name": "Energy",
+        "bias": -0.75,
+        "count": 4
+      },
+      {
+        "name": "Technology",
+        "bias": 0.05,
+        "count": 43
       },
       {
         "name": "Real Estate",
@@ -5818,34 +4593,40 @@
         "count": 3
       },
       {
+        "name": "Finance",
+        "bias": 6.52,
+        "count": 21
+      },
+      {
         "name": "Materials",
         "bias": 5.5,
         "count": 2
-      },
-      {
-        "name": "Finance",
-        "bias": 4.35,
-        "count": 23
       }
     ],
     "neu": [
       {
-        "name": "Energy",
-        "bias": 2.17,
-        "count": 6
+        "name": "Utilities",
+        "bias": 1,
+        "count": 2
       },
       {
-        "name": "Communication",
-        "bias": -1.88,
-        "count": 50
+        "name": "Energy",
+        "bias": -0.75,
+        "count": 4
       },
       {
         "name": "Technology",
-        "bias": 0.16,
-        "count": 44
+        "bias": 0.05,
+        "count": 43
       }
     ],
-    "neg": []
+    "neg": [
+      {
+        "name": "Communication",
+        "bias": -2.13,
+        "count": 52
+      }
+    ]
   },
   "meta": {
     "source": "bootstrap-cache",
@@ -5864,8 +4645,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 175,
-      "potusArticles": 57,
+      "usaArticles": 177,
+      "potusArticles": 54,
       "sourceRows": 12,
       "industryRows": 8,
       "trendingPoints": 12
