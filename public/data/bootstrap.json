@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-04-18T20:49:11.970Z",
+  "generatedAt": "2026-04-18T21:20:34.913Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 176,
-    "potusArticles": 45
+    "potusArticles": 44
   },
   "version": 1,
   "topStories": [
@@ -93,6 +93,26 @@
   "news": {
     "articles": [
       {
+        "title": "WWE WrestleMania 42 LIVE: Match results and analysis from Night One",
+        "link": "https://www.espn.com/wwe/story/_/id/48494667/wwe-wrestlemania-42-night-1-live-match-results-analysis-cody-rhodes-vs-randy-orton",
+        "source": "ESPN",
+        "sourceDomain": "espn.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "ESPN breaks down all the action from Night One of WrestleMania 42 in Las Vegas.",
+        "image": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0415%2Fr1643997_1296x729_16%2D9.jpg",
+        "imageUrl": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0415%2Fr1643997_1296x729_16%2D9.jpg",
+        "publishedAt": "2026-04-18T22:00:46.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
         "title": "Driver dies in German race featuring Verstappen",
         "link": "https://www.espn.com/racing/story/_/id/48524261/driver-dies-nurburgring-juha-miettinen-max-verstappen-adac-24h",
         "source": "ESPN",
@@ -111,6 +131,46 @@
           "confidence": 0.34
         },
         "category": "world"
+      },
+      {
+        "title": "The RAM shortage could last years",
+        "link": "https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years",
+        "source": "The Verge",
+        "sourceDomain": "theverge.com",
+        "sourceCredibility": "Medium",
+        "industry": "Technology",
+        "description": "According to Nikkei Asia, even as suppliers ramp up DRAM production, manufacturers are only expected to meet 60 percent of demand by the end of 2027. SK Group chairman has even said that shortages could last until 2030.\nThe world's largest memory makers - Samsung, SK Hynix, and Micron - are all working to add new fabrication capacity, but almost none of it will be online until at least 2027, if not 2028. SK opened a fab in Cheongju in February, but that is the only increase in production among the three for 2026.\nNikkei says that production would need to increase by 12 percent a year in 2026 and 2027 to meet demand. But according to Counte …\nRead the full story at The Verge.",
+        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STKS523_RAM_SHORTAGE_B.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+        "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STKS523_RAM_SHORTAGE_B.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+        "publishedAt": "2026-04-18T21:08:45.000Z",
+        "sentiment": {
+          "posP": 7,
+          "neuP": 89,
+          "negP": 4,
+          "label": "positive",
+          "confidence": 0.7964
+        },
+        "category": "technology"
+      },
+      {
+        "title": "3D-printed brain sensors may unlock personalized neural monitoring",
+        "link": "https://medicalxpress.com/news/2026-04-3d-brain-sensors-personalized-neural.html",
+        "source": "Medical Xpress",
+        "sourceDomain": "medicalxpress.com",
+        "sourceCredibility": "Medium",
+        "industry": "Healthcare",
+        "description": "Soft electrodes designed to perfectly match a person's brain surface may help advance neural interfaces for neurodegenerative disease monitoring and treatment, according to a new study led by Penn State researchers. Neural interfaces are powered by tiny sensors capable of tracking biophysical signals, known as bioelectrodes. These sensors are usually made from stiff materials in a one-size-fits-all design that struggles to match the brain's complex structure. The researchers have created a novel approach to 3D printing bioelectrodes that can stretch and morph to fit the minor differences that make every brain unique.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T21:00:01.000Z",
+        "sentiment": {
+          "posP": 15,
+          "neuP": 83,
+          "negP": 2,
+          "label": "positive",
+          "confidence": 0.9153
+        },
+        "category": "health"
       },
       {
         "title": "Kerr on future: These jobs have 'expiration date'",
@@ -151,6 +211,106 @@
           "confidence": 0.1027
         },
         "category": "sports"
+      },
+      {
+        "title": "Biomining at Vedimara in North Paravur in final stage",
+        "link": "https://www.thehindu.com/news/national/kerala/biomining-at-vedimara-in-north-paravur-in-final-stage/article70878695.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "",
+        "image": "https://www.thehindu.com/theme/images/og-image.png",
+        "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
+        "publishedAt": "2026-04-18T20:51:44.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "world"
+      },
+      {
+        "title": "A mass shooting in Ukraine's capital leaves 6 dead before police shot and killed the gunman",
+        "link": "https://www.npr.org/2026/04/18/nx-s1-5789903/mass-shooting-kyiv-ukraine",
+        "source": "NPR",
+        "sourceDomain": "npr.org",
+        "sourceCredibility": "High",
+        "industry": "Media",
+        "description": "A gunman has killed six people and injured at least 14 in a mass shooting in Ukraine's capital before he was shot and killed by police.",
+        "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F70%2F7c%2Fca9644364a9188359b4eb08cad70%2Fap26108610147479.jpg",
+        "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F70%2F7c%2Fca9644364a9188359b4eb08cad70%2Fap26108610147479.jpg",
+        "publishedAt": "2026-04-18T20:43:45.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 62,
+          "negP": 38,
+          "label": "negative",
+          "confidence": 0.9702
+        },
+        "category": "world"
+      },
+      {
+        "title": "Secretary Doug Burgum expects Teddy Roosevelt’s induction into Pro Football Hall of Fame: report",
+        "link": "https://www.foxnews.com/sports/sec-doug-burgum-expects-teddy-roosevelts-induction-pro-football-hall-fame-report",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "Medium",
+        "industry": "Media",
+        "description": "Doug Burgum reportedly thinks Teddy Roosevelt will be inducted into the Pro Football Hall of Fame next year at the NFL Draft on the National Mall.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T20:40:51.000Z",
+        "sentiment": {
+          "posP": 13,
+          "neuP": 87,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7003
+        },
+        "category": "sports"
+      },
+      {
+        "title": "Tamil Nadu election 2026: Farm distress and civic shortfalls loom large in Thuraiyur constituency",
+        "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/tamil-nadu-assembly-elections-2026-farm-distress-and-civic-shortfalls-loom-large-in-thuraiyur-constituency/article70796259.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "Comprising the Thuraiyur Municipality and the town panchayats of Uppilliyapuram and Balakrishnampatti, the constituency is home to a sizeable population of tribals, who live in remote villages of Pachamalai.",
+        "image": "https://th-i.thgim.com/public/incoming/iks024/article70878936.ece/alternates/LANDSCAPE_1200/Dry%20paddy%20field%20Thuraiyur%204.jpeg",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/iks024/article70878936.ece/alternates/LANDSCAPE_1200/Dry%20paddy%20field%20Thuraiyur%204.jpeg",
+        "publishedAt": "2026-04-18T20:39:03.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 88,
+          "negP": 12,
+          "label": "negative",
+          "confidence": 0.6486
+        },
+        "category": "world"
+      },
+      {
+        "title": "Court seeks Sonia Gandhi’s reply in voter list case, next hearing on May 16",
+        "link": "https://timesofindia.indiatimes.com/india/court-seeks-sonia-gandhis-reply-in-voter-list-case-next-hearing-on-may-16/articleshow/130361746.cms",
+        "source": "TOI",
+        "sourceDomain": "timesofindia.indiatimes.com",
+        "sourceCredibility": "Medium",
+        "industry": "Communication",
+        "description": "",
+        "image": "https://static.toiimg.com/photo/msid-130361749,imgsize-815390.cms",
+        "imageUrl": "https://static.toiimg.com/photo/msid-130361749,imgsize-815390.cms",
+        "publishedAt": "2026-04-18T20:30:23.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "india"
       },
       {
         "title": "Osteopenia: Loss of bone mineral density affects millions of people. Here's what you need to know",
@@ -229,6 +389,46 @@
           "negP": 6,
           "label": "positive",
           "confidence": 0.2732
+        },
+        "category": "world"
+      },
+      {
+        "title": "Tamil Nadu election 2026: Long-pending demand of Chengalpattu constituency residents for better infrastructure remain unfulfilled",
+        "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/long-pending-demand-of-chengalpattu-constituency-residents-for-better-infrastructure-remain-unfulfilled/article70796999.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "With a sizeable farming community, residents of Chengalpattu constituency call for water management projects; they demand that the authorities clean Kolavai Lake and complete a sewer line work; since the district has no minister, residents are unable to take up local issues with those in power",
+        "image": "https://th-i.thgim.com/public/news/national/tamil-nadu/m65sd5/article70808804.ece/alternates/LANDSCAPE_1200/chengalpattu%20pic.jpeg",
+        "imageUrl": "https://th-i.thgim.com/public/news/national/tamil-nadu/m65sd5/article70808804.ece/alternates/LANDSCAPE_1200/chengalpattu%20pic.jpeg",
+        "publishedAt": "2026-04-18T20:21:41.000Z",
+        "sentiment": {
+          "posP": 8,
+          "neuP": 80,
+          "negP": 12,
+          "label": "negative",
+          "confidence": 0.1027
+        },
+        "category": "world"
+      },
+      {
+        "title": "Tamil Nadu election 2026: In Vellore constituency, residents unhappy over tardy work under Smart Cities Mission project",
+        "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/tn-assembly-elections-2026-in-vellore-assembly-constituency-residents-are-unhappy-over-tardy-work-under-smart-cities-mission-project/article70796249.ece",
+        "source": "The Hindu",
+        "sourceDomain": "thehindu.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "A resident complains that work done under the project drains the taxpayers’ money; other issues that plague the Vellore constituency include improper re-laying of damages stretches that lead to waterlogging during rain and traffic rule violations",
+        "image": "https://th-i.thgim.com/public/incoming/8g49i4/article70797222.ece/alternates/LANDSCAPE_1200/9712_28_3_2026_18_34_24_1__DSC6161.JPG",
+        "imageUrl": "https://th-i.thgim.com/public/incoming/8g49i4/article70797222.ece/alternates/LANDSCAPE_1200/9712_28_3_2026_18_34_24_1__DSC6161.JPG",
+        "publishedAt": "2026-04-18T20:18:45.000Z",
+        "sentiment": {
+          "posP": 4,
+          "neuP": 77,
+          "negP": 19,
+          "label": "negative",
+          "confidence": 0.8402
         },
         "category": "world"
       },
@@ -333,46 +533,6 @@
         "category": "india"
       },
       {
-        "title": "Tamil Nadu election 2026: Tiruvallur constituency grapples with connectivity, traffic issues",
-        "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/tiruvallurgrapples-with-connectivity-and-traffic-issues/article70796213.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "Residents of Tiruvallur constituency want the new bus stand to be opened for public use at the earliest; traffic congestion remains key concern; farmers in Perambakkam region hit by falling groundwater level",
-        "image": "https://th-i.thgim.com/public/incoming/7lemdl/article70797527.ece/alternates/LANDSCAPE_1200/DJI_20260327171929_0078_D.JPG",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/7lemdl/article70797527.ece/alternates/LANDSCAPE_1200/DJI_20260327171929_0078_D.JPG",
-        "publishedAt": "2026-04-18T20:12:42.000Z",
-        "sentiment": {
-          "posP": 3,
-          "neuP": 93,
-          "negP": 4,
-          "label": "negative",
-          "confidence": 0.0772
-        },
-        "category": "world"
-      },
-      {
-        "title": "Tamil Nadu election 2026: Open drains and chaotic traffic hurt Thanjavur constituency’s heritage image",
-        "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/tamil-nadu-assembly-elections-2026-open-drains-and-chaotic-traffic-mar-heritage-value-of-thanjavur/article70795243.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "Thanjavur, a heritage town continues to grapple with problems such as open drains in a few lanes and by-lanes in the heart of the town, and traffic congestion during weekends and on holy days near Sri Brahadeeswarar Temple, a World Heritage Monument.",
-        "image": "https://th-i.thgim.com/public/incoming/xz732m/article70878923.ece/alternates/LANDSCAPE_1200/BIG%20TEMPLE%20-%20Thanjavur%20%206.jpg.jpeg",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/xz732m/article70878923.ece/alternates/LANDSCAPE_1200/BIG%20TEMPLE%20-%20Thanjavur%20%206.jpg.jpeg",
-        "publishedAt": "2026-04-18T20:11:05.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 84,
-          "negP": 16,
-          "label": "negative",
-          "confidence": 0.8519
-        },
-        "category": "world"
-      },
-      {
         "title": "Lawyer who led effort to overturn 2020 election will oversee probe of ex-CIA director",
         "link": "https://www.cbsnews.com/news/trump-lawyer-joseph-digenova-oversee-probe-of-ex-cia-director-official/",
         "source": "CBS News",
@@ -473,46 +633,6 @@
         "category": "world"
       },
       {
-        "title": "Tamil Nadu election 2026: Unresolved issues galore in Kangayam constituency",
-        "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/unresolved-issues-galore-in-kangayam-constituency/article70789203.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "Known widely for its rice mills and coconut oil units, the constituency that also accounts for a substantial extent of powerloom units has quite a few unresolved issues, according to sections of the electorate.",
-        "image": "https://th-i.thgim.com/public/incoming/7e1qxp/article70819086.ece/alternates/LANDSCAPE_1200/copra%20arrival%202.jpg",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/7e1qxp/article70819086.ece/alternates/LANDSCAPE_1200/copra%20arrival%202.jpg",
-        "publishedAt": "2026-04-18T19:57:10.000Z",
-        "sentiment": {
-          "posP": 4,
-          "neuP": 96,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.2023
-        },
-        "category": "world"
-      },
-      {
-        "title": "Tamil Nadu election 2026: Vedaparai reservoir project remains a long-pending demand in Anthiyur constituency",
-        "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/vedaparai-reservoir-project-remains-a-long-pending-demand-in-anthiyur-constituency/article70791771.ece",
-        "source": "The Hindu",
-        "sourceDomain": "thehindu.com",
-        "sourceCredibility": "High",
-        "industry": "Communication",
-        "description": "The constituency has seen several water management proposals, including check dams across the Maniyachi Pallam stream and at Valukkuparai in the hills, along with plans to divert water to the reservoir. While these measures can improve irrigation in the plains, hill residents fear ecological disruption, including impacts on forests, wildlife and traditional livelihoods.",
-        "image": "https://th-i.thgim.com/public/incoming/g0c58d/article70878921.ece/alternates/LANDSCAPE_1200/9870_27_3_2026_11_27_27_2_ER28LAKE2.JPG",
-        "imageUrl": "https://th-i.thgim.com/public/incoming/g0c58d/article70878921.ece/alternates/LANDSCAPE_1200/9870_27_3_2026_11_27_27_2_ER28LAKE2.JPG",
-        "publishedAt": "2026-04-18T19:55:00.000Z",
-        "sentiment": {
-          "posP": 7,
-          "neuP": 83,
-          "negP": 10,
-          "label": "negative",
-          "confidence": 0.34
-        },
-        "category": "world"
-      },
-      {
         "title": "Eric Swalwell cameo in ‘Jury Duty: Company Retreat’ raises eyebrows following misconduct claims",
         "link": "https://www.foxnews.com/media/eric-swalwell-cameo-jury-duty-company-retreat-raises-eyebrows-following-misconduct-claims",
         "source": "Fox News",
@@ -529,26 +649,6 @@
           "negP": 9,
           "label": "negative",
           "confidence": 0.2023
-        },
-        "category": "world"
-      },
-      {
-        "title": "Spurs concede last-gasp goal to stay in drop zone",
-        "link": "https://www.espn.com/soccer/report/_/gameId/740920",
-        "source": "ESPN",
-        "sourceDomain": "espn.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "Tottenham remain in the Premier League relegation zone after they were stunned by a stoppage-time leveller from Brighton substitute Georginio Rutter .",
-        "image": "https://a.espncdn.com/combiner/i?img=/i/espn/misc_logos/500/soccer.png",
-        "imageUrl": "https://a.espncdn.com/combiner/i?img=/i/espn/misc_logos/500/soccer.png",
-        "publishedAt": "2026-04-18T19:52:59.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 88,
-          "negP": 12,
-          "label": "negative",
-          "confidence": 0.3612
         },
         "category": "world"
       },
@@ -591,26 +691,6 @@
           "confidence": 0.4588
         },
         "category": "sports"
-      },
-      {
-        "title": "Nancy Mace calls on Congress to release sexual harassment records, wants an 'avalanche of resignations'",
-        "link": "https://www.foxnews.com/media/nancy-mace-calls-congress-release-sexual-harassment-records-wants-avalanche-resignations",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "Medium",
-        "industry": "Media",
-        "description": "Rep. Nancy Mace calls for an avalanche of resignations in Congress, pushing a resolution to release ethics committee records on sexual harassment claims.",
-        "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/eric-swalwell-nancy-mace-politics-fox-news.jpeg",
-        "imageUrl": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/eric-swalwell-nancy-mace-politics-fox-news.jpeg",
-        "publishedAt": "2026-04-18T19:45:43.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 79,
-          "negP": 21,
-          "label": "negative",
-          "confidence": 0.8481
-        },
-        "category": "world"
       },
       {
         "title": "SNK's Neo Geo console remake works with original cartridges and HDMI",
@@ -1813,26 +1893,6 @@
         "category": "world"
       },
       {
-        "title": "Tamil Nadu polls: AIADMK’s D Jayakumar eyes comeback in Royapuram after DMK wrested seat in 2021",
-        "link": "https://timesofindia.indiatimes.com/india/tamil-nadu-polls-aiadmks-d-jayakumar-eyes-comeback-in-royapuram-after-dmk-wrested-seat-in-2021/articleshow/130358350.cms",
-        "source": "TOI",
-        "sourceDomain": "timesofindia.indiatimes.com",
-        "sourceCredibility": "Medium",
-        "industry": "Communication",
-        "description": "",
-        "image": "https://static.toiimg.com/photo/msid-130358725,imgsize-31532.cms",
-        "imageUrl": "https://static.toiimg.com/photo/msid-130358725,imgsize-31532.cms",
-        "publishedAt": "2026-04-18T17:01:43.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 100,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "india"
-      },
-      {
         "title": "Therapy program for kids with lupus can change lives in 6 sessions",
         "link": "https://medicalxpress.com/news/2026-04-therapy-kids-lupus-sessions.html",
         "source": "Medical Xpress",
@@ -2113,6 +2173,26 @@
         "category": "business"
       },
       {
+        "title": "WATCH:  'Oldchellas' spread cheer",
+        "link": "https://abcnews.com/video/132165515/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "",
+        "industry": "",
+        "description": "Seniors are sharing their advice at the Coachella music festival, calling themselves the “Oldchellas.” They are armed with wisdom as they hold up inspirational signs for festivalgoers.",
+        "image": "https://i.abcnewsfe.com/a/3663c81b-b839-4b43-8ea0-13cd7b235fe5/260418_gma_play_oldchellas1_hpMain_16x9.jpg?w=992",
+        "imageUrl": "https://i.abcnewsfe.com/a/3663c81b-b839-4b43-8ea0-13cd7b235fe5/260418_gma_play_oldchellas1_hpMain_16x9.jpg?w=992",
+        "publishedAt": "2026-04-18T15:35:39.000Z",
+        "sentiment": {
+          "posP": 42,
+          "neuP": 58,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.9531
+        },
+        "category": "world"
+      },
+      {
         "title": "At least two dead as gunman opens fire and takes hostages in Kyiv",
         "link": "https://www.bbc.com/news/articles/cm25r1vkx4lo?at_medium=RSS&at_campaign=rss",
         "source": "BBC",
@@ -2213,22 +2293,42 @@
         "category": "world"
       },
       {
-        "title": "I'm sorry: PM's message to women, shreds Opposition for crushing their dreams after quota bill setback",
+        "title": "How JLL is Embracing Artificial Intelligence | C-Suite Saturdays",
+        "link": "https://www.bloomberg.com/news/videos/2026-04-18/how-jll-is-embracing-artificial-intelligence-video",
+        "source": "Bloomberg",
+        "sourceDomain": "bloomberg.com",
+        "sourceCredibility": "High",
+        "industry": "Finance",
+        "description": "With a legacy spanning 243 years, JLL is now navigating a landscape transformed by Artificial Intelligence. JLL President and Global CEO Christian Ulbrich joins David Gura and Christina Ruffini on Bloomberg This Weekend to discuss how the firm stays ahead of the curve. (Source: Bloomberg)",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T15:11:51.000Z",
+        "sentiment": {
+          "posP": 11,
+          "neuP": 89,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7351
+        },
+        "category": "world"
+      },
+      {
+        "title": "Opposition committed foeticide of your rights: PM to women after quota setback",
         "link": "https://www.indiatoday.in/india/story/im-sorry-pms-message-to-women-shreds-opposition-for-crushing-their-dreams-after-quota-bill-setback-2898291-2026-04-18?utm_source=rss",
         "source": "India Today",
         "sourceDomain": "indiatoday.in",
         "sourceCredibility": "Medium",
         "industry": "Communication",
-        "description": "Im sorry PMs message to women shreds Opposition for crushing their dreams after quota bill setback",
-        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_story_image/202604/WhatsApp%2520Image%25202026-04-18%2520at%252020.37.17.jpeg%3FVersionId%3DuC6UkPfwRZWuObl5aBvOm31urqezMxUk?VersionId=HJ1x5uYTaAE6TmVwGn7nucgmWk6dm2H2",
-        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/breaking_story_image/202604/WhatsApp%2520Image%25202026-04-18%2520at%252020.37.17.jpeg%3FVersionId%3DuC6UkPfwRZWuObl5aBvOm31urqezMxUk?VersionId=HJ1x5uYTaAE6TmVwGn7nucgmWk6dm2H2",
+        "description": "Opposition committed foeticide of your rights PM to women after quota setback",
+        "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/pm-modi-during-his-address-to-the-nation-on-saturday-185319177-16x9_0.jpg?VersionId=ebflMVGsbTjsW_MnPFldGkuxK7.rJn1g",
+        "imageUrl": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202604/pm-modi-during-his-address-to-the-nation-on-saturday-185319177-16x9_0.jpg?VersionId=ebflMVGsbTjsW_MnPFldGkuxK7.rJn1g",
         "publishedAt": "2026-04-18T15:08:19.000Z",
         "sentiment": {
-          "posP": 14,
-          "neuP": 66,
-          "negP": 20,
-          "label": "negative",
-          "confidence": 0.0516
+          "posP": 16,
+          "neuP": 84,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.4939
         },
         "category": "india"
       },
@@ -2293,6 +2393,66 @@
         "category": "world"
       },
       {
+        "title": "How Trump is pushing psychedelics reform through the health agencies",
+        "link": "https://www.statnews.com/2026/04/18/psychedelics-ptsd-mental-health-research-boost-from-trump-executive-order/?utm_campaign=rss",
+        "source": "STAT",
+        "sourceDomain": "statnews.com",
+        "sourceCredibility": "High",
+        "industry": "Healthcare",
+        "description": "Trump directed the federal government to rush access to psychedelic treatments and reevaluate their status as controlled substances.",
+        "image": "https://www.statnews.com/wp-content/uploads/2024/03/Iboga_Drug-1024x576.jpeg",
+        "imageUrl": "https://www.statnews.com/wp-content/uploads/2024/03/Iboga_Drug-1024x576.jpeg",
+        "publishedAt": "2026-04-18T15:00:14.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "science"
+      },
+      {
+        "title": "Why private gardens mattered so much during the first COVID-19 lockdown",
+        "link": "https://medicalxpress.com/news/2026-04-private-gardens-covid-lockdown.html",
+        "source": "Medical Xpress",
+        "sourceDomain": "medicalxpress.com",
+        "sourceCredibility": "Medium",
+        "industry": "Healthcare",
+        "description": "A team of researchers led by the University of Aberdeen has found that private gardens played a vital role in supporting people's well-being during the U.K.'s first COVID-19 lockdown, when access to public green spaces was significantly restricted.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T15:00:05.000Z",
+        "sentiment": {
+          "posP": 14,
+          "neuP": 81,
+          "negP": 5,
+          "label": "positive",
+          "confidence": 0.5994
+        },
+        "category": "health"
+      },
+      {
+        "title": "After war of words on Iran, Pope Leo says he's not interested in a debate with Trump",
+        "link": "https://www.nbcnews.com/world/pope-leo-xiv/war-words-iran-pope-leo-says-not-interested-debate-trump-rcna340780",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "Media",
+        "description": "Pope Leo XIV said he has no interest in debating President Donald Trump, pushing back at reporting about the escalating war of words between the two men",
+        "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-pope-leo-ch-1045-6ccf93.jpg",
+        "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-pope-leo-ch-1045-6ccf93.jpg",
+        "publishedAt": "2026-04-18T14:57:04.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 71,
+          "negP": 23,
+          "label": "negative",
+          "confidence": 0.8503
+        },
+        "category": "world"
+      },
+      {
         "title": "Anthropic’s relationship with the Trump administration seems to be thawing",
         "link": "https://techcrunch.com/2026/04/18/anthropics-relationship-with-the-trump-administration-seems-to-be-thawing/",
         "source": "TechCrunch",
@@ -2313,16 +2473,16 @@
         "category": "technology"
       },
       {
-        "title": "The App Store is booming again, and AI may be why",
-        "link": "https://techcrunch.com/2026/04/18/the-app-store-is-booming-again-and-ai-may-be-why/",
-        "source": "TechCrunch",
-        "sourceDomain": "techcrunch.com",
-        "sourceCredibility": "Medium",
-        "industry": "Technology",
-        "description": "New data from Appfigures shows a swell of new app launches in 2026, suggesting AI tools could be fueling a mobile software boom.",
-        "image": "https://techcrunch.com/wp-content/uploads/2026/04/app-store-with-badge-GettyImages-2193151739.jpg?w=1024",
-        "imageUrl": "https://techcrunch.com/wp-content/uploads/2026/04/app-store-with-badge-GettyImages-2193151739.jpg?w=1024",
-        "publishedAt": "2026-04-18T13:00:00.000Z",
+        "title": "French film star Nathalie Baye dies aged 77, media report",
+        "link": "https://www.bbc.com/news/articles/cn9q48y9wr7o?at_medium=RSS&at_campaign=rss",
+        "source": "BBC",
+        "sourceDomain": "bbc.com",
+        "sourceCredibility": "High",
+        "industry": "Communication",
+        "description": "President Emmanuel Macron said France had \"loved, dreamed and grown up\" with the stalwart of French cinema.",
+        "image": "https://ichef.bbci.co.uk/news/1024/branded_news/bf54/live/786c3500-3b17-11f1-b1b8-59274407f83c.jpg",
+        "imageUrl": "https://ichef.bbci.co.uk/news/1024/branded_news/bf54/live/786c3500-3b17-11f1-b1b8-59274407f83c.jpg",
+        "publishedAt": "2026-04-18T14:52:15.000Z",
         "sentiment": {
           "posP": 0,
           "neuP": 100,
@@ -2330,180 +2490,31 @@
           "label": "neutral",
           "confidence": 0
         },
-        "category": "technology"
-      },
-      {
-        "title": "Dyson’s handheld fan is more powerful and louder than I expected",
-        "link": "https://www.theverge.com/tech/908962/dyson-hushjet-mini-cool-personal-handheld-fan-hands-on",
-        "source": "The Verge",
-        "sourceDomain": "theverge.com",
-        "sourceCredibility": "Medium",
-        "industry": "Technology",
-        "description": "Two years ago I attended a picturesque outdoor wedding in August where the hot and humid weather had guests occasionally ducking into their cars to enjoy a blast of AC. Dyson’s new $99.99 handheld fan would have provided some much-needed relief then, although I’m not sure I would have been comfortable powering it up during the service or reception. The HushJet Mini Cool is as slim and sleek as Dyson’s recent thin vacuum and hair dryer, but it’s not quiet enough to earn the name “Hush.”\nThat’s unfortunate because the HushJet Mini Cool is yet another product Dyson has redesigned to look and perform better than what’s already on the market. All of its components — including the motor, 5,000mAh rechargeable battery, and spinning blades — are safely contained inside a cylindrical body 38mm in diameter that’s easy to slip into a pocket. Many handheld fans use flexible or folding blades that are left exposed and not ideal for kids, or they stuff the moving parts into a bulbous section on top that limits pocketability.\nDyson HushJet Mini Cool\n\nWhere to Buy:\n\n $99.99 at Dyson\n $99.99 at Amazon\n $99.99 at Best Buy\n\nAt 208 grams the HushJet Mini Cool is about the same weight as an iPhone 17 Pro, so it’s not a terrible burden to schlep around when temperatures soar, and it’s incredibly easy to use. A toggle switch turns the fan on and off, while a rocker button lets you step up and down through five different fan speeds indicated by a strip of five small white LEDs. There’s also an even stronger Boost Mode that’s only activated while you’re holding down the “plus” side of that rocker button.\nThe only learning curve was remembering to grip the fan above the vent that wraps around its base so as not to block the airflow. Some added texture on the outside of the HushJet Mini Cool to naturally guide where your hand should grip it would be welcome.\nDyson claims up to six hours of battery life at the fan’s lowest setting, but at its highest speed (not Boost Mode) it died after 62 minutes. I was still impressed, because I didn’t expect the fan to last that long at full power. The remaining battery life is displayed using the fan’s five white LEDs, but only when it’s turned off. Being able to track how fast the battery level drops with the fan running would be a useful way to estimate how much cooling time you have left.\nThe HushJet Mini Cool is bottom-heavy and can be used as a self-standing fan, and Dyson includes an accessory to widen the base and improve its stability. It helps, but it’s also an accessory that’s easy to lose. And while you can power the fan indefinitely by connecting it to a power source over USB-C, you’re limited to the lowest speed setting. At that setting you’ll need to stay within about 5 feet of the fan to feel anything.\nDyson’s marketing for the fan, including the HushJet branding, emphasizes how it’s engineered to be quiet. “Dyson’s obsession with acoustics means tonal comfort: with the HushJet nozzle, we’ve lowered frequencies, eliminated high-pitched whirring, and silenced the sound of whining motors,” the company said in a press release. But it was definitely not as quiet as I expected it to be.\nIt doesn’t get anywhere near as loud as Dyson’s cordless vacuums or hair dryers, but the HushJet Mini Cool isn’t whisper-quiet, even at its lowest setting. The handheld fan also has a similar high-pitched whine as those other Dyson devices, despite its tiny electric motor spinning at less than half the speed of theirs.\nFor the past year my family has been using Nitecore’s izzCool 10 Pro fan to beat the heat whenever AC isn’t available. Its design makes it harder to slip into a pocket, and at full power its blast is nowhere near as strong as Dyson’s — even at half power. While both fans were similarly loud at their lowest settings (measured using the NIOSH Sound Level Meter app on my iPhone), Dyson’s was well over 10 decibels louder at full power. That’s not surprising given Dyson’s fan far outperforms Nitecore’s, but the sound of the HushJet Mini Cool was generally far more noticeable, since it produced noise at higher frequencies.\nAt a noisy outdoor music festival, crowded carnival, or bustling state fair I can see myself comfortably pushing the fan’s speed to its third or fourth speed setting without worrying about getting too many annoyed looks. But in quieter settings, like that stifling-hot outdoor wedding I attended, I would be hesitant to fire up the HushJet Mini Cool. At least until the wedding DJ took over.\nCompact electric air dusters like the Wolfbox MF100 are stronger and cheaper than the HushJet Mini Cool, but they’re typically much louder because they’re designed to be pointed at keyboards covered in Doritos crumbs, while fans are designed to be pointed at your head. Dyson’s HushJet Mini Cool is better at balancing size, performance, and battery life. If used nonstop it can last half a day at an amusement park. You can definitely find a quieter alternative, but I doubt you’ll find a more powerful one this size.\nPhotography by Andrew Liszewski / The Verge",
-        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/dyson_hushjetminicool_1.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-        "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/dyson_hushjetminicool_1.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-        "publishedAt": "2026-04-18T13:00:00.000Z",
-        "sentiment": {
-          "posP": 20,
-          "neuP": 74,
-          "negP": 6,
-          "label": "positive",
-          "confidence": 0.9992
-        },
-        "category": "technology"
-      },
-      {
-        "title": "There’s nothing like an RPG over vacation",
-        "link": "https://www.theverge.com/games/908358/people-of-note-pc-playstation-xbox-nintendo-switch-2",
-        "source": "The Verge",
-        "sourceDomain": "theverge.com",
-        "sourceCredibility": "Medium",
-        "industry": "Technology",
-        "description": "With a vacation comes a big choice: What game should I focus on during the trip? I thought about grinding out the harder levels of Super Meat Boy 3D, but I was looking for something more chill. I could have dabbled more with Slay the Spire II, but I already know that's a game I'll be playing for a long time. I wanted something that I could really get lost in and finish in a little over a week. People of Note, a new music-focused RPG from Annapurna Interactive and Iridium Studios, turned out to be exactly what I needed.\nIn the game, you play as aspiring pop singer Cadence. What starts as a journey to outperform a popular boy band turns into  …\nRead the full story at The Verge.",
-        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/videoframe_121699.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-        "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/videoframe_121699.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-        "publishedAt": "2026-04-18T12:00:00.000Z",
-        "sentiment": {
-          "posP": 9,
-          "neuP": 87,
-          "negP": 4,
-          "label": "positive",
-          "confidence": 0.7599
-        },
-        "category": "world"
-      },
-      {
-        "title": "The AI apps are coming for your PC",
-        "link": "https://www.theverge.com/tech/914429/the-ai-apps-are-coming-for-your-pc",
-        "source": "The Verge",
-        "sourceDomain": "theverge.com",
-        "sourceCredibility": "Medium",
-        "industry": "Technology",
-        "description": "Hi, friends! Welcome to Installer No. 124, your guide to the best and Verge-iest stuff in the world. (If you're new here, welcome, send me your Coachella fits, and also you can read all the old editions at the Installer homepage.) \nThis week, I've been reading about restaurant bread and GLP-1s  and Lenny Rachitsky and Artemis II fashion, watching the new boy band doc because I will always watch a boy band doc, also watching every clip I can find from Justin Bieber's Coachella set, filling the Schitt's Creek-shaped hole in my heart with Big Mistakes, getting increasingly excited about The Mandalorian and Grogu, and watering my new lawn so it …\nRead the full story at The Verge.",
-        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/Installer-124.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-        "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/04/Installer-124.png?quality=90&#038;strip=all&#038;crop=0,0,100,100",
-        "publishedAt": "2026-04-18T12:00:00.000Z",
-        "sentiment": {
-          "posP": 12,
-          "neuP": 85,
-          "negP": 3,
-          "label": "positive",
-          "confidence": 0.906
-        },
-        "category": "technology"
-      },
-      {
-        "title": "Hormuz Chaos, Lebanon Clashes Dent Trump Peace Deal Hopes",
-        "link": "https://www.bloomberg.com/news/articles/2026-04-18/chaos-erupts-in-hormuz-after-trump-claimed-iran-deal-is-imminent-mo48sbi2",
-        "source": "Bloomberg",
-        "sourceDomain": "bloomberg.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "Iran on Saturday reimposed restrictions on vessel traffic through the Strait of Hormuz and Israel attacked targets in Lebanon, undermining expectations of an imminent peace deal touted by US President Donald Trump.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T11:15:56.000Z",
-        "sentiment": {
-          "posP": 18,
-          "neuP": 63,
-          "negP": 19,
-          "label": "positive",
-          "confidence": 0.1027
-        },
-        "category": "world"
-      },
-      {
-        "title": "Great white sharks are overheating",
-        "link": "https://arstechnica.com/science/2026/04/great-white-sharks-are-overheating/",
-        "source": "Ars Technica",
-        "sourceDomain": "arstechnica.com",
-        "sourceCredibility": "High",
-        "industry": "Technology",
-        "description": "The sharks might also be the most physiologically vulnerable to warming waters.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T11:07:59.000Z",
-        "sentiment": {
-          "posP": 26,
-          "neuP": 64,
-          "negP": 10,
-          "label": "positive",
-          "confidence": 0.5456
-        },
-        "category": "technology"
-      },
-      {
-        "title": "The Best Smart Home Accessories to Boost Your Curb Appeal (2026)",
-        "link": "https://www.wired.com/story/smart-home-curb-appeal/",
-        "source": "Wired",
-        "sourceDomain": "wired.com",
-        "sourceCredibility": "Medium",
-        "industry": "Technology",
-        "description": "These locks, lights, and other smart home upgrades let you add automation without messing up your home’s vibe.",
-        "image": "https://media.wired.com/photos/69e2927e26dabb307b73e8ca/191:100/w_1280,c_limit/Your-Outdoor-Smart-Home-Gear-Doesn&#x27;t-Have-To-Be-Ugly.jpg",
-        "imageUrl": "https://media.wired.com/photos/69e2927e26dabb307b73e8ca/191:100/w_1280,c_limit/Your-Outdoor-Smart-Home-Gear-Doesn&#x27;t-Have-To-Be-Ugly.jpg",
-        "publishedAt": "2026-04-18T11:02:00.000Z",
-        "sentiment": {
-          "posP": 33,
-          "neuP": 67,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.9062
-        },
-        "category": "world"
-      },
-      {
-        "title": "How to Clean Your Vinyl Records (2026): Vacuum, Ultrasonic, Solution, Brush",
-        "link": "https://www.wired.com/story/how-to-clean-vinyl-records/",
-        "source": "Wired",
-        "sourceDomain": "wired.com",
-        "sourceCredibility": "Medium",
-        "industry": "Technology",
-        "description": "Those clicks and pops aren't supposed to be there. Give your music a proper bath with this handy guide.",
-        "image": "https://media.wired.com/photos/67ca18d6dd326b3d912b0e49/191:100/w_1280,c_limit/Vinyl-record-cleaning-brush-GettyImages-1129795475-peuceta-(cropped).jpg",
-        "imageUrl": "https://media.wired.com/photos/67ca18d6dd326b3d912b0e49/191:100/w_1280,c_limit/Vinyl-record-cleaning-brush-GettyImages-1129795475-peuceta-(cropped).jpg",
-        "publishedAt": "2026-04-18T11:00:00.000Z",
-        "sentiment": {
-          "posP": 16,
-          "neuP": 84,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.6124
-        },
-        "category": "world"
-      },
-      {
-        "title": "Asus TUF Gaming A14 (2026) Review: GPU-Less Gaming Laptop",
-        "link": "https://www.wired.com/review/asus-tuf-gaming-a14-2026/",
-        "source": "Wired",
-        "sourceDomain": "wired.com",
-        "sourceCredibility": "Medium",
-        "industry": "Technology",
-        "description": "A gaming laptop without a discrete graphics card feels revolutionary, but the TUF Gaming A14 doesn't quite take full advantage of AMD's daring new silicon.",
-        "image": "https://media.wired.com/photos/69e28a8f04c989eedf38ac69/191:100/w_1280,c_limit/tuf-A14-02-top.JPG",
-        "imageUrl": "https://media.wired.com/photos/69e28a8f04c989eedf38ac69/191:100/w_1280,c_limit/tuf-A14-02-top.JPG",
-        "publishedAt": "2026-04-18T10:30:00.000Z",
-        "sentiment": {
-          "posP": 17,
-          "neuP": 83,
-          "negP": 0,
-          "label": "positive",
-          "confidence": 0.7307
-        },
-        "category": "world"
+        "category": "entertainment"
       }
     ],
     "topics": [
       {
         "title": "tamil nadu | nadu election | election 2026",
-        "count": 5,
+        "count": 4,
         "sources": 1,
         "sentiment": {
           "pos": 3,
-          "neg": 7,
-          "neu": 91
+          "neg": 12,
+          "neu": 86
         },
-        "image": "https://th-i.thgim.com/public/incoming/osho9w/article70819746.ece/alternates/LANDSCAPE_1200/Amaravathi%20Cooperative%20Sugar%20Mill%203.jpg"
+        "image": "https://th-i.thgim.com/public/incoming/iks024/article70878936.ece/alternates/LANDSCAPE_1200/Dry%20paddy%20field%20Thuraiyur%204.jpeg"
+      },
+      {
+        "title": "wwe wrestlemania | live match | match results",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 0,
+          "neu": 100
+        },
+        "image": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0415%2Fr1643997_1296x729_16%2D9.jpg"
       },
       {
         "title": "driver dies | german race | race featuring",
@@ -2515,6 +2526,28 @@
           "neu": 76
         },
         "image": "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0418%2Fr1645588_1296x729_16%2D9.jpg"
+      },
+      {
+        "title": "the ram | ram shortage | shortage could",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 7,
+          "neg": 4,
+          "neu": 89
+        },
+        "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STKS523_RAM_SHORTAGE_B.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100"
+      },
+      {
+        "title": "printed brain | brain sensors | sensors may",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 15,
+          "neg": 2,
+          "neu": 83
+        },
+        "image": "/img/thumb-placeholder.svg"
       },
       {
         "title": "future these | these jobs | jobs have",
@@ -2539,6 +2572,50 @@
         "image": "https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2023%2F0104%2Fr1113563_1296x729_16%2D9.jpg"
       },
       {
+        "title": "north paravur | final stage",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 0,
+          "neu": 100
+        },
+        "image": "https://www.thehindu.com/theme/images/og-image.png"
+      },
+      {
+        "title": "mass shooting | capital leaves | dead before",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 38,
+          "neu": 62
+        },
+        "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F70%2F7c%2Fca9644364a9188359b4eb08cad70%2Fap26108610147479.jpg"
+      },
+      {
+        "title": "secretary doug | doug burgum | burgum expects",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 13,
+          "neg": 0,
+          "neu": 87
+        },
+        "image": "/img/thumb-placeholder.svg"
+      },
+      {
+        "title": "court seeks | seeks sonia | sonia gandhi",
+        "count": 1,
+        "sources": 1,
+        "sentiment": {
+          "pos": 0,
+          "neg": 0,
+          "neu": 100
+        },
+        "image": "https://static.toiimg.com/photo/msid-130361749,imgsize-815390.cms"
+      },
+      {
         "title": "osteopenia loss | bone mineral | mineral density",
         "count": 1,
         "sources": 1,
@@ -2548,86 +2625,43 @@
           "neu": 87
         },
         "image": "/img/thumb-placeholder.svg"
-      },
-      {
-        "title": "creedence clearwater | clearwater revival | revival founder",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 8,
-          "neg": 23,
-          "neu": 69
-        },
-        "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/john-fogerty-julie-fogerty.jpeg"
-      },
-      {
-        "title": "nhl star | star reveals | brutal bacterial",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 9,
-          "neu": 91
-        },
-        "image": "/img/thumb-placeholder.svg"
-      },
-      {
-        "title": "life jacket | jacket worn | titanic passenger",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 9,
-          "neg": 6,
-          "neu": 85
-        },
-        "image": "https://assets3.cbsnewsstatic.com/hub/i/r/2016/04/14/30f782f1-545b-4f30-8ffc-377192a8f533/thumbnail/1200x630g2/20eb9f38cf45cace64b1f7507a34545d/gettyimages-96518519.jpg"
-      },
-      {
-        "title": "officials visited | visited havana | lay out",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 5,
-          "neu": 95
-        },
-        "image": "/img/thumb-placeholder.svg"
-      },
-      {
-        "title": "lori loughlin | loughlin and | and daughter",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 0,
-          "neu": 100
-        },
-        "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/olivia-jade-lori-loughlin-lacma.jpeg"
-      },
-      {
-        "title": "senior bjp | bjp leader | leader balbir",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 0,
-          "neu": 100
-        },
-        "image": "https://th-i.thgim.com/public/incoming/89tp8y/article70878928.ece/alternates/LANDSCAPE_1200/PUNJ_BJP_VARUN_GANDHI_23_03_3.jpg"
-      },
-      {
-        "title": "10th indian | indian ship | ship crosses",
-        "count": 1,
-        "sources": 1,
-        "sentiment": {
-          "pos": 0,
-          "neg": 21,
-          "neu": 79
-        },
-        "image": "https://static.toiimg.com/photo/msid-130361704,imgsize-61934.cms"
       }
     ],
     "stories": [
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "WWE WrestleMania 42 LIVE: Match results and analysis from Night One",
+            "link": "https://www.espn.com/wwe/story/_/id/48494667/wwe-wrestlemania-42-night-1-live-match-results-analysis-cody-rhodes-vs-randy-orton",
+            "source": "ESPN",
+            "sourceDomain": "espn.com",
+            "sourceCredibility": "Medium",
+            "industry": "Communication",
+            "description": "ESPN breaks down all the action from Night One of WrestleMania 42 in Las Vegas.",
+            "image": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0415%2Fr1643997_1296x729_16%2D9.jpg",
+            "imageUrl": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0415%2Fr1643997_1296x729_16%2D9.jpg",
+            "publishedAt": "2026-04-18T22:00:46.000Z",
+            "sentiment": {
+              "posP": 0,
+              "neuP": 100,
+              "negP": 0,
+              "label": "neutral",
+              "confidence": 0
+            },
+            "category": "world"
+          }
+        ]
+      },
       {
         "title": "",
         "summary": "",
@@ -2659,6 +2693,74 @@
               "confidence": 0.34
             },
             "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "The RAM shortage could last years",
+            "link": "https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years",
+            "source": "The Verge",
+            "sourceDomain": "theverge.com",
+            "sourceCredibility": "Medium",
+            "industry": "Technology",
+            "description": "According to Nikkei Asia, even as suppliers ramp up DRAM production, manufacturers are only expected to meet 60 percent of demand by the end of 2027. SK Group chairman has even said that shortages could last until 2030.\nThe world's largest memory makers - Samsung, SK Hynix, and Micron - are all working to add new fabrication capacity, but almost none of it will be online until at least 2027, if not 2028. SK opened a fab in Cheongju in February, but that is the only increase in production among the three for 2026.\nNikkei says that production would need to increase by 12 percent a year in 2026 and 2027 to meet demand. But according to Counte …\nRead the full story at The Verge.",
+            "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STKS523_RAM_SHORTAGE_B.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+            "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STKS523_RAM_SHORTAGE_B.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+            "publishedAt": "2026-04-18T21:08:45.000Z",
+            "sentiment": {
+              "posP": 7,
+              "neuP": 89,
+              "negP": 4,
+              "label": "positive",
+              "confidence": 0.7964
+            },
+            "category": "technology"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "3D-printed brain sensors may unlock personalized neural monitoring",
+            "link": "https://medicalxpress.com/news/2026-04-3d-brain-sensors-personalized-neural.html",
+            "source": "Medical Xpress",
+            "sourceDomain": "medicalxpress.com",
+            "sourceCredibility": "Medium",
+            "industry": "Healthcare",
+            "description": "Soft electrodes designed to perfectly match a person's brain surface may help advance neural interfaces for neurodegenerative disease monitoring and treatment, according to a new study led by Penn State researchers. Neural interfaces are powered by tiny sensors capable of tracking biophysical signals, known as bioelectrodes. These sensors are usually made from stiff materials in a one-size-fits-all design that struggles to match the brain's complex structure. The researchers have created a novel approach to 3D printing bioelectrodes that can stretch and morph to fit the minor differences that make every brain unique.",
+            "image": "/img/thumb-placeholder.svg",
+            "imageUrl": "/img/thumb-placeholder.svg",
+            "publishedAt": "2026-04-18T21:00:01.000Z",
+            "sentiment": {
+              "posP": 15,
+              "neuP": 83,
+              "negP": 2,
+              "label": "positive",
+              "confidence": 0.9153
+            },
+            "category": "health"
           }
         ]
       },
@@ -2743,124 +2845,22 @@
         },
         "articles": [
           {
-            "title": "Osteopenia: Loss of bone mineral density affects millions of people. Here's what you need to know",
-            "link": "https://medicalxpress.com/news/2026-04-osteopenia-loss-bone-mineral-density.html",
-            "source": "Medical Xpress",
-            "sourceDomain": "medicalxpress.com",
-            "sourceCredibility": "Medium",
-            "industry": "Healthcare",
-            "description": "Around 40% of adults worldwide are affected by osteopenia: a loss of bone mineral density. This condition is extremely common, particularly in postmenopausal women and elderly adults. It's estimated that more than 500,000 fractures occur annually in the UK due to low bone density.",
-            "image": "/img/thumb-placeholder.svg",
-            "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-04-18T20:30:01.000Z",
+            "title": "Biomining at Vedimara in North Paravur in final stage",
+            "link": "https://www.thehindu.com/news/national/kerala/biomining-at-vedimara-in-north-paravur-in-final-stage/article70878695.ece",
+            "source": "The Hindu",
+            "sourceDomain": "thehindu.com",
+            "sourceCredibility": "High",
+            "industry": "Communication",
+            "description": "",
+            "image": "https://www.thehindu.com/theme/images/og-image.png",
+            "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
+            "publishedAt": "2026-04-18T20:51:44.000Z",
             "sentiment": {
               "posP": 0,
-              "neuP": 87,
-              "negP": 13,
-              "label": "negative",
-              "confidence": 0.743
-            },
-            "category": "health"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Creedence Clearwater Revival founder John Fogerty says he'd 'probably be dead' without his wife Julie",
-            "link": "https://www.foxnews.com/entertainment/creedence-clearwater-revival-founder-john-fogerty-says-probably-dead-without-wife-julie",
-            "source": "Fox News",
-            "sourceDomain": "foxnews.com",
-            "sourceCredibility": "Medium",
-            "industry": "Media",
-            "description": "John Fogerty credits his wife Julie for saving his life after alcohol abuse during his legal fight over Creedence Clearwater Revival song rights.",
-            "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/john-fogerty-julie-fogerty.jpeg",
-            "imageUrl": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/john-fogerty-julie-fogerty.jpeg",
-            "publishedAt": "2026-04-18T20:26:54.000Z",
-            "sentiment": {
-              "posP": 8,
-              "neuP": 69,
-              "negP": 23,
-              "label": "negative",
-              "confidence": 0.8442
-            },
-            "category": "entertainment"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "NHL star reveals he had a brutal bacterial lung infection during season: 'I thought I was dying'",
-            "link": "https://www.foxnews.com/sports/nhl-star-reveals-brutal-bacterial-lung-infection-season-thought-dying",
-            "source": "Fox News",
-            "sourceDomain": "foxnews.com",
-            "sourceCredibility": "Medium",
-            "industry": "Media",
-            "description": "New York Rangers star Vincent Trocheck revealed he had a bacterial lung infection that caused his 14-game absence, saying he had surgery and that he was hospitalized for about a week.",
-            "image": "/img/thumb-placeholder.svg",
-            "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-04-18T20:26:47.000Z",
-            "sentiment": {
-              "posP": 0,
-              "neuP": 91,
-              "negP": 9,
-              "label": "negative",
-              "confidence": 0.6249
-            },
-            "category": "sports"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Life jacket worn by Titanic passenger who survived auctioned for $900,000",
-            "link": "https://www.cbsnews.com/news/titanic-life-jacket-passenger-auctioned-900000/",
-            "source": "CBS News",
-            "sourceDomain": "cbsnews.com",
-            "sourceCredibility": "Medium",
-            "industry": "Media",
-            "description": "The item is believed to be one of only a handful of Titanic life jackets still in existence, the auction house said.",
-            "image": "https://assets3.cbsnewsstatic.com/hub/i/r/2016/04/14/30f782f1-545b-4f30-8ffc-377192a8f533/thumbnail/1200x630g2/20eb9f38cf45cace64b1f7507a34545d/gettyimages-96518519.jpg",
-            "imageUrl": "https://assets3.cbsnewsstatic.com/hub/i/r/2016/04/14/30f782f1-545b-4f30-8ffc-377192a8f533/thumbnail/1200x630g2/20eb9f38cf45cace64b1f7507a34545d/gettyimages-96518519.jpg",
-            "publishedAt": "2026-04-18T20:25:25.000Z",
-            "sentiment": {
-              "posP": 9,
-              "neuP": 85,
-              "negP": 6,
-              "label": "positive",
-              "confidence": 0.2732
+              "neuP": 100,
+              "negP": 0,
+              "label": "neutral",
+              "confidence": 0
             },
             "category": "world"
           }
@@ -2879,22 +2879,22 @@
         },
         "articles": [
           {
-            "title": "U.S. Officials Visited Havana to Lay Out Proposals for Cuban Reforms",
-            "link": "https://www.nytimes.com/2026/04/18/world/americas/us-officials-cuba-trump.html",
-            "source": "NYT",
-            "sourceDomain": "nytimes.com",
+            "title": "A mass shooting in Ukraine's capital leaves 6 dead before police shot and killed the gunman",
+            "link": "https://www.npr.org/2026/04/18/nx-s1-5789903/mass-shooting-kyiv-ukraine",
+            "source": "NPR",
+            "sourceDomain": "npr.org",
             "sourceCredibility": "High",
             "industry": "Media",
-            "description": "The delegation told Cuba’s leadership that it had only a narrow window of time to make the economic and political changes demanded by the Trump administration.",
-            "image": "/img/thumb-placeholder.svg",
-            "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-04-18T20:17:14.000Z",
+            "description": "A gunman has killed six people and injured at least 14 in a mass shooting in Ukraine's capital before he was shot and killed by police.",
+            "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F70%2F7c%2Fca9644364a9188359b4eb08cad70%2Fap26108610147479.jpg",
+            "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F70%2F7c%2Fca9644364a9188359b4eb08cad70%2Fap26108610147479.jpg",
+            "publishedAt": "2026-04-18T20:43:45.000Z",
             "sentiment": {
               "posP": 0,
-              "neuP": 95,
-              "negP": 5,
+              "neuP": 62,
+              "negP": 38,
               "label": "negative",
-              "confidence": 0.2263
+              "confidence": 0.9702
             },
             "category": "world"
           }
@@ -2915,42 +2915,22 @@
         },
         "articles": [
           {
-            "title": "Tamil Nadu election 2026: Amaravathi sugar mill revival, drinking water issues dominate in Madathukulam constituency",
-            "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/amaravathi-sugar-mill-revival-drinking-water-issues-dominate-madathukulam-constituency/article70796177.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
+            "title": "WWE WrestleMania 42 LIVE: Match results and analysis from Night One",
+            "link": "https://www.espn.com/wwe/story/_/id/48494667/wwe-wrestlemania-42-night-1-live-match-results-analysis-cody-rhodes-vs-randy-orton",
+            "source": "ESPN",
+            "sourceDomain": "espn.com",
+            "sourceCredibility": "Medium",
             "industry": "Communication",
-            "description": "Located along the southern side of Tiruppur district, the constituency is predominantly rural, with agriculture as the mainstay, and sugarcane, coconut, paddy and vegetables cultivated across the region.",
-            "image": "https://th-i.thgim.com/public/incoming/osho9w/article70819746.ece/alternates/LANDSCAPE_1200/Amaravathi%20Cooperative%20Sugar%20Mill%203.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/osho9w/article70819746.ece/alternates/LANDSCAPE_1200/Amaravathi%20Cooperative%20Sugar%20Mill%203.jpg",
-            "publishedAt": "2026-04-18T20:14:09.000Z",
+            "description": "ESPN breaks down all the action from Night One of WrestleMania 42 in Las Vegas.",
+            "image": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0415%2Fr1643997_1296x729_16%2D9.jpg",
+            "imageUrl": "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2026%2F0415%2Fr1643997_1296x729_16%2D9.jpg",
+            "publishedAt": "2026-04-18T22:00:46.000Z",
             "sentiment": {
               "posP": 0,
-              "neuP": 97,
-              "negP": 3,
-              "label": "negative",
-              "confidence": 0.128
-            },
-            "category": "world"
-          },
-          {
-            "title": "Tamil Nadu election 2026: Unresolved issues galore in Kangayam constituency",
-            "link": "https://www.thehindu.com/elections/tamil-nadu-assembly/unresolved-issues-galore-in-kangayam-constituency/article70789203.ece",
-            "source": "The Hindu",
-            "sourceDomain": "thehindu.com",
-            "sourceCredibility": "High",
-            "industry": "Communication",
-            "description": "Known widely for its rice mills and coconut oil units, the constituency that also accounts for a substantial extent of powerloom units has quite a few unresolved issues, according to sections of the electorate.",
-            "image": "https://th-i.thgim.com/public/incoming/7e1qxp/article70819086.ece/alternates/LANDSCAPE_1200/copra%20arrival%202.jpg",
-            "imageUrl": "https://th-i.thgim.com/public/incoming/7e1qxp/article70819086.ece/alternates/LANDSCAPE_1200/copra%20arrival%202.jpg",
-            "publishedAt": "2026-04-18T19:57:10.000Z",
-            "sentiment": {
-              "posP": 4,
-              "neuP": 96,
+              "neuP": 100,
               "negP": 0,
-              "label": "positive",
-              "confidence": 0.2023
+              "label": "neutral",
+              "confidence": 0
             },
             "category": "world"
           }
@@ -2987,6 +2967,74 @@
               "confidence": 0.34
             },
             "category": "world"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "The RAM shortage could last years",
+            "link": "https://www.theverge.com/ai-artificial-intelligence/914672/the-ram-shortage-could-last-years",
+            "source": "The Verge",
+            "sourceDomain": "theverge.com",
+            "sourceCredibility": "Medium",
+            "industry": "Technology",
+            "description": "According to Nikkei Asia, even as suppliers ramp up DRAM production, manufacturers are only expected to meet 60 percent of demand by the end of 2027. SK Group chairman has even said that shortages could last until 2030.\nThe world's largest memory makers - Samsung, SK Hynix, and Micron - are all working to add new fabrication capacity, but almost none of it will be online until at least 2027, if not 2028. SK opened a fab in Cheongju in February, but that is the only increase in production among the three for 2026.\nNikkei says that production would need to increase by 12 percent a year in 2026 and 2027 to meet demand. But according to Counte …\nRead the full story at The Verge.",
+            "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STKS523_RAM_SHORTAGE_B.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+            "imageUrl": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/12/STKS523_RAM_SHORTAGE_B.jpg?quality=90&#038;strip=all&#038;crop=0,0,100,100",
+            "publishedAt": "2026-04-18T21:08:45.000Z",
+            "sentiment": {
+              "posP": 7,
+              "neuP": 89,
+              "negP": 4,
+              "label": "positive",
+              "confidence": 0.7964
+            },
+            "category": "technology"
+          }
+        ]
+      },
+      {
+        "title": "",
+        "summary": "",
+        "count": 0,
+        "sentiment": {
+          "posP": 0,
+          "neuP": 0,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "articles": [
+          {
+            "title": "3D-printed brain sensors may unlock personalized neural monitoring",
+            "link": "https://medicalxpress.com/news/2026-04-3d-brain-sensors-personalized-neural.html",
+            "source": "Medical Xpress",
+            "sourceDomain": "medicalxpress.com",
+            "sourceCredibility": "Medium",
+            "industry": "Healthcare",
+            "description": "Soft electrodes designed to perfectly match a person's brain surface may help advance neural interfaces for neurodegenerative disease monitoring and treatment, according to a new study led by Penn State researchers. Neural interfaces are powered by tiny sensors capable of tracking biophysical signals, known as bioelectrodes. These sensors are usually made from stiff materials in a one-size-fits-all design that struggles to match the brain's complex structure. The researchers have created a novel approach to 3D printing bioelectrodes that can stretch and morph to fit the minor differences that make every brain unique.",
+            "image": "/img/thumb-placeholder.svg",
+            "imageUrl": "/img/thumb-placeholder.svg",
+            "publishedAt": "2026-04-18T21:00:01.000Z",
+            "sentiment": {
+              "posP": 15,
+              "neuP": 83,
+              "negP": 2,
+              "label": "positive",
+              "confidence": 0.9153
+            },
+            "category": "health"
           }
         ]
       },
@@ -3071,24 +3119,24 @@
         },
         "articles": [
           {
-            "title": "Osteopenia: Loss of bone mineral density affects millions of people. Here's what you need to know",
-            "link": "https://medicalxpress.com/news/2026-04-osteopenia-loss-bone-mineral-density.html",
-            "source": "Medical Xpress",
-            "sourceDomain": "medicalxpress.com",
-            "sourceCredibility": "Medium",
-            "industry": "Healthcare",
-            "description": "Around 40% of adults worldwide are affected by osteopenia: a loss of bone mineral density. This condition is extremely common, particularly in postmenopausal women and elderly adults. It's estimated that more than 500,000 fractures occur annually in the UK due to low bone density.",
-            "image": "/img/thumb-placeholder.svg",
-            "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-04-18T20:30:01.000Z",
+            "title": "Biomining at Vedimara in North Paravur in final stage",
+            "link": "https://www.thehindu.com/news/national/kerala/biomining-at-vedimara-in-north-paravur-in-final-stage/article70878695.ece",
+            "source": "The Hindu",
+            "sourceDomain": "thehindu.com",
+            "sourceCredibility": "High",
+            "industry": "Communication",
+            "description": "",
+            "image": "https://www.thehindu.com/theme/images/og-image.png",
+            "imageUrl": "https://www.thehindu.com/theme/images/og-image.png",
+            "publishedAt": "2026-04-18T20:51:44.000Z",
             "sentiment": {
               "posP": 0,
-              "neuP": 87,
-              "negP": 13,
-              "label": "negative",
-              "confidence": 0.743
+              "neuP": 100,
+              "negP": 0,
+              "label": "neutral",
+              "confidence": 0
             },
-            "category": "health"
+            "category": "world"
           }
         ]
       },
@@ -3105,90 +3153,22 @@
         },
         "articles": [
           {
-            "title": "Creedence Clearwater Revival founder John Fogerty says he'd 'probably be dead' without his wife Julie",
-            "link": "https://www.foxnews.com/entertainment/creedence-clearwater-revival-founder-john-fogerty-says-probably-dead-without-wife-julie",
-            "source": "Fox News",
-            "sourceDomain": "foxnews.com",
-            "sourceCredibility": "Medium",
+            "title": "A mass shooting in Ukraine's capital leaves 6 dead before police shot and killed the gunman",
+            "link": "https://www.npr.org/2026/04/18/nx-s1-5789903/mass-shooting-kyiv-ukraine",
+            "source": "NPR",
+            "sourceDomain": "npr.org",
+            "sourceCredibility": "High",
             "industry": "Media",
-            "description": "John Fogerty credits his wife Julie for saving his life after alcohol abuse during his legal fight over Creedence Clearwater Revival song rights.",
-            "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/john-fogerty-julie-fogerty.jpeg",
-            "imageUrl": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/john-fogerty-julie-fogerty.jpeg",
-            "publishedAt": "2026-04-18T20:26:54.000Z",
-            "sentiment": {
-              "posP": 8,
-              "neuP": 69,
-              "negP": 23,
-              "label": "negative",
-              "confidence": 0.8442
-            },
-            "category": "entertainment"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "NHL star reveals he had a brutal bacterial lung infection during season: 'I thought I was dying'",
-            "link": "https://www.foxnews.com/sports/nhl-star-reveals-brutal-bacterial-lung-infection-season-thought-dying",
-            "source": "Fox News",
-            "sourceDomain": "foxnews.com",
-            "sourceCredibility": "Medium",
-            "industry": "Media",
-            "description": "New York Rangers star Vincent Trocheck revealed he had a bacterial lung infection that caused his 14-game absence, saying he had surgery and that he was hospitalized for about a week.",
-            "image": "/img/thumb-placeholder.svg",
-            "imageUrl": "/img/thumb-placeholder.svg",
-            "publishedAt": "2026-04-18T20:26:47.000Z",
+            "description": "A gunman has killed six people and injured at least 14 in a mass shooting in Ukraine's capital before he was shot and killed by police.",
+            "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F70%2F7c%2Fca9644364a9188359b4eb08cad70%2Fap26108610147479.jpg",
+            "imageUrl": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F70%2F7c%2Fca9644364a9188359b4eb08cad70%2Fap26108610147479.jpg",
+            "publishedAt": "2026-04-18T20:43:45.000Z",
             "sentiment": {
               "posP": 0,
-              "neuP": 91,
-              "negP": 9,
+              "neuP": 62,
+              "negP": 38,
               "label": "negative",
-              "confidence": 0.6249
-            },
-            "category": "sports"
-          }
-        ]
-      },
-      {
-        "title": "",
-        "summary": "",
-        "count": 0,
-        "sentiment": {
-          "posP": 0,
-          "neuP": 0,
-          "negP": 0,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "articles": [
-          {
-            "title": "Life jacket worn by Titanic passenger who survived auctioned for $900,000",
-            "link": "https://www.cbsnews.com/news/titanic-life-jacket-passenger-auctioned-900000/",
-            "source": "CBS News",
-            "sourceDomain": "cbsnews.com",
-            "sourceCredibility": "Medium",
-            "industry": "Media",
-            "description": "The item is believed to be one of only a handful of Titanic life jackets still in existence, the auction house said.",
-            "image": "https://assets3.cbsnewsstatic.com/hub/i/r/2016/04/14/30f782f1-545b-4f30-8ffc-377192a8f533/thumbnail/1200x630g2/20eb9f38cf45cace64b1f7507a34545d/gettyimages-96518519.jpg",
-            "imageUrl": "https://assets3.cbsnewsstatic.com/hub/i/r/2016/04/14/30f782f1-545b-4f30-8ffc-377192a8f533/thumbnail/1200x630g2/20eb9f38cf45cace64b1f7507a34545d/gettyimages-96518519.jpg",
-            "publishedAt": "2026-04-18T20:25:25.000Z",
-            "sentiment": {
-              "posP": 9,
-              "neuP": 85,
-              "negP": 6,
-              "label": "positive",
-              "confidence": 0.2732
+              "confidence": 0.9702
             },
             "category": "world"
           }
@@ -3611,83 +3591,83 @@
     ],
     "sentiment": {
       "overall": {
-        "pos": 8.09,
-        "neu": 81.14,
-        "neg": 10.77,
+        "pos": 7.73,
+        "neu": 81.58,
+        "neg": 10.68,
         "count": 120
       },
       "india": {
-        "pos": 6.77,
-        "neu": 79.18,
-        "neg": 14.05,
+        "pos": 6.86,
+        "neu": 80,
+        "neg": 13.14,
         "count": 22
       },
       "world": {
-        "pos": 8.39,
-        "neu": 81.58,
-        "neg": 10.03,
+        "pos": 7.93,
+        "neu": 81.94,
+        "neg": 10.13,
         "count": 98
       }
     },
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-04-18T16:49:11.970Z",
+          "label": "2026-04-18T17:20:34.913Z",
           "pos": 5,
-          "neu": 87,
-          "neg": 8,
-          "count": 5
-        },
-        {
-          "label": "2026-04-18T17:49:11.970Z",
-          "pos": 7,
-          "neu": 71,
+          "neu": 74,
           "neg": 22,
-          "count": 8
+          "count": 6
         },
         {
-          "label": "2026-04-18T18:49:11.970Z",
-          "pos": 0,
-          "neu": 89,
-          "neg": 11,
-          "count": 1
+          "label": "2026-04-18T18:20:34.913Z",
+          "pos": 9,
+          "neu": 72,
+          "neg": 19,
+          "count": 4
         },
         {
-          "label": "2026-04-18T19:49:11.970Z",
+          "label": "2026-04-18T19:20:34.913Z",
           "pos": 0,
-          "neu": 79,
-          "neg": 21,
+          "neu": 84,
+          "neg": 16,
+          "count": 2
+        },
+        {
+          "label": "2026-04-18T20:20:34.913Z",
+          "pos": 0,
+          "neu": 100,
+          "neg": 0,
           "count": 1
         }
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-04-18T16:49:11.971Z",
+          "label": "2026-04-18T17:20:34.914Z",
           "pos": 9,
-          "neu": 80,
-          "neg": 11,
-          "count": 9
-        },
-        {
-          "label": "2026-04-18T17:49:11.971Z",
-          "pos": 12,
-          "neu": 78,
+          "neu": 81,
           "neg": 10,
-          "count": 25
+          "count": 21
         },
         {
-          "label": "2026-04-18T18:49:11.971Z",
-          "pos": 7,
-          "neu": 82,
+          "label": "2026-04-18T18:20:34.914Z",
+          "pos": 12,
+          "neu": 77,
           "neg": 11,
+          "count": 22
+        },
+        {
+          "label": "2026-04-18T19:20:34.914Z",
+          "pos": 4,
+          "neu": 88,
+          "neg": 8,
           "count": 16
         },
         {
-          "label": "2026-04-18T19:49:11.971Z",
-          "pos": 4,
-          "neu": 87,
-          "neg": 9,
-          "count": 20
+          "label": "2026-04-18T20:20:34.914Z",
+          "pos": 6,
+          "neu": 84,
+          "neg": 11,
+          "count": 14
         }
       ]
     },
@@ -3721,23 +3701,23 @@
           },
           {
             "name": "Communication",
-            "bias": -6.51,
-            "count": 51
+            "bias": -6.02,
+            "count": 52
           },
           {
             "name": "Finance",
-            "bias": -2.75,
+            "bias": -1.75,
+            "count": 12
+          },
+          {
+            "name": "Healthcare",
+            "bias": 1.17,
             "count": 12
           },
           {
             "name": "Technology",
-            "bias": 1.71,
-            "count": 48
-          },
-          {
-            "name": "Healthcare",
-            "bias": -0.89,
-            "count": 9
+            "bias": -0.4,
+            "count": 43
           }
         ],
         "pos": [
@@ -3755,18 +3735,18 @@
         "neu": [
           {
             "name": "Communication",
-            "bias": -6.51,
-            "count": 51
+            "bias": -6.02,
+            "count": 52
           },
           {
             "name": "Finance",
-            "bias": -2.75,
+            "bias": -1.75,
             "count": 12
           },
           {
-            "name": "Technology",
-            "bias": 1.71,
-            "count": 48
+            "name": "Healthcare",
+            "bias": 1.17,
+            "count": 12
           }
         ],
         "neg": [
@@ -3798,29 +3778,29 @@
         {
           "source": "ESPN",
           "pos": 5.67,
-          "neu": 86.83,
-          "neg": 7.5,
+          "neu": 88.83,
+          "neg": 5.5,
           "count": 6
         },
         {
-          "source": "Fox News",
-          "pos": 3,
-          "neu": 85.33,
-          "neg": 11.67,
-          "count": 6
-        },
-        {
-          "source": "CBS News",
-          "pos": 4,
-          "neu": 88.5,
-          "neg": 7.5,
+          "source": "Medical Xpress",
+          "pos": 9.67,
+          "neu": 78.33,
+          "neg": 12,
           "count": 6
         },
         {
           "source": "The Hindu",
-          "pos": 2.33,
-          "neu": 92.17,
-          "neg": 5.5,
+          "pos": 2,
+          "neu": 90.33,
+          "neg": 7.67,
+          "count": 6
+        },
+        {
+          "source": "Fox News",
+          "pos": 5.17,
+          "neu": 86.67,
+          "neg": 8.17,
           "count": 6
         },
         {
@@ -3828,6 +3808,13 @@
           "pos": 3.83,
           "neu": 80.5,
           "neg": 15.67,
+          "count": 6
+        },
+        {
+          "source": "CBS News",
+          "pos": 4,
+          "neu": 88.5,
+          "neg": 7.5,
           "count": 6
         },
         {
@@ -3853,9 +3840,9 @@
         },
         {
           "source": "India Today",
-          "pos": 10.67,
-          "neu": 70,
-          "neg": 19.33,
+          "pos": 11,
+          "neu": 73,
+          "neg": 16,
           "count": 6
         },
         {
@@ -3864,19 +3851,32 @@
           "neu": 80.83,
           "neg": 9,
           "count": 6
-        },
-        {
-          "source": "Bloomberg",
-          "pos": 9.6,
-          "neu": 72.2,
-          "neg": 18.2,
-          "count": 5
         }
       ]
     }
   },
   "usa": {
     "topStories": [
+      {
+        "title": "Secretary Doug Burgum expects Teddy Roosevelt’s induction into Pro Football Hall of Fame: report",
+        "link": "https://www.foxnews.com/sports/sec-doug-burgum-expects-teddy-roosevelts-induction-pro-football-hall-fame-report",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "Medium",
+        "industry": "Media",
+        "description": "Doug Burgum reportedly thinks Teddy Roosevelt will be inducted into the Pro Football Hall of Fame next year at the NFL Draft on the National Mall.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T20:40:51.000Z",
+        "sentiment": {
+          "posP": 13,
+          "neuP": 87,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7003
+        },
+        "category": "sports"
+      },
       {
         "title": "Creedence Clearwater Revival founder John Fogerty says he'd 'probably be dead' without his wife Julie",
         "link": "https://www.foxnews.com/entertainment/creedence-clearwater-revival-founder-john-fogerty-says-probably-dead-without-wife-julie",
@@ -4076,26 +4076,6 @@
           "confidence": 0.4588
         },
         "category": "sports"
-      },
-      {
-        "title": "Nancy Mace calls on Congress to release sexual harassment records, wants an 'avalanche of resignations'",
-        "link": "https://www.foxnews.com/media/nancy-mace-calls-congress-release-sexual-harassment-records-wants-avalanche-resignations",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "Medium",
-        "industry": "Media",
-        "description": "Rep. Nancy Mace calls for an avalanche of resignations in Congress, pushing a resolution to release ethics committee records on sexual harassment claims.",
-        "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/eric-swalwell-nancy-mace-politics-fox-news.jpeg",
-        "imageUrl": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/eric-swalwell-nancy-mace-politics-fox-news.jpeg",
-        "publishedAt": "2026-04-18T19:45:43.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 79,
-          "negP": 21,
-          "label": "negative",
-          "confidence": 0.8481
-        },
-        "category": "world"
       },
       {
         "title": "Iran reimposes Strait of Hormuz restrictions, citing U.S. blockade",
@@ -4120,6 +4100,26 @@
     ],
     "dailyNews": [
       {
+        "title": "Secretary Doug Burgum expects Teddy Roosevelt’s induction into Pro Football Hall of Fame: report",
+        "link": "https://www.foxnews.com/sports/sec-doug-burgum-expects-teddy-roosevelts-induction-pro-football-hall-fame-report",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "Medium",
+        "industry": "Media",
+        "description": "Doug Burgum reportedly thinks Teddy Roosevelt will be inducted into the Pro Football Hall of Fame next year at the NFL Draft on the National Mall.",
+        "image": "/img/thumb-placeholder.svg",
+        "imageUrl": "/img/thumb-placeholder.svg",
+        "publishedAt": "2026-04-18T20:40:51.000Z",
+        "sentiment": {
+          "posP": 13,
+          "neuP": 87,
+          "negP": 0,
+          "label": "positive",
+          "confidence": 0.7003
+        },
+        "category": "sports"
+      },
+      {
         "title": "Creedence Clearwater Revival founder John Fogerty says he'd 'probably be dead' without his wife Julie",
         "link": "https://www.foxnews.com/entertainment/creedence-clearwater-revival-founder-john-fogerty-says-probably-dead-without-wife-julie",
         "source": "Fox News",
@@ -4318,26 +4318,6 @@
           "confidence": 0.4588
         },
         "category": "sports"
-      },
-      {
-        "title": "Nancy Mace calls on Congress to release sexual harassment records, wants an 'avalanche of resignations'",
-        "link": "https://www.foxnews.com/media/nancy-mace-calls-congress-release-sexual-harassment-records-wants-avalanche-resignations",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "Medium",
-        "industry": "Media",
-        "description": "Rep. Nancy Mace calls for an avalanche of resignations in Congress, pushing a resolution to release ethics committee records on sexual harassment claims.",
-        "image": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/eric-swalwell-nancy-mace-politics-fox-news.jpeg",
-        "imageUrl": "https://static.foxnews.com/foxnews.com/content/uploads/2026/04/eric-swalwell-nancy-mace-politics-fox-news.jpeg",
-        "publishedAt": "2026-04-18T19:45:43.000Z",
-        "sentiment": {
-          "posP": 0,
-          "neuP": 79,
-          "negP": 21,
-          "label": "negative",
-          "confidence": 0.8481
-        },
-        "category": "world"
       },
       {
         "title": "Iran reimposes Strait of Hormuz restrictions, citing U.S. blockade",
@@ -4601,24 +4581,24 @@
       }
     ],
     "sentiment": {
-      "pos": 7.19,
-      "neu": 83.62,
-      "neg": 9.19,
+      "pos": 7.32,
+      "neu": 83.58,
+      "neg": 9.1,
       "count": 176
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.1,
-        "neu": 86.31,
-        "neg": 7.58,
+        "pos": 6.33,
+        "neu": 86.83,
+        "neg": 6.84,
         "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 5.02,
-        "neu": 85.88,
-        "neg": 9.11,
+        "pos": 4.79,
+        "neu": 85.82,
+        "neg": 9.4,
         "count": 20
       },
       {
@@ -4630,8 +4610,8 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.79,
-        "neu": 84.48,
+        "pos": 12.47,
+        "neu": 82.8,
         "neg": 4.73,
         "count": 20
       },
@@ -4644,9 +4624,9 @@
       },
       {
         "source": "NYT",
-        "pos": 3.48,
-        "neu": 88.03,
-        "neg": 8.49,
+        "pos": 3.62,
+        "neu": 86.25,
+        "neg": 10.13,
         "count": 17
       },
       {
@@ -4665,10 +4645,10 @@
       },
       {
         "source": "Bloomberg",
-        "pos": 10.5,
-        "neu": 72.75,
-        "neg": 16.75,
-        "count": 4
+        "pos": 8,
+        "neu": 76,
+        "neg": 16,
+        "count": 3
       },
       {
         "source": "NDTV",
@@ -4716,18 +4696,18 @@
         },
         {
           "name": "Healthcare",
-          "bias": 4.32,
-          "count": 16
+          "bias": 4.07,
+          "count": 17
         },
         {
           "name": "Technology",
-          "bias": -1.67,
-          "count": 133
+          "bias": -1.65,
+          "count": 134
         },
         {
           "name": "Energy",
-          "bias": -0.74,
-          "count": 11
+          "bias": -1.26,
+          "count": 10
         },
         {
           "name": "Communication",
@@ -4736,8 +4716,8 @@
         },
         {
           "name": "Finance",
-          "bias": -0.21,
-          "count": 16
+          "bias": -0.15,
+          "count": 15
         }
       ],
       "pos": [
@@ -4748,20 +4728,20 @@
         },
         {
           "name": "Healthcare",
-          "bias": 4.32,
-          "count": 16
+          "bias": 4.07,
+          "count": 17
         }
       ],
       "neu": [
         {
           "name": "Technology",
-          "bias": -1.67,
-          "count": 133
+          "bias": -1.65,
+          "count": 134
         },
         {
           "name": "Energy",
-          "bias": -0.74,
-          "count": 11
+          "bias": -1.26,
+          "count": 10
         },
         {
           "name": "Communication",
@@ -4790,32 +4770,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-04-18T16:49:11.973Z",
+          "label": "2026-04-18T17:20:34.915Z",
           "pos": 5,
           "neu": 81,
           "neg": 14,
-          "count": 14
-        },
-        {
-          "label": "2026-04-18T17:49:11.973Z",
-          "pos": 6,
-          "neu": 84,
-          "neg": 9,
-          "count": 22
-        },
-        {
-          "label": "2026-04-18T18:49:11.973Z",
-          "pos": 5,
-          "neu": 86,
-          "neg": 9,
           "count": 15
         },
         {
-          "label": "2026-04-18T19:49:11.973Z",
+          "label": "2026-04-18T18:20:34.915Z",
           "pos": 6,
-          "neu": 87,
-          "neg": 8,
+          "neu": 84,
+          "neg": 10,
+          "count": 23
+        },
+        {
+          "label": "2026-04-18T19:20:34.915Z",
+          "pos": 4,
+          "neu": 89,
+          "neg": 7,
           "count": 14
+        },
+        {
+          "label": "2026-04-18T20:20:34.915Z",
+          "pos": 6,
+          "neu": 84,
+          "neg": 10,
+          "count": 11
         }
       ]
     }
@@ -5405,6 +5385,46 @@
         "category": "science"
       },
       {
+        "title": "How Trump is pushing psychedelics reform through the health agencies",
+        "link": "https://www.statnews.com/2026/04/18/psychedelics-ptsd-mental-health-research-boost-from-trump-executive-order/?utm_campaign=rss",
+        "source": "STAT",
+        "sourceDomain": "statnews.com",
+        "sourceCredibility": "High",
+        "industry": "Healthcare",
+        "description": "Trump directed the federal government to rush access to psychedelic treatments and reevaluate their status as controlled substances.",
+        "image": "https://www.statnews.com/wp-content/uploads/2024/03/Iboga_Drug-1024x576.jpeg",
+        "imageUrl": "https://www.statnews.com/wp-content/uploads/2024/03/Iboga_Drug-1024x576.jpeg",
+        "publishedAt": "2026-04-18T15:00:14.000Z",
+        "sentiment": {
+          "posP": 0,
+          "neuP": 100,
+          "negP": 0,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "science"
+      },
+      {
+        "title": "After war of words on Iran, Pope Leo says he's not interested in a debate with Trump",
+        "link": "https://www.nbcnews.com/world/pope-leo-xiv/war-words-iran-pope-leo-says-not-interested-debate-trump-rcna340780",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "Media",
+        "description": "Pope Leo XIV said he has no interest in debating President Donald Trump, pushing back at reporting about the escalating war of words between the two men",
+        "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-pope-leo-ch-1045-6ccf93.jpg",
+        "imageUrl": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2026-04/260418-pope-leo-ch-1045-6ccf93.jpg",
+        "publishedAt": "2026-04-18T14:57:04.000Z",
+        "sentiment": {
+          "posP": 6,
+          "neuP": 71,
+          "negP": 23,
+          "label": "negative",
+          "confidence": 0.8503
+        },
+        "category": "world"
+      },
+      {
         "title": "Anthropic’s relationship with the Trump administration seems to be thawing",
         "link": "https://techcrunch.com/2026/04/18/anthropics-relationship-with-the-trump-administration-seems-to-be-thawing/",
         "source": "TechCrunch",
@@ -5423,26 +5443,6 @@
           "confidence": 0.2732
         },
         "category": "technology"
-      },
-      {
-        "title": "Hormuz Chaos, Lebanon Clashes Dent Trump Peace Deal Hopes",
-        "link": "https://www.bloomberg.com/news/articles/2026-04-18/chaos-erupts-in-hormuz-after-trump-claimed-iran-deal-is-imminent-mo48sbi2",
-        "source": "Bloomberg",
-        "sourceDomain": "bloomberg.com",
-        "sourceCredibility": "High",
-        "industry": "Finance",
-        "description": "Iran on Saturday reimposed restrictions on vessel traffic through the Strait of Hormuz and Israel attacked targets in Lebanon, undermining expectations of an imminent peace deal touted by US President Donald Trump.",
-        "image": "/img/thumb-placeholder.svg",
-        "imageUrl": "/img/thumb-placeholder.svg",
-        "publishedAt": "2026-04-18T11:15:56.000Z",
-        "sentiment": {
-          "posP": 18,
-          "neuP": 63,
-          "negP": 19,
-          "label": "positive",
-          "confidence": 0.1027
-        },
-        "category": "world"
       },
       {
         "title": "Pope Leo says remarks about world being 'ravaged by a ​handful of tyrants' were not aimed at Trump: report",
@@ -5494,33 +5494,13 @@
         "description": "Pope Leo responded directly on Monday to a presidential attack. But since then, he said, some of his statements during his Africa trip have been misconstrued.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-04-18T15:10:00.000Z",
+        "publishedAt": "2026-04-18T21:07:27.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 18.8,
           "neuP": 81.2,
           "label": "negative",
           "confidence": 0.8
-        },
-        "category": "usa"
-      },
-      {
-        "title": "New PEPFAR Data Show Worrying Declines in Testing and Treatment for H.I.V.",
-        "link": "https://www.nytimes.com/2026/04/17/health/hiv-testing-treatment-data-pepfar.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The numbers are the first to quantify the effect of the Trump administration’s shutdown and restarting of a program that has saved millions of lives worldwide.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-04-17T22:09:02.000Z",
-        "sentiment": {
-          "posP": 7,
-          "negP": 6,
-          "neuP": 87,
-          "label": "neutral",
-          "confidence": 0.1
         },
         "category": "usa"
       },
@@ -5546,10 +5526,10 @@
       }
     ],
     "sentiment": {
-      "pos": 8.14,
-      "neu": 84.16,
-      "neg": 7.71,
-      "count": 45
+      "pos": 7.89,
+      "neu": 84.8,
+      "neg": 7.31,
+      "count": 44
     },
     "sourceLeaderboard": [
       {
@@ -5561,17 +5541,10 @@
       },
       {
         "source": "NBC News",
-        "pos": 6.2,
-        "neu": 87.39,
-        "neg": 6.41,
+        "pos": 7.06,
+        "neu": 86.59,
+        "neg": 6.36,
         "count": 7
-      },
-      {
-        "source": "NYT",
-        "pos": 4.15,
-        "neu": 84.33,
-        "neg": 11.53,
-        "count": 4
       },
       {
         "source": "WSJ",
@@ -5579,6 +5552,13 @@
         "neu": 85.3,
         "neg": 9.88,
         "count": 4
+      },
+      {
+        "source": "NYT",
+        "pos": 3.2,
+        "neu": 83.43,
+        "neg": 13.37,
+        "count": 3
       },
       {
         "source": "ABC News",
@@ -5607,29 +5587,22 @@
         "neu": 79.5,
         "neg": 10,
         "count": 2
-      },
-      {
-        "source": "Bloomberg",
-        "pos": 9,
-        "neu": 73.5,
-        "neg": 17.5,
-        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 10.61,
-        "neu": 81.75,
-        "neg": 7.64,
+        "pos": 10.07,
+        "neu": 83.17,
+        "neg": 6.76,
         "count": 22
       },
       {
         "topic": "Policy",
-        "pos": 5.54,
-        "neu": 88.49,
-        "neg": 5.97,
-        "count": 12
+        "pos": 5.41,
+        "neu": 88.63,
+        "neg": 5.96,
+        "count": 11
       },
       {
         "topic": "Public Statements",
@@ -5663,83 +5636,83 @@
   },
   "sentiment": {
     "overall": {
-      "pos": 8.09,
-      "neu": 81.14,
-      "neg": 10.77,
+      "pos": 7.73,
+      "neu": 81.58,
+      "neg": 10.68,
       "count": 120
     },
     "india": {
-      "pos": 6.77,
-      "neu": 79.18,
-      "neg": 14.05,
+      "pos": 6.86,
+      "neu": 80,
+      "neg": 13.14,
       "count": 22
     },
     "world": {
-      "pos": 8.39,
-      "neu": 81.58,
-      "neg": 10.03,
+      "pos": 7.93,
+      "neu": 81.94,
+      "neg": 10.13,
       "count": 98
     }
   },
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-04-18T16:49:11.976Z",
+        "label": "2026-04-18T17:20:34.920Z",
         "pos": 5,
-        "neu": 87,
-        "neg": 8,
-        "count": 5
-      },
-      {
-        "label": "2026-04-18T17:49:11.976Z",
-        "pos": 7,
-        "neu": 71,
+        "neu": 74,
         "neg": 22,
-        "count": 8
+        "count": 6
       },
       {
-        "label": "2026-04-18T18:49:11.976Z",
-        "pos": 0,
-        "neu": 89,
-        "neg": 11,
-        "count": 1
+        "label": "2026-04-18T18:20:34.920Z",
+        "pos": 9,
+        "neu": 72,
+        "neg": 19,
+        "count": 4
       },
       {
-        "label": "2026-04-18T19:49:11.976Z",
+        "label": "2026-04-18T19:20:34.920Z",
         "pos": 0,
-        "neu": 79,
-        "neg": 21,
+        "neu": 84,
+        "neg": 16,
+        "count": 2
+      },
+      {
+        "label": "2026-04-18T20:20:34.920Z",
+        "pos": 0,
+        "neu": 100,
+        "neg": 0,
         "count": 1
       }
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-04-18T16:49:11.976Z",
+        "label": "2026-04-18T17:20:34.920Z",
         "pos": 9,
-        "neu": 80,
-        "neg": 11,
-        "count": 9
-      },
-      {
-        "label": "2026-04-18T17:49:11.976Z",
-        "pos": 12,
-        "neu": 78,
+        "neu": 81,
         "neg": 10,
-        "count": 25
+        "count": 21
       },
       {
-        "label": "2026-04-18T18:49:11.976Z",
-        "pos": 7,
-        "neu": 82,
+        "label": "2026-04-18T18:20:34.920Z",
+        "pos": 12,
+        "neu": 77,
         "neg": 11,
+        "count": 22
+      },
+      {
+        "label": "2026-04-18T19:20:34.920Z",
+        "pos": 4,
+        "neu": 88,
+        "neg": 8,
         "count": 16
       },
       {
-        "label": "2026-04-18T19:49:11.976Z",
-        "pos": 4,
-        "neu": 87,
-        "neg": 9,
-        "count": 20
+        "label": "2026-04-18T20:20:34.920Z",
+        "pos": 6,
+        "neu": 84,
+        "neg": 11,
+        "count": 14
       }
     ]
   },
@@ -5772,23 +5745,23 @@
       },
       {
         "name": "Communication",
-        "bias": -6.51,
-        "count": 51
+        "bias": -6.02,
+        "count": 52
       },
       {
         "name": "Finance",
-        "bias": -2.75,
+        "bias": -1.75,
+        "count": 12
+      },
+      {
+        "name": "Healthcare",
+        "bias": 1.17,
         "count": 12
       },
       {
         "name": "Technology",
-        "bias": 1.71,
-        "count": 48
-      },
-      {
-        "name": "Healthcare",
-        "bias": -0.89,
-        "count": 9
+        "bias": -0.4,
+        "count": 43
       }
     ],
     "pos": [
@@ -5806,18 +5779,18 @@
     "neu": [
       {
         "name": "Communication",
-        "bias": -6.51,
-        "count": 51
+        "bias": -6.02,
+        "count": 52
       },
       {
         "name": "Finance",
-        "bias": -2.75,
+        "bias": -1.75,
         "count": 12
       },
       {
-        "name": "Technology",
-        "bias": 1.71,
-        "count": 48
+        "name": "Healthcare",
+        "bias": 1.17,
+        "count": 12
       }
     ],
     "neg": [
@@ -5856,7 +5829,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 176,
-      "potusArticles": 45,
+      "potusArticles": 44,
       "sourceRows": 12,
       "industryRows": 9,
       "trendingPoints": 12
