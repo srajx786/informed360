@@ -823,6 +823,77 @@ const LOGO_DOMAIN_MAP = {
   "Guardian":"theguardian.com",
   "PIB":"pib.gov.in"
 };
+const CANONICAL_SOURCE_BY_DOMAIN = {
+  "thehindu.com": "The Hindu",
+  "indianexpress.com": "The Indian Express",
+  "hindustantimes.com": "Hindustan Times",
+  "indiatoday.in": "India Today",
+  "ndtv.com": "NDTV",
+  "livemint.com": "Mint",
+  "business-standard.com": "Business Standard",
+  "economictimes.indiatimes.com": "The Economic Times",
+  "moneycontrol.com": "Moneycontrol",
+  "cnbctv18.com": "CNBC-TV18",
+  "news18.com": "News18",
+  "deccanherald.com": "Deccan Herald",
+  "scroll.in": "Scroll",
+  "timesofindia.indiatimes.com": "Times of India",
+  "theprint.in": "ThePrint",
+  "financialexpress.com": "Financial Express",
+  "firstpost.com": "Firstpost",
+  "aninews.in": "ANI News",
+  "wionews.com": "WION",
+  "reuters.com": "Reuters",
+  "apnews.com": "AP",
+  "bbc.com": "BBC",
+  "bbc.co.uk": "BBC Sport",
+  "aljazeera.com": "Al Jazeera",
+  "cnn.com": "CNN",
+  "foxnews.com": "Fox News",
+  "nbcnews.com": "NBC News",
+  "cbsnews.com": "CBS News",
+  "abcnews.go.com": "ABC News",
+  "cnbc.com": "CNBC",
+  "washingtonpost.com": "Washington Post",
+  "wsj.com": "WSJ",
+  "nytimes.com": "NYT",
+  "bloomberg.com": "Bloomberg",
+  "theguardian.com": "The Guardian",
+  "politico.com": "Politico",
+  "axios.com": "Axios",
+  "npr.org": "NPR",
+  "usatoday.com": "USA Today",
+  "latimes.com": "Los Angeles Times",
+  "techcrunch.com": "TechCrunch",
+  "theverge.com": "The Verge",
+  "arstechnica.com": "Ars Technica",
+  "wired.com": "Wired",
+  "engadget.com": "Engadget",
+  "technologyreview.com": "MIT Technology Review",
+  "sciencedaily.com": "ScienceDaily",
+  "newscientist.com": "New Scientist",
+  "medicalxpress.com": "Medical Xpress",
+  "espncricinfo.com": "ESPN Cricinfo",
+  "espn.com": "ESPN",
+  "skysports.com": "Sky Sports",
+  "goal.com": "Goal",
+  "statnews.com": "STAT"
+};
+const normalizeSourceKey = (value = "") =>
+  String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+const SOURCE_NAME_TO_DOMAIN = (() => {
+  const map = new Map();
+  Object.entries(CANONICAL_SOURCE_BY_DOMAIN).forEach(([domain, name]) => {
+    map.set(normalizeSourceKey(name), domain);
+  });
+  Object.entries(LOGO_DOMAIN_MAP).forEach(([name, domain]) => {
+    map.set(normalizeSourceKey(name), domain);
+  });
+  return map;
+})();
 
 const LOCAL_LOGOS = {
   "indiatoday.in":"/logo/indiatoday.png",
@@ -849,17 +920,35 @@ const LOCAL_LOGOS = {
 };
 
 const clearbit = (d) => d ? `https://logo.clearbit.com/${d}` : "";
+const inferDomainFromSourceText = (value = "") => {
+  const clean = String(value || "").trim();
+  if (!clean) return "";
+  const decoded = decodeURIComponent(clean);
+  const siteMatch = decoded.match(/site:([a-z0-9.-]+\.[a-z]{2,})/i);
+  if (siteMatch?.[1]) return siteMatch[1].toLowerCase().replace(/^www\./, "");
+  const hostMatch = decoded.match(/(?:https?:\/\/)?(?:www\.)?([a-z0-9.-]+\.[a-z]{2,})/i);
+  if (hostMatch?.[1]) return hostMatch[1].toLowerCase().replace(/^www\./, "");
+  return "";
+};
 const getSourceLogoUrl = (sourceDomain = "", sourceName = "") => {
-  const mapDom = LOGO_DOMAIN_MAP[String(sourceName || "").trim()] || "";
-  const d = sourceDomain || mapDom || domainFromUrl(sourceName) || "";
+  const cleanDomain = String(sourceDomain || "").trim().toLowerCase().replace(/^www\./, "");
+  const nameKey = normalizeSourceKey(normalizeSourceName(sourceName) || sourceName);
+  const mapDom = LOGO_DOMAIN_MAP[String(sourceName || "").trim()]
+    || SOURCE_NAME_TO_DOMAIN.get(nameKey)
+    || "";
+  const inferredDomain = inferDomainFromSourceText(sourceName);
+  const d = cleanDomain && cleanDomain !== "news.google.com"
+    ? cleanDomain
+    : (mapDom || inferredDomain || domainFromUrl(sourceName) || "");
   if (LOCAL_LOGOS[d]) return LOCAL_LOGOS[d];
+  if (d && CANONICAL_SOURCE_BY_DOMAIN[d]) return `/logo/sources/${d}.svg`;
   return clearbit(d);
 };
 const logoFor = (link = "", source = "") =>
   getSourceLogoUrl(domainFromUrl(link), source);
 
 const PLACEHOLDER = "/img/placeholder-news.svg";
-const THUMB_PLACEHOLDER = "/img/thumb-placeholder.svg";
+const THUMB_PLACEHOLDER = "/icon-512.png";
 const LOGO_PLACEHOLDER =
   "data:image/svg+xml;base64," +
   btoa(
@@ -2981,14 +3070,36 @@ function renderPinned(){
 
 function collectActiveSources(articles = []){
   const names = new Set();
-  articles.forEach(article => {
-    const source = String(article?.source || "").trim();
-    if (source){
-      names.add(source);
-      return;
+  const normalizeDomain = (value = "") => String(value || "").trim().toLowerCase().replace(/^www\./, "");
+  const inferDomainFromSourceLabel = (label = "") => {
+    const clean = String(label || "").trim();
+    if (!clean) return "";
+    const decoded = decodeURIComponent(clean);
+    const siteMatch = decoded.match(/site:([a-z0-9.-]+\.[a-z]{2,})/i);
+    if (siteMatch?.[1]) return normalizeDomain(siteMatch[1]);
+    const hostMatch = decoded.match(/(?:https?:\/\/)?(?:www\.)?([a-z0-9.-]+\.[a-z]{2,})/i);
+    if (hostMatch?.[1]) return normalizeDomain(hostMatch[1]);
+    return "";
+  };
+  const canonicalSourceName = (article = {}) => {
+    const rawSource = String(article?.source || "").trim();
+    const sourceDomain = normalizeDomain(article?.sourceDomain || "");
+    const linkDomain = normalizeDomain(domainFromUrl(article?.link || article?.url || ""));
+    const normalized = normalizeSourceName(rawSource);
+    const noisyGoogleLabel = /google\s*news/i.test(rawSource) || /^site:/i.test(rawSource);
+    const sourceLabelDomain = inferDomainFromSourceLabel(rawSource);
+    const domainCandidate = [sourceDomain, linkDomain, sourceLabelDomain]
+      .map(normalizeDomain)
+      .find((domain) => domain && domain !== "news.google.com" && domain !== "google.com");
+    if (domainCandidate && CANONICAL_SOURCE_BY_DOMAIN[domainCandidate]) {
+      return CANONICAL_SOURCE_BY_DOMAIN[domainCandidate];
     }
-    const domain = domainFromUrl(article?.link || article?.url || "");
-    if (domain) names.add(domain);
+    if (!noisyGoogleLabel && isStrongSourceLabel(normalized)) return normalized;
+    return "";
+  };
+  articles.forEach(article => {
+    const source = canonicalSourceName(article);
+    if (source) names.add(source);
   });
   return [...names].sort((a, b) => a.localeCompare(b));
 }
@@ -3478,7 +3589,16 @@ function attachTrendTooltips(){
 }
 
 function getSourceInitials(source = ""){
-  return source.split(/\s+/).slice(0,2).map(word => word[0] || "").join("").toUpperCase();
+  const cleaned = String(source || "")
+    .replace(/site:/ig, " ")
+    .replace(/google\s*news/ig, " ")
+    .replace(/[^a-z0-9.\s-]/ig, " ")
+    .trim();
+  const words = cleaned.split(/\s+/).filter(Boolean);
+  const initials = words.slice(0, 2).map((word) => word[0] || "").join("").toUpperCase();
+  if (initials.length >= 2) return initials;
+  const compact = cleaned.replace(/[^a-z0-9]/ig, "").toUpperCase();
+  return compact.slice(0, 2) || "NW";
 }
 function renderTopicSourceLogos(matches = []){
   const sourceMap = new Map();
@@ -4001,6 +4121,14 @@ function getLeaderboardArticles(){
 }
 
 function computeLeaderboard(){
+  const MAX_VISIBLE_LOGOS = 15;
+  const PER_BUCKET_LIMIT = Math.max(1, Math.floor(MAX_VISIBLE_LOGOS / 3));
+  const rankScore = (row) => {
+    const count = Number(row.count || 0);
+    const confidence = Number(row.confidence || 0);
+    const freshness = row.publishedAt ? Math.max(0, 1 - ((Date.now() - new Date(row.publishedAt).getTime()) / (6 * 60 * 60 * 1000))) : 0;
+    return count + (confidence * 2) + freshness;
+  };
   const splitRows = safeArray(state.splitSnapshots?.sourceSentiment?.rows);
   if (splitRows.length){
     const arr = splitRows.map((row) => {
@@ -4018,9 +4146,10 @@ function computeLeaderboard(){
       };
     }).filter((row) => row.source && isStrongSourceLabel(row.source));
     return {
-      pos: arr.filter(x => x.bias > 3).sort((a,b) => b.bias - a.bias).slice(0,2),
-      neu: arr.slice().sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias)).slice(0,2),
-      neg: arr.filter(x => x.bias < -3).sort((a,b) => a.bias - b.bias).slice(0,2)
+      pos: arr.filter(x => x.bias > 3).sort((a,b) => rankScore(b) - rankScore(a) || b.bias - a.bias).slice(0, PER_BUCKET_LIMIT),
+      neu: arr.slice().sort((a,b) => rankScore(b) - rankScore(a) || Math.abs(a.bias) - Math.abs(b.bias)).slice(0, PER_BUCKET_LIMIT),
+      neg: arr.filter(x => x.bias < -3).sort((a,b) => rankScore(b) - rankScore(a) || a.bias - b.bias).slice(0, PER_BUCKET_LIMIT),
+      activeSourceCount: arr.length
     };
   }
   const bySource = new Map();
@@ -4075,14 +4204,14 @@ function computeLeaderboard(){
   }
 
   const pos = arr.filter(x => x.bias > 3)
-    .sort((a,b) => b.bias - a.bias).slice(0,2);
+    .sort((a,b) => rankScore(b) - rankScore(a) || b.bias - a.bias).slice(0,PER_BUCKET_LIMIT);
   const neg = arr.filter(x => x.bias < -3)
-    .sort((a,b) => a.bias - b.bias).slice(0,2);
+    .sort((a,b) => rankScore(b) - rankScore(a) || a.bias - b.bias).slice(0,PER_BUCKET_LIMIT);
   const neu = arr.slice()
-    .sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias))
-    .slice(0,2);
+    .sort((a,b) => rankScore(b) - rankScore(a) || Math.abs(a.bias) - Math.abs(b.bias))
+    .slice(0,PER_BUCKET_LIMIT);
 
-  return { pos, neu, neg };
+  return { pos, neu, neg, activeSourceCount: arr.length };
 }
 
 function loadImage(src){
