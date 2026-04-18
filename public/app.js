@@ -4001,6 +4001,14 @@ function getLeaderboardArticles(){
 }
 
 function computeLeaderboard(){
+  const MAX_VISIBLE_LOGOS = 15;
+  const PER_BUCKET_LIMIT = Math.max(1, Math.floor(MAX_VISIBLE_LOGOS / 3));
+  const rankScore = (row) => {
+    const count = Number(row.count || 0);
+    const confidence = Number(row.confidence || 0);
+    const freshness = row.publishedAt ? Math.max(0, 1 - ((Date.now() - new Date(row.publishedAt).getTime()) / (6 * 60 * 60 * 1000))) : 0;
+    return count + (confidence * 2) + freshness;
+  };
   const splitRows = safeArray(state.splitSnapshots?.sourceSentiment?.rows);
   if (splitRows.length){
     const arr = splitRows.map((row) => {
@@ -4018,9 +4026,10 @@ function computeLeaderboard(){
       };
     }).filter((row) => row.source && isStrongSourceLabel(row.source));
     return {
-      pos: arr.filter(x => x.bias > 3).sort((a,b) => b.bias - a.bias).slice(0,2),
-      neu: arr.slice().sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias)).slice(0,2),
-      neg: arr.filter(x => x.bias < -3).sort((a,b) => a.bias - b.bias).slice(0,2)
+      pos: arr.filter(x => x.bias > 3).sort((a,b) => rankScore(b) - rankScore(a) || b.bias - a.bias).slice(0, PER_BUCKET_LIMIT),
+      neu: arr.slice().sort((a,b) => rankScore(b) - rankScore(a) || Math.abs(a.bias) - Math.abs(b.bias)).slice(0, PER_BUCKET_LIMIT),
+      neg: arr.filter(x => x.bias < -3).sort((a,b) => rankScore(b) - rankScore(a) || a.bias - b.bias).slice(0, PER_BUCKET_LIMIT),
+      activeSourceCount: arr.length
     };
   }
   const bySource = new Map();
@@ -4075,14 +4084,14 @@ function computeLeaderboard(){
   }
 
   const pos = arr.filter(x => x.bias > 3)
-    .sort((a,b) => b.bias - a.bias).slice(0,2);
+    .sort((a,b) => rankScore(b) - rankScore(a) || b.bias - a.bias).slice(0,PER_BUCKET_LIMIT);
   const neg = arr.filter(x => x.bias < -3)
-    .sort((a,b) => a.bias - b.bias).slice(0,2);
+    .sort((a,b) => rankScore(b) - rankScore(a) || a.bias - b.bias).slice(0,PER_BUCKET_LIMIT);
   const neu = arr.slice()
-    .sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias))
-    .slice(0,2);
+    .sort((a,b) => rankScore(b) - rankScore(a) || Math.abs(a.bias) - Math.abs(b.bias))
+    .slice(0,PER_BUCKET_LIMIT);
 
-  return { pos, neu, neg };
+  return { pos, neu, neg, activeSourceCount: arr.length };
 }
 
 function loadImage(src){
@@ -4104,7 +4113,16 @@ async function renderLeaderboard(){
   const empty = grid.querySelector(".board-empty");
   [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
 
-  const { pos, neu, neg } = computeLeaderboard();
+  const { pos, neu, neg, activeSourceCount = 0 } = computeLeaderboard();
+  const activeSourcesEl = $("#activeSources");
+  if (activeSourcesEl){
+    if (activeSourceCount > 0){
+      activeSourcesEl.hidden = false;
+      activeSourcesEl.textContent = `Based on ${activeSourceCount} active sources`;
+    } else {
+      activeSourcesEl.hidden = true;
+    }
+  }
   const TIERS = [0.35, 0.75];
 
   async function place(col, list){
