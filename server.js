@@ -52,6 +52,7 @@ const SENTIMENT_STATIC_FILES = {
   industries: path.join(PUBLIC_DATA_DIR, "industry_sentiment.json"),
   topics: path.join(PUBLIC_DATA_DIR, "topic_sentiment.json")
 };
+const SOURCE_HEALTH_PATH = path.join(PUBLIC_DATA_DIR, "source-health.json");
 const CACHE_FILES = {
   news: path.join(CACHE_DIR, "news.json"),
   stories: path.join(CACHE_DIR, "stories.json")
@@ -156,7 +157,7 @@ const SOURCE_REGISTRY = JSON.parse(
 const REFRESH_MS = Math.max(2, FEEDS.refreshMinutes || 10) * 60 * 1000;
 
 const parser = new Parser({
-  timeout: 15000,
+  timeout: 9500,
   requestOptions: {
     headers: {
       "User-Agent":
@@ -180,6 +181,57 @@ const SOURCE_NAME_MAP = new Map(
     domain
   ])
 );
+const feedDomainFromUrl = (feedUrl = "") => {
+  try {
+    const parsed = new URL(feedUrl);
+    const host = parsed.hostname.replace(/^www\./, "");
+    if (!host.includes("feedburner.com")) return host;
+    const lower = String(feedUrl || "").toLowerCase();
+    if (lower.includes("ndtv")) return "ndtv.com";
+    return host;
+  } catch {
+    return "";
+  }
+};
+const SOURCE_FETCH_CONCURRENCY = 6;
+const SOURCE_FETCH_TIMEOUT_MS = 9500;
+const SOURCE_FETCH_RETRIES = 1;
+const SOURCE_ROLLOUT_PHASE = Math.min(4, Math.max(1, Number(process.env.SOURCE_ROLLOUT_PHASE || 1)));
+const MAX_ARTICLES_PER_SOURCE = 6;
+const MIN_ARTICLES_FOR_STRONG_SNAPSHOT = 24;
+const SOURCE_ENTRIES = Object.entries(SOURCE_REGISTRY.sources || {}).map(([domain, info]) => ({
+  domain,
+  ...(info || {})
+}));
+const ACTIVE_SOURCE_ENTRIES = SOURCE_ENTRIES.filter((entry) => {
+  if (entry.enabled === false) return false;
+  const phase = Number(entry.phase || 4);
+  return phase <= SOURCE_ROLLOUT_PHASE;
+});
+const SOURCE_FEED_CATALOG = ACTIVE_SOURCE_ENTRIES.flatMap((entry) =>
+  (entry.rssFeeds || []).map((url) => ({
+    url,
+    domain: entry.domain,
+    sourceName: entry.name || entry.domain,
+    fetchMode: entry.fetchMode || "rss"
+  }))
+);
+const LEGACY_CORE_FEEDS = (FEEDS.feeds || []).map((url) => ({
+  url,
+  domain: feedDomainFromUrl(url),
+  sourceName: feedDomainFromUrl(url),
+  fetchMode: "rss"
+}));
+const CORE_FEEDS = [...SOURCE_FEED_CATALOG];
+LEGACY_CORE_FEEDS.forEach((entry) => {
+  if (!CORE_FEEDS.some((existing) => existing.url === entry.url)) CORE_FEEDS.push(entry);
+});
+const EXP_FEEDS = (FEEDS.experimental || []).map((url) => ({
+  url,
+  domain: feedDomainFromUrl(url),
+  sourceName: feedDomainFromUrl(url),
+  fetchMode: "safe_fallback"
+}));
 
 const TRANSFORMER_ENABLED = process.env.TRANSFORMER_ENABLED === "1";
 const TRANSFORMER_MODEL =
@@ -446,6 +498,7 @@ const TOP_STORY_RELATED_CACHE = new Map();
 const RELATED_COVERAGE_CACHE = new Map();
 const COVERAGE_CACHE = new Map();
 const FEED_HEALTH = new Map();
+const SOURCE_HEALTH = new Map();
 
 let transformerPipeline = null;
 const domainFromUrl = (u = "") => {
@@ -463,6 +516,60 @@ const publisherDomainFromFeed = (u = "") => {
   if (lower.includes("ndtv")) return "ndtv.com";
   return host;
 };
+const normalizeTitleForDedupe = (value = "") =>
+  String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+const titleTokens = (value = "") =>
+  new Set(
+    normalizeTitleForDedupe(value)
+      .split(" ")
+      .filter((token) => token.length >= 3)
+  );
+const similarityScore = (a = "", b = "") => {
+  const left = titleTokens(a);
+  const right = titleTokens(b);
+  if (!left.size || !right.size) return 0;
+  let intersection = 0;
+  left.forEach((token) => {
+    if (right.has(token)) intersection += 1;
+  });
+  const union = new Set([...left, ...right]).size;
+  return union ? intersection / union : 0;
+};
+class Semaphore {
+  constructor(max = 6) {
+    this.max = Math.max(1, max);
+    this.active = 0;
+    this.queue = [];
+  }
+  async use(task) {
+    await this.acquire();
+    try {
+      return await task();
+    } finally {
+      this.release();
+    }
+  }
+  acquire() {
+    if (this.active < this.max) {
+      this.active += 1;
+      return Promise.resolve();
+    }
+    return new Promise((resolve) => this.queue.push(resolve));
+  }
+  release() {
+    this.active = Math.max(0, this.active - 1);
+    const next = this.queue.shift();
+    if (next) {
+      this.active += 1;
+      next();
+    }
+  }
+}
+const sourceSemaphore = new Semaphore(SOURCE_FETCH_CONCURRENCY);
 const cleanUrl = (u = "", base = "") => {
   if (!u) return "";
   const normalized = u
@@ -620,6 +727,8 @@ const LOCAL_LOGOS = {
 
 const logoForDomain = (domain = "") => {
   if (!domain) return "";
+  const fromRegistry = SOURCE_MAP.get(domain)?.logoPath || "";
+  if (fromRegistry) return fromRegistry;
   if (LOCAL_LOGOS[domain]) return LOCAL_LOGOS[domain];
   return `https://logo.clearbit.com/${domain}`;
 };
@@ -1038,7 +1147,12 @@ const release = (host) =>
   hostCounters.set(host, Math.max(0, (hostCounters.get(host) || 1) - 1));
 
 async function parseURL(u) {
-  return parser.parseURL(u);
+  return Promise.race([
+    parser.parseURL(u),
+    new Promise((_, reject) =>
+      setTimeout(() => reject(new Error(`timeout:${SOURCE_FETCH_TIMEOUT_MS}`)), SOURCE_FETCH_TIMEOUT_MS)
+    )
+  ]);
 }
 const gNewsForDomain = (domain) =>
   `https://news.google.com/rss/search?q=site:${encodeURIComponent(
@@ -1054,61 +1168,89 @@ async function fetchDirect(url) {
     release(host);
   }
 }
-async function fetchWithFallback(url) {
-  const domain = publisherDomainFromFeed(url);
-  try {
+async function fetchWithFallback({ url, domain: providedDomain = "", fetchMode = "rss", sourceName = "" } = {}) {
+  const domain = providedDomain || publisherDomainFromFeed(url);
+  let attempts = 0;
+  let lastError = null;
+  if (!url) return { title: domain || sourceName || "unknown", items: [] };
+  while (attempts <= SOURCE_FETCH_RETRIES) {
+    attempts += 1;
     if (shouldSkipFeed(url)) {
-      return { title: domain, items: [] };
+      console.warn("[FEED SKIP - circuit-breaker]", domain || url);
+      return { title: domain || sourceName || "unknown", items: [] };
     }
-    const feed = await fetchDirect(url);
-    recordFeedHealth(url, true);
-    if (feed?.items?.length) return feed;
-    const g = await parseURL(gNewsForDomain(domain));
-    g.title = g.title || domain;
-    return g;
-  } catch (e) {
     try {
-      const g = await parseURL(gNewsForDomain(domain));
-      g.title = g.title || domain;
+      const feed = await sourceSemaphore.use(() => fetchDirect(url));
       recordFeedHealth(url, true);
-      console.warn("[FEED Fallback]", domain, "-> Google News RSS");
-      return g;
-    } catch (e2) {
-      const msg = e?.statusCode
-        ? `Status ${e.statusCode}`
-        : e?.code || e?.message || "Unknown";
-      console.warn("[FEED ERR]", domain, "->", msg);
+      recordSourceHealth(domain, { ok: true, error: "", count: feed?.items?.length || 0 });
+      console.info("[FEED OK]", domain || sourceName || "unknown", `items=${feed?.items?.length || 0}`);
+      if (feed?.items?.length) return feed;
+      if (fetchMode !== "safe_fallback") return { title: domain || sourceName || "unknown", items: [] };
+      const fallbackFeed = await sourceSemaphore.use(() => parseURL(gNewsForDomain(domain)));
+      fallbackFeed.title = fallbackFeed.title || domain || sourceName;
+      return fallbackFeed;
+    } catch (e) {
+      lastError = e;
+      const msg = e?.statusCode ? `Status ${e.statusCode}` : e?.code || e?.message || "Unknown";
       recordFeedHealth(url, false, msg);
-      return { title: domain, items: [] };
+      recordSourceHealth(domain, { ok: false, error: msg, count: 0 });
+      if (attempts > SOURCE_FETCH_RETRIES) break;
     }
   }
+  try {
+    if (fetchMode === "safe_fallback" && domain) {
+      const g = await sourceSemaphore.use(() => parseURL(gNewsForDomain(domain)));
+      g.title = g.title || domain;
+      return g;
+    }
+  } catch {
+    // noop, fallback below
+  }
+  const msg = lastError?.statusCode
+    ? `Status ${lastError.statusCode}`
+    : lastError?.code || lastError?.message || "Unknown";
+  console.warn("[FEED ERR]", domain || sourceName || url, "->", msg);
+  return { title: domain || sourceName || "unknown", items: [] };
 }
 
-async function fetchList(urls) {
+async function fetchList(feedEntries = []) {
   const articles = [];
-  const seen = new Set();
+  const seenByUrl = new Set();
+  const seenByTitle = new Set();
+  const sourceCounts = new Map();
 
-  await Promise.all(
-    urls.map(async (url) => {
-      const domain = publisherDomainFromFeed(url);
-      const feed = await fetchWithFallback(url);
+  await Promise.all(feedEntries.map(async (entry) => {
+      const { url, domain: configuredDomain = "" } = entry || {};
+      const domain = configuredDomain || publisherDomainFromFeed(url);
+      const feed = await fetchWithFallback(entry);
       const items = (feed.items || []).slice(0, 30);
 
       for (const item of items) {
         const rawLink = item.link || item.guid || "";
         const link = cleanUrl(rawLink, rawLink);
-        if (!link || seen.has(link)) continue;
+        if (!link) continue;
+        const normalizedLink = canonicalizeUrl(link);
+        if (seenByUrl.has(normalizedLink)) continue;
 
         const cached = getCachedArticle(link);
         if (cached) {
-          seen.add(link);
+          if ((sourceCounts.get(cached.sourceDomain || domain) || 0) >= MAX_ARTICLES_PER_SOURCE) continue;
+          seenByUrl.add(normalizedLink);
+          const normalizedTitle = normalizeTitleForDedupe(cached.title || "");
+          if (normalizedTitle) seenByTitle.add(normalizedTitle);
           articles.push(cached);
+          sourceCounts.set(cached.sourceDomain || domain, (sourceCounts.get(cached.sourceDomain || domain) || 0) + 1);
           continue;
         }
 
         const title = item.title || "";
-        const sourceRaw = item.source?.title || feed.title || domain;
+        const sourceRaw = item.source?.title || feed.title || domain || entry?.sourceName || "";
         const sourceInfo = lookupSourceInfo({ source: sourceRaw, link });
+        if (!sourceInfo?.name || !String(sourceInfo.name).trim()) continue;
+        const normalizedTitle = normalizeTitleForDedupe(title);
+        if (!title || !normalizedTitle || seenByTitle.has(normalizedTitle)) continue;
+        const domainKey = sourceInfo.domain || domain || "unknown";
+        if ((sourceCounts.get(domainKey) || 0) >= MAX_ARTICLES_PER_SOURCE) continue;
         const description = item.contentSnippet || item.summary || "";
         const publishedAt =
           item.isoDate || item.pubDate || new Date().toISOString();
@@ -1134,6 +1276,7 @@ async function fetchList(urls) {
           image,
           imageUrl: image,
           publishedAt,
+          language: sourceInfo.language || "en",
           sentiment: {
             ...sentiment,
             sentimentLabel: explanation.sentiment_label,
@@ -1147,17 +1290,32 @@ async function fetchList(urls) {
           category
         };
 
-        seen.add(link);
+        seenByUrl.add(normalizedLink);
+        seenByTitle.add(normalizedTitle);
         articles.push(article);
+        sourceCounts.set(domainKey, (sourceCounts.get(domainKey) || 0) + 1);
         setCachedArticle(link, article, explanation);
       }
-    })
-  );
+    }));
 
-  articles.sort(
+  const clustered = [];
+  for (const article of articles) {
+    const similarIndex = clustered.findIndex((existing) =>
+      similarityScore(existing.title || "", article.title || "") >= 0.88
+    );
+    if (similarIndex === -1) {
+      clustered.push(article);
+      continue;
+    }
+    const existing = clustered[similarIndex];
+    const existingAt = new Date(existing.publishedAt || 0).getTime();
+    const nextAt = new Date(article.publishedAt || 0).getTime();
+    if (nextAt > existingAt) clustered[similarIndex] = article;
+  }
+  clustered.sort(
     (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
   );
-  return { fetchedAt: Date.now(), articles };
+  return { fetchedAt: Date.now(), articles: clustered };
 }
 
 let CORE = { fetchedAt: 0, articles: [] };
@@ -1175,7 +1333,7 @@ const uniqueMerge = (a, b) => {
 };
 
 async function refreshCore() {
-  const next = await fetchList(FEEDS.feeds || []);
+  const next = await fetchList(CORE_FEEDS);
   if (next?.articles?.length || !CORE?.articles?.length) {
     CORE = next;
   }
@@ -1197,9 +1355,10 @@ async function refreshCore() {
     console.log("refresh success: /api/stories");
     void refreshSentimentCache();
   }
+  await writeSourceHealthSnapshot();
 }
 async function refreshExp() {
-  const next = await fetchList(FEEDS.experimental || []);
+  const next = await fetchList(EXP_FEEDS);
   if (next?.articles?.length || !EXP?.articles?.length) {
     EXP = next;
   }
@@ -1217,22 +1376,97 @@ async function refreshExp() {
     storeCacheEntry("stories", cacheKeyForStories({ includeExp: true }), storiesPayload);
     void refreshSentimentCache();
   }
+  await writeSourceHealthSnapshot();
 }
 async function validateFeeds() {
-  const urls = [...(FEEDS.feeds || []), ...(FEEDS.experimental || [])];
+  const urls = [...CORE_FEEDS, ...EXP_FEEDS];
   await Promise.all(
-    urls.map(async (url) => {
+    urls.map(async (entry) => {
+      const url = entry?.url || "";
       if (shouldSkipFeed(url)) return;
       try {
         const feed = await fetchDirect(url);
         recordFeedHealth(url, Boolean(feed?.items?.length));
+        recordSourceHealth(entry?.domain || publisherDomainFromFeed(url), {
+          ok: Boolean(feed?.items?.length),
+          error: "",
+          count: feed?.items?.length || 0
+        });
       } catch (e) {
         const msg = e?.code || e?.message || "Unknown";
         recordFeedHealth(url, false, msg);
+        recordSourceHealth(entry?.domain || publisherDomainFromFeed(url), {
+          ok: false,
+          error: msg,
+          count: 0
+        });
       }
     })
   );
+  await writeSourceHealthSnapshot();
 }
+const recordSourceHealth = (domain, { ok = false, error = "", count = 0 } = {}) => {
+  if (!domain) return;
+  const prev = SOURCE_HEALTH.get(domain) || {
+    domain,
+    failures: 0,
+    lastFetchAt: 0,
+    lastOkAt: 0,
+    lastError: "",
+    recentCount: 0
+  };
+  prev.lastFetchAt = Date.now();
+  prev.recentCount = Number(count || 0);
+  if (ok) {
+    prev.lastOkAt = Date.now();
+    prev.failures = 0;
+    prev.lastError = "";
+  } else {
+    prev.failures += 1;
+    prev.lastError = error || "unknown";
+  }
+  SOURCE_HEALTH.set(domain, prev);
+};
+const buildSourceHealthPayload = () => {
+  const counts = countArticlesByDomain(CORE.articles || []);
+  const sources = ACTIVE_SOURCE_ENTRIES.map((entry) => {
+    const state = SOURCE_HEALTH.get(entry.domain) || {};
+    const healthy = Boolean(state.lastOkAt) && Date.now() - (state.lastOkAt || 0) < 2 * REFRESH_MS;
+    return {
+      name: entry.name || entry.domain,
+      domain: entry.domain,
+      enabled: entry.enabled !== false,
+      healthy,
+      articleCount: counts.get(entry.domain) || state.recentCount || 0,
+      lastFetchAt: state.lastFetchAt ? new Date(state.lastFetchAt).toISOString() : null,
+      failureReason: state.lastError || "",
+      failures: state.failures || 0
+    };
+  });
+  const enabled = sources.filter((source) => source.enabled);
+  const healthy = enabled.filter((source) => source.healthy);
+  const failed = enabled.filter((source) => !source.healthy).map((source) => ({
+    domain: source.domain,
+    reason: source.failureReason || "No recent successful fetch"
+  }));
+  return {
+    generatedAt: new Date().toISOString(),
+    enabledSources: enabled.length,
+    healthySources: healthy.length,
+    failedSources: failed,
+    sources
+  };
+};
+const writeSourceHealthSnapshot = async () => {
+  const payload = buildSourceHealthPayload();
+  try {
+    await fsPromises.mkdir(path.dirname(SOURCE_HEALTH_PATH), { recursive: true });
+    await fsPromises.writeFile(SOURCE_HEALTH_PATH, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+  } catch (error) {
+    console.warn("[source-health] write-failed", error?.message || "unknown");
+  }
+  return payload;
+};
 
 const countArticlesByDomain = (articles = []) => {
   const counts = new Map();
@@ -3270,12 +3504,17 @@ app.get("/api/sources", (_req, res) => {
   res.json({
     refreshMinutes: FEEDS.refreshMinutes || 10,
     feeds: {
-      core: (FEEDS.feeds || []).map((url) => buildFeedStatus(url, counts)),
-      experimental: (FEEDS.experimental || []).map((url) =>
-        buildFeedStatus(url, counts)
+      core: CORE_FEEDS.map((entry) => buildFeedStatus(entry.url, counts)),
+      experimental: EXP_FEEDS.map((entry) =>
+        buildFeedStatus(entry.url, counts)
       )
     }
   });
+});
+
+app.get("/api/source-health", async (_req, res) => {
+  const payload = await writeSourceHealthSnapshot();
+  res.json(payload);
 });
 
 app.get("/api/health", (_req, res) => {
