@@ -823,6 +823,89 @@ const LOGO_DOMAIN_MAP = {
   "Guardian":"theguardian.com",
   "PIB":"pib.gov.in"
 };
+const CANONICAL_SOURCE_BY_DOMAIN = {
+  "thehindu.com": "The Hindu",
+  "indianexpress.com": "The Indian Express",
+  "hindustantimes.com": "Hindustan Times",
+  "indiatoday.in": "India Today",
+  "ndtv.com": "NDTV",
+  "livemint.com": "Mint",
+  "business-standard.com": "Business Standard",
+  "economictimes.indiatimes.com": "The Economic Times",
+  "moneycontrol.com": "Moneycontrol",
+  "cnbctv18.com": "CNBC-TV18",
+  "news18.com": "News18",
+  "deccanherald.com": "Deccan Herald",
+  "scroll.in": "Scroll",
+  "timesofindia.indiatimes.com": "Times of India",
+  "theprint.in": "ThePrint",
+  "financialexpress.com": "Financial Express",
+  "firstpost.com": "Firstpost",
+  "aninews.in": "ANI News",
+  "wionews.com": "WION",
+  "reuters.com": "Reuters",
+  "apnews.com": "AP",
+  "bbc.com": "BBC",
+  "bbc.co.uk": "BBC Sport",
+  "aljazeera.com": "Al Jazeera",
+  "cnn.com": "CNN",
+  "foxnews.com": "Fox News",
+  "nbcnews.com": "NBC News",
+  "cbsnews.com": "CBS News",
+  "abcnews.go.com": "ABC News",
+  "cnbc.com": "CNBC",
+  "washingtonpost.com": "Washington Post",
+  "wsj.com": "WSJ",
+  "nytimes.com": "NYT",
+  "bloomberg.com": "Bloomberg",
+  "theguardian.com": "The Guardian",
+  "politico.com": "Politico",
+  "axios.com": "Axios",
+  "npr.org": "NPR",
+  "usatoday.com": "USA Today",
+  "latimes.com": "Los Angeles Times",
+  "techcrunch.com": "TechCrunch",
+  "theverge.com": "The Verge",
+  "arstechnica.com": "Ars Technica",
+  "wired.com": "Wired",
+  "engadget.com": "Engadget",
+  "technologyreview.com": "MIT Technology Review",
+  "sciencedaily.com": "ScienceDaily",
+  "newscientist.com": "New Scientist",
+  "medicalxpress.com": "Medical Xpress",
+  "espncricinfo.com": "ESPN Cricinfo",
+  "espn.com": "ESPN",
+  "skysports.com": "Sky Sports",
+  "goal.com": "Goal",
+  "statnews.com": "STAT"
+};
+const normalizeSourceKey = (value = "") =>
+  String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+const SOURCE_NAME_TO_DOMAIN = (() => {
+  const map = new Map();
+  Object.entries(CANONICAL_SOURCE_BY_DOMAIN).forEach(([domain, name]) => {
+    map.set(normalizeSourceKey(name), domain);
+  });
+  Object.entries(LOGO_DOMAIN_MAP).forEach(([name, domain]) => {
+    map.set(normalizeSourceKey(name), domain);
+  });
+  return map;
+})();
+const SOURCE_ALIAS_TO_DOMAIN = {
+  ani: "aninews.in",
+  wion: "wionews.com",
+  news18: "news18.com",
+  toi: "timesofindia.indiatimes.com",
+  et: "economictimes.indiatimes.com",
+  nyt: "nytimes.com",
+  wsj: "wsj.com",
+  ap: "apnews.com",
+  bbc: "bbc.com",
+  ndtv: "ndtv.com"
+};
 
 const LOCAL_LOGOS = {
   "indiatoday.in":"/logo/indiatoday.png",
@@ -848,18 +931,45 @@ const LOCAL_LOGOS = {
   "pib.gov.in":"/logo/pib.png"
 };
 
-const clearbit = (d) => d ? `https://logo.clearbit.com/${d}` : "";
-const getSourceLogoUrl = (sourceDomain = "", sourceName = "") => {
-  const mapDom = LOGO_DOMAIN_MAP[String(sourceName || "").trim()] || "";
-  const d = sourceDomain || mapDom || domainFromUrl(sourceName) || "";
+const inferDomainFromSourceText = (value = "") => {
+  const clean = String(value || "").trim();
+  if (!clean) return "";
+  const decoded = decodeURIComponent(clean);
+  const siteMatch = decoded.match(/site:([a-z0-9.-]+\.[a-z]{2,})/i);
+  if (siteMatch?.[1]) return siteMatch[1].toLowerCase().replace(/^www\./, "");
+  const hostMatch = decoded.match(/(?:https?:\/\/)?(?:www\.)?([a-z0-9.-]+\.[a-z]{2,})/i);
+  if (hostMatch?.[1]) return hostMatch[1].toLowerCase().replace(/^www\./, "");
+  return "";
+};
+const resolveDomainFromSourceName = (sourceName = "") => {
+  const normalizedSource = normalizeSourceName(sourceName) || sourceName;
+  const key = normalizeSourceKey(normalizedSource);
+  if (!key) return "";
+  const direct = SOURCE_NAME_TO_DOMAIN.get(key);
+  if (direct) return direct;
+  const compact = key.replace(/\s+/g, "");
+  if (SOURCE_ALIAS_TO_DOMAIN[compact]) return SOURCE_ALIAS_TO_DOMAIN[compact];
+  return "";
+};
+const getSourceLogoUrl = (sourceDomain = "", sourceName = "", { allowRemote = false } = {}) => {
+  const cleanDomain = String(sourceDomain || "").trim().toLowerCase().replace(/^www\./, "");
+  const mapDom = LOGO_DOMAIN_MAP[String(sourceName || "").trim()]
+    || resolveDomainFromSourceName(sourceName)
+    || "";
+  const inferredDomain = inferDomainFromSourceText(sourceName);
+  const d = cleanDomain && cleanDomain !== "news.google.com"
+    ? cleanDomain
+    : (mapDom || inferredDomain || domainFromUrl(sourceName) || "");
   if (LOCAL_LOGOS[d]) return LOCAL_LOGOS[d];
-  return clearbit(d);
+  if (d && CANONICAL_SOURCE_BY_DOMAIN[d]) return `/logo/sources/${d}.svg`;
+  return "";
 };
 const logoFor = (link = "", source = "") =>
-  getSourceLogoUrl(domainFromUrl(link), source);
+  getSourceLogoUrl(domainFromUrl(link), source, { allowRemote: false });
 
 const PLACEHOLDER = "/img/placeholder-news.svg";
-const THUMB_PLACEHOLDER = "/img/thumb-placeholder.svg";
+const THUMB_PLACEHOLDER = "/icon-512.png";
+const LEGACY_THUMB_PLACEHOLDER = "thumb-placeholder.svg";
 const LOGO_PLACEHOLDER =
   "data:image/svg+xml;base64," +
   btoa(
@@ -902,6 +1012,8 @@ const isFallbackLogo = (url = "") => {
 const normalizeDailyThumbSrc = (value = "") => {
   const cleaned = String(value || "").trim();
   if (!cleaned) return "";
+  const decoded = decodeURIComponent(cleaned).toLowerCase();
+  if (decoded.includes(LEGACY_THUMB_PLACEHOLDER)) return THUMB_PLACEHOLDER;
   if (cleaned.startsWith("/")) return cleaned;
   if (/^https?:\/\//i.test(cleaned)) return cleaned;
   return "";
@@ -912,6 +1024,7 @@ const isLikelyImageUrl = (url = "") => {
   if (cleaned.length > 220) return false;
   if (/\s/.test(cleaned)) return false;
   const lower = cleaned.toLowerCase();
+  if (lower.includes(LEGACY_THUMB_PLACEHOLDER)) return false;
   if (IMAGE_REJECT_FRAGMENTS.some(fragment => lower.includes(fragment))) return false;
   let parsed;
   try{
@@ -1356,6 +1469,10 @@ function normalizeShareImage(value = ""){
   if (!value) return "";
   const trimmed = String(value || "").trim();
   if (!trimmed) return "";
+  const decoded = decodeURIComponent(trimmed).toLowerCase();
+  if (decoded.includes(LEGACY_THUMB_PLACEHOLDER)){
+    return new URL(THUMB_PLACEHOLDER, window.location.origin).href;
+  }
   if (/^https?:\/\//i.test(trimmed)) return trimmed;
   if (trimmed.startsWith("/")){
     return new URL(trimmed, window.location.origin).href;
@@ -2981,14 +3098,36 @@ function renderPinned(){
 
 function collectActiveSources(articles = []){
   const names = new Set();
-  articles.forEach(article => {
-    const source = String(article?.source || "").trim();
-    if (source){
-      names.add(source);
-      return;
+  const normalizeDomain = (value = "") => String(value || "").trim().toLowerCase().replace(/^www\./, "");
+  const inferDomainFromSourceLabel = (label = "") => {
+    const clean = String(label || "").trim();
+    if (!clean) return "";
+    const decoded = decodeURIComponent(clean);
+    const siteMatch = decoded.match(/site:([a-z0-9.-]+\.[a-z]{2,})/i);
+    if (siteMatch?.[1]) return normalizeDomain(siteMatch[1]);
+    const hostMatch = decoded.match(/(?:https?:\/\/)?(?:www\.)?([a-z0-9.-]+\.[a-z]{2,})/i);
+    if (hostMatch?.[1]) return normalizeDomain(hostMatch[1]);
+    return "";
+  };
+  const canonicalSourceName = (article = {}) => {
+    const rawSource = String(article?.source || "").trim();
+    const sourceDomain = normalizeDomain(article?.sourceDomain || "");
+    const linkDomain = normalizeDomain(domainFromUrl(article?.link || article?.url || ""));
+    const normalized = normalizeSourceName(rawSource);
+    const noisyGoogleLabel = /google\s*news/i.test(rawSource) || /^site:/i.test(rawSource);
+    const sourceLabelDomain = inferDomainFromSourceLabel(rawSource);
+    const domainCandidate = [sourceDomain, linkDomain, sourceLabelDomain]
+      .map(normalizeDomain)
+      .find((domain) => domain && domain !== "news.google.com" && domain !== "google.com");
+    if (domainCandidate && CANONICAL_SOURCE_BY_DOMAIN[domainCandidate]) {
+      return CANONICAL_SOURCE_BY_DOMAIN[domainCandidate];
     }
-    const domain = domainFromUrl(article?.link || article?.url || "");
-    if (domain) names.add(domain);
+    if (!noisyGoogleLabel && isStrongSourceLabel(normalized)) return normalized;
+    return "";
+  };
+  articles.forEach(article => {
+    const source = canonicalSourceName(article);
+    if (source) names.add(source);
   });
   return [...names].sort((a, b) => a.localeCompare(b));
 }
@@ -3477,9 +3616,6 @@ function attachTrendTooltips(){
   });
 }
 
-function getSourceInitials(source = ""){
-  return source.split(/\s+/).slice(0,2).map(word => word[0] || "").join("").toUpperCase();
-}
 function renderTopicSourceLogos(matches = []){
   const sourceMap = new Map();
   matches.forEach(article => {
@@ -3490,7 +3626,7 @@ function renderTopicSourceLogos(matches = []){
   const max = 4;
   const extra = Math.max(0, entries.length - max);
   const items = entries.slice(0, max).map(([source, link]) => {
-    const logo = getSourceLogoUrl(domainFromUrl(link), source);
+    const logo = getSourceLogoUrl(domainFromUrl(link), source, { allowRemote: false });
     const placeholder = LOGO_PLACEHOLDER;
     const classNames = ["topic-logo", logo ? "" : "topic-logo-fallback"]
       .filter(Boolean)
@@ -3501,6 +3637,11 @@ function renderTopicSourceLogos(matches = []){
   }).join("");
   const extraBadge = extra ? `<span class="logo-count">+${extra}</span>` : "";
   return `<span class="topic-logos">${items}${extraBadge}</span>`;
+}
+
+// Compatibility shim for stale runtime callers still invoking removed hero autoplay hooks.
+function startHeroAuto(){
+  return;
 }
 function getTopicContext(topic, matches = []){
   const base = topic?.displayTitle || topic?.title || "";
@@ -4001,26 +4142,39 @@ function getLeaderboardArticles(){
 }
 
 function computeLeaderboard(){
+  const MAX_VISIBLE_LOGOS = 15;
+  const PER_BUCKET_LIMIT = Math.max(1, Math.floor(MAX_VISIBLE_LOGOS / 3));
+  const rankScore = (row) => {
+    const count = Number(row.count || 0);
+    const confidence = Number(row.confidence || 0);
+    const freshness = row.publishedAt ? Math.max(0, 1 - ((Date.now() - new Date(row.publishedAt).getTime()) / (6 * 60 * 60 * 1000))) : 0;
+    return count + (confidence * 2) + freshness;
+  };
   const splitRows = safeArray(state.splitSnapshots?.sourceSentiment?.rows);
   if (splitRows.length){
     const arr = splitRows.map((row) => {
-      const source = normalizeSourceName(row.source || "");
+      const rawSource = String(row.source || "").trim();
+      const source = normalizeSourceName(rawSource);
       const pos = Number(row.pos || 0);
       const neg = Number(row.neg || 0);
       return {
+        rawSource,
         source,
+        sourceDomain: String(row.sourceDomain || "").trim(),
+        articleDomain: domainFromUrl(row.link || ""),
         pos,
         neu: Number(row.neu || 0),
         neg,
         bias: pos - neg,
-        logo: logoFor("", source),
+        logo: getSourceLogoUrl("", source, { allowRemote: false }),
         count: Number(row.count || MIN_SOURCE_ARTICLES)
       };
     }).filter((row) => row.source && isStrongSourceLabel(row.source));
     return {
-      pos: arr.filter(x => x.bias > 3).sort((a,b) => b.bias - a.bias).slice(0,2),
-      neu: arr.slice().sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias)).slice(0,2),
-      neg: arr.filter(x => x.bias < -3).sort((a,b) => a.bias - b.bias).slice(0,2)
+      pos: arr.filter(x => x.bias > 3).sort((a,b) => rankScore(b) - rankScore(a) || b.bias - a.bias).slice(0, PER_BUCKET_LIMIT),
+      neu: arr.slice().sort((a,b) => rankScore(b) - rankScore(a) || Math.abs(a.bias) - Math.abs(b.bias)).slice(0, PER_BUCKET_LIMIT),
+      neg: arr.filter(x => x.bias < -3).sort((a,b) => rankScore(b) - rankScore(a) || a.bias - b.bias).slice(0, PER_BUCKET_LIMIT),
+      activeSourceCount: arr.length
     };
   }
   const bySource = new Map();
@@ -4045,8 +4199,14 @@ function computeLeaderboard(){
     const n = Math.max(1, v.n);
     const pos = v.pos/n, neg = v.neg/n, neu = v.neu/n;
     const bias = pos - neg;
-    const logo = logoFor(v.link, src);
-    return { source:src, pos, neg, neu, bias, logo, count: v.n };
+    const logo = getSourceLogoUrl(domainFromUrl(v.link || ""), src, { allowRemote: false });
+    return {
+      rawSource: src,
+      source: src,
+      sourceDomain: "",
+      articleDomain: domainFromUrl(v.link || ""),
+      pos, neg, neu, bias, logo, count: v.n
+    };
   }).filter(x => (x.pos + x.neg + x.neu) > 0.1 && x.count >= MIN_SOURCE_ARTICLES && isStrongSourceLabel(x.source));
 
   if (!arr.length){
@@ -4062,12 +4222,15 @@ function computeLeaderboard(){
         if (!source || !isStrongSourceLabel(source)) return;
         const bias = Number(row.pos || 0) - Number(row.neg || 0);
         arr.push({
+          rawSource: row.source || "",
           source,
+          sourceDomain: String(row.sourceDomain || "").trim(),
+          articleDomain: domainFromUrl(row.link || ""),
           pos: Number(row.pos || 0),
           neu: Number(row.neu || 0),
           neg: Number(row.neg || 0),
           bias,
-          logo: logoFor("", source),
+          logo: getSourceLogoUrl("", source, { allowRemote: false }),
           count: Number(row.count || MIN_SOURCE_ARTICLES)
         });
       });
@@ -4075,14 +4238,14 @@ function computeLeaderboard(){
   }
 
   const pos = arr.filter(x => x.bias > 3)
-    .sort((a,b) => b.bias - a.bias).slice(0,2);
+    .sort((a,b) => rankScore(b) - rankScore(a) || b.bias - a.bias).slice(0,PER_BUCKET_LIMIT);
   const neg = arr.filter(x => x.bias < -3)
-    .sort((a,b) => a.bias - b.bias).slice(0,2);
+    .sort((a,b) => rankScore(b) - rankScore(a) || a.bias - b.bias).slice(0,PER_BUCKET_LIMIT);
   const neu = arr.slice()
-    .sort((a,b) => Math.abs(a.bias) - Math.abs(b.bias))
-    .slice(0,2);
+    .sort((a,b) => rankScore(b) - rankScore(a) || Math.abs(a.bias) - Math.abs(b.bias))
+    .slice(0,PER_BUCKET_LIMIT);
 
-  return { pos, neu, neg };
+  return { pos, neu, neg, activeSourceCount: arr.length };
 }
 
 function loadImage(src){
@@ -4095,9 +4258,29 @@ function loadImage(src){
   });
 }
 
+let sourceLogoManifestMapPromise = null;
+async function getSourceLogoManifestMap(){
+  if (sourceLogoManifestMapPromise) return sourceLogoManifestMapPromise;
+  sourceLogoManifestMapPromise = fetch("/data/source-logo-manifest.json", { cache: "no-store" })
+    .then(r => (r.ok ? r.json() : null))
+    .then((json) => {
+      const sources = json?.sources && typeof json.sources === "object" ? json.sources : {};
+      const map = new Map();
+      Object.entries(sources).forEach(([domain, entry]) => {
+        const key = String(domain || "").trim().toLowerCase().replace(/^www\./, "");
+        const path = String(entry?.logoPath || "").trim();
+        if (key && path) map.set(key, path);
+      });
+      return map;
+    })
+    .catch(() => new Map());
+  return sourceLogoManifestMapPromise;
+}
+
 async function renderLeaderboard(){
   const grid = $("#leaderboard");
   if (!grid) return;
+  console.log("LEADERBOARD_IMAGE_ONLY_RENDER_ACTIVE");
   const colPos = grid.querySelector(".col-pos");
   const colNeu = grid.querySelector(".col-neu");
   const colNeg = grid.querySelector(".col-neg");
@@ -4106,26 +4289,42 @@ async function renderLeaderboard(){
 
   const { pos, neu, neg } = computeLeaderboard();
   const TIERS = [0.35, 0.75];
+  const sourceLogoManifest = await getSourceLogoManifestMap();
+
+  const resolveLeaderboardDomain = (row = {}) => {
+    const sourceDomain = String(row.sourceDomain || "").trim().toLowerCase().replace(/^www\./, "");
+    const articleDomain = String(row.articleDomain || "").trim().toLowerCase().replace(/^www\./, "");
+    return sourceDomain
+      || resolveDomainFromSourceName(row.source || "")
+      || inferDomainFromSourceText(row.rawSource || row.source || "")
+      || articleDomain;
+  };
+  const hasValidLeaderboardLogo = (row = {}) => {
+    if (!row.logo) return false;
+    const domain = resolveLeaderboardDomain(row);
+    if (!domain) return false;
+    const logoPath = sourceLogoManifest.get(domain) || "";
+    return Boolean(logoPath && row.logo === logoPath);
+  };
 
   async function place(col, list){
-    const results = await Promise.all(list.map(s => (s.logo ? loadImage(s.logo) : Promise.resolve(false))));
+    const listWithLogos = list.filter(hasValidLeaderboardLogo);
+    const results = await Promise.all(listWithLogos.map(s => loadImage(s.logo)));
     let idx = 0;
     results.forEach((ok, i) => {
-      const s = list[i];
+      if (!ok) return;
+      const s = listWithLogos[i];
       const b = document.createElement("div");
       b.className = "badge";
       const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
       b.style.left = "50%";
       b.style.top  = `${topPct}%`;
-      if (ok && s.logo){
-        const img = document.createElement("img");
-        img.src = s.logo;
-        img.alt = s.source;
-        img.loading = "lazy";
-        b.appendChild(img);
-      } else {
-        b.textContent = getSourceInitials(s.source || "?");
-      }
+      const img = document.createElement("img");
+      img.className = "source-logo";
+      img.src = s.logo;
+      img.alt = s.source;
+      img.loading = "lazy";
+      b.appendChild(img);
       col.appendChild(b);
       idx++;
     });
@@ -4842,7 +5041,6 @@ void (async () => {
 })();
 checkHealthWithRetry();
 if (!hasCachedContent) renderAll();
-startHeroAuto();
 
 if ("serviceWorker" in navigator){
   window.addEventListener("load", () => {

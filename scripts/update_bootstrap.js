@@ -6,6 +6,8 @@ import vader from "vader-sentiment";
 const ROOT = process.cwd();
 const OUTPUT_PATH = path.join(ROOT, "public", "data", "bootstrap.json");
 const DATA_DIR = path.join(ROOT, "public", "data");
+const SOURCE_REGISTRY_PATH = path.join(ROOT, "source-registry.json");
+const SOURCE_HEALTH_PATH = path.join(DATA_DIR, "source-health.json");
 const SNAPSHOT_FILES = {
   bootstrap: OUTPUT_PATH,
   homepage: path.join(DATA_DIR, "homepage.json"),
@@ -899,6 +901,12 @@ const main = async () => {
   }
   const nextUsaLeaderboard = buildSourceLeaderboard(safeUsa);
   const nextUsaIndustry = buildIndustryLeaderboard(safeUsa);
+  const sourceRegistry = await readJson(SOURCE_REGISTRY_PATH);
+  const sourceHealth = await readJson(SOURCE_HEALTH_PATH);
+  const registryEntries = Object.values(sourceRegistry?.sources || {});
+  const enabledSourceCount = registryEntries.filter((entry) => entry?.enabled !== false).length;
+  const healthySourceCount = Number(sourceHealth?.healthySources || 0);
+  const failedSources = Array.isArray(sourceHealth?.failedSources) ? sourceHealth.failedSources : [];
 
   const snapshot = {
     generatedAt: new Date().toISOString(),
@@ -958,6 +966,12 @@ const main = async () => {
     meta: {
       source: "bootstrap-cache",
       schemaVersion: SCHEMA_VERSION,
+      generatedAt: new Date().toISOString(),
+      sourceCount: registryEntries.length,
+      enabledSourceCount,
+      healthySourceCount,
+      articleCount: allArticles.length,
+      failedSources,
       thresholds: SNAPSHOT_THRESHOLDS,
       counts: {
         articles: allArticles.length,
