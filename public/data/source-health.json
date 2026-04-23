@@ -1,0 +1,715 @@
+{
+  "generatedAt": "2026-04-18T05:59:35.196Z",
+  "rolloutPhase": 1,
+  "enabledSources": 25,
+  "healthySources": 0,
+  "failedSources": [
+    {
+      "domain": "thehindu.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "indianexpress.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "hindustantimes.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "indiatoday.in",
+      "reason": "pending"
+    },
+    {
+      "domain": "ndtv.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "livemint.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "business-standard.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "economictimes.indiatimes.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "moneycontrol.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "cnbctv18.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "news18.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "deccanherald.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "scroll.in",
+      "reason": "pending"
+    },
+    {
+      "domain": "timesofindia.indiatimes.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "theprint.in",
+      "reason": "pending"
+    },
+    {
+      "domain": "financialexpress.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "firstpost.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "aninews.in",
+      "reason": "pending"
+    },
+    {
+      "domain": "wionews.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "reuters.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "apnews.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "bbc.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "aljazeera.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "cnn.com",
+      "reason": "pending"
+    },
+    {
+      "domain": "foxnews.com",
+      "reason": "pending"
+    }
+  ],
+  "sources": [
+    {
+      "name": "The Hindu",
+      "domain": "thehindu.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "The Indian Express",
+      "domain": "indianexpress.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Hindustan Times",
+      "domain": "hindustantimes.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "India Today",
+      "domain": "indiatoday.in",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "NDTV",
+      "domain": "ndtv.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Mint",
+      "domain": "livemint.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Business Standard",
+      "domain": "business-standard.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "The Economic Times",
+      "domain": "economictimes.indiatimes.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Moneycontrol",
+      "domain": "moneycontrol.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "CNBC-TV18",
+      "domain": "cnbctv18.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "News18",
+      "domain": "news18.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Deccan Herald",
+      "domain": "deccanherald.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Scroll",
+      "domain": "scroll.in",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Times of India",
+      "domain": "timesofindia.indiatimes.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "ThePrint",
+      "domain": "theprint.in",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Financial Express",
+      "domain": "financialexpress.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "The Telegraph India",
+      "domain": "telegraphindia.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "No reliable public RSS discovered; disabled for legal/safety",
+      "failures": 0,
+      "phase": 4
+    },
+    {
+      "name": "Firstpost",
+      "domain": "firstpost.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "ANI News",
+      "domain": "aninews.in",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "WION",
+      "domain": "wionews.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Reuters",
+      "domain": "reuters.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "AP",
+      "domain": "apnews.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "BBC",
+      "domain": "bbc.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Al Jazeera",
+      "domain": "aljazeera.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "CNN",
+      "domain": "cnn.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "Fox News",
+      "domain": "foxnews.com",
+      "enabled": true,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 1
+    },
+    {
+      "name": "NBC News",
+      "domain": "nbcnews.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 2
+    },
+    {
+      "name": "CBS News",
+      "domain": "cbsnews.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 2
+    },
+    {
+      "name": "ABC News",
+      "domain": "abcnews.go.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 2
+    },
+    {
+      "name": "CNBC",
+      "domain": "cnbc.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 2
+    },
+    {
+      "name": "Washington Post",
+      "domain": "washingtonpost.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 2
+    },
+    {
+      "name": "WSJ",
+      "domain": "wsj.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 2
+    },
+    {
+      "name": "NYT",
+      "domain": "nytimes.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 2
+    },
+    {
+      "name": "Bloomberg",
+      "domain": "bloomberg.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 2
+    },
+    {
+      "name": "The Guardian",
+      "domain": "theguardian.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 2
+    },
+    {
+      "name": "Politico",
+      "domain": "politico.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 2
+    },
+    {
+      "name": "Axios",
+      "domain": "axios.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 3
+    },
+    {
+      "name": "NPR",
+      "domain": "npr.org",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 3
+    },
+    {
+      "name": "USA Today",
+      "domain": "usatoday.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 3
+    },
+    {
+      "name": "Los Angeles Times",
+      "domain": "latimes.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 3
+    },
+    {
+      "name": "TechCrunch",
+      "domain": "techcrunch.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 3
+    },
+    {
+      "name": "The Verge",
+      "domain": "theverge.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 3
+    },
+    {
+      "name": "Ars Technica",
+      "domain": "arstechnica.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 3
+    },
+    {
+      "name": "Wired",
+      "domain": "wired.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 3
+    },
+    {
+      "name": "Engadget",
+      "domain": "engadget.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 3
+    },
+    {
+      "name": "MIT Technology Review",
+      "domain": "technologyreview.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 3
+    },
+    {
+      "name": "ScienceDaily",
+      "domain": "sciencedaily.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 4
+    },
+    {
+      "name": "New Scientist",
+      "domain": "newscientist.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 4
+    },
+    {
+      "name": "Medical Xpress",
+      "domain": "medicalxpress.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 4
+    },
+    {
+      "name": "ESPN Cricinfo",
+      "domain": "espncricinfo.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 4
+    },
+    {
+      "name": "ESPN",
+      "domain": "espn.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 4
+    },
+    {
+      "name": "Sky Sports",
+      "domain": "skysports.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 4
+    },
+    {
+      "name": "Goal",
+      "domain": "goal.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 4
+    },
+    {
+      "name": "STAT",
+      "domain": "statnews.com",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 4
+    },
+    {
+      "name": "BBC Sport",
+      "domain": "bbc.co.uk",
+      "enabled": false,
+      "healthy": false,
+      "articleCount": 0,
+      "lastFetchAt": null,
+      "failureReason": "pending",
+      "failures": 0,
+      "phase": 4
+    }
+  ]
+}
