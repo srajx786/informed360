@@ -1003,8 +1003,15 @@ body.theme-dark .gn-search{ background:#1a222c }
   max-height:54px;
   text-align:center;
   word-break:break-word;
+  overflow:hidden;
 }
 .leader-grid .badge img{ max-width:100%; max-height:48px; object-fit:contain; display:block }
+.leader-grid .badge .source-logo{
+  max-width:72px;
+  max-height:28px;
+  object-fit:contain;
+  display:block;
+}
 .leader-grid .badge.text-badge{
   font-weight:700;
   font-size:1rem;
