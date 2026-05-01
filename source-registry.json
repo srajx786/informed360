@@ -2,143 +2,1047 @@
   "sources": {
     "thehindu.com": {
       "name": "The Hindu",
+      "country": "IN",
+      "category": "general",
       "industry": "Communication",
-      "credibility": "High"
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 10,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.thehindu.com/news/national/feeder/default.rss"
+      ],
+      "logoPath": "/logo/thehindu.png",
+      "faviconUrl": "https://www.thehindu.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "indianexpress.com": {
       "name": "The Indian Express",
+      "country": "IN",
+      "category": "general",
       "industry": "Communication",
-      "credibility": "High"
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 9,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://indianexpress.com/feed/"
+      ],
+      "logoPath": "/logo/indianexpress.png",
+      "faviconUrl": "https://indianexpress.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "hindustantimes.com": {
       "name": "Hindustan Times",
+      "country": "IN",
+      "category": "general",
       "industry": "Communication",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 9,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml"
+      ],
+      "logoPath": "/logo/hindustantimes.png",
+      "faviconUrl": "https://www.hindustantimes.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "indiatoday.in": {
       "name": "India Today",
+      "country": "IN",
+      "category": "general",
       "industry": "Communication",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.indiatoday.in/rss/home"
+      ],
+      "logoPath": "/logo/indiatoday.png",
+      "faviconUrl": "https://www.indiatoday.in/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "ndtv.com": {
       "name": "NDTV",
+      "country": "IN",
+      "category": "general",
       "industry": "Communication",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://feeds.feedburner.com/NDTV-LatestNews"
+      ],
+      "logoPath": "/logo/ndtv.png",
+      "faviconUrl": "https://www.ndtv.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Feedburner RSS for NDTV",
+      "phase": 1
     },
     "livemint.com": {
       "name": "Mint",
+      "country": "IN",
+      "category": "business",
       "industry": "Finance",
-      "credibility": "High"
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 9,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.livemint.com/rss/news"
+      ],
+      "logoPath": "/logo/livemint.png",
+      "faviconUrl": "https://www.livemint.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "business-standard.com": {
       "name": "Business Standard",
+      "country": "IN",
+      "category": "business",
       "industry": "Finance",
-      "credibility": "High"
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.business-standard.com/rss/latestRSS.cms"
+      ],
+      "logoPath": "/logo/businessstandard.png",
+      "faviconUrl": "https://www.business-standard.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "economictimes.indiatimes.com": {
       "name": "The Economic Times",
+      "country": "IN",
+      "category": "business",
       "industry": "Finance",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://economictimes.indiatimes.com/rssfeedsdefault.cms"
+      ],
+      "logoPath": "/logo/economictimes.png",
+      "faviconUrl": "https://economictimes.indiatimes.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "moneycontrol.com": {
       "name": "Moneycontrol",
+      "country": "IN",
+      "category": "business",
       "industry": "Finance",
-      "credibility": "Medium"
-    },
-    "reuters.com": {
-      "name": "Reuters",
-      "industry": "Communication",
-      "credibility": "High"
-    },
-    "bbc.com": {
-      "name": "BBC",
-      "industry": "Communication",
-      "credibility": "High"
-    },
-    "aljazeera.com": {
-      "name": "Al Jazeera",
-      "industry": "Communication",
-      "credibility": "Medium"
-    },
-    "techcrunch.com": {
-      "name": "TechCrunch",
-      "industry": "Technology",
-      "credibility": "Medium"
-    },
-    "theverge.com": {
-      "name": "The Verge",
-      "industry": "Technology",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.moneycontrol.com/rss/latestnews.xml"
+      ],
+      "logoPath": "/logo/sources/moneycontrol.com.svg",
+      "faviconUrl": "https://www.moneycontrol.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "cnbctv18.com": {
       "name": "CNBC-TV18",
+      "country": "IN",
+      "category": "business",
       "industry": "Finance",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.cnbctv18.com/rss/latest.xml"
+      ],
+      "logoPath": "/logo/sources/cnbctv18.com.svg",
+      "faviconUrl": "https://www.cnbctv18.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "news18.com": {
       "name": "News18",
+      "country": "IN",
+      "category": "general",
       "industry": "Communication",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.news18.com/rss/india.xml"
+      ],
+      "logoPath": "/logo/news18.png",
+      "faviconUrl": "https://www.news18.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "deccanherald.com": {
       "name": "Deccan Herald",
+      "country": "IN",
+      "category": "general",
       "industry": "Communication",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.deccanherald.com/rss"
+      ],
+      "logoPath": "/logo/deccanherald.png",
+      "faviconUrl": "https://www.deccanherald.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "scroll.in": {
       "name": "Scroll",
+      "country": "IN",
+      "category": "general",
       "industry": "Communication",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://scroll.in/feeds"
+      ],
+      "logoPath": "/logo/scroll.png",
+      "faviconUrl": "https://scroll.in/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
-    "cnn.com": {
-      "name": "CNN",
-      "industry": "Media",
-      "credibility": "High"
+    "timesofindia.indiatimes.com": {
+      "name": "Times of India",
+      "country": "IN",
+      "category": "general",
+      "industry": "Communication",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms"
+      ],
+      "logoPath": "/logo/toi.png",
+      "faviconUrl": "https://timesofindia.indiatimes.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
-    "foxnews.com": {
-      "name": "Fox News",
-      "industry": "Media",
-      "credibility": "Medium"
+    "theprint.in": {
+      "name": "ThePrint",
+      "country": "IN",
+      "category": "general",
+      "industry": "Communication",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://theprint.in/feed/"
+      ],
+      "logoPath": "/logo/theprint.png",
+      "faviconUrl": "https://theprint.in/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
+    },
+    "financialexpress.com": {
+      "name": "Financial Express",
+      "country": "IN",
+      "category": "business",
+      "industry": "Finance",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.financialexpress.com/feed/"
+      ],
+      "logoPath": "/logo/sources/financialexpress.com.svg",
+      "faviconUrl": "https://www.financialexpress.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
+    },
+    "telegraphindia.com": {
+      "name": "The Telegraph India",
+      "country": "IN",
+      "category": "general",
+      "industry": "Communication",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 5,
+      "enabled": false,
+      "fetchMode": "safe_fallback",
+      "rssFeeds": [],
+      "logoPath": "/logo/sources/telegraphindia.com.svg",
+      "faviconUrl": "https://www.telegraphindia.com/favicon.ico",
+      "health": "disabled",
+      "notes": "No reliable public RSS discovered; disabled for legal/safety",
+      "phase": 4
+    },
+    "firstpost.com": {
+      "name": "Firstpost",
+      "country": "IN",
+      "category": "general",
+      "industry": "Communication",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.firstpost.com/commonfeeds/v1/mfp/rss/india.xml"
+      ],
+      "logoPath": "/logo/firstpost.png",
+      "faviconUrl": "https://www.firstpost.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
+    },
+    "aninews.in": {
+      "name": "ANI News",
+      "country": "IN",
+      "category": "general",
+      "industry": "Communication",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 6,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://aninews.in/rss.xml"
+      ],
+      "logoPath": "/logo/sources/aninews.in.svg",
+      "faviconUrl": "https://aninews.in/favicon.ico",
+      "health": "unknown",
+      "notes": "Public RSS endpoint",
+      "phase": 1
+    },
+    "wionews.com": {
+      "name": "WION",
+      "country": "IN",
+      "category": "world",
+      "industry": "Communication",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 6,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.wionews.com/rss/world-news"
+      ],
+      "logoPath": "/logo/sources/wionews.com.svg",
+      "faviconUrl": "https://www.wionews.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Public RSS endpoint",
+      "phase": 1
+    },
+    "reuters.com": {
+      "name": "Reuters",
+      "country": "US",
+      "category": "world",
+      "industry": "Communication",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 10,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://feeds.reuters.com/reuters/worldNews"
+      ],
+      "logoPath": "/logo/reuters.png",
+      "faviconUrl": "https://www.reuters.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
     "apnews.com": {
       "name": "AP",
+      "country": "US",
+      "category": "world",
       "industry": "Media",
-      "credibility": "High"
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 9,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://apnews.com/hub/apf-topnews?output=rss"
+      ],
+      "logoPath": "/logo/sources/apnews.com.svg",
+      "faviconUrl": "https://apnews.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
     },
-    "nytimes.com": {
-      "name": "NYT",
+    "bbc.com": {
+      "name": "BBC",
+      "country": "GB",
+      "category": "world",
+      "industry": "Communication",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 10,
+      "enabled": true,
+      "fetchMode": "section_feed",
+      "rssFeeds": [
+        "https://feeds.bbci.co.uk/news/world/rss.xml",
+        "https://feeds.bbci.co.uk/sport/rss.xml"
+      ],
+      "logoPath": "/logo/bbc.png",
+      "faviconUrl": "https://www.bbc.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS world+sport",
+      "phase": 1
+    },
+    "aljazeera.com": {
+      "name": "Al Jazeera",
+      "country": "QA",
+      "category": "world",
+      "industry": "Communication",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.aljazeera.com/xml/rss/all.xml"
+      ],
+      "logoPath": "/logo/aljazeera.png",
+      "faviconUrl": "https://www.aljazeera.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
+    },
+    "cnn.com": {
+      "name": "CNN",
+      "country": "US",
+      "category": "world",
       "industry": "Media",
-      "credibility": "High"
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://rss.cnn.com/rss/cnn_latest.rss"
+      ],
+      "logoPath": "/logo/sources/cnn.com.svg",
+      "faviconUrl": "https://www.cnn.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 1
+    },
+    "foxnews.com": {
+      "name": "Fox News",
+      "country": "US",
+      "category": "world",
+      "industry": "Media",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://moxie.foxnews.com/google-publisher/latest.xml"
+      ],
+      "logoPath": "/logo/sources/foxnews.com.svg",
+      "faviconUrl": "https://www.foxnews.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Public XML feed",
+      "phase": 1
     },
     "nbcnews.com": {
       "name": "NBC News",
+      "country": "US",
+      "category": "world",
       "industry": "Media",
-      "credibility": "High"
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://feeds.nbcnews.com/nbcnews/public/news"
+      ],
+      "logoPath": "/logo/sources/nbcnews.com.svg",
+      "faviconUrl": "https://www.nbcnews.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 2
     },
     "cbsnews.com": {
       "name": "CBS News",
+      "country": "US",
+      "category": "world",
       "industry": "Media",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.cbsnews.com/latest/rss/main"
+      ],
+      "logoPath": "/logo/sources/cbsnews.com.svg",
+      "faviconUrl": "https://www.cbsnews.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 2
     },
     "abcnews.go.com": {
       "name": "ABC News",
+      "country": "US",
+      "category": "world",
       "industry": "Media",
-      "credibility": "Medium"
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://abcnews.go.com/abcnews/topstories"
+      ],
+      "logoPath": "/logo/sources/abcnews.go.com.svg",
+      "faviconUrl": "https://abcnews.go.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 2
     },
     "cnbc.com": {
       "name": "CNBC",
+      "country": "US",
+      "category": "business",
       "industry": "Finance",
-      "credibility": "High"
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+      ],
+      "logoPath": "/logo/sources/cnbc.com.svg",
+      "faviconUrl": "https://www.cnbc.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 2
     },
     "washingtonpost.com": {
       "name": "Washington Post",
+      "country": "US",
+      "category": "politics",
       "industry": "Media",
-      "credibility": "High"
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://feeds.washingtonpost.com/rss/politics"
+      ],
+      "logoPath": "/logo/sources/washingtonpost.com.svg",
+      "faviconUrl": "https://www.washingtonpost.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 2
     },
     "wsj.com": {
       "name": "WSJ",
+      "country": "US",
+      "category": "business",
       "industry": "Finance",
-      "credibility": "High"
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://feeds.a.dj.com/rss/RSSWorldNews.xml"
+      ],
+      "logoPath": "/logo/sources/wsj.com.svg",
+      "faviconUrl": "https://www.wsj.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS headlines",
+      "phase": 2
+    },
+    "nytimes.com": {
+      "name": "NYT",
+      "country": "US",
+      "category": "world",
+      "industry": "Media",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+      ],
+      "logoPath": "/logo/sources/nytimes.com.svg",
+      "faviconUrl": "https://www.nytimes.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 2
+    },
+    "bloomberg.com": {
+      "name": "Bloomberg",
+      "country": "US",
+      "category": "business",
+      "industry": "Finance",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://feeds.bloomberg.com/markets/news.rss"
+      ],
+      "logoPath": "/logo/sources/bloomberg.com.svg",
+      "faviconUrl": "https://www.bloomberg.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 2
+    },
+    "theguardian.com": {
+      "name": "The Guardian",
+      "country": "GB",
+      "category": "world",
+      "industry": "Communication",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.theguardian.com/world/rss"
+      ],
+      "logoPath": "/logo/guardian.png",
+      "faviconUrl": "https://www.theguardian.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 2
+    },
+    "politico.com": {
+      "name": "Politico",
+      "country": "US",
+      "category": "politics",
+      "industry": "Media",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.politico.com/rss/politicopicks.xml"
+      ],
+      "logoPath": "/logo/sources/politico.com.svg",
+      "faviconUrl": "https://www.politico.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 2
+    },
+    "axios.com": {
+      "name": "Axios",
+      "country": "US",
+      "category": "world",
+      "industry": "Media",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.axios.com/feeds/news.xml"
+      ],
+      "logoPath": "/logo/sources/axios.com.svg",
+      "faviconUrl": "https://www.axios.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Public feed",
+      "phase": 3
+    },
+    "npr.org": {
+      "name": "NPR",
+      "country": "US",
+      "category": "world",
+      "industry": "Media",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://feeds.npr.org/1001/rss.xml"
+      ],
+      "logoPath": "/logo/sources/npr.org.svg",
+      "faviconUrl": "https://www.npr.org/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 3
+    },
+    "usatoday.com": {
+      "name": "USA Today",
+      "country": "US",
+      "category": "world",
+      "industry": "Media",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.usatoday.com/feeds/news/"
+      ],
+      "logoPath": "/logo/sources/usatoday.com.svg",
+      "faviconUrl": "https://www.usatoday.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 3
+    },
+    "latimes.com": {
+      "name": "Los Angeles Times",
+      "country": "US",
+      "category": "world",
+      "industry": "Media",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.latimes.com/world/rss2.0.xml"
+      ],
+      "logoPath": "/logo/sources/latimes.com.svg",
+      "faviconUrl": "https://www.latimes.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 3
+    },
+    "techcrunch.com": {
+      "name": "TechCrunch",
+      "country": "US",
+      "category": "technology",
+      "industry": "Technology",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 8,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://techcrunch.com/feed/"
+      ],
+      "logoPath": "/logo/sources/techcrunch.com.svg",
+      "faviconUrl": "https://techcrunch.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 3
+    },
+    "theverge.com": {
+      "name": "The Verge",
+      "country": "US",
+      "category": "technology",
+      "industry": "Technology",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.theverge.com/rss/index.xml"
+      ],
+      "logoPath": "/logo/sources/theverge.com.svg",
+      "faviconUrl": "https://www.theverge.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 3
+    },
+    "arstechnica.com": {
+      "name": "Ars Technica",
+      "country": "US",
+      "category": "technology",
+      "industry": "Technology",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://feeds.arstechnica.com/arstechnica/index"
+      ],
+      "logoPath": "/logo/sources/arstechnica.com.svg",
+      "faviconUrl": "https://arstechnica.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 3
+    },
+    "wired.com": {
+      "name": "Wired",
+      "country": "US",
+      "category": "technology",
+      "industry": "Technology",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.wired.com/feed/rss"
+      ],
+      "logoPath": "/logo/sources/wired.com.svg",
+      "faviconUrl": "https://www.wired.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 3
+    },
+    "engadget.com": {
+      "name": "Engadget",
+      "country": "US",
+      "category": "technology",
+      "industry": "Technology",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 6,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.engadget.com/rss.xml"
+      ],
+      "logoPath": "/logo/sources/engadget.com.svg",
+      "faviconUrl": "https://www.engadget.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 3
+    },
+    "technologyreview.com": {
+      "name": "MIT Technology Review",
+      "country": "US",
+      "category": "technology",
+      "industry": "Technology",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.technologyreview.com/feed/"
+      ],
+      "logoPath": "/logo/sources/technologyreview.com.svg",
+      "faviconUrl": "https://www.technologyreview.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 3
+    },
+    "sciencedaily.com": {
+      "name": "ScienceDaily",
+      "country": "US",
+      "category": "science",
+      "industry": "Healthcare",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 6,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.sciencedaily.com/rss/all.xml"
+      ],
+      "logoPath": "/logo/sources/sciencedaily.com.svg",
+      "faviconUrl": "https://www.sciencedaily.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 4
+    },
+    "newscientist.com": {
+      "name": "New Scientist",
+      "country": "GB",
+      "category": "science",
+      "industry": "Healthcare",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 6,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.newscientist.com/feed/home/"
+      ],
+      "logoPath": "/logo/sources/newscientist.com.svg",
+      "faviconUrl": "https://www.newscientist.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 4
+    },
+    "medicalxpress.com": {
+      "name": "Medical Xpress",
+      "country": "US",
+      "category": "health",
+      "industry": "Healthcare",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 6,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://medicalxpress.com/rss-feed/"
+      ],
+      "logoPath": "/logo/sources/medicalxpress.com.svg",
+      "faviconUrl": "https://medicalxpress.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 4
+    },
+    "espncricinfo.com": {
+      "name": "ESPN Cricinfo",
+      "country": "IN",
+      "category": "sports",
+      "industry": "Communication",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 6,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.espncricinfo.com/rss/content/story/feeds/0.xml"
+      ],
+      "logoPath": "/logo/sources/espncricinfo.com.svg",
+      "faviconUrl": "https://www.espncricinfo.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 4
+    },
+    "espn.com": {
+      "name": "ESPN",
+      "country": "US",
+      "category": "sports",
+      "industry": "Communication",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 6,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.espn.com/espn/rss/news"
+      ],
+      "logoPath": "/logo/sources/espn.com.svg",
+      "faviconUrl": "https://www.espn.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 4
+    },
+    "skysports.com": {
+      "name": "Sky Sports",
+      "country": "GB",
+      "category": "sports",
+      "industry": "Communication",
+      "sourceCredibility": "Medium",
+      "credibility": "Medium",
+      "priority": 5,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.skysports.com/rss/12040"
+      ],
+      "logoPath": "/logo/sources/skysports.com.svg",
+      "faviconUrl": "https://www.skysports.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Public RSS",
+      "phase": 4
+    },
+    "goal.com": {
+      "name": "Goal",
+      "country": "GB",
+      "category": "sports",
+      "industry": "Communication",
+      "sourceCredibility": "Low",
+      "credibility": "Low",
+      "priority": 5,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.goal.com/feeds/en/news"
+      ],
+      "logoPath": "/logo/sources/goal.com.svg",
+      "faviconUrl": "https://www.goal.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Public RSS",
+      "phase": 4
+    },
+    "statnews.com": {
+      "name": "STAT",
+      "country": "US",
+      "category": "health",
+      "industry": "Healthcare",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 6,
+      "enabled": true,
+      "fetchMode": "rss",
+      "rssFeeds": [
+        "https://www.statnews.com/feed/"
+      ],
+      "logoPath": "/logo/sources/statnews.com.svg",
+      "faviconUrl": "https://www.statnews.com/favicon.ico",
+      "health": "unknown",
+      "notes": "Official RSS",
+      "phase": 4
+    },
+    "bbc.co.uk": {
+      "name": "BBC Sport",
+      "country": "GB",
+      "category": "sports",
+      "industry": "Communication",
+      "sourceCredibility": "High",
+      "credibility": "High",
+      "priority": 7,
+      "enabled": true,
+      "fetchMode": "section_feed",
+      "rssFeeds": [
+        "https://feeds.bbci.co.uk/sport/rss.xml"
+      ],
+      "logoPath": "/logo/bbc.png",
+      "faviconUrl": "https://www.bbc.co.uk/favicon.ico",
+      "health": "unknown",
+      "notes": "BBC sport RSS endpoint",
+      "phase": 4
     }
   }
 }
