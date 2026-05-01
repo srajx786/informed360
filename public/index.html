@@ -153,16 +153,18 @@
         <div class="leader-title">News Source Sentiment</div>
         <div class="leader-sub">Updated every hour</div>
       </div>
-      <div class="lb-wrap">
-        <div class="lb-axis">
-          <span>100%</span><span>75%</span><span>50%</span><span>25%</span>
+      <div id="sourceSentimentV2" class="source-sentiment-v2" aria-live="polite">
+        <div class="source-sentiment-v2-lane source-sentiment-v2-lane-pos" data-lane="positive">
+          <div class="source-sentiment-v2-lane-title">Positive</div>
+          <div class="source-sentiment-v2-lane-logos"></div>
         </div>
-        <div id="leaderboard" class="leader-grid lb-board" aria-live="polite">
-          <div class="leader-col col-pos"></div>
-          <div class="leader-col col-neu"></div>
-          <div class="leader-col col-neg"></div>
-          <div class="leader-lines"></div>
-          <div class="board-empty" aria-live="polite">Loading source sentiment…</div>
+        <div class="source-sentiment-v2-lane source-sentiment-v2-lane-neu" data-lane="neutral">
+          <div class="source-sentiment-v2-lane-title">Neutral</div>
+          <div class="source-sentiment-v2-lane-logos"></div>
+        </div>
+        <div class="source-sentiment-v2-lane source-sentiment-v2-lane-neg" data-lane="negative">
+          <div class="source-sentiment-v2-lane-title">Negative</div>
+          <div class="source-sentiment-v2-lane-logos"></div>
         </div>
       </div>
       <div class="lb-foot-wrap">
@@ -401,9 +403,9 @@
 
   <script>
     window.__API_BASE__ = "";
-    window.__APP_VERSION__ = "2026-04-25-1";
+    window.__APP_VERSION__ = "2026-04-25-3";
   </script>
-  <script src="app.js?v=2026-04-25-1" defer></script>
+  <script src="app.js?v=2026-04-25-3" defer></script>
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
