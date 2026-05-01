@@ -4280,7 +4280,6 @@ async function getSourceLogoManifestMap(){
 async function renderLeaderboard(){
   const grid = $("#leaderboard");
   if (!grid) return;
-  console.log("LEADERBOARD_IMAGE_ONLY_RENDER_ACTIVE");
   const colPos = grid.querySelector(".col-pos");
   const colNeu = grid.querySelector(".col-neu");
   const colNeg = grid.querySelector(".col-neg");
@@ -4310,17 +4309,14 @@ async function renderLeaderboard(){
   async function place(col, list){
     const listWithLogos = list.filter((row) => {
       const valid = hasValidLeaderboardLogo(row);
-      if (!valid) console.log("LEADERBOARD_SKIP_NO_LOGO_ACTIVE");
+      if (!valid) console.log("LEADERBOARD_SOURCE_SKIPPED_NO_VALID_LOGO", row?.source || row?.rawSource || "");
       return valid;
     });
     const results = await Promise.all(listWithLogos.map(s => loadImage(s.logo)));
     let idx = 0;
     results.forEach((ok, i) => {
       const s = listWithLogos[i];
-      if (!ok || !s || !s.logo || !hasValidLeaderboardLogo(s)) {
-        console.log("LEADERBOARD_SKIP_NO_LOGO_ACTIVE");
-        return;
-      }
+      if (!ok || !s || !s.logo || !hasValidLeaderboardLogo(s)) return;
       const b = document.createElement("div");
       b.className = "badge";
       const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
@@ -4329,7 +4325,7 @@ async function renderLeaderboard(){
       const img = document.createElement("img");
       img.className = "source-logo";
       img.src = s.logo;
-      img.alt = s.source;
+      img.alt = "";
       img.loading = "lazy";
       b.appendChild(img);
       col.appendChild(b);
