@@ -4259,6 +4259,8 @@ function loadImage(src){
 }
 
 let sourceLogoManifestMapPromise = null;
+let sourceLeaderboardBadgeObserver = null;
+let sourceLeaderboardBadgeSanitizerTimeout = null;
 async function getSourceLogoManifestMap(){
   if (sourceLogoManifestMapPromise) return sourceLogoManifestMapPromise;
   sourceLogoManifestMapPromise = fetch("/data/source-logo-manifest.json", { cache: "no-store" })
@@ -4361,6 +4363,40 @@ async function renderLeaderboard(){
   empty?.classList.toggle("show", !hasBadges);
 
   state.lastLeaderboardAt = Date.now();
+  sanitizeSourceLeaderboardBadges();
+}
+
+function sanitizeSourceLeaderboardBadges(){
+  const leaderboardContainer = document.querySelector("#leaderboard");
+  if (!leaderboardContainer) return;
+
+  const isValidLogoImage = (badgeNode) => {
+    const logo = badgeNode?.querySelector?.("img.source-logo, img[src*='/logo/sources/']");
+    if (!logo) return false;
+    const src = String(logo.getAttribute("src") || logo.src || "").trim();
+    if (!src) return false;
+    return logo.classList.contains("source-logo") || src.includes("/logo/sources/");
+  };
+
+  leaderboardContainer.querySelectorAll(".badge").forEach((badgeNode) => {
+    if (isValidLogoImage(badgeNode)) return;
+    const text = badgeNode.textContent.trim();
+    console.log("SOURCE_LEADERBOARD_TEXT_BADGE_REMOVED", text);
+    badgeNode.remove();
+  });
+
+  if (!sourceLeaderboardBadgeObserver){
+    sourceLeaderboardBadgeObserver = new MutationObserver(() => {
+      leaderboardContainer.querySelectorAll(".badge").forEach((badgeNode) => {
+        if (isValidLogoImage(badgeNode)) return;
+        const text = badgeNode.textContent.trim();
+        console.log("SOURCE_LEADERBOARD_TEXT_BADGE_REMOVED", text);
+        badgeNode.remove();
+      });
+    });
+    sourceLeaderboardBadgeObserver.observe(leaderboardContainer, { childList: true, subtree: true });
+    console.log("SOURCE_LEADERBOARD_BADGE_SANITIZER_ACTIVE");
+  }
 }
 
 const INDUSTRY_GROUPS = [
@@ -4700,6 +4736,9 @@ function renderAll(){
   renderIndiaSentiment();
   renderWorldSentiment();
   renderLeaderboard();
+  sanitizeSourceLeaderboardBadges();
+  if (sourceLeaderboardBadgeSanitizerTimeout) clearTimeout(sourceLeaderboardBadgeSanitizerTimeout);
+  sourceLeaderboardBadgeSanitizerTimeout = setTimeout(sanitizeSourceLeaderboardBadges, 120);
   const leaderTitle = document.querySelector("#leaderWrap .leader-title");
   if (leaderTitle) leaderTitle.textContent = state.category === POTUS_CATEGORY ? "POTUS Source Sentiment" : "News Source Sentiment";
   renderIndustryBoard();
@@ -5070,7 +5109,7 @@ setInterval(updateActiveSources, 1000 * 60);
 setInterval(updateBriefingDateTime, 1000 * 60);
 setInterval(() => {
   if (Date.now() - state.lastLeaderboardAt > 1000 * 60 * 60)
-    renderLeaderboard();
+    renderLeaderboard().then(sanitizeSourceLeaderboardBadges);
 }, 15 * 1000);
 
 /* keep badge positions responsive */
@@ -5078,7 +5117,7 @@ let resizeRaf;
 window.addEventListener("resize", () => {
   if (resizeRaf) cancelAnimationFrame(resizeRaf);
   resizeRaf = requestAnimationFrame(() => {
-    renderLeaderboard();
+    renderLeaderboard().then(sanitizeSourceLeaderboardBadges);
     renderIndustryBoard();
   });
 });
