@@ -1012,21 +1012,6 @@ body.theme-dark .gn-search{ background:#1a222c }
   object-fit:contain;
   display:block;
 }
-.leader-grid#leaderboard .badge{
-  overflow:hidden;
-}
-.leader-grid#leaderboard .badge:not(:has(img.source-logo, img[src*="/logo/sources/"])){
-  display:none !important;
-}
-.leader-grid#leaderboard .badge img.source-logo,
-.leader-grid#leaderboard .badge img[src*="/logo/sources/"]{
-  width:72px;
-  height:28px;
-  max-width:72px;
-  max-height:28px;
-  object-fit:contain;
-  display:block;
-}
 .leader-grid .badge.text-badge{
   font-weight:700;
   font-size:1rem;
@@ -1037,6 +1022,23 @@ body.theme-dark .gn-search{ background:#1a222c }
   max-width:calc(100% - 20px);
   padding:0;
 }
+
+#sourceSentimentV2 .source-sentiment-v2-item{
+  position:absolute;
+  transform:translate(-50%,-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:72px;
+  height:28px;
+}
+#sourceSentimentV2 img.source-sentiment-v2-logo{
+  width:72px;
+  height:28px;
+  object-fit:contain;
+  display:block;
+}
+
 .leader-grid .badge.icon-badge{
   background:transparent;
   border:none;
