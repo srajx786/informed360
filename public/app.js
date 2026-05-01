@@ -4259,8 +4259,6 @@ function loadImage(src){
 }
 
 let sourceLogoManifestMapPromise = null;
-let sourceLeaderboardBadgeObserver = null;
-let sourceLeaderboardBadgeSanitizerTimeout = null;
 async function getSourceLogoManifestMap(){
   if (sourceLogoManifestMapPromise) return sourceLogoManifestMapPromise;
   sourceLogoManifestMapPromise = fetch("/data/source-logo-manifest.json", { cache: "no-store" })
@@ -4279,22 +4277,21 @@ async function getSourceLogoManifestMap(){
   return sourceLogoManifestMapPromise;
 }
 
-async function renderLeaderboard(){
-  const grid = $("#leaderboard");
+async function renderSourceSentimentV2(){
+  const grid = $("#sourceSentimentV2");
   if (!grid) return;
-  console.log("LEADERBOARD_RENDER_SINGLE_PATH_ACTIVE");
+  console.log("SOURCE_SENTIMENT_V2_ONLY_ACTIVE");
   const colPos = grid.querySelector(".col-pos");
   const colNeu = grid.querySelector(".col-neu");
   const colNeg = grid.querySelector(".col-neg");
   const empty = grid.querySelector(".board-empty");
-  grid.querySelectorAll(".badge").forEach(node => node.remove());
-  [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
+  [colPos, colNeu, colNeg].forEach(c => c && (c.innerHTML = ""));
 
   const { pos, neu, neg } = computeLeaderboard();
   const TIERS = [0.35, 0.75];
   const sourceLogoManifest = await getSourceLogoManifestMap();
 
-  const resolveLeaderboardDomain = (row = {}) => {
+  const resolveDomain = (row = {}) => {
     const sourceDomain = String(row.sourceDomain || "").trim().toLowerCase().replace(/^www\./, "");
     const articleDomain = String(row.articleDomain || "").trim().toLowerCase().replace(/^www\./, "");
     return sourceDomain
@@ -4302,55 +4299,37 @@ async function renderLeaderboard(){
       || inferDomainFromSourceText(row.rawSource || row.source || "")
       || articleDomain;
   };
-  const resolveLeaderboardManifestLogo = (row = {}) => {
-    const domain = resolveLeaderboardDomain(row);
-    const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
-    return {
-      source: row?.source || row?.rawSource || "",
-      domain,
-      logoPath: logoPath.startsWith("/") ? logoPath : ""
-    };
-  };
 
   async function place(col, list){
+    if (!col) return;
     let idx = 0;
     for (const row of list){
-      const { source, domain, logoPath } = resolveLeaderboardManifestLogo(row);
-      if (!logoPath){
-        console.log("LEADERBOARD_SOURCE_SKIPPED_NO_LOGO", { source, domain });
-        continue;
-      }
+      const domain = resolveDomain(row);
+      const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
+      if (!logoPath || !logoPath.startsWith('/')) continue;
       const ok = await loadImage(logoPath);
       if (!ok) continue;
-      const b = document.createElement("div");
-      b.className = "badge";
-      const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
-      b.style.left = "50%";
-      b.style.top  = `${topPct}%`;
+
+      const wrap = document.createElement("div");
+      wrap.className = "source-sentiment-v2-item";
+      wrap.style.left = "50%";
+      wrap.style.top = `${TIERS[Math.min(idx, TIERS.length - 1)] * 100}%`;
+
       const img = document.createElement("img");
-      img.className = "source-logo";
+      img.className = "source-sentiment-v2-logo";
       img.src = logoPath;
       img.alt = "";
       img.loading = "lazy";
-      b.appendChild(img);
-      col.appendChild(b);
-      console.log("LEADERBOARD_LOGO_RENDERED", { source, domain, logoPath });
+      wrap.appendChild(img);
+      col.appendChild(wrap);
       idx++;
     }
   }
 
-  await Promise.all([
-    place(colPos, pos),
-    place(colNeu, neu),
-    place(colNeg, neg)
-  ]);
+  await Promise.all([place(colPos, pos), place(colNeu, neu), place(colNeg, neg)]);
 
-  const hasBadges = grid.querySelectorAll(".badge").length > 0;
-  const textBadgeCount = [...grid.querySelectorAll(".badge")]
-    .filter((badge) => !badge.querySelector("img.source-logo") || badge.textContent.trim().length > 0)
-    .length;
-  if (textBadgeCount > 0) console.error("LEADERBOARD_TEXT_BADGE_FOUND");
-  if (!hasBadges && empty) {
+  const hasLogos = grid.querySelectorAll("img.source-sentiment-v2-logo").length > 0;
+  if (!hasLogos && empty) {
     setDebugSection("sourceSentiment", "fallback-empty", { rows: countOf(state.splitSnapshots?.sourceSentiment?.rows) });
     const updatedAt = formatLastUpdated(state.fallbackUpdatedAt || state.sentimentStaleDataTimestampISO || state.bootstrapGeneratedAt);
     empty.textContent = updatedAt && state.usingFallbackSnapshot
@@ -4358,45 +4337,10 @@ async function renderLeaderboard(){
       : (state.sentimentData?.message || EMPTY_STATE_MESSAGE);
     pushDegradedReason("sourceSentiment", empty.textContent);
   } else {
-    setDebugSection("sourceSentiment", countOf(state.splitSnapshots?.sourceSentiment?.rows) ? "snapshot:source-sentiment" : "live-or-bootstrap", { badges: grid.querySelectorAll(".badge").length });
+    setDebugSection("sourceSentiment", countOf(state.splitSnapshots?.sourceSentiment?.rows) ? "snapshot:source-sentiment" : "live-or-bootstrap", { logos: grid.querySelectorAll("img.source-sentiment-v2-logo").length });
   }
-  empty?.classList.toggle("show", !hasBadges);
-
+  empty?.classList.toggle("show", !hasLogos);
   state.lastLeaderboardAt = Date.now();
-  sanitizeSourceLeaderboardBadges();
-}
-
-function sanitizeSourceLeaderboardBadges(){
-  const leaderboardContainer = document.querySelector("#leaderboard");
-  if (!leaderboardContainer) return;
-
-  const isValidLogoImage = (badgeNode) => {
-    const logo = badgeNode?.querySelector?.("img.source-logo, img[src*='/logo/sources/']");
-    if (!logo) return false;
-    const src = String(logo.getAttribute("src") || logo.src || "").trim();
-    if (!src) return false;
-    return logo.classList.contains("source-logo") || src.includes("/logo/sources/");
-  };
-
-  leaderboardContainer.querySelectorAll(".badge").forEach((badgeNode) => {
-    if (isValidLogoImage(badgeNode)) return;
-    const text = badgeNode.textContent.trim();
-    console.log("SOURCE_LEADERBOARD_TEXT_BADGE_REMOVED", text);
-    badgeNode.remove();
-  });
-
-  if (!sourceLeaderboardBadgeObserver){
-    sourceLeaderboardBadgeObserver = new MutationObserver(() => {
-      leaderboardContainer.querySelectorAll(".badge").forEach((badgeNode) => {
-        if (isValidLogoImage(badgeNode)) return;
-        const text = badgeNode.textContent.trim();
-        console.log("SOURCE_LEADERBOARD_TEXT_BADGE_REMOVED", text);
-        badgeNode.remove();
-      });
-    });
-    sourceLeaderboardBadgeObserver.observe(leaderboardContainer, { childList: true, subtree: true });
-    console.log("SOURCE_LEADERBOARD_BADGE_SANITIZER_ACTIVE");
-  }
 }
 
 const INDUSTRY_GROUPS = [
@@ -4735,10 +4679,7 @@ function renderAll(){
   renderTopics();
   renderIndiaSentiment();
   renderWorldSentiment();
-  renderLeaderboard();
-  sanitizeSourceLeaderboardBadges();
-  if (sourceLeaderboardBadgeSanitizerTimeout) clearTimeout(sourceLeaderboardBadgeSanitizerTimeout);
-  sourceLeaderboardBadgeSanitizerTimeout = setTimeout(sanitizeSourceLeaderboardBadges, 120);
+  renderSourceSentimentV2();
   const leaderTitle = document.querySelector("#leaderWrap .leader-title");
   if (leaderTitle) leaderTitle.textContent = state.category === POTUS_CATEGORY ? "POTUS Source Sentiment" : "News Source Sentiment";
   renderIndustryBoard();
@@ -5109,7 +5050,7 @@ setInterval(updateActiveSources, 1000 * 60);
 setInterval(updateBriefingDateTime, 1000 * 60);
 setInterval(() => {
   if (Date.now() - state.lastLeaderboardAt > 1000 * 60 * 60)
-    renderLeaderboard().then(sanitizeSourceLeaderboardBadges);
+    renderSourceSentimentV2();
 }, 15 * 1000);
 
 /* keep badge positions responsive */
@@ -5117,7 +5058,7 @@ let resizeRaf;
 window.addEventListener("resize", () => {
   if (resizeRaf) cancelAnimationFrame(resizeRaf);
   resizeRaf = requestAnimationFrame(() => {
-    renderLeaderboard().then(sanitizeSourceLeaderboardBadges);
+    renderSourceSentimentV2();
     renderIndustryBoard();
   });
 });
