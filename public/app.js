@@ -4279,89 +4279,71 @@ async function getSourceLogoManifestMap(){
   return sourceLogoManifestMapPromise;
 }
 
-async function renderLeaderboard(){
-  const grid = $("#leaderboard");
-  if (!grid) return;
-  console.log("LEADERBOARD_RENDER_SINGLE_PATH_ACTIVE");
-  const colPos = grid.querySelector(".col-pos");
-  const colNeu = grid.querySelector(".col-neu");
-  const colNeg = grid.querySelector(".col-neg");
-  const empty = grid.querySelector(".board-empty");
-  grid.querySelectorAll(".badge").forEach(node => node.remove());
-  [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
+async function renderSourceSentimentV2(){
+  const container = $("#sourceSentimentV2");
+  if (!container) return;
+  console.log("SOURCE_SENTIMENT_V2_RENDER_ACTIVE");
+  const lanePos = container.querySelector("[data-lane='positive'] .source-sentiment-v2-lane-logos");
+  const laneNeu = container.querySelector("[data-lane='neutral'] .source-sentiment-v2-lane-logos");
+  const laneNeg = container.querySelector("[data-lane='negative'] .source-sentiment-v2-lane-logos");
+  [lanePos, laneNeu, laneNeg].forEach((lane) => { if (lane) lane.innerHTML = ""; });
 
-  const { pos, neu, neg } = computeLeaderboard();
-  const TIERS = [0.35, 0.75];
+  const rejectLabels = new Set(["W","N","B","T","CN","MT","EC","SS","AN","NN","FN"]);
   const sourceLogoManifest = await getSourceLogoManifestMap();
-
-  const resolveLeaderboardDomain = (row = {}) => {
-    const sourceDomain = String(row.sourceDomain || "").trim().toLowerCase().replace(/^www\./, "");
-    const articleDomain = String(row.articleDomain || "").trim().toLowerCase().replace(/^www\./, "");
-    return sourceDomain
-      || resolveDomainFromSourceName(row.source || "")
-      || inferDomainFromSourceText(row.rawSource || row.source || "")
-      || articleDomain;
-  };
-  const resolveLeaderboardManifestLogo = (row = {}) => {
-    const domain = resolveLeaderboardDomain(row);
-    const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
-    return {
-      source: row?.source || row?.rawSource || "",
-      domain,
-      logoPath: logoPath.startsWith("/") ? logoPath : ""
-    };
-  };
-
-  async function place(col, list){
-    let idx = 0;
-    for (const row of list){
-      const { source, domain, logoPath } = resolveLeaderboardManifestLogo(row);
-      if (!logoPath){
-        console.log("LEADERBOARD_SOURCE_SKIPPED_NO_LOGO", { source, domain });
+  const { pos, neu, neg } = computeLeaderboard();
+  const seenDomains = new Set();
+  const buckets = { positive: [], neutral: [], negative: [] };
+  const addRows = (rows, bucket) => {
+    for (const row of rows){
+      const source = String(row?.source || row?.rawSource || "").trim();
+      const sourceUpper = source.toUpperCase();
+      if (!source || rejectLabels.has(sourceUpper) || sourceUpper.length <= 2) continue;
+      const domain = (
+        String(row?.sourceDomain || "").trim().toLowerCase().replace(/^www\./, "")
+        || resolveDomainFromSourceName(source)
+        || inferDomainFromSourceText(row?.rawSource || source)
+        || String(row?.articleDomain || "").trim().toLowerCase().replace(/^www\./, "")
+      );
+      if (!domain || seenDomains.has(domain)) continue;
+      const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
+      if (!logoPath || !logoPath.startsWith("/")){
+        console.log("SOURCE_SENTIMENT_V2_SKIPPED_NO_LOGO", { source, domain });
         continue;
       }
-      const ok = await loadImage(logoPath);
-      if (!ok) continue;
-      const b = document.createElement("div");
-      b.className = "badge";
-      const topPct = TIERS[Math.min(idx,TIERS.length-1)] * 100;
-      b.style.left = "50%";
-      b.style.top  = `${topPct}%`;
+      seenDomains.add(domain);
+      buckets[bucket].push({ source, domain, logoPath });
+      if (buckets[bucket].length >= 5) break;
+    }
+  };
+  addRows(pos, "positive");
+  addRows(neu, "neutral");
+  addRows(neg, "negative");
+
+  const allRows = [...buckets.positive, ...buckets.neutral, ...buckets.negative].slice(0, 15);
+  const validDomains = new Set(allRows.map((item) => item.domain));
+  Object.keys(buckets).forEach((key) => {
+    buckets[key] = buckets[key].filter((item) => validDomains.has(item.domain)).slice(0, 5);
+  });
+
+  const renderLane = (laneNode, rows) => {
+    if (!laneNode) return;
+    rows.forEach(({ source, domain, logoPath }) => {
+      const card = document.createElement("div");
+      card.className = "source-sentiment-v2-logo-card";
       const img = document.createElement("img");
-      img.className = "source-logo";
+      img.className = "source-sentiment-v2-logo";
       img.src = logoPath;
       img.alt = "";
       img.loading = "lazy";
-      b.appendChild(img);
-      col.appendChild(b);
-      console.log("LEADERBOARD_LOGO_RENDERED", { source, domain, logoPath });
-      idx++;
-    }
-  }
+      card.appendChild(img);
+      laneNode.appendChild(card);
+      console.log("SOURCE_SENTIMENT_V2_RENDERED_LOGO", { source, domain, logoPath });
+    });
+  };
 
-  await Promise.all([
-    place(colPos, pos),
-    place(colNeu, neu),
-    place(colNeg, neg)
-  ]);
-
-  const hasBadges = grid.querySelectorAll(".badge").length > 0;
-  const textBadgeCount = [...grid.querySelectorAll(".badge")]
-    .filter((badge) => !badge.querySelector("img.source-logo") || badge.textContent.trim().length > 0)
-    .length;
-  if (textBadgeCount > 0) console.error("LEADERBOARD_TEXT_BADGE_FOUND");
-  if (!hasBadges && empty) {
-    setDebugSection("sourceSentiment", "fallback-empty", { rows: countOf(state.splitSnapshots?.sourceSentiment?.rows) });
-    const updatedAt = formatLastUpdated(state.fallbackUpdatedAt || state.sentimentStaleDataTimestampISO || state.bootstrapGeneratedAt);
-    empty.textContent = updatedAt && state.usingFallbackSnapshot
-      ? `${SNAPSHOT_FALLBACK_MESSAGE} Last updated: ${updatedAt}`
-      : (state.sentimentData?.message || EMPTY_STATE_MESSAGE);
-    pushDegradedReason("sourceSentiment", empty.textContent);
-  } else {
-    setDebugSection("sourceSentiment", countOf(state.splitSnapshots?.sourceSentiment?.rows) ? "snapshot:source-sentiment" : "live-or-bootstrap", { badges: grid.querySelectorAll(".badge").length });
-  }
-  empty?.classList.toggle("show", !hasBadges);
-
+  renderLane(lanePos, buckets.positive);
+  renderLane(laneNeu, buckets.neutral);
+  renderLane(laneNeg, buckets.negative);
   state.lastLeaderboardAt = Date.now();
   sanitizeSourceLeaderboardBadges();
 }
@@ -4735,6 +4717,7 @@ function renderAll(){
   renderTopics();
   renderIndiaSentiment();
   renderWorldSentiment();
+  renderSourceSentimentV2();
   renderLeaderboard();
   sanitizeSourceLeaderboardBadges();
   if (sourceLeaderboardBadgeSanitizerTimeout) clearTimeout(sourceLeaderboardBadgeSanitizerTimeout);
@@ -5109,6 +5092,7 @@ setInterval(updateActiveSources, 1000 * 60);
 setInterval(updateBriefingDateTime, 1000 * 60);
 setInterval(() => {
   if (Date.now() - state.lastLeaderboardAt > 1000 * 60 * 60)
+    renderSourceSentimentV2();
     renderLeaderboard().then(sanitizeSourceLeaderboardBadges);
 }, 15 * 1000);
 
@@ -5117,6 +5101,7 @@ let resizeRaf;
 window.addEventListener("resize", () => {
   if (resizeRaf) cancelAnimationFrame(resizeRaf);
   resizeRaf = requestAnimationFrame(() => {
+    renderSourceSentimentV2();
     renderLeaderboard().then(sanitizeSourceLeaderboardBadges);
     renderIndustryBoard();
   });
