@@ -4141,6 +4141,32 @@ function getLeaderboardArticles(){
   return state.articles || [];
 }
 
+function isValidSource(source = ""){
+  if (!source) return false;
+  const s = String(source || "").toLowerCase().trim();
+  if (s.length < 3) return false;
+  if (!/[a-z]{3,}/.test(s)) return false;
+  if (s.includes("google") || s.includes("site:")) return false;
+  return true;
+}
+
+const LEADERBOARD_REJECT_LABELS = new Set(["w","n","b","t","ec","ss","an","nn","fn"]);
+function getLeaderboardSourceLabel(row = {}){
+  return String(
+    row.source || row.rawSource || row.name || row.label || row.sourceName || row.sourceDomain || ""
+  ).trim();
+}
+function isValidLeaderboardSourceRow(row = {}){
+  const raw = getLeaderboardSourceLabel(row);
+  if (!raw) return false;
+  const s = raw.toLowerCase().trim();
+  if (s.length < 3) return false;
+  if (/^[A-Z]{1,2}$/.test(raw)) return false;
+  if (LEADERBOARD_REJECT_LABELS.has(s)) return false;
+  return isValidSource(s);
+}
+
+function computeLeaderboard(sourceLogoManifest = new Map()){
 function computeLeaderboard(){
   const MAX_VISIBLE_LOGOS = 15;
   const PER_BUCKET_LIMIT = Math.max(1, Math.floor(MAX_VISIBLE_LOGOS / 3));
@@ -4151,7 +4177,40 @@ function computeLeaderboard(){
     return count + (confidence * 2) + freshness;
   };
   const splitRows = safeArray(state.splitSnapshots?.sourceSentiment?.rows);
+  const resolveLeaderboardDomain = (row = {}) => {
+    const sourceDomain = String(row.sourceDomain || "").trim().toLowerCase().replace(/^www\./, "");
+    const articleDomain = String(row.articleDomain || "").trim().toLowerCase().replace(/^www\./, "");
+    return sourceDomain
+      || resolveDomainFromSourceName(row.source || "")
+      || inferDomainFromSourceText(row.rawSource || row.source || "")
+      || articleDomain;
+  };
+  const filterValidManifestRows = (rows = []) => {
+    const beforeCount = rows.length;
+    const rejectedSources = [];
+    const filtered = rows.filter((row) => {
+      const label = getLeaderboardSourceLabel(row);
+      if (!isValidLeaderboardSourceRow(row)) {
+        rejectedSources.push(label || "(empty)");
+        return false;
+      }
+      const domain = resolveLeaderboardDomain(row);
+      const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
+      const keep = Boolean(domain && logoPath);
+      if (!keep) rejectedSources.push(label || "(empty)");
+      return keep;
+    });
+    console.log("LEADERBOARD_VALID_ROWS_COUNT", {
+      beforeCount,
+      afterCount: filtered.length,
+      rejectedSources: rejectedSources.slice(0, 25),
+      keptSources: filtered.map(getLeaderboardSourceLabel).slice(0, 25)
+    });
+    return filtered;
+  };
+
   if (splitRows.length){
+    const arr = filterValidManifestRows(splitRows.map((row) => {
     const arr = splitRows.map((row) => {
       const rawSource = String(row.source || "").trim();
       const source = normalizeSourceName(rawSource);
@@ -4169,7 +4228,7 @@ function computeLeaderboard(){
         logo: getSourceLogoUrl("", source, { allowRemote: false }),
         count: Number(row.count || MIN_SOURCE_ARTICLES)
       };
-    }).filter((row) => row.source && isStrongSourceLabel(row.source));
+    }).filter((row) => row.source && isStrongSourceLabel(row.source)));
     return {
       pos: arr.filter(x => x.bias > 3).sort((a,b) => rankScore(b) - rankScore(a) || b.bias - a.bias).slice(0, PER_BUCKET_LIMIT),
       neu: arr.slice().sort((a,b) => rankScore(b) - rankScore(a) || Math.abs(a.bias) - Math.abs(b.bias)).slice(0, PER_BUCKET_LIMIT),
@@ -4195,7 +4254,7 @@ function computeLeaderboard(){
     bySource.set(key, s);
   });
 
-  const arr = [...bySource.entries()].map(([src,v]) => {
+  const arr = filterValidManifestRows([...bySource.entries()].map(([src,v]) => {
     const n = Math.max(1, v.n);
     const pos = v.pos/n, neg = v.neg/n, neu = v.neu/n;
     const bias = pos - neg;
@@ -4207,6 +4266,7 @@ function computeLeaderboard(){
       articleDomain: domainFromUrl(v.link || ""),
       pos, neg, neu, bias, logo, count: v.n
     };
+  }).filter(x => (x.pos + x.neg + x.neu) > 0.1 && x.count >= MIN_SOURCE_ARTICLES && isStrongSourceLabel(x.source)));
   }).filter(x => (x.pos + x.neg + x.neu) > 0.1 && x.count >= MIN_SOURCE_ARTICLES && isStrongSourceLabel(x.source));
 
   if (!arr.length){
@@ -4237,6 +4297,16 @@ function computeLeaderboard(){
     }
   }
 
+  const rankedRows = filterValidManifestRows(arr);
+  const pos = rankedRows.filter(x => x.bias > 3)
+    .sort((a,b) => rankScore(b) - rankScore(a) || b.bias - a.bias).slice(0,PER_BUCKET_LIMIT);
+  const neg = rankedRows.filter(x => x.bias < -3)
+    .sort((a,b) => rankScore(b) - rankScore(a) || a.bias - b.bias).slice(0,PER_BUCKET_LIMIT);
+  const neu = rankedRows.slice()
+    .sort((a,b) => rankScore(b) - rankScore(a) || Math.abs(a.bias) - Math.abs(b.bias))
+    .slice(0,PER_BUCKET_LIMIT);
+
+  return { pos, neu, neg, activeSourceCount: rankedRows.length };
   const pos = arr.filter(x => x.bias > 3)
     .sort((a,b) => rankScore(b) - rankScore(a) || b.bias - a.bias).slice(0,PER_BUCKET_LIMIT);
   const neg = arr.filter(x => x.bias < -3)
@@ -4288,7 +4358,8 @@ async function renderLeaderboard(){
   grid.querySelectorAll(".badge").forEach(node => node.remove());
   [colPos, colNeu, colNeg].forEach(c => c.innerHTML = "");
 
-  const { pos, neu, neg } = computeLeaderboard();
+  const sourceLogoManifest = await getSourceLogoManifestMap();
+  const { pos, neu, neg } = computeLeaderboard(sourceLogoManifest);
   const TIERS = [0.35, 0.75];
   const sourceLogoManifest = await getSourceLogoManifestMap();
 
@@ -4302,6 +4373,21 @@ async function renderLeaderboard(){
   };
   const resolveLeaderboardManifestLogo = (row = {}) => {
     const domain = resolveLeaderboardDomain(row);
+    const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
+    return {
+      source: row?.source || row?.rawSource || "",
+      domain,
+      logoPath: logoPath.startsWith("/") ? logoPath : ""
+    };
+  };
+
+  const resolveLeaderboardManifestLogo = (row = {}) => {
+    const sourceDomain = String(row.sourceDomain || "").trim().toLowerCase().replace(/^www\./, "");
+    const articleDomain = String(row.articleDomain || "").trim().toLowerCase().replace(/^www\./, "");
+    const domain = sourceDomain
+      || resolveDomainFromSourceName(row.source || "")
+      || inferDomainFromSourceText(row.rawSource || row.source || "")
+      || articleDomain;
     const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
     return {
       source: row?.source || row?.rawSource || "",
@@ -4347,6 +4433,12 @@ async function renderLeaderboard(){
   const textBadgeCount = [...grid.querySelectorAll(".badge")]
     .filter((badge) => !badge.querySelector("img.source-logo") || badge.textContent.trim().length > 0)
     .length;
+  [...grid.querySelectorAll(".badge")]
+    .filter((badge) => !badge.querySelector("img.source-logo") || badge.textContent.trim().length > 0)
+    .forEach((badge) => {
+      console.log("LEADERBOARD_TEXT_BADGE_BLOCKED");
+      badge.remove();
+    });
   if (textBadgeCount > 0) console.error("LEADERBOARD_TEXT_BADGE_FOUND");
   if (!hasBadges && empty) {
     setDebugSection("sourceSentiment", "fallback-empty", { rows: countOf(state.splitSnapshots?.sourceSentiment?.rows) });
