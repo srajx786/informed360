@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-05-04T00:00:00Z",
+  "mode": "daily",
+  "trackedParties": ["BJP","INC","AAP","DMK","TMC","SP","Shiv Sena","NCP","BJD","RJD","CPI(M)","JD(U)"],
+  "trackedLeaders": ["Narendra Modi","Rahul Gandhi","Arvind Kejriwal","Mamata Banerjee","M.K. Stalin","Yogi Adityanath","Akhilesh Yadav","Nitish Kumar","Naveen Patnaik"],
+  "sources": ["The Hindu","Indian Express","India Today","NDTV","Reuters"],
+  "partyTrend": [{"party":"BJP","values":[58,56,60,57]},{"party":"INC","values":[45,48,44,46]},{"party":"AAP","values":[50,49,48,47]},{"party":"DMK","values":[52,51,52,53]},{"party":"TMC","values":[49,50,51,50]}],
+  "sourcePartyTone": [{"source":"The Hindu","tones":{"BJP":-1,"INC":0,"AAP":1,"DMK":1,"TMC":0}},{"source":"Indian Express","tones":{"BJP":0,"INC":0,"AAP":0,"DMK":1,"TMC":-1}}],
+  "shareOfVoice": [{"entity":"BJP","mentions":62},{"entity":"INC","mentions":51},{"entity":"AAP","mentions":23},{"entity":"DMK","mentions":19},{"entity":"TMC","mentions":17}],
+  "issues": [{"issue":"economy","count":44},{"issue":"jobs","count":31},{"issue":"inflation","count":29},{"issue":"governance","count":27},{"issue":"national security","count":21}],
+  "election": {"status":"standby","lastRefresh":"2026-05-04T00:00:00Z","states":[]},
+  "ticker": {"asOf":"2026-05-04T00:00:00Z","items":[{"label":"Sensex","value":"74,980","change":"+0.6%"},{"label":"Nifty","value":"22,780","change":"+0.5%"},{"label":"USD/INR","value":"83.18","change":"-0.1%"},{"label":"Gold","value":"₹71,420/10g","change":"+0.3%"},{"label":"IPL","value":"MI vs CSK 7:30 PM IST"},{"label":"Cricket","value":"IND vs AUS (Upcoming)"},{"label":"Football","value":"EPL: Arsenal vs Spurs"}]}
+}
