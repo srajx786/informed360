@@ -27,6 +27,8 @@ const SNAPSHOT_CACHE_KEYS = [
 ];
 const USA_CATEGORY = "usa";
 const POTUS_CATEGORY = "potus";
+const POLITICAL_INTEL_CATEGORY = "political-intelligence";
+const PREMIUM_PREVIEW_KEY = "i360_premium_preview";
 const MIN_SOURCE_ARTICLES = 2;
 const USA_SECTION_SOURCES = new Set([
   "CNN",
@@ -1547,7 +1549,8 @@ const state = {
   fallbackMessage: "",
   splitSnapshots: readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY) || {},
   currentHeroSnapshot: readHeroSnapshot(),
-  currentHeroQuality: "empty"
+  currentHeroQuality: "empty",
+  politicalIntelSnapshot: null
 };
 let hasCachedContent = false;
 function logHeroUpdate(source, incoming, current, accepted, reason = ""){
@@ -2309,6 +2312,11 @@ async function loadAll(){
   state.isStaleMode = false;
   state.fallbackMessage = "";
   setApiBanner(false);
+  if (state.category === POLITICAL_INTEL_CATEGORY){
+    await loadPoliticalIntelSnapshot();
+    renderAll();
+    return;
+  }
   await loadSentimentData();
   try{
     const qs = new URLSearchParams();
@@ -2491,6 +2499,61 @@ async function loadAll(){
     renderPinnedChips();
     renderAll();
   }
+}
+
+async function loadPoliticalIntelSnapshot(){
+  const fallback = {
+    generatedAt: new Date().toISOString(),
+    trackedParties: [],
+    trackedLeaders: [],
+    sources: [],
+    partyTrend: [],
+    sourcePartyTone: [],
+    shareOfVoice: [],
+    issues: [],
+    election: { status: "standby", lastRefresh: "", states: [] },
+    ticker: { asOf: "", items: [] }
+  };
+  try{
+    state.politicalIntelSnapshot = await fetchJSON("/data/political-intel-snapshot.json");
+  }catch{
+    state.politicalIntelSnapshot = fallback;
+  }
+}
+function isPremiumPreviewEnabled(){
+  try{
+    return localStorage.getItem(PREMIUM_PREVIEW_KEY) === "true";
+  }catch{
+    return false;
+  }
+}
+function renderPoliticalIntelligence(){
+  const wrap = document.getElementById("politicalIntelPage");
+  const layout = document.querySelector("main.layout");
+  if (!wrap || !layout) return;
+  const active = state.category === POLITICAL_INTEL_CATEGORY;
+  wrap.hidden = !active;
+  layout.style.display = active ? "none" : "";
+  if (!active) return;
+  const data = state.politicalIntelSnapshot || {};
+  const premium = isPremiumPreviewEnabled();
+  const parties = safeArray(data.trackedParties);
+  const sources = safeArray(data.sources);
+  const matrix = safeArray(data.sourcePartyTone);
+  const matrixCols = parties.slice(0, 6);
+  const toneClass = (n) => n > 0 ? "tone-pos" : (n < 0 ? "tone-neg" : "tone-neu");
+  wrap.innerHTML = `
+    <article class="pi-card pi-full"><h3>Political Intelligence ${premium ? "" : '<span class="premium-badge">Premium</span>'}</h3><div class="pi-note">Daily intelligence + live election mode with snapshot-first rendering.</div></article>
+    <article class="pi-card pi-third"><h3>Political Signal Summary</h3><div>Total analyzed: ${safeArray(data.shareOfVoice).reduce((n,r)=>n+(Number(r.mentions)||0),0)}</div><div>Tracked parties: ${parties.length}</div><div>Tracked sources: ${sources.length}</div><div>Last updated: ${formatLastUpdated(data.generatedAt) || "Unavailable"}</div><div class="pi-chip">${data.generatedAt ? "Snapshot fresh" : "Snapshot fallback"}</div></article>
+    <article class="pi-card pi-third ${premium ? "" : "pi-lock"}"><h3>Party Tone Trend</h3>${safeArray(data.partyTrend).map(r=>`<div>${escapeHtml(r.party)}: ${(r.values||[]).join(" → ")}</div>`).join("") || '<div class="pi-note">No trend data.</div>'}</article>
+    <article class="pi-card pi-third ${premium ? "" : "pi-lock"}"><h3>Share of Voice</h3>${safeArray(data.shareOfVoice).map(r=>`<div>${escapeHtml(r.entity)}: ${Number(r.mentions)||0}</div>`).join("")}</article>
+    <article class="pi-card pi-half ${premium ? "" : "pi-lock"}"><h3>Source × Party Tone Matrix</h3><div class="pi-note">Media tone based on article coverage, not voter sentiment.</div><table><thead><tr><th>Source</th>${matrixCols.map(c=>`<th>${escapeHtml(c)}</th>`).join("")}</tr></thead><tbody>${matrix.map(row=>`<tr><td>${escapeHtml(row.source || "")}</td>${matrixCols.map(c=>`<td class="${toneClass(Number(row.tones?.[c] || 0))}">${Number(row.tones?.[c] || 0)}</td>`).join("")}</tr>`).join("")}</tbody></table></article>
+    <article class="pi-card pi-half ${premium ? "" : "pi-lock"}"><h3>Issue Association</h3>${safeArray(data.issues).map(r=>`<div>${escapeHtml(r.issue)}: ${Number(r.count)||0}</div>`).join("")}</article>
+    <article class="pi-card pi-half ${premium ? "" : "pi-lock"}"><h3>Leader Lens</h3>${safeArray(data.trackedLeaders).map(n=>`<span class="pi-chip">${escapeHtml(n)}</span>`).join("")}</article>
+    <article class="pi-card pi-half"><h3>Live Election Results</h3><div>Status: ${escapeHtml(data.election?.status || "standby")}</div><div>Last refresh: ${formatLastUpdated(data.election?.lastRefresh) || "Awaiting feed"}</div></article>
+    <article class="pi-card pi-full"><h3>Markets + Sports Ticker</h3><div>${safeArray(data.ticker?.items).map(i => `<span class=\"pi-chip\">${escapeHtml(i.label)} ${escapeHtml(i.value)} ${escapeHtml(i.change || "")}</span>`).join("") || "Ticker snapshot unavailable."}</div></article>
+    ${premium ? "" : '<article class="pi-card pi-full"><strong>Preview mode:</strong> Set <code>localStorage.i360_premium_preview = \"true\"</code> to unlock full prototype.</article>'}
+  `;
 }
 
 /* image helpers */
@@ -4670,6 +4733,8 @@ function renderIndustryBoard(){
 
 /* glue */
 function renderAll(){
+  renderPoliticalIntelligence();
+  if (state.category === POLITICAL_INTEL_CATEGORY) return;
   updateBriefingDateTime();
   renderHero();
   renderPinned();
