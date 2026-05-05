@@ -1750,3 +1750,18 @@ dialog::backdrop{
     font-size: 12px;
   }
 }
+
+.premium-badge{font-size:11px;background:#f59e0b;color:#111827;padding:1px 6px;border-radius:999px;margin-left:4px;vertical-align:middle;font-weight:700}
+.political-intel-page{max-width:1240px;margin:12px auto;padding:0 14px 20px;display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.political-intel-page .pi-card{background:var(--card,#fff);border:1px solid #dbe2ee;border-radius:12px;padding:12px}
+.political-intel-page .pi-card h3{margin:0 0 8px;font-size:16px}
+.political-intel-page .pi-full{grid-column:1/-1}.political-intel-page .pi-half{grid-column:span 6}.political-intel-page .pi-third{grid-column:span 4}
+.political-intel-page .pi-note{font-size:12px;color:#475569}
+.political-intel-page table{width:100%;border-collapse:collapse;font-size:12px}.political-intel-page th,.political-intel-page td{border:1px solid #e2e8f0;padding:4px;text-align:center}
+.political-intel-page .tone-pos{background:rgba(16,185,129,.23)}.political-intel-page .tone-neu{background:rgba(148,163,184,.2)}.political-intel-page .tone-neg{background:rgba(239,68,68,.23)}
+.political-intel-page .pi-chip{display:inline-block;padding:3px 8px;border-radius:999px;background:#e2e8f0;font-size:11px;margin-right:6px}
+@media (max-width:980px){.political-intel-page .pi-half,.political-intel-page .pi-third{grid-column:1/-1}}
+
+.pi-ticker{display:flex;gap:8px;overflow:auto;padding-bottom:4px}.pi-kpis{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:10px}.pi-kpis strong{display:block;font-size:28px}.pi-kpis span{font-size:12px;color:#64748b}.pi-trend-row{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #e2e8f0;padding:8px 0}.pi-trend-row svg{width:90px;height:34px}.pi-bar-row{display:grid;grid-template-columns:110px 1fr 42px;gap:8px;align-items:center;margin:7px 0}.pi-bar{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden}.pi-bar i{display:block;height:100%;background:#2563eb}.pi-matrix-wrap{overflow:auto}.pi-leader{display:grid;grid-template-columns:1.5fr auto auto 80px;gap:8px;align-items:center;border-bottom:1px solid #e2e8f0;padding:8px 0}.pi-leader svg{width:72px;height:20px}@media(max-width:980px){.pi-kpis{grid-template-columns:repeat(2,minmax(120px,1fr))}.pi-leader{grid-template-columns:1fr auto auto}}
+.political-intel-page,.political-intel-page *{box-sizing:border-box}
+@media(max-width:640px){.pi-bar-row{grid-template-columns:84px 1fr 34px;font-size:12px}.pi-kpis strong{font-size:22px}}

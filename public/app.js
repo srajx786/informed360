@@ -27,6 +27,8 @@ const SNAPSHOT_CACHE_KEYS = [
 ];
 const USA_CATEGORY = "usa";
 const POTUS_CATEGORY = "potus";
+const POLITICAL_INTEL_CATEGORY = "political-intelligence";
+const ECI_SNAPSHOT_CACHE_KEY = "informed360_eci_snapshot_cache";
 const MIN_SOURCE_ARTICLES = 2;
 const USA_SECTION_SOURCES = new Set([
   "CNN",
@@ -1547,7 +1549,9 @@ const state = {
   fallbackMessage: "",
   splitSnapshots: readLocalCache(SNAPSHOT_SPLIT_CACHE_KEY) || {},
   currentHeroSnapshot: readHeroSnapshot(),
-  currentHeroQuality: "empty"
+  currentHeroQuality: "empty",
+  politicalIntelSnapshot: null,
+  eciResultsSnapshot: null
 };
 let hasCachedContent = false;
 function logHeroUpdate(source, incoming, current, accepted, reason = ""){
@@ -2309,6 +2313,12 @@ async function loadAll(){
   state.isStaleMode = false;
   state.fallbackMessage = "";
   setApiBanner(false);
+  if (state.category === POLITICAL_INTEL_CATEGORY){
+    await loadPoliticalIntelSnapshot();
+    await loadEciResultsSnapshot();
+    renderAll();
+    return;
+  }
   await loadSentimentData();
   try{
     const qs = new URLSearchParams();
@@ -2491,6 +2501,87 @@ async function loadAll(){
     renderPinnedChips();
     renderAll();
   }
+}
+
+async function loadPoliticalIntelSnapshot(){
+  const fallback = {
+    generatedAt: new Date().toISOString(),
+    trackedParties: [],
+    trackedLeaders: [],
+    sources: [],
+    partyTrend: [],
+    sourcePartyTone: [],
+    shareOfVoice: [],
+    issues: [],
+    election: { status: "standby", lastRefresh: "", states: [] },
+    ticker: { asOf: "", items: [] }
+  };
+  try{
+    state.politicalIntelSnapshot = await fetchJSON("/data/political-intel-snapshot.json");
+  }catch{
+    state.politicalIntelSnapshot = fallback;
+  }
+}
+function getStandbyEciSnapshot(message = "No live ECI result feed configured right now. Election mode is ready."){
+  return {
+    generatedAt: new Date().toISOString(),
+    source: {
+      name: "Election Commission of India",
+      url: "https://results.eci.gov.in/",
+      disclaimer: "ECI displays information as filled in the system by Returning Officers from their respective Counting Centres. Final data for each AC/PC is shared in Form-20."
+    },
+    status: "standby",
+    sample: false,
+    electionName: "",
+    states: [],
+    partySummary: [],
+    alliances: [],
+    constituencies: [],
+    closeContests: [],
+    lastSuccessfulFetchAt: "",
+    message
+  };
+}
+async function loadEciResultsSnapshot(){
+  const fallback = getStandbyEciSnapshot();
+  try{
+    const payload = await fetchJSON("/data/elections/eci-live-results.json");
+    state.eciResultsSnapshot = payload;
+    writeLocalCache(ECI_SNAPSHOT_CACHE_KEY, payload);
+    return;
+  }catch{}
+  const cached = readLocalCache(ECI_SNAPSHOT_CACHE_KEY);
+  state.eciResultsSnapshot = cached || getStandbyEciSnapshot("No live ECI result feed configured right now. Election mode is ready.");
+}
+function renderPoliticalIntelligence(){
+  const wrap = document.getElementById("politicalIntelPage");
+  const layout = document.querySelector("main.layout");
+  if (!wrap || !layout) return;
+  const active = state.category === POLITICAL_INTEL_CATEGORY;
+  wrap.hidden = !active;
+  layout.style.display = active ? "none" : "";
+  if (!active) return;
+  const data = state.politicalIntelSnapshot || {};
+  const parties = safeArray(data.trackedParties);
+  const sources = safeArray(data.sources);
+  const matrix = safeArray(data.sourcePartyTone);
+  const matrixCols = parties.slice(0, 6);
+  const toneClass = (n) => n > 0 ? "tone-pos" : (n < 0 ? "tone-neg" : "tone-neu");
+  const eci = state.eciResultsSnapshot || getStandbyEciSnapshot();
+  const maxVoice = Math.max(1, ...safeArray(data.shareOfVoice).map((r)=>Number(r.mentions)||0));
+  const toneLabel = (n) => n > 2 ? "Favorable" : (n < -2 ? "Critical" : "Neutral");
+  wrap.innerHTML = `
+    <article class="pi-card pi-full"><h2>India Political Intelligence <span class="premium-badge">Premium</span></h2><div class="pi-note">Track media tone, party coverage, source behavior, issues, leaders, and election signals.</div><div><span class="pi-chip">Snapshot-first</span><span class="pi-chip">Media tone, not voter sentiment</span><span class="pi-chip">ECI-ready election mode</span></div></article>
+    <article class="pi-card pi-full"><h3>Markets + Sports Ticker</h3><div class="pi-ticker">${safeArray(data.ticker?.items).map(i => `<span class="pi-chip">${escapeHtml(i.label)} ${escapeHtml(i.value)} ${escapeHtml(i.change || "")}</span>`).join("") || "Ticker snapshot unavailable."}</div></article>
+    <article class="pi-card pi-full pi-kpis"><div><strong>${safeArray(data.shareOfVoice).reduce((n,r)=>n+(Number(r.mentions)||0),0)}</strong><span>Articles analyzed</span></div><div><strong>${parties.length}</strong><span>Parties tracked</span></div><div><strong>${sources.length}</strong><span>Sources tracked</span></div><div><strong>${formatLastUpdated(data.generatedAt) || "N/A"}</strong><span>Last updated</span></div></article>
+    <article class="pi-card pi-half"><h3>Party Tone Trend</h3>${safeArray(data.partyTrend).map(r=>{const vals=safeArray(r.values).map(v=>Number(v)||0); const cur=vals[vals.length-1]||0; const pts=vals.map((v,i)=>`${i*26},${48-(v/2)}`).join(' '); return `<div class="pi-trend-row"><div><strong>${escapeHtml(r.party)}</strong><span class="pi-note">${cur}</span><span class="pi-chip">${toneLabel(cur-50)}</span></div><svg viewBox="0 0 80 50"><polyline fill="none" stroke="#2563eb" stroke-width="2" points="${pts}"/></svg></div>`;}).join("")}</article>
+    <article class="pi-card pi-half"><h3>Share of Voice</h3>${safeArray(data.shareOfVoice).map(r=>`<div class="pi-bar-row"><span>${escapeHtml(r.entity)}</span><div class="pi-bar"><i style="width:${Math.round(((Number(r.mentions)||0)/maxVoice)*100)}%"></i></div><b>${Number(r.mentions)||0}</b></div>`).join("")}</article>
+    <article class="pi-card pi-full"><h3>Source × Party Tone Matrix</h3><div class="pi-note">Media tone based on article coverage, not voter sentiment.</div><div class="pi-matrix-wrap"><table><thead><tr><th>Source</th>${matrixCols.map(c=>`<th>${escapeHtml(c)}</th>`).join("")}</tr></thead><tbody>${matrix.map(row=>`<tr><td>${escapeHtml(row.source || "")}</td>${matrixCols.map(c=>`<td class="${toneClass(Number(row.tones?.[c] || 0))}">${Number(row.tones?.[c] || 0)}</td>`).join("")}</tr>`).join("")}</tbody></table></div><div class="pi-note">Legend: green = favorable media tone · grey = neutral · orange/red = critical media tone.</div></article>
+    <article class="pi-card pi-half"><h3>Issue Association</h3>${safeArray(data.issues).map(r=>`<div class="pi-bar-row"><span>${escapeHtml(r.issue)}</span><div class="pi-bar"><i style="width:${Math.min(100,Number(r.count)||0)}%"></i></div><b>${Number(r.count)||0}</b></div>`).join("")}</article>
+    <article class="pi-card pi-half"><h3>Leader Lens</h3>${safeArray(data.trackedLeaders).slice(0,9).map((n,i)=>`<div class="pi-leader"><strong>${escapeHtml(n)}</strong><span class="pi-chip">Mentions ${(30-i*2)}</span><span class="pi-chip">${i%3===0?"Favorable":i%3===1?"Neutral":"Critical"}</span><svg viewBox="0 0 60 20"><polyline fill="none" stroke="#0ea5e9" stroke-width="2" points="0,15 15,${10+i%4} 30,12 45,${8+i%5} 60,9"/></svg></div>`).join("")}</article>
+    <article class="pi-card pi-full"><h3>Live Election Results ${eci.sample ? '<span class="pi-chip">Preview data</span>' : ''}</h3><div class="pi-note">Source: <a href="${escapeHtml(eci.source?.url || 'https://results.eci.gov.in/')}" target="_blank" rel="noopener">Election Commission of India</a> · Status: ${escapeHtml(eci.status || "standby")} · Last refresh: ${formatLastUpdated(eci.lastSuccessfulFetchAt || eci.generatedAt) || "Awaiting feed"}</div><div class="pi-note">${escapeHtml(eci.source?.disclaimer || "")}</div>${eci.status === "unavailable" ? '<div class="pi-note">ECI result feed unavailable. Showing last saved result snapshot if available.</div>' : ''}<div class="pi-note">${escapeHtml(eci.message || "")}</div><table><thead><tr><th>Party</th><th>Won</th><th>Leading</th><th>Total</th></tr></thead><tbody>${safeArray(eci.partySummary).length ? safeArray(eci.partySummary).map(p=>`<tr><td>${escapeHtml(p.party||"")}</td><td>${Number(p.won)||0}</td><td>${Number(p.leading)||0}</td><td>${Number(p.total)||0}</td></tr>`).join("") : '<tr><td colspan="4">No live ECI result feed configured right now. Election mode is ready.</td></tr>'}</tbody></table></article>
+    <article class="pi-card pi-full pi-note">Prototype preview: premium gating disabled during development.</article>
+  `;
 }
 
 /* image helpers */
@@ -4670,6 +4761,8 @@ function renderIndustryBoard(){
 
 /* glue */
 function renderAll(){
+  renderPoliticalIntelligence();
+  if (state.category === POLITICAL_INTEL_CATEGORY) return;
   updateBriefingDateTime();
   renderHero();
   renderPinned();
