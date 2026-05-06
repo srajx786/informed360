@@ -3618,6 +3618,34 @@ app.get("/api/markets", (_req, res) => {
   }
   res.json(buildMarketFallbackPayload());
 });
+app.get("/api/elections/eci-live-results", async (_req, res) => {
+  const fallback = {
+    generatedAt: new Date().toISOString(),
+    source: {
+      name: "Election Commission of India",
+      url: "https://results.eci.gov.in/",
+      disclaimer: "ECI displays information as filled in the system by Returning Officers from their respective Counting Centres. Final data for each AC/PC is shared in Form-20."
+    },
+    status: "standby",
+    sample: false,
+    electionName: "",
+    states: [],
+    partySummary: [],
+    alliances: [],
+    constituencies: [],
+    closeContests: [],
+    lastSuccessfulFetchAt: "",
+    message: "No live ECI result feed configured right now. Election mode is ready."
+  };
+  try {
+    const filePath = path.join(PUBLIC_DATA_DIR, "elections", "eci-live-results.json");
+    const raw = await fsPromises.readFile(filePath, "utf-8");
+    const parsed = JSON.parse(raw);
+    res.json(parsed && typeof parsed === "object" ? parsed : fallback);
+  } catch {
+    res.json(fallback);
+  }
+});
 
 app.get("/api/visitor-stats", async (_req, res) => {
   res.setHeader("Cache-Control", "no-store");
