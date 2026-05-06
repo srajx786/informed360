@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Political Dashboard Prototype</title>
+  <style>
+    :root{--navy:#14325f;--bg:#eef3f8;--card:#fff;--line:#d8e1ec;--orange:#ef8a20;--green:#2f9e66;--blue:#3b82c4;--red:#e5652f}
+    body{margin:0;background:var(--bg);font-family:Inter,Arial,sans-serif;color:#1f2a44}
+    .wrap{max-width:1400px;margin:0 auto;padding-bottom:20px}
+    .top{background:var(--navy);color:#c7d7ee;padding:12px 18px;font-weight:700;display:flex;justify-content:space-between}
+    .hero{background:#f4f7fb;border:1px solid var(--line);padding:16px;text-align:center}
+    .hero h1{margin:0;font-size:56px}.ribbon{display:inline-block;background:var(--orange);color:#fff;padding:8px 18px;border-radius:4px;font-weight:700;margin-top:10px}
+    .grid{display:grid;gap:12px;padding:12px}
+    .row1,.row2,.row3{grid-template-columns:2fr 1fr}.card{background:var(--card);border:1px solid var(--line);box-shadow:0 3px 10px rgba(0,0,0,.08);padding:12px}
+    h3{margin:0;font-size:30px}.rule{height:1px;background:var(--line);margin:8px 0 12px}
+    .gauges{display:flex;gap:10px}.g{flex:1;text-align:center;position:relative}.g svg{width:130px;height:130px}.gbg{fill:none;stroke:#e7edf5;stroke-width:14}.gr{fill:none;stroke-width:14;stroke-linecap:round;transform:rotate(-90deg);transform-origin:65px 65px}
+    .g .mid{position:absolute;left:0;right:0;top:52px;font-weight:700}
+    .chart{width:100%;height:250px;background:#f8fbff}
+    .bars .b{margin:8px 0}.track{height:13px;background:#e7edf6;border-radius:999px;overflow:hidden}.fill{height:100%;background:var(--green)}
+    .stack{display:grid;gap:12px}.issue .i{display:grid;grid-template-columns:130px 1fr;gap:8px;margin:8px 0}.issue b{height:10px;background:linear-gradient(90deg,var(--green),var(--blue),var(--orange));display:block;border-radius:999px}
+    .region{display:grid;grid-template-columns:150px 1fr;gap:10px}.pie{width:140px;height:140px;border-radius:50%;background:conic-gradient(var(--green) 0 30%,var(--orange) 30% 60%,var(--blue) 60% 80%,#f97316 80% 100%)}
+    .india{height:200px;background:linear-gradient(135deg,#dde8f6,#ccdced);clip-path:polygon(49% 0,61% 10%,66% 25%,61% 44%,72% 62%,56% 98%,46% 86%,34% 66%,39% 48%,31% 26%,42% 8%);border:1px solid #cad9eb}
+    .chips span{display:inline-block;background:#1b3c6d;color:#fff;padding:4px 8px;border-radius:999px;font-size:12px;margin-right:6px}
+    table{width:100%;border-collapse:collapse;font-size:12px}th,td{border:1px solid var(--line);padding:6px;text-align:left}
+    .heat td.pos{background:#d8f3e7}.heat td.neu{background:#e7eef8}.heat td.neg{background:#fde6dc}
+    .heads .r{display:flex;justify-content:space-between;border-bottom:1px solid #edf2f8;padding:8px 0}.pill{background:#e8eef8;border-radius:999px;padding:2px 8px;font-size:11px}
+    @media (max-width:980px){.hero h1{font-size:34px}.row1,.row2,.row3{grid-template-columns:1fr}.gauges{flex-direction:column}.region{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top"><span>Informed360</span><span>Political Intelligence Prototype</span></div>
+    <section class="hero"><h1>India Political Intelligence</h1><div class="ribbon">Premium Intelligence</div></section>
+
+    <section class="grid row1">
+      <article class="card"><h3>Party Sentiment Overview</h3><div class="rule"></div><div class="gauges">
+        <div class="g"><div>Favorable</div><svg viewBox="0 0 130 130"><circle cx="65" cy="65" r="45" class="gbg"/><circle cx="65" cy="65" r="45" class="gr" stroke="#2f9e66" stroke-dasharray="170 283"/></svg><div class="mid">60%</div></div>
+        <div class="g"><div>Neutral</div><svg viewBox="0 0 130 130"><circle cx="65" cy="65" r="45" class="gbg"/><circle cx="65" cy="65" r="45" class="gr" stroke="#3b82c4" stroke-dasharray="132 283"/></svg><div class="mid">47%</div></div>
+        <div class="g"><div>Critical</div><svg viewBox="0 0 130 130"><circle cx="65" cy="65" r="45" class="gbg"/><circle cx="65" cy="65" r="45" class="gr" stroke="#e5652f" stroke-dasharray="102 283"/></svg><div class="mid">36%</div></div>
+      </div></article>
+      <article class="card"><h3>Media Tone Toward Parties</h3><div class="rule"></div><svg viewBox="0 0 420 240" class="chart"><line x1="30" y1="200" x2="390" y2="200" stroke="#d8e1ec"/><line x1="30" y1="120" x2="390" y2="120" stroke="#d8e1ec"/><polyline points="30,180 90,160 150,170 210,140 270,130 330,120 390,110" fill="none" stroke="#1d4ed8" stroke-width="3"/><polyline points="30,190 90,175 150,155 210,160 270,145 330,132 390,126" fill="none" stroke="#2f9e66" stroke-width="3"/><polyline points="30,170 90,165 150,150 210,145 270,155 330,138 390,130" fill="none" stroke="#ef8a20" stroke-width="3"/><text x="30" y="225" font-size="11">May 1</text><text x="150" y="225" font-size="11">May 3</text><text x="270" y="225" font-size="11">May 5</text><text x="370" y="225" font-size="11">May 6</text></svg></article>
+    </section>
+
+    <section class="grid row2">
+      <article class="card bars"><h3>Election Results / Trends</h3><div class="rule"></div><p><strong>Standby</strong> · No live official election feed configured.</p><div class="b"><small>Alliance A</small><div class="track"><div class="fill" style="width:0%"></div></div></div><div class="b"><small>Alliance B</small><div class="track"><div class="fill" style="width:0%"></div></div></div><div class="b"><small>Alliance C</small><div class="track"><div class="fill" style="width:0%"></div></div></div></article>
+      <div class="stack">
+        <article class="card"><h3>Live Election Results</h3><div class="rule"></div><p><b>Source:</b> Election Commission of India</p><p><b>Status:</b> standby</p><p><b>Last updated:</b> Awaiting official feed</p></article>
+        <article class="card issue"><h3>Issue & Public Narrative</h3><div class="rule"></div><div class="i"><span>Economy</span><b style="width:85%"></b></div><div class="i"><span>Jobs</span><b style="width:76%"></b></div><div class="i"><span>Inflation</span><b style="width:66%"></b></div><div class="i"><span>Governance</span><b style="width:58%"></b></div></article>
+        <article class="card heads"><h3>Political Headlines</h3><div class="rule"></div><div class="r"><div>Coalition talks intensify<br><small>The Hindu</small></div><div><span class="pill">BJP</span><br><span class="pill">neutral</span></div></div><div class="r"><div>Campaign shifts to jobs<br><small>Indian Express</small></div><div><span class="pill">INC</span><br><span class="pill">critical</span></div></div><div class="r"><div>Urban race debate grows<br><small>TOI</small></div><div><span class="pill">AAP</span><br><span class="pill">favorable</span></div></div></article>
+      </div>
+    </section>
+
+    <section class="grid row3">
+      <article class="card"><h3>Regional Political Analysis</h3><div class="rule"></div><div class="region"><div class="pie"></div><div class="india"></div></div><p>Regional map activates when state or constituency data is available.</p><div class="chips"><span>North</span><span>South</span><span>East</span><span>West</span><span>Central</span></div></article>
+      <article class="card"><h3>Constituency / Municipal Results</h3><div class="rule"></div><p>Standby · Awaiting official feed.</p></article>
+    </section>
+
+    <section class="grid"><article class="card"><h3>Source × Party Tone Matrix</h3><div class="rule"></div><table class="heat"><thead><tr><th>Source</th><th>BJP</th><th>INC</th><th>AAP</th></tr></thead><tbody><tr><td>The Hindu</td><td class="pos">12</td><td class="neu">2</td><td class="neg">-4</td></tr><tr><td>Indian Express</td><td class="neg">-6</td><td class="pos">8</td><td class="neu">1</td></tr><tr><td>Times of India</td><td class="neu">4</td><td class="neg">-2</td><td class="pos">10</td></tr></tbody></table></article></section>
+  </div>
+</body>
+</html>

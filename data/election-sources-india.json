@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "id": "eci",
+      "name": "Election Commission of India",
+      "type": "national_official",
+      "baseUrl": "https://results.eci.gov.in/",
+      "enabled": true
+    },
+    {
+      "id": "state-sec-template",
+      "name": "State Election Commission",
+      "type": "state_or_municipal_official",
+      "state": "",
+      "baseUrl": "",
+      "enabled": false
+    }
+  ]
+}

@@ -1,13 +1,47 @@
 {
-  "generatedAt": "2026-05-04T00:00:00Z",
-  "mode": "daily",
-  "trackedParties": ["BJP","INC","AAP","DMK","TMC","SP","Shiv Sena","NCP","BJD","RJD","CPI(M)","JD(U)"],
-  "trackedLeaders": ["Narendra Modi","Rahul Gandhi","Arvind Kejriwal","Mamata Banerjee","M.K. Stalin","Yogi Adityanath","Akhilesh Yadav","Nitish Kumar","Naveen Patnaik"],
-  "sources": ["The Hindu","Indian Express","India Today","NDTV","Reuters"],
-  "partyTrend": [{"party":"BJP","values":[58,56,60,57]},{"party":"INC","values":[45,48,44,46]},{"party":"AAP","values":[50,49,48,47]},{"party":"DMK","values":[52,51,52,53]},{"party":"TMC","values":[49,50,51,50]}],
-  "sourcePartyTone": [{"source":"The Hindu","tones":{"BJP":-1,"INC":0,"AAP":1,"DMK":1,"TMC":0}},{"source":"Indian Express","tones":{"BJP":0,"INC":0,"AAP":0,"DMK":1,"TMC":-1}}],
-  "shareOfVoice": [{"entity":"BJP","mentions":62},{"entity":"INC","mentions":51},{"entity":"AAP","mentions":23},{"entity":"DMK","mentions":19},{"entity":"TMC","mentions":17}],
-  "issues": [{"issue":"economy","count":44},{"issue":"jobs","count":31},{"issue":"inflation","count":29},{"issue":"governance","count":27},{"issue":"national security","count":21}],
-  "election": {"status":"standby","lastRefresh":"2026-05-04T00:00:00Z","states":[]},
-  "ticker": {"asOf":"2026-05-04T00:00:00Z","items":[{"label":"Sensex","value":"74,980","change":"+0.6%"},{"label":"Nifty","value":"22,780","change":"+0.5%"},{"label":"USD/INR","value":"83.18","change":"-0.1%"},{"label":"Gold","value":"₹71,420/10g","change":"+0.3%"},{"label":"IPL","value":"MI vs CSK 7:30 PM IST"},{"label":"Cricket","value":"IND vs AUS (Upcoming)"},{"label":"Football","value":"EPL: Arsenal vs Spurs"}]}
+  "sample": true,
+  "generatedAt": "2026-05-06T00:00:00Z",
+  "partyToneBuckets": [
+    {"label": "Favorable", "value": 39, "count": 468, "color": "#1f9d63"},
+    {"label": "Neutral", "value": 34, "count": 408, "color": "#7b8aa6"},
+    {"label": "Critical", "value": 27, "count": 324, "color": "#e4572e"}
+  ],
+  "partyToneTrends": {
+    "buckets": ["May 1", "May 2", "May 3", "May 4", "May 5", "May 6"],
+    "series": [
+      {"party": "BJP", "color": "#2563eb", "values": [18, 26, 22, 28, 31, 34]},
+      {"party": "INC", "color": "#f97316", "values": [12, 16, 19, 18, 21, 24]},
+      {"party": "AAP", "color": "#16a34a", "values": [10, 13, 11, 14, 16, 18]}
+    ]
+  },
+  "sourcePartyMatrix": [
+    {"source": "The Hindu", "tones": {"BJP": 8, "INC": 4, "AAP": 2}},
+    {"source": "Indian Express", "tones": {"BJP": -5, "INC": 3, "AAP": 5}},
+    {"source": "Times of India", "tones": {"BJP": 6, "INC": -2, "AAP": 1}}
+  ],
+  "shareOfVoice": [{"entity": "BJP", "mentions": 512}, {"entity": "INC", "mentions": 436}],
+  "issueNarratives": [
+    {"issue": "Economy", "score": 84}, {"issue": "Jobs", "score": 74}, {"issue": "Inflation", "score": 70},
+    {"issue": "Corruption", "score": 62}, {"issue": "Governance", "score": 66}, {"issue": "National security", "score": 58},
+    {"issue": "Welfare", "score": 52}, {"issue": "Caste", "score": 44}, {"issue": "Religion", "score": 41}, {"issue": "Environment", "score": 39}
+  ],
+  "leaderLens": ["Narendra Modi", "Rahul Gandhi", "Arvind Kejriwal"],
+  "regionalSignals": [],
+  "politicalHeadlines": [
+    {"headline": "Coalition talks intensify before state vote", "source": "The Hindu", "entities": ["BJP", "INC"], "tone": "neutral", "sparkline": [1,2,1,3,2,3]},
+    {"headline": "Campaign pivots to jobs and inflation", "source": "Indian Express", "entities": ["INC"], "tone": "critical", "sparkline": [2,1,2,2,1,1]},
+    {"headline": "Urban governance debate dominates city races", "source": "Times of India", "entities": ["AAP"], "tone": "favorable", "sparkline": [1,1,2,3,3,4]}
+  ],
+  "electionResults": {
+    "generatedAt": "2026-05-06T00:00:00Z",
+    "status": "standby",
+    "electionName": "Election Results Feed Standby",
+    "partySummary": [
+      {"party": "BJP", "won": 0, "leading": 0, "total": 543, "voteShare": 0},
+      {"party": "INC", "won": 0, "leading": 0, "total": 543, "voteShare": 0},
+      {"party": "AAP", "won": 0, "leading": 0, "total": 543, "voteShare": 0}
+    ],
+    "constituencies": []
+  },
+  "municipalResults": {"wards": []}
 }
