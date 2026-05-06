@@ -2503,58 +2503,74 @@ async function loadAll(){
 
 async function loadPoliticalIntelSnapshot(){
   const fallback = {
+    sample: true,
     generatedAt: new Date().toISOString(),
-    trackedParties: [],
-    trackedLeaders: [],
-    sources: [],
-    partyTrend: [],
-    sourcePartyTone: [],
-    shareOfVoice: [],
-    issues: [],
-    election: { status: "standby", lastRefresh: "", states: [] },
-    ticker: { asOf: "", items: [] }
+    partyToneBuckets: [
+      { label: "Favorable", value: 38, count: 380, color: "#1f9d63" },
+      { label: "Neutral", value: 34, count: 340, color: "#7c8aa5" },
+      { label: "Critical", value: 28, count: 280, color: "#e4572e" }
+    ],
+    partyToneTrends: { buckets: ["May 1", "May 2", "May 3", "May 4", "May 5", "May 6"], series: [] },
+    sourcePartyMatrix: [], shareOfVoice: [], issueNarratives: [], regionalSignals: [], politicalHeadlines: []
   };
-  try{
-    state.politicalIntelSnapshot = await fetchJSON("/data/political-intel-snapshot.json");
-  }catch{
-    state.politicalIntelSnapshot = fallback;
-  }
+  try{ state.politicalIntelSnapshot = await fetchJSON('/data/political-intel-snapshot.json'); }
+  catch{ state.politicalIntelSnapshot = fallback; }
 }
-function isPremiumPreviewEnabled(){
-  try{
-    return localStorage.getItem(PREMIUM_PREVIEW_KEY) === "true";
-  }catch{
-    return false;
-  }
-}
-function renderPoliticalIntelligence(){
-  const wrap = document.getElementById("politicalIntelPage");
-  const layout = document.querySelector("main.layout");
+
+function renderPoliticalIntelligence(){ renderPoliticalIntelligencePage(); }
+
+function renderPoliticalIntelligencePage(){
+  const wrap = document.getElementById('politicalIntelPage');
+  const layout = document.querySelector('main.layout');
   if (!wrap || !layout) return;
   const active = state.category === POLITICAL_INTEL_CATEGORY;
   wrap.hidden = !active;
-  layout.style.display = active ? "none" : "";
+  layout.style.display = active ? 'none' : '';
   if (!active) return;
   const data = state.politicalIntelSnapshot || {};
-  const premium = isPremiumPreviewEnabled();
-  const parties = safeArray(data.trackedParties);
-  const sources = safeArray(data.sources);
-  const matrix = safeArray(data.sourcePartyTone);
-  const matrixCols = parties.slice(0, 6);
-  const toneClass = (n) => n > 0 ? "tone-pos" : (n < 0 ? "tone-neg" : "tone-neu");
+  const election = data.electionResults || {};
+  const municipal = data.municipalResults || {};
   wrap.innerHTML = `
-    <article class="pi-card pi-full"><h3>Political Intelligence ${premium ? "" : '<span class="premium-badge">Premium</span>'}</h3><div class="pi-note">Daily intelligence + live election mode with snapshot-first rendering.</div></article>
-    <article class="pi-card pi-third"><h3>Political Signal Summary</h3><div>Total analyzed: ${safeArray(data.shareOfVoice).reduce((n,r)=>n+(Number(r.mentions)||0),0)}</div><div>Tracked parties: ${parties.length}</div><div>Tracked sources: ${sources.length}</div><div>Last updated: ${formatLastUpdated(data.generatedAt) || "Unavailable"}</div><div class="pi-chip">${data.generatedAt ? "Snapshot fresh" : "Snapshot fallback"}</div></article>
-    <article class="pi-card pi-third ${premium ? "" : "pi-lock"}"><h3>Party Tone Trend</h3>${safeArray(data.partyTrend).map(r=>`<div>${escapeHtml(r.party)}: ${(r.values||[]).join(" → ")}</div>`).join("") || '<div class="pi-note">No trend data.</div>'}</article>
-    <article class="pi-card pi-third ${premium ? "" : "pi-lock"}"><h3>Share of Voice</h3>${safeArray(data.shareOfVoice).map(r=>`<div>${escapeHtml(r.entity)}: ${Number(r.mentions)||0}</div>`).join("")}</article>
-    <article class="pi-card pi-half ${premium ? "" : "pi-lock"}"><h3>Source × Party Tone Matrix</h3><div class="pi-note">Media tone based on article coverage, not voter sentiment.</div><table><thead><tr><th>Source</th>${matrixCols.map(c=>`<th>${escapeHtml(c)}</th>`).join("")}</tr></thead><tbody>${matrix.map(row=>`<tr><td>${escapeHtml(row.source || "")}</td>${matrixCols.map(c=>`<td class="${toneClass(Number(row.tones?.[c] || 0))}">${Number(row.tones?.[c] || 0)}</td>`).join("")}</tr>`).join("")}</tbody></table></article>
-    <article class="pi-card pi-half ${premium ? "" : "pi-lock"}"><h3>Issue Association</h3>${safeArray(data.issues).map(r=>`<div>${escapeHtml(r.issue)}: ${Number(r.count)||0}</div>`).join("")}</article>
-    <article class="pi-card pi-half ${premium ? "" : "pi-lock"}"><h3>Leader Lens</h3>${safeArray(data.trackedLeaders).map(n=>`<span class="pi-chip">${escapeHtml(n)}</span>`).join("")}</article>
-    <article class="pi-card pi-half"><h3>Live Election Results</h3><div>Status: ${escapeHtml(data.election?.status || "standby")}</div><div>Last refresh: ${formatLastUpdated(data.election?.lastRefresh) || "Awaiting feed"}</div></article>
-    <article class="pi-card pi-full"><h3>Markets + Sports Ticker</h3><div>${safeArray(data.ticker?.items).map(i => `<span class=\"pi-chip\">${escapeHtml(i.label)} ${escapeHtml(i.value)} ${escapeHtml(i.change || "")}</span>`).join("") || "Ticker snapshot unavailable."}</div></article>
-    ${premium ? "" : '<article class="pi-card pi-full"><strong>Preview mode:</strong> Set <code>localStorage.i360_premium_preview = \"true\"</code> to unlock full prototype.</article>'}
-  `;
+    ${renderPoliticalHero(data)}
+    <section class="pi-canvas">
+      <div class="pi-main-grid">
+        ${renderPartySentimentGauges(data.partyToneBuckets || [])}
+        ${renderMediaToneLineChart(data.partyToneTrends || {})}
+        ${renderElectionResultsBoard(election.partySummary || election.alliances || [])}
+        ${renderLiveElectionStatus(election)}
+        ${renderSourcePartyMatrix(data.sourcePartyMatrix || [])}
+        ${renderIssueNarrativeBars(data.issueNarratives || [])}
+      </div>
+      <aside class="pi-side-grid">${renderPoliticalHeadlines(data.politicalHeadlines || [])}</aside>
+      <div class="pi-lower-grid">
+        ${renderRegionalPoliticalMap(data.regionalSignals || [])}
+        ${renderConstituencyMunicipalTable([...(election.constituencies||[]), ...(municipal.wards||[])])}
+      </div>
+    </section>`;
 }
+function renderPoliticalHero(data){
+  return `<section class="pi-hero"><div><h1>India Political Intelligence</h1><span class="pi-ribbon">Premium Intelligence</span><p>Track Indian political coverage, party tone, source behavior, election results, regional signals, and issue narratives.</p></div>${data.sample?'<span class="pi-preview-chip">Preview data</span>':''}</section>`;
+}
+function renderPartySentimentGauges(buckets){
+  return `<article class="pi-card"><h3>Party Sentiment Overview</h3><div class="pi-gauge-row">${buckets.slice(0,3).map(renderDonutGauge).join('')}</div></article>`;
+}
+function renderDonutGauge(item){ const v=Math.max(0,Math.min(100,Number(item?.value||0))); return `<div class="pi-gauge"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="44" class="pi-g-bg"/><circle cx="60" cy="60" r="44" class="pi-g-val" stroke="${item.color||'#2563eb'}" stroke-dasharray="${v*2.764} 999"/></svg><div class="pi-g-center"><strong>${v}%</strong><span>${Number(item.count||0)}</span></div><label>${escapeHtml(item.label||'')}</label></div>`; }
+function renderMediaToneLineChart(trends){
+  const labels=safeArray(trends.buckets); const series=safeArray(trends.series); const w=560,h=210,p=24;
+  const all=series.flatMap(s=>safeArray(s.values).map(Number)); const min=Math.min(-40,...all), max=Math.max(40,...all);
+  const x=(i)=>p+(i*Math.max(1,(w-p*2)/Math.max(1,labels.length-1))); const y=(v)=>h-p-((v-min)/(max-min||1))*(h-p*2);
+  const lines=series.map((s,idx)=>`<path d="${safeArray(s.values).map((v,i)=>`${i?'L':'M'} ${x(i)} ${y(Number(v)||0)}`).join(' ')}" stroke="${s.color||['#2563eb','#f97316','#16a34a'][idx%3]}" fill="none" stroke-width="2.5"/>`).join('');
+  return `<article class="pi-card"><h3>Media Tone Toward Parties</h3><svg viewBox="0 0 ${w} ${h}" class="pi-line">${lines}</svg><div class="pi-legend">${series.map((s,i)=>`<span><i style="background:${s.color||['#2563eb','#f97316','#16a34a'][i%3]}"></i>${escapeHtml(s.party||'Party')}</span>`).join('')}</div></article>`;
+}
+function renderElectionResultsBoard(rows){ return `<article class="pi-card"><h3>Election Results / Trends</h3>${safeArray(rows).map(r=>{const t=Math.max(1,Number(r.total||0));const w=(Number(r.won||0)/t)*100;const l=(Number(r.leading||0)/t)*100;return `<div class="pi-result-row"><div><strong>${escapeHtml(r.party||r.alliance||'')}</strong><small>Vote share ${Number(r.voteShare||0)}%</small></div><div class="pi-result-bar"><span style="width:${w}%"></span><em style="width:${l}%"></em></div><div class="pi-result-meta">Won ${Number(r.won||0)} · Leading ${Number(r.leading||0)} · Total ${t}</div></div>`}).join('')}</article>`; }
+function renderLiveElectionStatus(e){ return `<article class="pi-card"><h3>Live Election Results</h3><p><strong>Source:</strong> Election Commission of India</p><p><strong>Election:</strong> ${escapeHtml(e.electionName||'Standby')}</p><p><strong>Status:</strong> ${escapeHtml(e.status||'standby')}</p><p><strong>Last updated:</strong> ${formatLastUpdated(e.generatedAt||e.lastSuccessfulFetchAt)||'Awaiting source'}</p><p class="pi-note">ECI displays information as filled in the system by Returning Officers from their respective Counting Centres. Final data for each AC/PC is shared in Form-20.</p></article>`; }
+function renderSourcePartyMatrix(rows){ const parties=[...new Set(rows.flatMap(r=>Object.keys(r.tones||{})))].slice(0,6); const toneClass=(n)=>n>20?'pi-tone-pos':n<-20?'pi-tone-neg':'pi-tone-neu'; return `<article class="pi-card"><h3>Source × Party Tone Matrix</h3><div class="pi-note">Media tone based on article coverage, not voter sentiment.</div><div class="pi-scroll"><table class="pi-table"><thead><tr><th>Source</th>${parties.map(p=>`<th>${escapeHtml(p)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr><td>${escapeHtml(r.source||'')}</td>${parties.map(p=>{const v=Number(r.tones?.[p]||0);return `<td class="${toneClass(v)}">${v}</td>`}).join('')}</tr>`).join('')}</tbody></table></div></article>`; }
+function renderIssueNarrativeBars(items){return `<article class="pi-card"><h3>Issue & Public Narrative</h3>${items.map(i=>`<div class="pi-issue"><span>${escapeHtml(i.issue||'')}</span><div><b style="width:${Math.max(2,Math.min(100,Number(i.score||0)))}%"></b></div></div>`).join('')}</article>`}
+function renderRegionalPoliticalMap(regions){return `<article class="pi-card"><h3>Regional Political Map</h3><div class="pi-map-wrap"><div class="pi-map-abstract"></div><p>Regional map activates when state or constituency data is available.</p><div class="pi-region-chips">${['North','South','East','West','Central'].map(r=>`<span>${r}</span>`).join('')}</div></div></article>`;}
+function renderConstituencyMunicipalTable(rows){return `<article class="pi-card"><h3>Constituency / Municipal Results</h3><div class="pi-scroll"><table class="pi-table"><thead><tr><th>Election type</th><th>State</th><th>Municipality / Ward / Constituency</th><th>Leading candidate</th><th>Party</th><th>Margin</th><th>Status</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${escapeHtml(r.electionType||'unknown')}</td><td>${escapeHtml(r.state||'')}</td><td>${escapeHtml(r.name||r.constituency||r.ward||'')}</td><td>${escapeHtml(r.leadingCandidate||'')}</td><td>${escapeHtml(r.party||'')}</td><td>${escapeHtml(String(r.margin||''))}</td><td>${escapeHtml(r.status||'standby')}</td></tr>`).join('')}</tbody></table></div></article>`;}
+function renderPoliticalHeadlines(items){return `<article class="pi-card"><h3>Political Headlines / Source Behavior</h3><div class="pi-headlines">${items.map(i=>`<div class="pi-headline"><h4>${escapeHtml(i.headline||'')}</h4><small>${escapeHtml(i.source||'')} · ${escapeHtml((i.entities||[]).join(', '))}</small><span class="pi-tone-chip ${i.tone||'neutral'}">${escapeHtml(i.tone||'neutral')}</span>${renderMiniSparkline(i.sparkline||[])}</div>`).join('')}</div></article>`;}
+function renderMiniSparkline(points){ if(!points.length) return ''; const w=120,h=32; const mx=Math.max(...points,1),mn=Math.min(...points,0); const x=i=>(i*(w/Math.max(1,points.length-1))); const y=v=>h-((v-mn)/(mx-mn||1))*h; return `<svg viewBox="0 0 ${w} ${h}" class="pi-spark"><path d="${points.map((v,i)=>`${i?'L':'M'} ${x(i)} ${y(v)}`).join(' ')}"/></svg>`; }
+
 
 /* image helpers */
 async function fetchOgImage(link = ""){
