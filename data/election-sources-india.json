@@ -1,25 +1,19 @@
 {
   "sources": [
     {
-      "id": "eci-ac-gen-may-2026",
-      "name": "Election Commission of India - AC General Elections May 2026",
+      "id": "eci",
+      "name": "Election Commission of India",
       "type": "national_official",
-      "level": "assembly",
-      "baseUrl": "https://results.eci.gov.in/ResultAcGenMay2026/",
-      "indexUrl": "https://results.eci.gov.in/ResultAcGenMay2026/index.htm",
-      "enabled": true,
-      "parser": "eci_results_portal"
+      "baseUrl": "https://results.eci.gov.in/",
+      "enabled": true
     },
     {
       "id": "state-sec-template",
-      "name": "State Election Commission Template",
+      "name": "State Election Commission",
       "type": "state_or_municipal_official",
-      "level": "municipal",
       "state": "",
       "baseUrl": "",
-      "indexUrl": "",
-      "enabled": false,
-      "parser": "generic_table_results"
+      "enabled": false
     }
   ]
 }

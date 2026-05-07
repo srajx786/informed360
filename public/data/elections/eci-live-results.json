@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-05-07T02:37:08.093078+00:00",
+  "generatedAt": "2026-05-06T17:09:50.412871+00:00",
   "source": {
     "name": "Election Commission of India",
-    "url": "https://results.eci.gov.in/ResultAcGenMay2026/index.htm",
+    "url": "https://results.eci.gov.in/",
     "type": "official",
-    "disclaimer": "ECI is displaying the information as being filled in the system by the Returning Officers from their respective Counting Centres. The final data for each AC/PC will be shared in Form-20."
+    "disclaimer": "Official status page. Parsed conservatively."
   },
-  "electionType": "vidhan_sabha",
-  "status": "unavailable",
+  "electionType": "unknown",
+  "status": "standby",
   "sample": false,
   "electionName": "",
   "state": "",
@@ -18,5 +18,5 @@
   "wards": [],
   "closeContests": [],
   "lastSuccessfulFetchAt": "",
-  "message": "ECI fetch failed: HTTP Error 403: Forbidden"
+  "message": "ECI standby: no active structured feed parsed."
 }
