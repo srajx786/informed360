@@ -1,47 +1,51 @@
 {
+  "generatedAt": "2026-05-08T00:00:00Z",
   "sample": true,
-  "generatedAt": "2026-05-06T00:00:00Z",
-  "partyToneBuckets": [
-    {"label": "Favorable", "value": 39, "count": 468, "color": "#1f9d63"},
-    {"label": "Neutral", "value": 34, "count": 408, "color": "#7b8aa6"},
-    {"label": "Critical", "value": 27, "count": 324, "color": "#e4572e"}
+  "activeToneFilter": "All",
+  "states": [
+    {
+      "name": "West Bengal",
+      "preview": true,
+      "electionSummary": {
+        "arcSegments": [
+          {"party": "BJP", "value": 115, "color": "#2f66d0"},
+          {"party": "TMC", "value": 117, "color": "#9c5ad6"},
+          {"party": "INC", "value": 6, "color": "#f59e0b"},
+          {"party": "OTH", "value": 5, "color": "#14b8a6"}
+        ],
+        "tableRows": [
+          {"party": "BJP", "won": 115, "lost": 3, "lead": 2},
+          {"party": "TMC", "won": 2, "lost": 115, "lead": 0},
+          {"party": "INC", "won": 1, "lost": 0, "lead": 5}
+        ]
+      },
+      "sentimentAnalysis": {"partyMarkers": [{"abbr":"BJP","lane":0,"value":52},{"abbr":"AAP","lane":1,"value":75},{"abbr":"INC","lane":1,"value":28},{"abbr":"TMC","lane":2,"value":40}]},
+      "issueNarratives": [
+        {"issue":"Employment","negative":18,"neutral":35,"positive":47},
+        {"issue":"Economics","negative":14,"neutral":41,"positive":45},
+        {"issue":"Corruption","negative":19,"neutral":36,"positive":45},
+        {"issue":"Governance","negative":17,"neutral":40,"positive":43},
+        {"issue":"Welfare","negative":13,"neutral":45,"positive":42},
+        {"issue":"Caste","negative":22,"neutral":41,"positive":37},
+        {"issue":"Religion","negative":26,"neutral":39,"positive":35}
+      ],
+      "partyTrends": [
+        {"party":"Political Party 1","points":[8,12,13,7],"positive":8,"neutral":63,"negative":4},
+        {"party":"Political Party 2","points":[12,7,8,10],"positive":9,"neutral":83,"negative":8}
+      ],
+      "trendingPoliticalNews": [
+        {"topic":"Year 2026","articles":15,"sources":7,"positive":25,"neutral":74,"negative":1},
+        {"topic":"India US","articles":10,"sources":5,"positive":17,"neutral":80,"negative":3},
+        {"topic":"Business Standard","articles":12,"sources":1,"positive":10,"neutral":89,"negative":1}
+      ]
+    }
   ],
-  "partyToneTrends": {
-    "buckets": ["May 1", "May 2", "May 3", "May 4", "May 5", "May 6"],
-    "series": [
-      {"party": "BJP", "color": "#2563eb", "values": [18, 26, 22, 28, 31, 34]},
-      {"party": "INC", "color": "#f97316", "values": [12, 16, 19, 18, 21, 24]},
-      {"party": "AAP", "color": "#16a34a", "values": [10, 13, 11, 14, 16, 18]}
-    ]
-  },
-  "sourcePartyMatrix": [
-    {"source": "The Hindu", "tones": {"BJP": 8, "INC": 4, "AAP": 2}},
-    {"source": "Indian Express", "tones": {"BJP": -5, "INC": 3, "AAP": 5}},
-    {"source": "Times of India", "tones": {"BJP": 6, "INC": -2, "AAP": 1}}
-  ],
-  "shareOfVoice": [{"entity": "BJP", "mentions": 512}, {"entity": "INC", "mentions": 436}],
-  "issueNarratives": [
-    {"issue": "Economy", "score": 84}, {"issue": "Jobs", "score": 74}, {"issue": "Inflation", "score": 70},
-    {"issue": "Corruption", "score": 62}, {"issue": "Governance", "score": 66}, {"issue": "National security", "score": 58},
-    {"issue": "Welfare", "score": 52}, {"issue": "Caste", "score": 44}, {"issue": "Religion", "score": 41}, {"issue": "Environment", "score": 39}
-  ],
-  "leaderLens": ["Narendra Modi", "Rahul Gandhi", "Arvind Kejriwal"],
-  "regionalSignals": [],
-  "politicalHeadlines": [
-    {"headline": "Coalition talks intensify before state vote", "source": "The Hindu", "entities": ["BJP", "INC"], "tone": "neutral", "sparkline": [1,2,1,3,2,3]},
-    {"headline": "Campaign pivots to jobs and inflation", "source": "Indian Express", "entities": ["INC"], "tone": "critical", "sparkline": [2,1,2,2,1,1]},
-    {"headline": "Urban governance debate dominates city races", "source": "Times of India", "entities": ["AAP"], "tone": "favorable", "sparkline": [1,1,2,3,3,4]}
-  ],
-  "electionResults": {
-    "generatedAt": "2026-05-06T00:00:00Z",
-    "status": "standby",
-    "electionName": "Election Results Feed Standby",
-    "partySummary": [
-      {"party": "BJP", "won": 0, "leading": 0, "total": 543, "voteShare": 0},
-      {"party": "INC", "won": 0, "leading": 0, "total": 543, "voteShare": 0},
-      {"party": "AAP", "won": 0, "leading": 0, "total": 543, "voteShare": 0}
-    ],
-    "constituencies": []
-  },
-  "municipalResults": {"wards": []}
+  "sourceComparison": [
+    {"source":"THE TIMES OF INDIA","negative":33,"neutral":18,"positive":49,"partyFocus":["AAP"]},
+    {"source":"mint","negative":31,"neutral":21,"positive":48,"partyFocus":["BJP","INC","TMC"]},
+    {"source":"BBC","negative":36,"neutral":33,"positive":31,"partyFocus":["INC"]},
+    {"source":"The Wire","negative":34,"neutral":17,"positive":49,"partyFocus":["BJP","AAP","TMC"]},
+    {"source":"ThePrint","negative":27,"neutral":25,"positive":48,"partyFocus":["BJP","TMC"]},
+    {"source":"THE HINDU","negative":24,"neutral":33,"positive":43,"partyFocus":["INC","TMC"]}
+  ]
 }

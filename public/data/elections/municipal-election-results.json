@@ -1,12 +1,11 @@
 {
-  "generatedAt": "2026-05-06T17:09:51.510189+00:00",
+  "generatedAt": "2026-05-08T19:26:15.203936+00:00",
   "source": {
     "name": "State Election Commission",
     "url": "",
-    "type": "official",
-    "disclaimer": "Configured municipal source required for live parsing."
+    "type": "official"
   },
-  "electionType": "municipal_corporation",
+  "electionType": "municipal",
   "status": "standby",
   "sample": false,
   "electionName": "",
@@ -16,7 +15,9 @@
   "alliances": [],
   "constituencies": [],
   "wards": [],
-  "closeContests": [],
+  "statusMeta": {
+    "retried": 0
+  },
   "lastSuccessfulFetchAt": "",
   "message": "Municipal standby: configure enabled state/municipal official source URL."
 }
