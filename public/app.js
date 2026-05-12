@@ -2541,6 +2541,70 @@ function renderPartyTrendMiniCard(c){const t=['20:41','21:41','22:41','23:41'];r
 function spark(points){const w=44,h=14,mx=Math.max(...points,1),mn=Math.min(...points,0),x=i=>i*(w/(points.length-1)),y=v=>h-((v-mn)/(mx-mn||1))*h; return `<svg viewBox="0 0 ${w} ${h}" class="pi-spark"><path d="${points.map((v,i)=>`${i?'L':'M'} ${x(i)} ${y(v)}`).join(' ')}"/></svg>`;}
 function renderTrendingPoliticalNewsCard(items){return `<article class="pi-card pi-news"><h4>Trending News : Last 4 Hrs</h4>${safeArray(items).map(n=>`<div class="pi-news-row"><div class="pi-news-top"><strong>${n.topic}</strong>${spark(n.spark||[1,2,3,2])}</div><small>${n.articles} articles · ${n.sources} sources <span class="pi-news-icons">◌ ◌ ◌</span></small><div class="pi-dist-line"><span style="width:${n.positive}%;background:#2db56f"></span><span style="width:${n.neutral}%;background:#cdd2dc"></span><span style="width:${n.negative}%;background:#e54b4b"></span></div><div class="pi-mini-meta">Positive ${n.positive}% · Neutral ${n.neutral}% · Negative ${n.negative}%</div></div>`).join('')}</article>`;}
 function renderSourceComparisonBoard(rows){const left=safeArray(rows).slice(0,3),right=safeArray(rows).slice(3);const col=(items)=>items.map(r=>`<div class="pi-sc-row"><div class="pi-sc-name">${r.source}</div><div class="pi-sc-lane"><span class="z1"></span><span class="z2"></span><span class="z3"></span>${safeArray(r.placements).map(p=>`<i style="left:${p.x}%">${p.party}</i>`).join('')}</div></div>`).join('');return `<section class="pi-card pi-source-board"><div class="pi-sc-cols"><div>${col(left)}</div><div class="pi-divider"></div><div>${col(right)}</div></div></section>`;}
+  const wrap = document.getElementById('politicalIntelPage');
+  const layout = document.querySelector('main.layout');
+  if (!wrap || !layout) return;
+  const active = state.category === POLITICAL_INTEL_CATEGORY;
+  wrap.hidden = !active;
+  layout.style.display = active ? 'none' : '';
+  if (!active) return;
+
+  const data = state.politicalIntelSnapshot || {};
+  const filter = data.activeToneFilter || 'All';
+  const states = safeArray(data.states);
+
+  wrap.innerHTML = `
+    <section class="pi-shell">
+      <div class="pi-filter-row">${['All','Positive','Neutral','Negative'].map(t=>`<button class="pi-filter-pill ${t===filter?'active':''}" type="button">${t}</button>`).join('')}</div>
+      <div class="pi-dashboard">${states.map(renderStateDashboardRow).join('')}</div>
+      ${renderSourceComparisonBoard(data.sourceComparison || [])}
+    </section>`;
+}
+
+function renderStateDashboardRow(st){
+  return `<section class="pi-row">
+    ${renderStateElectionSummaryCard(st)}
+    ${renderStateSentimentAnalysisCard(st)}
+    ${renderIssueNarrativeCard(st)}
+    <div class="pi-trends-stack">${safeArray(st.partyTrends).map(renderPartyTrendMiniCard).join('')}</div>
+    ${renderTrendingPoliticalNewsCard(st.trendingPoliticalNews || [])}
+  </section>`;
+}
+
+function renderStateElectionSummaryCard(st){
+  const sum = st.electionSummary || {};
+  const segs = safeArray(sum.arcSegments);
+  const total = segs.reduce((a,b)=>a+(Number(b.value)||0),0)||1;
+  let a=-180;
+  const parts = segs.map(seg=>{const v=(Number(seg.value)||0)/total*180; const d=describeArc(110,112,84,a,a+v); a+=v; return `<path d="${d}" stroke="${seg.color||'#6b7280'}" stroke-width="9" fill="none" stroke-linecap="round"/>`;}).join('');
+  return `<article class="pi-card pi-election"><h3>${escapeHtml(st.name||'State')}</h3>${st.preview?'<span class="pi-preview-chip">Preview data</span>':''}<svg viewBox="0 0 220 140" class="pi-seat-arc">${parts}</svg><table class="pi-result-table"><thead><tr><th>Party</th><th>Won</th><th>Lost</th><th>Lead</th></tr></thead><tbody>${safeArray(sum.tableRows).map(r=>`<tr><td>${escapeHtml(r.party||'')}</td><td>${Number(r.won||0)}</td><td>${Number(r.lost||0)}</td><td>${Number(r.lead||0)}</td></tr>`).join('')}</tbody></table></article>`;
+}
+function polarToCartesian(cx, cy, r, angle){const rad=(angle-90)*Math.PI/180; return {x:cx+r*Math.cos(rad),y:cy+r*Math.sin(rad)};}
+function describeArc(cx,cy,r,start,end){const s=polarToCartesian(cx,cy,r,end), e=polarToCartesian(cx,cy,r,start); const large=end-start<=180?0:1; return `M ${s.x} ${s.y} A ${r} ${r} 0 ${large} 0 ${e.x} ${e.y}`;}
+
+function renderStateSentimentAnalysisCard(st){
+  const s=st.sentimentAnalysis||{};
+  const markers=safeArray(s.partyMarkers).map(m=>`<div class="pi-party-marker" style="left:${m.lane*33.3+16.65}%;bottom:${Math.max(0,Math.min(100,m.value||0))}%"><span>${escapeHtml(m.abbr||'P')}</span></div>`).join('');
+  return `<article class="pi-card pi-sentiment"><h4>${escapeHtml(st.name||'State')} Sentiment Analysis</h4><div class="pi-sentiment-body"><div class="pi-scale"><span>100%</span><span>75%</span><span>50%</span><span>25%</span><span>0%</span></div><div class="pi-lanes"><div class="pi-lane neg"></div><div class="pi-lane neu"></div><div class="pi-lane pos"></div>${markers}</div></div><div class="pi-lane-legend"><span>Negative</span><span>Neutral</span><span>Positive</span></div></article>`;
+}
+
+function renderIssueNarrativeCard(st){
+  return `<article class="pi-card pi-issues"><h4>${escapeHtml(st.name||'State')} Issue and Public Narrative</h4>${safeArray(st.issueNarratives).map(i=>`<div class="pi-issue-row"><label>${escapeHtml(i.issue||'')}</label><div class="pi-issue-bar"><b style="width:${i.negative||20}%;background:#ef4444"></b><b style="width:${i.neutral||40}%;background:#9ca3af"></b><b style="width:${i.positive||40}%;background:#eab308"></b></div></div>`).join('')}</article>`;
+}
+
+function renderPartyTrendMiniCard(p){
+  const w=250,h=74,pts=safeArray(p.points); const max=Math.max(...pts,1),min=Math.min(...pts,0); const X=i=>i*(w/Math.max(1,pts.length-1)); const Y=v=>h-((v-min)/(max-min||1))*h;
+  return `<article class="pi-card pi-mini"><h4>${escapeHtml(p.party||'Political Party')}</h4><svg viewBox="0 0 ${w} ${h}"><path d="${pts.map((v,i)=>`${i?'L':'M'} ${X(i)} ${Y(v)}`).join(' ')}"/></svg><div class="pi-mini-meta">Positive ${p.positive||0}% · Neutral ${p.neutral||0}% · Negative ${p.negative||0}%</div></article>`;
+}
+
+function renderTrendingPoliticalNewsCard(items){
+  return `<article class="pi-card pi-news"><h4>Trending News : Last 4 Hrs</h4>${safeArray(items).map(n=>`<div class="pi-news-row"><strong>${escapeHtml(n.topic||'')}</strong><small>${n.articles||0} articles · ${n.sources||0} sources</small><div class="pi-mini-meta">Positive ${n.positive||0}% · Neutral ${n.neutral||0}% · Negative ${n.negative||0}%</div></div>`).join('')}</article>`;
+}
+
+function renderSourceComparisonBoard(rows){
+  return `<section class="pi-card pi-source-board"><div class="pi-source-grid">${safeArray(rows).map(r=>`<div class="pi-source-row"><div class="pi-source-name">${escapeHtml(r.source||'')}</div><div class="pi-source-lane"><span style="width:${r.negative||30}%" class="neg"></span><span style="width:${r.neutral||30}%" class="neu"></span><span style="width:${r.positive||40}%" class="pos"></span></div><div class="pi-source-party">${escapeHtml((r.partyFocus||[]).join(' · '))}</div></div>`).join('')}</div></section>`;
+}
+
 
 /* image helpers */
 async function fetchOgImage(link = ""){

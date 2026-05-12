@@ -1,5 +1,6 @@
 {
   "generatedAt": "2026-05-11T00:00:00Z",
+  "generatedAt": "2026-05-08T00:00:00Z",
   "sample": true,
   "activeToneFilter": "All",
   "states": [
@@ -415,6 +416,39 @@
             6
           ]
         }
+      "name": "West Bengal",
+      "preview": true,
+      "electionSummary": {
+        "arcSegments": [
+          {"party": "BJP", "value": 115, "color": "#2f66d0"},
+          {"party": "TMC", "value": 117, "color": "#9c5ad6"},
+          {"party": "INC", "value": 6, "color": "#f59e0b"},
+          {"party": "OTH", "value": 5, "color": "#14b8a6"}
+        ],
+        "tableRows": [
+          {"party": "BJP", "won": 115, "lost": 3, "lead": 2},
+          {"party": "TMC", "won": 2, "lost": 115, "lead": 0},
+          {"party": "INC", "won": 1, "lost": 0, "lead": 5}
+        ]
+      },
+      "sentimentAnalysis": {"partyMarkers": [{"abbr":"BJP","lane":0,"value":52},{"abbr":"AAP","lane":1,"value":75},{"abbr":"INC","lane":1,"value":28},{"abbr":"TMC","lane":2,"value":40}]},
+      "issueNarratives": [
+        {"issue":"Employment","negative":18,"neutral":35,"positive":47},
+        {"issue":"Economics","negative":14,"neutral":41,"positive":45},
+        {"issue":"Corruption","negative":19,"neutral":36,"positive":45},
+        {"issue":"Governance","negative":17,"neutral":40,"positive":43},
+        {"issue":"Welfare","negative":13,"neutral":45,"positive":42},
+        {"issue":"Caste","negative":22,"neutral":41,"positive":37},
+        {"issue":"Religion","negative":26,"neutral":39,"positive":35}
+      ],
+      "partyTrends": [
+        {"party":"Political Party 1","points":[8,12,13,7],"positive":8,"neutral":63,"negative":4},
+        {"party":"Political Party 2","points":[12,7,8,10],"positive":9,"neutral":83,"negative":8}
+      ],
+      "trendingPoliticalNews": [
+        {"topic":"Year 2026","articles":15,"sources":7,"positive":25,"neutral":74,"negative":1},
+        {"topic":"India US","articles":10,"sources":5,"positive":17,"neutral":80,"negative":3},
+        {"topic":"Business Standard","articles":12,"sources":1,"positive":10,"neutral":89,"negative":1}
       ]
     }
   ],
@@ -497,5 +531,13 @@
         }
       ]
     }
+  ]
+}
+    {"source":"THE TIMES OF INDIA","negative":33,"neutral":18,"positive":49,"partyFocus":["AAP"]},
+    {"source":"mint","negative":31,"neutral":21,"positive":48,"partyFocus":["BJP","INC","TMC"]},
+    {"source":"BBC","negative":36,"neutral":33,"positive":31,"partyFocus":["INC"]},
+    {"source":"The Wire","negative":34,"neutral":17,"positive":49,"partyFocus":["BJP","AAP","TMC"]},
+    {"source":"ThePrint","negative":27,"neutral":25,"positive":48,"partyFocus":["BJP","TMC"]},
+    {"source":"THE HINDU","negative":24,"neutral":33,"positive":43,"partyFocus":["INC","TMC"]}
   ]
 }
