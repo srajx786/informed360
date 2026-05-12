@@ -1,47 +1,501 @@
 {
+  "generatedAt": "2026-05-11T00:00:00Z",
   "sample": true,
-  "generatedAt": "2026-05-06T00:00:00Z",
-  "partyToneBuckets": [
-    {"label": "Favorable", "value": 39, "count": 468, "color": "#1f9d63"},
-    {"label": "Neutral", "value": 34, "count": 408, "color": "#7b8aa6"},
-    {"label": "Critical", "value": 27, "count": 324, "color": "#e4572e"}
+  "activeToneFilter": "All",
+  "states": [
+    {
+      "name": "Tamil Nadu",
+      "preview": true,
+      "electionSummary": {
+        "parties": [
+          {
+            "party": "BJP",
+            "won": 115,
+            "lost": 3,
+            "lead": 2,
+            "color": "#1e63da",
+            "count": 115
+          },
+          {
+            "party": "TMC",
+            "won": 2,
+            "lost": 115,
+            "lead": 0,
+            "color": "#8b52d9",
+            "count": 48
+          },
+          {
+            "party": "INC",
+            "won": 1,
+            "lost": 0,
+            "lead": 5,
+            "color": "#ec5fa2",
+            "count": 30
+          },
+          {
+            "party": "Lead",
+            "won": 5,
+            "lost": 0,
+            "lead": 5,
+            "color": "#f4b400",
+            "count": 20
+          },
+          {
+            "party": "Other",
+            "won": 0,
+            "lost": 0,
+            "lead": 0,
+            "color": "#11b3ad",
+            "count": 12
+          }
+        ]
+      },
+      "sentimentAnalysis": {
+        "markers": [
+          {
+            "party": "BJP",
+            "x": 18,
+            "y": 52
+          },
+          {
+            "party": "INC",
+            "x": 50,
+            "y": 25
+          },
+          {
+            "party": "AAP",
+            "x": 50,
+            "y": 78
+          },
+          {
+            "party": "TMC",
+            "x": 82,
+            "y": 45
+          }
+        ]
+      },
+      "issueNarratives": [
+        {
+          "issue": "Employment",
+          "positive": 32,
+          "neutral": 33,
+          "negative": 35
+        },
+        {
+          "issue": "Economics",
+          "positive": 41,
+          "neutral": 29,
+          "negative": 30
+        },
+        {
+          "issue": "Corruption",
+          "positive": 31,
+          "neutral": 34,
+          "negative": 35
+        },
+        {
+          "issue": "Governance",
+          "positive": 40,
+          "neutral": 31,
+          "negative": 29
+        },
+        {
+          "issue": "Welfare",
+          "positive": 37,
+          "neutral": 35,
+          "negative": 28
+        },
+        {
+          "issue": "Caste",
+          "positive": 29,
+          "neutral": 37,
+          "negative": 34
+        },
+        {
+          "issue": "Religion",
+          "positive": 24,
+          "neutral": 39,
+          "negative": 37
+        }
+      ],
+      "partyTrendCards": [
+        {
+          "party": "Political Party 1",
+          "positive": 8,
+          "neutral": 63,
+          "negative": 4,
+          "posLine": [
+            9,
+            12,
+            13,
+            7
+          ],
+          "negLine": [
+            6,
+            4,
+            4,
+            5
+          ]
+        },
+        {
+          "party": "Political Party 2",
+          "positive": 9,
+          "neutral": 83,
+          "negative": 8,
+          "posLine": [
+            12,
+            7,
+            8,
+            10
+          ],
+          "negLine": [
+            9,
+            7,
+            6,
+            10
+          ]
+        }
+      ],
+      "trendingPoliticalNews": [
+        {
+          "topic": "Year 2026",
+          "articles": 15,
+          "sources": 7,
+          "positive": 25,
+          "neutral": 74,
+          "negative": 1,
+          "spark": [
+            3,
+            3,
+            8,
+            4,
+            9,
+            5,
+            8
+          ]
+        },
+        {
+          "topic": "India US",
+          "articles": 10,
+          "sources": 5,
+          "positive": 17,
+          "neutral": 80,
+          "negative": 3,
+          "spark": [
+            5,
+            5,
+            4,
+            10,
+            3,
+            8,
+            8
+          ]
+        },
+        {
+          "topic": "Business Standard",
+          "articles": 12,
+          "sources": 1,
+          "positive": 10,
+          "neutral": 89,
+          "negative": 1,
+          "spark": [
+            6,
+            6,
+            6,
+            6,
+            7,
+            6,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GOA",
+      "preview": true,
+      "electionSummary": {
+        "parties": [
+          {
+            "party": "BJP",
+            "won": 115,
+            "lost": 3,
+            "lead": 2,
+            "color": "#1e63da",
+            "count": 115
+          },
+          {
+            "party": "TMC",
+            "won": 2,
+            "lost": 115,
+            "lead": 0,
+            "color": "#8b52d9",
+            "count": 48
+          },
+          {
+            "party": "INC",
+            "won": 1,
+            "lost": 0,
+            "lead": 5,
+            "color": "#ec5fa2",
+            "count": 30
+          },
+          {
+            "party": "Lead",
+            "won": 5,
+            "lost": 0,
+            "lead": 5,
+            "color": "#f4b400",
+            "count": 20
+          },
+          {
+            "party": "Other",
+            "won": 0,
+            "lost": 0,
+            "lead": 0,
+            "color": "#11b3ad",
+            "count": 12
+          }
+        ]
+      },
+      "sentimentAnalysis": {
+        "markers": [
+          {
+            "party": "BJP",
+            "x": 18,
+            "y": 52
+          },
+          {
+            "party": "INC",
+            "x": 50,
+            "y": 25
+          },
+          {
+            "party": "AAP",
+            "x": 50,
+            "y": 78
+          },
+          {
+            "party": "TMC",
+            "x": 82,
+            "y": 45
+          }
+        ]
+      },
+      "issueNarratives": [
+        {
+          "issue": "Employment",
+          "positive": 32,
+          "neutral": 33,
+          "negative": 35
+        },
+        {
+          "issue": "Economics",
+          "positive": 41,
+          "neutral": 29,
+          "negative": 30
+        },
+        {
+          "issue": "Corruption",
+          "positive": 31,
+          "neutral": 34,
+          "negative": 35
+        },
+        {
+          "issue": "Governance",
+          "positive": 40,
+          "neutral": 31,
+          "negative": 29
+        },
+        {
+          "issue": "Welfare",
+          "positive": 37,
+          "neutral": 35,
+          "negative": 28
+        },
+        {
+          "issue": "Caste",
+          "positive": 29,
+          "neutral": 37,
+          "negative": 34
+        },
+        {
+          "issue": "Religion",
+          "positive": 24,
+          "neutral": 39,
+          "negative": 37
+        }
+      ],
+      "partyTrendCards": [
+        {
+          "party": "Political Party 1",
+          "positive": 8,
+          "neutral": 63,
+          "negative": 4,
+          "posLine": [
+            9,
+            12,
+            13,
+            7
+          ],
+          "negLine": [
+            6,
+            4,
+            4,
+            5
+          ]
+        },
+        {
+          "party": "Political Party 2",
+          "positive": 9,
+          "neutral": 83,
+          "negative": 8,
+          "posLine": [
+            12,
+            7,
+            8,
+            10
+          ],
+          "negLine": [
+            9,
+            7,
+            6,
+            10
+          ]
+        }
+      ],
+      "trendingPoliticalNews": [
+        {
+          "topic": "Year 2026",
+          "articles": 15,
+          "sources": 7,
+          "positive": 25,
+          "neutral": 74,
+          "negative": 1,
+          "spark": [
+            3,
+            3,
+            8,
+            4,
+            9,
+            5,
+            8
+          ]
+        },
+        {
+          "topic": "India US",
+          "articles": 10,
+          "sources": 5,
+          "positive": 17,
+          "neutral": 80,
+          "negative": 3,
+          "spark": [
+            5,
+            5,
+            4,
+            10,
+            3,
+            8,
+            8
+          ]
+        },
+        {
+          "topic": "Business Standard",
+          "articles": 12,
+          "sources": 1,
+          "positive": 10,
+          "neutral": 89,
+          "negative": 1,
+          "spark": [
+            6,
+            6,
+            6,
+            6,
+            7,
+            6,
+            6
+          ]
+        }
+      ]
+    }
   ],
-  "partyToneTrends": {
-    "buckets": ["May 1", "May 2", "May 3", "May 4", "May 5", "May 6"],
-    "series": [
-      {"party": "BJP", "color": "#2563eb", "values": [18, 26, 22, 28, 31, 34]},
-      {"party": "INC", "color": "#f97316", "values": [12, 16, 19, 18, 21, 24]},
-      {"party": "AAP", "color": "#16a34a", "values": [10, 13, 11, 14, 16, 18]}
-    ]
-  },
-  "sourcePartyMatrix": [
-    {"source": "The Hindu", "tones": {"BJP": 8, "INC": 4, "AAP": 2}},
-    {"source": "Indian Express", "tones": {"BJP": -5, "INC": 3, "AAP": 5}},
-    {"source": "Times of India", "tones": {"BJP": 6, "INC": -2, "AAP": 1}}
-  ],
-  "shareOfVoice": [{"entity": "BJP", "mentions": 512}, {"entity": "INC", "mentions": 436}],
-  "issueNarratives": [
-    {"issue": "Economy", "score": 84}, {"issue": "Jobs", "score": 74}, {"issue": "Inflation", "score": 70},
-    {"issue": "Corruption", "score": 62}, {"issue": "Governance", "score": 66}, {"issue": "National security", "score": 58},
-    {"issue": "Welfare", "score": 52}, {"issue": "Caste", "score": 44}, {"issue": "Religion", "score": 41}, {"issue": "Environment", "score": 39}
-  ],
-  "leaderLens": ["Narendra Modi", "Rahul Gandhi", "Arvind Kejriwal"],
-  "regionalSignals": [],
-  "politicalHeadlines": [
-    {"headline": "Coalition talks intensify before state vote", "source": "The Hindu", "entities": ["BJP", "INC"], "tone": "neutral", "sparkline": [1,2,1,3,2,3]},
-    {"headline": "Campaign pivots to jobs and inflation", "source": "Indian Express", "entities": ["INC"], "tone": "critical", "sparkline": [2,1,2,2,1,1]},
-    {"headline": "Urban governance debate dominates city races", "source": "Times of India", "entities": ["AAP"], "tone": "favorable", "sparkline": [1,1,2,3,3,4]}
-  ],
-  "electionResults": {
-    "generatedAt": "2026-05-06T00:00:00Z",
-    "status": "standby",
-    "electionName": "Election Results Feed Standby",
-    "partySummary": [
-      {"party": "BJP", "won": 0, "leading": 0, "total": 543, "voteShare": 0},
-      {"party": "INC", "won": 0, "leading": 0, "total": 543, "voteShare": 0},
-      {"party": "AAP", "won": 0, "leading": 0, "total": 543, "voteShare": 0}
-    ],
-    "constituencies": []
-  },
-  "municipalResults": {"wards": []}
+  "sourceComparison": [
+    {
+      "source": "THE TIMES OF INDIA",
+      "placements": [
+        {
+          "party": "AAP",
+          "x": 56
+        }
+      ]
+    },
+    {
+      "source": "mint",
+      "placements": [
+        {
+          "party": "BJP",
+          "x": 18
+        },
+        {
+          "party": "INC",
+          "x": 44
+        },
+        {
+          "party": "TMC",
+          "x": 74
+        }
+      ]
+    },
+    {
+      "source": "BBC",
+      "placements": [
+        {
+          "party": "INC",
+          "x": 45
+        }
+      ]
+    },
+    {
+      "source": "The Wire",
+      "placements": [
+        {
+          "party": "BJP",
+          "x": 18
+        },
+        {
+          "party": "AAP",
+          "x": 46
+        },
+        {
+          "party": "TMC",
+          "x": 84
+        }
+      ]
+    },
+    {
+      "source": "ThePrint",
+      "placements": [
+        {
+          "party": "BJP",
+          "x": 30
+        },
+        {
+          "party": "TMC",
+          "x": 72
+        }
+      ]
+    },
+    {
+      "source": "THE HINDU",
+      "placements": [
+        {
+          "party": "INC",
+          "x": 46
+        },
+        {
+          "party": "TMC",
+          "x": 86
+        }
+      ]
+    }
+  ]
 }
