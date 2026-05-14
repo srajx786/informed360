@@ -1,48 +1,44 @@
 {
-  "updatedAt": 1778692577075,
+  "updatedAt": 1778741181186,
   "quotes": [
     {
       "symbol": "^NSEI",
       "pretty": "NSE Nifty",
-      "price": 23412.6,
-      "change": 33.04999999999927,
-      "changePercent": 0.14136285771111623,
-      "status": "closed",
-      "updatedAt": 1778692577075
+      "price": 23680.9,
+      "change": 268.3000000000029,
+      "changePercent": 1.1459641389679187,
+      "status": "live",
+      "updatedAt": 1778741181186
     },
     {
       "symbol": "GC=F",
       "pretty": "Gold",
-      "price": 4706.4,
-      "change": 19.699999999999818,
-      "changePercent": 0.4203384044210173,
+      "price": 4701.3,
+      "change": -5.399999999999636,
+      "changePercent": -0.11473006565108539,
       "status": "live",
-      "updatedAt": 1778692577075
+      "updatedAt": 1778741181186
     },
     {
       "symbol": "CL=F",
       "pretty": "Crude Oil",
-      "price": 101.8,
-      "change": -0.38000000000000966,
-      "changePercent": -0.3718927383049615,
+      "price": 101.08,
+      "change": 0.060000000000002274,
+      "changePercent": 0.059394179370423954,
       "status": "live",
-      "updatedAt": 1778692577075
+      "updatedAt": 1778741181186
     },
     {
       "symbol": "USDINR=X",
       "pretty": "USD/INR",
-      "price": 95.62,
-      "change": 0.0,
-      "changePercent": 0.0,
+      "price": 95.743,
+      "change": 0.12299999999999045,
+      "changePercent": 0.1286341769504188,
       "status": "live",
-      "updatedAt": 1778692577075
+      "updatedAt": 1778741181186
     }
   ],
   "niftyHistory": [
-    {
-      "timestamp": 1778169600000,
-      "value": 24326.65
-    },
     {
       "timestamp": 1778216400000,
       "value": 24201.25
@@ -134,6 +130,10 @@
     {
       "timestamp": 1778691600000,
       "value": 23412.6
+    },
+    {
+      "timestamp": 1778738400000,
+      "value": 23680.9
     }
   ]
 }
