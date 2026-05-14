@@ -4380,7 +4380,8 @@ async function renderSourceSentimentV2(){
   [colPos, colNeu, colNeg].forEach(c => c && (c.innerHTML = ""));
 
   const { pos, neu, neg } = computeLeaderboard();
-  const TIERS = [0.35, 0.75];
+  const debugSources = new URLSearchParams(window.location.search).get("debugSources") === "1";
+  const PER_LANE_MAX = 4;
   const sourceLogoManifest = await getSourceLogoManifestMap();
 
   const resolveDomain = (row = {}) => {
@@ -4392,10 +4393,24 @@ async function renderSourceSentimentV2(){
       || articleDomain;
   };
 
+  const rowScore = (row = {}) => {
+    const contribution = Number(row?.contribution ?? row?.score ?? row?.weight ?? NaN);
+    if (Number.isFinite(contribution)) return contribution;
+    return Number.NaN;
+  };
+  const sortLaneRows = (list = []) => {
+    const allHaveContribution = list.every((row) => Number.isFinite(rowScore(row)));
+    if (!allHaveContribution) return list.slice();
+    return list.slice().sort((a, b) => rowScore(b) - rowScore(a));
+  };
+
   async function place(col, list){
     if (!col) return;
-    let idx = 0;
-    for (const row of list){
+    col.innerHTML = "";
+    const laneList = document.createElement("div");
+    laneList.className = "source-sentiment-v2-lane-list";
+    const laneRows = sortLaneRows(list).slice(0, PER_LANE_MAX);
+    for (const row of laneRows){
       const domain = resolveDomain(row);
       const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
       if (!logoPath || !logoPath.startsWith('/')) continue;
@@ -4404,8 +4419,6 @@ async function renderSourceSentimentV2(){
 
       const wrap = document.createElement("div");
       wrap.className = "source-sentiment-v2-item";
-      wrap.style.left = "50%";
-      wrap.style.top = `${TIERS[Math.min(idx, TIERS.length - 1)] * 100}%`;
 
       const img = document.createElement("img");
       img.className = "source-sentiment-v2-logo";
@@ -4413,12 +4426,29 @@ async function renderSourceSentimentV2(){
       img.alt = "";
       img.loading = "lazy";
       wrap.appendChild(img);
-      col.appendChild(wrap);
-      idx++;
+      if (debugSources){
+        const label = document.createElement("span");
+        label.className = "source-sentiment-v2-debug-label";
+        label.textContent = row.source || domain;
+        wrap.appendChild(label);
+      }
+      laneList.appendChild(wrap);
     }
+    col.appendChild(laneList);
   }
 
   await Promise.all([place(colPos, pos), place(colNeu, neu), place(colNeg, neg)]);
+  const renderedPositive = colPos?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
+  const renderedNeutral = colNeu?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
+  const renderedNegative = colNeg?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
+  console.log("SOURCE_SENTIMENT_V2_LAYOUT_FIXED", {
+    positiveCount: pos.length,
+    neutralCount: neu.length,
+    negativeCount: neg.length,
+    renderedPositive,
+    renderedNeutral,
+    renderedNegative
+  });
 
   const hasLogos = grid.querySelectorAll("img.source-sentiment-v2-logo").length > 0;
   if (!hasLogos && empty) {
