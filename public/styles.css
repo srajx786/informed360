@@ -1765,6 +1765,31 @@ dialog::backdrop{
 .pi-issue{display:grid;grid-template-columns:160px 1fr;align-items:center;gap:8px;margin:8px 0}.pi-issue b{display:block;height:10px;background:linear-gradient(90deg,#f97316,#fb923c);border-radius:999px}
 .pi-map-wrap{background:#f6f8fc;border:1px dashed #cad4e5;border-radius:10px;padding:10px}.pi-map-abstract{height:180px;background:conic-gradient(from 40deg,#2b5cab,#3f8fc2,#65b88f,#f59e0b,#d97706,#2b5cab);clip-path:polygon(48% 0,58% 9%,64% 24%,60% 44%,68% 64%,55% 98%,46% 84%,34% 68%,37% 47%,30% 24%,42% 9%);opacity:.85}.pi-region-chips span{display:inline-block;background:#dce5f4;color:#173463;border-radius:999px;padding:4px 8px;margin:6px 5px 0 0;font-size:12px}
 .pi-headline{border-bottom:1px solid #e2e8f0;padding:8px 0}.pi-tone-chip{display:inline-block;border-radius:999px;padding:2px 8px;font-size:11px;background:#e5e7eb}.pi-tone-chip.favorable{background:#dcfce7}.pi-tone-chip.critical{background:#ffedd5}.pi-spark{width:120px;height:32px}.pi-spark path{stroke:#2563eb;fill:none;stroke-width:2}
+@media (max-width:980px){.pi-main-grid,.pi-lower-grid{grid-template-columns:1fr}.pi-gauge-row{flex-direction:column;align-items:center}.pi-hero h1{font-size:14px}}
+
+/* Political Intelligence rebuilt */
+.political-intel-page{background:#f1f3f5;padding:8px}
+.pi-shell{display:flex;flex-direction:column;gap:10px}.pi-filter-row{display:flex;gap:10px;padding:0 6px}
+.pi-filter-pill{border:1px solid #b8bfcb;background:#e8ebf0;border-radius:20px;padding:5px 14px;color:#1f2937}
+.pi-filter-pill.active{border-color:#4e78d9;background:#edf2ff}
+.pi-row{display:grid;grid-template-columns:245px 230px 230px 250px 250px;gap:10px}
+.pi-card{background:#fff;border:1px solid #d8dce2;border-radius:14px;box-shadow:0 2px 7px rgba(0,0,0,.08);padding:8px}
+.pi-election h3{text-align:center;margin:2px 0 4px;font-size:14px}.pi-preview-chip{font-size:12px;border:1px solid #c4c8cf;border-radius:999px;padding:2px 8px}
+.pi-seat-arc{width:100%;height:140px;display:block}
+.pi-result-table{width:100%;border-collapse:collapse;font-size:14px}.pi-result-table th,.pi-result-table td{border:1px solid #4b4b4b;padding:5px;text-align:center}
+.pi-sentiment h4,.pi-issues h4,.pi-mini h4,.pi-news h4{margin:0 0 6px;font-size:15px}.pi-sentiment-body{display:flex;gap:8px}.pi-scale{display:flex;flex-direction:column;justify-content:space-between;font-size:12px}
+.pi-lanes{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:9px;min-height:240px;flex:1}.pi-lane{border-radius:8px}.pi-lane.neg{background:#dbe7d4}.pi-lane.neu{background:#dedee2}.pi-lane.pos{background:#f0dfd4}
+.pi-party-marker{position:absolute;transform:translate(-50%,50%)}.pi-badge{display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;background:#fff;border:2px solid #8f98a5;box-shadow:0 2px 4px rgba(0,0,0,.18);font-size:12px;font-weight:700}
+.pi-lane-legend{display:grid;grid-template-columns:repeat(3,1fr);font-size:11px;text-align:center;margin-top:5px}.pi-issue-row{display:grid;grid-template-columns:86px 1fr;gap:8px;align-items:center;margin:9px 0}.pi-issue-row label{font-size:13px}
+.pi-issue-bar{display:flex;height:6px;border-radius:999px;overflow:hidden}.pi-trends-stack{display:flex;flex-direction:column;gap:10px}
+.pi-mini svg{width:100%;height:82px}.pi-grid line{stroke:#eceef3;stroke-width:1}.pi-mini path{fill:none;stroke-width:2}.pi-mini path.pos{stroke:#22b573}.pi-mini path.neg{stroke:#ea5b64}.pi-mini text{font-size:9px}.pi-mini .lblp{fill:#22b573}
+.pi-time-row{display:grid;grid-template-columns:repeat(4,1fr);font-size:9px;color:#838b97}.pi-mini-meta{font-size:12px;color:#6b7280}.pi-mini-meta b{color:#2ab66d}.pi-mini-meta em{color:#e05858;font-style:normal}
+.pi-news-row{border-top:1px solid #e7eaef;padding:8px 0}.pi-news-row:first-of-type{border-top:none}.pi-news-top{display:flex;justify-content:space-between;align-items:center}.pi-news-top strong{font-size:15px}.pi-news-row small{font-size:13px;color:#6b7280}
+.pi-news-icons{font-size:10px;color:#9ca3af}.pi-spark{width:44px;height:14px}.pi-spark path{stroke:#1fb47e;fill:none;stroke-width:1.5}.pi-dist-line{display:flex;height:3px;background:#edf0f5;border-radius:99px;overflow:hidden;margin:4px 0}
+.pi-source-board{padding:10px;overflow:auto}.pi-sc-cols{display:grid;grid-template-columns:1fr 1px 1fr;gap:14px;min-width:980px}.pi-divider{background:repeating-linear-gradient(to bottom,#cfd3db 0 4px,transparent 4px 8px)}
+.pi-sc-row{display:grid;grid-template-columns:170px 1fr;align-items:center;gap:10px;margin:10px 0}.pi-sc-name{font-family:Georgia,serif;font-size:13px;font-weight:700}.pi-sc-lane{position:relative;height:44px;border-radius:2px;overflow:hidden;display:flex}
+.pi-sc-lane .z1{background:#d6e4cf;width:34%}.pi-sc-lane .z2{background:#dbdde3;width:33%}.pi-sc-lane .z3{background:#eedacc;width:33%}.pi-sc-lane i{position:absolute;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid #7d8796;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:10px;font-weight:700}
+@media (max-width:1200px){.pi-row{grid-template-columns:1fr}.pi-sc-cols{grid-template-columns:1fr;min-width:680px}.pi-divider{display:none}}
 @media (max-width:980px){.pi-main-grid,.pi-lower-grid{grid-template-columns:1fr}.pi-gauge-row{flex-direction:column;align-items:center}.pi-hero h1{font-size:32px}}
 
 /* Political Intelligence rebuilt */
