@@ -4420,6 +4420,8 @@ async function renderSourceSentimentV2(){
     let placed = 0;
     for (const row of laneRows){
       if (placed >= PER_LANE_MAX) break;
+    const laneRows = sortLaneRows(list).slice(0, PER_LANE_MAX);
+    for (const row of laneRows){
       const domain = resolveDomain(row);
       if (!domain || seenDomains.has(domain)) continue;
       const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
