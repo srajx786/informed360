@@ -1028,6 +1028,18 @@ body.theme-dark .gn-search{ background:#1a222c }
   flex-direction:column;
   align-items:center;
   justify-content:center;
+  width:min(76px, 100%);
+  max-width:100%;
+  height:38px;
+  overflow:hidden;
+  flex:0 0 auto;
+  position:relative;
+  line-height:1;
+  box-sizing:border-box;
+}
+#sourceSentimentV2 img.source-sentiment-v2-logo{
+  max-width:68px;
+  max-height:24px;
   height:28px;
   width:100%;
 }
@@ -1038,6 +1050,40 @@ body.theme-dark .gn-search{ background:#1a222c }
   height:auto;
   object-fit:contain;
   display:block;
+  min-width:0;
+  transform:none !important;
+  position:static !important;
+}
+#sourceSentimentV2 .source-sentiment-v2-lane-list{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  height:100%;
+  padding:14px 8px;
+  overflow:hidden;
+}
+#sourceSentimentV2 .source-sentiment-v2-debug-label{
+  margin-top:2px;
+  font-size:10px;
+  line-height:1.1;
+  color:var(--muted);
+  max-width:90px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  text-align:center;
+}
+@media (max-width: 640px){
+  #sourceSentimentV2 .source-sentiment-v2-item{
+    width:min(62px, 100%);
+    height:34px;
+  }
+  #sourceSentimentV2 img.source-sentiment-v2-logo{
+    max-width:56px;
+    max-height:22px;
+  }
 }
 #sourceSentimentV2 .source-sentiment-v2-lane-list{
   display:flex;

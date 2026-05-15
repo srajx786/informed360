@@ -32,6 +32,32 @@ const desktopWait = await waitForLogos(page, 'desktop');
 const domChecksDesktop = await page.evaluate(() => {
   const root = document.querySelector('#sourceSentimentV2');
   const text = root?.innerText || '';
+  const epsilon = 1.5;
+  const laneSelectors = {
+    positive: '#sourceSentimentV2 .col-pos',
+    neutral: '#sourceSentimentV2 .col-neu',
+    negative: '#sourceSentimentV2 .col-neg'
+  };
+  const laneKeys = {};
+  const overflowItems = [];
+  const overflowLogos = [];
+  Object.entries(laneSelectors).forEach(([lane, laneSel]) => {
+    const items = Array.from(document.querySelectorAll(`${laneSel} .source-sentiment-v2-item`));
+    laneKeys[lane] = items.map((n) => n.dataset.sourceKey || '').filter(Boolean);
+    items.forEach((item, idx) => {
+      const ir = item.getBoundingClientRect();
+      const nearestLaneRect = item.closest('.source-sentiment-v2-lane-list')?.getBoundingClientRect();
+      if (nearestLaneRect && (ir.left < nearestLaneRect.left - epsilon || ir.right > nearestLaneRect.right + epsilon || ir.top < nearestLaneRect.top - epsilon || ir.bottom > nearestLaneRect.bottom + epsilon)) overflowItems.push({ lane, idx, sourceKey: item.dataset.sourceKey || '' });
+      const logo = item.querySelector('img.source-sentiment-v2-logo');
+      const lr = logo?.getBoundingClientRect();
+      if (nearestLaneRect && lr && (lr.left < nearestLaneRect.left - epsilon || lr.right > nearestLaneRect.right + epsilon || lr.top < nearestLaneRect.top - epsilon || lr.bottom > nearestLaneRect.bottom + epsilon)) overflowLogos.push({ lane, idx, sourceKey: item.dataset.sourceKey || '' });
+    });
+  });
+  const allKeys = [...laneKeys.positive, ...laneKeys.neutral, ...laneKeys.negative];
+  const keyCounts = allKeys.reduce((acc, key) => ((acc[key] = (acc[key] || 0) + 1), acc), {});
+  const duplicateSourceKeys = Object.entries(keyCounts).filter(([, count]) => count > 1).map(([key]) => key);
+  const missingDataSourceKeyCount = document.querySelectorAll('#sourceSentimentV2 .source-sentiment-v2-item:not([data-source-key])').length;
+  const visibleTextTokens = (text.match(/\b(W|NN|SS|S|AN|FN|WP|TV)\b/g) || []);
   const laneSelectors = {
     positive: '#sourceSentimentV2 .col-pos .source-sentiment-v2-item',
     neutral: '#sourceSentimentV2 .col-neu .source-sentiment-v2-item',
@@ -55,6 +81,10 @@ const domChecksDesktop = await page.evaluate(() => {
     hasFallbackTokens: /\b(W|NN|FN|SS|WP|TV)\b/.test(text),
     laneKeys,
     duplicateSourceKeys,
+    missingDataSourceKeyCount,
+    overflowItems,
+    overflowLogos,
+    visibleTextTokens
     missingDataSourceKeyCount
   };
 });
@@ -69,6 +99,32 @@ const mobileWait = await waitForLogos(mobilePage, 'mobile');
 const domChecksMobile = await mobilePage.evaluate(() => {
   const root = document.querySelector('#sourceSentimentV2');
   const text = root?.innerText || '';
+  const epsilon = 1.5;
+  const laneSelectors = {
+    positive: '#sourceSentimentV2 .col-pos',
+    neutral: '#sourceSentimentV2 .col-neu',
+    negative: '#sourceSentimentV2 .col-neg'
+  };
+  const laneKeys = {};
+  const overflowItems = [];
+  const overflowLogos = [];
+  Object.entries(laneSelectors).forEach(([lane, laneSel]) => {
+    const items = Array.from(document.querySelectorAll(`${laneSel} .source-sentiment-v2-item`));
+    laneKeys[lane] = items.map((n) => n.dataset.sourceKey || '').filter(Boolean);
+    items.forEach((item, idx) => {
+      const ir = item.getBoundingClientRect();
+      const nearestLaneRect = item.closest('.source-sentiment-v2-lane-list')?.getBoundingClientRect();
+      if (nearestLaneRect && (ir.left < nearestLaneRect.left - epsilon || ir.right > nearestLaneRect.right + epsilon || ir.top < nearestLaneRect.top - epsilon || ir.bottom > nearestLaneRect.bottom + epsilon)) overflowItems.push({ lane, idx, sourceKey: item.dataset.sourceKey || '' });
+      const logo = item.querySelector('img.source-sentiment-v2-logo');
+      const lr = logo?.getBoundingClientRect();
+      if (nearestLaneRect && lr && (lr.left < nearestLaneRect.left - epsilon || lr.right > nearestLaneRect.right + epsilon || lr.top < nearestLaneRect.top - epsilon || lr.bottom > nearestLaneRect.bottom + epsilon)) overflowLogos.push({ lane, idx, sourceKey: item.dataset.sourceKey || '' });
+    });
+  });
+  const allKeys = [...laneKeys.positive, ...laneKeys.neutral, ...laneKeys.negative];
+  const keyCounts = allKeys.reduce((acc, key) => ((acc[key] = (acc[key] || 0) + 1), acc), {});
+  const duplicateSourceKeys = Object.entries(keyCounts).filter(([, count]) => count > 1).map(([key]) => key);
+  const missingDataSourceKeyCount = document.querySelectorAll('#sourceSentimentV2 .source-sentiment-v2-item:not([data-source-key])').length;
+  const visibleTextTokens = (text.match(/\b(W|NN|SS|S|AN|FN|WP|TV)\b/g) || []);
   const laneSelectors = {
     positive: '#sourceSentimentV2 .col-pos .source-sentiment-v2-item',
     neutral: '#sourceSentimentV2 .col-neu .source-sentiment-v2-item',
@@ -92,6 +148,10 @@ const domChecksMobile = await mobilePage.evaluate(() => {
     hasFallbackTokens: /\b(W|NN|FN|SS|WP|TV)\b/.test(text),
     laneKeys,
     duplicateSourceKeys,
+    missingDataSourceKeyCount,
+    overflowItems,
+    overflowLogos,
+    visibleTextTokens
     missingDataSourceKeyCount
   };
 });
@@ -105,6 +165,9 @@ assertCheck('desktop: .badge count === 0', domChecksDesktop.badgeCount === 0, do
 assertCheck('desktop: no fallback tokens', !domChecksDesktop.hasFallbackTokens, domChecksDesktop);
 assertCheck('desktop: every item has data-source-key', domChecksDesktop.missingDataSourceKeyCount === 0, domChecksDesktop);
 assertCheck('desktop: no duplicate source keys across lanes', domChecksDesktop.duplicateSourceKeys.length === 0, domChecksDesktop);
+assertCheck('desktop: no overflow items', domChecksDesktop.overflowItems.length === 0, domChecksDesktop);
+assertCheck('desktop: no overflow logos', domChecksDesktop.overflowLogos.length === 0, domChecksDesktop);
+assertCheck('desktop: no visible text tokens', domChecksDesktop.visibleTextTokens.length === 0, domChecksDesktop);
 
 assertCheck('mobile: no #leaderboard', domChecksMobile.noLeaderboard, domChecksMobile);
 assertCheck('mobile: #sourceSentimentV2 exists', domChecksMobile.hasSourceSentimentV2, domChecksMobile);
@@ -113,6 +176,9 @@ assertCheck('mobile: .badge count === 0', domChecksMobile.badgeCount === 0, domC
 assertCheck('mobile: no fallback tokens', !domChecksMobile.hasFallbackTokens, domChecksMobile);
 assertCheck('mobile: every item has data-source-key', domChecksMobile.missingDataSourceKeyCount === 0, domChecksMobile);
 assertCheck('mobile: no duplicate source keys across lanes', domChecksMobile.duplicateSourceKeys.length === 0, domChecksMobile);
+assertCheck('mobile: no overflow items', domChecksMobile.overflowItems.length === 0, domChecksMobile);
+assertCheck('mobile: no overflow logos', domChecksMobile.overflowLogos.length === 0, domChecksMobile);
+assertCheck('mobile: no visible text tokens', domChecksMobile.visibleTextTokens.length === 0, domChecksMobile);
 
 await browser.close();
 
@@ -122,6 +188,18 @@ const summary = {
   duplicateSourceKeys: {
     desktop: domChecksDesktop.duplicateSourceKeys,
     mobile: domChecksMobile.duplicateSourceKeys
+  },
+  overflowItems: {
+    desktop: domChecksDesktop.overflowItems,
+    mobile: domChecksMobile.overflowItems
+  },
+  overflowLogos: {
+    desktop: domChecksDesktop.overflowLogos,
+    mobile: domChecksMobile.overflowLogos
+  },
+  visibleTextTokens: {
+    desktop: domChecksDesktop.visibleTextTokens,
+    mobile: domChecksMobile.visibleTextTokens
   },
   waits: { desktopWait, mobileWait },
   checks,
