@@ -1024,19 +1024,47 @@ body.theme-dark .gn-search{ background:#1a222c }
 }
 
 #sourceSentimentV2 .source-sentiment-v2-item{
-  position:absolute;
-  transform:translate(-50%,-50%);
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
-  width:72px;
   height:28px;
+  width:100%;
 }
 #sourceSentimentV2 img.source-sentiment-v2-logo{
-  width:72px;
-  height:28px;
+  max-width:86px;
+  max-height:28px;
+  width:auto;
+  height:auto;
   object-fit:contain;
   display:block;
+}
+#sourceSentimentV2 .source-sentiment-v2-lane-list{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  height:100%;
+  padding:14px 8px;
+  overflow:hidden;
+}
+#sourceSentimentV2 .source-sentiment-v2-debug-label{
+  margin-top:2px;
+  font-size:10px;
+  line-height:1.1;
+  color:var(--muted);
+  max-width:90px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  text-align:center;
+}
+@media (max-width: 640px){
+  #sourceSentimentV2 img.source-sentiment-v2-logo{
+    max-width:72px;
+    max-height:24px;
+  }
 }
 
 .leader-grid .badge.icon-badge{

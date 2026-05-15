@@ -4377,10 +4377,17 @@ async function renderSourceSentimentV2(){
   const colNeu = grid.querySelector(".col-neu");
   const colNeg = grid.querySelector(".col-neg");
   const empty = grid.querySelector(".board-empty");
-  [colPos, colNeu, colNeg].forEach(c => c && (c.innerHTML = ""));
 
   const { pos, neu, neg } = computeLeaderboard();
-  const TIERS = [0.35, 0.75];
+  const existingLogos = grid.querySelectorAll("img.source-sentiment-v2-logo").length;
+  if (!pos.length && !neu.length && !neg.length && existingLogos > 0){
+    console.log("SOURCE_SENTIMENT_V2_LAYOUT_FIXED_SKIP_EMPTY_REFRESH", { existingLogos });
+    return;
+  }
+  grid.querySelectorAll(".badge").forEach((node) => node.remove());
+  [colPos, colNeu, colNeg].forEach(c => c && (c.innerHTML = ""));
+  const debugSources = new URLSearchParams(window.location.search).get("debugSources") === "1";
+  const PER_LANE_MAX = 4;
   const sourceLogoManifest = await getSourceLogoManifestMap();
 
   const resolveDomain = (row = {}) => {
@@ -4392,20 +4399,84 @@ async function renderSourceSentimentV2(){
       || articleDomain;
   };
 
+  const rowScore = (row = {}) => {
+    const contribution = Number(row?.contribution ?? row?.score ?? row?.weight ?? NaN);
+    if (Number.isFinite(contribution)) return contribution;
+    return Number.NaN;
+  };
+  const sortLaneRows = (list = []) => {
+    const allHaveContribution = list.every((row) => Number.isFinite(rowScore(row)));
+    if (!allHaveContribution) return list.slice();
+    return list.slice().sort((a, b) => rowScore(b) - rowScore(a));
+  };
+  const toSourceKey = (row = {}) => {
+    const domain = resolveDomain(row);
+    if (domain) return domain;
+    return normalizeSourceName(row.source || row.rawSource || "");
+  };
+  const aggregateUniqueSourceLanes = (sourceLanes) => {
+    const laneScore = { pos: 1, neu: 0, neg: -1 };
+    const grouped = new Map();
+    const addRows = (laneName, rows = []) => {
+      rows.forEach((row, idx) => {
+        const sourceKey = toSourceKey(row);
+        if (!sourceKey) return;
+        const weightCandidate = Number(rowScore(row));
+        const weight = Number.isFinite(weightCandidate) ? Math.max(0.0001, weightCandidate) : Number.NaN;
+        const bucket = grouped.get(sourceKey) || { rows: [], counts: { pos: 0, neu: 0, neg: 0 }, weightedTotal: 0, weightedSum: 0 };
+        bucket.rows.push({ row, laneName, idx, weight });
+        bucket.counts[laneName] += 1;
+        if (Number.isFinite(weight)) {
+          bucket.weightedTotal += weight;
+          bucket.weightedSum += laneScore[laneName] * weight;
+        }
+        grouped.set(sourceKey, bucket);
+      });
+    };
+    addRows("pos", sourceLanes.pos);
+    addRows("neu", sourceLanes.neu);
+    addRows("neg", sourceLanes.neg);
+
+    const unique = { pos: [], neu: [], neg: [] };
+    grouped.forEach((group) => {
+      const hasWeighted = group.weightedTotal > 0;
+      const finalLane = hasWeighted
+        ? (group.weightedSum / group.weightedTotal > 0.2 ? "pos" : (group.weightedSum / group.weightedTotal < -0.2 ? "neg" : "neu"))
+        : (group.counts.pos > group.counts.neg && group.counts.pos > group.counts.neu
+          ? "pos"
+          : (group.counts.neg > group.counts.pos && group.counts.neg > group.counts.neu ? "neg" : "neu"));
+      const best = group.rows.slice().sort((a, b) => {
+        const aw = Number.isFinite(a.weight) ? a.weight : -1;
+        const bw = Number.isFinite(b.weight) ? b.weight : -1;
+        return bw - aw || a.idx - b.idx;
+      })[0];
+      if (best?.row) unique[finalLane].push(best.row);
+    });
+    return unique;
+  };
+
+  const uniqueLanes = aggregateUniqueSourceLanes({ pos, neu, neg });
   async function place(col, list){
     if (!col) return;
-    let idx = 0;
-    for (const row of list){
+    col.innerHTML = "";
+    const laneList = document.createElement("div");
+    laneList.className = "source-sentiment-v2-lane-list";
+    const laneRows = sortLaneRows(list);
+    const seenDomains = new Set();
+    let placed = 0;
+    for (const row of laneRows){
+      if (placed >= PER_LANE_MAX) break;
       const domain = resolveDomain(row);
+      if (!domain || seenDomains.has(domain)) continue;
       const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
       if (!logoPath || !logoPath.startsWith('/')) continue;
       const ok = await loadImage(logoPath);
       if (!ok) continue;
+      seenDomains.add(domain);
 
       const wrap = document.createElement("div");
       wrap.className = "source-sentiment-v2-item";
-      wrap.style.left = "50%";
-      wrap.style.top = `${TIERS[Math.min(idx, TIERS.length - 1)] * 100}%`;
+      wrap.dataset.sourceKey = domain;
 
       const img = document.createElement("img");
       img.className = "source-sentiment-v2-logo";
@@ -4413,12 +4484,33 @@ async function renderSourceSentimentV2(){
       img.alt = "";
       img.loading = "lazy";
       wrap.appendChild(img);
-      col.appendChild(wrap);
-      idx++;
+      if (debugSources){
+        const label = document.createElement("span");
+        label.className = "source-sentiment-v2-debug-label";
+        label.textContent = row.source || domain;
+        wrap.appendChild(label);
+      }
+      laneList.appendChild(wrap);
+      placed++;
     }
+    col.appendChild(laneList);
   }
 
-  await Promise.all([place(colPos, pos), place(colNeu, neu), place(colNeg, neg)]);
+  await Promise.all([place(colPos, uniqueLanes.pos), place(colNeu, uniqueLanes.neu), place(colNeg, uniqueLanes.neg)]);
+  const renderedPositive = colPos?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
+  const renderedNeutral = colNeu?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
+  const renderedNegative = colNeg?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
+  console.log("SOURCE_SENTIMENT_V2_LAYOUT_FIXED", {
+    positiveCount: pos.length,
+    neutralCount: neu.length,
+    negativeCount: neg.length,
+    uniquePositiveCount: uniqueLanes.pos.length,
+    uniqueNeutralCount: uniqueLanes.neu.length,
+    uniqueNegativeCount: uniqueLanes.neg.length,
+    renderedPositive,
+    renderedNeutral,
+    renderedNegative
+  });
 
   const hasLogos = grid.querySelectorAll("img.source-sentiment-v2-logo").length > 0;
   if (!hasLogos && empty) {
