@@ -1034,6 +1034,8 @@ body.theme-dark .gn-search{ background:#1a222c }
 #sourceSentimentV2 img.source-sentiment-v2-logo{
   max-width:86px;
   max-height:28px;
+  width:auto;
+  height:auto;
   object-fit:contain;
   display:block;
 }
