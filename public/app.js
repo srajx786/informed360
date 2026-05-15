@@ -4470,6 +4470,64 @@ async function renderSourceSentimentV2(){
 
   const uniqueLanes = aggregateUniqueSourceLanes({ pos, neu, neg });
   const globallyClaimedKeys = new Set();
+  const rowScore = (row = {}) => {
+    const contribution = Number(row?.contribution ?? row?.score ?? row?.weight ?? NaN);
+    if (Number.isFinite(contribution)) return contribution;
+    return Number.NaN;
+  };
+  const sortLaneRows = (list = []) => {
+    const allHaveContribution = list.every((row) => Number.isFinite(rowScore(row)));
+    if (!allHaveContribution) return list.slice();
+    return list.slice().sort((a, b) => rowScore(b) - rowScore(a));
+  };
+  const toSourceKey = (row = {}) => {
+    const domain = resolveDomain(row);
+    if (domain) return domain;
+    return normalizeSourceName(row.source || row.rawSource || "");
+  };
+  const aggregateUniqueSourceLanes = (sourceLanes) => {
+    const laneScore = { pos: 1, neu: 0, neg: -1 };
+    const grouped = new Map();
+    const addRows = (laneName, rows = []) => {
+      rows.forEach((row, idx) => {
+        const sourceKey = toSourceKey(row);
+        if (!sourceKey) return;
+        const weightCandidate = Number(rowScore(row));
+        const weight = Number.isFinite(weightCandidate) ? Math.max(0.0001, weightCandidate) : Number.NaN;
+        const bucket = grouped.get(sourceKey) || { rows: [], counts: { pos: 0, neu: 0, neg: 0 }, weightedTotal: 0, weightedSum: 0 };
+        bucket.rows.push({ row, laneName, idx, weight });
+        bucket.counts[laneName] += 1;
+        if (Number.isFinite(weight)) {
+          bucket.weightedTotal += weight;
+          bucket.weightedSum += laneScore[laneName] * weight;
+        }
+        grouped.set(sourceKey, bucket);
+      });
+    };
+    addRows("pos", sourceLanes.pos);
+    addRows("neu", sourceLanes.neu);
+    addRows("neg", sourceLanes.neg);
+
+    const unique = { pos: [], neu: [], neg: [] };
+    grouped.forEach((group) => {
+      const hasWeighted = group.weightedTotal > 0;
+      const finalLane = hasWeighted
+        ? (group.weightedSum / group.weightedTotal > 0.2 ? "pos" : (group.weightedSum / group.weightedTotal < -0.2 ? "neg" : "neu"))
+        : (group.counts.pos > group.counts.neg && group.counts.pos > group.counts.neu
+          ? "pos"
+          : (group.counts.neg > group.counts.pos && group.counts.neg > group.counts.neu ? "neg" : "neu"));
+      const best = group.rows.slice().sort((a, b) => {
+        const aw = Number.isFinite(a.weight) ? a.weight : -1;
+        const bw = Number.isFinite(b.weight) ? b.weight : -1;
+        return bw - aw || a.idx - b.idx;
+      })[0];
+      if (best?.row) unique[finalLane].push(best.row);
+    });
+    return unique;
+  };
+
+  const uniqueLanes = aggregateUniqueSourceLanes({ pos, neu, neg });
+
   async function place(col, list){
     if (!col) return;
     col.innerHTML = "";
@@ -4484,6 +4542,14 @@ async function renderSourceSentimentV2(){
       if (!sourceKey || globallyClaimedKeys.has(sourceKey)) continue;
       const domain = manifestDomainForRow(row) || resolveDomain(row);
       if (!domain) continue;
+    const seenDomains = new Set();
+    let placed = 0;
+    for (const row of laneRows){
+      if (placed >= PER_LANE_MAX) break;
+    const laneRows = sortLaneRows(list).slice(0, PER_LANE_MAX);
+    for (const row of laneRows){
+      const domain = resolveDomain(row);
+      if (!domain || seenDomains.has(domain)) continue;
       const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
       if (!logoPath || !logoPath.startsWith('/')) continue;
       const ok = await loadImage(logoPath);
@@ -4494,6 +4560,11 @@ async function renderSourceSentimentV2(){
       const wrap = document.createElement("div");
       wrap.className = "source-sentiment-v2-item";
       wrap.dataset.sourceKey = sourceKey;
+      seenDomains.add(domain);
+
+      const wrap = document.createElement("div");
+      wrap.className = "source-sentiment-v2-item";
+      wrap.dataset.sourceKey = domain;
 
       const img = document.createElement("img");
       img.className = "source-sentiment-v2-logo";
@@ -4515,6 +4586,7 @@ async function renderSourceSentimentV2(){
   }
 
   await Promise.all([place(colPos, uniqueLanes.pos), place(colNeu, uniqueLanes.neu), place(colNeg, uniqueLanes.neg)]);
+  await Promise.all([place(colPos, pos), place(colNeu, neu), place(colNeg, neg)]);
   const renderedPositive = colPos?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
   const renderedNeutral = colNeu?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
   const renderedNegative = colNeg?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
@@ -4531,6 +4603,7 @@ async function renderSourceSentimentV2(){
     renderedPositiveKeys: Array.from(colPos?.querySelectorAll(".source-sentiment-v2-item") || []).map((n) => n.dataset.sourceKey).filter(Boolean),
     renderedNeutralKeys: Array.from(colNeu?.querySelectorAll(".source-sentiment-v2-item") || []).map((n) => n.dataset.sourceKey).filter(Boolean),
     renderedNegativeKeys: Array.from(colNeg?.querySelectorAll(".source-sentiment-v2-item") || []).map((n) => n.dataset.sourceKey).filter(Boolean)
+    renderedNegative
   });
 
   const hasLogos = grid.querySelectorAll("img.source-sentiment-v2-logo").length > 0;

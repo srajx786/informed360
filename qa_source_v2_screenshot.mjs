@@ -58,6 +58,21 @@ const domChecksDesktop = await page.evaluate(() => {
   const duplicateSourceKeys = Object.entries(keyCounts).filter(([, count]) => count > 1).map(([key]) => key);
   const missingDataSourceKeyCount = document.querySelectorAll('#sourceSentimentV2 .source-sentiment-v2-item:not([data-source-key])').length;
   const visibleTextTokens = (text.match(/\b(W|NN|SS|S|AN|FN|WP|TV)\b/g) || []);
+  const laneSelectors = {
+    positive: '#sourceSentimentV2 .col-pos .source-sentiment-v2-item',
+    neutral: '#sourceSentimentV2 .col-neu .source-sentiment-v2-item',
+    negative: '#sourceSentimentV2 .col-neg .source-sentiment-v2-item'
+  };
+  const laneKeys = Object.fromEntries(
+    Object.entries(laneSelectors).map(([lane, sel]) => [lane, Array.from(document.querySelectorAll(sel)).map((n) => n.dataset.sourceKey || '').filter(Boolean)])
+  );
+  const allKeys = [...laneKeys.positive, ...laneKeys.neutral, ...laneKeys.negative];
+  const keyCounts = allKeys.reduce((acc, key) => {
+    acc[key] = (acc[key] || 0) + 1;
+    return acc;
+  }, {});
+  const duplicateSourceKeys = Object.entries(keyCounts).filter(([, count]) => count > 1).map(([key]) => key);
+  const missingDataSourceKeyCount = document.querySelectorAll('#sourceSentimentV2 .source-sentiment-v2-item:not([data-source-key])').length;
   return {
     noLeaderboard: document.querySelector('#leaderboard') === null,
     hasSourceSentimentV2: !!root,
@@ -70,6 +85,7 @@ const domChecksDesktop = await page.evaluate(() => {
     overflowItems,
     overflowLogos,
     visibleTextTokens
+    missingDataSourceKeyCount
   };
 });
 
@@ -109,6 +125,21 @@ const domChecksMobile = await mobilePage.evaluate(() => {
   const duplicateSourceKeys = Object.entries(keyCounts).filter(([, count]) => count > 1).map(([key]) => key);
   const missingDataSourceKeyCount = document.querySelectorAll('#sourceSentimentV2 .source-sentiment-v2-item:not([data-source-key])').length;
   const visibleTextTokens = (text.match(/\b(W|NN|SS|S|AN|FN|WP|TV)\b/g) || []);
+  const laneSelectors = {
+    positive: '#sourceSentimentV2 .col-pos .source-sentiment-v2-item',
+    neutral: '#sourceSentimentV2 .col-neu .source-sentiment-v2-item',
+    negative: '#sourceSentimentV2 .col-neg .source-sentiment-v2-item'
+  };
+  const laneKeys = Object.fromEntries(
+    Object.entries(laneSelectors).map(([lane, sel]) => [lane, Array.from(document.querySelectorAll(sel)).map((n) => n.dataset.sourceKey || '').filter(Boolean)])
+  );
+  const allKeys = [...laneKeys.positive, ...laneKeys.neutral, ...laneKeys.negative];
+  const keyCounts = allKeys.reduce((acc, key) => {
+    acc[key] = (acc[key] || 0) + 1;
+    return acc;
+  }, {});
+  const duplicateSourceKeys = Object.entries(keyCounts).filter(([, count]) => count > 1).map(([key]) => key);
+  const missingDataSourceKeyCount = document.querySelectorAll('#sourceSentimentV2 .source-sentiment-v2-item:not([data-source-key])').length;
   return {
     noLeaderboard: document.querySelector('#leaderboard') === null,
     hasSourceSentimentV2: !!root,
@@ -121,6 +152,7 @@ const domChecksMobile = await mobilePage.evaluate(() => {
     overflowItems,
     overflowLogos,
     visibleTextTokens
+    missingDataSourceKeyCount
   };
 });
 
