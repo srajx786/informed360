@@ -4377,9 +4377,15 @@ async function renderSourceSentimentV2(){
   const colNeu = grid.querySelector(".col-neu");
   const colNeg = grid.querySelector(".col-neg");
   const empty = grid.querySelector(".board-empty");
-  [colPos, colNeu, colNeg].forEach(c => c && (c.innerHTML = ""));
 
   const { pos, neu, neg } = computeLeaderboard();
+  const existingLogos = grid.querySelectorAll("img.source-sentiment-v2-logo").length;
+  if (!pos.length && !neu.length && !neg.length && existingLogos > 0){
+    console.log("SOURCE_SENTIMENT_V2_LAYOUT_FIXED_SKIP_EMPTY_REFRESH", { existingLogos });
+    return;
+  }
+  grid.querySelectorAll(".badge").forEach((node) => node.remove());
+  [colPos, colNeu, colNeg].forEach(c => c && (c.innerHTML = ""));
   const debugSources = new URLSearchParams(window.location.search).get("debugSources") === "1";
   const PER_LANE_MAX = 4;
   const sourceLogoManifest = await getSourceLogoManifestMap();
@@ -4409,13 +4415,20 @@ async function renderSourceSentimentV2(){
     col.innerHTML = "";
     const laneList = document.createElement("div");
     laneList.className = "source-sentiment-v2-lane-list";
+    const laneRows = sortLaneRows(list);
+    const seenDomains = new Set();
+    let placed = 0;
+    for (const row of laneRows){
+      if (placed >= PER_LANE_MAX) break;
     const laneRows = sortLaneRows(list).slice(0, PER_LANE_MAX);
     for (const row of laneRows){
       const domain = resolveDomain(row);
+      if (!domain || seenDomains.has(domain)) continue;
       const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
       if (!logoPath || !logoPath.startsWith('/')) continue;
       const ok = await loadImage(logoPath);
       if (!ok) continue;
+      seenDomains.add(domain);
 
       const wrap = document.createElement("div");
       wrap.className = "source-sentiment-v2-item";
@@ -4433,6 +4446,7 @@ async function renderSourceSentimentV2(){
         wrap.appendChild(label);
       }
       laneList.appendChild(wrap);
+      placed++;
     }
     col.appendChild(laneList);
   }
