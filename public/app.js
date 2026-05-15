@@ -4456,6 +4456,7 @@ async function renderSourceSentimentV2(){
   };
 
   const uniqueLanes = aggregateUniqueSourceLanes({ pos, neu, neg });
+
   async function place(col, list){
     if (!col) return;
     col.innerHTML = "";
@@ -4466,6 +4467,8 @@ async function renderSourceSentimentV2(){
     let placed = 0;
     for (const row of laneRows){
       if (placed >= PER_LANE_MAX) break;
+    const laneRows = sortLaneRows(list).slice(0, PER_LANE_MAX);
+    for (const row of laneRows){
       const domain = resolveDomain(row);
       if (!domain || seenDomains.has(domain)) continue;
       const logoPath = String(sourceLogoManifest.get(domain) || "").trim();
@@ -4497,6 +4500,7 @@ async function renderSourceSentimentV2(){
   }
 
   await Promise.all([place(colPos, uniqueLanes.pos), place(colNeu, uniqueLanes.neu), place(colNeg, uniqueLanes.neg)]);
+  await Promise.all([place(colPos, pos), place(colNeu, neu), place(colNeg, neg)]);
   const renderedPositive = colPos?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
   const renderedNeutral = colNeu?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
   const renderedNegative = colNeg?.querySelectorAll("img.source-sentiment-v2-logo").length || 0;
