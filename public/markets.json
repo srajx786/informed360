@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1784019824509,
+  "updatedAt": 1784028279611,
   "quotes": [
     {
       "symbol": "^NSEI",
@@ -7,8 +7,8 @@
       "price": 24211.0,
       "change": 4.099999999998545,
       "changePercent": 0.016937319524592348,
-      "status": "live",
-      "updatedAt": 1784019824509
+      "status": "closed",
+      "updatedAt": 1784028279611
     },
     {
       "symbol": "GC=F",
@@ -17,7 +17,7 @@
       "change": 2.0,
       "changePercent": 0.049928851386773845,
       "status": "live",
-      "updatedAt": 1784019824509
+      "updatedAt": 1784028279611
     },
     {
       "symbol": "CL=F",
@@ -26,23 +26,19 @@
       "change": 1.8599999999999994,
       "changePercent": 2.3803429741489626,
       "status": "live",
-      "updatedAt": 1784019824509
+      "updatedAt": 1784028279611
     },
     {
       "symbol": "USDINR=X",
       "pretty": "USD/INR",
-      "price": 96.1525,
-      "change": 0.5324999999999989,
-      "changePercent": 0.556891863626855,
+      "price": 96.13,
+      "change": 0.5099999999999909,
+      "changePercent": 0.5333612215017683,
       "status": "live",
-      "updatedAt": 1784019824509
+      "updatedAt": 1784028279611
     }
   ],
   "niftyHistory": [
-    {
-      "timestamp": 1783357200000,
-      "value": 24430.35
-    },
     {
       "timestamp": 1783425600000,
       "value": 24398.7
@@ -133,6 +129,10 @@
     },
     {
       "timestamp": 1784019600000,
+      "value": 24211.0
+    },
+    {
+      "timestamp": 1784026800000,
       "value": 24211.0
     }
   ]
