@@ -82,6 +82,24 @@ def read_nifty_history(existing: Optional[Dict[str, Any]]) -> list[Dict[str, Any
     return cleaned
 
 
+def seed_nifty_history_from_existing_quote(
+    history: list[Dict[str, Any]],
+    existing: Optional[Dict[str, Any]],
+    now_ms: int,
+) -> list[Dict[str, Any]]:
+    if history:
+        return history
+    existing_quote = get_existing_quote(existing, NIFTY_SYMBOL)
+    existing_price = coerce_number(existing_quote.get("price") if existing_quote else None)
+    if existing_price is None:
+        return history
+    existing_updated_at = int(existing_quote.get("updatedAt") or 0) if existing_quote else 0
+    source_ts = existing_updated_at if existing_updated_at > 0 else now_ms
+    hour_ms = 60 * 60 * 1000
+    bucket_ts = (source_ts // hour_ms) * hour_ms
+    return [{"timestamp": bucket_ts, "value": float(existing_price)}]
+
+
 def update_nifty_history(
     history: list[Dict[str, Any]],
     *,
@@ -222,6 +240,7 @@ def main() -> int:
     now_ms = int(time.time() * 1000)
     existing = read_existing()
     nifty_history = read_nifty_history(existing)
+    nifty_history = seed_nifty_history_from_existing_quote(nifty_history, existing, now_ms)
     quotes = []
     valid_prices = 0
 
@@ -258,6 +277,11 @@ def main() -> int:
         return 0
 
     if existing:
+        existing_history = read_nifty_history(existing)
+        if not existing_history and nifty_history:
+            write_payload(build_payload(existing.get("quotes") or quotes, now_ms, nifty_history))
+            logging.warning("only %s fresh prices; backfilled niftyHistory from last known quote", valid_prices)
+            return 0
         logging.warning(
             "only %s fresh prices; keeping existing markets.json unchanged", valid_prices
         )
