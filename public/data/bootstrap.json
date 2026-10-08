@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-16T14:11:56.441Z",
+  "generatedAt": "2026-10-08T22:22:59.604Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 161,
-    "potusArticles": 44
+    "usaArticles": 189,
+    "potusArticles": 47
   },
   "version": 1,
   "topStories": [
@@ -3612,62 +3612,62 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-05-16T10:11:56.441Z",
+          "label": "2026-10-08T18:22:59.605Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-05-16T11:11:56.441Z",
-          "pos": 3,
-          "neu": 87,
-          "neg": 10,
-          "count": 4
+          "label": "2026-10-08T19:22:59.605Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
         },
         {
-          "label": "2026-05-16T12:11:56.441Z",
-          "pos": 7,
-          "neu": 85,
-          "neg": 8,
-          "count": 9
+          "label": "2026-10-08T20:22:59.605Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
         },
         {
-          "label": "2026-05-16T13:11:56.441Z",
-          "pos": 8,
-          "neu": 84,
-          "neg": 8,
-          "count": 7
+          "label": "2026-10-08T21:22:59.605Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
         }
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-05-16T10:11:56.441Z",
-          "pos": 10,
-          "neu": 90,
+          "label": "2026-10-08T18:22:59.605Z",
+          "pos": 0,
+          "neu": 0,
           "neg": 0,
-          "count": 1
+          "count": 0
         },
         {
-          "label": "2026-05-16T11:11:56.441Z",
-          "pos": 9,
-          "neu": 78,
-          "neg": 13,
-          "count": 17
+          "label": "2026-10-08T19:22:59.605Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
         },
         {
-          "label": "2026-05-16T12:11:56.441Z",
-          "pos": 7,
-          "neu": 82,
-          "neg": 11,
-          "count": 23
+          "label": "2026-10-08T20:22:59.605Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
         },
         {
-          "label": "2026-05-16T13:11:56.441Z",
-          "pos": 8,
-          "neu": 81,
-          "neg": 11,
-          "count": 37
+          "label": "2026-10-08T21:22:59.605Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
         }
       ]
     },
@@ -4555,18 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.31,
-      "neu": 81.84,
-      "neg": 10.85,
-      "count": 161
+      "pos": 7.3,
+      "neu": 82.61,
+      "neg": 10.1,
+      "count": 189
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.7,
-        "neu": 85.14,
-        "neg": 8.16,
-        "count": 36
+        "pos": 9.37,
+        "neu": 83.28,
+        "neg": 7.35,
+        "count": 41
+      },
+      {
+        "source": "Fox News",
+        "pos": 7.56,
+        "neu": 78.15,
+        "neg": 14.29,
+        "count": 26
+      },
+      {
+        "source": "CBS News",
+        "pos": 6.2,
+        "neu": 84.02,
+        "neg": 9.78,
+        "count": 26
+      },
+      {
+        "source": "NYT",
+        "pos": 4.48,
+        "neu": 84.08,
+        "neg": 11.44,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4576,39 +4597,18 @@
         "count": 20
       },
       {
-        "source": "Fox News",
-        "pos": 10.58,
-        "neu": 77.85,
-        "neg": 11.57,
-        "count": 20
-      },
-      {
-        "source": "CBS News",
-        "pos": 5.15,
-        "neu": 82.2,
-        "neg": 12.66,
-        "count": 20
-      },
-      {
-        "source": "NYT",
-        "pos": 6.99,
-        "neu": 81.09,
-        "neg": 11.92,
-        "count": 20
-      },
-      {
         "source": "ABC News",
-        "pos": 7.66,
-        "neu": 80.34,
-        "neg": 12,
-        "count": 19
+        "pos": 8.62,
+        "neu": 85.5,
+        "neg": 5.88,
+        "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 8.63,
-        "neu": 83.68,
-        "neg": 7.69,
-        "count": 14
+        "pos": 7.11,
+        "neu": 83.15,
+        "neg": 9.74,
+        "count": 20
       },
       {
         "source": "NPR",
@@ -4635,117 +4635,127 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Materials",
-          "bias": 19.2,
-          "count": 1
-        },
-        {
           "name": "Utilities",
-          "bias": -19,
+          "bias": -15.55,
           "count": 2
-        },
-        {
-          "name": "Communication",
-          "bias": -5.65,
-          "count": 2
-        },
-        {
-          "name": "Technology",
-          "bias": -4.04,
-          "count": 128
-        },
-        {
-          "name": "Healthcare",
-          "bias": -3.51,
-          "count": 12
-        },
-        {
-          "name": "Real Estate",
-          "bias": -2.25,
-          "count": 2
-        },
-        {
-          "name": "Finance",
-          "bias": -1.61,
-          "count": 16
         },
         {
           "name": "Energy",
-          "bias": 0.2,
-          "count": 9
+          "bias": -9.69,
+          "count": 12
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -7.5,
+          "count": 1
+        },
+        {
+          "name": "Materials",
+          "bias": -6.17,
+          "count": 4
+        },
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
+        },
+        {
+          "name": "Finance",
+          "bias": 4.8,
+          "count": 20
+        },
+        {
+          "name": "Technology",
+          "bias": -2.75,
+          "count": 145
+        },
+        {
+          "name": "Healthcare",
+          "bias": -2.49,
+          "count": 7
+        },
+        {
+          "name": "Communication",
+          "bias": 1.47,
+          "count": 3
         }
       ],
       "pos": [
         {
-          "name": "Materials",
-          "bias": 19.2,
+          "name": "Real Estate",
+          "bias": 5.9,
           "count": 1
+        },
+        {
+          "name": "Finance",
+          "bias": 4.8,
+          "count": 20
         }
       ],
       "neu": [
         {
+          "name": "Materials",
+          "bias": -6.17,
+          "count": 4
+        },
+        {
+          "name": "Technology",
+          "bias": -2.75,
+          "count": 145
+        },
+        {
           "name": "Healthcare",
-          "bias": -3.51,
-          "count": 12
-        },
-        {
-          "name": "Real Estate",
-          "bias": -2.25,
-          "count": 2
-        },
-        {
-          "name": "Finance",
-          "bias": -1.61,
-          "count": 16
+          "bias": -2.49,
+          "count": 7
         }
       ],
       "neg": [
         {
           "name": "Utilities",
-          "bias": -19,
+          "bias": -15.55,
           "count": 2
         },
         {
-          "name": "Communication",
-          "bias": -5.65,
-          "count": 2
+          "name": "Energy",
+          "bias": -9.69,
+          "count": 12
         },
         {
-          "name": "Technology",
-          "bias": -4.04,
-          "count": 128
+          "name": "Manufacturing",
+          "bias": -7.5,
+          "count": 1
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-05-16T10:11:56.444Z",
-          "pos": 13,
-          "neu": 80,
-          "neg": 7,
+          "label": "2026-10-08T18:22:59.607Z",
+          "pos": 5,
+          "neu": 85,
+          "neg": 10,
           "count": 6
         },
         {
-          "label": "2026-05-16T11:11:56.444Z",
+          "label": "2026-10-08T19:22:59.607Z",
           "pos": 11,
           "neu": 81,
-          "neg": 8,
+          "neg": 7,
           "count": 18
         },
         {
-          "label": "2026-05-16T12:11:56.444Z",
+          "label": "2026-10-08T20:22:59.607Z",
           "pos": 6,
-          "neu": 84,
-          "neg": 11,
-          "count": 18
+          "neu": 81,
+          "neg": 13,
+          "count": 33
         },
         {
-          "label": "2026-05-16T13:11:56.444Z",
+          "label": "2026-10-08T21:22:59.607Z",
           "pos": 7,
-          "neu": 79,
-          "neg": 14,
-          "count": 25
+          "neu": 86,
+          "neg": 8,
+          "count": 36
         }
       ]
     }
@@ -4953,42 +4963,42 @@
         "category": "world"
       },
       {
-        "title": "With Possible Raúl Castro Indictment, U.S. Eyes Venezuela Playbook",
-        "link": "https://www.nytimes.com/2026/05/15/us/politics/trump-cuba-pressue-castro.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "ABC News deletes ‘hit piece’ on Trump sons' Pentagon-linked investments without explanation",
+        "link": "https://www.foxnews.com/media/abc-news-deletes-hit-piece-trump-sons-pentagon-linked-investments-without-explanation",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Amid stepped-up surveillance flights, a visit of the C.I.A. director and an energy embargo, the White House is trying to increase pressure on Cuba.",
+        "description": "ABC News quietly deleted its report on Donald Trump Jr. and Eric Trump's alleged ties to Pentagon contracts after 1789 Capital threatened legal action.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-05-15T23:41:23.000Z",
+        "publishedAt": "2026-10-08T22:00:53.000Z",
         "sentiment": {
-          "posP": 12.4,
-          "negP": 6.2,
-          "neuP": 81.4,
-          "label": "positive",
-          "confidence": 0.3
+          "posP": 3.9,
+          "negP": 7.8,
+          "neuP": 88.3,
+          "label": "negative",
+          "confidence": 0.36
         },
         "category": "usa"
       },
       {
-        "title": "China Will Host Putin, Days After Trump’s Visit",
-        "link": "https://www.nytimes.com/2026/05/16/world/europe/putin-china-visit-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump calls Democrat he pardoned a 'loser' for not switching parties",
+        "link": "https://www.foxnews.com/politics/trump-calls-democrat-he-pardoned-loser-not-switching-parties",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Russian leader will go to Beijing on Tuesday for talks with President Xi Jinping. The Kremlin said he had watched President Trump’s visit closely.",
+        "description": "President Donald Trump slammed Democratic Rep. Henry Cuellar of Texas for not becoming a Republican after receiving a presidential pardon.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-05-16T11:23:43.000Z",
+        "publishedAt": "2026-10-08T20:33:43.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 13.4,
+          "negP": 7.2,
+          "neuP": 79.4,
+          "label": "positive",
+          "confidence": 0.24
         },
         "category": "usa"
       }
@@ -5195,176 +5205,76 @@
         "category": "world"
       },
       {
-        "title": "With Possible Raúl Castro Indictment, U.S. Eyes Venezuela Playbook",
-        "link": "https://www.nytimes.com/2026/05/15/us/politics/trump-cuba-pressue-castro.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "ABC News deletes ‘hit piece’ on Trump sons' Pentagon-linked investments without explanation",
+        "link": "https://www.foxnews.com/media/abc-news-deletes-hit-piece-trump-sons-pentagon-linked-investments-without-explanation",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Amid stepped-up surveillance flights, a visit of the C.I.A. director and an energy embargo, the White House is trying to increase pressure on Cuba.",
+        "description": "ABC News quietly deleted its report on Donald Trump Jr. and Eric Trump's alleged ties to Pentagon contracts after 1789 Capital threatened legal action.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-05-15T23:41:23.000Z",
+        "publishedAt": "2026-10-08T22:00:53.000Z",
         "sentiment": {
-          "posP": 12.4,
-          "negP": 6.2,
-          "neuP": 81.4,
-          "label": "positive",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
-        "title": "China Will Host Putin, Days After Trump’s Visit",
-        "link": "https://www.nytimes.com/2026/05/16/world/europe/putin-china-visit-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Russian leader will go to Beijing on Tuesday for talks with President Xi Jinping. The Kremlin said he had watched President Trump’s visit closely.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-05-16T11:23:43.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What to Watch in Saturday’s Republican Senate Primary in Louisiana",
-        "link": "https://www.nytimes.com/2026/05/16/us/politics/what-to-watch-louisiana-senate-primary.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Senator Bill Cassidy, who has drawn President Trump’s ire, is fighting for political survival.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-05-16T12:43:17.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 9.8,
-          "neuP": 90.2,
+          "posP": 3.9,
+          "negP": 7.8,
+          "neuP": 88.3,
           "label": "negative",
           "confidence": 0.36
         },
         "category": "usa"
       },
       {
-        "title": "Trump Says a Top ISIS Leader Was Killed in a U.S.-Nigerian Mission",
-        "link": "https://www.nytimes.com/2026/05/16/world/africa/trump-isis-nigeria-al-minuki.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump calls Democrat he pardoned a 'loser' for not switching parties",
+        "link": "https://www.foxnews.com/politics/trump-calls-democrat-he-pardoned-loser-not-switching-parties",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The leader, whom the State Department designated a terrorist in 2023, had been hiding in Africa, President Trump said.",
+        "description": "President Donald Trump slammed Democratic Rep. Henry Cuellar of Texas for not becoming a Republican after receiving a presidential pardon.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-05-16T08:44:47.000Z",
+        "publishedAt": "2026-10-08T20:33:43.000Z",
         "sentiment": {
-          "posP": 4.8,
-          "negP": 30.6,
-          "neuP": 64.6,
-          "label": "negative",
-          "confidence": 0.89
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The Great Political Realignment of 2026",
-        "link": "https://www.nytimes.com/2026/05/16/opinion/supreme-court-midterms-politics.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The country seems to be tiring of the Trump era. Now what?",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-05-16T11:10:38.000Z",
-        "sentiment": {
-          "posP": 19.4,
-          "negP": 0,
-          "neuP": 80.6,
+          "posP": 13.4,
+          "negP": 7.2,
+          "neuP": 79.4,
           "label": "positive",
-          "confidence": 0.62
+          "confidence": 0.24
         },
         "category": "usa"
       },
       {
-        "title": "Trump says U.S. has killed Islamic State leader in Nigeria",
-        "link": "https://www.cbsnews.com/news/trump-says-us-kills-islamic-state-leader-in-nigeria/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump Says U.S. Will Not Strike Iran Again Before Midterms as Military Draws Up New Plans",
+        "link": "https://www.nytimes.com/2026/10/08/us/politics/trump-iran-war-options.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump announced Friday evening that U.S. and Nigerian military forces had killed Abu-Bilal al-Minuki, a leader in the Islamic State group.",
+        "description": "The U.S. military has drafted options for three days of strikes, but in recent months the president has repeatedly vetoed plans to restart the war.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-05-16T10:20:05.000Z",
+        "publishedAt": "2026-10-08T21:05:33.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 23.7,
-          "neuP": 76.3,
+          "negP": 18,
+          "neuP": 82,
           "label": "negative",
-          "confidence": 0.88
+          "confidence": 0.81
         },
         "category": "usa"
       },
       {
-        "title": "Colorado governor commutes Trump ally Tina Peters' prison sentence",
-        "link": "https://www.cbsnews.com/news/tina-peters-clemency-jared-police-colorado-governor/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "How Trump Has Alienated Republican Voters Ahead of the Midterms",
+        "link": "https://www.nytimes.com/2026/10/08/us/elections/trump-voter-enthusiasm-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Gov. Jared Polis announced he is commuting the sentence of former Mesa County Clerk Tina Peters, who was facing more than eight years in state prison for allowing unauthorized access to voting machines following the 2020 presidential election.",
+        "description": "Signs are emerging that dispirited Republican voters may stay home in November, bringing a Democratic surge without many conversions.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-05-16T03:23:00.000Z",
-        "sentiment": {
-          "posP": 5,
-          "negP": 12.6,
-          "neuP": 82.4,
-          "label": "negative",
-          "confidence": 0.72
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump talks up trade deals with China, but experts see no big wins for U.S.",
-        "link": "https://www.cbsnews.com/news/trump-xi-jinping-china-trade-deals-boeing/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump's trip to China could bolster economic relations, but failed to deliver a breakthrough deal, some trade and energy experts said.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-05-15T23:52:31.000Z",
-        "sentiment": {
-          "posP": 16.4,
-          "negP": 15.4,
-          "neuP": 68.2,
-          "label": "neutral",
-          "confidence": 0.12
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Why Taiwan became the defining issue in the Trump-Xi talks",
-        "link": "https://www.cnbc.com/2026/05/16/trumps-meeting-with-chinas-xi-steers-the-us-away-from-taiwan-again.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "U.S. President Donald Trump had said arms sales to Taiwan would be on the agenda for his talks with Chinese President Xi Jinping which ended Friday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-05-16T08:26:02.000Z",
+        "publishedAt": "2026-10-08T15:07:06.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5375,96 +5285,36 @@
         "category": "usa"
       },
       {
-        "title": "Trump went big on tech stocks in first quarter of 2026, new filings show",
-        "link": "https://www.cnbc.com/2026/05/15/trump-stock-trade-tech-oge.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "In Maine Senate Race, Spiking Heating Oil Costs Put Susan Collins on Defensive",
+        "link": "https://www.nytimes.com/2026/10/08/us/maine-senate-collins-jackson-oil.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump bought shares of Amazon, Meta, Oracle, Broadcom, Motorola and Dell worth millions, new ethics disclosure filings show.",
+        "description": "Half of homes in Maine rely on heating oil. Rising costs driven up by President Trump’s war with Iran have become central to the state’s Senate race.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-05-15T19:34:05.000Z",
+        "publishedAt": "2026-10-08T14:53:22.000Z",
         "sentiment": {
-          "posP": 16.7,
-          "negP": 0,
-          "neuP": 83.3,
-          "label": "positive",
+          "posP": 2.6,
+          "negP": 9.1,
+          "neuP": 88.3,
+          "label": "negative",
           "confidence": 0.59
         },
         "category": "usa"
       },
       {
-        "title": "This federal program trains older workers. The Trump administration wants to cut it",
-        "link": "https://www.cnbc.com/2026/05/16/senior-community-service-employment-program.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "In Trump’s Russian Oil Deal, Middle East Funds Are the Biggest Owners",
+        "link": "https://www.nytimes.com/2026/10/08/world/europe/trump-russia-oil-deal-lukoil-middle-east-investors.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Senior Community Service Employment Program provides older, low-income individuals with an opportunity to train for work. But its future is uncertain.",
+        "description": "A majority of ownership in a proposed multibillion-dollar deal would go to a group of Middle Eastern investors, including some with business ties to U.S. negotiators.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-05-16T13:30:01.000Z",
-        "sentiment": {
-          "posP": 7.2,
-          "negP": 11,
-          "neuP": 81.8,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "A state banquet, selfies with Musk and Huang's noodle run: The spectacle of Trump's Beijing visit",
-        "link": "https://www.cnbc.com/2026/05/16/a-state-banquet-selfies-and-a-noodle-run-trumps-beijing-visit.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The visit was full of friendly overtures, orchestrated pageantry, business dealmaking, and headline-grabbing sideshows.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-05-16T11:36:25.000Z",
-        "sentiment": {
-          "posP": 10.3,
-          "negP": 0,
-          "neuP": 89.7,
-          "label": "positive",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says China and Taiwan should 'both cool it'",
-        "link": "https://www.cnbc.com/2026/05/15/trump-china-xi-taiwan.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump spoke about Taiwan after a two-day visit to China, where he said he discussed Iran, and trade deals with Chinese President Xi Jingping.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-05-15T23:52:43.000Z",
-        "sentiment": {
-          "posP": 6.5,
-          "negP": 0,
-          "neuP": 93.5,
-          "label": "positive",
-          "confidence": 0.32
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Russia's Putin to meet China's Xi in Beijing from May 19-20, Beijing and Moscow say",
-        "link": "https://www.cnbc.com/2026/05/16/russias-putin-to-meet-chinas-xi-in-beijing-from-may-19-20.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Putin's trip follows shortly after U.S. President Donald Trump's visit to Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-05-16T09:26:49.000Z",
+        "publishedAt": "2026-10-08T16:28:17.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5473,42 +5323,202 @@
           "confidence": 0
         },
         "category": "usa"
+      },
+      {
+        "title": "Trump Administration Considers Using Ships to Deport Immigrants",
+        "link": "https://www.nytimes.com/2026/10/08/us/trump-deportations-boats-ships.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Journeys to destinations including El Salvador and Venezuela could take days and cost millions. Officials cautioned that discussions are still preliminary.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-08T19:22:55.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Administration Suspends Microsoft From Green Card Program, Alleging Visa Fraud",
+        "link": "https://www.nytimes.com/2026/10/08/us/politics/microsoft-visas-green-cards.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Vice President JD Vance singled out the tech firm as he and other officials accused an array of companies and universities of abusing the visa system.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-08T20:51:38.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 20.9,
+          "neuP": 79.1,
+          "label": "negative",
+          "confidence": 0.84
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump’s Speech Is Getting Filthier",
+        "link": "https://www.nytimes.com/2026/10/08/opinion/trump-profanity.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "What to make of the president’s uptick in profanity?",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-08T19:32:50.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Enrollment in Trump Accounts program tops 70 million",
+        "link": "https://www.cbsnews.com/video/trump-accounts-enrollment-70-million/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration is touting 70 million children enrolled in long-term investment accounts dubbed Trump Accounts. David Zervos, counselor to the Treasury secretary, joins \"The Takeout\" to discuss how the program works and more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-08T22:08:20.000Z",
+        "sentiment": {
+          "posP": 11.1,
+          "negP": 3.7,
+          "neuP": 85.2,
+          "label": "positive",
+          "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Donor claims Kimberly Guilfoyle pushed him to wire $100,000 for Trump administration access",
+        "link": "https://www.cbsnews.com/video/donor-claims-kimberly-guilfoyle-wire-100000-trump-administration-access/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A businessman who claims U.S. Ambassador to Greece Kimberly Guilfoyle asked him to wire her $100,000 says he's sure it was \"pay to play.\" CBS News senior White House correspondent Weijia Jiang reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-08T21:42:04.000Z",
+        "sentiment": {
+          "posP": 4.9,
+          "negP": 3,
+          "neuP": 92.1,
+          "label": "positive",
+          "confidence": 0.23
+        },
+        "category": "usa"
+      },
+      {
+        "title": "DOJ trying to indict former Mark Meadows aide Cassidy Hutchinson",
+        "link": "https://www.cbsnews.com/news/doj-seeking-indictment-cassidy-hutchinson-jan-6/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Hutchinson, a former aide to White House chief of staff Mark Meadows, drew the ire of Trump's base when she testified in 2022 before the House Jan. 6 committee about Trump's actions that day.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-08T21:40:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says U.S. won't attack Iran \"at any time\" before midterms",
+        "link": "https://www.cbsnews.com/video/trump-us-wont-attack-iran-before-midterms/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump posted on social media Thursday that the U.S. would not attack Iran before November's midterm elections. CBS News correspondent Nana-Sentuo Bonsu reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-08T20:50:35.000Z",
+        "sentiment": {
+          "posP": 13.4,
+          "negP": 0,
+          "neuP": 86.6,
+          "label": "positive",
+          "confidence": 0.63
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump promises not to resume Iran strikes before midterm elections",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-nuclear-donald-trump-vance-rubio-strait-of-hormuz/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Crude oil prices had shot up on Thursday after reports President Trump was considering more strikes. They immediately dropped again after his new announcement.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-08T20:06:00.000Z",
+        "sentiment": {
+          "posP": 6.3,
+          "negP": 21.6,
+          "neuP": 72.1,
+          "label": "negative",
+          "confidence": 0.75
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.14,
-      "neu": 86,
-      "neg": 7.86,
-      "count": 44
+      "pos": 6.2,
+      "neu": 84.96,
+      "neg": 8.84,
+      "count": 47
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 4.86,
-        "neu": 89.52,
-        "neg": 5.62,
-        "count": 12
-      },
-      {
         "source": "Washington Post",
-        "pos": 9.54,
-        "neu": 84.51,
-        "neg": 5.94,
-        "count": 9
+        "pos": 6.22,
+        "neu": 83.07,
+        "neg": 10.71,
+        "count": 11
       },
       {
         "source": "NYT",
-        "pos": 7.09,
-        "neu": 84.54,
-        "neg": 8.37,
-        "count": 7
+        "pos": 1.73,
+        "neu": 91.6,
+        "neg": 6.67,
+        "count": 9
+      },
+      {
+        "source": "NBC News",
+        "pos": 13.14,
+        "neu": 77.36,
+        "neg": 9.5,
+        "count": 8
       },
       {
         "source": "CBS News",
-        "pos": 6.35,
-        "neu": 77.23,
-        "neg": 16.43,
-        "count": 4
+        "pos": 6.62,
+        "neu": 86.33,
+        "neg": 7.05,
+        "count": 6
       },
       {
         "source": "WSJ",
@@ -5525,54 +5535,61 @@
         "count": 3
       },
       {
+        "source": "Fox News",
+        "pos": 8.77,
+        "neu": 86.23,
+        "neg": 5,
+        "count": 3
+      },
+      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
         "neg": 9,
-        "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 2.9,
-        "neu": 87.05,
-        "neg": 10.05,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.03,
-        "neu": 83.19,
-        "neg": 9.78,
-        "count": 19
+        "pos": 7.5,
+        "neu": 82.67,
+        "neg": 9.83,
+        "count": 26
       },
       {
         "topic": "Policy",
-        "pos": 2.72,
-        "neu": 91.59,
-        "neg": 5.69,
-        "count": 10
+        "pos": 4.58,
+        "neu": 88.08,
+        "neg": 7.33,
+        "count": 12
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.03,
-        "neu": 88.58,
-        "neg": 7.39,
-        "count": 9
-      },
-      {
-        "topic": "Economy",
-        "pos": 12.18,
-        "neu": 81.74,
-        "neg": 6.08,
+        "pos": 3.7,
+        "neu": 85.9,
+        "neg": 10.4,
         "count": 5
       },
       {
+        "topic": "Economy",
+        "pos": 9.5,
+        "neu": 84.5,
+        "neg": 6,
+        "count": 2
+      },
+      {
         "topic": "Legal",
-        "pos": 12.4,
-        "neu": 81.4,
-        "neg": 6.2,
+        "pos": 3.9,
+        "neu": 88.3,
+        "neg": 7.8,
+        "count": 1
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 0,
+        "neu": 100,
+        "neg": 0,
         "count": 1
       }
     ]
@@ -5600,62 +5617,62 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-05-16T10:11:56.447Z",
+        "label": "2026-10-08T18:22:59.609Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-05-16T11:11:56.447Z",
-        "pos": 3,
-        "neu": 87,
-        "neg": 10,
-        "count": 4
+        "label": "2026-10-08T19:22:59.609Z",
+        "pos": 0,
+        "neu": 0,
+        "neg": 0,
+        "count": 0
       },
       {
-        "label": "2026-05-16T12:11:56.447Z",
-        "pos": 7,
-        "neu": 85,
-        "neg": 8,
-        "count": 9
+        "label": "2026-10-08T20:22:59.609Z",
+        "pos": 0,
+        "neu": 0,
+        "neg": 0,
+        "count": 0
       },
       {
-        "label": "2026-05-16T13:11:56.447Z",
-        "pos": 8,
-        "neu": 84,
-        "neg": 8,
-        "count": 7
+        "label": "2026-10-08T21:22:59.609Z",
+        "pos": 0,
+        "neu": 0,
+        "neg": 0,
+        "count": 0
       }
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-05-16T10:11:56.447Z",
-        "pos": 10,
-        "neu": 90,
+        "label": "2026-10-08T18:22:59.609Z",
+        "pos": 0,
+        "neu": 0,
         "neg": 0,
-        "count": 1
+        "count": 0
       },
       {
-        "label": "2026-05-16T11:11:56.447Z",
-        "pos": 9,
-        "neu": 78,
-        "neg": 13,
-        "count": 17
+        "label": "2026-10-08T19:22:59.609Z",
+        "pos": 0,
+        "neu": 0,
+        "neg": 0,
+        "count": 0
       },
       {
-        "label": "2026-05-16T12:11:56.447Z",
-        "pos": 7,
-        "neu": 82,
-        "neg": 11,
-        "count": 23
+        "label": "2026-10-08T20:22:59.609Z",
+        "pos": 0,
+        "neu": 0,
+        "neg": 0,
+        "count": 0
       },
       {
-        "label": "2026-05-16T13:11:56.447Z",
-        "pos": 8,
-        "neu": 81,
-        "neg": 11,
-        "count": 37
+        "label": "2026-10-08T21:22:59.609Z",
+        "pos": 0,
+        "neu": 0,
+        "neg": 0,
+        "count": 0
       }
     ]
   },
@@ -5731,7 +5748,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-05-16T14:11:56.449Z",
+    "generatedAt": "2026-10-08T22:22:59.610Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5852,8 +5869,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 161,
-      "potusArticles": 44,
+      "usaArticles": 189,
+      "potusArticles": 47,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
