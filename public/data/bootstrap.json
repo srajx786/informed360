@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-09T02:29:14.668Z",
+  "generatedAt": "2026-10-09T09:32:14.851Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 186,
-    "potusArticles": 43
+    "usaArticles": 180,
+    "potusArticles": 41
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-08T22:29:14.668Z",
+          "label": "2026-10-09T05:32:14.852Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-08T23:29:14.668Z",
+          "label": "2026-10-09T06:32:14.852Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T00:29:14.668Z",
+          "label": "2026-10-09T07:32:14.852Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T01:29:14.668Z",
+          "label": "2026-10-09T08:32:14.852Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-08T22:29:14.668Z",
+          "label": "2026-10-09T05:32:14.852Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-08T23:29:14.668Z",
+          "label": "2026-10-09T06:32:14.852Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T00:29:14.668Z",
+          "label": "2026-10-09T07:32:14.852Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T01:29:14.668Z",
+          "label": "2026-10-09T08:32:14.852Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 6.77,
-      "neu": 83.04,
+      "pos": 7.83,
+      "neu": 81.97,
       "neg": 10.2,
-      "count": 186
+      "count": 180
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.02,
-        "neu": 83.75,
-        "neg": 8.23,
+        "pos": 9.64,
+        "neu": 81.99,
+        "neg": 8.37,
         "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 5.85,
-        "neu": 80.59,
-        "neg": 13.56,
+        "pos": 7.02,
+        "neu": 79.82,
+        "neg": 13.16,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.3,
-        "neu": 82.41,
-        "neg": 11.3,
+        "pos": 8.1,
+        "neu": 81.62,
+        "neg": 10.28,
         "count": 25
-      },
-      {
-        "source": "NYT",
-        "pos": 5.88,
-        "neu": 85.57,
-        "neg": 8.56,
-        "count": 21
       },
       {
         "source": "WSJ",
@@ -4598,17 +4591,24 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.76,
-        "neu": 85.82,
+        "pos": 8.38,
+        "neu": 84.2,
         "neg": 7.42,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 6.89,
-        "neu": 83.42,
-        "neg": 9.69,
+        "pos": 7.61,
+        "neu": 85.25,
+        "neg": 7.15,
         "count": 20
+      },
+      {
+        "source": "NYT",
+        "pos": 5.61,
+        "neu": 81.09,
+        "neg": 13.3,
+        "count": 15
       },
       {
         "source": "NPR",
@@ -4641,18 +4641,13 @@
         },
         {
           "name": "Manufacturing",
-          "bias": -14.56,
-          "count": 5
+          "bias": -8.45,
+          "count": 2
         },
         {
-          "name": "Real Estate",
-          "bias": -9.5,
-          "count": 3
-        },
-        {
-          "name": "Energy",
-          "bias": -5.33,
-          "count": 10
+          "name": "Materials",
+          "bias": -7.65,
+          "count": 2
         },
         {
           "name": "Communication",
@@ -4661,43 +4656,38 @@
         },
         {
           "name": "Finance",
-          "bias": 4.18,
+          "bias": 3.96,
           "count": 20
         },
         {
           "name": "Technology",
-          "bias": -3.2,
-          "count": 149
-        },
-        {
-          "name": "Materials",
-          "bias": 2.9,
-          "count": 2
+          "bias": -3.08,
+          "count": 141
         },
         {
           "name": "Healthcare",
-          "bias": -0.59,
-          "count": 8
+          "bias": -2.04,
+          "count": 10
+        },
+        {
+          "name": "Real Estate",
+          "bias": 2,
+          "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": 1.86,
+          "count": 12
         }
       ],
       "pos": [
         {
           "name": "Finance",
-          "bias": 4.18,
+          "bias": 3.96,
           "count": 20
-        },
-        {
-          "name": "Materials",
-          "bias": 2.9,
-          "count": 2
         }
       ],
       "neu": [
-        {
-          "name": "Energy",
-          "bias": -5.33,
-          "count": 10
-        },
         {
           "name": "Communication",
           "bias": -5.28,
@@ -4705,8 +4695,13 @@
         },
         {
           "name": "Technology",
-          "bias": -3.2,
-          "count": 149
+          "bias": -3.08,
+          "count": 141
+        },
+        {
+          "name": "Healthcare",
+          "bias": -2.04,
+          "count": 10
         }
       ],
       "neg": [
@@ -4717,45 +4712,45 @@
         },
         {
           "name": "Manufacturing",
-          "bias": -14.56,
-          "count": 5
+          "bias": -8.45,
+          "count": 2
         },
         {
-          "name": "Real Estate",
-          "bias": -9.5,
-          "count": 3
+          "name": "Materials",
+          "bias": -7.65,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-08T22:29:14.670Z",
-          "pos": 2,
+          "label": "2026-10-09T05:32:14.854Z",
+          "pos": 4,
           "neu": 84,
-          "neg": 14,
-          "count": 14
+          "neg": 12,
+          "count": 2
         },
         {
-          "label": "2026-10-08T23:29:14.670Z",
-          "pos": 7,
-          "neu": 81,
-          "neg": 13,
-          "count": 27
+          "label": "2026-10-09T06:32:14.854Z",
+          "pos": 3,
+          "neu": 91,
+          "neg": 6,
+          "count": 2
         },
         {
-          "label": "2026-10-09T00:29:14.670Z",
-          "pos": 8,
-          "neu": 82,
-          "neg": 10,
-          "count": 11
+          "label": "2026-10-09T07:32:14.854Z",
+          "pos": 10,
+          "neu": 87,
+          "neg": 3,
+          "count": 4
         },
         {
-          "label": "2026-10-09T01:29:14.670Z",
-          "pos": 5,
-          "neu": 88,
-          "neg": 7,
-          "count": 15
+          "label": "2026-10-09T08:32:14.854Z",
+          "pos": 18,
+          "neu": 73,
+          "neg": 9,
+          "count": 18
         }
       ]
     }
@@ -4963,6 +4958,26 @@
         "category": "world"
       },
       {
+        "title": "Mamdani demands Trump release illegal immigrant shot by ICE agent as protests erupt in the Bronx",
+        "link": "https://www.foxnews.com/us/mamdani-demands-trump-release-illegal-immigrant-shot-ice-agent-protests-erupt-bronx",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Mayor Zohran Mamdani demanded President Donald Trump release the man shot and injured by an ICE agent on Thursday in an incident that set off protests across New York City.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T04:40:09.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 22.6,
+          "neuP": 77.4,
+          "label": "negative",
+          "confidence": 0.88
+        },
+        "category": "usa"
+      },
+      {
         "title": "Federal grand jury hears evidence in probe of former Trump aide Cassidy Hutchinson's Jan 6 testimony: source",
         "link": "https://www.foxnews.com/politics/federal-grand-jury-hears-evidence-probe-former-trump-aide-cassidy-hutchinson-jan-6-testimony",
         "source": "Fox News",
@@ -4979,26 +4994,6 @@
           "neuP": 78.4,
           "label": "positive",
           "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Arizona man arrested after allegedly emailing White House bomb threat to Tucson news station",
-        "link": "https://www.foxnews.com/us/arizona-man-arrested-allegedly-emailing-white-house-bomb-threat-tucson-news-station",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Jacob Aaron Hicks allegedly emailed a Tucson news station claiming an imminent bomb strike against the White House, prompting an FBI investigation.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T00:14:16.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 32.4,
-          "neuP": 67.6,
-          "label": "negative",
-          "confidence": 0.92
         },
         "category": "usa"
       }
@@ -5205,6 +5200,26 @@
         "category": "world"
       },
       {
+        "title": "Mamdani demands Trump release illegal immigrant shot by ICE agent as protests erupt in the Bronx",
+        "link": "https://www.foxnews.com/us/mamdani-demands-trump-release-illegal-immigrant-shot-ice-agent-protests-erupt-bronx",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Mayor Zohran Mamdani demanded President Donald Trump release the man shot and injured by an ICE agent on Thursday in an incident that set off protests across New York City.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T04:40:09.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 22.6,
+          "neuP": 77.4,
+          "label": "negative",
+          "confidence": 0.88
+        },
+        "category": "usa"
+      },
+      {
         "title": "Federal grand jury hears evidence in probe of former Trump aide Cassidy Hutchinson's Jan 6 testimony: source",
         "link": "https://www.foxnews.com/politics/federal-grand-jury-hears-evidence-probe-former-trump-aide-cassidy-hutchinson-jan-6-testimony",
         "source": "Fox News",
@@ -5245,46 +5260,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump Administration Considers Using Ships to Deport Immigrants",
-        "link": "https://www.nytimes.com/2026/10/08/us/trump-deportations-boats-ships.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Journeys to destinations including El Salvador and Venezuela could take days and cost millions. Officials cautioned that discussions are still preliminary.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-08T19:22:56.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Administration Suspends Microsoft From Green Card Program, Alleging Visa Fraud",
-        "link": "https://www.nytimes.com/2026/10/08/us/politics/microsoft-visas-green-cards.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Vice President JD Vance singled out the tech firm as he and other officials accused an array of companies and universities of abusing the visa system.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T00:27:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 20.9,
-          "neuP": 79.1,
-          "label": "negative",
-          "confidence": 0.84
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump Says U.S. Will Not Strike Iran Again Before Midterms as Military Draws Up New Plans",
         "link": "https://www.nytimes.com/2026/10/08/us/politics/trump-iran-war-options.html",
         "source": "NYT",
@@ -5305,22 +5280,82 @@
         "category": "usa"
       },
       {
-        "title": "What to Make of Trump’s Uptick in Profanity",
-        "link": "https://www.nytimes.com/2026/10/08/opinion/trump-profanity.html",
+        "title": "ICE Agent Shoots Man During Arrest Attempt in New York Neighborhood",
+        "link": "https://www.nytimes.com/2026/10/08/nyregion/ice-shooting-nyc-bronx.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president’s speech is getting filthier.",
+        "description": "The man was in a car with a 5-year-old in the back seat when he was shot and wounded, the authorities said. Mayor Zohran Mamdani said the Trump administration was “terrorizing our city.”",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-08T22:39:32.000Z",
+        "publishedAt": "2026-10-09T07:06:46.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 5.5,
+          "neuP": 94.5,
+          "label": "negative",
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Nobel Peace Prize 2026 awarded to ICC jurist Navanethem \"Navi\" Pillay",
+        "link": "https://www.cbsnews.com/news/nobel-peace-prize-2026-navanethem-navi-pillay-south-africa/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Nobel Peace Prize 2026 was awarded to Navanethem \"Navi\" Pillay, a judge on the International Criminal Court, which was sanctioned by the Trump administration last year.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T09:30:42.000Z",
+        "sentiment": {
+          "posP": 36.3,
+          "negP": 6.5,
+          "neuP": 57.2,
+          "label": "positive",
+          "confidence": 0.94
+        },
+        "category": "usa"
+      },
+      {
+        "title": "AI leaders lobby Trump health officials in government-run chat room",
+        "link": "https://www.cbsnews.com/news/ai-tech-leaders-trump-health-officials-slack/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A Slack workspace has served as a war room for AI industry insiders and Trump administration officials to launch a rapid campaign aimed at persuading Americans to manage their healthcare and medical records on apps.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T09:00:11.000Z",
+        "sentiment": {
+          "posP": 2.4,
+          "negP": 8.7,
+          "neuP": 88.9,
+          "label": "negative",
+          "confidence": 0.59
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump promises not to resume Iran strikes before midterm elections",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-nuclear-donald-trump-vance-rubio-strait-of-hormuz/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Crude oil prices had shot up on Thursday after reports President Trump was considering more strikes. They immediately dropped again after his new announcement.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T05:21:58.000Z",
+        "sentiment": {
+          "posP": 6.3,
+          "negP": 21.6,
+          "neuP": 72.1,
+          "label": "negative",
+          "confidence": 0.75
         },
         "category": "usa"
       },
@@ -5345,26 +5380,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump promises not to resume Iran strikes before midterm elections",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-nuclear-donald-trump-vance-rubio-strait-of-hormuz/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Crude oil prices had shot up on Thursday after reports President Trump was considering more strikes. They immediately dropped again after his new announcement.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T00:35:51.000Z",
-        "sentiment": {
-          "posP": 6.3,
-          "negP": 21.6,
-          "neuP": 72.1,
-          "label": "negative",
-          "confidence": 0.75
-        },
-        "category": "usa"
-      },
-      {
         "title": "Judge presses Justice Department on justifications for White House media ban",
         "link": "https://www.cbsnews.com/news/cnn-ms-now-politico-trump-white-house-ban-hearing/",
         "source": "CBS News",
@@ -5381,26 +5396,6 @@
           "neuP": 69.8,
           "label": "negative",
           "confidence": 0.71
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Treasury sanctions 17 tankers linked to Iran's 'shadow fleet' in economic pressure campaign",
-        "link": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The additional sanctions are part of the Trump administration's military and economic campaign against Iran.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-08T17:13:32.000Z",
-        "sentiment": {
-          "posP": 6,
-          "negP": 7.3,
-          "neuP": 86.7,
-          "label": "neutral",
-          "confidence": 0.1
         },
         "category": "usa"
       },
@@ -5425,6 +5420,46 @@
         "category": "usa"
       },
       {
+        "title": "Treasury yields steady as Trump strikes diplomatic tone on Iran ahead of midterms",
+        "link": "https://www.cnbc.com/2026/10/09/us-treasurys-bond-yields-midterms.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Yields were largely unchanged Friday as investors assessed President Trump's latest comments on Iran.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T08:24:50.000Z",
+        "sentiment": {
+          "posP": 6.1,
+          "negP": 8.5,
+          "neuP": 85.4,
+          "label": "neutral",
+          "confidence": 0.18
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Treasury sanctions 17 tankers linked to Iran's 'shadow fleet' in economic pressure campaign",
+        "link": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The additional sanctions are part of the Trump administration's military and economic campaign against Iran.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-08T17:13:32.000Z",
+        "sentiment": {
+          "posP": 6,
+          "negP": 7.3,
+          "neuP": 86.7,
+          "label": "neutral",
+          "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
         "title": "Oil prices jump as Iran steps up tanker attacks, hurricane threatens U.S. Gulf production",
         "link": "https://www.cnbc.com/2026/10/08/oil-prices-today-brent-wti-hormuz.html",
         "source": "CNBC",
@@ -5443,81 +5478,48 @@
           "confidence": 0.48
         },
         "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.65,
-      "neu": 84.07,
-      "neg": 10.27,
-      "count": 43
+      "pos": 6.36,
+      "neu": 82.68,
+      "neg": 10.96,
+      "count": 41
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.91,
-        "neu": 82.87,
-        "neg": 9.22,
+        "pos": 5.74,
+        "neu": 83.43,
+        "neg": 10.84,
         "count": 11
       },
       {
         "source": "Washington Post",
-        "pos": 6.39,
-        "neu": 82.33,
-        "neg": 11.28,
-        "count": 10
-      },
-      {
-        "source": "NYT",
-        "pos": 2.17,
-        "neu": 89.35,
-        "neg": 8.48,
-        "count": 6
+        "pos": 9.56,
+        "neu": 79,
+        "neg": 11.44,
+        "count": 7
       },
       {
         "source": "CBS News",
-        "pos": 5.1,
-        "neu": 80.97,
-        "neg": 13.93,
+        "pos": 9.85,
+        "neu": 78.33,
+        "neg": 11.82,
+        "count": 6
+      },
+      {
+        "source": "NYT",
+        "pos": 3.25,
+        "neu": 87.88,
+        "neg": 8.88,
+        "count": 4
+      },
+      {
+        "source": "Fox News",
+        "pos": 5.63,
+        "neu": 78.6,
+        "neg": 15.78,
         "count": 4
       },
       {
@@ -5535,13 +5537,6 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 7.5,
-        "neu": 79,
-        "neg": 13.5,
-        "count": 3
-      },
-      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
@@ -5552,24 +5547,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.96,
-        "neu": 82.86,
-        "neg": 11.18,
-        "count": 24
+        "pos": 4.36,
+        "neu": 83.48,
+        "neg": 12.16,
+        "count": 21
       },
       {
         "topic": "Policy",
-        "pos": 4.33,
-        "neu": 86.63,
-        "neg": 9.03,
-        "count": 9
+        "pos": 9.85,
+        "neu": 81.88,
+        "neg": 8.27,
+        "count": 11
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.7,
-        "neu": 85.9,
-        "neg": 10.4,
-        "count": 5
+        "pos": 4.63,
+        "neu": 85.35,
+        "neg": 10.03,
+        "count": 4
       },
       {
         "topic": "Economy",
@@ -5579,17 +5574,17 @@
         "count": 2
       },
       {
-        "topic": "Public Statements",
-        "pos": 6.75,
-        "neu": 89.2,
-        "neg": 4.05,
+        "topic": "Legal",
+        "pos": 5.05,
+        "neu": 73.6,
+        "neg": 21.35,
         "count": 2
       },
       {
-        "topic": "Legal",
-        "pos": 10.1,
-        "neu": 69.8,
-        "neg": 20.1,
+        "topic": "Public Statements",
+        "pos": 13.5,
+        "neu": 78.4,
+        "neg": 8.1,
         "count": 1
       }
     ]
@@ -5617,28 +5612,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-08T22:29:14.673Z",
+        "label": "2026-10-09T05:32:14.856Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-08T23:29:14.673Z",
+        "label": "2026-10-09T06:32:14.856Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T00:29:14.673Z",
+        "label": "2026-10-09T07:32:14.856Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T01:29:14.673Z",
+        "label": "2026-10-09T08:32:14.856Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5647,28 +5642,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-08T22:29:14.673Z",
+        "label": "2026-10-09T05:32:14.856Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-08T23:29:14.673Z",
+        "label": "2026-10-09T06:32:14.856Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T00:29:14.673Z",
+        "label": "2026-10-09T07:32:14.856Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T01:29:14.673Z",
+        "label": "2026-10-09T08:32:14.856Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5748,7 +5743,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-09T02:29:14.674Z",
+    "generatedAt": "2026-10-09T09:32:14.857Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5869,8 +5864,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 186,
-      "potusArticles": 43,
+      "usaArticles": 180,
+      "potusArticles": 41,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
