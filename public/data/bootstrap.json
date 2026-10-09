@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-09T09:32:14.851Z",
+  "generatedAt": "2026-10-09T16:29:43.758Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 180,
-    "potusArticles": 41
+    "usaArticles": 187,
+    "potusArticles": 39
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-09T05:32:14.852Z",
+          "label": "2026-10-09T12:29:43.759Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T06:32:14.852Z",
+          "label": "2026-10-09T13:29:43.759Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T07:32:14.852Z",
+          "label": "2026-10-09T14:29:43.759Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T08:32:14.852Z",
+          "label": "2026-10-09T15:29:43.759Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-09T05:32:14.852Z",
+          "label": "2026-10-09T12:29:43.759Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T06:32:14.852Z",
+          "label": "2026-10-09T13:29:43.759Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T07:32:14.852Z",
+          "label": "2026-10-09T14:29:43.759Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T08:32:14.852Z",
+          "label": "2026-10-09T15:29:43.759Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.83,
-      "neu": 81.97,
-      "neg": 10.2,
-      "count": 180
+      "pos": 8.11,
+      "neu": 80.92,
+      "neg": 10.97,
+      "count": 187
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.64,
-        "neu": 81.99,
-        "neg": 8.37,
-        "count": 42
+        "pos": 9.57,
+        "neu": 80.47,
+        "neg": 9.96,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 7.02,
-        "neu": 79.82,
-        "neg": 13.16,
+        "pos": 9.65,
+        "neu": 76.07,
+        "neg": 14.28,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 8.1,
-        "neu": 81.62,
-        "neg": 10.28,
-        "count": 25
+        "pos": 6.68,
+        "neu": 81,
+        "neg": 12.32,
+        "count": 26
+      },
+      {
+        "source": "NYT",
+        "pos": 7.5,
+        "neu": 80.61,
+        "neg": 11.89,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4591,24 +4598,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.38,
-        "neu": 84.2,
-        "neg": 7.42,
+        "pos": 6.83,
+        "neu": 85.72,
+        "neg": 7.45,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 7.61,
-        "neu": 85.25,
-        "neg": 7.15,
+        "pos": 9.31,
+        "neu": 83.5,
+        "neg": 7.2,
         "count": 20
-      },
-      {
-        "source": "NYT",
-        "pos": 5.61,
-        "neu": 81.09,
-        "neg": 13.3,
-        "count": 15
       },
       {
         "source": "NPR",
@@ -4635,122 +4635,116 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
+          "name": "Communication",
+          "bias": -13.17,
+          "count": 3
         },
         {
-          "name": "Manufacturing",
-          "bias": -8.45,
+          "name": "Utilities",
+          "bias": -10.35,
           "count": 2
         },
         {
           "name": "Materials",
-          "bias": -7.65,
-          "count": 2
-        },
-        {
-          "name": "Communication",
-          "bias": -5.28,
-          "count": 5
-        },
-        {
-          "name": "Finance",
-          "bias": 3.96,
-          "count": 20
-        },
-        {
-          "name": "Technology",
-          "bias": -3.08,
-          "count": 141
+          "bias": -8.73,
+          "count": 3
         },
         {
           "name": "Healthcare",
-          "bias": -2.04,
-          "count": 10
+          "bias": -7.85,
+          "count": 4
         },
         {
-          "name": "Real Estate",
-          "bias": 2,
-          "count": 2
+          "name": "Manufacturing",
+          "bias": -4.77,
+          "count": 3
+        },
+        {
+          "name": "Finance",
+          "bias": -4.14,
+          "count": 20
         },
         {
           "name": "Energy",
-          "bias": 1.86,
-          "count": 12
-        }
-      ],
-      "pos": [
-        {
-          "name": "Finance",
-          "bias": 3.96,
-          "count": 20
-        }
-      ],
-      "neu": [
-        {
-          "name": "Communication",
-          "bias": -5.28,
-          "count": 5
+          "bias": -3,
+          "count": 6
         },
         {
           "name": "Technology",
-          "bias": -3.08,
-          "count": 141
+          "bias": -2.98,
+          "count": 147
         },
         {
+          "name": "Real Estate",
+          "bias": -2.7,
+          "count": 2
+        }
+      ],
+      "pos": [],
+      "neu": [
+        {
           "name": "Healthcare",
-          "bias": -2.04,
-          "count": 10
+          "bias": -7.85,
+          "count": 4
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -4.77,
+          "count": 3
+        },
+        {
+          "name": "Finance",
+          "bias": -4.14,
+          "count": 20
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
+          "name": "Communication",
+          "bias": -13.17,
+          "count": 3
         },
         {
-          "name": "Manufacturing",
-          "bias": -8.45,
+          "name": "Utilities",
+          "bias": -10.35,
           "count": 2
         },
         {
           "name": "Materials",
-          "bias": -7.65,
-          "count": 2
+          "bias": -8.73,
+          "count": 3
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-09T05:32:14.854Z",
-          "pos": 4,
-          "neu": 84,
+          "label": "2026-10-09T12:29:43.761Z",
+          "pos": 5,
+          "neu": 80,
+          "neg": 16,
+          "count": 5
+        },
+        {
+          "label": "2026-10-09T13:29:43.761Z",
+          "pos": 13,
+          "neu": 79,
+          "neg": 8,
+          "count": 8
+        },
+        {
+          "label": "2026-10-09T14:29:43.761Z",
+          "pos": 9,
+          "neu": 79,
           "neg": 12,
-          "count": 2
+          "count": 27
         },
         {
-          "label": "2026-10-09T06:32:14.854Z",
-          "pos": 3,
-          "neu": 91,
-          "neg": 6,
-          "count": 2
-        },
-        {
-          "label": "2026-10-09T07:32:14.854Z",
-          "pos": 10,
-          "neu": 87,
-          "neg": 3,
-          "count": 4
-        },
-        {
-          "label": "2026-10-09T08:32:14.854Z",
-          "pos": 18,
-          "neu": 73,
-          "neg": 9,
-          "count": 18
+          "label": "2026-10-09T15:29:43.761Z",
+          "pos": 7,
+          "neu": 81,
+          "neg": 12,
+          "count": 38
         }
       ]
     }
@@ -4958,42 +4952,42 @@
         "category": "world"
       },
       {
-        "title": "Mamdani demands Trump release illegal immigrant shot by ICE agent as protests erupt in the Bronx",
-        "link": "https://www.foxnews.com/us/mamdani-demands-trump-release-illegal-immigrant-shot-ice-agent-protests-erupt-bronx",
+        "title": "Radical anti-Trump language riddles California voter guide on high-stakes ballot measure",
+        "link": "https://www.foxnews.com/politics/radical-anti-trump-language-riddles-california-voter-guide-high-stakes-ballot-measure",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Mayor Zohran Mamdani demanded President Donald Trump release the man shot and injured by an ICE agent on Thursday in an incident that set off protests across New York City.",
+        "description": "California's Prop 39 voter ID ballot guide draws backlash online for its politically charged language, including a reference to \"MAGA billionaires.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T04:40:09.000Z",
+        "publishedAt": "2026-10-09T15:56:32.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 22.6,
-          "neuP": 77.4,
+          "negP": 5.7,
+          "neuP": 94.3,
           "label": "negative",
-          "confidence": 0.88
+          "confidence": 0.2
         },
         "category": "usa"
       },
       {
-        "title": "Federal grand jury hears evidence in probe of former Trump aide Cassidy Hutchinson's Jan 6 testimony: source",
-        "link": "https://www.foxnews.com/politics/federal-grand-jury-hears-evidence-probe-former-trump-aide-cassidy-hutchinson-jan-6-testimony",
+        "title": "Talarico disappearance has Dem volunteers worrying and Trump asking, 'What is going on?'",
+        "link": "https://www.foxnews.com/politics/talarico-disappearance-has-dem-volunteers-worrying-trump-asking-what-going-on",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A federal grand jury heard evidence about possible false statements Cassidy Hutchinson made to the Jan. 6 House select committee on the Capitol riot.",
+        "description": "Trump called James Talarico \"MISSING IN ACTION\" as the Texas Democrat's nearly two-week campaign trail absence sparks concerns about losing momentum.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T01:33:15.000Z",
+        "publishedAt": "2026-10-09T14:56:34.000Z",
         "sentiment": {
-          "posP": 13.5,
-          "negP": 8.1,
-          "neuP": 78.4,
-          "label": "positive",
-          "confidence": 0.34
+          "posP": 0,
+          "negP": 20.4,
+          "neuP": 79.6,
+          "label": "negative",
+          "confidence": 0.79
         },
         "category": "usa"
       }
@@ -5200,176 +5194,276 @@
         "category": "world"
       },
       {
-        "title": "Mamdani demands Trump release illegal immigrant shot by ICE agent as protests erupt in the Bronx",
-        "link": "https://www.foxnews.com/us/mamdani-demands-trump-release-illegal-immigrant-shot-ice-agent-protests-erupt-bronx",
+        "title": "Radical anti-Trump language riddles California voter guide on high-stakes ballot measure",
+        "link": "https://www.foxnews.com/politics/radical-anti-trump-language-riddles-california-voter-guide-high-stakes-ballot-measure",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Mayor Zohran Mamdani demanded President Donald Trump release the man shot and injured by an ICE agent on Thursday in an incident that set off protests across New York City.",
+        "description": "California's Prop 39 voter ID ballot guide draws backlash online for its politically charged language, including a reference to \"MAGA billionaires.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T04:40:09.000Z",
+        "publishedAt": "2026-10-09T15:56:32.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 22.6,
-          "neuP": 77.4,
+          "negP": 5.7,
+          "neuP": 94.3,
           "label": "negative",
-          "confidence": 0.88
+          "confidence": 0.2
         },
         "category": "usa"
       },
       {
-        "title": "Federal grand jury hears evidence in probe of former Trump aide Cassidy Hutchinson's Jan 6 testimony: source",
-        "link": "https://www.foxnews.com/politics/federal-grand-jury-hears-evidence-probe-former-trump-aide-cassidy-hutchinson-jan-6-testimony",
+        "title": "Talarico disappearance has Dem volunteers worrying and Trump asking, 'What is going on?'",
+        "link": "https://www.foxnews.com/politics/talarico-disappearance-has-dem-volunteers-worrying-trump-asking-what-going-on",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A federal grand jury heard evidence about possible false statements Cassidy Hutchinson made to the Jan. 6 House select committee on the Capitol riot.",
+        "description": "Trump called James Talarico \"MISSING IN ACTION\" as the Texas Democrat's nearly two-week campaign trail absence sparks concerns about losing momentum.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T01:33:15.000Z",
-        "sentiment": {
-          "posP": 13.5,
-          "negP": 8.1,
-          "neuP": 78.4,
-          "label": "positive",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Arizona man arrested after allegedly emailing White House bomb threat to Tucson news station",
-        "link": "https://www.foxnews.com/us/arizona-man-arrested-allegedly-emailing-white-house-bomb-threat-tucson-news-station",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Jacob Aaron Hicks allegedly emailed a Tucson news station claiming an imminent bomb strike against the White House, prompting an FBI investigation.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T00:14:16.000Z",
+        "publishedAt": "2026-10-09T14:56:34.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 32.4,
-          "neuP": 67.6,
+          "negP": 20.4,
+          "neuP": 79.6,
           "label": "negative",
-          "confidence": 0.92
+          "confidence": 0.79
         },
         "category": "usa"
       },
       {
-        "title": "Trump Says U.S. Will Not Strike Iran Again Before Midterms as Military Draws Up New Plans",
-        "link": "https://www.nytimes.com/2026/10/08/us/politics/trump-iran-war-options.html",
+        "title": "How Trump’s Revenge Campaign Descended Into Turmoil",
+        "link": "https://www.nytimes.com/2026/10/09/us/politics/trump-grand-conspiracy.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The U.S. military has drafted options for three days of strikes, but in recent months the president has repeatedly vetoed plans to restart the war.",
+        "description": "The president’s allies have sought to prove a “grand conspiracy” through a sprawling Justice Department inquiry. It has buckled under staffing shake-ups, internal disputes and trouble finding evidence.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-08T21:05:33.000Z",
+        "publishedAt": "2026-10-09T09:00:32.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 18,
-          "neuP": 82,
+          "posP": 8.1,
+          "negP": 25.4,
+          "neuP": 66.5,
           "label": "negative",
-          "confidence": 0.81
+          "confidence": 0.74
         },
         "category": "usa"
       },
       {
-        "title": "ICE Agent Shoots Man During Arrest Attempt in New York Neighborhood",
-        "link": "https://www.nytimes.com/2026/10/08/nyregion/ice-shooting-nyc-bronx.html",
+        "title": "Trump Announces White House Inquiry Into Fed Governor Lisa Cook",
+        "link": "https://www.nytimes.com/2026/10/09/business/trump-lisa-cook-fed.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The man was in a car with a 5-year-old in the back seat when he was shot and wounded, the authorities said. Mayor Zohran Mamdani said the Trump administration was “terrorizing our city.”",
+        "description": "President Trump said the White House would investigate unsubstantiated claims that Lisa D. Cook committed mortgage fraud and hold a hearing next month.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T07:06:46.000Z",
+        "publishedAt": "2026-10-09T15:56:34.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 5.5,
-          "neuP": 94.5,
+          "posP": 5.8,
+          "negP": 10.6,
+          "neuP": 83.6,
           "label": "negative",
-          "confidence": 0.34
+          "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "Nobel Peace Prize 2026 awarded to ICC jurist Navanethem \"Navi\" Pillay",
-        "link": "https://www.cbsnews.com/news/nobel-peace-prize-2026-navanethem-navi-pillay-south-africa/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump Administration Hits International Criminal Court With Severe Sanctions",
+        "link": "https://www.nytimes.com/2026/10/09/us/politics/trump-international-criminal-court-sanctions.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Nobel Peace Prize 2026 was awarded to Navanethem \"Navi\" Pillay, a judge on the International Criminal Court, which was sanctioned by the Trump administration last year.",
+        "description": "U.S. officials announced new punishments aimed at the court, just hours after the Nobel Peace Prize committee gave its annual honor to a former court judge.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T09:30:42.000Z",
+        "publishedAt": "2026-10-09T15:23:16.000Z",
         "sentiment": {
-          "posP": 36.3,
-          "negP": 6.5,
-          "neuP": 57.2,
+          "posP": 21.4,
+          "negP": 18.8,
+          "neuP": 59.8,
           "label": "positive",
-          "confidence": 0.94
+          "confidence": 0.3
         },
         "category": "usa"
       },
       {
-        "title": "AI leaders lobby Trump health officials in government-run chat room",
-        "link": "https://www.cbsnews.com/news/ai-tech-leaders-trump-health-officials-slack/",
+        "title": "Trump promised to lower prices for Americans. Here's what the data shows.",
+        "link": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A Slack workspace has served as a war room for AI industry insiders and Trump administration officials to launch a rapid campaign aimed at persuading Americans to manage their healthcare and medical records on apps.",
+        "description": "Just weeks before the midterm elections, 90% of Americans say prices in the U.S. are the main factor shaping their view of the economy. These charts show why.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T09:00:11.000Z",
+        "publishedAt": "2026-10-09T16:23:02.000Z",
         "sentiment": {
-          "posP": 2.4,
-          "negP": 8.7,
+          "posP": 5.9,
+          "negP": 5.2,
           "neuP": 88.9,
+          "label": "neutral",
+          "confidence": 0.08
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump creates committee to investigate Fed's Lisa Cook",
+        "link": "https://www.cbsnews.com/news/trump-lisa-cook-committee-fed-governor/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump established a committee to look into allegations that Fed Governor Lisa Cook made false statements on mortgage documents, the latest step in his renewed effort to fire her.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T15:39:57.000Z",
+        "sentiment": {
+          "posP": 5.3,
+          "negP": 6.1,
+          "neuP": 88.6,
+          "label": "neutral",
+          "confidence": 0.08
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Food pantries overwhelmed by Trump cuts",
+        "link": "https://www.nbcnews.com/news/us-news/west-virginia-hunger-trump-cuts-food-stamps-gas-prices-iran-rcna601637",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Those on the front lines of feeding their neighbors in rural West Virginia say they face unprecedented challenges brought on by Washington.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T09:00:43.000Z",
+        "sentiment": {
+          "posP": 8.4,
+          "negP": 7.4,
+          "neuP": 84.2,
+          "label": "neutral",
+          "confidence": 0.18
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Candidates Face Off in Debates; Kimberly Guilfoyle Under Scrutiny",
+        "link": "https://www.today.com/video/candidates-face-off-in-debates-kimberly-guilfoyle-under-scrutiny-271320645719",
+        "source": "NBC News",
+        "sourceDomain": "today.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "With the midterm elections fast approaching, fierce debates were held in three critical races Thursday night. It comes as a recent NBC News poll found that inflation and the cost of issue is the top issue for voters with government corruption coming in at No. 2. Now, President Donald Trump’s ambassador to Greece, Kimberly Guilfoyle, is under growing scrutiny after a top Trump donor alleged she asked him to pay her $100,00 American Express bill. NBC’s Gabe Gutierrez reports for TODAY.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T11:25:03.000Z",
+        "sentiment": {
+          "posP": 5.7,
+          "negP": 6.3,
+          "neuP": 88,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump establishes panel to probe Fed governor Lisa Cook in latest attempt to fire her",
+        "link": "https://www.nbcnews.com/business/economy/trump-probe-fed-gov-lisa-cook-rcna602500",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump established a committee to investigate Fed governor Lisa Cook, in his latest attempt to fire her.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T14:25:29.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 13.4,
+          "neuP": 86.6,
           "label": "negative",
           "confidence": 0.59
         },
         "category": "usa"
       },
       {
-        "title": "Trump promises not to resume Iran strikes before midterm elections",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-nuclear-donald-trump-vance-rubio-strait-of-hormuz/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump hosts Columbus Day celebration at White House",
+        "link": "https://www.nbcnews.com/video/watch-live-trump-hosts-columbus-day-celebration-at-white-house-271334469512",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Crude oil prices had shot up on Thursday after reports President Trump was considering more strikes. They immediately dropped again after his new announcement.",
+        "description": "Watch live coverage as President Trump hosts a Columbus Day celebration at the White House ahead of Monday's holiday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T05:21:58.000Z",
+        "publishedAt": "2026-10-09T14:42:33.000Z",
         "sentiment": {
-          "posP": 6.3,
-          "negP": 21.6,
-          "neuP": 72.1,
-          "label": "negative",
-          "confidence": 0.75
+          "posP": 9.7,
+          "negP": 0,
+          "neuP": 90.3,
+          "label": "positive",
+          "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "Guilfoyle associate says when she asked him for $100K, it was \"quid pro quo\"",
-        "link": "https://www.cbsnews.com/news/kimberly-guilfoyle-greece-ambassador-eric-deters-texts-100000/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "WATCH:  Biggest moments after candidates face off in high-stakes debates in race to midterms",
+        "link": "https://abcnews.com/video/137122989/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "White House officials were told that text messages between Kimberly Guilfoyle and Eric Deters were real, sources told CBS News.",
+        "description": "It was a fiery debate night in key midterm races in Michigan, Georgia and Maine, with 25 days until Election Day and the war in Iran and President Donald Trump’s tariffs taking center stage.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T01:42:49.000Z",
+        "publishedAt": "2026-10-09T15:05:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 12.3,
+          "neuP": 87.7,
+          "label": "negative",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump donor accuses Guilfoyle of asking him to pay her $100K credit card bill",
+        "link": "https://abcnews.com/Politics/trump-donor-accuses-kimberly-guilfoyle-pay-100k-credit/story?id=137094580",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Asked whether he thought Guilfoyle was asking for the payment in exchange for something, Deters told ABC News \"absolutely.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T10:41:48.000Z",
+        "sentiment": {
+          "posP": 7.1,
+          "negP": 10.4,
+          "neuP": 82.5,
+          "label": "neutral",
+          "confidence": 0.05
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump administration to use government lawyers to represent migrant children",
+        "link": "https://abcnews.com/US/trump-administration-government-lawyers-represent-migrant-children/story?id=137106761",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration has quietly organized a team of government attorneys to represent unaccompanied migrant children in immigration court, according to a notice.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-08T22:06:12.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5378,148 +5472,41 @@
           "confidence": 0
         },
         "category": "usa"
-      },
-      {
-        "title": "Judge presses Justice Department on justifications for White House media ban",
-        "link": "https://www.cbsnews.com/news/cnn-ms-now-politico-trump-white-house-ban-hearing/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Lawyers for CNN, MS NOW and Politico were back in court as the legal battle continues over President Trump's decision to ban their reporters from the White House.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T00:23:27.000Z",
-        "sentiment": {
-          "posP": 10.1,
-          "negP": 20.1,
-          "neuP": 69.8,
-          "label": "negative",
-          "confidence": 0.71
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says U.S. will not attack Iran before midterm election",
-        "link": "https://www.cnbc.com/2026/10/08/iran-war-trump-midterm-election.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump said talks with Tehran were “productive” as the Iran war pushes oil and gas prices higher and support for the conflict falls.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-08T17:41:20.000Z",
-        "sentiment": {
-          "posP": 13,
-          "negP": 15.3,
-          "neuP": 71.7,
-          "label": "negative",
-          "confidence": 0.24
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Treasury yields steady as Trump strikes diplomatic tone on Iran ahead of midterms",
-        "link": "https://www.cnbc.com/2026/10/09/us-treasurys-bond-yields-midterms.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Yields were largely unchanged Friday as investors assessed President Trump's latest comments on Iran.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T08:24:50.000Z",
-        "sentiment": {
-          "posP": 6.1,
-          "negP": 8.5,
-          "neuP": 85.4,
-          "label": "neutral",
-          "confidence": 0.18
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Treasury sanctions 17 tankers linked to Iran's 'shadow fleet' in economic pressure campaign",
-        "link": "https://www.cnbc.com/2026/10/08/iran-treasury-sanctions-shadow-fleet.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The additional sanctions are part of the Trump administration's military and economic campaign against Iran.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-08T17:13:32.000Z",
-        "sentiment": {
-          "posP": 6,
-          "negP": 7.3,
-          "neuP": 86.7,
-          "label": "neutral",
-          "confidence": 0.1
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Oil prices jump as Iran steps up tanker attacks, hurricane threatens U.S. Gulf production",
-        "link": "https://www.cnbc.com/2026/10/08/oil-prices-today-brent-wti-hormuz.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump and his national security team have talked about possibly restarting large-scale U.S. military operations in Iran, according to reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-08T19:00:49.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 13.4,
-          "neuP": 80.7,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.36,
-      "neu": 82.68,
-      "neg": 10.96,
-      "count": 41
+      "pos": 6.84,
+      "neu": 83.95,
+      "neg": 9.21,
+      "count": 39
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 5.74,
-        "neu": 83.43,
-        "neg": 10.84,
-        "count": 11
+        "pos": 7.64,
+        "neu": 84.51,
+        "neg": 7.85,
+        "count": 8
       },
       {
         "source": "Washington Post",
-        "pos": 9.56,
-        "neu": 79,
-        "neg": 11.44,
+        "pos": 12.8,
+        "neu": 77.6,
+        "neg": 9.6,
         "count": 7
       },
       {
-        "source": "CBS News",
-        "pos": 9.85,
-        "neu": 78.33,
-        "neg": 11.82,
-        "count": 6
-      },
-      {
         "source": "NYT",
-        "pos": 3.25,
-        "neu": 87.88,
-        "neg": 8.88,
-        "count": 4
+        "pos": 9.66,
+        "neu": 76.98,
+        "neg": 13.36,
+        "count": 5
       },
       {
-        "source": "Fox News",
-        "pos": 5.63,
-        "neu": 78.6,
-        "neg": 15.78,
+        "source": "ABC News",
+        "pos": 1.77,
+        "neu": 90.57,
+        "neg": 7.65,
         "count": 4
       },
       {
@@ -5537,6 +5524,20 @@
         "count": 3
       },
       {
+        "source": "Fox News",
+        "pos": 3,
+        "neu": 88.3,
+        "neg": 8.7,
+        "count": 3
+      },
+      {
+        "source": "CBS News",
+        "pos": 5.07,
+        "neu": 86.5,
+        "neg": 8.43,
+        "count": 3
+      },
+      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
@@ -5547,17 +5548,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.36,
-        "neu": 83.48,
-        "neg": 12.16,
-        "count": 21
+        "pos": 6.57,
+        "neu": 82.91,
+        "neg": 10.52,
+        "count": 18
       },
       {
         "topic": "Policy",
-        "pos": 9.85,
-        "neu": 81.88,
-        "neg": 8.27,
-        "count": 11
+        "pos": 7.18,
+        "neu": 84.94,
+        "neg": 7.88,
+        "count": 12
       },
       {
         "topic": "Foreign Policy",
@@ -5568,23 +5569,23 @@
       },
       {
         "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
-      },
-      {
-        "topic": "Legal",
-        "pos": 5.05,
-        "neu": 73.6,
-        "neg": 21.35,
-        "count": 2
+        "pos": 8.3,
+        "neu": 85.97,
+        "neg": 5.73,
+        "count": 3
       },
       {
         "topic": "Public Statements",
+        "pos": 5.3,
+        "neu": 88.6,
+        "neg": 6.1,
+        "count": 1
+      },
+      {
+        "topic": "Legal",
         "pos": 13.5,
-        "neu": 78.4,
-        "neg": 8.1,
+        "neu": 74.5,
+        "neg": 12,
         "count": 1
       }
     ]
@@ -5612,28 +5613,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-09T05:32:14.856Z",
+        "label": "2026-10-09T12:29:43.764Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T06:32:14.856Z",
+        "label": "2026-10-09T13:29:43.764Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T07:32:14.856Z",
+        "label": "2026-10-09T14:29:43.764Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T08:32:14.856Z",
+        "label": "2026-10-09T15:29:43.764Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5642,28 +5643,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-09T05:32:14.856Z",
+        "label": "2026-10-09T12:29:43.764Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T06:32:14.856Z",
+        "label": "2026-10-09T13:29:43.764Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T07:32:14.856Z",
+        "label": "2026-10-09T14:29:43.764Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T08:32:14.856Z",
+        "label": "2026-10-09T15:29:43.764Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5743,7 +5744,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-09T09:32:14.857Z",
+    "generatedAt": "2026-10-09T16:29:43.765Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5864,8 +5865,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 180,
-      "potusArticles": 41,
+      "usaArticles": 187,
+      "potusArticles": 39,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
