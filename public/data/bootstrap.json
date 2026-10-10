@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-10T00:57:03.003Z",
+  "generatedAt": "2026-10-10T06:56:16.220Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 186,
-    "potusArticles": 44
+    "usaArticles": 189,
+    "potusArticles": 45
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-09T20:57:03.003Z",
+          "label": "2026-10-10T02:56:16.220Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T21:57:03.003Z",
+          "label": "2026-10-10T03:56:16.220Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T22:57:03.003Z",
+          "label": "2026-10-10T04:56:16.220Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T23:57:03.003Z",
+          "label": "2026-10-10T05:56:16.220Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-09T20:57:03.003Z",
+          "label": "2026-10-10T02:56:16.220Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T21:57:03.003Z",
+          "label": "2026-10-10T03:56:16.220Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T22:57:03.003Z",
+          "label": "2026-10-10T04:56:16.220Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T23:57:03.003Z",
+          "label": "2026-10-10T05:56:16.220Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.23,
-      "neu": 81.83,
-      "neg": 10.94,
-      "count": 186
+      "pos": 7.11,
+      "neu": 82.27,
+      "neg": 10.62,
+      "count": 189
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.47,
-        "neu": 83.2,
-        "neg": 9.33,
-        "count": 41
+        "pos": 7.2,
+        "neu": 84.79,
+        "neg": 8.01,
+        "count": 44
       },
       {
         "source": "Fox News",
-        "pos": 10.66,
-        "neu": 74.34,
-        "neg": 15,
+        "pos": 10.9,
+        "neu": 74.23,
+        "neg": 14.87,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.75,
-        "neu": 84.57,
-        "neg": 10.68,
+        "pos": 5.91,
+        "neu": 83.38,
+        "neg": 10.71,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.26,
-        "neu": 80.52,
-        "neg": 12.22,
+        "pos": 4.83,
+        "neu": 84.01,
+        "neg": 11.16,
         "count": 21
       },
       {
@@ -4598,15 +4598,15 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.03,
-        "neu": 85.66,
-        "neg": 8.32,
+        "pos": 6.21,
+        "neu": 84.12,
+        "neg": 9.67,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 7.43,
-        "neu": 84.19,
+        "pos": 7.44,
+        "neu": 84.18,
         "neg": 8.38,
         "count": 20
       },
@@ -4640,14 +4640,19 @@
           "count": 2
         },
         {
-          "name": "Communication",
-          "bias": -12.25,
-          "count": 2
+          "name": "Healthcare",
+          "bias": -11.07,
+          "count": 6
         },
         {
-          "name": "Healthcare",
-          "bias": -11.34,
-          "count": 7
+          "name": "Communication",
+          "bias": -9.67,
+          "count": 3
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -8.57,
+          "count": 3
         },
         {
           "name": "Real Estate",
@@ -4655,29 +4660,24 @@
           "count": 1
         },
         {
-          "name": "Manufacturing",
-          "bias": -5.1,
-          "count": 6
-        },
-        {
           "name": "Technology",
-          "bias": -3.87,
-          "count": 144
+          "bias": -3.52,
+          "count": 145
         },
         {
           "name": "Energy",
-          "bias": -1.4,
-          "count": 10
+          "bias": 1.88,
+          "count": 16
         },
         {
           "name": "Finance",
-          "bias": -1.19,
-          "count": 22
+          "bias": -1.3,
+          "count": 24
         },
         {
           "name": "Materials",
-          "bias": -0.68,
-          "count": 5
+          "bias": -0.5,
+          "count": 3
         }
       ],
       "pos": [
@@ -4690,18 +4690,18 @@
       "neu": [
         {
           "name": "Manufacturing",
-          "bias": -5.1,
-          "count": 6
+          "bias": -8.57,
+          "count": 3
         },
         {
           "name": "Technology",
-          "bias": -3.87,
-          "count": 144
+          "bias": -3.52,
+          "count": 145
         },
         {
           "name": "Energy",
-          "bias": -1.4,
-          "count": 10
+          "bias": 1.88,
+          "count": 16
         }
       ],
       "neg": [
@@ -4711,46 +4711,46 @@
           "count": 2
         },
         {
-          "name": "Communication",
-          "bias": -12.25,
-          "count": 2
+          "name": "Healthcare",
+          "bias": -11.07,
+          "count": 6
         },
         {
-          "name": "Healthcare",
-          "bias": -11.34,
-          "count": 7
+          "name": "Communication",
+          "bias": -9.67,
+          "count": 3
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-09T20:57:03.005Z",
-          "pos": 7,
-          "neu": 80,
-          "neg": 13,
-          "count": 14
+          "label": "2026-10-10T02:56:16.222Z",
+          "pos": 4,
+          "neu": 94,
+          "neg": 1,
+          "count": 3
         },
         {
-          "label": "2026-10-09T21:57:03.005Z",
-          "pos": 9,
-          "neu": 78,
-          "neg": 13,
-          "count": 14
-        },
-        {
-          "label": "2026-10-09T22:57:03.005Z",
-          "pos": 8,
-          "neu": 83,
-          "neg": 9,
-          "count": 21
-        },
-        {
-          "label": "2026-10-09T23:57:03.005Z",
-          "pos": 8,
+          "label": "2026-10-10T03:56:16.222Z",
+          "pos": 6,
           "neu": 82,
-          "neg": 11,
-          "count": 19
+          "neg": 12,
+          "count": 5
+        },
+        {
+          "label": "2026-10-10T04:56:16.222Z",
+          "pos": 7,
+          "neu": 86,
+          "neg": 7,
+          "count": 3
+        },
+        {
+          "label": "2026-10-10T05:56:16.222Z",
+          "pos": 0,
+          "neu": 100,
+          "neg": 0,
+          "count": 2
         }
       ]
     }
@@ -4958,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "James Talarico resurfaces after extended absence as his campaign pushes back",
-        "link": "https://www.foxnews.com/politics/james-talarico-resurfaces-after-12-day-absence-sparked-campaign-trail-attacks",
+        "title": "Trump rallies New York crowd for Republican Bruce Blakeman's bid to replace Gov. Kathy Hochul",
+        "link": "https://www.foxnews.com/politics/trump-rallies-new-york-crowd-republican-bruce-blakemans-bid-replace-gov-kathy-hochul",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "James Talarico resurfaces at Austin City Limits after a 12-day absence that drew sharp attacks from Trump and Ken Paxton on the campaign trail.",
+        "description": "President Donald Trump rallied Syracuse supporters behind Bruce Blakeman's bid to unseat Gov. Kathy Hochul, promising tax cuts and cheaper energy for New York families.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T00:41:11.000Z",
+        "publishedAt": "2026-10-10T02:42:49.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 8.1,
-          "neuP": 91.9,
-          "label": "negative",
-          "confidence": 0.44
+          "posP": 16.8,
+          "negP": 4.8,
+          "neuP": 78.4,
+          "label": "positive",
+          "confidence": 0.67
         },
         "category": "usa"
       },
       {
-        "title": "Trump gives raw reaction after finding out about Mike Ditka's death: 'A tough cookie'",
-        "link": "https://www.foxnews.com/outkick-sports/trump-raw-reaction-mike-ditka-death-tough-cookie",
+        "title": "Trump brings Mike Tyson on stage at Syracuse rally, jokes that he is Bruce Blakeman's personal security",
+        "link": "https://www.foxnews.com/outkick-sports/trump-brings-mike-tyson-stage-syracuse-rally-jokes-bruce-blakeman-personal-security",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump called Mike Ditka \"a tough cookie\" and \"a winner\" after learning of the Hall of Fame Chicago Bears coach's death on the South Lawn Friday.",
+        "description": "Trump brought Mike Tyson on Air Force One to a Syracuse rally for Bruce Blakeman, the Republican running to unseat New York Gov. Kathy Hochul.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T00:13:38.000Z",
+        "publishedAt": "2026-10-10T01:45:43.000Z",
         "sentiment": {
-          "posP": 13,
-          "negP": 21,
-          "neuP": 66,
-          "label": "negative",
-          "confidence": 0.48
+          "posP": 10.1,
+          "negP": 0,
+          "neuP": 89.9,
+          "label": "positive",
+          "confidence": 0.53
         },
         "category": "usa"
       }
@@ -5200,6 +5200,66 @@
         "category": "world"
       },
       {
+        "title": "Trump rallies New York crowd for Republican Bruce Blakeman's bid to replace Gov. Kathy Hochul",
+        "link": "https://www.foxnews.com/politics/trump-rallies-new-york-crowd-republican-bruce-blakemans-bid-replace-gov-kathy-hochul",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump rallied Syracuse supporters behind Bruce Blakeman's bid to unseat Gov. Kathy Hochul, promising tax cuts and cheaper energy for New York families.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T02:42:49.000Z",
+        "sentiment": {
+          "posP": 16.8,
+          "negP": 4.8,
+          "neuP": 78.4,
+          "label": "positive",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump brings Mike Tyson on stage at Syracuse rally, jokes that he is Bruce Blakeman's personal security",
+        "link": "https://www.foxnews.com/outkick-sports/trump-brings-mike-tyson-stage-syracuse-rally-jokes-bruce-blakeman-personal-security",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump brought Mike Tyson on Air Force One to a Syracuse rally for Bruce Blakeman, the Republican running to unseat New York Gov. Kathy Hochul.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T01:45:43.000Z",
+        "sentiment": {
+          "posP": 10.1,
+          "negP": 0,
+          "neuP": 89.9,
+          "label": "positive",
+          "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Gov Kathy Hochul signs New York onto Trump's school choice program despite teachers union opposition",
+        "link": "https://www.foxnews.com/media/gov-kathy-hochul-signs-new-york-trump-school-choice-program-despite-teachers-union-opposition",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "New York Gov. Kathy Hochul joined President Donald Trump's Education Freedom Tax Credit despite fierce opposition from teachers unions and a petition to reject it.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T01:03:12.000Z",
+        "sentiment": {
+          "posP": 14.9,
+          "negP": 5.9,
+          "neuP": 79.2,
+          "label": "positive",
+          "confidence": 0.62
+        },
+        "category": "usa"
+      },
+      {
         "title": "James Talarico resurfaces after extended absence as his campaign pushes back",
         "link": "https://www.foxnews.com/politics/james-talarico-resurfaces-after-12-day-absence-sparked-campaign-trail-attacks",
         "source": "Fox News",
@@ -5236,206 +5296,6 @@
           "neuP": 66,
           "label": "negative",
           "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "For Trump, a Firing Squad on Livestream Becomes the Latest Spectacle",
-        "link": "https://www.nytimes.com/2026/10/09/us/politics/trump-firing-squad-spectacle.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The idea seemed to surprise even some inside the Trump administration.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-10T00:25:01.000Z",
-        "sentiment": {
-          "posP": 8.9,
-          "negP": 10.2,
-          "neuP": 80.9,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Will Import Russian Diesel Fuel Amid High Prices",
-        "link": "https://www.nytimes.com/2026/10/09/us/politics/trump-russia-diesel-putin.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump said Russia had agreed to ship potentially millions of tons of diesel fuel in the coming months. But the amounts would be small relative to global demand.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T22:30:39.000Z",
-        "sentiment": {
-          "posP": 5,
-          "negP": 3.6,
-          "neuP": 91.4,
-          "label": "neutral",
-          "confidence": 0.15
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Administration Hits International Criminal Court With Severe Sanctions",
-        "link": "https://www.nytimes.com/2026/10/09/us/politics/trump-international-criminal-court-sanctions.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "U.S. officials announced the new, sweeping punishments just hours after the Nobel Peace Prize committee gave its annual honor to a former court judge.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T17:51:24.000Z",
-        "sentiment": {
-          "posP": 22.3,
-          "negP": 19.6,
-          "neuP": 58.1,
-          "label": "positive",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump launches new investigation into Fed Gov. Lisa Cook",
-        "link": "https://www.cbsnews.com/video/trump-launches-new-investigation-fed-gov-lisa-cook/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump says a committee will investigate Federal Reserve Gov. Lisa Cook and determine whether there is cause to remove her from the board. CBS News homeland security correspondent Nicole Sganga has the details.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T23:24:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 0,
-          "neuP": 94.5,
-          "label": "positive",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump's diesel agreement with Putin accused of contradicting Russia sanctions law",
-        "link": "https://www.cnbc.com/2026/10/09/trump-putin-diesel-russia-sanctions-ukraine.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ukraine President Volodymyr Zelenskyy said in a searing statement that the U.S. easing sanctions on Moscow \"plays into Russia's hands.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T23:16:50.000Z",
-        "sentiment": {
-          "posP": 19.6,
-          "negP": 12.3,
-          "neuP": 68.1,
-          "label": "positive",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Media advisor Katie Zacharia offered White House press secretary role",
-        "link": "https://www.cnbc.com/2026/10/09/katie-zacharia-white-house-press-secretary.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The White House has tapped Katie Zacharia to be its next press secretary, a White House official confirmed to CNBC.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T19:25:28.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump created a committee to dig into the Fed's Lisa Cook. What is it and what comes next?",
-        "link": "https://www.cnbc.com/2026/10/09/trump-lisa-cook-fed-firing-committee-explained.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump’s bid to fire the Fed's Lisa Cook follows a Supreme Court ruling and could affect Jerome Powell, central bank independence and interest rates.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T19:19:00.000Z",
-        "sentiment": {
-          "posP": 18.3,
-          "negP": 5.1,
-          "neuP": 76.6,
-          "label": "positive",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump appoints committee to investigate statements by the Fed's Lisa Cook",
-        "link": "https://www.cnbc.com/2026/10/09/fed-lisa-cook-trump.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump tried to fire Cook, a nominee of former President Joe Biden, but the Supreme Court blocked his first attempt.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T17:56:24.000Z",
-        "sentiment": {
-          "posP": 13.5,
-          "negP": 12,
-          "neuP": 74.5,
-          "label": "positive",
-          "confidence": 0.37
-        },
-        "category": "usa"
-      },
-      {
-        "title": "ICE won't pause enforcement in NY after Bronx shooting, DHS' Mullin says",
-        "link": "https://www.cnbc.com/2026/10/09/ice-bronx-shooting-mamdani-dhs.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "New York Gov. Kathy Hochul said she asked Homeland Security Secretary Mullin and President Donald Trump to immediately halt ICE operations in her state.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T15:20:56.000Z",
-        "sentiment": {
-          "posP": 6.4,
-          "negP": 0,
-          "neuP": 93.6,
-          "label": "positive",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Treasury's Bessent hires Trump's controversial former Fed board pick, Judy Shelton, as advisor",
-        "link": "https://www.cnbc.com/2026/10/09/judy-shelton-scott-bessent-treasury.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Shelton's controversial economic ideas led the Senate to block her nomination to the Fed. Now she's going to be a counselor to the Treasury secretary.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T13:09:19.000Z",
-        "sentiment": {
-          "posP": 4.4,
-          "negP": 15.7,
-          "neuP": 79.9,
-          "label": "negative",
-          "confidence": 0.57
         },
         "category": "usa"
       },
@@ -5478,34 +5338,181 @@
           "confidence": 0.18
         },
         "category": "usa"
+      },
+      {
+        "title": "Backlash to livestream of firing squad execution",
+        "link": "https://www.nbcnews.com/nightly-news/video/backlash-to-livestream-of-firing-squad-execution-271368773744",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "There is criticism of the Trump administration’s decision to livestream the firing squad execution of the Fort Hood mass killer. NBC News’ Ryan Chandler reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T22:55:17.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 30,
+          "neuP": 70,
+          "label": "negative",
+          "confidence": 0.9
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Katie Zacharia will be the next White House press secretary",
+        "link": "https://www.nbcnews.com/politics/trump-administration/katie-zacharia-white-house-press-secretary-trump-rcna602560",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Conservative commentator Katie Zacharia is expected to be named the next White House press secretary, replacing Karoline Leavitt.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T18:30:34.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "For Trump, a Firing Squad on Livestream Becomes the Latest Spectacle",
+        "link": "https://www.nytimes.com/2026/10/09/us/politics/trump-firing-squad-spectacle.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The idea seemed to surprise even some inside the Trump administration.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T04:06:53.000Z",
+        "sentiment": {
+          "posP": 8.9,
+          "negP": 10.2,
+          "neuP": 80.9,
+          "label": "neutral",
+          "confidence": 0.08
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Anthropic Agents Tried to Fill Out Visa Forms on State Dept. Website",
+        "link": "https://www.nytimes.com/2026/10/09/technology/anthropic-rogue-ai-agents.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Philadelphia Police Department said the agents had also sent in a false homicide tip. The incidents led the White House to call for better disclosure of rogue A.I. behavior.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T01:19:55.000Z",
+        "sentiment": {
+          "posP": 6.8,
+          "negP": 0,
+          "neuP": 93.2,
+          "label": "positive",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Will Import Russian Diesel Fuel Amid High Prices",
+        "link": "https://www.nytimes.com/2026/10/09/us/politics/trump-russia-diesel-putin.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump said Russia had agreed to ship potentially millions of tons of diesel fuel in the coming months. But the amounts would be small relative to global demand.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T03:09:00.000Z",
+        "sentiment": {
+          "posP": 5,
+          "negP": 3.6,
+          "neuP": 91.4,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's diesel agreement with Putin accused of contradicting Russia sanctions law",
+        "link": "https://www.cnbc.com/2026/10/09/trump-putin-diesel-russia-sanctions-ukraine.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ukraine President Volodymyr Zelenskyy said in a searing statement that the U.S. easing sanctions on Moscow \"plays into Russia's hands.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T02:09:00.000Z",
+        "sentiment": {
+          "posP": 19.6,
+          "negP": 12.3,
+          "neuP": 68.1,
+          "label": "positive",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Media advisor Katie Zacharia offered White House press secretary role",
+        "link": "https://www.cnbc.com/2026/10/09/katie-zacharia-white-house-press-secretary.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The White House has tapped Katie Zacharia to be its next press secretary, a White House official confirmed to CNBC.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T19:25:28.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.88,
-      "neu": 84.38,
-      "neg": 8.74,
-      "count": 44
+      "pos": 7.02,
+      "neu": 84.63,
+      "neg": 8.35,
+      "count": 45
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.59,
-        "neu": 84.87,
-        "neg": 7.54,
-        "count": 12
+        "pos": 7.6,
+        "neu": 84.17,
+        "neg": 8.23,
+        "count": 11
       },
       {
         "source": "Washington Post",
-        "pos": 9.7,
-        "neu": 81.89,
+        "pos": 9.72,
+        "neu": 81.87,
         "neg": 8.41,
         "count": 9
       },
       {
+        "source": "Fox News",
+        "pos": 10.63,
+        "neu": 82.73,
+        "neg": 6.63,
+        "count": 6
+      },
+      {
         "source": "NYT",
-        "pos": 9.84,
-        "neu": 81.08,
-        "neg": 9.08,
+        "pos": 6.74,
+        "neu": 88.1,
+        "neg": 5.16,
         "count": 5
       },
       {
@@ -5530,20 +5537,6 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 7.33,
-        "neu": 82.97,
-        "neg": 9.7,
-        "count": 3
-      },
-      {
-        "source": "CBS News",
-        "pos": 4.75,
-        "neu": 88.25,
-        "neg": 7,
-        "count": 2
-      },
-      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
@@ -5554,24 +5547,31 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.17,
-        "neu": 84.64,
+        "pos": 6.38,
+        "neu": 84.42,
         "neg": 9.19,
         "count": 18
       },
       {
         "topic": "Policy",
-        "pos": 8.19,
-        "neu": 80.23,
-        "neg": 11.58,
-        "count": 10
+        "pos": 6.62,
+        "neu": 82.69,
+        "neg": 10.69,
+        "count": 9
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.66,
-        "neu": 86.09,
+        "pos": 5.68,
+        "neu": 86.07,
         "neg": 8.26,
         "count": 9
+      },
+      {
+        "topic": "Economy",
+        "pos": 12.67,
+        "neu": 81.65,
+        "neg": 5.68,
+        "count": 4
       },
       {
         "topic": "Public Statements",
@@ -5579,13 +5579,6 @@
         "neu": 97.37,
         "neg": 0,
         "count": 3
-      },
-      {
-        "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
       },
       {
         "topic": "Legal",
@@ -5619,28 +5612,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-09T20:57:03.008Z",
+        "label": "2026-10-10T02:56:16.224Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T21:57:03.008Z",
+        "label": "2026-10-10T03:56:16.224Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T22:57:03.008Z",
+        "label": "2026-10-10T04:56:16.224Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T23:57:03.008Z",
+        "label": "2026-10-10T05:56:16.224Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5649,28 +5642,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-09T20:57:03.008Z",
+        "label": "2026-10-10T02:56:16.225Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T21:57:03.008Z",
+        "label": "2026-10-10T03:56:16.225Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T22:57:03.008Z",
+        "label": "2026-10-10T04:56:16.225Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T23:57:03.008Z",
+        "label": "2026-10-10T05:56:16.225Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5750,7 +5743,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-10T00:57:03.009Z",
+    "generatedAt": "2026-10-10T06:56:16.225Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5871,8 +5864,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 186,
-      "potusArticles": 44,
+      "usaArticles": 189,
+      "potusArticles": 45,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
