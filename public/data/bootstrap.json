@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-09T21:10:25.566Z",
+  "generatedAt": "2026-10-10T00:57:03.003Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 188,
-    "potusArticles": 48
+    "usaArticles": 186,
+    "potusArticles": 44
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-09T17:10:25.566Z",
+          "label": "2026-10-09T20:57:03.003Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T18:10:25.566Z",
+          "label": "2026-10-09T21:57:03.003Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T19:10:25.566Z",
+          "label": "2026-10-09T22:57:03.003Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T20:10:25.566Z",
+          "label": "2026-10-09T23:57:03.003Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-09T17:10:25.566Z",
+          "label": "2026-10-09T20:57:03.003Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T18:10:25.566Z",
+          "label": "2026-10-09T21:57:03.003Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T19:10:25.566Z",
+          "label": "2026-10-09T22:57:03.003Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-09T20:10:25.566Z",
+          "label": "2026-10-09T23:57:03.003Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.09,
-      "neu": 83.01,
-      "neg": 9.9,
-      "count": 188
+      "pos": 7.23,
+      "neu": 81.83,
+      "neg": 10.94,
+      "count": 186
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.69,
-        "neu": 84.59,
-        "neg": 8.72,
+        "pos": 7.47,
+        "neu": 83.2,
+        "neg": 9.33,
         "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 10.26,
-        "neu": 80.86,
-        "neg": 8.88,
+        "pos": 10.66,
+        "neu": 74.34,
+        "neg": 15,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.43,
-        "neu": 85.24,
-        "neg": 10.33,
+        "pos": 4.75,
+        "neu": 84.57,
+        "neg": 10.68,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.88,
-        "neu": 80.28,
-        "neg": 11.83,
-        "count": 23
+        "pos": 7.26,
+        "neu": 80.52,
+        "neg": 12.22,
+        "count": 21
       },
       {
         "source": "WSJ",
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.29,
-        "neu": 84.66,
-        "neg": 9.04,
+        "pos": 6.03,
+        "neu": 85.66,
+        "neg": 8.32,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 7.66,
-        "neu": 84.48,
-        "neg": 7.86,
+        "pos": 7.43,
+        "neu": 84.19,
+        "neg": 8.38,
         "count": 20
       },
       {
@@ -4636,8 +4636,8 @@
       "rows": [
         {
           "name": "Utilities",
-          "bias": -17,
-          "count": 1
+          "bias": -17.6,
+          "count": 2
         },
         {
           "name": "Communication",
@@ -4646,8 +4646,8 @@
         },
         {
           "name": "Healthcare",
-          "bias": -7.85,
-          "count": 4
+          "bias": -11.34,
+          "count": 7
         },
         {
           "name": "Real Estate",
@@ -4656,28 +4656,28 @@
         },
         {
           "name": "Manufacturing",
-          "bias": -5.85,
-          "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -4.3,
-          "count": 12
-        },
-        {
-          "name": "Finance",
-          "bias": -2.82,
-          "count": 21
+          "bias": -5.1,
+          "count": 6
         },
         {
           "name": "Technology",
-          "bias": -2.43,
-          "count": 145
+          "bias": -3.87,
+          "count": 144
+        },
+        {
+          "name": "Energy",
+          "bias": -1.4,
+          "count": 10
+        },
+        {
+          "name": "Finance",
+          "bias": -1.19,
+          "count": 22
         },
         {
           "name": "Materials",
-          "bias": -1.15,
-          "count": 2
+          "bias": -0.68,
+          "count": 5
         }
       ],
       "pos": [
@@ -4690,25 +4690,25 @@
       "neu": [
         {
           "name": "Manufacturing",
-          "bias": -5.85,
-          "count": 2
+          "bias": -5.1,
+          "count": 6
+        },
+        {
+          "name": "Technology",
+          "bias": -3.87,
+          "count": 144
         },
         {
           "name": "Energy",
-          "bias": -4.3,
-          "count": 12
-        },
-        {
-          "name": "Finance",
-          "bias": -2.82,
-          "count": 21
+          "bias": -1.4,
+          "count": 10
         }
       ],
       "neg": [
         {
           "name": "Utilities",
-          "bias": -17,
-          "count": 1
+          "bias": -17.6,
+          "count": 2
         },
         {
           "name": "Communication",
@@ -4717,40 +4717,40 @@
         },
         {
           "name": "Healthcare",
-          "bias": -7.85,
-          "count": 4
+          "bias": -11.34,
+          "count": 7
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-09T17:10:25.569Z",
-          "pos": 12,
-          "neu": 79,
-          "neg": 9,
-          "count": 6
-        },
-        {
-          "label": "2026-10-09T18:10:25.569Z",
-          "pos": 4,
-          "neu": 90,
-          "neg": 7,
-          "count": 12
-        },
-        {
-          "label": "2026-10-09T19:10:25.569Z",
+          "label": "2026-10-09T20:57:03.005Z",
           "pos": 7,
-          "neu": 84,
-          "neg": 9,
-          "count": 33
+          "neu": 80,
+          "neg": 13,
+          "count": 14
         },
         {
-          "label": "2026-10-09T20:10:25.569Z",
-          "pos": 7,
-          "neu": 84,
+          "label": "2026-10-09T21:57:03.005Z",
+          "pos": 9,
+          "neu": 78,
+          "neg": 13,
+          "count": 14
+        },
+        {
+          "label": "2026-10-09T22:57:03.005Z",
+          "pos": 8,
+          "neu": 83,
           "neg": 9,
-          "count": 36
+          "count": 21
+        },
+        {
+          "label": "2026-10-09T23:57:03.005Z",
+          "pos": 8,
+          "neu": 82,
+          "neg": 11,
+          "count": 19
         }
       ]
     }
@@ -4958,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "Trump Says He Will Import Russian Diesel Fuel Amid High Prices",
-        "link": "https://www.nytimes.com/2026/10/09/us/politics/trump-russia-diesel-putin.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "James Talarico resurfaces after extended absence as his campaign pushes back",
+        "link": "https://www.foxnews.com/politics/james-talarico-resurfaces-after-12-day-absence-sparked-campaign-trail-attacks",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump said Russia had agreed to ship potentially millions of tons of diesel fuel in the coming months. But the amounts would be small relative to global demand.",
+        "description": "James Talarico resurfaces at Austin City Limits after a 12-day absence that drew sharp attacks from Trump and Ken Paxton on the campaign trail.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T21:05:33.000Z",
+        "publishedAt": "2026-10-10T00:41:11.000Z",
         "sentiment": {
-          "posP": 5,
-          "negP": 3.6,
-          "neuP": 91.4,
-          "label": "neutral",
-          "confidence": 0.15
+          "posP": 0,
+          "negP": 8.1,
+          "neuP": 91.9,
+          "label": "negative",
+          "confidence": 0.44
         },
         "category": "usa"
       },
       {
-        "title": "Trump Announces White House Inquiry Into Fed Governor Lisa Cook",
-        "link": "https://www.nytimes.com/2026/10/09/business/trump-lisa-cook-fed.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump gives raw reaction after finding out about Mike Ditka's death: 'A tough cookie'",
+        "link": "https://www.foxnews.com/outkick-sports/trump-raw-reaction-mike-ditka-death-tough-cookie",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump said the White House would investigate unsubstantiated claims that Lisa D. Cook committed mortgage fraud and hold a hearing next month.",
+        "description": "Trump called Mike Ditka \"a tough cookie\" and \"a winner\" after learning of the Hall of Fame Chicago Bears coach's death on the South Lawn Friday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T19:12:08.000Z",
+        "publishedAt": "2026-10-10T00:13:38.000Z",
         "sentiment": {
-          "posP": 5.8,
-          "negP": 10.6,
-          "neuP": 83.6,
+          "posP": 13,
+          "negP": 21,
+          "neuP": 66,
           "label": "negative",
-          "confidence": 0.4
+          "confidence": 0.48
         },
         "category": "usa"
       }
@@ -5200,6 +5200,66 @@
         "category": "world"
       },
       {
+        "title": "James Talarico resurfaces after extended absence as his campaign pushes back",
+        "link": "https://www.foxnews.com/politics/james-talarico-resurfaces-after-12-day-absence-sparked-campaign-trail-attacks",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "James Talarico resurfaces at Austin City Limits after a 12-day absence that drew sharp attacks from Trump and Ken Paxton on the campaign trail.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T00:41:11.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 8.1,
+          "neuP": 91.9,
+          "label": "negative",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump gives raw reaction after finding out about Mike Ditka's death: 'A tough cookie'",
+        "link": "https://www.foxnews.com/outkick-sports/trump-raw-reaction-mike-ditka-death-tough-cookie",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump called Mike Ditka \"a tough cookie\" and \"a winner\" after learning of the Hall of Fame Chicago Bears coach's death on the South Lawn Friday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T00:13:38.000Z",
+        "sentiment": {
+          "posP": 13,
+          "negP": 21,
+          "neuP": 66,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "For Trump, a Firing Squad on Livestream Becomes the Latest Spectacle",
+        "link": "https://www.nytimes.com/2026/10/09/us/politics/trump-firing-squad-spectacle.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The idea seemed to surprise even some inside the Trump administration.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T00:25:01.000Z",
+        "sentiment": {
+          "posP": 8.9,
+          "negP": 10.2,
+          "neuP": 80.9,
+          "label": "neutral",
+          "confidence": 0.08
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump Says He Will Import Russian Diesel Fuel Amid High Prices",
         "link": "https://www.nytimes.com/2026/10/09/us/politics/trump-russia-diesel-putin.html",
         "source": "NYT",
@@ -5209,33 +5269,13 @@
         "description": "President Trump said Russia had agreed to ship potentially millions of tons of diesel fuel in the coming months. But the amounts would be small relative to global demand.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T21:05:33.000Z",
+        "publishedAt": "2026-10-09T22:30:39.000Z",
         "sentiment": {
           "posP": 5,
           "negP": 3.6,
           "neuP": 91.4,
           "label": "neutral",
           "confidence": 0.15
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Announces White House Inquiry Into Fed Governor Lisa Cook",
-        "link": "https://www.nytimes.com/2026/10/09/business/trump-lisa-cook-fed.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump said the White House would investigate unsubstantiated claims that Lisa D. Cook committed mortgage fraud and hold a hearing next month.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T19:12:08.000Z",
-        "sentiment": {
-          "posP": 5.8,
-          "negP": 10.6,
-          "neuP": 83.6,
-          "label": "negative",
-          "confidence": 0.4
         },
         "category": "usa"
       },
@@ -5260,142 +5300,42 @@
         "category": "usa"
       },
       {
-        "title": "Donor Says Kimberly Guilfoyle Sought Money From Him to Cover Debt",
-        "link": "https://www.nytimes.com/2026/10/09/us/politics/kimberly-guilfoyle-donor-texts.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Correspondence suggests that Ms. Guilfoyle, the U.S. ambassador to Greece and former fiancée of Donald Trump Jr., asked a G.O.P. donor to pay off her credit card.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T19:31:20.000Z",
-        "sentiment": {
-          "posP": 6.4,
-          "negP": 9.6,
-          "neuP": 84,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump announces Russia will release millions of tons of diesel to help with costs",
-        "link": "https://www.cbsnews.com/news/trump-russia-release-diesel-oil-iran-skyrocketing-costs/",
+        "title": "Trump launches new investigation into Fed Gov. Lisa Cook",
+        "link": "https://www.cbsnews.com/video/trump-launches-new-investigation-fed-gov-lisa-cook/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Russian President Vladimir Putin agreed to release 300,000 tons of diesel immediately and millions more over the coming months.",
+        "description": "President Trump says a committee will investigate Federal Reserve Gov. Lisa Cook and determine whether there is cause to remove her from the board. CBS News homeland security correspondent Nicole Sganga has the details.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T21:02:47.000Z",
+        "publishedAt": "2026-10-09T23:24:00.000Z",
         "sentiment": {
-          "posP": 13.4,
+          "posP": 5.5,
           "negP": 0,
-          "neuP": 86.6,
+          "neuP": 94.5,
           "label": "positive",
-          "confidence": 0.59
+          "confidence": 0.34
         },
         "category": "usa"
       },
       {
-        "title": "Trump forms committee to investigate Fed's Lisa Cook",
-        "link": "https://www.cbsnews.com/video/trump-forms-committee-investigate-lisa-cook/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump has established a committee to investigate allegations that Lisa Cook, a member of the Federal Reserve's Board of Governors, made false statements in mortgage documents. The move comes after the Supreme Court's June decision rejecting the president's attempt to fire Cook. CBS News homeland security correspondent Nicole Sganga reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T20:56:04.000Z",
-        "sentiment": {
-          "posP": 9.3,
-          "negP": 8.4,
-          "neuP": 82.3,
-          "label": "neutral",
-          "confidence": 0.15
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump picks \"loyal\" Katie Zacharia as next White House press secretary",
-        "link": "https://www.cbsnews.com/news/katie-zacharia-white-house-press-secretary-trump/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "\"I am confident that Katie will deliver strong results for our Country as the next White House Press Secretary,\" President Trump said.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T20:19:32.000Z",
-        "sentiment": {
-          "posP": 17.3,
-          "negP": 0,
-          "neuP": 82.7,
-          "label": "positive",
-          "confidence": 0.76
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump promised to lower prices for Americans. Here's what the data shows.",
-        "link": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Just weeks before the midterm elections, 90% of Americans say prices in the U.S. are the main factor shaping their view of the economy. These charts show why.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T19:53:41.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 5.2,
-          "neuP": 88.9,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Top Trump aide's daughter photographed with pro-Russia politician in Bosnia",
-        "link": "https://www.cbsnews.com/video/top-trump-aides-daughter-photographed-with-pro-russia-politician-in-bosnia/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Katie Wiles, the daughter of White House chief of staff Susie Wiles, recently traveled to Republika Srpska, the Bosnian-controlled territory led by pro-Russian Serb Milorad Dodik. CBS News' Emmett Lyons explains more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T18:58:37.000Z",
-        "sentiment": {
-          "posP": 4.2,
-          "negP": 0,
-          "neuP": 95.8,
-          "label": "positive",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump strikes deal with Putin to supply Russian diesel to U.S. and global markets",
-        "link": "https://www.cnbc.com/2026/10/09/trump-putin-russian-diesel-us-global-markets.html",
+        "title": "Trump's diesel agreement with Putin accused of contradicting Russia sanctions law",
+        "link": "https://www.cnbc.com/2026/10/09/trump-putin-diesel-russia-sanctions-ukraine.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump has few options to reduce diesel prices given the destruction done to refineries by the wars in Eastern Europe and the Middle East.",
+        "description": "Ukraine President Volodymyr Zelenskyy said in a searing statement that the U.S. easing sanctions on Moscow \"plays into Russia's hands.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-09T20:20:57.000Z",
+        "publishedAt": "2026-10-09T23:16:50.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 20.9,
-          "neuP": 79.1,
-          "label": "negative",
-          "confidence": 0.87
+          "posP": 19.6,
+          "negP": 12.3,
+          "neuP": 68.1,
+          "label": "positive",
+          "confidence": 0.4
         },
         "category": "usa"
       },
@@ -5478,48 +5418,94 @@
           "confidence": 0.34
         },
         "category": "usa"
+      },
+      {
+        "title": "Treasury's Bessent hires Trump's controversial former Fed board pick, Judy Shelton, as advisor",
+        "link": "https://www.cnbc.com/2026/10/09/judy-shelton-scott-bessent-treasury.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Shelton's controversial economic ideas led the Senate to block her nomination to the Fed. Now she's going to be a counselor to the Treasury secretary.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T13:09:19.000Z",
+        "sentiment": {
+          "posP": 4.4,
+          "negP": 15.7,
+          "neuP": 79.9,
+          "label": "negative",
+          "confidence": 0.57
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump: Russia will send diesel fuel to the U.S. to bring down prices",
+        "link": "https://www.nbcnews.com/nightly-news/video/trump-russia-will-send-diesel-fuel-to-the-u-s-to-bring-down-prices-271372357511",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump said he spoke to Vladimir Putin and Russia will send hundreds of thousands of barrels of diesel fuel to the U.S. aimed at bringing down prices at the pump. NBC News’ Garrett Haake reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T00:07:47.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Food pantries overwhelmed by Trump cuts",
+        "link": "https://www.nbcnews.com/news/us-news/west-virginia-hunger-trump-cuts-food-stamps-gas-prices-iran-rcna601637",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Those on the front lines of feeding their neighbors in rural West Virginia say they face unprecedented challenges brought on by Washington.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-09T09:00:43.000Z",
+        "sentiment": {
+          "posP": 8.4,
+          "negP": 7.4,
+          "neuP": 84.2,
+          "label": "neutral",
+          "confidence": 0.18
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.59,
-      "neu": 85.85,
-      "neg": 7.56,
-      "count": 48
+      "pos": 6.88,
+      "neu": 84.38,
+      "neg": 8.74,
+      "count": 44
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.48,
-        "neu": 86.65,
-        "neg": 6.88,
+        "pos": 7.59,
+        "neu": 84.87,
+        "neg": 7.54,
         "count": 12
       },
       {
         "source": "Washington Post",
-        "pos": 8.83,
-        "neu": 81.56,
-        "neg": 9.61,
+        "pos": 9.7,
+        "neu": 81.89,
+        "neg": 8.41,
         "count": 9
       },
       {
         "source": "NYT",
-        "pos": 8.75,
-        "neu": 82.02,
-        "neg": 9.23,
-        "count": 6
-      },
-      {
-        "source": "CBS News",
-        "pos": 9.02,
-        "neu": 86.38,
-        "neg": 4.6,
-        "count": 6
-      },
-      {
-        "source": "ABC News",
-        "pos": 1.42,
-        "neu": 92.46,
-        "neg": 6.12,
+        "pos": 9.84,
+        "neu": 81.08,
+        "neg": 9.08,
         "count": 5
       },
       {
@@ -5530,11 +5516,32 @@
         "count": 4
       },
       {
+        "source": "ABC News",
+        "pos": 1.77,
+        "neu": 85.85,
+        "neg": 12.38,
+        "count": 4
+      },
+      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
         "count": 3
+      },
+      {
+        "source": "Fox News",
+        "pos": 7.33,
+        "neu": 82.97,
+        "neg": 9.7,
+        "count": 3
+      },
+      {
+        "source": "CBS News",
+        "pos": 4.75,
+        "neu": 88.25,
+        "neg": 7,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5547,45 +5554,45 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.16,
-        "neu": 85.42,
-        "neg": 8.42,
-        "count": 17
+        "pos": 6.17,
+        "neu": 84.64,
+        "neg": 9.19,
+        "count": 18
       },
       {
         "topic": "Policy",
-        "pos": 7.3,
-        "neu": 83.27,
-        "neg": 9.43,
+        "pos": 8.19,
+        "neu": 80.23,
+        "neg": 11.58,
         "count": 10
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.14,
-        "neu": 87.11,
-        "neg": 7.75,
-        "count": 8
-      },
-      {
-        "topic": "Economy",
-        "pos": 6.22,
-        "neu": 86.16,
-        "neg": 7.62,
-        "count": 5
+        "pos": 5.66,
+        "neu": 86.09,
+        "neg": 8.26,
+        "count": 9
       },
       {
         "topic": "Public Statements",
-        "pos": 5.04,
-        "neu": 94.96,
+        "pos": 2.63,
+        "neu": 97.37,
         "neg": 0,
-        "count": 5
+        "count": 3
+      },
+      {
+        "topic": "Economy",
+        "pos": 9.5,
+        "neu": 84.5,
+        "neg": 6,
+        "count": 2
       },
       {
         "topic": "Legal",
-        "pos": 13.7,
-        "neu": 77.8,
-        "neg": 8.5,
-        "count": 3
+        "pos": 15.9,
+        "neu": 75.55,
+        "neg": 8.55,
+        "count": 2
       }
     ]
   },
@@ -5612,28 +5619,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-09T17:10:25.572Z",
+        "label": "2026-10-09T20:57:03.008Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T18:10:25.572Z",
+        "label": "2026-10-09T21:57:03.008Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T19:10:25.572Z",
+        "label": "2026-10-09T22:57:03.008Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T20:10:25.572Z",
+        "label": "2026-10-09T23:57:03.008Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5642,28 +5649,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-09T17:10:25.572Z",
+        "label": "2026-10-09T20:57:03.008Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T18:10:25.572Z",
+        "label": "2026-10-09T21:57:03.008Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T19:10:25.572Z",
+        "label": "2026-10-09T22:57:03.008Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-09T20:10:25.572Z",
+        "label": "2026-10-09T23:57:03.008Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5743,7 +5750,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-09T21:10:25.573Z",
+    "generatedAt": "2026-10-10T00:57:03.009Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5864,8 +5871,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 188,
-      "potusArticles": 48,
+      "usaArticles": 186,
+      "potusArticles": 44,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
