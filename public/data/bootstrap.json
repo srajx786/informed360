@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-11T00:23:57.780Z",
+  "generatedAt": "2026-10-11T06:19:35.272Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 188,
-    "potusArticles": 48
+    "usaArticles": 187,
+    "potusArticles": 53
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-10T20:23:57.780Z",
+          "label": "2026-10-11T02:19:35.272Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T21:23:57.780Z",
+          "label": "2026-10-11T03:19:35.272Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T22:23:57.780Z",
+          "label": "2026-10-11T04:19:35.272Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T23:23:57.780Z",
+          "label": "2026-10-11T05:19:35.272Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-10T20:23:57.780Z",
+          "label": "2026-10-11T02:19:35.272Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T21:23:57.780Z",
+          "label": "2026-10-11T03:19:35.272Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T22:23:57.780Z",
+          "label": "2026-10-11T04:19:35.272Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T23:23:57.780Z",
+          "label": "2026-10-11T05:19:35.272Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4556,38 +4556,38 @@
     ],
     "sentiment": {
       "pos": 7.36,
-      "neu": 81.47,
-      "neg": 11.17,
-      "count": 188
+      "neu": 81.36,
+      "neg": 11.27,
+      "count": 187
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.92,
-        "neu": 80.71,
-        "neg": 8.37,
-        "count": 42
+        "pos": 10.69,
+        "neu": 81.59,
+        "neg": 7.72,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 7.95,
-        "neu": 81.48,
-        "neg": 10.57,
+        "pos": 9.14,
+        "neu": 81.38,
+        "neg": 9.48,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.07,
-        "neu": 81.16,
-        "neg": 14.77,
+        "pos": 3.88,
+        "neu": 79.8,
+        "neg": 16.32,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.03,
-        "neu": 79.93,
-        "neg": 14.04,
-        "count": 22
+        "pos": 5.92,
+        "neu": 79.04,
+        "neg": 15.04,
+        "count": 23
       },
       {
         "source": "WSJ",
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.14,
-        "neu": 82.91,
-        "neg": 10.95,
+        "pos": 6.15,
+        "neu": 82.98,
+        "neg": 10.87,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 7.07,
-        "neu": 84.51,
-        "neg": 8.42,
+        "pos": 6.81,
+        "neu": 84.63,
+        "neg": 8.56,
         "count": 20
       },
       {
@@ -4640,19 +4640,24 @@
           "count": 1
         },
         {
+          "name": "Materials",
+          "bias": -10.23,
+          "count": 3
+        },
+        {
           "name": "Communication",
-          "bias": -10.65,
+          "bias": -8.92,
+          "count": 5
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -8.9,
           "count": 2
         },
         {
           "name": "Energy",
-          "bias": -9.73,
-          "count": 16
-        },
-        {
-          "name": "Materials",
-          "bias": -6.17,
-          "count": 4
+          "bias": -8.13,
+          "count": 18
         },
         {
           "name": "Real Estate",
@@ -4666,23 +4671,18 @@
         },
         {
           "name": "Technology",
-          "bias": -4.02,
-          "count": 150
-        },
-        {
-          "name": "Finance",
-          "bias": -1.02,
-          "count": 17
+          "bias": -4.36,
+          "count": 144
         },
         {
           "name": "Healthcare",
-          "bias": 0.69,
-          "count": 10
+          "bias": -1.19,
+          "count": 8
         },
         {
-          "name": "Manufacturing",
-          "bias": 0,
-          "count": 2
+          "name": "Finance",
+          "bias": -1.08,
+          "count": 17
         }
       ],
       "pos": [
@@ -4699,68 +4699,68 @@
       ],
       "neu": [
         {
+          "name": "Energy",
+          "bias": -8.13,
+          "count": 18
+        },
+        {
           "name": "Utilities",
           "bias": -4.6,
           "count": 2
         },
         {
           "name": "Technology",
-          "bias": -4.02,
-          "count": 150
-        },
-        {
-          "name": "Finance",
-          "bias": -1.02,
-          "count": 17
+          "bias": -4.36,
+          "count": 144
         }
       ],
       "neg": [
         {
-          "name": "Communication",
-          "bias": -10.65,
-          "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -9.73,
-          "count": 16
-        },
-        {
           "name": "Materials",
-          "bias": -6.17,
-          "count": 4
+          "bias": -10.23,
+          "count": 3
+        },
+        {
+          "name": "Communication",
+          "bias": -8.92,
+          "count": 5
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -8.9,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-10T20:23:57.782Z",
-          "pos": 8,
-          "neu": 80,
-          "neg": 12,
-          "count": 7
-        },
-        {
-          "label": "2026-10-10T21:23:57.782Z",
-          "pos": 2,
-          "neu": 87,
-          "neg": 11,
-          "count": 8
-        },
-        {
-          "label": "2026-10-10T22:23:57.782Z",
+          "label": "2026-10-11T02:19:35.275Z",
           "pos": 5,
           "neu": 83,
           "neg": 12,
-          "count": 8
+          "count": 9
         },
         {
-          "label": "2026-10-10T23:23:57.782Z",
-          "pos": 5,
-          "neu": 76,
-          "neg": 18,
-          "count": 12
+          "label": "2026-10-11T03:19:35.275Z",
+          "pos": 16,
+          "neu": 71,
+          "neg": 13,
+          "count": 7
+        },
+        {
+          "label": "2026-10-11T04:19:35.275Z",
+          "pos": 36,
+          "neu": 65,
+          "neg": 0,
+          "count": 1
+        },
+        {
+          "label": "2026-10-11T05:19:35.275Z",
+          "pos": 4,
+          "neu": 85,
+          "neg": 11,
+          "count": 3
         }
       ]
     }
@@ -4968,42 +4968,42 @@
         "category": "world"
       },
       {
-        "title": "President talks 'Trump Ocean,' trades jokes with Tennessee crowd as Kid Rock kicks off sprawling rally",
-        "link": "https://www.foxnews.com/politics/president-talks-trump-ocean-trades-jokes-tennessee-crowd-kid-rock-kicks-sprawling-rally",
+        "title": "Trump says he'd 'love' to have Sen. John Fetterman as a Republican amid growing speculation",
+        "link": "https://www.foxnews.com/politics/trump-says-hed-love-have-sen-john-fetterman-republican-amid-growing-speculation",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump called Iranian leaders \"crazy\" and floated renaming an ocean after himself during a wide-ranging Tennessee rally with Kid Rock opening.",
+        "description": "President Donald Trump called Sen. John Fetterman a \"great guy\" and said he would welcome the Pennsylvania Democrat into the Republican Party ranks.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T23:07:06.000Z",
+        "publishedAt": "2026-10-11T03:46:18.000Z",
         "sentiment": {
-          "posP": 5.4,
+          "posP": 26.4,
           "negP": 0,
-          "neuP": 94.6,
+          "neuP": 73.6,
           "label": "positive",
-          "confidence": 0.25
+          "confidence": 0.89
         },
         "category": "usa"
       },
       {
-        "title": "Trump calls for Ukraine to replace Zelenskyy after clash over Russia diesel deal: 'Get a new president'",
-        "link": "https://www.foxnews.com/politics/trump-calls-ukraine-replace-zelenskyy-clash-russia-diesel-deal-get-new-president",
+        "title": "Trump says he will 'make a decision' on Pentagon's plans to livestream Nidal Hasan's firing squad execution",
+        "link": "https://www.foxnews.com/politics/trump-says-he-make-decision-pentagons-plans-livestream-nidal-hasans-firing-squad-execution",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump demanded Volodymyr Zelenskyy stop striking Russian oil refineries, warning the attacks worsen global diesel and fuel supplies.",
+        "description": "President Donald Trump says he hasn't decided whether Nidal Malik Hasan's firing squad execution at Fort Hood will be livestreamed, weighing deterrence value.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T19:54:36.000Z",
+        "publishedAt": "2026-10-11T03:37:40.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 29.1,
-          "neuP": 70.9,
+          "posP": 5.6,
+          "negP": 11.1,
+          "neuP": 83.3,
           "label": "negative",
-          "confidence": 0.89
+          "confidence": 0.34
         },
         "category": "usa"
       }
@@ -5210,6 +5210,46 @@
         "category": "world"
       },
       {
+        "title": "Trump says he'd 'love' to have Sen. John Fetterman as a Republican amid growing speculation",
+        "link": "https://www.foxnews.com/politics/trump-says-hed-love-have-sen-john-fetterman-republican-amid-growing-speculation",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump called Sen. John Fetterman a \"great guy\" and said he would welcome the Pennsylvania Democrat into the Republican Party ranks.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-11T03:46:18.000Z",
+        "sentiment": {
+          "posP": 26.4,
+          "negP": 0,
+          "neuP": 73.6,
+          "label": "positive",
+          "confidence": 0.89
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he will 'make a decision' on Pentagon's plans to livestream Nidal Hasan's firing squad execution",
+        "link": "https://www.foxnews.com/politics/trump-says-he-make-decision-pentagons-plans-livestream-nidal-hasans-firing-squad-execution",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump says he hasn't decided whether Nidal Malik Hasan's firing squad execution at Fort Hood will be livestreamed, weighing deterrence value.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-11T03:37:40.000Z",
+        "sentiment": {
+          "posP": 5.6,
+          "negP": 11.1,
+          "neuP": 83.3,
+          "label": "negative",
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
         "title": "President talks 'Trump Ocean,' trades jokes with Tennessee crowd as Kid Rock kicks off sprawling rally",
         "link": "https://www.foxnews.com/politics/president-talks-trump-ocean-trades-jokes-tennessee-crowd-kid-rock-kicks-sprawling-rally",
         "source": "Fox News",
@@ -5230,46 +5270,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump calls for Ukraine to replace Zelenskyy after clash over Russia diesel deal: 'Get a new president'",
-        "link": "https://www.foxnews.com/politics/trump-calls-ukraine-replace-zelenskyy-clash-russia-diesel-deal-get-new-president",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump demanded Volodymyr Zelenskyy stop striking Russian oil refineries, warning the attacks worsen global diesel and fuel supplies.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-10T19:54:36.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 29.1,
-          "neuP": 70.9,
-          "label": "negative",
-          "confidence": 0.89
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Mike Tyson predicts ‘Donald Trump will win’ midterms before joining president for New York rally",
-        "link": "https://www.foxnews.com/outkick-sports/mike-tyson-predicts-donald-trump-will-win-midterms-joining-president-new-york-rally",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Mike Tyson visited the White House and predicted a Trump midterm elections victory before joining the president at a rally in Syracuse, New York.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-10T19:49:04.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
         "title": "Rebuking Ukraine Over Oil Strikes, Trump Says It Should ‘Get a New President’",
         "link": "https://www.nytimes.com/2026/10/10/world/europe/ukraine-russia-trump-diesel-talks.html",
         "source": "NYT",
@@ -5279,7 +5279,7 @@
         "description": "Hours after President Trump said the United States would buy Russian diesel, the Kremlin said there would be no immediate resumption of discussions to end the war.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T19:28:54.000Z",
+        "publishedAt": "2026-10-10T19:28:55.000Z",
         "sentiment": {
           "posP": 6,
           "negP": 18.5,
@@ -5316,14 +5316,14 @@
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Major TV networks were notified on Friday that the department was looking into whether they violated antitrust laws when they suspended pool coverage of President Trump.",
+        "description": "Major TV networks were notified on Friday that the department was examining whether they violated antitrust laws when they suspended pool coverage of President Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T23:21:07.000Z",
+        "publishedAt": "2026-10-11T02:40:52.000Z",
         "sentiment": {
-          "posP": 7.9,
-          "negP": 15.2,
-          "neuP": 76.9,
+          "posP": 8.1,
+          "negP": 15.5,
+          "neuP": 76.4,
           "label": "negative",
           "confidence": 0.48
         },
@@ -5370,42 +5370,42 @@
         "category": "usa"
       },
       {
-        "title": "After airport strike, Trump considering whether to join fight against Houthis",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-elections-saudi-arabia-yemen-houthis/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump Is Begging to Be Impeached",
+        "link": "https://www.nytimes.com/2026/10/10/opinion/impeachment-trump-democrats-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Following the latest strike Saturday on Riyadh's King Khalid International Airport, President Trump said the U.S. \"may\" join the fight against the Iran-backed Houthis.",
+        "description": "The president’s despotism is itself a constitutional offense.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-11T00:10:43.000Z",
+        "publishedAt": "2026-10-10T16:38:14.000Z",
         "sentiment": {
-          "posP": 10.6,
-          "negP": 19.7,
-          "neuP": 69.7,
+          "posP": 0,
+          "negP": 14.3,
+          "neuP": 85.7,
           "label": "negative",
-          "confidence": 0.42
+          "confidence": 0.25
         },
         "category": "usa"
       },
       {
-        "title": "Katie Bailey tapped as new White House legislative director",
-        "link": "https://www.cbsnews.com/news/katie-bailey-new-head-of-white-house-office-of-legislative-affairs-sources/",
+        "title": "DOJ investigating TV networks over suspension of press pool after Trump media ban",
+        "link": "https://www.cbsnews.com/news/doj-investigating-tv-networks-suspension-press-pool-trump-media-ban/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Katie Bailey currently serves as both special assistant to the president and deputy director of legislative affairs.",
+        "description": "The Justice Department is investigating whether the major TV networks violated antitrust laws after they briefly suspended the TV press pool system in response to President Trump's decision to ban three news organizations from the White House.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T23:57:00.000Z",
+        "publishedAt": "2026-10-11T02:21:00.000Z",
         "sentiment": {
-          "posP": 9.7,
-          "negP": 0,
-          "neuP": 90.3,
-          "label": "positive",
-          "confidence": 0.4
+          "posP": 5.5,
+          "negP": 22.1,
+          "neuP": 72.4,
+          "label": "negative",
+          "confidence": 0.88
         },
         "category": "usa"
       },
@@ -5419,7 +5419,7 @@
         "description": "President Trump's criticism of Ukrainian President Volodymyr Zelenskyy comes after Russian strikes killed at least 20 people, including three children, in Ukraine.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T23:25:00.000Z",
+        "publishedAt": "2026-10-11T01:59:52.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 30.3,
@@ -5430,106 +5430,106 @@
         "category": "usa"
       },
       {
-        "title": "Trump says Russia will release millions of tons of diesel to help with costs",
-        "link": "https://www.cbsnews.com/news/trump-russia-release-diesel-oil-iran-skyrocketing-costs/",
+        "title": "Ukraine says it won't stop attacking Russian oil resources amid diesel fuel deal with U.S.",
+        "link": "https://www.cbsnews.com/video/ukraine-says-it-wont-stop-attacking-russian-oil-resources-amid-diesel-fuel-deal-with-us/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Russian President Vladimir Putin agreed to release 300,000 tons of diesel immediately and millions more over the coming months.",
+        "description": "President Trump is arguing that Ukraine needs a new president as Volodymyr Zelenskyy refuses to halt strikes on Russian oil refineries despite the country's commitment to provide diesel fuel to the U.S. Kamal Afzali has the story.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T16:08:46.000Z",
+        "publishedAt": "2026-10-11T01:14:20.000Z",
         "sentiment": {
-          "posP": 13.4,
-          "negP": 0,
-          "neuP": 86.6,
-          "label": "positive",
-          "confidence": 0.59
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump touts diesel deal with Putin ahead of midterms",
-        "link": "https://www.cbsnews.com/video/trump-touts-diesel-deal-with-putin-ahead-of-midterms/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump says Russia has agreed to release millions of tons of diesel fuel over the next several months in an attempt to combat high prices amid the Iran war. The move comes weeks ahead of the U.S. midterm elections.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-10T14:46:00.000Z",
-        "sentiment": {
-          "posP": 3.9,
-          "negP": 13.6,
-          "neuP": 82.5,
+          "posP": 7.5,
+          "negP": 13.2,
+          "neuP": 79.3,
           "label": "negative",
-          "confidence": 0.65
+          "confidence": 0.51
         },
         "category": "usa"
       },
       {
-        "title": "Putin relayed Iran war proposal to Trump, Kremlin says",
-        "link": "https://www.cnbc.com/2026/10/10/putin-trump-iran-war-russia-diesel.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Trump hits campaign trail in Tennessee with midterms voting less than 3 weeks away",
+        "link": "https://www.cbsnews.com/video/trump-hits-campaign-trail-in-tennessee-with-midterms-voting-less-than-3-weeks-away/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Putin's reported call with Trump regarding the Iran war comes on the heels of a deal for the U.S. to buy Russian diesel amid a surge in fuel prices.",
+        "description": "President Trump campaigned for Republican candidates in Tennessee on Saturday as the GOP faces a rough forecast with midterms less than three weeks away. Taurean Small has more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T13:42:36.000Z",
+        "publishedAt": "2026-10-11T01:08:00.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 18.7,
-          "neuP": 81.3,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "After airport strike, Trump considering whether to join fight against Houthis",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-elections-saudi-arabia-yemen-houthis/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Following the latest strike Saturday on Riyadh's King Khalid International Airport, President Trump said the U.S. \"may\" join the fight against the Iran-backed Houthis.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-11T00:43:36.000Z",
+        "sentiment": {
+          "posP": 10.6,
+          "negP": 19.7,
+          "neuP": 69.7,
           "label": "negative",
-          "confidence": 0.83
+          "confidence": 0.42
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.08,
-      "neu": 84.8,
-      "neg": 9.12,
-      "count": 48
+      "pos": 5.99,
+      "neu": 85.01,
+      "neg": 9,
+      "count": 53
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 6.07,
-        "neu": 86.19,
-        "neg": 7.74,
-        "count": 10
+        "pos": 5.52,
+        "neu": 86.28,
+        "neg": 8.2,
+        "count": 11
       },
       {
         "source": "NBC News",
-        "pos": 9.86,
-        "neu": 80.29,
-        "neg": 9.85,
-        "count": 8
+        "pos": 8.54,
+        "neu": 83.82,
+        "neg": 7.63,
+        "count": 9
       },
       {
         "source": "NYT",
-        "pos": 6.11,
-        "neu": 82.9,
-        "neg": 10.99,
-        "count": 7
+        "pos": 5.38,
+        "neu": 83.19,
+        "neg": 11.44,
+        "count": 8
       },
       {
         "source": "CBS News",
-        "pos": 6.93,
-        "neu": 80.13,
-        "neg": 12.93,
-        "count": 6
+        "pos": 4.66,
+        "neu": 80.69,
+        "neg": 14.65,
+        "count": 8
       },
       {
         "source": "Fox News",
-        "pos": 3.6,
-        "neu": 89.13,
-        "neg": 7.28,
+        "pos": 11.6,
+        "neu": 85.63,
+        "neg": 2.77,
         "count": 4
       },
       {
@@ -5564,24 +5564,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.83,
-        "neu": 85.43,
-        "neg": 7.74,
-        "count": 19
+        "pos": 6.93,
+        "neu": 84.81,
+        "neg": 8.25,
+        "count": 24
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.35,
-        "neu": 80.84,
-        "neg": 13.81,
-        "count": 15
+        "pos": 5.42,
+        "neu": 80.92,
+        "neg": 13.66,
+        "count": 13
       },
       {
         "topic": "Policy",
-        "pos": 4.1,
-        "neu": 87.02,
-        "neg": 8.88,
-        "count": 6
+        "pos": 2.6,
+        "neu": 90.47,
+        "neg": 6.93,
+        "count": 7
       },
       {
         "topic": "Economy",
@@ -5592,10 +5592,10 @@
       },
       {
         "topic": "Public Statements",
-        "pos": 2.63,
-        "neu": 97.37,
-        "neg": 0,
-        "count": 3
+        "pos": 3.35,
+        "neu": 91.13,
+        "neg": 5.53,
+        "count": 4
       },
       {
         "topic": "Legal",
@@ -5629,28 +5629,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-10T20:23:57.784Z",
+        "label": "2026-10-11T02:19:35.278Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T21:23:57.784Z",
+        "label": "2026-10-11T03:19:35.278Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T22:23:57.784Z",
+        "label": "2026-10-11T04:19:35.278Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T23:23:57.784Z",
+        "label": "2026-10-11T05:19:35.278Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5659,28 +5659,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-10T20:23:57.784Z",
+        "label": "2026-10-11T02:19:35.278Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T21:23:57.784Z",
+        "label": "2026-10-11T03:19:35.278Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T22:23:57.784Z",
+        "label": "2026-10-11T04:19:35.278Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T23:23:57.784Z",
+        "label": "2026-10-11T05:19:35.278Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5760,7 +5760,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-11T00:23:57.785Z",
+    "generatedAt": "2026-10-11T06:19:35.279Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5881,8 +5881,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 188,
-      "potusArticles": 48,
+      "usaArticles": 187,
+      "potusArticles": 53,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
