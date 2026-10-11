@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-10T21:31:57.271Z",
+  "generatedAt": "2026-10-11T00:23:57.780Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 182,
-    "potusArticles": 45
+    "usaArticles": 188,
+    "potusArticles": 48
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-10T17:31:57.271Z",
+          "label": "2026-10-10T20:23:57.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T18:31:57.271Z",
+          "label": "2026-10-10T21:23:57.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T19:31:57.271Z",
+          "label": "2026-10-10T22:23:57.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T20:31:57.271Z",
+          "label": "2026-10-10T23:23:57.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-10T17:31:57.271Z",
+          "label": "2026-10-10T20:23:57.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T18:31:57.271Z",
+          "label": "2026-10-10T21:23:57.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T19:31:57.271Z",
+          "label": "2026-10-10T22:23:57.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-10T20:31:57.271Z",
+          "label": "2026-10-10T23:23:57.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.82,
-      "neu": 81.08,
-      "neg": 11.1,
-      "count": 182
+      "pos": 7.36,
+      "neu": 81.47,
+      "neg": 11.17,
+      "count": 188
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.63,
-        "neu": 80.89,
-        "neg": 8.48,
-        "count": 41
+        "pos": 10.92,
+        "neu": 80.71,
+        "neg": 8.37,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 10.6,
-        "neu": 76.66,
-        "neg": 12.75,
+        "pos": 7.95,
+        "neu": 81.48,
+        "neg": 10.57,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.07,
-        "neu": 81.64,
-        "neg": 13.29,
+        "pos": 4.07,
+        "neu": 81.16,
+        "neg": 14.77,
         "count": 26
+      },
+      {
+        "source": "NYT",
+        "pos": 6.03,
+        "neu": 79.93,
+        "neg": 14.04,
+        "count": 22
       },
       {
         "source": "WSJ",
@@ -4591,24 +4598,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.01,
-        "neu": 84.36,
-        "neg": 9.63,
+        "pos": 6.14,
+        "neu": 82.91,
+        "neg": 10.95,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 7.95,
-        "neu": 83.19,
-        "neg": 8.86,
+        "pos": 7.07,
+        "neu": 84.51,
+        "neg": 8.42,
         "count": 20
-      },
-      {
-        "source": "NYT",
-        "pos": 4.99,
-        "neu": 81.39,
-        "neg": 13.62,
-        "count": 17
       },
       {
         "source": "NPR",
@@ -4641,13 +4641,18 @@
         },
         {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -10.65,
+          "count": 2
         },
         {
           "name": "Energy",
-          "bias": -8.67,
-          "count": 15
+          "bias": -9.73,
+          "count": 16
+        },
+        {
+          "name": "Materials",
+          "bias": -6.17,
+          "count": 4
         },
         {
           "name": "Real Estate",
@@ -4661,28 +4666,23 @@
         },
         {
           "name": "Technology",
-          "bias": -4,
-          "count": 145
-        },
-        {
-          "name": "Healthcare",
-          "bias": -1.97,
-          "count": 12
+          "bias": -4.02,
+          "count": 150
         },
         {
           "name": "Finance",
-          "bias": -1.48,
-          "count": 15
+          "bias": -1.02,
+          "count": 17
+        },
+        {
+          "name": "Healthcare",
+          "bias": 0.69,
+          "count": 10
         },
         {
           "name": "Manufacturing",
           "bias": 0,
           "count": 2
-        },
-        {
-          "name": "Materials",
-          "bias": 0,
-          "count": 1
         }
       ],
       "pos": [
@@ -4699,68 +4699,68 @@
       ],
       "neu": [
         {
-          "name": "Technology",
-          "bias": -4,
-          "count": 145
+          "name": "Utilities",
+          "bias": -4.6,
+          "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": -1.97,
-          "count": 12
+          "name": "Technology",
+          "bias": -4.02,
+          "count": 150
         },
         {
           "name": "Finance",
-          "bias": -1.48,
-          "count": 15
+          "bias": -1.02,
+          "count": 17
         }
       ],
       "neg": [
         {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -10.65,
+          "count": 2
         },
         {
           "name": "Energy",
-          "bias": -8.67,
-          "count": 15
+          "bias": -9.73,
+          "count": 16
         },
         {
-          "name": "Utilities",
-          "bias": -4.6,
-          "count": 2
+          "name": "Materials",
+          "bias": -6.17,
+          "count": 4
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-10T17:31:57.273Z",
-          "pos": 7,
+          "label": "2026-10-10T20:23:57.782Z",
+          "pos": 8,
+          "neu": 80,
+          "neg": 12,
+          "count": 7
+        },
+        {
+          "label": "2026-10-10T21:23:57.782Z",
+          "pos": 2,
+          "neu": 87,
+          "neg": 11,
+          "count": 8
+        },
+        {
+          "label": "2026-10-10T22:23:57.782Z",
+          "pos": 5,
           "neu": 83,
-          "neg": 10,
-          "count": 13
+          "neg": 12,
+          "count": 8
         },
         {
-          "label": "2026-10-10T18:31:57.273Z",
-          "pos": 7,
-          "neu": 77,
-          "neg": 16,
-          "count": 9
-        },
-        {
-          "label": "2026-10-10T19:31:57.273Z",
+          "label": "2026-10-10T23:23:57.782Z",
           "pos": 5,
           "neu": 76,
-          "neg": 19,
-          "count": 13
-        },
-        {
-          "label": "2026-10-10T20:31:57.273Z",
-          "pos": 7,
-          "neu": 77,
-          "neg": 15,
-          "count": 8
+          "neg": 18,
+          "count": 12
         }
       ]
     }
@@ -4968,6 +4968,26 @@
         "category": "world"
       },
       {
+        "title": "President talks 'Trump Ocean,' trades jokes with Tennessee crowd as Kid Rock kicks off sprawling rally",
+        "link": "https://www.foxnews.com/politics/president-talks-trump-ocean-trades-jokes-tennessee-crowd-kid-rock-kicks-sprawling-rally",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump called Iranian leaders \"crazy\" and floated renaming an ocean after himself during a wide-ranging Tennessee rally with Kid Rock opening.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T23:07:06.000Z",
+        "sentiment": {
+          "posP": 5.4,
+          "negP": 0,
+          "neuP": 94.6,
+          "label": "positive",
+          "confidence": 0.25
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump calls for Ukraine to replace Zelenskyy after clash over Russia diesel deal: 'Get a new president'",
         "link": "https://www.foxnews.com/politics/trump-calls-ukraine-replace-zelenskyy-clash-russia-diesel-deal-get-new-president",
         "source": "Fox News",
@@ -4984,26 +5004,6 @@
           "neuP": 70.9,
           "label": "negative",
           "confidence": 0.89
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Mike Tyson predicts ‘Donald Trump will win’ midterms before joining president for New York rally",
-        "link": "https://www.foxnews.com/outkick-sports/mike-tyson-predicts-donald-trump-will-win-midterms-joining-president-new-york-rally",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Mike Tyson visited the White House and predicted a Trump midterm elections victory before joining the president at a rally in Syracuse, New York.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-10T19:49:04.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
         },
         "category": "usa"
       }
@@ -5210,6 +5210,26 @@
         "category": "world"
       },
       {
+        "title": "President talks 'Trump Ocean,' trades jokes with Tennessee crowd as Kid Rock kicks off sprawling rally",
+        "link": "https://www.foxnews.com/politics/president-talks-trump-ocean-trades-jokes-tennessee-crowd-kid-rock-kicks-sprawling-rally",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump called Iranian leaders \"crazy\" and floated renaming an ocean after himself during a wide-ranging Tennessee rally with Kid Rock opening.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T23:07:06.000Z",
+        "sentiment": {
+          "posP": 5.4,
+          "negP": 0,
+          "neuP": 94.6,
+          "label": "positive",
+          "confidence": 0.25
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump calls for Ukraine to replace Zelenskyy after clash over Russia diesel deal: 'Get a new president'",
         "link": "https://www.foxnews.com/politics/trump-calls-ukraine-replace-zelenskyy-clash-russia-diesel-deal-get-new-president",
         "source": "Fox News",
@@ -5250,66 +5270,6 @@
         "category": "usa"
       },
       {
-        "title": "Watch as OutKick's Trey Wallace braves Hurricane Isaias' before Alabama-Georgia showdown in Tuscaloosa",
-        "link": "https://www.foxnews.com/outkick-sports/outkick-trey-wallace-braves-hurricane-isaias-alabama-georgia-showdown-tuscaloosa",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump's attendance was halted and kickoff conditions shifted as Hurricane Isaias bears down on the Alabama-Georgia game at Bryant-Denny Stadium.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-10T19:22:00.000Z",
-        "sentiment": {
-          "posP": 8.3,
-          "negP": 0,
-          "neuP": 91.7,
-          "label": "positive",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "President Trump blasts Nobel Peace Prize snub with blistering list of accomplishments: 'WOW!'",
-        "link": "https://www.foxnews.com/politics/president-trump-blasts-nobel-peace-prize-snub-blistering-list-accomplishments-wow",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump sounded off on Truth Social after the Norwegian Nobel Committee passed him over for the 2026 Nobel Peace Prize in favor of Navi Pillay.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-10T18:28:07.000Z",
-        "sentiment": {
-          "posP": 35.9,
-          "negP": 5.3,
-          "neuP": 58.8,
-          "label": "positive",
-          "confidence": 0.94
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Judicial Watch's Thomas Fitton slams FBI's 'drip-drip' release for 75,000 pages of Trump-Butler shooting files",
-        "link": "https://www.foxnews.com/politics/judicial-watch-thomas-fitton-slams-fbi-drip-drip-release-75000-pages-trump-butler-shooting-files",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Judicial Watch's Thomas Fitton says the FBI's 12-year timeline for releasing Thomas Matthew Crooks assassination attempt documents is unacceptable.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-10T18:24:54.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 17.7,
-          "neuP": 82.3,
-          "label": "negative",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
         "title": "Rebuking Ukraine Over Oil Strikes, Trump Says It Should ‘Get a New President’",
         "link": "https://www.nytimes.com/2026/10/10/world/europe/ukraine-russia-trump-diesel-talks.html",
         "source": "NYT",
@@ -5326,6 +5286,66 @@
           "neuP": 75.5,
           "label": "negative",
           "confidence": 0.7
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Some Republicans Reject Trump’s Move to Import Diesel Fuel From Russia",
+        "link": "https://www.nytimes.com/2026/10/10/us/politics/republicans-midterms-trump-diesel-russia.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "High diesel costs have posed a problem for Republicans in the midterms, but President Trump’s decision did not satisfy some candidates in key Senate races.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T22:33:15.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17.8,
+          "neuP": 82.2,
+          "label": "negative",
+          "confidence": 0.71
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Justice Dept. Is Investigating TV Networks Over Trump Pool Coverage",
+        "link": "https://www.nytimes.com/2026/10/10/business/media/trump-justice-department-tv-networks.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Major TV networks were notified on Friday that the department was looking into whether they violated antitrust laws when they suspended pool coverage of President Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T23:21:07.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 15.2,
+          "neuP": 76.9,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "‘Not Pleasant’ but ‘Necessary’: Support at Trump Rally for Public Execution",
+        "link": "https://www.nytimes.com/2026/10/10/us/politics/trump-rally-tennessee-public-execution.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A sample of people at the president’s midterm stump speech in Tennessee defended the Pentagon’s announcement that it would livestream the execution of a mass shooter.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-11T00:11:51.000Z",
+        "sentiment": {
+          "posP": 9.5,
+          "negP": 0,
+          "neuP": 90.5,
+          "label": "positive",
+          "confidence": 0.55
         },
         "category": "usa"
       },
@@ -5359,13 +5379,33 @@
         "description": "Following the latest strike Saturday on Riyadh's King Khalid International Airport, President Trump said the U.S. \"may\" join the fight against the Iran-backed Houthis.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T21:06:00.000Z",
+        "publishedAt": "2026-10-11T00:10:43.000Z",
         "sentiment": {
           "posP": 10.6,
           "negP": 19.7,
           "neuP": 69.7,
           "label": "negative",
           "confidence": 0.42
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Katie Bailey tapped as new White House legislative director",
+        "link": "https://www.cbsnews.com/news/katie-bailey-new-head-of-white-house-office-of-legislative-affairs-sources/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Katie Bailey currently serves as both special assistant to the president and deputy director of legislative affairs.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-10T23:57:00.000Z",
+        "sentiment": {
+          "posP": 9.7,
+          "negP": 0,
+          "neuP": 90.3,
+          "label": "positive",
+          "confidence": 0.4
         },
         "category": "usa"
       },
@@ -5379,7 +5419,7 @@
         "description": "President Trump's criticism of Ukrainian President Volodymyr Zelenskyy comes after Russian strikes killed at least 20 people, including three children, in Ukraine.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T19:12:54.000Z",
+        "publishedAt": "2026-10-10T23:25:00.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 30.3,
@@ -5410,22 +5450,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump's diesel agreement with Putin accused of contradicting Russia sanctions law",
-        "link": "https://www.cnbc.com/2026/10/09/trump-putin-diesel-russia-sanctions-ukraine.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Trump touts diesel deal with Putin ahead of midterms",
+        "link": "https://www.cbsnews.com/video/trump-touts-diesel-deal-with-putin-ahead-of-midterms/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ukraine President Volodymyr Zelenskyy said in a searing statement that the U.S. easing sanctions on Moscow \"plays into Russia's hands.\"",
+        "description": "President Trump says Russia has agreed to release millions of tons of diesel fuel over the next several months in an attempt to combat high prices amid the Iran war. The move comes weeks ahead of the U.S. midterm elections.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-10T02:09:00.000Z",
+        "publishedAt": "2026-10-10T14:46:00.000Z",
         "sentiment": {
-          "posP": 19.6,
-          "negP": 12.3,
-          "neuP": 68.1,
-          "label": "positive",
-          "confidence": 0.4
+          "posP": 3.9,
+          "negP": 13.6,
+          "neuP": 82.5,
+          "label": "negative",
+          "confidence": 0.65
         },
         "category": "usa"
       },
@@ -5448,60 +5488,20 @@
           "confidence": 0.83
         },
         "category": "usa"
-      },
-      {
-        "title": "Trump created a committee to dig into the Fed's Lisa Cook. What is it and what comes next?",
-        "link": "https://www.cnbc.com/2026/10/09/trump-lisa-cook-fed-firing-committee-explained.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump’s bid to fire the Fed's Lisa Cook follows a Supreme Court ruling and could affect Jerome Powell, central bank independence and interest rates.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T19:19:00.000Z",
-        "sentiment": {
-          "posP": 18.3,
-          "negP": 5.1,
-          "neuP": 76.6,
-          "label": "positive",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Media advisor Katie Zacharia offered White House press secretary role",
-        "link": "https://www.cnbc.com/2026/10/09/katie-zacharia-white-house-press-secretary.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The White House has tapped Katie Zacharia to be its next press secretary, a White House official confirmed to CNBC.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-09T19:25:28.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.05,
-      "neu": 83.55,
-      "neg": 9.4,
-      "count": 45
+      "pos": 6.08,
+      "neu": 84.8,
+      "neg": 9.12,
+      "count": 48
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 7.84,
-        "neu": 83.55,
-        "neg": 8.61,
+        "pos": 6.07,
+        "neu": 86.19,
+        "neg": 7.74,
         "count": 10
       },
       {
@@ -5512,31 +5512,24 @@
         "count": 8
       },
       {
-        "source": "Fox News",
-        "pos": 8.87,
-        "neu": 82.45,
-        "neg": 8.68,
-        "count": 6
-      },
-      {
         "source": "NYT",
-        "pos": 6.35,
-        "neu": 82.67,
-        "neg": 10.97,
-        "count": 4
+        "pos": 6.11,
+        "neu": 82.9,
+        "neg": 10.99,
+        "count": 7
       },
       {
         "source": "CBS News",
-        "pos": 7,
-        "neu": 77,
-        "neg": 16,
-        "count": 4
+        "pos": 6.93,
+        "neu": 80.13,
+        "neg": 12.93,
+        "count": 6
       },
       {
-        "source": "ABC News",
-        "pos": 4.25,
-        "neu": 91.35,
-        "neg": 4.4,
+        "source": "Fox News",
+        "pos": 3.6,
+        "neu": 89.13,
+        "neg": 7.28,
         "count": 4
       },
       {
@@ -5544,6 +5537,13 @@
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
+        "count": 4
+      },
+      {
+        "source": "ABC News",
+        "pos": 4.25,
+        "neu": 91.35,
+        "neg": 4.4,
         "count": 4
       },
       {
@@ -5564,17 +5564,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 8.66,
-        "neu": 82.73,
-        "neg": 8.61,
+        "pos": 6.83,
+        "neu": 85.43,
+        "neg": 7.74,
         "count": 19
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.88,
-        "neu": 80.61,
-        "neg": 13.52,
-        "count": 13
+        "pos": 5.35,
+        "neu": 80.84,
+        "neg": 13.81,
+        "count": 15
       },
       {
         "topic": "Policy",
@@ -5585,10 +5585,10 @@
       },
       {
         "topic": "Economy",
-        "pos": 8.47,
-        "neu": 83.07,
-        "neg": 8.47,
-        "count": 3
+        "pos": 7.7,
+        "neu": 85.95,
+        "neg": 6.35,
+        "count": 4
       },
       {
         "topic": "Public Statements",
@@ -5629,28 +5629,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-10T17:31:57.276Z",
+        "label": "2026-10-10T20:23:57.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T18:31:57.276Z",
+        "label": "2026-10-10T21:23:57.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T19:31:57.276Z",
+        "label": "2026-10-10T22:23:57.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T20:31:57.276Z",
+        "label": "2026-10-10T23:23:57.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5659,28 +5659,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-10T17:31:57.276Z",
+        "label": "2026-10-10T20:23:57.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T18:31:57.276Z",
+        "label": "2026-10-10T21:23:57.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T19:31:57.276Z",
+        "label": "2026-10-10T22:23:57.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-10T20:31:57.276Z",
+        "label": "2026-10-10T23:23:57.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5760,7 +5760,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-10T21:31:57.277Z",
+    "generatedAt": "2026-10-11T00:23:57.785Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5881,8 +5881,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 182,
-      "potusArticles": 45,
+      "usaArticles": 188,
+      "potusArticles": 48,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
