@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-11T21:47:09.238Z",
+  "generatedAt": "2026-10-12T00:45:13.310Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 177,
-    "potusArticles": 41
+    "usaArticles": 184,
+    "potusArticles": 44
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-11T17:47:09.239Z",
+          "label": "2026-10-11T20:45:13.311Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-11T18:47:09.239Z",
+          "label": "2026-10-11T21:45:13.311Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-11T19:47:09.239Z",
+          "label": "2026-10-11T22:45:13.311Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-11T20:47:09.239Z",
+          "label": "2026-10-11T23:45:13.311Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-11T17:47:09.239Z",
+          "label": "2026-10-11T20:45:13.311Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-11T18:47:09.239Z",
+          "label": "2026-10-11T21:45:13.311Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-11T19:47:09.239Z",
+          "label": "2026-10-11T22:45:13.311Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-11T20:47:09.239Z",
+          "label": "2026-10-11T23:45:13.311Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 6.78,
-      "neu": 82.92,
-      "neg": 10.3,
-      "count": 177
+      "pos": 6.81,
+      "neu": 82.55,
+      "neg": 10.64,
+      "count": 184
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.3,
-        "neu": 84.15,
-        "neg": 7.55,
-        "count": 39
+        "pos": 8.08,
+        "neu": 83.51,
+        "neg": 8.42,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 7.91,
-        "neu": 79.48,
-        "neg": 12.62,
+        "pos": 7.42,
+        "neu": 78.6,
+        "neg": 13.98,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 3.56,
-        "neu": 85.88,
-        "neg": 10.55,
+        "pos": 4.83,
+        "neu": 83,
+        "neg": 12.16,
         "count": 26
+      },
+      {
+        "source": "NYT",
+        "pos": 5.87,
+        "neu": 83.1,
+        "neg": 11.03,
+        "count": 22
       },
       {
         "source": "WSJ",
@@ -4598,17 +4605,10 @@
       },
       {
         "source": "Washington Post",
-        "pos": 6.52,
-        "neu": 84.81,
-        "neg": 8.67,
-        "count": 18
-      },
-      {
-        "source": "NYT",
-        "pos": 6.51,
-        "neu": 79.35,
-        "neg": 14.14,
-        "count": 16
+        "pos": 6.91,
+        "neu": 84.41,
+        "neg": 8.69,
+        "count": 17
       },
       {
         "source": "NPR",
@@ -4635,19 +4635,9 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Materials",
-          "bias": -15.7,
-          "count": 5
-        },
-        {
           "name": "Utilities",
-          "bias": -12.2,
-          "count": 3
-        },
-        {
-          "name": "Real Estate",
-          "bias": 9.25,
-          "count": 2
+          "bias": -12.9,
+          "count": 4
         },
         {
           "name": "Communication",
@@ -4655,23 +4645,57 @@
           "count": 3
         },
         {
-          "name": "Energy",
-          "bias": -6.22,
-          "count": 17
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
         },
         {
           "name": "Finance",
-          "bias": -5.17,
+          "bias": -4.99,
           "count": 15
         },
         {
           "name": "Technology",
-          "bias": -3.66,
-          "count": 138
+          "bias": -3.87,
+          "count": 144
         },
         {
           "name": "Healthcare",
-          "bias": -3.5,
+          "bias": -3.78,
+          "count": 9
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -3.1,
+          "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": -2.27,
+          "count": 23
+        },
+        {
+          "name": "Materials",
+          "bias": 2,
+          "count": 4
+        }
+      ],
+      "pos": [
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
+        }
+      ],
+      "neu": [
+        {
+          "name": "Technology",
+          "bias": -3.87,
+          "count": 144
+        },
+        {
+          "name": "Healthcare",
+          "bias": -3.78,
           "count": 9
         },
         {
@@ -4680,77 +4704,53 @@
           "count": 2
         }
       ],
-      "pos": [
-        {
-          "name": "Real Estate",
-          "bias": 9.25,
-          "count": 2
-        }
-      ],
-      "neu": [
-        {
-          "name": "Energy",
-          "bias": -6.22,
-          "count": 17
-        },
-        {
-          "name": "Finance",
-          "bias": -5.17,
-          "count": 15
-        },
-        {
-          "name": "Technology",
-          "bias": -3.66,
-          "count": 138
-        }
-      ],
       "neg": [
         {
-          "name": "Materials",
-          "bias": -15.7,
-          "count": 5
-        },
-        {
           "name": "Utilities",
-          "bias": -12.2,
-          "count": 3
+          "bias": -12.9,
+          "count": 4
         },
         {
           "name": "Communication",
           "bias": -8.27,
           "count": 3
+        },
+        {
+          "name": "Finance",
+          "bias": -4.99,
+          "count": 15
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-11T17:47:09.240Z",
-          "pos": 6,
-          "neu": 82,
-          "neg": 11,
-          "count": 7
-        },
-        {
-          "label": "2026-10-11T18:47:09.240Z",
-          "pos": 5,
-          "neu": 83,
-          "neg": 13,
-          "count": 16
-        },
-        {
-          "label": "2026-10-11T19:47:09.240Z",
-          "pos": 7,
-          "neu": 82,
+          "label": "2026-10-11T20:45:13.313Z",
+          "pos": 8,
+          "neu": 81,
           "neg": 12,
-          "count": 15
+          "count": 11
         },
         {
-          "label": "2026-10-11T20:47:09.240Z",
-          "pos": 6,
+          "label": "2026-10-11T21:45:13.313Z",
+          "pos": 7,
+          "neu": 81,
+          "neg": 12,
+          "count": 13
+        },
+        {
+          "label": "2026-10-11T22:45:13.313Z",
+          "pos": 5,
+          "neu": 85,
+          "neg": 10,
+          "count": 17
+        },
+        {
+          "label": "2026-10-11T23:45:13.313Z",
+          "pos": 5,
           "neu": 82,
-          "neg": 11,
-          "count": 9
+          "neg": 14,
+          "count": 19
         }
       ]
     }
@@ -4958,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "GOP senator calls for FCC probe of ABC News over Trump sons-Anduril 'political hit job'",
-        "link": "https://www.foxnews.com/media/gop-senator-calls-fcc-probe-abc-news-trump-sons-anduril-political-hit-job",
+        "title": "Minnesota homecoming shooting suspect out on bond after gunfire sends football fans fleeing",
+        "link": "https://www.foxnews.com/us/minnesota-homecoming-shooting-suspect-bond-gunfire-sends-football-fans-fleeing",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Sen. Bernie Moreno urged the FCC to investigate ABC News over a retracted report linking Donald Trump Jr. and Anduril Industries to government contracts.",
+        "description": "Adam Abdihakeem Adam posted bond two days after his arrest in the Eden Prairie homecoming shooting, drawing sharp criticism from President Donald Trump's team.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-11T20:43:19.000Z",
+        "publishedAt": "2026-10-11T23:25:53.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 18.1,
+          "neuP": 81.9,
+          "label": "negative",
+          "confidence": 0.76
         },
         "category": "usa"
       },
       {
-        "title": "In Springfield, Ohio, Trump must settle the MAGA vs Chamber of Commerce war",
-        "link": "https://www.foxnews.com/opinion/springfield-ohio-trump-settle-maga-vs-chamber-commerce-war",
+        "title": "Trump and Rubio weigh firing Kimberly Guilfoyle as misconduct and donor bailout allegations mount",
+        "link": "https://www.foxnews.com/politics/trump-rubio-weigh-firing-kimberly-guilfoyle-misconduct-donor-bailout-allegations-mount",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Springfield, Ohio, small business owners reveal what they need from Vivek Ramaswamy and John Husted on taxes, regulations, and immigration reform.",
+        "description": "Kimberly Guilfoyle faces mounting allegations in Greece as JD Vance and Marco Rubio weigh in on the embattled ambassador's growing controversies.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-11T19:41:04.000Z",
+        "publishedAt": "2026-10-11T22:55:22.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 10.6,
-          "neuP": 89.4,
+          "posP": 4.5,
+          "negP": 10.1,
+          "neuP": 85.4,
           "label": "negative",
-          "confidence": 0.6
+          "confidence": 0.27
         },
         "category": "usa"
       }
@@ -5200,6 +5200,66 @@
         "category": "world"
       },
       {
+        "title": "Minnesota homecoming shooting suspect out on bond after gunfire sends football fans fleeing",
+        "link": "https://www.foxnews.com/us/minnesota-homecoming-shooting-suspect-bond-gunfire-sends-football-fans-fleeing",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Adam Abdihakeem Adam posted bond two days after his arrest in the Eden Prairie homecoming shooting, drawing sharp criticism from President Donald Trump's team.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-11T23:25:53.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 18.1,
+          "neuP": 81.9,
+          "label": "negative",
+          "confidence": 0.76
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump and Rubio weigh firing Kimberly Guilfoyle as misconduct and donor bailout allegations mount",
+        "link": "https://www.foxnews.com/politics/trump-rubio-weigh-firing-kimberly-guilfoyle-misconduct-donor-bailout-allegations-mount",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Kimberly Guilfoyle faces mounting allegations in Greece as JD Vance and Marco Rubio weigh in on the embattled ambassador's growing controversies.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-11T22:55:22.000Z",
+        "sentiment": {
+          "posP": 4.5,
+          "negP": 10.1,
+          "neuP": 85.4,
+          "label": "negative",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Russia deal could fuel Putin's war, ex-NATO commander warns as Zelenskyy says 'nyet'",
+        "link": "https://www.foxnews.com/world/trump-russia-deal-could-fuel-putins-war-ex-nato-commander-warns-zelenskyy-says-nyet",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Donald Trump's energy ceasefire could hand Vladimir Putin fresh revenue to fuel Russia's war in Ukraine, former NATO commander Breedlove warns.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-11T21:56:55.000Z",
+        "sentiment": {
+          "posP": 16.5,
+          "negP": 22.9,
+          "neuP": 60.6,
+          "label": "negative",
+          "confidence": 0.46
+        },
+        "category": "usa"
+      },
+      {
         "title": "GOP senator calls for FCC probe of ABC News over Trump sons-Anduril 'political hit job'",
         "link": "https://www.foxnews.com/media/gop-senator-calls-fcc-probe-abc-news-trump-sons-anduril-political-hit-job",
         "source": "Fox News",
@@ -5216,26 +5276,6 @@
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "In Springfield, Ohio, Trump must settle the MAGA vs Chamber of Commerce war",
-        "link": "https://www.foxnews.com/opinion/springfield-ohio-trump-settle-maga-vs-chamber-commerce-war",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Springfield, Ohio, small business owners reveal what they need from Vivek Ramaswamy and John Husted on taxes, regulations, and immigration reform.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-11T19:41:04.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 10.6,
-          "neuP": 89.4,
-          "label": "negative",
-          "confidence": 0.6
         },
         "category": "usa"
       },
@@ -5260,26 +5300,6 @@
         "category": "usa"
       },
       {
-        "title": "How the White House Manufactured a Narrative About a Trump Aide’s Call Logs",
-        "link": "https://www.nytimes.com/2026/10/11/us/politics/white-house-manufactured-narrative-solomon.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A release of selected records from the classified documents inquiry is a case study in how omitting context can create political ammunition.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-11T19:15:03.000Z",
-        "sentiment": {
-          "posP": 6.5,
-          "negP": 0,
-          "neuP": 93.5,
-          "label": "positive",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump announces Russia-Ukraine \"energy ceasefire\" after criticizing Zelenskyy",
         "link": "https://www.cbsnews.com/news/zelenskyy-trump-new-ukrainian-president/",
         "source": "CBS News",
@@ -5289,7 +5309,7 @@
         "description": "Ukrainian President Volodymyr Zelenskyy said Russia alone is responsible for the war in Ukraine, after President Trump said he should be replaced.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-11T20:39:21.000Z",
+        "publishedAt": "2026-10-12T00:14:46.000Z",
         "sentiment": {
           "posP": 11.6,
           "negP": 22.2,
@@ -5300,42 +5320,42 @@
         "category": "usa"
       },
       {
-        "title": "Sen. Chris Murphy says Trump administration is \"absolutely incompetent in war making\"",
-        "link": "https://www.cbsnews.com/video/sen-chris-murphy-says-trump-administration-is-absolutely-incompetent-in-war-making/",
+        "title": "Trump announces Russia-Ukraine energy ceasefire, Russia later strikes Ukraine",
+        "link": "https://www.cbsnews.com/video/trump-announces-russia-ukraine-energy-ceasefire-russia-later-strikes-ukraine/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Democratic Sen. Chris Murphy of Connecticut on \"Face the Nation with Margaret Brennan\" slammed the Trump administration for its handling of the Iran war, saying \"if the Trump administration was trying to lose this war, they couldn't do worse than they are doing,\" adding he believes they are \"absolutely incompetent in war making.\"",
+        "description": "President Trump announced that he struck an energy ceasefire with Ukraine and Russia. Hours later, the Russians hit a neighborhood in the Ukrainian city of Kharkiv, including a power plant. It follows new criticism for the president's diesel deal with Russia. Taurean Small reports from the White House.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-11T17:14:55.000Z",
+        "publishedAt": "2026-10-12T00:11:31.000Z",
         "sentiment": {
-          "posP": 3,
-          "negP": 30.7,
-          "neuP": 66.3,
+          "posP": 6.8,
+          "negP": 12,
+          "neuP": 81.2,
           "label": "negative",
-          "confidence": 0.98
+          "confidence": 0.49
         },
         "category": "usa"
       },
       {
-        "title": "Trump claims Russia and Ukraine agree to energy ceasefire, but Zelenskyy says that’s ‘news for me’",
-        "link": "https://www.nbcnews.com/world/ukraine/trump-russia-ukraine-agree-energy-ceasefire-zelenskyy-diesel-rcna602766",
+        "title": "Trump claims Russia and Ukraine agree to energy ceasefire",
+        "link": "https://www.nbcnews.com/nightly-news/video/trump-claims-russia-and-ukraine-agree-to-energy-ceasefire-271416901581",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump made a similar announcement a month ago, only for the two sides to continue their aerial attacks on each other’s energy facilities.",
+        "description": "President Trump claimed Sunday that Ukraine and Russia have agreed to an “energy ceasefire” as part of the ongoing conflict. There was no immediate confirmation from Moscow, while Ukrainian President Volodymyr Zelenskyy says they are ready to take all necessary steps to end the war. NBC News’ Yamiche Alcindor reports.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-11T15:02:43.000Z",
+        "publishedAt": "2026-10-11T22:49:56.000Z",
         "sentiment": {
-          "posP": 13.3,
-          "negP": 8.6,
-          "neuP": 78.1,
+          "posP": 13.2,
+          "negP": 12.1,
+          "neuP": 74.7,
           "label": "neutral",
-          "confidence": 0.03
+          "confidence": 0.05
         },
         "category": "usa"
       },
@@ -5356,6 +5376,26 @@
           "neuP": 84.2,
           "label": "neutral",
           "confidence": 0.18
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump claims Russia and Ukraine agree to energy ceasefire, but Zelenskyy says that’s ‘news for me’",
+        "link": "https://www.nbcnews.com/world/ukraine/trump-russia-ukraine-agree-energy-ceasefire-zelenskyy-diesel-rcna602766",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump made a similar announcement a month ago, only for the two sides to continue their aerial attacks on each other’s energy facilities.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-11T15:02:43.000Z",
+        "sentiment": {
+          "posP": 13.3,
+          "negP": 8.6,
+          "neuP": 78.1,
+          "label": "neutral",
+          "confidence": 0.03
         },
         "category": "usa"
       },
@@ -5400,6 +5440,26 @@
         "category": "usa"
       },
       {
+        "title": "Judge orders Trump admin to stop airing challenged government-funded ads immediately",
+        "link": "https://www.cnbc.com/2026/10/11/trump-ads-dhs-judge-order.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The ads have been criticized as government propaganda and as aimed at influencing the outcome of the midterm election, which will determine control of Congress.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-12T00:29:50.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 20.2,
+          "neuP": 79.8,
+          "label": "negative",
+          "confidence": 0.73
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump says he is 'going to look at' joining Saudi Arabia in the fight against Iran-backed Houthis after deadly airport strike",
         "link": "https://www.cnbc.com/2026/10/11/trump-saudi-arabia-iran-houthis.html",
         "source": "CNBC",
@@ -5418,88 +5478,35 @@
           "confidence": 0.73
         },
         "category": "usa"
-      },
-      {
-        "title": "Trump declares 'energy ceasefire' between Russia and Ukraine; Zelenskyy is waiting for details",
-        "link": "https://www.cnbc.com/2026/10/11/trump-energy-ceasefire-russia-ukraine-zelenskyy.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ukrainian President Volodymyr Zelenskyy said he is waiting on details from Washington.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-11T19:33:51.000Z",
-        "sentiment": {
-          "posP": 8,
-          "negP": 0,
-          "neuP": 92,
-          "label": "positive",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Justice Department investigates TV networks as White House press-access fight escalates",
-        "link": "https://www.cnbc.com/2026/10/11/trump-doj-white-house-tv-press-pool-antitrust.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Justice Department said in a statement that it is examining whether the White House TV press pool violated the Sherman Act.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-11T20:18:38.000Z",
-        "sentiment": {
-          "posP": 16.7,
-          "negP": 14.7,
-          "neuP": 68.6,
-          "label": "positive",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Putin relayed Iran war proposal to Trump, Kremlin says",
-        "link": "https://www.cnbc.com/2026/10/10/putin-trump-iran-war-russia-diesel.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Putin's reported call with Trump regarding the Iran war comes on the heels of a deal for the U.S. to buy Russian diesel amid a surge in fuel prices.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-10T13:42:36.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 18.7,
-          "neuP": 81.3,
-          "label": "negative",
-          "confidence": 0.83
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.22,
-      "neu": 85.07,
-      "neg": 8.71,
-      "count": 41
+      "pos": 6.09,
+      "neu": 84.68,
+      "neg": 9.22,
+      "count": 44
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.78,
-        "neu": 81.53,
-        "neg": 9.69,
-        "count": 10
+        "pos": 7.52,
+        "neu": 82.9,
+        "neg": 9.58,
+        "count": 11
       },
       {
         "source": "Washington Post",
-        "pos": 7.54,
-        "neu": 86.43,
-        "neg": 6.03,
-        "count": 7
+        "pos": 6.6,
+        "neu": 85.83,
+        "neg": 7.57,
+        "count": 8
+      },
+      {
+        "source": "Fox News",
+        "pos": 6,
+        "neu": 83.78,
+        "neg": 10.22,
+        "count": 5
       },
       {
         "source": "ABC News",
@@ -5507,13 +5514,6 @@
         "neu": 87.92,
         "neg": 7.04,
         "count": 5
-      },
-      {
-        "source": "NYT",
-        "pos": 6.3,
-        "neu": 87.5,
-        "neg": 6.2,
-        "count": 4
       },
       {
         "source": "WSJ",
@@ -5530,17 +5530,17 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 3,
-        "neu": 93.47,
-        "neg": 3.53,
+        "source": "NYT",
+        "pos": 6.23,
+        "neu": 85.5,
+        "neg": 8.27,
         "count": 3
       },
       {
         "source": "CBS News",
-        "pos": 6.2,
-        "neu": 71.5,
-        "neg": 22.3,
+        "pos": 7.47,
+        "neu": 76.47,
+        "neg": 16.07,
         "count": 3
       },
       {
@@ -5554,24 +5554,31 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.92,
-        "neu": 86.74,
-        "neg": 7.34,
-        "count": 16
+        "pos": 5.46,
+        "neu": 85.98,
+        "neg": 8.56,
+        "count": 17
       },
       {
         "topic": "Foreign Policy",
-        "pos": 6.44,
-        "neu": 83.58,
-        "neg": 9.99,
-        "count": 14
+        "pos": 7.91,
+        "neu": 81.58,
+        "neg": 10.51,
+        "count": 16
       },
       {
         "topic": "Policy",
-        "pos": 2.67,
-        "neu": 85.98,
-        "neg": 11.35,
-        "count": 6
+        "pos": 3.25,
+        "neu": 90.05,
+        "neg": 6.7,
+        "count": 4
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 5.57,
+        "neu": 89.53,
+        "neg": 4.9,
+        "count": 3
       },
       {
         "topic": "Economy",
@@ -5581,18 +5588,11 @@
         "count": 2
       },
       {
-        "topic": "Public Statements",
-        "pos": 8.35,
-        "neu": 84.3,
-        "neg": 7.35,
-        "count": 2
-      },
-      {
         "topic": "Legal",
-        "pos": 18.3,
-        "neu": 76.6,
-        "neg": 5.1,
-        "count": 1
+        "pos": 0,
+        "neu": 80.7,
+        "neg": 19.3,
+        "count": 2
       }
     ]
   },
@@ -5619,28 +5619,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-11T17:47:09.242Z",
+        "label": "2026-10-11T20:45:13.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-11T18:47:09.242Z",
+        "label": "2026-10-11T21:45:13.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-11T19:47:09.242Z",
+        "label": "2026-10-11T22:45:13.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-11T20:47:09.242Z",
+        "label": "2026-10-11T23:45:13.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5649,28 +5649,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-11T17:47:09.242Z",
+        "label": "2026-10-11T20:45:13.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-11T18:47:09.242Z",
+        "label": "2026-10-11T21:45:13.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-11T19:47:09.242Z",
+        "label": "2026-10-11T22:45:13.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-11T20:47:09.242Z",
+        "label": "2026-10-11T23:45:13.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5750,7 +5750,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-11T21:47:09.243Z",
+    "generatedAt": "2026-10-12T00:45:13.317Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5871,8 +5871,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 177,
-      "potusArticles": 41,
+      "usaArticles": 184,
+      "potusArticles": 44,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
