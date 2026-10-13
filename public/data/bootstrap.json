@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-12T22:52:12.235Z",
+  "generatedAt": "2026-10-13T10:44:14.826Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 187,
-    "potusArticles": 46
+    "potusArticles": 41
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-12T18:52:12.235Z",
+          "label": "2026-10-13T06:44:14.826Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-12T19:52:12.235Z",
+          "label": "2026-10-13T07:44:14.826Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-12T20:52:12.235Z",
+          "label": "2026-10-13T08:44:14.826Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-12T21:52:12.235Z",
+          "label": "2026-10-13T09:44:14.826Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-12T18:52:12.235Z",
+          "label": "2026-10-13T06:44:14.826Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-12T19:52:12.235Z",
+          "label": "2026-10-13T07:44:14.826Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-12T20:52:12.235Z",
+          "label": "2026-10-13T08:44:14.826Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-12T21:52:12.235Z",
+          "label": "2026-10-13T09:44:14.826Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 6.95,
-      "neu": 82.38,
-      "neg": 10.67,
+      "pos": 7.75,
+      "neu": 81.63,
+      "neg": 10.62,
       "count": 187
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.7,
-        "neu": 83.12,
-        "neg": 9.18,
+        "pos": 10.34,
+        "neu": 79.88,
+        "neg": 9.78,
         "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 8.66,
-        "neu": 78.1,
-        "neg": 13.24,
+        "pos": 8.55,
+        "neu": 77.39,
+        "neg": 14.07,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 3.16,
-        "neu": 82.8,
-        "neg": 14.04,
+        "pos": 3.58,
+        "neu": 83.98,
+        "neg": 12.44,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.03,
-        "neu": 79.96,
-        "neg": 13.01,
+        "pos": 7.15,
+        "neu": 80.22,
+        "neg": 12.64,
         "count": 22
       },
       {
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 11.03,
-        "neu": 84.85,
-        "neg": 4.12,
+        "pos": 10.54,
+        "neu": 83.4,
+        "neg": 6.06,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 4.27,
-        "neu": 88.33,
-        "neg": 7.4,
+        "pos": 6.33,
+        "neu": 88.53,
+        "neg": 5.14,
         "count": 20
       },
       {
@@ -4636,121 +4636,121 @@
       "rows": [
         {
           "name": "Utilities",
-          "bias": -15.97,
-          "count": 3
-        },
-        {
-          "name": "Healthcare",
-          "bias": -9.64,
-          "count": 9
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -9.4,
-          "count": 1
-        },
-        {
-          "name": "Technology",
-          "bias": -4.45,
-          "count": 132
-        },
-        {
-          "name": "Real Estate",
-          "bias": 4.15,
+          "bias": -23.05,
           "count": 2
         },
         {
           "name": "Communication",
-          "bias": -4,
-          "count": 4
+          "bias": -11.63,
+          "count": 3
         },
         {
           "name": "Materials",
-          "bias": -1.6,
-          "count": 5
+          "bias": -6.93,
+          "count": 3
         },
         {
-          "name": "Finance",
-          "bias": 0.96,
-          "count": 16
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
         },
         {
           "name": "Energy",
-          "bias": 0.42,
+          "bias": -4.03,
+          "count": 19
+        },
+        {
+          "name": "Technology",
+          "bias": -3.18,
+          "count": 138
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -1.83,
+          "count": 3
+        },
+        {
+          "name": "Finance",
+          "bias": -0.68,
           "count": 18
+        },
+        {
+          "name": "Healthcare",
+          "bias": -0.08,
+          "count": 8
         }
       ],
       "pos": [
         {
           "name": "Real Estate",
-          "bias": 4.15,
-          "count": 2
+          "bias": 5.9,
+          "count": 1
         }
       ],
       "neu": [
         {
+          "name": "Energy",
+          "bias": -4.03,
+          "count": 19
+        },
+        {
           "name": "Technology",
-          "bias": -4.45,
-          "count": 132
+          "bias": -3.18,
+          "count": 138
         },
         {
-          "name": "Communication",
-          "bias": -4,
-          "count": 4
-        },
-        {
-          "name": "Materials",
-          "bias": -1.6,
-          "count": 5
+          "name": "Manufacturing",
+          "bias": -1.83,
+          "count": 3
         }
       ],
       "neg": [
         {
           "name": "Utilities",
-          "bias": -15.97,
+          "bias": -23.05,
+          "count": 2
+        },
+        {
+          "name": "Communication",
+          "bias": -11.63,
           "count": 3
         },
         {
-          "name": "Healthcare",
-          "bias": -9.64,
-          "count": 9
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -9.4,
-          "count": 1
+          "name": "Materials",
+          "bias": -6.93,
+          "count": 3
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-12T18:52:12.237Z",
+          "label": "2026-10-13T06:44:14.828Z",
+          "pos": 4,
+          "neu": 78,
+          "neg": 18,
+          "count": 3
+        },
+        {
+          "label": "2026-10-13T07:44:14.828Z",
+          "pos": 12,
+          "neu": 81,
+          "neg": 6,
+          "count": 4
+        },
+        {
+          "label": "2026-10-13T08:44:14.828Z",
           "pos": 7,
-          "neu": 82,
-          "neg": 11,
-          "count": 9
-        },
-        {
-          "label": "2026-10-12T19:52:12.237Z",
-          "pos": 10,
-          "neu": 80,
-          "neg": 10,
-          "count": 17
-        },
-        {
-          "label": "2026-10-12T20:52:12.237Z",
-          "pos": 6,
           "neu": 83,
-          "neg": 12,
-          "count": 20
+          "neg": 10,
+          "count": 26
         },
         {
-          "label": "2026-10-12T21:52:12.237Z",
-          "pos": 3,
-          "neu": 84,
-          "neg": 13,
-          "count": 24
+          "label": "2026-10-13T09:44:14.828Z",
+          "pos": 8,
+          "neu": 77,
+          "neg": 15,
+          "count": 15
         }
       ]
     }
@@ -4958,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "After Russian Diesel Deal, Trump Faces New Crisis Over Ukraine",
-        "link": "https://www.nytimes.com/2026/10/12/world/europe/russia-ukraine-war-us-diesel-deal-negotiations.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump's new press secretary faces first major test as White House briefing room enters new era",
+        "link": "https://www.foxnews.com/politics/trumps-new-press-secretary-faces-first-major-test-white-house-briefing-room-enters-new-era",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump’s surprise decision to suspend sanctions on Russian diesel fuel stunned Ukrainian and European officials, who were meeting with U.S. envoys at an exclusive golf club near Miami.",
+        "description": "Katie Zacharia makes her White House press briefing room debut Tuesday, ending a weeks-long stretch without a permanent press secretary at the podium.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-12T22:12:38.000Z",
+        "publishedAt": "2026-10-13T10:00:57.000Z",
         "sentiment": {
-          "posP": 7.9,
-          "negP": 17.2,
-          "neuP": 74.9,
-          "label": "negative",
-          "confidence": 0.64
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Trump Gives Putin a Hand in Russia’s Economic War With Ukraine",
-        "link": "https://www.nytimes.com/2026/10/12/world/europe/russia-diesel-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Kimberly Guilfoyle faces potential Senate probe over bombshell $100K allegation",
+        "link": "https://www.foxnews.com/politics/kimberly-guilfoyle-faces-potential-senate-probe-over-bombshell-100k-allegation",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump is moving to buy Russian diesel while also pressuring Ukraine to halt attacks on refineries, a lifeblood of Moscow’s war machine.",
+        "description": "Kimberly Guilfoyle faces a likely Senate investigation after allegations she sought to have a Trump donor clear $100,000 in personal credit card debt.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-12T17:20:14.000Z",
+        "publishedAt": "2026-10-13T09:20:27.000Z",
         "sentiment": {
-          "posP": 7.4,
-          "negP": 30.3,
-          "neuP": 62.3,
-          "label": "negative",
-          "confidence": 0.87
+          "posP": 14.6,
+          "negP": 7,
+          "neuP": 78.4,
+          "label": "positive",
+          "confidence": 0.4
         },
         "category": "usa"
       }
@@ -5200,276 +5200,16 @@
         "category": "world"
       },
       {
-        "title": "After Russian Diesel Deal, Trump Faces New Crisis Over Ukraine",
-        "link": "https://www.nytimes.com/2026/10/12/world/europe/russia-ukraine-war-us-diesel-deal-negotiations.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump's new press secretary faces first major test as White House briefing room enters new era",
+        "link": "https://www.foxnews.com/politics/trumps-new-press-secretary-faces-first-major-test-white-house-briefing-room-enters-new-era",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump’s surprise decision to suspend sanctions on Russian diesel fuel stunned Ukrainian and European officials, who were meeting with U.S. envoys at an exclusive golf club near Miami.",
+        "description": "Katie Zacharia makes her White House press briefing room debut Tuesday, ending a weeks-long stretch without a permanent press secretary at the podium.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-12T22:12:38.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 17.2,
-          "neuP": 74.9,
-          "label": "negative",
-          "confidence": 0.64
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Gives Putin a Hand in Russia’s Economic War With Ukraine",
-        "link": "https://www.nytimes.com/2026/10/12/world/europe/russia-diesel-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is moving to buy Russian diesel while also pressuring Ukraine to halt attacks on refineries, a lifeblood of Moscow’s war machine.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-12T17:20:14.000Z",
-        "sentiment": {
-          "posP": 7.4,
-          "negP": 30.3,
-          "neuP": 62.3,
-          "label": "negative",
-          "confidence": 0.87
-        },
-        "category": "usa"
-      },
-      {
-        "title": "A Trump Loyalist, a Turkish Investor and a Battle for Wealth and Influence",
-        "link": "https://www.nytimes.com/2026/10/12/us/politics/a-trump-loyalist-a-turkish-investor-and-a-battle-for-wealth-and-influence.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A Turkish businessman once allied with the Maduro regime has tied the knot with President Trump’s former personal lawyer, Alina Habba, at the same time he is seeking to retain a big contract in Venezuela.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-12T20:41:21.000Z",
-        "sentiment": {
-          "posP": 11.8,
-          "negP": 5.4,
-          "neuP": 82.8,
-          "label": "positive",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Judge Orders Trump Administration to Answer for Tree Removals at D.C. Golf Course",
-        "link": "https://www.nytimes.com/2026/10/12/us/politics/judge-trees-golf-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "During a four-hour hearing, a federal judge demanded answers from the Trump administration about who authorized the removal of hundreds of trees at the East Potomac Golf Links.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-12T22:29:42.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 4.8,
-          "neuP": 95.2,
-          "label": "negative",
-          "confidence": 0.23
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he's \"looking at\" firing Kimberly Guilfoyle",
-        "link": "https://www.cbsnews.com/news/trump-says-hes-looking-at-firing-kimberly-guilfoyle/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "\"Well, we're looking at it,\" President Trump said when asked if he's considering firing U.S. Ambassador to Greece Kimberly Guilfoyle.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-12T22:41:28.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 15.6,
-          "neuP": 84.4,
-          "label": "negative",
-          "confidence": 0.59
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Michigan GOP governor hopeful John James says \"Trump doesn't speak for\" state amid Canada tariff war",
-        "link": "https://www.cbsnews.com/video/michigan-gop-governor-hopeful-john-james-trump-doesnt-speak-for-state-canada-tariff-war/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Republican Rep. John James, the Republican nominee for governor in Michigan, is running behind Democrat Jocelyn Benson in the polls as tariffs and the war with Iran dominate the race. James joins \"The Takeout\" to discuss the state of his campaign.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-12T22:30:25.000Z",
-        "sentiment": {
-          "posP": 5,
-          "negP": 14.2,
-          "neuP": 80.8,
-          "label": "negative",
-          "confidence": 0.72
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump weighing joining Saudis in fight against Houthis",
-        "link": "https://www.cbsnews.com/video/trump-weighing-joining-saudis-fight-houthis/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump says he is weighing having U.S. forces join Saudi Arabia in its intensifying battle against Houthi forces in Yemen. Former House Armed Services investigator Joe Cirincione joins with analysis.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-12T22:28:04.000Z",
-        "sentiment": {
-          "posP": 5.1,
-          "negP": 12,
-          "neuP": 82.9,
-          "label": "negative",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he's \"looking at\" firing Kimberly Guilfoyle: \"We're not happy\"",
-        "link": "https://www.cbsnews.com/video/trump-looking-firing-kimberly-guilfoyle-not-happy/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump said Monday he was \"looking at\" firing Kimberly Guilfoyle as U.S. ambassador to Greece after an associate of Guilfoyle's alleged she asked him to wire $100,000 to pay her American Express bill in exchange for her help with the Trump administration ahead of her Senate confirmation hearing. CBS News political director Fin Gómez and Washington Sun politics reporter Kadia Goba join to discuss.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-12T22:27:16.000Z",
-        "sentiment": {
-          "posP": 6,
-          "negP": 7.6,
-          "neuP": 86.4,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Saudi airport stays shut as Houthi attacks kill 20 people in a week",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-saudi-arabia-houthi/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump considers joining Saudi attacks on Iran's Houthi allies in Yemen after a week of Houthi strikes kills 20 people, including an American, at Riyadh's airport.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-12T21:50:41.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 34,
-          "neuP": 66,
-          "label": "negative",
-          "confidence": 0.95
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump threatens Ukraine over high energy prices mainly caused by Iran war",
-        "link": "https://www.cbsnews.com/video/trump-threatens-ukraine-high-energy-prices-mainly-caused-iran-war/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Over the weekend, President Trump said Ukraine needs a new president. CBS News has also confirmed Mr. Trump is threatening to withhold from Ukraine intelligence on Russian ballistic missile attacks. He's also threatening to suspend European purchases of U.S.-made weapons the Europeans provide to Ukraine. CBS News' Major Garrett and Nikole Killion have more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-12T21:41:34.000Z",
-        "sentiment": {
-          "posP": 6.3,
-          "negP": 25.9,
-          "neuP": 67.8,
-          "label": "negative",
-          "confidence": 0.95
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
-        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-24T22:56:00.000Z",
+        "publishedAt": "2026-10-13T10:00:57.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5478,55 +5218,315 @@
           "confidence": 0
         },
         "category": "usa"
+      },
+      {
+        "title": "Kimberly Guilfoyle faces potential Senate probe over bombshell $100K allegation",
+        "link": "https://www.foxnews.com/politics/kimberly-guilfoyle-faces-potential-senate-probe-over-bombshell-100k-allegation",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Kimberly Guilfoyle faces a likely Senate investigation after allegations she sought to have a Trump donor clear $100,000 in personal credit card debt.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T09:20:27.000Z",
+        "sentiment": {
+          "posP": 14.6,
+          "negP": 7,
+          "neuP": 78.4,
+          "label": "positive",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Booker ‘wowed’ by GOP challenger’s blunt message to Trump",
+        "link": "https://www.foxnews.com/politics/booker-wowed-gop-challengers-blunt-message-trump",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Justin Murphy told Trump to \"finish it\" on Iran, drawing applause and a stunned reaction from Cory Booker during their New Jersey Senate debate.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T09:00:47.000Z",
+        "sentiment": {
+          "posP": 8.2,
+          "negP": 4.1,
+          "neuP": 87.7,
+          "label": "positive",
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Protester punched in face by Trump supporter, mocked by president at Ohio rally: 'Gotta go on a diet'",
+        "link": "https://www.foxnews.com/politics/protester-punched-face-trump-supporter-mocked-president-ohio-rally-gotta-go-diet",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A supporter of President Donald Trump punched a heckler wearing a \"Release the Epstein Files\" shirt at the president's Youngstown, Ohio, rally.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T04:57:26.000Z",
+        "sentiment": {
+          "posP": 10.6,
+          "negP": 5.8,
+          "neuP": 83.6,
+          "label": "positive",
+          "confidence": 0.23
+        },
+        "category": "usa"
+      },
+      {
+        "title": "U.K. and Europe Recoil From Trump’s Diesel Deal With Putin",
+        "link": "https://www.nytimes.com/2026/10/13/world/europe/trump-putin-diesel-uk-europe-gift.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Shocked by the U.S. agreement with Russia, which Ukraine has called “a gift” to President Putin, officials in Europe have coalesced around a cautious diplomatic message.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T09:03:47.000Z",
+        "sentiment": {
+          "posP": 8.2,
+          "negP": 9.5,
+          "neuP": 82.3,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Jimmy Kimmel Teases Trump Over Not Getting the Nobel Prize",
+        "link": "https://www.nytimes.com/2026/10/13/arts/television/jimmy-kimmel-trump-nobel-peace-prize.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "“Thanks a lot, Norway. I hope you’re happy — you made our baby cry,” Kimmel said after the president blamed Norway.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T06:02:36.000Z",
+        "sentiment": {
+          "posP": 25.9,
+          "negP": 13.9,
+          "neuP": 60.2,
+          "label": "positive",
+          "confidence": 0.68
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Houthis threaten \"painful\" response if U.S. joins Saudi offensive",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-saudi-arabia-houthi/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "As Trump mulls joining Saudi Arabia in attacking the Houthis, the Iran-backed group is threatening a \"painful\" response.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T10:01:46.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 35.3,
+          "neuP": 64.7,
+          "label": "negative",
+          "confidence": 0.9
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Will Trump's Russia diesel deal actually bring down prices?",
+        "link": "https://www.cbsnews.com/video/trump-defends-diesel-deal-with-russia-but-will-it-actually-bring-down-prices/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump said Friday on Truth Social that Russia will \"immediately supply\" more than 300,000 tons of diesel to global markets, an additional 500,000 tons in November, and 1 million tons \"immediately thereafter.\" Patrick De Haan, head of petroleum analysis at GasBuddy, joins CBS News to discuss the effect that might have on prices.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T01:22:00.000Z",
+        "sentiment": {
+          "posP": 3.6,
+          "negP": 0,
+          "neuP": 96.4,
+          "label": "positive",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Inside the Houthis' power as Trump considers strikes after attacks on Saudi Arabia",
+        "link": "https://www.cbsnews.com/video/inside-the-houthis-power-as-trump-considers-strikes-after-attacks-on-saudi-arabia/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The main international airport in Riyadh remains closed after Houthi forces fired a barrage of missiles at the main terminal, causing massive damage and killing at least 13 people over the weekend. Saudi Arabia's government has vowed to retaliate and now wants the U.S. to join in. Gregory Gause, associate fellow at the Middle East Institute, joins CBS News to discuss the level of power the Houthis hold in the Middle East.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T00:46:00.000Z",
+        "sentiment": {
+          "posP": 2.3,
+          "negP": 17.1,
+          "neuP": 80.6,
+          "label": "negative",
+          "confidence": 0.94
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump considering strikes against Houthis in Yemen after attacks on Saudi Arabia",
+        "link": "https://www.cbsnews.com/video/trump-considering-strikes-against-houthis-in-yemen-after-attacks-on-saudi-arabia/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump is considering launching U.S. military strikes against the Iran-backed Houthis in Yemen, following a wave of attacks on Saudi Arabia. Holly Williams reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-12T23:56:12.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 25.2,
+          "neuP": 74.8,
+          "label": "negative",
+          "confidence": 0.87
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Elon Musk gives $276 million to Republican groups, becomes biggest known 2026 midterm donor",
+        "link": "https://www.cnbc.com/2026/10/12/elon-musk-republican-donations-2026-midterm-election.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Musk’s record midterm election spending comes as the Tesla and SpaceX CEO rebuilds his relationship with Trump and has business ties to the federal government.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-12T21:17:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump census plan to cut noncitizens from 2030 count spurs critics toward legal fight",
+        "link": "https://www.cnbc.com/2026/10/13/trump-census-rule-noncitizens.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration's proposal to exclude some noncitizens from the 2030 census prompts alarm for voting rights groups.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T10:00:01.000Z",
+        "sentiment": {
+          "posP": 3.9,
+          "negP": 28.9,
+          "neuP": 67.2,
+          "label": "negative",
+          "confidence": 0.83
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump 'not happy' with Kimberly Guilfoyle, weighs firing her as ambassador to Greece",
+        "link": "https://www.cnbc.com/2026/10/12/trump-kimberly-guilfoyle-ambassador.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The former Fox News personality Guilfoyle was previously engaged to the president's son, Donald Trump Jr.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T09:23:53.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 15.8,
+          "neuP": 76.3,
+          "label": "negative",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Rep. Ilhan Omar blasts federal criminal raid on home: 'I will not be silenced'",
+        "link": "https://www.cnbc.com/2026/10/12/ilhan-omar-home-raided-dhs-immigration-investigation.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Minnesota Democrat, a Muslim who was born in Somalia, has been targeted for criticism in the past by President Donald Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-12T18:29:28.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 16,
+          "neuP": 84,
+          "label": "negative",
+          "confidence": 0.74
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.38,
-      "neu": 84.66,
-      "neg": 9.97,
-      "count": 46
+      "pos": 6,
+      "neu": 84.22,
+      "neg": 9.77,
+      "count": 41
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.9,
-        "neu": 83.15,
-        "neg": 7.95,
-        "count": 10
-      },
-      {
-        "source": "Washington Post",
-        "pos": 3.86,
-        "neu": 87.13,
-        "neg": 9.01,
+        "pos": 7.27,
+        "neu": 81.09,
+        "neg": 11.64,
         "count": 9
       },
       {
-        "source": "CBS News",
-        "pos": 3.77,
-        "neu": 78.61,
-        "neg": 17.61,
+        "source": "Washington Post",
+        "pos": 4.76,
+        "neu": 86.96,
+        "neg": 8.29,
         "count": 7
       },
       {
+        "source": "Fox News",
+        "pos": 8.48,
+        "neu": 88.14,
+        "neg": 3.38,
+        "count": 5
+      },
+      {
+        "source": "CBS News",
+        "pos": 1.98,
+        "neu": 79.7,
+        "neg": 18.32,
+        "count": 5
+      },
+      {
         "source": "NYT",
-        "pos": 6.68,
-        "neu": 81.7,
-        "neg": 11.62,
-        "count": 6
+        "pos": 11.77,
+        "neu": 79.38,
+        "neg": 8.85,
+        "count": 4
       },
       {
         "source": "WSJ",
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
-        "count": 4
-      },
-      {
-        "source": "ABC News",
-        "pos": 2.95,
-        "neu": 90.95,
-        "neg": 6.1,
         "count": 4
       },
       {
@@ -5542,50 +5542,57 @@
         "neu": 88,
         "neg": 9,
         "count": 2
+      },
+      {
+        "source": "ABC News",
+        "pos": 5.9,
+        "neu": 87.4,
+        "neg": 6.7,
+        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.9,
-        "neu": 83.12,
-        "neg": 11.98,
-        "count": 17
+        "pos": 7.1,
+        "neu": 81.39,
+        "neg": 11.52,
+        "count": 21
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7,
-        "neu": 82.32,
-        "neg": 10.68,
-        "count": 12
-      },
-      {
-        "topic": "Policy",
-        "pos": 4.16,
-        "neu": 88.28,
-        "neg": 7.56,
+        "pos": 7.21,
+        "neu": 84.75,
+        "neg": 8.04,
         "count": 8
       },
       {
-        "topic": "Economy",
-        "pos": 6.33,
-        "neu": 88.33,
-        "neg": 5.33,
-        "count": 3
+        "topic": "Policy",
+        "pos": 3.38,
+        "neu": 84.62,
+        "neg": 12,
+        "count": 5
       },
       {
-        "topic": "Legal",
-        "pos": 3.83,
-        "neu": 83.83,
-        "neg": 12.33,
-        "count": 3
+        "topic": "Economy",
+        "pos": 5.65,
+        "neu": 90.35,
+        "neg": 4,
+        "count": 4
       },
       {
         "topic": "Public Statements",
-        "pos": 5.4,
-        "neu": 90.2,
-        "neg": 4.4,
-        "count": 3
+        "pos": 0,
+        "neu": 100,
+        "neg": 0,
+        "count": 2
+      },
+      {
+        "topic": "Legal",
+        "pos": 0,
+        "neu": 81.6,
+        "neg": 18.4,
+        "count": 1
       }
     ]
   },
@@ -5612,28 +5619,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-12T18:52:12.241Z",
+        "label": "2026-10-13T06:44:14.830Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-12T19:52:12.241Z",
+        "label": "2026-10-13T07:44:14.830Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-12T20:52:12.241Z",
+        "label": "2026-10-13T08:44:14.830Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-12T21:52:12.241Z",
+        "label": "2026-10-13T09:44:14.830Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5642,28 +5649,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-12T18:52:12.241Z",
+        "label": "2026-10-13T06:44:14.830Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-12T19:52:12.241Z",
+        "label": "2026-10-13T07:44:14.830Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-12T20:52:12.241Z",
+        "label": "2026-10-13T08:44:14.830Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-12T21:52:12.241Z",
+        "label": "2026-10-13T09:44:14.830Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5743,7 +5750,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-12T22:52:12.242Z",
+    "generatedAt": "2026-10-13T10:44:14.830Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5865,7 +5872,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 187,
-      "potusArticles": 46,
+      "potusArticles": 41,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
