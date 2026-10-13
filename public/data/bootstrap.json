@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-13T17:48:47.927Z",
+  "generatedAt": "2026-10-13T21:58:54.946Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 190,
-    "potusArticles": 49
+    "usaArticles": 165,
+    "potusArticles": 33
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-13T13:48:47.927Z",
+          "label": "2026-10-13T17:58:54.946Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T14:48:47.927Z",
+          "label": "2026-10-13T18:58:54.946Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T15:48:47.927Z",
+          "label": "2026-10-13T19:58:54.946Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T16:48:47.927Z",
+          "label": "2026-10-13T20:58:54.946Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-13T13:48:47.927Z",
+          "label": "2026-10-13T17:58:54.946Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T14:48:47.927Z",
+          "label": "2026-10-13T18:58:54.946Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T15:48:47.927Z",
+          "label": "2026-10-13T19:58:54.946Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T16:48:47.927Z",
+          "label": "2026-10-13T20:58:54.946Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 7.66,
-      "neu": 81.78,
-      "neg": 10.56,
-      "count": 190
+      "pos": 6.75,
+      "neu": 80.77,
+      "neg": 12.48,
+      "count": 165
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.86,
-        "neu": 81.63,
-        "neg": 9.51,
+        "pos": 7.17,
+        "neu": 81.84,
+        "neg": 10.98,
         "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 8.12,
-        "neu": 79.86,
-        "neg": 12.02,
+        "pos": 5.82,
+        "neu": 76.96,
+        "neg": 17.22,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.03,
-        "neu": 82.33,
-        "neg": 13.65,
+        "pos": 4.65,
+        "neu": 80.96,
+        "neg": 14.39,
         "count": 26
-      },
-      {
-        "source": "NYT",
-        "pos": 6.97,
-        "neu": 78.39,
-        "neg": 14.64,
-        "count": 24
       },
       {
         "source": "WSJ",
@@ -4597,18 +4590,18 @@
         "count": 20
       },
       {
-        "source": "ABC News",
-        "pos": 11.56,
-        "neu": 82.69,
-        "neg": 5.75,
+        "source": "NYT",
+        "pos": 4.52,
+        "neu": 80.77,
+        "neg": 14.71,
         "count": 20
       },
       {
-        "source": "Washington Post",
-        "pos": 7.62,
-        "neu": 88.42,
-        "neg": 3.96,
-        "count": 20
+        "source": "ABC News",
+        "pos": 12.33,
+        "neu": 83.02,
+        "neg": 4.65,
+        "count": 19
       },
       {
         "source": "NPR",
@@ -4636,18 +4629,18 @@
       "rows": [
         {
           "name": "Utilities",
-          "bias": -13.4,
-          "count": 3
-        },
-        {
-          "name": "Materials",
-          "bias": -8.6,
-          "count": 6
+          "bias": -14.95,
+          "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -7.41,
-          "count": 11
+          "bias": -11.49,
+          "count": 9
+        },
+        {
+          "name": "Materials",
+          "bias": -9.16,
+          "count": 5
         },
         {
           "name": "Communication",
@@ -4656,23 +4649,23 @@
         },
         {
           "name": "Technology",
-          "bias": -3.9,
-          "count": 151
-        },
-        {
-          "name": "Energy",
-          "bias": -3.86,
-          "count": 18
-        },
-        {
-          "name": "Finance",
-          "bias": -3.04,
-          "count": 20
+          "bias": -6.82,
+          "count": 126
         },
         {
           "name": "Real Estate",
-          "bias": 2.95,
-          "count": 2
+          "bias": -6.3,
+          "count": 3
+        },
+        {
+          "name": "Energy",
+          "bias": -5.54,
+          "count": 14
+        },
+        {
+          "name": "Finance",
+          "bias": -4.41,
+          "count": 21
         },
         {
           "name": "Manufacturing",
@@ -4680,13 +4673,7 @@
           "count": 1
         }
       ],
-      "pos": [
-        {
-          "name": "Real Estate",
-          "bias": 2.95,
-          "count": 2
-        }
-      ],
+      "pos": [],
       "neu": [
         {
           "name": "Communication",
@@ -4695,62 +4682,62 @@
         },
         {
           "name": "Technology",
-          "bias": -3.9,
-          "count": 151
+          "bias": -6.82,
+          "count": 126
         },
         {
-          "name": "Energy",
-          "bias": -3.86,
-          "count": 18
+          "name": "Real Estate",
+          "bias": -6.3,
+          "count": 3
         }
       ],
       "neg": [
         {
           "name": "Utilities",
-          "bias": -13.4,
-          "count": 3
-        },
-        {
-          "name": "Materials",
-          "bias": -8.6,
-          "count": 6
+          "bias": -14.95,
+          "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -7.41,
-          "count": 11
+          "bias": -11.49,
+          "count": 9
+        },
+        {
+          "name": "Materials",
+          "bias": -9.16,
+          "count": 5
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-13T13:48:47.930Z",
-          "pos": 8,
+          "label": "2026-10-13T17:58:54.947Z",
+          "pos": 4,
           "neu": 84,
-          "neg": 7,
+          "neg": 12,
           "count": 9
         },
         {
-          "label": "2026-10-13T14:48:47.930Z",
-          "pos": 10,
-          "neu": 78,
-          "neg": 13,
-          "count": 16
-        },
-        {
-          "label": "2026-10-13T15:48:47.930Z",
-          "pos": 7,
+          "label": "2026-10-13T18:58:54.947Z",
+          "pos": 8,
           "neu": 83,
-          "neg": 11,
-          "count": 34
+          "neg": 10,
+          "count": 14
         },
         {
-          "label": "2026-10-13T16:48:47.930Z",
+          "label": "2026-10-13T19:58:54.947Z",
           "pos": 6,
-          "neu": 81,
-          "neg": 13,
-          "count": 33
+          "neu": 80,
+          "neg": 14,
+          "count": 25
+        },
+        {
+          "label": "2026-10-13T20:58:54.947Z",
+          "pos": 4,
+          "neu": 79,
+          "neg": 17,
+          "count": 37
         }
       ]
     }
@@ -4958,42 +4945,42 @@
         "category": "world"
       },
       {
-        "title": "Dan Le Batard thinks Patrick Mahomes, other athletes are obligated to oppose Trump on Protect College Sports",
-        "link": "https://www.foxnews.com/outkick-sports/dan-le-batard-thinks-patrick-mahomes-athletes-obligated-oppose-trump-protect-college-sports",
+        "title": "Hochul's office mocks Katie Zacharia with Aaron Rodgers injury post despite governor's press secretary scandal",
+        "link": "https://www.foxnews.com/outkick-sports/hochul-office-mocks-katie-zacharia-aaron-rodgers-injury-post-despite-governor-press-secretary-scandal",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Dan Le Batard demanded Patrick Mahomes publicly oppose the Protect College Sports Act, but Mahomes has long avoided weighing in politically.",
+        "description": "New York Democratic Gov. Kathy Hochul's press office appeared to mock Katie Zacharia's White House debut by posting Aaron Rodgers' Jets injury photo.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T17:43:36.000Z",
+        "publishedAt": "2026-10-13T21:51:55.000Z",
         "sentiment": {
-          "posP": 8.5,
-          "negP": 10.8,
-          "neuP": 80.7,
+          "posP": 0,
+          "negP": 30.2,
+          "neuP": 69.8,
           "label": "negative",
-          "confidence": 0.24
+          "confidence": 0.92
         },
         "category": "usa"
       },
       {
-        "title": "Trump White House aide admits cocaine relapse in plea for deported reality star’s second chance",
-        "link": "https://www.foxnews.com/entertainment/trump-white-house-aide-admits-cocaine-relapse-plea-deported-reality-star-second-chance",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Hands Victories to Putin, Who Offers More War in Return",
+        "link": "https://www.nytimes.com/2026/10/13/world/europe/russia-putin-trump-diesel-ukraine.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Lynne Patton shared her cocaine addiction story and the intervention by Eric Trump and Lara Trump that shaped her belief in second chances for Joe Giudice.",
+        "description": "Russia has reaped a diesel deal and an increase in U.S. pressure on Ukraine as President Trump’s political needs align with his longstanding inclinations toward Russia.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T16:45:09.000Z",
+        "publishedAt": "2026-10-13T16:13:56.000Z",
         "sentiment": {
-          "posP": 18.5,
-          "negP": 0,
-          "neuP": 81.5,
-          "label": "positive",
-          "confidence": 0.75
+          "posP": 5.5,
+          "negP": 15.3,
+          "neuP": 79.2,
+          "label": "negative",
+          "confidence": 0.62
         },
         "category": "usa"
       }
@@ -5200,107 +5187,127 @@
         "category": "world"
       },
       {
-        "title": "Dan Le Batard thinks Patrick Mahomes, other athletes are obligated to oppose Trump on Protect College Sports",
-        "link": "https://www.foxnews.com/outkick-sports/dan-le-batard-thinks-patrick-mahomes-athletes-obligated-oppose-trump-protect-college-sports",
+        "title": "Hochul's office mocks Katie Zacharia with Aaron Rodgers injury post despite governor's press secretary scandal",
+        "link": "https://www.foxnews.com/outkick-sports/hochul-office-mocks-katie-zacharia-aaron-rodgers-injury-post-despite-governor-press-secretary-scandal",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Dan Le Batard demanded Patrick Mahomes publicly oppose the Protect College Sports Act, but Mahomes has long avoided weighing in politically.",
+        "description": "New York Democratic Gov. Kathy Hochul's press office appeared to mock Katie Zacharia's White House debut by posting Aaron Rodgers' Jets injury photo.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T17:43:36.000Z",
+        "publishedAt": "2026-10-13T21:51:55.000Z",
         "sentiment": {
-          "posP": 8.5,
-          "negP": 10.8,
-          "neuP": 80.7,
+          "posP": 0,
+          "negP": 30.2,
+          "neuP": 69.8,
           "label": "negative",
-          "confidence": 0.24
+          "confidence": 0.92
         },
         "category": "usa"
       },
       {
-        "title": "Trump White House aide admits cocaine relapse in plea for deported reality star’s second chance",
-        "link": "https://www.foxnews.com/entertainment/trump-white-house-aide-admits-cocaine-relapse-plea-deported-reality-star-second-chance",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Hands Victories to Putin, Who Offers More War in Return",
+        "link": "https://www.nytimes.com/2026/10/13/world/europe/russia-putin-trump-diesel-ukraine.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Lynne Patton shared her cocaine addiction story and the intervention by Eric Trump and Lara Trump that shaped her belief in second chances for Joe Giudice.",
+        "description": "Russia has reaped a diesel deal and an increase in U.S. pressure on Ukraine as President Trump’s political needs align with his longstanding inclinations toward Russia.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T16:45:09.000Z",
+        "publishedAt": "2026-10-13T16:13:56.000Z",
         "sentiment": {
-          "posP": 18.5,
-          "negP": 0,
-          "neuP": 81.5,
-          "label": "positive",
-          "confidence": 0.75
+          "posP": 5.5,
+          "negP": 15.3,
+          "neuP": 79.2,
+          "label": "negative",
+          "confidence": 0.62
         },
         "category": "usa"
       },
       {
-        "title": "Don Lemon's presidential ambitions met with skepticism, amusement from his former CNN colleagues",
-        "link": "https://www.foxnews.com/media/don-lemons-presidential-ambitions-met-skepticism-amusement-from-his-former-cnn-colleagues",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "U.K. and Europe Recoil From Trump’s Diesel Deal With Putin",
+        "link": "https://www.nytimes.com/2026/10/13/world/europe/trump-putin-diesel-uk-europe-gift.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Don Lemon says there's a 65 to 70% chance he'll launch a White House bid, and CNN staffers have strong reactions to his presidential ambitions.",
+        "description": "Shocked by the U.S. agreement with Russia, which Ukraine has called “a gift” to President Putin, officials in Europe have coalesced around a cautious diplomatic message.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T16:30:45.000Z",
+        "publishedAt": "2026-10-13T14:35:44.000Z",
         "sentiment": {
-          "posP": 18.7,
-          "negP": 4.8,
-          "neuP": 76.5,
-          "label": "positive",
-          "confidence": 0.7
+          "posP": 8.2,
+          "negP": 9.5,
+          "neuP": 82.3,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       },
       {
-        "title": "Dana Perino shares how she secretly pushed back at reporters during White House briefings",
-        "link": "https://www.foxnews.com/media/dana-perino-shares-how-she-secretly-pushed-back-reporters-during-white-house-briefings",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "The Rise and Fall of Ambassador Kimberly Guilfoyle",
+        "link": "https://www.nytimes.com/2026/10/13/us/politics/guilfoyle-fall.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Dana Perino revealed on Sean Hannity's podcast how she secretly flipped off reporters behind a water cup during George W. Bush press briefings.",
+        "description": "President Trump cut her loose after damaging news reports about her tenure as ambassador to Greece. Once a prominent Trump insider, she suggested she will now fight to defend her reputation.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T16:24:39.000Z",
+        "publishedAt": "2026-10-13T20:50:48.000Z",
         "sentiment": {
-          "posP": 5.9,
-          "negP": 0,
-          "neuP": 94.1,
-          "label": "positive",
-          "confidence": 0.3
+          "posP": 5,
+          "negP": 22.6,
+          "neuP": 72.4,
+          "label": "negative",
+          "confidence": 0.79
         },
         "category": "usa"
       },
       {
-        "title": "‘Peace through strength’: Trump Gaza plan gains global backing one year on",
-        "link": "https://www.foxnews.com/world/peace-through-strength-trump-gaza-plan-gains-global-backing-one-year",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Kimberly Guilfoyle Resigns as Ambassador to Greece",
+        "link": "https://www.nytimes.com/2026/10/13/us/politics/kimberly-guilfoyle-resign.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Donald Trump's Board of Peace excludes UNRWA from Gaza's future as the EU pledges $1 billion and demilitarization efforts gain global momentum.",
+        "description": "Ms. Guilfoyle was asked to quit by the White House after a string of damaging reports, including that she had asked a Republican donor to pay off a credit card.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T16:18:26.000Z",
+        "publishedAt": "2026-10-13T21:42:35.000Z",
         "sentiment": {
-          "posP": 25.7,
-          "negP": 0,
-          "neuP": 74.3,
-          "label": "positive",
-          "confidence": 0.86
+          "posP": 6.6,
+          "negP": 17.7,
+          "neuP": 75.7,
+          "label": "negative",
+          "confidence": 0.53
         },
         "category": "usa"
       },
       {
-        "title": "Houthis threaten \"painful\" response if U.S. joins Saudi offensive",
+        "title": "Lawyer for Fed Governor Cook Denounces Trump’s New Investigation",
+        "link": "https://www.nytimes.com/2026/10/13/business/fed-governor-lisa-cook-trump-investigation.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A lawyer for Lisa Cook raised “significant concerns” over the “objectivity and fitness of the committee” assembled by President Trump as a way to remove her as a governor at the Federal Reserve.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T21:55:45.000Z",
+        "sentiment": {
+          "posP": 5,
+          "negP": 6.9,
+          "neuP": 88.1,
+          "label": "negative",
+          "confidence": 0.2
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Houthis threaten \"painful\" response if U.S. helps Saudis",
         "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-saudi-arabia-houthi/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
@@ -5309,13 +5316,13 @@
         "description": "As Trump mulls joining Saudi Arabia in attacking the Houthis, the Iran-backed group is threatening a \"painful\" response.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T17:37:17.000Z",
+        "publishedAt": "2026-10-13T21:16:45.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 35.3,
-          "neuP": 64.7,
+          "posP": 8,
+          "negP": 27.6,
+          "neuP": 64.4,
           "label": "negative",
-          "confidence": 0.9
+          "confidence": 0.75
         },
         "category": "usa"
       },
@@ -5329,7 +5336,7 @@
         "description": "U.S. District Judge Ana Reyes blocked the Trump administration from cutting down trees at East Potomac Golf Links through Oct. 26.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T17:34:03.000Z",
+        "publishedAt": "2026-10-13T18:46:25.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 15.9,
@@ -5360,102 +5367,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump confirms Kimberly Guilfoyle's resignation as U.S. ambassador to Greece",
-        "link": "https://www.cbsnews.com/video/trump-confirms-kimberly-guilfoyle-resignation-ambassador-greece/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump attacks Rep. Ilhan Omar and Senate hopeful Abdul El-Sayed at Ohio rally",
+        "link": "https://www.nbcnews.com/politics/2026-election/donald-trump-attacks-ilhan-omar-abdul-el-sayed-ohio-rally-youngstown-rcna603107",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump spoke with reporters Tuesday as he left the White House for his trip to Alaska. Trump confirmed Kimberly Guilfoyle's resignation as U.S. ambassador to Greece, saying, \"She will not be there. I didn't like what I read.\"",
+        "description": "The crowd chanted “deport” at several points as Trump denigrated Omar, who was born in Somalia and immigrated to the U.S., and El-Sayed, who was born in Michigan.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T16:53:47.000Z",
+        "publishedAt": "2026-10-13T01:27:03.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 12.9,
-          "neuP": 87.1,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Bipartisan senators call Russia diesel deal a \"betrayal\" of Ukraine",
-        "link": "https://www.cbsnews.com/news/senators-trump-russia-diesel-deal-ukraine/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A bipartisan group of senators urged President Trump to withdraw from his diesel deal with Russian President Vladimir Putin and rescind a move to waive sanctions on Russia's energy sector.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T16:40:15.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 0,
-          "neuP": 94.5,
-          "label": "positive",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Houthi attacks leave Trump with \"a difficult dilemma\"",
-        "link": "https://www.cbsnews.com/news/iran-war-houthis-saudi-arabia-trump-faces-difficult-dilemma/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump has so far declined to get the U.S. military embroiled in Yemen's civil war, but Iran's Houthi allies may force his hand.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T16:39:18.000Z",
-        "sentiment": {
-          "posP": 11.2,
-          "negP": 18.8,
-          "neuP": 70,
+          "posP": 7.3,
+          "negP": 6.4,
+          "neuP": 86.3,
           "label": "neutral",
-          "confidence": 0.01
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Kimberly Guilfoyle is preparing to resign",
-        "link": "https://www.cbsnews.com/video/kimberly-guilfoyle-to-resign-trump-white-house/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "U.S. Ambassador to Greece Kimberly Guilfoyle is preparing to resign after she allegedly asked a Trump donor to pay off her credit card bill in exchange for political access. CBS News' Natalie Brand reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T15:44:04.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 14.2,
-          "neuP": 79.9,
-          "label": "negative",
-          "confidence": 0.38
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Russia strikes Ukrainian targets despite Trump's energy ceasefire claims",
-        "link": "https://www.cbsnews.com/video/russia-strikes-ukrainian-targets-despite-trumps-energy-ceasefire-claims/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ukrainian President Volodymyr Zelenskyy says that Russia has struck at least six energy facilities despite President Trump's claims of an \"energy ceasefire.\" CBS News' Aidan Stretch reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T15:42:07.000Z",
-        "sentiment": {
-          "posP": 10.1,
-          "negP": 15.2,
-          "neuP": 74.7,
-          "label": "negative",
-          "confidence": 0.28
+          "confidence": 0.1
         },
         "category": "usa"
       },
@@ -5478,49 +5405,95 @@
           "confidence": 0.36
         },
         "category": "usa"
+      },
+      {
+        "title": "Diesel futures jump, signaling higher prices to come despite Trump’s Russia deal",
+        "link": "https://www.nbcnews.com/business/energy/diesel-futures-higher-prices-trump-moves-rcna603218",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Diesel futures traded sharply higher Tuesday, as doubts mounted that the Trump administration’s recent maneuvers to lower prices would make much of an impact.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T17:49:19.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 11.5,
+          "neuP": 88.5,
+          "label": "negative",
+          "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump’s new messenger: From the Politics Desk",
+        "link": "https://www.nbcnews.com/politics/politics-news/trumps-new-messenger-politics-desk-rcna603276",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Welcome to From the Politics Desk, a daily newsletter that brings you the NBC News Politics team’s latest reporting and analysis from the White House, Capitol Hill and the campaign trail.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T21:39:18.000Z",
+        "sentiment": {
+          "posP": 7.7,
+          "negP": 0,
+          "neuP": 92.3,
+          "label": "positive",
+          "confidence": 0.46
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump rally protester attacked in act of ‘senseless’ political violence, Ohio mayor says",
+        "link": "https://www.nbcnews.com/news/us-news/trump-rally-protester-attacked-act-senseless-political-violence-ohio-m-rcna603249",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "At least two men attending President Donald Trump’s rally in Ohio attacked a female protester in a “senseless” confrontation decried by the mayor of Youngstown on Tuesday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T21:17:44.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 26.7,
+          "neuP": 73.3,
+          "label": "negative",
+          "confidence": 0.91
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.19,
-      "neu": 83.55,
-      "neg": 9.26,
-      "count": 49
+      "pos": 5.04,
+      "neu": 84.41,
+      "neg": 10.55,
+      "count": 33
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.91,
-        "neu": 82.29,
-        "neg": 9.8,
-        "count": 9
-      },
-      {
-        "source": "CBS News",
-        "pos": 4.98,
-        "neu": 80.99,
-        "neg": 14.03,
-        "count": 9
-      },
-      {
-        "source": "Washington Post",
-        "pos": 6.2,
-        "neu": 87.36,
-        "neg": 6.44,
-        "count": 7
+        "pos": 3.9,
+        "neu": 86.04,
+        "neg": 10.06,
+        "count": 8
       },
       {
         "source": "NYT",
-        "pos": 9.73,
-        "neu": 77.27,
-        "neg": 13,
-        "count": 6
+        "pos": 6.19,
+        "neu": 81.81,
+        "neg": 12,
+        "count": 7
       },
       {
-        "source": "Fox News",
-        "pos": 14.38,
-        "neu": 83.02,
-        "neg": 2.6,
-        "count": 6
+        "source": "CBS News",
+        "pos": 5.03,
+        "neu": 80.6,
+        "neg": 14.38,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5538,10 +5511,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 3.93,
-        "neu": 89.37,
-        "neg": 6.7,
+        "pos": 8.83,
+        "neu": 86.03,
+        "neg": 5.13,
         "count": 3
+      },
+      {
+        "source": "Fox News",
+        "pos": 4.5,
+        "neu": 80.4,
+        "neg": 15.1,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5554,45 +5534,45 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.28,
-        "neu": 81.62,
-        "neg": 11.11,
-        "count": 17
-      },
-      {
-        "topic": "Policy",
-        "pos": 8.94,
-        "neu": 81.06,
-        "neg": 10,
-        "count": 11
+        "pos": 4.99,
+        "neu": 81.29,
+        "neg": 13.71,
+        "count": 15
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7.7,
-        "neu": 82.05,
-        "neg": 10.25,
-        "count": 11
+        "pos": 5.5,
+        "neu": 85.4,
+        "neg": 9.1,
+        "count": 8
       },
       {
-        "topic": "Public Statements",
-        "pos": 3.68,
-        "neu": 93.26,
-        "neg": 3.06,
-        "count": 5
+        "topic": "Policy",
+        "pos": 3.4,
+        "neu": 89.08,
+        "neg": 7.52,
+        "count": 6
       },
       {
         "topic": "Economy",
-        "pos": 6.33,
-        "neu": 88.33,
-        "neg": 5.33,
-        "count": 3
+        "pos": 9.5,
+        "neu": 84.5,
+        "neg": 6,
+        "count": 2
       },
       {
         "topic": "Legal",
-        "pos": 4.05,
-        "neu": 90.45,
-        "neg": 5.5,
-        "count": 2
+        "pos": 8.1,
+        "neu": 91.9,
+        "neg": 0,
+        "count": 1
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 0,
+        "neu": 87.5,
+        "neg": 12.5,
+        "count": 1
       }
     ]
   },
@@ -5619,28 +5599,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-13T13:48:47.933Z",
+        "label": "2026-10-13T17:58:54.948Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T14:48:47.933Z",
+        "label": "2026-10-13T18:58:54.948Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T15:48:47.933Z",
+        "label": "2026-10-13T19:58:54.948Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T16:48:47.933Z",
+        "label": "2026-10-13T20:58:54.948Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5649,28 +5629,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-13T13:48:47.933Z",
+        "label": "2026-10-13T17:58:54.948Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T14:48:47.933Z",
+        "label": "2026-10-13T18:58:54.948Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T15:48:47.933Z",
+        "label": "2026-10-13T19:58:54.948Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T16:48:47.933Z",
+        "label": "2026-10-13T20:58:54.948Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5750,7 +5730,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-13T17:48:47.934Z",
+    "generatedAt": "2026-10-13T21:58:54.949Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5871,8 +5851,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 190,
-      "potusArticles": 49,
+      "usaArticles": 165,
+      "potusArticles": 33,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
