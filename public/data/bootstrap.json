@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-13T21:58:54.946Z",
+  "generatedAt": "2026-10-14T01:05:36.781Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 165,
-    "potusArticles": 33
+    "usaArticles": 168,
+    "potusArticles": 36
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-13T17:58:54.946Z",
+          "label": "2026-10-13T21:05:36.781Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T18:58:54.946Z",
+          "label": "2026-10-13T22:05:36.781Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T19:58:54.946Z",
+          "label": "2026-10-13T23:05:36.781Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T20:58:54.946Z",
+          "label": "2026-10-14T00:05:36.781Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-13T17:58:54.946Z",
+          "label": "2026-10-13T21:05:36.781Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T18:58:54.946Z",
+          "label": "2026-10-13T22:05:36.781Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T19:58:54.946Z",
+          "label": "2026-10-13T23:05:36.781Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T20:58:54.946Z",
+          "label": "2026-10-14T00:05:36.781Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 6.75,
-      "neu": 80.77,
-      "neg": 12.48,
-      "count": 165
+      "pos": 6.59,
+      "neu": 80.95,
+      "neg": 12.46,
+      "count": 168
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.17,
-        "neu": 81.84,
-        "neg": 10.98,
-        "count": 42
+        "pos": 7.18,
+        "neu": 81.85,
+        "neg": 10.96,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 5.82,
-        "neu": 76.96,
-        "neg": 17.22,
+        "pos": 7.47,
+        "neu": 77.79,
+        "neg": 14.74,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.65,
-        "neu": 80.96,
-        "neg": 14.39,
+        "pos": 3.29,
+        "neu": 83.41,
+        "neg": 13.3,
         "count": 26
+      },
+      {
+        "source": "NYT",
+        "pos": 5.16,
+        "neu": 79.15,
+        "neg": 15.7,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4590,18 +4597,11 @@
         "count": 20
       },
       {
-        "source": "NYT",
-        "pos": 4.52,
-        "neu": 80.77,
-        "neg": 14.71,
-        "count": 20
-      },
-      {
         "source": "ABC News",
-        "pos": 12.33,
-        "neu": 83.02,
-        "neg": 4.65,
-        "count": 19
+        "pos": 10.02,
+        "neu": 82.22,
+        "neg": 7.76,
+        "count": 20
       },
       {
         "source": "NPR",
@@ -4629,115 +4629,121 @@
       "rows": [
         {
           "name": "Utilities",
-          "bias": -14.95,
-          "count": 2
+          "bias": -17,
+          "count": 1
         },
         {
           "name": "Healthcare",
-          "bias": -11.49,
-          "count": 9
+          "bias": -15.73,
+          "count": 8
         },
         {
           "name": "Materials",
-          "bias": -9.16,
-          "count": 5
-        },
-        {
-          "name": "Communication",
-          "bias": -7,
-          "count": 2
-        },
-        {
-          "name": "Technology",
-          "bias": -6.82,
-          "count": 126
-        },
-        {
-          "name": "Real Estate",
-          "bias": -6.3,
+          "bias": -10.67,
           "count": 3
         },
         {
-          "name": "Energy",
-          "bias": -5.54,
-          "count": 14
+          "name": "Communication",
+          "bias": -9.78,
+          "count": 4
         },
         {
-          "name": "Finance",
-          "bias": -4.41,
-          "count": 21
+          "name": "Technology",
+          "bias": -6.81,
+          "count": 116
+        },
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
         },
         {
           "name": "Manufacturing",
-          "bias": 0,
-          "count": 1
-        }
-      ],
-      "pos": [],
-      "neu": [
-        {
-          "name": "Communication",
-          "bias": -7,
+          "bias": -5.45,
           "count": 2
         },
         {
-          "name": "Technology",
-          "bias": -6.82,
-          "count": 126
+          "name": "Finance",
+          "bias": -3.99,
+          "count": 18
         },
         {
+          "name": "Energy",
+          "bias": 1.5,
+          "count": 8
+        }
+      ],
+      "pos": [
+        {
           "name": "Real Estate",
-          "bias": -6.3,
-          "count": 3
+          "bias": 5.9,
+          "count": 1
+        }
+      ],
+      "neu": [
+        {
+          "name": "Communication",
+          "bias": -9.78,
+          "count": 4
+        },
+        {
+          "name": "Technology",
+          "bias": -6.81,
+          "count": 116
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -5.45,
+          "count": 2
         }
       ],
       "neg": [
         {
           "name": "Utilities",
-          "bias": -14.95,
-          "count": 2
+          "bias": -17,
+          "count": 1
         },
         {
           "name": "Healthcare",
-          "bias": -11.49,
-          "count": 9
+          "bias": -15.73,
+          "count": 8
         },
         {
           "name": "Materials",
-          "bias": -9.16,
-          "count": 5
+          "bias": -10.67,
+          "count": 3
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-13T17:58:54.947Z",
-          "pos": 4,
-          "neu": 84,
-          "neg": 12,
-          "count": 9
-        },
-        {
-          "label": "2026-10-13T18:58:54.947Z",
-          "pos": 8,
-          "neu": 83,
-          "neg": 10,
+          "label": "2026-10-13T21:05:36.782Z",
+          "pos": 6,
+          "neu": 77,
+          "neg": 17,
           "count": 14
         },
         {
-          "label": "2026-10-13T19:58:54.947Z",
-          "pos": 6,
-          "neu": 80,
-          "neg": 14,
-          "count": 25
+          "label": "2026-10-13T22:05:36.782Z",
+          "pos": 8,
+          "neu": 77,
+          "neg": 15,
+          "count": 13
         },
         {
-          "label": "2026-10-13T20:58:54.947Z",
-          "pos": 4,
-          "neu": 79,
-          "neg": 17,
-          "count": 37
+          "label": "2026-10-13T23:05:36.782Z",
+          "pos": 3,
+          "neu": 85,
+          "neg": 12,
+          "count": 27
+        },
+        {
+          "label": "2026-10-14T00:05:36.782Z",
+          "pos": 6,
+          "neu": 81,
+          "neg": 14,
+          "count": 18
         }
       ]
     }
@@ -4945,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Hochul's office mocks Katie Zacharia with Aaron Rodgers injury post despite governor's press secretary scandal",
-        "link": "https://www.foxnews.com/outkick-sports/hochul-office-mocks-katie-zacharia-aaron-rodgers-injury-post-despite-governor-press-secretary-scandal",
+        "title": "Venture capital firm tied to Donald Trump Jr weighs legal action against ABC News over botched report",
+        "link": "https://www.foxnews.com/media/venture-capital-firm-tied-donald-trump-jr-weighs-legal-action-abc-news-botched-report",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "New York Democratic Gov. Kathy Hochul's press office appeared to mock Katie Zacharia's White House debut by posting Aaron Rodgers' Jets injury photo.",
+        "description": "1789 Capital says its attorneys are in touch with ABC News and Disney after the network deleted and revised a report about Donald Trump Jr..",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T21:51:55.000Z",
+        "publishedAt": "2026-10-14T01:01:57.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 30.2,
-          "neuP": 69.8,
-          "label": "negative",
-          "confidence": 0.92
+          "posP": 3.6,
+          "negP": 0,
+          "neuP": 96.4,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       },
       {
-        "title": "Trump Hands Victories to Putin, Who Offers More War in Return",
-        "link": "https://www.nytimes.com/2026/10/13/world/europe/russia-putin-trump-diesel-ukraine.html",
+        "title": "‘Honey Please’: The Steep Rise and Sudden Fall of Kimberly Guilfoyle.",
+        "link": "https://www.nytimes.com/2026/10/13/us/politics/guilfoyle-fall.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Russia has reaped a diesel deal and an increase in U.S. pressure on Ukraine as President Trump’s political needs align with his longstanding inclinations toward Russia.",
+        "description": "President Trump cut her loose after damaging news reports about her tenure as ambassador to Greece. Once a prominent Trump insider, she suggested she will now fight to defend her reputation.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T16:13:56.000Z",
+        "publishedAt": "2026-10-13T23:44:50.000Z",
         "sentiment": {
-          "posP": 5.5,
-          "negP": 15.3,
-          "neuP": 79.2,
+          "posP": 4.7,
+          "negP": 21.2,
+          "neuP": 74.1,
           "label": "negative",
-          "confidence": 0.62
+          "confidence": 0.79
         },
         "category": "usa"
       }
@@ -5187,22 +5193,82 @@
         "category": "world"
       },
       {
-        "title": "Hochul's office mocks Katie Zacharia with Aaron Rodgers injury post despite governor's press secretary scandal",
-        "link": "https://www.foxnews.com/outkick-sports/hochul-office-mocks-katie-zacharia-aaron-rodgers-injury-post-despite-governor-press-secretary-scandal",
+        "title": "Venture capital firm tied to Donald Trump Jr weighs legal action against ABC News over botched report",
+        "link": "https://www.foxnews.com/media/venture-capital-firm-tied-donald-trump-jr-weighs-legal-action-abc-news-botched-report",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "New York Democratic Gov. Kathy Hochul's press office appeared to mock Katie Zacharia's White House debut by posting Aaron Rodgers' Jets injury photo.",
+        "description": "1789 Capital says its attorneys are in touch with ABC News and Disney after the network deleted and revised a report about Donald Trump Jr..",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T21:51:55.000Z",
+        "publishedAt": "2026-10-14T01:01:57.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 30.2,
-          "neuP": 69.8,
+          "posP": 3.6,
+          "negP": 0,
+          "neuP": 96.4,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "‘Honey Please’: The Steep Rise and Sudden Fall of Kimberly Guilfoyle.",
+        "link": "https://www.nytimes.com/2026/10/13/us/politics/guilfoyle-fall.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump cut her loose after damaging news reports about her tenure as ambassador to Greece. Once a prominent Trump insider, she suggested she will now fight to defend her reputation.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T23:44:50.000Z",
+        "sentiment": {
+          "posP": 4.7,
+          "negP": 21.2,
+          "neuP": 74.1,
           "label": "negative",
-          "confidence": 0.92
+          "confidence": 0.79
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Kimberly Guilfoyle Resigns as Ambassador to Greece",
+        "link": "https://www.nytimes.com/2026/10/13/us/politics/kimberly-guilfoyle-resign.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ms. Guilfoyle was asked to quit by the White House after a string of damaging reports, including that she had asked a Republican donor to pay off a credit card.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T21:56:15.000Z",
+        "sentiment": {
+          "posP": 6.6,
+          "negP": 17.7,
+          "neuP": 75.7,
+          "label": "negative",
+          "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Aids Putin, Feuds With Ukraine",
+        "link": "https://www.nytimes.com/2026/10/13/briefing/putin-guilfoyle-gop.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Plus, the G.O.P. plays defense in red states. Here’s the latest at the end of Tuesday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T22:38:10.000Z",
+        "sentiment": {
+          "posP": 14.1,
+          "negP": 9.6,
+          "neuP": 76.3,
+          "label": "neutral",
+          "confidence": 0.03
         },
         "category": "usa"
       },
@@ -5227,62 +5293,42 @@
         "category": "usa"
       },
       {
-        "title": "U.K. and Europe Recoil From Trump’s Diesel Deal With Putin",
-        "link": "https://www.nytimes.com/2026/10/13/world/europe/trump-putin-diesel-uk-europe-gift.html",
+        "title": "Ukraine Says It Received No Intelligence About Strikes 2 Nights in a Row",
+        "link": "https://www.nytimes.com/2026/10/13/world/europe/ukraine-trump-intelligence.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Shocked by the U.S. agreement with Russia, which Ukraine has called “a gift” to President Putin, officials in Europe have coalesced around a cautious diplomatic message.",
+        "description": "Asked about apparent U.S. threats to cut off intelligence sharing with Kyiv, which can warn of Russian aerial attacks, President Trump said information continued to flow.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T14:35:44.000Z",
+        "publishedAt": "2026-10-13T21:17:34.000Z",
         "sentiment": {
-          "posP": 8.2,
-          "negP": 9.5,
-          "neuP": 82.3,
+          "posP": 17.7,
+          "negP": 27.3,
+          "neuP": 55,
+          "label": "negative",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Katie Zacharia Makes Bumpy Debut as Trump’s New Press Secretary",
+        "link": "https://www.nytimes.com/2026/10/13/us/politics/katie-zacharia-white-house-first-briefing.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ms. Zacharia spent eight minutes reading from a script, called on only three reporters and made an awkward slip-up.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T23:49:54.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 5.6,
+          "neuP": 94.4,
           "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The Rise and Fall of Ambassador Kimberly Guilfoyle",
-        "link": "https://www.nytimes.com/2026/10/13/us/politics/guilfoyle-fall.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump cut her loose after damaging news reports about her tenure as ambassador to Greece. Once a prominent Trump insider, she suggested she will now fight to defend her reputation.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T20:50:48.000Z",
-        "sentiment": {
-          "posP": 5,
-          "negP": 22.6,
-          "neuP": 72.4,
-          "label": "negative",
-          "confidence": 0.79
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Kimberly Guilfoyle Resigns as Ambassador to Greece",
-        "link": "https://www.nytimes.com/2026/10/13/us/politics/kimberly-guilfoyle-resign.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ms. Guilfoyle was asked to quit by the White House after a string of damaging reports, including that she had asked a Republican donor to pay off a credit card.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T21:42:35.000Z",
-        "sentiment": {
-          "posP": 6.6,
-          "negP": 17.7,
-          "neuP": 75.7,
-          "label": "negative",
-          "confidence": 0.53
+          "confidence": 0.15
         },
         "category": "usa"
       },
@@ -5296,7 +5342,7 @@
         "description": "A lawyer for Lisa Cook raised “significant concerns” over the “objectivity and fitness of the committee” assembled by President Trump as a way to remove her as a governor at the Federal Reserve.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T21:55:45.000Z",
+        "publishedAt": "2026-10-14T00:04:56.000Z",
         "sentiment": {
           "posP": 5,
           "negP": 6.9,
@@ -5316,7 +5362,7 @@
         "description": "As Trump mulls joining Saudi Arabia in attacking the Houthis, the Iran-backed group is threatening a \"painful\" response.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T21:16:45.000Z",
+        "publishedAt": "2026-10-14T00:53:10.000Z",
         "sentiment": {
           "posP": 8,
           "negP": 27.6,
@@ -5327,122 +5373,82 @@
         "category": "usa"
       },
       {
-        "title": "Judge blocks Trump admin. from felling trees at D.C. golf course",
-        "link": "https://www.cbsnews.com/news/trump-east-potomac-golf-course-judge-ana-reyes/",
+        "title": "Trump says Houthis are \"behaving very badly.\" What are his options?",
+        "link": "https://www.cbsnews.com/video/trump-houthis-behaving-very-badly-what-are-his-options/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "U.S. District Judge Ana Reyes blocked the Trump administration from cutting down trees at East Potomac Golf Links through Oct. 26.",
+        "description": "Saudi Arabia said it intercepted Houthi missiles and drones across the kingdom on Tuesday after the rebel group struck an airport over the weekend. CBS News Middle East contributor Courtney Kealy joins with analysis.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T18:46:25.000Z",
+        "publishedAt": "2026-10-14T00:18:03.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 15.9,
-          "neuP": 84.1,
-          "label": "negative",
-          "confidence": 0.54
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Controversy over new White House press secretary Katie Zacharia's legal credentials",
-        "link": "https://www.cbsnews.com/video/controversy-over-new-white-house-press-secretary-katie-zacharias-legal-credentials/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Questions are rising over new White House press secretary Katie Zacharia's legal credentials and where she took her bar exam. CBS News' Nancy Cordes reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T17:26:33.000Z",
-        "sentiment": {
-          "posP": 8.1,
-          "negP": 0,
-          "neuP": 91.9,
-          "label": "positive",
-          "confidence": 0.25
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump attacks Rep. Ilhan Omar and Senate hopeful Abdul El-Sayed at Ohio rally",
-        "link": "https://www.nbcnews.com/politics/2026-election/donald-trump-attacks-ilhan-omar-abdul-el-sayed-ohio-rally-youngstown-rcna603107",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The crowd chanted “deport” at several points as Trump denigrated Omar, who was born in Somalia and immigrated to the U.S., and El-Sayed, who was born in Michigan.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T01:27:03.000Z",
-        "sentiment": {
-          "posP": 7.3,
-          "negP": 6.4,
-          "neuP": 86.3,
-          "label": "neutral",
-          "confidence": 0.1
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Kimberly Guilfoyle resigns as U.S. ambassador to Greece amid misconduct allegations",
-        "link": "https://www.nbcnews.com/now/video/kimberly-guilfoyle-resigns-as-u-s-ambassador-to-greece-amid-misconduct-allegations-271500869816",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "U.S. Ambassador to Greece Kimberly Guilfoyle, once a top Trump campaign surrogate, resigned amid misconduct allegations, which she said were false. Guilfoyle's announcement came shortly after the new White House press secretary, Katie Zacharia, told reporters that the ambassador was asked to step down.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T16:16:29.000Z",
-        "sentiment": {
-          "posP": 3.2,
-          "negP": 7.5,
-          "neuP": 89.3,
-          "label": "negative",
-          "confidence": 0.36
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Diesel futures jump, signaling higher prices to come despite Trump’s Russia deal",
-        "link": "https://www.nbcnews.com/business/energy/diesel-futures-higher-prices-trump-moves-rcna603218",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Diesel futures traded sharply higher Tuesday, as doubts mounted that the Trump administration’s recent maneuvers to lower prices would make much of an impact.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T17:49:19.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 11.5,
-          "neuP": 88.5,
-          "label": "negative",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump’s new messenger: From the Politics Desk",
-        "link": "https://www.nbcnews.com/politics/politics-news/trumps-new-messenger-politics-desk-rcna603276",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Welcome to From the Politics Desk, a daily newsletter that brings you the NBC News Politics team’s latest reporting and analysis from the White House, Capitol Hill and the campaign trail.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T21:39:18.000Z",
-        "sentiment": {
-          "posP": 7.7,
-          "negP": 0,
+          "negP": 7.7,
           "neuP": 92.3,
-          "label": "positive",
-          "confidence": 0.46
+          "label": "negative",
+          "confidence": 0.38
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump officials now leaning against execution livestream, sources say",
+        "link": "https://www.cbsnews.com/news/trump-officials-leaning-against-execution-livestream-nidal-hasan/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Last week, the Pentagon had said the execution of the ex-Army major convicted of killing 13 in 2009 would be livestreamed.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T23:44:35.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 13.2,
+          "neuP": 86.8,
+          "label": "negative",
+          "confidence": 0.66
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump officials now leaning against livestreaming Fort Hood shooter's execution, sources say",
+        "link": "https://www.cbsnews.com/video/trump-officials-leaning-against-livestreaming-fort-hood-shooter-execution-sources/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump administration officials are now leaning against livestreaming the Fort Hood mass shooter's execution, sources say.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T23:30:17.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump distances himself from Kimberly Guilfoyle: \"She wasn't a member of the family\"",
+        "link": "https://www.cbsnews.com/video/trump-distances-himself-kimberly-guilfoyle-wasnt-member-family/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Kimberly Guilfoyle, the former fiancée of Donald Trump Jr., is now also the former U.S. ambassador to Greece. She resigned on Tuesday, amid allegations that she asked a major donor to pay off her six-figure personal credit card debt, in exchange for access to the Trump White House. Weijia Jiang has more details.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-13T23:29:48.000Z",
+        "sentiment": {
+          "posP": 3.8,
+          "negP": 8.6,
+          "neuP": 87.6,
+          "label": "negative",
+          "confidence": 0.32
         },
         "category": "usa"
       },
@@ -5468,32 +5474,32 @@
       }
     ],
     "sentiment": {
-      "pos": 5.04,
-      "neu": 84.41,
-      "neg": 10.55,
-      "count": 33
+      "pos": 5.85,
+      "neu": 84.73,
+      "neg": 9.42,
+      "count": 36
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 3.9,
-        "neu": 86.04,
-        "neg": 10.06,
-        "count": 8
+        "source": "NYT",
+        "pos": 7.4,
+        "neu": 79.76,
+        "neg": 12.84,
+        "count": 9
       },
       {
-        "source": "NYT",
-        "pos": 6.19,
-        "neu": 81.81,
-        "neg": 12,
+        "source": "NBC News",
+        "pos": 7.83,
+        "neu": 84.1,
+        "neg": 8.07,
         "count": 7
       },
       {
         "source": "CBS News",
-        "pos": 5.03,
-        "neu": 80.6,
-        "neg": 14.38,
-        "count": 4
+        "pos": 2.63,
+        "neu": 85.52,
+        "neg": 11.85,
+        "count": 6
       },
       {
         "source": "WSJ",
@@ -5511,16 +5517,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.83,
-        "neu": 86.03,
+        "pos": 8.17,
+        "neu": 86.7,
         "neg": 5.13,
         "count": 3
       },
       {
         "source": "Fox News",
-        "pos": 4.5,
-        "neu": 80.4,
-        "neg": 15.1,
+        "pos": 6.3,
+        "neu": 93.7,
+        "neg": 0,
         "count": 2
       },
       {
@@ -5534,23 +5540,23 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.99,
-        "neu": 81.29,
-        "neg": 13.71,
-        "count": 15
+        "pos": 4.9,
+        "neu": 82.86,
+        "neg": 12.24,
+        "count": 16
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.5,
-        "neu": 85.4,
-        "neg": 9.1,
-        "count": 8
+        "pos": 8.82,
+        "neu": 80.04,
+        "neg": 11.13,
+        "count": 9
       },
       {
         "topic": "Policy",
-        "pos": 3.4,
-        "neu": 89.08,
-        "neg": 7.52,
+        "pos": 5.03,
+        "neu": 92.02,
+        "neg": 2.95,
         "count": 6
       },
       {
@@ -5562,16 +5568,16 @@
       },
       {
         "topic": "Legal",
-        "pos": 8.1,
-        "neu": 91.9,
-        "neg": 0,
-        "count": 1
+        "pos": 1.8,
+        "neu": 94.35,
+        "neg": 3.85,
+        "count": 2
       },
       {
         "topic": "Public Statements",
         "pos": 0,
-        "neu": 87.5,
-        "neg": 12.5,
+        "neu": 94.4,
+        "neg": 5.6,
         "count": 1
       }
     ]
@@ -5599,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-13T17:58:54.948Z",
+        "label": "2026-10-13T21:05:36.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T18:58:54.948Z",
+        "label": "2026-10-13T22:05:36.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T19:58:54.948Z",
+        "label": "2026-10-13T23:05:36.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T20:58:54.948Z",
+        "label": "2026-10-14T00:05:36.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5629,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-13T17:58:54.948Z",
+        "label": "2026-10-13T21:05:36.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T18:58:54.948Z",
+        "label": "2026-10-13T22:05:36.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T19:58:54.948Z",
+        "label": "2026-10-13T23:05:36.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T20:58:54.948Z",
+        "label": "2026-10-14T00:05:36.784Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5730,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-13T21:58:54.949Z",
+    "generatedAt": "2026-10-14T01:05:36.785Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5851,8 +5857,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 165,
-      "potusArticles": 33,
+      "usaArticles": 168,
+      "potusArticles": 36,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
