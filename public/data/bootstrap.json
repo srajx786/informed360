@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-14T01:05:36.781Z",
+  "generatedAt": "2026-10-14T15:58:50.399Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 168,
-    "potusArticles": 36
+    "usaArticles": 169,
+    "potusArticles": 31
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-13T21:05:36.781Z",
+          "label": "2026-10-14T11:58:50.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T22:05:36.781Z",
+          "label": "2026-10-14T12:58:50.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T23:05:36.781Z",
+          "label": "2026-10-14T13:58:50.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-14T00:05:36.781Z",
+          "label": "2026-10-14T14:58:50.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-13T21:05:36.781Z",
+          "label": "2026-10-14T11:58:50.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T22:05:36.781Z",
+          "label": "2026-10-14T12:58:50.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-13T23:05:36.781Z",
+          "label": "2026-10-14T13:58:50.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-14T00:05:36.781Z",
+          "label": "2026-10-14T14:58:50.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 6.59,
-      "neu": 80.95,
-      "neg": 12.46,
-      "count": 168
+      "pos": 8.49,
+      "neu": 80.82,
+      "neg": 10.69,
+      "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.18,
-        "neu": 81.85,
-        "neg": 10.96,
-        "count": 40
+        "pos": 10.16,
+        "neu": 82.01,
+        "neg": 7.82,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 7.47,
-        "neu": 77.79,
-        "neg": 14.74,
+        "pos": 9.5,
+        "neu": 75.82,
+        "neg": 14.68,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 3.29,
-        "neu": 83.41,
-        "neg": 13.3,
+        "pos": 8.27,
+        "neu": 82.64,
+        "neg": 9.09,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 5.16,
-        "neu": 79.15,
-        "neg": 15.7,
+        "pos": 6.52,
+        "neu": 79.04,
+        "neg": 14.43,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.02,
-        "neu": 82.22,
-        "neg": 7.76,
+        "pos": 9.19,
+        "neu": 84.47,
+        "neg": 6.34,
         "count": 20
       },
       {
@@ -4628,122 +4628,116 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
-        },
-        {
-          "name": "Healthcare",
-          "bias": -15.73,
-          "count": 8
-        },
-        {
           "name": "Materials",
-          "bias": -10.67,
-          "count": 3
-        },
-        {
-          "name": "Communication",
-          "bias": -9.78,
-          "count": 4
-        },
-        {
-          "name": "Technology",
-          "bias": -6.81,
-          "count": 116
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -5.45,
+          "bias": -15.45,
           "count": 2
         },
         {
-          "name": "Finance",
-          "bias": -3.99,
-          "count": 18
-        },
-        {
-          "name": "Energy",
-          "bias": 1.5,
-          "count": 8
-        }
-      ],
-      "pos": [
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        }
-      ],
-      "neu": [
-        {
-          "name": "Communication",
-          "bias": -9.78,
-          "count": 4
-        },
-        {
-          "name": "Technology",
-          "bias": -6.81,
-          "count": 116
+          "name": "Utilities",
+          "bias": -14.73,
+          "count": 3
         },
         {
           "name": "Manufacturing",
-          "bias": -5.45,
+          "bias": -9.83,
+          "count": 4
+        },
+        {
+          "name": "Communication",
+          "bias": -8.2,
+          "count": 3
+        },
+        {
+          "name": "Healthcare",
+          "bias": -4.75,
+          "count": 8
+        },
+        {
+          "name": "Real Estate",
+          "bias": -4,
+          "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": -2.15,
+          "count": 11
+        },
+        {
+          "name": "Technology",
+          "bias": -2.11,
+          "count": 130
+        },
+        {
+          "name": "Finance",
+          "bias": -0.97,
+          "count": 15
+        }
+      ],
+      "pos": [],
+      "neu": [
+        {
+          "name": "Communication",
+          "bias": -8.2,
+          "count": 3
+        },
+        {
+          "name": "Healthcare",
+          "bias": -4.75,
+          "count": 8
+        },
+        {
+          "name": "Real Estate",
+          "bias": -4,
           "count": 2
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
-        },
-        {
-          "name": "Healthcare",
-          "bias": -15.73,
-          "count": 8
-        },
-        {
           "name": "Materials",
-          "bias": -10.67,
+          "bias": -15.45,
+          "count": 2
+        },
+        {
+          "name": "Utilities",
+          "bias": -14.73,
           "count": 3
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -9.83,
+          "count": 4
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-13T21:05:36.782Z",
-          "pos": 6,
-          "neu": 77,
-          "neg": 17,
-          "count": 14
+          "label": "2026-10-14T11:58:50.401Z",
+          "pos": 5,
+          "neu": 86,
+          "neg": 9,
+          "count": 7
         },
         {
-          "label": "2026-10-13T22:05:36.782Z",
+          "label": "2026-10-14T12:58:50.401Z",
+          "pos": 10,
+          "neu": 80,
+          "neg": 10,
+          "count": 25
+        },
+        {
+          "label": "2026-10-14T13:58:50.401Z",
+          "pos": 10,
+          "neu": 80,
+          "neg": 10,
+          "count": 28
+        },
+        {
+          "label": "2026-10-14T14:58:50.401Z",
           "pos": 8,
-          "neu": 77,
-          "neg": 15,
-          "count": 13
-        },
-        {
-          "label": "2026-10-13T23:05:36.782Z",
-          "pos": 3,
-          "neu": 85,
+          "neu": 80,
           "neg": 12,
           "count": 27
-        },
-        {
-          "label": "2026-10-14T00:05:36.782Z",
-          "pos": 6,
-          "neu": 81,
-          "neg": 14,
-          "count": 18
         }
       ]
     }
@@ -4951,42 +4945,42 @@
         "category": "world"
       },
       {
-        "title": "Venture capital firm tied to Donald Trump Jr weighs legal action against ABC News over botched report",
-        "link": "https://www.foxnews.com/media/venture-capital-firm-tied-donald-trump-jr-weighs-legal-action-abc-news-botched-report",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "1789 Capital says its attorneys are in touch with ABC News and Disney after the network deleted and revised a report about Donald Trump Jr..",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-14T01:01:57.000Z",
-        "sentiment": {
-          "posP": 3.6,
-          "negP": 0,
-          "neuP": 96.4,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "‘Honey Please’: The Steep Rise and Sudden Fall of Kimberly Guilfoyle.",
-        "link": "https://www.nytimes.com/2026/10/13/us/politics/guilfoyle-fall.html",
+        "title": "The Downfall of Trump’s Ambassador to Greece, and the Pope’s Cancer Diagnosis",
+        "link": "https://www.nytimes.com/2026/10/14/podcasts/the-headlines/kimberly-guilfoyle-pope-cancer.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump cut her loose after damaging news reports about her tenure as ambassador to Greece. Once a prominent Trump insider, she suggested she will now fight to defend her reputation.",
+        "description": "Plus, the antique apples making a comeback.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T23:44:50.000Z",
+        "publishedAt": "2026-10-14T10:00:07.000Z",
         "sentiment": {
-          "posP": 4.7,
-          "negP": 21.2,
-          "neuP": 74.1,
+          "posP": 0,
+          "negP": 20.6,
+          "neuP": 79.4,
           "label": "negative",
-          "confidence": 0.79
+          "confidence": 0.66
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Zelensky Visits U.K. as Ukraine Presses Allies on Intelligence Sharing",
+        "link": "https://www.nytimes.com/2026/10/14/world/europe/ukraine-intelligence-sharing-zelensky-uk.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Volodymyr Zelensky said Ukraine had received “no early warning from our partners” about Russian attacks. President Trump has said Washington is still “sharing intel.”",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T15:38:50.000Z",
+        "sentiment": {
+          "posP": 14,
+          "negP": 12.6,
+          "neuP": 73.4,
+          "label": "neutral",
+          "confidence": 0.15
         },
         "category": "usa"
       }
@@ -5193,236 +5187,56 @@
         "category": "world"
       },
       {
-        "title": "Venture capital firm tied to Donald Trump Jr weighs legal action against ABC News over botched report",
-        "link": "https://www.foxnews.com/media/venture-capital-firm-tied-donald-trump-jr-weighs-legal-action-abc-news-botched-report",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "1789 Capital says its attorneys are in touch with ABC News and Disney after the network deleted and revised a report about Donald Trump Jr..",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-14T01:01:57.000Z",
-        "sentiment": {
-          "posP": 3.6,
-          "negP": 0,
-          "neuP": 96.4,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "‘Honey Please’: The Steep Rise and Sudden Fall of Kimberly Guilfoyle.",
-        "link": "https://www.nytimes.com/2026/10/13/us/politics/guilfoyle-fall.html",
+        "title": "The Downfall of Trump’s Ambassador to Greece, and the Pope’s Cancer Diagnosis",
+        "link": "https://www.nytimes.com/2026/10/14/podcasts/the-headlines/kimberly-guilfoyle-pope-cancer.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump cut her loose after damaging news reports about her tenure as ambassador to Greece. Once a prominent Trump insider, she suggested she will now fight to defend her reputation.",
+        "description": "Plus, the antique apples making a comeback.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T23:44:50.000Z",
-        "sentiment": {
-          "posP": 4.7,
-          "negP": 21.2,
-          "neuP": 74.1,
-          "label": "negative",
-          "confidence": 0.79
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Kimberly Guilfoyle Resigns as Ambassador to Greece",
-        "link": "https://www.nytimes.com/2026/10/13/us/politics/kimberly-guilfoyle-resign.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ms. Guilfoyle was asked to quit by the White House after a string of damaging reports, including that she had asked a Republican donor to pay off a credit card.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T21:56:15.000Z",
-        "sentiment": {
-          "posP": 6.6,
-          "negP": 17.7,
-          "neuP": 75.7,
-          "label": "negative",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Aids Putin, Feuds With Ukraine",
-        "link": "https://www.nytimes.com/2026/10/13/briefing/putin-guilfoyle-gop.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Plus, the G.O.P. plays defense in red states. Here’s the latest at the end of Tuesday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T22:38:10.000Z",
-        "sentiment": {
-          "posP": 14.1,
-          "negP": 9.6,
-          "neuP": 76.3,
-          "label": "neutral",
-          "confidence": 0.03
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Hands Victories to Putin, Who Offers More War in Return",
-        "link": "https://www.nytimes.com/2026/10/13/world/europe/russia-putin-trump-diesel-ukraine.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Russia has reaped a diesel deal and an increase in U.S. pressure on Ukraine as President Trump’s political needs align with his longstanding inclinations toward Russia.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T16:13:56.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 15.3,
-          "neuP": 79.2,
-          "label": "negative",
-          "confidence": 0.62
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Ukraine Says It Received No Intelligence About Strikes 2 Nights in a Row",
-        "link": "https://www.nytimes.com/2026/10/13/world/europe/ukraine-trump-intelligence.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Asked about apparent U.S. threats to cut off intelligence sharing with Kyiv, which can warn of Russian aerial attacks, President Trump said information continued to flow.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T21:17:34.000Z",
-        "sentiment": {
-          "posP": 17.7,
-          "negP": 27.3,
-          "neuP": 55,
-          "label": "negative",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Katie Zacharia Makes Bumpy Debut as Trump’s New Press Secretary",
-        "link": "https://www.nytimes.com/2026/10/13/us/politics/katie-zacharia-white-house-first-briefing.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ms. Zacharia spent eight minutes reading from a script, called on only three reporters and made an awkward slip-up.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T23:49:54.000Z",
+        "publishedAt": "2026-10-14T10:00:07.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 5.6,
-          "neuP": 94.4,
-          "label": "neutral",
-          "confidence": 0.15
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Lawyer for Fed Governor Cook Denounces Trump’s New Investigation",
-        "link": "https://www.nytimes.com/2026/10/13/business/fed-governor-lisa-cook-trump-investigation.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A lawyer for Lisa Cook raised “significant concerns” over the “objectivity and fitness of the committee” assembled by President Trump as a way to remove her as a governor at the Federal Reserve.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-14T00:04:56.000Z",
-        "sentiment": {
-          "posP": 5,
-          "negP": 6.9,
-          "neuP": 88.1,
-          "label": "negative",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Houthis threaten \"painful\" response if U.S. helps Saudis",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-saudi-arabia-houthi/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "As Trump mulls joining Saudi Arabia in attacking the Houthis, the Iran-backed group is threatening a \"painful\" response.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-14T00:53:10.000Z",
-        "sentiment": {
-          "posP": 8,
-          "negP": 27.6,
-          "neuP": 64.4,
-          "label": "negative",
-          "confidence": 0.75
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says Houthis are \"behaving very badly.\" What are his options?",
-        "link": "https://www.cbsnews.com/video/trump-houthis-behaving-very-badly-what-are-his-options/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Saudi Arabia said it intercepted Houthi missiles and drones across the kingdom on Tuesday after the rebel group struck an airport over the weekend. CBS News Middle East contributor Courtney Kealy joins with analysis.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-14T00:18:03.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 7.7,
-          "neuP": 92.3,
-          "label": "negative",
-          "confidence": 0.38
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump officials now leaning against execution livestream, sources say",
-        "link": "https://www.cbsnews.com/news/trump-officials-leaning-against-execution-livestream-nidal-hasan/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Last week, the Pentagon had said the execution of the ex-Army major convicted of killing 13 in 2009 would be livestreamed.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-13T23:44:35.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 13.2,
-          "neuP": 86.8,
+          "negP": 20.6,
+          "neuP": 79.4,
           "label": "negative",
           "confidence": 0.66
         },
         "category": "usa"
       },
       {
-        "title": "Trump officials now leaning against livestreaming Fort Hood shooter's execution, sources say",
-        "link": "https://www.cbsnews.com/video/trump-officials-leaning-against-livestreaming-fort-hood-shooter-execution-sources/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Zelensky Visits U.K. as Ukraine Presses Allies on Intelligence Sharing",
+        "link": "https://www.nytimes.com/2026/10/14/world/europe/ukraine-intelligence-sharing-zelensky-uk.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump administration officials are now leaning against livestreaming the Fort Hood mass shooter's execution, sources say.",
+        "description": "President Volodymyr Zelensky said Ukraine had received “no early warning from our partners” about Russian attacks. President Trump has said Washington is still “sharing intel.”",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T23:30:17.000Z",
+        "publishedAt": "2026-10-14T15:38:50.000Z",
+        "sentiment": {
+          "posP": 14,
+          "negP": 12.6,
+          "neuP": 73.4,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "A Trump Backlash Endangers Susan Collins in the Maine Senate Race",
+        "link": "https://www.nytimes.com/2026/10/14/us/politics/susan-collins-trump-maine-senate.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The race in Maine, which could decide Senate control, is testing whether there is still room for Ms. Collins’s brand of moderation during a sharply polarizing presidency.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T12:26:57.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5433,73 +5247,253 @@
         "category": "usa"
       },
       {
-        "title": "Trump distances himself from Kimberly Guilfoyle: \"She wasn't a member of the family\"",
-        "link": "https://www.cbsnews.com/video/trump-distances-himself-kimberly-guilfoyle-wasnt-member-family/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Kimberly Guilfoyle’s Rise and Fall as Trump’s Ambassador to Greece",
+        "link": "https://www.nytimes.com/2026/10/13/us/politics/kimberly-guilfoyle-resigns-trump-ambassador-greece.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Kimberly Guilfoyle, the former fiancée of Donald Trump Jr., is now also the former U.S. ambassador to Greece. She resigned on Tuesday, amid allegations that she asked a major donor to pay off her six-figure personal credit card debt, in exchange for access to the Trump White House. Weijia Jiang has more details.",
+        "description": "President Trump cut her loose after damaging news reports about her tenure as ambassador to Greece. Once a prominent Trump insider, she suggested she will now fight to defend her reputation.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T23:29:48.000Z",
+        "publishedAt": "2026-10-14T14:17:27.000Z",
         "sentiment": {
-          "posP": 3.8,
-          "negP": 8.6,
-          "neuP": 87.6,
+          "posP": 4.8,
+          "negP": 21.6,
+          "neuP": 73.6,
           "label": "negative",
-          "confidence": 0.32
+          "confidence": 0.79
         },
         "category": "usa"
       },
       {
-        "title": "Trump rally protester attacked in act of ‘senseless’ political violence, Ohio mayor says",
-        "link": "https://www.nbcnews.com/news/us-news/trump-rally-protester-attacked-act-senseless-political-violence-ohio-m-rcna603249",
+        "title": "Trump’s Latest Effort to Fire Fed Governor Lisa Cook Underscores Political Motives",
+        "link": "https://www.nytimes.com/2026/10/14/business/trump-lisa-cook-federal-reserve-hearing.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump tapped his political appointees to determine whether he could oust Lisa Cook, a Fed governor he had already tried to oust.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T09:02:27.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 6.8,
+          "neuP": 93.2,
+          "label": "negative",
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How Top Trump Officials Stoked Fears of a Nuke That Could Fry the Power Grid",
+        "link": "https://www.nytimes.com/2026/10/14/science/electromagnetic-pulse-nuke-trump-officials.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "For more than a decade, conservative activists held that a single atomic bomb could, without killing Americans directly, lay waste to the country — a claim that built fervor for war with Iran.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T09:00:30.000Z",
+        "sentiment": {
+          "posP": 9.7,
+          "negP": 23.1,
+          "neuP": 67.2,
+          "label": "negative",
+          "confidence": 0.81
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Houthis launch new attack on Saudi capital as Trump mulls strikes",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-houthi-saudi-arabia-trump/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Iran's Houthi allies launch a new attack on Saudi Arabia and promise more to come as Trump considers U.S. action on the new front line in the wider Mideast war.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T15:35:06.000Z",
+        "sentiment": {
+          "posP": 4.6,
+          "negP": 25.3,
+          "neuP": 70.1,
+          "label": "negative",
+          "confidence": 0.88
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Top meme coin buyers vying for Trump dinner appear to be overseas",
+        "link": "https://www.cbsnews.com/news/trump-meme-coin-dinner-foreign-top-bidders/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "At least 52 $TRUMP holders moved funds through crypto exchanges that bar U.S. customers.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T13:40:00.000Z",
+        "sentiment": {
+          "posP": 6.7,
+          "negP": 0,
+          "neuP": 93.3,
+          "label": "positive",
+          "confidence": 0.2
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump promised to lower prices for Americans. Here's what the data shows.",
+        "link": "https://www.cbsnews.com/news/trump-promised-lower-prices-cost-living-inflation/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Just weeks before the midterm elections, 90% of Americans say prices in the U.S. are the main factor shaping their view of the economy. These charts show why.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T13:28:51.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 5.2,
+          "neuP": 88.9,
+          "label": "neutral",
+          "confidence": 0.08
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Treasury says largest U.S. banks let politics influence who received banking services",
+        "link": "https://www.cnbc.com/2026/10/14/treasury-banks-debanking-trump-reputation-risk.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "New Treasury Department findings may lend weight to President Donald Trump’s long-running grievance that major banks have discriminated against conservatives.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T15:44:54.000Z",
+        "sentiment": {
+          "posP": 10.1,
+          "negP": 8.7,
+          "neuP": 81.2,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's diesel dilemma — by the numbers",
+        "link": "https://www.cnbc.com/2026/10/14/trumps-diesel-dilemma-by-the-numbers.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Conflicts in Ukraine and Iran have created major ripple effects across global energy markets causing major price swings.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T13:35:46.000Z",
+        "sentiment": {
+          "posP": 14.4,
+          "negP": 15.1,
+          "neuP": 70.5,
+          "label": "neutral",
+          "confidence": 0.05
+        },
+        "category": "usa"
+      },
+      {
+        "title": "South Texas Latino voters who flipped for Trump in 2024 are up for grabs in 2026",
+        "link": "https://www.cnbc.com/2026/10/14/texas-latino-voters-midterm-election-trump.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Hispanic and Latino voters swung hard for President Donald Trump in 2024. But in the 2026 midterm election, Democrats are pushing to get them back.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T14:25:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 3.4,
+          "neuP": 96.6,
+          "label": "neutral",
+          "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Ukraine warns Starlink limits are disrupting military operations as Russia pounds its energy infrastructure",
+        "link": "https://www.cnbc.com/2026/10/14/russia-ukraine-energy-ceasefire-power-outages.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A ballistic missile has struck energy infrastructure supposedly covered by the \"energy ceasefire\" announced by Trump on Sunday, Zelenskyy said.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T09:18:18.000Z",
+        "sentiment": {
+          "posP": 16.7,
+          "negP": 9,
+          "neuP": 74.3,
+          "label": "positive",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump pardons two vehicle repair shop owners during Alaska rally",
+        "link": "https://www.nbcnews.com/video/trump-pardons-two-vehicle-repair-shop-owners-during-alaska-rally-271538245765",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "At least two men attending President Donald Trump’s rally in Ohio attacked a female protester in a “senseless” confrontation decried by the mayor of Youngstown on Tuesday.",
+        "description": "During his rally in Alaska, President Trump pardoned Zachary Czuback and Patrick Fleming, co-owners of a vehicle repair shop in Anchorage. Both pleaded guilty in 2022 to violating the Clean Air Act by tampering with federally mandated and monitored devices that tracked vehicles’ diesel emissions.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-13T21:17:44.000Z",
+        "publishedAt": "2026-10-14T01:56:45.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 26.7,
-          "neuP": 73.3,
-          "label": "negative",
-          "confidence": 0.91
+          "posP": 11,
+          "negP": 10.1,
+          "neuP": 78.9,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.85,
-      "neu": 84.73,
-      "neg": 9.42,
-      "count": 36
+      "pos": 6.19,
+      "neu": 83.66,
+      "neg": 10.14,
+      "count": 31
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 7.4,
-        "neu": 79.76,
-        "neg": 12.84,
-        "count": 9
+        "pos": 5.19,
+        "neu": 82.73,
+        "neg": 12.09,
+        "count": 8
       },
       {
         "source": "NBC News",
-        "pos": 7.83,
-        "neu": 84.1,
-        "neg": 8.07,
-        "count": 7
+        "pos": 10.87,
+        "neu": 80.08,
+        "neg": 9.05,
+        "count": 6
       },
       {
         "source": "CBS News",
-        "pos": 2.63,
-        "neu": 85.52,
-        "neg": 11.85,
-        "count": 6
+        "pos": 5.3,
+        "neu": 83.57,
+        "neg": 11.13,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5517,17 +5511,10 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.17,
-        "neu": 86.7,
-        "neg": 5.13,
+        "pos": 6.27,
+        "neu": 80.93,
+        "neg": 12.8,
         "count": 3
-      },
-      {
-        "source": "Fox News",
-        "pos": 6.3,
-        "neu": 93.7,
-        "neg": 0,
-        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5540,44 +5527,37 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.9,
-        "neu": 82.86,
-        "neg": 12.24,
+        "pos": 4.94,
+        "neu": 83.83,
+        "neg": 11.23,
         "count": 16
       },
       {
         "topic": "Foreign Policy",
-        "pos": 8.82,
-        "neu": 80.04,
-        "neg": 11.13,
-        "count": 9
-      },
-      {
-        "topic": "Policy",
-        "pos": 5.03,
-        "neu": 92.02,
-        "neg": 2.95,
+        "pos": 8.2,
+        "neu": 81.52,
+        "neg": 10.28,
         "count": 6
       },
       {
-        "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
+        "topic": "Policy",
+        "pos": 5.4,
+        "neu": 85.9,
+        "neg": 8.7,
+        "count": 4
       },
       {
-        "topic": "Legal",
-        "pos": 1.8,
-        "neu": 94.35,
-        "neg": 3.85,
-        "count": 2
+        "topic": "Economy",
+        "pos": 9.82,
+        "neu": 82.1,
+        "neg": 8.07,
+        "count": 4
       },
       {
         "topic": "Public Statements",
-        "pos": 0,
-        "neu": 94.4,
-        "neg": 5.6,
+        "pos": 2.9,
+        "neu": 91.2,
+        "neg": 5.9,
         "count": 1
       }
     ]
@@ -5605,28 +5585,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-13T21:05:36.784Z",
+        "label": "2026-10-14T11:58:50.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T22:05:36.784Z",
+        "label": "2026-10-14T12:58:50.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T23:05:36.784Z",
+        "label": "2026-10-14T13:58:50.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-14T00:05:36.784Z",
+        "label": "2026-10-14T14:58:50.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5615,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-13T21:05:36.784Z",
+        "label": "2026-10-14T11:58:50.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T22:05:36.784Z",
+        "label": "2026-10-14T12:58:50.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-13T23:05:36.784Z",
+        "label": "2026-10-14T13:58:50.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-14T00:05:36.784Z",
+        "label": "2026-10-14T14:58:50.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5716,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-14T01:05:36.785Z",
+    "generatedAt": "2026-10-14T15:58:50.403Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5857,8 +5837,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 168,
-      "potusArticles": 36,
+      "usaArticles": 169,
+      "potusArticles": 31,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
