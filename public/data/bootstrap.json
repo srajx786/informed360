@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-15T01:32:01.615Z",
+  "generatedAt": "2026-10-15T06:20:44.272Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 171,
-    "potusArticles": 37
+    "usaArticles": 170,
+    "potusArticles": 33
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-14T21:32:01.615Z",
+          "label": "2026-10-15T02:20:44.273Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-14T22:32:01.615Z",
+          "label": "2026-10-15T03:20:44.273Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-14T23:32:01.615Z",
+          "label": "2026-10-15T04:20:44.273Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-15T00:32:01.615Z",
+          "label": "2026-10-15T05:20:44.273Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-14T21:32:01.616Z",
+          "label": "2026-10-15T02:20:44.273Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-14T22:32:01.616Z",
+          "label": "2026-10-15T03:20:44.273Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-14T23:32:01.616Z",
+          "label": "2026-10-15T04:20:44.273Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-15T00:32:01.616Z",
+          "label": "2026-10-15T05:20:44.273Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.46,
-      "neu": 81.72,
-      "neg": 10.83,
-      "count": 171
+      "pos": 6.74,
+      "neu": 82.05,
+      "neg": 11.2,
+      "count": 170
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.64,
-        "neu": 82.58,
-        "neg": 9.78,
-        "count": 43
+        "pos": 6.44,
+        "neu": 82.53,
+        "neg": 11.03,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 8.43,
-        "neu": 77.64,
-        "neg": 13.93,
+        "pos": 7.47,
+        "neu": 81.75,
+        "neg": 10.79,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.54,
-        "neu": 83.06,
-        "neg": 12.4,
+        "pos": 4.02,
+        "neu": 83.38,
+        "neg": 12.6,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.88,
-        "neu": 81.94,
-        "neg": 11.17,
+        "pos": 5.68,
+        "neu": 81.76,
+        "neg": 12.56,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 11.43,
-        "neu": 84.34,
-        "neg": 4.24,
+        "pos": 11.29,
+        "neu": 81.84,
+        "neg": 6.88,
         "count": 20
       },
       {
@@ -4633,63 +4633,62 @@
           "count": 1
         },
         {
+          "name": "Materials",
+          "bias": -12.74,
+          "count": 5
+        },
+        {
           "name": "Communication",
           "bias": -7,
           "count": 2
         },
         {
           "name": "Energy",
-          "bias": -6.44,
-          "count": 17
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Finance",
-          "bias": -4.37,
-          "count": 18
+          "bias": -5.88,
+          "count": 14
         },
         {
           "name": "Technology",
-          "bias": -4.13,
-          "count": 128
+          "bias": -5,
+          "count": 131
         },
         {
-          "name": "Healthcare",
-          "bias": -0.87,
-          "count": 7
+          "name": "Finance",
+          "bias": -4.86,
+          "count": 13
         },
         {
           "name": "Manufacturing",
-          "bias": 0.42,
-          "count": 5
-        }
-      ],
-      "pos": [
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        }
-      ],
-      "neu": [
-        {
-          "name": "Finance",
-          "bias": -4.37,
-          "count": 18
-        },
-        {
-          "name": "Technology",
-          "bias": -4.13,
-          "count": 128
+          "bias": -4.4,
+          "count": 4
         },
         {
           "name": "Healthcare",
-          "bias": -0.87,
-          "count": 7
+          "bias": -3.33,
+          "count": 9
+        },
+        {
+          "name": "Real Estate",
+          "bias": -2.25,
+          "count": 2
+        }
+      ],
+      "pos": [],
+      "neu": [
+        {
+          "name": "Energy",
+          "bias": -5.88,
+          "count": 14
+        },
+        {
+          "name": "Technology",
+          "bias": -5,
+          "count": 131
+        },
+        {
+          "name": "Finance",
+          "bias": -4.86,
+          "count": 13
         }
       ],
       "neg": [
@@ -4699,46 +4698,46 @@
           "count": 1
         },
         {
+          "name": "Materials",
+          "bias": -12.74,
+          "count": 5
+        },
+        {
           "name": "Communication",
           "bias": -7,
           "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -6.44,
-          "count": 17
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-14T21:32:01.618Z",
-          "pos": 6,
-          "neu": 89,
+          "label": "2026-10-15T02:20:44.274Z",
+          "pos": 4,
+          "neu": 86,
+          "neg": 11,
+          "count": 10
+        },
+        {
+          "label": "2026-10-15T03:20:44.274Z",
+          "pos": 8,
+          "neu": 87,
           "neg": 4,
           "count": 7
         },
         {
-          "label": "2026-10-14T22:32:01.618Z",
-          "pos": 6,
-          "neu": 79,
-          "neg": 15,
-          "count": 18
-        },
-        {
-          "label": "2026-10-14T23:32:01.618Z",
+          "label": "2026-10-15T04:20:44.274Z",
           "pos": 5,
-          "neu": 82,
-          "neg": 13,
-          "count": 31
+          "neu": 78,
+          "neg": 17,
+          "count": 8
         },
         {
-          "label": "2026-10-15T00:32:01.618Z",
-          "pos": 6,
-          "neu": 84,
-          "neg": 10,
-          "count": 14
+          "label": "2026-10-15T05:20:44.274Z",
+          "pos": 9,
+          "neu": 82,
+          "neg": 9,
+          "count": 4
         }
       ]
     }
@@ -4946,6 +4945,26 @@
         "category": "world"
       },
       {
+        "title": "Trump wishes Pope Leo speedy recovery after lung cancer diagnosis, speaks highly of pontiff's brother",
+        "link": "https://www.foxnews.com/world/trump-wishes-pope-leo-speedy-recovery-after-lung-cancer-diagnosis-speaks-highly-pontiffs-brother",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump revealed Pope Leo XIV's brother is a friend and avid MAGA supporter with memorabilia \"all over\" his house while wishing the pontiff well.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T03:38:47.000Z",
+        "sentiment": {
+          "posP": 25.9,
+          "negP": 8.7,
+          "neuP": 65.4,
+          "label": "positive",
+          "confidence": 0.69
+        },
+        "category": "usa"
+      },
+      {
         "title": "White House punches back at Chicago Mayor Johnson over reparations demands",
         "link": "https://www.foxnews.com/media/white-house-slams-chicago-mayor-brandon-johnson-progressive-mayor-hits-trump-wealth-reparations",
         "source": "Fox News",
@@ -4962,26 +4981,6 @@
           "neuP": 84.3,
           "label": "negative",
           "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump torches Democrats at Arizona rally, warns they will ‘destroy our country’ ahead of midterms",
-        "link": "https://www.foxnews.com/politics/trump-torches-democrats-arizona-rally-warns-destroy-country-ahead-midterms",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump rallied for Andy Biggs in Bullhead City, blasting Dem Gov. Katie Hobbs and urging Arizona voters to turn the state red in honor of Charlie Kirk.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-15T00:06:31.000Z",
-        "sentiment": {
-          "posP": 7.2,
-          "negP": 3.1,
-          "neuP": 89.7,
-          "label": "positive",
-          "confidence": 0.42
         },
         "category": "usa"
       }
@@ -5188,6 +5187,26 @@
         "category": "world"
       },
       {
+        "title": "Trump wishes Pope Leo speedy recovery after lung cancer diagnosis, speaks highly of pontiff's brother",
+        "link": "https://www.foxnews.com/world/trump-wishes-pope-leo-speedy-recovery-after-lung-cancer-diagnosis-speaks-highly-pontiffs-brother",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump revealed Pope Leo XIV's brother is a friend and avid MAGA supporter with memorabilia \"all over\" his house while wishing the pontiff well.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T03:38:47.000Z",
+        "sentiment": {
+          "posP": 25.9,
+          "negP": 8.7,
+          "neuP": 65.4,
+          "label": "positive",
+          "confidence": 0.69
+        },
+        "category": "usa"
+      },
+      {
         "title": "White House punches back at Chicago Mayor Johnson over reparations demands",
         "link": "https://www.foxnews.com/media/white-house-slams-chicago-mayor-brandon-johnson-progressive-mayor-hits-trump-wealth-reparations",
         "source": "Fox News",
@@ -5248,46 +5267,6 @@
         "category": "usa"
       },
       {
-        "title": "Ex-SJSU volleyball coach files new lawsuit alleging retaliation for Trump support, religion amid trans scandal",
-        "link": "https://www.foxnews.com/outkick-sports/ex-sjsu-volleyball-coach-files-new-lawsuit-alleging-retaliation-trump-support-religion-trans-scandal",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Melissa Batie-Smoose's new federal lawsuit alleges Todd Kress mocked her Trump support and religious beliefs before SJSU stripped her duties.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-14T22:50:36.000Z",
-        "sentiment": {
-          "posP": 12.4,
-          "negP": 20.7,
-          "neuP": 66.9,
-          "label": "negative",
-          "confidence": 0.38
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Fox News Poll: Cost-of-living concerns weigh on GOP in midterms",
-        "link": "https://www.foxnews.com/politics/fox-news-poll-cost-living-concerns-weigh-gop-midterms",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A Fox News survey finds Trump's approval on inflation hitting a new low of 22% as six in 10 voters say cost of living is their top economic worry.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-14T22:00:00.000Z",
-        "sentiment": {
-          "posP": 11.4,
-          "negP": 11.7,
-          "neuP": 76.9,
-          "label": "neutral",
-          "confidence": 0.03
-        },
-        "category": "usa"
-      },
-      {
         "title": "The Trump Administration and the Shrinking Number of Women in Top Roles",
         "link": "https://www.nytimes.com/2026/10/14/us/politics/trump-administration-kimberly-guilfoyle-women.html",
         "source": "NYT",
@@ -5297,7 +5276,7 @@
         "description": "In President Trump’s second term, those heading for the exits, voluntarily or involuntarily, are female officials.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T01:05:45.000Z",
+        "publishedAt": "2026-10-15T01:05:46.000Z",
         "sentiment": {
           "posP": 10.7,
           "negP": 0,
@@ -5314,36 +5293,16 @@
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Katie Zacharia told The New York Times that the confusion over her legal credentials is the result of one big misunderstanding.",
+        "description": "Katie Zacharia told The New York Times that the confusion over her legal credentials was the result of one big misunderstanding.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T00:45:41.000Z",
+        "publishedAt": "2026-10-15T05:12:49.000Z",
         "sentiment": {
           "posP": 4.2,
           "negP": 14.1,
           "neuP": 81.7,
           "label": "negative",
           "confidence": 0.54
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Kimberly Guilfoyle’s Rise and Fall as Trump’s Ambassador to Greece",
-        "link": "https://www.nytimes.com/2026/10/13/us/politics/kimberly-guilfoyle-resigns-trump-ambassador-greece.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump cut her loose after damaging news reports about her tenure as ambassador to Greece. Once a prominent Trump insider, she suggested she will now fight to defend her reputation.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-14T14:17:27.000Z",
-        "sentiment": {
-          "posP": 4.8,
-          "negP": 21.6,
-          "neuP": 73.6,
-          "label": "negative",
-          "confidence": 0.79
         },
         "category": "usa"
       },
@@ -5364,6 +5323,26 @@
           "neuP": 75.2,
           "label": "negative",
           "confidence": 0.8
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Houthis launch new attack on Saudi capital as Trump mulls strikes",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-houthi-saudi-arabia-trump/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Iran's Houthi allies launch a new attack on Saudi Arabia and promise more to come as Trump considers U.S. action on the new front line in the wider Mideast war.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T02:57:03.000Z",
+        "sentiment": {
+          "posP": 4.6,
+          "negP": 25.3,
+          "neuP": 70.1,
+          "label": "negative",
+          "confidence": 0.88
         },
         "category": "usa"
       },
@@ -5408,42 +5387,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump insists inflation is low as CPI report shows a 3.7% increase",
-        "link": "https://www.cbsnews.com/video/trump-insists-inflation-low-cpi-report-shows-37-increase/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Elon Musk says Trump is 'ultimately' responsible for any curbs on Ukraine's Starshield systems",
+        "link": "https://www.cnbc.com/2026/10/15/elon-musk-starlink-ukraine-trump-energy-ceasefire.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump hunted for silver linings in the higher-than-expected September inflation numbers. The surge in prices was fueled by a 9% month-over-month jump in gas prices. Nancy Cordes reports.",
+        "description": "\"Any limits on speed or usage are decided by the US military and ultimately POTUS,\" Musk wrote.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-14T23:49:44.000Z",
+        "publishedAt": "2026-10-15T04:11:52.000Z",
         "sentiment": {
-          "posP": 5.6,
-          "negP": 5.1,
-          "neuP": 89.3,
-          "label": "neutral",
-          "confidence": 0.05
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump, Chicagoans show outpouring of support for Pope Leo amid cancer diagnosis",
-        "link": "https://www.cbsnews.com/video/trump-chicagoans-support-pope-leo-cancer-diagnosis/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Pope Leo, just a day after surgery to remove a cancerous growth from his right lung, showed signs of a smooth recovery. Chris Livesay has more on the response.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-14T23:44:52.000Z",
-        "sentiment": {
-          "posP": 11.9,
-          "negP": 9.8,
-          "neuP": 78.3,
-          "label": "neutral",
-          "confidence": 0.03
+          "posP": 7.1,
+          "negP": 0,
+          "neuP": 92.9,
+          "label": "positive",
+          "confidence": 0.32
         },
         "category": "usa"
       },
@@ -5466,42 +5425,82 @@
           "confidence": 0.05
         },
         "category": "usa"
+      },
+      {
+        "title": "Trump touts booming economy at Montana rally, but supporters feel the pinch",
+        "link": "https://www.nbcnews.com/politics/donald-trump/trump-touts-booming-economy-montana-rally-supporters-feel-pinch-rcna603000",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "KALISPELL, Mont. — On a day when the U.S. inflation rate was shown to have climbed 3.7% over the past year, President Donald Trump said at a rally in Montana on Wednesday, “We have very little inflation.”",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T05:20:34.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 2.1,
+          "neuP": 90,
+          "label": "positive",
+          "confidence": 0.59
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump pardons two vehicle repair shop owners during Alaska rally",
+        "link": "https://www.nbcnews.com/video/trump-pardons-two-vehicle-repair-shop-owners-during-alaska-rally-271538245765",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "During his rally in Alaska, President Trump pardoned Zachary Czuback and Patrick Fleming, co-owners of a vehicle repair shop in Anchorage. Both pleaded guilty in 2022 to violating the Clean Air Act by tampering with federally mandated and monitored devices that tracked vehicles’ diesel emissions.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T01:56:45.000Z",
+        "sentiment": {
+          "posP": 11,
+          "negP": 10.1,
+          "neuP": 78.9,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.14,
-      "neu": 81.16,
-      "neg": 11.7,
-      "count": 37
+      "pos": 6.87,
+      "neu": 81.46,
+      "neg": 11.67,
+      "count": 33
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.1,
-        "neu": 82.06,
-        "neg": 7.84,
-        "count": 9
+        "pos": 8.64,
+        "neu": 84.16,
+        "neg": 7.2,
+        "count": 8
       },
       {
         "source": "NYT",
-        "pos": 6.17,
-        "neu": 82.47,
-        "neg": 11.37,
-        "count": 6
+        "pos": 6.44,
+        "neu": 84.24,
+        "neg": 9.32,
+        "count": 5
       },
       {
         "source": "Fox News",
-        "pos": 7.88,
-        "neu": 76.92,
-        "neg": 15.2,
-        "count": 6
+        "pos": 9.88,
+        "neu": 76.62,
+        "neg": 13.5,
+        "count": 5
       },
       {
         "source": "CBS News",
-        "pos": 7.26,
-        "neu": 75.28,
-        "neg": 17.46,
-        "count": 5
+        "pos": 5.85,
+        "neu": 69.72,
+        "neg": 24.43,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5535,38 +5534,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.48,
-        "neu": 81.42,
-        "neg": 12.11,
-        "count": 13
+        "pos": 7.33,
+        "neu": 80.07,
+        "neg": 12.61,
+        "count": 12
       },
       {
         "topic": "Policy",
-        "pos": 8.26,
-        "neu": 81.54,
-        "neg": 10.2,
-        "count": 9
+        "pos": 5.95,
+        "neu": 82.58,
+        "neg": 11.47,
+        "count": 8
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.5,
-        "neu": 80.4,
-        "neg": 14.1,
-        "count": 7
+        "pos": 5.7,
+        "neu": 81.96,
+        "neg": 12.34,
+        "count": 8
       },
       {
         "topic": "Economy",
-        "pos": 10.08,
-        "neu": 81.14,
-        "neg": 8.78,
-        "count": 5
+        "pos": 10.32,
+        "neu": 82.38,
+        "neg": 7.3,
+        "count": 4
       },
       {
         "topic": "Legal",
-        "pos": 5.53,
-        "neu": 80.73,
-        "neg": 13.73,
-        "count": 3
+        "pos": 4.2,
+        "neu": 81.7,
+        "neg": 14.1,
+        "count": 1
       }
     ]
   },
@@ -5593,28 +5592,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-14T21:32:01.620Z",
+        "label": "2026-10-15T02:20:44.275Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-14T22:32:01.620Z",
+        "label": "2026-10-15T03:20:44.275Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-14T23:32:01.620Z",
+        "label": "2026-10-15T04:20:44.275Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-15T00:32:01.620Z",
+        "label": "2026-10-15T05:20:44.275Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5623,28 +5622,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-14T21:32:01.620Z",
+        "label": "2026-10-15T02:20:44.275Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-14T22:32:01.620Z",
+        "label": "2026-10-15T03:20:44.275Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-14T23:32:01.620Z",
+        "label": "2026-10-15T04:20:44.275Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-15T00:32:01.620Z",
+        "label": "2026-10-15T05:20:44.275Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5724,7 +5723,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-15T01:32:01.622Z",
+    "generatedAt": "2026-10-15T06:20:44.276Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5845,8 +5844,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 171,
-      "potusArticles": 37,
+      "usaArticles": 170,
+      "potusArticles": 33,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
