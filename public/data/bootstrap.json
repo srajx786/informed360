@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-15T22:38:32.837Z",
+  "generatedAt": "2026-10-16T00:49:05.086Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 168,
-    "potusArticles": 36
+    "usaArticles": 165,
+    "potusArticles": 32
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-15T18:38:32.838Z",
+          "label": "2026-10-15T20:49:05.086Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-15T19:38:32.838Z",
+          "label": "2026-10-15T21:49:05.086Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-15T20:38:32.838Z",
+          "label": "2026-10-15T22:49:05.086Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-15T21:38:32.838Z",
+          "label": "2026-10-15T23:49:05.086Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-15T18:38:32.838Z",
+          "label": "2026-10-15T20:49:05.086Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-15T19:38:32.838Z",
+          "label": "2026-10-15T21:49:05.086Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-15T20:38:32.838Z",
+          "label": "2026-10-15T22:49:05.086Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-15T21:38:32.838Z",
+          "label": "2026-10-15T23:49:05.086Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.79,
-      "neu": 82.05,
-      "neg": 10.16,
-      "count": 168
+      "pos": 7.14,
+      "neu": 81.86,
+      "neg": 11,
+      "count": 165
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.7,
-        "neu": 84.73,
-        "neg": 7.58,
-        "count": 41
+        "pos": 7.67,
+        "neu": 84.5,
+        "neg": 7.83,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 11.07,
-        "neu": 78.67,
-        "neg": 10.27,
+        "pos": 8.29,
+        "neu": 78.09,
+        "neg": 13.62,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.03,
-        "neu": 82.12,
-        "neg": 12.85,
+        "pos": 3.95,
+        "neu": 82.51,
+        "neg": 13.53,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.63,
-        "neu": 81.17,
-        "neg": 12.2,
-        "count": 23
+        "pos": 7.56,
+        "neu": 78.61,
+        "neg": 13.83,
+        "count": 21
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.38,
-        "neu": 83.6,
-        "neg": 6.02,
+        "pos": 8.95,
+        "neu": 85.52,
+        "neg": 5.53,
         "count": 20
       },
       {
@@ -4629,22 +4629,22 @@
       "rows": [
         {
           "name": "Materials",
-          "bias": -16.25,
-          "count": 2
-        },
-        {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -18.87,
+          "count": 7
         },
         {
           "name": "Utilities",
-          "bias": -8.5,
+          "bias": -18.55,
           "count": 2
         },
         {
           "name": "Real Estate",
           "bias": 7.35,
+          "count": 2
+        },
+        {
+          "name": "Communication",
+          "bias": -6.15,
           "count": 2
         },
         {
@@ -4654,23 +4654,23 @@
         },
         {
           "name": "Technology",
-          "bias": -2.89,
-          "count": 131
-        },
-        {
-          "name": "Finance",
-          "bias": -2.27,
-          "count": 16
-        },
-        {
-          "name": "Healthcare",
-          "bias": -1.14,
-          "count": 7
+          "bias": -4.28,
+          "count": 134
         },
         {
           "name": "Energy",
-          "bias": 0.53,
-          "count": 10
+          "bias": -3.91,
+          "count": 9
+        },
+        {
+          "name": "Finance",
+          "bias": -2.01,
+          "count": 15
+        },
+        {
+          "name": "Healthcare",
+          "bias": -1.28,
+          "count": 6
         }
       ],
       "pos": [
@@ -4688,29 +4688,29 @@
         },
         {
           "name": "Technology",
-          "bias": -2.89,
-          "count": 131
+          "bias": -4.28,
+          "count": 134
         },
         {
-          "name": "Finance",
-          "bias": -2.27,
-          "count": 16
+          "name": "Energy",
+          "bias": -3.91,
+          "count": 9
         }
       ],
       "neg": [
         {
           "name": "Materials",
-          "bias": -16.25,
+          "bias": -18.87,
+          "count": 7
+        },
+        {
+          "name": "Utilities",
+          "bias": -18.55,
           "count": 2
         },
         {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
-        },
-        {
-          "name": "Utilities",
-          "bias": -8.5,
+          "bias": -6.15,
           "count": 2
         }
       ]
@@ -4718,32 +4718,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-15T18:38:32.839Z",
-          "pos": 3,
-          "neu": 87,
-          "neg": 10,
-          "count": 6
-        },
-        {
-          "label": "2026-10-15T19:38:32.839Z",
-          "pos": 12,
-          "neu": 82,
-          "neg": 7,
-          "count": 17
-        },
-        {
-          "label": "2026-10-15T20:38:32.839Z",
-          "pos": 6,
-          "neu": 84,
-          "neg": 9,
-          "count": 26
-        },
-        {
-          "label": "2026-10-15T21:38:32.839Z",
-          "pos": 6,
+          "label": "2026-10-15T20:49:05.088Z",
+          "pos": 4,
           "neu": 81,
+          "neg": 16,
+          "count": 8
+        },
+        {
+          "label": "2026-10-15T21:49:05.088Z",
+          "pos": 9,
+          "neu": 79,
           "neg": 13,
-          "count": 30
+          "count": 18
+        },
+        {
+          "label": "2026-10-15T22:49:05.088Z",
+          "pos": 3,
+          "neu": 84,
+          "neg": 13,
+          "count": 32
+        },
+        {
+          "label": "2026-10-15T23:49:05.088Z",
+          "pos": 6,
+          "neu": 80,
+          "neg": 14,
+          "count": 13
         }
       ]
     }
@@ -4951,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Vance says \"selling access to the White House\" is \"disgusting\"",
-        "link": "https://www.cbsnews.com/news/vance-town-hall-dokoupil-selling-access-white-house/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump’s Attacks on Voting Raise Fears He Will Try to Challenge Midterm Results",
+        "link": "https://www.nytimes.com/2026/10/15/us/politics/trumps-attacks-voting-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Vice President JD Vance told CBS News in a \"Things That Matter\" town hall in Michigan that anybody who is \"selling access to the White House\" should \"suffer consequences.\"",
+        "description": "Election officials say they worry the administration could use its own unsubstantiated claims to contest the vote in November.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T22:11:00.000Z",
+        "publishedAt": "2026-10-15T21:37:34.000Z",
         "sentiment": {
-          "posP": 2.7,
-          "negP": 8.6,
-          "neuP": 88.7,
+          "posP": 3.4,
+          "negP": 22.7,
+          "neuP": 73.9,
           "label": "negative",
-          "confidence": 0.53
+          "confidence": 0.81
         },
         "category": "usa"
       },
       {
-        "title": "Vance says selling access to White House is disgusting and despicable",
-        "link": "https://www.cbsnews.com/video/vance-says-selling-access-to-white-house-is-disgusting-and-despicable/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump Administration Sues California Over Voter Rolls",
+        "link": "https://www.nytimes.com/2026/10/15/us/politics/trump-administration-california-voter-rolls.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Vice President JD Vance tells Tony Dokoupil he thinks if someone's selling access to the White House, \"That's disgusting and despicable and they should suffer consequences.\" See more of the conversation, Saturday at 8 p.m. ET on CBS.",
+        "description": "The lawsuit seeks to temporarily block the state from counting mail ballots of voters it claims are likely noncitizens, opening a new front in the administration’s legal fights with election officials.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T21:42:14.000Z",
+        "publishedAt": "2026-10-15T21:05:29.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 18.6,
-          "neuP": 81.4,
+          "posP": 3.6,
+          "negP": 17.9,
+          "neuP": 78.5,
           "label": "negative",
-          "confidence": 0.88
+          "confidence": 0.72
         },
         "category": "usa"
       }
@@ -5193,106 +5193,6 @@
         "category": "world"
       },
       {
-        "title": "Vance says \"selling access to the White House\" is \"disgusting\"",
-        "link": "https://www.cbsnews.com/news/vance-town-hall-dokoupil-selling-access-white-house/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Vice President JD Vance told CBS News in a \"Things That Matter\" town hall in Michigan that anybody who is \"selling access to the White House\" should \"suffer consequences.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-15T22:11:00.000Z",
-        "sentiment": {
-          "posP": 2.7,
-          "negP": 8.6,
-          "neuP": 88.7,
-          "label": "negative",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Vance says selling access to White House is disgusting and despicable",
-        "link": "https://www.cbsnews.com/video/vance-says-selling-access-to-white-house-is-disgusting-and-despicable/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Vice President JD Vance tells Tony Dokoupil he thinks if someone's selling access to the White House, \"That's disgusting and despicable and they should suffer consequences.\" See more of the conversation, Saturday at 8 p.m. ET on CBS.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-15T21:42:14.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 18.6,
-          "neuP": 81.4,
-          "label": "negative",
-          "confidence": 0.88
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Kristi Noem no longer serving as Trump envoy to Shield of the Americas",
-        "link": "https://www.cbsnews.com/news/kristi-noem-no-longer-trump-envoy-shield-of-the-americas/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Former DHS Secretary Kristi Noem is no longer serving as the Trump administration's envoy to the Shield of the Americas initiative, a State Department official said. She is still at the department.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-15T21:00:17.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 9.5,
-          "neuP": 90.5,
-          "label": "negative",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "White House's Katie Zacharia confirms she never passed bar exam",
-        "link": "https://www.cbsnews.com/news/white-house-press-secretary-katie-zacharia-lawyer-no-bar-exam/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The White House described Katie Zacharia as \"uniquely qualified\" to be the new press secretary.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-15T20:48:59.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "White House prepares plans to use \"mother of all bombs\" on Iran",
-        "link": "https://www.cbsnews.com/news/iran-trump-administration-mother-of-all-bombs/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The White House and Pentagon have prepared plans to use a Massive Ordnance Air Blast bomb to hit military sites in Iran if ordered by President Trump, sources familiar with the matter told CBS News.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-15T20:12:00.000Z",
-        "sentiment": {
-          "posP": 6.1,
-          "negP": 6.5,
-          "neuP": 87.4,
-          "label": "negative",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump’s Attacks on Voting Raise Fears He Will Try to Challenge Midterm Results",
         "link": "https://www.nytimes.com/2026/10/15/us/politics/trumps-attacks-voting-midterms.html",
         "source": "NYT",
@@ -5333,22 +5233,42 @@
         "category": "usa"
       },
       {
-        "title": "Zelensky Says Ukraine Will Resume Russian Refinery Strikes, Defying Trump",
-        "link": "https://www.nytimes.com/2026/10/15/world/europe/ukraine-russia-oil-strikes-zelensky-us-intelligence.html",
+        "title": "Trump’s Deal With Russia Inflames Ukraine War He Vowed to End",
+        "link": "https://www.nytimes.com/2026/10/15/us/politics/trump-russia-ukraine.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Volodymyr Zelensky expressed overt frustration with the United States in an interview with The Financial Times. He had paused the strikes to comply with a demand from the United States.",
+        "description": "The Ukrainian president’s defiant decision to continue attacking Russian refineries underscores President Trump’s inability to end a war he had promised to resolve.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T20:35:57.000Z",
+        "publishedAt": "2026-10-15T23:26:45.000Z",
         "sentiment": {
-          "posP": 11.4,
-          "negP": 19.5,
-          "neuP": 69.1,
+          "posP": 11,
+          "negP": 33.1,
+          "neuP": 55.9,
           "label": "negative",
-          "confidence": 0.46
+          "confidence": 0.88
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How U.S. Support to Ukraine Has Evolved Under Trump",
+        "link": "https://www.nytimes.com/2026/10/15/us/politics/ukraine-us-aid-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump’s latest push to end the war in Ukraine has raised questions about the future of U.S. support.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T22:37:04.000Z",
+        "sentiment": {
+          "posP": 15.7,
+          "negP": 11.4,
+          "neuP": 72.9,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       },
@@ -5362,7 +5282,7 @@
         "description": "Republicans joined Democrats in calling on the Pentagon’s inspector general to look into whether the Trump administration was responsible for the interruption.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T21:13:44.000Z",
+        "publishedAt": "2026-10-15T21:13:45.000Z",
         "sentiment": {
           "posP": 6.8,
           "negP": 19.2,
@@ -5373,28 +5293,8 @@
         "category": "usa"
       },
       {
-        "title": "More Trump Allies Aided Pro-Russian Balkan Government",
-        "link": "https://www.nytimes.com/2026/10/15/us/politics/trump-russia-srpska-elections-wiles.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The daughter of the president’s chief of staff joined an American businessman in Republika Srpska as he explored a gas pipeline. And six current and former campaign advisers recently traveled there for an election.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-15T20:53:09.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump Cancels Planned Execution Livestream of Nidal Hasan, Fort Hood Shooter",
-        "link": "https://www.nytimes.com/2026/10/15/us/trump-hasan-fort-hood-execution-livestream.html",
+        "link": "https://www.nytimes.com/2026/10/15/us/politics/trump-hasan-fort-hood-execution-livestream.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
@@ -5402,7 +5302,7 @@
         "description": "The president said only immediate families of the victims of the mass shooting in 2009 would witness the execution of Maj. Nidal Malik Hasan.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T20:38:39.000Z",
+        "publishedAt": "2026-10-15T22:56:29.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 11.3,
@@ -5413,22 +5313,42 @@
         "category": "usa"
       },
       {
-        "title": "Venezuela’s Opposition Leader Breaks With Trump Over Oil Deal",
+        "title": "Venezuela’s Opposition Leader Calls Trump’s New Oil Partner Corrupt",
         "link": "https://www.nytimes.com/2026/10/15/world/americas/venezuela-machado-trump-oil-deal.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "As ties with the Trump administration fray, María Corina Machado said her return to Venezuela would come “sooner than you think.”",
+        "description": "As ties with the Trump administration fray, María Corina Machado said her return to Venezuela would come “sooner than you would expect.”",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T21:58:57.000Z",
+        "publishedAt": "2026-10-15T23:24:50.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Katie Zacharia Admits Failing Bar, but Defends Calling Herself a Lawyer",
+        "link": "https://www.nytimes.com/2026/10/15/us/katie-zacharia-lawyer-attorney-bar.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In an interview with a right-wing influencer, the new White House press secretary also described the harried process that led to her hiring.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T23:43:34.000Z",
+        "sentiment": {
+          "posP": 4.5,
+          "negP": 14.6,
+          "neuP": 80.9,
+          "label": "negative",
+          "confidence": 0.56
         },
         "category": "usa"
       },
@@ -5442,13 +5362,53 @@
         "description": "The president’s arrangement to import Russian diesel fuel is one more example of how he has sold out American democracy.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T15:00:11.000Z",
+        "publishedAt": "2026-10-15T22:51:58.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 9.7,
           "neuP": 90.3,
           "label": "negative",
           "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says execution of Fort Hood shooter will not be livestreamed",
+        "link": "https://www.nbcnews.com/video/trump-says-execution-of-fort-hood-shooter-will-not-be-livestreamed-271625285609",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump announced that the firing squad execution of Fort Hood shooter Nidal Hasan will not be livestreamed, overriding Defense Secretary Pete Hegseth’s earlier claim that it would be. NBC News' Monica Alba reports the latest details from the White House.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T14:34:30.000Z",
+        "sentiment": {
+          "posP": 2.8,
+          "negP": 4.5,
+          "neuP": 92.7,
+          "label": "negative",
+          "confidence": 0.23
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump invokes executive privilege in Kennedy Center court fight",
+        "link": "https://www.nbcnews.com/politics/donald-trump/president-invokes-executive-privilege-kennedy-center-court-fight-rcna603701",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A White House lawyer said information about the president’s management of the center, including efforts to add his name to it, should be off-limits.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T22:12:23.000Z",
+        "sentiment": {
+          "posP": 7.1,
+          "negP": 7.4,
+          "neuP": 85.5,
+          "label": "neutral",
+          "confidence": 0.03
         },
         "category": "usa"
       },
@@ -5471,34 +5431,67 @@
           "confidence": 0.57
         },
         "category": "usa"
+      },
+      {
+        "title": "U.S. sues California in fight over checking citizenship of mail voters",
+        "link": "https://www.cnbc.com/2026/10/15/california-mail-ballots-voting-lawsuit.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The lawsuit by the Trump administration comes less than a month before the midterm election that will determine which party controls both chambers of Congress.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T21:24:57.000Z",
+        "sentiment": {
+          "posP": 6.9,
+          "negP": 11.5,
+          "neuP": 81.6,
+          "label": "negative",
+          "confidence": 0.2
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Nvidia and Cisco confirm multimillion-dollar donations to Trump's White House ballroom",
+        "link": "https://www.cnbc.com/2026/10/15/trump-ballroom-nvidia-cisco-donations.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Big Tech gave millions to Trump's White House ballroom, documents show",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T22:48:12.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.42,
-      "neu": 86.55,
-      "neg": 9.03,
-      "count": 36
+      "pos": 4.86,
+      "neu": 85.5,
+      "neg": 9.64,
+      "count": 32
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 3.82,
-        "neu": 84.95,
-        "neg": 11.23,
-        "count": 10
+        "pos": 5.27,
+        "neu": 80.92,
+        "neg": 13.81,
+        "count": 11
       },
       {
         "source": "NBC News",
-        "pos": 6.97,
-        "neu": 85.63,
-        "neg": 7.4,
-        "count": 9
-      },
-      {
-        "source": "CBS News",
-        "pos": 2.13,
-        "neu": 88.33,
-        "neg": 9.53,
+        "pos": 4.97,
+        "neu": 87.48,
+        "neg": 7.55,
         "count": 6
       },
       {
@@ -5516,34 +5509,48 @@
         "count": 3
       },
       {
+        "source": "CBS News",
+        "pos": 2.23,
+        "neu": 90.23,
+        "neg": 7.53,
+        "count": 3
+      },
+      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
         "neg": 9,
+        "count": 2
+      },
+      {
+        "source": "ABC News",
+        "pos": 7.8,
+        "neu": 88.05,
+        "neg": 4.15,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 2.6,
-        "neu": 88.81,
-        "neg": 8.59,
-        "count": 14
+        "pos": 3.82,
+        "neu": 88.26,
+        "neg": 7.92,
+        "count": 12
       },
       {
         "topic": "Policy",
-        "pos": 5.7,
-        "neu": 84.82,
+        "pos": 3.74,
+        "neu": 86.78,
         "neg": 9.48,
-        "count": 10
+        "count": 9
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.31,
-        "neu": 85.01,
-        "neg": 10.68,
-        "count": 8
+        "pos": 6.46,
+        "neu": 80.07,
+        "neg": 13.47,
+        "count": 7
       },
       {
         "topic": "Economy",
@@ -5554,16 +5561,16 @@
       },
       {
         "topic": "Public Statements",
-        "pos": 0,
-        "neu": 100,
-        "neg": 0,
+        "pos": 4.5,
+        "neu": 80.9,
+        "neg": 14.6,
         "count": 1
       },
       {
         "topic": "Legal",
-        "pos": 12.1,
-        "neu": 75.3,
-        "neg": 12.6,
+        "pos": 7.1,
+        "neu": 85.5,
+        "neg": 7.4,
         "count": 1
       }
     ]
@@ -5591,28 +5598,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-15T18:38:32.842Z",
+        "label": "2026-10-15T20:49:05.090Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-15T19:38:32.842Z",
+        "label": "2026-10-15T21:49:05.090Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-15T20:38:32.842Z",
+        "label": "2026-10-15T22:49:05.090Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-15T21:38:32.842Z",
+        "label": "2026-10-15T23:49:05.090Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5621,28 +5628,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-15T18:38:32.842Z",
+        "label": "2026-10-15T20:49:05.091Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-15T19:38:32.842Z",
+        "label": "2026-10-15T21:49:05.091Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-15T20:38:32.842Z",
+        "label": "2026-10-15T22:49:05.091Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-15T21:38:32.842Z",
+        "label": "2026-10-15T23:49:05.091Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5722,7 +5729,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-15T22:38:32.843Z",
+    "generatedAt": "2026-10-16T00:49:05.092Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5843,8 +5850,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 168,
-      "potusArticles": 36,
+      "usaArticles": 165,
+      "potusArticles": 32,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
