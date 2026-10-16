@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-16T18:26:04.170Z",
+  "generatedAt": "2026-10-16T23:50:59.103Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 166,
+    "usaArticles": 168,
     "potusArticles": 40
   },
   "version": 1,
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-16T14:26:04.170Z",
+          "label": "2026-10-16T19:50:59.104Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T15:26:04.170Z",
+          "label": "2026-10-16T20:50:59.104Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T16:26:04.170Z",
+          "label": "2026-10-16T21:50:59.104Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T17:26:04.170Z",
+          "label": "2026-10-16T22:50:59.104Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-16T14:26:04.170Z",
+          "label": "2026-10-16T19:50:59.104Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T15:26:04.170Z",
+          "label": "2026-10-16T20:50:59.104Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T16:26:04.170Z",
+          "label": "2026-10-16T21:50:59.104Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T17:26:04.170Z",
+          "label": "2026-10-16T22:50:59.104Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 6.68,
-      "neu": 83.31,
-      "neg": 10.01,
-      "count": 166
+      "pos": 6.16,
+      "neu": 82.83,
+      "neg": 11.01,
+      "count": 168
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.16,
-        "neu": 84.94,
-        "neg": 8.91,
-        "count": 39
+        "pos": 5.79,
+        "neu": 85.52,
+        "neg": 8.7,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 7.48,
-        "neu": 78.83,
-        "neg": 13.68,
+        "pos": 6.32,
+        "neu": 81.39,
+        "neg": 12.28,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.62,
-        "neu": 85.67,
-        "neg": 9.71,
+        "pos": 4.82,
+        "neu": 81.48,
+        "neg": 13.7,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.93,
-        "neu": 81.92,
-        "neg": 10.15,
+        "pos": 5.66,
+        "neu": 80.86,
+        "neg": 13.48,
         "count": 23
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 7.79,
-        "neu": 88.29,
-        "neg": 3.92,
+        "pos": 8.11,
+        "neu": 86.19,
+        "neg": 5.71,
         "count": 20
       },
       {
@@ -4628,127 +4628,111 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Communication",
-          "bias": -8.8,
-          "count": 2
-        },
-        {
           "name": "Utilities",
-          "bias": -8.5,
-          "count": 2
+          "bias": -17,
+          "count": 1
         },
         {
-          "name": "Real Estate",
-          "bias": 4.9,
-          "count": 3
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
         },
         {
           "name": "Healthcare",
-          "bias": -4.54,
-          "count": 8
+          "bias": -9.12,
+          "count": 10
         },
         {
           "name": "Technology",
-          "bias": -3.51,
-          "count": 123
-        },
-        {
-          "name": "Materials",
-          "bias": -3.26,
-          "count": 5
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 3.17,
-          "count": 3
-        },
-        {
-          "name": "Finance",
-          "bias": -2.48,
-          "count": 14
+          "bias": -5.57,
+          "count": 131
         },
         {
           "name": "Energy",
-          "bias": 1.14,
-          "count": 10
-        }
-      ],
-      "pos": [
+          "bias": -5.23,
+          "count": 11
+        },
         {
           "name": "Real Estate",
-          "bias": 4.9,
+          "bias": -4.53,
           "count": 3
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 3.17,
-          "count": 3
-        }
-      ],
-      "neu": [
-        {
-          "name": "Technology",
-          "bias": -3.51,
-          "count": 123
-        },
-        {
-          "name": "Materials",
-          "bias": -3.26,
-          "count": 5
         },
         {
           "name": "Finance",
-          "bias": -2.48,
-          "count": 14
+          "bias": -2.37,
+          "count": 19
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 0.9,
+          "count": 1
+        }
+      ],
+      "pos": [],
+      "neu": [
+        {
+          "name": "Technology",
+          "bias": -5.57,
+          "count": 131
+        },
+        {
+          "name": "Energy",
+          "bias": -5.23,
+          "count": 11
+        },
+        {
+          "name": "Real Estate",
+          "bias": -4.53,
+          "count": 3
         }
       ],
       "neg": [
         {
-          "name": "Communication",
-          "bias": -8.8,
-          "count": 2
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
         },
         {
-          "name": "Utilities",
-          "bias": -8.5,
-          "count": 2
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
         },
         {
           "name": "Healthcare",
-          "bias": -4.54,
-          "count": 8
+          "bias": -9.12,
+          "count": 10
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-16T14:26:04.172Z",
+          "label": "2026-10-16T19:50:59.105Z",
+          "pos": 7,
+          "neu": 81,
+          "neg": 12,
+          "count": 8
+        },
+        {
+          "label": "2026-10-16T20:50:59.105Z",
           "pos": 3,
-          "neu": 89,
-          "neg": 8,
-          "count": 6
-        },
-        {
-          "label": "2026-10-16T15:26:04.172Z",
-          "pos": 5,
-          "neu": 85,
+          "neu": 87,
           "neg": 10,
-          "count": 23
+          "count": 16
         },
         {
-          "label": "2026-10-16T16:26:04.172Z",
-          "pos": 5,
+          "label": "2026-10-16T21:50:59.105Z",
+          "pos": 7,
+          "neu": 82,
+          "neg": 11,
+          "count": 27
+        },
+        {
+          "label": "2026-10-16T22:50:59.105Z",
+          "pos": 3,
           "neu": 85,
-          "neg": 9,
-          "count": 18
-        },
-        {
-          "label": "2026-10-16T17:26:04.172Z",
-          "pos": 5,
-          "neu": 86,
-          "neg": 9,
-          "count": 29
+          "neg": 12,
+          "count": 17
         }
       ]
     }
@@ -4956,42 +4940,42 @@
         "category": "world"
       },
       {
-        "title": "Trump's new press secretary out of the job just days after rocky debut",
-        "link": "https://www.foxnews.com/politics/trump-casts-doubt-new-press-secretarys-future-after-rocky-white-house-debut",
+        "title": "White House reporters react to Katie Zacharia's 'brutal' exit as Trump press secretary",
+        "link": "https://www.foxnews.com/media/white-house-reporters-react-katie-zacharia-brutal-exit-trump-press-secretary",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Katie Zacharia has been fired as White House Press Secretary.",
+        "description": "Fox News Digital spoke with several White House correspondents about Katie Zacharia's dramatic exit as President Donald Trump's press secretary.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T17:23:14.000Z",
+        "publishedAt": "2026-10-16T23:32:49.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 14.1,
-          "neuP": 85.9,
-          "label": "negative",
-          "confidence": 0.56
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Americans back Trump's decision against livestreaming Nidal Hasan's firing squad execution",
-        "link": "https://www.foxnews.com/politics/americans-back-trumps-decision-against-livestreaming-nidal-hasans-firing-squad-execution",
+        "title": "Seth Meyers admits shock over second Trump victory prompted sit-down with late-night team to adjust tone",
+        "link": "https://www.foxnews.com/media/seth-meyers-admits-shock-second-trump-victory-prompted-sit-down-late-night-team-adjust-tone",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump canceled the Nidal Hasan firing squad execution livestream, but victims' families will still be able to witness the Fort Hood shooter's scheduled death.",
+        "description": "Seth Meyers revealed he held a tonal meeting with his team after President Donald Trump's second election victory, saying he didn't want to go through the motions again.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T16:04:34.000Z",
+        "publishedAt": "2026-10-16T22:42:07.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 27.4,
-          "neuP": 72.6,
-          "label": "negative",
-          "confidence": 0.89
+          "posP": 4.8,
+          "negP": 8.3,
+          "neuP": 86.9,
+          "label": "neutral",
+          "confidence": 0.16
         },
         "category": "usa"
       }
@@ -5198,68 +5182,128 @@
         "category": "world"
       },
       {
-        "title": "Trump's new press secretary out of the job just days after rocky debut",
-        "link": "https://www.foxnews.com/politics/trump-casts-doubt-new-press-secretarys-future-after-rocky-white-house-debut",
+        "title": "White House reporters react to Katie Zacharia's 'brutal' exit as Trump press secretary",
+        "link": "https://www.foxnews.com/media/white-house-reporters-react-katie-zacharia-brutal-exit-trump-press-secretary",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Katie Zacharia has been fired as White House Press Secretary.",
+        "description": "Fox News Digital spoke with several White House correspondents about Katie Zacharia's dramatic exit as President Donald Trump's press secretary.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T17:23:14.000Z",
+        "publishedAt": "2026-10-16T23:32:49.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 14.1,
-          "neuP": 85.9,
-          "label": "negative",
-          "confidence": 0.56
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Americans back Trump's decision against livestreaming Nidal Hasan's firing squad execution",
-        "link": "https://www.foxnews.com/politics/americans-back-trumps-decision-against-livestreaming-nidal-hasans-firing-squad-execution",
+        "title": "Seth Meyers admits shock over second Trump victory prompted sit-down with late-night team to adjust tone",
+        "link": "https://www.foxnews.com/media/seth-meyers-admits-shock-second-trump-victory-prompted-sit-down-late-night-team-adjust-tone",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump canceled the Nidal Hasan firing squad execution livestream, but victims' families will still be able to witness the Fort Hood shooter's scheduled death.",
+        "description": "Seth Meyers revealed he held a tonal meeting with his team after President Donald Trump's second election victory, saying he didn't want to go through the motions again.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T16:04:34.000Z",
+        "publishedAt": "2026-10-16T22:42:07.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 27.4,
-          "neuP": 72.6,
-          "label": "negative",
-          "confidence": 0.89
+          "posP": 4.8,
+          "negP": 8.3,
+          "neuP": 86.9,
+          "label": "neutral",
+          "confidence": 0.16
         },
         "category": "usa"
       },
       {
-        "title": "Katie Zacharia, Trump’s New Press Secretary, Is Fired After 5 Days",
+        "title": "Former NFL All-Pro running back joins President Trump for Georgia midterms rally",
+        "link": "https://www.foxnews.com/outkick-sports/former-nfl-all-pro-running-back-joins-president-trump-georgia-midterms-rally",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Todd Gurley flew aboard Air Force One with President Donald Trump to a Dalton, Georgia rally, continuing a pattern of Bulldogs in Trump's orbit.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T21:30:30.000Z",
+        "sentiment": {
+          "posP": 3.2,
+          "negP": 0,
+          "neuP": 96.8,
+          "label": "neutral",
+          "confidence": 0.03
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Tish James confronted on camera over Trump's accusation of bias in Cornell rape case",
+        "link": "https://www.foxnews.com/politics/tish-james-confronted-camera-trumps-accusation-bias-cornell-rape-case",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Letitia James vows a fair probe into the alleged Cornell University gang rape, but Trump and defense attorneys question her impartiality.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T21:20:35.000Z",
+        "sentiment": {
+          "posP": 8.5,
+          "negP": 24.4,
+          "neuP": 67.1,
+          "label": "negative",
+          "confidence": 0.66
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Katie Zacharia, Trump’s New Press Secretary, Is Ousted After 5 Days",
         "link": "https://www.nytimes.com/2026/10/16/us/politics/katie-zacharia-fired-press-secretary.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The ouster came as Ms. Zacharia was shadowed by questions about how she had presented her legal career and handled her first press briefing.",
+        "description": "Her abrupt departure came after she was shadowed by questions about how she had presented her legal career and handled her first press briefing.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T18:19:02.000Z",
+        "publishedAt": "2026-10-16T21:57:40.000Z",
         "sentiment": {
-          "posP": 4,
-          "negP": 9.7,
-          "neuP": 86.3,
+          "posP": 4.3,
+          "negP": 0,
+          "neuP": 95.7,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Bystander Who Killed School Shooter Is Father of 2 Students",
+        "link": "https://www.nytimes.com/2026/10/16/briefing/oregon-shooting-white-house-press-secretary.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Also, the White House press secretary is ousted after five days. Here’s the latest at the end of Friday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T21:29:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 14.3,
+          "neuP": 85.7,
           "label": "negative",
-          "confidence": 0.48
+          "confidence": 0.67
         },
         "category": "usa"
       },
       {
         "title": "U.S. Budget Deficit Nears $2 Trillion, a Reality Check for Trump’s Cost Cutting",
-        "link": "https://www.nytimes.com/2026/10/16/business/us-budget-deficit-nears-2-trillion-a-reality-check-for-trumps-cost-cutting.html",
+        "link": "https://www.nytimes.com/2026/10/16/business/us-budget-deficit.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
@@ -5267,7 +5311,7 @@
         "description": "Higher interest rates are inflating borrowing costs as the Trump administration spends on the Iran war and tariff refunds.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T18:21:27.000Z",
+        "publishedAt": "2026-10-16T18:28:21.000Z",
         "sentiment": {
           "posP": 7.9,
           "negP": 21.3,
@@ -5307,7 +5351,7 @@
         "description": "Where the two presidents’ war of words will end is anybody’s guess. But if it continues, it could threaten the crucial operational help that Ukraine still gets from the United States.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T15:02:53.000Z",
+        "publishedAt": "2026-10-16T19:12:25.000Z",
         "sentiment": {
           "posP": 10.3,
           "negP": 18.5,
@@ -5327,7 +5371,7 @@
         "description": "Two Trump allies — Alina Habba Mildon and Richard Grenell — are locked in a raging dispute that has its roots in the battle for a share of the spoils in Venezuela.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T00:52:57.000Z",
+        "publishedAt": "2026-10-16T00:52:58.000Z",
         "sentiment": {
           "posP": 4.3,
           "negP": 27.2,
@@ -5338,22 +5382,22 @@
         "category": "usa"
       },
       {
-        "title": "More Trump Allies Aided Pro-Russian Balkan Government",
-        "link": "https://www.nytimes.com/2026/10/15/us/politics/trump-russia-srpska-elections-wiles.html",
+        "title": "Appeals Court Questions Justice Dept. Claim that Trump Owns White House Records",
+        "link": "https://www.nytimes.com/2026/10/16/us/politics/appeals-court-trump-presidential-records.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The daughter of the president’s chief of staff joined an American businessman in Republika Srpska as he explored a gas pipeline. And six current and former campaign advisers recently traveled there for an election.",
+        "description": "A three-judge panel appeared unconvinced by claims that a federal law requiring the president to preserve and hand over his presidential papers was unconstitutional.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T20:53:09.000Z",
+        "publishedAt": "2026-10-16T21:47:04.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 16.4,
+          "negP": 6.5,
+          "neuP": 77.1,
+          "label": "positive",
+          "confidence": 0.61
         },
         "category": "usa"
       },
@@ -5367,7 +5411,7 @@
         "description": "This is more than just another persecution of one of the president’s political enemies.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T17:28:36.000Z",
+        "publishedAt": "2026-10-16T18:25:44.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 11.3,
@@ -5378,16 +5422,16 @@
         "category": "usa"
       },
       {
-        "title": "This Texas Region Flipped for Trump. Will It Stay Red?",
-        "link": "https://www.nytimes.com/2026/10/16/opinion/texas-border-voters-midterms-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Katie Zacharia makes history as shortest-serving White House press secretary ever",
+        "link": "https://www.cbsnews.com/video/katie-zacharia-makes-history-shortest-serving-white-house-press-secretary-ever/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "With control of the Senate at stake, Mara Gay traveled to this Texas border region to hear from voters.",
+        "description": "Katie Zacharia is out as White House press secretary after five days on the job, making her tenure the shortest in the role's history. CBS News' Lindsey Reiser looks at the job's history.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T14:43:38.000Z",
+        "publishedAt": "2026-10-16T23:23:00.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5398,126 +5442,66 @@
         "category": "usa"
       },
       {
-        "title": "Katie Zacharia out as White House press secretary after first week",
-        "link": "https://www.cbsnews.com/news/trump-katie-zacharia-white-house-press-secretary/",
+        "title": "Trump looking for new press secretary after Katie Zacharia fired",
+        "link": "https://www.cbsnews.com/video/trump-looking-for-new-press-secretary-after-katie-zacharia-fired/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Katie Zacharia, President Trump's new White House press secretary, is being moved out of the role after her first week on the job, two U.S. officials told CBS News.",
+        "description": "Katie Zacharia was ousted as White House press secretary Friday after only five days on the job, sources say. CBS News' Natalie Brand has more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T18:23:22.000Z",
+        "publishedAt": "2026-10-16T22:54:00.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Katie Zacharia out as White House press secretary after only 5 days",
-        "link": "https://www.cbsnews.com/video/katie-zacharia-out-as-white-house-press-secretary-after-only-5-days/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Katie Zacharia is out as White House press secretary after five days on the job, sources say. CBS. News' Nancy Cordes reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T18:13:53.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "H.R. McMaster on Trump's \"mother of all bombs\" plan, Putin \"talking\" in his ear",
-        "link": "https://www.cbsnews.com/video/hr-mcmaster-reacts-to-trumps-comments-on-iran-and-plans-for-the-mother-of-all-bombs/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Retired Lt. Gen. H.R. McMaster, who served as an adviser to President Trump, breaks down what's known about the \"mother of all bombs,\" which sources say was discussed in relation to the Iran war. McMaster also reacts to Mr. Trump's latest comments on the Russia-Ukraine war.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T16:50:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 11.9,
-          "neuP": 88.1,
+          "negP": 9.6,
+          "neuP": 90.4,
           "label": "negative",
-          "confidence": 0.83
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Ukraine's Zelenskyy has stunning reaction when asked if he is Trump's scapegoat",
-        "link": "https://www.cbsnews.com/video/ukraines-zelenskyy-has-stunning-reaction-when-asked-if-he-is-trumps-scapegoat/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ukrainian President Volodymyr Zelenskyy had a peculiar reaction when asked about President Trump while meeting with European Council leaders. CBS News' Aidan Stretch reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T16:42:55.000Z",
-        "sentiment": {
-          "posP": 10.8,
-          "negP": 6.9,
-          "neuP": 82.3,
-          "label": "neutral",
-          "confidence": 0.13
+          "confidence": 0.56
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.17,
-      "neu": 86.92,
-      "neg": 8.92,
+      "pos": 4.99,
+      "neu": 85.93,
+      "neg": 9.08,
       "count": 40
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 5.05,
-        "neu": 84.66,
-        "neg": 10.29,
+        "pos": 6.72,
+        "neu": 81.88,
+        "neg": 11.4,
         "count": 10
       },
       {
         "source": "NBC News",
-        "pos": 5.42,
-        "neu": 88.44,
-        "neg": 6.14,
-        "count": 8
+        "pos": 3.83,
+        "neu": 90.36,
+        "neg": 5.81,
+        "count": 7
       },
       {
         "source": "CBS News",
-        "pos": 2.47,
-        "neu": 92.07,
-        "neg": 5.47,
+        "pos": 5.15,
+        "neu": 87.28,
+        "neg": 7.57,
         "count": 6
+      },
+      {
+        "source": "Fox News",
+        "pos": 5.1,
+        "neu": 88.36,
+        "neg": 6.54,
+        "count": 5
       },
       {
         "source": "WSJ",
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
-        "count": 4
-      },
-      {
-        "source": "ABC News",
-        "pos": 3.17,
-        "neu": 84.35,
-        "neg": 12.48,
         "count": 4
       },
       {
@@ -5528,10 +5512,10 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 3,
-        "neu": 83.17,
-        "neg": 13.83,
+        "source": "ABC News",
+        "pos": 4.23,
+        "neu": 79.13,
+        "neg": 16.63,
         "count": 3
       },
       {
@@ -5545,31 +5529,31 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.91,
-        "neu": 84.23,
-        "neg": 10.86,
-        "count": 15
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 4.4,
-        "neu": 85.5,
-        "neg": 10.1,
-        "count": 9
+        "pos": 6.41,
+        "neu": 82.82,
+        "neg": 10.76,
+        "count": 14
       },
       {
         "topic": "Policy",
-        "pos": 2.99,
-        "neu": 88.83,
-        "neg": 8.19,
+        "pos": 4.1,
+        "neu": 85.79,
+        "neg": 10.11,
+        "count": 7
+      },
+      {
+        "topic": "Foreign Policy",
+        "pos": 4.11,
+        "neu": 83.86,
+        "neg": 12.03,
         "count": 7
       },
       {
         "topic": "Public Statements",
-        "pos": 0,
-        "neu": 97.18,
-        "neg": 2.82,
-        "count": 5
+        "pos": 0.4,
+        "neu": 95.43,
+        "neg": 4.17,
+        "count": 7
       },
       {
         "topic": "Economy",
@@ -5580,10 +5564,10 @@
       },
       {
         "topic": "Legal",
-        "pos": 4,
-        "neu": 86.3,
-        "neg": 9.7,
-        "count": 1
+        "pos": 10.35,
+        "neu": 86.4,
+        "neg": 3.25,
+        "count": 2
       }
     ]
   },
@@ -5610,28 +5594,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-16T14:26:04.175Z",
+        "label": "2026-10-16T19:50:59.107Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T15:26:04.175Z",
+        "label": "2026-10-16T20:50:59.107Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T16:26:04.175Z",
+        "label": "2026-10-16T21:50:59.107Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T17:26:04.175Z",
+        "label": "2026-10-16T22:50:59.107Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5640,28 +5624,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-16T14:26:04.175Z",
+        "label": "2026-10-16T19:50:59.107Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T15:26:04.175Z",
+        "label": "2026-10-16T20:50:59.107Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T16:26:04.175Z",
+        "label": "2026-10-16T21:50:59.107Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T17:26:04.175Z",
+        "label": "2026-10-16T22:50:59.107Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5741,7 +5725,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-16T18:26:04.177Z",
+    "generatedAt": "2026-10-16T23:50:59.108Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5862,7 +5846,7 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 166,
+      "usaArticles": 168,
       "potusArticles": 40,
       "sourceRows": 12,
       "industryRows": 6,
