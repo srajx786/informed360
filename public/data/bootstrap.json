@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-16T09:54:16.454Z",
+  "generatedAt": "2026-10-16T14:43:48.383Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 171,
-    "potusArticles": 36
+    "usaArticles": 167,
+    "potusArticles": 35
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-16T05:54:16.455Z",
+          "label": "2026-10-16T10:43:48.383Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T06:54:16.455Z",
+          "label": "2026-10-16T11:43:48.383Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T07:54:16.455Z",
+          "label": "2026-10-16T12:43:48.383Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T08:54:16.455Z",
+          "label": "2026-10-16T13:43:48.383Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-16T05:54:16.455Z",
+          "label": "2026-10-16T10:43:48.383Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T06:54:16.455Z",
+          "label": "2026-10-16T11:43:48.383Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T07:54:16.455Z",
+          "label": "2026-10-16T12:43:48.383Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T08:54:16.455Z",
+          "label": "2026-10-16T13:43:48.383Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.03,
-      "neu": 81.26,
-      "neg": 11.71,
-      "count": 171
+      "pos": 7.02,
+      "neu": 81.81,
+      "neg": 11.18,
+      "count": 167
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.32,
-        "neu": 82.41,
-        "neg": 10.27,
-        "count": 43
+        "pos": 8.17,
+        "neu": 81.94,
+        "neg": 9.89,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 6.75,
-        "neu": 77.69,
-        "neg": 15.56,
+        "pos": 6.84,
+        "neu": 77.57,
+        "neg": 15.59,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.53,
-        "neu": 83.26,
-        "neg": 12.21,
+        "pos": 4.01,
+        "neu": 81.88,
+        "neg": 14.1,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.83,
-        "neu": 77.1,
-        "neg": 15.07,
-        "count": 24
+        "pos": 7.75,
+        "neu": 81.63,
+        "neg": 10.62,
+        "count": 23
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 9.53,
-        "neu": 86.31,
-        "neg": 4.15,
+        "pos": 8.45,
+        "neu": 88.52,
+        "neg": 3.03,
         "count": 20
       },
       {
@@ -4628,19 +4628,19 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -19.75,
-          "count": 2
-        },
-        {
-          "name": "Materials",
-          "bias": -15.43,
-          "count": 3
-        },
-        {
           "name": "Communication",
           "bias": -14,
           "count": 1
+        },
+        {
+          "name": "Materials",
+          "bias": 10.5,
+          "count": 1
+        },
+        {
+          "name": "Utilities",
+          "bias": -8.5,
+          "count": 2
         },
         {
           "name": "Real Estate",
@@ -4648,32 +4648,37 @@
           "count": 2
         },
         {
-          "name": "Technology",
-          "bias": -5.39,
-          "count": 134
-        },
-        {
           "name": "Energy",
-          "bias": -1.52,
+          "bias": -5.32,
           "count": 12
         },
         {
-          "name": "Healthcare",
-          "bias": 1.14,
-          "count": 7
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 0.9,
-          "count": 1
+          "name": "Technology",
+          "bias": -4.8,
+          "count": 127
         },
         {
           "name": "Finance",
-          "bias": 0.72,
+          "bias": -2.35,
           "count": 19
+        },
+        {
+          "name": "Healthcare",
+          "bias": 1.97,
+          "count": 9
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 0.7,
+          "count": 3
         }
       ],
       "pos": [
+        {
+          "name": "Materials",
+          "bias": 10.5,
+          "count": 1
+        },
         {
           "name": "Real Estate",
           "bias": 7.35,
@@ -4683,67 +4688,67 @@
       "neu": [
         {
           "name": "Technology",
-          "bias": -5.39,
-          "count": 134
+          "bias": -4.8,
+          "count": 127
         },
         {
-          "name": "Energy",
-          "bias": -1.52,
-          "count": 12
+          "name": "Finance",
+          "bias": -2.35,
+          "count": 19
         },
         {
           "name": "Healthcare",
-          "bias": 1.14,
-          "count": 7
+          "bias": 1.97,
+          "count": 9
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -19.75,
-          "count": 2
-        },
-        {
-          "name": "Materials",
-          "bias": -15.43,
-          "count": 3
-        },
-        {
           "name": "Communication",
           "bias": -14,
           "count": 1
+        },
+        {
+          "name": "Utilities",
+          "bias": -8.5,
+          "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": -5.32,
+          "count": 12
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-16T05:54:16.457Z",
-          "pos": 10,
-          "neu": 76,
-          "neg": 14,
-          "count": 4
-        },
-        {
-          "label": "2026-10-16T06:54:16.457Z",
-          "pos": 10,
+          "label": "2026-10-16T10:43:48.385Z",
+          "pos": 8,
           "neu": 81,
-          "neg": 10,
-          "count": 3
+          "neg": 11,
+          "count": 15
         },
         {
-          "label": "2026-10-16T07:54:16.457Z",
+          "label": "2026-10-16T11:43:48.385Z",
           "pos": 11,
-          "neu": 73,
-          "neg": 16,
-          "count": 4
+          "neu": 84,
+          "neg": 5,
+          "count": 9
         },
         {
-          "label": "2026-10-16T08:54:16.457Z",
-          "pos": 6,
-          "neu": 80,
-          "neg": 14,
-          "count": 13
+          "label": "2026-10-16T12:43:48.385Z",
+          "pos": 5,
+          "neu": 82,
+          "neg": 13,
+          "count": 19
+        },
+        {
+          "label": "2026-10-16T13:43:48.385Z",
+          "pos": 4,
+          "neu": 85,
+          "neg": 11,
+          "count": 21
         }
       ]
     }
@@ -4951,42 +4956,42 @@
         "category": "world"
       },
       {
-        "title": "Trump admin sued over alleged illegal collection of sensitive voter data from 47 states",
-        "link": "https://www.foxnews.com/politics/trump-admin-sued-alleged-illegal-collection-sensitive-voter-data-47-states",
+        "title": "Trump's Capitol Hill whisperer reveals secrets to president's dealmaking as he heads for exit",
+        "link": "https://www.foxnews.com/politics/trumps-capitol-hill-whisperer-reveals-secrets-presidents-deal-making-he-heads-exit",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A lawsuit alleges DHS collected voter files from 47 states and combined them with commercial datasets, violating federal privacy safeguards.",
+        "description": "James Braid spoke with Fox News Digital about his work the last two years on his way out of the Trump administration.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T06:47:45.000Z",
+        "publishedAt": "2026-10-16T12:02:30.000Z",
         "sentiment": {
-          "posP": 5.9,
-          "negP": 22.3,
-          "neuP": 71.8,
-          "label": "negative",
-          "confidence": 0.77
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Katie Zacharia addresses brevity of first press briefing, defends legal credentials after criticism",
-        "link": "https://www.foxnews.com/media/katie-zacharia-addresses-brevity-first-press-briefing-defends-legal-credentials-criticism",
+        "title": "JONATHAN TURLEY: Sherrod Brown's pledge turns advice and consent into a punchline",
+        "link": "https://www.foxnews.com/opinion/jonathan-turley-browns-pledge-turns-advice-consent-punchline",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Katie Zacharia defended her debut White House press briefing and addressed California bar exam scrutiny during interview with Sean Hannity.",
+        "description": "Ohio's Sherrod Brown pledged to vote against every Trump judicial nominee regardless of qualifications, abandoning Senate advice and consent duties.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T03:01:19.000Z",
+        "publishedAt": "2026-10-16T11:00:42.000Z",
         "sentiment": {
-          "posP": 4.2,
-          "negP": 8.2,
-          "neuP": 87.6,
-          "label": "negative",
-          "confidence": 0.34
+          "posP": 11,
+          "negP": 7.6,
+          "neuP": 81.4,
+          "label": "neutral",
+          "confidence": 0.05
         },
         "category": "usa"
       }
@@ -5193,42 +5198,62 @@
         "category": "world"
       },
       {
-        "title": "Trump admin sued over alleged illegal collection of sensitive voter data from 47 states",
-        "link": "https://www.foxnews.com/politics/trump-admin-sued-alleged-illegal-collection-sensitive-voter-data-47-states",
+        "title": "Trump's Capitol Hill whisperer reveals secrets to president's dealmaking as he heads for exit",
+        "link": "https://www.foxnews.com/politics/trumps-capitol-hill-whisperer-reveals-secrets-presidents-deal-making-he-heads-exit",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A lawsuit alleges DHS collected voter files from 47 states and combined them with commercial datasets, violating federal privacy safeguards.",
+        "description": "James Braid spoke with Fox News Digital about his work the last two years on his way out of the Trump administration.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T06:47:45.000Z",
+        "publishedAt": "2026-10-16T12:02:30.000Z",
         "sentiment": {
-          "posP": 5.9,
-          "negP": 22.3,
-          "neuP": 71.8,
-          "label": "negative",
-          "confidence": 0.77
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Katie Zacharia addresses brevity of first press briefing, defends legal credentials after criticism",
-        "link": "https://www.foxnews.com/media/katie-zacharia-addresses-brevity-first-press-briefing-defends-legal-credentials-criticism",
+        "title": "JONATHAN TURLEY: Sherrod Brown's pledge turns advice and consent into a punchline",
+        "link": "https://www.foxnews.com/opinion/jonathan-turley-browns-pledge-turns-advice-consent-punchline",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Katie Zacharia defended her debut White House press briefing and addressed California bar exam scrutiny during interview with Sean Hannity.",
+        "description": "Ohio's Sherrod Brown pledged to vote against every Trump judicial nominee regardless of qualifications, abandoning Senate advice and consent duties.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T03:01:19.000Z",
+        "publishedAt": "2026-10-16T11:00:42.000Z",
         "sentiment": {
-          "posP": 4.2,
-          "negP": 8.2,
-          "neuP": 87.6,
-          "label": "negative",
-          "confidence": 0.34
+          "posP": 11,
+          "negP": 7.6,
+          "neuP": 81.4,
+          "label": "neutral",
+          "confidence": 0.05
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Avalanche of G.O.P. Cash Keeps the Party Competitive Despite Its Problems",
+        "link": "https://www.nytimes.com/2026/10/16/us/avalanche-of-gop-cash-keeps-the-party-competitive-despite-its-problems.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Republican Senate and House candidates are being out-raised by their Democratic rivals, but the party has received a huge boost from groups tied to Elon Musk and President Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T09:02:37.000Z",
+        "sentiment": {
+          "posP": 27.5,
+          "negP": 3.8,
+          "neuP": 68.7,
+          "label": "positive",
+          "confidence": 0.89
         },
         "category": "usa"
       },
@@ -5253,106 +5278,6 @@
         "category": "usa"
       },
       {
-        "title": "How U.S. Support to Ukraine Has Evolved Under Trump",
-        "link": "https://www.nytimes.com/2026/10/15/us/politics/ukraine-us-aid-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump’s latest push to end the war in Ukraine has raised questions about the future of U.S. support.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-15T22:37:04.000Z",
-        "sentiment": {
-          "posP": 15.7,
-          "negP": 11.4,
-          "neuP": 72.9,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Senators Demand Investigation Into Ukraine Satellite Disruption",
-        "link": "https://www.nytimes.com/2026/10/15/us/politics/ukraine-satellite-intelligence-investigation-senate.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Republicans joined Democrats in calling on the Pentagon’s inspector general to look into whether the Trump administration was responsible for the interruption.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T09:17:11.000Z",
-        "sentiment": {
-          "posP": 6.8,
-          "negP": 19.2,
-          "neuP": 74,
-          "label": "negative",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "5 Takeaways From the Senate Debate in Maine",
-        "link": "https://www.nytimes.com/2026/10/15/us/politics/maine-senate-debate-collins-jackson.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The race’s fourth and final debate centered around whether Senator Susan Collins, the Republican incumbent, was as independent as she claimed to be from President Trump.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T03:05:19.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "In Michigan Senate Race, Ocasio-Cortez Joins El-Sayed on Trail in Trump Country",
-        "link": "https://www.nytimes.com/2026/10/15/us/politics/ocasio-cortez-el-sayed-michigan-vance-trump-senate.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Representative Alexandria Ocasio-Cortez campaigned with Dr. Abdul El-Sayed in a swath of Michigan including areas won by President Trump, making a progressive pitch in a key Senate race.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T03:16:51.000Z",
-        "sentiment": {
-          "posP": 9.3,
-          "negP": 0,
-          "neuP": 90.7,
-          "label": "positive",
-          "confidence": 0.57
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Judge Dismisses Trump Lawsuit That Sought to Block N.Y.C. Sanctuary Laws",
-        "link": "https://www.nytimes.com/2026/10/15/nyregion/nyc-sanctuary-law-ice-judge-ruling.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The ruling was the latest defeat for the administration as it continues a mass deportation campaign.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T01:12:51.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 25.3,
-          "neuP": 74.7,
-          "label": "negative",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
         "title": "Katie Zacharia Admits Failing Bar, but Defends Calling Herself a Lawyer",
         "link": "https://www.nytimes.com/2026/10/15/us/katie-zacharia-lawyer-attorney-bar.html",
         "source": "NYT",
@@ -5373,36 +5298,36 @@
         "category": "usa"
       },
       {
-        "title": "Vance says \"selling access to the White House\" is \"disgusting\"",
-        "link": "https://www.cbsnews.com/news/vance-town-hall-dokoupil-selling-access-white-house/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "A Bitter White House Feud, Even by Trump-Era Standards: Alina Mildon and Richard Grenell",
+        "link": "https://www.nytimes.com/2026/10/15/us/politics/alina-habba-mildon-richard-grenell-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Vice President JD Vance told CBS News in a \"Things That Matter\" town hall in Michigan that anybody who is \"selling access to the White House\" should \"suffer consequences.\"",
+        "description": "Two Trump allies — Alina Habba Mildon and Richard Grenell — are locked in a raging dispute that has its roots in the battle for a share of the spoils in Venezuela.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T23:31:49.000Z",
+        "publishedAt": "2026-10-16T00:52:57.000Z",
         "sentiment": {
-          "posP": 2.7,
-          "negP": 8.6,
-          "neuP": 88.7,
+          "posP": 4.3,
+          "negP": 27.2,
+          "neuP": 68.5,
           "label": "negative",
-          "confidence": 0.53
+          "confidence": 0.89
         },
         "category": "usa"
       },
       {
-        "title": "Michigan Senate contest earns outsized attention from Trump",
-        "link": "https://www.cbsnews.com/video/michigan-senate-contest-outsized-attention-trump/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "More Trump Allies Aided Pro-Russian Balkan Government",
+        "link": "https://www.nytimes.com/2026/10/15/us/politics/trump-russia-srpska-elections-wiles.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Democrats hold the Michigan Senate seat on the ballot this fall, and Republican Mike Rogers is trying to pick it up for the Republicans. Ed O'Keefe has more details on the race and the latest on the Trump administration.",
+        "description": "The daughter of the president’s chief of staff joined an American businessman in Republika Srpska as he explored a gas pipeline. And six current and former campaign advisers recently traveled there for an election.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-15T23:27:07.000Z",
+        "publishedAt": "2026-10-15T20:53:09.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5413,86 +5338,173 @@
         "category": "usa"
       },
       {
-        "title": "Trump says he won't use nuclear weapons or send ground troops to Iran",
-        "link": "https://www.cnbc.com/2026/10/16/us-iran-war-trump-hormuz.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Trump’s Attempt to Deport Ilhan Omar Is Another Leap Toward the Abyss",
+        "link": "https://www.nytimes.com/2026/10/16/opinion/ilhan-omar-deportation-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump said he would not use nuclear weapons against Iran or send ground troops as the U.S. reportedly weighs new strike options.",
+        "description": "This is more than just another persecution of one of the president’s political enemies.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T09:46:54.000Z",
-        "sentiment": {
-          "posP": 12.6,
-          "negP": 3.9,
-          "neuP": 83.5,
-          "label": "positive",
-          "confidence": 0.51
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Zelenskyy praises 'real leaders' in Europe, as his strained relationship with Trump overshadows EU summit",
-        "link": "https://www.cnbc.com/2026/10/16/zelenskyy-trump-eu-summit-russia-ukraine.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Zelenskyy's strained relationship with Trump is clouding the EU summit focused on securing further support for Ukraine.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T08:52:54.000Z",
-        "sentiment": {
-          "posP": 25.9,
-          "negP": 12.7,
-          "neuP": 61.4,
-          "label": "positive",
-          "confidence": 0.68
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says 'if Ken Paxton loses' Texas Senate race, blame Cornyn and Karl Rove",
-        "link": "https://www.cnbc.com/2026/10/15/trump-paxton-texas-talarico.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Polls show GOP Attorney General Ken Paxton trailing Democratic Rep. James Talarico in the Texas Senate race.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-15T21:42:14.000Z",
+        "publishedAt": "2026-10-16T13:33:13.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 13.9,
-          "neuP": 86.1,
+          "negP": 11.3,
+          "neuP": 88.7,
           "label": "negative",
-          "confidence": 0.57
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "This Texas Region Flipped for Trump. Will It Stay Red?",
+        "link": "https://www.nytimes.com/2026/10/16/opinion/texas-border-voters-midterms-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "With control of the Senate at stake, Mara Gay traveled to this Texas border region to hear from voters.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T12:12:51.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "What is the \"mother of all bombs\" that sources say the White House prepared for Iran?",
+        "link": "https://www.cbsnews.com/video/what-is-the-mother-of-all-bombs-that-sources-say-the-white-house-is-preparing-for-iran/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Sources say the White House prepared plans to use the \"mother of all bombs\" on Iran. President Trump clarified in an interview that the weapon is not a nuclear bomb. CBS News' Ramy Inocencio reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T13:49:50.000Z",
+        "sentiment": {
+          "posP": 11.8,
+          "negP": 4,
+          "neuP": 84.2,
+          "label": "positive",
+          "confidence": 0.5
+        },
+        "category": "usa"
+      },
+      {
+        "title": "A look at Cuba's humanitarian crisis",
+        "link": "https://www.cbsnews.com/video/a-look-at-cubas-humanitarian-crisis/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The U.S. blockade of oil imports to Cuba has been blamed for a worsening economic and humanitarian crisis. The Trump administration is targeting Cuba's communist government, imposing new sanctions against Cuba's state-run bank. Matt Gutman traveled to Havana to see how U.S. sanctions are impacting the Cuban people.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T13:42:31.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 25,
+          "neuP": 75,
+          "label": "negative",
+          "confidence": 0.94
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Vance calls selling access to the White House \"disgusting\" and slams Abdul El-Sayed in Michigan",
+        "link": "https://www.cbsnews.com/video/vance-calls-selling-access-to-the-white-house-disgusting-and-slams-abdul-el-sayed-in-michigan/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Vice President JD Vance weighed in on questions about access to the White House in exchange for money during a CBS News town hall in Michigan. He also rallied voters against Democratic Senate candidate Abdul El-Sayed. CBS News' Taurean Small and Aaron Navarro report.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T13:29:28.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Vance says he'll \"follow the law\" if subpoenaed by Democrats",
+        "link": "https://www.cbsnews.com/video/vance-says-hell-follow-the-law-if-subpoenaed-by-democrats/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "\"CBS Evening News\" anchor Tony Dokoupil sat down with Vice President JD Vance for a CBS News \"Things That Matter\" town hall airing Saturday. Discussing Kimberly Guilfoyle, Vance said anyone \"selling access to the White House\" should \"suffer consequences.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T13:18:45.000Z",
+        "sentiment": {
+          "posP": 2.2,
+          "negP": 6.9,
+          "neuP": 90.9,
+          "label": "negative",
+          "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Michigan Senate campaigns heat up as Trump and Vance lash out at El-Sayed",
+        "link": "https://www.cbsnews.com/video/michigan-senate-campaigns-heat-up-as-trump-and-vance-lash-out-at-el-sayed/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The close Michigan Senate race between Republican Mike Rogers and Democrat Dr. Abdul El-Sayed is heating up. Ed O'Keefe reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T13:12:22.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.81,
-      "neu": 84.81,
-      "neg": 9.38,
-      "count": 36
+      "pos": 5.34,
+      "neu": 86.17,
+      "neg": 8.5,
+      "count": 35
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 7.1,
-        "neu": 84.88,
-        "neg": 8.02,
-        "count": 10
-      },
-      {
         "source": "NYT",
         "pos": 6.7,
-        "neu": 80.46,
-        "neg": 12.84,
+        "neu": 81.97,
+        "neg": 11.33,
         "count": 9
+      },
+      {
+        "source": "CBS News",
+        "pos": 3,
+        "neu": 88.68,
+        "neg": 8.32,
+        "count": 6
+      },
+      {
+        "source": "NBC News",
+        "pos": 7.32,
+        "neu": 82.86,
+        "neg": 9.82,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5510,16 +5522,16 @@
       },
       {
         "source": "Fox News",
-        "pos": 6.37,
-        "neu": 83.47,
-        "neg": 10.17,
+        "pos": 6.67,
+        "neu": 90.8,
+        "neg": 2.53,
         "count": 3
       },
       {
-        "source": "CBS News",
-        "pos": 2.23,
-        "neu": 90.23,
-        "neg": 7.53,
+        "source": "ABC News",
+        "pos": 5.2,
+        "neu": 92.03,
+        "neg": 2.77,
         "count": 3
       },
       {
@@ -5528,36 +5540,36 @@
         "neu": 88,
         "neg": 9,
         "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 7.8,
-        "neu": 88.05,
-        "neg": 4.15,
-        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.25,
-        "neu": 87.33,
-        "neg": 7.42,
-        "count": 15
+        "pos": 6.06,
+        "neu": 86.11,
+        "neg": 7.84,
+        "count": 18
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7.9,
-        "neu": 79.79,
-        "neg": 12.31,
-        "count": 9
+        "pos": 4.21,
+        "neu": 83.4,
+        "neg": 12.39,
+        "count": 7
       },
       {
         "topic": "Policy",
-        "pos": 3.64,
-        "neu": 88,
-        "neg": 8.36,
-        "count": 7
+        "pos": 2.6,
+        "neu": 89.6,
+        "neg": 7.8,
+        "count": 5
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 5.43,
+        "neu": 88.37,
+        "neg": 6.2,
+        "count": 3
       },
       {
         "topic": "Economy",
@@ -5565,20 +5577,6 @@
         "neu": 84.5,
         "neg": 6,
         "count": 2
-      },
-      {
-        "topic": "Legal",
-        "pos": 5.05,
-        "neu": 79.7,
-        "neg": 15.25,
-        "count": 2
-      },
-      {
-        "topic": "Public Statements",
-        "pos": 4.5,
-        "neu": 80.9,
-        "neg": 14.6,
-        "count": 1
       }
     ]
   },
@@ -5605,28 +5603,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-16T05:54:16.460Z",
+        "label": "2026-10-16T10:43:48.388Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T06:54:16.460Z",
+        "label": "2026-10-16T11:43:48.388Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T07:54:16.460Z",
+        "label": "2026-10-16T12:43:48.388Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T08:54:16.460Z",
+        "label": "2026-10-16T13:43:48.388Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5633,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-16T05:54:16.460Z",
+        "label": "2026-10-16T10:43:48.388Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T06:54:16.460Z",
+        "label": "2026-10-16T11:43:48.388Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T07:54:16.460Z",
+        "label": "2026-10-16T12:43:48.388Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T08:54:16.460Z",
+        "label": "2026-10-16T13:43:48.388Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5734,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-16T09:54:16.462Z",
+    "generatedAt": "2026-10-16T14:43:48.389Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5857,8 +5855,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 171,
-      "potusArticles": 36,
+      "usaArticles": 167,
+      "potusArticles": 35,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
