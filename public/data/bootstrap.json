@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-17T01:37:28.506Z",
+  "generatedAt": "2026-10-17T10:52:47.839Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 169,
-    "potusArticles": 35
+    "usaArticles": 166,
+    "potusArticles": 34
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-16T21:37:28.507Z",
+          "label": "2026-10-17T06:52:47.840Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T22:37:28.507Z",
+          "label": "2026-10-17T07:52:47.840Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T23:37:28.507Z",
+          "label": "2026-10-17T08:52:47.840Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T00:37:28.507Z",
+          "label": "2026-10-17T09:52:47.840Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-16T21:37:28.507Z",
+          "label": "2026-10-17T06:52:47.840Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T22:37:28.507Z",
+          "label": "2026-10-17T07:52:47.840Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T23:37:28.507Z",
+          "label": "2026-10-17T08:52:47.840Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T00:37:28.507Z",
+          "label": "2026-10-17T09:52:47.840Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 5.72,
-      "neu": 83.59,
-      "neg": 10.69,
-      "count": 169
+      "pos": 6.35,
+      "neu": 82.29,
+      "neg": 11.36,
+      "count": 166
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 5.82,
-        "neu": 84.67,
-        "neg": 9.51,
-        "count": 41
+        "pos": 5.19,
+        "neu": 85.29,
+        "neg": 9.52,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 6.26,
-        "neu": 83.36,
-        "neg": 10.38,
+        "pos": 8.52,
+        "neu": 76.44,
+        "neg": 15.05,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 3.31,
-        "neu": 85.05,
-        "neg": 11.63,
+        "pos": 4.73,
+        "neu": 83.94,
+        "neg": 11.33,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 4.62,
-        "neu": 82.88,
-        "neg": 12.51,
-        "count": 24
+        "pos": 6.04,
+        "neu": 81.51,
+        "neg": 12.45,
+        "count": 23
       },
       {
         "source": "WSJ",
@@ -4599,8 +4599,8 @@
       {
         "source": "ABC News",
         "pos": 7.63,
-        "neu": 84.85,
-        "neg": 7.51,
+        "neu": 84.91,
+        "neg": 7.46,
         "count": 20
       },
       {
@@ -4628,6 +4628,11 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Materials",
+          "bias": -17.2,
+          "count": 1
+        },
+        {
           "name": "Utilities",
           "bias": -17,
           "count": 1
@@ -4638,71 +4643,66 @@
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": 7,
-          "count": 1
-        },
-        {
-          "name": "Energy",
-          "bias": -6.86,
-          "count": 12
+          "name": "Real Estate",
+          "bias": 7.35,
+          "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -5.8,
-          "count": 11
+          "bias": -7.1,
+          "count": 14
+        },
+        {
+          "name": "Energy",
+          "bias": -6.52,
+          "count": 10
         },
         {
           "name": "Technology",
-          "bias": -5.3,
-          "count": 131
+          "bias": -5.38,
+          "count": 130
         },
         {
           "name": "Manufacturing",
-          "bias": 5,
-          "count": 3
-        },
-        {
-          "name": "Real Estate",
-          "bias": -4.53,
-          "count": 3
+          "bias": 1.65,
+          "count": 2
         },
         {
           "name": "Finance",
-          "bias": -1.76,
-          "count": 18
+          "bias": -1.59,
+          "count": 16
         }
       ],
       "pos": [
         {
-          "name": "Materials",
-          "bias": 7,
-          "count": 1
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 5,
-          "count": 3
+          "name": "Real Estate",
+          "bias": 7.35,
+          "count": 2
         }
       ],
       "neu": [
         {
           "name": "Healthcare",
-          "bias": -5.8,
-          "count": 11
+          "bias": -7.1,
+          "count": 14
+        },
+        {
+          "name": "Energy",
+          "bias": -6.52,
+          "count": 10
         },
         {
           "name": "Technology",
-          "bias": -5.3,
-          "count": 131
-        },
-        {
-          "name": "Real Estate",
-          "bias": -4.53,
-          "count": 3
+          "bias": -5.38,
+          "count": 130
         }
       ],
       "neg": [
+        {
+          "name": "Materials",
+          "bias": -17.2,
+          "count": 1
+        },
         {
           "name": "Utilities",
           "bias": -17,
@@ -4712,43 +4712,38 @@
           "name": "Communication",
           "bias": -14,
           "count": 1
-        },
-        {
-          "name": "Energy",
-          "bias": -6.86,
-          "count": 12
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-16T21:37:28.508Z",
-          "pos": 6,
-          "neu": 85,
-          "neg": 9,
-          "count": 14
+          "label": "2026-10-17T06:52:47.842Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
         },
         {
-          "label": "2026-10-16T22:37:28.508Z",
-          "pos": 7,
-          "neu": 85,
-          "neg": 8,
-          "count": 12
-        },
-        {
-          "label": "2026-10-16T23:37:28.508Z",
-          "pos": 2,
-          "neu": 87,
-          "neg": 10,
-          "count": 24
-        },
-        {
-          "label": "2026-10-17T00:37:28.508Z",
+          "label": "2026-10-17T07:52:47.842Z",
           "pos": 4,
-          "neu": 81,
-          "neg": 15,
-          "count": 11
+          "neu": 85,
+          "neg": 11,
+          "count": 6
+        },
+        {
+          "label": "2026-10-17T08:52:47.842Z",
+          "pos": 9,
+          "neu": 80,
+          "neg": 11,
+          "count": 10
+        },
+        {
+          "label": "2026-10-17T09:52:47.842Z",
+          "pos": 6,
+          "neu": 79,
+          "neg": 14,
+          "count": 15
         }
       ]
     }
@@ -4956,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Kid Rock details sit-down with Trump, Stephen A Smith and Bill Maher",
-        "link": "https://www.foxnews.com/media/kid-rock-details-sit-down-trump-stephen-smith-bill-maher",
+        "title": "Biden-appointed judge deals Trump another sanctuary city defeat in major immigration fight",
+        "link": "https://www.foxnews.com/politics/biden-appointed-judge-deals-trump-another-sanctuary-city-defeat-major-immigration-fight",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Kid Rock revealed details from an \"epic\" White House dinner with President Donald Trump, Bill Maher and Stephen A. Smith where socialism and HBCUs took center stage.",
+        "description": "A federal judge ruled Trump's lawsuit against New York City's sanctuary policies fails, citing the Tenth Amendment's anti-commandeering doctrine.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T01:00:57.000Z",
+        "publishedAt": "2026-10-17T09:00:40.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 28.4,
+          "neuP": 71.6,
+          "label": "negative",
+          "confidence": 0.85
         },
         "category": "usa"
       },
       {
-        "title": "White House reporters react to Katie Zacharia's 'brutal' exit as Trump's press secretary",
-        "link": "https://www.foxnews.com/media/white-house-reporters-react-katie-zacharia-brutal-exit-trump-press-secretary",
+        "title": "Army expo attendees skeptical of Trump's Iran peace deal hopes: 'Beat 'em into submission'",
+        "link": "https://www.foxnews.com/politics/army-expo-attendees-skeptical-trumps-iran-peace-deal-hopes-beat-em-submission",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Fox News Digital spoke with several White House correspondents about Katie Zacharia's dramatic exit as President Donald Trump's press secretary.",
+        "description": "AUSA Exposition attendees question Trump's optimism about an Iran deal, arguing military and economic sanctions must intensify before Tehran talks.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T23:32:49.000Z",
+        "publishedAt": "2026-10-17T08:00:05.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 22.2,
+          "negP": 12,
+          "neuP": 65.8,
+          "label": "positive",
+          "confidence": 0.67
         },
         "category": "usa"
       }
@@ -5198,6 +5193,46 @@
         "category": "world"
       },
       {
+        "title": "Biden-appointed judge deals Trump another sanctuary city defeat in major immigration fight",
+        "link": "https://www.foxnews.com/politics/biden-appointed-judge-deals-trump-another-sanctuary-city-defeat-major-immigration-fight",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A federal judge ruled Trump's lawsuit against New York City's sanctuary policies fails, citing the Tenth Amendment's anti-commandeering doctrine.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T09:00:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 28.4,
+          "neuP": 71.6,
+          "label": "negative",
+          "confidence": 0.85
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Army expo attendees skeptical of Trump's Iran peace deal hopes: 'Beat 'em into submission'",
+        "link": "https://www.foxnews.com/politics/army-expo-attendees-skeptical-trumps-iran-peace-deal-hopes-beat-em-submission",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "AUSA Exposition attendees question Trump's optimism about an Iran deal, arguing military and economic sanctions must intensify before Tehran talks.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T08:00:05.000Z",
+        "sentiment": {
+          "posP": 22.2,
+          "negP": 12,
+          "neuP": 65.8,
+          "label": "positive",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
         "title": "Kid Rock details sit-down with Trump, Stephen A Smith and Bill Maher",
         "link": "https://www.foxnews.com/media/kid-rock-details-sit-down-trump-stephen-smith-bill-maher",
         "source": "Fox News",
@@ -5218,202 +5253,42 @@
         "category": "usa"
       },
       {
-        "title": "White House reporters react to Katie Zacharia's 'brutal' exit as Trump's press secretary",
-        "link": "https://www.foxnews.com/media/white-house-reporters-react-katie-zacharia-brutal-exit-trump-press-secretary",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Revives 2020 Election Conspiracies, With Help From the Federal Government",
+        "link": "https://www.nytimes.com/2026/10/17/us/politics/election-fraud-conspiracies-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Fox News Digital spoke with several White House correspondents about Katie Zacharia's dramatic exit as President Donald Trump's press secretary.",
+        "description": "Voting rights advocates fear the Trump administration may use the federal government to cast doubt on the election, discourage participation or try to delegitimize results.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T23:32:49.000Z",
+        "publishedAt": "2026-10-17T09:02:18.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 11.8,
+          "negP": 19,
+          "neuP": 69.2,
+          "label": "negative",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "‘No Kings’ Events This Weekend: What We Know",
+        "link": "https://www.nytimes.com/2026/10/16/us/what-we-know-no-kings-vote-early.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Organizers are hoping to promote early voting ahead of the midterm elections in this latest round of nationwide demonstrations that have previously focused on President Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T09:04:20.000Z",
+        "sentiment": {
+          "posP": 20.5,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Seth Meyers admits shock over second Trump victory prompted sit-down with late-night team to adjust tone",
-        "link": "https://www.foxnews.com/media/seth-meyers-admits-shock-second-trump-victory-prompted-sit-down-late-night-team-adjust-tone",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Seth Meyers revealed he held a tonal meeting with his team after President Donald Trump's second election victory, saying he didn't want to go through the motions again.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T22:42:07.000Z",
-        "sentiment": {
-          "posP": 4.8,
-          "negP": 8.3,
-          "neuP": 86.9,
-          "label": "neutral",
-          "confidence": 0.16
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Katie Zacharia out as White House press secretary after first week",
-        "link": "https://www.cbsnews.com/news/trump-katie-zacharia-white-house-press-secretary/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Katie Zacharia, President Trump's new White House press secretary, is being removed from the role after just five days on the job.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-17T00:03:31.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Katie Zacharia, Trump’s New Press Secretary, Is Ousted After 5 Days",
-        "link": "https://www.nytimes.com/2026/10/16/us/politics/katie-zacharia-fired-press-secretary.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Her abrupt departure came after she was shadowed by questions about how she had presented her legal career and handled her first press briefing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T21:57:41.000Z",
-        "sentiment": {
-          "posP": 4.3,
-          "negP": 0,
-          "neuP": 95.7,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How We Reported on the Cornell Case",
-        "link": "https://www.nytimes.com/2026/10/15/insider/backstory-newsletter-trump-cornell.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "In our first edition of The Backstory, a new newsletter about Times journalism, we’re diving into coverage of a rape allegation and talking to a critic who says we’re not tough enough on Trump.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-15T17:09:51.000Z",
-        "sentiment": {
-          "posP": 6.1,
-          "negP": 15.6,
-          "neuP": 78.3,
-          "label": "negative",
-          "confidence": 0.73
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Bystander Who Killed School Shooter Is Father of 2 Students",
-        "link": "https://www.nytimes.com/2026/10/16/briefing/oregon-shooting-white-house-press-secretary.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Also, the White House press secretary is ousted after five days. Here’s the latest at the end of Friday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T21:29:40.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 14.3,
-          "neuP": 85.7,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "U.S. Budget Deficit Nears $2 Trillion, a Reality Check for Trump’s Cost Cutting",
-        "link": "https://www.nytimes.com/2026/10/16/business/us-budget-deficit.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Higher interest rates are inflating borrowing costs as the Trump administration spends on the Iran war and tariff refunds.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T18:28:21.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 21.3,
-          "neuP": 70.8,
-          "label": "negative",
-          "confidence": 0.62
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The Rupturing Trump-Zelensky Relationship Stands to Hurt Ukraine and Its European Allies",
-        "link": "https://www.nytimes.com/2026/10/16/world/europe/trump-zelensky-ukraine-war.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Where the two presidents’ war of words will end is anybody’s guess. But if it continues, it could threaten the crucial operational help that Ukraine still gets from the United States.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T19:12:25.000Z",
-        "sentiment": {
-          "posP": 10.3,
-          "negP": 18.5,
-          "neuP": 71.2,
-          "label": "negative",
-          "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
-        "title": "A Bitter White House Feud, Even by Trump-Era Standards: Alina Mildon and Richard Grenell",
-        "link": "https://www.nytimes.com/2026/10/15/us/politics/alina-habba-mildon-richard-grenell-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Two Trump allies — Alina Habba Mildon and Richard Grenell — are locked in a raging dispute that has its roots in the battle for a share of the spoils in Venezuela.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T00:52:58.000Z",
-        "sentiment": {
-          "posP": 4.3,
-          "negP": 27.2,
-          "neuP": 68.5,
-          "label": "negative",
-          "confidence": 0.89
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Appeals Court Questions Justice Dept. Claim that Trump Owns White House Records",
-        "link": "https://www.nytimes.com/2026/10/16/us/politics/appeals-court-trump-presidential-records.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A three-judge panel appeared unconvinced by claims that a federal law requiring the president to preserve and hand over his presidential papers was unconstitutional.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T21:47:04.000Z",
-        "sentiment": {
-          "posP": 16.4,
-          "negP": 6.5,
-          "neuP": 77.1,
+          "neuP": 79.5,
           "label": "positive",
-          "confidence": 0.61
+          "confidence": 0.79
         },
         "category": "usa"
       },
@@ -5438,72 +5313,199 @@
         "category": "usa"
       },
       {
-        "title": "White House Press Secretary out after 5 days on the job",
-        "link": "https://www.nbcnews.com/nightly-news/video/white-house-press-secretary-out-after-5-days-on-the-job-271724613540",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Trump waives tariffs on largest buyers of Russian oil",
+        "link": "https://www.cbsnews.com/news/trump-waives-sanctions-tariffs-russian-oil-lindsey-graham/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Katie Zacharia had a rocky five days as White House Press Secretary with a single briefing that was widely panned followed by questions over her legal credentials. Now she is out from one of the highest profile posts of the Trump administration. NBC News’ Chief White House Correspondent Garrett Haake reports.",
+        "description": "President Trump prevented some new sanctions on Russia and hefty tariffs on large-scale buyers of Russian oil from taking effect late Friday, as he seeks to ease prices by tapping Russian energy.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T22:50:32.000Z",
+        "publishedAt": "2026-10-17T09:39:30.000Z",
         "sentiment": {
-          "posP": 2.5,
+          "posP": 13,
           "negP": 0,
-          "neuP": 97.5,
-          "label": "neutral",
-          "confidence": 0.13
+          "neuP": 87,
+          "label": "positive",
+          "confidence": 0.57
         },
         "category": "usa"
       },
       {
-        "title": "Trump pardons two vehicle repair shop owners during Alaska rally",
-        "link": "https://www.nbcnews.com/video/trump-pardons-two-vehicle-repair-shop-owners-during-alaska-rally-271538245765",
+        "title": "Katie Zacharia out as White House press secretary after first week",
+        "link": "https://www.cbsnews.com/news/trump-katie-zacharia-white-house-press-secretary/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Katie Zacharia, President Trump's new White House press secretary, is being removed from the role after just five days on the job.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T01:40:54.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump waives broad new Russia sanctions and tariffs under Graham Act, citing national interest",
+        "link": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump signed the Graham Bill, which targeted Russia over its invasion of Ukraine, into law in September.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T10:20:44.000Z",
+        "sentiment": {
+          "posP": 9.1,
+          "negP": 0,
+          "neuP": 90.9,
+          "label": "positive",
+          "confidence": 0.46
+        },
+        "category": "usa"
+      },
+      {
+        "title": "5 midterm money takeaways: Democrats have candidate cash. Republicans have Elon Musk",
+        "link": "https://www.cnbc.com/2026/10/16/midterm-election-fundraising-elon-musk.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats outraise Republicans in key Congress races as Elon Musk funds Ken Paxton in Texas and GOP groups aligned with Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T21:49:13.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Katie Zacharia out as Trump's White House press secretary",
+        "link": "https://www.cnbc.com/2026/10/16/trump-katie-zacharia-white-house.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Zacharia was on shaky ground from her first White House press conference and over questions about her claims of being a lawyer despite not passing a bar exam.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T21:26:15.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 5.3,
+          "neuP": 94.7,
+          "label": "negative",
+          "confidence": 0.23
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Why Trump and the GOP's billion-dollar midterm blitz isn’t working",
+        "link": "https://www.cnbc.com/2026/10/16/republicans-midterms-spending-trump-musk-2026.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump-aligned groups and Elon Musk have poured hundreds of millions into the midterm election, but the GOP spending surge has barely moved polls or the map.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T17:55:05.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says White House didn't order Starlink restrictions in Ukraine",
+        "link": "https://www.cnbc.com/2026/10/16/trump-denies-musk-claim-he-ordered-starlink-restrictions-in-ukraine.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ukrainian officials complained this week that SpaceX had limited internet connectivity without advance notice.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T20:28:10.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17.3,
+          "neuP": 82.7,
+          "label": "negative",
+          "confidence": 0.56
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump waives new Russia sanctions passed by Congress, citing ‘national interests’",
+        "link": "https://www.nbcnews.com/politics/trump-administration/trump-suspends-new-russia-sanctions-deal-purchase-diesel-citing-nation-rcna603991",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "During his rally in Alaska, President Trump pardoned Zachary Czuback and Patrick Fleming, co-owners of a vehicle repair shop in Anchorage. Both pleaded guilty in 2022 to violating the Clean Air Act by tampering with federally mandated and monitored devices that tracked vehicles’ diesel emissions.",
+        "description": "President Donald Trump waived sweeping new sanctions against Russia passed by Congress, arguing in an executive order Friday that the move “is in the national interests of the United States.”",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-14T01:56:45.000Z",
+        "publishedAt": "2026-10-17T02:45:08.000Z",
         "sentiment": {
-          "posP": 11,
-          "negP": 10.1,
-          "neuP": 78.9,
-          "label": "neutral",
-          "confidence": 0.13
+          "posP": 10.5,
+          "negP": 6.6,
+          "neuP": 82.9,
+          "label": "positive",
+          "confidence": 0.2
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.45,
+      "pos": 5.55,
       "neu": 86.41,
-      "neg": 9.15,
-      "count": 35
+      "neg": 8.04,
+      "count": 34
     },
     "sourceLeaderboard": [
       {
-        "source": "NYT",
-        "pos": 6.23,
-        "neu": 81.1,
-        "neg": 12.67,
-        "count": 10
+        "source": "NBC News",
+        "pos": 5.12,
+        "neu": 89.62,
+        "neg": 5.26,
+        "count": 9
       },
       {
-        "source": "NBC News",
-        "pos": 3.79,
-        "neu": 90.4,
-        "neg": 5.81,
-        "count": 7
+        "source": "NYT",
+        "pos": 9.06,
+        "neu": 82.48,
+        "neg": 8.46,
+        "count": 5
       },
       {
         "source": "Fox News",
-        "pos": 3.45,
-        "neu": 94.47,
-        "neg": 2.08,
+        "pos": 7.8,
+        "neu": 82.1,
+        "neg": 10.1,
+        "count": 4
+      },
+      {
+        "source": "ABC News",
+        "pos": 3.17,
+        "neu": 84.63,
+        "neg": 12.2,
         "count": 4
       },
       {
@@ -5521,18 +5523,11 @@
         "count": 3
       },
       {
-        "source": "ABC News",
-        "pos": 4.23,
-        "neu": 79.13,
-        "neg": 16.63,
-        "count": 3
-      },
-      {
         "source": "CBS News",
-        "pos": 2,
-        "neu": 91,
-        "neg": 7,
-        "count": 2
+        "pos": 5.67,
+        "neu": 89.67,
+        "neg": 4.67,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5545,31 +5540,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.92,
-        "neu": 82.45,
-        "neg": 12.64,
+        "pos": 7.42,
+        "neu": 83.5,
+        "neg": 9.08,
         "count": 11
       },
       {
         "topic": "Policy",
-        "pos": 2.92,
-        "neu": 89.91,
-        "neg": 7.16,
-        "count": 8
+        "pos": 4.69,
+        "neu": 89.26,
+        "neg": 6.05,
+        "count": 10
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.8,
-        "neu": 82.55,
-        "neg": 12.65,
-        "count": 6
-      },
-      {
-        "topic": "Public Statements",
-        "pos": 0,
-        "neu": 96.08,
-        "neg": 3.92,
-        "count": 5
+        "pos": 4.5,
+        "neu": 87.3,
+        "neg": 8.2,
+        "count": 7
       },
       {
         "topic": "Economy",
@@ -5579,11 +5567,18 @@
         "count": 3
       },
       {
-        "topic": "Legal",
-        "pos": 10.35,
-        "neu": 86.4,
-        "neg": 3.25,
+        "topic": "Public Statements",
+        "pos": 0,
+        "neu": 97.35,
+        "neg": 2.65,
         "count": 2
+      },
+      {
+        "topic": "Legal",
+        "pos": 0,
+        "neu": 71.6,
+        "neg": 28.4,
+        "count": 1
       }
     ]
   },
@@ -5610,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-16T21:37:28.509Z",
+        "label": "2026-10-17T06:52:47.844Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T22:37:28.509Z",
+        "label": "2026-10-17T07:52:47.844Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T23:37:28.509Z",
+        "label": "2026-10-17T08:52:47.844Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T00:37:28.509Z",
+        "label": "2026-10-17T09:52:47.844Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5640,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-16T21:37:28.509Z",
+        "label": "2026-10-17T06:52:47.844Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T22:37:28.509Z",
+        "label": "2026-10-17T07:52:47.844Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T23:37:28.509Z",
+        "label": "2026-10-17T08:52:47.844Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T00:37:28.509Z",
+        "label": "2026-10-17T09:52:47.844Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5741,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-17T01:37:28.510Z",
+    "generatedAt": "2026-10-17T10:52:47.845Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5862,8 +5857,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 169,
-      "potusArticles": 35,
+      "usaArticles": 166,
+      "potusArticles": 34,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
