@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-17T21:39:59.598Z",
+  "generatedAt": "2026-10-17T23:29:48.000Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 164,
+    "usaArticles": 162,
     "potusArticles": 32
   },
   "version": 1,
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-17T17:39:59.598Z",
+          "label": "2026-10-17T19:29:48.001Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T18:39:59.598Z",
+          "label": "2026-10-17T20:29:48.001Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T19:39:59.598Z",
+          "label": "2026-10-17T21:29:48.001Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T20:39:59.598Z",
+          "label": "2026-10-17T22:29:48.001Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-17T17:39:59.598Z",
+          "label": "2026-10-17T19:29:48.001Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T18:39:59.598Z",
+          "label": "2026-10-17T20:29:48.001Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T19:39:59.598Z",
+          "label": "2026-10-17T21:29:48.001Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T20:39:59.598Z",
+          "label": "2026-10-17T22:29:48.001Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.21,
-      "neu": 82.29,
-      "neg": 10.5,
-      "count": 164
+      "pos": 7.75,
+      "neu": 81.42,
+      "neg": 10.83,
+      "count": 162
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.99,
-        "neu": 83.84,
-        "neg": 9.17,
+        "pos": 7.5,
+        "neu": 83.16,
+        "neg": 9.34,
         "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 10.08,
-        "neu": 76.74,
-        "neg": 13.18,
+        "pos": 9.96,
+        "neu": 75.62,
+        "neg": 14.42,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.24,
-        "neu": 86.93,
-        "neg": 7.83,
+        "pos": 6.72,
+        "neu": 84.71,
+        "neg": 8.57,
         "count": 26
       },
       {
@@ -4592,16 +4592,16 @@
       {
         "source": "ABC News",
         "pos": 8.71,
-        "neu": 83.12,
-        "neg": 8.17,
+        "neu": 83.34,
+        "neg": 7.94,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 5.7,
-        "neu": 81.51,
-        "neg": 12.79,
-        "count": 19
+        "pos": 7.36,
+        "neu": 79.64,
+        "neg": 13,
+        "count": 17
       },
       {
         "source": "NPR",
@@ -4628,24 +4628,34 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Manufacturing",
+          "bias": -23.6,
+          "count": 3
+        },
+        {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
           "name": "Healthcare",
-          "bias": -12.22,
-          "count": 10
+          "bias": -9.73,
+          "count": 12
         },
         {
           "name": "Energy",
-          "bias": 4.64,
+          "bias": 8.11,
           "count": 8
         },
         {
+          "name": "Utilities",
+          "bias": 3.47,
+          "count": 4
+        },
+        {
           "name": "Technology",
-          "bias": -3.52,
-          "count": 124
+          "bias": -3.38,
+          "count": 121
         },
         {
           "name": "Real Estate",
@@ -4656,21 +4666,26 @@
           "name": "Finance",
           "bias": -1.17,
           "count": 20
-        },
-        {
-          "name": "Utilities",
-          "bias": 0.75,
-          "count": 6
         }
       ],
       "pos": [
         {
           "name": "Energy",
-          "bias": 4.64,
+          "bias": 8.11,
           "count": 8
+        },
+        {
+          "name": "Utilities",
+          "bias": 3.47,
+          "count": 4
         }
       ],
       "neu": [
+        {
+          "name": "Technology",
+          "bias": -3.38,
+          "count": 121
+        },
         {
           "name": "Real Estate",
           "bias": -1.23,
@@ -4680,14 +4695,14 @@
           "name": "Finance",
           "bias": -1.17,
           "count": 20
-        },
-        {
-          "name": "Utilities",
-          "bias": 0.75,
-          "count": 6
         }
       ],
       "neg": [
+        {
+          "name": "Manufacturing",
+          "bias": -23.6,
+          "count": 3
+        },
         {
           "name": "Communication",
           "bias": -14,
@@ -4695,44 +4710,39 @@
         },
         {
           "name": "Healthcare",
-          "bias": -12.22,
-          "count": 10
-        },
-        {
-          "name": "Technology",
-          "bias": -3.52,
-          "count": 124
+          "bias": -9.73,
+          "count": 12
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-17T17:39:59.600Z",
-          "pos": 7,
-          "neu": 80,
-          "neg": 13,
-          "count": 6
+          "label": "2026-10-17T19:29:48.002Z",
+          "pos": 11,
+          "neu": 77,
+          "neg": 12,
+          "count": 12
         },
         {
-          "label": "2026-10-17T18:39:59.600Z",
+          "label": "2026-10-17T20:29:48.002Z",
           "pos": 6,
-          "neu": 84,
+          "neu": 81,
+          "neg": 12,
+          "count": 9
+        },
+        {
+          "label": "2026-10-17T21:29:48.002Z",
+          "pos": 9,
+          "neu": 81,
           "neg": 10,
-          "count": 13
+          "count": 11
         },
         {
-          "label": "2026-10-17T19:39:59.600Z",
-          "pos": 10,
-          "neu": 73,
-          "neg": 17,
-          "count": 13
-        },
-        {
-          "label": "2026-10-17T20:39:59.600Z",
-          "pos": 7,
-          "neu": 85,
-          "neg": 9,
+          "label": "2026-10-17T22:29:48.002Z",
+          "pos": 6,
+          "neu": 76,
+          "neg": 18,
           "count": 10
         }
       ]
@@ -5263,22 +5273,22 @@
         "category": "usa"
       },
       {
-        "title": "New Round of ‘No Kings’ Rallies Focuses on Getting Out the Vote",
-        "link": "https://www.nytimes.com/2026/10/17/us/no-kings-early-voting-midterms.html",
+        "title": "In Midterm Campaign’s Final Stretch, Trump Can’t Stop Praising Men’s Bodies",
+        "link": "https://www.nytimes.com/2026/10/17/us/politics/trump-men-physical-appearance-comments.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "With midterm elections approaching, organizers of the demonstrations known for their anti-Trump sentiment are urging people to vote early.",
+        "description": "As he stumps for midterm candidates, the president has been especially eager to talk about the physical appearance of some men.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T19:30:39.000Z",
+        "publishedAt": "2026-10-17T22:51:49.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 16.8,
+          "negP": 5.9,
+          "neuP": 77.3,
+          "label": "positive",
+          "confidence": 0.62
         },
         "category": "usa"
       },
@@ -5464,17 +5474,17 @@
       }
     ],
     "sentiment": {
-      "pos": 5.64,
-      "neu": 87.36,
-      "neg": 7.01,
+      "pos": 6.16,
+      "neu": 86.65,
+      "neg": 7.19,
       "count": 32
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 9.52,
-        "neu": 84.17,
-        "neg": 6.3,
+        "pos": 11.63,
+        "neu": 81.34,
+        "neg": 7.04,
         "count": 8
       },
       {
@@ -5530,9 +5540,9 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.34,
-        "neu": 88.51,
-        "neg": 7.15,
+        "pos": 5.74,
+        "neu": 86.62,
+        "neg": 7.64,
         "count": 12
       },
       {
@@ -5595,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-17T17:39:59.602Z",
+        "label": "2026-10-17T19:29:48.005Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T18:39:59.602Z",
+        "label": "2026-10-17T20:29:48.005Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T19:39:59.602Z",
+        "label": "2026-10-17T21:29:48.005Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T20:39:59.602Z",
+        "label": "2026-10-17T22:29:48.005Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5625,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-17T17:39:59.602Z",
+        "label": "2026-10-17T19:29:48.005Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T18:39:59.602Z",
+        "label": "2026-10-17T20:29:48.005Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T19:39:59.602Z",
+        "label": "2026-10-17T21:29:48.005Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T20:39:59.602Z",
+        "label": "2026-10-17T22:29:48.005Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5726,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-17T21:39:59.603Z",
+    "generatedAt": "2026-10-17T23:29:48.006Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5847,7 +5857,7 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 164,
+      "usaArticles": 162,
       "potusArticles": 32,
       "sourceRows": 12,
       "industryRows": 6,
