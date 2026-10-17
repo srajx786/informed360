@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-16T23:50:59.103Z",
+  "generatedAt": "2026-10-17T01:37:28.506Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 168,
-    "potusArticles": 40
+    "usaArticles": 169,
+    "potusArticles": 35
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-16T19:50:59.104Z",
+          "label": "2026-10-16T21:37:28.507Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T20:50:59.104Z",
+          "label": "2026-10-16T22:37:28.507Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T21:50:59.104Z",
+          "label": "2026-10-16T23:37:28.507Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T22:50:59.104Z",
+          "label": "2026-10-17T00:37:28.507Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-16T19:50:59.104Z",
+          "label": "2026-10-16T21:37:28.507Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T20:50:59.104Z",
+          "label": "2026-10-16T22:37:28.507Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T21:50:59.104Z",
+          "label": "2026-10-16T23:37:28.507Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-16T22:50:59.104Z",
+          "label": "2026-10-17T00:37:28.507Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 6.16,
-      "neu": 82.83,
-      "neg": 11.01,
-      "count": 168
+      "pos": 5.72,
+      "neu": 83.59,
+      "neg": 10.69,
+      "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 5.79,
-        "neu": 85.52,
-        "neg": 8.7,
+        "pos": 5.82,
+        "neu": 84.67,
+        "neg": 9.51,
         "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 6.32,
-        "neu": 81.39,
-        "neg": 12.28,
+        "pos": 6.26,
+        "neu": 83.36,
+        "neg": 10.38,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.82,
-        "neu": 81.48,
-        "neg": 13.7,
+        "pos": 3.31,
+        "neu": 85.05,
+        "neg": 11.63,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 5.66,
-        "neu": 80.86,
-        "neg": 13.48,
-        "count": 23
+        "pos": 4.62,
+        "neu": 82.88,
+        "neg": 12.51,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.11,
-        "neu": 86.19,
-        "neg": 5.71,
+        "pos": 7.63,
+        "neu": 84.85,
+        "neg": 7.51,
         "count": 20
       },
       {
@@ -4638,19 +4638,29 @@
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": -9.12,
-          "count": 10
-        },
-        {
-          "name": "Technology",
-          "bias": -5.57,
-          "count": 131
+          "name": "Materials",
+          "bias": 7,
+          "count": 1
         },
         {
           "name": "Energy",
-          "bias": -5.23,
+          "bias": -6.86,
+          "count": 12
+        },
+        {
+          "name": "Healthcare",
+          "bias": -5.8,
           "count": 11
+        },
+        {
+          "name": "Technology",
+          "bias": -5.3,
+          "count": 131
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 5,
+          "count": 3
         },
         {
           "name": "Real Estate",
@@ -4659,26 +4669,32 @@
         },
         {
           "name": "Finance",
-          "bias": -2.37,
-          "count": 19
+          "bias": -1.76,
+          "count": 18
+        }
+      ],
+      "pos": [
+        {
+          "name": "Materials",
+          "bias": 7,
+          "count": 1
         },
         {
           "name": "Manufacturing",
-          "bias": 0.9,
-          "count": 1
+          "bias": 5,
+          "count": 3
         }
       ],
-      "pos": [],
       "neu": [
         {
-          "name": "Technology",
-          "bias": -5.57,
-          "count": 131
+          "name": "Healthcare",
+          "bias": -5.8,
+          "count": 11
         },
         {
-          "name": "Energy",
-          "bias": -5.23,
-          "count": 11
+          "name": "Technology",
+          "bias": -5.3,
+          "count": 131
         },
         {
           "name": "Real Estate",
@@ -4698,41 +4714,41 @@
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": -9.12,
-          "count": 10
+          "name": "Energy",
+          "bias": -6.86,
+          "count": 12
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-16T19:50:59.105Z",
-          "pos": 7,
-          "neu": 81,
-          "neg": 12,
-          "count": 8
+          "label": "2026-10-16T21:37:28.508Z",
+          "pos": 6,
+          "neu": 85,
+          "neg": 9,
+          "count": 14
         },
         {
-          "label": "2026-10-16T20:50:59.105Z",
-          "pos": 3,
+          "label": "2026-10-16T22:37:28.508Z",
+          "pos": 7,
+          "neu": 85,
+          "neg": 8,
+          "count": 12
+        },
+        {
+          "label": "2026-10-16T23:37:28.508Z",
+          "pos": 2,
           "neu": 87,
           "neg": 10,
-          "count": 16
+          "count": 24
         },
         {
-          "label": "2026-10-16T21:50:59.105Z",
-          "pos": 7,
-          "neu": 82,
-          "neg": 11,
-          "count": 27
-        },
-        {
-          "label": "2026-10-16T22:50:59.105Z",
-          "pos": 3,
-          "neu": 85,
-          "neg": 12,
-          "count": 17
+          "label": "2026-10-17T00:37:28.508Z",
+          "pos": 4,
+          "neu": 81,
+          "neg": 15,
+          "count": 11
         }
       ]
     }
@@ -4940,7 +4956,27 @@
         "category": "world"
       },
       {
-        "title": "White House reporters react to Katie Zacharia's 'brutal' exit as Trump press secretary",
+        "title": "Kid Rock details sit-down with Trump, Stephen A Smith and Bill Maher",
+        "link": "https://www.foxnews.com/media/kid-rock-details-sit-down-trump-stephen-smith-bill-maher",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Kid Rock revealed details from an \"epic\" White House dinner with President Donald Trump, Bill Maher and Stephen A. Smith where socialism and HBCUs took center stage.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T01:00:57.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "White House reporters react to Katie Zacharia's 'brutal' exit as Trump's press secretary",
         "link": "https://www.foxnews.com/media/white-house-reporters-react-katie-zacharia-brutal-exit-trump-press-secretary",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
@@ -4956,26 +4992,6 @@
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Seth Meyers admits shock over second Trump victory prompted sit-down with late-night team to adjust tone",
-        "link": "https://www.foxnews.com/media/seth-meyers-admits-shock-second-trump-victory-prompted-sit-down-late-night-team-adjust-tone",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Seth Meyers revealed he held a tonal meeting with his team after President Donald Trump's second election victory, saying he didn't want to go through the motions again.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T22:42:07.000Z",
-        "sentiment": {
-          "posP": 4.8,
-          "negP": 8.3,
-          "neuP": 86.9,
-          "label": "neutral",
-          "confidence": 0.16
         },
         "category": "usa"
       }
@@ -5182,7 +5198,27 @@
         "category": "world"
       },
       {
-        "title": "White House reporters react to Katie Zacharia's 'brutal' exit as Trump press secretary",
+        "title": "Kid Rock details sit-down with Trump, Stephen A Smith and Bill Maher",
+        "link": "https://www.foxnews.com/media/kid-rock-details-sit-down-trump-stephen-smith-bill-maher",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Kid Rock revealed details from an \"epic\" White House dinner with President Donald Trump, Bill Maher and Stephen A. Smith where socialism and HBCUs took center stage.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T01:00:57.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "White House reporters react to Katie Zacharia's 'brutal' exit as Trump's press secretary",
         "link": "https://www.foxnews.com/media/white-house-reporters-react-katie-zacharia-brutal-exit-trump-press-secretary",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
@@ -5222,42 +5258,22 @@
         "category": "usa"
       },
       {
-        "title": "Former NFL All-Pro running back joins President Trump for Georgia midterms rally",
-        "link": "https://www.foxnews.com/outkick-sports/former-nfl-all-pro-running-back-joins-president-trump-georgia-midterms-rally",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Katie Zacharia out as White House press secretary after first week",
+        "link": "https://www.cbsnews.com/news/trump-katie-zacharia-white-house-press-secretary/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Todd Gurley flew aboard Air Force One with President Donald Trump to a Dalton, Georgia rally, continuing a pattern of Bulldogs in Trump's orbit.",
+        "description": "Katie Zacharia, President Trump's new White House press secretary, is being removed from the role after just five days on the job.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T21:30:30.000Z",
+        "publishedAt": "2026-10-17T00:03:31.000Z",
         "sentiment": {
-          "posP": 3.2,
+          "posP": 0,
           "negP": 0,
-          "neuP": 96.8,
+          "neuP": 100,
           "label": "neutral",
-          "confidence": 0.03
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Tish James confronted on camera over Trump's accusation of bias in Cornell rape case",
-        "link": "https://www.foxnews.com/politics/tish-james-confronted-camera-trumps-accusation-bias-cornell-rape-case",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Letitia James vows a fair probe into the alleged Cornell University gang rape, but Trump and defense attorneys question her impartiality.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T21:20:35.000Z",
-        "sentiment": {
-          "posP": 8.5,
-          "negP": 24.4,
-          "neuP": 67.1,
-          "label": "negative",
-          "confidence": 0.66
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5271,13 +5287,33 @@
         "description": "Her abrupt departure came after she was shadowed by questions about how she had presented her legal career and handled her first press briefing.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T21:57:40.000Z",
+        "publishedAt": "2026-10-16T21:57:41.000Z",
         "sentiment": {
           "posP": 4.3,
           "negP": 0,
           "neuP": 95.7,
           "label": "neutral",
           "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How We Reported on the Cornell Case",
+        "link": "https://www.nytimes.com/2026/10/15/insider/backstory-newsletter-trump-cornell.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In our first edition of The Backstory, a new newsletter about Times journalism, we’re diving into coverage of a rape allegation and talking to a critic who says we’re not tough enough on Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-15T17:09:51.000Z",
+        "sentiment": {
+          "posP": 6.1,
+          "negP": 15.6,
+          "neuP": 78.3,
+          "label": "negative",
+          "confidence": 0.73
         },
         "category": "usa"
       },
@@ -5318,26 +5354,6 @@
           "neuP": 70.8,
           "label": "negative",
           "confidence": 0.62
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Young Voters Say They Are Turning Their Backs on Trump and His Party",
-        "link": "https://www.nytimes.com/2026/10/16/us/politics/young-voters-fleeing-republicans.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "One of the biggest surprises of 2024 was the swing of young voters, particularly men, away from Democrats to Donald Trump. Now they are swinging back.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T14:04:11.000Z",
-        "sentiment": {
-          "posP": 11,
-          "negP": 2.9,
-          "neuP": 86.1,
-          "label": "positive",
-          "confidence": 0.53
         },
         "category": "usa"
       },
@@ -5422,80 +5438,73 @@
         "category": "usa"
       },
       {
-        "title": "Katie Zacharia makes history as shortest-serving White House press secretary ever",
-        "link": "https://www.cbsnews.com/video/katie-zacharia-makes-history-shortest-serving-white-house-press-secretary-ever/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "White House Press Secretary out after 5 days on the job",
+        "link": "https://www.nbcnews.com/nightly-news/video/white-house-press-secretary-out-after-5-days-on-the-job-271724613540",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Katie Zacharia is out as White House press secretary after five days on the job, making her tenure the shortest in the role's history. CBS News' Lindsey Reiser looks at the job's history.",
+        "description": "Katie Zacharia had a rocky five days as White House Press Secretary with a single briefing that was widely panned followed by questions over her legal credentials. Now she is out from one of the highest profile posts of the Trump administration. NBC News’ Chief White House Correspondent Garrett Haake reports.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T23:23:00.000Z",
+        "publishedAt": "2026-10-16T22:50:32.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 2.5,
           "negP": 0,
-          "neuP": 100,
+          "neuP": 97.5,
           "label": "neutral",
-          "confidence": 0
+          "confidence": 0.13
         },
         "category": "usa"
       },
       {
-        "title": "Trump looking for new press secretary after Katie Zacharia fired",
-        "link": "https://www.cbsnews.com/video/trump-looking-for-new-press-secretary-after-katie-zacharia-fired/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump pardons two vehicle repair shop owners during Alaska rally",
+        "link": "https://www.nbcnews.com/video/trump-pardons-two-vehicle-repair-shop-owners-during-alaska-rally-271538245765",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Katie Zacharia was ousted as White House press secretary Friday after only five days on the job, sources say. CBS News' Natalie Brand has more.",
+        "description": "During his rally in Alaska, President Trump pardoned Zachary Czuback and Patrick Fleming, co-owners of a vehicle repair shop in Anchorage. Both pleaded guilty in 2022 to violating the Clean Air Act by tampering with federally mandated and monitored devices that tracked vehicles’ diesel emissions.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T22:54:00.000Z",
+        "publishedAt": "2026-10-14T01:56:45.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 9.6,
-          "neuP": 90.4,
-          "label": "negative",
-          "confidence": 0.56
+          "posP": 11,
+          "negP": 10.1,
+          "neuP": 78.9,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.99,
-      "neu": 85.93,
-      "neg": 9.08,
-      "count": 40
+      "pos": 4.45,
+      "neu": 86.41,
+      "neg": 9.15,
+      "count": 35
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 6.72,
-        "neu": 81.88,
-        "neg": 11.4,
+        "pos": 6.23,
+        "neu": 81.1,
+        "neg": 12.67,
         "count": 10
       },
       {
         "source": "NBC News",
-        "pos": 3.83,
-        "neu": 90.36,
+        "pos": 3.79,
+        "neu": 90.4,
         "neg": 5.81,
         "count": 7
       },
       {
-        "source": "CBS News",
-        "pos": 5.15,
-        "neu": 87.28,
-        "neg": 7.57,
-        "count": 6
-      },
-      {
         "source": "Fox News",
-        "pos": 5.1,
-        "neu": 88.36,
-        "neg": 6.54,
-        "count": 5
+        "pos": 3.45,
+        "neu": 94.47,
+        "neg": 2.08,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5519,6 +5528,13 @@
         "count": 3
       },
       {
+        "source": "CBS News",
+        "pos": 2,
+        "neu": 91,
+        "neg": 7,
+        "count": 2
+      },
+      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
@@ -5529,31 +5545,31 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.41,
-        "neu": 82.82,
-        "neg": 10.76,
-        "count": 14
+        "pos": 4.92,
+        "neu": 82.45,
+        "neg": 12.64,
+        "count": 11
       },
       {
         "topic": "Policy",
-        "pos": 4.1,
-        "neu": 85.79,
-        "neg": 10.11,
-        "count": 7
+        "pos": 2.92,
+        "neu": 89.91,
+        "neg": 7.16,
+        "count": 8
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.11,
-        "neu": 83.86,
-        "neg": 12.03,
-        "count": 7
+        "pos": 4.8,
+        "neu": 82.55,
+        "neg": 12.65,
+        "count": 6
       },
       {
         "topic": "Public Statements",
-        "pos": 0.4,
-        "neu": 95.43,
-        "neg": 4.17,
-        "count": 7
+        "pos": 0,
+        "neu": 96.08,
+        "neg": 3.92,
+        "count": 5
       },
       {
         "topic": "Economy",
@@ -5594,28 +5610,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-16T19:50:59.107Z",
+        "label": "2026-10-16T21:37:28.509Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T20:50:59.107Z",
+        "label": "2026-10-16T22:37:28.509Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T21:50:59.107Z",
+        "label": "2026-10-16T23:37:28.509Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T22:50:59.107Z",
+        "label": "2026-10-17T00:37:28.509Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5624,28 +5640,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-16T19:50:59.107Z",
+        "label": "2026-10-16T21:37:28.509Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T20:50:59.107Z",
+        "label": "2026-10-16T22:37:28.509Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T21:50:59.107Z",
+        "label": "2026-10-16T23:37:28.509Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-16T22:50:59.107Z",
+        "label": "2026-10-17T00:37:28.509Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5725,7 +5741,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-16T23:50:59.108Z",
+    "generatedAt": "2026-10-17T01:37:28.510Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5846,8 +5862,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 168,
-      "potusArticles": 40,
+      "usaArticles": 169,
+      "potusArticles": 35,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
