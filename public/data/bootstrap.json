@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T23:29:48.000Z",
+  "generatedAt": "2026-10-18T01:27:23.075Z",
   "counts": {
     "articles": 120,
     "topics": 12,
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-17T19:29:48.001Z",
+          "label": "2026-10-17T21:27:23.075Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T20:29:48.001Z",
+          "label": "2026-10-17T22:27:23.075Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T21:29:48.001Z",
+          "label": "2026-10-17T23:27:23.075Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T22:29:48.001Z",
+          "label": "2026-10-18T00:27:23.075Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-17T19:29:48.001Z",
+          "label": "2026-10-17T21:27:23.075Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T20:29:48.001Z",
+          "label": "2026-10-17T22:27:23.075Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T21:29:48.001Z",
+          "label": "2026-10-17T23:27:23.075Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-17T22:29:48.001Z",
+          "label": "2026-10-18T00:27:23.075Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.75,
-      "neu": 81.42,
-      "neg": 10.83,
+      "pos": 7.52,
+      "neu": 81.48,
+      "neg": 11,
       "count": 162
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.5,
-        "neu": 83.16,
-        "neg": 9.34,
-        "count": 41
+        "pos": 7.78,
+        "neu": 83.11,
+        "neg": 9.11,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 9.96,
-        "neu": 75.62,
-        "neg": 14.42,
+        "pos": 9.67,
+        "neu": 75.79,
+        "neg": 14.54,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.72,
-        "neu": 84.71,
-        "neg": 8.57,
+        "pos": 5.1,
+        "neu": 83.43,
+        "neg": 11.47,
         "count": 26
       },
       {
@@ -4592,16 +4592,16 @@
       {
         "source": "ABC News",
         "pos": 8.71,
-        "neu": 83.34,
-        "neg": 7.94,
+        "neu": 83.04,
+        "neg": 8.25,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 7.36,
-        "neu": 79.64,
-        "neg": 13,
-        "count": 17
+        "pos": 7.41,
+        "neu": 82.49,
+        "neg": 10.1,
+        "count": 18
       },
       {
         "source": "NPR",
@@ -4629,8 +4629,13 @@
       "rows": [
         {
           "name": "Manufacturing",
-          "bias": -23.6,
+          "bias": -25.07,
           "count": 3
+        },
+        {
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
         },
         {
           "name": "Communication",
@@ -4638,24 +4643,24 @@
           "count": 1
         },
         {
+          "name": "Materials",
+          "bias": 8.2,
+          "count": 1
+        },
+        {
           "name": "Healthcare",
-          "bias": -9.73,
-          "count": 12
-        },
-        {
-          "name": "Energy",
-          "bias": 8.11,
-          "count": 8
-        },
-        {
-          "name": "Utilities",
-          "bias": 3.47,
-          "count": 4
+          "bias": -6.56,
+          "count": 10
         },
         {
           "name": "Technology",
-          "bias": -3.38,
-          "count": 121
+          "bias": -3.57,
+          "count": 116
+        },
+        {
+          "name": "Energy",
+          "bias": 3.01,
+          "count": 8
         },
         {
           "name": "Real Estate",
@@ -4670,80 +4675,80 @@
       ],
       "pos": [
         {
-          "name": "Energy",
-          "bias": 8.11,
-          "count": 8
+          "name": "Materials",
+          "bias": 8.2,
+          "count": 1
         },
         {
-          "name": "Utilities",
-          "bias": 3.47,
-          "count": 4
+          "name": "Energy",
+          "bias": 3.01,
+          "count": 8
         }
       ],
       "neu": [
         {
+          "name": "Healthcare",
+          "bias": -6.56,
+          "count": 10
+        },
+        {
           "name": "Technology",
-          "bias": -3.38,
-          "count": 121
+          "bias": -3.57,
+          "count": 116
         },
         {
           "name": "Real Estate",
           "bias": -1.23,
           "count": 3
-        },
-        {
-          "name": "Finance",
-          "bias": -1.17,
-          "count": 20
         }
       ],
       "neg": [
         {
           "name": "Manufacturing",
-          "bias": -23.6,
+          "bias": -25.07,
           "count": 3
+        },
+        {
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
         },
         {
           "name": "Communication",
           "bias": -14,
           "count": 1
-        },
-        {
-          "name": "Healthcare",
-          "bias": -9.73,
-          "count": 12
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-17T19:29:48.002Z",
-          "pos": 11,
-          "neu": 77,
-          "neg": 12,
-          "count": 12
-        },
-        {
-          "label": "2026-10-17T20:29:48.002Z",
-          "pos": 6,
-          "neu": 81,
-          "neg": 12,
-          "count": 9
-        },
-        {
-          "label": "2026-10-17T21:29:48.002Z",
+          "label": "2026-10-17T21:27:23.077Z",
           "pos": 9,
           "neu": 81,
           "neg": 10,
-          "count": 11
+          "count": 10
         },
         {
-          "label": "2026-10-17T22:29:48.002Z",
-          "pos": 6,
+          "label": "2026-10-17T22:27:23.077Z",
+          "pos": 8,
+          "neu": 77,
+          "neg": 14,
+          "count": 8
+        },
+        {
+          "label": "2026-10-17T23:27:23.077Z",
+          "pos": 12,
           "neu": 76,
-          "neg": 18,
+          "neg": 12,
           "count": 10
+        },
+        {
+          "label": "2026-10-18T00:27:23.077Z",
+          "pos": 5,
+          "neu": 80,
+          "neg": 15,
+          "count": 13
         }
       ]
     }
@@ -4951,26 +4956,6 @@
         "category": "world"
       },
       {
-        "title": "Joy Behar wants Trump back on ‘The View’ despite saying he’s ‘not long for this world’",
-        "link": "https://www.foxnews.com/media/joy-behar-wants-trump-back-view-despite-saying-hes-not-long-this-world",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Joy Behar invited Trump back to \"The View\" while claiming he's \"not long for this world,\" prompting a sharp response from the White House team.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-17T20:00:39.000Z",
-        "sentiment": {
-          "posP": 16.7,
-          "negP": 0,
-          "neuP": 83.3,
-          "label": "positive",
-          "confidence": 0.82
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump Offers Putin Economic Relief in Hopes That Russia Will Return the Favor",
         "link": "https://www.nytimes.com/2026/10/17/business/trump-russia-sanctions-congress.html",
         "source": "NYT",
@@ -4980,13 +4965,33 @@
         "description": "The Trump administration is ignoring the will of Congress and waiving new Russia sanctions amid fears that high energy prices will cost Republicans in next month’s elections.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T21:18:47.000Z",
+        "publishedAt": "2026-10-17T23:46:16.000Z",
         "sentiment": {
           "posP": 21.3,
           "negP": 11,
           "neuP": 67.7,
           "label": "positive",
           "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
+        "title": "U.S. Floats Lifeline to Russia: Allowing More Gas Sales to Europe",
+        "link": "https://www.nytimes.com/2026/10/17/us/politics/russia-gas-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration is pitching the idea as part of a peace deal with Ukraine, but Europe is wary and critics say Russia would be strengthened.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T18:00:45.000Z",
+        "sentiment": {
+          "posP": 14.3,
+          "negP": 6.7,
+          "neuP": 79,
+          "label": "positive",
+          "confidence": 0.49
         },
         "category": "usa"
       }
@@ -5193,26 +5198,6 @@
         "category": "world"
       },
       {
-        "title": "Joy Behar wants Trump back on ‘The View’ despite saying he’s ‘not long for this world’",
-        "link": "https://www.foxnews.com/media/joy-behar-wants-trump-back-view-despite-saying-hes-not-long-this-world",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Joy Behar invited Trump back to \"The View\" while claiming he's \"not long for this world,\" prompting a sharp response from the White House team.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-17T20:00:39.000Z",
-        "sentiment": {
-          "posP": 16.7,
-          "negP": 0,
-          "neuP": 83.3,
-          "label": "positive",
-          "confidence": 0.82
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump Offers Putin Economic Relief in Hopes That Russia Will Return the Favor",
         "link": "https://www.nytimes.com/2026/10/17/business/trump-russia-sanctions-congress.html",
         "source": "NYT",
@@ -5222,7 +5207,7 @@
         "description": "The Trump administration is ignoring the will of Congress and waiving new Russia sanctions amid fears that high energy prices will cost Republicans in next month’s elections.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T21:18:47.000Z",
+        "publishedAt": "2026-10-17T23:46:16.000Z",
         "sentiment": {
           "posP": 21.3,
           "negP": 11,
@@ -5262,7 +5247,7 @@
         "description": "Senator Darline Graham, appointed to fill the Senate seat of her late brother, Lindsey, gently disagreed with the president’s decision to exempt Russia from the sanctions legislation.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T20:14:00.000Z",
+        "publishedAt": "2026-10-18T00:19:59.000Z",
         "sentiment": {
           "posP": 15.4,
           "negP": 5.4,
@@ -5282,7 +5267,7 @@
         "description": "As he stumps for midterm candidates, the president has been especially eager to talk about the physical appearance of some men.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T22:51:49.000Z",
+        "publishedAt": "2026-10-17T23:54:30.000Z",
         "sentiment": {
           "posP": 16.8,
           "negP": 5.9,
@@ -5333,6 +5318,26 @@
         "category": "usa"
       },
       {
+        "title": "7 highlights from JD Vance's CBS News town hall",
+        "link": "https://www.cbsnews.com/news/jd-vance-cbs-town-hall-highlights-michigan/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In an hour-long town hall hosted by CBS News, Vice President JD Vance argued the Trump administration's handling of the economy and Iran will pay dividends in the future.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T01:01:09.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 10,
+          "neuP": 90,
+          "label": "negative",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
         "title": "In Kentucky campaign stop, Trump says he \"can do stuff that is unbelievable\"",
         "link": "https://www.cbsnews.com/news/trump-kentucky-midterm-campaign-stop/",
         "source": "CBS News",
@@ -5349,26 +5354,6 @@
           "neuP": 86.4,
           "label": "neutral",
           "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Zelenskyy says Trump is ‘rewarding Putin’ as he suspends Russia sanctions",
-        "link": "https://www.nbcnews.com/politics/trump-administration/trump-suspends-new-russia-sanctions-deal-purchase-diesel-citing-nation-rcna603991",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump waived sweeping new sanctions against Russia passed by Congress, arguing in an executive order Friday that the move “is in the national interests of the United States.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-17T02:45:08.000Z",
-        "sentiment": {
-          "posP": 10.5,
-          "negP": 6.6,
-          "neuP": 82.9,
-          "label": "positive",
-          "confidence": 0.2
         },
         "category": "usa"
       },
@@ -5471,12 +5456,32 @@
           "confidence": 0.23
         },
         "category": "usa"
+      },
+      {
+        "title": "President Trump faces backlash over Russia sanctions relief",
+        "link": "https://www.nbcnews.com/nightly-news/video/president-trump-faces-backlash-over-russia-sanctions-relief-271759941812",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump was in Kentucky on Saturday, rallying for midterm candidates just weeks before Election Day. The President is facing new criticism, including from some in his party, for ordering sanctions relief for Russia, even as it continues to strike Ukraine. NBC News’ Yamiche Alcindor reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T23:05:22.000Z",
+        "sentiment": {
+          "posP": 14.3,
+          "negP": 7.1,
+          "neuP": 78.6,
+          "label": "positive",
+          "confidence": 0.67
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.16,
-      "neu": 86.65,
-      "neg": 7.19,
+      "pos": 5.76,
+      "neu": 86.72,
+      "neg": 7.52,
       "count": 32
     },
     "sourceLeaderboard": [
@@ -5489,9 +5494,9 @@
       },
       {
         "source": "NBC News",
-        "pos": 3.94,
-        "neu": 91.17,
-        "neg": 4.89,
+        "pos": 4.49,
+        "neu": 90.56,
+        "neg": 4.96,
         "count": 7
       },
       {
@@ -5516,18 +5521,11 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 12.85,
-        "neu": 87.15,
-        "neg": 0,
-        "count": 2
-      },
-      {
         "source": "CBS News",
-        "pos": 5.75,
-        "neu": 84.2,
-        "neg": 10.05,
-        "count": 2
+        "pos": 3.83,
+        "neu": 86.13,
+        "neg": 10.03,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5540,24 +5538,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.74,
-        "neu": 86.62,
-        "neg": 7.64,
-        "count": 12
+        "pos": 4.75,
+        "neu": 86.92,
+        "neg": 8.34,
+        "count": 11
       },
       {
         "topic": "Policy",
-        "pos": 7.92,
-        "neu": 83.68,
-        "neg": 8.4,
+        "pos": 6.76,
+        "neu": 84.47,
+        "neg": 8.78,
         "count": 9
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.65,
-        "neu": 86.77,
-        "neg": 7.58,
-        "count": 6
+        "pos": 6.89,
+        "neu": 85.6,
+        "neg": 7.51,
+        "count": 7
       },
       {
         "topic": "Economy",
@@ -5605,28 +5603,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-17T19:29:48.005Z",
+        "label": "2026-10-17T21:27:23.079Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T20:29:48.005Z",
+        "label": "2026-10-17T22:27:23.079Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T21:29:48.005Z",
+        "label": "2026-10-17T23:27:23.079Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T22:29:48.005Z",
+        "label": "2026-10-18T00:27:23.079Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5633,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-17T19:29:48.005Z",
+        "label": "2026-10-17T21:27:23.079Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T20:29:48.005Z",
+        "label": "2026-10-17T22:27:23.079Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T21:29:48.005Z",
+        "label": "2026-10-17T23:27:23.079Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-17T22:29:48.005Z",
+        "label": "2026-10-18T00:27:23.079Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5734,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-17T23:29:48.006Z",
+    "generatedAt": "2026-10-18T01:27:23.080Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
