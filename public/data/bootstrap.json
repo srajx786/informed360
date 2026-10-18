@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-18T17:34:14.236Z",
+  "generatedAt": "2026-10-18T19:36:05.527Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 164,
-    "potusArticles": 34
+    "usaArticles": 163,
+    "potusArticles": 33
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-18T13:34:14.236Z",
+          "label": "2026-10-18T15:36:05.527Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T14:34:14.236Z",
+          "label": "2026-10-18T16:36:05.527Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T15:34:14.236Z",
+          "label": "2026-10-18T17:36:05.527Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T16:34:14.236Z",
+          "label": "2026-10-18T18:36:05.527Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-18T13:34:14.237Z",
+          "label": "2026-10-18T15:36:05.527Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T14:34:14.237Z",
+          "label": "2026-10-18T16:36:05.527Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T15:34:14.237Z",
+          "label": "2026-10-18T17:36:05.527Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T16:34:14.237Z",
+          "label": "2026-10-18T18:36:05.527Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 7.43,
-      "neu": 81.95,
-      "neg": 10.62,
-      "count": 164
+      "pos": 7.6,
+      "neu": 81.11,
+      "neg": 11.3,
+      "count": 163
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.66,
-        "neu": 80.7,
-        "neg": 9.64,
-        "count": 42
+        "pos": 10.07,
+        "neu": 80.45,
+        "neg": 9.48,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 8.78,
-        "neu": 78.27,
-        "neg": 12.95,
+        "pos": 9.23,
+        "neu": 76.08,
+        "neg": 14.69,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 2.58,
-        "neu": 89.62,
-        "neg": 7.81,
-        "count": 25
+        "pos": 2.53,
+        "neu": 87.27,
+        "neg": 10.2,
+        "count": 26
       },
       {
         "source": "WSJ",
@@ -4591,17 +4591,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 9.89,
-        "neu": 83.49,
-        "neg": 6.62,
+        "pos": 9.69,
+        "neu": 83.41,
+        "neg": 6.9,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 5.63,
-        "neu": 79.74,
-        "neg": 14.64,
-        "count": 19
+        "pos": 6.14,
+        "neu": 78.67,
+        "neg": 15.19,
+        "count": 18
       },
       {
         "source": "NPR",
@@ -4628,14 +4628,9 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Materials",
-          "bias": -21,
-          "count": 2
-        },
-        {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -13.45,
+          "count": 2
         },
         {
           "name": "Utilities",
@@ -4644,8 +4639,18 @@
         },
         {
           "name": "Manufacturing",
-          "bias": -5.7,
-          "count": 2
+          "bias": -9.9,
+          "count": 1
+        },
+        {
+          "name": "Materials",
+          "bias": -9.9,
+          "count": 1
+        },
+        {
+          "name": "Technology",
+          "bias": -5.12,
+          "count": 124
         },
         {
           "name": "Real Estate",
@@ -4653,19 +4658,14 @@
           "count": 3
         },
         {
-          "name": "Technology",
-          "bias": -4.13,
-          "count": 124
+          "name": "Healthcare",
+          "bias": -3.55,
+          "count": 10
         },
         {
           "name": "Energy",
-          "bias": 2.08,
-          "count": 5
-        },
-        {
-          "name": "Healthcare",
-          "bias": -1.65,
-          "count": 12
+          "bias": -3.53,
+          "count": 11
         },
         {
           "name": "Finance",
@@ -4678,77 +4678,72 @@
           "name": "Real Estate",
           "bias": 4.9,
           "count": 3
-        },
-        {
-          "name": "Energy",
-          "bias": 2.08,
-          "count": 5
         }
       ],
       "neu": [
         {
-          "name": "Manufacturing",
-          "bias": -5.7,
-          "count": 2
+          "name": "Materials",
+          "bias": -9.9,
+          "count": 1
         },
         {
           "name": "Technology",
-          "bias": -4.13,
+          "bias": -5.12,
           "count": 124
         },
         {
           "name": "Healthcare",
-          "bias": -1.65,
-          "count": 12
+          "bias": -3.55,
+          "count": 10
         }
       ],
       "neg": [
         {
-          "name": "Materials",
-          "bias": -21,
-          "count": 2
-        },
-        {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -13.45,
+          "count": 2
         },
         {
           "name": "Utilities",
           "bias": -10.63,
           "count": 3
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -9.9,
+          "count": 1
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-18T13:34:14.238Z",
-          "pos": 13,
-          "neu": 77,
-          "neg": 10,
-          "count": 6
-        },
-        {
-          "label": "2026-10-18T14:34:14.238Z",
+          "label": "2026-10-18T15:36:05.529Z",
           "pos": 5,
-          "neu": 85,
-          "neg": 11,
-          "count": 12
+          "neu": 79,
+          "neg": 16,
+          "count": 2
         },
         {
-          "label": "2026-10-18T15:34:14.238Z",
-          "pos": 5,
-          "neu": 85,
+          "label": "2026-10-18T16:36:05.529Z",
+          "pos": 7,
+          "neu": 83,
           "neg": 10,
-          "count": 19
+          "count": 14
         },
         {
-          "label": "2026-10-18T16:34:14.238Z",
-          "pos": 6,
+          "label": "2026-10-18T17:36:05.529Z",
+          "pos": 4,
           "neu": 81,
-          "neg": 13,
-          "count": 19
+          "neg": 14,
+          "count": 22
+        },
+        {
+          "label": "2026-10-18T18:36:05.529Z",
+          "pos": 5,
+          "neu": 80,
+          "neg": 14,
+          "count": 11
         }
       ]
     }
@@ -5258,46 +5253,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump intel chief warns AI firms on hacks, says new department is the 'cop on the beat'",
-        "link": "https://www.foxnews.com/media/trump-intel-chief-warns-ai-firms-hacks-says-new-department-cop-beat",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump's intelligence chief warns AI companies they're responsible when products hack websites as new guardrails are developed.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T15:20:02.000Z",
-        "sentiment": {
-          "posP": 13.4,
-          "negP": 7,
-          "neuP": 79.6,
-          "label": "positive",
-          "confidence": 0.56
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Obama backs Ilhan Omar amid probe, accuses Trump admin of 'appalling' targeting in lengthy statement",
-        "link": "https://www.foxnews.com/politics/obama-backs-ilhan-omar-amid-probe-accuses-trump-admin-appalling-targeting-lengthy-statement",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Barack Obama accused the Trump administration of politically targeting Rep. Ilhan Omar, alleging efforts to strip her citizenship and deport her.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T14:38:26.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 14.9,
-          "neuP": 85.1,
-          "label": "negative",
-          "confidence": 0.59
-        },
-        "category": "usa"
-      },
-      {
         "title": "Across Farm Country, Economic Discontent Strains Republican Coalition",
         "link": "https://www.nytimes.com/2026/10/18/us/politics/farmers-ranchers-trump-economic-stress.html",
         "source": "NYT",
@@ -5338,6 +5293,46 @@
         "category": "usa"
       },
       {
+        "title": "Trump endorses Israel's Netanyahu ahead of reelection bid",
+        "link": "https://www.cbsnews.com/news/trump-endorses-israel-prime-minister-benjamin-netanyahu-reelection/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Israelis are set to vote Oct. 27, in the first national elections since the 2023 Hamas attack on Israel.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T18:38:07.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 10.2,
+          "neuP": 81.9,
+          "label": "neutral",
+          "confidence": 0.18
+        },
+        "category": "usa"
+      },
+      {
+        "title": "GOP Sen. Cramer says he agrees with Republicans who have criticized waiving Russian sanctions",
+        "link": "https://www.cbsnews.com/video/gop-sen-cramer-says-he-agrees-with-republicans-who-have-criticized-waiving-russian-sanctions/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Republican Sen. Kevin Cramer says he agrees with members of his party who have criticized the Trump administration for waiving sanctions that target Russia and buyers of Russian oil, saying that \"capitulating to a bully generally means they're going to make more demands going forward.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T18:07:29.000Z",
+        "sentiment": {
+          "posP": 9.5,
+          "negP": 12.3,
+          "neuP": 78.2,
+          "label": "negative",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump says D.C. golf course construction will start next month",
         "link": "https://www.cbsnews.com/news/trump-says-dc-golf-course-construction-start-next-month/",
         "source": "CBS News",
@@ -5358,146 +5353,139 @@
         "category": "usa"
       },
       {
-        "title": "Trump endorses Israel's Netanyahu ahead of reelection bid",
-        "link": "https://www.cbsnews.com/news/trump-endorses-israel-prime-minister-benjamin-netanyahu-reelection/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump's Russia diesel deal may offer Putin more than money — and spell trouble for Ukraine",
+        "link": "https://www.cnbc.com/2026/10/17/trump-diesel-russia-ukraine-war.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Israelis are set to vote Oct. 27, in the first national elections since the 2023 Hamas attack on Israel.",
+        "description": "Trump's diesel deal may do little for Russia's finances, but it raises bigger questions about Ukraine's leverage, U.S. support and Putin's next moves.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T16:18:50.000Z",
+        "publishedAt": "2026-10-18T07:22:07.000Z",
         "sentiment": {
-          "posP": 7.9,
-          "negP": 10.2,
-          "neuP": 81.9,
-          "label": "neutral",
-          "confidence": 0.18
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The Vote | Sunday on 60 Minutes",
-        "link": "https://www.cbsnews.com/video/the-vote-sunday-on-60-minutes/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "On Friday, the Justice Department threatened to prosecute California election officials who knowingly count mail-in ballots from people the Trump administration identified as \"likely noncitizens.\"\r\n\r\nThis Sunday, 60 Minutes reports on state and local election officials who are resisting what they see as pressure from Washington.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T14:40:00.000Z",
-        "sentiment": {
-          "posP": 5.7,
-          "negP": 13.3,
-          "neuP": 81,
-          "label": "negative",
-          "confidence": 0.54
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Poll: Americans are anxious, pessimistic and deeply unhappy with Trump ahead of the midterms",
-        "link": "https://www.nbcnews.com/politics/2026-election/poll-americans-anxious-pessimistic-deeply-unhappy-trump-ahead-midterms-rcna603064",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Weeks ahead of Election Day, 71% of U.S. adults think the country is on the “wrong track.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T13:00:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 21.3,
-          "neuP": 78.7,
-          "label": "negative",
-          "confidence": 0.76
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Zelenskyy says waived Russian sanctions are 'strengthening Putin's war against us'",
-        "link": "https://www.nbcnews.com/meet-the-press/video/zelenskyy-says-it-s-a-pity-trump-bypassed-sanctions-law-named-for-lindsey-graham-271778373559",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "In an exclusive interview with Meet the Press, Ukrainian President Volodymyr Zelenskyy says that President Trump's decision to waive Lindsey Graham’s Russia sanctions law shows \"really big support for Putin.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T13:40:01.000Z",
-        "sentiment": {
-          "posP": 15.8,
-          "negP": 8,
-          "neuP": 76.2,
-          "label": "positive",
-          "confidence": 0.42
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Treasury secretary refuses to say if the U.S. sees Ukraine as an ally",
-        "link": "https://www.nbcnews.com/politics/trump-administration/treasury-secretary-bessent-refuses-us-ukraine-ally-starlink-rcna604129",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Amid escalating tensions between President Donald Trump and Ukrainian President Volodymyr Zelenskyy, Treasury Secretary Scott Bessent on Sunday dodged three times when asked whether Ukraine is an ally of the United States.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T15:24:24.000Z",
-        "sentiment": {
-          "posP": 12.8,
-          "negP": 5.4,
-          "neuP": 81.8,
+          "posP": 8.6,
+          "negP": 4.5,
+          "neuP": 86.9,
           "label": "positive",
           "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "U.S. taking Putin’s side would be a ‘historic mistake,’ says Zelenskyy",
-        "link": "https://www.nbcnews.com/politics/trump-administration/us-taking-putins-side-historic-mistake-says-zelenskyy-rcna604111",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "5 midterm money takeaways: Democrats have candidate cash. Republicans have Elon Musk",
+        "link": "https://www.cnbc.com/2026/10/16/midterm-election-fundraising-elon-musk.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ukrainian President Volodymyr Zelenskyy has warned that the U.S. formally siding with Russia’s Vladimir Putin would be a “historic mistake,” but said he still sees President Donald Trump as an ally despite a series of moves that have unsettled his country and its friends on Capitol Hill.",
+        "description": "Democrats outraise Republicans in key Congress races as Elon Musk funds Ken Paxton in Texas and GOP groups aligned with Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T12:21:20.000Z",
+        "publishedAt": "2026-10-16T21:49:13.000Z",
         "sentiment": {
-          "posP": 6.8,
-          "negP": 7.4,
-          "neuP": 85.8,
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
           "label": "neutral",
-          "confidence": 0.17
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's student loan overhaul could lead to more bankruptcy filings, former judge says",
+        "link": "https://www.cnbc.com/2026/10/17/trump-student-loans-bankruptcy.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "After nearly three decades as a bankruptcy judge, Sarah Sharer Curley writes about the legal process in her new book, \"The Price of Forgiveness.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T13:30:01.000Z",
+        "sentiment": {
+          "posP": 4.1,
+          "negP": 0,
+          "neuP": 95.9,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
+          "label": "neutral",
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.34,
-      "neu": 85.09,
-      "neg": 8.57,
-      "count": 34
+      "pos": 6.45,
+      "neu": 85.04,
+      "neg": 8.51,
+      "count": 33
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.64,
-        "neu": 85.54,
-        "neg": 6.82,
-        "count": 8
-      },
-      {
-        "source": "Fox News",
-        "pos": 6.75,
-        "neu": 82.32,
-        "neg": 10.93,
-        "count": 6
+        "pos": 7.58,
+        "neu": 84.99,
+        "neg": 7.43,
+        "count": 9
       },
       {
         "source": "NYT",
@@ -5507,10 +5495,17 @@
         "count": 4
       },
       {
+        "source": "Fox News",
+        "pos": 6.77,
+        "neu": 82.3,
+        "neg": 10.93,
+        "count": 4
+      },
+      {
         "source": "CBS News",
-        "pos": 4.4,
-        "neu": 86.22,
-        "neg": 9.38,
+        "pos": 5.35,
+        "neu": 85.53,
+        "neg": 9.13,
         "count": 4
       },
       {
@@ -5545,23 +5540,23 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.81,
-        "neu": 84.34,
-        "neg": 8.86,
-        "count": 14
+        "pos": 6.3,
+        "neu": 84.7,
+        "neg": 9,
+        "count": 13
       },
       {
         "topic": "Foreign Policy",
         "pos": 7.81,
         "neu": 84.01,
-        "neg": 8.17,
+        "neg": 8.18,
         "count": 8
       },
       {
         "topic": "Policy",
-        "pos": 4.11,
-        "neu": 85.27,
-        "neg": 10.61,
+        "pos": 5.67,
+        "neu": 84.23,
+        "neg": 10.1,
         "count": 7
       },
       {
@@ -5610,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-18T13:34:14.240Z",
+        "label": "2026-10-18T15:36:05.532Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T14:34:14.240Z",
+        "label": "2026-10-18T16:36:05.532Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T15:34:14.240Z",
+        "label": "2026-10-18T17:36:05.532Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T16:34:14.240Z",
+        "label": "2026-10-18T18:36:05.532Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5640,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-18T13:34:14.240Z",
+        "label": "2026-10-18T15:36:05.532Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T14:34:14.240Z",
+        "label": "2026-10-18T16:36:05.532Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T15:34:14.240Z",
+        "label": "2026-10-18T17:36:05.532Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T16:34:14.240Z",
+        "label": "2026-10-18T18:36:05.532Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5741,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-18T17:34:14.241Z",
+    "generatedAt": "2026-10-18T19:36:05.533Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5862,8 +5857,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 164,
-      "potusArticles": 34,
+      "usaArticles": 163,
+      "potusArticles": 33,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
