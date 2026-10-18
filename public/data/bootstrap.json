@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-18T19:36:05.527Z",
+  "generatedAt": "2026-10-18T21:48:35.774Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 163,
-    "potusArticles": 33
+    "usaArticles": 167,
+    "potusArticles": 31
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-18T15:36:05.527Z",
+          "label": "2026-10-18T17:48:35.774Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T16:36:05.527Z",
+          "label": "2026-10-18T18:48:35.774Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T17:36:05.527Z",
+          "label": "2026-10-18T19:48:35.774Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T18:36:05.527Z",
+          "label": "2026-10-18T20:48:35.774Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-18T15:36:05.527Z",
+          "label": "2026-10-18T17:48:35.774Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T16:36:05.527Z",
+          "label": "2026-10-18T18:48:35.774Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T17:36:05.527Z",
+          "label": "2026-10-18T19:48:35.774Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T18:36:05.527Z",
+          "label": "2026-10-18T20:48:35.774Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.6,
-      "neu": 81.11,
-      "neg": 11.3,
-      "count": 163
+      "pos": 7.57,
+      "neu": 81.58,
+      "neg": 10.86,
+      "count": 167
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.07,
-        "neu": 80.45,
-        "neg": 9.48,
+        "pos": 9.63,
+        "neu": 81.06,
+        "neg": 9.31,
         "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 9.23,
-        "neu": 76.08,
-        "neg": 14.69,
+        "pos": 9.03,
+        "neu": 76.66,
+        "neg": 14.3,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 2.53,
-        "neu": 87.27,
-        "neg": 10.2,
+        "pos": 3.49,
+        "neu": 86.08,
+        "neg": 10.43,
         "count": 26
+      },
+      {
+        "source": "NYT",
+        "pos": 6.06,
+        "neu": 82.28,
+        "neg": 11.66,
+        "count": 22
       },
       {
         "source": "WSJ",
@@ -4595,13 +4602,6 @@
         "neu": 83.41,
         "neg": 6.9,
         "count": 20
-      },
-      {
-        "source": "NYT",
-        "pos": 6.14,
-        "neu": 78.67,
-        "neg": 15.19,
-        "count": 18
       },
       {
         "source": "NPR",
@@ -4638,34 +4638,29 @@
           "count": 3
         },
         {
-          "name": "Manufacturing",
-          "bias": -9.9,
-          "count": 1
+          "name": "Real Estate",
+          "bias": 7.35,
+          "count": 2
         },
         {
           "name": "Materials",
-          "bias": -9.9,
-          "count": 1
-        },
-        {
-          "name": "Technology",
-          "bias": -5.12,
-          "count": 124
-        },
-        {
-          "name": "Real Estate",
-          "bias": 4.9,
-          "count": 3
+          "bias": -5.43,
+          "count": 4
         },
         {
           "name": "Healthcare",
-          "bias": -3.55,
-          "count": 10
+          "bias": -4.69,
+          "count": 11
+        },
+        {
+          "name": "Technology",
+          "bias": -4.38,
+          "count": 129
         },
         {
           "name": "Energy",
-          "bias": -3.53,
-          "count": 11
+          "bias": 1.75,
+          "count": 10
         },
         {
           "name": "Finance",
@@ -4676,24 +4671,24 @@
       "pos": [
         {
           "name": "Real Estate",
-          "bias": 4.9,
-          "count": 3
+          "bias": 7.35,
+          "count": 2
         }
       ],
       "neu": [
         {
-          "name": "Materials",
-          "bias": -9.9,
-          "count": 1
+          "name": "Healthcare",
+          "bias": -4.69,
+          "count": 11
         },
         {
           "name": "Technology",
-          "bias": -5.12,
-          "count": 124
+          "bias": -4.38,
+          "count": 129
         },
         {
-          "name": "Healthcare",
-          "bias": -3.55,
+          "name": "Energy",
+          "bias": 1.75,
           "count": 10
         }
       ],
@@ -4709,41 +4704,41 @@
           "count": 3
         },
         {
-          "name": "Manufacturing",
-          "bias": -9.9,
-          "count": 1
+          "name": "Materials",
+          "bias": -5.43,
+          "count": 4
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-18T15:36:05.529Z",
+          "label": "2026-10-18T17:48:35.776Z",
           "pos": 5,
-          "neu": 79,
-          "neg": 16,
-          "count": 2
+          "neu": 84,
+          "neg": 11,
+          "count": 23
         },
         {
-          "label": "2026-10-18T16:36:05.529Z",
-          "pos": 7,
+          "label": "2026-10-18T18:48:35.776Z",
+          "pos": 8,
+          "neu": 84,
+          "neg": 8,
+          "count": 8
+        },
+        {
+          "label": "2026-10-18T19:48:35.776Z",
+          "pos": 6,
           "neu": 83,
-          "neg": 10,
-          "count": 14
+          "neg": 11,
+          "count": 9
         },
         {
-          "label": "2026-10-18T17:36:05.529Z",
-          "pos": 4,
-          "neu": 81,
-          "neg": 14,
-          "count": 22
-        },
-        {
-          "label": "2026-10-18T18:36:05.529Z",
-          "pos": 5,
-          "neu": 80,
-          "neg": 14,
-          "count": 11
+          "label": "2026-10-18T20:48:35.776Z",
+          "pos": 6,
+          "neu": 77,
+          "neg": 18,
+          "count": 8
         }
       ]
     }
@@ -4951,42 +4946,42 @@
         "category": "world"
       },
       {
-        "title": "Slotkin wants GOP prosecutions to deter young people from Trump administration jobs",
-        "link": "https://www.foxnews.com/politics/slotkin-wants-gop-prosecutions-deter-young-people-trump-administration-jobs",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Hits Campaign Trail as White House Turmoil Weighs on GOP Midterm Prospects",
+        "link": "https://www.nytimes.com/2026/10/18/us/trump-midterm-elections-republicans-approval-ratings.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Elissa Slotkin said she wants young people to fear legal problems before joining the Trump administration, sparking fierce online backlash..",
+        "description": "As Trump rallies around the nation, his White House was consumed by dramas that reinforce how his presidency has become a drag on his party’s prospects in the midterms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T17:04:11.000Z",
+        "publishedAt": "2026-10-18T21:25:35.000Z",
         "sentiment": {
-          "posP": 4.1,
-          "negP": 16.2,
-          "neuP": 79.7,
-          "label": "negative",
-          "confidence": 0.66
+          "posP": 9.6,
+          "negP": 9.6,
+          "neuP": 80.8,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Trump says Netanyahu needs to be re-elected, or else US will have to 'finish the job’ against Iran alone",
-        "link": "https://www.foxnews.com/politics/trump-says-netanyahu-needs-reelected-else-us-finish-job-against-iran-alone",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Outlines Rapid Plan to Close and Overhaul D.C. Golf Course",
+        "link": "https://www.nytimes.com/2026/10/18/us/politics/trump-golf-course-east-potomac-washington.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump called Benjamin Netanyahu a \"great warrior\" and urged Israeli voters to back Likud in the Oct. 27 Knesset elections amid the war on Iran.",
+        "description": "The plan to begin work transforming the course in four weeks injected fresh urgency into a federal lawsuit opposing changes to East Potomac Golf Links.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T16:42:02.000Z",
+        "publishedAt": "2026-10-18T19:11:55.000Z",
         "sentiment": {
-          "posP": 8.2,
-          "negP": 11.8,
-          "neuP": 80,
-          "label": "negative",
-          "confidence": 0.2
+          "posP": 6.2,
+          "negP": 5.1,
+          "neuP": 88.7,
+          "label": "neutral",
+          "confidence": 0.1
         },
         "category": "usa"
       }
@@ -5193,62 +5188,42 @@
         "category": "world"
       },
       {
-        "title": "Slotkin wants GOP prosecutions to deter young people from Trump administration jobs",
-        "link": "https://www.foxnews.com/politics/slotkin-wants-gop-prosecutions-deter-young-people-trump-administration-jobs",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Hits Campaign Trail as White House Turmoil Weighs on GOP Midterm Prospects",
+        "link": "https://www.nytimes.com/2026/10/18/us/trump-midterm-elections-republicans-approval-ratings.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Elissa Slotkin said she wants young people to fear legal problems before joining the Trump administration, sparking fierce online backlash..",
+        "description": "As Trump rallies around the nation, his White House was consumed by dramas that reinforce how his presidency has become a drag on his party’s prospects in the midterms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T17:04:11.000Z",
+        "publishedAt": "2026-10-18T21:25:35.000Z",
         "sentiment": {
-          "posP": 4.1,
-          "negP": 16.2,
-          "neuP": 79.7,
-          "label": "negative",
-          "confidence": 0.66
+          "posP": 9.6,
+          "negP": 9.6,
+          "neuP": 80.8,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Trump says Netanyahu needs to be re-elected, or else US will have to 'finish the job’ against Iran alone",
-        "link": "https://www.foxnews.com/politics/trump-says-netanyahu-needs-reelected-else-us-finish-job-against-iran-alone",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Outlines Rapid Plan to Close and Overhaul D.C. Golf Course",
+        "link": "https://www.nytimes.com/2026/10/18/us/politics/trump-golf-course-east-potomac-washington.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump called Benjamin Netanyahu a \"great warrior\" and urged Israeli voters to back Likud in the Oct. 27 Knesset elections amid the war on Iran.",
+        "description": "The plan to begin work transforming the course in four weeks injected fresh urgency into a federal lawsuit opposing changes to East Potomac Golf Links.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T16:42:02.000Z",
+        "publishedAt": "2026-10-18T19:11:55.000Z",
         "sentiment": {
-          "posP": 8.2,
-          "negP": 11.8,
-          "neuP": 80,
-          "label": "negative",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Bernie Sanders admits Democrats failed working-class voters on economics, driving them to Donald Trump",
-        "link": "https://www.foxnews.com/media/bernie-sanders-admits-democrats-failed-working-class-voters-economics-driving-donald-trump",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Vermont senator pointed to trade deals that cost millions of manufacturing jobs as a key reason for voter disillusionment.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T16:25:35.000Z",
-        "sentiment": {
-          "posP": 5.8,
-          "negP": 15.7,
-          "neuP": 78.5,
-          "label": "negative",
-          "confidence": 0.59
+          "posP": 6.2,
+          "negP": 5.1,
+          "neuP": 88.7,
+          "label": "neutral",
+          "confidence": 0.1
         },
         "category": "usa"
       },
@@ -5293,6 +5268,46 @@
         "category": "usa"
       },
       {
+        "title": "Migrants From Ukraine and Sudan to Keep Deportation Protections for Now",
+        "link": "https://www.nytimes.com/2026/10/18/us/politics/ukraine-sudan-tps-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Temporary Protected Status for the two countries was set to expire on Monday. The Trump administration said an announcement would be made “at the appropriate time.”",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T20:14:32.000Z",
+        "sentiment": {
+          "posP": 7.5,
+          "negP": 0,
+          "neuP": 92.5,
+          "label": "positive",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he's \"negotiating Peace\" as Russia, Ukraine trade strikes",
+        "link": "https://www.cbsnews.com/news/ukraine-russia-drone-st-petersburg-oil-facilites/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The strikes came as tensions between Ukraine and Washington deepened.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T21:14:54.000Z",
+        "sentiment": {
+          "posP": 12.9,
+          "negP": 28.3,
+          "neuP": 58.8,
+          "label": "negative",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump endorses Israel's Netanyahu ahead of reelection bid",
         "link": "https://www.cbsnews.com/news/trump-endorses-israel-prime-minister-benjamin-netanyahu-reelection/",
         "source": "CBS News",
@@ -5333,82 +5348,62 @@
         "category": "usa"
       },
       {
-        "title": "Trump says D.C. golf course construction will start next month",
-        "link": "https://www.cbsnews.com/news/trump-says-dc-golf-course-construction-start-next-month/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Poll: Americans are anxious, pessimistic and deeply unhappy with Trump ahead of the midterms",
+        "link": "https://www.nbcnews.com/politics/2026-election/poll-americans-anxious-pessimistic-deeply-unhappy-trump-ahead-midterms-rcna603064",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump said Sunday that construction at the historic East Potomac Golf Links course will begin Nov. 15.",
+        "description": "Weeks ahead of Election Day, 71% of U.S. adults think the country is on the “wrong track.”",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T16:59:36.000Z",
+        "publishedAt": "2026-10-18T13:00:41.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 21.3,
+          "neuP": 78.7,
+          "label": "negative",
+          "confidence": 0.76
         },
         "category": "usa"
       },
       {
-        "title": "Trump's Russia diesel deal may offer Putin more than money — and spell trouble for Ukraine",
-        "link": "https://www.cnbc.com/2026/10/17/trump-diesel-russia-ukraine-war.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Zelenskyy says waived Russian sanctions are 'strengthening Putin's war against us'",
+        "link": "https://www.nbcnews.com/meet-the-press/video/zelenskyy-says-it-s-a-pity-trump-bypassed-sanctions-law-named-for-lindsey-graham-271778373559",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump's diesel deal may do little for Russia's finances, but it raises bigger questions about Ukraine's leverage, U.S. support and Putin's next moves.",
+        "description": "In an exclusive interview with Meet the Press, Ukrainian President Volodymyr Zelenskyy says that President Trump's decision to waive Lindsey Graham’s Russia sanctions law shows \"really big support for Putin.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T07:22:07.000Z",
+        "publishedAt": "2026-10-18T13:40:01.000Z",
         "sentiment": {
-          "posP": 8.6,
-          "negP": 4.5,
-          "neuP": 86.9,
+          "posP": 15.8,
+          "negP": 8,
+          "neuP": 76.2,
           "label": "positive",
-          "confidence": 0.4
+          "confidence": 0.42
         },
         "category": "usa"
       },
       {
-        "title": "5 midterm money takeaways: Democrats have candidate cash. Republicans have Elon Musk",
-        "link": "https://www.cnbc.com/2026/10/16/midterm-election-fundraising-elon-musk.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Trump announces plans to renovate D.C. golf course amid legal battle",
+        "link": "https://www.nbcnews.com/politics/trump-administration/trump-announces-plans-renovate-dc-golf-course-legal-battle-rcna604147",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Democrats outraise Republicans in key Congress races as Elon Musk funds Ken Paxton in Texas and GOP groups aligned with Trump.",
+        "description": "The announcement comes after a judge required the government to provide three days’ notice before making “irreparable modification” to the golf course.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-16T21:49:13.000Z",
+        "publishedAt": "2026-10-18T18:09:06.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump's student loan overhaul could lead to more bankruptcy filings, former judge says",
-        "link": "https://www.cnbc.com/2026/10/17/trump-student-loans-bankruptcy.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "After nearly three decades as a bankruptcy judge, Sarah Sharer Curley writes about the legal process in her new book, \"The Price of Forgiveness.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-17T13:30:01.000Z",
-        "sentiment": {
-          "posP": 4.1,
-          "negP": 0,
-          "neuP": 95.9,
-          "label": "neutral",
-          "confidence": 0.13
+          "posP": 4.4,
+          "negP": 7.6,
+          "neuP": 88,
+          "label": "negative",
+          "confidence": 0.27
         },
         "category": "usa"
       },
@@ -5474,38 +5469,31 @@
       }
     ],
     "sentiment": {
-      "pos": 6.45,
-      "neu": 85.04,
-      "neg": 8.51,
-      "count": 33
+      "pos": 6.74,
+      "neu": 84.79,
+      "neg": 8.47,
+      "count": 31
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 7.58,
-        "neu": 84.99,
-        "neg": 7.43,
-        "count": 9
-      },
-      {
         "source": "NYT",
-        "pos": 11.57,
-        "neu": 81.45,
-        "neg": 6.97,
-        "count": 4
+        "pos": 9.94,
+        "neu": 83.97,
+        "neg": 6.09,
+        "count": 7
       },
       {
-        "source": "Fox News",
-        "pos": 6.77,
-        "neu": 82.3,
-        "neg": 10.93,
-        "count": 4
+        "source": "NBC News",
+        "pos": 6.56,
+        "neu": 86.39,
+        "neg": 7.06,
+        "count": 7
       },
       {
         "source": "CBS News",
-        "pos": 5.35,
-        "neu": 85.53,
-        "neg": 9.13,
+        "pos": 8.57,
+        "neu": 75.23,
+        "neg": 16.2,
         "count": 4
       },
       {
@@ -5540,38 +5528,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.3,
-        "neu": 84.7,
-        "neg": 9,
-        "count": 13
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 7.81,
-        "neu": 84.01,
-        "neg": 8.18,
-        "count": 8
+        "pos": 6.94,
+        "neu": 83.49,
+        "neg": 9.57,
+        "count": 12
       },
       {
         "topic": "Policy",
-        "pos": 5.67,
-        "neu": 84.23,
-        "neg": 10.1,
-        "count": 7
+        "pos": 6,
+        "neu": 86.97,
+        "neg": 7.03,
+        "count": 6
+      },
+      {
+        "topic": "Foreign Policy",
+        "pos": 7.15,
+        "neu": 84.08,
+        "neg": 8.77,
+        "count": 6
       },
       {
         "topic": "Economy",
-        "pos": 8.27,
-        "neu": 82.5,
-        "neg": 9.23,
+        "pos": 10.63,
+        "neu": 75.93,
+        "neg": 13.43,
         "count": 3
       },
       {
         "topic": "Legal",
-        "pos": 4.1,
-        "neu": 95.9,
-        "neg": 0,
-        "count": 1
+        "pos": 4.9,
+        "neu": 90.87,
+        "neg": 4.23,
+        "count": 3
       },
       {
         "topic": "Public Statements",
@@ -5605,28 +5593,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-18T15:36:05.532Z",
+        "label": "2026-10-18T17:48:35.778Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T16:36:05.532Z",
+        "label": "2026-10-18T18:48:35.778Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T17:36:05.532Z",
+        "label": "2026-10-18T19:48:35.778Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T18:36:05.532Z",
+        "label": "2026-10-18T20:48:35.778Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5623,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-18T15:36:05.532Z",
+        "label": "2026-10-18T17:48:35.778Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T16:36:05.532Z",
+        "label": "2026-10-18T18:48:35.778Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T17:36:05.532Z",
+        "label": "2026-10-18T19:48:35.778Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T18:36:05.532Z",
+        "label": "2026-10-18T20:48:35.778Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5724,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-18T19:36:05.533Z",
+    "generatedAt": "2026-10-18T21:48:35.780Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5857,8 +5845,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 163,
-      "potusArticles": 33,
+      "usaArticles": 167,
+      "potusArticles": 31,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
