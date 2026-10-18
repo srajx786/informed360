@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-18T06:30:42.268Z",
+  "generatedAt": "2026-10-18T11:37:04.113Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 161,
-    "potusArticles": 35
+    "usaArticles": 162,
+    "potusArticles": 30
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-18T02:30:42.268Z",
+          "label": "2026-10-18T07:37:04.113Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T03:30:42.268Z",
+          "label": "2026-10-18T08:37:04.113Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T04:30:42.268Z",
+          "label": "2026-10-18T09:37:04.113Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T05:30:42.268Z",
+          "label": "2026-10-18T10:37:04.113Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-18T02:30:42.268Z",
+          "label": "2026-10-18T07:37:04.113Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T03:30:42.268Z",
+          "label": "2026-10-18T08:37:04.113Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T04:30:42.268Z",
+          "label": "2026-10-18T09:37:04.113Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T05:30:42.268Z",
+          "label": "2026-10-18T10:37:04.113Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.51,
-      "neu": 80.7,
-      "neg": 11.79,
-      "count": 161
+      "pos": 6.52,
+      "neu": 81.23,
+      "neg": 12.25,
+      "count": 162
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.53,
-        "neu": 81.82,
-        "neg": 10.65,
-        "count": 41
+        "pos": 7.33,
+        "neu": 82.07,
+        "neg": 10.61,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 9.68,
-        "neu": 74.51,
-        "neg": 15.81,
+        "pos": 5.98,
+        "neu": 79.59,
+        "neg": 14.43,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.63,
-        "neu": 81.68,
-        "neg": 13.68,
+        "pos": 4.3,
+        "neu": 82.04,
+        "neg": 13.66,
         "count": 26
       },
       {
@@ -4591,17 +4591,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.65,
-        "neu": 83.72,
-        "neg": 7.63,
+        "pos": 8.61,
+        "neu": 82.89,
+        "neg": 8.5,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 8.76,
-        "neu": 82,
-        "neg": 9.24,
-        "count": 16
+        "pos": 6,
+        "neu": 79.25,
+        "neg": 14.75,
+        "count": 18
       },
       {
         "source": "NPR",
@@ -4629,13 +4629,8 @@
       "rows": [
         {
           "name": "Manufacturing",
-          "bias": -24.45,
+          "bias": -14.55,
           "count": 2
-        },
-        {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
         },
         {
           "name": "Communication",
@@ -4643,9 +4638,24 @@
           "count": 1
         },
         {
+          "name": "Utilities",
+          "bias": -13.07,
+          "count": 3
+        },
+        {
           "name": "Healthcare",
-          "bias": -11.69,
-          "count": 8
+          "bias": -9.77,
+          "count": 10
+        },
+        {
+          "name": "Energy",
+          "bias": -8.09,
+          "count": 9
+        },
+        {
+          "name": "Materials",
+          "bias": -7.8,
+          "count": 2
         },
         {
           "name": "Real Estate",
@@ -4654,13 +4664,8 @@
         },
         {
           "name": "Technology",
-          "bias": -4.76,
-          "count": 116
-        },
-        {
-          "name": "Energy",
-          "bias": -1.28,
-          "count": 10
+          "bias": -6.31,
+          "count": 117
         },
         {
           "name": "Finance",
@@ -4678,67 +4683,67 @@
       "neu": [
         {
           "name": "Healthcare",
-          "bias": -11.69,
-          "count": 8
-        },
-        {
-          "name": "Technology",
-          "bias": -4.76,
-          "count": 116
+          "bias": -9.77,
+          "count": 10
         },
         {
           "name": "Energy",
-          "bias": -1.28,
-          "count": 10
+          "bias": -8.09,
+          "count": 9
+        },
+        {
+          "name": "Materials",
+          "bias": -7.8,
+          "count": 2
         }
       ],
       "neg": [
         {
           "name": "Manufacturing",
-          "bias": -24.45,
+          "bias": -14.55,
           "count": 2
-        },
-        {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
         },
         {
           "name": "Communication",
           "bias": -14,
           "count": 1
+        },
+        {
+          "name": "Utilities",
+          "bias": -13.07,
+          "count": 3
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-18T02:30:42.270Z",
-          "pos": 4,
-          "neu": 81,
-          "neg": 15,
-          "count": 16
+          "label": "2026-10-18T07:37:04.115Z",
+          "pos": 8,
+          "neu": 86,
+          "neg": 6,
+          "count": 1
         },
         {
-          "label": "2026-10-18T03:30:42.270Z",
-          "pos": 6,
-          "neu": 84,
-          "neg": 10,
+          "label": "2026-10-18T08:37:04.115Z",
+          "pos": 8,
+          "neu": 76,
+          "neg": 16,
+          "count": 6
+        },
+        {
+          "label": "2026-10-18T09:37:04.115Z",
+          "pos": 5,
+          "neu": 82,
+          "neg": 14,
           "count": 9
         },
         {
-          "label": "2026-10-18T04:30:42.270Z",
+          "label": "2026-10-18T10:37:04.115Z",
           "pos": 4,
-          "neu": 76,
-          "neg": 20,
-          "count": 3
-        },
-        {
-          "label": "2026-10-18T05:30:42.270Z",
-          "pos": 6,
-          "neu": 75,
-          "neg": 19,
-          "count": 8
+          "neu": 82,
+          "neg": 14,
+          "count": 17
         }
       ]
     }
@@ -4946,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Top takeaways from JD Vance town hall: Costly gas, DC corruption, immigration hot takes and the war",
-        "link": "https://www.foxnews.com/politics/top-takeaways-from-jd-vance-town-hall-costly-gas-dc-corruption-immigration-hot-takes-war",
+        "title": "Trump's chief of staff almost skipped screening that detected aggressive cancer",
+        "link": "https://www.foxnews.com/health/trumps-chief-staff-almost-skipped-screening-detected-aggressive-cancer",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "JD Vance defended Trump administration policies on gas prices, Iran's nuclear program, and H-1B visas while blasting Abdul El-Sayed at a CBS town hall.",
+        "description": "White House chief of staff Susie Wiles discusses how her doctor's insistence on an early mammogram caught her aggressive breast cancer in time.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T02:32:15.000Z",
+        "publishedAt": "2026-10-18T11:00:13.000Z",
         "sentiment": {
-          "posP": 4.1,
-          "negP": 12,
-          "neuP": 83.9,
+          "posP": 0,
+          "negP": 28.6,
+          "neuP": 71.4,
           "label": "negative",
-          "confidence": 0.54
+          "confidence": 0.9
         },
         "category": "usa"
       },
       {
-        "title": "Trump Offers Putin Economic Relief in Hopes That Russia Will Return the Favor",
-        "link": "https://www.nytimes.com/2026/10/17/business/trump-russia-sanctions-congress.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Becoming a lawyer could get cheaper and faster under looming Trump admin shakeup",
+        "link": "https://www.foxnews.com/politics/becoming-lawyer-cheaper-faster-trump-admin-shakeup",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Trump administration is ignoring the will of Congress and waiving new Russia sanctions amid fears that high energy prices will cost Republicans in next month’s elections.",
+        "description": "As the Trump admin weighs stripping the American Bar Association's law school accrediting arm of federal recognition, experts say the move could open the door to new types of legal education.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T23:46:16.000Z",
+        "publishedAt": "2026-10-18T09:00:10.000Z",
         "sentiment": {
-          "posP": 21.3,
-          "negP": 11,
-          "neuP": 67.7,
-          "label": "positive",
-          "confidence": 0.64
+          "posP": 3.4,
+          "negP": 7,
+          "neuP": 89.6,
+          "label": "neutral",
+          "confidence": 0.15
         },
         "category": "usa"
       }
@@ -5188,102 +5193,62 @@
         "category": "world"
       },
       {
-        "title": "Top takeaways from JD Vance town hall: Costly gas, DC corruption, immigration hot takes and the war",
-        "link": "https://www.foxnews.com/politics/top-takeaways-from-jd-vance-town-hall-costly-gas-dc-corruption-immigration-hot-takes-war",
+        "title": "Trump's chief of staff almost skipped screening that detected aggressive cancer",
+        "link": "https://www.foxnews.com/health/trumps-chief-staff-almost-skipped-screening-detected-aggressive-cancer",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "JD Vance defended Trump administration policies on gas prices, Iran's nuclear program, and H-1B visas while blasting Abdul El-Sayed at a CBS town hall.",
+        "description": "White House chief of staff Susie Wiles discusses how her doctor's insistence on an early mammogram caught her aggressive breast cancer in time.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T02:32:15.000Z",
+        "publishedAt": "2026-10-18T11:00:13.000Z",
         "sentiment": {
-          "posP": 4.1,
-          "negP": 12,
-          "neuP": 83.9,
+          "posP": 0,
+          "negP": 28.6,
+          "neuP": 71.4,
           "label": "negative",
-          "confidence": 0.54
+          "confidence": 0.9
         },
         "category": "usa"
       },
       {
-        "title": "Trump Offers Putin Economic Relief in Hopes That Russia Will Return the Favor",
-        "link": "https://www.nytimes.com/2026/10/17/business/trump-russia-sanctions-congress.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Becoming a lawyer could get cheaper and faster under looming Trump admin shakeup",
+        "link": "https://www.foxnews.com/politics/becoming-lawyer-cheaper-faster-trump-admin-shakeup",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Trump administration is ignoring the will of Congress and waiving new Russia sanctions amid fears that high energy prices will cost Republicans in next month’s elections.",
+        "description": "As the Trump admin weighs stripping the American Bar Association's law school accrediting arm of federal recognition, experts say the move could open the door to new types of legal education.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T23:46:16.000Z",
+        "publishedAt": "2026-10-18T09:00:10.000Z",
         "sentiment": {
-          "posP": 21.3,
-          "negP": 11,
-          "neuP": 67.7,
-          "label": "positive",
-          "confidence": 0.64
+          "posP": 3.4,
+          "negP": 7,
+          "neuP": 89.6,
+          "label": "neutral",
+          "confidence": 0.15
         },
         "category": "usa"
       },
       {
-        "title": "U.S. Floats Lifeline to Russia: Allowing More Gas Sales to Europe",
-        "link": "https://www.nytimes.com/2026/10/17/us/politics/russia-gas-trump.html",
+        "title": "Across Farm Country, Economic Discontent Strains Republican Coalition",
+        "link": "https://www.nytimes.com/2026/10/18/us/politics/farmers-ranchers-trump-economic-stress.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Trump administration is pitching the idea as part of a peace deal with Ukraine, but Europe is wary and critics say Russia would be strengthened.",
+        "description": "Farmers and ranchers have supported President Trump for a decade. But the war in Iran, tariffs and other administration policies have soured some on the G.O.P.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T18:00:45.000Z",
+        "publishedAt": "2026-10-18T09:00:47.000Z",
         "sentiment": {
-          "posP": 14.3,
-          "negP": 6.7,
-          "neuP": 79,
-          "label": "positive",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Graham Breaks With Trump Over Russia Sanctions Law Her Brother Championed",
-        "link": "https://www.nytimes.com/2026/10/17/us/politics/graham-trump-russia-sanctions-law.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Senator Darline Graham, appointed to fill the Senate seat of her late brother, Lindsey, gently disagreed with the president’s decision to exempt Russia from the sanctions legislation.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T00:19:59.000Z",
-        "sentiment": {
-          "posP": 15.4,
-          "negP": 5.4,
-          "neuP": 79.2,
-          "label": "positive",
-          "confidence": 0.51
-        },
-        "category": "usa"
-      },
-      {
-        "title": "In Midterm Campaign’s Final Stretch, Trump Can’t Stop Praising Men’s Bodies",
-        "link": "https://www.nytimes.com/2026/10/17/us/politics/trump-men-physical-appearance-comments.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "As he stumps for midterm candidates, the president has been especially eager to talk about the physical appearance of some men.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-17T23:54:30.000Z",
-        "sentiment": {
-          "posP": 16.8,
-          "negP": 5.9,
-          "neuP": 77.3,
-          "label": "positive",
-          "confidence": 0.62
+          "posP": 6,
+          "negP": 15.9,
+          "neuP": 78.1,
+          "label": "negative",
+          "confidence": 0.59
         },
         "category": "usa"
       },
@@ -5368,46 +5333,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump visits Kentucky for 13th rally in the last month as midterms approach",
-        "link": "https://www.cbsnews.com/video/trump-visits-kentucky-for-13th-rally-in-the-last-month-as-midterms-approach/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump rallied in Kentucky ahead of the midterms as \"no kings\" protests, encouraging early voting against his party, continue. Taurean Small reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T02:41:12.000Z",
-        "sentiment": {
-          "posP": 14.5,
-          "negP": 9.7,
-          "neuP": 75.8,
-          "label": "positive",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Zelenskyy says Trump's decision to waive new sanctions on Russia \"seems wrong\"",
-        "link": "https://www.cbsnews.com/video/zelenskyy-says-trumps-decision-to-waive-new-sanctions-on-russia-seems-wrong/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump waived virtually all new Russia sanctions he had signed as strikes against Ukraine continue, drawing backlash. Ramy Inocencio has more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T02:38:24.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 7,
-          "neuP": 93,
-          "label": "negative",
-          "confidence": 0.36
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump waives broad new Russia sanctions, Zelenskyy condemns it as 'wrong'",
         "link": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
         "source": "CNBC",
@@ -5437,7 +5362,7 @@
         "description": "Trump's diesel deal may do little for Russia's finances, but it raises bigger questions about Ukraine's leverage, U.S. support and Putin's next moves.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T05:46:20.000Z",
+        "publishedAt": "2026-10-18T07:22:07.000Z",
         "sentiment": {
           "posP": 8.6,
           "negP": 4.5,
@@ -5466,13 +5391,93 @@
           "confidence": 0
         },
         "category": "usa"
+      },
+      {
+        "title": "Trump's student loan overhaul could lead to more bankruptcy filings, former judge says",
+        "link": "https://www.cnbc.com/2026/10/17/trump-student-loans-bankruptcy.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "After nearly three decades as a bankruptcy judge, Sarah Sharer Curley writes about the legal process in her new book, \"The Price of Forgiveness.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T13:30:01.000Z",
+        "sentiment": {
+          "posP": 4.1,
+          "negP": 0,
+          "neuP": 95.9,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "South Texas Latino voters who flipped for Trump in 2024 are up for grabs in 2026",
+        "link": "https://www.cnbc.com/2026/10/14/texas-latino-voters-midterm-election-trump.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Hispanic and Latino voters swung hard for President Donald Trump in 2024. But in the 2026 midterm election, Democrats are pushing to get them back.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-14T14:25:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 3.4,
+          "neuP": 96.6,
+          "label": "neutral",
+          "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
+        "title": "President Trump faces backlash over Russia sanctions relief",
+        "link": "https://www.nbcnews.com/nightly-news/video/president-trump-faces-backlash-over-russia-sanctions-relief-271759941812",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump was in Kentucky on Saturday, rallying for midterm candidates just weeks before Election Day. The President is facing new criticism, including from some in his party, for ordering sanctions relief for Russia, even as it continues to strike Ukraine. NBC News’ Yamiche Alcindor reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T23:05:22.000Z",
+        "sentiment": {
+          "posP": 14.3,
+          "negP": 7.1,
+          "neuP": 78.6,
+          "label": "positive",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Dems lead GOP in House vote choice as Trump's approval rating hits record low: Poll",
+        "link": "https://abcnews.com/Politics/democrats-lead-republicans-house-vote-choice-trumps-approval/story?id=137322849",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Half or more Americans call every household purchase category measured \"unaffordable.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T04:03:29.000Z",
+        "sentiment": {
+          "posP": 10.6,
+          "negP": 7.2,
+          "neuP": 82.2,
+          "label": "positive",
+          "confidence": 0.25
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.54,
-      "neu": 85.91,
-      "neg": 7.54,
-      "count": 35
+      "pos": 5.07,
+      "neu": 86.34,
+      "neg": 8.59,
+      "count": 30
     },
     "sourceLeaderboard": [
       {
@@ -5484,24 +5489,10 @@
       },
       {
         "source": "CBS News",
-        "pos": 6.44,
-        "neu": 83.37,
-        "neg": 10.19,
-        "count": 7
-      },
-      {
-        "source": "NYT",
-        "pos": 13.47,
-        "neu": 79.7,
-        "neg": 6.83,
-        "count": 6
-      },
-      {
-        "source": "ABC News",
-        "pos": 3.42,
-        "neu": 90.25,
-        "neg": 6.33,
-        "count": 4
+        "pos": 6.12,
+        "neu": 82.96,
+        "neg": 10.92,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5518,11 +5509,25 @@
         "count": 3
       },
       {
+        "source": "NYT",
+        "pos": 6.33,
+        "neu": 84.37,
+        "neg": 9.3,
+        "count": 3
+      },
+      {
         "source": "Fox News",
-        "pos": 6.55,
-        "neu": 87.45,
-        "neg": 6,
-        "count": 2
+        "pos": 4.13,
+        "neu": 84,
+        "neg": 11.87,
+        "count": 3
+      },
+      {
+        "source": "ABC News",
+        "pos": 4.57,
+        "neu": 87,
+        "neg": 8.43,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5535,24 +5540,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.42,
-        "neu": 84.1,
-        "neg": 9.48,
-        "count": 13
+        "pos": 4.34,
+        "neu": 84.3,
+        "neg": 11.36,
+        "count": 12
       },
       {
         "topic": "Foreign Policy",
-        "pos": 6.98,
-        "neu": 86.61,
-        "neg": 6.41,
-        "count": 10
+        "pos": 7.77,
+        "neu": 84.84,
+        "neg": 7.39,
+        "count": 7
       },
       {
         "topic": "Policy",
-        "pos": 6.59,
-        "neu": 85.34,
-        "neg": 8.08,
-        "count": 8
+        "pos": 3.17,
+        "neu": 88.37,
+        "neg": 8.47,
+        "count": 6
       },
       {
         "topic": "Economy",
@@ -5563,10 +5568,10 @@
       },
       {
         "topic": "Legal",
-        "pos": 4.1,
-        "neu": 95.9,
-        "neg": 0,
-        "count": 1
+        "pos": 3.75,
+        "neu": 92.75,
+        "neg": 3.5,
+        "count": 2
       },
       {
         "topic": "Public Statements",
@@ -5600,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-18T02:30:42.272Z",
+        "label": "2026-10-18T07:37:04.117Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T03:30:42.272Z",
+        "label": "2026-10-18T08:37:04.117Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T04:30:42.272Z",
+        "label": "2026-10-18T09:37:04.117Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T05:30:42.272Z",
+        "label": "2026-10-18T10:37:04.117Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5630,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-18T02:30:42.273Z",
+        "label": "2026-10-18T07:37:04.117Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T03:30:42.273Z",
+        "label": "2026-10-18T08:37:04.117Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T04:30:42.273Z",
+        "label": "2026-10-18T09:37:04.117Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T05:30:42.273Z",
+        "label": "2026-10-18T10:37:04.117Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5731,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-18T06:30:42.274Z",
+    "generatedAt": "2026-10-18T11:37:04.118Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5852,8 +5857,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 161,
-      "potusArticles": 35,
+      "usaArticles": 162,
+      "potusArticles": 30,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
