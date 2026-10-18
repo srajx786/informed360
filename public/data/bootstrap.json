@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-18T11:37:04.113Z",
+  "generatedAt": "2026-10-18T17:34:14.236Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 162,
-    "potusArticles": 30
+    "usaArticles": 164,
+    "potusArticles": 34
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-18T07:37:04.113Z",
+          "label": "2026-10-18T13:34:14.236Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T08:37:04.113Z",
+          "label": "2026-10-18T14:34:14.236Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T09:37:04.113Z",
+          "label": "2026-10-18T15:34:14.236Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T10:37:04.113Z",
+          "label": "2026-10-18T16:34:14.236Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-18T07:37:04.113Z",
+          "label": "2026-10-18T13:34:14.237Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T08:37:04.113Z",
+          "label": "2026-10-18T14:34:14.237Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T09:37:04.113Z",
+          "label": "2026-10-18T15:34:14.237Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T10:37:04.113Z",
+          "label": "2026-10-18T16:34:14.237Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 6.52,
-      "neu": 81.23,
-      "neg": 12.25,
-      "count": 162
+      "pos": 7.43,
+      "neu": 81.95,
+      "neg": 10.62,
+      "count": 164
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.33,
-        "neu": 82.07,
-        "neg": 10.61,
-        "count": 40
+        "pos": 9.66,
+        "neu": 80.7,
+        "neg": 9.64,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 5.98,
-        "neu": 79.59,
-        "neg": 14.43,
+        "pos": 8.78,
+        "neu": 78.27,
+        "neg": 12.95,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.3,
-        "neu": 82.04,
-        "neg": 13.66,
-        "count": 26
+        "pos": 2.58,
+        "neu": 89.62,
+        "neg": 7.81,
+        "count": 25
       },
       {
         "source": "WSJ",
@@ -4591,17 +4591,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.61,
-        "neu": 82.89,
-        "neg": 8.5,
+        "pos": 9.89,
+        "neu": 83.49,
+        "neg": 6.62,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 6,
-        "neu": 79.25,
-        "neg": 14.75,
-        "count": 18
+        "pos": 5.63,
+        "neu": 79.74,
+        "neg": 14.64,
+        "count": 19
       },
       {
         "source": "NPR",
@@ -4628,8 +4628,8 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Manufacturing",
-          "bias": -14.55,
+          "name": "Materials",
+          "bias": -21,
           "count": 2
         },
         {
@@ -4639,68 +4639,73 @@
         },
         {
           "name": "Utilities",
-          "bias": -13.07,
+          "bias": -10.63,
           "count": 3
         },
         {
-          "name": "Healthcare",
-          "bias": -9.77,
-          "count": 10
-        },
-        {
-          "name": "Energy",
-          "bias": -8.09,
-          "count": 9
-        },
-        {
-          "name": "Materials",
-          "bias": -7.8,
+          "name": "Manufacturing",
+          "bias": -5.7,
           "count": 2
         },
         {
           "name": "Real Estate",
-          "bias": 7.35,
-          "count": 2
+          "bias": 4.9,
+          "count": 3
         },
         {
           "name": "Technology",
-          "bias": -6.31,
-          "count": 117
+          "bias": -4.13,
+          "count": 124
+        },
+        {
+          "name": "Energy",
+          "bias": 2.08,
+          "count": 5
+        },
+        {
+          "name": "Healthcare",
+          "bias": -1.65,
+          "count": 12
         },
         {
           "name": "Finance",
-          "bias": -0.36,
-          "count": 20
+          "bias": 0.49,
+          "count": 18
         }
       ],
       "pos": [
         {
           "name": "Real Estate",
-          "bias": 7.35,
-          "count": 2
+          "bias": 4.9,
+          "count": 3
+        },
+        {
+          "name": "Energy",
+          "bias": 2.08,
+          "count": 5
         }
       ],
       "neu": [
         {
-          "name": "Healthcare",
-          "bias": -9.77,
-          "count": 10
-        },
-        {
-          "name": "Energy",
-          "bias": -8.09,
-          "count": 9
-        },
-        {
-          "name": "Materials",
-          "bias": -7.8,
+          "name": "Manufacturing",
+          "bias": -5.7,
           "count": 2
+        },
+        {
+          "name": "Technology",
+          "bias": -4.13,
+          "count": 124
+        },
+        {
+          "name": "Healthcare",
+          "bias": -1.65,
+          "count": 12
         }
       ],
       "neg": [
         {
-          "name": "Manufacturing",
-          "bias": -14.55,
+          "name": "Materials",
+          "bias": -21,
           "count": 2
         },
         {
@@ -4710,7 +4715,7 @@
         },
         {
           "name": "Utilities",
-          "bias": -13.07,
+          "bias": -10.63,
           "count": 3
         }
       ]
@@ -4718,32 +4723,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-18T07:37:04.115Z",
-          "pos": 8,
-          "neu": 86,
-          "neg": 6,
-          "count": 1
-        },
-        {
-          "label": "2026-10-18T08:37:04.115Z",
-          "pos": 8,
-          "neu": 76,
-          "neg": 16,
+          "label": "2026-10-18T13:34:14.238Z",
+          "pos": 13,
+          "neu": 77,
+          "neg": 10,
           "count": 6
         },
         {
-          "label": "2026-10-18T09:37:04.115Z",
+          "label": "2026-10-18T14:34:14.238Z",
           "pos": 5,
-          "neu": 82,
-          "neg": 14,
-          "count": 9
+          "neu": 85,
+          "neg": 11,
+          "count": 12
         },
         {
-          "label": "2026-10-18T10:37:04.115Z",
-          "pos": 4,
-          "neu": 82,
-          "neg": 14,
-          "count": 17
+          "label": "2026-10-18T15:34:14.238Z",
+          "pos": 5,
+          "neu": 85,
+          "neg": 10,
+          "count": 19
+        },
+        {
+          "label": "2026-10-18T16:34:14.238Z",
+          "pos": 6,
+          "neu": 81,
+          "neg": 13,
+          "count": 19
         }
       ]
     }
@@ -4951,42 +4956,42 @@
         "category": "world"
       },
       {
-        "title": "Trump's chief of staff almost skipped screening that detected aggressive cancer",
-        "link": "https://www.foxnews.com/health/trumps-chief-staff-almost-skipped-screening-detected-aggressive-cancer",
+        "title": "Slotkin wants GOP prosecutions to deter young people from Trump administration jobs",
+        "link": "https://www.foxnews.com/politics/slotkin-wants-gop-prosecutions-deter-young-people-trump-administration-jobs",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "White House chief of staff Susie Wiles discusses how her doctor's insistence on an early mammogram caught her aggressive breast cancer in time.",
+        "description": "Elissa Slotkin said she wants young people to fear legal problems before joining the Trump administration, sparking fierce online backlash..",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T11:00:13.000Z",
+        "publishedAt": "2026-10-18T17:04:11.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 28.6,
-          "neuP": 71.4,
+          "posP": 4.1,
+          "negP": 16.2,
+          "neuP": 79.7,
           "label": "negative",
-          "confidence": 0.9
+          "confidence": 0.66
         },
         "category": "usa"
       },
       {
-        "title": "Becoming a lawyer could get cheaper and faster under looming Trump admin shakeup",
-        "link": "https://www.foxnews.com/politics/becoming-lawyer-cheaper-faster-trump-admin-shakeup",
+        "title": "Trump says Netanyahu needs to be re-elected, or else US will have to 'finish the job’ against Iran alone",
+        "link": "https://www.foxnews.com/politics/trump-says-netanyahu-needs-reelected-else-us-finish-job-against-iran-alone",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "As the Trump admin weighs stripping the American Bar Association's law school accrediting arm of federal recognition, experts say the move could open the door to new types of legal education.",
+        "description": "Trump called Benjamin Netanyahu a \"great warrior\" and urged Israeli voters to back Likud in the Oct. 27 Knesset elections amid the war on Iran.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T09:00:10.000Z",
+        "publishedAt": "2026-10-18T16:42:02.000Z",
         "sentiment": {
-          "posP": 3.4,
-          "negP": 7,
-          "neuP": 89.6,
-          "label": "neutral",
-          "confidence": 0.15
+          "posP": 8.2,
+          "negP": 11.8,
+          "neuP": 80,
+          "label": "negative",
+          "confidence": 0.2
         },
         "category": "usa"
       }
@@ -5193,42 +5198,102 @@
         "category": "world"
       },
       {
-        "title": "Trump's chief of staff almost skipped screening that detected aggressive cancer",
-        "link": "https://www.foxnews.com/health/trumps-chief-staff-almost-skipped-screening-detected-aggressive-cancer",
+        "title": "Slotkin wants GOP prosecutions to deter young people from Trump administration jobs",
+        "link": "https://www.foxnews.com/politics/slotkin-wants-gop-prosecutions-deter-young-people-trump-administration-jobs",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "White House chief of staff Susie Wiles discusses how her doctor's insistence on an early mammogram caught her aggressive breast cancer in time.",
+        "description": "Elissa Slotkin said she wants young people to fear legal problems before joining the Trump administration, sparking fierce online backlash..",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T11:00:13.000Z",
+        "publishedAt": "2026-10-18T17:04:11.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 28.6,
-          "neuP": 71.4,
+          "posP": 4.1,
+          "negP": 16.2,
+          "neuP": 79.7,
           "label": "negative",
-          "confidence": 0.9
+          "confidence": 0.66
         },
         "category": "usa"
       },
       {
-        "title": "Becoming a lawyer could get cheaper and faster under looming Trump admin shakeup",
-        "link": "https://www.foxnews.com/politics/becoming-lawyer-cheaper-faster-trump-admin-shakeup",
+        "title": "Trump says Netanyahu needs to be re-elected, or else US will have to 'finish the job’ against Iran alone",
+        "link": "https://www.foxnews.com/politics/trump-says-netanyahu-needs-reelected-else-us-finish-job-against-iran-alone",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "As the Trump admin weighs stripping the American Bar Association's law school accrediting arm of federal recognition, experts say the move could open the door to new types of legal education.",
+        "description": "Trump called Benjamin Netanyahu a \"great warrior\" and urged Israeli voters to back Likud in the Oct. 27 Knesset elections amid the war on Iran.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T09:00:10.000Z",
+        "publishedAt": "2026-10-18T16:42:02.000Z",
         "sentiment": {
-          "posP": 3.4,
+          "posP": 8.2,
+          "negP": 11.8,
+          "neuP": 80,
+          "label": "negative",
+          "confidence": 0.2
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Bernie Sanders admits Democrats failed working-class voters on economics, driving them to Donald Trump",
+        "link": "https://www.foxnews.com/media/bernie-sanders-admits-democrats-failed-working-class-voters-economics-driving-donald-trump",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Vermont senator pointed to trade deals that cost millions of manufacturing jobs as a key reason for voter disillusionment.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T16:25:35.000Z",
+        "sentiment": {
+          "posP": 5.8,
+          "negP": 15.7,
+          "neuP": 78.5,
+          "label": "negative",
+          "confidence": 0.59
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump intel chief warns AI firms on hacks, says new department is the 'cop on the beat'",
+        "link": "https://www.foxnews.com/media/trump-intel-chief-warns-ai-firms-hacks-says-new-department-cop-beat",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump's intelligence chief warns AI companies they're responsible when products hack websites as new guardrails are developed.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T15:20:02.000Z",
+        "sentiment": {
+          "posP": 13.4,
           "negP": 7,
-          "neuP": 89.6,
-          "label": "neutral",
-          "confidence": 0.15
+          "neuP": 79.6,
+          "label": "positive",
+          "confidence": 0.56
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Obama backs Ilhan Omar amid probe, accuses Trump admin of 'appalling' targeting in lengthy statement",
+        "link": "https://www.foxnews.com/politics/obama-backs-ilhan-omar-amid-probe-accuses-trump-admin-appalling-targeting-lengthy-statement",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Barack Obama accused the Trump administration of politically targeting Rep. Ilhan Omar, alleging efforts to strip her citizenship and deport her.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T14:38:26.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 14.9,
+          "neuP": 85.1,
+          "label": "negative",
+          "confidence": 0.59
         },
         "category": "usa"
       },
@@ -5253,136 +5318,36 @@
         "category": "usa"
       },
       {
-        "title": "7 highlights from JD Vance's CBS News town hall",
-        "link": "https://www.cbsnews.com/news/jd-vance-cbs-town-hall-highlights-michigan/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Some MAHA Voters in Arizona Question Their G.O.P. Ties",
+        "link": "https://www.nytimes.com/2026/10/18/us/maha-voters-republican-split.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "In an hour-long town hall hosted by CBS News, Vice President JD Vance argued the Trump administration's handling of the economy and Iran will pay dividends in the future.",
+        "description": "MAHA’s alliance with MAGA had energized voters to support President Trump’s 2024 campaign. Now, some aren’t so sure.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T04:01:21.000Z",
+        "publishedAt": "2026-10-18T09:00:17.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 10,
-          "neuP": 90,
-          "label": "negative",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump waives tariffs on largest buyers of Russian oil",
-        "link": "https://www.cbsnews.com/news/trump-waives-sanctions-tariffs-russian-oil-lindsey-graham/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump prevented some new sanctions on Russia and hefty tariffs on large-scale buyers of Russian oil from taking effect late Friday, as he seeks to ease prices by tapping Russian energy.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T02:49:27.000Z",
-        "sentiment": {
-          "posP": 13,
+          "posP": 27.3,
           "negP": 0,
-          "neuP": 87,
+          "neuP": 72.7,
           "label": "positive",
-          "confidence": 0.57
+          "confidence": 0.84
         },
         "category": "usa"
       },
       {
-        "title": "Replenishing U.S. missile stockpile after Iran war will take at least 4 years, sources say",
-        "link": "https://www.cbsnews.com/video/replenishing-us-missile-stockpile-after-iran-war-will-take-at-least-4-years-sources-say/",
+        "title": "Trump says D.C. golf course construction will start next month",
+        "link": "https://www.cbsnews.com/news/trump-says-dc-golf-course-construction-start-next-month/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Just months before President Trump's war on Iran began, the Pentagon was warned of critically low missile defenses and continues to face challenges. Charlie D'Agata reports.",
+        "description": "President Trump said Sunday that construction at the historic East Potomac Golf Links course will begin Nov. 15.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T02:47:43.000Z",
-        "sentiment": {
-          "posP": 6.1,
-          "negP": 24.5,
-          "neuP": 69.4,
-          "label": "negative",
-          "confidence": 0.88
-        },
-        "category": "usa"
-      },
-      {
-        "title": "In Kentucky campaign stop, Trump says he \"can do stuff that is unbelievable\"",
-        "link": "https://www.cbsnews.com/news/trump-kentucky-midterm-campaign-stop/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump spoke in the city of Highland Heights to boost Republican candidates, including Ed Gallrein​ for the U.S. House.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T02:44:53.000Z",
-        "sentiment": {
-          "posP": 7.5,
-          "negP": 6.1,
-          "neuP": 86.4,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump waives broad new Russia sanctions, Zelenskyy condemns it as 'wrong'",
-        "link": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump signed the Graham Bill, which targeted Russia over its invasion of Ukraine, into law in September.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-17T19:35:18.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 10.9,
-          "neuP": 89.1,
-          "label": "negative",
-          "confidence": 0.51
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump's Russia diesel deal may offer Putin more than money — and spell trouble for Ukraine",
-        "link": "https://www.cnbc.com/2026/10/17/trump-diesel-russia-ukraine-war.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump's diesel deal may do little for Russia's finances, but it raises bigger questions about Ukraine's leverage, U.S. support and Putin's next moves.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T07:22:07.000Z",
-        "sentiment": {
-          "posP": 8.6,
-          "negP": 4.5,
-          "neuP": 86.9,
-          "label": "positive",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "5 midterm money takeaways: Democrats have candidate cash. Republicans have Elon Musk",
-        "link": "https://www.cnbc.com/2026/10/16/midterm-election-fundraising-elon-musk.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats outraise Republicans in key Congress races as Elon Musk funds Ken Paxton in Texas and GOP groups aligned with Trump.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-16T21:49:13.000Z",
+        "publishedAt": "2026-10-18T16:59:36.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5393,106 +5358,160 @@
         "category": "usa"
       },
       {
-        "title": "Trump's student loan overhaul could lead to more bankruptcy filings, former judge says",
-        "link": "https://www.cnbc.com/2026/10/17/trump-student-loans-bankruptcy.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Trump endorses Israel's Netanyahu ahead of reelection bid",
+        "link": "https://www.cbsnews.com/news/trump-endorses-israel-prime-minister-benjamin-netanyahu-reelection/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "After nearly three decades as a bankruptcy judge, Sarah Sharer Curley writes about the legal process in her new book, \"The Price of Forgiveness.\"",
+        "description": "Israelis are set to vote Oct. 27, in the first national elections since the 2023 Hamas attack on Israel.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T13:30:01.000Z",
+        "publishedAt": "2026-10-18T16:18:50.000Z",
         "sentiment": {
-          "posP": 4.1,
-          "negP": 0,
-          "neuP": 95.9,
+          "posP": 7.9,
+          "negP": 10.2,
+          "neuP": 81.9,
           "label": "neutral",
-          "confidence": 0.13
+          "confidence": 0.18
         },
         "category": "usa"
       },
       {
-        "title": "South Texas Latino voters who flipped for Trump in 2024 are up for grabs in 2026",
-        "link": "https://www.cnbc.com/2026/10/14/texas-latino-voters-midterm-election-trump.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "The Vote | Sunday on 60 Minutes",
+        "link": "https://www.cbsnews.com/video/the-vote-sunday-on-60-minutes/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Hispanic and Latino voters swung hard for President Donald Trump in 2024. But in the 2026 midterm election, Democrats are pushing to get them back.",
+        "description": "On Friday, the Justice Department threatened to prosecute California election officials who knowingly count mail-in ballots from people the Trump administration identified as \"likely noncitizens.\"\r\n\r\nThis Sunday, 60 Minutes reports on state and local election officials who are resisting what they see as pressure from Washington.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-14T14:25:40.000Z",
+        "publishedAt": "2026-10-18T14:40:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 3.4,
-          "neuP": 96.6,
-          "label": "neutral",
-          "confidence": 0.1
+          "posP": 5.7,
+          "negP": 13.3,
+          "neuP": 81,
+          "label": "negative",
+          "confidence": 0.54
         },
         "category": "usa"
       },
       {
-        "title": "President Trump faces backlash over Russia sanctions relief",
-        "link": "https://www.nbcnews.com/nightly-news/video/president-trump-faces-backlash-over-russia-sanctions-relief-271759941812",
+        "title": "Poll: Americans are anxious, pessimistic and deeply unhappy with Trump ahead of the midterms",
+        "link": "https://www.nbcnews.com/politics/2026-election/poll-americans-anxious-pessimistic-deeply-unhappy-trump-ahead-midterms-rcna603064",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump was in Kentucky on Saturday, rallying for midterm candidates just weeks before Election Day. The President is facing new criticism, including from some in his party, for ordering sanctions relief for Russia, even as it continues to strike Ukraine. NBC News’ Yamiche Alcindor reports.",
+        "description": "Weeks ahead of Election Day, 71% of U.S. adults think the country is on the “wrong track.”",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-17T23:05:22.000Z",
+        "publishedAt": "2026-10-18T13:00:00.000Z",
         "sentiment": {
-          "posP": 14.3,
-          "negP": 7.1,
-          "neuP": 78.6,
-          "label": "positive",
-          "confidence": 0.67
+          "posP": 0,
+          "negP": 21.3,
+          "neuP": 78.7,
+          "label": "negative",
+          "confidence": 0.76
         },
         "category": "usa"
       },
       {
-        "title": "Dems lead GOP in House vote choice as Trump's approval rating hits record low: Poll",
-        "link": "https://abcnews.com/Politics/democrats-lead-republicans-house-vote-choice-trumps-approval/story?id=137322849",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
+        "title": "Zelenskyy says waived Russian sanctions are 'strengthening Putin's war against us'",
+        "link": "https://www.nbcnews.com/meet-the-press/video/zelenskyy-says-it-s-a-pity-trump-bypassed-sanctions-law-named-for-lindsey-graham-271778373559",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Half or more Americans call every household purchase category measured \"unaffordable.\"",
+        "description": "In an exclusive interview with Meet the Press, Ukrainian President Volodymyr Zelenskyy says that President Trump's decision to waive Lindsey Graham’s Russia sanctions law shows \"really big support for Putin.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T04:03:29.000Z",
+        "publishedAt": "2026-10-18T13:40:01.000Z",
         "sentiment": {
-          "posP": 10.6,
-          "negP": 7.2,
-          "neuP": 82.2,
+          "posP": 15.8,
+          "negP": 8,
+          "neuP": 76.2,
           "label": "positive",
-          "confidence": 0.25
+          "confidence": 0.42
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Treasury secretary refuses to say if the U.S. sees Ukraine as an ally",
+        "link": "https://www.nbcnews.com/politics/trump-administration/treasury-secretary-bessent-refuses-us-ukraine-ally-starlink-rcna604129",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Amid escalating tensions between President Donald Trump and Ukrainian President Volodymyr Zelenskyy, Treasury Secretary Scott Bessent on Sunday dodged three times when asked whether Ukraine is an ally of the United States.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T15:24:24.000Z",
+        "sentiment": {
+          "posP": 12.8,
+          "negP": 5.4,
+          "neuP": 81.8,
+          "label": "positive",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "U.S. taking Putin’s side would be a ‘historic mistake,’ says Zelenskyy",
+        "link": "https://www.nbcnews.com/politics/trump-administration/us-taking-putins-side-historic-mistake-says-zelenskyy-rcna604111",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ukrainian President Volodymyr Zelenskyy has warned that the U.S. formally siding with Russia’s Vladimir Putin would be a “historic mistake,” but said he still sees President Donald Trump as an ally despite a series of moves that have unsettled his country and its friends on Capitol Hill.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-18T12:21:20.000Z",
+        "sentiment": {
+          "posP": 6.8,
+          "negP": 7.4,
+          "neuP": 85.8,
+          "label": "neutral",
+          "confidence": 0.17
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.07,
-      "neu": 86.34,
-      "neg": 8.59,
-      "count": 30
+      "pos": 6.34,
+      "neu": 85.09,
+      "neg": 8.57,
+      "count": 34
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 5.71,
-        "neu": 89.44,
-        "neg": 4.84,
-        "count": 7
+        "pos": 7.64,
+        "neu": 85.54,
+        "neg": 6.82,
+        "count": 8
+      },
+      {
+        "source": "Fox News",
+        "pos": 6.75,
+        "neu": 82.32,
+        "neg": 10.93,
+        "count": 6
+      },
+      {
+        "source": "NYT",
+        "pos": 11.57,
+        "neu": 81.45,
+        "neg": 6.97,
+        "count": 4
       },
       {
         "source": "CBS News",
-        "pos": 6.12,
-        "neu": 82.96,
-        "neg": 10.92,
-        "count": 5
+        "pos": 4.4,
+        "neu": 86.22,
+        "neg": 9.38,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5506,20 +5525,6 @@
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
-        "count": 3
-      },
-      {
-        "source": "NYT",
-        "pos": 6.33,
-        "neu": 84.37,
-        "neg": 9.3,
-        "count": 3
-      },
-      {
-        "source": "Fox News",
-        "pos": 4.13,
-        "neu": 84,
-        "neg": 11.87,
         "count": 3
       },
       {
@@ -5540,38 +5545,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.34,
-        "neu": 84.3,
-        "neg": 11.36,
-        "count": 12
+        "pos": 6.81,
+        "neu": 84.34,
+        "neg": 8.86,
+        "count": 14
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7.77,
-        "neu": 84.84,
-        "neg": 7.39,
-        "count": 7
+        "pos": 7.81,
+        "neu": 84.01,
+        "neg": 8.17,
+        "count": 8
       },
       {
         "topic": "Policy",
-        "pos": 3.17,
-        "neu": 88.37,
-        "neg": 8.47,
-        "count": 6
+        "pos": 4.11,
+        "neu": 85.27,
+        "neg": 10.61,
+        "count": 7
       },
       {
         "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
+        "pos": 8.27,
+        "neu": 82.5,
+        "neg": 9.23,
+        "count": 3
       },
       {
         "topic": "Legal",
-        "pos": 3.75,
-        "neu": 92.75,
-        "neg": 3.5,
-        "count": 2
+        "pos": 4.1,
+        "neu": 95.9,
+        "neg": 0,
+        "count": 1
       },
       {
         "topic": "Public Statements",
@@ -5605,28 +5610,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-18T07:37:04.117Z",
+        "label": "2026-10-18T13:34:14.240Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T08:37:04.117Z",
+        "label": "2026-10-18T14:34:14.240Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T09:37:04.117Z",
+        "label": "2026-10-18T15:34:14.240Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T10:37:04.117Z",
+        "label": "2026-10-18T16:34:14.240Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5640,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-18T07:37:04.117Z",
+        "label": "2026-10-18T13:34:14.240Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T08:37:04.117Z",
+        "label": "2026-10-18T14:34:14.240Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T09:37:04.117Z",
+        "label": "2026-10-18T15:34:14.240Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T10:37:04.117Z",
+        "label": "2026-10-18T16:34:14.240Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5741,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-18T11:37:04.118Z",
+    "generatedAt": "2026-10-18T17:34:14.241Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5857,8 +5862,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 162,
-      "potusArticles": 30,
+      "usaArticles": 164,
+      "potusArticles": 34,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
