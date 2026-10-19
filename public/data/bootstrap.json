@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-19T06:56:46.629Z",
+  "generatedAt": "2026-10-19T14:34:38.849Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 170,
-    "potusArticles": 30
+    "usaArticles": 168,
+    "potusArticles": 26
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-19T02:56:46.629Z",
+          "label": "2026-10-19T10:34:38.850Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-19T03:56:46.629Z",
+          "label": "2026-10-19T11:34:38.850Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-19T04:56:46.629Z",
+          "label": "2026-10-19T12:34:38.850Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-19T05:56:46.629Z",
+          "label": "2026-10-19T13:34:38.850Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-19T02:56:46.629Z",
+          "label": "2026-10-19T10:34:38.850Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-19T03:56:46.629Z",
+          "label": "2026-10-19T11:34:38.850Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-19T04:56:46.629Z",
+          "label": "2026-10-19T12:34:38.850Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-19T05:56:46.629Z",
+          "label": "2026-10-19T13:34:38.850Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.47,
-      "neu": 79.73,
-      "neg": 12.8,
-      "count": 170
+      "pos": 8.08,
+      "neu": 80.07,
+      "neg": 11.85,
+      "count": 168
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.35,
-        "neu": 80.44,
-        "neg": 12.21,
-        "count": 42
+        "pos": 9.79,
+        "neu": 78.8,
+        "neg": 11.41,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 9.85,
-        "neu": 75.06,
-        "neg": 15.09,
+        "pos": 8.44,
+        "neu": 81.16,
+        "neg": 10.4,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 3.35,
-        "neu": 79.29,
-        "neg": 17.36,
+        "pos": 5.54,
+        "neu": 78.38,
+        "neg": 16.08,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 8.75,
-        "neu": 78.95,
-        "neg": 12.3,
+        "pos": 7.51,
+        "neu": 78.38,
+        "neg": 14.11,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 9.6,
-        "neu": 83.86,
-        "neg": 6.54,
+        "pos": 10.29,
+        "neu": 84.05,
+        "neg": 5.65,
         "count": 20
       },
       {
@@ -4628,122 +4628,122 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -17,
+          "name": "Communication",
+          "bias": -14,
           "count": 1
         },
         {
-          "name": "Real Estate",
-          "bias": 6.87,
-          "count": 3
-        },
-        {
-          "name": "Technology",
-          "bias": -6.76,
-          "count": 129
-        },
-        {
-          "name": "Energy",
-          "bias": -5.02,
-          "count": 9
-        },
-        {
-          "name": "Finance",
-          "bias": -3.48,
-          "count": 18
-        },
-        {
           "name": "Healthcare",
-          "bias": -2.4,
+          "bias": -10.3,
           "count": 7
         },
         {
-          "name": "Communication",
-          "bias": 2.15,
+          "name": "Finance",
+          "bias": -9.04,
+          "count": 22
+        },
+        {
+          "name": "Real Estate",
+          "bias": 7.35,
           "count": 2
         },
         {
+          "name": "Energy",
+          "bias": -5.32,
+          "count": 11
+        },
+        {
           "name": "Materials",
-          "bias": 2.15,
+          "bias": 4.9,
+          "count": 1
+        },
+        {
+          "name": "Technology",
+          "bias": -3.29,
+          "count": 126
+        },
+        {
+          "name": "Utilities",
+          "bias": -2.9,
           "count": 2
         }
       ],
       "pos": [
         {
           "name": "Real Estate",
-          "bias": 6.87,
-          "count": 3
-        },
-        {
-          "name": "Communication",
-          "bias": 2.15,
+          "bias": 7.35,
           "count": 2
         },
         {
           "name": "Materials",
-          "bias": 2.15,
-          "count": 2
+          "bias": 4.9,
+          "count": 1
         }
       ],
       "neu": [
         {
-          "name": "Finance",
-          "bias": -3.48,
-          "count": 18
+          "name": "Energy",
+          "bias": -5.32,
+          "count": 11
         },
         {
-          "name": "Healthcare",
-          "bias": -2.4,
-          "count": 7
+          "name": "Technology",
+          "bias": -3.29,
+          "count": 126
+        },
+        {
+          "name": "Utilities",
+          "bias": -2.9,
+          "count": 2
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -17,
+          "name": "Communication",
+          "bias": -14,
           "count": 1
         },
         {
-          "name": "Technology",
-          "bias": -6.76,
-          "count": 129
+          "name": "Healthcare",
+          "bias": -10.3,
+          "count": 7
         },
         {
-          "name": "Energy",
-          "bias": -5.02,
-          "count": 9
+          "name": "Finance",
+          "bias": -9.04,
+          "count": 22
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-19T02:56:46.631Z",
-          "pos": 2,
+          "label": "2026-10-19T10:34:38.852Z",
+          "pos": 4,
+          "neu": 83,
+          "neg": 13,
+          "count": 15
+        },
+        {
+          "label": "2026-10-19T11:34:38.852Z",
+          "pos": 12,
           "neu": 81,
-          "neg": 16,
+          "neg": 7,
           "count": 7
         },
         {
-          "label": "2026-10-19T03:56:46.631Z",
+          "label": "2026-10-19T12:34:38.852Z",
           "pos": 8,
-          "neu": 73,
-          "neg": 19,
-          "count": 9
+          "neu": 81,
+          "neg": 11,
+          "count": 24
         },
         {
-          "label": "2026-10-19T04:56:46.631Z",
-          "pos": 6,
-          "neu": 62,
-          "neg": 32,
-          "count": 3
-        },
-        {
-          "label": "2026-10-19T05:56:46.631Z",
-          "pos": 7,
-          "neu": 82,
-          "neg": 12,
-          "count": 4
+          "label": "2026-10-19T13:34:38.852Z",
+          "pos": 9,
+          "neu": 77,
+          "neg": 15,
+          "count": 29
         }
       ]
     }
@@ -4951,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Trump unveils plan to transform historic DC golf course as judge tees off",
-        "link": "https://www.foxnews.com/politics/trump-unveils-plan-transform-historic-dc-golf-course-judge-tees-off",
+        "title": "DOJ official defends Trump's noncitizen voter probe on '60 Minutes,' accuses show of editing out her answers",
+        "link": "https://www.foxnews.com/media/doj-official-defends-trumps-noncitizen-voter-probe-60-minutes-accuses-show-editing-out-her-answers",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump announced Tom Fazio will redesign East Potomac Golf Links into a championship venue capable of hosting the U.S. Open.",
+        "description": "Harmeet Dhillon pushed back on claims the Trump administration is sowing election distrust, saying thousands of noncitizen voting cases are under review.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T23:22:18.000Z",
+        "publishedAt": "2026-10-19T14:27:02.000Z",
         "sentiment": {
-          "posP": 14.7,
-          "negP": 0,
-          "neuP": 85.3,
-          "label": "positive",
-          "confidence": 0.67
+          "posP": 0,
+          "negP": 12.3,
+          "neuP": 87.7,
+          "label": "negative",
+          "confidence": 0.64
         },
         "category": "usa"
       },
       {
-        "title": "Trump Hits Campaign Trail as White House Turmoil Weighs on GOP Midterm Prospects",
-        "link": "https://www.nytimes.com/2026/10/18/us/trump-midterm-elections-republicans-approval-ratings.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "LEE CARTER: 2026 election could all come down to just one type of voter",
+        "link": "https://www.foxnews.com/opinion/lee-carter-2026-election-come-down-one-type-voter",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "As Trump held rallies around the nation, his White House was consumed by dramas that reinforce how his presidency has become a drag on his party’s prospects in the midterms.",
+        "description": "Trump won voters who skipped 2020 and 2022 by 14 points, suggesting voter turnout could matter far more than party persuasion in the 2026 midterms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-19T01:15:46.000Z",
+        "publishedAt": "2026-10-19T13:00:34.000Z",
         "sentiment": {
-          "posP": 9.4,
-          "negP": 9.4,
-          "neuP": 81.2,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 17.8,
+          "negP": 0,
+          "neuP": 82.2,
+          "label": "positive",
+          "confidence": 0.78
         },
         "category": "usa"
       }
@@ -5193,62 +5193,62 @@
         "category": "world"
       },
       {
-        "title": "Trump unveils plan to transform historic DC golf course as judge tees off",
-        "link": "https://www.foxnews.com/politics/trump-unveils-plan-transform-historic-dc-golf-course-judge-tees-off",
+        "title": "DOJ official defends Trump's noncitizen voter probe on '60 Minutes,' accuses show of editing out her answers",
+        "link": "https://www.foxnews.com/media/doj-official-defends-trumps-noncitizen-voter-probe-60-minutes-accuses-show-editing-out-her-answers",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump announced Tom Fazio will redesign East Potomac Golf Links into a championship venue capable of hosting the U.S. Open.",
+        "description": "Harmeet Dhillon pushed back on claims the Trump administration is sowing election distrust, saying thousands of noncitizen voting cases are under review.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T23:22:18.000Z",
+        "publishedAt": "2026-10-19T14:27:02.000Z",
         "sentiment": {
-          "posP": 14.7,
+          "posP": 0,
+          "negP": 12.3,
+          "neuP": 87.7,
+          "label": "negative",
+          "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
+        "title": "LEE CARTER: 2026 election could all come down to just one type of voter",
+        "link": "https://www.foxnews.com/opinion/lee-carter-2026-election-come-down-one-type-voter",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump won voters who skipped 2020 and 2022 by 14 points, suggesting voter turnout could matter far more than party persuasion in the 2026 midterms.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-19T13:00:34.000Z",
+        "sentiment": {
+          "posP": 17.8,
           "negP": 0,
-          "neuP": 85.3,
+          "neuP": 82.2,
           "label": "positive",
-          "confidence": 0.67
+          "confidence": 0.78
         },
         "category": "usa"
       },
       {
-        "title": "Trump Hits Campaign Trail as White House Turmoil Weighs on GOP Midterm Prospects",
-        "link": "https://www.nytimes.com/2026/10/18/us/trump-midterm-elections-republicans-approval-ratings.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump heads to unlikely battleground as GOP fights to hold Senate and more top headlines",
+        "link": "https://www.foxnews.com/us/trump-heads-unlikely-battleground-gop-hold-senate-more-top-headlines",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "As Trump held rallies around the nation, his White House was consumed by dramas that reinforce how his presidency has become a drag on his party’s prospects in the midterms.",
+        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-19T01:15:46.000Z",
+        "publishedAt": "2026-10-19T11:25:37.000Z",
         "sentiment": {
-          "posP": 9.4,
-          "negP": 9.4,
-          "neuP": 81.2,
+          "posP": 12.2,
+          "negP": 12.7,
+          "neuP": 75.1,
           "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Outlines Rapid Plan to Close and Overhaul D.C. Golf Course",
-        "link": "https://www.nytimes.com/2026/10/18/us/politics/trump-golf-course-east-potomac-washington.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The plan to begin work transforming the course in four weeks injected fresh urgency into a federal lawsuit opposing changes to East Potomac Golf Links.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-19T02:55:13.000Z",
-        "sentiment": {
-          "posP": 6.2,
-          "negP": 5.1,
-          "neuP": 88.7,
-          "label": "neutral",
-          "confidence": 0.1
+          "confidence": 0.06
         },
         "category": "usa"
       },
@@ -5273,187 +5273,107 @@
         "category": "usa"
       },
       {
-        "title": "Zelensky Says Trump Risks ‘Historic Mistake’ If He Backs Russia",
-        "link": "https://www.nytimes.com/2026/10/18/world/europe/ukraine-starshield-russia-war.html",
+        "title": "Trump Is Pushing Ukraine to Surrender to Russia, Zelensky Says",
+        "link": "https://www.nytimes.com/2026/10/19/world/europe/trump-zelensky-putin-ukraine-war.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Volodymyr Zelensky of Ukraine pressed Sunday for more information on possible restrictions to Starshield, a U.S.-provided satellite internet service used by the Ukrainian military.",
+        "description": "President Volodymyr Zelensky said he didn’t want to believe that Washington wanted an end to the war at Ukraine’s expense. “But that’s how it looks,” he added.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T14:30:49.000Z",
+        "publishedAt": "2026-10-19T12:39:50.000Z",
+        "sentiment": {
+          "posP": 3.2,
+          "negP": 9.7,
+          "neuP": 87.1,
+          "label": "negative",
+          "confidence": 0.56
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Will Trump’s Endorsement of Netanyahu Fire Up His Campaign or Fizzle?",
+        "link": "https://www.nytimes.com/2026/10/19/world/middleeast/trump-netanyahu-endorsement-election.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump said Benjamin Netanyahu was a “Great Warrior,” as he faces a tough re-election bid for prime minister. But the Trump brand is not what it once was in Israel, analysts say.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-19T14:21:13.000Z",
+        "sentiment": {
+          "posP": 5.1,
+          "negP": 8.6,
+          "neuP": 86.3,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's unexpected move to stop new Russian sanctions",
+        "link": "https://www.cbsnews.com/video/trumps-unexpected-move-to-stop-new-russian-sanctions/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump waived sanctions on Russia that were expected to take effect on Sunday, including those on Moscow's oil sector. CBS News' Weijia Jiang reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-19T13:52:42.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 9.3,
-          "neuP": 90.7,
+          "negP": 6.4,
+          "neuP": 93.6,
           "label": "negative",
-          "confidence": 0.32
+          "confidence": 0.3
         },
         "category": "usa"
       },
       {
-        "title": "Some MAHA Voters in Arizona Question Their G.O.P. Ties",
-        "link": "https://www.nytimes.com/2026/10/18/us/maha-voters-republican-split.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "MAHA’s alliance with MAGA had energized voters to support President Trump’s 2024 campaign. Now, some aren’t so sure.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T09:00:18.000Z",
-        "sentiment": {
-          "posP": 27.3,
-          "negP": 0,
-          "neuP": 72.7,
-          "label": "positive",
-          "confidence": 0.84
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Migrants From Ukraine and Sudan to Keep Deportation Protections for Now",
-        "link": "https://www.nytimes.com/2026/10/18/us/politics/ukraine-sudan-tps-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Temporary Protected Status for the two countries was set to expire on Monday. The Trump administration said an announcement would be made “at the appropriate time.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T20:14:32.000Z",
-        "sentiment": {
-          "posP": 7.5,
-          "negP": 0,
-          "neuP": 92.5,
-          "label": "positive",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump accuses Zelenskyy of not wanting to end the war with Russia",
+        "title": "Trump says Zelenskyy doesn't want to end Russia's war on Ukraine",
         "link": "https://www.cbsnews.com/news/ukraine-russia-drone-st-petersburg-oil-facilites/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "As Ukraine struck more Russian oil infrastructure, President Trump accused Zelensky of not wanting to end the war with RUssia",
+        "description": "As Ukraine and Russia continue trading strikes, Trump accuses Zelenskyy of not wanting to end the war sparked by Putin's ongoing full-scale invasion.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-19T05:47:26.000Z",
+        "publishedAt": "2026-10-19T13:15:23.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 34.8,
-          "neuP": 65.2,
+          "negP": 32.4,
+          "neuP": 67.6,
           "label": "negative",
           "confidence": 0.92
         },
         "category": "usa"
       },
       {
-        "title": "Could Kansas elect its first Democrat to Senate since 1932?",
-        "link": "https://www.cbsnews.com/video/inside-kansas-unexpected-toss-up-in-midterms/",
+        "title": "Trump's feud with Zelenskyy worsens after U.S. moves to help Putin",
+        "link": "https://www.cbsnews.com/video/trumps-feud-with-zelenskyy-worsens-after-us-moves-to-help-putin/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump will return to the campaign trail on Monday in Kansas, a red state, with the midterms fast approaching. Polls there show Republican Sen. Roger Marshall one point behind Democrat Adam Hamilton. Caitlin Huey Burns has more.",
+        "description": "Ukrainian President Volodymyr Zelenskyy is slamming President Trump's latest moves that appear to benefit Russian President Vladimir Putin in the Russia-Ukraine war. CBS News' Aaron Navarro reports, and Michael Bociurkiw, a nonresident senior fellow at the Atlantic Council's Eurasia Center, joins with more insight.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-19T00:59:29.000Z",
+        "publishedAt": "2026-10-19T13:13:48.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump defends shifting positions on Ukraine, touts progress with Russia",
-        "link": "https://www.cbsnews.com/video/trump-defends-shifting-positions-on-ukraine/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "As President Trump touted \"great progress\" being made with Russia to end the conflict it started with Ukraine, Ukrainian President Volodymyr Zelenskyy warned that the U.S. siding with Russia would be a \"historic mistake.\" Taurean Small reports from West Palm Beach, Florida.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-19T00:42:22.000Z",
-        "sentiment": {
-          "posP": 16.1,
-          "negP": 11.1,
-          "neuP": 72.8,
-          "label": "positive",
-          "confidence": 0.72
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Poll: Americans are anxious, pessimistic and deeply unhappy with Trump ahead of the midterms",
-        "link": "https://www.nbcnews.com/politics/2026-election/poll-americans-anxious-pessimistic-deeply-unhappy-trump-ahead-midterms-rcna603064",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Weeks ahead of Election Day, 71% of U.S. adults think the country is on the “wrong track.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T13:00:41.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 21.3,
-          "neuP": 78.7,
+          "posP": 8.9,
+          "negP": 14.7,
+          "neuP": 76.4,
           "label": "negative",
-          "confidence": 0.76
+          "confidence": 0.57
         },
         "category": "usa"
       },
       {
-        "title": "Obama calls Trump officials’ investigation of Ilhan Omar ‘appalling’",
-        "link": "https://www.nbcnews.com/politics/politics-news/obama-calls-trump-officials-investigation-ilhan-omar-appalling-rcna604235",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The former president posted a lengthy statement calling President Donald Trump’s treatment of Ilhan Omar a “transparent” effort to intimidate her.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-19T00:34:33.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 6.3,
-          "neuP": 93.7,
-          "label": "negative",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump announces plans to renovate D.C. golf course amid legal battle",
-        "link": "https://www.nbcnews.com/politics/trump-administration/trump-announces-plans-renovate-dc-golf-course-legal-battle-rcna604147",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The announcement comes after a judge required the government to provide three days’ notice before making “irreparable modification” to the golf course.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T18:09:06.000Z",
-        "sentiment": {
-          "posP": 4.4,
-          "negP": 7.6,
-          "neuP": 88,
-          "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Putin reportedly suggests summit with Trump and Xi to decide fate of Ukraine",
+        "title": "Putin reportedly proposes three-way summit with Trump and Xi on Ukraine war — without Zelenskyy",
         "link": "https://www.cnbc.com/2026/10/19/putin-trump-xi-ukraine-war-energy.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
@@ -5462,43 +5382,123 @@
         "description": "The report comes amid mounting tensions between Ukraine and the United States, its largest military backer.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-19T03:56:03.000Z",
+        "publishedAt": "2026-10-19T10:36:47.000Z",
         "sentiment": {
-          "posP": 8.6,
-          "negP": 8.3,
-          "neuP": 83.1,
+          "posP": 7.7,
+          "negP": 18.1,
+          "neuP": 74.2,
+          "label": "negative",
+          "confidence": 0.59
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's student loan overhaul could lead to more bankruptcy filings, former judge says",
+        "link": "https://www.cnbc.com/2026/10/17/trump-student-loans-bankruptcy.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "After nearly three decades as a bankruptcy judge, Sarah Sharer Curley writes about the legal process in her new book, \"The Price of Forgiveness.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-17T13:30:01.000Z",
+        "sentiment": {
+          "posP": 4.1,
+          "negP": 0,
+          "neuP": 95.9,
           "label": "neutral",
-          "confidence": 0.03
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
+          "label": "neutral",
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.67,
-      "neu": 85.5,
-      "neg": 7.83,
-      "count": 30
+      "pos": 6.34,
+      "neu": 84.56,
+      "neg": 9.1,
+      "count": 26
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 10.41,
-        "neu": 85.11,
-        "neg": 4.47,
-        "count": 8
-      },
-      {
-        "source": "NBC News",
-        "pos": 5.2,
-        "neu": 84.5,
-        "neg": 10.3,
+        "pos": 8.24,
+        "neu": 85.7,
+        "neg": 6.06,
         "count": 5
       },
       {
+        "source": "Fox News",
+        "pos": 9.75,
+        "neu": 84,
+        "neg": 6.25,
+        "count": 4
+      },
+      {
         "source": "CBS News",
-        "pos": 5.03,
-        "neu": 80,
-        "neg": 14.97,
+        "pos": 3.23,
+        "neu": 79.9,
+        "neg": 16.88,
         "count": 4
       },
       {
@@ -5516,11 +5516,11 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 11.85,
-        "neu": 88.15,
-        "neg": 0,
-        "count": 2
+        "source": "NBC News",
+        "pos": 8.27,
+        "neu": 83.03,
+        "neg": 8.7,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5528,43 +5528,29 @@
         "neu": 88,
         "neg": 9,
         "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 5.3,
-        "neu": 91.1,
-        "neg": 3.6,
-        "count": 2
       }
     ],
     "topicSentiment": [
       {
-        "topic": "Campaign / Politics",
-        "pos": 7.21,
-        "neu": 84.16,
-        "neg": 8.63,
+        "topic": "Foreign Policy",
+        "pos": 5.82,
+        "neu": 82.04,
+        "neg": 12.14,
         "count": 10
       },
       {
-        "topic": "Foreign Policy",
-        "pos": 7.01,
-        "neu": 81.48,
-        "neg": 11.51,
+        "topic": "Campaign / Politics",
+        "pos": 7.83,
+        "neu": 83.62,
+        "neg": 8.54,
         "count": 9
       },
       {
         "topic": "Policy",
-        "pos": 5.13,
-        "neu": 91.38,
-        "neg": 3.5,
+        "pos": 3.25,
+        "neu": 90.17,
+        "neg": 6.58,
         "count": 4
-      },
-      {
-        "topic": "Legal",
-        "pos": 8.43,
-        "neu": 87.33,
-        "neg": 4.23,
-        "count": 3
       },
       {
         "topic": "Economy",
@@ -5574,11 +5560,11 @@
         "count": 2
       },
       {
-        "topic": "Public Statements",
-        "pos": 0,
-        "neu": 96.85,
-        "neg": 3.15,
-        "count": 2
+        "topic": "Legal",
+        "pos": 4.1,
+        "neu": 95.9,
+        "neg": 0,
+        "count": 1
       }
     ]
   },
@@ -5605,28 +5591,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-19T02:56:46.633Z",
+        "label": "2026-10-19T10:34:38.855Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-19T03:56:46.633Z",
+        "label": "2026-10-19T11:34:38.855Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-19T04:56:46.633Z",
+        "label": "2026-10-19T12:34:38.855Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-19T05:56:46.633Z",
+        "label": "2026-10-19T13:34:38.855Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5621,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-19T02:56:46.633Z",
+        "label": "2026-10-19T10:34:38.855Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-19T03:56:46.633Z",
+        "label": "2026-10-19T11:34:38.855Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-19T04:56:46.633Z",
+        "label": "2026-10-19T12:34:38.855Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-19T05:56:46.633Z",
+        "label": "2026-10-19T13:34:38.855Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5722,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-19T06:56:46.634Z",
+    "generatedAt": "2026-10-19T14:34:38.856Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5857,8 +5843,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 170,
-      "potusArticles": 30,
+      "usaArticles": 168,
+      "potusArticles": 26,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
