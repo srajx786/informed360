@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-19T01:48:36.897Z",
+  "generatedAt": "2026-10-19T06:56:46.629Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 167,
-    "potusArticles": 33
+    "usaArticles": 170,
+    "potusArticles": 30
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-18T21:48:36.897Z",
+          "label": "2026-10-19T02:56:46.629Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T22:48:36.897Z",
+          "label": "2026-10-19T03:56:46.629Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T23:48:36.897Z",
+          "label": "2026-10-19T04:56:46.629Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-19T00:48:36.897Z",
+          "label": "2026-10-19T05:56:46.629Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-18T21:48:36.897Z",
+          "label": "2026-10-19T02:56:46.629Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T22:48:36.897Z",
+          "label": "2026-10-19T03:56:46.629Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-18T23:48:36.897Z",
+          "label": "2026-10-19T04:56:46.629Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-19T00:48:36.897Z",
+          "label": "2026-10-19T05:56:46.629Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.61,
-      "neu": 81.07,
-      "neg": 11.31,
-      "count": 167
+      "pos": 7.47,
+      "neu": 79.73,
+      "neg": 12.8,
+      "count": 170
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.75,
-        "neu": 83.67,
-        "neg": 8.58,
-        "count": 39
+        "pos": 7.35,
+        "neu": 80.44,
+        "neg": 12.21,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 9.12,
-        "neu": 77.98,
-        "neg": 12.9,
+        "pos": 9.85,
+        "neu": 75.06,
+        "neg": 15.09,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.1,
-        "neu": 77.73,
-        "neg": 17.17,
+        "pos": 3.35,
+        "neu": 79.29,
+        "neg": 17.36,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.53,
-        "neu": 81.67,
-        "neg": 10.8,
+        "pos": 8.75,
+        "neu": 78.95,
+        "neg": 12.3,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.14,
-        "neu": 83.85,
-        "neg": 6,
+        "pos": 9.6,
+        "neu": 83.86,
+        "neg": 6.54,
         "count": 20
       },
       {
@@ -4629,23 +4629,33 @@
       "rows": [
         {
           "name": "Utilities",
-          "bias": -20.95,
-          "count": 2
+          "bias": -17,
+          "count": 1
         },
         {
           "name": "Real Estate",
-          "bias": 7.35,
-          "count": 2
+          "bias": 6.87,
+          "count": 3
         },
         {
           "name": "Technology",
-          "bias": -4.88,
-          "count": 123
+          "bias": -6.76,
+          "count": 129
+        },
+        {
+          "name": "Energy",
+          "bias": -5.02,
+          "count": 9
+        },
+        {
+          "name": "Finance",
+          "bias": -3.48,
+          "count": 18
         },
         {
           "name": "Healthcare",
-          "bias": -3.55,
-          "count": 8
+          "bias": -2.4,
+          "count": 7
         },
         {
           "name": "Communication",
@@ -4656,23 +4666,13 @@
           "name": "Materials",
           "bias": 2.15,
           "count": 2
-        },
-        {
-          "name": "Finance",
-          "bias": -1.81,
-          "count": 22
-        },
-        {
-          "name": "Energy",
-          "bias": 0.64,
-          "count": 10
         }
       ],
       "pos": [
         {
           "name": "Real Estate",
-          "bias": 7.35,
-          "count": 2
+          "bias": 6.87,
+          "count": 3
         },
         {
           "name": "Communication",
@@ -4688,62 +4688,62 @@
       "neu": [
         {
           "name": "Finance",
-          "bias": -1.81,
-          "count": 22
+          "bias": -3.48,
+          "count": 18
         },
         {
-          "name": "Energy",
-          "bias": 0.64,
-          "count": 10
+          "name": "Healthcare",
+          "bias": -2.4,
+          "count": 7
         }
       ],
       "neg": [
         {
           "name": "Utilities",
-          "bias": -20.95,
-          "count": 2
+          "bias": -17,
+          "count": 1
         },
         {
           "name": "Technology",
-          "bias": -4.88,
-          "count": 123
+          "bias": -6.76,
+          "count": 129
         },
         {
-          "name": "Healthcare",
-          "bias": -3.55,
-          "count": 8
+          "name": "Energy",
+          "bias": -5.02,
+          "count": 9
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-18T21:48:36.900Z",
-          "pos": 5,
-          "neu": 79,
+          "label": "2026-10-19T02:56:46.631Z",
+          "pos": 2,
+          "neu": 81,
           "neg": 16,
-          "count": 11
+          "count": 7
         },
         {
-          "label": "2026-10-18T22:48:36.900Z",
+          "label": "2026-10-19T03:56:46.631Z",
           "pos": 8,
-          "neu": 80,
-          "neg": 12,
-          "count": 14
+          "neu": 73,
+          "neg": 19,
+          "count": 9
         },
         {
-          "label": "2026-10-18T23:48:36.900Z",
-          "pos": 8,
-          "neu": 74,
-          "neg": 17,
-          "count": 15
+          "label": "2026-10-19T04:56:46.631Z",
+          "pos": 6,
+          "neu": 62,
+          "neg": 32,
+          "count": 3
         },
         {
-          "label": "2026-10-19T00:48:36.900Z",
-          "pos": 5,
+          "label": "2026-10-19T05:56:46.631Z",
+          "pos": 7,
           "neu": 82,
-          "neg": 13,
-          "count": 16
+          "neg": 12,
+          "count": 4
         }
       ]
     }
@@ -4971,22 +4971,22 @@
         "category": "usa"
       },
       {
-        "title": "MIKE DAVIS: Sen Slotkin reveals her insidious scheme to target young conservatives",
-        "link": "https://www.foxnews.com/opinion/mike-davis-sen-slotkin-reveals-insidious-scheme-target-young-conservatives",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Hits Campaign Trail as White House Turmoil Weighs on GOP Midterm Prospects",
+        "link": "https://www.nytimes.com/2026/10/18/us/trump-midterm-elections-republicans-approval-ratings.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Elissa Slotkin's University of Chicago remarks about prosecuting Trump officials and sending a \"deterrence message\" spark demands for investigations.",
+        "description": "As Trump held rallies around the nation, his White House was consumed by dramas that reinforce how his presidency has become a drag on his party’s prospects in the midterms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T23:02:31.000Z",
+        "publishedAt": "2026-10-19T01:15:46.000Z",
         "sentiment": {
-          "posP": 6.1,
-          "negP": 0,
-          "neuP": 93.9,
-          "label": "positive",
-          "confidence": 0.23
+          "posP": 9.4,
+          "negP": 9.4,
+          "neuP": 81.2,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       }
@@ -5213,26 +5213,6 @@
         "category": "usa"
       },
       {
-        "title": "MIKE DAVIS: Sen Slotkin reveals her insidious scheme to target young conservatives",
-        "link": "https://www.foxnews.com/opinion/mike-davis-sen-slotkin-reveals-insidious-scheme-target-young-conservatives",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Elissa Slotkin's University of Chicago remarks about prosecuting Trump officials and sending a \"deterrence message\" spark demands for investigations.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-18T23:02:31.000Z",
-        "sentiment": {
-          "posP": 6.1,
-          "negP": 0,
-          "neuP": 93.9,
-          "label": "positive",
-          "confidence": 0.23
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump Hits Campaign Trail as White House Turmoil Weighs on GOP Midterm Prospects",
         "link": "https://www.nytimes.com/2026/10/18/us/trump-midterm-elections-republicans-approval-ratings.html",
         "source": "NYT",
@@ -5262,7 +5242,7 @@
         "description": "The plan to begin work transforming the course in four weeks injected fresh urgency into a federal lawsuit opposing changes to East Potomac Golf Links.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T19:11:55.000Z",
+        "publishedAt": "2026-10-19T02:55:13.000Z",
         "sentiment": {
           "posP": 6.2,
           "negP": 5.1,
@@ -5322,7 +5302,7 @@
         "description": "MAHA’s alliance with MAGA had energized voters to support President Trump’s 2024 campaign. Now, some aren’t so sure.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-18T09:00:17.000Z",
+        "publishedAt": "2026-10-18T09:00:18.000Z",
         "sentiment": {
           "posP": 27.3,
           "negP": 0,
@@ -5353,6 +5333,26 @@
         "category": "usa"
       },
       {
+        "title": "Trump accuses Zelenskyy of not wanting to end the war with Russia",
+        "link": "https://www.cbsnews.com/news/ukraine-russia-drone-st-petersburg-oil-facilites/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "As Ukraine struck more Russian oil infrastructure, President Trump accused Zelensky of not wanting to end the war with RUssia",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-19T05:47:26.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 34.8,
+          "neuP": 65.2,
+          "label": "negative",
+          "confidence": 0.92
+        },
+        "category": "usa"
+      },
+      {
         "title": "Could Kansas elect its first Democrat to Senate since 1932?",
         "link": "https://www.cbsnews.com/video/inside-kansas-unexpected-toss-up-in-midterms/",
         "source": "CBS News",
@@ -5369,26 +5369,6 @@
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he's \"negotiating Peace\" as Russia, Ukraine trade strikes",
-        "link": "https://www.cbsnews.com/news/ukraine-russia-drone-st-petersburg-oil-facilites/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The strikes came as tensions between Ukraine and Washington deepened.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-19T00:45:08.000Z",
-        "sentiment": {
-          "posP": 12.9,
-          "negP": 28.3,
-          "neuP": 58.8,
-          "label": "negative",
-          "confidence": 0.49
         },
         "category": "usa"
       },
@@ -5471,13 +5451,33 @@
           "confidence": 0.27
         },
         "category": "usa"
+      },
+      {
+        "title": "Putin reportedly suggests summit with Trump and Xi to decide fate of Ukraine",
+        "link": "https://www.cnbc.com/2026/10/19/putin-trump-xi-ukraine-war-energy.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The report comes amid mounting tensions between Ukraine and the United States, its largest military backer.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-19T03:56:03.000Z",
+        "sentiment": {
+          "posP": 8.6,
+          "negP": 8.3,
+          "neuP": 83.1,
+          "label": "neutral",
+          "confidence": 0.03
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.76,
-      "neu": 86.43,
-      "neg": 6.81,
-      "count": 33
+      "pos": 6.67,
+      "neu": 85.5,
+      "neg": 7.83,
+      "count": 30
     },
     "sourceLeaderboard": [
       {
@@ -5489,16 +5489,16 @@
       },
       {
         "source": "NBC News",
-        "pos": 4.3,
-        "neu": 88.89,
-        "neg": 6.81,
-        "count": 7
+        "pos": 5.2,
+        "neu": 84.5,
+        "neg": 10.3,
+        "count": 5
       },
       {
         "source": "CBS News",
-        "pos": 8.25,
-        "neu": 78.4,
-        "neg": 13.35,
+        "pos": 5.03,
+        "neu": 80,
+        "neg": 14.97,
         "count": 4
       },
       {
@@ -5517,10 +5517,10 @@
       },
       {
         "source": "Fox News",
-        "pos": 9.93,
-        "neu": 90.07,
+        "pos": 11.85,
+        "neu": 88.15,
         "neg": 0,
-        "count": 3
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5540,17 +5540,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.55,
-        "neu": 85.6,
-        "neg": 7.85,
-        "count": 11
+        "pos": 7.21,
+        "neu": 84.16,
+        "neg": 8.63,
+        "count": 10
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7.89,
-        "neu": 83.99,
-        "neg": 8.13,
-        "count": 8
+        "pos": 7.01,
+        "neu": 81.48,
+        "neg": 11.51,
+        "count": 9
       },
       {
         "topic": "Policy",
@@ -5561,24 +5561,24 @@
       },
       {
         "topic": "Legal",
-        "pos": 7.35,
-        "neu": 89.47,
-        "neg": 3.17,
-        "count": 4
+        "pos": 8.43,
+        "neu": 87.33,
+        "neg": 4.23,
+        "count": 3
       },
       {
         "topic": "Economy",
-        "pos": 10.63,
-        "neu": 75.93,
-        "neg": 13.43,
-        "count": 3
+        "pos": 9.5,
+        "neu": 84.5,
+        "neg": 6,
+        "count": 2
       },
       {
         "topic": "Public Statements",
-        "pos": 2.03,
-        "neu": 95.87,
-        "neg": 2.1,
-        "count": 3
+        "pos": 0,
+        "neu": 96.85,
+        "neg": 3.15,
+        "count": 2
       }
     ]
   },
@@ -5605,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-18T21:48:36.901Z",
+        "label": "2026-10-19T02:56:46.633Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T22:48:36.901Z",
+        "label": "2026-10-19T03:56:46.633Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T23:48:36.901Z",
+        "label": "2026-10-19T04:56:46.633Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-19T00:48:36.901Z",
+        "label": "2026-10-19T05:56:46.633Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-18T21:48:36.902Z",
+        "label": "2026-10-19T02:56:46.633Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T22:48:36.902Z",
+        "label": "2026-10-19T03:56:46.633Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-18T23:48:36.902Z",
+        "label": "2026-10-19T04:56:46.633Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-19T00:48:36.902Z",
+        "label": "2026-10-19T05:56:46.633Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-19T01:48:36.903Z",
+    "generatedAt": "2026-10-19T06:56:46.634Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5857,8 +5857,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 167,
-      "potusArticles": 33,
+      "usaArticles": 170,
+      "potusArticles": 30,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
