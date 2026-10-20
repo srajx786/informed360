@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-20T02:08:47.168Z",
+  "generatedAt": "2026-10-20T13:02:26.185Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 169,
-    "potusArticles": 35
+    "usaArticles": 170,
+    "potusArticles": 41
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-19T22:08:47.168Z",
+          "label": "2026-10-20T09:02:26.185Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-19T23:08:47.168Z",
+          "label": "2026-10-20T10:02:26.185Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T00:08:47.168Z",
+          "label": "2026-10-20T11:02:26.185Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T01:08:47.168Z",
+          "label": "2026-10-20T12:02:26.185Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-19T22:08:47.168Z",
+          "label": "2026-10-20T09:02:26.185Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-19T23:08:47.168Z",
+          "label": "2026-10-20T10:02:26.185Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T00:08:47.168Z",
+          "label": "2026-10-20T11:02:26.185Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T01:08:47.168Z",
+          "label": "2026-10-20T12:02:26.185Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 6.1,
-      "neu": 81.89,
-      "neg": 12,
-      "count": 169
+      "pos": 6.68,
+      "neu": 81.51,
+      "neg": 11.81,
+      "count": 170
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.93,
-        "neu": 82.86,
-        "neg": 9.21,
-        "count": 41
+        "pos": 9.46,
+        "neu": 80.19,
+        "neg": 10.35,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 5.88,
-        "neu": 79.58,
-        "neg": 14.54,
+        "pos": 6.92,
+        "neu": 80.44,
+        "neg": 12.65,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 2.38,
-        "neu": 82.22,
-        "neg": 15.4,
+        "pos": 3.47,
+        "neu": 81.94,
+        "neg": 14.58,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 4.07,
-        "neu": 81.52,
-        "neg": 14.41,
+        "pos": 4.73,
+        "neu": 82.86,
+        "neg": 12.41,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.89,
-        "neu": 84.47,
-        "neg": 6.64,
+        "pos": 6.95,
+        "neu": 84.37,
+        "neg": 8.69,
         "count": 20
       },
       {
@@ -4628,122 +4628,122 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Materials",
-          "bias": -17.2,
-          "count": 1
-        },
-        {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
-        },
-        {
-          "name": "Healthcare",
-          "bias": -8.78,
-          "count": 6
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -8.1,
-          "count": 2
-        },
-        {
           "name": "Real Estate",
-          "bias": 7.35,
+          "bias": -20.6,
           "count": 2
-        },
-        {
-          "name": "Technology",
-          "bias": -5.37,
-          "count": 125
         },
         {
           "name": "Communication",
-          "bias": -5.18,
+          "bias": -14,
+          "count": 1
+        },
+        {
+          "name": "Materials",
+          "bias": -12.25,
+          "count": 2
+        },
+        {
+          "name": "Utilities",
+          "bias": -10.9,
+          "count": 3
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 7,
           "count": 4
         },
         {
-          "name": "Finance",
-          "bias": -3.99,
-          "count": 15
+          "name": "Technology",
+          "bias": -5.15,
+          "count": 134
         },
         {
           "name": "Energy",
-          "bias": -3.55,
-          "count": 8
+          "bias": -3.72,
+          "count": 16
+        },
+        {
+          "name": "Healthcare",
+          "bias": -3.44,
+          "count": 10
+        },
+        {
+          "name": "Finance",
+          "bias": -1.09,
+          "count": 17
         }
       ],
       "pos": [
         {
-          "name": "Real Estate",
-          "bias": 7.35,
-          "count": 2
+          "name": "Manufacturing",
+          "bias": 7,
+          "count": 4
         }
       ],
       "neu": [
         {
-          "name": "Manufacturing",
-          "bias": -8.1,
-          "count": 2
+          "name": "Utilities",
+          "bias": -10.9,
+          "count": 3
         },
         {
           "name": "Technology",
-          "bias": -5.37,
-          "count": 125
+          "bias": -5.15,
+          "count": 134
         },
         {
-          "name": "Communication",
-          "bias": -5.18,
-          "count": 4
+          "name": "Energy",
+          "bias": -3.72,
+          "count": 16
         }
       ],
       "neg": [
         {
+          "name": "Real Estate",
+          "bias": -20.6,
+          "count": 2
+        },
+        {
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
+        },
+        {
           "name": "Materials",
-          "bias": -17.2,
-          "count": 1
-        },
-        {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
-        },
-        {
-          "name": "Healthcare",
-          "bias": -8.78,
-          "count": 6
+          "bias": -12.25,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-19T22:08:47.170Z",
-          "pos": 5,
+          "label": "2026-10-20T09:02:26.187Z",
+          "pos": 2,
           "neu": 88,
-          "neg": 7,
-          "count": 11
+          "neg": 11,
+          "count": 13
         },
         {
-          "label": "2026-10-19T23:08:47.170Z",
-          "pos": 3,
-          "neu": 82,
-          "neg": 15,
-          "count": 25
+          "label": "2026-10-20T10:02:26.187Z",
+          "pos": 6,
+          "neu": 76,
+          "neg": 18,
+          "count": 13
         },
         {
-          "label": "2026-10-20T00:08:47.170Z",
+          "label": "2026-10-20T11:02:26.187Z",
           "pos": 5,
-          "neu": 82,
-          "neg": 14,
-          "count": 16
+          "neu": 83,
+          "neg": 12,
+          "count": 14
         },
         {
-          "label": "2026-10-20T01:08:47.170Z",
-          "pos": 3,
-          "neu": 81,
-          "neg": 16,
-          "count": 9
+          "label": "2026-10-20T12:02:26.187Z",
+          "pos": 8,
+          "neu": 82,
+          "neg": 10,
+          "count": 19
         }
       ]
     }
@@ -4951,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Elissa Slotkin calls backlash to threat of prosecution comments 'manufactured outrage'",
-        "link": "https://www.foxnews.com/media/elissa-slotkin-calls-backlash-threat-prosecution-comments-manufactured-outrage",
+        "title": "Midwest pro-Trump state could hold key to Republicans' midterm hopes",
+        "link": "https://www.foxnews.com/politics/midwest-pro-trump-state-could-hold-key-republicans-midterm-hopes",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Sen. Elissa Slotkin, D-Mich., dismissed criticism on CNN as \"manufactured outrage\" after her viral remarks about prosecuting Trump administration enablers.",
+        "description": "Tom Emmer warns Iowa GOP supporters that turnout will decide whether House Republicans keep their majority as three districts face tough races.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T01:30:17.000Z",
+        "publishedAt": "2026-10-20T11:00:47.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 32.2,
-          "neuP": 67.8,
-          "label": "negative",
-          "confidence": 0.92
+          "posP": 15.6,
+          "negP": 7.9,
+          "neuP": 76.5,
+          "label": "positive",
+          "confidence": 0.59
         },
         "category": "usa"
       },
       {
-        "title": "JD Vance declines to endorse Netanyahu despite Trump's strong backing",
-        "link": "https://www.foxnews.com/politics/jd-vance-declines-endorse-netanyahu-despite-trumps-strong-backing",
+        "title": "Trump puts fraudsters on notice with $25M whistleblower program offering cash for tips that deliver",
+        "link": "https://www.foxnews.com/politics/trump-puts-fraudsters-notice-25m-whistleblower-program-offering-cash-tips-deliver",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Vice President JD Vance said he will not weigh in on Israel's upcoming election after Trump threw his support behind Netanyahu's reelection bid.",
+        "description": "President Donald Trump and Vice President JD Vance will unveil a $25 million fraud whistleblower program offering up to $30,000 for tips leading to convictions.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T00:45:41.000Z",
+        "publishedAt": "2026-10-20T10:01:04.000Z",
         "sentiment": {
-          "posP": 13.2,
-          "negP": 10,
-          "neuP": 76.8,
-          "label": "positive",
-          "confidence": 0.3
+          "posP": 0,
+          "negP": 16.3,
+          "neuP": 83.7,
+          "label": "negative",
+          "confidence": 0.8
         },
         "category": "usa"
       }
@@ -5193,202 +5193,162 @@
         "category": "world"
       },
       {
-        "title": "Elissa Slotkin calls backlash to threat of prosecution comments 'manufactured outrage'",
-        "link": "https://www.foxnews.com/media/elissa-slotkin-calls-backlash-threat-prosecution-comments-manufactured-outrage",
+        "title": "Midwest pro-Trump state could hold key to Republicans' midterm hopes",
+        "link": "https://www.foxnews.com/politics/midwest-pro-trump-state-could-hold-key-republicans-midterm-hopes",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Sen. Elissa Slotkin, D-Mich., dismissed criticism on CNN as \"manufactured outrage\" after her viral remarks about prosecuting Trump administration enablers.",
+        "description": "Tom Emmer warns Iowa GOP supporters that turnout will decide whether House Republicans keep their majority as three districts face tough races.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T01:30:17.000Z",
+        "publishedAt": "2026-10-20T11:00:47.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 32.2,
-          "neuP": 67.8,
-          "label": "negative",
-          "confidence": 0.92
-        },
-        "category": "usa"
-      },
-      {
-        "title": "JD Vance declines to endorse Netanyahu despite Trump's strong backing",
-        "link": "https://www.foxnews.com/politics/jd-vance-declines-endorse-netanyahu-despite-trumps-strong-backing",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Vice President JD Vance said he will not weigh in on Israel's upcoming election after Trump threw his support behind Netanyahu's reelection bid.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T00:45:41.000Z",
-        "sentiment": {
-          "posP": 13.2,
-          "negP": 10,
-          "neuP": 76.8,
+          "posP": 15.6,
+          "negP": 7.9,
+          "neuP": 76.5,
           "label": "positive",
-          "confidence": 0.3
+          "confidence": 0.59
         },
         "category": "usa"
       },
       {
-        "title": "Kansas man mapped rooftops near Trump speech site, threatened to shoot president: DOJ",
-        "link": "https://www.foxnews.com/us/kansas-man-mapped-rooftops-near-trump-speech-site-threatened-shoot-president-doj",
+        "title": "Trump puts fraudsters on notice with $25M whistleblower program offering cash for tips that deliver",
+        "link": "https://www.foxnews.com/politics/trump-puts-fraudsters-notice-25m-whistleblower-program-offering-cash-tips-deliver",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Jaden Read allegedly posted Facebook threats to shoot President Donald Trump and claimed he mapped rooftops near the planned Wichita, Kansas, speech.",
+        "description": "President Donald Trump and Vice President JD Vance will unveil a $25 million fraud whistleblower program offering up to $30,000 for tips leading to convictions.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-19T22:59:12.000Z",
+        "publishedAt": "2026-10-20T10:01:04.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 25.5,
-          "neuP": 74.5,
+          "negP": 16.3,
+          "neuP": 83.7,
           "label": "negative",
-          "confidence": 0.86
+          "confidence": 0.8
         },
         "category": "usa"
       },
       {
-        "title": "Trump Rallies Red States Amid Fears About G.O.P. Voter Enthusiasm as Midterms Near",
-        "link": "https://www.nytimes.com/2026/10/19/us/politics/trump-midterm-rally-red-states.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Voters prepare to weigh-in on Trump's economy as costs continue to surge",
+        "link": "https://www.foxnews.com/politics/voters-prepare-weigh-trumps-economy-costs-continue-surge-2-weeks-before-midterms",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president’s swing is taking him to states including South Carolina and Kansas that were not seen as competitive just a few months ago.",
+        "description": "Gas prices surged 9.1% in September as consumer prices rose 3.7% annually, putting Trump's promise to lower costs to the test before midterms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T01:22:57.000Z",
+        "publishedAt": "2026-10-20T10:00:43.000Z",
         "sentiment": {
-          "posP": 7.2,
-          "negP": 10.7,
-          "neuP": 82.1,
+          "posP": 6.1,
+          "negP": 5.9,
+          "neuP": 88,
           "label": "neutral",
-          "confidence": 0.11
+          "confidence": 0.03
         },
         "category": "usa"
       },
       {
-        "title": "Trump Campaigns for Republicans as Turmoil Mounts in Washington",
-        "link": "https://www.nytimes.com/video/us/100000011219687/trump-campaigns-for-republicans-as-turmoil-mounts-in-washington.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Our White House correspondent Tyler Pager traveled with President Trump as he campaigned across the country ahead of the midterms. As the president touted his record, political drama mounted in Washington.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-19T05:29:44.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 8.9,
-          "neuP": 91.1,
-          "label": "negative",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Republicans Barely Mention Trump in Political Ads Ahead of the Midterms",
-        "link": "https://www.nytimes.com/2026/10/19/us/politics/trump-midterms-republican-political-ads.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Only a small fraction of recent G.O.P. broadcast and streaming ads mention the president, according to a Times analysis of ad data.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-19T20:35:14.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Golf Course Dispute Sparks Clash Between Judge and DOJ",
-        "link": "https://www.nytimes.com/2026/10/19/us/politics/trump-washington-golf-course.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Government attorneys sparred with Judge Ana C. Reyes over testimony by several government witnesses about the chain of decisions surrounding East Potomac Golf Links.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-19T23:24:54.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 7.6,
-          "neuP": 92.4,
-          "label": "negative",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Mahmoud Khalil Appeals to Supreme Court to Halt Deportation",
-        "link": "https://www.nytimes.com/2026/10/19/us/politics/supreme-court-mahmoud-khalil-deportation.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Mr. Khalil had recently graduated from Columbia when he was arrested by ICE agents and became the face of the Trump administration’s crackdown on pro-Palestinian demonstrations.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-19T20:31:52.000Z",
-        "sentiment": {
-          "posP": 9.1,
-          "negP": 7.8,
-          "neuP": 83.1,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Is Pushing Ukraine to Surrender to Russia, Zelensky Says",
-        "link": "https://www.nytimes.com/2026/10/19/world/europe/trump-zelensky-putin-ukraine-war.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Volodymyr Zelensky said he didn’t want to believe that Washington wanted an end to the war at Ukraine’s expense. “But that’s how it looks,” he added.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-19T12:39:50.000Z",
-        "sentiment": {
-          "posP": 3.2,
-          "negP": 9.7,
-          "neuP": 87.1,
-          "label": "negative",
-          "confidence": 0.56
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Netanyahu tells Trump \"we have a job to finish\" on Iran",
+        "title": "Iran touts closest ever ties with Russia, contradicting Trump",
         "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Russia's foreign minister is visiting Tehran for the first time since the U.S. and Israel launched their war with Iran.",
+        "description": "Iran says its ties with Russia are stronger than ever after a visit by Putin's top envoy, challenging Trump's assertion that Moscow isn't helping Iran in the war.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T01:48:16.000Z",
+        "publishedAt": "2026-10-20T12:48:12.000Z",
         "sentiment": {
-          "posP": 4.5,
-          "negP": 11.7,
-          "neuP": 83.8,
+          "posP": 13.6,
+          "negP": 20.8,
+          "neuP": 65.6,
           "label": "negative",
-          "confidence": 0.53
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump announces $8 billion in diesel relief for U.S. farmers",
+        "link": "https://www.cbsnews.com/news/trump-farmer-harvest-fuel-relief-aid/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The USDA said farmers don't need crop insurance to qualify and can prepare to apply by creating a Login.gov account.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T12:36:50.000Z",
+        "sentiment": {
+          "posP": 16.4,
+          "negP": 0,
+          "neuP": 83.6,
+          "label": "positive",
+          "confidence": 0.65
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump faces bipartisan backlash over waiving Russia sanctions",
+        "link": "https://www.cbsnews.com/news/trump-faces-bipartisan-backlash-over-waiving-russia-sanctions/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump is defending his decision to waive sanctions, which will refill Russia's pocketbooks as it attacks Ukraine.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T12:29:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 10.4,
+          "neuP": 89.6,
+          "label": "negative",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Hegseth meets Netanyahu ahead of elections, possible Iran war restart",
+        "link": "https://www.cbsnews.com/news/hegseth-visits-israel-elections-iran-war-netanyahu/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Defense Secretary Pete Hegseth made an unannounced visit to Israel just over a week before Prime Minister Benjamin Netanyahu stands for elections, and as President Trump floats restarting the Iran war.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T04:50:45.000Z",
+        "sentiment": {
+          "posP": 3.2,
+          "negP": 16.8,
+          "neuP": 80,
+          "label": "negative",
+          "confidence": 0.81
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Zelenskyy says it's Putin who wants an endless war, not him",
+        "link": "https://www.cbsnews.com/news/russia-ukraine-war-zelenskyy-trump-putin-strikes-no-intelligence/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ukraine's leader rejects Trump's accusations, says Putin is refusing peace, not him, and the U.S. military is delaying \"vital supplies.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T03:16:23.000Z",
+        "sentiment": {
+          "posP": 13.3,
+          "negP": 28.3,
+          "neuP": 58.4,
+          "label": "negative",
+          "confidence": 0.75
         },
         "category": "usa"
       },
@@ -5413,99 +5373,146 @@
         "category": "usa"
       },
       {
-        "title": "Zelenskyy says it's Putin who wants an endless war, not him",
-        "link": "https://www.cbsnews.com/news/russia-ukraine-war-zelenskyy-trump-putin-strikes-no-intelligence/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump’s Push for Deals With Russia Powers His Frustration With Ukraine",
+        "link": "https://www.nytimes.com/2026/10/19/us/politics/trump-russia-deals.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ukraine's leader rejects Trump's accusations, says Putin is refusing peace, not him, and the U.S. military is delaying \"vital supplies.\"",
+        "description": "The series of recent steps by the president that seem to favor Vladimir Putin reflect his intensifying desire to normalize the relationship with Moscow even if it means further undercutting Ukraine.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-19T23:58:58.000Z",
+        "publishedAt": "2026-10-20T07:19:14.000Z",
         "sentiment": {
-          "posP": 13.3,
-          "negP": 28.3,
-          "neuP": 58.4,
-          "label": "negative",
-          "confidence": 0.75
+          "posP": 11.4,
+          "negP": 6.5,
+          "neuP": 82.1,
+          "label": "positive",
+          "confidence": 0.32
         },
         "category": "usa"
       },
       {
-        "title": "Texas Senate race close to tied between James Talarico, Ken Paxton, CBS News poll finds",
-        "link": "https://www.cbsnews.com/video/texas-senate-race-close-tied-james-talarico-ken-paxton-cbs-news-poll/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Taunting Trump Over Gas Prices, Iran Braces for Aftermath of U.S. Vote",
+        "link": "https://www.nytimes.com/2026/10/20/us/politics/iran-trump-midterm-elections.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "With two weeks to the midterm elections, President Trump rejected worries about a tough year for Republicans ahead of a campaign trip to Kansas. Nancy Cordes reports.",
+        "description": "The midterm elections appear to be a factor for both sides in the war as President Trump weighs his next steps.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-19T23:31:33.000Z",
+        "publishedAt": "2026-10-20T09:01:54.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 17,
-          "neuP": 83,
+          "negP": 11.2,
+          "neuP": 88.8,
           "label": "negative",
-          "confidence": 0.77
+          "confidence": 0.6
         },
         "category": "usa"
       },
       {
-        "title": "Kansas voters stress affordability as key issue in competitive Senate race",
-        "link": "https://www.nbcnews.com/now/video/kansas-voters-stress-affordability-as-key-issue-in-competitive-senate-race-271824453567",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Trump Announces $8 Billion Plan to Cover Farm Losses",
+        "link": "https://www.nytimes.com/2026/10/20/business/trump-farmer-bailout.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump is headed to Kansas in support of incumbent GOP Sen. Roger Marshall, who is in a tight race against his Democratic challenger, Adam Hamilton. NBC News' Stephanie Gosk spoke with voters who emphasized affordability as a key issue in the race.",
+        "description": "Under the Harvest Fuel Relief program, the Agriculture Department will provide economic aid for farmers hurt by high diesel prices.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-19T17:19:16.000Z",
+        "publishedAt": "2026-10-20T12:12:44.000Z",
         "sentiment": {
-          "posP": 10.2,
-          "negP": 4.9,
-          "neuP": 84.9,
-          "label": "positive",
-          "confidence": 0.27
+          "posP": 8.8,
+          "negP": 17.3,
+          "neuP": 73.9,
+          "label": "negative",
+          "confidence": 0.46
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trumpism Is Backfiring",
+        "link": "https://www.nytimes.com/2026/10/20/opinion/ezra-klein-podcast-chrystia-freeland.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Chrystia Freeland, a former Canadian deputy prime minister, explains why her country chose to fight back against Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T09:38:15.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 12,
+          "neuP": 88,
+          "label": "negative",
+          "confidence": 0.38
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Late Night Sends Off Trump’s Press Secretary After Just Five Days",
+        "link": "https://www.nytimes.com/2026/10/20/arts/television/late-night-trump-press-secretary-katie-zacharia.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "“It’s not good when the edible arrangement you got on your first day is still edible on your last day,” Jimmy Fallon said.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T06:01:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 6.8,
+          "neuP": 93.2,
+          "label": "negative",
+          "confidence": 0.34
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.47,
-      "neu": 84.04,
-      "neg": 10.49,
-      "count": 35
+      "pos": 7.01,
+      "neu": 82.73,
+      "neg": 10.25,
+      "count": 41
     },
     "sourceLeaderboard": [
       {
-        "source": "NYT",
-        "pos": 4.06,
-        "neu": 88.85,
-        "neg": 7.09,
-        "count": 8
+        "source": "NBC News",
+        "pos": 9.32,
+        "neu": 83.57,
+        "neg": 7.11,
+        "count": 9
       },
       {
-        "source": "NBC News",
-        "pos": 6.93,
-        "neu": 84.65,
-        "neg": 8.43,
-        "count": 8
+        "source": "NYT",
+        "pos": 4.74,
+        "neu": 85.86,
+        "neg": 9.4,
+        "count": 7
       },
       {
         "source": "CBS News",
-        "pos": 4.36,
-        "neu": 78.24,
-        "neg": 17.4,
+        "pos": 7.21,
+        "neu": 77.6,
+        "neg": 15.19,
+        "count": 7
+      },
+      {
+        "source": "ABC News",
+        "pos": 10.6,
+        "neu": 74.68,
+        "neg": 14.72,
         "count": 5
       },
       {
         "source": "Fox News",
-        "pos": 5.55,
-        "neu": 77.53,
-        "neg": 16.93,
+        "pos": 7.68,
+        "neu": 84.8,
+        "neg": 7.53,
         "count": 4
       },
       {
@@ -5533,44 +5540,44 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.43,
-        "neu": 86.71,
-        "neg": 7.86,
-        "count": 14
+        "pos": 7.87,
+        "neu": 82.13,
+        "neg": 10,
+        "count": 19
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.72,
-        "neu": 81.48,
-        "neg": 13.8,
-        "count": 10
+        "pos": 6.59,
+        "neu": 79.73,
+        "neg": 13.68,
+        "count": 11
       },
       {
         "topic": "Policy",
-        "pos": 4.33,
-        "neu": 84.63,
-        "neg": 11.03,
+        "pos": 6.73,
+        "neu": 85.95,
+        "neg": 7.32,
         "count": 6
       },
       {
         "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
-      },
-      {
-        "topic": "Legal",
-        "pos": 11.65,
-        "neu": 80.65,
-        "neg": 7.7,
-        "count": 2
+        "pos": 8.37,
+        "neu": 85.67,
+        "neg": 5.97,
+        "count": 3
       },
       {
         "topic": "Public Statements",
         "pos": 0,
-        "neu": 74.5,
-        "neg": 25.5,
+        "neu": 93.2,
+        "neg": 6.8,
+        "count": 1
+      },
+      {
+        "topic": "Legal",
+        "pos": 0,
+        "neu": 88.8,
+        "neg": 11.2,
         "count": 1
       }
     ]
@@ -5598,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-19T22:08:47.171Z",
+        "label": "2026-10-20T09:02:26.190Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-19T23:08:47.171Z",
+        "label": "2026-10-20T10:02:26.190Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T00:08:47.171Z",
+        "label": "2026-10-20T11:02:26.190Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T01:08:47.171Z",
+        "label": "2026-10-20T12:02:26.190Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5628,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-19T22:08:47.171Z",
+        "label": "2026-10-20T09:02:26.190Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-19T23:08:47.171Z",
+        "label": "2026-10-20T10:02:26.190Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T00:08:47.171Z",
+        "label": "2026-10-20T11:02:26.190Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T01:08:47.171Z",
+        "label": "2026-10-20T12:02:26.190Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5729,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-20T02:08:47.172Z",
+    "generatedAt": "2026-10-20T13:02:26.191Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5850,8 +5857,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 169,
-      "potusArticles": 35,
+      "usaArticles": 170,
+      "potusArticles": 41,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
