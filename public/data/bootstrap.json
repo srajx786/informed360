@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-20T17:54:27.663Z",
+  "generatedAt": "2026-10-20T21:30:52.559Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 170,
-    "potusArticles": 34
+    "usaArticles": 168,
+    "potusArticles": 36
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-20T13:54:27.663Z",
+          "label": "2026-10-20T17:30:52.559Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T14:54:27.663Z",
+          "label": "2026-10-20T18:30:52.559Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T15:54:27.663Z",
+          "label": "2026-10-20T19:30:52.559Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T16:54:27.663Z",
+          "label": "2026-10-20T20:30:52.559Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-20T13:54:27.663Z",
+          "label": "2026-10-20T17:30:52.559Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T14:54:27.663Z",
+          "label": "2026-10-20T18:30:52.559Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T15:54:27.663Z",
+          "label": "2026-10-20T19:30:52.559Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T16:54:27.663Z",
+          "label": "2026-10-20T20:30:52.559Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 8.3,
-      "neu": 81.63,
-      "neg": 10.07,
-      "count": 170
+      "pos": 8.08,
+      "neu": 81.38,
+      "neg": 10.54,
+      "count": 168
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.7,
-        "neu": 82,
-        "neg": 7.3,
+        "pos": 9.99,
+        "neu": 82.77,
+        "neg": 7.24,
         "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 9.36,
-        "neu": 80.89,
-        "neg": 9.75,
+        "pos": 9.2,
+        "neu": 79.05,
+        "neg": 11.75,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 7.72,
-        "neu": 82.07,
-        "neg": 10.22,
+        "pos": 7.38,
+        "neu": 81.36,
+        "neg": 11.26,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 5.28,
-        "neu": 81.39,
-        "neg": 13.33,
-        "count": 24
+        "pos": 5.48,
+        "neu": 82.56,
+        "neg": 11.96,
+        "count": 22
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.81,
-        "neu": 82.6,
-        "neg": 8.59,
+        "pos": 8.53,
+        "neu": 80.91,
+        "neg": 10.57,
         "count": 20
       },
       {
@@ -4638,63 +4638,63 @@
           "count": 1
         },
         {
-          "name": "Real Estate",
-          "bias": -9.28,
-          "count": 4
+          "name": "Manufacturing",
+          "bias": 11.7,
+          "count": 3
         },
         {
-          "name": "Manufacturing",
-          "bias": 5.3,
-          "count": 6
+          "name": "Real Estate",
+          "bias": -6.8,
+          "count": 5
         },
         {
           "name": "Energy",
-          "bias": -2.69,
-          "count": 17
-        },
-        {
-          "name": "Finance",
-          "bias": -2.27,
-          "count": 18
+          "bias": -6.15,
+          "count": 10
         },
         {
           "name": "Materials",
-          "bias": -2.1,
-          "count": 2
+          "bias": -5.1,
+          "count": 1
+        },
+        {
+          "name": "Finance",
+          "bias": -4.9,
+          "count": 16
         },
         {
           "name": "Technology",
-          "bias": -2.02,
-          "count": 131
+          "bias": -2.28,
+          "count": 134
         },
         {
           "name": "Healthcare",
-          "bias": -0.79,
-          "count": 10
+          "bias": -1.81,
+          "count": 9
         }
       ],
       "pos": [
         {
           "name": "Manufacturing",
-          "bias": 5.3,
-          "count": 6
+          "bias": 11.7,
+          "count": 3
         }
       ],
       "neu": [
         {
           "name": "Energy",
-          "bias": -2.69,
-          "count": 17
-        },
-        {
-          "name": "Finance",
-          "bias": -2.27,
-          "count": 18
+          "bias": -6.15,
+          "count": 10
         },
         {
           "name": "Materials",
-          "bias": -2.1,
-          "count": 2
+          "bias": -5.1,
+          "count": 1
+        },
+        {
+          "name": "Finance",
+          "bias": -4.9,
+          "count": 16
         }
       ],
       "neg": [
@@ -4710,40 +4710,40 @@
         },
         {
           "name": "Real Estate",
-          "bias": -9.28,
-          "count": 4
+          "bias": -6.8,
+          "count": 5
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-20T13:54:27.665Z",
-          "pos": 4,
-          "neu": 83,
-          "neg": 14,
-          "count": 9
+          "label": "2026-10-20T17:30:52.560Z",
+          "pos": 7,
+          "neu": 87,
+          "neg": 6,
+          "count": 12
         },
         {
-          "label": "2026-10-20T14:54:27.665Z",
-          "pos": 10,
-          "neu": 84,
+          "label": "2026-10-20T18:30:52.560Z",
+          "pos": 6,
+          "neu": 88,
           "neg": 6,
+          "count": 12
+        },
+        {
+          "label": "2026-10-20T19:30:52.560Z",
+          "pos": 6,
+          "neu": 80,
+          "neg": 14,
           "count": 20
         },
         {
-          "label": "2026-10-20T15:54:27.665Z",
-          "pos": 8,
-          "neu": 83,
-          "neg": 9,
-          "count": 25
-        },
-        {
-          "label": "2026-10-20T16:54:27.665Z",
+          "label": "2026-10-20T20:30:52.560Z",
           "pos": 10,
-          "neu": 82,
+          "neu": 81,
           "neg": 9,
-          "count": 21
+          "count": 23
         }
       ]
     }
@@ -4951,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Why Zelensky Took the Gloves Off This Time With Trump",
-        "link": "https://www.nytimes.com/2026/10/20/world/europe/ukraine-war-zelensky-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump says Ilhan Omar could go to jail or be deported, calls her ‘a disgrace to our country’",
+        "link": "https://www.foxnews.com/politics/trump-says-ilhan-omar-could-go-jail-deported-calls-her-a-disgrace-our-country",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Staying quiet is riskier than speaking up, Ukrainian officials say, as President Trump goes further than ever in prioritizing Russia’s interests.",
+        "description": "President Donald Trump said Ilhan Omar could face jail in addition to deportation, calling her \"a disgrace\" amid a federal immigration fraud probe.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T17:40:11.000Z",
+        "publishedAt": "2026-10-20T21:11:25.000Z",
         "sentiment": {
-          "posP": 6,
-          "negP": 7.2,
-          "neuP": 86.8,
-          "label": "neutral",
-          "confidence": 0.1
+          "posP": 0,
+          "negP": 21.6,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.88
         },
         "category": "usa"
       },
       {
-        "title": "Trump’s D.C. Golf Course Renovation Plan Has Many Residents Feeling Discouraged",
-        "link": "https://www.nytimes.com/2026/10/20/us/trump-dc-golf-course-renovation-residents.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Vance reveals the Trump dilemma that could complicate his 2028 White House ambitions",
+        "link": "https://www.foxnews.com/politics/vance-reveals-trump-dilemma-complicate-2028-white-house-ambitions",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "At East Potomac Park, several residents bemoaned a plan to revamp the federal property that might wipe out features they have cherished for years.",
+        "description": "JD Vance says he believes Trump would endorse him for the 2028 presidential election but admits he hasn't actually discussed a potential run.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T17:21:39.000Z",
+        "publishedAt": "2026-10-20T19:49:27.000Z",
         "sentiment": {
-          "posP": 12.5,
-          "negP": 7,
-          "neuP": 80.5,
+          "posP": 11.8,
+          "negP": 3.6,
+          "neuP": 84.6,
           "label": "positive",
-          "confidence": 0.27
+          "confidence": 0.48
         },
         "category": "usa"
       }
@@ -5193,6 +5193,46 @@
         "category": "world"
       },
       {
+        "title": "Trump says Ilhan Omar could go to jail or be deported, calls her ‘a disgrace to our country’",
+        "link": "https://www.foxnews.com/politics/trump-says-ilhan-omar-could-go-jail-deported-calls-her-a-disgrace-our-country",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump said Ilhan Omar could face jail in addition to deportation, calling her \"a disgrace\" amid a federal immigration fraud probe.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T21:11:25.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 21.6,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.88
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Vance reveals the Trump dilemma that could complicate his 2028 White House ambitions",
+        "link": "https://www.foxnews.com/politics/vance-reveals-trump-dilemma-complicate-2028-white-house-ambitions",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "JD Vance says he believes Trump would endorse him for the 2028 presidential election but admits he hasn't actually discussed a potential run.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T19:49:27.000Z",
+        "sentiment": {
+          "posP": 11.8,
+          "negP": 3.6,
+          "neuP": 84.6,
+          "label": "positive",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
         "title": "Why Zelensky Took the Gloves Off This Time With Trump",
         "link": "https://www.nytimes.com/2026/10/20/world/europe/ukraine-war-zelensky-trump.html",
         "source": "NYT",
@@ -5202,13 +5242,53 @@
         "description": "Staying quiet is riskier than speaking up, Ukrainian officials say, as President Trump goes further than ever in prioritizing Russia’s interests.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T17:40:11.000Z",
+        "publishedAt": "2026-10-20T20:39:58.000Z",
         "sentiment": {
           "posP": 6,
           "negP": 7.2,
           "neuP": 86.8,
           "label": "neutral",
           "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Asked Putin to Release an American Jailed in Russia",
+        "link": "https://www.nytimes.com/2026/10/20/us/politics/trump-russia-prisoner-stephen-hubbard.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president called for the return of Stephen James Hubbard, a Michigan teacher seized from his home in Ukraine months after Russia invaded that country.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T20:47:51.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 8.4,
+          "neuP": 91.6,
+          "label": "negative",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Pushes to Evict White House Press Corps",
+        "link": "https://www.nytimes.com/2026/10/20/us/politics/trump-white-house-media.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump has talked about replacing the James S. Brady Press Briefing Room with an indoor swimming pool.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T20:59:42.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5233,6 +5313,26 @@
         "category": "usa"
       },
       {
+        "title": "Trump’s Betrayal of Ukraine",
+        "link": "https://www.nytimes.com/2026/10/20/opinion/russia-ukraine-trump-us.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The stakes in Ukraine are much larger than the fate of one nation.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T20:57:29.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 19.2,
+          "neuP": 80.8,
+          "label": "negative",
+          "confidence": 0.59
+        },
+        "category": "usa"
+      },
+      {
         "title": "The History We Lost When Trump Tore Down the East Wing",
         "link": "https://www.nytimes.com/2026/10/20/opinion/contributors/trump-east-wing-white-house.html",
         "source": "NYT",
@@ -5253,6 +5353,26 @@
         "category": "usa"
       },
       {
+        "title": "Trump says U.S. will pay fraud whistleblowers, and he'll decide who is paid",
+        "link": "https://www.cbsnews.com/news/trump-us-compensate-fraud-whistleblowers/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump said successful whistleblowers will get 1% of any fraud they report, although there may be limits.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T20:55:40.000Z",
+        "sentiment": {
+          "posP": 9.5,
+          "negP": 22.6,
+          "neuP": 67.9,
+          "label": "negative",
+          "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
         "title": "Iran touts closest ever ties with Russia, contradicting Trump",
         "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/",
         "source": "CBS News",
@@ -5262,13 +5382,33 @@
         "description": "Iran says its ties with Russia are stronger than ever after a visit by Putin's top envoy, challenging Trump's assertion that Moscow isn't helping Iran in the war.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T17:51:22.000Z",
+        "publishedAt": "2026-10-20T20:45:00.000Z",
         "sentiment": {
           "posP": 13.6,
           "negP": 20.8,
           "neuP": 65.6,
           "label": "negative",
           "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Hegseth meets Netanyahu ahead of elections, possible Iran war restart",
+        "link": "https://www.cbsnews.com/news/hegseth-visits-israel-elections-iran-war-netanyahu/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Defense Secretary Pete Hegseth made an unannounced visit to Israel just over a week before Prime Minister Benjamin Netanyahu stands for elections, and as President Trump floats restarting the Iran war.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T20:02:49.000Z",
+        "sentiment": {
+          "posP": 3.2,
+          "negP": 16.8,
+          "neuP": 80,
+          "label": "negative",
+          "confidence": 0.81
         },
         "category": "usa"
       },
@@ -5313,26 +5453,6 @@
         "category": "usa"
       },
       {
-        "title": "Dissecting Trump's election messaging; updates in Minnesota, Florida races",
-        "link": "https://www.cbsnews.com/video/dissecting-trumps-election-messaging-updates-in-minnesota-florida-races/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "CBS News' Fin Gómez analyzes President Trump's messaging to voters and developments in the Minnesota Senate race, and Cristian Benavides breaks down gubernatorial and Senate races in Florida.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T16:34:59.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump administration health leaders break down new women's health initiative",
         "link": "https://www.cbsnews.com/video/trump-administration-health-leaders-break-down-new-womens-health-initiative/",
         "source": "CBS News",
@@ -5351,162 +5471,35 @@
           "confidence": 0.49
         },
         "category": "usa"
-      },
-      {
-        "title": "Trump \"should apply his creativity\" to end Russia's war, Ukrainian parliament member says",
-        "link": "https://www.cbsnews.com/video/trump-should-apply-his-creativity-to-end-russias-war-ukrainian-parliament-member-says/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "U.S. officials will participate in Ukraine-Russia peace talks in Norway. This comes as President Trump and Ukrainian President Volodymyr Zelenskyy trade barbs over strained relations. Ukrainian parliament member Halyna Yanchenko weighs in.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T15:04:00.000Z",
-        "sentiment": {
-          "posP": 11.4,
-          "negP": 12.3,
-          "neuP": 76.3,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump sued over 50% tariffs on Canada in latest trade challenge",
-        "link": "https://www.cnbc.com/2026/10/20/trump-tariffs-canada-section-338-lawsuit.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A new lawsuit challenges President Donald Trump's tariffs on a range of Canadian goods using Section 338 of the Tariff Act of 1930.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T17:49:38.000Z",
-        "sentiment": {
-          "posP": 7.8,
-          "negP": 5.7,
-          "neuP": 86.5,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "If Elon Musk gifts SpaceX stock through Trump Accounts, it will come with a catch",
-        "link": "https://www.cnbc.com/2026/10/20/musk-spacex-trump-account-stock-rules.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Elon Musk's planned SpaceX stock donation could come with strings attached if he uses Trump Accounts. New Treasury rules limit when children can sell shares.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T17:29:38.000Z",
-        "sentiment": {
-          "posP": 9.8,
-          "negP": 0,
-          "neuP": 90.2,
-          "label": "positive",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 8.29,
-      "neu": 83.93,
-      "neg": 7.78,
-      "count": 34
+      "pos": 7.33,
+      "neu": 82.96,
+      "neg": 9.71,
+      "count": 36
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 8.59,
-        "neu": 81.64,
-        "neg": 9.77,
-        "count": 7
+        "source": "NYT",
+        "pos": 5.24,
+        "neu": 86.94,
+        "neg": 7.82,
+        "count": 8
       },
       {
         "source": "CBS News",
-        "pos": 11.3,
-        "neu": 81.01,
-        "neg": 7.69,
+        "pos": 11.49,
+        "neu": 76.96,
+        "neg": 11.56,
         "count": 7
       },
       {
-        "source": "NYT",
-        "pos": 8.38,
-        "neu": 84.62,
-        "neg": 7,
-        "count": 5
-      },
-      {
         "source": "ABC News",
-        "pos": 11.1,
-        "neu": 83.56,
-        "neg": 5.34,
-        "count": 5
+        "pos": 9.95,
+        "neu": 78.18,
+        "neg": 11.87,
+        "count": 6
       },
       {
         "source": "WSJ",
@@ -5523,6 +5516,20 @@
         "count": 3
       },
       {
+        "source": "Fox News",
+        "pos": 6.93,
+        "neu": 84.67,
+        "neg": 8.4,
+        "count": 3
+      },
+      {
+        "source": "NBC News",
+        "pos": 8.27,
+        "neu": 82.07,
+        "neg": 9.67,
+        "count": 3
+      },
+      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
@@ -5533,38 +5540,45 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 9.71,
-        "neu": 81.81,
-        "neg": 8.48,
-        "count": 13
+        "pos": 7.53,
+        "neu": 79.73,
+        "neg": 12.74,
+        "count": 15
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7.54,
-        "neu": 82.44,
-        "neg": 10.01,
-        "count": 9
+        "pos": 6.79,
+        "neu": 81.44,
+        "neg": 11.77,
+        "count": 10
       },
       {
         "topic": "Policy",
-        "pos": 7.38,
-        "neu": 90.28,
-        "neg": 2.33,
-        "count": 6
+        "pos": 8.03,
+        "neu": 88.7,
+        "neg": 3.27,
+        "count": 7
       },
       {
         "topic": "Economy",
-        "pos": 10.13,
-        "neu": 81.77,
-        "neg": 8.1,
-        "count": 3
+        "pos": 9.5,
+        "neu": 84.5,
+        "neg": 6,
+        "count": 2
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 0,
+        "neu": 100,
+        "neg": 0,
+        "count": 1
       },
       {
         "topic": "Legal",
-        "pos": 4.37,
-        "neu": 87.07,
-        "neg": 8.57,
-        "count": 3
+        "pos": 7.8,
+        "neu": 86.5,
+        "neg": 5.7,
+        "count": 1
       }
     ]
   },
@@ -5591,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-20T13:54:27.668Z",
+        "label": "2026-10-20T17:30:52.562Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T14:54:27.668Z",
+        "label": "2026-10-20T18:30:52.562Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T15:54:27.668Z",
+        "label": "2026-10-20T19:30:52.562Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T16:54:27.668Z",
+        "label": "2026-10-20T20:30:52.562Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5621,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-20T13:54:27.668Z",
+        "label": "2026-10-20T17:30:52.563Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T14:54:27.668Z",
+        "label": "2026-10-20T18:30:52.563Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T15:54:27.668Z",
+        "label": "2026-10-20T19:30:52.563Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T16:54:27.668Z",
+        "label": "2026-10-20T20:30:52.563Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5722,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-20T17:54:27.670Z",
+    "generatedAt": "2026-10-20T21:30:52.563Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5843,8 +5857,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 170,
-      "potusArticles": 34,
+      "usaArticles": 168,
+      "potusArticles": 36,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
