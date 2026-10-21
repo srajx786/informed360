@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-20T21:30:52.559Z",
+  "generatedAt": "2026-10-21T04:32:04.990Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 168,
-    "potusArticles": 36
+    "potusArticles": 30
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-20T17:30:52.559Z",
+          "label": "2026-10-21T00:32:04.990Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T18:30:52.559Z",
+          "label": "2026-10-21T01:32:04.990Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T19:30:52.559Z",
+          "label": "2026-10-21T02:32:04.990Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T20:30:52.559Z",
+          "label": "2026-10-21T03:32:04.990Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-20T17:30:52.559Z",
+          "label": "2026-10-21T00:32:04.990Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T18:30:52.559Z",
+          "label": "2026-10-21T01:32:04.990Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T19:30:52.559Z",
+          "label": "2026-10-21T02:32:04.990Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-20T20:30:52.559Z",
+          "label": "2026-10-21T03:32:04.990Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 8.08,
-      "neu": 81.38,
-      "neg": 10.54,
+      "pos": 8.06,
+      "neu": 80.79,
+      "neg": 11.15,
       "count": 168
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.99,
-        "neu": 82.77,
-        "neg": 7.24,
+        "pos": 11.32,
+        "neu": 79.1,
+        "neg": 9.58,
         "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 9.2,
-        "neu": 79.05,
-        "neg": 11.75,
+        "pos": 9.17,
+        "neu": 78.3,
+        "neg": 12.53,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 7.38,
-        "neu": 81.36,
-        "neg": 11.26,
+        "pos": 5.11,
+        "neu": 81.91,
+        "neg": 12.98,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 5.48,
-        "neu": 82.56,
-        "neg": 11.96,
+        "pos": 6.36,
+        "neu": 82.87,
+        "neg": 10.77,
         "count": 22
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.53,
-        "neu": 80.91,
-        "neg": 10.57,
+        "pos": 7.59,
+        "neu": 83.58,
+        "neg": 8.83,
         "count": 20
       },
       {
@@ -4628,122 +4628,111 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
+          "name": "Real Estate",
+          "bias": -9.88,
+          "count": 4
         },
         {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 11.7,
+          "bias": -8.9,
           "count": 3
-        },
-        {
-          "name": "Real Estate",
-          "bias": -6.8,
-          "count": 5
-        },
-        {
-          "name": "Energy",
-          "bias": -6.15,
-          "count": 10
-        },
-        {
-          "name": "Materials",
-          "bias": -5.1,
-          "count": 1
-        },
-        {
-          "name": "Finance",
-          "bias": -4.9,
-          "count": 16
-        },
-        {
-          "name": "Technology",
-          "bias": -2.28,
-          "count": 134
         },
         {
           "name": "Healthcare",
-          "bias": -1.81,
-          "count": 9
-        }
-      ],
-      "pos": [
+          "bias": -6.03,
+          "count": 7
+        },
         {
-          "name": "Manufacturing",
-          "bias": 11.7,
+          "name": "Utilities",
+          "bias": -5.77,
           "count": 3
-        }
-      ],
-      "neu": [
+        },
+        {
+          "name": "Technology",
+          "bias": -2.84,
+          "count": 136
+        },
         {
           "name": "Energy",
-          "bias": -6.15,
+          "bias": -2.49,
           "count": 10
         },
         {
-          "name": "Materials",
-          "bias": -5.1,
-          "count": 1
+          "name": "Finance",
+          "bias": 0.69,
+          "count": 20
         },
         {
-          "name": "Finance",
-          "bias": -4.9,
-          "count": 16
+          "name": "Materials",
+          "bias": -0.25,
+          "count": 4
+        }
+      ],
+      "pos": [],
+      "neu": [
+        {
+          "name": "Utilities",
+          "bias": -5.77,
+          "count": 3
+        },
+        {
+          "name": "Technology",
+          "bias": -2.84,
+          "count": 136
+        },
+        {
+          "name": "Energy",
+          "bias": -2.49,
+          "count": 10
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
+          "name": "Real Estate",
+          "bias": -9.88,
+          "count": 4
         },
         {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -8.9,
+          "count": 3
         },
         {
-          "name": "Real Estate",
-          "bias": -6.8,
-          "count": 5
+          "name": "Healthcare",
+          "bias": -6.03,
+          "count": 7
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-20T17:30:52.560Z",
-          "pos": 7,
-          "neu": 87,
-          "neg": 6,
-          "count": 12
-        },
-        {
-          "label": "2026-10-20T18:30:52.560Z",
-          "pos": 6,
-          "neu": 88,
-          "neg": 6,
-          "count": 12
-        },
-        {
-          "label": "2026-10-20T19:30:52.560Z",
+          "label": "2026-10-21T00:32:04.991Z",
           "pos": 6,
           "neu": 80,
           "neg": 14,
-          "count": 20
+          "count": 15
         },
         {
-          "label": "2026-10-20T20:30:52.560Z",
+          "label": "2026-10-21T01:32:04.991Z",
           "pos": 10,
-          "neu": 81,
-          "neg": 9,
-          "count": 23
+          "neu": 77,
+          "neg": 13,
+          "count": 8
+        },
+        {
+          "label": "2026-10-21T02:32:04.991Z",
+          "pos": 14,
+          "neu": 76,
+          "neg": 10,
+          "count": 4
+        },
+        {
+          "label": "2026-10-21T03:32:04.991Z",
+          "pos": 8,
+          "neu": 78,
+          "neg": 14,
+          "count": 6
         }
       ]
     }
@@ -4951,42 +4940,42 @@
         "category": "world"
       },
       {
-        "title": "Trump says Ilhan Omar could go to jail or be deported, calls her ‘a disgrace to our country’",
-        "link": "https://www.foxnews.com/politics/trump-says-ilhan-omar-could-go-jail-deported-calls-her-a-disgrace-our-country",
+        "title": "Americans who moved to Europe after Trump win now say they regret leaving",
+        "link": "https://www.foxnews.com/media/americans-who-moved-europe-after-trump-win-now-say-regret-leaving",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump said Ilhan Omar could face jail in addition to deportation, calling her \"a disgrace\" amid a federal immigration fraud probe.",
+        "description": "American expats who fled Trump's America now voice frustration with Europe's lower quality of life, bureaucracy, and hostility toward American culture.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T21:11:25.000Z",
+        "publishedAt": "2026-10-21T00:30:40.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 21.6,
-          "neuP": 78.4,
+          "posP": 8.6,
+          "negP": 26.1,
+          "neuP": 65.3,
           "label": "negative",
-          "confidence": 0.88
+          "confidence": 0.78
         },
         "category": "usa"
       },
       {
-        "title": "Vance reveals the Trump dilemma that could complicate his 2028 White House ambitions",
-        "link": "https://www.foxnews.com/politics/vance-reveals-trump-dilemma-complicate-2028-white-house-ambitions",
+        "title": "Ana Navarro clashes with 'The View' co-hosts, declares there's 'no way in hell' she would meet with Trump",
+        "link": "https://www.foxnews.com/media/ana-navarro-clashes-the-view-co-hosts-declares-theres-no-way-hell-she-would-meet-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "JD Vance says he believes Trump would endorse him for the 2028 presidential election but admits he hasn't actually discussed a potential run.",
+        "description": "\"The View\" co-host Ana Navarro declared she would never meet with President Donald Trump as the panel debated a recent dinner he had with Bill Maher and others.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T19:49:27.000Z",
+        "publishedAt": "2026-10-20T23:48:38.000Z",
         "sentiment": {
-          "posP": 11.8,
-          "negP": 3.6,
-          "neuP": 84.6,
-          "label": "positive",
-          "confidence": 0.48
+          "posP": 0,
+          "negP": 13.7,
+          "neuP": 86.3,
+          "label": "negative",
+          "confidence": 0.78
         },
         "category": "usa"
       }
@@ -5193,42 +5182,162 @@
         "category": "world"
       },
       {
-        "title": "Trump says Ilhan Omar could go to jail or be deported, calls her ‘a disgrace to our country’",
-        "link": "https://www.foxnews.com/politics/trump-says-ilhan-omar-could-go-jail-deported-calls-her-a-disgrace-our-country",
+        "title": "Americans who moved to Europe after Trump win now say they regret leaving",
+        "link": "https://www.foxnews.com/media/americans-who-moved-europe-after-trump-win-now-say-regret-leaving",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump said Ilhan Omar could face jail in addition to deportation, calling her \"a disgrace\" amid a federal immigration fraud probe.",
+        "description": "American expats who fled Trump's America now voice frustration with Europe's lower quality of life, bureaucracy, and hostility toward American culture.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T21:11:25.000Z",
+        "publishedAt": "2026-10-21T00:30:40.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 21.6,
-          "neuP": 78.4,
+          "posP": 8.6,
+          "negP": 26.1,
+          "neuP": 65.3,
           "label": "negative",
-          "confidence": 0.88
+          "confidence": 0.78
         },
         "category": "usa"
       },
       {
-        "title": "Vance reveals the Trump dilemma that could complicate his 2028 White House ambitions",
-        "link": "https://www.foxnews.com/politics/vance-reveals-trump-dilemma-complicate-2028-white-house-ambitions",
+        "title": "Ana Navarro clashes with 'The View' co-hosts, declares there's 'no way in hell' she would meet with Trump",
+        "link": "https://www.foxnews.com/media/ana-navarro-clashes-the-view-co-hosts-declares-theres-no-way-hell-she-would-meet-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "JD Vance says he believes Trump would endorse him for the 2028 presidential election but admits he hasn't actually discussed a potential run.",
+        "description": "\"The View\" co-host Ana Navarro declared she would never meet with President Donald Trump as the panel debated a recent dinner he had with Bill Maher and others.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T19:49:27.000Z",
+        "publishedAt": "2026-10-20T23:48:38.000Z",
         "sentiment": {
-          "posP": 11.8,
-          "negP": 3.6,
-          "neuP": 84.6,
+          "posP": 0,
+          "negP": 13.7,
+          "neuP": 86.3,
+          "label": "negative",
+          "confidence": 0.78
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Iran touts closest ever ties with Russia, contradicting Trump",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Iran says its ties with Russia are stronger than ever after a visit by Putin's top envoy, challenging Trump's assertion that Moscow isn't helping Iran in the war.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T00:58:40.000Z",
+        "sentiment": {
+          "posP": 13.6,
+          "negP": 20.8,
+          "neuP": 65.6,
+          "label": "negative",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says U.S. has gotten \"nothing\" from Ukraine",
+        "link": "https://www.cbsnews.com/video/trump-says-us-has-gotten-nothing-from-ukraine/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump on Tuesday said the U.S. has \"given a lot\" to Ukraine and gotten \"nothing\" in return amid Russia's ongoing war with the country. CBS News' Aaron MacLean has more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T00:19:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 9.5,
+          "neuP": 90.5,
+          "label": "negative",
+          "confidence": 0.6
+        },
+        "category": "usa"
+      },
+      {
+        "title": "A Billionaire Wanted a Trump Pardon. His Family Gave Alina Habba a $50 Million Deal.",
+        "link": "https://www.nytimes.com/2026/10/20/us/politics/julio-herrera-pardon-alina-habba.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Julio Herrera Velutini, a prominent Venezuelan, was seeking clemency. He got it not long after his daughter gave Ms. Habba, a lawyer close to President Trump, an extraordinarily lucrative job.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T03:58:26.000Z",
+        "sentiment": {
+          "posP": 10.8,
+          "negP": 0,
+          "neuP": 89.2,
           "label": "positive",
-          "confidence": 0.48
+          "confidence": 0.56
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Wields an Unprecedented $277 Million in Final Midterm Stretch",
+        "link": "https://www.nytimes.com/2026/10/20/us/politics/trump-maga-inc-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The enormous spending by the term-limited president’s super PAC has no parallel in American history, and could offer struggling Republican candidates a lifeline.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T03:14:58.000Z",
+        "sentiment": {
+          "posP": 10.3,
+          "negP": 13.2,
+          "neuP": 76.5,
+          "label": "neutral",
+          "confidence": 0.03
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Announces Plans to Spend Another $100 Million by Election Day",
+        "link": "https://www.nytimes.com/2026/10/20/briefing/trump-midterm-spending.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Also, a new N.B.A. season begins. Here’s the latest at the end of Tuesday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T21:56:19.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Pushes to Evict White House Press Corps",
+        "link": "https://www.nytimes.com/2026/10/20/us/politics/trump-white-house-media.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump has talked about replacing the James S. Brady Press Briefing Room with an indoor swimming pool.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T20:59:43.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5262,7 +5371,7 @@
         "description": "The president called for the return of Stephen James Hubbard, a Michigan teacher seized from his home in Ukraine months after Russia invaded that country.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T20:47:51.000Z",
+        "publishedAt": "2026-10-20T20:47:52.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 8.4,
@@ -5273,239 +5382,112 @@
         "category": "usa"
       },
       {
-        "title": "Trump Pushes to Evict White House Press Corps",
-        "link": "https://www.nytimes.com/2026/10/20/us/politics/trump-white-house-media.html",
+        "title": "Trumpism Is Backfiring",
+        "link": "https://www.nytimes.com/2026/10/20/opinion/ezra-klein-podcast-chrystia-freeland.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump has talked about replacing the James S. Brady Press Briefing Room with an indoor swimming pool.",
+        "description": "Chrystia Freeland, a former Canadian deputy prime minister, explains why her country chose to fight back against Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T20:59:42.000Z",
+        "publishedAt": "2026-10-20T13:11:05.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "negP": 12,
+          "neuP": 88,
+          "label": "negative",
+          "confidence": 0.38
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump sued over 50% tariffs on Canada in latest trade challenge",
+        "link": "https://www.cnbc.com/2026/10/20/trump-tariffs-canada-section-338-lawsuit.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A new lawsuit challenges President Donald Trump's tariffs on a range of Canadian goods using Section 338 of the Tariff Act of 1930.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-20T18:06:13.000Z",
+        "sentiment": {
+          "posP": 7.8,
+          "negP": 5.7,
+          "neuP": 86.5,
           "label": "neutral",
-          "confidence": 0
+          "confidence": 0.08
         },
         "category": "usa"
       },
       {
-        "title": "Trump’s D.C. Golf Course Renovation Plan Has Many Residents Feeling Discouraged",
-        "link": "https://www.nytimes.com/2026/10/20/us/trump-dc-golf-course-renovation-residents.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "At East Potomac Park, several residents bemoaned a plan to revamp the federal property that might wipe out features they have cherished for years.",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T17:21:39.000Z",
-        "sentiment": {
-          "posP": 12.5,
-          "negP": 7,
-          "neuP": 80.5,
-          "label": "positive",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump’s Betrayal of Ukraine",
-        "link": "https://www.nytimes.com/2026/10/20/opinion/russia-ukraine-trump-us.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The stakes in Ukraine are much larger than the fate of one nation.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T20:57:29.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 19.2,
-          "neuP": 80.8,
-          "label": "negative",
-          "confidence": 0.59
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The History We Lost When Trump Tore Down the East Wing",
-        "link": "https://www.nytimes.com/2026/10/20/opinion/contributors/trump-east-wing-white-house.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Mr. Trump appears to wish to be both president and first lady.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T15:00:08.000Z",
-        "sentiment": {
-          "posP": 10.4,
-          "negP": 8.8,
-          "neuP": 80.8,
-          "label": "neutral",
-          "confidence": 0.1
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says U.S. will pay fraud whistleblowers, and he'll decide who is paid",
-        "link": "https://www.cbsnews.com/news/trump-us-compensate-fraud-whistleblowers/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump said successful whistleblowers will get 1% of any fraud they report, although there may be limits.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T20:55:40.000Z",
-        "sentiment": {
-          "posP": 9.5,
-          "negP": 22.6,
-          "neuP": 67.9,
-          "label": "negative",
-          "confidence": 0.64
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iran touts closest ever ties with Russia, contradicting Trump",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Iran says its ties with Russia are stronger than ever after a visit by Putin's top envoy, challenging Trump's assertion that Moscow isn't helping Iran in the war.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T20:45:00.000Z",
-        "sentiment": {
-          "posP": 13.6,
-          "negP": 20.8,
-          "neuP": 65.6,
-          "label": "negative",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Hegseth meets Netanyahu ahead of elections, possible Iran war restart",
-        "link": "https://www.cbsnews.com/news/hegseth-visits-israel-elections-iran-war-netanyahu/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Defense Secretary Pete Hegseth made an unannounced visit to Israel just over a week before Prime Minister Benjamin Netanyahu stands for elections, and as President Trump floats restarting the Iran war.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T20:02:49.000Z",
-        "sentiment": {
-          "posP": 3.2,
-          "negP": 16.8,
-          "neuP": 80,
-          "label": "negative",
-          "confidence": 0.81
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump announces $8 billion in diesel relief for U.S. farmers",
-        "link": "https://www.cbsnews.com/news/trump-farmer-harvest-fuel-relief-aid/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The USDA said farmers don't need crop insurance to qualify and can prepare to apply by creating a Login.gov account.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T17:48:15.000Z",
-        "sentiment": {
-          "posP": 16.4,
-          "negP": 0,
-          "neuP": 83.6,
-          "label": "positive",
-          "confidence": 0.65
-        },
-        "category": "usa"
-      },
-      {
-        "title": "H.R. McMaster weighs in on Ukraine-Russia peace talks, Trump-Zelenskyy feud",
-        "link": "https://www.cbsnews.com/video/hr-mcmaster-on-ukraine-russia-peace-talks-trump-zelenskyy-feud/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ukrainian President Volodymyr Zelenskyy is in Norway for peace talks. Retired Lt. Gen. H.R. McMaster shares his thoughts.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T16:55:08.000Z",
-        "sentiment": {
-          "posP": 25.8,
-          "negP": 6.7,
-          "neuP": 67.5,
-          "label": "positive",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump administration health leaders break down new women's health initiative",
-        "link": "https://www.cbsnews.com/video/trump-administration-health-leaders-break-down-new-womens-health-initiative/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Director of the National Institutes of Health Dr. Jay Bhattacharya and Director of the Advanced Research Projects Agency for Health Dr. Alicia Jackson sit down with \"CBS Mornings\" to discuss President Trump's executive order creating a women's health division within the NIH.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T15:40:00.000Z",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
         "sentiment": {
           "posP": 7.9,
-          "negP": 0,
-          "neuP": 92.1,
-          "label": "positive",
-          "confidence": 0.49
+          "negP": 9.7,
+          "neuP": 82.4,
+          "label": "neutral",
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.67
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.33,
-      "neu": 82.96,
-      "neg": 9.71,
-      "count": 36
+      "pos": 5.4,
+      "neu": 85.34,
+      "neg": 9.26,
+      "count": 30
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 5.24,
-        "neu": 86.94,
-        "neg": 7.82,
-        "count": 8
-      },
-      {
-        "source": "CBS News",
-        "pos": 11.49,
-        "neu": 76.96,
-        "neg": 11.56,
-        "count": 7
-      },
-      {
-        "source": "ABC News",
-        "pos": 9.95,
-        "neu": 78.18,
-        "neg": 11.87,
-        "count": 6
+        "pos": 4.46,
+        "neu": 89.68,
+        "neg": 5.87,
+        "count": 9
       },
       {
         "source": "WSJ",
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
+        "count": 4
+      },
+      {
+        "source": "ABC News",
+        "pos": 7.38,
+        "neu": 80.92,
+        "neg": 11.7,
         "count": 4
       },
       {
@@ -5517,17 +5499,24 @@
       },
       {
         "source": "Fox News",
-        "pos": 6.93,
-        "neu": 84.67,
-        "neg": 8.4,
+        "pos": 5.87,
+        "neu": 80.87,
+        "neg": 13.27,
+        "count": 3
+      },
+      {
+        "source": "CBS News",
+        "pos": 5.87,
+        "neu": 79.37,
+        "neg": 14.77,
         "count": 3
       },
       {
         "source": "NBC News",
-        "pos": 8.27,
-        "neu": 82.07,
-        "neg": 9.67,
-        "count": 3
+        "pos": 10.4,
+        "neu": 82.75,
+        "neg": 6.85,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5540,24 +5529,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.53,
-        "neu": 79.73,
-        "neg": 12.74,
-        "count": 15
+        "pos": 5.52,
+        "neu": 82.27,
+        "neg": 12.21,
+        "count": 12
       },
       {
         "topic": "Foreign Policy",
-        "pos": 6.79,
-        "neu": 81.44,
-        "neg": 11.77,
-        "count": 10
+        "pos": 4.76,
+        "neu": 84.49,
+        "neg": 10.75,
+        "count": 8
       },
       {
         "topic": "Policy",
-        "pos": 8.03,
-        "neu": 88.7,
-        "neg": 3.27,
-        "count": 7
+        "pos": 5.13,
+        "neu": 90.25,
+        "neg": 4.62,
+        "count": 6
       },
       {
         "topic": "Economy",
@@ -5605,28 +5594,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-20T17:30:52.562Z",
+        "label": "2026-10-21T00:32:04.993Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T18:30:52.562Z",
+        "label": "2026-10-21T01:32:04.993Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T19:30:52.562Z",
+        "label": "2026-10-21T02:32:04.993Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T20:30:52.562Z",
+        "label": "2026-10-21T03:32:04.993Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5624,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-20T17:30:52.563Z",
+        "label": "2026-10-21T00:32:04.993Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T18:30:52.563Z",
+        "label": "2026-10-21T01:32:04.993Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T19:30:52.563Z",
+        "label": "2026-10-21T02:32:04.993Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-20T20:30:52.563Z",
+        "label": "2026-10-21T03:32:04.993Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5725,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-20T21:30:52.563Z",
+    "generatedAt": "2026-10-21T04:32:04.994Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5858,7 +5847,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 168,
-      "potusArticles": 36,
+      "potusArticles": 30,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
