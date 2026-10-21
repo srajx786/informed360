@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-21T04:32:04.990Z",
+  "generatedAt": "2026-10-21T14:36:16.483Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 168,
-    "potusArticles": 30
+    "usaArticles": 169,
+    "potusArticles": 38
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-21T00:32:04.990Z",
+          "label": "2026-10-21T10:36:16.483Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T01:32:04.990Z",
+          "label": "2026-10-21T11:36:16.483Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T02:32:04.990Z",
+          "label": "2026-10-21T12:36:16.483Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T03:32:04.990Z",
+          "label": "2026-10-21T13:36:16.483Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-21T00:32:04.990Z",
+          "label": "2026-10-21T10:36:16.483Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T01:32:04.990Z",
+          "label": "2026-10-21T11:36:16.483Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T02:32:04.990Z",
+          "label": "2026-10-21T12:36:16.483Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T03:32:04.990Z",
+          "label": "2026-10-21T13:36:16.483Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 8.06,
-      "neu": 80.79,
-      "neg": 11.15,
-      "count": 168
+      "pos": 8.38,
+      "neu": 81.22,
+      "neg": 10.4,
+      "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 11.32,
-        "neu": 79.1,
-        "neg": 9.58,
-        "count": 42
+        "pos": 11.79,
+        "neu": 79.54,
+        "neg": 8.67,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 9.17,
-        "neu": 78.3,
-        "neg": 12.53,
+        "pos": 8.78,
+        "neu": 78.89,
+        "neg": 12.33,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.11,
-        "neu": 81.91,
-        "neg": 12.98,
+        "pos": 5.66,
+        "neu": 82.94,
+        "neg": 11.4,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.36,
-        "neu": 82.87,
-        "neg": 10.77,
-        "count": 22
+        "pos": 7.41,
+        "neu": 81.15,
+        "neg": 11.44,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 7.59,
-        "neu": 83.58,
-        "neg": 8.83,
+        "pos": 8.24,
+        "neu": 85.95,
+        "neg": 5.82,
         "count": 20
       },
       {
@@ -4628,111 +4628,122 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Real Estate",
-          "bias": -9.88,
-          "count": 4
+          "name": "Communication",
+          "bias": -14,
+          "count": 2
         },
         {
-          "name": "Communication",
-          "bias": -8.9,
-          "count": 3
+          "name": "Manufacturing",
+          "bias": -6,
+          "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -6.03,
-          "count": 7
-        },
-        {
-          "name": "Utilities",
-          "bias": -5.77,
-          "count": 3
-        },
-        {
-          "name": "Technology",
-          "bias": -2.84,
-          "count": 136
+          "bias": -3.92,
+          "count": 8
         },
         {
           "name": "Energy",
-          "bias": -2.49,
-          "count": 10
+          "bias": 2.83,
+          "count": 9
+        },
+        {
+          "name": "Utilities",
+          "bias": -2.8,
+          "count": 2
         },
         {
           "name": "Finance",
-          "bias": 0.69,
-          "count": 20
-        },
-        {
-          "name": "Materials",
-          "bias": -0.25,
-          "count": 4
-        }
-      ],
-      "pos": [],
-      "neu": [
-        {
-          "name": "Utilities",
-          "bias": -5.77,
-          "count": 3
+          "bias": -2.5,
+          "count": 21
         },
         {
           "name": "Technology",
-          "bias": -2.84,
-          "count": 136
+          "bias": -1.29,
+          "count": 138
         },
         {
+          "name": "Real Estate",
+          "bias": -1.1,
+          "count": 4
+        },
+        {
+          "name": "Materials",
+          "bias": -0.53,
+          "count": 3
+        }
+      ],
+      "pos": [
+        {
           "name": "Energy",
-          "bias": -2.49,
-          "count": 10
+          "bias": 2.83,
+          "count": 9
+        }
+      ],
+      "neu": [
+        {
+          "name": "Utilities",
+          "bias": -2.8,
+          "count": 2
+        },
+        {
+          "name": "Finance",
+          "bias": -2.5,
+          "count": 21
+        },
+        {
+          "name": "Technology",
+          "bias": -1.29,
+          "count": 138
         }
       ],
       "neg": [
         {
-          "name": "Real Estate",
-          "bias": -9.88,
-          "count": 4
+          "name": "Communication",
+          "bias": -14,
+          "count": 2
         },
         {
-          "name": "Communication",
-          "bias": -8.9,
-          "count": 3
+          "name": "Manufacturing",
+          "bias": -6,
+          "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -6.03,
-          "count": 7
+          "bias": -3.92,
+          "count": 8
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-21T00:32:04.991Z",
-          "pos": 6,
-          "neu": 80,
-          "neg": 14,
-          "count": 15
+          "label": "2026-10-21T10:36:16.484Z",
+          "pos": 3,
+          "neu": 81,
+          "neg": 16,
+          "count": 9
         },
         {
-          "label": "2026-10-21T01:32:04.991Z",
-          "pos": 10,
-          "neu": 77,
-          "neg": 13,
+          "label": "2026-10-21T11:36:16.484Z",
+          "pos": 8,
+          "neu": 85,
+          "neg": 8,
           "count": 8
         },
         {
-          "label": "2026-10-21T02:32:04.991Z",
-          "pos": 14,
-          "neu": 76,
-          "neg": 10,
-          "count": 4
+          "label": "2026-10-21T12:36:16.484Z",
+          "pos": 9,
+          "neu": 80,
+          "neg": 11,
+          "count": 19
         },
         {
-          "label": "2026-10-21T03:32:04.991Z",
+          "label": "2026-10-21T13:36:16.484Z",
           "pos": 8,
-          "neu": 78,
-          "neg": 14,
-          "count": 6
+          "neu": 84,
+          "neg": 8,
+          "count": 45
         }
       ]
     }
@@ -4940,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Americans who moved to Europe after Trump win now say they regret leaving",
-        "link": "https://www.foxnews.com/media/americans-who-moved-europe-after-trump-win-now-say-regret-leaving",
+        "title": "Trump delivers $1 billion to Marines to relieve decades-long suffering of American heroes and their families",
+        "link": "https://www.foxnews.com/politics/trump-delivers-1-billion-marines-relieve-decades-long-suffering-american-heroes-families",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "American expats who fled Trump's America now voice frustration with Europe's lower quality of life, bureaucracy, and hostility toward American culture.",
+        "description": "Trump announced nearly $1 billion in Camp Lejeune toxic water settlements at a North Carolina rally, ordering the DOJ to resolve all remaining claims.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T00:30:40.000Z",
+        "publishedAt": "2026-10-21T13:54:07.000Z",
         "sentiment": {
-          "posP": 8.6,
-          "negP": 26.1,
-          "neuP": 65.3,
-          "label": "negative",
-          "confidence": 0.78
+          "posP": 18.1,
+          "negP": 6.7,
+          "neuP": 75.2,
+          "label": "positive",
+          "confidence": 0.65
         },
         "category": "usa"
       },
       {
-        "title": "Ana Navarro clashes with 'The View' co-hosts, declares there's 'no way in hell' she would meet with Trump",
-        "link": "https://www.foxnews.com/media/ana-navarro-clashes-the-view-co-hosts-declares-theres-no-way-hell-she-would-meet-trump",
+        "title": "Danica Patrick dusts off her election firesuit and sends America a message about Donald Trump",
+        "link": "https://www.foxnews.com/outkick-sports/danica-patrick-dusts-off-election-firesuit-sends-america-message-donald-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "\"The View\" co-host Ana Navarro declared she would never meet with President Donald Trump as the panel debated a recent dinner he had with Bill Maher and others.",
+        "description": "Danica Patrick posted a passionate Instagram message urging Americans to vote in the midterms to help Trump make the most of his presidency.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T23:48:38.000Z",
+        "publishedAt": "2026-10-21T13:48:45.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 13.7,
-          "neuP": 86.3,
-          "label": "negative",
-          "confidence": 0.78
+          "posP": 15.2,
+          "negP": 0,
+          "neuP": 84.8,
+          "label": "positive",
+          "confidence": 0.73
         },
         "category": "usa"
       }
@@ -5182,82 +5193,102 @@
         "category": "world"
       },
       {
-        "title": "Americans who moved to Europe after Trump win now say they regret leaving",
-        "link": "https://www.foxnews.com/media/americans-who-moved-europe-after-trump-win-now-say-regret-leaving",
+        "title": "Trump delivers $1 billion to Marines to relieve decades-long suffering of American heroes and their families",
+        "link": "https://www.foxnews.com/politics/trump-delivers-1-billion-marines-relieve-decades-long-suffering-american-heroes-families",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "American expats who fled Trump's America now voice frustration with Europe's lower quality of life, bureaucracy, and hostility toward American culture.",
+        "description": "Trump announced nearly $1 billion in Camp Lejeune toxic water settlements at a North Carolina rally, ordering the DOJ to resolve all remaining claims.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T00:30:40.000Z",
+        "publishedAt": "2026-10-21T13:54:07.000Z",
         "sentiment": {
-          "posP": 8.6,
-          "negP": 26.1,
-          "neuP": 65.3,
-          "label": "negative",
-          "confidence": 0.78
+          "posP": 18.1,
+          "negP": 6.7,
+          "neuP": 75.2,
+          "label": "positive",
+          "confidence": 0.65
         },
         "category": "usa"
       },
       {
-        "title": "Ana Navarro clashes with 'The View' co-hosts, declares there's 'no way in hell' she would meet with Trump",
-        "link": "https://www.foxnews.com/media/ana-navarro-clashes-the-view-co-hosts-declares-theres-no-way-hell-she-would-meet-trump",
+        "title": "Danica Patrick dusts off her election firesuit and sends America a message about Donald Trump",
+        "link": "https://www.foxnews.com/outkick-sports/danica-patrick-dusts-off-election-firesuit-sends-america-message-donald-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "\"The View\" co-host Ana Navarro declared she would never meet with President Donald Trump as the panel debated a recent dinner he had with Bill Maher and others.",
+        "description": "Danica Patrick posted a passionate Instagram message urging Americans to vote in the midterms to help Trump make the most of his presidency.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T23:48:38.000Z",
+        "publishedAt": "2026-10-21T13:48:45.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 13.7,
-          "neuP": 86.3,
-          "label": "negative",
-          "confidence": 0.78
+          "posP": 15.2,
+          "negP": 0,
+          "neuP": 84.8,
+          "label": "positive",
+          "confidence": 0.73
         },
         "category": "usa"
       },
       {
-        "title": "Iran touts closest ever ties with Russia, contradicting Trump",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-talks-russia-strait-of-hormuz/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Warren Sapp gets into confrontation with Florida State fan during tailgate, Tim McGraw's bronzer & Dale art",
+        "link": "https://www.foxnews.com/outkick-sports/warren-sapp-confrontation-florida-state-fan-tailgate-tim-mcgraw-bronzer-dale-art",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Iran says its ties with Russia are stronger than ever after a visit by Putin's top envoy, challenging Trump's assertion that Moscow isn't helping Iran in the war.",
+        "description": "Danica Patrick praised Trump as a great storyteller after riding in The Beast, but Katie Couric couldn't let it go",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T00:58:40.000Z",
+        "publishedAt": "2026-10-21T13:35:50.000Z",
         "sentiment": {
-          "posP": 13.6,
-          "negP": 20.8,
-          "neuP": 65.6,
-          "label": "negative",
-          "confidence": 0.49
+          "posP": 16.2,
+          "negP": 4.2,
+          "neuP": 79.6,
+          "label": "positive",
+          "confidence": 0.56
         },
         "category": "usa"
       },
       {
-        "title": "Trump says U.S. has gotten \"nothing\" from Ukraine",
-        "link": "https://www.cbsnews.com/video/trump-says-us-has-gotten-nothing-from-ukraine/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Russia Releases American Stephen Hubbard From Prison, State Media Reports",
+        "link": "https://www.nytimes.com/2026/10/21/us/politics/russia-american-prisoner-release-stephen-hubbard-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump on Tuesday said the U.S. has \"given a lot\" to Ukraine and gotten \"nothing\" in return amid Russia's ongoing war with the country. CBS News' Aaron MacLean has more.",
+        "description": "The move buys good will with President Trump while costing the President Vladimir V. Putin — who is wanted for war crimes — little.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T00:19:00.000Z",
+        "publishedAt": "2026-10-21T14:28:48.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 9.5,
-          "neuP": 90.5,
+          "posP": 7.4,
+          "negP": 18.4,
+          "neuP": 74.2,
           "label": "negative",
-          "confidence": 0.6
+          "confidence": 0.65
+        },
+        "category": "usa"
+      },
+      {
+        "title": "America’s Utility Bill Crisis, and Trump’s Approval Rating Hits a New Low",
+        "link": "https://www.nytimes.com/2026/10/21/podcasts/the-headlines/utility-bill-costs-trump-approval-rating.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Plus, the big business of big scares.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T12:45:52.000Z",
+        "sentiment": {
+          "posP": 12.1,
+          "negP": 33.5,
+          "neuP": 54.4,
+          "label": "negative",
+          "confidence": 0.67
         },
         "category": "usa"
       },
@@ -5271,7 +5302,7 @@
         "description": "Julio Herrera Velutini, a prominent Venezuelan, was seeking clemency. He got it not long after his daughter gave Ms. Habba, a lawyer close to President Trump, an extraordinarily lucrative job.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T03:58:26.000Z",
+        "publishedAt": "2026-10-21T14:04:31.000Z",
         "sentiment": {
           "posP": 10.8,
           "negP": 0,
@@ -5282,36 +5313,56 @@
         "category": "usa"
       },
       {
-        "title": "Trump Wields an Unprecedented $277 Million in Final Midterm Stretch",
-        "link": "https://www.nytimes.com/2026/10/20/us/politics/trump-maga-inc-midterms.html",
+        "title": "Trump Approval Hits New Low Two Weeks Before Midterms, Poll Finds",
+        "link": "https://www.nytimes.com/2026/10/21/us/politics/trump-midterm-election-poll.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The enormous spending by the term-limited president’s super PAC has no parallel in American history, and could offer struggling Republican candidates a lifeline.",
+        "description": "Likely voters favored Democratic candidates over Republicans by 11 percentage points in their congressional district, a New York Times/Siena poll found.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T03:14:58.000Z",
+        "publishedAt": "2026-10-21T09:03:22.000Z",
         "sentiment": {
-          "posP": 10.3,
-          "negP": 13.2,
-          "neuP": 76.5,
-          "label": "neutral",
-          "confidence": 0.03
+          "posP": 16.4,
+          "negP": 5.8,
+          "neuP": 77.8,
+          "label": "positive",
+          "confidence": 0.59
         },
         "category": "usa"
       },
       {
-        "title": "Trump Announces Plans to Spend Another $100 Million by Election Day",
-        "link": "https://www.nytimes.com/2026/10/20/briefing/trump-midterm-spending.html",
+        "title": "Democrats Have a Wide Lead in Our New Poll as Trump Slides",
+        "link": "https://www.nytimes.com/2026/10/21/upshot/times-siena-poll-trump-midterms.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Also, a new N.B.A. season begins. Here’s the latest at the end of Tuesday.",
+        "description": "The map favors Republicans, but cracks in their base are leaving them vulnerable in defending House and Senate control.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T21:56:19.000Z",
+        "publishedAt": "2026-10-21T09:36:35.000Z",
+        "sentiment": {
+          "posP": 4.7,
+          "negP": 7.4,
+          "neuP": 87.9,
+          "label": "negative",
+          "confidence": 0.21
+        },
+        "category": "usa"
+      },
+      {
+        "title": "In Six Decades of Public Life, I Never Thought I Would Write This Piece",
+        "link": "https://www.nytimes.com/2026/10/21/opinion/trump-midterms-election-threats-ice-economy.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump’s meddling would have dark consequences for our democracy and our prosperity.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T09:02:15.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5322,16 +5373,16 @@
         "category": "usa"
       },
       {
-        "title": "Trump Pushes to Evict White House Press Corps",
-        "link": "https://www.nytimes.com/2026/10/20/us/politics/trump-white-house-media.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump weighs moving White House press corps out of building",
+        "link": "https://www.cbsnews.com/news/trump-white-house-press-corps/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump has talked about replacing the James S. Brady Press Briefing Room with an indoor swimming pool.",
+        "description": "Outside allies of President Trump have recently pushed the idea of moving the White House press corps to another building, including former Trump strategist Steve Bannon, one source said.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T20:59:43.000Z",
+        "publishedAt": "2026-10-21T14:22:32.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5342,139 +5393,127 @@
         "category": "usa"
       },
       {
-        "title": "Why Zelensky Took the Gloves Off This Time With Trump",
-        "link": "https://www.nytimes.com/2026/10/20/world/europe/ukraine-war-zelensky-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Iran says indirect talks with U.S. on ceasefire proposal continue",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-ceasefire-talks-ongoing/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Staying quiet is riskier than speaking up, Ukrainian officials say, as President Trump goes further than ever in prioritizing Russia’s interests.",
+        "description": "Iran says the U.S. is seeking changes to a seven-day ceasefire proposal Trump rejected last month as indirect talks continue.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T20:39:58.000Z",
-        "sentiment": {
-          "posP": 6,
-          "negP": 7.2,
-          "neuP": 86.8,
-          "label": "neutral",
-          "confidence": 0.1
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Asked Putin to Release an American Jailed in Russia",
-        "link": "https://www.nytimes.com/2026/10/20/us/politics/trump-russia-prisoner-stephen-hubbard.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president called for the return of Stephen James Hubbard, a Michigan teacher seized from his home in Ukraine months after Russia invaded that country.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-20T20:47:52.000Z",
+        "publishedAt": "2026-10-21T14:20:12.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 8.4,
-          "neuP": 91.6,
+          "negP": 10.5,
+          "neuP": 89.5,
           "label": "negative",
-          "confidence": 0.49
+          "confidence": 0.51
         },
         "category": "usa"
       },
       {
-        "title": "Trumpism Is Backfiring",
-        "link": "https://www.nytimes.com/2026/10/20/opinion/ezra-klein-podcast-chrystia-freeland.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "San Diego mayor on affordability crisis, Trump suggesting Iran to \"take out\" his city",
+        "link": "https://www.cbsnews.com/video/san-diego-mayor-on-affordability-crisis-trump-suggesting-iran-take-out-his-city/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Chrystia Freeland, a former Canadian deputy prime minister, explains why her country chose to fight back against Trump.",
+        "description": "Americans are struggling with rising prices as the Iran war worsens economic issues. Mayor Todd Gloria of San Diego, California, speaks about his \"National Affordability Tour\" as part of the U.S. Conference of Mayors.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T13:11:05.000Z",
+        "publishedAt": "2026-10-21T14:04:13.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 12,
-          "neuP": 88,
+          "negP": 24,
+          "neuP": 76,
           "label": "negative",
-          "confidence": 0.38
+          "confidence": 0.93
         },
         "category": "usa"
       },
       {
-        "title": "Trump sued over 50% tariffs on Canada in latest trade challenge",
-        "link": "https://www.cnbc.com/2026/10/20/trump-tariffs-canada-section-338-lawsuit.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Trump defends Iran war, downplays high prices at North Carolina rally",
+        "link": "https://www.cbsnews.com/video/trump-defends-iran-war-downplays-high-prices-at-north-carolina-rally/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A new lawsuit challenges President Donald Trump's tariffs on a range of Canadian goods using Section 338 of the Tariff Act of 1930.",
+        "description": "President Trump downplayed economic issues at a rally in North Carolina. In Ohio, Republican gubernatorial candidate Vivek Ramaswamy released a highly criticized attack ad against his Democratic rival Amy Acton. CBS News' Weijia Jiang has more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-20T18:06:13.000Z",
+        "publishedAt": "2026-10-21T13:52:00.000Z",
         "sentiment": {
-          "posP": 7.8,
-          "negP": 5.7,
-          "neuP": 86.5,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
+          "posP": 0,
+          "negP": 19.3,
+          "neuP": 80.7,
           "label": "negative",
-          "confidence": 0.67
+          "confidence": 0.88
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump heckled by protesters at North Carolina rally",
+        "link": "https://www.cbsnews.com/video/trump-heckled-by-protesters-at-north-carolina-rally/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Multiple protesters were removed from President Trump's North Carolina rally on Tuesday night. Meanwhile, political ads in Ohio are getting personal. Weijia Jiang reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T13:36:38.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 11.2,
+          "neuP": 88.8,
+          "label": "negative",
+          "confidence": 0.42
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.4,
-      "neu": 85.34,
-      "neg": 9.26,
-      "count": 30
+      "pos": 7.98,
+      "neu": 83.73,
+      "neg": 8.29,
+      "count": 38
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 4.46,
-        "neu": 89.68,
-        "neg": 5.87,
-        "count": 9
+        "pos": 8.05,
+        "neu": 82.31,
+        "neg": 9.64,
+        "count": 8
+      },
+      {
+        "source": "ABC News",
+        "pos": 10.34,
+        "neu": 84.76,
+        "neg": 4.9,
+        "count": 7
+      },
+      {
+        "source": "CBS News",
+        "pos": 0.67,
+        "neu": 86.17,
+        "neg": 13.17,
+        "count": 6
+      },
+      {
+        "source": "Fox News",
+        "pos": 14.63,
+        "neu": 82.65,
+        "neg": 2.73,
+        "count": 4
+      },
+      {
+        "source": "NBC News",
+        "pos": 16.88,
+        "neu": 74.83,
+        "neg": 8.3,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5484,39 +5523,11 @@
         "count": 4
       },
       {
-        "source": "ABC News",
-        "pos": 7.38,
-        "neu": 80.92,
-        "neg": 11.7,
-        "count": 4
-      },
-      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
         "count": 3
-      },
-      {
-        "source": "Fox News",
-        "pos": 5.87,
-        "neu": 80.87,
-        "neg": 13.27,
-        "count": 3
-      },
-      {
-        "source": "CBS News",
-        "pos": 5.87,
-        "neu": 79.37,
-        "neg": 14.77,
-        "count": 3
-      },
-      {
-        "source": "NBC News",
-        "pos": 10.4,
-        "neu": 82.75,
-        "neg": 6.85,
-        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5529,44 +5540,37 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.52,
-        "neu": 82.27,
-        "neg": 12.21,
-        "count": 12
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 4.76,
-        "neu": 84.49,
-        "neg": 10.75,
-        "count": 8
+        "pos": 7.81,
+        "neu": 84.39,
+        "neg": 7.81,
+        "count": 18
       },
       {
         "topic": "Policy",
-        "pos": 5.13,
-        "neu": 90.25,
-        "neg": 4.62,
-        "count": 6
+        "pos": 9.11,
+        "neu": 83,
+        "neg": 7.89,
+        "count": 8
+      },
+      {
+        "topic": "Foreign Policy",
+        "pos": 7.73,
+        "neu": 81,
+        "neg": 11.28,
+        "count": 8
       },
       {
         "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
+        "pos": 9.3,
+        "neu": 83.63,
+        "neg": 7.07,
+        "count": 3
       },
       {
         "topic": "Public Statements",
         "pos": 0,
         "neu": 100,
         "neg": 0,
-        "count": 1
-      },
-      {
-        "topic": "Legal",
-        "pos": 7.8,
-        "neu": 86.5,
-        "neg": 5.7,
         "count": 1
       }
     ]
@@ -5594,28 +5598,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-21T00:32:04.993Z",
+        "label": "2026-10-21T10:36:16.486Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T01:32:04.993Z",
+        "label": "2026-10-21T11:36:16.486Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T02:32:04.993Z",
+        "label": "2026-10-21T12:36:16.486Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T03:32:04.993Z",
+        "label": "2026-10-21T13:36:16.486Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5624,28 +5628,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-21T00:32:04.993Z",
+        "label": "2026-10-21T10:36:16.486Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T01:32:04.993Z",
+        "label": "2026-10-21T11:36:16.486Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T02:32:04.993Z",
+        "label": "2026-10-21T12:36:16.486Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T03:32:04.993Z",
+        "label": "2026-10-21T13:36:16.486Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5725,7 +5729,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-21T04:32:04.994Z",
+    "generatedAt": "2026-10-21T14:36:16.486Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5846,8 +5850,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 168,
-      "potusArticles": 30,
+      "usaArticles": 169,
+      "potusArticles": 38,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
