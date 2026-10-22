@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-22T00:42:55.916Z",
+  "generatedAt": "2026-10-22T05:26:20.492Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 168,
-    "potusArticles": 31
+    "usaArticles": 167,
+    "potusArticles": 35
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-21T20:42:55.916Z",
+          "label": "2026-10-22T01:26:20.492Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T21:42:55.916Z",
+          "label": "2026-10-22T02:26:20.492Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T22:42:55.916Z",
+          "label": "2026-10-22T03:26:20.492Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T23:42:55.916Z",
+          "label": "2026-10-22T04:26:20.492Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-21T20:42:55.916Z",
+          "label": "2026-10-22T01:26:20.492Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T21:42:55.916Z",
+          "label": "2026-10-22T02:26:20.492Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T22:42:55.916Z",
+          "label": "2026-10-22T03:26:20.492Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T23:42:55.916Z",
+          "label": "2026-10-22T04:26:20.492Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 8.36,
-      "neu": 80.38,
-      "neg": 11.26,
-      "count": 168
+      "pos": 8.26,
+      "neu": 80.98,
+      "neg": 10.75,
+      "count": 167
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 11,
-        "neu": 80.39,
-        "neg": 8.61,
-        "count": 42
+        "pos": 12.12,
+        "neu": 79.21,
+        "neg": 8.67,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 9.87,
-        "neu": 78.06,
-        "neg": 12.08,
+        "pos": 8.65,
+        "neu": 80.83,
+        "neg": 10.53,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.11,
-        "neu": 81.76,
-        "neg": 13.13,
+        "pos": 4.19,
+        "neu": 83.41,
+        "neg": 12.4,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.83,
-        "neu": 80.01,
-        "neg": 13.16,
-        "count": 22
+        "pos": 6.75,
+        "neu": 80.7,
+        "neg": 12.56,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 9.41,
-        "neu": 81.05,
-        "neg": 9.54,
+        "pos": 9.81,
+        "neu": 81.87,
+        "neg": 8.32,
         "count": 20
       },
       {
@@ -4634,28 +4634,23 @@
         },
         {
           "name": "Communication",
-          "bias": -7.88,
-          "count": 4
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 5.85,
+          "bias": -14,
           "count": 2
         },
         {
-          "name": "Finance",
-          "bias": -4.7,
-          "count": 17
-        },
-        {
           "name": "Energy",
-          "bias": -4.12,
+          "bias": -9.56,
           "count": 10
         },
         {
           "name": "Technology",
-          "bias": -2.74,
-          "count": 129
+          "bias": -3.07,
+          "count": 124
+        },
+        {
+          "name": "Finance",
+          "bias": -2.76,
+          "count": 18
         },
         {
           "name": "Materials",
@@ -4663,33 +4658,38 @@
           "count": 2
         },
         {
+          "name": "Healthcare",
+          "bias": 2.14,
+          "count": 9
+        },
+        {
           "name": "Real Estate",
-          "bias": 0.82,
+          "bias": 1.32,
           "count": 5
         },
         {
-          "name": "Healthcare",
-          "bias": -0.77,
-          "count": 9
+          "name": "Manufacturing",
+          "bias": 0,
+          "count": 1
         }
       ],
       "pos": [
         {
-          "name": "Manufacturing",
-          "bias": 5.85,
-          "count": 2
+          "name": "Healthcare",
+          "bias": 2.14,
+          "count": 9
         }
       ],
       "neu": [
         {
-          "name": "Energy",
-          "bias": -4.12,
-          "count": 10
+          "name": "Technology",
+          "bias": -3.07,
+          "count": 124
         },
         {
-          "name": "Technology",
-          "bias": -2.74,
-          "count": 129
+          "name": "Finance",
+          "bias": -2.76,
+          "count": 18
         },
         {
           "name": "Materials",
@@ -4705,45 +4705,45 @@
         },
         {
           "name": "Communication",
-          "bias": -7.88,
-          "count": 4
+          "bias": -14,
+          "count": 2
         },
         {
-          "name": "Finance",
-          "bias": -4.7,
-          "count": 17
+          "name": "Energy",
+          "bias": -9.56,
+          "count": 10
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-21T20:42:55.918Z",
-          "pos": 15,
-          "neu": 76,
+          "label": "2026-10-22T01:26:20.494Z",
+          "pos": 9,
+          "neu": 83,
+          "neg": 8,
+          "count": 11
+        },
+        {
+          "label": "2026-10-22T02:26:20.494Z",
+          "pos": 8,
+          "neu": 82,
           "neg": 9,
+          "count": 14
+        },
+        {
+          "label": "2026-10-22T03:26:20.494Z",
+          "pos": 2,
+          "neu": 85,
+          "neg": 13,
           "count": 5
         },
         {
-          "label": "2026-10-21T21:42:55.918Z",
-          "pos": 11,
-          "neu": 74,
-          "neg": 15,
-          "count": 19
-        },
-        {
-          "label": "2026-10-21T22:42:55.918Z",
-          "pos": 6,
-          "neu": 82,
-          "neg": 12,
-          "count": 21
-        },
-        {
-          "label": "2026-10-21T23:42:55.918Z",
-          "pos": 6,
-          "neu": 83,
-          "neg": 11,
-          "count": 27
+          "label": "2026-10-22T04:26:20.494Z",
+          "pos": 1,
+          "neu": 80,
+          "neg": 18,
+          "count": 4
         }
       ]
     }
@@ -4951,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "U.S. and Israel Draw Up Plans for Renewed Strikes on Iran After Elections",
-        "link": "https://www.nytimes.com/2026/10/21/us/politics/us-israel-renewed-iran-strikes.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump dominates El-Sayed's attacks against Rogers, but GOP rival offers unexpected policy split",
+        "link": "https://www.foxnews.com/politics/trump-dominates-el-sayeds-attacks-against-rogers-gop-rival-offers-unexpected-policy-split",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Renewed hostilities might not be any more successful than the war’s first phase, and President Trump has repeatedly canceled plans for a return to major combat.",
+        "description": "Donald Trump was invoked 18 times as Abdul El-Sayed branded Mike Rogers a \"sock puppet\" and declared \"MAGA bingo\" in the Michigan Senate debate.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T22:41:33.000Z",
+        "publishedAt": "2026-10-22T02:51:58.000Z",
         "sentiment": {
-          "posP": 8.9,
-          "negP": 17.4,
-          "neuP": 73.7,
+          "posP": 3,
+          "negP": 5.3,
+          "neuP": 91.7,
           "label": "negative",
-          "confidence": 0.44
+          "confidence": 0.21
         },
         "category": "usa"
       },
       {
-        "title": "In Trump’s Diplomacy, Insults Are a One-Way Street. Ukraine Is the Latest Example.",
-        "link": "https://www.nytimes.com/2026/10/21/us/politics/trumps-diplomacy-insults.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Ilhan Omar believes Trump raid on home was meant to 'intimidate and scare people' from voting",
+        "link": "https://www.foxnews.com/media/ilhan-omar-believes-trump-raid-home-meant-intimidate-scare-people-voting",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The latest rift with President Volodymyr Zelensky of Ukraine serves as a reminder that President Trump readily lashes out at other world leaders, only to grow outraged if they fight back.",
+        "description": "Rep. Ilhan Omar, D-Minn., claimed the raid on her D.C. home was designed to intimidate voters ahead of midterm elections and appease Trump supporters.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T16:44:15.000Z",
+        "publishedAt": "2026-10-22T01:42:53.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 18.6,
-          "neuP": 81.4,
+          "posP": 10.7,
+          "negP": 14.5,
+          "neuP": 74.8,
           "label": "negative",
-          "confidence": 0.84
+          "confidence": 0.2
         },
         "category": "usa"
       }
@@ -5193,6 +5193,66 @@
         "category": "world"
       },
       {
+        "title": "Trump dominates El-Sayed's attacks against Rogers, but GOP rival offers unexpected policy split",
+        "link": "https://www.foxnews.com/politics/trump-dominates-el-sayeds-attacks-against-rogers-gop-rival-offers-unexpected-policy-split",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Donald Trump was invoked 18 times as Abdul El-Sayed branded Mike Rogers a \"sock puppet\" and declared \"MAGA bingo\" in the Michigan Senate debate.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T02:51:58.000Z",
+        "sentiment": {
+          "posP": 3,
+          "negP": 5.3,
+          "neuP": 91.7,
+          "label": "negative",
+          "confidence": 0.21
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Ilhan Omar believes Trump raid on home was meant to 'intimidate and scare people' from voting",
+        "link": "https://www.foxnews.com/media/ilhan-omar-believes-trump-raid-home-meant-intimidate-scare-people-voting",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Rep. Ilhan Omar, D-Minn., claimed the raid on her D.C. home was designed to intimidate voters ahead of midterm elections and appease Trump supporters.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T01:42:53.000Z",
+        "sentiment": {
+          "posP": 10.7,
+          "negP": 14.5,
+          "neuP": 74.8,
+          "label": "negative",
+          "confidence": 0.2
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Stephen A Smith defends White House dinner with Trump",
+        "link": "https://www.foxnews.com/media/stephen-smith-defends-white-house-dinner-trump",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Stephen A. Smith told \"The View\" co-hosts he won't apologize for his White House dinner meeting with Trump, Bill Maher and Kid Rock last week.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T00:58:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 3.9,
+          "neuP": 96.1,
+          "label": "neutral",
+          "confidence": 0.08
+        },
+        "category": "usa"
+      },
+      {
         "title": "U.S. and Israel Draw Up Plans for Renewed Strikes on Iran After Elections",
         "link": "https://www.nytimes.com/2026/10/21/us/politics/us-israel-renewed-iran-strikes.html",
         "source": "NYT",
@@ -5202,13 +5262,33 @@
         "description": "Renewed hostilities might not be any more successful than the war’s first phase, and President Trump has repeatedly canceled plans for a return to major combat.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T22:41:33.000Z",
+        "publishedAt": "2026-10-22T00:58:22.000Z",
         "sentiment": {
           "posP": 8.9,
           "negP": 17.4,
           "neuP": 73.7,
           "label": "negative",
           "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "MAGA Bingo and Questions of Loyalty: 5 Michigan Senate Debate Takeaways",
+        "link": "https://www.nytimes.com/2026/10/21/us/politics/michigan-senate-debate-takeaways-el-sayed-rogers.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Abdul El-Sayed accused Mike Rogers of being overly devoted to President Trump. Mr. Rogers accused Dr. El-Sayed of not enough loyalty to the country. It was still more cordial than their last debate.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T02:43:40.000Z",
+        "sentiment": {
+          "posP": 12.1,
+          "negP": 14.1,
+          "neuP": 73.8,
+          "label": "neutral",
+          "confidence": 0.01
         },
         "category": "usa"
       },
@@ -5222,7 +5302,7 @@
         "description": "The latest rift with President Volodymyr Zelensky of Ukraine serves as a reminder that President Trump readily lashes out at other world leaders, only to grow outraged if they fight back.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T16:44:15.000Z",
+        "publishedAt": "2026-10-22T02:29:48.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 18.6,
@@ -5249,26 +5329,6 @@
           "neuP": 72.2,
           "label": "positive",
           "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Envoy Calls Putin a ‘Humanitarian’",
-        "link": "https://www.nytimes.com/2026/10/21/briefing/trump-russia-prisoner-release.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Also, Democrats lead in polls, but still face image problems. Here’s the latest at the end of Wednesday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-21T21:58:39.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 13.9,
-          "neuP": 86.1,
-          "label": "negative",
-          "confidence": 0.55
         },
         "category": "usa"
       },
@@ -5333,42 +5393,22 @@
         "category": "usa"
       },
       {
-        "title": "In Six Decades of Public Life, I Never Thought I Would Write This Piece",
-        "link": "https://www.nytimes.com/2026/10/21/opinion/trump-midterms-election-threats-ice-economy.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump’s meddling would have dark consequences for our democracy and our prosperity.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-21T16:21:45.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Stephen Hubbard's son thanks Putin and Trump for father's release from Russian jail",
-        "link": "https://www.cbsnews.com/video/stephen-hubbards-son-thanks-putin-for-fathers-release-from-russian-jail/",
+        "title": "Candidates clash over Trump policies, Senate control in debate",
+        "link": "https://www.cbsnews.com/news/kansas-senate-debate-roger-marshall-adam-hamilton-2026/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Retired American teacher Stephen Hubbard has been released from a Russian jail after over four years of detention. His son, Joseph Coleman, spoke to CBS News about the good news. CBS News' Natalie Brand has more.",
+        "description": "GOP Sen. Roger Marshall and Pastor Adam Hamilton debated tariffs, war and high fuel prices, and also addressed the most controversial issues in each of their campaigns.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T23:12:00.000Z",
+        "publishedAt": "2026-10-22T04:05:18.000Z",
         "sentiment": {
-          "posP": 10.9,
-          "negP": 4.7,
-          "neuP": 84.4,
-          "label": "positive",
-          "confidence": 0.51
+          "posP": 0,
+          "negP": 15,
+          "neuP": 85,
+          "label": "negative",
+          "confidence": 0.72
         },
         "category": "usa"
       },
@@ -5413,26 +5453,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump-aligned super PACs pour millions into once-safe GOP House seats",
-        "link": "https://www.cnbc.com/2026/10/21/trump-pac-spending-midterm-election-house-republicans.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump-aligned PACs are pouring hundreds of millions into House and Senate races as Republicans defend an expanding midterm election battleground map.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-21T20:57:12.000Z",
-        "sentiment": {
-          "posP": 11,
-          "negP": 7.6,
-          "neuP": 81.4,
-          "label": "positive",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump hopes to flatter Putin into negotiating on Ukraine, experts say",
         "link": "https://www.nbcnews.com/politics/donald-trump/trump-hopes-flatter-putin-negotiating-ukraine-experts-say-rcna604770",
         "source": "NBC News",
@@ -5451,48 +5471,42 @@
           "confidence": 0.18
         },
         "category": "usa"
-      },
-      {
-        "title": "Trump’s growing list of campaign pledges: From the Politics Desk",
-        "link": "https://www.nbcnews.com/politics/politics-news/trumps-growing-list-campaign-pledges-politics-desk-rcna604906",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Welcome to From the Politics Desk, a daily newsletter that brings you the NBC News Politics team’s latest reporting and analysis from the White House, Capitol Hill and the campaign trail.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-21T22:34:59.000Z",
-        "sentiment": {
-          "posP": 11,
-          "negP": 0,
-          "neuP": 89,
-          "label": "positive",
-          "confidence": 0.57
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.09,
-      "neu": 84.14,
-      "neg": 8.77,
-      "count": 31
+      "pos": 6.84,
+      "neu": 83.77,
+      "neg": 9.39,
+      "count": 35
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 7.38,
-        "neu": 82.72,
-        "neg": 9.9,
-        "count": 10
+        "pos": 9.54,
+        "neu": 79.43,
+        "neg": 11.02,
+        "count": 9
       },
       {
         "source": "NBC News",
-        "pos": 8.25,
-        "neu": 83.42,
-        "neg": 8.33,
+        "pos": 7.67,
+        "neu": 84.22,
+        "neg": 8.12,
         "count": 6
+      },
+      {
+        "source": "ABC News",
+        "pos": 8.9,
+        "neu": 81.62,
+        "neg": 9.48,
+        "count": 5
+      },
+      {
+        "source": "Fox News",
+        "pos": 5.67,
+        "neu": 88.4,
+        "neg": 5.92,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5509,17 +5523,10 @@
         "count": 3
       },
       {
-        "source": "ABC News",
-        "pos": 12.13,
-        "neu": 79.97,
-        "neg": 7.9,
-        "count": 3
-      },
-      {
         "source": "CBS News",
-        "pos": 7.45,
-        "neu": 83.2,
-        "neg": 9.35,
+        "pos": 2,
+        "neu": 83.5,
+        "neg": 14.5,
         "count": 2
       },
       {
@@ -5533,31 +5540,31 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.64,
-        "neu": 87.3,
-        "neg": 8.06,
+        "pos": 5.63,
+        "neu": 84.47,
+        "neg": 9.9,
         "count": 12
       },
       {
-        "topic": "Foreign Policy",
-        "pos": 6.07,
-        "neu": 83.05,
-        "neg": 10.88,
+        "topic": "Policy",
+        "pos": 8.75,
+        "neu": 83.33,
+        "neg": 7.92,
         "count": 10
       },
       {
-        "topic": "Policy",
-        "pos": 12.07,
-        "neu": 80.16,
-        "neg": 7.77,
-        "count": 7
+        "topic": "Foreign Policy",
+        "pos": 5.79,
+        "neu": 82.99,
+        "neg": 11.22,
+        "count": 10
       },
       {
         "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
+        "pos": 8.83,
+        "neu": 85.07,
+        "neg": 6.1,
+        "count": 3
       }
     ]
   },
@@ -5584,28 +5591,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-21T20:42:55.920Z",
+        "label": "2026-10-22T01:26:20.496Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T21:42:55.920Z",
+        "label": "2026-10-22T02:26:20.496Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T22:42:55.920Z",
+        "label": "2026-10-22T03:26:20.496Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T23:42:55.920Z",
+        "label": "2026-10-22T04:26:20.496Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5614,28 +5621,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-21T20:42:55.920Z",
+        "label": "2026-10-22T01:26:20.497Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T21:42:55.920Z",
+        "label": "2026-10-22T02:26:20.497Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T22:42:55.920Z",
+        "label": "2026-10-22T03:26:20.497Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T23:42:55.920Z",
+        "label": "2026-10-22T04:26:20.497Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5715,7 +5722,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-22T00:42:55.921Z",
+    "generatedAt": "2026-10-22T05:26:20.498Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5836,8 +5843,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 168,
-      "potusArticles": 31,
+      "usaArticles": 167,
+      "potusArticles": 35,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
