@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-22T19:23:38.841Z",
+  "generatedAt": "2026-10-22T22:40:15.218Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 169,
-    "potusArticles": 36
+    "usaArticles": 170,
+    "potusArticles": 47
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-22T15:23:38.841Z",
+          "label": "2026-10-22T18:40:15.219Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T16:23:38.841Z",
+          "label": "2026-10-22T19:40:15.219Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T17:23:38.841Z",
+          "label": "2026-10-22T20:40:15.219Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T18:23:38.841Z",
+          "label": "2026-10-22T21:40:15.219Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-22T15:23:38.841Z",
+          "label": "2026-10-22T18:40:15.219Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T16:23:38.841Z",
+          "label": "2026-10-22T19:40:15.219Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T17:23:38.841Z",
+          "label": "2026-10-22T20:40:15.219Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T18:23:38.841Z",
+          "label": "2026-10-22T21:40:15.219Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.64,
-      "neu": 82.52,
-      "neg": 9.83,
-      "count": 169
+      "pos": 8.01,
+      "neu": 82.12,
+      "neg": 9.87,
+      "count": 170
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.78,
-        "neu": 80.93,
-        "neg": 9.29,
-        "count": 43
+        "pos": 10.5,
+        "neu": 79.35,
+        "neg": 10.15,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 7.9,
-        "neu": 82.14,
-        "neg": 9.96,
+        "pos": 11.54,
+        "neu": 77.92,
+        "neg": 10.54,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.05,
-        "neu": 84.25,
-        "neg": 9.7,
+        "pos": 4.83,
+        "neu": 86.92,
+        "neg": 8.25,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.96,
-        "neu": 82.62,
-        "neg": 10.42,
-        "count": 22
+        "pos": 6.35,
+        "neu": 82.41,
+        "neg": 11.24,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.99,
-        "neu": 86.62,
-        "neg": 6.39,
+        "pos": 6.31,
+        "neu": 88.68,
+        "neg": 5,
         "count": 20
       },
       {
@@ -4628,117 +4628,132 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -17,
+          "name": "Manufacturing",
+          "bias": 18.6,
           "count": 1
         },
         {
           "name": "Communication",
-          "bias": -14,
-          "count": 2
-        },
-        {
-          "name": "Real Estate",
-          "bias": 10.55,
-          "count": 2
-        },
-        {
-          "name": "Technology",
-          "bias": -2.83,
-          "count": 130
-        },
-        {
-          "name": "Energy",
-          "bias": -1.96,
-          "count": 9
-        },
-        {
-          "name": "Finance",
-          "bias": 0.4,
-          "count": 19
-        },
-        {
-          "name": "Materials",
-          "bias": -0.4,
+          "bias": -7.63,
           "count": 3
         },
         {
           "name": "Healthcare",
-          "bias": -0.37,
-          "count": 16
+          "bias": -7.55,
+          "count": 11
+        },
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
+        },
+        {
+          "name": "Utilities",
+          "bias": -4.1,
+          "count": 2
+        },
+        {
+          "name": "Materials",
+          "bias": 3.04,
+          "count": 5
+        },
+        {
+          "name": "Technology",
+          "bias": -2.16,
+          "count": 139
+        },
+        {
+          "name": "Finance",
+          "bias": 1.62,
+          "count": 17
+        },
+        {
+          "name": "Energy",
+          "bias": 0.86,
+          "count": 8
         }
       ],
       "pos": [
         {
+          "name": "Manufacturing",
+          "bias": 18.6,
+          "count": 1
+        },
+        {
           "name": "Real Estate",
-          "bias": 10.55,
-          "count": 2
+          "bias": 5.9,
+          "count": 1
+        },
+        {
+          "name": "Materials",
+          "bias": 3.04,
+          "count": 5
         }
       ],
       "neu": [
         {
-          "name": "Energy",
-          "bias": -1.96,
-          "count": 9
+          "name": "Technology",
+          "bias": -2.16,
+          "count": 139
         },
         {
           "name": "Finance",
-          "bias": 0.4,
-          "count": 19
+          "bias": 1.62,
+          "count": 17
         },
         {
-          "name": "Materials",
-          "bias": -0.4,
-          "count": 3
+          "name": "Energy",
+          "bias": 0.86,
+          "count": 8
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
-        },
-        {
           "name": "Communication",
-          "bias": -14,
-          "count": 2
+          "bias": -7.63,
+          "count": 3
         },
         {
-          "name": "Technology",
-          "bias": -2.83,
-          "count": 130
+          "name": "Healthcare",
+          "bias": -7.55,
+          "count": 11
+        },
+        {
+          "name": "Utilities",
+          "bias": -4.1,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-22T15:23:38.843Z",
+          "label": "2026-10-22T18:40:15.220Z",
+          "pos": 7,
+          "neu": 81,
+          "neg": 12,
+          "count": 8
+        },
+        {
+          "label": "2026-10-22T19:40:15.220Z",
+          "pos": 9,
+          "neu": 84,
+          "neg": 8,
+          "count": 15
+        },
+        {
+          "label": "2026-10-22T20:40:15.220Z",
+          "pos": 11,
+          "neu": 81,
+          "neg": 8,
+          "count": 24
+        },
+        {
+          "label": "2026-10-22T21:40:15.220Z",
           "pos": 6,
-          "neu": 83,
-          "neg": 11,
-          "count": 10
-        },
-        {
-          "label": "2026-10-22T16:23:38.843Z",
-          "pos": 8,
-          "neu": 83,
-          "neg": 9,
-          "count": 19
-        },
-        {
-          "label": "2026-10-22T17:23:38.843Z",
-          "pos": 8,
-          "neu": 82,
-          "neg": 11,
-          "count": 21
-        },
-        {
-          "label": "2026-10-22T18:23:38.843Z",
-          "pos": 8,
           "neu": 85,
-          "neg": 7,
-          "count": 30
+          "neg": 9,
+          "count": 31
         }
       ]
     }
@@ -4966,21 +4981,21 @@
         "category": "usa"
       },
       {
-        "title": "Australia pastor case 'canary in the coal mine' for American Christian freedoms: TPUSA leader",
-        "link": "https://www.foxnews.com/politics/exclusive-australia-pastor-case-canary-coal-mine-american-christian-freedoms-tpusa-leader",
+        "title": "Judge orders Trump to give deposition for his $10 billion defamation lawsuit against BBC",
+        "link": "https://www.foxnews.com/media/judge-orders-trump-give-deposition-10-billion-defamation-lawsuit-bbc",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Lucas Miles of Turning Point USA says he contacted the White House Faith Office urging Trump to pressure Australia over a church investigation.",
+        "description": "President Donald Trump must sit for a deposition by Dec. 11 in his $10 billion defamation lawsuit against the BBC over its 2024 \"Panorama\" documentary.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T18:42:14.000Z",
+        "publishedAt": "2026-10-22T22:16:11.000Z",
         "sentiment": {
-          "posP": 12.4,
-          "negP": 5.5,
-          "neuP": 82.1,
-          "label": "positive",
+          "posP": 0,
+          "negP": 9.5,
+          "neuP": 90.5,
+          "label": "negative",
           "confidence": 0.42
         },
         "category": "usa"
@@ -5208,202 +5223,122 @@
         "category": "usa"
       },
       {
-        "title": "Australia pastor case 'canary in the coal mine' for American Christian freedoms: TPUSA leader",
-        "link": "https://www.foxnews.com/politics/exclusive-australia-pastor-case-canary-coal-mine-american-christian-freedoms-tpusa-leader",
+        "title": "Judge orders Trump to give deposition for his $10 billion defamation lawsuit against BBC",
+        "link": "https://www.foxnews.com/media/judge-orders-trump-give-deposition-10-billion-defamation-lawsuit-bbc",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Lucas Miles of Turning Point USA says he contacted the White House Faith Office urging Trump to pressure Australia over a church investigation.",
+        "description": "President Donald Trump must sit for a deposition by Dec. 11 in his $10 billion defamation lawsuit against the BBC over its 2024 \"Panorama\" documentary.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T18:42:14.000Z",
+        "publishedAt": "2026-10-22T22:16:11.000Z",
         "sentiment": {
-          "posP": 12.4,
-          "negP": 5.5,
-          "neuP": 82.1,
-          "label": "positive",
+          "posP": 0,
+          "negP": 9.5,
+          "neuP": 90.5,
+          "label": "negative",
           "confidence": 0.42
         },
         "category": "usa"
       },
       {
-        "title": "Presidents Cup hero Jacob Bridgeman joins President Trump on stage in South Carolina, leads Clemson chant",
-        "link": "https://www.foxnews.com/outkick-sports/presidents-cup-hero-jacob-bridgeman-joins-president-trump-stage-south-carolina-leads-clemson-chant",
+        "title": "Paul Finebaum says ESPN banned him from shows after telling OutKick he might run for office",
+        "link": "https://www.foxnews.com/outkick-sports/paul-finebaum-says-espn-banned-him-shows-after-telling-outkick-might-run-office",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Jacob Bridgeman spoke at Trump's Clemson University rally in South Carolina, recounting his Presidents Cup clinching putt for Team USA golf.",
+        "description": "Paul Finebaum confirms ESPN sidelined him after his OutKick interview about running for Alabama Senate as a Republican and voting for Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T18:18:34.000Z",
-        "sentiment": {
-          "posP": 9.1,
-          "negP": 0,
-          "neuP": 90.9,
-          "label": "positive",
-          "confidence": 0.56
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump blasts LeBron James as a 'total disgrace' over his national anthem antics during 76ers debut",
-        "link": "https://www.foxnews.com/outkick-sports/trump-blasts-lebron-james-total-disgrace-national-anthem-antics-76ers-debut",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump blasted LeBron James on Truth Social for practicing golf swings during the national anthem while wearing his new Philadelphia 76ers gear.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T17:39:03.000Z",
-        "sentiment": {
-          "posP": 5.7,
-          "negP": 7.9,
-          "neuP": 86.4,
-          "label": "negative",
-          "confidence": 0.23
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iowa, Usually Red, Is in Play This Midterm as Economic Woes Mount",
-        "link": "https://www.nytimes.com/2026/10/22/us/politics/iowa-farmers-republicans-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration’s policies could cost Republicans in a state that is being hit hard by expensive diesel prices and uncertainty over trade.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T09:03:19.000Z",
-        "sentiment": {
-          "posP": 6.1,
-          "negP": 17.1,
-          "neuP": 76.8,
-          "label": "negative",
-          "confidence": 0.51
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Impeachment. It’s Not Just for Presidents.",
-        "link": "https://www.nytimes.com/2026/10/22/opinion/trump-slotkin-corruption-impeachment.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump’s grotesque rerun of the Gilded Age demands a rebuke.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T14:08:38.000Z",
+        "publishedAt": "2026-10-22T22:09:59.000Z",
         "sentiment": {
           "posP": 0,
+          "negP": 7.7,
+          "neuP": 92.3,
+          "label": "negative",
+          "confidence": 0.46
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Fox News Poll: Nail-biter in Maine Senate race",
+        "link": "https://www.foxnews.com/politics/fox-news-poll-nail-biter-maine-senate-race",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Susan Collins and Troy Jackson are deadlocked at 49% in the Maine Senate race as Trump's job approval sits 25 points underwater in the state.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T22:00:02.000Z",
+        "sentiment": {
+          "posP": 8.8,
           "negP": 0,
-          "neuP": 100,
+          "neuP": 91.2,
+          "label": "positive",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump rally exposes surprising cracks in MAGA base as Republicans face midterm test",
+        "link": "https://www.foxnews.com/politics/trump-rally-exposes-surprising-cracks-maga-base-republicans-face-midterm-test",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump's Clemson rally revealed GOP fractures over the Iran war, funding and immigration as one student eyes crossing party lines.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T21:10:46.000Z",
+        "sentiment": {
+          "posP": 11.7,
+          "negP": 13.1,
+          "neuP": 75.2,
           "label": "neutral",
-          "confidence": 0
+          "confidence": 0.15
         },
         "category": "usa"
       },
       {
-        "title": "The Brief, Messy Political Career of Paolo Zampolli, a Trump Ally",
-        "link": "https://www.nytimes.com/2026/10/22/style/paolo-zampolli-trump-friend-brief-political-career.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Hegseth unleashes Trump's 'Arsenal of Freedom' with warning to defense giants",
+        "link": "https://www.foxnews.com/politics/hegseth-unleashes-trumps-arsenal-freedom-warning-defense-giants",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "He had an unlikely rise, from modeling agent to presidential special envoy. After his firing, he was unrepentant: “I need to make money.”",
+        "description": "Pete Hegseth's video showcases missile launches and production lines as the Trump administration's \"Arsenal of Freedom\" campaign targets Pentagon red tape.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T14:15:35.000Z",
+        "publishedAt": "2026-10-22T21:08:44.000Z",
         "sentiment": {
-          "posP": 7.2,
-          "negP": 13,
-          "neuP": 79.8,
-          "label": "negative",
-          "confidence": 0.3
+          "posP": 24.6,
+          "negP": 6,
+          "neuP": 69.4,
+          "label": "positive",
+          "confidence": 0.82
         },
         "category": "usa"
       },
       {
-        "title": "Trump says Iran is making up strikes on ships to drive up oil prices",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-ceasefire-talks-ongoing/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "DOJ moves to boot two federal judges from immigration cases over remarks to media: 'Extraordinarily imprudent'",
+        "link": "https://www.foxnews.com/politics/doj-moves-boot-two-federal-judges-immigration-cases-over-remarks-media-extraordinarily-imprudent",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump said Iran was trying to drive up oil prices before the midterms by lying about ships hitting mines or being struck by projectiles in the Strait of Hormuz.",
+        "description": "Two Minnesota federal judges who criticized Trump's Operation Metro Surge in a report published by the New York Times now face DOJ recusal motions tied to their immigration cases.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T18:58:55.000Z",
+        "publishedAt": "2026-10-22T20:15:16.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 16.2,
-          "neuP": 83.8,
+          "negP": 5.5,
+          "neuP": 94.5,
           "label": "negative",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iowa State Rep. J.D. Scholten on tight Senate race between Hinson, Turek",
-        "link": "https://www.cbsnews.com/video/iowa-state-rep-jd-scholten-on-tight-senate-race-between-hinson-turek/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is campaigning in Sioux City, Iowa, on Thursday to try to drum up support for Republican Ashley Hinson in her Senate race against Democrat Josh Turek. J.D. Scholten, a campaign surrogate for Turek, joins CBS News to discuss the race.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T18:37:07.000Z",
-        "sentiment": {
-          "posP": 4.9,
-          "negP": 0,
-          "neuP": 95.1,
-          "label": "positive",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Judge says Trump must sit for deposition in BBC defamation lawsuit",
-        "link": "https://www.cbsnews.com/news/trump-bbc-deposition-defamation-lawsuit/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A federal judge said President Trump must sit for a deposition with lawyers for the BBC by Dec. 11 as part of his ongoing defamation lawsuit.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T17:55:32.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 10.3,
-          "neuP": 89.7,
-          "label": "negative",
-          "confidence": 0.42
-        },
-        "category": "usa"
-      },
-      {
-        "title": "DOJ asks Supreme Court to allow border wall construction in Big Bend region",
-        "link": "https://www.cbsnews.com/news/justice-department-supreme-court-border-wall-big-bend-region/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Justice Department asked the Supreme Court to lift a lower court injunction that temporarily blocked the Trump administration from building a border wall and related infrastructure in the Big Bend Sector.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T16:40:45.000Z",
-        "sentiment": {
-          "posP": 23.2,
-          "negP": 8,
-          "neuP": 68.8,
-          "label": "positive",
-          "confidence": 0.85
+          "confidence": 0.36
         },
         "category": "usa"
       },
@@ -5434,74 +5369,154 @@
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Calley Means, a key advisor to health secretary Robert F. Kennedy Jr. and central advocate for the “Make America Healthy Again” movement, is leaving the Trump administration.",
+        "description": "Means, a key advocate for the “Make America Healthy Again” movement, had grown frustrated with a lack of progress on his policy goals, a source familiar with his departure said.",
         "image": "",
         "imageUrl": "",
         "publishedAt": "2026-10-22T18:57:36.000Z",
         "sentiment": {
-          "posP": 11.9,
-          "negP": 6.1,
-          "neuP": 82,
-          "label": "positive",
-          "confidence": 0.3
+          "posP": 16.5,
+          "negP": 18.1,
+          "neuP": 65.4,
+          "label": "neutral",
+          "confidence": 0.18
         },
         "category": "usa"
       },
       {
-        "title": "Judge orders Trump to sit for deposition in his $10 billion lawsuit against the BBC",
-        "link": "https://www.nbcnews.com/politics/donald-trump/trump-sit-deposition-10-billion-defamation-lawsuit-bbc-jan-6-rcna605034",
+        "title": "Blanche won’t rule out DOJ post-election action in a ‘doomsday’ scenario",
+        "link": "https://www.nbcnews.com/politics/justice-department/blanche-wont-rule-doj-post-election-action-doomsday-scenario-rcna605035",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A federal judge in Florida on Thursday ordered President Donald Trump to sit for a deposition in his defamation lawsuit against the BBC by Dec. 11 or face the possibility of having his $10 billion action dismissed.",
+        "description": "The attorney general’s comments come in the middle of a broader campaign by the Trump administration to zero in on what elections experts say is a relatively rare phenomenon of voting by noncitizens.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T15:53:28.000Z",
+        "publishedAt": "2026-10-22T17:38:39.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.3,
-          "neuP": 92.7,
-          "label": "negative",
-          "confidence": 0.42
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How Trump's immigration crackdown may reshape Republican voting in Texas",
+        "link": "https://www.cbsnews.com/video/trumps-immigration-crackdown-reshape-republican-voting-texas/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump's mass deportation operations and immigration enforcement actions could reshape the way Texans vote. CBS News' Camilo Montoya-Galvez spoke with voters and officials about that.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T22:16:26.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "El-Sayed, Rogers trade barbs at final Michigan Senate debate",
+        "link": "https://www.cbsnews.com/video/el-sayed-rogers-trade-barbs-final-michigan-senate-debate/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrat Abdul El-Sayed and Republican Mike Rogers went head-to-head during the Michigan Senate race's final debate on Wednesday night. CBS News White House and politics reporter Aaron Navarro joins with a recap.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T22:11:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Minnesota GOP Senate candidate Michele Tafoya on where she would break with Trump if elected",
+        "link": "https://www.cbsnews.com/video/minnesota-gop-senate-michele-tafoya-where-she-would-break-trump-if-elected/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "New polling shows Minnesota Republican Senate candidate Michele Tafoya making gains in her race against Democratic Lt. Gov. Peggy Flanagan. CBS News correspondent Jonah Kaplan spoke with Tafoya about how she would serve as a check on President Trump if elected to the Senate.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T22:10:42.000Z",
+        "sentiment": {
+          "posP": 4,
+          "negP": 0,
+          "neuP": 96,
+          "label": "positive",
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump campaigning in ruby red area of Iowa with midterms 12 days away",
+        "link": "https://www.cbsnews.com/video/trump-campaigning-ruby-red-area-iowa-midterms-12-days-away/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump is stumping for Republicans in Sioux City, Iowa, on Thursday, with 12 days until Election Day. CBS News chief Washington analyst Robert Costa is in the Hawkeye State with more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T21:44:39.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.36,
-      "neu": 86.07,
-      "neg": 8.57,
-      "count": 36
+      "pos": 5.37,
+      "neu": 86.7,
+      "neg": 7.92,
+      "count": 47
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 5.46,
-        "neu": 84,
-        "neg": 10.54,
+        "source": "NYT",
+        "pos": 5.4,
+        "neu": 84.64,
+        "neg": 9.96,
         "count": 9
       },
       {
-        "source": "NYT",
-        "pos": 5.26,
-        "neu": 86.32,
-        "neg": 8.42,
-        "count": 5
+        "source": "NBC News",
+        "pos": 5.97,
+        "neu": 83.39,
+        "neg": 10.64,
+        "count": 9
       },
       {
         "source": "Fox News",
-        "pos": 8.4,
-        "neu": 88.92,
-        "neg": 2.68,
-        "count": 5
+        "pos": 7.49,
+        "neu": 87.29,
+        "neg": 5.22,
+        "count": 8
       },
       {
         "source": "CBS News",
-        "pos": 6.42,
-        "neu": 83.88,
-        "neg": 9.7,
-        "count": 5
+        "pos": 4.42,
+        "neu": 90.86,
+        "neg": 4.71,
+        "count": 8
       },
       {
         "source": "WSJ",
@@ -5511,17 +5526,17 @@
         "count": 4
       },
       {
+        "source": "ABC News",
+        "pos": 4.65,
+        "neu": 88.6,
+        "neg": 6.75,
+        "count": 4
+      },
+      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
-        "count": 3
-      },
-      {
-        "source": "ABC News",
-        "pos": 2.33,
-        "neu": 87.93,
-        "neg": 9.73,
         "count": 3
       },
       {
@@ -5535,45 +5550,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.11,
-        "neu": 87.7,
-        "neg": 8.19,
-        "count": 14
+        "pos": 5.48,
+        "neu": 87.54,
+        "neg": 6.99,
+        "count": 22
       },
       {
         "topic": "Policy",
-        "pos": 6.12,
-        "neu": 86.7,
-        "neg": 7.18,
-        "count": 10
+        "pos": 6.11,
+        "neu": 86.25,
+        "neg": 7.64,
+        "count": 11
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.7,
-        "neu": 86.62,
-        "neg": 9.68,
-        "count": 5
+        "pos": 3.09,
+        "neu": 86.73,
+        "neg": 10.19,
+        "count": 7
       },
       {
         "topic": "Economy",
-        "pos": 9.93,
-        "neu": 79.77,
-        "neg": 10.3,
-        "count": 3
+        "pos": 7.45,
+        "neu": 84.83,
+        "neg": 7.72,
+        "count": 4
       },
       {
         "topic": "Legal",
         "pos": 4.47,
-        "neu": 83.1,
-        "neg": 12.43,
+        "neu": 84.7,
+        "neg": 10.83,
         "count": 3
-      },
-      {
-        "topic": "Public Statements",
-        "pos": 12.4,
-        "neu": 82.1,
-        "neg": 5.5,
-        "count": 1
       }
     ]
   },
@@ -5600,28 +5608,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-22T15:23:38.845Z",
+        "label": "2026-10-22T18:40:15.221Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T16:23:38.845Z",
+        "label": "2026-10-22T19:40:15.221Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T17:23:38.845Z",
+        "label": "2026-10-22T20:40:15.221Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T18:23:38.845Z",
+        "label": "2026-10-22T21:40:15.221Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5630,28 +5638,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-22T15:23:38.845Z",
+        "label": "2026-10-22T18:40:15.221Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T16:23:38.845Z",
+        "label": "2026-10-22T19:40:15.221Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T17:23:38.845Z",
+        "label": "2026-10-22T20:40:15.221Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T18:23:38.845Z",
+        "label": "2026-10-22T21:40:15.221Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5731,7 +5739,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-22T19:23:38.846Z",
+    "generatedAt": "2026-10-22T22:40:15.222Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5852,8 +5860,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 169,
-      "potusArticles": 36,
+      "usaArticles": 170,
+      "potusArticles": 47,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
