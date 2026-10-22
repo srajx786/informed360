@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-21T22:14:39.299Z",
+  "generatedAt": "2026-10-22T00:42:55.916Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 168,
-    "potusArticles": 38
+    "potusArticles": 31
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-21T18:14:39.299Z",
+          "label": "2026-10-21T20:42:55.916Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T19:14:39.299Z",
+          "label": "2026-10-21T21:42:55.916Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T20:14:39.299Z",
+          "label": "2026-10-21T22:42:55.916Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T21:14:39.299Z",
+          "label": "2026-10-21T23:42:55.916Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-21T18:14:39.299Z",
+          "label": "2026-10-21T20:42:55.916Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T19:14:39.299Z",
+          "label": "2026-10-21T21:42:55.916Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T20:14:39.299Z",
+          "label": "2026-10-21T22:42:55.916Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-21T21:14:39.299Z",
+          "label": "2026-10-21T23:42:55.916Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 8.11,
-      "neu": 80.66,
-      "neg": 11.23,
+      "pos": 8.36,
+      "neu": 80.38,
+      "neg": 11.26,
       "count": 168
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 12.15,
-        "neu": 78.38,
-        "neg": 9.47,
-        "count": 41
+        "pos": 11,
+        "neu": 80.39,
+        "neg": 8.61,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 6.7,
-        "neu": 81.39,
-        "neg": 11.92,
+        "pos": 9.87,
+        "neu": 78.06,
+        "neg": 12.08,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.14,
-        "neu": 83.5,
-        "neg": 11.36,
+        "pos": 5.11,
+        "neu": 81.76,
+        "neg": 13.13,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.26,
-        "neu": 80.11,
-        "neg": 13.63,
-        "count": 23
+        "pos": 6.83,
+        "neu": 80.01,
+        "neg": 13.16,
+        "count": 22
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 9.88,
-        "neu": 80.84,
-        "neg": 9.28,
+        "pos": 9.41,
+        "neu": 81.05,
+        "neg": 9.54,
         "count": 20
       },
       {
@@ -4628,78 +4628,68 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Communication",
-          "bias": -10.3,
-          "count": 3
+          "name": "Utilities",
+          "bias": -14.5,
+          "count": 2
         },
         {
-          "name": "Utilities",
-          "bias": 4.83,
-          "count": 3
+          "name": "Communication",
+          "bias": -7.88,
+          "count": 4
         },
         {
           "name": "Manufacturing",
-          "bias": 3.9,
-          "count": 3
-        },
-        {
-          "name": "Healthcare",
-          "bias": -3.59,
-          "count": 8
-        },
-        {
-          "name": "Technology",
-          "bias": -3.37,
-          "count": 126
-        },
-        {
-          "name": "Real Estate",
-          "bias": 3.3,
-          "count": 6
-        },
-        {
-          "name": "Energy",
-          "bias": -2.91,
-          "count": 8
+          "bias": 5.85,
+          "count": 2
         },
         {
           "name": "Finance",
-          "bias": -2.71,
+          "bias": -4.7,
           "count": 17
+        },
+        {
+          "name": "Energy",
+          "bias": -4.12,
+          "count": 10
+        },
+        {
+          "name": "Technology",
+          "bias": -2.74,
+          "count": 129
         },
         {
           "name": "Materials",
           "bias": -2.55,
           "count": 2
+        },
+        {
+          "name": "Real Estate",
+          "bias": 0.82,
+          "count": 5
+        },
+        {
+          "name": "Healthcare",
+          "bias": -0.77,
+          "count": 9
         }
       ],
       "pos": [
         {
-          "name": "Utilities",
-          "bias": 4.83,
-          "count": 3
-        },
-        {
           "name": "Manufacturing",
-          "bias": 3.9,
-          "count": 3
-        },
-        {
-          "name": "Real Estate",
-          "bias": 3.3,
-          "count": 6
+          "bias": 5.85,
+          "count": 2
         }
       ],
       "neu": [
         {
           "name": "Energy",
-          "bias": -2.91,
-          "count": 8
+          "bias": -4.12,
+          "count": 10
         },
         {
-          "name": "Finance",
-          "bias": -2.71,
-          "count": 17
+          "name": "Technology",
+          "bias": -2.74,
+          "count": 129
         },
         {
           "name": "Materials",
@@ -4709,51 +4699,51 @@
       ],
       "neg": [
         {
+          "name": "Utilities",
+          "bias": -14.5,
+          "count": 2
+        },
+        {
           "name": "Communication",
-          "bias": -10.3,
-          "count": 3
+          "bias": -7.88,
+          "count": 4
         },
         {
-          "name": "Healthcare",
-          "bias": -3.59,
-          "count": 8
-        },
-        {
-          "name": "Technology",
-          "bias": -3.37,
-          "count": 126
+          "name": "Finance",
+          "bias": -4.7,
+          "count": 17
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-21T18:14:39.301Z",
-          "pos": 6,
-          "neu": 81,
-          "neg": 13,
-          "count": 8
+          "label": "2026-10-21T20:42:55.918Z",
+          "pos": 15,
+          "neu": 76,
+          "neg": 9,
+          "count": 5
         },
         {
-          "label": "2026-10-21T19:14:39.301Z",
-          "pos": 6,
-          "neu": 84,
-          "neg": 10,
+          "label": "2026-10-21T21:42:55.918Z",
+          "pos": 11,
+          "neu": 74,
+          "neg": 15,
           "count": 19
         },
         {
-          "label": "2026-10-21T20:14:39.301Z",
-          "pos": 9,
-          "neu": 79,
+          "label": "2026-10-21T22:42:55.918Z",
+          "pos": 6,
+          "neu": 82,
           "neg": 12,
-          "count": 20
+          "count": 21
         },
         {
-          "label": "2026-10-21T21:14:39.301Z",
-          "pos": 8,
-          "neu": 82,
-          "neg": 10,
-          "count": 25
+          "label": "2026-10-21T23:42:55.918Z",
+          "pos": 6,
+          "neu": 83,
+          "neg": 11,
+          "count": 27
         }
       ]
     }
@@ -4961,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Fox News Poll: Gender gap and pocketbook pain shape Ohio Senate race",
-        "link": "https://www.foxnews.com/politics/fox-news-poll-gender-gap-pocketbook-pain-shape-ohio-senate-race",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "U.S. and Israel Draw Up Plans for Renewed Strikes on Iran After Elections",
+        "link": "https://www.nytimes.com/2026/10/21/us/politics/us-israel-renewed-iran-strikes.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Sherrod Brown leads Jon Husted 52%-47% in the Ohio Senate race, fueled by a major gender gap and Trump's sliding approval in the Buckeye State.",
+        "description": "Renewed hostilities might not be any more successful than the war’s first phase, and President Trump has repeatedly canceled plans for a return to major combat.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T22:00:05.000Z",
+        "publishedAt": "2026-10-21T22:41:33.000Z",
         "sentiment": {
-          "posP": 7.7,
-          "negP": 8.2,
-          "neuP": 84.1,
-          "label": "neutral",
-          "confidence": 0.05
+          "posP": 8.9,
+          "negP": 17.4,
+          "neuP": 73.7,
+          "label": "negative",
+          "confidence": 0.44
         },
         "category": "usa"
       },
       {
-        "title": "US pulls personnel from Saudi Arabia as kingdom comes under Houthi fire",
-        "link": "https://www.foxnews.com/politics/us-pulls-personnel-saudi-arabia-kingdom-comes-under-houthi-fire",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "In Trump’s Diplomacy, Insults Are a One-Way Street. Ukraine Is the Latest Example.",
+        "link": "https://www.nytimes.com/2026/10/21/us/politics/trumps-diplomacy-insults.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump weighs direct military strikes against the Houthis as deadly attacks on Saudi Arabia escalate and Riyadh urgently seeks U.S. interceptors.",
+        "description": "The latest rift with President Volodymyr Zelensky of Ukraine serves as a reminder that President Trump readily lashes out at other world leaders, only to grow outraged if they fight back.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T21:03:01.000Z",
+        "publishedAt": "2026-10-21T16:44:15.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 20.6,
-          "neuP": 79.4,
+          "negP": 18.6,
+          "neuP": 81.4,
           "label": "negative",
-          "confidence": 0.78
+          "confidence": 0.84
         },
         "category": "usa"
       }
@@ -5203,82 +5193,22 @@
         "category": "world"
       },
       {
-        "title": "Fox News Poll: Gender gap and pocketbook pain shape Ohio Senate race",
-        "link": "https://www.foxnews.com/politics/fox-news-poll-gender-gap-pocketbook-pain-shape-ohio-senate-race",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "U.S. and Israel Draw Up Plans for Renewed Strikes on Iran After Elections",
+        "link": "https://www.nytimes.com/2026/10/21/us/politics/us-israel-renewed-iran-strikes.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Sherrod Brown leads Jon Husted 52%-47% in the Ohio Senate race, fueled by a major gender gap and Trump's sliding approval in the Buckeye State.",
+        "description": "Renewed hostilities might not be any more successful than the war’s first phase, and President Trump has repeatedly canceled plans for a return to major combat.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T22:00:05.000Z",
+        "publishedAt": "2026-10-21T22:41:33.000Z",
         "sentiment": {
-          "posP": 7.7,
-          "negP": 8.2,
-          "neuP": 84.1,
-          "label": "neutral",
-          "confidence": 0.05
-        },
-        "category": "usa"
-      },
-      {
-        "title": "US pulls personnel from Saudi Arabia as kingdom comes under Houthi fire",
-        "link": "https://www.foxnews.com/politics/us-pulls-personnel-saudi-arabia-kingdom-comes-under-houthi-fire",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump weighs direct military strikes against the Houthis as deadly attacks on Saudi Arabia escalate and Riyadh urgently seeks U.S. interceptors.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-21T21:03:01.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 20.6,
-          "neuP": 79.4,
+          "posP": 8.9,
+          "negP": 17.4,
+          "neuP": 73.7,
           "label": "negative",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Natasha Lyonne accused of ‘going full MAGA’ after Trump posts spark backlash",
-        "link": "https://www.foxnews.com/entertainment/natasha-lyonne-prefer-trump-remark-elon-musk-repost-draw-accusations-going-full-maga",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Natasha Lyonne's repost of Trump's Elon Musk SpaceX message and her \"prefer Trump\" remark over JD Vance ignited a fierce online reaction.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-21T20:44:54.000Z",
-        "sentiment": {
-          "posP": 5.4,
-          "negP": 6.3,
-          "neuP": 88.3,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Vols fans set noise record and terrify Alabama's Kalen DeBoer, Tiff Ann's Halloween costume & Danica stumps!",
-        "link": "https://www.foxnews.com/outkick-sports/vols-fans-set-noise-record-terrify-alabama-kalen-deboer-tiff-ann-halloween-costume-danica-stumps",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Another October Hump Day Nightcaps covers Kalen DeBoer looking miserable at Neyland Stadium and Danica Patrick back on the Trump campaign trail.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-21T19:41:08.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 15.9,
-          "neuP": 84.1,
-          "label": "negative",
-          "confidence": 0.78
+          "confidence": 0.44
         },
         "category": "usa"
       },
@@ -5323,26 +5253,6 @@
         "category": "usa"
       },
       {
-        "title": "Russia Releases American Stephen Hubbard From Prison, State Media Reports",
-        "link": "https://www.nytimes.com/2026/10/21/us/politics/russia-american-prisoner-release-stephen-hubbard-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The move buys good will with President Trump while costing the President Vladimir V. Putin — who is wanted for war crimes — little.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-21T18:58:22.000Z",
-        "sentiment": {
-          "posP": 7.4,
-          "negP": 18.4,
-          "neuP": 74.2,
-          "label": "negative",
-          "confidence": 0.65
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump Envoy Calls Putin a ‘Humanitarian’",
         "link": "https://www.nytimes.com/2026/10/21/briefing/trump-russia-prisoner-release.html",
         "source": "NYT",
@@ -5359,26 +5269,6 @@
           "neuP": 86.1,
           "label": "negative",
           "confidence": 0.55
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Macron Says Trump Does Not Like France and Distorts Its Troubles",
-        "link": "https://www.nytimes.com/2026/10/21/world/europe/macron-trump-france-protests.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Speaking in Qatar, President Emmanuel Macron railed against foreign leaders who he said had made false claims about unrest in France for their own political ends.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-21T19:16:14.000Z",
-        "sentiment": {
-          "posP": 6,
-          "negP": 12.9,
-          "neuP": 81.1,
-          "label": "negative",
-          "confidence": 0.44
         },
         "category": "usa"
       },
@@ -5403,7 +5293,7 @@
         "category": "usa"
       },
       {
-        "title": "Trump Administration Asks Supreme Court to Allow Border Wall Construction",
+        "title": "Trump Asks Supreme Court to Allow Border Wall Construction in Big Bend",
         "link": "https://www.nytimes.com/2026/10/21/us/politics/trump-supreme-court-border-wall.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
@@ -5412,13 +5302,33 @@
         "description": "A lower court judge had halted the administration’s plan to erect hundreds of miles of barriers in the Big Bend region of Texas.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T21:21:06.000Z",
+        "publishedAt": "2026-10-22T00:32:22.000Z",
         "sentiment": {
-          "posP": 15,
-          "negP": 6,
-          "neuP": 79,
+          "posP": 14.2,
+          "negP": 5.7,
+          "neuP": 80.1,
           "label": "positive",
           "confidence": 0.51
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Supreme Court Blocks Trump From Denying Gender-Affirming Care to Trans Prisoners",
+        "link": "https://www.nytimes.com/2026/10/21/us/politics/supreme-court-trump-transgender-prisoners.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The justices, for now, agreed to continue preventing the Bureau of Prisons from implementing a policy that would prohibit gender-transition medical treatments.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T17:08:27.000Z",
+        "sentiment": {
+          "posP": 20.9,
+          "negP": 20.4,
+          "neuP": 58.7,
+          "label": "positive",
+          "confidence": 0.3
         },
         "category": "usa"
       },
@@ -5443,80 +5353,146 @@
         "category": "usa"
       },
       {
-        "title": "American Stephen Hubbard released by Russia, Trump confirms",
-        "link": "https://www.cbsnews.com/news/russia-stephen-hubbard-freed-american-ukraine-war-witkoff-putin/",
+        "title": "Stephen Hubbard's son thanks Putin and Trump for father's release from Russian jail",
+        "link": "https://www.cbsnews.com/video/stephen-hubbards-son-thanks-putin-for-fathers-release-from-russian-jail/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Steve Witkoff lauded Vladimir Putin as \"a humanitarian\" as Russia freed Stephen Hubbard, an American deemed wrongfully detained by the U.S., after more than 4 years in prison.",
+        "description": "Retired American teacher Stephen Hubbard has been released from a Russian jail after over four years of detention. His son, Joseph Coleman, spoke to CBS News about the good news. CBS News' Natalie Brand has more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T21:02:02.000Z",
+        "publishedAt": "2026-10-21T23:12:00.000Z",
         "sentiment": {
-          "posP": 6.6,
-          "negP": 14.7,
-          "neuP": 78.7,
-          "label": "negative",
+          "posP": 10.9,
+          "negP": 4.7,
+          "neuP": 84.4,
+          "label": "positive",
           "confidence": 0.51
         },
         "category": "usa"
       },
       {
-        "title": "DOJ asks Supreme Court to allow border wall construction in Big Bend region",
-        "link": "https://www.cbsnews.com/news/justice-department-supreme-court-border-wall-big-bend-region/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump denies ordering Starlink slowdown in Ukraine, says he doesn't know who did",
+        "link": "https://www.cnbc.com/2026/10/21/trump-starlink-ukraine-elon-musk.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Justice Department asked the Supreme Court to lift a lower court injunction that temporarily blocked the Trump administration from building a border wall and related infrastructure in the Big Bend Sector.",
+        "description": "Asked if Elon Musk ordered the slowdown, Trump said, \"I don't know who did it, but I was not involved.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T20:45:53.000Z",
+        "publishedAt": "2026-10-21T21:48:02.000Z",
         "sentiment": {
-          "posP": 23.2,
-          "negP": 8,
-          "neuP": 68.8,
+          "posP": 0,
+          "negP": 5.8,
+          "neuP": 94.2,
+          "label": "negative",
+          "confidence": 0.23
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How Ukraine’s drone strikes on Russia crippled the world’s second-largest diesel supplier",
+        "link": "https://www.cnbc.com/2026/10/21/ukraine-russia-drone-diesel-refinery-trump-putin-zelenskyy.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump has blamed Ukraine for surging diesel prices that are hurting Republicans' election chances with the midterms just two weeks away.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T17:27:34.000Z",
+        "sentiment": {
+          "posP": 4.4,
+          "negP": 20.2,
+          "neuP": 75.4,
+          "label": "negative",
+          "confidence": 0.76
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump-aligned super PACs pour millions into once-safe GOP House seats",
+        "link": "https://www.cnbc.com/2026/10/21/trump-pac-spending-midterm-election-house-republicans.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump-aligned PACs are pouring hundreds of millions into House and Senate races as Republicans defend an expanding midterm election battleground map.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T20:57:12.000Z",
+        "sentiment": {
+          "posP": 11,
+          "negP": 7.6,
+          "neuP": 81.4,
           "label": "positive",
-          "confidence": 0.85
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump hopes to flatter Putin into negotiating on Ukraine, experts say",
+        "link": "https://www.nbcnews.com/politics/donald-trump/trump-hopes-flatter-putin-negotiating-ukraine-experts-say-rcna604770",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A Trump diplomat called Putin “a humanitarian,” another in a recent flurry of overtures to the Russian leader. But it’s unclear whether blandishments will entice him to strike a deal.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T00:34:15.000Z",
+        "sentiment": {
+          "posP": 10.1,
+          "negP": 8.4,
+          "neuP": 81.5,
+          "label": "neutral",
+          "confidence": 0.18
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump’s growing list of campaign pledges: From the Politics Desk",
+        "link": "https://www.nbcnews.com/politics/politics-news/trumps-growing-list-campaign-pledges-politics-desk-rcna604906",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Welcome to From the Politics Desk, a daily newsletter that brings you the NBC News Politics team’s latest reporting and analysis from the White House, Capitol Hill and the campaign trail.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-21T22:34:59.000Z",
+        "sentiment": {
+          "posP": 11,
+          "negP": 0,
+          "neuP": 89,
+          "label": "positive",
+          "confidence": 0.57
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.74,
-      "neu": 83.12,
-      "neg": 10.14,
-      "count": 38
+      "pos": 7.09,
+      "neu": 84.14,
+      "neg": 8.77,
+      "count": 31
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 5.82,
-        "neu": 84.9,
-        "neg": 9.28,
+        "pos": 7.38,
+        "neu": 82.72,
+        "neg": 9.9,
         "count": 10
       },
       {
         "source": "NBC News",
-        "pos": 8.45,
-        "neu": 76.43,
-        "neg": 15.12,
+        "pos": 8.25,
+        "neu": 83.42,
+        "neg": 8.33,
         "count": 6
-      },
-      {
-        "source": "Fox News",
-        "pos": 4.42,
-        "neu": 85.38,
-        "neg": 10.2,
-        "count": 5
-      },
-      {
-        "source": "CBS News",
-        "pos": 8.45,
-        "neu": 79.75,
-        "neg": 11.8,
-        "count": 4
       },
       {
         "source": "WSJ",
@@ -5526,18 +5502,25 @@
         "count": 4
       },
       {
-        "source": "ABC News",
-        "pos": 13.77,
-        "neu": 80.45,
-        "neg": 5.78,
-        "count": 4
-      },
-      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
         "count": 3
+      },
+      {
+        "source": "ABC News",
+        "pos": 12.13,
+        "neu": 79.97,
+        "neg": 7.9,
+        "count": 3
+      },
+      {
+        "source": "CBS News",
+        "pos": 7.45,
+        "neu": 83.2,
+        "neg": 9.35,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5550,24 +5533,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.22,
-        "neu": 87.01,
-        "neg": 8.76,
-        "count": 16
+        "pos": 4.64,
+        "neu": 87.3,
+        "neg": 8.06,
+        "count": 12
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.43,
-        "neu": 81.69,
-        "neg": 12.88,
-        "count": 11
+        "pos": 6.07,
+        "neu": 83.05,
+        "neg": 10.88,
+        "count": 10
       },
       {
         "topic": "Policy",
-        "pos": 12.82,
-        "neu": 78.05,
-        "neg": 9.13,
-        "count": 8
+        "pos": 12.07,
+        "neu": 80.16,
+        "neg": 7.77,
+        "count": 7
       },
       {
         "topic": "Economy",
@@ -5575,13 +5558,6 @@
         "neu": 84.5,
         "neg": 6,
         "count": 2
-      },
-      {
-        "topic": "Legal",
-        "pos": 7.3,
-        "neu": 74.3,
-        "neg": 18.4,
-        "count": 1
       }
     ]
   },
@@ -5608,28 +5584,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-21T18:14:39.304Z",
+        "label": "2026-10-21T20:42:55.920Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T19:14:39.304Z",
+        "label": "2026-10-21T21:42:55.920Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T20:14:39.304Z",
+        "label": "2026-10-21T22:42:55.920Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T21:14:39.304Z",
+        "label": "2026-10-21T23:42:55.920Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5638,28 +5614,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-21T18:14:39.304Z",
+        "label": "2026-10-21T20:42:55.920Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T19:14:39.304Z",
+        "label": "2026-10-21T21:42:55.920Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T20:14:39.304Z",
+        "label": "2026-10-21T22:42:55.920Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-21T21:14:39.304Z",
+        "label": "2026-10-21T23:42:55.920Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5739,7 +5715,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-21T22:14:39.305Z",
+    "generatedAt": "2026-10-22T00:42:55.921Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5861,7 +5837,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 168,
-      "potusArticles": 38,
+      "potusArticles": 31,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
