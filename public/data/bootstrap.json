@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-22T10:32:21.877Z",
+  "generatedAt": "2026-10-22T19:23:38.841Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 165,
-    "potusArticles": 35
+    "usaArticles": 169,
+    "potusArticles": 36
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-22T06:32:21.877Z",
+          "label": "2026-10-22T15:23:38.841Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T07:32:21.877Z",
+          "label": "2026-10-22T16:23:38.841Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T08:32:21.877Z",
+          "label": "2026-10-22T17:23:38.841Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T09:32:21.877Z",
+          "label": "2026-10-22T18:23:38.841Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-22T06:32:21.878Z",
+          "label": "2026-10-22T15:23:38.841Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T07:32:21.878Z",
+          "label": "2026-10-22T16:23:38.841Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T08:32:21.878Z",
+          "label": "2026-10-22T17:23:38.841Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T09:32:21.878Z",
+          "label": "2026-10-22T18:23:38.841Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 8.87,
-      "neu": 80.2,
-      "neg": 10.93,
-      "count": 165
+      "pos": 7.64,
+      "neu": 82.52,
+      "neg": 9.83,
+      "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 12.9,
-        "neu": 78.96,
-        "neg": 8.14,
-        "count": 40
+        "pos": 9.78,
+        "neu": 80.93,
+        "neg": 9.29,
+        "count": 43
       },
       {
         "source": "Fox News",
-        "pos": 9.51,
-        "neu": 77.23,
-        "neg": 13.26,
+        "pos": 7.9,
+        "neu": 82.14,
+        "neg": 9.96,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.58,
-        "neu": 83.18,
-        "neg": 12.24,
+        "pos": 6.05,
+        "neu": 84.25,
+        "neg": 9.7,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.79,
-        "neu": 80.13,
-        "neg": 12.08,
-        "count": 21
+        "pos": 6.96,
+        "neu": 82.62,
+        "neg": 10.42,
+        "count": 22
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.14,
-        "neu": 81.53,
-        "neg": 8.33,
+        "pos": 6.99,
+        "neu": 86.62,
+        "neg": 6.39,
         "count": 20
       },
       {
@@ -4628,127 +4628,117 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
+        },
+        {
           "name": "Communication",
           "bias": -14,
           "count": 2
         },
         {
-          "name": "Manufacturing",
-          "bias": 12.45,
-          "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -9.88,
-          "count": 8
-        },
-        {
-          "name": "Utilities",
-          "bias": -9.15,
-          "count": 2
-        },
-        {
           "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Healthcare",
-          "bias": -3.34,
-          "count": 10
-        },
-        {
-          "name": "Materials",
-          "bias": -3.2,
+          "bias": 10.55,
           "count": 2
         },
         {
           "name": "Technology",
-          "bias": -2.25,
-          "count": 120
+          "bias": -2.83,
+          "count": 130
+        },
+        {
+          "name": "Energy",
+          "bias": -1.96,
+          "count": 9
         },
         {
           "name": "Finance",
-          "bias": 1.53,
-          "count": 15
+          "bias": 0.4,
+          "count": 19
+        },
+        {
+          "name": "Materials",
+          "bias": -0.4,
+          "count": 3
+        },
+        {
+          "name": "Healthcare",
+          "bias": -0.37,
+          "count": 16
         }
       ],
       "pos": [
         {
-          "name": "Manufacturing",
-          "bias": 12.45,
-          "count": 2
-        },
-        {
           "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
+          "bias": 10.55,
+          "count": 2
         }
       ],
       "neu": [
         {
-          "name": "Healthcare",
-          "bias": -3.34,
-          "count": 10
+          "name": "Energy",
+          "bias": -1.96,
+          "count": 9
+        },
+        {
+          "name": "Finance",
+          "bias": 0.4,
+          "count": 19
         },
         {
           "name": "Materials",
-          "bias": -3.2,
-          "count": 2
-        },
-        {
-          "name": "Technology",
-          "bias": -2.25,
-          "count": 120
+          "bias": -0.4,
+          "count": 3
         }
       ],
       "neg": [
+        {
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
+        },
         {
           "name": "Communication",
           "bias": -14,
           "count": 2
         },
         {
-          "name": "Energy",
-          "bias": -9.88,
-          "count": 8
-        },
-        {
-          "name": "Utilities",
-          "bias": -9.15,
-          "count": 2
+          "name": "Technology",
+          "bias": -2.83,
+          "count": 130
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-22T06:32:21.879Z",
-          "pos": 0,
-          "neu": 60,
-          "neg": 40,
-          "count": 1
-        },
-        {
-          "label": "2026-10-22T07:32:21.879Z",
-          "pos": 9,
-          "neu": 80,
+          "label": "2026-10-22T15:23:38.843Z",
+          "pos": 6,
+          "neu": 83,
           "neg": 11,
-          "count": 6
+          "count": 10
         },
         {
-          "label": "2026-10-22T08:32:21.879Z",
-          "pos": 11,
-          "neu": 79,
-          "neg": 10,
-          "count": 12
+          "label": "2026-10-22T16:23:38.843Z",
+          "pos": 8,
+          "neu": 83,
+          "neg": 9,
+          "count": 19
         },
         {
-          "label": "2026-10-22T09:32:21.879Z",
-          "pos": 7,
-          "neu": 76,
-          "neg": 17,
-          "count": 14
+          "label": "2026-10-22T17:23:38.843Z",
+          "pos": 8,
+          "neu": 82,
+          "neg": 11,
+          "count": 21
+        },
+        {
+          "label": "2026-10-22T18:23:38.843Z",
+          "pos": 8,
+          "neu": 85,
+          "neg": 7,
+          "count": 30
         }
       ]
     }
@@ -4976,22 +4966,22 @@
         "category": "usa"
       },
       {
-        "title": "El-Sayed, Rogers clash over Muslim Brotherhood, Trump and guns: 5 fiery debate moments",
-        "link": "https://www.foxnews.com/politics/el-sayed-rogers-clash-over-muslim-brotherhood-trump-guns-5-fiery-debate-moments",
+        "title": "Australia pastor case 'canary in the coal mine' for American Christian freedoms: TPUSA leader",
+        "link": "https://www.foxnews.com/politics/exclusive-australia-pastor-case-canary-coal-mine-american-christian-freedoms-tpusa-leader",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Mike Rogers and Abdul El-Sayed clashed over the Iran war, AI regulation, and the Second Amendment in a fiery Michigan Senate debate.",
+        "description": "Lucas Miles of Turning Point USA says he contacted the White House Faith Office urging Trump to pressure Australia over a church investigation.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T10:00:24.000Z",
+        "publishedAt": "2026-10-22T18:42:14.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 22.5,
-          "neuP": 77.5,
-          "label": "negative",
-          "confidence": 0.83
+          "posP": 12.4,
+          "negP": 5.5,
+          "neuP": 82.1,
+          "label": "positive",
+          "confidence": 0.42
         },
         "category": "usa"
       }
@@ -5218,156 +5208,96 @@
         "category": "usa"
       },
       {
-        "title": "El-Sayed, Rogers clash over Muslim Brotherhood, Trump and guns: 5 fiery debate moments",
-        "link": "https://www.foxnews.com/politics/el-sayed-rogers-clash-over-muslim-brotherhood-trump-guns-5-fiery-debate-moments",
+        "title": "Australia pastor case 'canary in the coal mine' for American Christian freedoms: TPUSA leader",
+        "link": "https://www.foxnews.com/politics/exclusive-australia-pastor-case-canary-coal-mine-american-christian-freedoms-tpusa-leader",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Mike Rogers and Abdul El-Sayed clashed over the Iran war, AI regulation, and the Second Amendment in a fiery Michigan Senate debate.",
+        "description": "Lucas Miles of Turning Point USA says he contacted the White House Faith Office urging Trump to pressure Australia over a church investigation.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T10:00:24.000Z",
+        "publishedAt": "2026-10-22T18:42:14.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 22.5,
-          "neuP": 77.5,
-          "label": "negative",
-          "confidence": 0.83
+          "posP": 12.4,
+          "negP": 5.5,
+          "neuP": 82.1,
+          "label": "positive",
+          "confidence": 0.42
         },
         "category": "usa"
       },
       {
-        "title": "MORNING GLORY: Trump must go to war on the airwaves to stop Democrats’ blue-wave blitz",
-        "link": "https://www.foxnews.com/opinion/morning-glory-trump-must-go-war-airwaves-stop-democrats-blue-wave-blitz",
+        "title": "Presidents Cup hero Jacob Bridgeman joins President Trump on stage in South Carolina, leads Clemson chant",
+        "link": "https://www.foxnews.com/outkick-sports/presidents-cup-hero-jacob-bridgeman-joins-president-trump-stage-south-carolina-leads-clemson-chant",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump should deliver a prime-time address warning voters that a Democratic blue wave would paralyze his agenda on Iran, spending, and the Supreme Court.",
+        "description": "Jacob Bridgeman spoke at Trump's Clemson University rally in South Carolina, recounting his Presidents Cup clinching putt for Team USA golf.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T09:00:35.000Z",
+        "publishedAt": "2026-10-22T18:18:34.000Z",
         "sentiment": {
-          "posP": 16.2,
-          "negP": 17.6,
-          "neuP": 66.2,
-          "label": "neutral",
-          "confidence": 0.09
+          "posP": 9.1,
+          "negP": 0,
+          "neuP": 90.9,
+          "label": "positive",
+          "confidence": 0.56
         },
         "category": "usa"
       },
       {
-        "title": "Trump voters reveal their biggest fear heading into midterms — and it's not rising prices",
-        "link": "https://www.foxnews.com/politics/trump-voters-reveal-biggest-fear-heading-midterms-its-not-rising-prices",
+        "title": "Trump blasts LeBron James as a 'total disgrace' over his national anthem antics during 76ers debut",
+        "link": "https://www.foxnews.com/outkick-sports/trump-blasts-lebron-james-total-disgrace-national-anthem-antics-76ers-debut",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump rallied supporters in Wichita as the Kansas Senate race between Roger Marshall and Adam Hamilton tightens to a dead heat in the polls.",
+        "description": "Trump blasted LeBron James on Truth Social for practicing golf swings during the national anthem while wearing his new Philadelphia 76ers gear.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T08:00:12.000Z",
+        "publishedAt": "2026-10-22T17:39:03.000Z",
         "sentiment": {
-          "posP": 6.5,
-          "negP": 16.9,
-          "neuP": 76.6,
+          "posP": 5.7,
+          "negP": 7.9,
+          "neuP": 86.4,
           "label": "negative",
-          "confidence": 0.68
+          "confidence": 0.23
         },
         "category": "usa"
       },
       {
-        "title": "Trump dominates El-Sayed's attacks against Rogers, but GOP rival offers unexpected policy split",
-        "link": "https://www.foxnews.com/politics/trump-dominates-el-sayeds-attacks-against-rogers-gop-rival-offers-unexpected-policy-split",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Iowa, Usually Red, Is in Play This Midterm as Economic Woes Mount",
+        "link": "https://www.nytimes.com/2026/10/22/us/politics/iowa-farmers-republicans-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Donald Trump was invoked 18 times as Abdul El-Sayed branded Mike Rogers a \"sock puppet\" and declared \"MAGA bingo\" in the Michigan Senate debate.",
+        "description": "The Trump administration’s policies could cost Republicans in a state that is being hit hard by expensive diesel prices and uncertainty over trade.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T02:51:58.000Z",
+        "publishedAt": "2026-10-22T09:03:19.000Z",
         "sentiment": {
-          "posP": 3,
-          "negP": 5.3,
-          "neuP": 91.7,
+          "posP": 6.1,
+          "negP": 17.1,
+          "neuP": 76.8,
           "label": "negative",
-          "confidence": 0.21
+          "confidence": 0.51
         },
         "category": "usa"
       },
       {
-        "title": "New U.S.-Israeli Plans to Attack Iran, and Trump’s Whistle-Blower Rewards Program",
-        "link": "https://www.nytimes.com/2026/10/22/podcasts/the-headlines/us-israel-iran-trump-whistleblower.html",
+        "title": "Impeachment. It’s Not Just for Presidents.",
+        "link": "https://www.nytimes.com/2026/10/22/opinion/trump-slotkin-corruption-impeachment.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Plus, America’s newest national park.",
+        "description": "Trump’s grotesque rerun of the Gilded Age demands a rebuke.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T10:02:48.000Z",
-        "sentiment": {
-          "posP": 15.3,
-          "negP": 15.3,
-          "neuP": 69.4,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "MAGA Bingo and Questions of Loyalty: 5 Michigan Senate Debate Takeaways",
-        "link": "https://www.nytimes.com/2026/10/21/us/politics/michigan-senate-debate-takeaways-el-sayed-rogers.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Abdul El-Sayed accused Mike Rogers of being overly devoted to President Trump. Mr. Rogers accused Dr. El-Sayed of not enough loyalty to the country. It was still more cordial than their last debate.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T08:03:31.000Z",
-        "sentiment": {
-          "posP": 12.1,
-          "negP": 14.1,
-          "neuP": 73.8,
-          "label": "neutral",
-          "confidence": 0.01
-        },
-        "category": "usa"
-      },
-      {
-        "title": "U.S. and Israel Draw Up Plans for Renewed Strikes on Iran After Elections",
-        "link": "https://www.nytimes.com/2026/10/21/us/politics/us-israel-renewed-iran-strikes.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Renewed hostilities might not be any more successful than the war’s first phase, and President Trump has repeatedly canceled plans for a return to major combat.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T00:58:22.000Z",
-        "sentiment": {
-          "posP": 8.9,
-          "negP": 17.4,
-          "neuP": 73.7,
-          "label": "negative",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "A Golden Age of Science’ Brought to You by the White House",
-        "link": "https://www.nytimes.com/2026/10/22/opinion/interesting-times-tyler-cowen-michael-kratsios.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration’s plan to supercharge scientific discovery.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T10:23:03.000Z",
+        "publishedAt": "2026-10-22T14:08:38.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5378,140 +5308,200 @@
         "category": "usa"
       },
       {
-        "title": "Trump rallying with Hinson in Iowa as she pledges to push back on White House",
-        "link": "https://www.cbsnews.com/news/trump-rally-iowa-ashley-hinson-senate-josh-turek/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "The Brief, Messy Political Career of Paolo Zampolli, a Trump Ally",
+        "link": "https://www.nytimes.com/2026/10/22/style/paolo-zampolli-trump-friend-brief-political-career.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump is set to rally with Rep. Ashley Hinson in Iowa as he seeks to boost GOP candidates in a political environment that has dimmed for the party — prompting pushback from some candidates, including Hinson.",
+        "description": "He had an unlikely rise, from modeling agent to presidential special envoy. After his firing, he was unrepentant: “I need to make money.”",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T10:00:13.000Z",
+        "publishedAt": "2026-10-22T14:15:35.000Z",
         "sentiment": {
-          "posP": 10.1,
-          "negP": 0,
-          "neuP": 89.9,
-          "label": "positive",
-          "confidence": 0.66
+          "posP": 7.2,
+          "negP": 13,
+          "neuP": 79.8,
+          "label": "negative",
+          "confidence": 0.3
         },
         "category": "usa"
       },
       {
-        "title": "Candidates clash over Trump policies, Senate control in debate",
-        "link": "https://www.cbsnews.com/news/kansas-senate-debate-roger-marshall-adam-hamilton-2026/",
+        "title": "Trump says Iran is making up strikes on ships to drive up oil prices",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-ceasefire-talks-ongoing/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "GOP Sen. Roger Marshall and Pastor Adam Hamilton debated tariffs, war and high fuel prices, and also addressed the most controversial issues in each of their campaigns.",
+        "description": "President Trump said Iran was trying to drive up oil prices before the midterms by lying about ships hitting mines or being struck by projectiles in the Strait of Hormuz.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T04:05:18.000Z",
+        "publishedAt": "2026-10-22T18:58:55.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 15,
-          "neuP": 85,
+          "negP": 16.2,
+          "neuP": 83.8,
           "label": "negative",
-          "confidence": 0.72
+          "confidence": 0.78
         },
         "category": "usa"
       },
       {
-        "title": "Trump-aligned super PACs pour millions into once-safe GOP House seats",
-        "link": "https://www.cnbc.com/2026/10/21/trump-pac-spending-midterm-election-house-republicans.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Iowa State Rep. J.D. Scholten on tight Senate race between Hinson, Turek",
+        "link": "https://www.cbsnews.com/video/iowa-state-rep-jd-scholten-on-tight-senate-race-between-hinson-turek/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump-aligned PACs are pouring hundreds of millions into House and Senate races as Republicans defend an expanding midterm election battleground map.",
+        "description": "President Trump is campaigning in Sioux City, Iowa, on Thursday to try to drum up support for Republican Ashley Hinson in her Senate race against Democrat Josh Turek. J.D. Scholten, a campaign surrogate for Turek, joins CBS News to discuss the race.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T20:57:12.000Z",
+        "publishedAt": "2026-10-22T18:37:07.000Z",
         "sentiment": {
-          "posP": 11,
-          "negP": 7.6,
-          "neuP": 81.4,
+          "posP": 4.9,
+          "negP": 0,
+          "neuP": 95.1,
+          "label": "positive",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Judge says Trump must sit for deposition in BBC defamation lawsuit",
+        "link": "https://www.cbsnews.com/news/trump-bbc-deposition-defamation-lawsuit/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A federal judge said President Trump must sit for a deposition with lawyers for the BBC by Dec. 11 as part of his ongoing defamation lawsuit.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T17:55:32.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 10.3,
+          "neuP": 89.7,
+          "label": "negative",
+          "confidence": 0.42
+        },
+        "category": "usa"
+      },
+      {
+        "title": "DOJ asks Supreme Court to allow border wall construction in Big Bend region",
+        "link": "https://www.cbsnews.com/news/justice-department-supreme-court-border-wall-big-bend-region/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Justice Department asked the Supreme Court to lift a lower court injunction that temporarily blocked the Trump administration from building a border wall and related infrastructure in the Big Bend Sector.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T16:40:45.000Z",
+        "sentiment": {
+          "posP": 23.2,
+          "negP": 8,
+          "neuP": 68.8,
+          "label": "positive",
+          "confidence": 0.85
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump ordered to sit for deposition in BBC lawsuit",
+        "link": "https://www.nbcnews.com/now/video/trump-ordered-to-sit-for-deposition-in-bbc-lawsuit-272044613767",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A federal judge in Florida ordered President Donald Trump to sit for a deposition in his defamation lawsuit against the BBC by Dec. 11, or face the possibility of having his $10 billion action dismissed.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T16:20:42.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 8.7,
+          "neuP": 91.3,
+          "label": "negative",
+          "confidence": 0.42
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Top adviser to Kennedy resigns from Trump administration",
+        "link": "https://www.nbcnews.com/health/health-news/kennedy-top-advisor-calley-means-resigns-trump-administration-maha-rcna605056",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Calley Means, a key advisor to health secretary Robert F. Kennedy Jr. and central advocate for the “Make America Healthy Again” movement, is leaving the Trump administration.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T18:57:36.000Z",
+        "sentiment": {
+          "posP": 11.9,
+          "negP": 6.1,
+          "neuP": 82,
           "label": "positive",
           "confidence": 0.3
         },
         "category": "usa"
       },
       {
-        "title": "How Ukraine’s drone strikes on Russia crippled the world’s second-largest diesel supplier",
-        "link": "https://www.cnbc.com/2026/10/21/ukraine-russia-drone-diesel-refinery-trump-putin-zelenskyy.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Judge orders Trump to sit for deposition in his $10 billion lawsuit against the BBC",
+        "link": "https://www.nbcnews.com/politics/donald-trump/trump-sit-deposition-10-billion-defamation-lawsuit-bbc-jan-6-rcna605034",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump has blamed Ukraine for surging diesel prices that are hurting Republicans' election chances with the midterms just two weeks away.",
+        "description": "A federal judge in Florida on Thursday ordered President Donald Trump to sit for a deposition in his defamation lawsuit against the BBC by Dec. 11 or face the possibility of having his $10 billion action dismissed.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-21T17:27:34.000Z",
-        "sentiment": {
-          "posP": 4.4,
-          "negP": 20.2,
-          "neuP": 75.4,
-          "label": "negative",
-          "confidence": 0.76
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump denies ordering Starlink slowdown in Ukraine, says he doesn't know who did",
-        "link": "https://www.cnbc.com/2026/10/21/trump-starlink-ukraine-elon-musk.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Asked if Elon Musk ordered the slowdown, Trump said, \"I don't know who did it, but I was not involved.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-21T21:48:02.000Z",
+        "publishedAt": "2026-10-22T15:53:28.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 5.8,
-          "neuP": 94.2,
+          "negP": 7.3,
+          "neuP": 92.7,
           "label": "negative",
-          "confidence": 0.23
+          "confidence": 0.42
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.69,
-      "neu": 83.69,
-      "neg": 9.62,
-      "count": 35
+      "pos": 5.36,
+      "neu": 86.07,
+      "neg": 8.57,
+      "count": 36
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.21,
-        "neu": 83.69,
-        "neg": 8.1,
-        "count": 7
+        "pos": 5.46,
+        "neu": 84,
+        "neg": 10.54,
+        "count": 9
       },
       {
         "source": "NYT",
-        "pos": 8.22,
-        "neu": 81.98,
-        "neg": 9.8,
-        "count": 6
+        "pos": 5.26,
+        "neu": 86.32,
+        "neg": 8.42,
+        "count": 5
       },
       {
         "source": "Fox News",
-        "pos": 6.75,
-        "neu": 82.87,
-        "neg": 10.38,
-        "count": 6
+        "pos": 8.4,
+        "neu": 88.92,
+        "neg": 2.68,
+        "count": 5
       },
       {
-        "source": "ABC News",
-        "pos": 9.1,
-        "neu": 78.58,
-        "neg": 12.32,
-        "count": 4
+        "source": "CBS News",
+        "pos": 6.42,
+        "neu": 83.88,
+        "neg": 9.7,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5528,10 +5518,10 @@
         "count": 3
       },
       {
-        "source": "CBS News",
-        "pos": 4.7,
-        "neu": 85.63,
-        "neg": 9.67,
+        "source": "ABC News",
+        "pos": 2.33,
+        "neu": 87.93,
+        "neg": 9.73,
         "count": 3
       },
       {
@@ -5545,37 +5535,44 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.03,
-        "neu": 82.69,
-        "neg": 10.27,
-        "count": 15
+        "pos": 4.11,
+        "neu": 87.7,
+        "neg": 8.19,
+        "count": 14
       },
       {
         "topic": "Policy",
-        "pos": 5.82,
-        "neu": 86.21,
-        "neg": 7.97,
-        "count": 9
+        "pos": 6.12,
+        "neu": 86.7,
+        "neg": 7.18,
+        "count": 10
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.79,
-        "neu": 84.51,
-        "neg": 10.7,
-        "count": 7
+        "pos": 3.7,
+        "neu": 86.62,
+        "neg": 9.68,
+        "count": 5
       },
       {
         "topic": "Economy",
-        "pos": 8.83,
-        "neu": 85.07,
-        "neg": 6.1,
+        "pos": 9.93,
+        "neu": 79.77,
+        "neg": 10.3,
         "count": 3
       },
       {
         "topic": "Legal",
-        "pos": 16.2,
-        "neu": 66.2,
-        "neg": 17.6,
+        "pos": 4.47,
+        "neu": 83.1,
+        "neg": 12.43,
+        "count": 3
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 12.4,
+        "neu": 82.1,
+        "neg": 5.5,
         "count": 1
       }
     ]
@@ -5603,28 +5600,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-22T06:32:21.880Z",
+        "label": "2026-10-22T15:23:38.845Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T07:32:21.880Z",
+        "label": "2026-10-22T16:23:38.845Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T08:32:21.880Z",
+        "label": "2026-10-22T17:23:38.845Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T09:32:21.880Z",
+        "label": "2026-10-22T18:23:38.845Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5633,28 +5630,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-22T06:32:21.880Z",
+        "label": "2026-10-22T15:23:38.845Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T07:32:21.880Z",
+        "label": "2026-10-22T16:23:38.845Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T08:32:21.880Z",
+        "label": "2026-10-22T17:23:38.845Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T09:32:21.880Z",
+        "label": "2026-10-22T18:23:38.845Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5734,7 +5731,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-22T10:32:21.881Z",
+    "generatedAt": "2026-10-22T19:23:38.846Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5855,8 +5852,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 165,
-      "potusArticles": 35,
+      "usaArticles": 169,
+      "potusArticles": 36,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
