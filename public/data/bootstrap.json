@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-23T15:52:14.879Z",
+  "generatedAt": "2026-10-23T19:34:29.809Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 169,
-    "potusArticles": 34
+    "usaArticles": 167,
+    "potusArticles": 40
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-23T11:52:14.880Z",
+          "label": "2026-10-23T15:34:29.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-23T12:52:14.880Z",
+          "label": "2026-10-23T16:34:29.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-23T13:52:14.880Z",
+          "label": "2026-10-23T17:34:29.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-23T14:52:14.880Z",
+          "label": "2026-10-23T18:34:29.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-23T11:52:14.880Z",
+          "label": "2026-10-23T15:34:29.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-23T12:52:14.880Z",
+          "label": "2026-10-23T16:34:29.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-23T13:52:14.880Z",
+          "label": "2026-10-23T17:34:29.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-23T14:52:14.880Z",
+          "label": "2026-10-23T18:34:29.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.55,
-      "neu": 80.97,
-      "neg": 11.48,
-      "count": 169
+      "pos": 7.21,
+      "neu": 80.68,
+      "neg": 12.11,
+      "count": 167
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.8,
-        "neu": 79.87,
-        "neg": 11.33,
-        "count": 41
+        "pos": 7.44,
+        "neu": 80.69,
+        "neg": 11.87,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 10.34,
-        "neu": 78.68,
-        "neg": 10.98,
+        "pos": 10.35,
+        "neu": 78.17,
+        "neg": 11.48,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 7.01,
-        "neu": 80.21,
-        "neg": 12.78,
+        "pos": 6.42,
+        "neu": 79.58,
+        "neg": 14,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 3.66,
-        "neu": 82.48,
-        "neg": 13.86,
+        "pos": 5.16,
+        "neu": 80.35,
+        "neg": 14.5,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.04,
-        "neu": 85.38,
-        "neg": 6.57,
+        "pos": 6.92,
+        "neu": 85.3,
+        "neg": 7.78,
         "count": 20
       },
       {
@@ -4633,68 +4633,68 @@
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": 13.75,
-          "count": 2
-        },
-        {
-          "name": "Real Estate",
-          "bias": 12.65,
-          "count": 2
-        },
-        {
-          "name": "Healthcare",
-          "bias": -10.9,
-          "count": 6
-        },
-        {
           "name": "Communication",
-          "bias": -9.28,
+          "bias": -11.93,
           "count": 4
         },
         {
-          "name": "Finance",
-          "bias": -6.32,
-          "count": 20
+          "name": "Healthcare",
+          "bias": -11.38,
+          "count": 6
+        },
+        {
+          "name": "Materials",
+          "bias": -11.23,
+          "count": 3
+        },
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
         },
         {
           "name": "Technology",
-          "bias": -4.32,
-          "count": 129
+          "bias": -5.04,
+          "count": 133
+        },
+        {
+          "name": "Finance",
+          "bias": -4.69,
+          "count": 21
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -2.6,
+          "count": 1
         },
         {
           "name": "Energy",
-          "bias": -4.29,
-          "count": 8
+          "bias": 0.34,
+          "count": 11
         }
       ],
       "pos": [
         {
-          "name": "Materials",
-          "bias": 13.75,
-          "count": 2
-        },
-        {
           "name": "Real Estate",
-          "bias": 12.65,
-          "count": 2
+          "bias": 5.9,
+          "count": 1
         }
       ],
       "neu": [
         {
-          "name": "Finance",
-          "bias": -6.32,
-          "count": 20
+          "name": "Materials",
+          "bias": -11.23,
+          "count": 3
         },
         {
           "name": "Technology",
-          "bias": -4.32,
-          "count": 129
+          "bias": -5.04,
+          "count": 133
         },
         {
-          "name": "Energy",
-          "bias": -4.29,
-          "count": 8
+          "name": "Finance",
+          "bias": -4.69,
+          "count": 21
         }
       ],
       "neg": [
@@ -4704,46 +4704,46 @@
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": -10.9,
-          "count": 6
+          "name": "Communication",
+          "bias": -11.93,
+          "count": 4
         },
         {
-          "name": "Communication",
-          "bias": -9.28,
-          "count": 4
+          "name": "Healthcare",
+          "bias": -11.38,
+          "count": 6
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-23T11:52:14.882Z",
-          "pos": 8,
-          "neu": 87,
-          "neg": 5,
-          "count": 6
+          "label": "2026-10-23T15:34:29.811Z",
+          "pos": 7,
+          "neu": 85,
+          "neg": 8,
+          "count": 7
         },
         {
-          "label": "2026-10-23T12:52:14.882Z",
+          "label": "2026-10-23T16:34:29.811Z",
           "pos": 5,
-          "neu": 84,
-          "neg": 10,
-          "count": 13
-        },
-        {
-          "label": "2026-10-23T13:52:14.882Z",
-          "pos": 8,
-          "neu": 78,
-          "neg": 14,
-          "count": 22
-        },
-        {
-          "label": "2026-10-23T14:52:14.882Z",
-          "pos": 8,
           "neu": 80,
-          "neg": 12,
-          "count": 37
+          "neg": 15,
+          "count": 23
+        },
+        {
+          "label": "2026-10-23T17:34:29.811Z",
+          "pos": 7,
+          "neu": 76,
+          "neg": 17,
+          "count": 19
+        },
+        {
+          "label": "2026-10-23T18:34:29.811Z",
+          "pos": 8,
+          "neu": 82,
+          "neg": 10,
+          "count": 31
         }
       ]
     }
@@ -4951,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "LeBron James doubles down with sneaky golf hip turns during national anthem after Trump's 'total disgrace' dig",
-        "link": "https://www.foxnews.com/outkick-sports/lebron-james-doubles-sneaky-golf-hip-turns-national-anthem-trump-total-disgrace-dig",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "LeBron James responded to Trump's Truth Social attack with more golf swing hip turns during the national anthem before the 76ers-Cavaliers game.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T14:45:24.000Z",
-        "sentiment": {
-          "posP": 5.1,
-          "negP": 18,
-          "neuP": 76.9,
-          "label": "negative",
-          "confidence": 0.71
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Big Names Flock to Ruby-Red Florida to Sway Voters in Unexpectedly Close Contests",
-        "link": "https://www.nytimes.com/2026/10/23/us/politics/florida-republicans-midterms-.html",
+        "title": "Trump’s Attacks on Voting Raise Fears He Will Try to Challenge Midterm Results",
+        "link": "https://www.nytimes.com/2026/10/15/us/politics/trumps-attacks-voting-midterms.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump will rally on Friday in a Republican state where Democrats have their eye on several House races.",
+        "description": "Election officials say they worry the administration could use its own unsubstantiated claims to contest the vote in November.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-23T13:00:17.000Z",
+        "publishedAt": "2026-10-16T19:49:20.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 3.4,
+          "negP": 22.7,
+          "neuP": 73.9,
+          "label": "negative",
+          "confidence": 0.81
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Here’s What Democrats Plan to Do With Their Power if They Win Back Congress",
+        "link": "https://www.nytimes.com/2026/10/23/us/politics/democrats-congress-majority-agenda.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats have campaigned on lowering living costs and holding the Trump administration accountable. This is a look at their to-do list if they win the majority.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T17:14:19.000Z",
+        "sentiment": {
+          "posP": 16.7,
+          "negP": 4.4,
+          "neuP": 78.9,
+          "label": "positive",
+          "confidence": 0.77
         },
         "category": "usa"
       }
@@ -5193,82 +5193,182 @@
         "category": "world"
       },
       {
-        "title": "LeBron James doubles down with sneaky golf hip turns during national anthem after Trump's 'total disgrace' dig",
-        "link": "https://www.foxnews.com/outkick-sports/lebron-james-doubles-sneaky-golf-hip-turns-national-anthem-trump-total-disgrace-dig",
+        "title": "Trump’s Attacks on Voting Raise Fears He Will Try to Challenge Midterm Results",
+        "link": "https://www.nytimes.com/2026/10/15/us/politics/trumps-attacks-voting-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Election officials say they worry the administration could use its own unsubstantiated claims to contest the vote in November.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-16T19:49:20.000Z",
+        "sentiment": {
+          "posP": 3.4,
+          "negP": 22.7,
+          "neuP": 73.9,
+          "label": "negative",
+          "confidence": 0.81
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Here’s What Democrats Plan to Do With Their Power if They Win Back Congress",
+        "link": "https://www.nytimes.com/2026/10/23/us/politics/democrats-congress-majority-agenda.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats have campaigned on lowering living costs and holding the Trump administration accountable. This is a look at their to-do list if they win the majority.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T17:14:19.000Z",
+        "sentiment": {
+          "posP": 16.7,
+          "negP": 4.4,
+          "neuP": 78.9,
+          "label": "positive",
+          "confidence": 0.77
+        },
+        "category": "usa"
+      },
+      {
+        "title": "U.S. Government Takes a Cut of Chip Business in Japan-Funded Deal",
+        "link": "https://www.nytimes.com/2026/10/23/business/economy/us-japan-chip-deal.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump’s novel deal-making is on display in upstate New York, where the administration is funneling Japanese funds into a government-owned chip factory.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T15:59:45.000Z",
+        "sentiment": {
+          "posP": 6.7,
+          "negP": 9.3,
+          "neuP": 84,
+          "label": "neutral",
+          "confidence": 0.03
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Lawmakers Plan to Block Trump Nominees Over Ukraine Satellite Network Restrictions",
+        "link": "https://www.nytimes.com/2026/10/23/us/politics/senators-trump-nominees-ukraine-starlink.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Senators have warned the White House they will withhold confirmation votes until the administration ensures the restoration of communications capabilities used by Ukraine’s military.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T18:18:46.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 13.2,
+          "neuP": 86.8,
+          "label": "negative",
+          "confidence": 0.61
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Melania Trump Says She Brokered a Cease-Fire in a Starving Ukrainian City",
+        "link": "https://www.nytimes.com/2026/10/23/us/politics/ceasefire-ukraine-melania-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The first lady, who is positioning herself as an intermediary between two warring nations as her husband sides with Russia, said the agreement would allow residents to evacuate.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T16:37:40.000Z",
+        "sentiment": {
+          "posP": 11.4,
+          "negP": 12.7,
+          "neuP": 75.9,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Under U.S. Watch, Venezuela Grapples With Tensions Over Democracy",
+        "link": "https://www.nytimes.com/2026/10/23/us/politics/venezuela-trump-rubio-elections.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump says Venezuela is not ready for elections, and he focuses instead on its oil. But Secretary of State Marco Rubio is nudging talks between opposing politicians.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T17:15:02.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 12.1,
+          "neuP": 87.9,
+          "label": "negative",
+          "confidence": 0.59
+        },
+        "category": "usa"
+      },
+      {
+        "title": "What Hundreds of Focus Groups With Trump Voters Revealed",
+        "link": "https://www.nytimes.com/2026/10/23/opinion/ezra-klein-podcast-sarah-longwell.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Sarah Longwell has conducted hundreds of focus groups with Trump voters, and many of them are feeling betrayed.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T19:19:54.000Z",
+        "sentiment": {
+          "posP": 4.9,
+          "negP": 13.1,
+          "neuP": 82,
+          "label": "negative",
+          "confidence": 0.54
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's corporate stakes are a gift to the next Democratic president",
+        "link": "https://www.foxnews.com/opinion/trumps-corporate-stakes-gift-next-democratic-president",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "LeBron James responded to Trump's Truth Social attack with more golf swing hip turns during the national anthem before the 76ers-Cavaliers game.",
+        "description": "Trump's government ownership stakes in 40 private companies could hand future Democratic presidents powerful leverage over gun, oil, and AI firms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-23T14:45:24.000Z",
+        "publishedAt": "2026-10-23T19:16:05.000Z",
         "sentiment": {
-          "posP": 5.1,
-          "negP": 18,
-          "neuP": 76.9,
-          "label": "negative",
-          "confidence": 0.71
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Big Names Flock to Ruby-Red Florida to Sway Voters in Unexpectedly Close Contests",
-        "link": "https://www.nytimes.com/2026/10/23/us/politics/florida-republicans-midterms-.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump will rally on Friday in a Republican state where Democrats have their eye on several House races.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T13:00:17.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Asked Musk to Reverse Starshield Restrictions on Ukraine",
-        "link": "https://www.nytimes.com/2026/10/22/us/politics/starshield-outage-ukraine-musk-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The call from the president about the Starshield network came after officials in Ukraine reported that they found new limits on the use of military drones in their war against Russia.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T13:05:59.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 9.1,
-          "neuP": 90.9,
-          "label": "negative",
-          "confidence": 0.6
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Late Night Dunks on Trump for Planning to Rename an Ocean",
-        "link": "https://www.nytimes.com/2026/10/23/arts/television/late-night-trump-ocean.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "“Once again, 12 days before this election, it’s good to see him locked in on the really big issues,” Jimmy Fallon said on “The Tonight Show.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T05:52:30.000Z",
-        "sentiment": {
-          "posP": 7.5,
-          "negP": 0,
-          "neuP": 92.5,
+          "posP": 23.2,
+          "negP": 6.3,
+          "neuP": 70.5,
           "label": "positive",
-          "confidence": 0.44
+          "confidence": 0.76
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says judge is 'desecrating' Charlie Kirk's memory amid fight over assassination trial date",
+        "link": "https://www.foxnews.com/us/trump-says-judge-desecrating-charlie-kirks-memory-amid-fight-assassination-trial-date",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump slammed the Utah judge in the Charlie Kirk assassination case, saying the trial should take a month, not years, as a 2029 date was proposed by the defense.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T17:35:02.000Z",
+        "sentiment": {
+          "posP": 3.1,
+          "negP": 21.3,
+          "neuP": 75.6,
+          "label": "negative",
+          "confidence": 0.87
         },
         "category": "usa"
       },
@@ -5282,33 +5382,13 @@
         "description": "The U.S. ambassador to the U.N. says the war with Iran could last another year, but he hopes Tehran will \"come to the table\" sooner.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-23T15:35:13.000Z",
+        "publishedAt": "2026-10-23T18:55:10.000Z",
         "sentiment": {
           "posP": 8.6,
           "negP": 14.8,
           "neuP": 76.6,
           "label": "neutral",
           "confidence": 0.17
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Melania Trump secures \"temporary ceasefire\" in Ukrainian city",
-        "link": "https://www.cbsnews.com/news/first-lady-melania-trump-temporary-ceasefire-russia-ukraine-oleshky/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "First lady Melania Trump's office says she secured a localized ceasefire for the Russian-occupied Ukrainian city of Oleshky.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T15:33:39.000Z",
-        "sentiment": {
-          "posP": 17.9,
-          "negP": 0,
-          "neuP": 82.1,
-          "label": "positive",
-          "confidence": 0.61
         },
         "category": "usa"
       },
@@ -5322,7 +5402,7 @@
         "description": "The Trump administration said using the DPA funding will increase refining output and lower fuel prices for Americans. Experts are skeptical.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-23T15:24:45.000Z",
+        "publishedAt": "2026-10-23T17:39:10.000Z",
         "sentiment": {
           "posP": 6.1,
           "negP": 17.6,
@@ -5333,16 +5413,56 @@
         "category": "usa"
       },
       {
-        "title": "Trumps to vote early in person in Florida on Saturday",
-        "link": "https://www.cbsnews.com/news/trump-melania-vote-early-in-person-florida-saturday/",
+        "title": "Trump defends Ramaswamy ad, takes questions on midterms, Iran war and more",
+        "link": "https://www.cbsnews.com/video/trump-defends-ramaswamy-ad-takes-questions-midterms-iran-war-more/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump and first lady Melania Trump are expected to vote early in Palm Beach County.",
+        "description": "President Trump spoke to reporters outside the White House before heading to a campaign stop in Florida.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-23T14:54:52.000Z",
+        "publishedAt": "2026-10-23T17:10:25.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 19,
+          "neuP": 81,
+          "label": "negative",
+          "confidence": 0.73
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump doubles down on support for Ramaswamy ad",
+        "link": "https://www.cbsnews.com/video/trump-repeats-support-for-ramaswamy-ad-key-house-midterms-to-watch/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ohio Republican gubernatorial candidate Vivek Ramaswamy released a controversial attack ad featuring opponent Amy Acton's mother. President Trump repeatedly defended the ad, despite bipartisan backlash. CBS News' Weijia Jiang reports, plus Ed O'Keefe takes a look at other midterm elections to watch.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T17:10:00.000Z",
+        "sentiment": {
+          "posP": 5.1,
+          "negP": 9.3,
+          "neuP": 85.6,
+          "label": "negative",
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democratic socialist set to become D.C. mayor — and face Trump's pushback",
+        "link": "https://www.cnbc.com/2026/10/23/janeese-lewis-george-democratic-socialist-washington-dc-mayor.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Following Zohran Mamdani's election as New York City mayor, another democratic socialist is set to become mayor of Washington, D.C.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T10:30:01.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5351,154 +5471,41 @@
           "confidence": 0
         },
         "category": "usa"
-      },
-      {
-        "title": "Kushner pushes back on report involving phone, spies, transfer",
-        "link": "https://www.cbsnews.com/news/jared-kushner-pushes-back-report-hacked-phone-spies-transfer/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "An excerpt from an upcoming book claims Kushner had access to alleged Middle Eastern \"slush\" funds when he served as a senior White House adviser during the first Trump administration. Kushner and his legal team deny the accusations.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T14:31:05.000Z",
-        "sentiment": {
-          "posP": 3,
-          "negP": 9.6,
-          "neuP": 87.4,
-          "label": "negative",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Immigration helped Trump get elected in 2024. Now, some Texans say the crackdown has gone too far.",
-        "link": "https://www.cbsnews.com/video/immigration-helped-trump-get-elected-in-2024-now-some-texans-say-the-crackdown-has-gone-too-far/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Two years ago, Republicans made huge gains among Latino communities along the southern border. CBS News polling now shows nearly 60% of Latino voters say the Trump administration is deporting more people than they expected. Camilo Montoya-Galvez has more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T14:21:17.000Z",
-        "sentiment": {
-          "posP": 8,
-          "negP": 0,
-          "neuP": 92,
-          "label": "positive",
-          "confidence": 0.57
-        },
-        "category": "usa"
-      },
-      {
-        "title": "DOJ charges two former top FBI officials who were frequent targets of Trump allies",
-        "link": "https://www.nbcnews.com/politics/justice-department/doj-charges-former-top-fbi-officials-frequent-targets-trump-allies-rcna605219",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Two former FBI officials who have come under withering criticism from allies of President Donald Trump over their intelligence work during the 2020 presidential election have been charged with allegedly lying to Congress.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T15:02:21.000Z",
-        "sentiment": {
-          "posP": 8.7,
-          "negP": 18.2,
-          "neuP": 73.1,
-          "label": "negative",
-          "confidence": 0.65
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Russian diesel tanker heads to the U.S., the first since Trump’s deal with Putin",
-        "link": "https://www.nbcnews.com/business/energy/russian-diesel-tanker-heads-us-trump-deal-putin-ukraine-war-rcna605187",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A tanker loaded with diesel fuel set sail Friday from Russia for the United States, the first shipment since President Donald Trump agreed to a deal with Russian President Vladimir Putin to release more fuel into the global market.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T12:22:15.000Z",
-        "sentiment": {
-          "posP": 9.1,
-          "negP": 0,
-          "neuP": 90.9,
-          "label": "positive",
-          "confidence": 0.6
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump hopes to flatter Putin into negotiating on Ukraine",
-        "link": "https://www.nbcnews.com/politics/donald-trump/trump-hopes-flatter-putin-negotiating-ukraine-experts-say-rcna604770",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A Trump diplomat called Putin “a humanitarian,” another in a recent flurry of overtures to the Russian leader. But it’s unclear whether blandishments will entice him to strike a deal.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T00:34:15.000Z",
-        "sentiment": {
-          "posP": 10.6,
-          "negP": 8.8,
-          "neuP": 80.6,
-          "label": "neutral",
-          "confidence": 0.18
-        },
-        "category": "usa"
-      },
-      {
-        "title": "DOJ probing Trump ally Corey Lewandowski's actions at DHS after IG referral: Sources",
-        "link": "https://abcnews.com/Politics/doj-probing-trump-ally-corey-lewandowskis-actions-dhs/story?id=137494061",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Lewandowski, a longtime Trump ally, served as ousted DHS Secretary Kristi Noem's top aide",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T10:24:38.000Z",
-        "sentiment": {
-          "posP": 6.7,
-          "negP": 0,
-          "neuP": 93.3,
-          "label": "positive",
-          "confidence": 0.2
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.64,
-      "neu": 86.27,
-      "neg": 8.09,
-      "count": 34
+      "pos": 5.55,
+      "neu": 82.9,
+      "neg": 11.55,
+      "count": 40
     },
     "sourceLeaderboard": [
       {
+        "source": "NYT",
+        "pos": 6.23,
+        "neu": 82.71,
+        "neg": 11.06,
+        "count": 9
+      },
+      {
         "source": "NBC News",
-        "pos": 7.65,
-        "neu": 81.01,
-        "neg": 11.34,
-        "count": 8
+        "pos": 6.52,
+        "neu": 80.08,
+        "neg": 13.4,
+        "count": 9
       },
       {
         "source": "CBS News",
-        "pos": 6.8,
-        "neu": 85.2,
-        "neg": 8,
-        "count": 7
+        "pos": 4.76,
+        "neu": 80.3,
+        "neg": 14.94,
+        "count": 5
       },
       {
-        "source": "NYT",
-        "pos": 4.1,
-        "neu": 91.68,
-        "neg": 4.22,
+        "source": "ABC News",
+        "pos": 2.36,
+        "neu": 85.82,
+        "neg": 11.82,
         "count": 5
       },
       {
@@ -5516,18 +5523,11 @@
         "count": 3
       },
       {
-        "source": "ABC News",
-        "pos": 4,
-        "neu": 93.07,
-        "neg": 2.93,
-        "count": 3
-      },
-      {
         "source": "Fox News",
-        "pos": 7.05,
-        "neu": 83.95,
-        "neg": 9,
-        "count": 2
+        "pos": 11.77,
+        "neu": 79.03,
+        "neg": 9.2,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5540,31 +5540,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.85,
-        "neu": 87.96,
-        "neg": 7.19,
-        "count": 16
+        "pos": 5.46,
+        "neu": 84.64,
+        "neg": 9.89,
+        "count": 17
       },
       {
         "topic": "Policy",
-        "pos": 4.3,
-        "neu": 86.16,
-        "neg": 9.54,
-        "count": 7
+        "pos": 4.17,
+        "neu": 82.74,
+        "neg": 13.09,
+        "count": 11
       },
       {
         "topic": "Foreign Policy",
-        "pos": 6.71,
-        "neu": 85,
-        "neg": 8.29,
-        "count": 7
+        "pos": 6.53,
+        "neu": 81.83,
+        "neg": 11.65,
+        "count": 8
       },
       {
         "topic": "Economy",
-        "pos": 9.25,
-        "neu": 81.92,
-        "neg": 8.82,
-        "count": 4
+        "pos": 9.3,
+        "neu": 78.93,
+        "neg": 11.77,
+        "count": 3
+      },
+      {
+        "topic": "Legal",
+        "pos": 3.1,
+        "neu": 75.6,
+        "neg": 21.3,
+        "count": 1
       }
     ]
   },
@@ -5591,28 +5598,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-23T11:52:14.884Z",
+        "label": "2026-10-23T15:34:29.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-23T12:52:14.884Z",
+        "label": "2026-10-23T16:34:29.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-23T13:52:14.884Z",
+        "label": "2026-10-23T17:34:29.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-23T14:52:14.884Z",
+        "label": "2026-10-23T18:34:29.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5621,28 +5628,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-23T11:52:14.884Z",
+        "label": "2026-10-23T15:34:29.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-23T12:52:14.884Z",
+        "label": "2026-10-23T16:34:29.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-23T13:52:14.884Z",
+        "label": "2026-10-23T17:34:29.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-23T14:52:14.884Z",
+        "label": "2026-10-23T18:34:29.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5722,7 +5729,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-23T15:52:14.885Z",
+    "generatedAt": "2026-10-23T19:34:29.815Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5843,8 +5850,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 169,
-      "potusArticles": 34,
+      "usaArticles": 167,
+      "potusArticles": 40,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
