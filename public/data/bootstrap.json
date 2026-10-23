@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-22T22:40:15.218Z",
+  "generatedAt": "2026-10-23T15:52:14.879Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 170,
-    "potusArticles": 47
+    "usaArticles": 169,
+    "potusArticles": 34
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-22T18:40:15.219Z",
+          "label": "2026-10-23T11:52:14.880Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T19:40:15.219Z",
+          "label": "2026-10-23T12:52:14.880Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T20:40:15.219Z",
+          "label": "2026-10-23T13:52:14.880Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T21:40:15.219Z",
+          "label": "2026-10-23T14:52:14.880Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-22T18:40:15.219Z",
+          "label": "2026-10-23T11:52:14.880Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T19:40:15.219Z",
+          "label": "2026-10-23T12:52:14.880Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T20:40:15.219Z",
+          "label": "2026-10-23T13:52:14.880Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-22T21:40:15.219Z",
+          "label": "2026-10-23T14:52:14.880Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 8.01,
-      "neu": 82.12,
-      "neg": 9.87,
-      "count": 170
+      "pos": 7.55,
+      "neu": 80.97,
+      "neg": 11.48,
+      "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.5,
-        "neu": 79.35,
-        "neg": 10.15,
-        "count": 42
+        "pos": 8.8,
+        "neu": 79.87,
+        "neg": 11.33,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 11.54,
-        "neu": 77.92,
-        "neg": 10.54,
+        "pos": 10.34,
+        "neu": 78.68,
+        "neg": 10.98,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.83,
-        "neu": 86.92,
-        "neg": 8.25,
+        "pos": 7.01,
+        "neu": 80.21,
+        "neg": 12.78,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.35,
-        "neu": 82.41,
-        "neg": 11.24,
+        "pos": 3.66,
+        "neu": 82.48,
+        "neg": 13.86,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.31,
-        "neu": 88.68,
-        "neg": 5,
+        "pos": 8.04,
+        "neu": 85.38,
+        "neg": 6.57,
         "count": 20
       },
       {
@@ -4628,132 +4628,122 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Manufacturing",
-          "bias": 18.6,
-          "count": 1
-        },
-        {
-          "name": "Communication",
-          "bias": -7.63,
-          "count": 3
-        },
-        {
-          "name": "Healthcare",
-          "bias": -7.55,
-          "count": 11
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
           "name": "Utilities",
-          "bias": -4.1,
-          "count": 2
+          "bias": -17,
+          "count": 1
         },
         {
           "name": "Materials",
-          "bias": 3.04,
-          "count": 5
+          "bias": 13.75,
+          "count": 2
         },
         {
-          "name": "Technology",
-          "bias": -2.16,
-          "count": 139
+          "name": "Real Estate",
+          "bias": 12.65,
+          "count": 2
+        },
+        {
+          "name": "Healthcare",
+          "bias": -10.9,
+          "count": 6
+        },
+        {
+          "name": "Communication",
+          "bias": -9.28,
+          "count": 4
         },
         {
           "name": "Finance",
-          "bias": 1.62,
-          "count": 17
+          "bias": -6.32,
+          "count": 20
+        },
+        {
+          "name": "Technology",
+          "bias": -4.32,
+          "count": 129
         },
         {
           "name": "Energy",
-          "bias": 0.86,
+          "bias": -4.29,
           "count": 8
         }
       ],
       "pos": [
         {
-          "name": "Manufacturing",
-          "bias": 18.6,
-          "count": 1
+          "name": "Materials",
+          "bias": 13.75,
+          "count": 2
         },
         {
           "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Materials",
-          "bias": 3.04,
-          "count": 5
+          "bias": 12.65,
+          "count": 2
         }
       ],
       "neu": [
         {
-          "name": "Technology",
-          "bias": -2.16,
-          "count": 139
+          "name": "Finance",
+          "bias": -6.32,
+          "count": 20
         },
         {
-          "name": "Finance",
-          "bias": 1.62,
-          "count": 17
+          "name": "Technology",
+          "bias": -4.32,
+          "count": 129
         },
         {
           "name": "Energy",
-          "bias": 0.86,
+          "bias": -4.29,
           "count": 8
         }
       ],
       "neg": [
         {
-          "name": "Communication",
-          "bias": -7.63,
-          "count": 3
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
         },
         {
           "name": "Healthcare",
-          "bias": -7.55,
-          "count": 11
+          "bias": -10.9,
+          "count": 6
         },
         {
-          "name": "Utilities",
-          "bias": -4.1,
-          "count": 2
+          "name": "Communication",
+          "bias": -9.28,
+          "count": 4
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-22T18:40:15.220Z",
-          "pos": 7,
-          "neu": 81,
-          "neg": 12,
-          "count": 8
+          "label": "2026-10-23T11:52:14.882Z",
+          "pos": 8,
+          "neu": 87,
+          "neg": 5,
+          "count": 6
         },
         {
-          "label": "2026-10-22T19:40:15.220Z",
-          "pos": 9,
+          "label": "2026-10-23T12:52:14.882Z",
+          "pos": 5,
           "neu": 84,
-          "neg": 8,
-          "count": 15
+          "neg": 10,
+          "count": 13
         },
         {
-          "label": "2026-10-22T20:40:15.220Z",
-          "pos": 11,
-          "neu": 81,
-          "neg": 8,
-          "count": 24
+          "label": "2026-10-23T13:52:14.882Z",
+          "pos": 8,
+          "neu": 78,
+          "neg": 14,
+          "count": 22
         },
         {
-          "label": "2026-10-22T21:40:15.220Z",
-          "pos": 6,
-          "neu": 85,
-          "neg": 9,
-          "count": 31
+          "label": "2026-10-23T14:52:14.882Z",
+          "pos": 8,
+          "neu": 80,
+          "neg": 12,
+          "count": 37
         }
       ]
     }
@@ -4961,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Trump pushback, Biden 'disaster' and gender surprise: 5 key moments from Kansas Senate debate",
-        "link": "https://www.foxnews.com/politics/trump-pushback-biden-disaster-gender-surprise-5-key-moments-from-kansas-senate-debate",
+        "title": "LeBron James doubles down with sneaky golf hip turns during national anthem after Trump's 'total disgrace' dig",
+        "link": "https://www.foxnews.com/outkick-sports/lebron-james-doubles-sneaky-golf-hip-turns-national-anthem-trump-total-disgrace-dig",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Republican Sen. Roger Marshall and Democrat Adam Hamilton clashed over Trump, transgender athletes and AI in a heated Kansas Senate debate on Wednesday.",
+        "description": "LeBron James responded to Trump's Truth Social attack with more golf swing hip turns during the national anthem before the 76ers-Cavaliers game.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-23T10:00:04.000Z",
+        "publishedAt": "2026-10-23T14:45:24.000Z",
         "sentiment": {
-          "posP": 5.8,
-          "negP": 0,
-          "neuP": 94.2,
-          "label": "positive",
-          "confidence": 0.27
+          "posP": 5.1,
+          "negP": 18,
+          "neuP": 76.9,
+          "label": "negative",
+          "confidence": 0.71
         },
         "category": "usa"
       },
       {
-        "title": "Judge orders Trump to give deposition for his $10 billion defamation lawsuit against BBC",
-        "link": "https://www.foxnews.com/media/judge-orders-trump-give-deposition-10-billion-defamation-lawsuit-bbc",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Big Names Flock to Ruby-Red Florida to Sway Voters in Unexpectedly Close Contests",
+        "link": "https://www.nytimes.com/2026/10/23/us/politics/florida-republicans-midterms-.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump must sit for a deposition by Dec. 11 in his $10 billion defamation lawsuit against the BBC over its 2024 \"Panorama\" documentary.",
+        "description": "President Trump will rally on Friday in a Republican state where Democrats have their eye on several House races.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T22:16:11.000Z",
+        "publishedAt": "2026-10-23T13:00:17.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 9.5,
-          "neuP": 90.5,
-          "label": "negative",
-          "confidence": 0.42
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       }
@@ -5203,320 +5193,313 @@
         "category": "world"
       },
       {
-        "title": "Trump pushback, Biden 'disaster' and gender surprise: 5 key moments from Kansas Senate debate",
-        "link": "https://www.foxnews.com/politics/trump-pushback-biden-disaster-gender-surprise-5-key-moments-from-kansas-senate-debate",
+        "title": "LeBron James doubles down with sneaky golf hip turns during national anthem after Trump's 'total disgrace' dig",
+        "link": "https://www.foxnews.com/outkick-sports/lebron-james-doubles-sneaky-golf-hip-turns-national-anthem-trump-total-disgrace-dig",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Republican Sen. Roger Marshall and Democrat Adam Hamilton clashed over Trump, transgender athletes and AI in a heated Kansas Senate debate on Wednesday.",
+        "description": "LeBron James responded to Trump's Truth Social attack with more golf swing hip turns during the national anthem before the 76ers-Cavaliers game.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-23T10:00:04.000Z",
+        "publishedAt": "2026-10-23T14:45:24.000Z",
         "sentiment": {
-          "posP": 5.8,
-          "negP": 0,
-          "neuP": 94.2,
-          "label": "positive",
-          "confidence": 0.27
+          "posP": 5.1,
+          "negP": 18,
+          "neuP": 76.9,
+          "label": "negative",
+          "confidence": 0.71
         },
         "category": "usa"
       },
       {
-        "title": "Judge orders Trump to give deposition for his $10 billion defamation lawsuit against BBC",
-        "link": "https://www.foxnews.com/media/judge-orders-trump-give-deposition-10-billion-defamation-lawsuit-bbc",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Big Names Flock to Ruby-Red Florida to Sway Voters in Unexpectedly Close Contests",
+        "link": "https://www.nytimes.com/2026/10/23/us/politics/florida-republicans-midterms-.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump must sit for a deposition by Dec. 11 in his $10 billion defamation lawsuit against the BBC over its 2024 \"Panorama\" documentary.",
+        "description": "President Trump will rally on Friday in a Republican state where Democrats have their eye on several House races.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T22:16:11.000Z",
+        "publishedAt": "2026-10-23T13:00:17.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 9.5,
-          "neuP": 90.5,
-          "label": "negative",
-          "confidence": 0.42
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Paul Finebaum says ESPN banned him from shows after telling OutKick he might run for office",
-        "link": "https://www.foxnews.com/outkick-sports/paul-finebaum-says-espn-banned-him-shows-after-telling-outkick-might-run-office",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Paul Finebaum confirms ESPN sidelined him after his OutKick interview about running for Alabama Senate as a Republican and voting for Trump.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T22:09:59.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 7.7,
-          "neuP": 92.3,
-          "label": "negative",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Fox News Poll: Nail-biter in Maine Senate race",
-        "link": "https://www.foxnews.com/politics/fox-news-poll-nail-biter-maine-senate-race",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Susan Collins and Troy Jackson are deadlocked at 49% in the Maine Senate race as Trump's job approval sits 25 points underwater in the state.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T22:00:02.000Z",
-        "sentiment": {
-          "posP": 8.8,
           "negP": 0,
-          "neuP": 91.2,
-          "label": "positive",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump rally exposes surprising cracks in MAGA base as Republicans face midterm test",
-        "link": "https://www.foxnews.com/politics/trump-rally-exposes-surprising-cracks-maga-base-republicans-face-midterm-test",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump's Clemson rally revealed GOP fractures over the Iran war, funding and immigration as one student eyes crossing party lines.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T21:10:46.000Z",
-        "sentiment": {
-          "posP": 11.7,
-          "negP": 13.1,
-          "neuP": 75.2,
+          "neuP": 100,
           "label": "neutral",
-          "confidence": 0.15
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Hegseth unleashes Trump's 'Arsenal of Freedom' with warning to defense giants",
-        "link": "https://www.foxnews.com/politics/hegseth-unleashes-trumps-arsenal-freedom-warning-defense-giants",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Asked Musk to Reverse Starshield Restrictions on Ukraine",
+        "link": "https://www.nytimes.com/2026/10/22/us/politics/starshield-outage-ukraine-musk-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Pete Hegseth's video showcases missile launches and production lines as the Trump administration's \"Arsenal of Freedom\" campaign targets Pentagon red tape.",
+        "description": "The call from the president about the Starshield network came after officials in Ukraine reported that they found new limits on the use of military drones in their war against Russia.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T21:08:44.000Z",
+        "publishedAt": "2026-10-23T13:05:59.000Z",
         "sentiment": {
-          "posP": 24.6,
-          "negP": 6,
-          "neuP": 69.4,
+          "posP": 0,
+          "negP": 9.1,
+          "neuP": 90.9,
+          "label": "negative",
+          "confidence": 0.6
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Late Night Dunks on Trump for Planning to Rename an Ocean",
+        "link": "https://www.nytimes.com/2026/10/23/arts/television/late-night-trump-ocean.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "“Once again, 12 days before this election, it’s good to see him locked in on the really big issues,” Jimmy Fallon said on “The Tonight Show.”",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T05:52:30.000Z",
+        "sentiment": {
+          "posP": 7.5,
+          "negP": 0,
+          "neuP": 92.5,
           "label": "positive",
-          "confidence": 0.82
+          "confidence": 0.44
         },
         "category": "usa"
       },
       {
-        "title": "DOJ moves to boot two federal judges from immigration cases over remarks to media: 'Extraordinarily imprudent'",
-        "link": "https://www.foxnews.com/politics/doj-moves-boot-two-federal-judges-immigration-cases-over-remarks-media-extraordinarily-imprudent",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump's U.N. envoy says Iran war could drag on for another year",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-oil-gas-prices-strait-of-hormuz-midterms/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Two Minnesota federal judges who criticized Trump's Operation Metro Surge in a report published by the New York Times now face DOJ recusal motions tied to their immigration cases.",
+        "description": "The U.S. ambassador to the U.N. says the war with Iran could last another year, but he hopes Tehran will \"come to the table\" sooner.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T20:15:16.000Z",
+        "publishedAt": "2026-10-23T15:35:13.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 5.5,
-          "neuP": 94.5,
-          "label": "negative",
-          "confidence": 0.36
+          "posP": 8.6,
+          "negP": 14.8,
+          "neuP": 76.6,
+          "label": "neutral",
+          "confidence": 0.17
         },
         "category": "usa"
       },
       {
-        "title": "Trump ordered to sit for deposition in BBC lawsuit",
-        "link": "https://www.nbcnews.com/now/video/trump-ordered-to-sit-for-deposition-in-bbc-lawsuit-272044613767",
+        "title": "Melania Trump secures \"temporary ceasefire\" in Ukrainian city",
+        "link": "https://www.cbsnews.com/news/first-lady-melania-trump-temporary-ceasefire-russia-ukraine-oleshky/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "First lady Melania Trump's office says she secured a localized ceasefire for the Russian-occupied Ukrainian city of Oleshky.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T15:33:39.000Z",
+        "sentiment": {
+          "posP": 17.9,
+          "negP": 0,
+          "neuP": 82.1,
+          "label": "positive",
+          "confidence": 0.61
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says new fuel supply push will lower prices. Will it work?",
+        "link": "https://www.cbsnews.com/news/trump-defense-production-act-gas-diesel-prices/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration said using the DPA funding will increase refining output and lower fuel prices for Americans. Experts are skeptical.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T15:24:45.000Z",
+        "sentiment": {
+          "posP": 6.1,
+          "negP": 17.6,
+          "neuP": 76.3,
+          "label": "negative",
+          "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trumps to vote early in person in Florida on Saturday",
+        "link": "https://www.cbsnews.com/news/trump-melania-vote-early-in-person-florida-saturday/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump and first lady Melania Trump are expected to vote early in Palm Beach County.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T14:54:52.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Kushner pushes back on report involving phone, spies, transfer",
+        "link": "https://www.cbsnews.com/news/jared-kushner-pushes-back-report-hacked-phone-spies-transfer/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "An excerpt from an upcoming book claims Kushner had access to alleged Middle Eastern \"slush\" funds when he served as a senior White House adviser during the first Trump administration. Kushner and his legal team deny the accusations.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T14:31:05.000Z",
+        "sentiment": {
+          "posP": 3,
+          "negP": 9.6,
+          "neuP": 87.4,
+          "label": "negative",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Immigration helped Trump get elected in 2024. Now, some Texans say the crackdown has gone too far.",
+        "link": "https://www.cbsnews.com/video/immigration-helped-trump-get-elected-in-2024-now-some-texans-say-the-crackdown-has-gone-too-far/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Two years ago, Republicans made huge gains among Latino communities along the southern border. CBS News polling now shows nearly 60% of Latino voters say the Trump administration is deporting more people than they expected. Camilo Montoya-Galvez has more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T14:21:17.000Z",
+        "sentiment": {
+          "posP": 8,
+          "negP": 0,
+          "neuP": 92,
+          "label": "positive",
+          "confidence": 0.57
+        },
+        "category": "usa"
+      },
+      {
+        "title": "DOJ charges two former top FBI officials who were frequent targets of Trump allies",
+        "link": "https://www.nbcnews.com/politics/justice-department/doj-charges-former-top-fbi-officials-frequent-targets-trump-allies-rcna605219",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A federal judge in Florida ordered President Donald Trump to sit for a deposition in his defamation lawsuit against the BBC by Dec. 11, or face the possibility of having his $10 billion action dismissed.",
+        "description": "Two former FBI officials who have come under withering criticism from allies of President Donald Trump over their intelligence work during the 2020 presidential election have been charged with allegedly lying to Congress.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T16:20:42.000Z",
+        "publishedAt": "2026-10-23T15:02:21.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 8.7,
-          "neuP": 91.3,
+          "posP": 8.7,
+          "negP": 18.2,
+          "neuP": 73.1,
           "label": "negative",
-          "confidence": 0.42
+          "confidence": 0.65
         },
         "category": "usa"
       },
       {
-        "title": "Top adviser to Kennedy resigns from Trump administration",
-        "link": "https://www.nbcnews.com/health/health-news/kennedy-top-advisor-calley-means-resigns-trump-administration-maha-rcna605056",
+        "title": "Russian diesel tanker heads to the U.S., the first since Trump’s deal with Putin",
+        "link": "https://www.nbcnews.com/business/energy/russian-diesel-tanker-heads-us-trump-deal-putin-ukraine-war-rcna605187",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Means, a key advocate for the “Make America Healthy Again” movement, had grown frustrated with a lack of progress on his policy goals, a source familiar with his departure said.",
+        "description": "A tanker loaded with diesel fuel set sail Friday from Russia for the United States, the first shipment since President Donald Trump agreed to a deal with Russian President Vladimir Putin to release more fuel into the global market.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T18:57:36.000Z",
+        "publishedAt": "2026-10-23T12:22:15.000Z",
         "sentiment": {
-          "posP": 16.5,
-          "negP": 18.1,
-          "neuP": 65.4,
+          "posP": 9.1,
+          "negP": 0,
+          "neuP": 90.9,
+          "label": "positive",
+          "confidence": 0.6
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump hopes to flatter Putin into negotiating on Ukraine",
+        "link": "https://www.nbcnews.com/politics/donald-trump/trump-hopes-flatter-putin-negotiating-ukraine-experts-say-rcna604770",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A Trump diplomat called Putin “a humanitarian,” another in a recent flurry of overtures to the Russian leader. But it’s unclear whether blandishments will entice him to strike a deal.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-22T00:34:15.000Z",
+        "sentiment": {
+          "posP": 10.6,
+          "negP": 8.8,
+          "neuP": 80.6,
           "label": "neutral",
           "confidence": 0.18
         },
         "category": "usa"
       },
       {
-        "title": "Blanche won’t rule out DOJ post-election action in a ‘doomsday’ scenario",
-        "link": "https://www.nbcnews.com/politics/justice-department/blanche-wont-rule-doj-post-election-action-doomsday-scenario-rcna605035",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "DOJ probing Trump ally Corey Lewandowski's actions at DHS after IG referral: Sources",
+        "link": "https://abcnews.com/Politics/doj-probing-trump-ally-corey-lewandowskis-actions-dhs/story?id=137494061",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The attorney general’s comments come in the middle of a broader campaign by the Trump administration to zero in on what elections experts say is a relatively rare phenomenon of voting by noncitizens.",
+        "description": "Lewandowski, a longtime Trump ally, served as ousted DHS Secretary Kristi Noem's top aide",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-22T17:38:39.000Z",
+        "publishedAt": "2026-10-23T10:24:38.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 6.7,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How Trump's immigration crackdown may reshape Republican voting in Texas",
-        "link": "https://www.cbsnews.com/video/trumps-immigration-crackdown-reshape-republican-voting-texas/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump's mass deportation operations and immigration enforcement actions could reshape the way Texans vote. CBS News' Camilo Montoya-Galvez spoke with voters and officials about that.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T22:16:26.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "El-Sayed, Rogers trade barbs at final Michigan Senate debate",
-        "link": "https://www.cbsnews.com/video/el-sayed-rogers-trade-barbs-final-michigan-senate-debate/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrat Abdul El-Sayed and Republican Mike Rogers went head-to-head during the Michigan Senate race's final debate on Wednesday night. CBS News White House and politics reporter Aaron Navarro joins with a recap.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T22:11:40.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Minnesota GOP Senate candidate Michele Tafoya on where she would break with Trump if elected",
-        "link": "https://www.cbsnews.com/video/minnesota-gop-senate-michele-tafoya-where-she-would-break-trump-if-elected/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "New polling shows Minnesota Republican Senate candidate Michele Tafoya making gains in her race against Democratic Lt. Gov. Peggy Flanagan. CBS News correspondent Jonah Kaplan spoke with Tafoya about how she would serve as a check on President Trump if elected to the Senate.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T22:10:42.000Z",
-        "sentiment": {
-          "posP": 4,
-          "negP": 0,
-          "neuP": 96,
+          "neuP": 93.3,
           "label": "positive",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump campaigning in ruby red area of Iowa with midterms 12 days away",
-        "link": "https://www.cbsnews.com/video/trump-campaigning-ruby-red-area-iowa-midterms-12-days-away/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is stumping for Republicans in Sioux City, Iowa, on Thursday, with 12 days until Election Day. CBS News chief Washington analyst Robert Costa is in the Hawkeye State with more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-22T21:44:39.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "confidence": 0.2
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.37,
-      "neu": 86.7,
-      "neg": 7.92,
-      "count": 47
+      "pos": 5.64,
+      "neu": 86.27,
+      "neg": 8.09,
+      "count": 34
     },
     "sourceLeaderboard": [
       {
-        "source": "NYT",
-        "pos": 5.4,
-        "neu": 84.64,
-        "neg": 9.96,
-        "count": 9
-      },
-      {
         "source": "NBC News",
-        "pos": 5.97,
-        "neu": 83.39,
-        "neg": 10.64,
-        "count": 9
-      },
-      {
-        "source": "Fox News",
-        "pos": 7.49,
-        "neu": 87.29,
-        "neg": 5.22,
+        "pos": 7.65,
+        "neu": 81.01,
+        "neg": 11.34,
         "count": 8
       },
       {
         "source": "CBS News",
-        "pos": 4.42,
-        "neu": 90.86,
-        "neg": 4.71,
-        "count": 8
+        "pos": 6.8,
+        "neu": 85.2,
+        "neg": 8,
+        "count": 7
+      },
+      {
+        "source": "NYT",
+        "pos": 4.1,
+        "neu": 91.68,
+        "neg": 4.22,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5526,18 +5509,25 @@
         "count": 4
       },
       {
-        "source": "ABC News",
-        "pos": 4.65,
-        "neu": 88.6,
-        "neg": 6.75,
-        "count": 4
-      },
-      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
         "count": 3
+      },
+      {
+        "source": "ABC News",
+        "pos": 4,
+        "neu": 93.07,
+        "neg": 2.93,
+        "count": 3
+      },
+      {
+        "source": "Fox News",
+        "pos": 7.05,
+        "neu": 83.95,
+        "neg": 9,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5550,38 +5540,31 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.48,
-        "neu": 87.54,
-        "neg": 6.99,
-        "count": 22
+        "pos": 4.85,
+        "neu": 87.96,
+        "neg": 7.19,
+        "count": 16
       },
       {
         "topic": "Policy",
-        "pos": 6.11,
-        "neu": 86.25,
-        "neg": 7.64,
-        "count": 11
+        "pos": 4.3,
+        "neu": 86.16,
+        "neg": 9.54,
+        "count": 7
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.09,
-        "neu": 86.73,
-        "neg": 10.19,
+        "pos": 6.71,
+        "neu": 85,
+        "neg": 8.29,
         "count": 7
       },
       {
         "topic": "Economy",
-        "pos": 7.45,
-        "neu": 84.83,
-        "neg": 7.72,
+        "pos": 9.25,
+        "neu": 81.92,
+        "neg": 8.82,
         "count": 4
-      },
-      {
-        "topic": "Legal",
-        "pos": 4.47,
-        "neu": 84.7,
-        "neg": 10.83,
-        "count": 3
       }
     ]
   },
@@ -5608,28 +5591,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-22T18:40:15.221Z",
+        "label": "2026-10-23T11:52:14.884Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T19:40:15.221Z",
+        "label": "2026-10-23T12:52:14.884Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T20:40:15.221Z",
+        "label": "2026-10-23T13:52:14.884Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T21:40:15.221Z",
+        "label": "2026-10-23T14:52:14.884Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5638,28 +5621,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-22T18:40:15.221Z",
+        "label": "2026-10-23T11:52:14.884Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T19:40:15.221Z",
+        "label": "2026-10-23T12:52:14.884Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T20:40:15.221Z",
+        "label": "2026-10-23T13:52:14.884Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-22T21:40:15.221Z",
+        "label": "2026-10-23T14:52:14.884Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5739,7 +5722,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-22T22:40:15.222Z",
+    "generatedAt": "2026-10-23T15:52:14.885Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5860,8 +5843,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 170,
-      "potusArticles": 47,
+      "usaArticles": 169,
+      "potusArticles": 34,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
