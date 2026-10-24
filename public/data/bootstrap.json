@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-24T13:38:56.626Z",
+  "generatedAt": "2026-10-24T17:01:17.026Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 160,
-    "potusArticles": 34
+    "usaArticles": 161,
+    "potusArticles": 30
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-24T09:38:56.627Z",
+          "label": "2026-10-24T13:01:17.027Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T10:38:56.627Z",
+          "label": "2026-10-24T14:01:17.027Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T11:38:56.627Z",
+          "label": "2026-10-24T15:01:17.027Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T12:38:56.627Z",
+          "label": "2026-10-24T16:01:17.027Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-24T09:38:56.627Z",
+          "label": "2026-10-24T13:01:17.027Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T10:38:56.627Z",
+          "label": "2026-10-24T14:01:17.027Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T11:38:56.627Z",
+          "label": "2026-10-24T15:01:17.027Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T12:38:56.627Z",
+          "label": "2026-10-24T16:01:17.027Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 8.1,
-      "neu": 80.47,
-      "neg": 11.43,
-      "count": 160
+      "pos": 8.8,
+      "neu": 80.81,
+      "neg": 10.39,
+      "count": 161
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.06,
-        "neu": 83.25,
-        "neg": 6.68,
-        "count": 37
+        "pos": 10.1,
+        "neu": 82.56,
+        "neg": 7.33,
+        "count": 38
       },
       {
         "source": "Fox News",
-        "pos": 8.22,
-        "neu": 74.4,
-        "neg": 17.39,
+        "pos": 10.4,
+        "neu": 76.75,
+        "neg": 12.85,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.93,
-        "neu": 79.99,
-        "neg": 13.08,
+        "pos": 9.79,
+        "neu": 80.56,
+        "neg": 9.65,
         "count": 26
       },
       {
@@ -4591,16 +4591,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.58,
-        "neu": 84.17,
-        "neg": 7.25,
+        "pos": 8.66,
+        "neu": 84.51,
+        "neg": 6.84,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 7.51,
-        "neu": 79.32,
-        "neg": 13.17,
+        "pos": 6.29,
+        "neu": 79.08,
+        "neg": 14.62,
         "count": 19
       },
       {
@@ -4629,12 +4629,7 @@
       "rows": [
         {
           "name": "Communication",
-          "bias": -22.03,
-          "count": 3
-        },
-        {
-          "name": "Utilities",
-          "bias": -17,
+          "bias": -14,
           "count": 1
         },
         {
@@ -4643,29 +4638,34 @@
           "count": 2
         },
         {
+          "name": "Healthcare",
+          "bias": -5.57,
+          "count": 7
+        },
+        {
           "name": "Finance",
-          "bias": -5.86,
-          "count": 16
-        },
-        {
-          "name": "Materials",
-          "bias": -5.22,
-          "count": 6
-        },
-        {
-          "name": "Energy",
-          "bias": -4.16,
-          "count": 8
+          "bias": -5.01,
+          "count": 18
         },
         {
           "name": "Technology",
-          "bias": -3.31,
-          "count": 123
+          "bias": -1.52,
+          "count": 128
         },
         {
-          "name": "Healthcare",
-          "bias": -2.19,
+          "name": "Energy",
+          "bias": -1.41,
           "count": 7
+        },
+        {
+          "name": "Utilities",
+          "bias": -1.17,
+          "count": 3
+        },
+        {
+          "name": "Materials",
+          "bias": 0.5,
+          "count": 5
         },
         {
           "name": "Real Estate",
@@ -4677,67 +4677,67 @@
       "neu": [
         {
           "name": "Finance",
-          "bias": -5.86,
-          "count": 16
+          "bias": -5.01,
+          "count": 18
         },
         {
-          "name": "Materials",
-          "bias": -5.22,
-          "count": 6
+          "name": "Technology",
+          "bias": -1.52,
+          "count": 128
         },
         {
           "name": "Energy",
-          "bias": -4.16,
-          "count": 8
+          "bias": -1.41,
+          "count": 7
         }
       ],
       "neg": [
         {
           "name": "Communication",
-          "bias": -22.03,
-          "count": 3
-        },
-        {
-          "name": "Utilities",
-          "bias": -17,
+          "bias": -14,
           "count": 1
         },
         {
           "name": "Manufacturing",
           "bias": -9.25,
           "count": 2
+        },
+        {
+          "name": "Healthcare",
+          "bias": -5.57,
+          "count": 7
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-24T09:38:56.628Z",
-          "pos": 9,
-          "neu": 74,
-          "neg": 17,
-          "count": 2
+          "label": "2026-10-24T13:01:17.029Z",
+          "pos": 17,
+          "neu": 75,
+          "neg": 8,
+          "count": 5
         },
         {
-          "label": "2026-10-24T10:38:56.628Z",
+          "label": "2026-10-24T14:01:17.029Z",
+          "pos": 10,
+          "neu": 78,
+          "neg": 12,
+          "count": 14
+        },
+        {
+          "label": "2026-10-24T15:01:17.029Z",
+          "pos": 13,
+          "neu": 78,
+          "neg": 9,
+          "count": 21
+        },
+        {
+          "label": "2026-10-24T16:01:17.029Z",
           "pos": 7,
-          "neu": 80,
-          "neg": 13,
-          "count": 13
-        },
-        {
-          "label": "2026-10-24T11:38:56.628Z",
-          "pos": 9,
-          "neu": 72,
-          "neg": 20,
-          "count": 11
-        },
-        {
-          "label": "2026-10-24T12:38:56.628Z",
-          "pos": 9,
-          "neu": 80,
-          "neg": 10,
-          "count": 16
+          "neu": 82,
+          "neg": 12,
+          "count": 15
         }
       ]
     }
@@ -4945,42 +4945,42 @@
         "category": "world"
       },
       {
-        "title": "Trump's war on drug cartels could gain powerful new ally after pivotal election",
-        "link": "https://www.foxnews.com/politics/trumps-war-drug-cartels-could-gain-powerful-new-ally-after-pivotal-election",
+        "title": "Stephen A Smith doubles down on Trump dinner, challenges critics by asking, 'What the f--- are you doing?'",
+        "link": "https://www.foxnews.com/media/stephen-smith-doubles-down-trump-dinner-challenges-critics-asking-what-f-you-doing",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Eduardo Bolsonaro says Brazil would join Trump's Shield of the Americas anti-cartel coalition if brother Flávio Bolsonaro wins the Oct. 25 runoff.",
+        "description": "Stephen A. Smith fired back at D.L. Hughley and other critics of his White House meeting with President Donald Trump, asking what they're doing for the community.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T13:30:45.000Z",
+        "publishedAt": "2026-10-24T16:00:36.000Z",
         "sentiment": {
-          "posP": 26.3,
-          "negP": 8.5,
-          "neuP": 65.2,
-          "label": "positive",
-          "confidence": 0.8
+          "posP": 2.6,
+          "negP": 16.2,
+          "neuP": 81.2,
+          "label": "negative",
+          "confidence": 0.77
         },
         "category": "usa"
       },
       {
-        "title": "Canada is feeling the pain from Trump's tariffs — but the trade fight didn't start overnight",
-        "link": "https://www.foxnews.com/politics/canada-feeling-pain-trumps-tariffs-trade-fight-didnt-start-overnight",
+        "title": "'SNL' Weekend Update anchor calls Republicans slurs, mocks Charlie Kirk in stand-up special",
+        "link": "https://www.foxnews.com/media/snl-weekend-update-anchor-calls-republicans-slurs-mocks-charlie-kirk-stand-up-special",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump's trade showdown with Canada targets dairy, lumber and market access, reviving decades-old tensions between allied economies.",
+        "description": "Michael Che's Netflix special opens with jokes about Charlie Kirk's killing and repeatedly uses the R-word to mock President Donald Trump and MAGA supporters.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T11:00:54.000Z",
+        "publishedAt": "2026-10-24T14:00:47.000Z",
         "sentiment": {
-          "posP": 3.1,
-          "negP": 22.6,
-          "neuP": 74.3,
+          "posP": 20.4,
+          "negP": 20.2,
+          "neuP": 59.4,
           "label": "negative",
-          "confidence": 0.83
+          "confidence": 0.23
         },
         "category": "usa"
       }
@@ -5187,62 +5187,42 @@
         "category": "world"
       },
       {
-        "title": "Trump's war on drug cartels could gain powerful new ally after pivotal election",
-        "link": "https://www.foxnews.com/politics/trumps-war-drug-cartels-could-gain-powerful-new-ally-after-pivotal-election",
+        "title": "Stephen A Smith doubles down on Trump dinner, challenges critics by asking, 'What the f--- are you doing?'",
+        "link": "https://www.foxnews.com/media/stephen-smith-doubles-down-trump-dinner-challenges-critics-asking-what-f-you-doing",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Eduardo Bolsonaro says Brazil would join Trump's Shield of the Americas anti-cartel coalition if brother Flávio Bolsonaro wins the Oct. 25 runoff.",
+        "description": "Stephen A. Smith fired back at D.L. Hughley and other critics of his White House meeting with President Donald Trump, asking what they're doing for the community.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T13:30:45.000Z",
+        "publishedAt": "2026-10-24T16:00:36.000Z",
         "sentiment": {
-          "posP": 26.3,
-          "negP": 8.5,
-          "neuP": 65.2,
-          "label": "positive",
-          "confidence": 0.8
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Canada is feeling the pain from Trump's tariffs — but the trade fight didn't start overnight",
-        "link": "https://www.foxnews.com/politics/canada-feeling-pain-trumps-tariffs-trade-fight-didnt-start-overnight",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump's trade showdown with Canada targets dairy, lumber and market access, reviving decades-old tensions between allied economies.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T11:00:54.000Z",
-        "sentiment": {
-          "posP": 3.1,
-          "negP": 22.6,
-          "neuP": 74.3,
+          "posP": 2.6,
+          "negP": 16.2,
+          "neuP": 81.2,
           "label": "negative",
-          "confidence": 0.83
+          "confidence": 0.77
         },
         "category": "usa"
       },
       {
-        "title": "Trump officials warn decades-long decline among American men could carry national security consequences",
-        "link": "https://www.foxnews.com/politics/trump-officials-warn-decades-long-decline-american-men-could-carry-national-security-consequences",
+        "title": "'SNL' Weekend Update anchor calls Republicans slurs, mocks Charlie Kirk in stand-up special",
+        "link": "https://www.foxnews.com/media/snl-weekend-update-anchor-calls-republicans-slurs-mocks-charlie-kirk-stand-up-special",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump's administration develops testosterone screening for troops as an HHS official warns 77% of young Americans can't serve.",
+        "description": "Michael Che's Netflix special opens with jokes about Charlie Kirk's killing and repeatedly uses the R-word to mock President Donald Trump and MAGA supporters.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T11:00:39.000Z",
+        "publishedAt": "2026-10-24T14:00:47.000Z",
         "sentiment": {
-          "posP": 6.8,
-          "negP": 8,
-          "neuP": 85.2,
-          "label": "neutral",
-          "confidence": 0.15
+          "posP": 20.4,
+          "negP": 20.2,
+          "neuP": 59.4,
+          "label": "negative",
+          "confidence": 0.23
         },
         "category": "usa"
       },
@@ -5347,82 +5327,82 @@
         "category": "usa"
       },
       {
-        "title": "What Happens if Trump Doesn’t Like the Midterm Results?",
-        "link": "https://www.nytimes.com/2026/10/24/opinion/trump-midterm-elections-results-predictions.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Hope, dread and the final stretch to Election Day.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T11:49:58.000Z",
-        "sentiment": {
-          "posP": 23.1,
-          "negP": 12.8,
-          "neuP": 64.1,
-          "label": "positive",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "DOJ sues to block Alaska Senate certification if Sullivan loses",
-        "link": "https://www.cbsnews.com/news/trump-admin-sues-to-block-alaska-senate-certification-if-sen-dan-sullivan-loses/",
+        "title": "Trump, Vance defend controversial Ramaswamy attack ad; Obama campaigns with Amy Acton",
+        "link": "https://www.cbsnews.com/video/trump-vance-defend-controversial-ramaswamy-attack-ad-obama-campaigns-with-amy-acton/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Trump administration is suing to prevent the Alaska Senate election from being certified if GOP Sen. Daniel Sullivan loses to Democrat Mary Peltola because of the other Dan Sullivan who is on the ballot.",
+        "description": "An ad released by Ohio's Republican gubernatorial candidate Vivek Ramaswamy has drawn bipartisan backlash. Olivia Gazis has more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T02:42:42.000Z",
+        "publishedAt": "2026-10-24T14:13:25.000Z",
         "sentiment": {
-          "posP": 2.2,
-          "negP": 18.9,
-          "neuP": 78.9,
+          "posP": 0,
+          "negP": 14.9,
+          "neuP": 85.1,
           "label": "negative",
-          "confidence": 0.82
+          "confidence": 0.6
         },
         "category": "usa"
       },
       {
-        "title": "Melania Trump secures \"temporary ceasefire\" in Ukrainian city",
-        "link": "https://www.cbsnews.com/news/first-lady-melania-trump-temporary-ceasefire-russia-ukraine-oleshky/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Iran live updates: Iranian plotting against US citizens abroad in 'advanced stages'",
+        "link": "https://abcnews.com/International/live-updates/iran-live-updates/?id=137370653",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "First lady Melania Trump's office says she secured a localized ceasefire for the Russian-occupied Ukrainian city of Oleshky.",
+        "description": "President Donald Trump announced \"major combat operations\" against Iran on Feb. 28.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T02:12:09.000Z",
+        "publishedAt": "2026-10-24T13:35:08.000Z",
         "sentiment": {
-          "posP": 17.9,
-          "negP": 0,
-          "neuP": 82.1,
-          "label": "positive",
-          "confidence": 0.61
+          "posP": 7.6,
+          "negP": 9.1,
+          "neuP": 83.3,
+          "label": "neutral",
+          "confidence": 0.1
         },
         "category": "usa"
       },
       {
-        "title": "Justice Department attempts to block certification of Alaska Senate race if Republican loses",
-        "link": "https://www.cbsnews.com/video/justice-department-attempts-to-block-certification-of-alaska-senate-race-if-republican-loses-1/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump doubles down on Amy Acton criticism as Ramaswamy ad controversy swirls",
+        "link": "https://abcnews.com/Politics/trump-doubles-amy-acton-criticism-ramaswamy-ad-controversy/story?id=137516959",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump is calling into question the integrity of the upcoming Alaska Senate vote, asking the Justice Department to block future certification over possible confusion around the identities of two candidates who share the same name. Nancy Cordes has more.",
+        "description": "\"It's a mother speaking badly against Amy Acton,\" Trump said.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T01:08:49.000Z",
+        "publishedAt": "2026-10-23T21:08:21.000Z",
         "sentiment": {
-          "posP": 17.3,
-          "negP": 15.4,
-          "neuP": 67.3,
-          "label": "positive",
-          "confidence": 0.32
+          "posP": 0,
+          "negP": 24,
+          "neuP": 76,
+          "label": "negative",
+          "confidence": 0.72
+        },
+        "category": "usa"
+      },
+      {
+        "title": "First lady Melania Trump says she brokered 'temporary' ceasefire in Ukrainian town",
+        "link": "https://abcnews.com/Politics/lady-melania-trump-brokered-temporary-localized-ceasefire-ukraine/story?id=137512833",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "It's unclear exactly how long the ceasefire is set to last.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T18:51:18.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 8.3,
+          "neuP": 91.7,
+          "label": "negative",
+          "confidence": 0.25
         },
         "category": "usa"
       },
@@ -5447,60 +5427,66 @@
         "category": "usa"
       },
       {
-        "title": "Trump dropping some Canada tariffs but 'replacing' them with other products",
-        "link": "https://www.cnbc.com/2026/10/23/trump-tariffs-canada-susan-collins.html",
+        "title": "America by the numbers: How voters feel about the economy, inflation, AI and Trump",
+        "link": "https://www.cnbc.com/2026/10/23/america-by-the-numbers-how-voters-feel-about-the-economy-inflation-ai-and-trump.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Sen. Susan Collins announced Canada was dropping Canadian tariffs, but the White House later said it was \"replacing\" the ones removed from the list.",
+        "description": "With the U.S. midterm elections looming, Americans are nearly as gloomy about the economy as they were when the nation was emerging from the pandemic.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-23T21:26:59.000Z",
+        "publishedAt": "2026-10-24T10:58:30.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 7.7,
+          "neuP": 92.3,
+          "label": "negative",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's executive order targets mortgage insurance, refinance costs. What it means for borrowers",
+        "link": "https://www.cnbc.com/2026/10/23/trump-mortgage-executive-order-costs.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump's executive order on housing aims to lower mortgage costs. Here's what it means for homeowners and buyers.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T22:27:06.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 6.8,
+          "neuP": 93.2,
+          "label": "negative",
+          "confidence": 0.3
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.34,
-      "neu": 82.81,
-      "neg": 10.84,
-      "count": 34
+      "pos": 4.93,
+      "neu": 84.63,
+      "neg": 10.44,
+      "count": 30
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 7.36,
-        "neu": 78.95,
-        "neg": 13.69,
-        "count": 8
-      },
-      {
-        "source": "NBC News",
-        "pos": 4.84,
-        "neu": 86.74,
-        "neg": 8.41,
+        "pos": 5.11,
+        "neu": 81.07,
+        "neg": 13.81,
         "count": 7
       },
       {
-        "source": "Fox News",
-        "pos": 11.3,
-        "neu": 78.92,
-        "neg": 9.78,
-        "count": 4
-      },
-      {
-        "source": "CBS News",
-        "pos": 10.35,
-        "neu": 77.58,
-        "neg": 12.07,
-        "count": 4
+        "source": "NBC News",
+        "pos": 5.38,
+        "neu": 89.73,
+        "neg": 4.88,
+        "count": 6
       },
       {
         "source": "WSJ",
@@ -5517,47 +5503,61 @@
         "count": 3
       },
       {
+        "source": "Fox News",
+        "pos": 10.67,
+        "neu": 77.2,
+        "neg": 12.13,
+        "count": 3
+      },
+      {
+        "source": "ABC News",
+        "pos": 2.53,
+        "neu": 83.67,
+        "neg": 13.8,
+        "count": 3
+      },
+      {
+        "source": "CBS News",
+        "pos": 2,
+        "neu": 83.55,
+        "neg": 14.45,
+        "count": 2
+      },
+      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
         "neg": 9,
-        "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 0,
-        "neu": 83.85,
-        "neg": 16.15,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.01,
-        "neu": 82.24,
-        "neg": 10.75,
-        "count": 15
+        "pos": 5.34,
+        "neu": 84.05,
+        "neg": 10.61,
+        "count": 14
       },
       {
         "topic": "Policy",
-        "pos": 4.75,
-        "neu": 84.92,
-        "neg": 10.33,
-        "count": 8
+        "pos": 4.36,
+        "neu": 87.68,
+        "neg": 7.96,
+        "count": 5
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7.28,
-        "neu": 84.7,
-        "neg": 8.02,
+        "pos": 3.7,
+        "neu": 85.3,
+        "neg": 11,
         "count": 5
       },
       {
         "topic": "Economy",
-        "pos": 7.37,
-        "neu": 81.1,
-        "neg": 11.53,
+        "pos": 6.33,
+        "neu": 87.1,
+        "neg": 6.57,
         "count": 3
       },
       {
@@ -5592,28 +5592,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-24T09:38:56.631Z",
+        "label": "2026-10-24T13:01:17.031Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T10:38:56.631Z",
+        "label": "2026-10-24T14:01:17.031Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T11:38:56.631Z",
+        "label": "2026-10-24T15:01:17.031Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T12:38:56.631Z",
+        "label": "2026-10-24T16:01:17.031Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5622,28 +5622,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-24T09:38:56.631Z",
+        "label": "2026-10-24T13:01:17.031Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T10:38:56.631Z",
+        "label": "2026-10-24T14:01:17.031Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T11:38:56.631Z",
+        "label": "2026-10-24T15:01:17.031Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T12:38:56.631Z",
+        "label": "2026-10-24T16:01:17.031Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5723,7 +5723,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-24T13:38:56.632Z",
+    "generatedAt": "2026-10-24T17:01:17.032Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5844,8 +5844,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 160,
-      "potusArticles": 34,
+      "usaArticles": 161,
+      "potusArticles": 30,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
