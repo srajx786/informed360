@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-24T17:01:17.026Z",
+  "generatedAt": "2026-10-24T19:23:42.911Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 161,
-    "potusArticles": 30
+    "usaArticles": 163,
+    "potusArticles": 32
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-24T13:01:17.027Z",
+          "label": "2026-10-24T15:23:42.912Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T14:01:17.027Z",
+          "label": "2026-10-24T16:23:42.912Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T15:01:17.027Z",
+          "label": "2026-10-24T17:23:42.912Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T16:01:17.027Z",
+          "label": "2026-10-24T18:23:42.912Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-24T13:01:17.027Z",
+          "label": "2026-10-24T15:23:42.912Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T14:01:17.027Z",
+          "label": "2026-10-24T16:23:42.912Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T15:01:17.027Z",
+          "label": "2026-10-24T17:23:42.912Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T16:01:17.027Z",
+          "label": "2026-10-24T18:23:42.912Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 8.8,
-      "neu": 80.81,
-      "neg": 10.39,
-      "count": 161
+      "pos": 8.71,
+      "neu": 80.49,
+      "neg": 10.8,
+      "count": 163
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.1,
-        "neu": 82.56,
-        "neg": 7.33,
-        "count": 38
+        "pos": 10.57,
+        "neu": 82.17,
+        "neg": 7.26,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 10.4,
-        "neu": 76.75,
-        "neg": 12.85,
+        "pos": 9.64,
+        "neu": 75,
+        "neg": 15.37,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 9.79,
-        "neu": 80.56,
-        "neg": 9.65,
+        "pos": 9.08,
+        "neu": 79.38,
+        "neg": 11.53,
         "count": 26
       },
       {
@@ -4590,18 +4590,18 @@
         "count": 20
       },
       {
-        "source": "ABC News",
-        "pos": 8.66,
-        "neu": 84.51,
-        "neg": 6.84,
+        "source": "NYT",
+        "pos": 6.75,
+        "neu": 82.46,
+        "neg": 10.79,
         "count": 20
       },
       {
-        "source": "NYT",
-        "pos": 6.29,
-        "neu": 79.08,
-        "neg": 14.62,
-        "count": 19
+        "source": "ABC News",
+        "pos": 8.51,
+        "neu": 83.1,
+        "neg": 8.39,
+        "count": 20
       },
       {
         "source": "NPR",
@@ -4638,29 +4638,29 @@
           "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": -5.57,
-          "count": 7
-        },
-        {
-          "name": "Finance",
-          "bias": -5.01,
-          "count": 18
-        },
-        {
-          "name": "Technology",
-          "bias": -1.52,
-          "count": 128
-        },
-        {
           "name": "Energy",
-          "bias": -1.41,
+          "bias": 3.66,
           "count": 7
         },
         {
           "name": "Utilities",
-          "bias": -1.17,
+          "bias": 3.37,
           "count": 3
+        },
+        {
+          "name": "Finance",
+          "bias": -2.89,
+          "count": 18
+        },
+        {
+          "name": "Technology",
+          "bias": -1.75,
+          "count": 127
+        },
+        {
+          "name": "Healthcare",
+          "bias": -1.03,
+          "count": 8
         },
         {
           "name": "Materials",
@@ -4673,22 +4673,33 @@
           "count": 2
         }
       ],
-      "pos": [],
-      "neu": [
-        {
-          "name": "Finance",
-          "bias": -5.01,
-          "count": 18
-        },
-        {
-          "name": "Technology",
-          "bias": -1.52,
-          "count": 128
-        },
+      "pos": [
         {
           "name": "Energy",
-          "bias": -1.41,
+          "bias": 3.66,
           "count": 7
+        },
+        {
+          "name": "Utilities",
+          "bias": 3.37,
+          "count": 3
+        }
+      ],
+      "neu": [
+        {
+          "name": "Technology",
+          "bias": -1.75,
+          "count": 127
+        },
+        {
+          "name": "Healthcare",
+          "bias": -1.03,
+          "count": 8
+        },
+        {
+          "name": "Materials",
+          "bias": 0.5,
+          "count": 5
         }
       ],
       "neg": [
@@ -4703,41 +4714,41 @@
           "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": -5.57,
-          "count": 7
+          "name": "Finance",
+          "bias": -2.89,
+          "count": 18
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-24T13:01:17.029Z",
-          "pos": 17,
-          "neu": 75,
+          "label": "2026-10-24T15:23:42.913Z",
+          "pos": 14,
+          "neu": 78,
           "neg": 8,
-          "count": 5
+          "count": 17
         },
         {
-          "label": "2026-10-24T14:01:17.029Z",
+          "label": "2026-10-24T16:23:42.913Z",
           "pos": 10,
-          "neu": 78,
-          "neg": 12,
-          "count": 14
+          "neu": 73,
+          "neg": 17,
+          "count": 11
         },
         {
-          "label": "2026-10-24T15:01:17.029Z",
-          "pos": 13,
-          "neu": 78,
-          "neg": 9,
-          "count": 21
+          "label": "2026-10-24T17:23:42.913Z",
+          "pos": 4,
+          "neu": 75,
+          "neg": 21,
+          "count": 9
         },
         {
-          "label": "2026-10-24T16:01:17.029Z",
-          "pos": 7,
-          "neu": 82,
-          "neg": 12,
-          "count": 15
+          "label": "2026-10-24T18:23:42.913Z",
+          "pos": 11,
+          "neu": 80,
+          "neg": 8,
+          "count": 10
         }
       ]
     }
@@ -4945,42 +4956,42 @@
         "category": "world"
       },
       {
-        "title": "Stephen A Smith doubles down on Trump dinner, challenges critics by asking, 'What the f--- are you doing?'",
-        "link": "https://www.foxnews.com/media/stephen-smith-doubles-down-trump-dinner-challenges-critics-asking-what-f-you-doing",
+        "title": "Dream, Valkyries stay off court for fourth WNBA Finals national anthem as some fans remain seated",
+        "link": "https://www.foxnews.com/outkick-sports/dream-valkyries-stay-off-court-fourth-wnba-finals-national-anthem-fans-remain-seated",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Stephen A. Smith fired back at D.L. Hughley and other critics of his White House meeting with President Donald Trump, asking what they're doing for the community.",
+        "description": "Atlanta Dream and Golden State Valkyries left the court before the national anthem for a fourth straight WNBA Finals game as Trump urged a boycott.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T16:00:36.000Z",
+        "publishedAt": "2026-10-24T18:25:36.000Z",
         "sentiment": {
-          "posP": 2.6,
-          "negP": 16.2,
-          "neuP": 81.2,
-          "label": "negative",
-          "confidence": 0.77
+          "posP": 13.7,
+          "negP": 5.3,
+          "neuP": 81,
+          "label": "positive",
+          "confidence": 0.38
         },
         "category": "usa"
       },
       {
-        "title": "'SNL' Weekend Update anchor calls Republicans slurs, mocks Charlie Kirk in stand-up special",
-        "link": "https://www.foxnews.com/media/snl-weekend-update-anchor-calls-republicans-slurs-mocks-charlie-kirk-stand-up-special",
+        "title": "Bush dynasty delivers another blow to GOP in Texas Senate battle as family member breaks ranks",
+        "link": "https://www.foxnews.com/politics/bush-dynasty-delivers-another-blow-gop-texas-senate-battle-family-member-breaks-ranks",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Michael Che's Netflix special opens with jokes about Charlie Kirk's killing and repeatedly uses the R-word to mock President Donald Trump and MAGA supporters.",
+        "description": "Neil Bush revealed he voted for Democrat James Talarico over Ken Paxton, citing deep concerns about Trump's influence on the Republican Party.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T14:00:47.000Z",
+        "publishedAt": "2026-10-24T17:00:50.000Z",
         "sentiment": {
-          "posP": 20.4,
-          "negP": 20.2,
-          "neuP": 59.4,
-          "label": "negative",
-          "confidence": 0.23
+          "posP": 6.5,
+          "negP": 6.3,
+          "neuP": 87.2,
+          "label": "neutral",
+          "confidence": 0.03
         },
         "category": "usa"
       }
@@ -5187,6 +5198,46 @@
         "category": "world"
       },
       {
+        "title": "Dream, Valkyries stay off court for fourth WNBA Finals national anthem as some fans remain seated",
+        "link": "https://www.foxnews.com/outkick-sports/dream-valkyries-stay-off-court-fourth-wnba-finals-national-anthem-fans-remain-seated",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Atlanta Dream and Golden State Valkyries left the court before the national anthem for a fourth straight WNBA Finals game as Trump urged a boycott.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T18:25:36.000Z",
+        "sentiment": {
+          "posP": 13.7,
+          "negP": 5.3,
+          "neuP": 81,
+          "label": "positive",
+          "confidence": 0.38
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Bush dynasty delivers another blow to GOP in Texas Senate battle as family member breaks ranks",
+        "link": "https://www.foxnews.com/politics/bush-dynasty-delivers-another-blow-gop-texas-senate-battle-family-member-breaks-ranks",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Neil Bush revealed he voted for Democrat James Talarico over Ken Paxton, citing deep concerns about Trump's influence on the Republican Party.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T17:00:50.000Z",
+        "sentiment": {
+          "posP": 6.5,
+          "negP": 6.3,
+          "neuP": 87.2,
+          "label": "neutral",
+          "confidence": 0.03
+        },
+        "category": "usa"
+      },
+      {
         "title": "Stephen A Smith doubles down on Trump dinner, challenges critics by asking, 'What the f--- are you doing?'",
         "link": "https://www.foxnews.com/media/stephen-smith-doubles-down-trump-dinner-challenges-critics-asking-what-f-you-doing",
         "source": "Fox News",
@@ -5207,22 +5258,62 @@
         "category": "usa"
       },
       {
-        "title": "'SNL' Weekend Update anchor calls Republicans slurs, mocks Charlie Kirk in stand-up special",
-        "link": "https://www.foxnews.com/media/snl-weekend-update-anchor-calls-republicans-slurs-mocks-charlie-kirk-stand-up-special",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Alaska Election Gambit Shows Justice Dept. Has Bowed to Trump’s Demands",
+        "link": "https://www.nytimes.com/2026/10/24/us/politics/alaska-senate-election-trump-justice-department.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Michael Che's Netflix special opens with jokes about Charlie Kirk's killing and repeatedly uses the R-word to mock President Donald Trump and MAGA supporters.",
+        "description": "With moves in Alaska and California, the department has stepped up interventions in the midterm elections as the president’s instrument of unmediated executive power.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T14:00:47.000Z",
+        "publishedAt": "2026-10-24T19:21:10.000Z",
         "sentiment": {
-          "posP": 20.4,
-          "negP": 20.2,
-          "neuP": 59.4,
+          "posP": 9.1,
+          "negP": 0,
+          "neuP": 90.9,
+          "label": "positive",
+          "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How Vivek Ramaswamy’s Ruthless Ad in Ohio Divided Republicans",
+        "link": "https://www.nytimes.com/2026/10/24/us/politics/vivek-ramaswamy-ad-ohio-amy-acton.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The fallout from Vivek Ramaswamy’s brutal spot targeting his Democratic rival in the Ohio governor’s race showed that even in the Trump era, a political attack can be seen as going too far.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T09:03:21.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 15.6,
+          "neuP": 84.4,
           "label": "negative",
-          "confidence": 0.23
+          "confidence": 0.8
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Why Democrats Could Find It Hard to Win the Senate Despite Their Strong Polls",
+        "link": "https://www.nytimes.com/2026/10/24/us/politics/democrats-expectations-blue-wave.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats are increasingly optimistic about the midterms. But they are being outspent by Republicans. And they are trying to compete in states that favored President Trump by large margins.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T17:00:54.000Z",
+        "sentiment": {
+          "posP": 23.6,
+          "negP": 2.7,
+          "neuP": 73.7,
+          "label": "positive",
+          "confidence": 0.9
         },
         "category": "usa"
       },
@@ -5267,46 +5358,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump Officials Seek Block on Alaska Senate Race Results if the Republican Dan Sullivan Loses",
-        "link": "https://www.nytimes.com/2026/10/23/us/politics/justice-dept-alaska-senate-race-sullivan.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The department, in a highly unusual lawsuit, argued that confusion over candidates with similar names could taint the election result.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T02:15:51.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 29.9,
-          "neuP": 70.1,
-          "label": "negative",
-          "confidence": 0.88
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How Vivek Ramaswamy’s Ruthless Ad in Ohio Divided Republicans",
-        "link": "https://www.nytimes.com/2026/10/24/us/politics/vivek-ramaswamy-ad-ohio-amy-acton.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The fallout from Vivek Ramaswamy’s brutal spot targeting his Democratic rival in the Ohio governor’s race showed that even in the Trump era, a political attack can be seen as going too far.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T09:03:21.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 15.6,
-          "neuP": 84.4,
-          "label": "negative",
-          "confidence": 0.8
-        },
-        "category": "usa"
-      },
-      {
         "title": "They Were Accused of Illegal Fishing. They Ended Up in ICE Detention.",
         "link": "https://www.nytimes.com/2026/10/24/us/politics/fishing-immigration-trump.html",
         "source": "NYT",
@@ -5327,8 +5378,48 @@
         "category": "usa"
       },
       {
+        "title": "What Happens if Trump Doesn’t Like the Midterm Results?",
+        "link": "https://www.nytimes.com/2026/10/24/opinion/trump-midterm-elections-results-predictions.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Hope, dread and the final stretch to Election Day.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T11:49:58.000Z",
+        "sentiment": {
+          "posP": 23.1,
+          "negP": 12.8,
+          "neuP": 64.1,
+          "label": "positive",
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
+        "title": "She Planned to Protest Trump. She Didn’t Plan on Getting Punched.",
+        "link": "https://www.nytimes.com/2026/10/24/us/trump-protester-punched-youngstown-ohio.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Blake Miley yelled “fascist” as President Trump spoke at a midterm campaign rally. The violence that followed “was not right,” she said.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T18:08:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 16.9,
+          "neuP": 83.1,
+          "label": "negative",
+          "confidence": 0.73
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump, Vance defend controversial Ramaswamy attack ad; Obama campaigns with Amy Acton",
-        "link": "https://www.cbsnews.com/video/trump-vance-defend-controversial-ramaswamy-attack-ad-obama-campaigns-with-amy-acton/",
+        "link": "https://www.cbsnews.com/video/trump-vance-defend-controversial-ramaswamy-attack-ad-obama-campaigns-with-amy-acton-1/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
@@ -5336,73 +5427,13 @@
         "description": "An ad released by Ohio's Republican gubernatorial candidate Vivek Ramaswamy has drawn bipartisan backlash. Olivia Gazis has more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T14:13:25.000Z",
+        "publishedAt": "2026-10-24T18:29:35.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 14.9,
           "neuP": 85.1,
           "label": "negative",
           "confidence": 0.6
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iran live updates: Iranian plotting against US citizens abroad in 'advanced stages'",
-        "link": "https://abcnews.com/International/live-updates/iran-live-updates/?id=137370653",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump announced \"major combat operations\" against Iran on Feb. 28.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T13:35:08.000Z",
-        "sentiment": {
-          "posP": 7.6,
-          "negP": 9.1,
-          "neuP": 83.3,
-          "label": "neutral",
-          "confidence": 0.1
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump doubles down on Amy Acton criticism as Ramaswamy ad controversy swirls",
-        "link": "https://abcnews.com/Politics/trump-doubles-amy-acton-criticism-ramaswamy-ad-controversy/story?id=137516959",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "\"It's a mother speaking badly against Amy Acton,\" Trump said.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T21:08:21.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 24,
-          "neuP": 76,
-          "label": "negative",
-          "confidence": 0.72
-        },
-        "category": "usa"
-      },
-      {
-        "title": "First lady Melania Trump says she brokered 'temporary' ceasefire in Ukrainian town",
-        "link": "https://abcnews.com/Politics/lady-melania-trump-brokered-temporary-localized-ceasefire-ukraine/story?id=137512833",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "It's unclear exactly how long the ceasefire is set to last.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T18:51:18.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 8.3,
-          "neuP": 91.7,
-          "label": "negative",
-          "confidence": 0.25
         },
         "category": "usa"
       },
@@ -5445,48 +5476,35 @@
           "confidence": 0.27
         },
         "category": "usa"
-      },
-      {
-        "title": "Trump's executive order targets mortgage insurance, refinance costs. What it means for borrowers",
-        "link": "https://www.cnbc.com/2026/10/23/trump-mortgage-executive-order-costs.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump's executive order on housing aims to lower mortgage costs. Here's what it means for homeowners and buyers.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T22:27:06.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 6.8,
-          "neuP": 93.2,
-          "label": "negative",
-          "confidence": 0.3
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.93,
-      "neu": 84.63,
-      "neg": 10.44,
-      "count": 30
+      "pos": 5.78,
+      "neu": 84.56,
+      "neg": 9.65,
+      "count": 32
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 5.11,
-        "neu": 81.07,
-        "neg": 13.81,
-        "count": 7
+        "pos": 9.16,
+        "neu": 80.92,
+        "neg": 9.92,
+        "count": 10
       },
       {
         "source": "NBC News",
-        "pos": 5.38,
-        "neu": 89.73,
-        "neg": 4.88,
-        "count": 6
+        "pos": 4.28,
+        "neu": 91.22,
+        "neg": 4.5,
+        "count": 5
+      },
+      {
+        "source": "Fox News",
+        "pos": 7.95,
+        "neu": 85.1,
+        "neg": 6.95,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5503,20 +5521,6 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 10.67,
-        "neu": 77.2,
-        "neg": 12.13,
-        "count": 3
-      },
-      {
-        "source": "ABC News",
-        "pos": 2.53,
-        "neu": 83.67,
-        "neg": 13.8,
-        "count": 3
-      },
-      {
         "source": "CBS News",
         "pos": 2,
         "neu": 83.55,
@@ -5529,15 +5533,22 @@
         "neu": 88,
         "neg": 9,
         "count": 2
+      },
+      {
+        "source": "ABC News",
+        "pos": 0,
+        "neu": 75,
+        "neg": 25,
+        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.34,
-        "neu": 84.05,
-        "neg": 10.61,
-        "count": 14
+        "pos": 6.54,
+        "neu": 83.93,
+        "neg": 9.53,
+        "count": 15
       },
       {
         "topic": "Policy",
@@ -5554,17 +5565,17 @@
         "count": 5
       },
       {
+        "topic": "Legal",
+        "pos": 6.92,
+        "neu": 80.2,
+        "neg": 12.88,
+        "count": 4
+      },
+      {
         "topic": "Economy",
         "pos": 6.33,
         "neu": 87.1,
         "neg": 6.57,
-        "count": 3
-      },
-      {
-        "topic": "Legal",
-        "pos": 4.67,
-        "neu": 78.63,
-        "neg": 16.7,
         "count": 3
       }
     ]
@@ -5592,28 +5603,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-24T13:01:17.031Z",
+        "label": "2026-10-24T15:23:42.915Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T14:01:17.031Z",
+        "label": "2026-10-24T16:23:42.915Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T15:01:17.031Z",
+        "label": "2026-10-24T17:23:42.915Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T16:01:17.031Z",
+        "label": "2026-10-24T18:23:42.915Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5622,28 +5633,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-24T13:01:17.031Z",
+        "label": "2026-10-24T15:23:42.915Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T14:01:17.031Z",
+        "label": "2026-10-24T16:23:42.915Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T15:01:17.031Z",
+        "label": "2026-10-24T17:23:42.915Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T16:01:17.031Z",
+        "label": "2026-10-24T18:23:42.915Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5723,7 +5734,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-24T17:01:17.032Z",
+    "generatedAt": "2026-10-24T19:23:42.916Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5844,8 +5855,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 161,
-      "potusArticles": 30,
+      "usaArticles": 163,
+      "potusArticles": 32,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
