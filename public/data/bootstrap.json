@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-24T19:23:42.911Z",
+  "generatedAt": "2026-10-24T21:49:17.402Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 163,
-    "potusArticles": 32
+    "usaArticles": 167,
+    "potusArticles": 38
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-24T15:23:42.912Z",
+          "label": "2026-10-24T17:49:17.402Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T16:23:42.912Z",
+          "label": "2026-10-24T18:49:17.402Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T17:23:42.912Z",
+          "label": "2026-10-24T19:49:17.402Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T18:23:42.912Z",
+          "label": "2026-10-24T20:49:17.402Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-24T15:23:42.912Z",
+          "label": "2026-10-24T17:49:17.402Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T16:23:42.912Z",
+          "label": "2026-10-24T18:49:17.402Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T17:23:42.912Z",
+          "label": "2026-10-24T19:49:17.402Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T18:23:42.912Z",
+          "label": "2026-10-24T20:49:17.402Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 8.71,
-      "neu": 80.49,
-      "neg": 10.8,
-      "count": 163
+      "pos": 7.56,
+      "neu": 82.08,
+      "neg": 10.36,
+      "count": 167
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.57,
-        "neu": 82.17,
-        "neg": 7.26,
-        "count": 39
+        "pos": 8.93,
+        "neu": 82.78,
+        "neg": 8.29,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 9.64,
-        "neu": 75,
-        "neg": 15.37,
+        "pos": 9.91,
+        "neu": 81.5,
+        "neg": 8.59,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 9.08,
-        "neu": 79.38,
-        "neg": 11.53,
+        "pos": 6.28,
+        "neu": 81.87,
+        "neg": 11.84,
         "count": 26
+      },
+      {
+        "source": "NYT",
+        "pos": 5.67,
+        "neu": 81.59,
+        "neg": 12.74,
+        "count": 23
       },
       {
         "source": "WSJ",
@@ -4590,17 +4597,10 @@
         "count": 20
       },
       {
-        "source": "NYT",
-        "pos": 6.75,
-        "neu": 82.46,
-        "neg": 10.79,
-        "count": 20
-      },
-      {
         "source": "ABC News",
-        "pos": 8.51,
-        "neu": 83.1,
-        "neg": 8.39,
+        "pos": 6.9,
+        "neu": 84.06,
+        "neg": 9.04,
         "count": 20
       },
       {
@@ -4628,9 +4628,9 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "name": "Healthcare",
+          "bias": -10.21,
+          "count": 7
         },
         {
           "name": "Manufacturing",
@@ -4638,75 +4638,70 @@
           "count": 2
         },
         {
-          "name": "Energy",
-          "bias": 3.66,
-          "count": 7
-        },
-        {
-          "name": "Utilities",
-          "bias": 3.37,
+          "name": "Real Estate",
+          "bias": -6.23,
           "count": 3
         },
         {
-          "name": "Finance",
-          "bias": -2.89,
-          "count": 18
+          "name": "Utilities",
+          "bias": -5.95,
+          "count": 2
+        },
+        {
+          "name": "Communication",
+          "bias": -5.9,
+          "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": 5.34,
+          "count": 10
         },
         {
           "name": "Technology",
-          "bias": -1.75,
-          "count": 127
+          "bias": -3.47,
+          "count": 125
         },
         {
-          "name": "Healthcare",
-          "bias": -1.03,
-          "count": 8
+          "name": "Finance",
+          "bias": -3.43,
+          "count": 19
         },
         {
           "name": "Materials",
-          "bias": 0.5,
-          "count": 5
-        },
-        {
-          "name": "Real Estate",
-          "bias": -0.45,
-          "count": 2
+          "bias": 0.57,
+          "count": 4
         }
       ],
       "pos": [
         {
           "name": "Energy",
-          "bias": 3.66,
-          "count": 7
-        },
-        {
-          "name": "Utilities",
-          "bias": 3.37,
-          "count": 3
+          "bias": 5.34,
+          "count": 10
         }
       ],
       "neu": [
         {
+          "name": "Utilities",
+          "bias": -5.95,
+          "count": 2
+        },
+        {
+          "name": "Communication",
+          "bias": -5.9,
+          "count": 2
+        },
+        {
           "name": "Technology",
-          "bias": -1.75,
-          "count": 127
-        },
-        {
-          "name": "Healthcare",
-          "bias": -1.03,
-          "count": 8
-        },
-        {
-          "name": "Materials",
-          "bias": 0.5,
-          "count": 5
+          "bias": -3.47,
+          "count": 125
         }
       ],
       "neg": [
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "name": "Healthcare",
+          "bias": -10.21,
+          "count": 7
         },
         {
           "name": "Manufacturing",
@@ -4714,41 +4709,41 @@
           "count": 2
         },
         {
-          "name": "Finance",
-          "bias": -2.89,
-          "count": 18
+          "name": "Real Estate",
+          "bias": -6.23,
+          "count": 3
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-24T15:23:42.913Z",
-          "pos": 14,
-          "neu": 78,
-          "neg": 8,
-          "count": 17
-        },
-        {
-          "label": "2026-10-24T16:23:42.913Z",
-          "pos": 10,
-          "neu": 73,
-          "neg": 17,
-          "count": 11
-        },
-        {
-          "label": "2026-10-24T17:23:42.913Z",
-          "pos": 4,
-          "neu": 75,
+          "label": "2026-10-24T17:49:17.403Z",
+          "pos": 2,
+          "neu": 77,
           "neg": 21,
+          "count": 6
+        },
+        {
+          "label": "2026-10-24T18:49:17.403Z",
+          "pos": 10,
+          "neu": 82,
+          "neg": 9,
           "count": 9
         },
         {
-          "label": "2026-10-24T18:23:42.913Z",
-          "pos": 11,
-          "neu": 80,
-          "neg": 8,
-          "count": 10
+          "label": "2026-10-24T19:49:17.403Z",
+          "pos": 9,
+          "neu": 84,
+          "neg": 7,
+          "count": 18
+        },
+        {
+          "label": "2026-10-24T20:49:17.403Z",
+          "pos": 7,
+          "neu": 83,
+          "neg": 10,
+          "count": 15
         }
       ]
     }
@@ -4956,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Dream, Valkyries stay off court for fourth WNBA Finals national anthem as some fans remain seated",
-        "link": "https://www.foxnews.com/outkick-sports/dream-valkyries-stay-off-court-fourth-wnba-finals-national-anthem-fans-remain-seated",
+        "title": "Melania Trump's advisor reveals how she bridged Putin, Zelenskyy to broker frontline Ukraine truce",
+        "link": "https://www.foxnews.com/media/melania-trumps-advisor-reveals-how-she-bridged-putin-zelenskyy-broker-front-line-ukraine-truce",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Atlanta Dream and Golden State Valkyries left the court before the national anthem for a fourth straight WNBA Finals game as Trump urged a boycott.",
+        "description": "First lady Melania Trump \"single-handedly\" brokered a humanitarian ceasefire in Oleshky, Ukraine, her senior advisor says, as Russia extends the truce.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T18:25:36.000Z",
+        "publishedAt": "2026-10-24T20:04:44.000Z",
         "sentiment": {
-          "posP": 13.7,
-          "negP": 5.3,
-          "neuP": 81,
-          "label": "positive",
-          "confidence": 0.38
+          "posP": 4.3,
+          "negP": 0,
+          "neuP": 95.7,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       },
       {
-        "title": "Bush dynasty delivers another blow to GOP in Texas Senate battle as family member breaks ranks",
-        "link": "https://www.foxnews.com/politics/bush-dynasty-delivers-another-blow-gop-texas-senate-battle-family-member-breaks-ranks",
+        "title": "Bill Maher fires back at liberal critics over second Trump dinner",
+        "link": "https://www.foxnews.com/media/bill-maher-fires-back-liberal-critics-over-second-trump-dinner",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Neil Bush revealed he voted for Democrat James Talarico over Ken Paxton, citing deep concerns about Trump's influence on the Republican Party.",
+        "description": "Bill Maher fired back at critics during his \"Real Time\" monologue after attending a second White House dinner with Trump, Stephen A. Smith and Kid Rock.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T17:00:50.000Z",
+        "publishedAt": "2026-10-24T19:33:44.000Z",
         "sentiment": {
-          "posP": 6.5,
-          "negP": 6.3,
-          "neuP": 87.2,
-          "label": "neutral",
-          "confidence": 0.03
+          "posP": 0,
+          "negP": 19.5,
+          "neuP": 80.5,
+          "label": "negative",
+          "confidence": 0.79
         },
         "category": "usa"
       }
@@ -5198,62 +5193,42 @@
         "category": "world"
       },
       {
-        "title": "Dream, Valkyries stay off court for fourth WNBA Finals national anthem as some fans remain seated",
-        "link": "https://www.foxnews.com/outkick-sports/dream-valkyries-stay-off-court-fourth-wnba-finals-national-anthem-fans-remain-seated",
+        "title": "Melania Trump's advisor reveals how she bridged Putin, Zelenskyy to broker frontline Ukraine truce",
+        "link": "https://www.foxnews.com/media/melania-trumps-advisor-reveals-how-she-bridged-putin-zelenskyy-broker-front-line-ukraine-truce",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Atlanta Dream and Golden State Valkyries left the court before the national anthem for a fourth straight WNBA Finals game as Trump urged a boycott.",
+        "description": "First lady Melania Trump \"single-handedly\" brokered a humanitarian ceasefire in Oleshky, Ukraine, her senior advisor says, as Russia extends the truce.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T18:25:36.000Z",
+        "publishedAt": "2026-10-24T20:04:44.000Z",
         "sentiment": {
-          "posP": 13.7,
-          "negP": 5.3,
-          "neuP": 81,
-          "label": "positive",
-          "confidence": 0.38
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Bush dynasty delivers another blow to GOP in Texas Senate battle as family member breaks ranks",
-        "link": "https://www.foxnews.com/politics/bush-dynasty-delivers-another-blow-gop-texas-senate-battle-family-member-breaks-ranks",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Neil Bush revealed he voted for Democrat James Talarico over Ken Paxton, citing deep concerns about Trump's influence on the Republican Party.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T17:00:50.000Z",
-        "sentiment": {
-          "posP": 6.5,
-          "negP": 6.3,
-          "neuP": 87.2,
+          "posP": 4.3,
+          "negP": 0,
+          "neuP": 95.7,
           "label": "neutral",
-          "confidence": 0.03
+          "confidence": 0.13
         },
         "category": "usa"
       },
       {
-        "title": "Stephen A Smith doubles down on Trump dinner, challenges critics by asking, 'What the f--- are you doing?'",
-        "link": "https://www.foxnews.com/media/stephen-smith-doubles-down-trump-dinner-challenges-critics-asking-what-f-you-doing",
+        "title": "Bill Maher fires back at liberal critics over second Trump dinner",
+        "link": "https://www.foxnews.com/media/bill-maher-fires-back-liberal-critics-over-second-trump-dinner",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Stephen A. Smith fired back at D.L. Hughley and other critics of his White House meeting with President Donald Trump, asking what they're doing for the community.",
+        "description": "Bill Maher fired back at critics during his \"Real Time\" monologue after attending a second White House dinner with Trump, Stephen A. Smith and Kid Rock.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T16:00:36.000Z",
+        "publishedAt": "2026-10-24T19:33:44.000Z",
         "sentiment": {
-          "posP": 2.6,
-          "negP": 16.2,
-          "neuP": 81.2,
+          "posP": 0,
+          "negP": 19.5,
+          "neuP": 80.5,
           "label": "negative",
-          "confidence": 0.77
+          "confidence": 0.79
         },
         "category": "usa"
       },
@@ -5267,13 +5242,53 @@
         "description": "With moves in Alaska and California, the department has stepped up interventions in the midterm elections as the president’s instrument of unmediated executive power.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T19:21:10.000Z",
+        "publishedAt": "2026-10-24T19:21:11.000Z",
         "sentiment": {
           "posP": 9.1,
           "negP": 0,
           "neuP": 90.9,
           "label": "positive",
           "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "What to Know About Alaska’s Senate Race",
+        "link": "https://www.nytimes.com/2026/10/23/us/politics/alaska-senate-race-explainer.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump told the Justice Department to intervene in the race, where polling shows Republicans at risk of losing a seat.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T23:22:52.000Z",
+        "sentiment": {
+          "posP": 10.6,
+          "negP": 14.6,
+          "neuP": 74.8,
+          "label": "neutral",
+          "confidence": 0.08
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Obama Issues Searing Attacks on Trump, Ramaswamy in Return to Campaign Trail",
+        "link": "https://www.nytimes.com/2026/10/24/us/politics/obama-trump-midterms-campaign.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The 44th president appeared in Ohio on Saturday, kicking off a two-state swing with a rebuke of President Trump and Vivek Ramaswamy, the Republican nominee for governor.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T21:06:54.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 7.5,
+          "neuP": 92.5,
+          "label": "negative",
+          "confidence": 0.44
         },
         "category": "usa"
       },
@@ -5378,26 +5393,6 @@
         "category": "usa"
       },
       {
-        "title": "What Happens if Trump Doesn’t Like the Midterm Results?",
-        "link": "https://www.nytimes.com/2026/10/24/opinion/trump-midterm-elections-results-predictions.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Hope, dread and the final stretch to Election Day.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T11:49:58.000Z",
-        "sentiment": {
-          "posP": 23.1,
-          "negP": 12.8,
-          "neuP": 64.1,
-          "label": "positive",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
         "title": "She Planned to Protest Trump. She Didn’t Plan on Getting Punched.",
         "link": "https://www.nytimes.com/2026/10/24/us/trump-protester-punched-youngstown-ohio.html",
         "source": "NYT",
@@ -5418,93 +5413,93 @@
         "category": "usa"
       },
       {
-        "title": "Trump, Vance defend controversial Ramaswamy attack ad; Obama campaigns with Amy Acton",
-        "link": "https://www.cbsnews.com/video/trump-vance-defend-controversial-ramaswamy-attack-ad-obama-campaigns-with-amy-acton-1/",
+        "title": "The controversy surrounding convicted former election official Tina Peters",
+        "link": "https://www.cbsnews.com/video/the-controversy-surrounding-convicted-former-election-official-tina-peters/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "An ad released by Ohio's Republican gubernatorial candidate Vivek Ramaswamy has drawn bipartisan backlash. Olivia Gazis has more.",
+        "description": "President Trump has gone to extraordinary lengths for Tina Peters, a former Colorado election official convicted for helping to breach the very voting system she swore to protect. Peters served less than two years in prison for crimes related to breaching voting system security. She maintains she was trying to show flaws in the system. 60 Minutes reports, Sunday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T18:29:35.000Z",
+        "publishedAt": "2026-10-24T21:23:40.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 14.9,
-          "neuP": 85.1,
-          "label": "negative",
-          "confidence": 0.6
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump is pushing a massive AI buildout. His own voters are wary of what comes with it",
-        "link": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A new CNBC survey finds broad voter opposition to nearby AI data centers, creating a political challenge for Trump and Republicans ahead of the midterm election.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T10:59:16.000Z",
-        "sentiment": {
-          "posP": 8.4,
-          "negP": 0,
-          "neuP": 91.6,
+          "posP": 9.8,
+          "negP": 4.5,
+          "neuP": 85.7,
           "label": "positive",
-          "confidence": 0.36
+          "confidence": 0.44
         },
         "category": "usa"
       },
       {
-        "title": "America by the numbers: How voters feel about the economy, inflation, AI and Trump",
-        "link": "https://www.cnbc.com/2026/10/23/america-by-the-numbers-how-voters-feel-about-the-economy-inflation-ai-and-trump.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "President Trump, first lady vote early in person in Florida",
+        "link": "https://www.cbsnews.com/news/trump-melania-vote-early-in-person-florida-saturday/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "With the U.S. midterm elections looming, Americans are nearly as gloomy about the economy as they were when the nation was emerging from the pandemic.",
+        "description": "President Trump and the first lady voted in Florida before he jetted off to Georgia for a campaign rally.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T10:58:30.000Z",
+        "publishedAt": "2026-10-24T21:01:28.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.7,
-          "neuP": 92.3,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "DOJ sues to block Alaska Senate certification if Sullivan loses",
+        "link": "https://www.cbsnews.com/news/trump-admin-sues-to-block-alaska-senate-certification-if-sen-dan-sullivan-loses/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration is suing to prevent the Alaska Senate election from being certified if GOP Sen. Daniel Sullivan loses to Democrat Mary Peltola because of the other Dan Sullivan who is on the ballot.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T20:15:44.000Z",
+        "sentiment": {
+          "posP": 2.2,
+          "negP": 18.9,
+          "neuP": 78.9,
           "label": "negative",
-          "confidence": 0.27
+          "confidence": 0.82
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.78,
-      "neu": 84.56,
-      "neg": 9.65,
-      "count": 32
+      "pos": 4.93,
+      "neu": 85.4,
+      "neg": 9.67,
+      "count": 38
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 9.16,
-        "neu": 80.92,
-        "neg": 9.92,
-        "count": 10
+        "pos": 7.19,
+        "neu": 82.95,
+        "neg": 9.86,
+        "count": 11
       },
       {
         "source": "NBC News",
-        "pos": 4.28,
-        "neu": 91.22,
-        "neg": 4.5,
-        "count": 5
+        "pos": 4.94,
+        "neu": 87.93,
+        "neg": 7.13,
+        "count": 7
       },
       {
-        "source": "Fox News",
-        "pos": 7.95,
-        "neu": 85.1,
-        "neg": 6.95,
-        "count": 4
+        "source": "CBS News",
+        "pos": 3.2,
+        "neu": 86.34,
+        "neg": 10.46,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5521,11 +5516,18 @@
         "count": 3
       },
       {
-        "source": "CBS News",
-        "pos": 2,
-        "neu": 83.55,
-        "neg": 14.45,
-        "count": 2
+        "source": "Fox News",
+        "pos": 4.43,
+        "neu": 89.07,
+        "neg": 6.5,
+        "count": 3
+      },
+      {
+        "source": "ABC News",
+        "pos": 2.63,
+        "neu": 78.43,
+        "neg": 18.93,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5533,42 +5535,35 @@
         "neu": 88,
         "neg": 9,
         "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 0,
-        "neu": 75,
-        "neg": 25,
-        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.54,
-        "neu": 83.93,
-        "neg": 9.53,
-        "count": 15
+        "pos": 5.58,
+        "neu": 86.18,
+        "neg": 8.24,
+        "count": 18
       },
       {
         "topic": "Policy",
-        "pos": 4.36,
-        "neu": 87.68,
-        "neg": 7.96,
-        "count": 5
+        "pos": 3.43,
+        "neu": 85.4,
+        "neg": 11.17,
+        "count": 7
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.7,
-        "neu": 85.3,
-        "neg": 11,
-        "count": 5
+        "pos": 3.8,
+        "neu": 87.03,
+        "neg": 9.17,
+        "count": 6
       },
       {
         "topic": "Legal",
-        "pos": 6.92,
-        "neu": 80.2,
-        "neg": 12.88,
+        "pos": 5.25,
+        "neu": 78.2,
+        "neg": 16.55,
         "count": 4
       },
       {
@@ -5603,28 +5598,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-24T15:23:42.915Z",
+        "label": "2026-10-24T17:49:17.405Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T16:23:42.915Z",
+        "label": "2026-10-24T18:49:17.405Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T17:23:42.915Z",
+        "label": "2026-10-24T19:49:17.405Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T18:23:42.915Z",
+        "label": "2026-10-24T20:49:17.405Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5633,28 +5628,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-24T15:23:42.915Z",
+        "label": "2026-10-24T17:49:17.405Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T16:23:42.915Z",
+        "label": "2026-10-24T18:49:17.405Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T17:23:42.915Z",
+        "label": "2026-10-24T19:49:17.405Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T18:23:42.915Z",
+        "label": "2026-10-24T20:49:17.405Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5734,7 +5729,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-24T19:23:42.916Z",
+    "generatedAt": "2026-10-24T21:49:17.406Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5855,8 +5850,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 163,
-      "potusArticles": 32,
+      "usaArticles": 167,
+      "potusArticles": 38,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
