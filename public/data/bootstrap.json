@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-25T16:44:03.118Z",
+  "generatedAt": "2026-10-25T19:17:56.701Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 166,
-    "potusArticles": 29
+    "usaArticles": 167,
+    "potusArticles": 35
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-25T12:44:03.119Z",
+          "label": "2026-10-25T15:17:56.701Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T13:44:03.119Z",
+          "label": "2026-10-25T16:17:56.701Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T14:44:03.119Z",
+          "label": "2026-10-25T17:17:56.701Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T15:44:03.119Z",
+          "label": "2026-10-25T18:17:56.701Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-25T12:44:03.119Z",
+          "label": "2026-10-25T15:17:56.702Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T13:44:03.119Z",
+          "label": "2026-10-25T16:17:56.702Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T14:44:03.119Z",
+          "label": "2026-10-25T17:17:56.702Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T15:44:03.119Z",
+          "label": "2026-10-25T18:17:56.702Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 6.53,
-      "neu": 83.34,
-      "neg": 10.13,
-      "count": 166
+      "pos": 6.69,
+      "neu": 83.19,
+      "neg": 10.12,
+      "count": 167
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.25,
-        "neu": 83.95,
-        "neg": 8.8,
-        "count": 42
+        "pos": 6.92,
+        "neu": 84.16,
+        "neg": 8.92,
+        "count": 43
       },
       {
         "source": "Fox News",
-        "pos": 7.05,
-        "neu": 79.58,
-        "neg": 13.36,
+        "pos": 9.3,
+        "neu": 77.93,
+        "neg": 12.77,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.9,
-        "neu": 87.27,
-        "neg": 6.84,
-        "count": 25
-      },
-      {
-        "source": "NYT",
-        "pos": 4.19,
-        "neu": 84.09,
-        "neg": 11.72,
-        "count": 21
+        "pos": 5.77,
+        "neu": 86.55,
+        "neg": 7.68,
+        "count": 26
       },
       {
         "source": "WSJ",
@@ -4597,10 +4590,17 @@
         "count": 20
       },
       {
+        "source": "NYT",
+        "pos": 2.53,
+        "neu": 85.35,
+        "neg": 12.12,
+        "count": 20
+      },
+      {
         "source": "ABC News",
-        "pos": 7.28,
-        "neu": 85.07,
-        "neg": 7.65,
+        "pos": 8.06,
+        "neu": 84.99,
+        "neg": 6.95,
         "count": 20
       },
       {
@@ -4633,19 +4633,24 @@
           "count": 1
         },
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "name": "Healthcare",
+          "bias": -10.29,
+          "count": 8
         },
         {
-          "name": "Healthcare",
-          "bias": -10.78,
-          "count": 9
+          "name": "Materials",
+          "bias": -5.3,
+          "count": 2
+        },
+        {
+          "name": "Communication",
+          "bias": -3.75,
+          "count": 2
         },
         {
           "name": "Technology",
-          "bias": -4.08,
-          "count": 129
+          "bias": -3.59,
+          "count": 131
         },
         {
           "name": "Finance",
@@ -4653,14 +4658,9 @@
           "count": 17
         },
         {
-          "name": "Materials",
-          "bias": -1.07,
-          "count": 4
-        },
-        {
           "name": "Energy",
-          "bias": -1.01,
-          "count": 7
+          "bias": -2.56,
+          "count": 8
         },
         {
           "name": "Real Estate",
@@ -4676,19 +4676,19 @@
       "pos": [],
       "neu": [
         {
+          "name": "Communication",
+          "bias": -3.75,
+          "count": 2
+        },
+        {
           "name": "Technology",
-          "bias": -4.08,
-          "count": 129
+          "bias": -3.59,
+          "count": 131
         },
         {
           "name": "Finance",
           "bias": -2.89,
           "count": 17
-        },
-        {
-          "name": "Materials",
-          "bias": -1.07,
-          "count": 4
         }
       ],
       "neg": [
@@ -4698,46 +4698,46 @@
           "count": 1
         },
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "name": "Healthcare",
+          "bias": -10.29,
+          "count": 8
         },
         {
-          "name": "Healthcare",
-          "bias": -10.78,
-          "count": 9
+          "name": "Materials",
+          "bias": -5.3,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-25T12:44:03.121Z",
-          "pos": 4,
-          "neu": 82,
-          "neg": 14,
-          "count": 9
-        },
-        {
-          "label": "2026-10-25T13:44:03.121Z",
-          "pos": 9,
-          "neu": 83,
-          "neg": 8,
-          "count": 20
-        },
-        {
-          "label": "2026-10-25T14:44:03.121Z",
-          "pos": 4,
-          "neu": 85,
-          "neg": 11,
-          "count": 12
-        },
-        {
-          "label": "2026-10-25T15:44:03.121Z",
+          "label": "2026-10-25T15:17:56.703Z",
           "pos": 6,
-          "neu": 87,
-          "neg": 8,
-          "count": 19
+          "neu": 81,
+          "neg": 13,
+          "count": 10
+        },
+        {
+          "label": "2026-10-25T16:17:56.703Z",
+          "pos": 6,
+          "neu": 89,
+          "neg": 6,
+          "count": 18
+        },
+        {
+          "label": "2026-10-25T17:17:56.703Z",
+          "pos": 10,
+          "neu": 78,
+          "neg": 13,
+          "count": 18
+        },
+        {
+          "label": "2026-10-25T18:17:56.703Z",
+          "pos": 5,
+          "neu": 85,
+          "neg": 10,
+          "count": 11
         }
       ]
     }
@@ -4945,42 +4945,42 @@
         "category": "world"
       },
       {
-        "title": "Trump immigration win could strengthen admin's hand in looming Supreme Court fight",
-        "link": "https://www.foxnews.com/politics/trump-immigration-win-could-strengthen-admins-hand-looming-supreme-court-fight",
+        "title": "MAPPED: The states Trump and top Democrats are targeting before Election Day",
+        "link": "https://www.foxnews.com/politics/mapped-states-trump-top-democrats-targeting-election-day",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Fifth Circuit Friday ruled illegal immigrants never formally admitted to the U.S. have no constitutional right to individualized bond hearings.",
+        "description": "With Election Day less than two weeks away, Trump rallied in Florida, Georgia and Michigan as both parties deploy top surrogates to battlegrounds.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T16:00:14.000Z",
+        "publishedAt": "2026-10-25T18:15:23.000Z",
         "sentiment": {
-          "posP": 26.8,
-          "negP": 23.3,
-          "neuP": 49.9,
+          "posP": 16.2,
+          "negP": 4.1,
+          "neuP": 79.7,
           "label": "positive",
           "confidence": 0.57
         },
         "category": "usa"
       },
       {
-        "title": "NFL overcomes civil unrest, Trump concerns and calls to postpone as Steelers and Saints kick off in Paris",
-        "link": "https://www.foxnews.com/outkick-sports/nfl-overcomes-civil-unrest-trump-concerns-calls-postpone-steelers-saints-kick-off-paris",
+        "title": "Trump reveals dire warning to Macron as violent unrest spreads across Europe",
+        "link": "https://www.foxnews.com/media/trump-reveals-dire-warning-macron-violent-unrest-spreads-across-europe",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The NFL kicked off at Stade de France despite Paris protests and calls from Trump to postpone the Pittsburgh Steelers and New Orleans Saints game.",
+        "description": "Trump says he warned Emmanuel Macron that immigration policies were \"destroying France\" as nearly 1,000 protesters were arrested on Saturday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T13:33:21.000Z",
+        "publishedAt": "2026-10-25T17:27:42.000Z",
         "sentiment": {
-          "posP": 3.7,
-          "negP": 8.4,
-          "neuP": 87.9,
+          "posP": 0,
+          "negP": 44.4,
+          "neuP": 55.6,
           "label": "negative",
-          "confidence": 0.28
+          "confidence": 0.96
         },
         "category": "usa"
       }
@@ -5187,6 +5187,66 @@
         "category": "world"
       },
       {
+        "title": "MAPPED: The states Trump and top Democrats are targeting before Election Day",
+        "link": "https://www.foxnews.com/politics/mapped-states-trump-top-democrats-targeting-election-day",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "With Election Day less than two weeks away, Trump rallied in Florida, Georgia and Michigan as both parties deploy top surrogates to battlegrounds.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T18:15:23.000Z",
+        "sentiment": {
+          "posP": 16.2,
+          "negP": 4.1,
+          "neuP": 79.7,
+          "label": "positive",
+          "confidence": 0.57
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump reveals dire warning to Macron as violent unrest spreads across Europe",
+        "link": "https://www.foxnews.com/media/trump-reveals-dire-warning-macron-violent-unrest-spreads-across-europe",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump says he warned Emmanuel Macron that immigration policies were \"destroying France\" as nearly 1,000 protesters were arrested on Saturday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T17:27:42.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 44.4,
+          "neuP": 55.6,
+          "label": "negative",
+          "confidence": 0.96
+        },
+        "category": "usa"
+      },
+      {
+        "title": "DOJ flooded with thousands of fraud tips after cash incentive launch, Trump official says",
+        "link": "https://www.foxnews.com/media/doj-flooded-thousands-fraud-tips-after-cash-incentive-launch-trump-official-says",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Justice Department's fraud whistleblower program received thousands of tips in days, as Colin McDonald reveals a novel upfront payment approach.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T17:07:11.000Z",
+        "sentiment": {
+          "posP": 18.3,
+          "negP": 17,
+          "neuP": 64.7,
+          "label": "neutral",
+          "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump immigration win could strengthen admin's hand in looming Supreme Court fight",
         "link": "https://www.foxnews.com/politics/trump-immigration-win-could-strengthen-admins-hand-looming-supreme-court-fight",
         "source": "Fox News",
@@ -5207,22 +5267,42 @@
         "category": "usa"
       },
       {
-        "title": "NFL overcomes civil unrest, Trump concerns and calls to postpone as Steelers and Saints kick off in Paris",
-        "link": "https://www.foxnews.com/outkick-sports/nfl-overcomes-civil-unrest-trump-concerns-calls-postpone-steelers-saints-kick-off-paris",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "María Corina Machado on Venezuela’s Future and Her Relationship With the Trump Administration",
+        "link": "https://www.nytimes.com/2026/10/19/world/americas/maria-corina-machado-venezuela-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The NFL kicked off at Stade de France despite Paris protests and calls from Trump to postpone the Pittsburgh Steelers and New Orleans Saints game.",
+        "description": "Blocked from entering her country, Venezuela’s opposition leader spoke with The Times about her efforts to return and her relationship with the Trump administration.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T13:33:21.000Z",
+        "publishedAt": "2026-10-19T19:09:33.000Z",
         "sentiment": {
-          "posP": 3.7,
-          "negP": 8.4,
-          "neuP": 87.9,
+          "posP": 0,
+          "negP": 5.5,
+          "neuP": 94.5,
           "label": "negative",
-          "confidence": 0.28
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump’s Election Attacks Enter New Pre-emptive Phase",
+        "link": "https://www.nytimes.com/2026/10/25/us/politics/trumps-election-alaska.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A lawsuit by the Justice Department challenging a potential narrow loss by the GOP Senate incumbent in Alaska reflects a new tactic by the president to try to shape the election results.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T18:42:12.000Z",
+        "sentiment": {
+          "posP": 11.6,
+          "negP": 16.5,
+          "neuP": 71.9,
+          "label": "negative",
+          "confidence": 0.27
         },
         "category": "usa"
       },
@@ -5247,22 +5327,22 @@
         "category": "usa"
       },
       {
-        "title": "Democrats ask judge to dismiss Trump administration’s challenge to Alaska Senate race",
-        "link": "https://www.nbcnews.com/politics/2026-election/democrats-ask-judge-dismiss-trump-administrations-challenge-alaska-sen-rcna605472",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Trump says he's weighing deal with Iran against action to \"finish them off\"",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-oil-gas-prices-strait-of-hormuz-midterms/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Attorneys for Alaska’s Democratic Senate candidate Mary Peltola and Senate Democrats filed a motion Friday urging a federal judge to dismiss the Trump administration’s lawsuit seeking to block the results of the upcoming election if Republican incumbent Dan S. Sullivan loses.",
+        "description": "President Trump said he's deciding between reaching an agreement with Tehran and taking action to \"finish them off.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T03:45:05.000Z",
+        "publishedAt": "2026-10-25T18:56:57.000Z",
         "sentiment": {
-          "posP": 2.3,
-          "negP": 12.8,
-          "neuP": 84.9,
-          "label": "negative",
-          "confidence": 0.7
+          "posP": 14.7,
+          "negP": 0,
+          "neuP": 85.3,
+          "label": "positive",
+          "confidence": 0.61
         },
         "category": "usa"
       },
@@ -5307,46 +5387,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump says he's weighing deal with Iran against action to \"finish them off\"",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-oil-gas-prices-strait-of-hormuz-midterms/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump said he's deciding between reaching an agreement with Tehran and taking action to \"finish them off.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T16:11:24.000Z",
-        "sentiment": {
-          "posP": 14.7,
-          "negP": 0,
-          "neuP": 85.3,
-          "label": "positive",
-          "confidence": 0.61
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Poll finds Democrats still boosted by voters' economic concerns",
-        "link": "https://www.cbsnews.com/news/poll-house-estimate-midterm-elections-2026/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is a key factor driving support and opposition; turnout looms large",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T14:38:01.000Z",
-        "sentiment": {
-          "posP": 21,
-          "negP": 6.5,
-          "neuP": 72.5,
-          "label": "positive",
-          "confidence": 0.56
-        },
-        "category": "usa"
-      },
-      {
         "title": "What Democrats and Republicans fear most about each other: CNBC survey has the answers",
         "link": "https://www.cnbc.com/2026/10/25/cnbc-survey-midterm-election-voter-fears.html",
         "source": "CNBC",
@@ -5363,6 +5403,26 @@
           "neuP": 94.9,
           "label": "negative",
           "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats, voting-rights groups challenge Trump's bid to block Alaska Senate certification",
+        "link": "https://www.cnbc.com/2026/10/24/alaska-senate-doj-certification-lawsuit.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Lawsuits filed by candidate Mary Peltola and a voters' rights group challenge Trump's preemptive efforts to block a Democratic Senate victory in Alaska.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T19:57:24.000Z",
+        "sentiment": {
+          "posP": 7,
+          "negP": 20,
+          "neuP": 73,
+          "label": "negative",
+          "confidence": 0.7
         },
         "category": "usa"
       },
@@ -5405,88 +5465,49 @@
           "confidence": 0.3
         },
         "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.4,
-      "neu": 84.01,
-      "neg": 9.59,
-      "count": 29
+      "pos": 6.73,
+      "neu": 82.68,
+      "neg": 10.59,
+      "count": 35
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 3.06,
-        "neu": 88.86,
-        "neg": 8.08,
+        "pos": 4.25,
+        "neu": 86.9,
+        "neg": 8.85,
+        "count": 8
+      },
+      {
+        "source": "NYT",
+        "pos": 4.92,
+        "neu": 82.66,
+        "neg": 12.42,
+        "count": 5
+      },
+      {
+        "source": "Fox News",
+        "pos": 14.06,
+        "neu": 68.18,
+        "neg": 17.76,
         "count": 5
       },
       {
         "source": "CBS News",
-        "pos": 10.74,
-        "neu": 83.56,
-        "neg": 5.7,
-        "count": 5
+        "pos": 8.18,
+        "neu": 86.33,
+        "neg": 5.5,
+        "count": 4
+      },
+      {
+        "source": "ABC News",
+        "pos": 9.45,
+        "neu": 78.97,
+        "neg": 11.57,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5496,31 +5517,10 @@
         "count": 4
       },
       {
-        "source": "ABC News",
-        "pos": 6.95,
-        "neu": 78.85,
-        "neg": 14.2,
-        "count": 4
-      },
-      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
-        "count": 3
-      },
-      {
-        "source": "NYT",
-        "pos": 4.33,
-        "neu": 82.3,
-        "neg": 13.37,
-        "count": 3
-      },
-      {
-        "source": "Fox News",
-        "pos": 13.17,
-        "neu": 76.27,
-        "neg": 10.57,
         "count": 3
       },
       {
@@ -5534,23 +5534,30 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.55,
-        "neu": 83.27,
-        "neg": 10.18,
-        "count": 12
+        "pos": 7.45,
+        "neu": 81.11,
+        "neg": 11.45,
+        "count": 13
       },
       {
         "topic": "Policy",
-        "pos": 3.8,
-        "neu": 89.27,
-        "neg": 6.93,
-        "count": 6
+        "pos": 3.26,
+        "neu": 90.01,
+        "neg": 6.73,
+        "count": 7
       },
       {
         "topic": "Foreign Policy",
         "pos": 7.68,
         "neu": 84.3,
         "neg": 8.02,
+        "count": 5
+      },
+      {
+        "topic": "Legal",
+        "pos": 11.08,
+        "neu": 69.06,
+        "neg": 19.86,
         "count": 5
       },
       {
@@ -5561,11 +5568,11 @@
         "count": 4
       },
       {
-        "topic": "Legal",
-        "pos": 13.4,
-        "neu": 61.95,
-        "neg": 24.65,
-        "count": 2
+        "topic": "Public Statements",
+        "pos": 3.3,
+        "neu": 86.3,
+        "neg": 10.4,
+        "count": 1
       }
     ]
   },
@@ -5592,28 +5599,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-25T12:44:03.122Z",
+        "label": "2026-10-25T15:17:56.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T13:44:03.122Z",
+        "label": "2026-10-25T16:17:56.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T14:44:03.122Z",
+        "label": "2026-10-25T17:17:56.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T15:44:03.122Z",
+        "label": "2026-10-25T18:17:56.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5622,28 +5629,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-25T12:44:03.123Z",
+        "label": "2026-10-25T15:17:56.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T13:44:03.123Z",
+        "label": "2026-10-25T16:17:56.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T14:44:03.123Z",
+        "label": "2026-10-25T17:17:56.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T15:44:03.123Z",
+        "label": "2026-10-25T18:17:56.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5723,7 +5730,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-25T16:44:03.124Z",
+    "generatedAt": "2026-10-25T19:17:56.706Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5844,8 +5851,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 166,
-      "potusArticles": 29,
+      "usaArticles": 167,
+      "potusArticles": 35,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
