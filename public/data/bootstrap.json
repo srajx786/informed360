@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-25T01:43:49.313Z",
+  "generatedAt": "2026-10-25T06:57:02.440Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 168,
-    "potusArticles": 35
+    "usaArticles": 166,
+    "potusArticles": 36
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-24T21:43:49.314Z",
+          "label": "2026-10-25T02:57:02.441Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T22:43:49.314Z",
+          "label": "2026-10-25T03:57:02.441Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T23:43:49.314Z",
+          "label": "2026-10-25T04:57:02.441Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T00:43:49.314Z",
+          "label": "2026-10-25T05:57:02.441Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-24T21:43:49.314Z",
+          "label": "2026-10-25T02:57:02.441Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T22:43:49.314Z",
+          "label": "2026-10-25T03:57:02.441Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T23:43:49.314Z",
+          "label": "2026-10-25T04:57:02.441Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T00:43:49.314Z",
+          "label": "2026-10-25T05:57:02.441Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 8.08,
-      "neu": 80.95,
-      "neg": 10.96,
-      "count": 168
+      "pos": 7.42,
+      "neu": 80.74,
+      "neg": 11.83,
+      "count": 166
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.3,
-        "neu": 82.2,
-        "neg": 8.5,
+        "pos": 8.6,
+        "neu": 81.6,
+        "neg": 9.8,
         "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 10.92,
-        "neu": 76.37,
-        "neg": 12.71,
+        "pos": 9.17,
+        "neu": 77.91,
+        "neg": 12.93,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 7.69,
-        "neu": 80.38,
-        "neg": 11.93,
+        "pos": 5.43,
+        "neu": 80.25,
+        "neg": 14.31,
         "count": 26
-      },
-      {
-        "source": "NYT",
-        "pos": 5.89,
-        "neu": 81.31,
-        "neg": 12.8,
-        "count": 22
       },
       {
         "source": "WSJ",
@@ -4597,10 +4590,17 @@
         "count": 20
       },
       {
+        "source": "NYT",
+        "pos": 7.53,
+        "neu": 76.99,
+        "neg": 15.47,
+        "count": 20
+      },
+      {
         "source": "ABC News",
-        "pos": 6.9,
-        "neu": 84.65,
-        "neg": 8.45,
+        "pos": 6.29,
+        "neu": 86.67,
+        "neg": 7.05,
         "count": 20
       },
       {
@@ -4628,14 +4628,29 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
+        },
+        {
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
+        },
+        {
           "name": "Healthcare",
-          "bias": -8.64,
-          "count": 7
+          "bias": -11.92,
+          "count": 6
         },
         {
           "name": "Materials",
-          "bias": 7.4,
-          "count": 3
+          "bias": 8.3,
+          "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": 6.7,
+          "count": 6
         },
         {
           "name": "Real Estate",
@@ -4643,29 +4658,43 @@
           "count": 3
         },
         {
-          "name": "Manufacturing",
-          "bias": -6.17,
-          "count": 3
-        },
-        {
-          "name": "Utilities",
-          "bias": -5.95,
-          "count": 2
-        },
-        {
-          "name": "Communication",
-          "bias": -5.9,
-          "count": 2
-        },
-        {
           "name": "Technology",
-          "bias": -3.9,
-          "count": 131
+          "bias": -5.32,
+          "count": 129
+        },
+        {
+          "name": "Finance",
+          "bias": -3.16,
+          "count": 17
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 0,
+          "count": 1
+        }
+      ],
+      "pos": [
+        {
+          "name": "Materials",
+          "bias": 8.3,
+          "count": 2
         },
         {
           "name": "Energy",
-          "bias": 3.4,
-          "count": 9
+          "bias": 6.7,
+          "count": 6
+        }
+      ],
+      "neu": [
+        {
+          "name": "Real Estate",
+          "bias": -6.23,
+          "count": 3
+        },
+        {
+          "name": "Technology",
+          "bias": -5.32,
+          "count": 129
         },
         {
           "name": "Finance",
@@ -4673,82 +4702,53 @@
           "count": 17
         }
       ],
-      "pos": [
-        {
-          "name": "Materials",
-          "bias": 7.4,
-          "count": 3
-        },
-        {
-          "name": "Energy",
-          "bias": 3.4,
-          "count": 9
-        }
-      ],
-      "neu": [
+      "neg": [
         {
           "name": "Utilities",
-          "bias": -5.95,
-          "count": 2
+          "bias": -17,
+          "count": 1
         },
         {
           "name": "Communication",
-          "bias": -5.9,
-          "count": 2
+          "bias": -14,
+          "count": 1
         },
-        {
-          "name": "Technology",
-          "bias": -3.9,
-          "count": 131
-        }
-      ],
-      "neg": [
         {
           "name": "Healthcare",
-          "bias": -8.64,
-          "count": 7
-        },
-        {
-          "name": "Real Estate",
-          "bias": -6.23,
-          "count": 3
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -6.17,
-          "count": 3
+          "bias": -11.92,
+          "count": 6
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-24T21:43:49.316Z",
-          "pos": 8,
-          "neu": 82,
-          "neg": 10,
-          "count": 12
-        },
-        {
-          "label": "2026-10-24T22:43:49.316Z",
-          "pos": 7,
-          "neu": 76,
-          "neg": 17,
-          "count": 1
-        },
-        {
-          "label": "2026-10-24T23:43:49.316Z",
-          "pos": 6,
-          "neu": 78,
+          "label": "2026-10-25T02:57:02.442Z",
+          "pos": 4,
+          "neu": 80,
           "neg": 16,
-          "count": 8
+          "count": 4
         },
         {
-          "label": "2026-10-25T00:43:49.316Z",
-          "pos": 10,
-          "neu": 74,
-          "neg": 17,
-          "count": 18
+          "label": "2026-10-25T03:57:02.442Z",
+          "pos": 3,
+          "neu": 86,
+          "neg": 11,
+          "count": 2
+        },
+        {
+          "label": "2026-10-25T04:57:02.442Z",
+          "pos": 3,
+          "neu": 77,
+          "neg": 20,
+          "count": 7
+        },
+        {
+          "label": "2026-10-25T05:57:02.442Z",
+          "pos": 5,
+          "neu": 76,
+          "neg": 19,
+          "count": 4
         }
       ]
     }
@@ -5267,7 +5267,7 @@
         "description": "The 44th president sharply criticized Mr. Trump, who hit back later in the day. Mr. Obama also assailed Vivek Ramaswamy, the Republican nominee for governor of Ohio.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T01:12:14.000Z",
+        "publishedAt": "2026-10-25T02:39:57.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 12.7,
@@ -5307,7 +5307,7 @@
         "description": "The United States once declared that Ukraine’s fight was the front line in a global battle for freedom. Now the Trump administration is sending money to Moscow.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T09:03:20.000Z",
+        "publishedAt": "2026-10-24T09:03:21.000Z",
         "sentiment": {
           "posP": 19,
           "negP": 11.6,
@@ -5318,42 +5318,22 @@
         "category": "usa"
       },
       {
-        "title": "How Trump Gave the Worst Polluters a Free Pass",
-        "link": "https://www.nytimes.com/2026/10/24/climate/trump-epa-chemical-air-pollution.html",
+        "title": "What Happens if Trump Doesn’t Like the Midterm Results?",
+        "link": "https://www.nytimes.com/2026/10/24/opinion/trump-midterm-elections-results-predictions.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president temporarily waived clean-air rules for industrial facilities that spew cancer-causing gases. Then his appointees worked to gut the regulations altogether.",
+        "description": "Hope, dread and the final stretch to Election Day.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T01:12:45.000Z",
+        "publishedAt": "2026-10-24T20:09:53.000Z",
         "sentiment": {
-          "posP": 8.8,
-          "negP": 19,
-          "neuP": 72.2,
-          "label": "negative",
-          "confidence": 0.59
-        },
-        "category": "usa"
-      },
-      {
-        "title": "5 Takeaways From Our Investigation of Trump’s Waivers for Polluters",
-        "link": "https://www.nytimes.com/2026/10/24/climate/takeaways-trump-waivers-chemical-pollution.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Chemical plants and other industrial facilities had been required to curb their toxic emissions. A New York Times investigation shows how they got out of it.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T12:50:46.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 8.3,
-          "neuP": 91.7,
-          "label": "negative",
-          "confidence": 0.46
+          "posP": 23.1,
+          "negP": 12.8,
+          "neuP": 64.1,
+          "label": "positive",
+          "confidence": 0.34
         },
         "category": "usa"
       },
@@ -5378,22 +5358,22 @@
         "category": "usa"
       },
       {
-        "title": "Obama describes Trump as an agent of ‘chaos and cruelty’ in midterm elections pitch",
-        "link": "https://www.nbcnews.com/politics/2026-election/obama-trump-chaos-cruelty-midterm-election-pitch-acton-ramaswamy-rcna605223",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "In the Venezuelan stronghold of Doral, some voters discouraged by Trump's policies",
+        "link": "https://www.cbsnews.com/news/venezuelan-stronghold-doral-florida-voters-trump-policies-midterms/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Former President Barack Obama characterized President Donald Trump as an agent of “chaos and cruelty” and a man of broken promises during a midterm election rally.",
+        "description": "Doral, Florida, has the largest Venezuelan population of any city in the country.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T20:44:55.000Z",
+        "publishedAt": "2026-10-25T01:47:44.000Z",
         "sentiment": {
-          "posP": 6.2,
-          "negP": 7.4,
-          "neuP": 86.4,
-          "label": "neutral",
-          "confidence": 0.13
+          "posP": 5.5,
+          "negP": 9.9,
+          "neuP": 84.6,
+          "label": "negative",
+          "confidence": 0.3
         },
         "category": "usa"
       },
@@ -5438,72 +5418,92 @@
         "category": "usa"
       },
       {
-        "title": "The controversy surrounding convicted former election official Tina Peters",
-        "link": "https://www.cbsnews.com/video/the-controversy-surrounding-convicted-former-election-official-tina-peters/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Democrats ask judge to dismiss Trump administration’s challenge to Alaska Senate race",
+        "link": "https://www.nbcnews.com/politics/2026-election/democrats-ask-judge-dismiss-trump-administrations-challenge-alaska-sen-rcna605472",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump has gone to extraordinary lengths for Tina Peters, a former Colorado election official convicted for helping to breach the very voting system she swore to protect. Peters served less than two years in prison for crimes related to breaching voting system security. She maintains she was trying to show flaws in the system. 60 Minutes reports, Sunday.",
+        "description": "Attorneys for Alaska’s Democratic Senate candidate Mary Peltola and Senate Democrats filed a motion Friday urging a federal judge to drop the Trump administration’s lawsuit that seeks to block the results of the upcoming election if Republican incumbent Dan S. Sullivan loses.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T21:23:00.000Z",
+        "publishedAt": "2026-10-25T03:45:05.000Z",
         "sentiment": {
-          "posP": 9.8,
-          "negP": 4.5,
-          "neuP": 85.7,
-          "label": "positive",
-          "confidence": 0.44
+          "posP": 2.3,
+          "negP": 16,
+          "neuP": 81.7,
+          "label": "negative",
+          "confidence": 0.78
         },
         "category": "usa"
       },
       {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
+        "title": "Obama describes Trump as an agent of ‘chaos and cruelty’ in midterm elections pitch",
+        "link": "https://www.nbcnews.com/politics/2026-election/obama-trump-chaos-cruelty-midterm-election-pitch-acton-ramaswamy-rcna605223",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "description": "Former President Barack Obama characterized President Donald Trump as an agent of “chaos and cruelty” and a man of broken promises during a midterm election rally.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "publishedAt": "2026-10-24T20:44:55.000Z",
         "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
+          "posP": 6.2,
+          "negP": 7.4,
+          "neuP": 86.4,
           "label": "neutral",
-          "confidence": 0.14
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats, voting-rights groups challenge Trump's bid to block Alaska Senate certification",
+        "link": "https://www.cnbc.com/2026/10/24/alaska-senate-doj-certification-lawsuit.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Lawsuits filed by candidate Mary Peltola and a voters' rights group challenge Trump's preemptive efforts to block a Democratic Senate victory in Alaska.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T19:57:24.000Z",
+        "sentiment": {
+          "posP": 7,
+          "negP": 20,
+          "neuP": 73,
+          "label": "negative",
+          "confidence": 0.7
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.75,
-      "neu": 85.38,
-      "neg": 8.88,
-      "count": 35
+      "pos": 5.93,
+      "neu": 84.99,
+      "neg": 9.08,
+      "count": 36
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 8.41,
-        "neu": 81.81,
-        "neg": 9.78,
-        "count": 10
+        "pos": 10.93,
+        "neu": 79.81,
+        "neg": 9.26,
+        "count": 9
       },
       {
         "source": "NBC News",
-        "pos": 4.94,
-        "neu": 87.93,
-        "neg": 7.13,
-        "count": 7
+        "pos": 4.61,
+        "neu": 87.15,
+        "neg": 8.24,
+        "count": 8
       },
       {
         "source": "CBS News",
-        "pos": 7.3,
-        "neu": 86.27,
-        "neg": 6.42,
+        "pos": 6.22,
+        "neu": 86,
+        "neg": 7.77,
         "count": 4
       },
       {
@@ -5514,17 +5514,17 @@
         "count": 4
       },
       {
+        "source": "ABC News",
+        "pos": 1.98,
+        "neu": 81.47,
+        "neg": 16.55,
+        "count": 4
+      },
+      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
-        "count": 3
-      },
-      {
-        "source": "ABC News",
-        "pos": 2.63,
-        "neu": 78.43,
-        "neg": 18.93,
         "count": 3
       },
       {
@@ -5545,16 +5545,16 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.43,
-        "neu": 85.69,
-        "neg": 7.88,
-        "count": 18
+        "pos": 6.73,
+        "neu": 84.8,
+        "neg": 8.47,
+        "count": 20
       },
       {
         "topic": "Policy",
-        "pos": 5.83,
-        "neu": 86.34,
-        "neg": 7.83,
+        "pos": 4.9,
+        "neu": 87.7,
+        "neg": 7.4,
         "count": 7
       },
       {
@@ -5573,10 +5573,10 @@
       },
       {
         "topic": "Legal",
-        "pos": 2.33,
-        "neu": 79.57,
-        "neg": 18.1,
-        "count": 3
+        "pos": 3.5,
+        "neu": 73.5,
+        "neg": 23,
+        "count": 2
       }
     ]
   },
@@ -5603,28 +5603,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-24T21:43:49.318Z",
+        "label": "2026-10-25T02:57:02.444Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T22:43:49.318Z",
+        "label": "2026-10-25T03:57:02.444Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T23:43:49.318Z",
+        "label": "2026-10-25T04:57:02.444Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T00:43:49.318Z",
+        "label": "2026-10-25T05:57:02.444Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5633,28 +5633,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-24T21:43:49.318Z",
+        "label": "2026-10-25T02:57:02.444Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T22:43:49.318Z",
+        "label": "2026-10-25T03:57:02.444Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T23:43:49.318Z",
+        "label": "2026-10-25T04:57:02.444Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T00:43:49.318Z",
+        "label": "2026-10-25T05:57:02.444Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5734,7 +5734,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-25T01:43:49.319Z",
+    "generatedAt": "2026-10-25T06:57:02.445Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5855,8 +5855,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 168,
-      "potusArticles": 35,
+      "usaArticles": 166,
+      "potusArticles": 36,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
