@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-25T12:29:34.630Z",
+  "generatedAt": "2026-10-25T16:44:03.118Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 165,
-    "potusArticles": 28
+    "usaArticles": 166,
+    "potusArticles": 29
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-25T08:29:34.631Z",
+          "label": "2026-10-25T12:44:03.119Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T09:29:34.631Z",
+          "label": "2026-10-25T13:44:03.119Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T10:29:34.631Z",
+          "label": "2026-10-25T14:44:03.119Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T11:29:34.631Z",
+          "label": "2026-10-25T15:44:03.119Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-25T08:29:34.631Z",
+          "label": "2026-10-25T12:44:03.119Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T09:29:34.631Z",
+          "label": "2026-10-25T13:44:03.119Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T10:29:34.631Z",
+          "label": "2026-10-25T14:44:03.119Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T11:29:34.631Z",
+          "label": "2026-10-25T15:44:03.119Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.73,
-      "neu": 81.88,
-      "neg": 10.4,
-      "count": 165
+      "pos": 6.53,
+      "neu": 83.34,
+      "neg": 10.13,
+      "count": 166
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.75,
-        "neu": 82.72,
-        "neg": 9.53,
-        "count": 41
+        "pos": 7.25,
+        "neu": 83.95,
+        "neg": 8.8,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 12.61,
-        "neu": 79.8,
-        "neg": 7.59,
+        "pos": 7.05,
+        "neu": 79.58,
+        "neg": 13.36,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.99,
-        "neu": 79.98,
-        "neg": 14.03,
-        "count": 26
+        "pos": 5.9,
+        "neu": 87.27,
+        "neg": 6.84,
+        "count": 25
+      },
+      {
+        "source": "NYT",
+        "pos": 4.19,
+        "neu": 84.09,
+        "neg": 11.72,
+        "count": 21
       },
       {
         "source": "WSJ",
@@ -4590,17 +4597,10 @@
         "count": 20
       },
       {
-        "source": "NYT",
-        "pos": 6.62,
-        "neu": 82.39,
-        "neg": 10.99,
-        "count": 20
-      },
-      {
         "source": "ABC News",
-        "pos": 6.29,
-        "neu": 86.27,
-        "neg": 7.44,
+        "pos": 7.28,
+        "neu": 85.07,
+        "neg": 7.65,
         "count": 20
       },
       {
@@ -4638,29 +4638,29 @@
           "count": 1
         },
         {
-          "name": "Energy",
-          "bias": 6.93,
+          "name": "Healthcare",
+          "bias": -10.78,
           "count": 9
         },
         {
-          "name": "Healthcare",
-          "bias": -5.81,
-          "count": 7
-        },
-        {
-          "name": "Materials",
-          "bias": 5.53,
-          "count": 3
+          "name": "Technology",
+          "bias": -4.08,
+          "count": 129
         },
         {
           "name": "Finance",
-          "bias": -2.68,
+          "bias": -2.89,
           "count": 17
         },
         {
-          "name": "Technology",
-          "bias": -2.66,
-          "count": 130
+          "name": "Materials",
+          "bias": -1.07,
+          "count": 4
+        },
+        {
+          "name": "Energy",
+          "bias": -1.01,
+          "count": 7
         },
         {
           "name": "Real Estate",
@@ -4673,33 +4673,22 @@
           "count": 1
         }
       ],
-      "pos": [
-        {
-          "name": "Energy",
-          "bias": 6.93,
-          "count": 9
-        },
-        {
-          "name": "Materials",
-          "bias": 5.53,
-          "count": 3
-        }
-      ],
+      "pos": [],
       "neu": [
         {
+          "name": "Technology",
+          "bias": -4.08,
+          "count": 129
+        },
+        {
           "name": "Finance",
-          "bias": -2.68,
+          "bias": -2.89,
           "count": 17
         },
         {
-          "name": "Technology",
-          "bias": -2.66,
-          "count": 130
-        },
-        {
-          "name": "Real Estate",
-          "bias": -0.3,
-          "count": 3
+          "name": "Materials",
+          "bias": -1.07,
+          "count": 4
         }
       ],
       "neg": [
@@ -4715,40 +4704,40 @@
         },
         {
           "name": "Healthcare",
-          "bias": -5.81,
-          "count": 7
+          "bias": -10.78,
+          "count": 9
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-25T08:29:34.632Z",
-          "pos": 8,
-          "neu": 91,
-          "neg": 2,
-          "count": 4
+          "label": "2026-10-25T12:44:03.121Z",
+          "pos": 4,
+          "neu": 82,
+          "neg": 14,
+          "count": 9
         },
         {
-          "label": "2026-10-25T09:29:34.632Z",
-          "pos": 7,
-          "neu": 65,
-          "neg": 27,
-          "count": 2
-        },
-        {
-          "label": "2026-10-25T10:29:34.632Z",
-          "pos": 7,
-          "neu": 84,
-          "neg": 9,
-          "count": 10
-        },
-        {
-          "label": "2026-10-25T11:29:34.632Z",
-          "pos": 12,
+          "label": "2026-10-25T13:44:03.121Z",
+          "pos": 9,
           "neu": 83,
-          "neg": 5,
-          "count": 23
+          "neg": 8,
+          "count": 20
+        },
+        {
+          "label": "2026-10-25T14:44:03.121Z",
+          "pos": 4,
+          "neu": 85,
+          "neg": 11,
+          "count": 12
+        },
+        {
+          "label": "2026-10-25T15:44:03.121Z",
+          "pos": 6,
+          "neu": 87,
+          "neg": 8,
+          "count": 19
         }
       ]
     }
@@ -4956,42 +4945,42 @@
         "category": "world"
       },
       {
-        "title": "Latinos Are Now America’s Most Important Swing Voters",
-        "link": "https://www.nytimes.com/2026/10/25/us/politics/latino-voters-poll-midterm-elections.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump immigration win could strengthen admin's hand in looming Supreme Court fight",
+        "link": "https://www.foxnews.com/politics/trump-immigration-win-could-strengthen-admins-hand-looming-supreme-court-fight",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Latinos helped fuel President Trump’s return to the White House. But Democrats have won back the trust of many Hispanic voters over the past two years.",
+        "description": "The Fifth Circuit Friday ruled illegal immigrants never formally admitted to the U.S. have no constitutional right to individualized bond hearings.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T09:01:38.000Z",
+        "publishedAt": "2026-10-25T16:00:14.000Z",
         "sentiment": {
-          "posP": 22.7,
-          "negP": 0,
-          "neuP": 77.3,
+          "posP": 26.8,
+          "negP": 23.3,
+          "neuP": 49.9,
           "label": "positive",
-          "confidence": 0.84
+          "confidence": 0.57
         },
         "category": "usa"
       },
       {
-        "title": "In the Venezuelan stronghold of Doral, some voters discouraged by Trump's policies",
-        "link": "https://www.cbsnews.com/news/venezuelan-stronghold-doral-florida-voters-trump-policies-midterms/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "NFL overcomes civil unrest, Trump concerns and calls to postpone as Steelers and Saints kick off in Paris",
+        "link": "https://www.foxnews.com/outkick-sports/nfl-overcomes-civil-unrest-trump-concerns-calls-postpone-steelers-saints-kick-off-paris",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Doral, Florida, has the largest Venezuelan population of any city in the country.",
+        "description": "The NFL kicked off at Stade de France despite Paris protests and calls from Trump to postpone the Pittsburgh Steelers and New Orleans Saints game.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T01:47:44.000Z",
+        "publishedAt": "2026-10-25T13:33:21.000Z",
         "sentiment": {
-          "posP": 5.5,
-          "negP": 9.9,
-          "neuP": 84.6,
+          "posP": 3.7,
+          "negP": 8.4,
+          "neuP": 87.9,
           "label": "negative",
-          "confidence": 0.3
+          "confidence": 0.28
         },
         "category": "usa"
       }
@@ -5198,82 +5187,62 @@
         "category": "world"
       },
       {
-        "title": "Latinos Are Now America’s Most Important Swing Voters",
-        "link": "https://www.nytimes.com/2026/10/25/us/politics/latino-voters-poll-midterm-elections.html",
+        "title": "Trump immigration win could strengthen admin's hand in looming Supreme Court fight",
+        "link": "https://www.foxnews.com/politics/trump-immigration-win-could-strengthen-admins-hand-looming-supreme-court-fight",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Fifth Circuit Friday ruled illegal immigrants never formally admitted to the U.S. have no constitutional right to individualized bond hearings.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T16:00:14.000Z",
+        "sentiment": {
+          "posP": 26.8,
+          "negP": 23.3,
+          "neuP": 49.9,
+          "label": "positive",
+          "confidence": 0.57
+        },
+        "category": "usa"
+      },
+      {
+        "title": "NFL overcomes civil unrest, Trump concerns and calls to postpone as Steelers and Saints kick off in Paris",
+        "link": "https://www.foxnews.com/outkick-sports/nfl-overcomes-civil-unrest-trump-concerns-calls-postpone-steelers-saints-kick-off-paris",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The NFL kicked off at Stade de France despite Paris protests and calls from Trump to postpone the Pittsburgh Steelers and New Orleans Saints game.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T13:33:21.000Z",
+        "sentiment": {
+          "posP": 3.7,
+          "negP": 8.4,
+          "neuP": 87.9,
+          "label": "negative",
+          "confidence": 0.28
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Despicable Doesn’t Begin to Cover It",
+        "link": "https://www.nytimes.com/2026/10/25/opinion/midterm-ads-ramaswamy-acton-ohio.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Latinos helped fuel President Trump’s return to the White House. But Democrats have won back the trust of many Hispanic voters over the past two years.",
+        "description": "Trump’s culture of cruelty spreads.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T09:01:38.000Z",
-        "sentiment": {
-          "posP": 22.7,
-          "negP": 0,
-          "neuP": 77.3,
-          "label": "positive",
-          "confidence": 0.84
-        },
-        "category": "usa"
-      },
-      {
-        "title": "In the Venezuelan stronghold of Doral, some voters discouraged by Trump's policies",
-        "link": "https://www.cbsnews.com/news/venezuelan-stronghold-doral-florida-voters-trump-policies-midterms/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Doral, Florida, has the largest Venezuelan population of any city in the country.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T01:47:44.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 9.9,
-          "neuP": 84.6,
-          "label": "negative",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
-        "title": "In one Miami community, some Latinos hesitant to vote Republican amid ICE immigration crackdown",
-        "link": "https://www.cbsnews.com/video/in-one-miami-community-some-latinos-hesitant-to-vote-republican-amid-ice-immigration-crackdown/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "In Doral, Florida, some Latino voters who had previously been supportive of President Trump are turning away from the Republican Party amid strong activity from U.S. Immigration and Customs Enforcement. Cristian Benavides reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T01:07:38.000Z",
-        "sentiment": {
-          "posP": 15.4,
-          "negP": 3.8,
-          "neuP": 80.8,
-          "label": "positive",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Obama hits the campaign trail for Democrats with midterms less than 2 weeks away",
-        "link": "https://www.cbsnews.com/video/obama-hits-the-campaign-trail-for-democrats-with-midterms-less-than-2-weeks-away/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Former President Barack Obama was hitting multiple campaign stops in Ohio and Michigan this weekend to speak out against the Trump administration, with midterms less than two weeks away. Nikole Killion has more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T00:53:00.000Z",
+        "publishedAt": "2026-10-25T13:13:02.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 3.4,
-          "neuP": 96.6,
-          "label": "neutral",
-          "confidence": 0.15
+          "negP": 28.1,
+          "neuP": 71.9,
+          "label": "negative",
+          "confidence": 0.6
         },
         "category": "usa"
       },
@@ -5284,116 +5253,96 @@
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Attorneys for Alaska’s Democratic Senate candidate Mary Peltola and Senate Democrats filed a motion Friday urging a federal judge to drop the Trump administration’s lawsuit that seeks to block the results of the upcoming election if Republican incumbent Dan S. Sullivan loses.",
+        "description": "Attorneys for Alaska’s Democratic Senate candidate Mary Peltola and Senate Democrats filed a motion Friday urging a federal judge to dismiss the Trump administration’s lawsuit seeking to block the results of the upcoming election if Republican incumbent Dan S. Sullivan loses.",
         "image": "",
         "imageUrl": "",
         "publishedAt": "2026-10-25T03:45:05.000Z",
         "sentiment": {
           "posP": 2.3,
-          "negP": 16,
-          "neuP": 81.7,
+          "negP": 12.8,
+          "neuP": 84.9,
           "label": "negative",
-          "confidence": 0.78
+          "confidence": 0.7
         },
         "category": "usa"
       },
       {
-        "title": "Obama describes Trump as an agent of ‘chaos and cruelty’ in midterm elections pitch",
-        "link": "https://www.nbcnews.com/politics/2026-election/obama-trump-chaos-cruelty-midterm-election-pitch-acton-ramaswamy-rcna605223",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "AG Blanche says DOJ is \"doing our own research under the law\" with Alaska ballot challenge",
+        "link": "https://www.cbsnews.com/video/ag-blanche-says-doj-is-doing-our-own-research-under-the-law-with-alaska-ballot-challenge/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Former President Barack Obama characterized President Donald Trump as an agent of “chaos and cruelty” and a man of broken promises during a midterm election rally.",
+        "description": "With the Trump administration preemptively suing to block the certification of the results in the Alaska Senate race, Attorney General Todd Blanche told \"Face the Nation with Margaret Brennan\" that the Justice Department is \"doing our own research under the law.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T20:44:55.000Z",
+        "publishedAt": "2026-10-25T16:36:12.000Z",
         "sentiment": {
-          "posP": 6.2,
-          "negP": 7.4,
-          "neuP": 86.4,
+          "posP": 7.5,
+          "negP": 8,
+          "neuP": 84.5,
           "label": "neutral",
-          "confidence": 0.13
+          "confidence": 0.08
         },
         "category": "usa"
       },
       {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
+        "title": "Rep. Jason Crow says Democrats are \"running against our own history\" in midterm elections",
+        "link": "https://www.cbsnews.com/video/rep-jason-crow-says-democrats-are-running-against-our-own-history-in-midterm-elections/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "description": "Democratic Rep. Jason Crow told \"Face the Nation with Margaret Brennan\" that his party has several challenges in this midterm election: \"We're running against Donald Trump. We're running against MAGA extremism. We're running against corruption. But we're also running against our own history to some degree.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "publishedAt": "2026-10-25T16:29:00.000Z",
         "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
-        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-24T22:56:00.000Z",
-        "sentiment": {
-          "posP": 0,
+          "posP": 6.5,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 93.5,
+          "label": "positive",
+          "confidence": 0.46
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he's weighing deal with Iran against action to \"finish them off\"",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-oil-gas-prices-strait-of-hormuz-midterms/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump said he's deciding between reaching an agreement with Tehran and taking action to \"finish them off.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T16:11:24.000Z",
+        "sentiment": {
+          "posP": 14.7,
+          "negP": 0,
+          "neuP": 85.3,
+          "label": "positive",
+          "confidence": 0.61
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Poll finds Democrats still boosted by voters' economic concerns",
+        "link": "https://www.cbsnews.com/news/poll-house-estimate-midterm-elections-2026/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump is a key factor driving support and opposition; turnout looms large",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T14:38:01.000Z",
+        "sentiment": {
+          "posP": 21,
+          "negP": 6.5,
+          "neuP": 72.5,
+          "label": "positive",
+          "confidence": 0.56
         },
         "category": "usa"
       },
@@ -5458,46 +5407,86 @@
         "category": "usa"
       },
       {
-        "title": "Trump dropping some Canada tariffs but 'replacing' them with other products",
-        "link": "https://www.cnbc.com/2026/10/23/trump-tariffs-canada-susan-collins.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Sen. Susan Collins announced Canada was dropping Canadian tariffs, but the White House later said it was \"replacing\" the ones removed from the list.",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-23T21:26:59.000Z",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
           "label": "neutral",
-          "confidence": 0
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.83,
-      "neu": 86.57,
-      "neg": 8.6,
-      "count": 28
+      "pos": 6.4,
+      "neu": 84.01,
+      "neg": 9.59,
+      "count": 29
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 3.07,
-        "neu": 89.64,
-        "neg": 7.29,
-        "count": 7
+        "pos": 3.06,
+        "neu": 88.86,
+        "neg": 8.08,
+        "count": 5
       },
       {
         "source": "CBS News",
-        "pos": 6.22,
-        "neu": 86,
-        "neg": 7.77,
-        "count": 4
+        "pos": 10.74,
+        "neu": 83.56,
+        "neg": 5.7,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5508,9 +5497,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 1.98,
-        "neu": 81.47,
-        "neg": 16.55,
+        "pos": 6.95,
+        "neu": 78.85,
+        "neg": 14.2,
         "count": 4
       },
       {
@@ -5522,9 +5511,16 @@
       },
       {
         "source": "NYT",
-        "pos": 11.9,
-        "neu": 84.1,
-        "neg": 4,
+        "pos": 4.33,
+        "neu": 82.3,
+        "neg": 13.37,
+        "count": 3
+      },
+      {
+        "source": "Fox News",
+        "pos": 13.17,
+        "neu": 76.27,
+        "neg": 10.57,
         "count": 3
       },
       {
@@ -5538,24 +5534,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.35,
-        "neu": 85.22,
-        "neg": 8.44,
-        "count": 13
+        "pos": 6.55,
+        "neu": 83.27,
+        "neg": 10.18,
+        "count": 12
       },
       {
         "topic": "Policy",
-        "pos": 2.55,
-        "neu": 90.75,
-        "neg": 6.7,
+        "pos": 3.8,
+        "neu": 89.27,
+        "neg": 6.93,
         "count": 6
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.63,
-        "neu": 85.35,
-        "neg": 10.03,
-        "count": 4
+        "pos": 7.68,
+        "neu": 84.3,
+        "neg": 8.02,
+        "count": 5
       },
       {
         "topic": "Economy",
@@ -5566,10 +5562,10 @@
       },
       {
         "topic": "Legal",
-        "pos": 0,
-        "neu": 74,
-        "neg": 26,
-        "count": 1
+        "pos": 13.4,
+        "neu": 61.95,
+        "neg": 24.65,
+        "count": 2
       }
     ]
   },
@@ -5596,28 +5592,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-25T08:29:34.634Z",
+        "label": "2026-10-25T12:44:03.122Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T09:29:34.634Z",
+        "label": "2026-10-25T13:44:03.122Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T10:29:34.634Z",
+        "label": "2026-10-25T14:44:03.122Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T11:29:34.634Z",
+        "label": "2026-10-25T15:44:03.122Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5626,28 +5622,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-25T08:29:34.634Z",
+        "label": "2026-10-25T12:44:03.123Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T09:29:34.634Z",
+        "label": "2026-10-25T13:44:03.123Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T10:29:34.634Z",
+        "label": "2026-10-25T14:44:03.123Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T11:29:34.634Z",
+        "label": "2026-10-25T15:44:03.123Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5727,7 +5723,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-25T12:29:34.635Z",
+    "generatedAt": "2026-10-25T16:44:03.124Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5848,8 +5844,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 165,
-      "potusArticles": 28,
+      "usaArticles": 166,
+      "potusArticles": 29,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
