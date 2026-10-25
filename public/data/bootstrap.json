@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-24T21:49:17.402Z",
+  "generatedAt": "2026-10-25T01:43:49.313Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 167,
-    "potusArticles": 38
+    "usaArticles": 168,
+    "potusArticles": 35
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-24T17:49:17.402Z",
+          "label": "2026-10-24T21:43:49.314Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T18:49:17.402Z",
+          "label": "2026-10-24T22:43:49.314Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T19:49:17.402Z",
+          "label": "2026-10-24T23:43:49.314Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T20:49:17.402Z",
+          "label": "2026-10-25T00:43:49.314Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-24T17:49:17.402Z",
+          "label": "2026-10-24T21:43:49.314Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T18:49:17.402Z",
+          "label": "2026-10-24T22:43:49.314Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T19:49:17.402Z",
+          "label": "2026-10-24T23:43:49.314Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-24T20:49:17.402Z",
+          "label": "2026-10-25T00:43:49.314Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.56,
-      "neu": 82.08,
-      "neg": 10.36,
-      "count": 167
+      "pos": 8.08,
+      "neu": 80.95,
+      "neg": 10.96,
+      "count": 168
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.93,
-        "neu": 82.78,
-        "neg": 8.29,
-        "count": 40
+        "pos": 9.3,
+        "neu": 82.2,
+        "neg": 8.5,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 9.91,
-        "neu": 81.5,
-        "neg": 8.59,
+        "pos": 10.92,
+        "neu": 76.37,
+        "neg": 12.71,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.28,
-        "neu": 81.87,
-        "neg": 11.84,
+        "pos": 7.69,
+        "neu": 80.38,
+        "neg": 11.93,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 5.67,
-        "neu": 81.59,
-        "neg": 12.74,
-        "count": 23
+        "pos": 5.89,
+        "neu": 81.31,
+        "neg": 12.8,
+        "count": 22
       },
       {
         "source": "WSJ",
@@ -4599,8 +4599,8 @@
       {
         "source": "ABC News",
         "pos": 6.9,
-        "neu": 84.06,
-        "neg": 9.04,
+        "neu": 84.65,
+        "neg": 8.45,
         "count": 20
       },
       {
@@ -4629,17 +4629,22 @@
       "rows": [
         {
           "name": "Healthcare",
-          "bias": -10.21,
+          "bias": -8.64,
           "count": 7
         },
         {
-          "name": "Manufacturing",
-          "bias": -9.25,
-          "count": 2
+          "name": "Materials",
+          "bias": 7.4,
+          "count": 3
         },
         {
           "name": "Real Estate",
           "bias": -6.23,
+          "count": 3
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -6.17,
           "count": 3
         },
         {
@@ -4653,31 +4658,31 @@
           "count": 2
         },
         {
-          "name": "Energy",
-          "bias": 5.34,
-          "count": 10
+          "name": "Technology",
+          "bias": -3.9,
+          "count": 131
         },
         {
-          "name": "Technology",
-          "bias": -3.47,
-          "count": 125
+          "name": "Energy",
+          "bias": 3.4,
+          "count": 9
         },
         {
           "name": "Finance",
-          "bias": -3.43,
-          "count": 19
-        },
-        {
-          "name": "Materials",
-          "bias": 0.57,
-          "count": 4
+          "bias": -3.16,
+          "count": 17
         }
       ],
       "pos": [
         {
+          "name": "Materials",
+          "bias": 7.4,
+          "count": 3
+        },
+        {
           "name": "Energy",
-          "bias": 5.34,
-          "count": 10
+          "bias": 3.4,
+          "count": 9
         }
       ],
       "neu": [
@@ -4693,24 +4698,24 @@
         },
         {
           "name": "Technology",
-          "bias": -3.47,
-          "count": 125
+          "bias": -3.9,
+          "count": 131
         }
       ],
       "neg": [
         {
           "name": "Healthcare",
-          "bias": -10.21,
+          "bias": -8.64,
           "count": 7
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -9.25,
-          "count": 2
         },
         {
           "name": "Real Estate",
           "bias": -6.23,
+          "count": 3
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -6.17,
           "count": 3
         }
       ]
@@ -4718,32 +4723,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-24T17:49:17.403Z",
-          "pos": 2,
-          "neu": 77,
-          "neg": 21,
-          "count": 6
-        },
-        {
-          "label": "2026-10-24T18:49:17.403Z",
-          "pos": 10,
+          "label": "2026-10-24T21:43:49.316Z",
+          "pos": 8,
           "neu": 82,
-          "neg": 9,
-          "count": 9
-        },
-        {
-          "label": "2026-10-24T19:49:17.403Z",
-          "pos": 9,
-          "neu": 84,
-          "neg": 7,
-          "count": 18
-        },
-        {
-          "label": "2026-10-24T20:49:17.403Z",
-          "pos": 7,
-          "neu": 83,
           "neg": 10,
-          "count": 15
+          "count": 12
+        },
+        {
+          "label": "2026-10-24T22:43:49.316Z",
+          "pos": 7,
+          "neu": 76,
+          "neg": 17,
+          "count": 1
+        },
+        {
+          "label": "2026-10-24T23:43:49.316Z",
+          "pos": 6,
+          "neu": 78,
+          "neg": 16,
+          "count": 8
+        },
+        {
+          "label": "2026-10-25T00:43:49.316Z",
+          "pos": 10,
+          "neu": 74,
+          "neg": 17,
+          "count": 18
         }
       ]
     }
@@ -4951,42 +4956,42 @@
         "category": "world"
       },
       {
-        "title": "Melania Trump's advisor reveals how she bridged Putin, Zelenskyy to broker frontline Ukraine truce",
-        "link": "https://www.foxnews.com/media/melania-trumps-advisor-reveals-how-she-bridged-putin-zelenskyy-broker-front-line-ukraine-truce",
+        "title": "Obama compares Trump's White House renovations to 'Saddam Hussein opening a Cheesecake Factory' at Ohio rally",
+        "link": "https://www.foxnews.com/politics/obama-compares-trumps-white-house-renovations-saddam-hussein-opening-cheesecake-factory-ohio-rally",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "First lady Melania Trump \"single-handedly\" brokered a humanitarian ceasefire in Oleshky, Ukraine, her senior advisor says, as Russia extends the truce.",
+        "description": "Barack Obama compared Trump's White House renovations to a Cheesecake Factory run by Saddam Hussein at a Cleveland rally for Ohio Democrats.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T20:04:44.000Z",
+        "publishedAt": "2026-10-24T22:35:34.000Z",
         "sentiment": {
-          "posP": 4.3,
+          "posP": 0,
           "negP": 0,
-          "neuP": 95.7,
+          "neuP": 100,
           "label": "neutral",
-          "confidence": 0.13
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Bill Maher fires back at liberal critics over second Trump dinner",
-        "link": "https://www.foxnews.com/media/bill-maher-fires-back-liberal-critics-over-second-trump-dinner",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Alaska Election Gambit Shows Justice Dept. Has Bowed to Trump’s Demands",
+        "link": "https://www.nytimes.com/2026/10/24/us/politics/alaska-senate-election-trump-justice-department.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Bill Maher fired back at critics during his \"Real Time\" monologue after attending a second White House dinner with Trump, Stephen A. Smith and Kid Rock.",
+        "description": "With moves in Alaska and California, the department has stepped up interventions in the midterm elections as the president’s instrument of unmediated executive power.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T19:33:44.000Z",
+        "publishedAt": "2026-10-24T19:21:11.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 19.5,
-          "neuP": 80.5,
-          "label": "negative",
-          "confidence": 0.79
+          "posP": 9.1,
+          "negP": 0,
+          "neuP": 90.9,
+          "label": "positive",
+          "confidence": 0.53
         },
         "category": "usa"
       }
@@ -5193,42 +5198,22 @@
         "category": "world"
       },
       {
-        "title": "Melania Trump's advisor reveals how she bridged Putin, Zelenskyy to broker frontline Ukraine truce",
-        "link": "https://www.foxnews.com/media/melania-trumps-advisor-reveals-how-she-bridged-putin-zelenskyy-broker-front-line-ukraine-truce",
+        "title": "Obama compares Trump's White House renovations to 'Saddam Hussein opening a Cheesecake Factory' at Ohio rally",
+        "link": "https://www.foxnews.com/politics/obama-compares-trumps-white-house-renovations-saddam-hussein-opening-cheesecake-factory-ohio-rally",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "First lady Melania Trump \"single-handedly\" brokered a humanitarian ceasefire in Oleshky, Ukraine, her senior advisor says, as Russia extends the truce.",
+        "description": "Barack Obama compared Trump's White House renovations to a Cheesecake Factory run by Saddam Hussein at a Cleveland rally for Ohio Democrats.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T20:04:44.000Z",
-        "sentiment": {
-          "posP": 4.3,
-          "negP": 0,
-          "neuP": 95.7,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Bill Maher fires back at liberal critics over second Trump dinner",
-        "link": "https://www.foxnews.com/media/bill-maher-fires-back-liberal-critics-over-second-trump-dinner",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Bill Maher fired back at critics during his \"Real Time\" monologue after attending a second White House dinner with Trump, Stephen A. Smith and Kid Rock.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T19:33:44.000Z",
+        "publishedAt": "2026-10-24T22:35:34.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 19.5,
-          "neuP": 80.5,
-          "label": "negative",
-          "confidence": 0.79
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5279,36 +5264,16 @@
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The 44th president appeared in Ohio on Saturday, kicking off a two-state swing with a rebuke of President Trump and Vivek Ramaswamy, the Republican nominee for governor.",
+        "description": "The 44th president sharply criticized Mr. Trump, who hit back later in the day. Mr. Obama also assailed Vivek Ramaswamy, the Republican nominee for governor of Ohio.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T21:06:54.000Z",
+        "publishedAt": "2026-10-25T01:12:14.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.5,
-          "neuP": 92.5,
+          "negP": 12.7,
+          "neuP": 87.3,
           "label": "negative",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How Vivek Ramaswamy’s Ruthless Ad in Ohio Divided Republicans",
-        "link": "https://www.nytimes.com/2026/10/24/us/politics/vivek-ramaswamy-ad-ohio-amy-acton.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The fallout from Vivek Ramaswamy’s brutal spot targeting his Democratic rival in the Ohio governor’s race showed that even in the Trump era, a political attack can be seen as going too far.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T09:03:21.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 15.6,
-          "neuP": 84.4,
-          "label": "negative",
-          "confidence": 0.8
+          "confidence": 0.66
         },
         "category": "usa"
       },
@@ -5333,6 +5298,26 @@
         "category": "usa"
       },
       {
+        "title": "Ukraine’s Feeling of Moral Whiplash at the Hands of Trump",
+        "link": "https://www.nytimes.com/2026/10/24/world/europe/ukraine-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The United States once declared that Ukraine’s fight was the front line in a global battle for freedom. Now the Trump administration is sending money to Moscow.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T09:03:20.000Z",
+        "sentiment": {
+          "posP": 19,
+          "negP": 11.6,
+          "neuP": 69.4,
+          "label": "positive",
+          "confidence": 0.51
+        },
+        "category": "usa"
+      },
+      {
         "title": "How Trump Gave the Worst Polluters a Free Pass",
         "link": "https://www.nytimes.com/2026/10/24/climate/trump-epa-chemical-air-pollution.html",
         "source": "NYT",
@@ -5342,7 +5327,7 @@
         "description": "The president temporarily waived clean-air rules for industrial facilities that spew cancer-causing gases. Then his appointees worked to gut the regulations altogether.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T12:28:26.000Z",
+        "publishedAt": "2026-10-25T01:12:45.000Z",
         "sentiment": {
           "posP": 8.8,
           "negP": 19,
@@ -5373,26 +5358,6 @@
         "category": "usa"
       },
       {
-        "title": "They Were Accused of Illegal Fishing. They Ended Up in ICE Detention.",
-        "link": "https://www.nytimes.com/2026/10/24/us/politics/fishing-immigration-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "In states like Florida, officers who hand out fishing citations and inspect produce have been deputized by Immigration and Customs Enforcement, expanding the reach of President Trump’s deportation campaign.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T09:00:48.000Z",
-        "sentiment": {
-          "posP": 14,
-          "negP": 11.9,
-          "neuP": 74.1,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
         "title": "She Planned to Protest Trump. She Didn’t Plan on Getting Punched.",
         "link": "https://www.nytimes.com/2026/10/24/us/trump-protester-punched-youngstown-ohio.html",
         "source": "NYT",
@@ -5413,6 +5378,66 @@
         "category": "usa"
       },
       {
+        "title": "Obama describes Trump as an agent of ‘chaos and cruelty’ in midterm elections pitch",
+        "link": "https://www.nbcnews.com/politics/2026-election/obama-trump-chaos-cruelty-midterm-election-pitch-acton-ramaswamy-rcna605223",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Former President Barack Obama characterized President Donald Trump as an agent of “chaos and cruelty” and a man of broken promises during a midterm election rally.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T20:44:55.000Z",
+        "sentiment": {
+          "posP": 6.2,
+          "negP": 7.4,
+          "neuP": 86.4,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "In one Miami community, some Latinos hesitant to vote Republican amid ICE immigration crackdown",
+        "link": "https://www.cbsnews.com/video/in-one-miami-community-some-latinos-hesitant-to-vote-republican-amid-ice-immigration-crackdown/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In Doral, Florida, some Latino voters who had previously been supportive of President Trump are turning away from the Republican Party amid strong activity from U.S. Immigration and Customs Enforcement. Cristian Benavides reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T01:07:38.000Z",
+        "sentiment": {
+          "posP": 15.4,
+          "negP": 3.8,
+          "neuP": 80.8,
+          "label": "positive",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Obama hits the campaign trail for Democrats with midterms less than 2 weeks away",
+        "link": "https://www.cbsnews.com/video/obama-hits-the-campaign-trail-for-democrats-with-midterms-less-than-2-weeks-away/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Former President Barack Obama was hitting multiple campaign stops in Ohio and Michigan this weekend to speak out against the Trump administration, with midterms less than two weeks away. Nikole Killion has more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T00:53:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 3.4,
+          "neuP": 96.6,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
         "title": "The controversy surrounding convicted former election official Tina Peters",
         "link": "https://www.cbsnews.com/video/the-controversy-surrounding-convicted-former-election-official-tina-peters/",
         "source": "CBS News",
@@ -5422,7 +5447,7 @@
         "description": "President Trump has gone to extraordinary lengths for Tina Peters, a former Colorado election official convicted for helping to breach the very voting system she swore to protect. Peters served less than two years in prison for crimes related to breaching voting system security. She maintains she was trying to show flaws in the system. 60 Minutes reports, Sunday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T21:23:40.000Z",
+        "publishedAt": "2026-10-24T21:23:00.000Z",
         "sentiment": {
           "posP": 9.8,
           "negP": 4.5,
@@ -5433,59 +5458,39 @@
         "category": "usa"
       },
       {
-        "title": "President Trump, first lady vote early in person in Florida",
-        "link": "https://www.cbsnews.com/news/trump-melania-vote-early-in-person-florida-saturday/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump and the first lady voted in Florida before he jetted off to Georgia for a campaign rally.",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T21:01:28.000Z",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
           "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "DOJ sues to block Alaska Senate certification if Sullivan loses",
-        "link": "https://www.cbsnews.com/news/trump-admin-sues-to-block-alaska-senate-certification-if-sen-dan-sullivan-loses/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration is suing to prevent the Alaska Senate election from being certified if GOP Sen. Daniel Sullivan loses to Democrat Mary Peltola because of the other Dan Sullivan who is on the ballot.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T20:15:44.000Z",
-        "sentiment": {
-          "posP": 2.2,
-          "negP": 18.9,
-          "neuP": 78.9,
-          "label": "negative",
-          "confidence": 0.82
+          "confidence": 0.14
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.93,
-      "neu": 85.4,
-      "neg": 9.67,
-      "count": 38
+      "pos": 5.75,
+      "neu": 85.38,
+      "neg": 8.88,
+      "count": 35
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 7.19,
-        "neu": 82.95,
-        "neg": 9.86,
-        "count": 11
+        "pos": 8.41,
+        "neu": 81.81,
+        "neg": 9.78,
+        "count": 10
       },
       {
         "source": "NBC News",
@@ -5496,10 +5501,10 @@
       },
       {
         "source": "CBS News",
-        "pos": 3.2,
-        "neu": 86.34,
-        "neg": 10.46,
-        "count": 5
+        "pos": 7.3,
+        "neu": 86.27,
+        "neg": 6.42,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5516,18 +5521,18 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 4.43,
-        "neu": 89.07,
-        "neg": 6.5,
-        "count": 3
-      },
-      {
         "source": "ABC News",
         "pos": 2.63,
         "neu": 78.43,
         "neg": 18.93,
         "count": 3
+      },
+      {
+        "source": "Fox News",
+        "pos": 4.5,
+        "neu": 95.5,
+        "neg": 0,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5540,30 +5545,23 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.58,
-        "neu": 86.18,
-        "neg": 8.24,
+        "pos": 6.43,
+        "neu": 85.69,
+        "neg": 7.88,
         "count": 18
       },
       {
         "topic": "Policy",
-        "pos": 3.43,
-        "neu": 85.4,
-        "neg": 11.17,
+        "pos": 5.83,
+        "neu": 86.34,
+        "neg": 7.83,
         "count": 7
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.8,
-        "neu": 87.03,
-        "neg": 9.17,
-        "count": 6
-      },
-      {
-        "topic": "Legal",
-        "pos": 5.25,
-        "neu": 78.2,
-        "neg": 16.55,
+        "pos": 4.63,
+        "neu": 85.35,
+        "neg": 10.03,
         "count": 4
       },
       {
@@ -5571,6 +5569,13 @@
         "pos": 6.33,
         "neu": 87.1,
         "neg": 6.57,
+        "count": 3
+      },
+      {
+        "topic": "Legal",
+        "pos": 2.33,
+        "neu": 79.57,
+        "neg": 18.1,
         "count": 3
       }
     ]
@@ -5598,28 +5603,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-24T17:49:17.405Z",
+        "label": "2026-10-24T21:43:49.318Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T18:49:17.405Z",
+        "label": "2026-10-24T22:43:49.318Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T19:49:17.405Z",
+        "label": "2026-10-24T23:43:49.318Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T20:49:17.405Z",
+        "label": "2026-10-25T00:43:49.318Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5628,28 +5633,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-24T17:49:17.405Z",
+        "label": "2026-10-24T21:43:49.318Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T18:49:17.405Z",
+        "label": "2026-10-24T22:43:49.318Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T19:49:17.405Z",
+        "label": "2026-10-24T23:43:49.318Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-24T20:49:17.405Z",
+        "label": "2026-10-25T00:43:49.318Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5729,7 +5734,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-24T21:49:17.406Z",
+    "generatedAt": "2026-10-25T01:43:49.319Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5850,8 +5855,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 167,
-      "potusArticles": 38,
+      "usaArticles": 168,
+      "potusArticles": 35,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
