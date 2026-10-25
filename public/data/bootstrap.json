@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-25T19:17:56.701Z",
+  "generatedAt": "2026-10-25T21:52:24.562Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 167,
-    "potusArticles": 35
+    "usaArticles": 163,
+    "potusArticles": 32
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-25T15:17:56.701Z",
+          "label": "2026-10-25T17:52:24.562Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T16:17:56.701Z",
+          "label": "2026-10-25T18:52:24.562Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T17:17:56.701Z",
+          "label": "2026-10-25T19:52:24.562Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T18:17:56.701Z",
+          "label": "2026-10-25T20:52:24.562Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-25T15:17:56.702Z",
+          "label": "2026-10-25T17:52:24.562Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T16:17:56.702Z",
+          "label": "2026-10-25T18:52:24.562Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T17:17:56.702Z",
+          "label": "2026-10-25T19:52:24.562Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T18:17:56.702Z",
+          "label": "2026-10-25T20:52:24.562Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 6.69,
-      "neu": 83.19,
-      "neg": 10.12,
-      "count": 167
+      "pos": 6.53,
+      "neu": 83.22,
+      "neg": 10.25,
+      "count": 163
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.92,
-        "neu": 84.16,
-        "neg": 8.92,
+        "pos": 6.55,
+        "neu": 83.76,
+        "neg": 9.69,
         "count": 43
       },
       {
         "source": "Fox News",
-        "pos": 9.3,
-        "neu": 77.93,
-        "neg": 12.77,
+        "pos": 9.13,
+        "neu": 78.34,
+        "neg": 12.53,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.77,
-        "neu": 86.55,
-        "neg": 7.68,
+        "pos": 5.42,
+        "neu": 87.14,
+        "neg": 7.43,
         "count": 26
       },
       {
@@ -4590,18 +4590,18 @@
         "count": 20
       },
       {
-        "source": "NYT",
-        "pos": 2.53,
-        "neu": 85.35,
-        "neg": 12.12,
+        "source": "ABC News",
+        "pos": 7.56,
+        "neu": 85.69,
+        "neg": 6.75,
         "count": 20
       },
       {
-        "source": "ABC News",
-        "pos": 8.06,
-        "neu": 84.99,
-        "neg": 6.95,
-        "count": 20
+        "source": "NYT",
+        "pos": 2.34,
+        "neu": 84.78,
+        "neg": 12.88,
+        "count": 16
       },
       {
         "source": "NPR",
@@ -4633,14 +4633,24 @@
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": -10.29,
-          "count": 8
+          "name": "Materials",
+          "bias": -10.6,
+          "count": 1
         },
         {
-          "name": "Materials",
-          "bias": -5.3,
+          "name": "Manufacturing",
+          "bias": -8.35,
           "count": 2
+        },
+        {
+          "name": "Healthcare",
+          "bias": -4.5,
+          "count": 7
+        },
+        {
+          "name": "Technology",
+          "bias": -3.85,
+          "count": 129
         },
         {
           "name": "Communication",
@@ -4648,47 +4658,37 @@
           "count": 2
         },
         {
-          "name": "Technology",
-          "bias": -3.59,
-          "count": 131
-        },
-        {
-          "name": "Finance",
-          "bias": -2.89,
-          "count": 17
-        },
-        {
           "name": "Energy",
-          "bias": -2.56,
+          "bias": -2.25,
           "count": 8
         },
         {
-          "name": "Real Estate",
-          "bias": -0.3,
-          "count": 3
+          "name": "Finance",
+          "bias": -1.65,
+          "count": 15
         },
         {
-          "name": "Manufacturing",
-          "bias": 0,
-          "count": 1
+          "name": "Real Estate",
+          "bias": -0.45,
+          "count": 2
         }
       ],
       "pos": [],
       "neu": [
         {
-          "name": "Communication",
-          "bias": -3.75,
-          "count": 2
+          "name": "Healthcare",
+          "bias": -4.5,
+          "count": 7
         },
         {
           "name": "Technology",
-          "bias": -3.59,
-          "count": 131
+          "bias": -3.85,
+          "count": 129
         },
         {
-          "name": "Finance",
-          "bias": -2.89,
-          "count": 17
+          "name": "Communication",
+          "bias": -3.75,
+          "count": 2
         }
       ],
       "neg": [
@@ -4698,13 +4698,13 @@
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": -10.29,
-          "count": 8
+          "name": "Materials",
+          "bias": -10.6,
+          "count": 1
         },
         {
-          "name": "Materials",
-          "bias": -5.3,
+          "name": "Manufacturing",
+          "bias": -8.35,
           "count": 2
         }
       ]
@@ -4712,32 +4712,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-25T15:17:56.703Z",
-          "pos": 6,
-          "neu": 81,
-          "neg": 13,
-          "count": 10
-        },
-        {
-          "label": "2026-10-25T16:17:56.703Z",
-          "pos": 6,
-          "neu": 89,
-          "neg": 6,
-          "count": 18
-        },
-        {
-          "label": "2026-10-25T17:17:56.703Z",
+          "label": "2026-10-25T17:52:24.564Z",
           "pos": 10,
-          "neu": 78,
-          "neg": 13,
-          "count": 18
+          "neu": 79,
+          "neg": 11,
+          "count": 13
         },
         {
-          "label": "2026-10-25T18:17:56.703Z",
-          "pos": 5,
-          "neu": 85,
+          "label": "2026-10-25T18:52:24.564Z",
+          "pos": 6,
+          "neu": 84,
           "neg": 10,
-          "count": 11
+          "count": 8
+        },
+        {
+          "label": "2026-10-25T19:52:24.564Z",
+          "pos": 3,
+          "neu": 89,
+          "neg": 9,
+          "count": 9
+        },
+        {
+          "label": "2026-10-25T20:52:24.564Z",
+          "pos": 2,
+          "neu": 83,
+          "neg": 15,
+          "count": 8
         }
       ]
     }
@@ -5247,46 +5247,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump immigration win could strengthen admin's hand in looming Supreme Court fight",
-        "link": "https://www.foxnews.com/politics/trump-immigration-win-could-strengthen-admins-hand-looming-supreme-court-fight",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Fifth Circuit Friday ruled illegal immigrants never formally admitted to the U.S. have no constitutional right to individualized bond hearings.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T16:00:14.000Z",
-        "sentiment": {
-          "posP": 26.8,
-          "negP": 23.3,
-          "neuP": 49.9,
-          "label": "positive",
-          "confidence": 0.57
-        },
-        "category": "usa"
-      },
-      {
-        "title": "María Corina Machado on Venezuela’s Future and Her Relationship With the Trump Administration",
-        "link": "https://www.nytimes.com/2026/10/19/world/americas/maria-corina-machado-venezuela-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Blocked from entering her country, Venezuela’s opposition leader spoke with The Times about her efforts to return and her relationship with the Trump administration.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-19T19:09:33.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 5.5,
-          "neuP": 94.5,
-          "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump’s Election Attacks Enter New Pre-emptive Phase",
         "link": "https://www.nytimes.com/2026/10/25/us/politics/trumps-election-alaska.html",
         "source": "NYT",
@@ -5336,7 +5296,7 @@
         "description": "President Trump said he's deciding between reaching an agreement with Tehran and taking action to \"finish them off.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T18:56:57.000Z",
+        "publishedAt": "2026-10-25T19:55:04.000Z",
         "sentiment": {
           "posP": 14.7,
           "negP": 0,
@@ -5387,42 +5347,22 @@
         "category": "usa"
       },
       {
-        "title": "What Democrats and Republicans fear most about each other: CNBC survey has the answers",
-        "link": "https://www.cnbc.com/2026/10/25/cnbc-survey-midterm-election-voter-fears.html",
+        "title": "Blanche defends Trump-ordered lawsuit over Alaska Senate election certification",
+        "link": "https://www.cnbc.com/2026/10/25/blanche-doj-alaska-senate-certification-lawsuit.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The economy is still a key issue in the 2026 election, but voters are concerned about Trump testing the bounds of the office and Democratic Socialist polices.",
+        "description": "Democrats have maintained they have no connection to Daniel J. Sullivan.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T12:00:01.000Z",
+        "publishedAt": "2026-10-25T20:28:55.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 5.1,
-          "neuP": 94.9,
+          "negP": 18.6,
+          "neuP": 81.4,
           "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Democrats, voting-rights groups challenge Trump's bid to block Alaska Senate certification",
-        "link": "https://www.cnbc.com/2026/10/24/alaska-senate-doj-certification-lawsuit.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Lawsuits filed by candidate Mary Peltola and a voters' rights group challenge Trump's preemptive efforts to block a Democratic Senate victory in Alaska.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T19:57:24.000Z",
-        "sentiment": {
-          "posP": 7,
-          "negP": 20,
-          "neuP": 73,
-          "label": "negative",
-          "confidence": 0.7
+          "confidence": 0.48
         },
         "category": "usa"
       },
@@ -5447,6 +5387,26 @@
         "category": "usa"
       },
       {
+        "title": "What Democrats and Republicans fear most about each other: CNBC survey has the answers",
+        "link": "https://www.cnbc.com/2026/10/25/cnbc-survey-midterm-election-voter-fears.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The economy is still a key issue in the 2026 election, but voters are concerned about Trump testing the bounds of the office and Democratic Socialist polices.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T12:00:01.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 5.1,
+          "neuP": 94.9,
+          "label": "negative",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump's executive order targets mortgage insurance, refinance costs. What it means for borrowers",
         "link": "https://www.cnbc.com/2026/10/23/trump-mortgage-executive-order-costs.html",
         "source": "CNBC",
@@ -5465,35 +5425,75 @@
           "confidence": 0.3
         },
         "category": "usa"
+      },
+      {
+        "title": "Trump is pushing a massive AI buildout. His own voters are wary of what comes with it",
+        "link": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A new CNBC survey finds broad voter opposition to nearby AI data centers, creating a political challenge for Trump and Republicans ahead of the midterm election.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T10:59:16.000Z",
+        "sentiment": {
+          "posP": 8.4,
+          "negP": 0,
+          "neuP": 91.6,
+          "label": "positive",
+          "confidence": 0.36
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Mike Rogers on Trump calling Abdul El-Sayed a terrorist: ‘I've never called him a terrorist’",
+        "link": "https://www.nbcnews.com/meet-the-press/video/mike-rogers-on-trump-calling-abdul-el-sayed-a-terrorist-i-ve-never-called-him-a-terrorist-272191045618",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In an exclusive interview with Meet the Press, Michigan Senate candidate and former Rep. Mike Rogers (R) responds to President Trump calling Abdul El-Sayed a “jihadist” and “violent terrorist.”",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T13:44:00.000Z",
+        "sentiment": {
+          "posP": 3.3,
+          "negP": 10.4,
+          "neuP": 86.3,
+          "label": "negative",
+          "confidence": 0.64
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.73,
-      "neu": 82.68,
-      "neg": 10.59,
-      "count": 35
+      "pos": 5.93,
+      "neu": 83.97,
+      "neg": 10.11,
+      "count": 32
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 4.25,
-        "neu": 86.9,
-        "neg": 8.85,
-        "count": 8
+        "pos": 3.53,
+        "neu": 88.39,
+        "neg": 8.09,
+        "count": 7
       },
       {
         "source": "NYT",
-        "pos": 4.92,
-        "neu": 82.66,
-        "neg": 12.42,
-        "count": 5
+        "pos": 6.15,
+        "neu": 79.7,
+        "neg": 14.15,
+        "count": 4
       },
       {
         "source": "Fox News",
-        "pos": 14.06,
-        "neu": 68.18,
-        "neg": 17.76,
-        "count": 5
+        "pos": 10.88,
+        "neu": 72.75,
+        "neg": 16.38,
+        "count": 4
       },
       {
         "source": "CBS News",
@@ -5504,9 +5504,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 9.45,
-        "neu": 78.97,
-        "neg": 11.57,
+        "pos": 6.95,
+        "neu": 82.5,
+        "neg": 10.55,
         "count": 4
       },
       {
@@ -5534,17 +5534,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.45,
-        "neu": 81.11,
-        "neg": 11.45,
-        "count": 13
+        "pos": 6.91,
+        "neu": 81.79,
+        "neg": 11.3,
+        "count": 14
       },
       {
         "topic": "Policy",
-        "pos": 3.26,
-        "neu": 90.01,
-        "neg": 6.73,
-        "count": 7
+        "pos": 4.1,
+        "neu": 90.14,
+        "neg": 5.76,
+        "count": 5
       },
       {
         "topic": "Foreign Policy",
@@ -5554,18 +5554,18 @@
         "count": 5
       },
       {
-        "topic": "Legal",
-        "pos": 11.08,
-        "neu": 69.06,
-        "neg": 19.86,
-        "count": 5
-      },
-      {
         "topic": "Economy",
         "pos": 4.75,
         "neu": 89.05,
         "neg": 6.2,
         "count": 4
+      },
+      {
+        "topic": "Legal",
+        "pos": 3.87,
+        "neu": 75.77,
+        "neg": 20.37,
+        "count": 3
       },
       {
         "topic": "Public Statements",
@@ -5599,28 +5599,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-25T15:17:56.705Z",
+        "label": "2026-10-25T17:52:24.566Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T16:17:56.705Z",
+        "label": "2026-10-25T18:52:24.566Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T17:17:56.705Z",
+        "label": "2026-10-25T19:52:24.566Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T18:17:56.705Z",
+        "label": "2026-10-25T20:52:24.566Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5629,28 +5629,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-25T15:17:56.705Z",
+        "label": "2026-10-25T17:52:24.567Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T16:17:56.705Z",
+        "label": "2026-10-25T18:52:24.567Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T17:17:56.705Z",
+        "label": "2026-10-25T19:52:24.567Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T18:17:56.705Z",
+        "label": "2026-10-25T20:52:24.567Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5730,7 +5730,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-25T19:17:56.706Z",
+    "generatedAt": "2026-10-25T21:52:24.568Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5851,8 +5851,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 167,
-      "potusArticles": 35,
+      "usaArticles": 163,
+      "potusArticles": 32,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
