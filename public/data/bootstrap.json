@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-25T21:52:24.562Z",
+  "generatedAt": "2026-10-25T23:37:49.673Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 163,
-    "potusArticles": 32
+    "potusArticles": 34
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-25T17:52:24.562Z",
+          "label": "2026-10-25T19:37:49.673Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T18:52:24.562Z",
+          "label": "2026-10-25T20:37:49.673Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T19:52:24.562Z",
+          "label": "2026-10-25T21:37:49.673Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T20:52:24.562Z",
+          "label": "2026-10-25T22:37:49.673Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-25T17:52:24.562Z",
+          "label": "2026-10-25T19:37:49.673Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T18:52:24.562Z",
+          "label": "2026-10-25T20:37:49.673Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T19:52:24.562Z",
+          "label": "2026-10-25T21:37:49.673Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T20:52:24.562Z",
+          "label": "2026-10-25T22:37:49.673Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 6.53,
-      "neu": 83.22,
-      "neg": 10.25,
+      "pos": 6.2,
+      "neu": 83.13,
+      "neg": 10.67,
       "count": 163
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.55,
-        "neu": 83.76,
-        "neg": 9.69,
-        "count": 43
+        "pos": 5.47,
+        "neu": 84.35,
+        "neg": 10.18,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 9.13,
-        "neu": 78.34,
-        "neg": 12.53,
+        "pos": 8.1,
+        "neu": 79.3,
+        "neg": 12.61,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.42,
-        "neu": 87.14,
-        "neg": 7.43,
+        "pos": 5.23,
+        "neu": 85.28,
+        "neg": 9.49,
         "count": 26
       },
       {
@@ -4591,17 +4591,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 7.56,
-        "neu": 85.69,
-        "neg": 6.75,
+        "pos": 8.11,
+        "neu": 84.87,
+        "neg": 7.02,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 2.34,
-        "neu": 84.78,
-        "neg": 12.88,
-        "count": 16
+        "pos": 3.32,
+        "neu": 84.73,
+        "neg": 11.95,
+        "count": 17
       },
       {
         "source": "NPR",
@@ -4633,9 +4633,14 @@
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": -10.6,
+          "name": "Communication",
+          "bias": -14,
           "count": 1
+        },
+        {
+          "name": "Healthcare",
+          "bias": -11.21,
+          "count": 7
         },
         {
           "name": "Manufacturing",
@@ -4643,29 +4648,24 @@
           "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": -4.5,
-          "count": 7
-        },
-        {
-          "name": "Technology",
-          "bias": -3.85,
-          "count": 129
-        },
-        {
-          "name": "Communication",
-          "bias": -3.75,
+          "name": "Materials",
+          "bias": -8.3,
           "count": 2
         },
         {
           "name": "Energy",
-          "bias": -2.25,
+          "bias": -5.81,
           "count": 8
         },
         {
           "name": "Finance",
-          "bias": -1.65,
-          "count": 15
+          "bias": -5.62,
+          "count": 16
+        },
+        {
+          "name": "Technology",
+          "bias": -4.63,
+          "count": 123
         },
         {
           "name": "Real Estate",
@@ -4676,19 +4676,19 @@
       "pos": [],
       "neu": [
         {
-          "name": "Healthcare",
-          "bias": -4.5,
-          "count": 7
-        },
-        {
-          "name": "Technology",
-          "bias": -3.85,
-          "count": 129
-        },
-        {
-          "name": "Communication",
-          "bias": -3.75,
+          "name": "Manufacturing",
+          "bias": -8.35,
           "count": 2
+        },
+        {
+          "name": "Materials",
+          "bias": -8.3,
+          "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": -5.81,
+          "count": 8
         }
       ],
       "neg": [
@@ -4698,46 +4698,46 @@
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": -10.6,
+          "name": "Communication",
+          "bias": -14,
           "count": 1
         },
         {
-          "name": "Manufacturing",
-          "bias": -8.35,
-          "count": 2
+          "name": "Healthcare",
+          "bias": -11.21,
+          "count": 7
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-25T17:52:24.564Z",
-          "pos": 10,
-          "neu": 79,
-          "neg": 11,
-          "count": 13
-        },
-        {
-          "label": "2026-10-25T18:52:24.564Z",
-          "pos": 6,
-          "neu": 84,
+          "label": "2026-10-25T19:37:49.675Z",
+          "pos": 5,
+          "neu": 85,
           "neg": 10,
           "count": 8
         },
         {
-          "label": "2026-10-25T19:52:24.564Z",
-          "pos": 3,
-          "neu": 89,
-          "neg": 9,
+          "label": "2026-10-25T20:37:49.675Z",
+          "pos": 2,
+          "neu": 85,
+          "neg": 13,
+          "count": 8
+        },
+        {
+          "label": "2026-10-25T21:37:49.675Z",
+          "pos": 8,
+          "neu": 82,
+          "neg": 10,
           "count": 9
         },
         {
-          "label": "2026-10-25T20:52:24.564Z",
-          "pos": 2,
+          "label": "2026-10-25T22:37:49.675Z",
+          "pos": 5,
           "neu": 83,
-          "neg": 15,
-          "count": 8
+          "neg": 12,
+          "count": 23
         }
       ]
     }
@@ -4945,42 +4945,42 @@
         "category": "world"
       },
       {
-        "title": "MAPPED: The states Trump and top Democrats are targeting before Election Day",
-        "link": "https://www.foxnews.com/politics/mapped-states-trump-top-democrats-targeting-election-day",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump’s Election Attacks Enter New Pre-emptive Phase",
+        "link": "https://www.nytimes.com/2026/10/25/us/politics/trumps-election-alaska.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "With Election Day less than two weeks away, Trump rallied in Florida, Georgia and Michigan as both parties deploy top surrogates to battlegrounds.",
+        "description": "A lawsuit by the Justice Department challenging a potential narrow loss by the GOP Senate incumbent in Alaska reflects a new tactic by the president to try to shape the election results.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T18:15:23.000Z",
+        "publishedAt": "2026-10-25T18:42:12.000Z",
         "sentiment": {
-          "posP": 16.2,
-          "negP": 4.1,
-          "neuP": 79.7,
-          "label": "positive",
-          "confidence": 0.57
+          "posP": 11.6,
+          "negP": 16.5,
+          "neuP": 71.9,
+          "label": "negative",
+          "confidence": 0.27
         },
         "category": "usa"
       },
       {
-        "title": "Trump reveals dire warning to Macron as violent unrest spreads across Europe",
-        "link": "https://www.foxnews.com/media/trump-reveals-dire-warning-macron-violent-unrest-spreads-across-europe",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "How to Straddle the MAGA Divide",
+        "link": "https://www.nytimes.com/2026/10/25/business/how-to-straddle-the-maga-divide.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump says he warned Emmanuel Macron that immigration policies were \"destroying France\" as nearly 1,000 protesters were arrested on Saturday.",
+        "description": "Beth Wilkinson is a Washington lawyer who has thrived representing the Trump administration’s enemies and allies alike. Does she represent a vanishing type?",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T17:27:42.000Z",
+        "publishedAt": "2026-10-25T17:00:21.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 44.4,
-          "neuP": 55.6,
+          "negP": 11,
+          "neuP": 89,
           "label": "negative",
-          "confidence": 0.96
+          "confidence": 0.49
         },
         "category": "usa"
       }
@@ -5187,66 +5187,6 @@
         "category": "world"
       },
       {
-        "title": "MAPPED: The states Trump and top Democrats are targeting before Election Day",
-        "link": "https://www.foxnews.com/politics/mapped-states-trump-top-democrats-targeting-election-day",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "With Election Day less than two weeks away, Trump rallied in Florida, Georgia and Michigan as both parties deploy top surrogates to battlegrounds.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T18:15:23.000Z",
-        "sentiment": {
-          "posP": 16.2,
-          "negP": 4.1,
-          "neuP": 79.7,
-          "label": "positive",
-          "confidence": 0.57
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump reveals dire warning to Macron as violent unrest spreads across Europe",
-        "link": "https://www.foxnews.com/media/trump-reveals-dire-warning-macron-violent-unrest-spreads-across-europe",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump says he warned Emmanuel Macron that immigration policies were \"destroying France\" as nearly 1,000 protesters were arrested on Saturday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T17:27:42.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 44.4,
-          "neuP": 55.6,
-          "label": "negative",
-          "confidence": 0.96
-        },
-        "category": "usa"
-      },
-      {
-        "title": "DOJ flooded with thousands of fraud tips after cash incentive launch, Trump official says",
-        "link": "https://www.foxnews.com/media/doj-flooded-thousands-fraud-tips-after-cash-incentive-launch-trump-official-says",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Justice Department's fraud whistleblower program received thousands of tips in days, as Colin McDonald reveals a novel upfront payment approach.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T17:07:11.000Z",
-        "sentiment": {
-          "posP": 18.3,
-          "negP": 17,
-          "neuP": 64.7,
-          "label": "neutral",
-          "confidence": 0.1
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump’s Election Attacks Enter New Pre-emptive Phase",
         "link": "https://www.nytimes.com/2026/10/25/us/politics/trumps-election-alaska.html",
         "source": "NYT",
@@ -5263,6 +5203,26 @@
           "neuP": 71.9,
           "label": "negative",
           "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How to Straddle the MAGA Divide",
+        "link": "https://www.nytimes.com/2026/10/25/business/how-to-straddle-the-maga-divide.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Beth Wilkinson is a Washington lawyer who has thrived representing the Trump administration’s enemies and allies alike. Does she represent a vanishing type?",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T17:00:21.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 11,
+          "neuP": 89,
+          "label": "negative",
+          "confidence": 0.49
         },
         "category": "usa"
       },
@@ -5287,6 +5247,86 @@
         "category": "usa"
       },
       {
+        "title": "60 Minutes transcript: Trump, Tina Peters and funds for Colorado",
+        "link": "https://www.cbsnews.com/news/trump-tina-peters-colorado-jared-polis-60-minutes-transcript/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Tina Peters, an election conspiracy theorist who supported President Trump's voting fraud claims, had her Colorado prison sentence commuted by Gov. Jared Polis after a White House pressure campaign.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T23:00:17.000Z",
+        "sentiment": {
+          "posP": 7.5,
+          "negP": 26.3,
+          "neuP": 66.2,
+          "label": "negative",
+          "confidence": 0.88
+        },
+        "category": "usa"
+      },
+      {
+        "title": "60 Minutes Transcript: Inside Trump's third-country deportations",
+        "link": "https://www.cbsnews.com/news/how-some-deportees-end-up-in-countries-us-judges-ruled-off-limits-60-minutes-transcript/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "When immigrants can't be deported to their home countries, the U.S. sometimes sends them to other countries. But some deportees end up in places where U.S. judges have ruled they will likely be persecuted.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T23:00:12.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 5.4,
+          "neuP": 94.6,
+          "label": "negative",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Investigating claims Trump tried to strong-arm Colorado into releasing Tina Peters | 60 Minutes",
+        "link": "https://www.cbsnews.com/video/tina-peters-trump-colorado-polis-60-minutes-video-2026-10-25/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Tina Peters, an election conspiracy theorist who supported President Trump's voting fraud claims, had her Colorado prison sentence commuted by Gov. Jared Polis after a White House pressure campaign.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T23:00:11.000Z",
+        "sentiment": {
+          "posP": 7,
+          "negP": 24.8,
+          "neuP": 68.2,
+          "label": "negative",
+          "confidence": 0.88
+        },
+        "category": "usa"
+      },
+      {
+        "title": "The lengths Trump went to for Tina Peters after her sentencing",
+        "link": "https://www.cbsnews.com/news/colorado-trump-tina-peters-sentence-commutation-60-minutes/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump went to extraordinary lengths for Tina Peters, a former election official convicted of helping to breach the very voting system she swore to protect.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T23:00:00.000Z",
+        "sentiment": {
+          "posP": 12.2,
+          "negP": 4.1,
+          "neuP": 83.7,
+          "label": "positive",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump says he's weighing deal with Iran against action to \"finish them off\"",
         "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-oil-gas-prices-strait-of-hormuz-midterms/",
         "source": "CBS News",
@@ -5303,146 +5343,6 @@
           "neuP": 85.3,
           "label": "positive",
           "confidence": 0.61
-        },
-        "category": "usa"
-      },
-      {
-        "title": "AG Blanche says DOJ is \"doing our own research under the law\" with Alaska ballot challenge",
-        "link": "https://www.cbsnews.com/video/ag-blanche-says-doj-is-doing-our-own-research-under-the-law-with-alaska-ballot-challenge/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "With the Trump administration preemptively suing to block the certification of the results in the Alaska Senate race, Attorney General Todd Blanche told \"Face the Nation with Margaret Brennan\" that the Justice Department is \"doing our own research under the law.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T16:36:12.000Z",
-        "sentiment": {
-          "posP": 7.5,
-          "negP": 8,
-          "neuP": 84.5,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Rep. Jason Crow says Democrats are \"running against our own history\" in midterm elections",
-        "link": "https://www.cbsnews.com/video/rep-jason-crow-says-democrats-are-running-against-our-own-history-in-midterm-elections/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democratic Rep. Jason Crow told \"Face the Nation with Margaret Brennan\" that his party has several challenges in this midterm election: \"We're running against Donald Trump. We're running against MAGA extremism. We're running against corruption. But we're also running against our own history to some degree.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T16:29:00.000Z",
-        "sentiment": {
-          "posP": 6.5,
-          "negP": 0,
-          "neuP": 93.5,
-          "label": "positive",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Blanche defends Trump-ordered lawsuit over Alaska Senate election certification",
-        "link": "https://www.cnbc.com/2026/10/25/blanche-doj-alaska-senate-certification-lawsuit.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats have maintained they have no connection to Daniel J. Sullivan.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T20:28:55.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 18.6,
-          "neuP": 81.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "America by the numbers: How voters feel about the economy, inflation, AI and Trump",
-        "link": "https://www.cnbc.com/2026/10/23/america-by-the-numbers-how-voters-feel-about-the-economy-inflation-ai-and-trump.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "With the U.S. midterm elections looming, Americans are nearly as gloomy about the economy as they were when the nation was emerging from the pandemic.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T10:58:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 7.7,
-          "neuP": 92.3,
-          "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What Democrats and Republicans fear most about each other: CNBC survey has the answers",
-        "link": "https://www.cnbc.com/2026/10/25/cnbc-survey-midterm-election-voter-fears.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The economy is still a key issue in the 2026 election, but voters are concerned about Trump testing the bounds of the office and Democratic Socialist polices.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T12:00:01.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 5.1,
-          "neuP": 94.9,
-          "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump's executive order targets mortgage insurance, refinance costs. What it means for borrowers",
-        "link": "https://www.cnbc.com/2026/10/23/trump-mortgage-executive-order-costs.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump's executive order on housing aims to lower mortgage costs. Here's what it means for homeowners and buyers.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T22:27:06.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 6.8,
-          "neuP": 93.2,
-          "label": "negative",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump is pushing a massive AI buildout. His own voters are wary of what comes with it",
-        "link": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A new CNBC survey finds broad voter opposition to nearby AI data centers, creating a political challenge for Trump and Republicans ahead of the midterm election.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T10:59:16.000Z",
-        "sentiment": {
-          "posP": 8.4,
-          "negP": 0,
-          "neuP": 91.6,
-          "label": "positive",
-          "confidence": 0.36
         },
         "category": "usa"
       },
@@ -5465,48 +5365,141 @@
           "confidence": 0.64
         },
         "category": "usa"
+      },
+      {
+        "title": "Here’s the biggest news you missed this weekend",
+        "link": "https://www.nbcnews.com/news/us-news/weekend-rundown-october-25-rcna605266",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Former President Barack Obama, appearing in Ohio Saturday at his first campaign rally for the midterm elections, characterized President Donald Trump as an agent of “chaos and cruelty” and a man of broken promises.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T22:00:00.000Z",
+        "sentiment": {
+          "posP": 5.7,
+          "negP": 11.5,
+          "neuP": 82.8,
+          "label": "negative",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump leans into Islamophobic rhetoric at Michigan rally",
+        "link": "https://www.nbcnews.com/politics/2026-election/trump-leans-islamophobic-rhetoric-michigan-rally-rcna605572",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president attacked Abdul El-Sayed, the Democratic Senate nominee who is locked in a dead heat against Republican Mike Rogers.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T23:32:27.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 22.6,
+          "neuP": 77.4,
+          "label": "negative",
+          "confidence": 0.81
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Appeals court hears arguments in Trump admin's voting suit against California",
+        "link": "https://abcnews.com/Politics/federal-appeals-court-hear-arguments-trump-administrations-voting/story?id=137546706",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A federal appeals court had a rare Sunday hearing in the Justice Department's voting lawsuit against California.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T23:32:10.000Z",
+        "sentiment": {
+          "posP": 11,
+          "negP": 14.8,
+          "neuP": 74.2,
+          "label": "neutral",
+          "confidence": 0.05
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrat Scott Colom aims for deep-red Mississippi Senate seat",
+        "link": "https://abcnews.com/Politics/democrats-aim-deep-red-mississippi-senate-seat-scott/story?id=137484924",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In a climate where polls show Trump's approval cratering, Dems are optimistic about Scott Colom's chances of flipping Republican senator's seat in deep-red Mississippi.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T16:40:38.000Z",
+        "sentiment": {
+          "posP": 19.9,
+          "negP": 0,
+          "neuP": 80.1,
+          "label": "positive",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "WATCH:  Obama, Trump hit the campaign trail ahead of critical midterm elections",
+        "link": "https://abcnews.com/video/137540917/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Both the Democratic and Republican parties are now leaning into presidential power amid early voting for the midterm elections.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T19:01:37.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 6.8,
+          "neuP": 85.3,
+          "label": "neutral",
+          "confidence": 0.1
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.93,
-      "neu": 83.97,
-      "neg": 10.11,
-      "count": 32
+      "pos": 5.43,
+      "neu": 83.96,
+      "neg": 10.62,
+      "count": 34
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 3.53,
-        "neu": 88.39,
-        "neg": 8.09,
-        "count": 7
-      },
-      {
-        "source": "NYT",
-        "pos": 6.15,
-        "neu": 79.7,
-        "neg": 14.15,
-        "count": 4
-      },
-      {
-        "source": "Fox News",
-        "pos": 10.88,
-        "neu": 72.75,
-        "neg": 16.38,
-        "count": 4
+        "pos": 3.38,
+        "neu": 86.54,
+        "neg": 10.08,
+        "count": 9
       },
       {
         "source": "CBS News",
-        "pos": 8.18,
-        "neu": 86.33,
-        "neg": 5.5,
-        "count": 4
+        "pos": 7.57,
+        "neu": 80,
+        "neg": 12.43,
+        "count": 6
+      },
+      {
+        "source": "NYT",
+        "pos": 4.92,
+        "neu": 81.56,
+        "neg": 13.52,
+        "count": 5
       },
       {
         "source": "ABC News",
-        "pos": 6.95,
-        "neu": 82.5,
-        "neg": 10.55,
+        "pos": 9.7,
+        "neu": 78.4,
+        "neg": 11.9,
         "count": 4
       },
       {
@@ -5534,16 +5527,16 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.91,
-        "neu": 81.79,
-        "neg": 11.3,
+        "pos": 6.3,
+        "neu": 81.37,
+        "neg": 12.33,
         "count": 14
       },
       {
         "topic": "Policy",
-        "pos": 4.1,
-        "neu": 90.14,
-        "neg": 5.76,
+        "pos": 2.6,
+        "neu": 91.04,
+        "neg": 6.36,
         "count": 5
       },
       {
@@ -5554,18 +5547,18 @@
         "count": 5
       },
       {
+        "topic": "Legal",
+        "pos": 4.52,
+        "neu": 79.22,
+        "neg": 16.26,
+        "count": 5
+      },
+      {
         "topic": "Economy",
         "pos": 4.75,
         "neu": 89.05,
         "neg": 6.2,
         "count": 4
-      },
-      {
-        "topic": "Legal",
-        "pos": 3.87,
-        "neu": 75.77,
-        "neg": 20.37,
-        "count": 3
       },
       {
         "topic": "Public Statements",
@@ -5599,28 +5592,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-25T17:52:24.566Z",
+        "label": "2026-10-25T19:37:49.677Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T18:52:24.566Z",
+        "label": "2026-10-25T20:37:49.677Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T19:52:24.566Z",
+        "label": "2026-10-25T21:37:49.677Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T20:52:24.566Z",
+        "label": "2026-10-25T22:37:49.677Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5629,28 +5622,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-25T17:52:24.567Z",
+        "label": "2026-10-25T19:37:49.677Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T18:52:24.567Z",
+        "label": "2026-10-25T20:37:49.677Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T19:52:24.567Z",
+        "label": "2026-10-25T21:37:49.677Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T20:52:24.567Z",
+        "label": "2026-10-25T22:37:49.677Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5730,7 +5723,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-25T21:52:24.568Z",
+    "generatedAt": "2026-10-25T23:37:49.678Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5852,7 +5845,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 163,
-      "potusArticles": 32,
+      "potusArticles": 34,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
