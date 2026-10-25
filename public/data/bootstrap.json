@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-25T06:57:02.440Z",
+  "generatedAt": "2026-10-25T12:29:34.630Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 166,
-    "potusArticles": 36
+    "usaArticles": 165,
+    "potusArticles": 28
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-25T02:57:02.441Z",
+          "label": "2026-10-25T08:29:34.631Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T03:57:02.441Z",
+          "label": "2026-10-25T09:29:34.631Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T04:57:02.441Z",
+          "label": "2026-10-25T10:29:34.631Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T05:57:02.441Z",
+          "label": "2026-10-25T11:29:34.631Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-25T02:57:02.441Z",
+          "label": "2026-10-25T08:29:34.631Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T03:57:02.441Z",
+          "label": "2026-10-25T09:29:34.631Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T04:57:02.441Z",
+          "label": "2026-10-25T10:29:34.631Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-25T05:57:02.441Z",
+          "label": "2026-10-25T11:29:34.631Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.42,
-      "neu": 80.74,
-      "neg": 11.83,
-      "count": 166
+      "pos": 7.73,
+      "neu": 81.88,
+      "neg": 10.4,
+      "count": 165
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.6,
-        "neu": 81.6,
-        "neg": 9.8,
-        "count": 42
+        "pos": 7.75,
+        "neu": 82.72,
+        "neg": 9.53,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 9.17,
-        "neu": 77.91,
-        "neg": 12.93,
+        "pos": 12.61,
+        "neu": 79.8,
+        "neg": 7.59,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.43,
-        "neu": 80.25,
-        "neg": 14.31,
+        "pos": 5.99,
+        "neu": 79.98,
+        "neg": 14.03,
         "count": 26
       },
       {
@@ -4591,16 +4591,16 @@
       },
       {
         "source": "NYT",
-        "pos": 7.53,
-        "neu": 76.99,
-        "neg": 15.47,
+        "pos": 6.62,
+        "neu": 82.39,
+        "neg": 10.99,
         "count": 20
       },
       {
         "source": "ABC News",
         "pos": 6.29,
-        "neu": 86.67,
-        "neg": 7.05,
+        "neu": 86.27,
+        "neg": 7.44,
         "count": 20
       },
       {
@@ -4638,34 +4638,34 @@
           "count": 1
         },
         {
+          "name": "Energy",
+          "bias": 6.93,
+          "count": 9
+        },
+        {
           "name": "Healthcare",
-          "bias": -11.92,
-          "count": 6
+          "bias": -5.81,
+          "count": 7
         },
         {
           "name": "Materials",
-          "bias": 8.3,
-          "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": 6.7,
-          "count": 6
-        },
-        {
-          "name": "Real Estate",
-          "bias": -6.23,
+          "bias": 5.53,
           "count": 3
         },
         {
-          "name": "Technology",
-          "bias": -5.32,
-          "count": 129
+          "name": "Finance",
+          "bias": -2.68,
+          "count": 17
         },
         {
-          "name": "Finance",
-          "bias": -3.16,
-          "count": 17
+          "name": "Technology",
+          "bias": -2.66,
+          "count": 130
+        },
+        {
+          "name": "Real Estate",
+          "bias": -0.3,
+          "count": 3
         },
         {
           "name": "Manufacturing",
@@ -4675,31 +4675,31 @@
       ],
       "pos": [
         {
-          "name": "Materials",
-          "bias": 8.3,
-          "count": 2
+          "name": "Energy",
+          "bias": 6.93,
+          "count": 9
         },
         {
-          "name": "Energy",
-          "bias": 6.7,
-          "count": 6
+          "name": "Materials",
+          "bias": 5.53,
+          "count": 3
         }
       ],
       "neu": [
         {
-          "name": "Real Estate",
-          "bias": -6.23,
-          "count": 3
+          "name": "Finance",
+          "bias": -2.68,
+          "count": 17
         },
         {
           "name": "Technology",
-          "bias": -5.32,
-          "count": 129
+          "bias": -2.66,
+          "count": 130
         },
         {
-          "name": "Finance",
-          "bias": -3.16,
-          "count": 17
+          "name": "Real Estate",
+          "bias": -0.3,
+          "count": 3
         }
       ],
       "neg": [
@@ -4715,40 +4715,40 @@
         },
         {
           "name": "Healthcare",
-          "bias": -11.92,
-          "count": 6
+          "bias": -5.81,
+          "count": 7
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-25T02:57:02.442Z",
-          "pos": 4,
-          "neu": 80,
-          "neg": 16,
+          "label": "2026-10-25T08:29:34.632Z",
+          "pos": 8,
+          "neu": 91,
+          "neg": 2,
           "count": 4
         },
         {
-          "label": "2026-10-25T03:57:02.442Z",
-          "pos": 3,
-          "neu": 86,
-          "neg": 11,
+          "label": "2026-10-25T09:29:34.632Z",
+          "pos": 7,
+          "neu": 65,
+          "neg": 27,
           "count": 2
         },
         {
-          "label": "2026-10-25T04:57:02.442Z",
-          "pos": 3,
-          "neu": 77,
-          "neg": 20,
-          "count": 7
+          "label": "2026-10-25T10:29:34.632Z",
+          "pos": 7,
+          "neu": 84,
+          "neg": 9,
+          "count": 10
         },
         {
-          "label": "2026-10-25T05:57:02.442Z",
-          "pos": 5,
-          "neu": 76,
-          "neg": 19,
-          "count": 4
+          "label": "2026-10-25T11:29:34.632Z",
+          "pos": 12,
+          "neu": 83,
+          "neg": 5,
+          "count": 23
         }
       ]
     }
@@ -4956,42 +4956,42 @@
         "category": "world"
       },
       {
-        "title": "Obama compares Trump's White House renovations to 'Saddam Hussein opening a Cheesecake Factory' at Ohio rally",
-        "link": "https://www.foxnews.com/politics/obama-compares-trumps-white-house-renovations-saddam-hussein-opening-cheesecake-factory-ohio-rally",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Barack Obama compared Trump's White House renovations to a Cheesecake Factory run by Saddam Hussein at a Cleveland rally for Ohio Democrats.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T22:35:34.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Alaska Election Gambit Shows Justice Dept. Has Bowed to Trump’s Demands",
-        "link": "https://www.nytimes.com/2026/10/24/us/politics/alaska-senate-election-trump-justice-department.html",
+        "title": "Latinos Are Now America’s Most Important Swing Voters",
+        "link": "https://www.nytimes.com/2026/10/25/us/politics/latino-voters-poll-midterm-elections.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "With moves in Alaska and California, the department has stepped up interventions in the midterm elections as the president’s instrument of unmediated executive power.",
+        "description": "Latinos helped fuel President Trump’s return to the White House. But Democrats have won back the trust of many Hispanic voters over the past two years.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T19:21:11.000Z",
+        "publishedAt": "2026-10-25T09:01:38.000Z",
         "sentiment": {
-          "posP": 9.1,
+          "posP": 22.7,
           "negP": 0,
-          "neuP": 90.9,
+          "neuP": 77.3,
           "label": "positive",
-          "confidence": 0.53
+          "confidence": 0.84
+        },
+        "category": "usa"
+      },
+      {
+        "title": "In the Venezuelan stronghold of Doral, some voters discouraged by Trump's policies",
+        "link": "https://www.cbsnews.com/news/venezuelan-stronghold-doral-florida-voters-trump-policies-midterms/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Doral, Florida, has the largest Venezuelan population of any city in the country.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T01:47:44.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 9.9,
+          "neuP": 84.6,
+          "label": "negative",
+          "confidence": 0.3
         },
         "category": "usa"
       }
@@ -5198,162 +5198,22 @@
         "category": "world"
       },
       {
-        "title": "Obama compares Trump's White House renovations to 'Saddam Hussein opening a Cheesecake Factory' at Ohio rally",
-        "link": "https://www.foxnews.com/politics/obama-compares-trumps-white-house-renovations-saddam-hussein-opening-cheesecake-factory-ohio-rally",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Latinos Are Now America’s Most Important Swing Voters",
+        "link": "https://www.nytimes.com/2026/10/25/us/politics/latino-voters-poll-midterm-elections.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Barack Obama compared Trump's White House renovations to a Cheesecake Factory run by Saddam Hussein at a Cleveland rally for Ohio Democrats.",
+        "description": "Latinos helped fuel President Trump’s return to the White House. But Democrats have won back the trust of many Hispanic voters over the past two years.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T22:35:34.000Z",
+        "publishedAt": "2026-10-25T09:01:38.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 22.7,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Alaska Election Gambit Shows Justice Dept. Has Bowed to Trump’s Demands",
-        "link": "https://www.nytimes.com/2026/10/24/us/politics/alaska-senate-election-trump-justice-department.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "With moves in Alaska and California, the department has stepped up interventions in the midterm elections as the president’s instrument of unmediated executive power.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T19:21:11.000Z",
-        "sentiment": {
-          "posP": 9.1,
-          "negP": 0,
-          "neuP": 90.9,
+          "neuP": 77.3,
           "label": "positive",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What to Know About Alaska’s Senate Race",
-        "link": "https://www.nytimes.com/2026/10/23/us/politics/alaska-senate-race-explainer.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump told the Justice Department to intervene in the race, where polling shows Republicans at risk of losing a seat.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-23T23:22:52.000Z",
-        "sentiment": {
-          "posP": 10.6,
-          "negP": 14.6,
-          "neuP": 74.8,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Obama Issues Searing Attacks on Trump, Ramaswamy in Return to Campaign Trail",
-        "link": "https://www.nytimes.com/2026/10/24/us/politics/obama-trump-midterms-campaign.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The 44th president sharply criticized Mr. Trump, who hit back later in the day. Mr. Obama also assailed Vivek Ramaswamy, the Republican nominee for governor of Ohio.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T02:39:57.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 12.7,
-          "neuP": 87.3,
-          "label": "negative",
-          "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Why Democrats Could Find It Hard to Win the Senate Despite Their Strong Polls",
-        "link": "https://www.nytimes.com/2026/10/24/us/politics/democrats-expectations-blue-wave.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats are increasingly optimistic about the midterms. But they are being outspent by Republicans. And they are trying to compete in states that favored President Trump by large margins.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T17:00:54.000Z",
-        "sentiment": {
-          "posP": 23.6,
-          "negP": 2.7,
-          "neuP": 73.7,
-          "label": "positive",
-          "confidence": 0.9
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Ukraine’s Feeling of Moral Whiplash at the Hands of Trump",
-        "link": "https://www.nytimes.com/2026/10/24/world/europe/ukraine-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The United States once declared that Ukraine’s fight was the front line in a global battle for freedom. Now the Trump administration is sending money to Moscow.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T09:03:21.000Z",
-        "sentiment": {
-          "posP": 19,
-          "negP": 11.6,
-          "neuP": 69.4,
-          "label": "positive",
-          "confidence": 0.51
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What Happens if Trump Doesn’t Like the Midterm Results?",
-        "link": "https://www.nytimes.com/2026/10/24/opinion/trump-midterm-elections-results-predictions.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Hope, dread and the final stretch to Election Day.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T20:09:53.000Z",
-        "sentiment": {
-          "posP": 23.1,
-          "negP": 12.8,
-          "neuP": 64.1,
-          "label": "positive",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "She Planned to Protest Trump. She Didn’t Plan on Getting Punched.",
-        "link": "https://www.nytimes.com/2026/10/24/us/trump-protester-punched-youngstown-ohio.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Blake Miley yelled “fascist” as President Trump spoke at a midterm campaign rally. The violence that followed “was not right,” she said.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T18:08:58.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 16.9,
-          "neuP": 83.1,
-          "label": "negative",
-          "confidence": 0.73
+          "confidence": 0.84
         },
         "category": "usa"
       },
@@ -5458,46 +5318,179 @@
         "category": "usa"
       },
       {
-        "title": "Democrats, voting-rights groups challenge Trump's bid to block Alaska Senate certification",
-        "link": "https://www.cnbc.com/2026/10/24/alaska-senate-doj-certification-lawsuit.html",
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
+          "label": "neutral",
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
+        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-24T22:56:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "What Democrats and Republicans fear most about each other: CNBC survey has the answers",
+        "link": "https://www.cnbc.com/2026/10/25/cnbc-survey-midterm-election-voter-fears.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Lawsuits filed by candidate Mary Peltola and a voters' rights group challenge Trump's preemptive efforts to block a Democratic Senate victory in Alaska.",
+        "description": "The economy is still a key issue in the 2026 election, but voters are concerned about Trump testing the bounds of the office and Democratic Socialist polices.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-24T19:57:24.000Z",
+        "publishedAt": "2026-10-25T12:00:01.000Z",
         "sentiment": {
-          "posP": 7,
-          "negP": 20,
-          "neuP": 73,
+          "posP": 0,
+          "negP": 5.1,
+          "neuP": 94.9,
           "label": "negative",
-          "confidence": 0.7
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "America by the numbers: How voters feel about the economy, inflation, AI and Trump",
+        "link": "https://www.cnbc.com/2026/10/23/america-by-the-numbers-how-voters-feel-about-the-economy-inflation-ai-and-trump.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "With the U.S. midterm elections looming, Americans are nearly as gloomy about the economy as they were when the nation was emerging from the pandemic.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T10:58:30.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 7.7,
+          "neuP": 92.3,
+          "label": "negative",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's executive order targets mortgage insurance, refinance costs. What it means for borrowers",
+        "link": "https://www.cnbc.com/2026/10/23/trump-mortgage-executive-order-costs.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump's executive order on housing aims to lower mortgage costs. Here's what it means for homeowners and buyers.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T22:27:06.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 6.8,
+          "neuP": 93.2,
+          "label": "negative",
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump dropping some Canada tariffs but 'replacing' them with other products",
+        "link": "https://www.cnbc.com/2026/10/23/trump-tariffs-canada-susan-collins.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Sen. Susan Collins announced Canada was dropping Canadian tariffs, but the White House later said it was \"replacing\" the ones removed from the list.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-23T21:26:59.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.93,
-      "neu": 84.99,
-      "neg": 9.08,
-      "count": 36
+      "pos": 4.83,
+      "neu": 86.57,
+      "neg": 8.6,
+      "count": 28
     },
     "sourceLeaderboard": [
       {
-        "source": "NYT",
-        "pos": 10.93,
-        "neu": 79.81,
-        "neg": 9.26,
-        "count": 9
-      },
-      {
         "source": "NBC News",
-        "pos": 4.61,
-        "neu": 87.15,
-        "neg": 8.24,
-        "count": 8
+        "pos": 3.07,
+        "neu": 89.64,
+        "neg": 7.29,
+        "count": 7
       },
       {
         "source": "CBS News",
@@ -5528,11 +5521,11 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 4.5,
-        "neu": 95.5,
-        "neg": 0,
-        "count": 2
+        "source": "NYT",
+        "pos": 11.9,
+        "neu": 84.1,
+        "neg": 4,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5545,17 +5538,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.73,
-        "neu": 84.8,
-        "neg": 8.47,
-        "count": 20
+        "pos": 6.35,
+        "neu": 85.22,
+        "neg": 8.44,
+        "count": 13
       },
       {
         "topic": "Policy",
-        "pos": 4.9,
-        "neu": 87.7,
-        "neg": 7.4,
-        "count": 7
+        "pos": 2.55,
+        "neu": 90.75,
+        "neg": 6.7,
+        "count": 6
       },
       {
         "topic": "Foreign Policy",
@@ -5566,17 +5559,17 @@
       },
       {
         "topic": "Economy",
-        "pos": 6.33,
-        "neu": 87.1,
-        "neg": 6.57,
-        "count": 3
+        "pos": 4.75,
+        "neu": 89.05,
+        "neg": 6.2,
+        "count": 4
       },
       {
         "topic": "Legal",
-        "pos": 3.5,
-        "neu": 73.5,
-        "neg": 23,
-        "count": 2
+        "pos": 0,
+        "neu": 74,
+        "neg": 26,
+        "count": 1
       }
     ]
   },
@@ -5603,28 +5596,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-25T02:57:02.444Z",
+        "label": "2026-10-25T08:29:34.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T03:57:02.444Z",
+        "label": "2026-10-25T09:29:34.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T04:57:02.444Z",
+        "label": "2026-10-25T10:29:34.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T05:57:02.444Z",
+        "label": "2026-10-25T11:29:34.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5633,28 +5626,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-25T02:57:02.444Z",
+        "label": "2026-10-25T08:29:34.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T03:57:02.444Z",
+        "label": "2026-10-25T09:29:34.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T04:57:02.444Z",
+        "label": "2026-10-25T10:29:34.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-25T05:57:02.444Z",
+        "label": "2026-10-25T11:29:34.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5734,7 +5727,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-25T06:57:02.445Z",
+    "generatedAt": "2026-10-25T12:29:34.635Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5855,8 +5848,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 166,
-      "potusArticles": 36,
+      "usaArticles": 165,
+      "potusArticles": 28,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
