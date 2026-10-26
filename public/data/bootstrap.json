@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-26T07:02:57.350Z",
+  "generatedAt": "2026-10-26T14:06:45.733Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 167,
-    "potusArticles": 37
+    "potusArticles": 31
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-26T03:02:57.350Z",
+          "label": "2026-10-26T10:06:45.734Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T04:02:57.350Z",
+          "label": "2026-10-26T11:06:45.734Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T05:02:57.350Z",
+          "label": "2026-10-26T12:06:45.734Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T06:02:57.350Z",
+          "label": "2026-10-26T13:06:45.734Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-26T03:02:57.351Z",
+          "label": "2026-10-26T10:06:45.734Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T04:02:57.351Z",
+          "label": "2026-10-26T11:06:45.734Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T05:02:57.351Z",
+          "label": "2026-10-26T12:06:45.734Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T06:02:57.351Z",
+          "label": "2026-10-26T13:06:45.734Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.03,
-      "neu": 81.88,
-      "neg": 11.09,
+      "pos": 7.7,
+      "neu": 81.73,
+      "neg": 10.57,
       "count": 167
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.42,
-        "neu": 82.55,
-        "neg": 11.04,
-        "count": 42
+        "pos": 8.53,
+        "neu": 82.7,
+        "neg": 8.77,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 9.22,
-        "neu": 77.96,
-        "neg": 12.82,
+        "pos": 9.54,
+        "neu": 76.23,
+        "neg": 14.23,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.5,
-        "neu": 82.73,
-        "neg": 11.77,
+        "pos": 5.11,
+        "neu": 83.08,
+        "neg": 11.81,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.1,
-        "neu": 83.16,
-        "neg": 10.73,
-        "count": 21
+        "pos": 8.03,
+        "neu": 82.93,
+        "neg": 9.05,
+        "count": 22
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.9,
-        "neu": 84.59,
-        "neg": 6.5,
+        "pos": 8.14,
+        "neu": 85.08,
+        "neg": 6.78,
         "count": 20
       },
       {
@@ -4638,56 +4638,67 @@
           "count": 1
         },
         {
-          "name": "Energy",
-          "bias": -11.73,
-          "count": 7
-        },
-        {
           "name": "Healthcare",
-          "bias": -9.52,
-          "count": 5
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -8.6,
-          "count": 2
-        },
-        {
-          "name": "Finance",
-          "bias": -6.49,
-          "count": 15
-        },
-        {
-          "name": "Technology",
-          "bias": -4.12,
-          "count": 131
-        },
-        {
-          "name": "Real Estate",
-          "bias": -0.45,
-          "count": 2
+          "bias": -13.19,
+          "count": 8
         },
         {
           "name": "Materials",
-          "bias": 0.27,
-          "count": 4
-        }
-      ],
-      "pos": [],
-      "neu": [
-        {
-          "name": "Healthcare",
-          "bias": -9.52,
-          "count": 5
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -8.6,
+          "bias": -10.9,
           "count": 2
         },
         {
+          "name": "Energy",
+          "bias": -7.99,
+          "count": 10
+        },
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
+        },
+        {
           "name": "Finance",
-          "bias": -6.49,
+          "bias": -4.07,
+          "count": 15
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 3.4,
+          "count": 2
+        },
+        {
+          "name": "Technology",
+          "bias": -2.78,
+          "count": 130
+        }
+      ],
+      "pos": [
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 3.4,
+          "count": 2
+        }
+      ],
+      "neu": [
+        {
+          "name": "Materials",
+          "bias": -10.9,
+          "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": -7.99,
+          "count": 10
+        },
+        {
+          "name": "Finance",
+          "bias": -4.07,
           "count": 15
         }
       ],
@@ -4703,41 +4714,41 @@
           "count": 1
         },
         {
-          "name": "Energy",
-          "bias": -11.73,
-          "count": 7
+          "name": "Healthcare",
+          "bias": -13.19,
+          "count": 8
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-26T03:02:57.352Z",
-          "pos": 9,
+          "label": "2026-10-26T10:06:45.736Z",
+          "pos": 10,
           "neu": 78,
-          "neg": 13,
-          "count": 3
+          "neg": 12,
+          "count": 14
         },
         {
-          "label": "2026-10-26T04:02:57.352Z",
-          "pos": 16,
-          "neu": 82,
-          "neg": 2,
-          "count": 3
+          "label": "2026-10-26T11:06:45.736Z",
+          "pos": 8,
+          "neu": 81,
+          "neg": 11,
+          "count": 12
         },
         {
-          "label": "2026-10-26T05:02:57.352Z",
+          "label": "2026-10-26T12:06:45.736Z",
           "pos": 7,
-          "neu": 77,
-          "neg": 16,
-          "count": 7
+          "neu": 81,
+          "neg": 12,
+          "count": 18
         },
         {
-          "label": "2026-10-26T06:02:57.352Z",
-          "pos": 13,
-          "neu": 82,
-          "neg": 5,
-          "count": 6
+          "label": "2026-10-26T13:06:45.736Z",
+          "pos": 6,
+          "neu": 85,
+          "neg": 9,
+          "count": 31
         }
       ]
     }
@@ -4945,42 +4956,42 @@
         "category": "world"
       },
       {
-        "title": "Nicki Minaj pledges to support Donald Trump again during Michigan Republican campaign rally",
-        "link": "https://www.foxnews.com/politics/nicki-minaj-pledges-support-donald-trump-michigan-republican-campaign-rally",
+        "title": "Trump escalates attacks on El-Sayed as Michigan Senate race tightens and more top headlines",
+        "link": "https://www.foxnews.com/us/trump-escalates-attacks-el-sayed-michigan-senate-race-tightens-more-top-headlines",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Nicki Minaj told President Donald Trump she would support him forever at a Michigan rally backing Mike Rogers and John James in the midterms.",
+        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T06:39:39.000Z",
+        "publishedAt": "2026-10-26T11:20:27.000Z",
         "sentiment": {
-          "posP": 16.5,
-          "negP": 0,
-          "neuP": 83.5,
+          "posP": 12.9,
+          "negP": 7.2,
+          "neuP": 79.9,
           "label": "positive",
-          "confidence": 0.67
+          "confidence": 0.32
         },
         "category": "usa"
       },
       {
-        "title": "Ninth Circuit questions Trump DOJ's emergency request to set aside 20,000 California mail ballots",
-        "link": "https://www.foxnews.com/politics/ninth-circuit-questions-trump-doj-emergency-request-set-aside-20000-california-mail-ballots",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Where the Trump administration's lawsuits seeking voter data stand",
+        "link": "https://www.cbsnews.com/news/trump-lawsuits-state-voter-rolls-justice-department/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A Ninth Circuit panel grilled Justice Department lawyers over forcing California to set aside mail-in ballots tied to suspected noncitizens.",
+        "description": "The Justice Department has filed lawsuits against 30 states and the District of Columbia in an effort to force them to hand over their unredacted voter rolls containing voters' sensitive information.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T01:26:06.000Z",
+        "publishedAt": "2026-10-26T13:57:23.000Z",
         "sentiment": {
-          "posP": 9,
-          "negP": 11.9,
-          "neuP": 79.1,
-          "label": "neutral",
-          "confidence": 0.03
+          "posP": 14.4,
+          "negP": 7,
+          "neuP": 78.6,
+          "label": "positive",
+          "confidence": 0.66
         },
         "category": "usa"
       }
@@ -5187,96 +5198,96 @@
         "category": "world"
       },
       {
-        "title": "Nicki Minaj pledges to support Donald Trump again during Michigan Republican campaign rally",
-        "link": "https://www.foxnews.com/politics/nicki-minaj-pledges-support-donald-trump-michigan-republican-campaign-rally",
+        "title": "Trump escalates attacks on El-Sayed as Michigan Senate race tightens and more top headlines",
+        "link": "https://www.foxnews.com/us/trump-escalates-attacks-el-sayed-michigan-senate-race-tightens-more-top-headlines",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Nicki Minaj told President Donald Trump she would support him forever at a Michigan rally backing Mike Rogers and John James in the midterms.",
+        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T06:39:39.000Z",
+        "publishedAt": "2026-10-26T11:20:27.000Z",
         "sentiment": {
-          "posP": 16.5,
-          "negP": 0,
-          "neuP": 83.5,
+          "posP": 12.9,
+          "negP": 7.2,
+          "neuP": 79.9,
           "label": "positive",
-          "confidence": 0.67
+          "confidence": 0.32
         },
         "category": "usa"
       },
       {
-        "title": "Ninth Circuit questions Trump DOJ's emergency request to set aside 20,000 California mail ballots",
-        "link": "https://www.foxnews.com/politics/ninth-circuit-questions-trump-doj-emergency-request-set-aside-20000-california-mail-ballots",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Where the Trump administration's lawsuits seeking voter data stand",
+        "link": "https://www.cbsnews.com/news/trump-lawsuits-state-voter-rolls-justice-department/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A Ninth Circuit panel grilled Justice Department lawyers over forcing California to set aside mail-in ballots tied to suspected noncitizens.",
+        "description": "The Justice Department has filed lawsuits against 30 states and the District of Columbia in an effort to force them to hand over their unredacted voter rolls containing voters' sensitive information.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T01:26:06.000Z",
+        "publishedAt": "2026-10-26T13:57:23.000Z",
         "sentiment": {
-          "posP": 9,
-          "negP": 11.9,
-          "neuP": 79.1,
-          "label": "neutral",
-          "confidence": 0.03
+          "posP": 14.4,
+          "negP": 7,
+          "neuP": 78.6,
+          "label": "positive",
+          "confidence": 0.66
         },
         "category": "usa"
       },
       {
-        "title": "Trump’s Election Attacks Enter New Pre-emptive Phase",
-        "link": "https://www.nytimes.com/2026/10/25/us/politics/trumps-election-alaska.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Democratic, Republican strategists react to polling data ahead of the midterms, Trump's likability",
+        "link": "https://www.cbsnews.com/video/democratic-republican-strategists-react-to-latest-polling-data-ahead-of-the-midterms-trumps-likability/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A lawsuit by the Justice Department challenging a potential narrow loss by the GOP Senate incumbent in Alaska reflects a new tactic by the president to try to shape the election results.",
+        "description": "Political strategists Joel Payne and Mike Hahn join CBS News with their take on the latest polling data ahead of the midterms and the messaging from campaigns across the U.S.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T01:12:21.000Z",
+        "publishedAt": "2026-10-26T13:55:31.000Z",
         "sentiment": {
-          "posP": 11.6,
-          "negP": 16.5,
-          "neuP": 71.9,
+          "posP": 5,
+          "negP": 0,
+          "neuP": 95,
+          "label": "positive",
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's oil and gas stocks gained millions during Iran war",
+        "link": "https://www.cbsnews.com/news/trump-oil-gas-stocks-gain-millions-iran-war-democratic-report-finds/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A report from congressional Democrats found the president purchased millions in oil and gas stocks during the war.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T13:52:54.000Z",
+        "sentiment": {
+          "posP": 7.6,
+          "negP": 22.7,
+          "neuP": 69.7,
           "label": "negative",
-          "confidence": 0.27
+          "confidence": 0.74
         },
         "category": "usa"
       },
       {
-        "title": "In Islamophobic Rant, Trump Seeks to Stir Republican Base in Michigan",
-        "link": "https://www.nytimes.com/2026/10/25/us/elections/trump-michigan-el-sayed-rogers.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump and Obama hold dueling rallies in closing days of midterms",
+        "link": "https://www.cbsnews.com/video/trump-and-obama-hold-dueling-rallies-in-closing-days-of-midterms/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president contended that Dr. Abdul El-Sayed, a Muslim, would “invite hordes of jihadis to our shores” as he sought to bolster the G.O.P. candidate in a tight Senate race.",
+        "description": "President Trump and former President Barack Obama held dueling rallies in Michigan in the final days before the midterm election. Nancy Cordes has more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T02:26:14.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 5.9,
-          "neuP": 94.1,
-          "label": "negative",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How Obama and Trump Made their Cases in Dueling Midterm Speeches",
-        "link": "https://www.nytimes.com/2026/10/25/us/politics/obama-trump-competing-rallies-midterms.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "At rallies this weekend, Mr. Obama and Mr. Trump delivered two starkly contrasting pitches, differing in style and substance.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T05:40:30.000Z",
+        "publishedAt": "2026-10-26T13:41:33.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5287,226 +5298,219 @@
         "category": "usa"
       },
       {
-        "title": "How to Straddle the MAGA Divide",
-        "link": "https://www.nytimes.com/2026/10/25/business/how-to-straddle-the-maga-divide.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Beth Wilkinson is a Washington lawyer who has thrived representing the Trump administration’s enemies and allies alike. Does she represent a vanishing type?",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T17:00:21.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 11,
-          "neuP": 89,
-          "label": "negative",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he's weighing deal with Iran vs. action to \"finish them off\"",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-oil-gas-prices-strait-of-hormuz-midterms/",
+        "title": "F-16 uses \"headbutt maneuver\" to intercept plane near Mar-a-Lago",
+        "link": "https://www.cbsnews.com/news/fighter-jet-headbutt-maneuver-intercept-plane-palm-beach-trump-florida/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump said he's deciding between reaching an agreement with Tehran and taking action to \"finish them off.\"",
+        "description": "A fighter jet intercepted a plane over Palm Beach, Florida, on Saturday afternoon, as President Trump cast an early ballot in Florida's midterm election.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T06:14:08.000Z",
+        "publishedAt": "2026-10-26T13:07:09.000Z",
         "sentiment": {
-          "posP": 14.7,
+          "posP": 5.1,
           "negP": 0,
-          "neuP": 85.3,
-          "label": "positive",
-          "confidence": 0.61
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Poll finds Democrats still boosted by voters' economic concerns",
-        "link": "https://www.cbsnews.com/news/poll-house-estimate-midterm-elections-2026/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is a key factor driving support and opposition; turnout looms large.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T00:13:21.000Z",
-        "sentiment": {
-          "posP": 21,
-          "negP": 6.5,
-          "neuP": 72.5,
-          "label": "positive",
-          "confidence": 0.56
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump attacks Abdul El-Sayed in Michigan campaign stop",
-        "link": "https://www.cbsnews.com/video/trump-attacks-abdul-el-sayed-michigan-campaign-stop/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Candidates are in their last full week of campaigning before the midterm elections, and early voting is already underway in 43 states. The latest CBS News poll shows that most Americans do not approve of President Trump's handling of the economy or inflation. Nikole Killion reports from Port Huron, Michigan.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T23:42:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 8.3,
-          "neuP": 91.7,
-          "label": "negative",
-          "confidence": 0.62
-        },
-        "category": "usa"
-      },
-      {
-        "title": "60 Minutes transcript: Trump, Tina Peters and funds for Colorado",
-        "link": "https://www.cbsnews.com/news/trump-tina-peters-colorado-jared-polis-60-minutes-transcript/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Tina Peters, an election conspiracy theorist who supported President Trump's voting fraud claims, had her Colorado prison sentence commuted by Gov. Jared Polis after a White House pressure campaign.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T23:00:17.000Z",
-        "sentiment": {
-          "posP": 7.5,
-          "negP": 26.3,
-          "neuP": 66.2,
-          "label": "negative",
-          "confidence": 0.88
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump and Obama rally supporters in key battleground states ahead of midterms",
-        "link": "https://www.nbcnews.com/nightly-news/video/trump-and-obama-rally-supporters-in-key-battleground-states-ahead-of-midterms-272200773800",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump and former President Obama both took to Michigan this weekend to rally supporters in the key battleground state ahead of midterms. NBC News’ Shaquille Brewster reports from Michigan.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T22:49:25.000Z",
-        "sentiment": {
-          "posP": 11.8,
-          "negP": 11,
-          "neuP": 77.2,
+          "neuP": 94.9,
           "label": "neutral",
-          "confidence": 0.1
+          "confidence": 0.15
         },
         "category": "usa"
       },
       {
-        "title": "Trump leans into Islamophobic rhetoric at Michigan rally",
-        "link": "https://www.nbcnews.com/politics/2026-election/trump-leans-islamophobic-rhetoric-michigan-rally-rcna605572",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Iran shrugs off Trump's attack threats, says diplomacy ongoing",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-diplomacy-oil-prices-strait-of-hormuz/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president attacked Abdul El-Sayed, the Democratic Senate nominee who is locked in a dead heat against Republican Mike Rogers.",
+        "description": "Iran says indirect negotiations with the U.S. continue but rules out bending to Trump's demands, even if he orders new strikes.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T23:32:27.000Z",
+        "publishedAt": "2026-10-26T13:05:17.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 22.6,
-          "neuP": 77.4,
+          "negP": 21.1,
+          "neuP": 78.9,
           "label": "negative",
-          "confidence": 0.81
+          "confidence": 0.74
         },
         "category": "usa"
       },
       {
-        "title": "Here’s the biggest news you missed this weekend",
-        "link": "https://www.nbcnews.com/news/us-news/weekend-rundown-october-25-rcna605266",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "New poll shows Democrats have slight edge in House races; Trump and Obama take Michigan",
+        "link": "https://www.cbsnews.com/video/new-poll-shows-democrats-have-slight-edge-in-house-races-trump-and-obama-take-ohio/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Former President Barack Obama, appearing in Ohio Saturday at his first campaign rally for the midterm elections, characterized President Donald Trump as an agent of “chaos and cruelty” and a man of broken promises.",
+        "description": "Recent CBS News polling ahead of the midterms shows Democrats have a slight edge to take the majority in the House of Representatives. This comes as President Trump and former President Barack Obama rally in battleground states. CBS News' Nikole Killion reports, and Ravi Gupta, a former Obama administration official, breaks down the latest.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T22:00:42.000Z",
+        "publishedAt": "2026-10-26T13:04:55.000Z",
         "sentiment": {
-          "posP": 5.7,
-          "negP": 11.5,
-          "neuP": 82.8,
+          "posP": 0,
+          "negP": 3.9,
+          "neuP": 96.1,
           "label": "negative",
           "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "Appeals court hears arguments in Trump admin's voting suit against California",
-        "link": "https://abcnews.com/Politics/federal-appeals-court-hear-arguments-trump-administrations-voting/story?id=137546706",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
+        "title": "Trump says he'll soon decide whether to ‘make a deal’ with Iran or ‘finish it off'",
+        "link": "https://www.cnbc.com/2026/10/26/us-iran-war-hormuz.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A federal appeals court had a rare Sunday hearing in the Justice Department's voting lawsuit against California.",
+        "description": "Trump said he is weighing a deal with Iran against renewed military action as tensions escalate across the Middle East.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-25T23:48:38.000Z",
+        "publishedAt": "2026-10-26T11:49:17.000Z",
         "sentiment": {
-          "posP": 11,
-          "negP": 14.8,
-          "neuP": 74.2,
+          "posP": 0,
+          "negP": 7.6,
+          "neuP": 92.4,
+          "label": "negative",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Can GOP Rep. Brian Fitzpatrick, a moderate who's bucked Trump, keep his Pennsylvania swing seat?",
+        "link": "https://www.cnbc.com/2026/10/26/brian-fitzpatrick-bob-harvie-pennsylvania-senate-election.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "GOP Rep. Brian Fitzpatrick has consistently won his Pennsylvania swing seat, but Democrats say this election is an opportunity to oust the veteran lawmaker.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T12:33:16.000Z",
+        "sentiment": {
+          "posP": 14.4,
+          "negP": 0,
+          "neuP": 85.6,
+          "label": "positive",
+          "confidence": 0.72
+        },
+        "category": "usa"
+      },
+      {
+        "title": "What Democrats and Republicans fear most about each other: CNBC survey has the answers",
+        "link": "https://www.cnbc.com/2026/10/25/cnbc-survey-midterm-election-voter-fears.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The economy is still a key issue in the 2026 election, but voters are concerned about Trump testing the bounds of the office and Democratic Socialist polices.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-25T12:00:01.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 5.1,
+          "neuP": 94.9,
+          "label": "negative",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "America by the numbers: How voters feel about the economy, inflation, AI and Trump",
+        "link": "https://www.cnbc.com/2026/10/23/america-by-the-numbers-how-voters-feel-about-the-economy-inflation-ai-and-trump.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "With the U.S. midterm elections looming, Americans are nearly as gloomy about the economy as they were when the nation was emerging from the pandemic.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-24T10:58:30.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 7.7,
+          "neuP": 92.3,
+          "label": "negative",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Personal Attacks Intensify Amid Tight Midterm Races",
+        "link": "https://www.today.com/video/trump-and-obama-trade-jabs-ahead-of-midterm-elections-272216133628",
+        "source": "NBC News",
+        "sourceDomain": "today.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "While voters worry about the economy, some races in key battleground states are focusing on personal attacks. It comes as President Donald Trump and former President Barack Obama hit the campaign trail to rally their parties while trading jabs. NBC’s Gabe Gutierrez reports for TODAY.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T11:14:28.000Z",
+        "sentiment": {
+          "posP": 4.4,
+          "negP": 18.7,
+          "neuP": 76.9,
+          "label": "negative",
+          "confidence": 0.83
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
           "label": "neutral",
-          "confidence": 0.05
+          "confidence": 0.14
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.38,
-      "neu": 84.35,
-      "neg": 9.27,
-      "count": 37
+      "pos": 5.31,
+      "neu": 85.81,
+      "neg": 8.87,
+      "count": 31
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 4.32,
-        "neu": 85.53,
-        "neg": 10.14,
-        "count": 9
-      },
-      {
-        "source": "NYT",
-        "pos": 4.1,
-        "neu": 88.33,
-        "neg": 7.57,
-        "count": 6
-      },
-      {
         "source": "CBS News",
-        "pos": 9.44,
-        "neu": 79.54,
-        "neg": 11.02,
-        "count": 5
+        "pos": 4.51,
+        "neu": 86.9,
+        "neg": 8.59,
+        "count": 8
       },
       {
-        "source": "ABC News",
-        "pos": 10.92,
-        "neu": 77.34,
-        "neg": 11.74,
-        "count": 5
+        "source": "NBC News",
+        "pos": 5.3,
+        "neu": 86.85,
+        "neg": 7.85,
+        "count": 6
       },
       {
         "source": "WSJ",
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
+        "count": 4
+      },
+      {
+        "source": "ABC News",
+        "pos": 6.4,
+        "neu": 78.7,
+        "neg": 14.9,
         "count": 4
       },
       {
@@ -5517,11 +5521,18 @@
         "count": 3
       },
       {
+        "source": "NYT",
+        "pos": 6.5,
+        "neu": 87.5,
+        "neg": 6,
+        "count": 2
+      },
+      {
         "source": "Fox News",
-        "pos": 11.5,
-        "neu": 84.53,
-        "neg": 3.97,
-        "count": 3
+        "pos": 10.95,
+        "neu": 85.45,
+        "neg": 3.6,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5534,44 +5545,37 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.96,
-        "neu": 82.61,
-        "neg": 9.43,
-        "count": 16
+        "pos": 5.37,
+        "neu": 87.3,
+        "neg": 7.33,
+        "count": 13
+      },
+      {
+        "topic": "Foreign Policy",
+        "pos": 6.4,
+        "neu": 83.4,
+        "neg": 10.2,
+        "count": 6
       },
       {
         "topic": "Economy",
-        "pos": 5.8,
-        "neu": 86.83,
-        "neg": 7.37,
+        "pos": 4.85,
+        "neu": 83.87,
+        "neg": 11.28,
         "count": 6
       },
       {
         "topic": "Policy",
-        "pos": 2.6,
-        "neu": 91.04,
-        "neg": 6.36,
-        "count": 5
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 7.68,
-        "neu": 84.3,
-        "neg": 8.02,
+        "pos": 5.48,
+        "neu": 89.54,
+        "neg": 4.98,
         "count": 5
       },
       {
         "topic": "Legal",
-        "pos": 5.65,
-        "neu": 75.38,
-        "neg": 18.98,
-        "count": 4
-      },
-      {
-        "topic": "Public Statements",
         "pos": 0,
-        "neu": 100,
-        "neg": 0,
+        "neu": 74,
+        "neg": 26,
         "count": 1
       }
     ]
@@ -5599,28 +5603,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-26T03:02:57.354Z",
+        "label": "2026-10-26T10:06:45.738Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T04:02:57.354Z",
+        "label": "2026-10-26T11:06:45.738Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T05:02:57.354Z",
+        "label": "2026-10-26T12:06:45.738Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T06:02:57.354Z",
+        "label": "2026-10-26T13:06:45.738Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5629,28 +5633,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-26T03:02:57.354Z",
+        "label": "2026-10-26T10:06:45.739Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T04:02:57.354Z",
+        "label": "2026-10-26T11:06:45.739Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T05:02:57.354Z",
+        "label": "2026-10-26T12:06:45.739Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T06:02:57.354Z",
+        "label": "2026-10-26T13:06:45.739Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5730,7 +5734,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-26T07:02:57.355Z",
+    "generatedAt": "2026-10-26T14:06:45.740Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5852,7 +5856,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 167,
-      "potusArticles": 37,
+      "potusArticles": 31,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
