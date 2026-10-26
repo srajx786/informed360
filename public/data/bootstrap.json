@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-26T14:06:45.733Z",
+  "generatedAt": "2026-10-26T19:52:27.399Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 167,
-    "potusArticles": 31
+    "usaArticles": 170,
+    "potusArticles": 30
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-26T10:06:45.734Z",
+          "label": "2026-10-26T15:52:27.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T11:06:45.734Z",
+          "label": "2026-10-26T16:52:27.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T12:06:45.734Z",
+          "label": "2026-10-26T17:52:27.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T13:06:45.734Z",
+          "label": "2026-10-26T18:52:27.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-26T10:06:45.734Z",
+          "label": "2026-10-26T15:52:27.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T11:06:45.734Z",
+          "label": "2026-10-26T16:52:27.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T12:06:45.734Z",
+          "label": "2026-10-26T17:52:27.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T13:06:45.734Z",
+          "label": "2026-10-26T18:52:27.400Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.7,
-      "neu": 81.73,
-      "neg": 10.57,
-      "count": 167
+      "pos": 8.24,
+      "neu": 82.69,
+      "neg": 9.07,
+      "count": 170
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.53,
-        "neu": 82.7,
-        "neg": 8.77,
-        "count": 41
+        "pos": 9.82,
+        "neu": 83.68,
+        "neg": 6.51,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 9.54,
-        "neu": 76.23,
-        "neg": 14.23,
+        "pos": 9.07,
+        "neu": 78.66,
+        "neg": 12.27,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.11,
-        "neu": 83.08,
-        "neg": 11.81,
+        "pos": 7.14,
+        "neu": 84.43,
+        "neg": 8.42,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 8.03,
-        "neu": 82.93,
-        "neg": 9.05,
-        "count": 22
+        "pos": 9.87,
+        "neu": 81.47,
+        "neg": 8.66,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.14,
-        "neu": 85.08,
-        "neg": 6.78,
+        "pos": 5.73,
+        "neu": 87.87,
+        "neg": 6.4,
         "count": 20
       },
       {
@@ -4639,18 +4639,8 @@
         },
         {
           "name": "Healthcare",
-          "bias": -13.19,
-          "count": 8
-        },
-        {
-          "name": "Materials",
-          "bias": -10.9,
-          "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -7.99,
-          "count": 10
+          "bias": -6.9,
+          "count": 7
         },
         {
           "name": "Real Estate",
@@ -4658,19 +4648,24 @@
           "count": 1
         },
         {
-          "name": "Finance",
-          "bias": -4.07,
-          "count": 15
+          "name": "Energy",
+          "bias": 5.12,
+          "count": 5
         },
         {
-          "name": "Manufacturing",
-          "bias": 3.4,
-          "count": 2
+          "name": "Finance",
+          "bias": 4.01,
+          "count": 20
         },
         {
           "name": "Technology",
-          "bias": -2.78,
-          "count": 130
+          "bias": -1.17,
+          "count": 131
+        },
+        {
+          "name": "Materials",
+          "bias": -0.9,
+          "count": 2
         }
       ],
       "pos": [
@@ -4680,26 +4675,26 @@
           "count": 1
         },
         {
-          "name": "Manufacturing",
-          "bias": 3.4,
-          "count": 2
+          "name": "Energy",
+          "bias": 5.12,
+          "count": 5
+        },
+        {
+          "name": "Finance",
+          "bias": 4.01,
+          "count": 20
         }
       ],
       "neu": [
         {
+          "name": "Technology",
+          "bias": -1.17,
+          "count": 131
+        },
+        {
           "name": "Materials",
-          "bias": -10.9,
+          "bias": -0.9,
           "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -7.99,
-          "count": 10
-        },
-        {
-          "name": "Finance",
-          "bias": -4.07,
-          "count": 15
         }
       ],
       "neg": [
@@ -4715,40 +4710,40 @@
         },
         {
           "name": "Healthcare",
-          "bias": -13.19,
-          "count": 8
+          "bias": -6.9,
+          "count": 7
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-26T10:06:45.736Z",
-          "pos": 10,
-          "neu": 78,
-          "neg": 12,
-          "count": 14
-        },
-        {
-          "label": "2026-10-26T11:06:45.736Z",
+          "label": "2026-10-26T15:52:27.401Z",
           "pos": 8,
-          "neu": 81,
-          "neg": 11,
-          "count": 12
+          "neu": 87,
+          "neg": 5,
+          "count": 10
         },
         {
-          "label": "2026-10-26T12:06:45.736Z",
-          "pos": 7,
-          "neu": 81,
+          "label": "2026-10-26T16:52:27.401Z",
+          "pos": 11,
+          "neu": 77,
           "neg": 12,
-          "count": 18
+          "count": 15
         },
         {
-          "label": "2026-10-26T13:06:45.736Z",
-          "pos": 6,
-          "neu": 85,
-          "neg": 9,
-          "count": 31
+          "label": "2026-10-26T17:52:27.401Z",
+          "pos": 8,
+          "neu": 84,
+          "neg": 8,
+          "count": 24
+        },
+        {
+          "label": "2026-10-26T18:52:27.401Z",
+          "pos": 8,
+          "neu": 83,
+          "neg": 8,
+          "count": 18
         }
       ]
     }
@@ -4956,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Trump escalates attacks on El-Sayed as Michigan Senate race tightens and more top headlines",
-        "link": "https://www.foxnews.com/us/trump-escalates-attacks-el-sayed-michigan-senate-race-tightens-more-top-headlines",
+        "title": "Obama judge rules Trump DOJ illegally fired James Comey's daughter, rejects sweeping Article II claim",
+        "link": "https://www.foxnews.com/politics/obama-judge-rules-trump-doj-illegally-fired-james-comeys-daughter-rejects-sweeping-article-ii-claim",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
+        "description": "The Trump Justice Department fired Maurene Comey without cause, but a federal judge ruled it violated the Civil Service Reform Act and ordered backpay.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T11:20:27.000Z",
+        "publishedAt": "2026-10-26T18:41:05.000Z",
         "sentiment": {
-          "posP": 12.9,
-          "negP": 7.2,
-          "neuP": 79.9,
-          "label": "positive",
-          "confidence": 0.32
+          "posP": 4.7,
+          "negP": 24.3,
+          "neuP": 71,
+          "label": "negative",
+          "confidence": 0.84
         },
         "category": "usa"
       },
       {
-        "title": "Where the Trump administration's lawsuits seeking voter data stand",
-        "link": "https://www.cbsnews.com/news/trump-lawsuits-state-voter-rolls-justice-department/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Schiff accuses DOJ of trying to 'subvert' elections as GOP alleges same-name candidate meant to confuse voters",
+        "link": "https://www.foxnews.com/politics/schiff-accuses-doj-trying-subvert-elections-gop-alleges-same-name-candidate-meant-confuse-voters",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Justice Department has filed lawsuits against 30 states and the District of Columbia in an effort to force them to hand over their unredacted voter rolls containing voters' sensitive information.",
+        "description": "Adam Schiff accuses Trump's DOJ of trying to subvert Alaska's Senate election over a namesake Dan Sullivan candidacy that could confuse voters.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T13:57:23.000Z",
+        "publishedAt": "2026-10-26T18:10:40.000Z",
         "sentiment": {
-          "posP": 14.4,
-          "negP": 7,
-          "neuP": 78.6,
-          "label": "positive",
-          "confidence": 0.66
+          "posP": 0,
+          "negP": 20.2,
+          "neuP": 79.8,
+          "label": "negative",
+          "confidence": 0.77
         },
         "category": "usa"
       }
@@ -5198,122 +5193,102 @@
         "category": "world"
       },
       {
-        "title": "Trump escalates attacks on El-Sayed as Michigan Senate race tightens and more top headlines",
-        "link": "https://www.foxnews.com/us/trump-escalates-attacks-el-sayed-michigan-senate-race-tightens-more-top-headlines",
+        "title": "Obama judge rules Trump DOJ illegally fired James Comey's daughter, rejects sweeping Article II claim",
+        "link": "https://www.foxnews.com/politics/obama-judge-rules-trump-doj-illegally-fired-james-comeys-daughter-rejects-sweeping-article-ii-claim",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
+        "description": "The Trump Justice Department fired Maurene Comey without cause, but a federal judge ruled it violated the Civil Service Reform Act and ordered backpay.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T11:20:27.000Z",
+        "publishedAt": "2026-10-26T18:41:05.000Z",
         "sentiment": {
-          "posP": 12.9,
-          "negP": 7.2,
-          "neuP": 79.9,
-          "label": "positive",
-          "confidence": 0.32
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Where the Trump administration's lawsuits seeking voter data stand",
-        "link": "https://www.cbsnews.com/news/trump-lawsuits-state-voter-rolls-justice-department/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Justice Department has filed lawsuits against 30 states and the District of Columbia in an effort to force them to hand over their unredacted voter rolls containing voters' sensitive information.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T13:57:23.000Z",
-        "sentiment": {
-          "posP": 14.4,
-          "negP": 7,
-          "neuP": 78.6,
-          "label": "positive",
-          "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Democratic, Republican strategists react to polling data ahead of the midterms, Trump's likability",
-        "link": "https://www.cbsnews.com/video/democratic-republican-strategists-react-to-latest-polling-data-ahead-of-the-midterms-trumps-likability/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Political strategists Joel Payne and Mike Hahn join CBS News with their take on the latest polling data ahead of the midterms and the messaging from campaigns across the U.S.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T13:55:31.000Z",
-        "sentiment": {
-          "posP": 5,
-          "negP": 0,
-          "neuP": 95,
-          "label": "positive",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump's oil and gas stocks gained millions during Iran war",
-        "link": "https://www.cbsnews.com/news/trump-oil-gas-stocks-gain-millions-iran-war-democratic-report-finds/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A report from congressional Democrats found the president purchased millions in oil and gas stocks during the war.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T13:52:54.000Z",
-        "sentiment": {
-          "posP": 7.6,
-          "negP": 22.7,
-          "neuP": 69.7,
+          "posP": 4.7,
+          "negP": 24.3,
+          "neuP": 71,
           "label": "negative",
-          "confidence": 0.74
+          "confidence": 0.84
         },
         "category": "usa"
       },
       {
-        "title": "Trump and Obama hold dueling rallies in closing days of midterms",
-        "link": "https://www.cbsnews.com/video/trump-and-obama-hold-dueling-rallies-in-closing-days-of-midterms/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Schiff accuses DOJ of trying to 'subvert' elections as GOP alleges same-name candidate meant to confuse voters",
+        "link": "https://www.foxnews.com/politics/schiff-accuses-doj-trying-subvert-elections-gop-alleges-same-name-candidate-meant-confuse-voters",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump and former President Barack Obama held dueling rallies in Michigan in the final days before the midterm election. Nancy Cordes has more.",
+        "description": "Adam Schiff accuses Trump's DOJ of trying to subvert Alaska's Senate election over a namesake Dan Sullivan candidacy that could confuse voters.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T13:41:33.000Z",
+        "publishedAt": "2026-10-26T18:10:40.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 20.2,
+          "neuP": 79.8,
+          "label": "negative",
+          "confidence": 0.77
         },
         "category": "usa"
       },
       {
-        "title": "F-16 uses \"headbutt maneuver\" to intercept plane near Mar-a-Lago",
-        "link": "https://www.cbsnews.com/news/fighter-jet-headbutt-maneuver-intercept-plane-palm-beach-trump-florida/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump's not on the ballot but swing state voters still cast ballots with MAGA in mind",
+        "link": "https://www.foxnews.com/politics/trumps-not-ballot-swing-state-voters-still-cast-ballots-maga-mind",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A fighter jet intercepted a plane over Palm Beach, Florida, on Saturday afternoon, as President Trump cast an early ballot in Florida's midterm election.",
+        "description": "Pennsylvania voters say they're voting Democratic in the midterms to rein in Donald Trump, even though some admit they don't trust the party.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T13:07:09.000Z",
+        "publishedAt": "2026-10-26T17:55:39.000Z",
         "sentiment": {
-          "posP": 5.1,
-          "negP": 0,
-          "neuP": 94.9,
-          "label": "neutral",
-          "confidence": 0.15
+          "posP": 4.9,
+          "negP": 14.4,
+          "neuP": 80.7,
+          "label": "negative",
+          "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How Scuffles at Trump Rallies Echo His Past Events",
+        "link": "https://www.nytimes.com/video/us/politics/100000011231247/how-scuffles-at-trump-rallies-echo-his-past-events.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Examining President Trump’s praise of a rallygoer who punched a protester last week, David E. Sanger, a White House and national security correspondent for The New York Times, studied the atmosphere at Mr. Trump’s recent events. What he found was a faint echo of the moments that made Mr. Trump’s 2016 rallies so shocking.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T19:20:51.000Z",
+        "sentiment": {
+          "posP": 9.2,
+          "negP": 5.3,
+          "neuP": 85.5,
+          "label": "positive",
+          "confidence": 0.36
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Administration Unlawfully Fired Maurene Comey, Judge Rules",
+        "link": "https://www.nytimes.com/2026/10/26/nyregion/maurene-comey-firing-doj-trump-epstein.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ms. Comey, the daughter of James Comey, the former director of the F.B.I., worked for the U.S. attorney’s office in Manhattan, handling the prosecutions of Jeffrey Epstein and Sean Combs.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T19:33:07.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 8.9,
+          "neuP": 91.1,
+          "label": "negative",
+          "confidence": 0.56
         },
         "category": "usa"
       },
@@ -5327,7 +5302,7 @@
         "description": "Iran says indirect negotiations with the U.S. continue but rules out bending to Trump's demands, even if he orders new strikes.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T13:05:17.000Z",
+        "publishedAt": "2026-10-26T19:00:03.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 21.1,
@@ -5338,22 +5313,82 @@
         "category": "usa"
       },
       {
-        "title": "New poll shows Democrats have slight edge in House races; Trump and Obama take Michigan",
-        "link": "https://www.cbsnews.com/video/new-poll-shows-democrats-have-slight-edge-in-house-races-trump-and-obama-take-ohio/",
+        "title": "Blanche refuses to say if Trump told DOJ to file Alaska Senate race lawsuit",
+        "link": "https://www.cbsnews.com/video/blanche-refuses-to-say-if-trump-told-doj-to-file-alaska-senate-race-lawsuit/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Recent CBS News polling ahead of the midterms shows Democrats have a slight edge to take the majority in the House of Representatives. This comes as President Trump and former President Barack Obama rally in battleground states. CBS News' Nikole Killion reports, and Ravi Gupta, a former Obama administration official, breaks down the latest.",
+        "description": "Attorney General Todd Blanche sparred with \"Face the Nation\" moderator Margaret Brennan over the Justice Department's preemptive lawsuit in the Alaska Senate race. CBS News' Caitlin Huey-Burns reports.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T13:04:55.000Z",
+        "publishedAt": "2026-10-26T16:04:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 3.9,
-          "neuP": 96.1,
+          "posP": 7.4,
+          "negP": 8.2,
+          "neuP": 84.4,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump reacts to intelligence memo warning Iran is targeting U.S. personnel overseas",
+        "link": "https://www.cbsnews.com/video/trump-reacts-to-intelligence-memo-warning-iran-is-targeting-us-personnel-overseas/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump is reacting to an intelligence memo obtained by CBS News that warns of Iran's increased efforts to target U.S. personnel overseas. CBS News' Kristin Brown reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T15:02:36.000Z",
+        "sentiment": {
+          "posP": 17.6,
+          "negP": 8.1,
+          "neuP": 74.3,
+          "label": "positive",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "The arc of Trump: How the president lost the coalition that put him in the White House",
+        "link": "https://www.cnbc.com/2026/10/26/trump-approval-midterms-cnbc-survey.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump forged an extraordinary coalition to win office in 2024. A new CNBC survey shows that coalition is now seriously weakened.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T17:36:55.000Z",
+        "sentiment": {
+          "posP": 8.6,
+          "negP": 14.3,
+          "neuP": 77.1,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump DOJ unlawfully fired Epstein prosecutor Maurene Comey, judge rules",
+        "link": "https://www.cnbc.com/2026/10/26/maurene-comey-firing-unlawful-trump.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The judge ordered that Comey, the daughter of ex-FBI director James Comey, be retroactively reinstated to her job as an assistant United States attorney.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T18:52:54.000Z",
+        "sentiment": {
+          "posP": 7.3,
+          "negP": 9.4,
+          "neuP": 83.3,
           "label": "negative",
-          "confidence": 0.4
+          "confidence": 0.2
         },
         "category": "usa"
       },
@@ -5367,93 +5402,13 @@
         "description": "Trump said he is weighing a deal with Iran against renewed military action as tensions escalate across the Middle East.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T11:49:17.000Z",
+        "publishedAt": "2026-10-26T14:36:03.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 7.6,
           "neuP": 92.4,
           "label": "negative",
           "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Can GOP Rep. Brian Fitzpatrick, a moderate who's bucked Trump, keep his Pennsylvania swing seat?",
-        "link": "https://www.cnbc.com/2026/10/26/brian-fitzpatrick-bob-harvie-pennsylvania-senate-election.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "GOP Rep. Brian Fitzpatrick has consistently won his Pennsylvania swing seat, but Democrats say this election is an opportunity to oust the veteran lawmaker.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T12:33:16.000Z",
-        "sentiment": {
-          "posP": 14.4,
-          "negP": 0,
-          "neuP": 85.6,
-          "label": "positive",
-          "confidence": 0.72
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What Democrats and Republicans fear most about each other: CNBC survey has the answers",
-        "link": "https://www.cnbc.com/2026/10/25/cnbc-survey-midterm-election-voter-fears.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The economy is still a key issue in the 2026 election, but voters are concerned about Trump testing the bounds of the office and Democratic Socialist polices.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-25T12:00:01.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 5.1,
-          "neuP": 94.9,
-          "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "America by the numbers: How voters feel about the economy, inflation, AI and Trump",
-        "link": "https://www.cnbc.com/2026/10/23/america-by-the-numbers-how-voters-feel-about-the-economy-inflation-ai-and-trump.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "With the U.S. midterm elections looming, Americans are nearly as gloomy about the economy as they were when the nation was emerging from the pandemic.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-24T10:58:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 7.7,
-          "neuP": 92.3,
-          "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Personal Attacks Intensify Amid Tight Midterm Races",
-        "link": "https://www.today.com/video/trump-and-obama-trade-jabs-ahead-of-midterm-elections-272216133628",
-        "source": "NBC News",
-        "sourceDomain": "today.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "While voters worry about the economy, some races in key battleground states are focusing on personal attacks. It comes as President Donald Trump and former President Barack Obama hit the campaign trail to rally their parties while trading jabs. NBC’s Gabe Gutierrez reports for TODAY.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T11:14:28.000Z",
-        "sentiment": {
-          "posP": 4.4,
-          "negP": 18.7,
-          "neuP": 76.9,
-          "label": "negative",
-          "confidence": 0.83
         },
         "category": "usa"
       },
@@ -5476,41 +5431,88 @@
           "confidence": 0.14
         },
         "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.31,
-      "neu": 85.81,
-      "neg": 8.87,
-      "count": 31
+      "pos": 5.69,
+      "neu": 83.21,
+      "neg": 11.1,
+      "count": 30
     },
     "sourceLeaderboard": [
       {
-        "source": "CBS News",
-        "pos": 4.51,
-        "neu": 86.9,
-        "neg": 8.59,
-        "count": 8
+        "source": "NBC News",
+        "pos": 8.27,
+        "neu": 80.82,
+        "neg": 10.92,
+        "count": 6
       },
       {
-        "source": "NBC News",
-        "pos": 5.3,
-        "neu": 86.85,
-        "neg": 7.85,
-        "count": 6
+        "source": "NYT",
+        "pos": 5.55,
+        "neu": 87.9,
+        "neg": 6.55,
+        "count": 4
+      },
+      {
+        "source": "Fox News",
+        "pos": 4.65,
+        "neu": 80.63,
+        "neg": 14.72,
+        "count": 4
+      },
+      {
+        "source": "CBS News",
+        "pos": 7.25,
+        "neu": 79.9,
+        "neg": 12.85,
+        "count": 4
       },
       {
         "source": "WSJ",
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
-        "count": 4
-      },
-      {
-        "source": "ABC News",
-        "pos": 6.4,
-        "neu": 78.7,
-        "neg": 14.9,
         "count": 4
       },
       {
@@ -5521,18 +5523,11 @@
         "count": 3
       },
       {
-        "source": "NYT",
-        "pos": 6.5,
-        "neu": 87.5,
-        "neg": 6,
-        "count": 2
-      },
-      {
-        "source": "Fox News",
-        "pos": 10.95,
-        "neu": 85.45,
-        "neg": 3.6,
-        "count": 2
+        "source": "ABC News",
+        "pos": 5.03,
+        "neu": 78.17,
+        "neg": 16.8,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5545,38 +5540,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.37,
-        "neu": 87.3,
-        "neg": 7.33,
-        "count": 13
-      },
-      {
-        "topic": "Foreign Policy",
         "pos": 6.4,
-        "neu": 83.4,
-        "neg": 10.2,
-        "count": 6
-      },
-      {
-        "topic": "Economy",
-        "pos": 4.85,
-        "neu": 83.87,
-        "neg": 11.28,
-        "count": 6
+        "neu": 82.6,
+        "neg": 11,
+        "count": 14
       },
       {
         "topic": "Policy",
-        "pos": 5.48,
-        "neu": 89.54,
-        "neg": 4.98,
+        "pos": 3.72,
+        "neu": 88.36,
+        "neg": 7.92,
         "count": 5
       },
       {
+        "topic": "Foreign Policy",
+        "pos": 3.7,
+        "neu": 84.06,
+        "neg": 12.24,
+        "count": 5
+      },
+      {
+        "topic": "Economy",
+        "pos": 8.23,
+        "neu": 79.7,
+        "neg": 12.07,
+        "count": 3
+      },
+      {
         "topic": "Legal",
-        "pos": 0,
-        "neu": 74,
-        "neg": 26,
-        "count": 1
+        "pos": 6.47,
+        "neu": 79.57,
+        "neg": 13.97,
+        "count": 3
       }
     ]
   },
@@ -5603,28 +5598,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-26T10:06:45.738Z",
+        "label": "2026-10-26T15:52:27.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T11:06:45.738Z",
+        "label": "2026-10-26T16:52:27.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T12:06:45.738Z",
+        "label": "2026-10-26T17:52:27.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T13:06:45.738Z",
+        "label": "2026-10-26T18:52:27.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5633,28 +5628,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-26T10:06:45.739Z",
+        "label": "2026-10-26T15:52:27.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T11:06:45.739Z",
+        "label": "2026-10-26T16:52:27.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T12:06:45.739Z",
+        "label": "2026-10-26T17:52:27.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T13:06:45.739Z",
+        "label": "2026-10-26T18:52:27.402Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5734,7 +5729,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-26T14:06:45.740Z",
+    "generatedAt": "2026-10-26T19:52:27.403Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5855,8 +5850,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 167,
-      "potusArticles": 31,
+      "usaArticles": 170,
+      "potusArticles": 30,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
