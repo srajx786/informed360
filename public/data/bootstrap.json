@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-26T19:52:27.399Z",
+  "generatedAt": "2026-10-26T23:23:49.388Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 170,
-    "potusArticles": 30
+    "usaArticles": 168,
+    "potusArticles": 36
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-26T15:52:27.400Z",
+          "label": "2026-10-26T19:23:49.388Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T16:52:27.400Z",
+          "label": "2026-10-26T20:23:49.388Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T17:52:27.400Z",
+          "label": "2026-10-26T21:23:49.388Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T18:52:27.400Z",
+          "label": "2026-10-26T22:23:49.388Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-26T15:52:27.400Z",
+          "label": "2026-10-26T19:23:49.389Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T16:52:27.400Z",
+          "label": "2026-10-26T20:23:49.389Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T17:52:27.400Z",
+          "label": "2026-10-26T21:23:49.389Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-26T18:52:27.400Z",
+          "label": "2026-10-26T22:23:49.389Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 8.24,
-      "neu": 82.69,
-      "neg": 9.07,
-      "count": 170
+      "pos": 8.37,
+      "neu": 81.77,
+      "neg": 9.86,
+      "count": 168
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.82,
-        "neu": 83.68,
-        "neg": 6.51,
-        "count": 42
+        "pos": 9.87,
+        "neu": 83.42,
+        "neg": 6.72,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 9.07,
-        "neu": 78.66,
-        "neg": 12.27,
+        "pos": 9.81,
+        "neu": 74.68,
+        "neg": 15.52,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 7.14,
-        "neu": 84.43,
-        "neg": 8.42,
+        "pos": 5.83,
+        "neu": 84.91,
+        "neg": 9.25,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 9.87,
-        "neu": 81.47,
-        "neg": 8.66,
+        "pos": 10.52,
+        "neu": 80.93,
+        "neg": 8.55,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 5.73,
-        "neu": 87.87,
-        "neg": 6.4,
+        "pos": 6.88,
+        "neu": 85.91,
+        "neg": 7.21,
         "count": 20
       },
       {
@@ -4628,68 +4628,57 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Communication",
+          "bias": -21.07,
+          "count": 3
+        },
+        {
           "name": "Utilities",
           "bias": -17,
           "count": 1
         },
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
-        },
-        {
           "name": "Healthcare",
-          "bias": -6.9,
+          "bias": -8.57,
           "count": 7
         },
         {
           "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Energy",
-          "bias": 5.12,
-          "count": 5
-        },
-        {
-          "name": "Finance",
-          "bias": 4.01,
-          "count": 20
+          "bias": -2.85,
+          "count": 2
         },
         {
           "name": "Technology",
-          "bias": -1.17,
-          "count": 131
+          "bias": -2.15,
+          "count": 130
         },
         {
           "name": "Materials",
           "bias": -0.9,
           "count": 2
-        }
-      ],
-      "pos": [
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Energy",
-          "bias": 5.12,
-          "count": 5
         },
         {
           "name": "Finance",
-          "bias": 4.01,
-          "count": 20
+          "bias": 0.89,
+          "count": 18
+        },
+        {
+          "name": "Energy",
+          "bias": 0.34,
+          "count": 5
         }
       ],
+      "pos": [],
       "neu": [
         {
+          "name": "Real Estate",
+          "bias": -2.85,
+          "count": 2
+        },
+        {
           "name": "Technology",
-          "bias": -1.17,
-          "count": 131
+          "bias": -2.15,
+          "count": 130
         },
         {
           "name": "Materials",
@@ -4699,18 +4688,18 @@
       ],
       "neg": [
         {
+          "name": "Communication",
+          "bias": -21.07,
+          "count": 3
+        },
+        {
           "name": "Utilities",
           "bias": -17,
           "count": 1
         },
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
-        },
-        {
           "name": "Healthcare",
-          "bias": -6.9,
+          "bias": -8.57,
           "count": 7
         }
       ]
@@ -4718,32 +4707,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-26T15:52:27.401Z",
+          "label": "2026-10-26T19:23:49.391Z",
           "pos": 8,
-          "neu": 87,
-          "neg": 5,
-          "count": 10
+          "neu": 83,
+          "neg": 9,
+          "count": 17
         },
         {
-          "label": "2026-10-26T16:52:27.401Z",
+          "label": "2026-10-26T20:23:49.391Z",
+          "pos": 8,
+          "neu": 80,
+          "neg": 12,
+          "count": 23
+        },
+        {
+          "label": "2026-10-26T21:23:49.391Z",
           "pos": 11,
-          "neu": 77,
+          "neu": 76,
           "neg": 12,
           "count": 15
         },
         {
-          "label": "2026-10-26T17:52:27.401Z",
-          "pos": 8,
+          "label": "2026-10-26T22:23:49.391Z",
+          "pos": 6,
           "neu": 84,
-          "neg": 8,
-          "count": 24
-        },
-        {
-          "label": "2026-10-26T18:52:27.401Z",
-          "pos": 8,
-          "neu": 83,
-          "neg": 8,
-          "count": 18
+          "neg": 10,
+          "count": 13
         }
       ]
     }
@@ -4951,42 +4940,42 @@
         "category": "world"
       },
       {
-        "title": "Obama judge rules Trump DOJ illegally fired James Comey's daughter, rejects sweeping Article II claim",
-        "link": "https://www.foxnews.com/politics/obama-judge-rules-trump-doj-illegally-fired-james-comeys-daughter-rejects-sweeping-article-ii-claim",
+        "title": "Not even sky high gas prices or the Iran war will stop Trump supporters voting MAGA",
+        "link": "https://www.foxnews.com/politics/sky-high-gas-prices-iran-war-wont-stop-trump-supporters-voting-maga",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Trump Justice Department fired Maurene Comey without cause, but a federal judge ruled it violated the Civil Service Reform Act and ordered backpay.",
+        "description": "MAGA voters at a Michigan Trump rally dismiss rising gas prices and the Iran war as temporary sacrifices, vowing to back Republicans in midterms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T18:41:05.000Z",
+        "publishedAt": "2026-10-26T22:00:34.000Z",
         "sentiment": {
-          "posP": 4.7,
-          "negP": 24.3,
-          "neuP": 71,
+          "posP": 6.1,
+          "negP": 20.9,
+          "neuP": 73,
           "label": "negative",
-          "confidence": 0.84
+          "confidence": 0.8
         },
         "category": "usa"
       },
       {
-        "title": "Schiff accuses DOJ of trying to 'subvert' elections as GOP alleges same-name candidate meant to confuse voters",
-        "link": "https://www.foxnews.com/politics/schiff-accuses-doj-trying-subvert-elections-gop-alleges-same-name-candidate-meant-confuse-voters",
+        "title": "ROBERT F KENNEDY JR, DR MEHMET OZ: 250 hospitals join the fight for healthier food",
+        "link": "https://www.foxnews.com/opinion/robert-f-kennedy-jr-dr-mehmet-oz-250-hospitals-join-fight-healthier-food",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Adam Schiff accuses Trump's DOJ of trying to subvert Alaska's Senate election over a namesake Dan Sullivan candidacy that could confuse voters.",
+        "description": "Over 250 hospitals joined the Make Hospital Food Healthier Pledge to cut processed food and added sugar from patient meals under Trump's health agenda.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T18:10:40.000Z",
+        "publishedAt": "2026-10-26T20:00:32.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 20.2,
-          "neuP": 79.8,
+          "posP": 5.3,
+          "negP": 11.2,
+          "neuP": 83.5,
           "label": "negative",
-          "confidence": 0.77
+          "confidence": 0.36
         },
         "category": "usa"
       }
@@ -5193,62 +5182,42 @@
         "category": "world"
       },
       {
-        "title": "Obama judge rules Trump DOJ illegally fired James Comey's daughter, rejects sweeping Article II claim",
-        "link": "https://www.foxnews.com/politics/obama-judge-rules-trump-doj-illegally-fired-james-comeys-daughter-rejects-sweeping-article-ii-claim",
+        "title": "Not even sky high gas prices or the Iran war will stop Trump supporters voting MAGA",
+        "link": "https://www.foxnews.com/politics/sky-high-gas-prices-iran-war-wont-stop-trump-supporters-voting-maga",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Trump Justice Department fired Maurene Comey without cause, but a federal judge ruled it violated the Civil Service Reform Act and ordered backpay.",
+        "description": "MAGA voters at a Michigan Trump rally dismiss rising gas prices and the Iran war as temporary sacrifices, vowing to back Republicans in midterms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T18:41:05.000Z",
+        "publishedAt": "2026-10-26T22:00:34.000Z",
         "sentiment": {
-          "posP": 4.7,
-          "negP": 24.3,
-          "neuP": 71,
+          "posP": 6.1,
+          "negP": 20.9,
+          "neuP": 73,
           "label": "negative",
-          "confidence": 0.84
+          "confidence": 0.8
         },
         "category": "usa"
       },
       {
-        "title": "Schiff accuses DOJ of trying to 'subvert' elections as GOP alleges same-name candidate meant to confuse voters",
-        "link": "https://www.foxnews.com/politics/schiff-accuses-doj-trying-subvert-elections-gop-alleges-same-name-candidate-meant-confuse-voters",
+        "title": "ROBERT F KENNEDY JR, DR MEHMET OZ: 250 hospitals join the fight for healthier food",
+        "link": "https://www.foxnews.com/opinion/robert-f-kennedy-jr-dr-mehmet-oz-250-hospitals-join-fight-healthier-food",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Adam Schiff accuses Trump's DOJ of trying to subvert Alaska's Senate election over a namesake Dan Sullivan candidacy that could confuse voters.",
+        "description": "Over 250 hospitals joined the Make Hospital Food Healthier Pledge to cut processed food and added sugar from patient meals under Trump's health agenda.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T18:10:40.000Z",
+        "publishedAt": "2026-10-26T20:00:32.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 20.2,
-          "neuP": 79.8,
+          "posP": 5.3,
+          "negP": 11.2,
+          "neuP": 83.5,
           "label": "negative",
-          "confidence": 0.77
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump's not on the ballot but swing state voters still cast ballots with MAGA in mind",
-        "link": "https://www.foxnews.com/politics/trumps-not-ballot-swing-state-voters-still-cast-ballots-maga-mind",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Pennsylvania voters say they're voting Democratic in the midterms to rein in Donald Trump, even though some admit they don't trust the party.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T17:55:39.000Z",
-        "sentiment": {
-          "posP": 4.9,
-          "negP": 14.4,
-          "neuP": 80.7,
-          "label": "negative",
-          "confidence": 0.64
+          "confidence": 0.36
         },
         "category": "usa"
       },
@@ -5262,7 +5231,7 @@
         "description": "Examining President Trump’s praise of a rallygoer who punched a protester last week, David E. Sanger, a White House and national security correspondent for The New York Times, studied the atmosphere at Mr. Trump’s recent events. What he found was a faint echo of the moments that made Mr. Trump’s 2016 rallies so shocking.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T19:20:51.000Z",
+        "publishedAt": "2026-10-26T20:39:20.000Z",
         "sentiment": {
           "posP": 9.2,
           "negP": 5.3,
@@ -5273,22 +5242,122 @@
         "category": "usa"
       },
       {
-        "title": "Trump Administration Unlawfully Fired Maurene Comey, Judge Rules",
-        "link": "https://www.nytimes.com/2026/10/26/nyregion/maurene-comey-firing-doj-trump-epstein.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "DOJ takes steps to charge James Comey again",
+        "link": "https://www.cbsnews.com/news/doj-takes-steps-to-charge-james-comey/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ms. Comey, the daughter of James Comey, the former director of the F.B.I., worked for the U.S. attorney’s office in Manhattan, handling the prosecutions of Jeffrey Epstein and Sean Combs.",
+        "description": "The DOJ took steps to charge James Comey with leaking information earlier this month, in its third attempt to bring criminal charges against the former FBI director and Trump foe.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T19:33:07.000Z",
+        "publishedAt": "2026-10-26T23:21:10.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 8.9,
-          "neuP": 91.1,
+          "negP": 19.4,
+          "neuP": 80.6,
           "label": "negative",
-          "confidence": 0.56
+          "confidence": 0.81
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Court dismisses DOJ's request to force California to set aside ballots",
+        "link": "https://www.cbsnews.com/news/appeals-court-dismisses-doj-trump-california-ballots/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A federal appeals court on Monday dismissed the DOJ's effort to force California election officials to set aside thousands of ballots that the Trump administration claims may have been cast by alleged noncitizens.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T23:09:12.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "DOJ trying to charge Trump-foe James Comey for third time, records show",
+        "link": "https://www.cbsnews.com/video/doj-trying-charge-trump-foe-james-comey-third-time-records-show/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Justice Department is working to bring a third criminal case against former FBI director James Comey, court records show. He said, \"I'm still innocent. I'm still not afraid of these people and I still believe in the independent federal judiciary.\" CBS News legal analyst Jessica Levinson has more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T22:14:00.000Z",
+        "sentiment": {
+          "posP": 11.1,
+          "negP": 5.2,
+          "neuP": 83.7,
+          "label": "positive",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump stumps for Republicans in deep-red Mississippi",
+        "link": "https://www.cbsnews.com/video/trump-stumps-republicans-deep-red-mississippi/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "As gas prices remain essentially the same as during the Biden administration, President Trump is stumping for Republican candidates in deep-red states like Mississippi. CBS News' Weijia Jiang reports on the White House's midterm strategy, and CBS News executive director of elections and surveys Anthony Salvanto has polling.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T21:42:37.000Z",
+        "sentiment": {
+          "posP": 4.4,
+          "negP": 0,
+          "neuP": 95.6,
+          "label": "positive",
+          "confidence": 0.36
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump campaigning in red states to reassure Republican voters",
+        "link": "https://www.cbsnews.com/video/trump-campaigning-red-states-reassure-republican-voters/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump will work to court voters for Sen. Cindy Hyde-Smith in Mississippi on Monday ahead of the midterms. Skyler Henry has more details.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T20:58:08.000Z",
+        "sentiment": {
+          "posP": 7,
+          "negP": 0,
+          "neuP": 93,
+          "label": "positive",
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump, Obama on campaign pushes as Democrats poised to take the House, CBS News poll shows",
+        "link": "https://www.cbsnews.com/video/trump-obama-campaign-pushes-democrats-poised-take-house-cbs-news-poll/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump and former President Barack Obama made their rounds across the U.S. ahead of the midterm elections. A new CBS News poll found that Democrats are on track to take control of the House of Representatives. CBS News contributor Kyle Kondik has more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-26T20:55:22.000Z",
+        "sentiment": {
+          "posP": 3.3,
+          "negP": 0,
+          "neuP": 96.7,
+          "label": "positive",
+          "confidence": 0.25
         },
         "category": "usa"
       },
@@ -5302,7 +5371,7 @@
         "description": "Iran says indirect negotiations with the U.S. continue but rules out bending to Trump's demands, even if he orders new strikes.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T19:00:03.000Z",
+        "publishedAt": "2026-10-26T20:29:02.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 21.1,
@@ -5313,42 +5382,42 @@
         "category": "usa"
       },
       {
-        "title": "Blanche refuses to say if Trump told DOJ to file Alaska Senate race lawsuit",
-        "link": "https://www.cbsnews.com/video/blanche-refuses-to-say-if-trump-told-doj-to-file-alaska-senate-race-lawsuit/",
+        "title": "Bishops lament White House meeting that produced photo with Trump",
+        "link": "https://www.cbsnews.com/news/trump-photo-bishops-white-house-meeting/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Attorney General Todd Blanche sparred with \"Face the Nation\" moderator Margaret Brennan over the Justice Department's preemptive lawsuit in the Alaska Senate race. CBS News' Caitlin Huey-Burns reports.",
+        "description": "Two Catholic bishops have expressed regret about agreeing to a White House meeting that produced a publicly distributed photo of them praying with President Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T16:04:00.000Z",
+        "publishedAt": "2026-10-26T19:57:07.000Z",
         "sentiment": {
-          "posP": 7.4,
-          "negP": 8.2,
-          "neuP": 84.4,
-          "label": "neutral",
-          "confidence": 0.15
+          "posP": 12.3,
+          "negP": 14.6,
+          "neuP": 73.1,
+          "label": "negative",
+          "confidence": 0.23
         },
         "category": "usa"
       },
       {
-        "title": "Trump reacts to intelligence memo warning Iran is targeting U.S. personnel overseas",
-        "link": "https://www.cbsnews.com/video/trump-reacts-to-intelligence-memo-warning-iran-is-targeting-us-personnel-overseas/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "DOJ charges ex-FBI Director James Comey in new case",
+        "link": "https://www.cnbc.com/2026/10/26/james-comey-indictment-national-defense-doj-trump.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump is reacting to an intelligence memo obtained by CBS News that warns of Iran's increased efforts to target U.S. personnel overseas. CBS News' Kristin Brown reports.",
+        "description": "Comey for years has been targeted by President Donald Trump, who fired him as FBI director in 2017.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T15:02:36.000Z",
+        "publishedAt": "2026-10-26T22:24:36.000Z",
         "sentiment": {
-          "posP": 17.6,
-          "negP": 8.1,
-          "neuP": 74.3,
-          "label": "positive",
-          "confidence": 0.67
+          "posP": 0,
+          "negP": 18.6,
+          "neuP": 81.4,
+          "label": "negative",
+          "confidence": 0.69
         },
         "category": "usa"
       },
@@ -5379,133 +5448,46 @@
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The judge ordered that Comey, the daughter of ex-FBI director James Comey, be retroactively reinstated to her job as an assistant United States attorney.",
+        "description": "The judge ordered that Maurene Comey, the daughter of ex-FBI director James Comey, be retroactively reinstated to her job as an assistant U.S. attorney.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-26T18:52:54.000Z",
-        "sentiment": {
-          "posP": 7.3,
-          "negP": 9.4,
-          "neuP": 83.3,
-          "label": "negative",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he'll soon decide whether to ‘make a deal’ with Iran or ‘finish it off'",
-        "link": "https://www.cnbc.com/2026/10/26/us-iran-war-hormuz.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump said he is weighing a deal with Iran against renewed military action as tensions escalate across the Middle East.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T14:36:03.000Z",
+        "publishedAt": "2026-10-26T20:03:58.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.6,
-          "neuP": 92.4,
+          "negP": 9.8,
+          "neuP": 90.2,
           "label": "negative",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
+          "confidence": 0.56
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.69,
-      "neu": 83.21,
-      "neg": 11.1,
-      "count": 30
+      "pos": 5.58,
+      "neu": 84.57,
+      "neg": 9.85,
+      "count": 36
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 8.27,
-        "neu": 80.82,
-        "neg": 10.92,
-        "count": 6
-      },
-      {
-        "source": "NYT",
-        "pos": 5.55,
-        "neu": 87.9,
-        "neg": 6.55,
-        "count": 4
-      },
-      {
-        "source": "Fox News",
-        "pos": 4.65,
-        "neu": 80.63,
-        "neg": 14.72,
-        "count": 4
-      },
-      {
         "source": "CBS News",
-        "pos": 7.25,
-        "neu": 79.9,
-        "neg": 12.85,
+        "pos": 4.68,
+        "neu": 87.07,
+        "neg": 8.26,
+        "count": 9
+      },
+      {
+        "source": "NBC News",
+        "pos": 5.24,
+        "neu": 84.41,
+        "neg": 10.35,
+        "count": 8
+      },
+      {
+        "source": "ABC News",
+        "pos": 9.53,
+        "neu": 73.6,
+        "neg": 16.88,
         "count": 4
       },
       {
@@ -5523,10 +5505,17 @@
         "count": 3
       },
       {
-        "source": "ABC News",
-        "pos": 5.03,
-        "neu": 78.17,
-        "neg": 16.8,
+        "source": "NYT",
+        "pos": 7.4,
+        "neu": 86.83,
+        "neg": 5.77,
+        "count": 3
+      },
+      {
+        "source": "Fox News",
+        "pos": 6.8,
+        "neu": 82.5,
+        "neg": 10.7,
         "count": 3
       },
       {
@@ -5540,17 +5529,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.4,
-        "neu": 82.6,
-        "neg": 11,
-        "count": 14
+        "pos": 6.11,
+        "neu": 82.39,
+        "neg": 11.5,
+        "count": 18
       },
       {
         "topic": "Policy",
-        "pos": 3.72,
-        "neu": 88.36,
-        "neg": 7.92,
-        "count": 5
+        "pos": 2.9,
+        "neu": 93.68,
+        "neg": 3.42,
+        "count": 6
       },
       {
         "topic": "Foreign Policy",
@@ -5568,10 +5557,17 @@
       },
       {
         "topic": "Legal",
-        "pos": 6.47,
-        "neu": 79.57,
-        "neg": 13.97,
+        "pos": 6.03,
+        "neu": 88.97,
+        "neg": 5,
         "count": 3
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 12.3,
+        "neu": 73.1,
+        "neg": 14.6,
+        "count": 1
       }
     ]
   },
@@ -5598,28 +5594,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-26T15:52:27.402Z",
+        "label": "2026-10-26T19:23:49.393Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T16:52:27.402Z",
+        "label": "2026-10-26T20:23:49.393Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T17:52:27.402Z",
+        "label": "2026-10-26T21:23:49.393Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T18:52:27.402Z",
+        "label": "2026-10-26T22:23:49.393Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5628,28 +5624,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-26T15:52:27.402Z",
+        "label": "2026-10-26T19:23:49.393Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T16:52:27.402Z",
+        "label": "2026-10-26T20:23:49.393Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T17:52:27.402Z",
+        "label": "2026-10-26T21:23:49.393Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-26T18:52:27.402Z",
+        "label": "2026-10-26T22:23:49.393Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5729,7 +5725,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-26T19:52:27.403Z",
+    "generatedAt": "2026-10-26T23:23:49.394Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5850,8 +5846,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 170,
-      "potusArticles": 30,
+      "usaArticles": 168,
+      "potusArticles": 36,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
