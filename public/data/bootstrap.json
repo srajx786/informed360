@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-27T08:02:13.594Z",
+  "generatedAt": "2026-10-27T14:20:23.930Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 171,
-    "potusArticles": 40
+    "usaArticles": 169,
+    "potusArticles": 33
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-27T04:02:13.594Z",
+          "label": "2026-10-27T10:20:23.930Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T05:02:13.594Z",
+          "label": "2026-10-27T11:20:23.930Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T06:02:13.594Z",
+          "label": "2026-10-27T12:20:23.930Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T07:02:13.594Z",
+          "label": "2026-10-27T13:20:23.930Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-27T04:02:13.594Z",
+          "label": "2026-10-27T10:20:23.931Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T05:02:13.594Z",
+          "label": "2026-10-27T11:20:23.931Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T06:02:13.594Z",
+          "label": "2026-10-27T12:20:23.931Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T07:02:13.594Z",
+          "label": "2026-10-27T13:20:23.931Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.08,
-      "neu": 82.55,
-      "neg": 10.37,
-      "count": 171
+      "pos": 6.76,
+      "neu": 83.45,
+      "neg": 9.78,
+      "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.5,
-        "neu": 81.12,
-        "neg": 9.37,
-        "count": 43
+        "pos": 8.76,
+        "neu": 84.94,
+        "neg": 6.3,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 7.83,
-        "neu": 79.22,
-        "neg": 12.94,
+        "pos": 8.5,
+        "neu": 80.72,
+        "neg": 10.78,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.07,
-        "neu": 86.72,
-        "neg": 8.21,
+        "pos": 5.28,
+        "neu": 82.33,
+        "neg": 12.39,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 5.77,
-        "neu": 84.17,
-        "neg": 10.06,
+        "pos": 6.24,
+        "neu": 86.3,
+        "neg": 7.46,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 5.62,
-        "neu": 85.13,
-        "neg": 9.26,
+        "pos": 3.01,
+        "neu": 86.02,
+        "neg": 10.97,
         "count": 20
       },
       {
@@ -4629,126 +4629,115 @@
       "rows": [
         {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
-        },
-        {
-          "name": "Utilities",
-          "bias": -11.68,
-          "count": 4
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 11.1,
+          "bias": -17.45,
           "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -9.05,
-          "count": 8
-        },
-        {
-          "name": "Healthcare",
-          "bias": -7.85,
-          "count": 4
-        },
-        {
-          "name": "Finance",
-          "bias": -6.46,
-          "count": 14
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Technology",
-          "bias": -4.12,
-          "count": 129
         },
         {
           "name": "Materials",
-          "bias": -0.9,
-          "count": 2
-        }
-      ],
-      "pos": [
-        {
-          "name": "Manufacturing",
-          "bias": 11.1,
-          "count": 2
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
+          "bias": -10.9,
           "count": 1
-        }
-      ],
-      "neu": [
+        },
         {
           "name": "Healthcare",
-          "bias": -7.85,
-          "count": 4
+          "bias": -8.46,
+          "count": 5
         },
         {
-          "name": "Finance",
-          "bias": -6.46,
-          "count": 14
+          "name": "Utilities",
+          "bias": -7.8,
+          "count": 2
         },
         {
           "name": "Technology",
-          "bias": -4.12,
-          "count": 129
+          "bias": -3.31,
+          "count": 130
+        },
+        {
+          "name": "Energy",
+          "bias": -1.96,
+          "count": 12
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -1.1,
+          "count": 1
+        },
+        {
+          "name": "Real Estate",
+          "bias": -0.47,
+          "count": 3
+        },
+        {
+          "name": "Finance",
+          "bias": -0.41,
+          "count": 22
+        }
+      ],
+      "pos": [],
+      "neu": [
+        {
+          "name": "Utilities",
+          "bias": -7.8,
+          "count": 2
+        },
+        {
+          "name": "Technology",
+          "bias": -3.31,
+          "count": 130
+        },
+        {
+          "name": "Energy",
+          "bias": -1.96,
+          "count": 12
         }
       ],
       "neg": [
         {
           "name": "Communication",
-          "bias": -14,
+          "bias": -17.45,
+          "count": 2
+        },
+        {
+          "name": "Materials",
+          "bias": -10.9,
           "count": 1
         },
         {
-          "name": "Utilities",
-          "bias": -11.68,
-          "count": 4
-        },
-        {
-          "name": "Energy",
-          "bias": -9.05,
-          "count": 8
+          "name": "Healthcare",
+          "bias": -8.46,
+          "count": 5
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-27T04:02:13.596Z",
-          "pos": 5,
+          "label": "2026-10-27T10:20:23.932Z",
+          "pos": 6,
           "neu": 84,
-          "neg": 12,
-          "count": 7
+          "neg": 10,
+          "count": 11
         },
         {
-          "label": "2026-10-27T05:02:13.596Z",
-          "pos": 9,
-          "neu": 82,
-          "neg": 9,
-          "count": 4
-        },
-        {
-          "label": "2026-10-27T06:02:13.596Z",
-          "pos": 4,
-          "neu": 81,
-          "neg": 15,
-          "count": 2
-        },
-        {
-          "label": "2026-10-27T07:02:13.596Z",
+          "label": "2026-10-27T11:20:23.932Z",
           "pos": 8,
-          "neu": 80,
-          "neg": 11,
-          "count": 5
+          "neu": 85,
+          "neg": 7,
+          "count": 19
+        },
+        {
+          "label": "2026-10-27T12:20:23.932Z",
+          "pos": 5,
+          "neu": 86,
+          "neg": 9,
+          "count": 19
+        },
+        {
+          "label": "2026-10-27T13:20:23.932Z",
+          "pos": 7,
+          "neu": 82,
+          "neg": 10,
+          "count": 32
         }
       ]
     }
@@ -4956,42 +4945,42 @@
         "category": "world"
       },
       {
-        "title": "White House defends Trump after archbishop calls prayer moment 'manipulated' ahead of midterms",
-        "link": "https://www.foxnews.com/media/white-house-defends-trump-after-archbishop-calls-prayer-moment-manipulated-ahead-midterms",
+        "title": "Fox News Power Rankings: As Iran looms large, can the GOP keep the faithful?",
+        "link": "https://www.foxnews.com/politics/fox-news-power-rankings-iran-looms-large-can-gop-keep-faithful",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Archbishop Jeffrey Grob accused the White House of manipulating video of an Oval Office prayer with Catholic bishops for political gain before midterms.",
+        "description": "Trump's approval dropped to 36% amid the war in Iran, reshaping the 2026 midterms, but the Senate map through deep-red states keeps GOP alive.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T01:00:00.000Z",
+        "publishedAt": "2026-10-27T13:00:02.000Z",
         "sentiment": {
-          "posP": 8.3,
-          "negP": 11.4,
-          "neuP": 80.3,
-          "label": "neutral",
-          "confidence": 0.08
+          "posP": 12.6,
+          "negP": 8.7,
+          "neuP": 78.7,
+          "label": "positive",
+          "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "DHS suspends visa-free travel program for Chinese nationals amid birth tourism, security concerns",
-        "link": "https://www.foxnews.com/politics/dhs-suspends-visa-free-travel-program-chinese-nationals-amid-birth-tourism-security-concerns",
+        "title": "Ceasefire negotiated by Melania Trump holds in Russia-occupied Ukrainian city",
+        "link": "https://www.foxnews.com/world/ceasefire-negotiated-melania-trump-holds-russia-occupied-ukrainian-city",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Trump administration suspended visa-free travel for Chinese nationals to the Northern Mariana Islands amid birth tourism and espionage concerns.",
+        "description": "A ceasefire in the Russian-held Ukrainian city of Oleshky, where first lady Melania Trump said the situation \"is dire,\" went into effect on Tuesday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T00:37:54.000Z",
+        "publishedAt": "2026-10-27T12:41:20.000Z",
         "sentiment": {
-          "posP": 6.6,
-          "negP": 8.5,
-          "neuP": 84.9,
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
           "label": "neutral",
-          "confidence": 0.18
+          "confidence": 0
         },
         "category": "usa"
       }
@@ -5198,82 +5187,82 @@
         "category": "world"
       },
       {
-        "title": "White House defends Trump after archbishop calls prayer moment 'manipulated' ahead of midterms",
-        "link": "https://www.foxnews.com/media/white-house-defends-trump-after-archbishop-calls-prayer-moment-manipulated-ahead-midterms",
+        "title": "Fox News Power Rankings: As Iran looms large, can the GOP keep the faithful?",
+        "link": "https://www.foxnews.com/politics/fox-news-power-rankings-iran-looms-large-can-gop-keep-faithful",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Archbishop Jeffrey Grob accused the White House of manipulating video of an Oval Office prayer with Catholic bishops for political gain before midterms.",
+        "description": "Trump's approval dropped to 36% amid the war in Iran, reshaping the 2026 midterms, but the Senate map through deep-red states keeps GOP alive.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T01:00:00.000Z",
+        "publishedAt": "2026-10-27T13:00:02.000Z",
         "sentiment": {
-          "posP": 8.3,
-          "negP": 11.4,
-          "neuP": 80.3,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "DHS suspends visa-free travel program for Chinese nationals amid birth tourism, security concerns",
-        "link": "https://www.foxnews.com/politics/dhs-suspends-visa-free-travel-program-chinese-nationals-amid-birth-tourism-security-concerns",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration suspended visa-free travel for Chinese nationals to the Northern Mariana Islands amid birth tourism and espionage concerns.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T00:37:54.000Z",
-        "sentiment": {
-          "posP": 6.6,
-          "negP": 8.5,
-          "neuP": 84.9,
-          "label": "neutral",
-          "confidence": 0.18
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How Scuffles at Trump Rallies Echo His Past Events",
-        "link": "https://www.nytimes.com/video/us/politics/100000011231247/how-scuffles-at-trump-rallies-echo-his-past-events.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Examining President Trump’s praise of a rallygoer who punched a protester last week, David E. Sanger, a White House and national security correspondent for The New York Times, studied the atmosphere at Mr. Trump’s recent events. What he found was a faint echo of the moments that made Mr. Trump’s 2016 rallies so shocking.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T20:39:20.000Z",
-        "sentiment": {
-          "posP": 9.2,
-          "negP": 5.3,
-          "neuP": 85.5,
+          "posP": 12.6,
+          "negP": 8.7,
+          "neuP": 78.7,
           "label": "positive",
-          "confidence": 0.36
+          "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "Appeals Court Declines to Intervene in California Ballot Lawsuit",
-        "link": "https://www.nytimes.com/2026/10/26/us/politics/appeals-court-california-ballot-suit.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Ceasefire negotiated by Melania Trump holds in Russia-occupied Ukrainian city",
+        "link": "https://www.foxnews.com/world/ceasefire-negotiated-melania-trump-holds-russia-occupied-ukrainian-city",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "By a 2-1 vote, a federal appeals court panel denied the Trump administration’s request that it immediately order the state to set aside 20,000 mail-in ballots.",
+        "description": "A ceasefire in the Russian-held Ukrainian city of Oleshky, where first lady Melania Trump said the situation \"is dire,\" went into effect on Tuesday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T00:04:44.000Z",
+        "publishedAt": "2026-10-27T12:41:20.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 13.4,
-          "neuP": 86.6,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump takes campaign blitz to Texas with one week until midterms and more top headlines",
+        "link": "https://www.foxnews.com/us/trump-takes-campaign-blitz-texas-one-week-until-midterms-more-top-headlines",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T11:20:23.000Z",
+        "sentiment": {
+          "posP": 13.2,
+          "negP": 0,
+          "neuP": 86.8,
+          "label": "positive",
+          "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Election Officials Fear Trump Administration’s Interference in Midterms Voting",
+        "link": "https://www.nytimes.com/2026/10/27/us/election-interference-trump-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "State and local plans for Election Day include how to react to potential I.C.E. raids, misbehavior by federal election monitors and attempts to seize votes or machines.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T09:03:57.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 8.4,
+          "neuP": 91.6,
           "label": "negative",
-          "confidence": 0.59
+          "confidence": 0.49
         },
         "category": "usa"
       },
@@ -5287,7 +5276,7 @@
         "description": "The new book by the reporter Matthew Cole connects $2 billion in slush funds from gulf state leaders to Trump’s son-in-law in an effort to influence U.S. policy.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T00:32:50.000Z",
+        "publishedAt": "2026-10-27T00:32:51.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5318,200 +5307,200 @@
         "category": "usa"
       },
       {
-        "title": "Iran shrugs off Trump's attack threats, says diplomacy ongoing",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-diplomacy-oil-prices-strait-of-hormuz/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Inflation. War. Corruption. Hold Trump Accountable.",
+        "link": "https://www.nytimes.com/2026/10/27/opinion/editorials/inflation-war-corruption-trump-editorial.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Iran says indirect negotiations with the U.S. continue but rules out bending to Trump's demands, even if he orders new strikes.",
+        "description": "The American people have a chance to allow the nation to glimpse the end of the Trump era and the start of something brighter.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T07:58:34.000Z",
+        "publishedAt": "2026-10-27T11:12:53.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 21.1,
-          "neuP": 78.9,
-          "label": "negative",
-          "confidence": 0.74
+          "posP": 18.4,
+          "negP": 11,
+          "neuP": 70.6,
+          "label": "neutral",
+          "confidence": 0.15
         },
         "category": "usa"
       },
       {
-        "title": "DOJ takes steps to charge James Comey again",
-        "link": "https://www.cbsnews.com/news/doj-takes-steps-to-charge-james-comey/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Jimmy Kimmel Proposes a Battle of Wits Between Trump and Obama",
+        "link": "https://www.nytimes.com/2026/10/27/arts/television/jimmy-kimmel-trump-obama-roast.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The DOJ took steps to charge James Comey with leaking information earlier this month, in its third attempt to bring criminal charges against the former FBI director and Trump foe.",
+        "description": "“There is only one way to settle this: roast battle on the White House lawn, live,” Kimmel offered, after former President Barack Obama mocked President Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T04:38:53.000Z",
+        "publishedAt": "2026-10-27T06:51:54.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 19.4,
-          "neuP": 80.6,
+          "negP": 18.5,
+          "neuP": 81.5,
           "label": "negative",
-          "confidence": 0.81
+          "confidence": 0.76
         },
         "category": "usa"
       },
       {
-        "title": "Judge continues to block Trump from cutting down trees at D.C. golf course",
-        "link": "https://www.cbsnews.com/news/judge-trump-trees-dc-golf-course-lorax/",
+        "title": "Trump on the defense in red states; Ilhan Omar campaigns with Hasan Piker",
+        "link": "https://www.cbsnews.com/video/trump-on-the-defense-in-red-states-ilhan-omar-campaigns-with-hasan-piker/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "\"The Court earlier stated, 'I am not the Lorax. I do not speak for the trees,'\" U.S. District Judge Ana Reyes wrote. \"The Court still does not speak for the trees. It speaks only for the rule of law.\"",
+        "description": "President Trump continues to campaign for Republican candidates ahead of the midterms. Plus, more details on races in Minnesota and Ohio, where notable figures are rallying for candidates. CBS News' Fin Gómez and Taurean Small report.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T04:20:39.000Z",
+        "publishedAt": "2026-10-27T13:42:47.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 8.2,
-          "neuP": 91.8,
-          "label": "negative",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump, Obama hold rallies ahead of midterms",
-        "link": "https://www.cbsnews.com/video/trump-obama-hold-rallies-ahead-of-midterms/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is holding several rallies, including in deep-red states, in the week before the midterm as he tries to keep his party in control of Congress. Former President Barack Obama is also headlining events, hoping to help flip control to the Democrats. Weijia Jiang reports and Robert Costa joins for analysis.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T00:59:04.000Z",
-        "sentiment": {
-          "posP": 12.8,
+          "posP": 3,
           "negP": 0,
-          "neuP": 87.2,
-          "label": "positive",
-          "confidence": 0.8
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Legal analysis of DOJ taking steps to charge James Comey again",
-        "link": "https://www.cbsnews.com/video/legal-analysis-doj-taking-steps-charge-james-comey-again/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration is attempting to charge former FBI director James Comey again. Comey said he remains innocent. CBS News legal contributor Rebecca Roiphe has more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T00:20:02.000Z",
-        "sentiment": {
-          "posP": 13.7,
-          "negP": 0,
-          "neuP": 86.3,
-          "label": "positive",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Mississippi voters express desire for change as Trump visits red state",
-        "link": "https://www.cbsnews.com/video/mississippi-voters-express-desire-for-change-as-trump-visits-red-state/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is visiting Mississippi on Monday, a historically bright-red state that he won in 2024, when he gained more than 60% of the vote. Ashton Pittman, a news editor for the Mississippi Free Press, joins \"The Daily Report\" to discuss the midterm elections there.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T00:13:56.000Z",
-        "sentiment": {
-          "posP": 19.7,
-          "negP": 0,
-          "neuP": 80.3,
-          "label": "positive",
-          "confidence": 0.91
-        },
-        "category": "usa"
-      },
-      {
-        "title": "DOJ charges ex-FBI Director James Comey in new case",
-        "link": "https://www.cnbc.com/2026/10/26/james-comey-indictment-national-defense-doj-trump.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Comey for years has been targeted by President Donald Trump, who fired him as FBI director in 2017.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T03:30:04.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 18.6,
-          "neuP": 81.4,
-          "label": "negative",
-          "confidence": 0.69
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The arc of Trump: How the president lost the coalition that put him in the White House",
-        "link": "https://www.cnbc.com/2026/10/26/trump-approval-midterms-cnbc-survey.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump forged an extraordinary coalition to win office in 2024. A new CNBC survey shows that coalition is now seriously weakened.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-26T17:36:55.000Z",
-        "sentiment": {
-          "posP": 8.6,
-          "negP": 14.3,
-          "neuP": 77.1,
+          "neuP": 97,
           "label": "neutral",
           "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Jackson pulls ahead of Collins in Senate race, new Maine poll shows",
+        "link": "https://www.cbsnews.com/video/jackson-pulls-ahead-of-collins-in-maine-senate-race-new-poll-shows/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump continues supporting Republican candidates with campaign stops across the U.S. Meanwhile, musician John Legend campaigned for Democrats in Ohio, and a new Maine poll shows Democrat Troy Jackson leading Republican Susan Collins in a tight Senate race. CBS News' Weijia Jiang and Portland Press Herald politics reporter Billy Kobin have more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T13:31:53.000Z",
+        "sentiment": {
+          "posP": 4.4,
+          "negP": 2.4,
+          "neuP": 93.2,
+          "label": "positive",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump makes final midterm push with one week to go",
+        "link": "https://www.cbsnews.com/video/trump-makes-final-midterm-push-with-one-week-to-go/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump rallied voters in Mississippi on Monday night and is set to go to Texas on Tuesday and South Carolina and Iowa later in the week. Weijia Jiang and Ed O'Keefe report.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T13:13:36.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's oil and gas stocks gained millions in value amid Iran war, according to Democrats' report",
+        "link": "https://www.cbsnews.com/video/trumps-oil-and-gas-stocks-gained-millions-in-value-amid-iran-war/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The value of President Trump's personal oil and gas stock holdings has nearly doubled since his war with Iran began, according to a report by Democrats on the Congressional Joint Economic Committee. CBS News' Olivia Rinaldi has more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T13:12:31.000Z",
+        "sentiment": {
+          "posP": 11.7,
+          "negP": 12.3,
+          "neuP": 76,
+          "label": "negative",
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Comey says he's \"still innocent\" after Trump administration attempts third round of charges",
+        "link": "https://www.cbsnews.com/video/comey-says-hes-still-innocent-after-trump-administration-attempts-third-round-of-charges/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Former FBI Director James Comey once again faces potential charges from the Trump administration's Department of Justice, which is now seeking charges for allegedly leaking classified information. Defense attorney and former federal prosecutor Scott Fredericksen comments on the case's legality.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T13:03:00.000Z",
+        "sentiment": {
+          "posP": 12,
+          "negP": 10.4,
+          "neuP": 77.6,
+          "label": "positive",
+          "confidence": 0.25
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Melania Trump-brokered ceasefire goes into effect in Ukrainian town ‘on brink of disaster’",
+        "link": "https://www.nbcnews.com/world/ukraine/ceasefire-brokered-melania-trump-comes-effect-russian-occupied-town-br-rcna605667",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The agreement would “temporarily stop all military action in Oleshky to allow for humanitarian aid to enter and to prepare a civilian evacuation,” the White House said.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T01:42:33.000Z",
+        "sentiment": {
+          "posP": 11.8,
+          "negP": 5.1,
+          "neuP": 83.1,
+          "label": "positive",
+          "confidence": 0.44
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.99,
-      "neu": 85.59,
-      "neg": 9.43,
-      "count": 40
+      "pos": 5.3,
+      "neu": 86.84,
+      "neg": 7.86,
+      "count": 33
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 5.89,
-        "neu": 85.14,
-        "neg": 8.97,
-        "count": 10
-      },
-      {
-        "source": "CBS News",
-        "pos": 7.17,
-        "neu": 83.87,
-        "neg": 8.96,
+        "source": "NYT",
+        "pos": 4.49,
+        "neu": 86.36,
+        "neg": 9.16,
         "count": 7
       },
       {
-        "source": "NYT",
-        "pos": 3.7,
-        "neu": 88.82,
-        "neg": 7.48,
+        "source": "CBS News",
+        "pos": 5.85,
+        "neu": 87.63,
+        "neg": 6.52,
         "count": 6
       },
       {
-        "source": "ABC News",
-        "pos": 1.6,
-        "neu": 82.52,
-        "neg": 15.88,
-        "count": 5
+        "source": "Fox News",
+        "pos": 8.7,
+        "neu": 89.13,
+        "neg": 2.17,
+        "count": 4
+      },
+      {
+        "source": "NBC News",
+        "pos": 7.35,
+        "neu": 87.13,
+        "neg": 5.53,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5528,10 +5517,10 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 7.97,
-        "neu": 85.4,
-        "neg": 6.63,
+        "source": "ABC News",
+        "pos": 2.67,
+        "neu": 82.37,
+        "neg": 14.97,
         "count": 3
       },
       {
@@ -5545,38 +5534,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.22,
-        "neu": 83.32,
-        "neg": 10.47,
-        "count": 18
+        "pos": 5.67,
+        "neu": 86.16,
+        "neg": 8.17,
+        "count": 15
       },
       {
         "topic": "Policy",
-        "pos": 3.17,
-        "neu": 89.61,
-        "neg": 7.22,
-        "count": 12
+        "pos": 3.67,
+        "neu": 90.15,
+        "neg": 6.17,
+        "count": 8
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.1,
-        "neu": 83.83,
-        "neg": 11.07,
+        "pos": 3.85,
+        "neu": 87.97,
+        "neg": 8.18,
         "count": 6
       },
       {
         "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
+        "pos": 12.47,
+        "neu": 79.87,
+        "neg": 7.67,
+        "count": 3
       },
       {
         "topic": "Legal",
         "pos": 0,
-        "neu": 88.2,
-        "neg": 11.8,
-        "count": 2
+        "neu": 84.6,
+        "neg": 15.4,
+        "count": 1
       }
     ]
   },
@@ -5603,28 +5592,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-27T04:02:13.598Z",
+        "label": "2026-10-27T10:20:23.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T05:02:13.598Z",
+        "label": "2026-10-27T11:20:23.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T06:02:13.598Z",
+        "label": "2026-10-27T12:20:23.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T07:02:13.598Z",
+        "label": "2026-10-27T13:20:23.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5633,28 +5622,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-27T04:02:13.598Z",
+        "label": "2026-10-27T10:20:23.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T05:02:13.598Z",
+        "label": "2026-10-27T11:20:23.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T06:02:13.598Z",
+        "label": "2026-10-27T12:20:23.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T07:02:13.598Z",
+        "label": "2026-10-27T13:20:23.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5734,7 +5723,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-27T08:02:13.600Z",
+    "generatedAt": "2026-10-27T14:20:23.934Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5855,8 +5844,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 171,
-      "potusArticles": 40,
+      "usaArticles": 169,
+      "potusArticles": 33,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
