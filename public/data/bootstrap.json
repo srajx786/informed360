@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-27T19:29:13.023Z",
+  "generatedAt": "2026-10-27T23:05:13.677Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 166,
-    "potusArticles": 28
+    "potusArticles": 33
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-27T15:29:13.023Z",
+          "label": "2026-10-27T19:05:13.678Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T16:29:13.023Z",
+          "label": "2026-10-27T20:05:13.678Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T17:29:13.023Z",
+          "label": "2026-10-27T21:05:13.678Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T18:29:13.023Z",
+          "label": "2026-10-27T22:05:13.678Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-27T15:29:13.023Z",
+          "label": "2026-10-27T19:05:13.678Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T16:29:13.023Z",
+          "label": "2026-10-27T20:05:13.678Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T17:29:13.023Z",
+          "label": "2026-10-27T21:05:13.678Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T18:29:13.023Z",
+          "label": "2026-10-27T22:05:13.678Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 6.86,
-      "neu": 82.34,
-      "neg": 10.8,
+      "pos": 7.73,
+      "neu": 82.76,
+      "neg": 9.51,
       "count": 166
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.98,
-        "neu": 81.53,
-        "neg": 8.49,
-        "count": 39
+        "pos": 11.25,
+        "neu": 81.45,
+        "neg": 7.3,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 6.05,
-        "neu": 80.86,
-        "neg": 13.09,
+        "pos": 8.96,
+        "neu": 80.45,
+        "neg": 10.59,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 3.11,
-        "neu": 84.73,
-        "neg": 12.16,
+        "pos": 3.58,
+        "neu": 87.19,
+        "neg": 9.23,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 8.28,
-        "neu": 81.84,
-        "neg": 9.88,
-        "count": 23
+        "pos": 6.9,
+        "neu": 82.42,
+        "neg": 10.68,
+        "count": 21
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 5.31,
-        "neu": 85.51,
-        "neg": 9.18,
+        "pos": 6.78,
+        "neu": 85.94,
+        "neg": 7.28,
         "count": 20
       },
       {
@@ -4628,9 +4628,24 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -17,
+          "name": "Materials",
+          "bias": -25.9,
           "count": 1
+        },
+        {
+          "name": "Utilities",
+          "bias": -15.05,
+          "count": 2
+        },
+        {
+          "name": "Healthcare",
+          "bias": -14.33,
+          "count": 6
+        },
+        {
+          "name": "Communication",
+          "bias": -12.25,
+          "count": 2
         },
         {
           "name": "Manufacturing",
@@ -4638,59 +4653,32 @@
           "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": -7.49,
-          "count": 7
-        },
-        {
-          "name": "Communication",
-          "bias": -7.1,
-          "count": 2
+          "name": "Real Estate",
+          "bias": -4.55,
+          "count": 4
         },
         {
           "name": "Technology",
-          "bias": -3.83,
-          "count": 122
-        },
-        {
-          "name": "Energy",
-          "bias": -2.09,
-          "count": 8
-        },
-        {
-          "name": "Real Estate",
-          "bias": -0.47,
-          "count": 3
+          "bias": -1.16,
+          "count": 120
         },
         {
           "name": "Finance",
-          "bias": -0.19,
+          "bias": -0.52,
           "count": 18
+        },
+        {
+          "name": "Energy",
+          "bias": 0.46,
+          "count": 9
         }
       ],
       "pos": [],
       "neu": [
         {
           "name": "Communication",
-          "bias": -7.1,
+          "bias": -12.25,
           "count": 2
-        },
-        {
-          "name": "Technology",
-          "bias": -3.83,
-          "count": 122
-        },
-        {
-          "name": "Energy",
-          "bias": -2.09,
-          "count": 8
-        }
-      ],
-      "neg": [
-        {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
         },
         {
           "name": "Manufacturing",
@@ -4698,41 +4686,58 @@
           "count": 2
         },
         {
+          "name": "Real Estate",
+          "bias": -4.55,
+          "count": 4
+        }
+      ],
+      "neg": [
+        {
+          "name": "Materials",
+          "bias": -25.9,
+          "count": 1
+        },
+        {
+          "name": "Utilities",
+          "bias": -15.05,
+          "count": 2
+        },
+        {
           "name": "Healthcare",
-          "bias": -7.49,
-          "count": 7
+          "bias": -14.33,
+          "count": 6
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-27T15:29:13.024Z",
+          "label": "2026-10-27T19:05:13.680Z",
+          "pos": 11,
+          "neu": 75,
+          "neg": 14,
+          "count": 7
+        },
+        {
+          "label": "2026-10-27T20:05:13.680Z",
           "pos": 10,
-          "neu": 84,
-          "neg": 6,
-          "count": 9
+          "neu": 83,
+          "neg": 7,
+          "count": 8
         },
         {
-          "label": "2026-10-27T16:29:13.024Z",
-          "pos": 8,
-          "neu": 87,
-          "neg": 5,
-          "count": 18
+          "label": "2026-10-27T21:05:13.680Z",
+          "pos": 10,
+          "neu": 83,
+          "neg": 7,
+          "count": 28
         },
         {
-          "label": "2026-10-27T17:29:13.024Z",
-          "pos": 5,
-          "neu": 80,
-          "neg": 15,
-          "count": 27
-        },
-        {
-          "label": "2026-10-27T18:29:13.024Z",
-          "pos": 5,
-          "neu": 84,
-          "neg": 11,
-          "count": 22
+          "label": "2026-10-27T22:05:13.680Z",
+          "pos": 6,
+          "neu": 86,
+          "neg": 8,
+          "count": 39
         }
       ]
     }
@@ -4940,42 +4945,42 @@
         "category": "world"
       },
       {
-        "title": "175 Democrats demand Trump admin stop Ilhan Omar investigation, warn it could hurt her re-election bid",
-        "link": "https://www.foxnews.com/politics/175-democrats-demand-trump-admin-stop-ilhan-omar-investigation-warn-could-hurt-her-re-election-bid",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Here's whether Texas could go blue as midterms approach, Trump visits state again",
+        "link": "https://www.cbsnews.com/video/heres-whether-texas-could-go-blue-as-midterms-approach-trump-visits-state-again/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Rep. Pramila Jayapal led 175 House Democrats in accusing DHS and DOJ of weaponizing the federal investigation into Ilhan Omar's immigration history.",
+        "description": "President Trump is once again hitting the campaign trail in Texas as the race between Republican Ken Paxton and James Talrico remains tight. CBS News' Anthony Salvanto breaks it down, and Texas Tribune reporter Kayla Guo joins \"The Daily Report.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T19:06:43.000Z",
+        "publishedAt": "2026-10-27T22:49:18.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 23.6,
-          "neuP": 76.4,
-          "label": "negative",
-          "confidence": 0.8
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Trump accused of trying to 'force' Senate candidate on voters as GOP feud erupts",
-        "link": "https://www.foxnews.com/politics/trump-accused-trying-force-senate-candidate-voters-gop-feud-erupts",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump erased $119 million in restitution for crime victims, CBS investigation finds",
+        "link": "https://www.cbsnews.com/video/trump-erased-119-million-in-restitution-for-crime-victims-cbs-investigation-finds/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ralph Norman refuses to campaign for Darline Graham, accusing Trump of trying to force his hand-picked Senate candidate on South Carolina voters.",
+        "description": "A CBS News investigation found that President Trump's use of clemency orders erased at least $119 million in restitution for victims of crimes, including small businesses and the IRS. CBS News investigative reporter Daniel Klaidman reports.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T17:26:02.000Z",
+        "publishedAt": "2026-10-27T22:27:06.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 16,
-          "neuP": 84,
+          "negP": 15.5,
+          "neuP": 84.5,
           "label": "negative",
-          "confidence": 0.65
+          "confidence": 0.8
         },
         "category": "usa"
       }
@@ -5182,42 +5187,162 @@
         "category": "world"
       },
       {
-        "title": "175 Democrats demand Trump admin stop Ilhan Omar investigation, warn it could hurt her re-election bid",
-        "link": "https://www.foxnews.com/politics/175-democrats-demand-trump-admin-stop-ilhan-omar-investigation-warn-could-hurt-her-re-election-bid",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Here's whether Texas could go blue as midterms approach, Trump visits state again",
+        "link": "https://www.cbsnews.com/video/heres-whether-texas-could-go-blue-as-midterms-approach-trump-visits-state-again/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Rep. Pramila Jayapal led 175 House Democrats in accusing DHS and DOJ of weaponizing the federal investigation into Ilhan Omar's immigration history.",
+        "description": "President Trump is once again hitting the campaign trail in Texas as the race between Republican Ken Paxton and James Talrico remains tight. CBS News' Anthony Salvanto breaks it down, and Texas Tribune reporter Kayla Guo joins \"The Daily Report.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T19:06:43.000Z",
+        "publishedAt": "2026-10-27T22:49:18.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 23.6,
-          "neuP": 76.4,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump erased $119 million in restitution for crime victims, CBS investigation finds",
+        "link": "https://www.cbsnews.com/video/trump-erased-119-million-in-restitution-for-crime-victims-cbs-investigation-finds/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A CBS News investigation found that President Trump's use of clemency orders erased at least $119 million in restitution for victims of crimes, including small businesses and the IRS. CBS News investigative reporter Daniel Klaidman reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T22:27:06.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 15.5,
+          "neuP": 84.5,
           "label": "negative",
           "confidence": 0.8
         },
         "category": "usa"
       },
       {
-        "title": "Trump accused of trying to 'force' Senate candidate on voters as GOP feud erupts",
-        "link": "https://www.foxnews.com/politics/trump-accused-trying-force-senate-candidate-voters-gop-feud-erupts",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Sen. Chris Coons speaks out against Trump's Ukraine policy",
+        "link": "https://www.cbsnews.com/video/chris-coons-speaks-out-trump-ukraine/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ralph Norman refuses to campaign for Darline Graham, accusing Trump of trying to force his hand-picked Senate candidate on South Carolina voters.",
+        "description": "Democratic Sen. Chris Coons of Delaware joins \"The Takeout\" to address the Trump administration's policies toward Ukraine and Russia as Elon Musk admits to restricting the country's access to a defensive satellite system.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T17:26:02.000Z",
+        "publishedAt": "2026-10-27T22:20:28.000Z",
+        "sentiment": {
+          "posP": 7.5,
+          "negP": 5.9,
+          "neuP": 86.6,
+          "label": "neutral",
+          "confidence": 0.08
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump campaigns in Texas as 83% of those polled say corruption is a major factor in the midterms",
+        "link": "https://www.cbsnews.com/video/trump-campaigns-texas-polled-say-corruption-major-factor-midterms/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The stakes are higher than ever for President Trump, whose final two years in office will be impacted by who controls Congress. CBS News correspondent Natalie Brand reports as the president campaigns in Texas for the third time this month.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T22:17:18.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 16,
-          "neuP": 84,
-          "label": "negative",
-          "confidence": 0.65
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump makes third trip to Texas this month as left-leaning leaders triumph globally",
+        "link": "https://www.cbsnews.com/video/trump-makes-third-trip-to-texas-this-month-as-left-leaning-leaders-triumph-globally/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump made a third pre-midterms trip to Texas this month as he tries to defend his party's majority in Congress. Meanwhile, left-leaning politicians have seen recent triumphs in international elections. CBS News' Nancy Cordes reports from Texas.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T21:34:33.000Z",
+        "sentiment": {
+          "posP": 11.3,
+          "negP": 0,
+          "neuP": 88.7,
+          "label": "positive",
+          "confidence": 0.73
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Grand jury declines to indict former Trump aide Cassidy Hutchinson, star witness of Jan. 6 committee",
+        "link": "https://www.nbcnews.com/politics/justice-department/grand-jury-declines-indict-former-trump-aide-cassidy-hutchinson-jan-6-rcna603233",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The failed indictment is one of many for federal prosecutors during the second Trump administration.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T22:42:04.000Z",
+        "sentiment": {
+          "posP": 8.7,
+          "negP": 9.6,
+          "neuP": 81.7,
+          "label": "neutral",
+          "confidence": 0.08
+        },
+        "category": "usa"
+      },
+      {
+        "title": "White House tempers its tough talk on Canada trade as inflation tops voter concerns",
+        "link": "https://www.nbcnews.com/business/economy/canada-trade-tariffs-trump-maine-midterms-rcna605906",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump’s combative approach to Canada appears to be softening just days before midterm elections in which tariff-fueled inflation is a primary concern for voters.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T18:00:38.000Z",
+        "sentiment": {
+          "posP": 8,
+          "negP": 9.2,
+          "neuP": 82.8,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Wes Moore’s other 2026 battle: From the Politics Desk",
+        "link": "https://www.nbcnews.com/politics/politics-news/wes-moores-other-2026-battle-politics-desk-rcna606000",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Welcome to From the Politics Desk, a daily newsletter that brings you the NBC News Politics team’s latest reporting and analysis from the White House, Capitol Hill and the campaign trail.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T21:25:23.000Z",
+        "sentiment": {
+          "posP": 7,
+          "negP": 6.1,
+          "neuP": 86.9,
+          "label": "neutral",
+          "confidence": 0.1
         },
         "category": "usa"
       },
@@ -5242,102 +5367,42 @@
         "category": "usa"
       },
       {
-        "title": "Election Officials Fear Trump Administration’s Interference in Midterms Voting",
-        "link": "https://www.nytimes.com/2026/10/27/us/election-interference-trump-midterms.html",
+        "title": "Exit Polls in Israel Show No Clear Winner",
+        "link": "https://www.nytimes.com/2026/10/27/briefing/israel-election-candy-prices.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "State and local plans for Election Day include how to react to potential ICE raids, misbehavior by federal election monitors and attempts to seize votes or machines.",
+        "description": "Also, Trump is set to loosen methane rules. Here’s the latest at the end of Tuesday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T16:51:20.000Z",
+        "publishedAt": "2026-10-27T21:58:14.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 8.4,
-          "neuP": 91.6,
-          "label": "negative",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump-Appointed CDC Deputy Director Jennifer Shuford Resigns After 4 Months",
-        "link": "https://www.nytimes.com/2026/10/27/health/shuford-cdc-resign.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Dr. Jennifer Shuford, a respected former Texas health official, had been appointed by President Trump to help steady the agency.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T15:07:59.000Z",
-        "sentiment": {
-          "posP": 17.5,
-          "negP": 6.9,
-          "neuP": 75.6,
+          "posP": 21.6,
+          "negP": 7.4,
+          "neuP": 71,
           "label": "positive",
-          "confidence": 0.54
+          "confidence": 0.64
         },
         "category": "usa"
       },
       {
-        "title": "Trump says Obama \"wouldn't understand\" White House renovations",
-        "link": "https://www.cbsnews.com/news/trump-obama-cheesecake-factory-white-house/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Grand Jury Declines to Bring Charges Against Cassidy Hutchinson",
+        "link": "https://www.nytimes.com/2026/10/27/us/politics/cassidy-hutchinson-indicted-trump-testimony.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "\"I would try and explain that to a guy like Obama, but he wouldn't understand,\" President Trump said at a rally in Mississippi.",
+        "description": "The rejection of the indictment was the latest extraordinary setback in President Trump’s wide-ranging campaign to go after his political opponents.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T15:54:15.000Z",
+        "publishedAt": "2026-10-27T22:11:48.000Z",
         "sentiment": {
-          "posP": 5.9,
-          "negP": 0,
-          "neuP": 94.1,
-          "label": "neutral",
-          "confidence": 0.19
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Honda warns 50% Canada auto tariffs would be catastrophic for industry",
-        "link": "https://www.cnbc.com/2026/10/27/honda-warns-50percent-canada-auto-tariffs-would-be-catastrophic.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump has threatened to double tariffs on Canadian vehicles and parts from 25% to 50% if a trade deal is not reached between the two countries.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T17:53:47.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 20.7,
-          "neuP": 79.3,
+          "posP": 8.4,
+          "negP": 15.7,
+          "neuP": 75.9,
           "label": "negative",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Speaker Mike Johnson calls election-transfer concerns ‘absurd’",
-        "link": "https://www.cnbc.com/2026/10/27/speaker-johnson-peaceful-transfer-midterms.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats and voting rights groups have raised concerns that President Donald Trump and congressional Republicans could challenge election results if they lose.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T18:03:02.000Z",
-        "sentiment": {
-          "posP": 4.2,
-          "negP": 8.7,
-          "neuP": 87.1,
-          "label": "negative",
-          "confidence": 0.34
+          "confidence": 0.38
         },
         "category": "usa"
       },
@@ -5400,87 +5465,34 @@
           "confidence": 0.48
         },
         "category": "usa"
-      },
-      {
-        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
-        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-24T22:56:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "White House tempers its tough talk on Canada trade as inflation tops voter concerns",
-        "link": "https://www.nbcnews.com/business/economy/canada-trade-tariffs-trump-maine-midterms-rcna605906",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump’s combative approach to Canada appears to be softening just days before midterm elections where tariff fueled inflation is a primary concern for voters.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T18:00:38.000Z",
-        "sentiment": {
-          "posP": 8,
-          "negP": 9.2,
-          "neuP": 82.8,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Neil Young sues for the second time over Trump’s use of ‘Rockin’ in the Free World’",
-        "link": "https://www.nbcnews.com/politics/donald-trump/neil-young-sues-trump-10-million-rockin-free-world-rcna605912",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Rock star Neil Young filed a $10 million lawsuit on Monday over President Donald Trump’s use of his song “Rockin’ in the Free World” at campaign events — the second time the artist has sued over Trump’s use of his music.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T14:45:28.000Z",
-        "sentiment": {
-          "posP": 10.9,
-          "negP": 3.1,
-          "neuP": 86,
-          "label": "positive",
-          "confidence": 0.69
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.42,
-      "neu": 85.94,
-      "neg": 8.64,
-      "count": 28
+      "pos": 7.08,
+      "neu": 84.45,
+      "neg": 8.47,
+      "count": 33
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.02,
-        "neu": 84.62,
-        "neg": 9.37,
+        "pos": 9.56,
+        "neu": 81.42,
+        "neg": 9.02,
+        "count": 9
+      },
+      {
+        "source": "CBS News",
+        "pos": 3.8,
+        "neu": 90.3,
+        "neg": 5.9,
         "count": 6
       },
       {
         "source": "NYT",
-        "pos": 10.26,
-        "neu": 82.46,
-        "neg": 7.28,
+        "pos": 12.76,
+        "neu": 78.4,
+        "neg": 8.84,
         "count": 5
       },
       {
@@ -5498,25 +5510,11 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 3,
-        "neu": 83.8,
-        "neg": 13.2,
-        "count": 3
-      },
-      {
         "source": "ABC News",
-        "pos": 3.03,
-        "neu": 91.9,
-        "neg": 5.07,
+        "pos": 5.23,
+        "neu": 82,
+        "neg": 12.77,
         "count": 3
-      },
-      {
-        "source": "CBS News",
-        "pos": 4.95,
-        "neu": 88.05,
-        "neg": 7,
-        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5529,17 +5527,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.13,
-        "neu": 86.24,
-        "neg": 8.63,
-        "count": 12
+        "pos": 7.5,
+        "neu": 85.77,
+        "neg": 6.73,
+        "count": 15
       },
       {
         "topic": "Policy",
-        "pos": 2.17,
-        "neu": 90.48,
-        "neg": 7.35,
-        "count": 6
+        "pos": 5.69,
+        "neu": 87.36,
+        "neg": 6.96,
+        "count": 7
       },
       {
         "topic": "Foreign Policy",
@@ -5552,15 +5550,15 @@
         "topic": "Economy",
         "pos": 6.75,
         "neu": 82.78,
-        "neg": 10.48,
+        "neg": 10.47,
         "count": 4
       },
       {
         "topic": "Legal",
-        "pos": 10.9,
-        "neu": 86,
-        "neg": 3.1,
-        "count": 1
+        "pos": 7.5,
+        "neu": 73.1,
+        "neg": 19.4,
+        "count": 2
       }
     ]
   },
@@ -5587,28 +5585,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-27T15:29:13.025Z",
+        "label": "2026-10-27T19:05:13.682Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T16:29:13.025Z",
+        "label": "2026-10-27T20:05:13.682Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T17:29:13.025Z",
+        "label": "2026-10-27T21:05:13.682Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T18:29:13.025Z",
+        "label": "2026-10-27T22:05:13.682Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5617,28 +5615,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-27T15:29:13.025Z",
+        "label": "2026-10-27T19:05:13.683Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T16:29:13.025Z",
+        "label": "2026-10-27T20:05:13.683Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T17:29:13.025Z",
+        "label": "2026-10-27T21:05:13.683Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T18:29:13.025Z",
+        "label": "2026-10-27T22:05:13.683Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5718,7 +5716,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-27T19:29:13.026Z",
+    "generatedAt": "2026-10-27T23:05:13.684Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5840,7 +5838,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 166,
-      "potusArticles": 28,
+      "potusArticles": 33,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
