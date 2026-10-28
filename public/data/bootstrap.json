@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-28T02:07:24.035Z",
+  "generatedAt": "2026-10-28T08:21:13.059Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 169,
-    "potusArticles": 37
+    "usaArticles": 168,
+    "potusArticles": 39
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-27T22:07:24.036Z",
+          "label": "2026-10-28T04:21:13.060Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T23:07:24.036Z",
+          "label": "2026-10-28T05:21:13.060Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-28T00:07:24.036Z",
+          "label": "2026-10-28T06:21:13.060Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-28T01:07:24.036Z",
+          "label": "2026-10-28T07:21:13.060Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-27T22:07:24.036Z",
+          "label": "2026-10-28T04:21:13.060Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-27T23:07:24.036Z",
+          "label": "2026-10-28T05:21:13.060Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-28T00:07:24.036Z",
+          "label": "2026-10-28T06:21:13.060Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-28T01:07:24.036Z",
+          "label": "2026-10-28T07:21:13.060Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.19,
-      "neu": 82.42,
-      "neg": 10.38,
-      "count": 169
+      "pos": 7.36,
+      "neu": 83.01,
+      "neg": 9.63,
+      "count": 168
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.09,
-        "neu": 82.35,
-        "neg": 7.55,
-        "count": 42
+        "pos": 9.96,
+        "neu": 83.44,
+        "neg": 6.6,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 7.56,
-        "neu": 79.1,
-        "neg": 13.34,
+        "pos": 9.34,
+        "neu": 79.22,
+        "neg": 11.44,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.73,
-        "neu": 82.8,
-        "neg": 12.47,
+        "pos": 4.22,
+        "neu": 82.44,
+        "neg": 13.35,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.01,
-        "neu": 85.6,
-        "neg": 8.39,
-        "count": 23
+        "pos": 6.3,
+        "neu": 86.55,
+        "neg": 7.15,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 5.92,
-        "neu": 85.11,
-        "neg": 8.97,
+        "pos": 5.95,
+        "neu": 86.83,
+        "neg": 7.22,
         "count": 20
       },
       {
@@ -4628,19 +4628,19 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Communication",
-          "bias": -14,
+          "name": "Manufacturing",
+          "bias": -15.4,
           "count": 1
         },
         {
           "name": "Healthcare",
-          "bias": -13.11,
-          "count": 7
+          "bias": -15.38,
+          "count": 6
         },
         {
-          "name": "Manufacturing",
-          "bias": -10.35,
-          "count": 2
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
         },
         {
           "name": "Utilities",
@@ -4654,23 +4654,23 @@
         },
         {
           "name": "Energy",
-          "bias": -3.57,
-          "count": 15
+          "bias": -5.2,
+          "count": 13
         },
         {
           "name": "Technology",
-          "bias": -2.6,
-          "count": 127
+          "bias": -2.66,
+          "count": 123
         },
         {
           "name": "Materials",
-          "bias": -2.1,
+          "bias": -2.35,
           "count": 2
         },
         {
           "name": "Finance",
-          "bias": -0.52,
-          "count": 18
+          "bias": -0.03,
+          "count": 13
         }
       ],
       "pos": [],
@@ -4687,57 +4687,57 @@
         },
         {
           "name": "Energy",
-          "bias": -3.57,
-          "count": 15
+          "bias": -5.2,
+          "count": 13
         }
       ],
       "neg": [
         {
-          "name": "Communication",
-          "bias": -14,
+          "name": "Manufacturing",
+          "bias": -15.4,
           "count": 1
         },
         {
           "name": "Healthcare",
-          "bias": -13.11,
-          "count": 7
+          "bias": -15.38,
+          "count": 6
         },
         {
-          "name": "Manufacturing",
-          "bias": -10.35,
-          "count": 2
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-27T22:07:24.038Z",
-          "pos": 8,
-          "neu": 85,
-          "neg": 7,
-          "count": 17
-        },
-        {
-          "label": "2026-10-27T23:07:24.038Z",
-          "pos": 6,
-          "neu": 81,
-          "neg": 13,
-          "count": 14
-        },
-        {
-          "label": "2026-10-28T00:07:24.038Z",
-          "pos": 6,
-          "neu": 85,
-          "neg": 9,
-          "count": 30
-        },
-        {
-          "label": "2026-10-28T01:07:24.038Z",
-          "pos": 8,
+          "label": "2026-10-28T04:21:13.062Z",
+          "pos": 13,
           "neu": 82,
-          "neg": 10,
-          "count": 9
+          "neg": 5,
+          "count": 3
+        },
+        {
+          "label": "2026-10-28T05:21:13.062Z",
+          "pos": 12,
+          "neu": 80,
+          "neg": 8,
+          "count": 3
+        },
+        {
+          "label": "2026-10-28T06:21:13.062Z",
+          "pos": 7,
+          "neu": 84,
+          "neg": 9,
+          "count": 5
+        },
+        {
+          "label": "2026-10-28T07:21:13.062Z",
+          "pos": 12,
+          "neu": 82,
+          "neg": 6,
+          "count": 6
         }
       ]
     }
@@ -4945,40 +4945,40 @@
         "category": "world"
       },
       {
-        "title": "Tiger Woods and Vanessa Trump's relationship 'stronger than ever' with marriage talks on the table: report",
-        "link": "https://www.foxnews.com/outkick-sports/tiger-woods-vanessa-trumps-relationship-stronger-than-ever-marriage-talks-table-report",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Grand Jury Declines to Bring Charges Against Cassidy Hutchinson",
+        "link": "https://www.nytimes.com/2026/10/27/us/politics/cassidy-hutchinson-indicted-trump-testimony.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Tiger Woods and Vanessa Trump have discussed marriage after leaning on each other in a difficult year, dealing with his arrest on charges of DUI and her breast cancer diagnosis.",
+        "description": "The rejection of the indictment was the latest extraordinary setback in President Trump’s wide-ranging campaign to go after his political opponents.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T23:39:04.000Z",
+        "publishedAt": "2026-10-28T02:21:11.000Z",
         "sentiment": {
-          "posP": 4.8,
-          "negP": 21.1,
-          "neuP": 74.1,
+          "posP": 8.4,
+          "negP": 15.7,
+          "neuP": 75.9,
           "label": "negative",
-          "confidence": 0.83
+          "confidence": 0.38
         },
         "category": "usa"
       },
       {
-        "title": "Russian diesel tankers close in on US ports as Trump, Putin deal triggers legal showdown",
-        "link": "https://www.foxnews.com/politics/russian-diesel-tankers-close-us-ports-trump-putin-deal-triggers-legal-showdown",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "White House Has Tight Grip Over FBI in Pursuing Trump Targets, Agent Says",
+        "link": "https://www.nytimes.com/2026/10/27/us/politics/fbi-trump-patel-witt-testimony.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Three tankers carrying Russian diesel are heading to U.S. ports as Congress threatens to investigate companies involved in Trump's fuel deal with Moscow.",
+        "description": "In court testimony, the agent outlined the willingness of Kash Patel, the F.B.I. director, to take orders from President Trump to investigate his perceived enemies.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T23:09:40.000Z",
+        "publishedAt": "2026-10-28T00:52:22.000Z",
         "sentiment": {
-          "posP": 3.7,
-          "negP": 6.5,
-          "neuP": 89.8,
+          "posP": 5.1,
+          "negP": 7.7,
+          "neuP": 87.2,
           "label": "negative",
           "confidence": 0.27
         },
@@ -5187,46 +5187,6 @@
         "category": "world"
       },
       {
-        "title": "Tiger Woods and Vanessa Trump's relationship 'stronger than ever' with marriage talks on the table: report",
-        "link": "https://www.foxnews.com/outkick-sports/tiger-woods-vanessa-trumps-relationship-stronger-than-ever-marriage-talks-table-report",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Tiger Woods and Vanessa Trump have discussed marriage after leaning on each other in a difficult year, dealing with his arrest on charges of DUI and her breast cancer diagnosis.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T23:39:04.000Z",
-        "sentiment": {
-          "posP": 4.8,
-          "negP": 21.1,
-          "neuP": 74.1,
-          "label": "negative",
-          "confidence": 0.83
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Russian diesel tankers close in on US ports as Trump, Putin deal triggers legal showdown",
-        "link": "https://www.foxnews.com/politics/russian-diesel-tankers-close-us-ports-trump-putin-deal-triggers-legal-showdown",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Three tankers carrying Russian diesel are heading to U.S. ports as Congress threatens to investigate companies involved in Trump's fuel deal with Moscow.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-27T23:09:40.000Z",
-        "sentiment": {
-          "posP": 3.7,
-          "negP": 6.5,
-          "neuP": 89.8,
-          "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
         "title": "Grand Jury Declines to Bring Charges Against Cassidy Hutchinson",
         "link": "https://www.nytimes.com/2026/10/27/us/politics/cassidy-hutchinson-indicted-trump-testimony.html",
         "source": "NYT",
@@ -5236,7 +5196,7 @@
         "description": "The rejection of the indictment was the latest extraordinary setback in President Trump’s wide-ranging campaign to go after his political opponents.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-28T00:45:29.000Z",
+        "publishedAt": "2026-10-28T02:21:11.000Z",
         "sentiment": {
           "posP": 8.4,
           "negP": 15.7,
@@ -5267,22 +5227,22 @@
         "category": "usa"
       },
       {
-        "title": "Exit Polls in Israel Show No Clear Winner",
-        "link": "https://www.nytimes.com/2026/10/27/briefing/israel-election-candy-prices.html",
+        "title": "Texas Senate Rivals Converge on Lubbock, With Trump in the Mix",
+        "link": "https://www.nytimes.com/2026/10/27/us/elections/paxton-talarico-texas-senate-rally-lubbock.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Also, Trump is set to loosen methane rules. Here’s the latest at the end of Tuesday.",
+        "description": "It was a showdown of sorts in western Texas as James Talarico and Ken Paxton appeared at dueling rallies on either side of a prairie-dog-filled city park.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T23:02:40.000Z",
+        "publishedAt": "2026-10-28T04:08:58.000Z",
         "sentiment": {
-          "posP": 21.6,
-          "negP": 7.4,
-          "neuP": 71,
-          "label": "positive",
-          "confidence": 0.64
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5296,7 +5256,7 @@
         "description": "In the legal tangle between the Justice Department and California, a federal judge on Tuesday deferred a ruling but said the government already had a remedy it could use after the election.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-28T00:53:53.000Z",
+        "publishedAt": "2026-10-28T02:31:21.000Z",
         "sentiment": {
           "posP": 8.7,
           "negP": 0,
@@ -5323,6 +5283,26 @@
           "neuP": 70.1,
           "label": "positive",
           "confidence": 0.46
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Jimmy Kimmel Turns Trump Heckler’s Taunt Into a T-Shirt",
+        "link": "https://www.nytimes.com/2026/10/28/arts/television/jimmy-kimmel-trump-heckler.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Kimmel was inspired after the president’s “‘Tone-Deaf Comedy Jam’ got tripped up by a heckler.”",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-28T06:12:48.000Z",
+        "sentiment": {
+          "posP": 22.2,
+          "negP": 0,
+          "neuP": 77.8,
+          "label": "positive",
+          "confidence": 0.69
         },
         "category": "usa"
       },
@@ -5407,60 +5387,80 @@
         "category": "usa"
       },
       {
-        "title": "Grand jury declines to indict former Trump aide Cassidy Hutchinson, star witness of Jan. 6 committee",
-        "link": "https://www.nbcnews.com/politics/justice-department/grand-jury-declines-indict-former-trump-aide-cassidy-hutchinson-jan-6-rcna603233",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Trump says Iran war will end 'when I want it to' as costs reportedly balloon to $47 billion",
+        "link": "https://www.cnbc.com/2026/10/28/us-iran-war-trump-hormuz-costs-centcom.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The failed indictment is one of many for federal prosecutors during the second Trump administration.",
+        "description": "Trump's statement comes as a report from The Hill revealed that the costs of the Iran conflict has ballooned to $47 billion.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T22:42:04.000Z",
+        "publishedAt": "2026-10-28T03:02:44.000Z",
         "sentiment": {
-          "posP": 8.7,
-          "negP": 9.6,
-          "neuP": 81.7,
-          "label": "neutral",
-          "confidence": 0.08
+          "posP": 3.1,
+          "negP": 14.6,
+          "neuP": 82.3,
+          "label": "negative",
+          "confidence": 0.71
         },
         "category": "usa"
       },
       {
-        "title": "White House tempers its tough talk on Canada trade as inflation tops voter concerns",
-        "link": "https://www.nbcnews.com/business/economy/canada-trade-tariffs-trump-maine-midterms-rcna605906",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Trump jokes $5,000 would buy 'a hamburger and maybe a small dessert' at Mar-a-Lago as cost of living looms over midterms",
+        "link": "https://www.cnbc.com/2026/10/28/trump-jokes-5000-cash-would-buy-hamburger-and-dessert-at-mar-a-lago.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump’s combative approach to Canada appears to be softening just days before midterm elections in which tariff-fueled inflation is a primary concern for voters.",
+        "description": "Trump joked that the $5,000 payments for U.S. adults would buy little more than \"a hamburger and maybe a small dessert\" as cost of living looms over midterms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-27T18:00:38.000Z",
+        "publishedAt": "2026-10-28T04:29:20.000Z",
         "sentiment": {
-          "posP": 8,
-          "negP": 9.2,
-          "neuP": 82.8,
-          "label": "neutral",
-          "confidence": 0.13
+          "posP": 8.5,
+          "negP": 6.3,
+          "neuP": 85.2,
+          "label": "positive",
+          "confidence": 0.27
         },
         "category": "usa"
       },
       {
-        "title": "Trump says he’ll roll back Biden-era methane rules for oil and gas companies",
-        "link": "https://www.nbcnews.com/science/climate-change/trump-methane-rules-leaks-emissions-oil-gas-rcna605983",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Speaker Mike Johnson calls election-transfer concerns ‘absurd’",
+        "link": "https://www.cnbc.com/2026/10/27/speaker-johnson-peaceful-transfer-midterms.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The EPA plans to ease regulations aimed at curbing methane leaks, Trump said. The potent greenhouse gas is a major contributor to climate change.",
+        "description": "Democrats and voting rights groups have raised concerns that President Donald Trump and congressional Republicans could challenge election results if they lose.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-28T01:37:47.000Z",
+        "publishedAt": "2026-10-27T22:35:25.000Z",
         "sentiment": {
-          "posP": 6.7,
-          "negP": 0,
-          "neuP": 93.3,
+          "posP": 4.2,
+          "negP": 8.7,
+          "neuP": 87.1,
+          "label": "negative",
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump administration may let more Russian diesel onto market, energy secretary tells CNBC",
+        "link": "https://www.cnbc.com/2026/10/27/trump-putin-zelenskyy-russia-ukraine-diesel.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The diesel volumes in the Trump-Putin deal won't materially lower prices because the shipments are small compared to total demand, analysts say.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-27T22:18:59.000Z",
+        "sentiment": {
+          "posP": 10.6,
+          "negP": 4,
+          "neuP": 85.4,
           "label": "positive",
           "confidence": 0.36
         },
@@ -5468,25 +5468,25 @@
       }
     ],
     "sentiment": {
-      "pos": 7.04,
-      "neu": 84.02,
-      "neg": 8.95,
-      "count": 37
+      "pos": 7.21,
+      "neu": 85.44,
+      "neg": 7.35,
+      "count": 39
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.24,
-        "neu": 82.67,
-        "neg": 8.09,
-        "count": 10
+        "pos": 9.09,
+        "neu": 83.63,
+        "neg": 7.28,
+        "count": 13
       },
       {
         "source": "NYT",
-        "pos": 11.09,
-        "neu": 81.5,
-        "neg": 7.41,
-        "count": 7
+        "pos": 9.78,
+        "neu": 84.66,
+        "neg": 5.56,
+        "count": 8
       },
       {
         "source": "CBS News",
@@ -5510,17 +5510,10 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 5.83,
-        "neu": 84.97,
-        "neg": 9.2,
-        "count": 3
-      },
-      {
         "source": "ABC News",
-        "pos": 5.23,
-        "neu": 82,
-        "neg": 12.77,
+        "pos": 6.23,
+        "neu": 88.73,
+        "neg": 5.03,
         "count": 3
       },
       {
@@ -5534,38 +5527,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 8.17,
-        "neu": 82.77,
-        "neg": 9.06,
-        "count": 15
+        "pos": 6.94,
+        "neu": 85.61,
+        "neg": 7.45,
+        "count": 18
       },
       {
         "topic": "Policy",
-        "pos": 5.96,
-        "neu": 88.69,
-        "neg": 5.35,
+        "pos": 6.35,
+        "neu": 88.38,
+        "neg": 5.28,
         "count": 8
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7.86,
-        "neu": 82.3,
-        "neg": 9.84,
-        "count": 5
+        "pos": 9.23,
+        "neu": 82.57,
+        "neg": 8.2,
+        "count": 6
       },
       {
         "topic": "Legal",
-        "pos": 4.76,
-        "neu": 83,
-        "neg": 12.24,
-        "count": 5
+        "pos": 5.78,
+        "neu": 84.28,
+        "neg": 9.95,
+        "count": 4
       },
       {
         "topic": "Economy",
-        "pos": 6.75,
-        "neu": 82.78,
-        "neg": 10.47,
-        "count": 4
+        "pos": 9,
+        "neu": 83.93,
+        "neg": 7.07,
+        "count": 3
       }
     ]
   },
@@ -5592,28 +5585,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-27T22:07:24.040Z",
+        "label": "2026-10-28T04:21:13.064Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T23:07:24.040Z",
+        "label": "2026-10-28T05:21:13.064Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-28T00:07:24.040Z",
+        "label": "2026-10-28T06:21:13.064Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-28T01:07:24.040Z",
+        "label": "2026-10-28T07:21:13.064Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5622,28 +5615,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-27T22:07:24.040Z",
+        "label": "2026-10-28T04:21:13.064Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-27T23:07:24.040Z",
+        "label": "2026-10-28T05:21:13.064Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-28T00:07:24.040Z",
+        "label": "2026-10-28T06:21:13.064Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-28T01:07:24.040Z",
+        "label": "2026-10-28T07:21:13.064Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5723,7 +5716,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-28T02:07:24.041Z",
+    "generatedAt": "2026-10-28T08:21:13.066Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5844,8 +5837,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 169,
-      "potusArticles": 37,
+      "usaArticles": 168,
+      "potusArticles": 39,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
