@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-29T17:34:46.607Z",
+  "generatedAt": "2026-10-29T21:58:01.906Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 166,
-    "potusArticles": 27
+    "usaArticles": 169,
+    "potusArticles": 31
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-29T13:34:46.608Z",
+          "label": "2026-10-29T17:58:01.907Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T14:34:46.608Z",
+          "label": "2026-10-29T18:58:01.907Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T15:34:46.608Z",
+          "label": "2026-10-29T19:58:01.907Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T16:34:46.608Z",
+          "label": "2026-10-29T20:58:01.907Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-29T13:34:46.608Z",
+          "label": "2026-10-29T17:58:01.907Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T14:34:46.608Z",
+          "label": "2026-10-29T18:58:01.907Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T15:34:46.608Z",
+          "label": "2026-10-29T19:58:01.907Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T16:34:46.608Z",
+          "label": "2026-10-29T20:58:01.907Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.96,
-      "neu": 82.25,
-      "neg": 9.79,
-      "count": 166
+      "pos": 7.28,
+      "neu": 82.03,
+      "neg": 10.69,
+      "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.43,
-        "neu": 82.23,
-        "neg": 9.34,
-        "count": 40
+        "pos": 9.26,
+        "neu": 81.02,
+        "neg": 9.72,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 10.02,
-        "neu": 77.93,
-        "neg": 12.05,
+        "pos": 5.72,
+        "neu": 78.5,
+        "neg": 15.78,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 7.35,
-        "neu": 82.42,
-        "neg": 10.23,
+        "pos": 5.05,
+        "neu": 83.75,
+        "neg": 11.2,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.34,
-        "neu": 84.3,
-        "neg": 8.35,
-        "count": 22
+        "pos": 8.1,
+        "neu": 83.35,
+        "neg": 8.56,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 7.8,
-        "neu": 87.49,
-        "neg": 4.7,
+        "pos": 8.07,
+        "neu": 86.62,
+        "neg": 5.32,
         "count": 20
       },
       {
@@ -4629,126 +4629,126 @@
       "rows": [
         {
           "name": "Communication",
-          "bias": -12.7,
+          "bias": -14,
+          "count": 1
+        },
+        {
+          "name": "Materials",
+          "bias": 12.7,
+          "count": 1
+        },
+        {
+          "name": "Utilities",
+          "bias": -10.7,
+          "count": 2
+        },
+        {
+          "name": "Healthcare",
+          "bias": -10.02,
+          "count": 8
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 5.35,
           "count": 2
         },
         {
           "name": "Real Estate",
-          "bias": -11.57,
-          "count": 3
-        },
-        {
-          "name": "Materials",
-          "bias": -4.9,
-          "count": 1
-        },
-        {
-          "name": "Healthcare",
-          "bias": -4.61,
-          "count": 13
-        },
-        {
-          "name": "Energy",
-          "bias": 4.2,
-          "count": 6
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 3.6,
-          "count": 1
+          "bias": -3.8,
+          "count": 2
         },
         {
           "name": "Technology",
-          "bias": -2.84,
-          "count": 125
+          "bias": -3.41,
+          "count": 130
         },
         {
           "name": "Finance",
-          "bias": -2.69,
-          "count": 18
+          "bias": -3.04,
+          "count": 19
         },
         {
-          "name": "Utilities",
-          "bias": -0.03,
-          "count": 3
+          "name": "Energy",
+          "bias": -1.66,
+          "count": 9
         }
       ],
       "pos": [
         {
-          "name": "Energy",
-          "bias": 4.2,
-          "count": 6
+          "name": "Materials",
+          "bias": 12.7,
+          "count": 1
         },
         {
           "name": "Manufacturing",
-          "bias": 3.6,
-          "count": 1
+          "bias": 5.35,
+          "count": 2
         }
       ],
       "neu": [
         {
-          "name": "Healthcare",
-          "bias": -4.61,
-          "count": 13
+          "name": "Real Estate",
+          "bias": -3.8,
+          "count": 2
         },
         {
           "name": "Technology",
-          "bias": -2.84,
-          "count": 125
+          "bias": -3.41,
+          "count": 130
         },
         {
           "name": "Finance",
-          "bias": -2.69,
-          "count": 18
+          "bias": -3.04,
+          "count": 19
         }
       ],
       "neg": [
         {
           "name": "Communication",
-          "bias": -12.7,
+          "bias": -14,
+          "count": 1
+        },
+        {
+          "name": "Utilities",
+          "bias": -10.7,
           "count": 2
         },
         {
-          "name": "Real Estate",
-          "bias": -11.57,
-          "count": 3
-        },
-        {
-          "name": "Materials",
-          "bias": -4.9,
-          "count": 1
+          "name": "Healthcare",
+          "bias": -10.02,
+          "count": 8
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-29T13:34:46.609Z",
-          "pos": 8,
-          "neu": 82,
-          "neg": 10,
-          "count": 15
-        },
-        {
-          "label": "2026-10-29T14:34:46.609Z",
-          "pos": 9,
-          "neu": 84,
-          "neg": 8,
-          "count": 14
-        },
-        {
-          "label": "2026-10-29T15:34:46.609Z",
+          "label": "2026-10-29T17:58:01.908Z",
           "pos": 8,
           "neu": 84,
-          "neg": 8,
-          "count": 26
-        },
-        {
-          "label": "2026-10-29T16:34:46.609Z",
-          "pos": 9,
-          "neu": 82,
           "neg": 9,
+          "count": 13
+        },
+        {
+          "label": "2026-10-29T18:58:01.908Z",
+          "pos": 6,
+          "neu": 84,
+          "neg": 10,
+          "count": 12
+        },
+        {
+          "label": "2026-10-29T19:58:01.908Z",
+          "pos": 6,
+          "neu": 77,
+          "neg": 17,
           "count": 26
+        },
+        {
+          "label": "2026-10-29T20:58:01.908Z",
+          "pos": 6,
+          "neu": 85,
+          "neg": 8,
+          "count": 31
         }
       ]
     }
@@ -4956,42 +4956,42 @@
         "category": "world"
       },
       {
-        "title": "Fox News ‘Antisemitism Exposed’ Newsletter: Trump's point man in the fight against Jew hate",
-        "link": "https://www.foxnews.com/us/fox-news-antisemitism-exposed-newsletter-trumps-point-man-fight-against-jew-hate",
+        "title": "Dem probes could ‘torture’ young Trump officials with crushing legal bills, subpoenaed conservative warns",
+        "link": "https://www.foxnews.com/politics/dem-probes-torture-young-trump-officials-crushing-legal-bills-subpoenaed-conservative-warns",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Fox News' \"Antisemitism Exposed\" newsletter brings you stories on the rising anti-Jewish prejudice across the U.S. and the world.",
+        "description": "Rachel Bovard of CPI warns Democrats could follow Jack Smith's playbook to target young Trump administration officials with costly subpoenas.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T16:33:40.000Z",
+        "publishedAt": "2026-10-29T20:36:26.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 27.3,
-          "neuP": 72.7,
+          "posP": 4,
+          "negP": 18,
+          "neuP": 78,
           "label": "negative",
-          "confidence": 0.87
+          "confidence": 0.49
         },
         "category": "usa"
       },
       {
-        "title": "Trump DOJ's fight over 20K suspected noncitizen voters takes sharp turn as California ballots pour in",
-        "link": "https://www.foxnews.com/politics/trump-dojs-fight-over-20k-suspected-noncitizen-voters-takes-sharp-turn-california-ballots-pour",
+        "title": "Kamala Harris breaks with left flank, warns Dems that impeaching Trump is 'not a good idea'",
+        "link": "https://www.foxnews.com/media/kamala-harris-breaks-left-flank-warns-dems-impeaching-trump-not-good-idea",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A federal judge blocked the Justice Department's bid to sequester ballots from over 20,000 suspected noncitizen voters on California's voter rolls.",
+        "description": "Kamala Harris urged Democrats to focus on investigations and accountability over impeachment, saying the votes aren't there and the party should focus on getting things done.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T16:18:50.000Z",
+        "publishedAt": "2026-10-29T20:19:28.000Z",
         "sentiment": {
-          "posP": 7.9,
-          "negP": 19.8,
-          "neuP": 72.3,
-          "label": "negative",
-          "confidence": 0.48
+          "posP": 6.1,
+          "negP": 8.6,
+          "neuP": 85.3,
+          "label": "neutral",
+          "confidence": 0.03
         },
         "category": "usa"
       }
@@ -5198,82 +5198,102 @@
         "category": "world"
       },
       {
-        "title": "Fox News ‘Antisemitism Exposed’ Newsletter: Trump's point man in the fight against Jew hate",
-        "link": "https://www.foxnews.com/us/fox-news-antisemitism-exposed-newsletter-trumps-point-man-fight-against-jew-hate",
+        "title": "Dem probes could ‘torture’ young Trump officials with crushing legal bills, subpoenaed conservative warns",
+        "link": "https://www.foxnews.com/politics/dem-probes-torture-young-trump-officials-crushing-legal-bills-subpoenaed-conservative-warns",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Fox News' \"Antisemitism Exposed\" newsletter brings you stories on the rising anti-Jewish prejudice across the U.S. and the world.",
+        "description": "Rachel Bovard of CPI warns Democrats could follow Jack Smith's playbook to target young Trump administration officials with costly subpoenas.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T16:33:40.000Z",
+        "publishedAt": "2026-10-29T20:36:26.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 27.3,
-          "neuP": 72.7,
+          "posP": 4,
+          "negP": 18,
+          "neuP": 78,
           "label": "negative",
-          "confidence": 0.87
+          "confidence": 0.49
         },
         "category": "usa"
       },
       {
-        "title": "Trump DOJ's fight over 20K suspected noncitizen voters takes sharp turn as California ballots pour in",
-        "link": "https://www.foxnews.com/politics/trump-dojs-fight-over-20k-suspected-noncitizen-voters-takes-sharp-turn-california-ballots-pour",
+        "title": "Kamala Harris breaks with left flank, warns Dems that impeaching Trump is 'not a good idea'",
+        "link": "https://www.foxnews.com/media/kamala-harris-breaks-left-flank-warns-dems-impeaching-trump-not-good-idea",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A federal judge blocked the Justice Department's bid to sequester ballots from over 20,000 suspected noncitizen voters on California's voter rolls.",
+        "description": "Kamala Harris urged Democrats to focus on investigations and accountability over impeachment, saying the votes aren't there and the party should focus on getting things done.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T16:18:50.000Z",
+        "publishedAt": "2026-10-29T20:19:28.000Z",
         "sentiment": {
-          "posP": 7.9,
-          "negP": 19.8,
-          "neuP": 72.3,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Russian strikes kill 14 in Ukraine but local truce brings some hope",
-        "link": "https://www.cbsnews.com/news/russia-ukraine-war-drone-dnipro-train-station-oleshky-ceasefire/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A Russian drone hit two trains at a station in central Ukraine, killing at least 14 people, but a local truce credited to Melania Trump is bringing some hope elsewhere.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T17:29:05.000Z",
-        "sentiment": {
-          "posP": 20,
-          "negP": 19.6,
-          "neuP": 60.4,
+          "posP": 6.1,
+          "negP": 8.6,
+          "neuP": 85.3,
           "label": "neutral",
-          "confidence": 0.06
+          "confidence": 0.03
         },
         "category": "usa"
       },
       {
-        "title": "Live Updates: Trump campaigns in South Carolina and more",
-        "link": "https://www.cbsnews.com/live-updates/2026-elections-midtems-house-senate-trump/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "GREGG JARRETT: Obama attacks Trump over Omar probe but there’s a big twist",
+        "link": "https://www.foxnews.com/opinion/gregg-jarrett-obama-attacks-trump-omar-probe-big-twist",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "More than 42 million Americans had voted early as of Thursday afternoon, according to the University of Florida Election Lab.",
+        "description": "Barack Obama's DHS and FBI investigated Ilhan Omar's alleged marriage fraud in 2016, finding evidence it was fraudulent, The New York Times reports.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T17:21:05.000Z",
+        "publishedAt": "2026-10-29T20:10:30.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 26.4,
+          "neuP": 73.6,
+          "label": "negative",
+          "confidence": 0.91
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Administration Pressures California With Expanded Voter Fraud Investigation",
+        "link": "https://www.nytimes.com/2026/10/29/us/trump-doj-california-voter-rolls-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The department has issued grand jury subpoenas to local election officials as part of a widening effort to prove unsubstantiated claims about large numbers of illegal voters in the state.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-29T21:52:58.000Z",
+        "sentiment": {
+          "posP": 6.4,
+          "negP": 20.8,
+          "neuP": 72.8,
+          "label": "negative",
+          "confidence": 0.77
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Judge Orders Trump Officials to Outline Election Demands Sent to States",
+        "link": "https://www.nytimes.com/2026/10/29/us/politics/trump-judge-election-lawsuit.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A federal judge gave the government until noon on Friday to share which states had received letters trying to enlist them in an effort to find evidence of voter fraud.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-29T21:46:22.000Z",
+        "sentiment": {
+          "posP": 5,
+          "negP": 8.6,
+          "neuP": 86.4,
+          "label": "negative",
+          "confidence": 0.38
         },
         "category": "usa"
       },
@@ -5287,33 +5307,13 @@
         "description": "A Chinese businesswoman who had a close relationship with Jensen Huang was found to be passing intelligence to Beijing. President Trump was briefed and took no action.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T09:01:52.000Z",
+        "publishedAt": "2026-10-29T19:27:01.000Z",
         "sentiment": {
           "posP": 7.7,
           "negP": 5.5,
           "neuP": 86.8,
           "label": "positive",
           "confidence": 0.23
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The Red States That Could Decide the Senate",
-        "link": "https://www.nytimes.com/video/us/elections/100000011223984/the-red-states-that-could-decide-the-senate.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats need to flip four Republican-held Senate seats to regain the majority, but some of their targets are in states President Trump won by double digits in 2024. Our election data reporter Evan Reynolds explains just how difficult that might be.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T14:58:19.000Z",
-        "sentiment": {
-          "posP": 9.1,
-          "negP": 5.9,
-          "neuP": 85,
-          "label": "positive",
-          "confidence": 0.42
         },
         "category": "usa"
       },
@@ -5327,13 +5327,113 @@
         "description": "President Trump ensured Flávio Bolsonaro, who lost a presidential election in Brazil and faces multiple criminal investigations there, could enter the United States, U.S. officials said.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T17:29:57.000Z",
+        "publishedAt": "2026-10-29T18:53:47.000Z",
         "sentiment": {
           "posP": 6.7,
           "negP": 13.7,
           "neuP": 79.6,
           "label": "negative",
           "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Cuba’s Foreign Minister: We’ll Outlast Trump",
+        "link": "https://www.nytimes.com/2026/10/29/world/americas/cuba-foreign-minister-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration is carrying out the most intense pressure campaign on Cuba in decades. The Cuban government says its plan is simply to endure.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-29T21:12:21.000Z",
+        "sentiment": {
+          "posP": 4.8,
+          "negP": 7.5,
+          "neuP": 87.7,
+          "label": "negative",
+          "confidence": 0.22
+        },
+        "category": "usa"
+      },
+      {
+        "title": "U.S. Expels Cuban Diplomat After Fiery Showdown at United Nations",
+        "link": "https://www.nytimes.com/2026/10/29/us/politics/cuban-diplomat-expelled.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Tensions have risen between the United States and Cuba as the Trump administration tries to force the island’s Communist government to make drastic changes.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-29T21:35:55.000Z",
+        "sentiment": {
+          "posP": 13.2,
+          "negP": 18.2,
+          "neuP": 68.6,
+          "label": "negative",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Live Updates: Trump campaigns in South Carolina and more",
+        "link": "https://www.cbsnews.com/live-updates/2026-elections-midtems-house-senate-trump/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "More than 42 million Americans had voted early as of Thursday afternoon, according to the University of Florida Election Lab.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-29T18:50:29.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says two Dan Sullivans on Alaska Senate ballot is \"very unfair\"",
+        "link": "https://www.cbsnews.com/video/trump-says-multiple-dan-sullivans-on-alaska-ballot-is-very-unfair/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump spoke to reporters before leaving for a South Carolina rally, where he weighed in on the Alaska Senate race featuring two Dan Sullivans.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-29T17:49:25.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump’s final sprint: From the Politics Desk",
+        "link": "https://www.nbcnews.com/politics/politics-news/trumps-final-sprint-politics-desk-rcna606431",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Welcome to From the Politics Desk, a daily newsletter that brings you the NBC News Politics team’s latest reporting and analysis from the White House, Capitol Hill and the campaign trail.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-29T21:04:30.000Z",
+        "sentiment": {
+          "posP": 7.7,
+          "negP": 0,
+          "neuP": 92.3,
+          "label": "positive",
+          "confidence": 0.46
         },
         "category": "usa"
       },
@@ -5347,33 +5447,13 @@
         "description": "IRS CEO Frank Bisignano has donated to Trump Accounts for Brooklyn kids from his hometown ZIP code. Here's what families need to know.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T16:06:02.000Z",
+        "publishedAt": "2026-10-29T21:55:42.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Hegseth reportedly fires U.S. top military planner as Trump downplays Iran peace talks",
-        "link": "https://www.cnbc.com/2026/10/29/us-iran-war-trump-hormuz.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Lieutenant General Brett Sylvia was removed as head of strategy, plans and policy on the Joint Chiefs of Staff.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T12:06:03.000Z",
-        "sentiment": {
-          "posP": 15,
-          "negP": 0,
-          "neuP": 85,
-          "label": "positive",
-          "confidence": 0.65
         },
         "category": "usa"
       },
@@ -5396,101 +5476,28 @@
           "confidence": 0.13
         },
         "category": "usa"
-      },
-      {
-        "title": "Midterm elections live updates: Trump heads to South Carolina as Senate race heats up",
-        "link": "https://abcnews.com/Politics/live-updates/midterm-elections-2026-1-week-high-stakes-elections/?id=137578278",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump is heading to Rock Hill, South Carolina, for a rally on Thursday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T15:57:33.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Judge rejects Trump admin request for order to segregate 20,000 Calif. ballots",
-        "link": "https://abcnews.com/Politics/judge-rejects-trump-administration-request-order-segregate-20000/story?id=137660006",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Justice Department sought an emergency order in the case.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T03:54:25.000Z",
-        "sentiment": {
-          "posP": 12.1,
-          "negP": 20.6,
-          "neuP": 67.3,
-          "label": "negative",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Senate skeptical about making daylight saving time permanent despite Trump's pressure",
-        "link": "https://abcnews.com/US/wireStory/senate-skeptical-making-daylight-saving-time-permanent-despite-137668431",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Get ready to fall back",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T11:47:52.000Z",
-        "sentiment": {
-          "posP": 22.3,
-          "negP": 11.7,
-          "neuP": 66,
-          "label": "positive",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.94,
-      "neu": 83.94,
-      "neg": 9.12,
-      "count": 27
+      "pos": 5.89,
+      "neu": 85.03,
+      "neg": 9.09,
+      "count": 31
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 7.3,
-        "neu": 85.28,
-        "neg": 7.42,
-        "count": 5
+        "pos": 7.1,
+        "neu": 82.11,
+        "neg": 10.79,
+        "count": 8
+      },
+      {
+        "source": "Fox News",
+        "pos": 4.78,
+        "neu": 81.97,
+        "neg": 13.25,
+        "count": 4
       },
       {
         "source": "ABC News",
@@ -5514,24 +5521,17 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 5.63,
-        "neu": 78.67,
-        "neg": 15.7,
-        "count": 3
-      },
-      {
         "source": "NBC News",
-        "pos": 9.33,
-        "neu": 88,
+        "pos": 6.9,
+        "neu": 90.43,
         "neg": 2.67,
         "count": 3
       },
       {
         "source": "CBS News",
-        "pos": 8,
-        "neu": 80.8,
-        "neg": 11.2,
+        "pos": 1.33,
+        "neu": 94,
+        "neg": 4.67,
         "count": 3
       },
       {
@@ -5545,23 +5545,23 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.58,
-        "neu": 87.08,
-        "neg": 8.34,
-        "count": 13
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 7.7,
-        "neu": 80.36,
-        "neg": 11.94,
-        "count": 5
+        "pos": 4.28,
+        "neu": 88.37,
+        "neg": 7.35,
+        "count": 15
       },
       {
         "topic": "Policy",
-        "pos": 7,
-        "neu": 89.5,
-        "neg": 3.5,
+        "pos": 5.91,
+        "neu": 82.87,
+        "neg": 11.21,
+        "count": 7
+      },
+      {
+        "topic": "Foreign Policy",
+        "pos": 4.63,
+        "neu": 85.35,
+        "neg": 10.03,
         "count": 4
       },
       {
@@ -5573,9 +5573,9 @@
       },
       {
         "topic": "Legal",
-        "pos": 10,
-        "neu": 69.8,
-        "neg": 20.2,
+        "pos": 8.55,
+        "neu": 76.85,
+        "neg": 14.6,
         "count": 2
       },
       {
@@ -5610,28 +5610,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-29T13:34:46.612Z",
+        "label": "2026-10-29T17:58:01.910Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T14:34:46.612Z",
+        "label": "2026-10-29T18:58:01.910Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T15:34:46.612Z",
+        "label": "2026-10-29T19:58:01.910Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T16:34:46.612Z",
+        "label": "2026-10-29T20:58:01.910Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5640,28 +5640,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-29T13:34:46.612Z",
+        "label": "2026-10-29T17:58:01.910Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T14:34:46.612Z",
+        "label": "2026-10-29T18:58:01.910Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T15:34:46.612Z",
+        "label": "2026-10-29T19:58:01.910Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T16:34:46.612Z",
+        "label": "2026-10-29T20:58:01.910Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5741,7 +5741,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-29T17:34:46.613Z",
+    "generatedAt": "2026-10-29T21:58:01.910Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5862,8 +5862,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 166,
-      "potusArticles": 27,
+      "usaArticles": 169,
+      "potusArticles": 31,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
