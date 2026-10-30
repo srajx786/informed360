@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-29T21:58:01.906Z",
+  "generatedAt": "2026-10-30T01:50:43.779Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 169,
-    "potusArticles": 31
+    "potusArticles": 30
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-29T17:58:01.907Z",
+          "label": "2026-10-29T21:50:43.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T18:58:01.907Z",
+          "label": "2026-10-29T22:50:43.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T19:58:01.907Z",
+          "label": "2026-10-29T23:50:43.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T20:58:01.907Z",
+          "label": "2026-10-30T00:50:43.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-29T17:58:01.907Z",
+          "label": "2026-10-29T21:50:43.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T18:58:01.907Z",
+          "label": "2026-10-29T22:50:43.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T19:58:01.907Z",
+          "label": "2026-10-29T23:50:43.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-29T20:58:01.907Z",
+          "label": "2026-10-30T00:50:43.780Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.28,
-      "neu": 82.03,
-      "neg": 10.69,
+      "pos": 8.06,
+      "neu": 81.09,
+      "neg": 10.86,
       "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.26,
-        "neu": 81.02,
-        "neg": 9.72,
+        "pos": 10.68,
+        "neu": 79.76,
+        "neg": 9.55,
         "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 5.72,
-        "neu": 78.5,
-        "neg": 15.78,
+        "pos": 8.42,
+        "neu": 77.9,
+        "neg": 13.68,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.05,
-        "neu": 83.75,
-        "neg": 11.2,
+        "pos": 5.32,
+        "neu": 81.79,
+        "neg": 12.88,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 8.1,
-        "neu": 83.35,
-        "neg": 8.56,
+        "pos": 8.08,
+        "neu": 81.51,
+        "neg": 10.41,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.07,
-        "neu": 86.62,
-        "neg": 5.32,
+        "pos": 7.85,
+        "neu": 86.72,
+        "neg": 5.44,
         "count": 20
       },
       {
@@ -4628,29 +4628,24 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
+        },
+        {
+          "name": "Materials",
+          "bias": 15.3,
+          "count": 1
+        },
+        {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": 12.7,
-          "count": 1
-        },
-        {
-          "name": "Utilities",
-          "bias": -10.7,
-          "count": 2
-        },
-        {
           "name": "Healthcare",
-          "bias": -10.02,
-          "count": 8
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 5.35,
-          "count": 2
+          "bias": -3.94,
+          "count": 10
         },
         {
           "name": "Real Estate",
@@ -4658,31 +4653,31 @@
           "count": 2
         },
         {
-          "name": "Technology",
-          "bias": -3.41,
-          "count": 130
+          "name": "Finance",
+          "bias": -2.81,
+          "count": 18
         },
         {
-          "name": "Finance",
-          "bias": -3.04,
-          "count": 19
+          "name": "Technology",
+          "bias": -2.72,
+          "count": 134
         },
         {
           "name": "Energy",
-          "bias": -1.66,
-          "count": 9
+          "bias": 0.17,
+          "count": 8
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -0.13,
+          "count": 3
         }
       ],
       "pos": [
         {
           "name": "Materials",
-          "bias": 12.7,
+          "bias": 15.3,
           "count": 1
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 5.35,
-          "count": 2
         }
       ],
       "neu": [
@@ -4692,63 +4687,63 @@
           "count": 2
         },
         {
-          "name": "Technology",
-          "bias": -3.41,
-          "count": 130
+          "name": "Finance",
+          "bias": -2.81,
+          "count": 18
         },
         {
-          "name": "Finance",
-          "bias": -3.04,
-          "count": 19
+          "name": "Technology",
+          "bias": -2.72,
+          "count": 134
         }
       ],
       "neg": [
+        {
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
+        },
         {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
-          "name": "Utilities",
-          "bias": -10.7,
-          "count": 2
-        },
-        {
           "name": "Healthcare",
-          "bias": -10.02,
-          "count": 8
+          "bias": -3.94,
+          "count": 10
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-29T17:58:01.908Z",
+          "label": "2026-10-29T21:50:43.781Z",
+          "pos": 7,
+          "neu": 82,
+          "neg": 11,
+          "count": 22
+        },
+        {
+          "label": "2026-10-29T22:50:43.781Z",
           "pos": 8,
-          "neu": 84,
-          "neg": 9,
-          "count": 13
-        },
-        {
-          "label": "2026-10-29T18:58:01.908Z",
-          "pos": 6,
-          "neu": 84,
-          "neg": 10,
-          "count": 12
-        },
-        {
-          "label": "2026-10-29T19:58:01.908Z",
-          "pos": 6,
-          "neu": 77,
+          "neu": 75,
           "neg": 17,
-          "count": 26
+          "count": 19
         },
         {
-          "label": "2026-10-29T20:58:01.908Z",
-          "pos": 6,
+          "label": "2026-10-29T23:50:43.781Z",
+          "pos": 9,
           "neu": 85,
-          "neg": 8,
-          "count": 31
+          "neg": 6,
+          "count": 19
+        },
+        {
+          "label": "2026-10-30T00:50:43.781Z",
+          "pos": 8,
+          "neu": 82,
+          "neg": 10,
+          "count": 21
         }
       ]
     }
@@ -4956,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Dem probes could ‘torture’ young Trump officials with crushing legal bills, subpoenaed conservative warns",
-        "link": "https://www.foxnews.com/politics/dem-probes-torture-young-trump-officials-crushing-legal-bills-subpoenaed-conservative-warns",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Administration Pressures California With Expanded Voter Fraud Investigation",
+        "link": "https://www.nytimes.com/2026/10/29/us/trump-doj-california-voter-rolls-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Rachel Bovard of CPI warns Democrats could follow Jack Smith's playbook to target young Trump administration officials with costly subpoenas.",
+        "description": "The department has issued grand jury subpoenas to local election officials as part of a widening effort to prove unsubstantiated claims about large numbers of illegal voters in the state.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T20:36:26.000Z",
+        "publishedAt": "2026-10-29T23:49:56.000Z",
         "sentiment": {
-          "posP": 4,
-          "negP": 18,
-          "neuP": 78,
+          "posP": 6.4,
+          "negP": 20.8,
+          "neuP": 72.8,
           "label": "negative",
-          "confidence": 0.49
+          "confidence": 0.77
         },
         "category": "usa"
       },
       {
-        "title": "Kamala Harris breaks with left flank, warns Dems that impeaching Trump is 'not a good idea'",
-        "link": "https://www.foxnews.com/media/kamala-harris-breaks-left-flank-warns-dems-impeaching-trump-not-good-idea",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Erupted After Learning of Alina Habba’s $50 Million Deal",
+        "link": "https://www.nytimes.com/2026/10/29/us/politics/trump-alina-habba-mildon-deal.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Kamala Harris urged Democrats to focus on investigations and accountability over impeachment, saying the votes aren't there and the party should focus on getting things done.",
+        "description": "Angry about the scale of a contract signed by one of his former lawyers with the family of a wealthy pardon seeker, the president told allies he wanted some of the money to go to his future presidential library.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T20:19:28.000Z",
+        "publishedAt": "2026-10-29T22:54:37.000Z",
         "sentiment": {
-          "posP": 6.1,
-          "negP": 8.6,
-          "neuP": 85.3,
+          "posP": 9.2,
+          "negP": 6.3,
+          "neuP": 84.5,
           "label": "neutral",
-          "confidence": 0.03
+          "confidence": 0.13
         },
         "category": "usa"
       }
@@ -5198,66 +5193,6 @@
         "category": "world"
       },
       {
-        "title": "Dem probes could ‘torture’ young Trump officials with crushing legal bills, subpoenaed conservative warns",
-        "link": "https://www.foxnews.com/politics/dem-probes-torture-young-trump-officials-crushing-legal-bills-subpoenaed-conservative-warns",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Rachel Bovard of CPI warns Democrats could follow Jack Smith's playbook to target young Trump administration officials with costly subpoenas.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T20:36:26.000Z",
-        "sentiment": {
-          "posP": 4,
-          "negP": 18,
-          "neuP": 78,
-          "label": "negative",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Kamala Harris breaks with left flank, warns Dems that impeaching Trump is 'not a good idea'",
-        "link": "https://www.foxnews.com/media/kamala-harris-breaks-left-flank-warns-dems-impeaching-trump-not-good-idea",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Kamala Harris urged Democrats to focus on investigations and accountability over impeachment, saying the votes aren't there and the party should focus on getting things done.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T20:19:28.000Z",
-        "sentiment": {
-          "posP": 6.1,
-          "negP": 8.6,
-          "neuP": 85.3,
-          "label": "neutral",
-          "confidence": 0.03
-        },
-        "category": "usa"
-      },
-      {
-        "title": "GREGG JARRETT: Obama attacks Trump over Omar probe but there’s a big twist",
-        "link": "https://www.foxnews.com/opinion/gregg-jarrett-obama-attacks-trump-omar-probe-big-twist",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Barack Obama's DHS and FBI investigated Ilhan Omar's alleged marriage fraud in 2016, finding evidence it was fraudulent, The New York Times reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T20:10:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 26.4,
-          "neuP": 73.6,
-          "label": "negative",
-          "confidence": 0.91
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump Administration Pressures California With Expanded Voter Fraud Investigation",
         "link": "https://www.nytimes.com/2026/10/29/us/trump-doj-california-voter-rolls-midterms.html",
         "source": "NYT",
@@ -5267,7 +5202,7 @@
         "description": "The department has issued grand jury subpoenas to local election officials as part of a widening effort to prove unsubstantiated claims about large numbers of illegal voters in the state.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T21:52:58.000Z",
+        "publishedAt": "2026-10-29T23:49:56.000Z",
         "sentiment": {
           "posP": 6.4,
           "negP": 20.8,
@@ -5278,62 +5213,22 @@
         "category": "usa"
       },
       {
-        "title": "Judge Orders Trump Officials to Outline Election Demands Sent to States",
-        "link": "https://www.nytimes.com/2026/10/29/us/politics/trump-judge-election-lawsuit.html",
+        "title": "Trump Erupted After Learning of Alina Habba’s $50 Million Deal",
+        "link": "https://www.nytimes.com/2026/10/29/us/politics/trump-alina-habba-mildon-deal.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A federal judge gave the government until noon on Friday to share which states had received letters trying to enlist them in an effort to find evidence of voter fraud.",
+        "description": "Angry about the scale of a contract signed by one of his former lawyers with the family of a wealthy pardon seeker, the president told allies he wanted some of the money to go to his future presidential library.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T21:46:22.000Z",
+        "publishedAt": "2026-10-29T22:54:37.000Z",
         "sentiment": {
-          "posP": 5,
-          "negP": 8.6,
-          "neuP": 86.4,
-          "label": "negative",
-          "confidence": 0.38
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Nvidia Chief, Jensen Huang, Is Seen as Target of Chinese Spy Plot",
-        "link": "https://www.nytimes.com/2026/10/29/us/politics/nvidia-china-jensen-huang-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A Chinese businesswoman who had a close relationship with Jensen Huang was found to be passing intelligence to Beijing. President Trump was briefed and took no action.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T19:27:01.000Z",
-        "sentiment": {
-          "posP": 7.7,
-          "negP": 5.5,
-          "neuP": 86.8,
-          "label": "positive",
-          "confidence": 0.23
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump and His Aides Helped Bolsonaro Flee Brazil and Enter U.S.",
-        "link": "https://www.nytimes.com/2026/10/29/world/americas/flavio-bolsonaro-trump-brazil-us.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump ensured Flávio Bolsonaro, who lost a presidential election in Brazil and faces multiple criminal investigations there, could enter the United States, U.S. officials said.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T18:53:47.000Z",
-        "sentiment": {
-          "posP": 6.7,
-          "negP": 13.7,
-          "neuP": 79.6,
-          "label": "negative",
-          "confidence": 0.44
+          "posP": 9.2,
+          "negP": 6.3,
+          "neuP": 84.5,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       },
@@ -5347,7 +5242,7 @@
         "description": "The Trump administration is carrying out the most intense pressure campaign on Cuba in decades. The Cuban government says its plan is simply to endure.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T21:12:21.000Z",
+        "publishedAt": "2026-10-29T22:49:00.000Z",
         "sentiment": {
           "posP": 4.8,
           "negP": 7.5,
@@ -5387,7 +5282,7 @@
         "description": "More than 42 million Americans had voted early as of Thursday afternoon, according to the University of Florida Election Lab.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T18:50:29.000Z",
+        "publishedAt": "2026-10-30T01:34:16.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5398,16 +5293,116 @@
         "category": "usa"
       },
       {
-        "title": "Trump says two Dan Sullivans on Alaska Senate ballot is \"very unfair\"",
-        "link": "https://www.cbsnews.com/video/trump-says-multiple-dan-sullivans-on-alaska-ballot-is-very-unfair/",
+        "title": "Trump cancels Iowa rally, will hold telerallies instead",
+        "link": "https://www.cbsnews.com/video/trump-cancels-iowa-rally-will-hold-telerallies-instead/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump spoke to reporters before leaving for a South Carolina rally, where he weighed in on the Alaska Senate race featuring two Dan Sullivans.",
+        "description": "President Trump canceled his rally in Iowa, opting for a telerally instead. He also spoke at a rally in Rock Hill, South Carolina, on Thursday afternoon, where he campaigned for Republican Senate candidate Darline Graham. CBS News' Fin Gómez reports and Nicholas Reynolds, a politics editor for The Post and Courier, has more on South Carolina's Senate race.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T17:49:25.000Z",
+        "publishedAt": "2026-10-30T00:51:34.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 3,
+          "neuP": 97,
+          "label": "negative",
+          "confidence": 0.23
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump campaigns in South Carolina as Senate race is surprisingly close",
+        "link": "https://www.cbsnews.com/video/trump-campaigns-south-carolina-senate-race-surprisingly-close/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The critical Senate race in South Carolina is closer than expected, and President Trump stopped there with six days to go until the midterms. Weijia Jiang has more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-29T23:43:09.000Z",
+        "sentiment": {
+          "posP": 5.2,
+          "negP": 9.9,
+          "neuP": 84.9,
+          "label": "negative",
+          "confidence": 0.25
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
+          "label": "neutral",
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
+        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-24T22:56:00.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5418,36 +5413,16 @@
         "category": "usa"
       },
       {
-        "title": "Trump’s final sprint: From the Politics Desk",
-        "link": "https://www.nbcnews.com/politics/politics-news/trumps-final-sprint-politics-desk-rcna606431",
+        "title": "DOJ subpoenas local election officials over claims of noncitizen voting in California",
+        "link": "https://www.nbcnews.com/politics/2026-election/doj-subpoenas-local-election-officials-claims-noncitizen-voting-califo-rcna606460",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Welcome to From the Politics Desk, a daily newsletter that brings you the NBC News Politics team’s latest reporting and analysis from the White House, Capitol Hill and the campaign trail.",
+        "description": "The subpoenas come just a day after a federal judge called into question the process the Trump administration used to identify alleged noncitizens.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T21:04:30.000Z",
-        "sentiment": {
-          "posP": 7.7,
-          "negP": 0,
-          "neuP": 92.3,
-          "label": "positive",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "IRS CEO Bisignano donates to Trump Accounts in his childhood Brooklyn ZIP code",
-        "link": "https://www.cnbc.com/2026/10/29/trump-accounts-frank-bisignano-brooklyn.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "IRS CEO Frank Bisignano has donated to Trump Accounts for Brooklyn kids from his hometown ZIP code. Here's what families need to know.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T21:55:42.000Z",
+        "publishedAt": "2026-10-30T00:17:01.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5458,52 +5433,72 @@
         "category": "usa"
       },
       {
-        "title": "WATCH:  Obama slams Trump for getting mad at his Cheesecake Factory comment",
-        "link": "https://abcnews.com/video/137668902/",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
+        "title": "Vivek Ramaswamy’s attack ad against Amy Acton’s ends TV run",
+        "link": "https://www.nbcnews.com/politics/2026-election/vivek-ramaswamys-ad-using-amy-actons-estranged-mother-ended-run-tv-rcna606441",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The former president took issue with how President Donald Trump responded to his joke about \"the White House looking like Saddam Hussein opened a Cheesecake Factory.\"",
+        "description": "The ad roiled Ohio’s race for governor, with the Trump-endorsed Ramaswamy and Acton, the Democratic nominee, vying to lead the state.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-29T16:25:23.000Z",
+        "publishedAt": "2026-10-29T22:00:16.000Z",
         "sentiment": {
-          "posP": 11.2,
-          "negP": 7.6,
-          "neuP": 81.2,
-          "label": "neutral",
-          "confidence": 0.13
+          "posP": 0,
+          "negP": 9.4,
+          "neuP": 90.6,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Pope Leo requested an absentee ballot in Illinois to vote in the midterms",
+        "link": "https://www.nbcnews.com/politics/2026-election/pope-leo-requested-absentee-ballot-illinois-vote-midterms-rcna606468",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "It’s not clear whether Leo, who has been critical of the Trump administration, has mailed off his ballot yet.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-30T01:44:30.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 18.5,
+          "neuP": 81.5,
+          "label": "negative",
+          "confidence": 0.68
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.89,
-      "neu": 85.03,
-      "neg": 9.09,
-      "count": 31
+      "pos": 4.43,
+      "neu": 87.65,
+      "neg": 7.91,
+      "count": 30
     },
     "sourceLeaderboard": [
       {
+        "source": "NBC News",
+        "pos": 2.96,
+        "neu": 89.69,
+        "neg": 7.36,
+        "count": 7
+      },
+      {
         "source": "NYT",
-        "pos": 7.1,
-        "neu": 82.11,
-        "neg": 10.79,
-        "count": 8
+        "pos": 7.77,
+        "neu": 81.43,
+        "neg": 10.8,
+        "count": 6
       },
       {
-        "source": "Fox News",
-        "pos": 4.78,
-        "neu": 81.97,
-        "neg": 13.25,
-        "count": 4
-      },
-      {
-        "source": "ABC News",
-        "pos": 11.4,
-        "neu": 78.63,
-        "neg": 9.98,
+        "source": "CBS News",
+        "pos": 2.3,
+        "neu": 90.97,
+        "neg": 6.72,
         "count": 4
       },
       {
@@ -5521,17 +5516,10 @@
         "count": 3
       },
       {
-        "source": "NBC News",
-        "pos": 6.9,
-        "neu": 90.43,
-        "neg": 2.67,
-        "count": 3
-      },
-      {
-        "source": "CBS News",
-        "pos": 1.33,
-        "neu": 94,
-        "neg": 4.67,
+        "source": "ABC News",
+        "pos": 3.73,
+        "neu": 91.7,
+        "neg": 4.57,
         "count": 3
       },
       {
@@ -5545,17 +5533,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.28,
-        "neu": 88.37,
-        "neg": 7.35,
+        "pos": 3.87,
+        "neu": 89.04,
+        "neg": 7.09,
         "count": 15
       },
       {
         "topic": "Policy",
-        "pos": 5.91,
-        "neu": 82.87,
-        "neg": 11.21,
-        "count": 7
+        "pos": 4.16,
+        "neu": 87.07,
+        "neg": 8.78,
+        "count": 9
       },
       {
         "topic": "Foreign Policy",
@@ -5570,20 +5558,6 @@
         "neu": 84.5,
         "neg": 6,
         "count": 2
-      },
-      {
-        "topic": "Legal",
-        "pos": 8.55,
-        "neu": 76.85,
-        "neg": 14.6,
-        "count": 2
-      },
-      {
-        "topic": "Public Statements",
-        "pos": 22.3,
-        "neu": 66,
-        "neg": 11.7,
-        "count": 1
       }
     ]
   },
@@ -5610,28 +5584,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-29T17:58:01.910Z",
+        "label": "2026-10-29T21:50:43.783Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T18:58:01.910Z",
+        "label": "2026-10-29T22:50:43.783Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T19:58:01.910Z",
+        "label": "2026-10-29T23:50:43.783Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T20:58:01.910Z",
+        "label": "2026-10-30T00:50:43.783Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5640,28 +5614,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-29T17:58:01.910Z",
+        "label": "2026-10-29T21:50:43.783Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T18:58:01.910Z",
+        "label": "2026-10-29T22:50:43.783Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T19:58:01.910Z",
+        "label": "2026-10-29T23:50:43.783Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-29T20:58:01.910Z",
+        "label": "2026-10-30T00:50:43.783Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5741,7 +5715,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-29T21:58:01.910Z",
+    "generatedAt": "2026-10-30T01:50:43.784Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5863,7 +5837,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 169,
-      "potusArticles": 31,
+      "potusArticles": 30,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
