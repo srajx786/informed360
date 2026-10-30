@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-30T14:34:11.499Z",
+  "generatedAt": "2026-10-30T19:38:01.976Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 169,
-    "potusArticles": 41
+    "usaArticles": 170,
+    "potusArticles": 32
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-30T10:34:11.499Z",
+          "label": "2026-10-30T15:38:01.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T11:34:11.499Z",
+          "label": "2026-10-30T16:38:01.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T12:34:11.499Z",
+          "label": "2026-10-30T17:38:01.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T13:34:11.499Z",
+          "label": "2026-10-30T18:38:01.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-30T10:34:11.499Z",
+          "label": "2026-10-30T15:38:01.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T11:34:11.499Z",
+          "label": "2026-10-30T16:38:01.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T12:34:11.499Z",
+          "label": "2026-10-30T17:38:01.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T13:34:11.499Z",
+          "label": "2026-10-30T18:38:01.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.85,
-      "neu": 82.73,
-      "neg": 9.42,
-      "count": 169
+      "pos": 7.44,
+      "neu": 82.92,
+      "neg": 9.64,
+      "count": 170
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.89,
-        "neu": 82.15,
-        "neg": 7.97,
-        "count": 41
+        "pos": 6.54,
+        "neu": 83.68,
+        "neg": 9.78,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 10.13,
-        "neu": 78.85,
-        "neg": 11.02,
+        "pos": 10.66,
+        "neu": 79.35,
+        "neg": 9.99,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.6,
-        "neu": 83.7,
-        "neg": 11.69,
+        "pos": 3.8,
+        "neu": 87.98,
+        "neg": 8.22,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.07,
-        "neu": 83.55,
-        "neg": 9.38,
+        "pos": 9.44,
+        "neu": 80.73,
+        "neg": 9.83,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 7.69,
-        "neu": 89.55,
-        "neg": 2.77,
+        "pos": 8.59,
+        "neu": 85.19,
+        "neg": 6.22,
         "count": 20
       },
       {
@@ -4628,19 +4628,24 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "name": "Manufacturing",
+          "bias": -11.82,
+          "count": 5
         },
         {
-          "name": "Manufacturing",
-          "bias": 5.35,
+          "name": "Communication",
+          "bias": -7,
           "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -5.04,
-          "count": 8
+          "bias": -5.23,
+          "count": 6
+        },
+        {
+          "name": "Finance",
+          "bias": -4.64,
+          "count": 22
         },
         {
           "name": "Real Estate",
@@ -4648,97 +4653,91 @@
           "count": 2
         },
         {
-          "name": "Utilities",
-          "bias": -2.6,
+          "name": "Technology",
+          "bias": -2.2,
+          "count": 129
+        },
+        {
+          "name": "Materials",
+          "bias": -1.23,
           "count": 3
         },
         {
+          "name": "Utilities",
+          "bias": 0.94,
+          "count": 5
+        },
+        {
           "name": "Energy",
-          "bias": -2.51,
-          "count": 13
-        },
-        {
-          "name": "Technology",
-          "bias": -1.5,
-          "count": 134
-        },
-        {
-          "name": "Finance",
-          "bias": 0.6,
-          "count": 21
+          "bias": 0.78,
+          "count": 14
         }
       ],
-      "pos": [
-        {
-          "name": "Manufacturing",
-          "bias": 5.35,
-          "count": 2
-        }
-      ],
+      "pos": [],
       "neu": [
         {
-          "name": "Utilities",
-          "bias": -2.6,
-          "count": 3
+          "name": "Finance",
+          "bias": -4.64,
+          "count": 22
         },
         {
-          "name": "Energy",
-          "bias": -2.51,
-          "count": 13
+          "name": "Real Estate",
+          "bias": -3.8,
+          "count": 2
         },
         {
           "name": "Technology",
-          "bias": -1.5,
-          "count": 134
+          "bias": -2.2,
+          "count": 129
         }
       ],
       "neg": [
         {
+          "name": "Manufacturing",
+          "bias": -11.82,
+          "count": 5
+        },
+        {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -7,
+          "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -5.04,
-          "count": 8
-        },
-        {
-          "name": "Real Estate",
-          "bias": -3.8,
-          "count": 2
+          "bias": -5.23,
+          "count": 6
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-30T10:34:11.500Z",
-          "pos": 10,
-          "neu": 82,
-          "neg": 8,
-          "count": 16
-        },
-        {
-          "label": "2026-10-30T11:34:11.500Z",
-          "pos": 7,
-          "neu": 83,
-          "neg": 9,
-          "count": 10
-        },
-        {
-          "label": "2026-10-30T12:34:11.500Z",
+          "label": "2026-10-30T15:38:01.979Z",
           "pos": 9,
-          "neu": 83,
-          "neg": 9,
-          "count": 26
+          "neu": 88,
+          "neg": 3,
+          "count": 6
         },
         {
-          "label": "2026-10-30T13:34:11.500Z",
+          "label": "2026-10-30T16:38:01.979Z",
+          "pos": 6,
+          "neu": 85,
+          "neg": 9,
+          "count": 18
+        },
+        {
+          "label": "2026-10-30T17:38:01.979Z",
+          "pos": 8,
+          "neu": 83,
+          "neg": 9,
+          "count": 32
+        },
+        {
+          "label": "2026-10-30T18:38:01.979Z",
           "pos": 6,
           "neu": 83,
           "neg": 11,
-          "count": 26
+          "count": 22
         }
       ]
     }
@@ -4946,42 +4945,42 @@
         "category": "world"
       },
       {
-        "title": "MIKE DAVIS: Democrats' lawfare targets journalists in Minnesota",
-        "link": "https://www.foxnews.com/opinion/mike-davis-democrats-lawfare-targets-journalists-minnesota",
+        "title": "Treasury flags $8B in suspicious foreign-directed transfers through US money services firms",
+        "link": "https://www.foxnews.com/politics/treasury-flags-8b-suspicious-foreign-directed-transfers-us-money-services-firms",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Mary Moriarty's felony charges against Cam Higby and James O'Keefe sparked calls for Trump Justice Department to open a civil rights case.",
+        "description": "The Trump administration uncovered what it says is $8 billion in suspicious cross-border wire payments directed by foreign agents.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T13:04:54.000Z",
+        "publishedAt": "2026-10-30T18:31:54.000Z",
         "sentiment": {
-          "posP": 9.7,
-          "negP": 16,
-          "neuP": 74.3,
+          "posP": 5.2,
+          "negP": 14.4,
+          "neuP": 80.4,
           "label": "negative",
-          "confidence": 0.3
+          "confidence": 0.49
         },
         "category": "usa"
       },
       {
-        "title": "Kim Kardashian had sharp response to warnings Trump White House visit would end her career: book",
-        "link": "https://www.foxnews.com/entertainment/kim-kardashian-challenged-president-trump-oval-office-sick-prisoner-book-says",
+        "title": "Liberal court delivers immigration win for Trump as judge warns of ‘floodgates’ if law firm succeeded",
+        "link": "https://www.foxnews.com/politics/liberal-court-delivers-immigration-win-trump-judge-warns-floodgates-law-firm-succeeded",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Kim Kardashian's White House meetings, Kanye West coparenting struggles and Kris Jenner's affair are explored in \"Citizen Kim\" by Jonathan Van Meter.",
+        "description": "The Ninth Circuit ruled that law firm Red Eagle lacked standing to challenge the State Department's indefinite pause on the diversity visa lottery.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T13:00:39.000Z",
+        "publishedAt": "2026-10-30T18:30:19.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 11.5,
-          "neuP": 88.5,
-          "label": "negative",
-          "confidence": 0.57
+          "posP": 17.8,
+          "negP": 3.2,
+          "neuP": 79,
+          "label": "positive",
+          "confidence": 0.76
         },
         "category": "usa"
       }
@@ -5188,162 +5187,142 @@
         "category": "world"
       },
       {
-        "title": "MIKE DAVIS: Democrats' lawfare targets journalists in Minnesota",
-        "link": "https://www.foxnews.com/opinion/mike-davis-democrats-lawfare-targets-journalists-minnesota",
+        "title": "Treasury flags $8B in suspicious foreign-directed transfers through US money services firms",
+        "link": "https://www.foxnews.com/politics/treasury-flags-8b-suspicious-foreign-directed-transfers-us-money-services-firms",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Mary Moriarty's felony charges against Cam Higby and James O'Keefe sparked calls for Trump Justice Department to open a civil rights case.",
+        "description": "The Trump administration uncovered what it says is $8 billion in suspicious cross-border wire payments directed by foreign agents.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T13:04:54.000Z",
+        "publishedAt": "2026-10-30T18:31:54.000Z",
         "sentiment": {
-          "posP": 9.7,
-          "negP": 16,
-          "neuP": 74.3,
+          "posP": 5.2,
+          "negP": 14.4,
+          "neuP": 80.4,
           "label": "negative",
-          "confidence": 0.3
+          "confidence": 0.49
         },
         "category": "usa"
       },
       {
-        "title": "Kim Kardashian had sharp response to warnings Trump White House visit would end her career: book",
-        "link": "https://www.foxnews.com/entertainment/kim-kardashian-challenged-president-trump-oval-office-sick-prisoner-book-says",
+        "title": "Liberal court delivers immigration win for Trump as judge warns of ‘floodgates’ if law firm succeeded",
+        "link": "https://www.foxnews.com/politics/liberal-court-delivers-immigration-win-trump-judge-warns-floodgates-law-firm-succeeded",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Kim Kardashian's White House meetings, Kanye West coparenting struggles and Kris Jenner's affair are explored in \"Citizen Kim\" by Jonathan Van Meter.",
+        "description": "The Ninth Circuit ruled that law firm Red Eagle lacked standing to challenge the State Department's indefinite pause on the diversity visa lottery.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T13:00:39.000Z",
+        "publishedAt": "2026-10-30T18:30:19.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 11.5,
-          "neuP": 88.5,
-          "label": "negative",
-          "confidence": 0.57
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Administration Steps Up Midterm Interventions, and Israeli Elections Have No Clear Winner",
-        "link": "https://www.nytimes.com/2026/10/30/podcasts/the-headlines/trump-interventions-midterms-israeli-election.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Plus, the Friday news quiz.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T10:00:12.000Z",
-        "sentiment": {
-          "posP": 27.1,
-          "negP": 9.3,
-          "neuP": 63.6,
+          "posP": 17.8,
+          "negP": 3.2,
+          "neuP": 79,
           "label": "positive",
-          "confidence": 0.64
+          "confidence": 0.76
         },
         "category": "usa"
       },
       {
-        "title": "Why Trump Is Losing Young Men",
-        "link": "https://www.nytimes.com/video/us/elections/100000011230123/trump-young-men-voters-michigan.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Americans 'frustrated' about Iran war going into midterms as Trump admin has decision to make: GOP lawmaker",
+        "link": "https://www.foxnews.com/politics/americans-frustrated-iran-war-midterms-trump-admin-decision-gop-lawmaker",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Young men swung to Donald Trump in 2024. Polling shows they are now moving away — but to what? Sabrina Tavernise, a reporter for The New York Times, went to Michigan to find out.",
+        "description": "House Armed Services Committee member Pat Harrigan says the U.S., in the ongoing conflict against Iran, must \"do what it takes to either win or come home.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T09:51:42.000Z",
+        "publishedAt": "2026-10-30T17:49:53.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 4.6,
-          "neuP": 95.4,
+          "posP": 7.5,
+          "negP": 12.2,
+          "neuP": 80.3,
           "label": "negative",
-          "confidence": 0.2
+          "confidence": 0.34
         },
         "category": "usa"
       },
       {
-        "title": "High Prices Haunt Trump and the GOP on Eve of the Midterms",
-        "link": "https://www.nytimes.com/2026/10/30/business/trump-inflation-election.html",
+        "title": "The Justice Department’s Unusual Election-Year Activity",
+        "link": "https://www.nytimes.com/video/us/elections/100000011240630/the-justice-departments-unusual-election-year-activity.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A backlash over high prices helped Republicans capture a majority in 2024. Now, it may be the source of the party’s own undoing.",
+        "description": "Federal prosecutors have targeted President Trump’s political opponents and sued states over election administration just before the midterms. Devlin Barrett, a reporter for The New York Times, explains how this activity is compared with the Justice Department’s usual election-year behavior.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T09:03:21.000Z",
+        "publishedAt": "2026-10-30T14:03:34.000Z",
+        "sentiment": {
+          "posP": 13.7,
+          "negP": 0,
+          "neuP": 86.3,
+          "label": "positive",
+          "confidence": 0.78
+        },
+        "category": "usa"
+      },
+      {
+        "title": "U.S. to Send Dozens Back to Afghanistan, Despite Risk of Persecution",
+        "link": "https://www.nytimes.com/2026/10/30/world/asia/afghan-refugees-deported-flight-pakistan.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration plans to fly the Afghan immigrants from Louisiana to Pakistan, where they are expected to be expelled over the border to Afghanistan.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-30T18:53:37.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.8,
-          "neuP": 92.2,
+          "negP": 10.8,
+          "neuP": 89.2,
           "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Judge Appoints Special Master to Determine if Trump Officials Lied in Golf Course Suit",
+        "link": "https://www.nytimes.com/2026/10/30/us/politics/special-master-reyes-trump-golf.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Judge Ana C. Reyes said an outside investigator would help determine whether parks officials or Justice Department lawyers withheld plans for Washington’s East Potomac Park.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-30T19:12:01.000Z",
+        "sentiment": {
+          "posP": 19,
+          "negP": 5.6,
+          "neuP": 75.4,
+          "label": "positive",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Judge opens misconduct inquiry into Trump officials in golf course case",
+        "link": "https://www.cbsnews.com/news/trump-golf-course-east-potomac-judge-inquiry/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "U.S. District Judge Ana Reyes said she will conduct a formal inquiry into whether government officials engaged in misconduct.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-30T18:23:16.000Z",
+        "sentiment": {
+          "posP": 8.8,
+          "negP": 0,
+          "neuP": 91.2,
+          "label": "positive",
           "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Erupted After Learning of Alina Habba’s $50 Million Deal",
-        "link": "https://www.nytimes.com/2026/10/29/us/politics/trump-alina-habba-mildon-deal.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Angry about the scale of a contract signed by one of his former lawyers with the family of a wealthy pardon seeker, the president told allies he wanted some of the money to go to his future presidential library.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-29T22:54:37.000Z",
-        "sentiment": {
-          "posP": 9.2,
-          "negP": 6.3,
-          "neuP": 84.5,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Rare Evacuation Announced by Melania Trump Begins in Ukrainian City of Oleshky",
-        "link": "https://www.nytimes.com/2026/10/26/world/europe/ukraine-oleshky-ceasefire-russia-war.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Many of the people left in Oleshky, where bombardment is constant, have run out of food. A truce that began Tuesday is supposed to allow aid in and civilians out.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T14:21:24.000Z",
-        "sentiment": {
-          "posP": 4.5,
-          "negP": 0,
-          "neuP": 95.5,
-          "label": "positive",
-          "confidence": 0.23
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Is This the End for Trump’s Princelings? Or Just the Start?",
-        "link": "https://www.nytimes.com/2026/10/30/opinion/trump-america-capitalism-rich-politics.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "American capitalism may never be the same again.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T05:58:54.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
         },
         "category": "usa"
       },
@@ -5357,13 +5336,33 @@
         "description": "Trump predicts the war with Iran is \"going to end soon,\" without offering any details, as Qatari mediators return to Tehran to push for a deal.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T14:27:38.000Z",
+        "publishedAt": "2026-10-30T18:17:56.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 18.2,
           "neuP": 81.8,
           "label": "negative",
           "confidence": 0.83
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump meeting freed prisoner Stephen Hubbard at the White House",
+        "link": "https://www.cbsnews.com/news/trump-meeting-stephen-hubbard-white-house-russia-release/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Stephen Hubbard was imprisoned in Russia for over four years until gaining release last week.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-30T18:07:00.000Z",
+        "sentiment": {
+          "posP": 16.7,
+          "negP": 19.7,
+          "neuP": 63.6,
+          "label": "negative",
+          "confidence": 0.25
         },
         "category": "usa"
       },
@@ -5377,7 +5376,7 @@
         "description": "The November 2026 midterm elections are just four days away. Candidates in key races — and President Trump — are making their closing arguments to voters.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T14:17:32.000Z",
+        "publishedAt": "2026-10-30T17:14:22.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 8,
@@ -5388,113 +5387,120 @@
         "category": "usa"
       },
       {
-        "title": "Midterms analysis on Trump, El-Sayed",
-        "link": "https://www.cbsnews.com/video/midterms-analysis-on-trump-el-sayed/",
+        "title": "Trump reverses decision to cancel rallies in Kansas and Iowa",
+        "link": "https://www.cbsnews.com/video/trump-reverses-decision-to-cancel-rallies-in-kansas-iowa/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Major Garrett has the latest political analysis in the last days of midterm elections campaigning.",
+        "description": "President Trump's planned rallies in Kansas and Iowa are back on. Meanwhile, political campaigns are increasingly turning to AI. CBS News' Kathryn Watson has more, and Taurean Small reports on Alaska's Senate race. Plus, VoteHub data scientist Zachary Donnini looks at election data.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T14:08:27.000Z",
+        "publishedAt": "2026-10-30T17:04:00.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 3.7,
+          "neuP": 96.3,
+          "label": "negative",
+          "confidence": 0.25
         },
         "category": "usa"
       },
       {
-        "title": "Trump changes plans for Kansas and Iowa rallies, pivoting to virtual events",
-        "link": "https://www.cbsnews.com/video/trump-cancels-kansas-and-iowa-rallies-pivoting-to-virtual-events/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump is changing plans for rallies in Kansas and Iowa and holding virtual events. This comes as midterm elections are just days away. Weijia Jiang has the latest.",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T14:00:00.000Z",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
           "label": "neutral",
-          "confidence": 0
+          "confidence": 0.14
         },
         "category": "usa"
       },
       {
-        "title": "Ukrainians trapped in a Russia-held city get chance to flee war during local ceasefire",
-        "link": "https://www.cbsnews.com/video/ukrainians-trapped-in-a-russia-held-city-get-chance-to-flee-war-during-local-ceasefire/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ukrainians in the city of Oleshky may have a chance to leave the Russian-held territory after first lady Melania Trump helped broker a local ceasefire there. CBS News' Aidan Stretch reports.",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T13:34:44.000Z",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
         "sentiment": {
-          "posP": 8.1,
-          "negP": 17.2,
-          "neuP": 74.7,
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
           "label": "negative",
           "confidence": 0.67
         },
         "category": "usa"
       },
       {
-        "title": "Ohio secretary of state says Trump DOJ's election monitors will be at polls to \"observe\"",
-        "link": "https://www.cbsnews.com/video/ohios-secretary-of-state-says-trump-administrations-election-monitors-will-be-at-polls-to-observe/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Frank LaRose, Ohio's secretary of state, joins CBS News with more details on the Trump administration's deployment of 1,000 election monitors nationwide for the midterm elections.",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T13:26:03.000Z",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.71,
-      "neu": 87.89,
-      "neg": 6.4,
-      "count": 41
+      "pos": 6.93,
+      "neu": 85.4,
+      "neg": 7.67,
+      "count": 32
     },
     "sourceLeaderboard": [
       {
-        "source": "CBS News",
-        "pos": 3.44,
-        "neu": 89.8,
-        "neg": 6.76,
-        "count": 10
+        "source": "NBC News",
+        "pos": 7.98,
+        "neu": 86.07,
+        "neg": 5.95,
+        "count": 6
       },
       {
-        "source": "NBC News",
-        "pos": 7.59,
-        "neu": 88.08,
-        "neg": 4.33,
-        "count": 9
+        "source": "CBS News",
+        "pos": 4.92,
+        "neu": 84.48,
+        "neg": 10.6,
+        "count": 6
       },
       {
         "source": "NYT",
-        "pos": 6.72,
-        "neu": 88.28,
-        "neg": 5,
-        "count": 8
+        "pos": 9.14,
+        "neu": 85.18,
+        "neg": 5.68,
+        "count": 5
+      },
+      {
+        "source": "Fox News",
+        "pos": 9.88,
+        "neu": 82.67,
+        "neg": 7.45,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5508,13 +5514,6 @@
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
-        "count": 3
-      },
-      {
-        "source": "Fox News",
-        "pos": 6.23,
-        "neu": 84.6,
-        "neg": 9.17,
         "count": 3
       },
       {
@@ -5535,24 +5534,31 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.15,
-        "neu": 88.46,
-        "neg": 6.39,
-        "count": 24
+        "pos": 4.83,
+        "neu": 87.41,
+        "neg": 7.76,
+        "count": 14
       },
       {
         "topic": "Policy",
-        "pos": 7.04,
-        "neu": 88.76,
-        "neg": 4.2,
+        "pos": 6.79,
+        "neu": 86.16,
+        "neg": 7.05,
         "count": 8
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.43,
-        "neu": 86.02,
-        "neg": 9.55,
-        "count": 6
+        "pos": 7.04,
+        "neu": 81,
+        "neg": 11.96,
+        "count": 5
+      },
+      {
+        "topic": "Legal",
+        "pos": 15.2,
+        "neu": 81.87,
+        "neg": 2.93,
+        "count": 3
       },
       {
         "topic": "Economy",
@@ -5560,13 +5566,6 @@
         "neu": 84.5,
         "neg": 6,
         "count": 2
-      },
-      {
-        "topic": "Legal",
-        "pos": 8.7,
-        "neu": 85.3,
-        "neg": 6,
-        "count": 1
       }
     ]
   },
@@ -5593,28 +5592,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-30T10:34:11.502Z",
+        "label": "2026-10-30T15:38:01.980Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T11:34:11.502Z",
+        "label": "2026-10-30T16:38:01.980Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T12:34:11.502Z",
+        "label": "2026-10-30T17:38:01.980Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T13:34:11.502Z",
+        "label": "2026-10-30T18:38:01.980Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5623,28 +5622,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-30T10:34:11.502Z",
+        "label": "2026-10-30T15:38:01.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T11:34:11.502Z",
+        "label": "2026-10-30T16:38:01.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T12:34:11.502Z",
+        "label": "2026-10-30T17:38:01.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T13:34:11.502Z",
+        "label": "2026-10-30T18:38:01.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5724,7 +5723,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-30T14:34:11.504Z",
+    "generatedAt": "2026-10-30T19:38:01.982Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5845,8 +5844,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 169,
-      "potusArticles": 41,
+      "usaArticles": 170,
+      "potusArticles": 32,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
