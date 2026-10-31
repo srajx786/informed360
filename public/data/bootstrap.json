@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-30T23:17:26.281Z",
+  "generatedAt": "2026-10-31T02:28:12.059Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 170,
-    "potusArticles": 36
+    "usaArticles": 168,
+    "potusArticles": 34
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-30T19:17:26.281Z",
+          "label": "2026-10-30T22:28:12.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T20:17:26.281Z",
+          "label": "2026-10-30T23:28:12.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T21:17:26.281Z",
+          "label": "2026-10-31T00:28:12.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T22:17:26.281Z",
+          "label": "2026-10-31T01:28:12.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-30T19:17:26.281Z",
+          "label": "2026-10-30T22:28:12.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T20:17:26.281Z",
+          "label": "2026-10-30T23:28:12.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T21:17:26.281Z",
+          "label": "2026-10-31T00:28:12.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-30T22:17:26.281Z",
+          "label": "2026-10-31T01:28:12.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.53,
-      "neu": 82.76,
-      "neg": 9.72,
-      "count": 170
+      "pos": 7.2,
+      "neu": 82.45,
+      "neg": 10.35,
+      "count": 168
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.82,
-        "neu": 84.94,
-        "neg": 8.24,
-        "count": 42
+        "pos": 5.5,
+        "neu": 85.96,
+        "neg": 8.55,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 10.27,
-        "neu": 77.12,
-        "neg": 12.62,
+        "pos": 9.63,
+        "neu": 76.8,
+        "neg": 13.57,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.19,
-        "neu": 87.52,
-        "neg": 8.29,
+        "pos": 4.81,
+        "neu": 85.63,
+        "neg": 9.55,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.32,
-        "neu": 80.7,
-        "neg": 11.98,
-        "count": 24
+        "pos": 7.59,
+        "neu": 79.34,
+        "neg": 13.07,
+        "count": 23
       },
       {
         "source": "WSJ",
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 11.29,
-        "neu": 84.66,
-        "neg": 4.04,
+        "pos": 10.94,
+        "neu": 84.45,
+        "neg": 4.61,
         "count": 20
       },
       {
@@ -4638,68 +4638,57 @@
           "count": 1
         },
         {
+          "name": "Healthcare",
+          "bias": -8.18,
+          "count": 9
+        },
+        {
           "name": "Finance",
-          "bias": -6.69,
-          "count": 20
+          "bias": -7.12,
+          "count": 21
         },
         {
           "name": "Real Estate",
-          "bias": -4.35,
+          "bias": -5.3,
           "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": -4.06,
-          "count": 8
+          "name": "Technology",
+          "bias": -3.25,
+          "count": 128
         },
         {
           "name": "Manufacturing",
-          "bias": 3.6,
-          "count": 1
-        },
-        {
-          "name": "Energy",
-          "bias": 2.77,
-          "count": 8
-        },
-        {
-          "name": "Technology",
-          "bias": -1.65,
-          "count": 130
+          "bias": 1.8,
+          "count": 2
         },
         {
           "name": "Utilities",
           "bias": -0.45,
           "count": 2
-        }
-      ],
-      "pos": [
-        {
-          "name": "Manufacturing",
-          "bias": 3.6,
-          "count": 1
         },
         {
           "name": "Energy",
-          "bias": 2.77,
-          "count": 8
+          "bias": -0.27,
+          "count": 9
         }
       ],
+      "pos": [],
       "neu": [
         {
+          "name": "Finance",
+          "bias": -7.12,
+          "count": 21
+        },
+        {
           "name": "Real Estate",
-          "bias": -4.35,
+          "bias": -5.3,
           "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": -4.06,
-          "count": 8
-        },
-        {
           "name": "Technology",
-          "bias": -1.65,
-          "count": 130
+          "bias": -3.25,
+          "count": 128
         }
       ],
       "neg": [
@@ -4714,41 +4703,41 @@
           "count": 1
         },
         {
-          "name": "Finance",
-          "bias": -6.69,
-          "count": 20
+          "name": "Healthcare",
+          "bias": -8.18,
+          "count": 9
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-30T19:17:26.283Z",
+          "label": "2026-10-30T22:28:12.061Z",
           "pos": 9,
-          "neu": 80,
-          "neg": 11,
-          "count": 11
+          "neu": 83,
+          "neg": 9,
+          "count": 20
         },
         {
-          "label": "2026-10-30T20:17:26.283Z",
-          "pos": 8,
-          "neu": 81,
-          "neg": 11,
-          "count": 19
+          "label": "2026-10-30T23:28:12.061Z",
+          "pos": 7,
+          "neu": 82,
+          "neg": 12,
+          "count": 18
         },
         {
-          "label": "2026-10-30T21:17:26.283Z",
-          "pos": 4,
-          "neu": 89,
-          "neg": 7,
-          "count": 27
-        },
-        {
-          "label": "2026-10-30T22:17:26.283Z",
-          "pos": 11,
-          "neu": 79,
+          "label": "2026-10-31T00:28:12.061Z",
+          "pos": 7,
+          "neu": 82,
           "neg": 10,
-          "count": 24
+          "count": 8
+        },
+        {
+          "label": "2026-10-31T01:28:12.061Z",
+          "pos": 5,
+          "neu": 84,
+          "neg": 12,
+          "count": 8
         }
       ]
     }
@@ -4956,6 +4945,26 @@
         "category": "world"
       },
       {
+        "title": "'The View' co-hosts agree Democrats should not impeach Trump if party wins back control of Congress",
+        "link": "https://www.foxnews.com/media/the-view-co-hosts-agree-democrats-should-not-impeach-trump-party-wins-back-control-congress",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Former Vice President Kamala Harris warned Democrats against impeaching President Donald Trump, and \"The View\" co-hosts agreed the focus should be on accountability and investigations.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T00:24:52.000Z",
+        "sentiment": {
+          "posP": 22.4,
+          "negP": 4.3,
+          "neuP": 73.3,
+          "label": "positive",
+          "confidence": 0.84
+        },
+        "category": "usa"
+      },
+      {
         "title": "Nicki Minaj torches Kathy Hochul as 'evil woman,' and the governor fires back with Trump jab",
         "link": "https://www.foxnews.com/entertainment/nicki-minaj-torches-kathy-hochul-evil-woman-governor-fires-back-trump-jab",
         "source": "Fox News",
@@ -4972,26 +4981,6 @@
           "neuP": 80.4,
           "label": "negative",
           "confidence": 0.87
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How Florida voters are reacting to Democrat Angie Nixon's progressive stances",
-        "link": "https://www.cbsnews.com/video/how-florida-voters-are-reacting-to-democrat-angie-nixons-progressive-stances/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is campaigning in Florida as CBS News rates the state's highly watched Senate race as likely Republican. CBS News contributor Marc Caputo has more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T22:57:51.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
         },
         "category": "usa"
       }
@@ -5198,6 +5187,26 @@
         "category": "world"
       },
       {
+        "title": "'The View' co-hosts agree Democrats should not impeach Trump if party wins back control of Congress",
+        "link": "https://www.foxnews.com/media/the-view-co-hosts-agree-democrats-should-not-impeach-trump-party-wins-back-control-congress",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Former Vice President Kamala Harris warned Democrats against impeaching President Donald Trump, and \"The View\" co-hosts agreed the focus should be on accountability and investigations.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T00:24:52.000Z",
+        "sentiment": {
+          "posP": 22.4,
+          "negP": 4.3,
+          "neuP": 73.3,
+          "label": "positive",
+          "confidence": 0.84
+        },
+        "category": "usa"
+      },
+      {
         "title": "Nicki Minaj torches Kathy Hochul as 'evil woman,' and the governor fires back with Trump jab",
         "link": "https://www.foxnews.com/entertainment/nicki-minaj-torches-kathy-hochul-evil-woman-governor-fires-back-trump-jab",
         "source": "Fox News",
@@ -5218,167 +5227,7 @@
         "category": "usa"
       },
       {
-        "title": "How Florida voters are reacting to Democrat Angie Nixon's progressive stances",
-        "link": "https://www.cbsnews.com/video/how-florida-voters-are-reacting-to-democrat-angie-nixons-progressive-stances/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is campaigning in Florida as CBS News rates the state's highly watched Senate race as likely Republican. CBS News contributor Marc Caputo has more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T22:57:51.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says Iran war will end \"soon\" as Qatar pushes for U.S.-Iran deal",
-        "link": "https://www.cbsnews.com/video/trump-says-iran-war-will-end-soon-as-qatar-pushes-for-us-iran-deal/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump claims his war with Iran will come to an end \"soon\" as Qatari mediators push for a deal days before the midterms. CBS News senior national security correspondent Charlie D'Agata breaks it down.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T22:36:00.000Z",
-        "sentiment": {
-          "posP": 4.4,
-          "negP": 14.4,
-          "neuP": 81.2,
-          "label": "negative",
-          "confidence": 0.75
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Why Trump is spending time campaigning in deep red Florida",
-        "link": "https://www.cbsnews.com/video/why-trump-is-spending-time-campaigning-in-deep-red-florida/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is set to appear at rally in Daytona Beach, Florida, on Friday night. This also comes after Mr. Trump reversed course on his decision to cancel upcoming weekend rallies in Kansas and Iowa. CBS News correspondent Cristian Benavides reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T22:34:10.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 3.8,
-          "neuP": 96.2,
-          "label": "negative",
-          "confidence": 0.25
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump predicts Iran war will end soon as Qatar pushes for a deal",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump predicts the war with Iran is \"going to end soon,\" without offering any details, as Qatari mediators return to Tehran to push for a deal.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T22:07:13.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 18.2,
-          "neuP": 81.8,
-          "label": "negative",
-          "confidence": 0.83
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump to hold rallies in Kansas and Iowa despite earlier cancelation",
-        "link": "https://www.cbsnews.com/video/trump-to-hold-rallies-in-kansas-and-iowa-despite-earlier-cancelation/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump has been going back and forth on whether he will hold rallies in Kansas and Iowa scheduled for this weekend.  Florida State Senator Joe Gruters joins \"The Takeout\" to share his thoughts.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T21:42:32.000Z",
-        "sentiment": {
-          "posP": 4.8,
-          "negP": 0,
-          "neuP": 95.2,
-          "label": "positive",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How Trump's immigration policies are impacting voting in Texas border races",
-        "link": "https://www.cbsnews.com/video/how-trumps-immigration-policies-are-impacting-voting-in-border-races/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump' immigration policies are having an impact on voters in Texas' border communities as midterms approach. CBS News' Camilo Montoya-Galvez has the story.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T21:30:52.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Midterm Updates: Trump heading to Florida for rally as election nears",
-        "link": "https://www.cbsnews.com/live-updates/2026-midterm-elections-campaigns-weekend-before/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The November 2026 midterm elections are just four days away. Candidates in key races — and President Trump — are making their closing arguments to voters.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T21:26:36.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 7.4,
-          "neuP": 92.6,
-          "label": "negative",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Why Trump is campaigning for Republicans in deep red Florida",
-        "link": "https://www.cbsnews.com/video/why-trump-is-campaigning-for-republicans-in-deep-red-florida/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump is campaigning for Republicans in Florida this Friday with only a couple of days to go until the midterms. CBS News' Cristian Benavides has the details.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T21:18:53.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Obamacare Dealt Yet Another Blow as Premiums Jump Again",
+        "title": "Obamacare Policies Hit Again With Steep Premium Increases for 2027",
         "link": "https://www.nytimes.com/2026/10/30/business/obamacare-health-insurance-rates.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
@@ -5387,33 +5236,13 @@
         "description": "Premiums will increase an average 13 percent next year for millions of Americans, on top of an earlier steep increase. It adds to the problems facing the program, which the Trump administration has weakened.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T22:56:18.000Z",
+        "publishedAt": "2026-10-30T23:42:10.000Z",
         "sentiment": {
-          "posP": 13,
-          "negP": 10.1,
-          "neuP": 76.9,
+          "posP": 12.7,
+          "negP": 9.9,
+          "neuP": 77.4,
           "label": "neutral",
           "confidence": 0.1
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The Justice Department’s Unusual Election-Year Activity",
-        "link": "https://www.nytimes.com/video/us/elections/100000011240630/the-justice-departments-unusual-election-year-activity.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Federal prosecutors have targeted President Trump’s political opponents and sued states over election administration just before the midterms. Devlin Barrett, a reporter for The New York Times, explains how this activity is compared with the Justice Department’s usual election-year behavior.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T14:03:34.000Z",
-        "sentiment": {
-          "posP": 13.7,
-          "negP": 0,
-          "neuP": 86.3,
-          "label": "positive",
-          "confidence": 0.78
         },
         "category": "usa"
       },
@@ -5438,6 +5267,26 @@
         "category": "usa"
       },
       {
+        "title": "Alina Habba’s Husband Ignited Drama in Trump’s Circle. Now He’s Under Scrutiny.",
+        "link": "https://www.nytimes.com/2026/10/30/us/politics/alina-habba-turhan-mildon-trump-congo-venezuela.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Turhan Mildon, who married Alina Habba this summer, presents himself as a 29-year-old billionaire with ties to global leaders. His story has inconsistencies.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T00:01:53.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
         "title": "Judge Appoints Special Master to Determine if Trump Officials Lied in Golf Course Suit",
         "link": "https://www.nytimes.com/2026/10/30/us/politics/special-master-reyes-trump-golf.html",
         "source": "NYT",
@@ -5458,16 +5307,156 @@
         "category": "usa"
       },
       {
-        "title": "Alina Habba’s Husband Ignited Drama in Trump’s Circle. Now He’s Under Scrutiny.",
-        "link": "https://www.nytimes.com/2026/10/30/us/politics/alina-habba-turhan-mildon-trump-congo-venezuela.html",
+        "title": "Trump’s Plane Flyover Is a Halloween Trick for Startled D.C. Residents",
+        "link": "https://www.nytimes.com/2026/10/30/us/politics/air-force-flyover.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Turhan Mildon, who married Alina Habba this summer, presents himself as a 29-year-old billionaire with ties to global leaders. His story has inconsistencies.",
+        "description": "A White House social media account said the surprise Air Force One flight was part of a Halloween event hosted by the president and the first lady.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-30T21:58:18.000Z",
+        "publishedAt": "2026-10-30T23:25:23.000Z",
+        "sentiment": {
+          "posP": 5.7,
+          "negP": 7.8,
+          "neuP": 86.5,
+          "label": "neutral",
+          "confidence": 0.05
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Minnesota Declined to Buy a Prison for $75 Million. D.H.S. Paid $495 Million.",
+        "link": "https://www.nytimes.com/2026/10/30/us/minnesota-prison-homeland-security.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The recent purchase of the prison to hold immigrants is among the acquisitions facing scrutiny in the Trump administration’s mass deportation push.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-30T22:15:46.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17.1,
+          "neuP": 82.9,
+          "label": "negative",
+          "confidence": 0.77
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Judge Blocks Expediting Migrant Children’s Asylum Cases, For Now",
+        "link": "https://www.nytimes.com/2026/10/30/us/politics/children-asylum-fast-track-deport.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Lawyers for the children praised the pause on fast-tracked interviews of unaccompanied minors, calling it a blow against the Trump administration’s “deportation assembly line.”",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T00:50:07.000Z",
+        "sentiment": {
+          "posP": 9.1,
+          "negP": 5.4,
+          "neuP": 85.5,
+          "label": "positive",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Midterm Updates: Trump rallies in Florida, El-Sayed clashes with Stevens",
+        "link": "https://www.cbsnews.com/live-updates/2026-midterm-elections-campaigns-weekend-before/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The November 2026 midterm elections are just four days away. Candidates in key races — and President Trump — are making their closing arguments to voters.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T01:50:16.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 7.6,
+          "neuP": 92.4,
+          "label": "negative",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "\"Trump holds 27th campaign rally as midterms near \"",
+        "link": "https://www.cbsnews.com/video/trump-holds-27th-campaign-rally-as-midterms-near/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump is holding his 27th rally in 30 days on Friday, a sign of how competitive key congressional races have become as Election Day closes in. Weijia Jiang has the latest.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-30T23:32:24.000Z",
+        "sentiment": {
+          "posP": 4.2,
+          "negP": 0,
+          "neuP": 95.8,
+          "label": "neutral",
+          "confidence": 0.18
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How Florida voters are reacting to Democrat Angie Nixon's progressive stances",
+        "link": "https://www.cbsnews.com/video/how-florida-voters-are-reacting-to-democrat-angie-nixons-progressive-stances/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump is campaigning in Florida as CBS News rates the state's highly watched Senate race as likely Republican. CBS News contributor Marc Caputo has more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-30T22:57:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump to hold rallies in Kansas and Iowa despite earlier cancelation",
+        "link": "https://www.cbsnews.com/video/trump-to-hold-rallies-in-kansas-and-iowa-despite-earlier-cancelation/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump has been going back and forth on whether he will hold rallies in Kansas and Iowa scheduled for this weekend.  Florida State Senator Joe Gruters joins \"The Takeout\" to share his thoughts.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-30T21:42:00.000Z",
+        "sentiment": {
+          "posP": 4.8,
+          "negP": 0,
+          "neuP": 95.2,
+          "label": "positive",
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump rallies in Kansas and Iowa are back on after RNC said they were canceled: Source",
+        "link": "https://www.cnbc.com/2026/10/30/trump-vance-rally-midterm-elections-.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump and Vance had canceled planned appearances across three states, reducing in-person campaigning in the final days before the midterm election.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-30T15:52:35.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5479,31 +5468,31 @@
       }
     ],
     "sentiment": {
-      "pos": 5.32,
-      "neu": 87.93,
-      "neg": 6.75,
-      "count": 36
+      "pos": 6.57,
+      "neu": 86.94,
+      "neg": 6.49,
+      "count": 34
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 7.91,
-        "neu": 85.91,
-        "neg": 6.18,
-        "count": 9
-      },
-      {
-        "source": "CBS News",
-        "pos": 1.47,
-        "neu": 92.11,
+        "pos": 8,
+        "neu": 85.58,
         "neg": 6.42,
         "count": 9
       },
       {
         "source": "NBC News",
-        "pos": 7.82,
-        "neu": 87.78,
-        "neg": 4.4,
+        "pos": 7.98,
+        "neu": 87.15,
+        "neg": 4.87,
+        "count": 6
+      },
+      {
+        "source": "CBS News",
+        "pos": 2.6,
+        "neu": 93.08,
+        "neg": 4.32,
         "count": 5
       },
       {
@@ -5522,10 +5511,10 @@
       },
       {
         "source": "Fox News",
-        "pos": 4.5,
-        "neu": 85.7,
-        "neg": 9.8,
-        "count": 2
+        "pos": 10.47,
+        "neu": 81.57,
+        "neg": 7.97,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5545,16 +5534,16 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 3.21,
-        "neu": 90.14,
-        "neg": 6.65,
-        "count": 15
+        "pos": 5.85,
+        "neu": 88.33,
+        "neg": 5.82,
+        "count": 13
       },
       {
         "topic": "Policy",
-        "pos": 6.34,
-        "neu": 87.66,
-        "neg": 6,
+        "pos": 6.69,
+        "neu": 87.16,
+        "neg": 6.15,
         "count": 11
       },
       {
@@ -5603,28 +5592,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-30T19:17:26.285Z",
+        "label": "2026-10-30T22:28:12.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T20:17:26.285Z",
+        "label": "2026-10-30T23:28:12.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T21:17:26.285Z",
+        "label": "2026-10-31T00:28:12.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T22:17:26.285Z",
+        "label": "2026-10-31T01:28:12.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5633,28 +5622,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-30T19:17:26.285Z",
+        "label": "2026-10-30T22:28:12.063Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T20:17:26.285Z",
+        "label": "2026-10-30T23:28:12.063Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T21:17:26.285Z",
+        "label": "2026-10-31T00:28:12.063Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-30T22:17:26.285Z",
+        "label": "2026-10-31T01:28:12.063Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5734,7 +5723,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-30T23:17:26.287Z",
+    "generatedAt": "2026-10-31T02:28:12.064Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5855,8 +5844,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 170,
-      "potusArticles": 36,
+      "usaArticles": 168,
+      "potusArticles": 34,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
