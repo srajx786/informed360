@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-31T14:48:56.601Z",
+  "generatedAt": "2026-10-31T18:50:05.699Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 163,
-    "potusArticles": 29
+    "usaArticles": 165,
+    "potusArticles": 30
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-31T10:48:56.601Z",
+          "label": "2026-10-31T14:50:05.700Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T11:48:56.601Z",
+          "label": "2026-10-31T15:50:05.700Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T12:48:56.601Z",
+          "label": "2026-10-31T16:50:05.700Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T13:48:56.601Z",
+          "label": "2026-10-31T17:50:05.700Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-31T10:48:56.601Z",
+          "label": "2026-10-31T14:50:05.700Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T11:48:56.601Z",
+          "label": "2026-10-31T15:50:05.700Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T12:48:56.601Z",
+          "label": "2026-10-31T16:50:05.700Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T13:48:56.601Z",
+          "label": "2026-10-31T17:50:05.700Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7,
-      "neu": 82.87,
-      "neg": 10.13,
-      "count": 163
+      "pos": 6.95,
+      "neu": 82.12,
+      "neg": 10.93,
+      "count": 165
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.29,
-        "neu": 81.77,
-        "neg": 9.94,
-        "count": 40
+        "pos": 7.8,
+        "neu": 82.9,
+        "neg": 9.3,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 8.65,
-        "neu": 82.83,
-        "neg": 8.52,
+        "pos": 8.42,
+        "neu": 77.18,
+        "neg": 14.4,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.65,
-        "neu": 84.18,
-        "neg": 11.17,
+        "pos": 5.93,
+        "neu": 84.23,
+        "neg": 9.85,
         "count": 26
       },
       {
@@ -4590,18 +4590,18 @@
         "count": 20
       },
       {
-        "source": "ABC News",
-        "pos": 9.1,
-        "neu": 82.76,
-        "neg": 8.14,
+        "source": "NYT",
+        "pos": 3.85,
+        "neu": 84.52,
+        "neg": 11.63,
         "count": 20
       },
       {
-        "source": "NYT",
-        "pos": 3.52,
-        "neu": 86.78,
-        "neg": 9.71,
-        "count": 19
+        "source": "ABC News",
+        "pos": 8.07,
+        "neu": 83.67,
+        "neg": 8.25,
+        "count": 20
       },
       {
         "source": "NPR",
@@ -4628,29 +4628,29 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Materials",
+          "bias": -15.8,
+          "count": 1
+        },
+        {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": -9.45,
-          "count": 6
-        },
-        {
           "name": "Finance",
-          "bias": -5.51,
-          "count": 14
+          "bias": -7.27,
+          "count": 15
         },
         {
-          "name": "Real Estate",
-          "bias": -5.45,
-          "count": 2
+          "name": "Healthcare",
+          "bias": -4.26,
+          "count": 8
         },
         {
           "name": "Technology",
-          "bias": -3.33,
-          "count": 114
+          "bias": -3.25,
+          "count": 126
         },
         {
           "name": "Manufacturing",
@@ -4658,14 +4658,19 @@
           "count": 4
         },
         {
-          "name": "Energy",
-          "bias": 1.33,
-          "count": 12
+          "name": "Utilities",
+          "bias": -2.03,
+          "count": 3
         },
         {
-          "name": "Utilities",
-          "bias": -0.45,
+          "name": "Real Estate",
+          "bias": -0.85,
           "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": 0.35,
+          "count": 14
         }
       ],
       "pos": [
@@ -4677,68 +4682,68 @@
       ],
       "neu": [
         {
-          "name": "Real Estate",
-          "bias": -5.45,
-          "count": 2
+          "name": "Healthcare",
+          "bias": -4.26,
+          "count": 8
         },
         {
           "name": "Technology",
-          "bias": -3.33,
-          "count": 114
+          "bias": -3.25,
+          "count": 126
         },
         {
-          "name": "Energy",
-          "bias": 1.33,
-          "count": 12
+          "name": "Utilities",
+          "bias": -2.03,
+          "count": 3
         }
       ],
       "neg": [
+        {
+          "name": "Materials",
+          "bias": -15.8,
+          "count": 1
+        },
         {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": -9.45,
-          "count": 6
-        },
-        {
           "name": "Finance",
-          "bias": -5.51,
-          "count": 14
+          "bias": -7.27,
+          "count": 15
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-31T10:48:56.602Z",
-          "pos": 2,
-          "neu": 93,
-          "neg": 4,
-          "count": 4
+          "label": "2026-10-31T14:50:05.702Z",
+          "pos": 9,
+          "neu": 79,
+          "neg": 12,
+          "count": 12
         },
         {
-          "label": "2026-10-31T11:48:56.602Z",
-          "pos": 11,
-          "neu": 86,
-          "neg": 3,
-          "count": 7
-        },
-        {
-          "label": "2026-10-31T12:48:56.602Z",
-          "pos": 10,
+          "label": "2026-10-31T15:50:05.702Z",
+          "pos": 7,
           "neu": 84,
-          "neg": 6,
-          "count": 15
+          "neg": 10,
+          "count": 12
         },
         {
-          "label": "2026-10-31T13:48:56.602Z",
-          "pos": 6,
-          "neu": 83,
-          "neg": 11,
-          "count": 29
+          "label": "2026-10-31T16:50:05.702Z",
+          "pos": 5,
+          "neu": 81,
+          "neg": 14,
+          "count": 14
+        },
+        {
+          "label": "2026-10-31T17:50:05.702Z",
+          "pos": 7,
+          "neu": 78,
+          "neg": 15,
+          "count": 17
         }
       ]
     }
@@ -4946,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "How Trump Is Dismantling America’s Scientific Research Machine",
-        "link": "https://www.nytimes.com/2026/10/31/climate/how-trump-is-dismantling-americas-scientific-research-machine.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Bill Maher hits back at Trump over blistering Truth Social post, jokes about president's dinner review",
+        "link": "https://www.foxnews.com/media/bill-maher-hits-back-trump-blistering-truth-social-post-jokes-president-dinner-review",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The system that has driven life-altering discoveries and helped make the United States a superpower is now under intense strain.",
+        "description": "Bill Maher fired back at Trump's record 1,300-word Truth Social post on \"Real Time,\" reading the president's attacks aloud line by line onstage.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-31T14:44:38.000Z",
+        "publishedAt": "2026-10-31T17:39:29.000Z",
         "sentiment": {
           "posP": 14,
-          "negP": 4.1,
-          "neuP": 81.9,
-          "label": "positive",
-          "confidence": 0.44
+          "negP": 13.8,
+          "neuP": 72.2,
+          "label": "negative",
+          "confidence": 0.23
         },
         "category": "usa"
       },
       {
-        "title": "Trump and GOP Close Midterms With Ugly Personal Attacks",
-        "link": "https://www.nytimes.com/2026/10/31/us/politics/trump-republicans-personal-attacks-midterms.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Who are Ilhan Omar’s lawyers? Meet the high-powered Dem attorneys the embattled rep hired",
+        "link": "https://www.foxnews.com/politics/who-ilhan-omars-lawyers-meet-high-powered-dem-attorneys-embattled-rep-hired",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Facing backlash over inflation and anger with the president, Republicans have turned to an onslaught of baseless claims about Democratic candidates.",
+        "description": "Ilhan Omar has hired Amy Jeffress and Joshua Matz, attorneys who represented Biden, House Democrats in Trump impeachment, and E. Jean Carroll.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-31T09:05:21.000Z",
+        "publishedAt": "2026-10-31T17:18:10.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 26.8,
-          "neuP": 73.2,
-          "label": "negative",
-          "confidence": 0.87
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       }
@@ -5188,8 +5193,68 @@
         "category": "world"
       },
       {
+        "title": "Bill Maher hits back at Trump over blistering Truth Social post, jokes about president's dinner review",
+        "link": "https://www.foxnews.com/media/bill-maher-hits-back-trump-blistering-truth-social-post-jokes-president-dinner-review",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Bill Maher fired back at Trump's record 1,300-word Truth Social post on \"Real Time,\" reading the president's attacks aloud line by line onstage.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T17:39:29.000Z",
+        "sentiment": {
+          "posP": 14,
+          "negP": 13.8,
+          "neuP": 72.2,
+          "label": "negative",
+          "confidence": 0.23
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Who are Ilhan Omar’s lawyers? Meet the high-powered Dem attorneys the embattled rep hired",
+        "link": "https://www.foxnews.com/politics/who-ilhan-omars-lawyers-meet-high-powered-dem-attorneys-embattled-rep-hired",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ilhan Omar has hired Amy Jeffress and Joshua Matz, attorneys who represented Biden, House Democrats in Trump impeachment, and E. Jean Carroll.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T17:18:10.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Why the Ilhan Omar saga isn't going away",
+        "link": "https://www.foxnews.com/politics/why-ilhan-omar-saga-isnt-going-away",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump claims Ilhan Omar must resign from Congress over alleged immigration fraud, but the Constitution grants that power solely to the House itself.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T16:07:26.000Z",
+        "sentiment": {
+          "posP": 6.8,
+          "negP": 11.9,
+          "neuP": 81.3,
+          "label": "neutral",
+          "confidence": 0.19
+        },
+        "category": "usa"
+      },
+      {
         "title": "How Trump Is Dismantling America’s Scientific Research Machine",
-        "link": "https://www.nytimes.com/2026/10/31/climate/how-trump-is-dismantling-americas-scientific-research-machine.html",
+        "link": "https://www.nytimes.com/2026/10/31/science/how-trump-is-dismantling-americas-scientific-research-machine.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
@@ -5197,7 +5262,7 @@
         "description": "The system that has driven life-altering discoveries and helped make the United States a superpower is now under intense strain.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-31T14:44:38.000Z",
+        "publishedAt": "2026-10-31T17:32:04.000Z",
         "sentiment": {
           "posP": 14,
           "negP": 4.1,
@@ -5228,26 +5293,6 @@
         "category": "usa"
       },
       {
-        "title": "Obamacare Policies Hit Again With Steep Premium Increases for 2027",
-        "link": "https://www.nytimes.com/2026/10/30/business/obamacare-health-insurance-rates.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Premiums will increase an average 13 percent next year for millions of Americans, on top of an earlier steep increase. It adds to the problems facing the program, which the Trump administration has weakened.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-30T23:42:10.000Z",
-        "sentiment": {
-          "posP": 12.7,
-          "negP": 9.9,
-          "neuP": 77.4,
-          "label": "neutral",
-          "confidence": 0.1
-        },
-        "category": "usa"
-      },
-      {
         "title": "Iran Braces for More War, No Matter the Outcome of the U.S. and Israeli Elections",
         "link": "https://www.nytimes.com/2026/10/31/world/middleeast/iran-war-israel-us-elections-trump-netanyahu.html",
         "source": "NYT",
@@ -5257,7 +5302,7 @@
         "description": "With Prime Minister Benjamin Netanyahu fighting to stay in power and President Trump facing a tough midterm, Iran’s leaders expect no major shift in policy.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-31T14:22:20.000Z",
+        "publishedAt": "2026-10-31T18:15:16.000Z",
         "sentiment": {
           "posP": 2.9,
           "negP": 27.2,
@@ -5268,87 +5313,7 @@
         "category": "usa"
       },
       {
-        "title": "U.S. set to deport Afghan refugees to Pakistan, despite risk they’ll be returned to Taliban",
-        "link": "https://www.nbcnews.com/news/us-news/trump-administration-set-deport-afghan-refugees-pakistan-rcna606059",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration is preparing to deport dozens of Afghan immigrants and asylum-seekers to Pakistan on the first flight of its kind, a senior administration official told NBC News — a move critics say could put their lives at risk.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T01:10:30.000Z",
-        "sentiment": {
-          "posP": 9.1,
-          "negP": 7.5,
-          "neuP": 83.4,
-          "label": "positive",
-          "confidence": 0.23
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Judge orders Trump administration to stop threatening election officials",
-        "link": "https://www.nbcnews.com/politics/2026-election/judge-orders-trump-administration-stop-threatening-election-officials-rcna606659",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A federal judge issued a sweeping order blocking the Trump administration from threatening or intimidating election officials amid pressure tactics used by the administration in the weeks leading up to next week’s midterm elections.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T02:19:44.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 32.3,
-          "neuP": 67.7,
-          "label": "negative",
-          "confidence": 0.94
-        },
-        "category": "usa"
-      },
-      {
-        "title": "ICE, immigration concerns top issues for Texas voters",
-        "link": "https://www.cbsnews.com/video/ice-immigration-concerns-top-issues-for-texas-voters/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Camilo Montoya-Galvez spoke with Texas voters about the Trump administration's immigration policies ahead of midterm elections.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T14:31:19.000Z",
-        "sentiment": {
-          "posP": 7.3,
-          "negP": 0,
-          "neuP": 92.7,
-          "label": "positive",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iran's supreme leader warns U.S., Israel against new attacks",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump predicted the war with Iran is \"going to end soon,\" without offering any details, as Qatari mediators push for a deal.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T14:19:05.000Z",
-        "sentiment": {
-          "posP": 9.3,
-          "negP": 21.1,
-          "neuP": 69.6,
-          "label": "negative",
-          "confidence": 0.56
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Midterm Updates: El-Sayed, Stevens feud lights up campaign amid final push",
+        "title": "2026 elections live updates: Trump supports Republicans with telerallies",
         "link": "https://www.cbsnews.com/live-updates/2026-midterm-elections-campaigns-weekend-before/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
@@ -5357,33 +5322,33 @@
         "description": "The November 2026 midterm elections are just three days away. Candidates in key races — and President Trump — are making their closing arguments to voters.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-31T14:16:16.000Z",
+        "publishedAt": "2026-10-31T18:33:37.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 13.4,
-          "neuP": 86.6,
-          "label": "negative",
-          "confidence": 0.62
+          "posP": 6.9,
+          "negP": 7.5,
+          "neuP": 85.6,
+          "label": "neutral",
+          "confidence": 0.05
         },
         "category": "usa"
       },
       {
-        "title": "Inside John Thune's push to save the GOP's Senate majority",
-        "link": "https://www.cbsnews.com/video/john-thune-push-save-gop-senate-majority/",
+        "title": "Virginia and D.C. sue over Trump's planned arch",
+        "link": "https://www.cbsnews.com/news/trump-arch-lawsuits-virginia-dc-politics/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Senate Majority Leader John Thune is making the case for Republicans to keep control of the Senate as the party faces mounting headwinds ahead of the midterms. He's balancing the push to advance President Trump's agenda with the need for GOP candidates to chart their own paths.",
+        "description": "There are now three lawsuits calling for a halt to potential work on a monument that would rise 250 feet over Washington, D.C.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-31T11:00:01.000Z",
+        "publishedAt": "2026-10-31T17:42:22.000Z",
         "sentiment": {
-          "posP": 9.7,
-          "negP": 0,
-          "neuP": 90.3,
-          "label": "positive",
-          "confidence": 0.71
+          "posP": 0,
+          "negP": 5.4,
+          "neuP": 94.6,
+          "label": "neutral",
+          "confidence": 0.15
         },
         "category": "usa"
       },
@@ -5424,6 +5389,46 @@
           "neuP": 90.5,
           "label": "neutral",
           "confidence": 0.05
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Virginia and D.C. sue to stop proposed Trump arch",
+        "link": "https://www.nbcnews.com/politics/white-house/dc-virginia-lawsuit-stop-proposed-trump-arch-construction-rcna606705",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Virginia and the District of Columbia filed a lawsuit in federal court Saturday in a last-ditch effort to stop the construction of the triumphal arch planned for Memorial Circle in Washington.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T17:03:15.000Z",
+        "sentiment": {
+          "posP": 6.9,
+          "negP": 14.5,
+          "neuP": 78.6,
+          "label": "negative",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "U.S. set to deport Afghan refugees to Pakistan, despite risk they’ll be returned to Taliban",
+        "link": "https://www.nbcnews.com/news/us-news/trump-administration-set-deport-afghan-refugees-pakistan-rcna606059",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration is preparing to deport dozens of Afghan immigrants and asylum-seekers to Pakistan on the first flight of its kind, a senior administration official told NBC News — a move critics say could put their lives at risk.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T01:10:30.000Z",
+        "sentiment": {
+          "posP": 9.1,
+          "negP": 7.5,
+          "neuP": 83.4,
+          "label": "positive",
+          "confidence": 0.23
         },
         "category": "usa"
       },
@@ -5469,38 +5474,45 @@
       }
     ],
     "sentiment": {
-      "pos": 5.86,
-      "neu": 83.08,
-      "neg": 11.07,
-      "count": 29
+      "pos": 5.51,
+      "neu": 84.57,
+      "neg": 9.91,
+      "count": 30
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 7.1,
-        "neu": 79.57,
-        "neg": 13.33,
-        "count": 6
+        "pos": 5.98,
+        "neu": 80,
+        "neg": 14.02,
+        "count": 5
       },
       {
         "source": "NBC News",
-        "pos": 8.08,
-        "neu": 77.94,
-        "neg": 13.98,
+        "pos": 9.46,
+        "neu": 80.12,
+        "neg": 10.42,
         "count": 5
       },
       {
-        "source": "CBS News",
-        "pos": 6.06,
-        "neu": 84.24,
-        "neg": 9.7,
-        "count": 5
+        "source": "Fox News",
+        "pos": 7.45,
+        "neu": 86.13,
+        "neg": 6.43,
+        "count": 4
       },
       {
         "source": "WSJ",
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
+        "count": 4
+      },
+      {
+        "source": "ABC News",
+        "pos": 2.8,
+        "neu": 86.67,
+        "neg": 10.53,
         "count": 4
       },
       {
@@ -5511,10 +5523,10 @@
         "count": 3
       },
       {
-        "source": "ABC News",
-        "pos": 3.73,
-        "neu": 82.23,
-        "neg": 14.03,
+        "source": "CBS News",
+        "pos": 3.63,
+        "neu": 87.4,
+        "neg": 8.97,
         "count": 3
       },
       {
@@ -5528,17 +5540,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.17,
-        "neu": 83.11,
-        "neg": 10.72,
+        "pos": 5.73,
+        "neu": 84.81,
+        "neg": 9.47,
         "count": 12
       },
       {
         "topic": "Policy",
-        "pos": 5,
-        "neu": 84.36,
-        "neg": 10.64,
-        "count": 9
+        "pos": 5.57,
+        "neu": 84.8,
+        "neg": 9.63,
+        "count": 7
       },
       {
         "topic": "Foreign Policy",
@@ -5553,6 +5565,13 @@
         "neu": 77.82,
         "neg": 14.1,
         "count": 4
+      },
+      {
+        "topic": "Legal",
+        "pos": 2.3,
+        "neu": 91.07,
+        "neg": 6.63,
+        "count": 3
       }
     ]
   },
@@ -5579,28 +5598,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-31T10:48:56.604Z",
+        "label": "2026-10-31T14:50:05.704Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T11:48:56.604Z",
+        "label": "2026-10-31T15:50:05.704Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T12:48:56.604Z",
+        "label": "2026-10-31T16:50:05.704Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T13:48:56.604Z",
+        "label": "2026-10-31T17:50:05.704Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5609,28 +5628,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-31T10:48:56.604Z",
+        "label": "2026-10-31T14:50:05.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T11:48:56.604Z",
+        "label": "2026-10-31T15:50:05.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T12:48:56.604Z",
+        "label": "2026-10-31T16:50:05.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T13:48:56.604Z",
+        "label": "2026-10-31T17:50:05.705Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5710,7 +5729,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-31T14:48:56.605Z",
+    "generatedAt": "2026-10-31T18:50:05.706Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5831,8 +5850,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 163,
-      "potusArticles": 29,
+      "usaArticles": 165,
+      "potusArticles": 30,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
