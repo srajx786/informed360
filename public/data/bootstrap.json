@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-01T14:22:26.016Z",
+  "generatedAt": "2026-11-01T19:06:39.165Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 160,
-    "potusArticles": 35
+    "usaArticles": 162,
+    "potusArticles": 29
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-01T10:22:26.016Z",
+          "label": "2026-11-01T15:06:39.165Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-01T11:22:26.016Z",
+          "label": "2026-11-01T16:06:39.165Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-01T12:22:26.016Z",
+          "label": "2026-11-01T17:06:39.165Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-01T13:22:26.016Z",
+          "label": "2026-11-01T18:06:39.165Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-01T10:22:26.016Z",
+          "label": "2026-11-01T15:06:39.165Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-01T11:22:26.016Z",
+          "label": "2026-11-01T16:06:39.165Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-01T12:22:26.016Z",
+          "label": "2026-11-01T17:06:39.165Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-01T13:22:26.016Z",
+          "label": "2026-11-01T18:06:39.165Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 8.1,
-      "neu": 82.94,
-      "neg": 8.96,
-      "count": 160
+      "pos": 7.72,
+      "neu": 81.29,
+      "neg": 10.99,
+      "count": 162
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.84,
-        "neu": 82.16,
-        "neg": 10,
-        "count": 38
+        "pos": 10.89,
+        "neu": 79.1,
+        "neg": 10.02,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 11.53,
-        "neu": 80.52,
-        "neg": 7.95,
+        "pos": 8.28,
+        "neu": 76.95,
+        "neg": 14.77,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 9.19,
-        "neu": 83.89,
-        "neg": 6.92,
-        "count": 25
+        "pos": 4.63,
+        "neu": 85.85,
+        "neg": 9.51,
+        "count": 26
       },
       {
         "source": "WSJ",
@@ -4591,17 +4591,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 7.51,
-        "neu": 84.31,
-        "neg": 8.18,
+        "pos": 6.6,
+        "neu": 82.99,
+        "neg": 10.42,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 5.37,
-        "neu": 88.48,
-        "neg": 6.15,
-        "count": 19
+        "pos": 6.9,
+        "neu": 85.22,
+        "neg": 7.88,
+        "count": 16
       },
       {
         "source": "NPR",
@@ -4638,14 +4638,9 @@
           "count": 1
         },
         {
-          "name": "Manufacturing",
-          "bias": 8.17,
-          "count": 3
-        },
-        {
           "name": "Healthcare",
-          "bias": -8.11,
-          "count": 8
+          "bias": -10.67,
+          "count": 12
         },
         {
           "name": "Real Estate",
@@ -4653,53 +4648,58 @@
           "count": 1
         },
         {
+          "name": "Energy",
+          "bias": -4.92,
+          "count": 10
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 4.7,
+          "count": 2
+        },
+        {
           "name": "Finance",
-          "bias": -3.41,
-          "count": 16
+          "bias": -4.54,
+          "count": 15
         },
         {
           "name": "Technology",
-          "bias": -1.17,
-          "count": 108
+          "bias": -4.15,
+          "count": 115
         },
         {
           "name": "Utilities",
           "bias": -0.45,
           "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -0.29,
-          "count": 15
         }
       ],
       "pos": [
         {
-          "name": "Manufacturing",
-          "bias": 8.17,
-          "count": 3
-        },
-        {
           "name": "Real Estate",
           "bias": 5.9,
           "count": 1
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 4.7,
+          "count": 2
         }
       ],
       "neu": [
         {
+          "name": "Energy",
+          "bias": -4.92,
+          "count": 10
+        },
+        {
           "name": "Finance",
-          "bias": -3.41,
-          "count": 16
+          "bias": -4.54,
+          "count": 15
         },
         {
           "name": "Technology",
-          "bias": -1.17,
-          "count": 108
-        },
-        {
-          "name": "Utilities",
-          "bias": -0.45,
-          "count": 2
+          "bias": -4.15,
+          "count": 115
         }
       ],
       "neg": [
@@ -4715,40 +4715,40 @@
         },
         {
           "name": "Healthcare",
-          "bias": -8.11,
-          "count": 8
+          "bias": -10.67,
+          "count": 12
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-01T10:22:26.017Z",
-          "pos": 15,
+          "label": "2026-11-01T15:06:39.167Z",
+          "pos": 11,
+          "neu": 82,
+          "neg": 7,
+          "count": 16
+        },
+        {
+          "label": "2026-11-01T16:06:39.167Z",
+          "pos": 8,
+          "neu": 77,
+          "neg": 15,
+          "count": 10
+        },
+        {
+          "label": "2026-11-01T17:06:39.167Z",
+          "pos": 6,
+          "neu": 82,
+          "neg": 12,
+          "count": 17
+        },
+        {
+          "label": "2026-11-01T18:06:39.167Z",
+          "pos": 6,
           "neu": 85,
-          "neg": 0,
-          "count": 2
-        },
-        {
-          "label": "2026-11-01T11:22:26.017Z",
-          "pos": 10,
-          "neu": 79,
-          "neg": 11,
-          "count": 11
-        },
-        {
-          "label": "2026-11-01T12:22:26.017Z",
-          "pos": 12,
-          "neu": 83,
-          "neg": 5,
-          "count": 19
-        },
-        {
-          "label": "2026-11-01T13:22:26.017Z",
-          "pos": 10,
-          "neu": 86,
-          "neg": 5,
-          "count": 12
+          "neg": 8,
+          "count": 18
         }
       ]
     }
@@ -4956,42 +4956,42 @@
         "category": "world"
       },
       {
-        "title": "Americans forced to change clocks again as Senate stalls Trump-backed daylight saving time bill",
-        "link": "https://www.foxnews.com/politics/americans-forced-change-clocks-again-senate-stalls-trump-backed-daylight-saving-time-bill",
+        "title": "Inside top Trump bulldog’s plan to save House GOP majority and defy history",
+        "link": "https://www.foxnews.com/politics/inside-top-trump-bulldog-plan-save-house-gop-majority-defy-history",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump shared Sen. Tom Cotton's cellphone number to pressure him on the Daylight Saving Time bill, but the Senate still has no clear path forward.",
+        "description": "Jim Jordan has barnstormed 115 districts across 34 states this election cycle, raising millions for House Republicans fighting to keep their majority.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-01T13:00:20.000Z",
+        "publishedAt": "2026-11-01T16:00:47.000Z",
         "sentiment": {
-          "posP": 13.7,
-          "negP": 14,
-          "neuP": 72.3,
-          "label": "neutral",
-          "confidence": 0.04
+          "posP": 12.7,
+          "negP": 6.3,
+          "neuP": 81,
+          "label": "positive",
+          "confidence": 0.36
         },
         "category": "usa"
       },
       {
-        "title": "Congress can save America’s unique history and boost the economy with just one move",
-        "link": "https://www.foxnews.com/opinion/congress-save-americas-unique-history-boost-economy-one-move",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Judge Rejects Trump Officials’ Move to Challenge Alaska Senate Election",
+        "link": "https://www.nytimes.com/2026/11/01/us/alaska-senate-election-lawsuit.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump urged Congress to pass a federal film tax credit as the U.S. share of global production has dropped from 65% to 39%, threatening American jobs.",
+        "description": "The ruling dismisses the Department of Justice’s lawsuit that pre-emptively contested the results of a race that includes two candidates named Daniel Sullivan.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-01T12:00:34.000Z",
+        "publishedAt": "2026-11-01T18:31:12.000Z",
         "sentiment": {
-          "posP": 22.2,
-          "negP": 7.1,
-          "neuP": 70.7,
-          "label": "positive",
-          "confidence": 0.74
+          "posP": 3.7,
+          "negP": 14.4,
+          "neuP": 81.9,
+          "label": "negative",
+          "confidence": 0.59
         },
         "category": "usa"
       }
@@ -5198,42 +5198,42 @@
         "category": "world"
       },
       {
-        "title": "Americans forced to change clocks again as Senate stalls Trump-backed daylight saving time bill",
-        "link": "https://www.foxnews.com/politics/americans-forced-change-clocks-again-senate-stalls-trump-backed-daylight-saving-time-bill",
+        "title": "Inside top Trump bulldog’s plan to save House GOP majority and defy history",
+        "link": "https://www.foxnews.com/politics/inside-top-trump-bulldog-plan-save-house-gop-majority-defy-history",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump shared Sen. Tom Cotton's cellphone number to pressure him on the Daylight Saving Time bill, but the Senate still has no clear path forward.",
+        "description": "Jim Jordan has barnstormed 115 districts across 34 states this election cycle, raising millions for House Republicans fighting to keep their majority.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-01T13:00:20.000Z",
+        "publishedAt": "2026-11-01T16:00:47.000Z",
         "sentiment": {
-          "posP": 13.7,
-          "negP": 14,
-          "neuP": 72.3,
-          "label": "neutral",
-          "confidence": 0.04
+          "posP": 12.7,
+          "negP": 6.3,
+          "neuP": 81,
+          "label": "positive",
+          "confidence": 0.36
         },
         "category": "usa"
       },
       {
-        "title": "Congress can save America’s unique history and boost the economy with just one move",
-        "link": "https://www.foxnews.com/opinion/congress-save-americas-unique-history-boost-economy-one-move",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Judge Rejects Trump Officials’ Move to Challenge Alaska Senate Election",
+        "link": "https://www.nytimes.com/2026/11/01/us/alaska-senate-election-lawsuit.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump urged Congress to pass a federal film tax credit as the U.S. share of global production has dropped from 65% to 39%, threatening American jobs.",
+        "description": "The ruling dismisses the Department of Justice’s lawsuit that pre-emptively contested the results of a race that includes two candidates named Daniel Sullivan.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-01T12:00:34.000Z",
+        "publishedAt": "2026-11-01T18:31:12.000Z",
         "sentiment": {
-          "posP": 22.2,
-          "negP": 7.1,
-          "neuP": 70.7,
-          "label": "positive",
-          "confidence": 0.74
+          "posP": 3.7,
+          "negP": 14.4,
+          "neuP": 81.9,
+          "label": "negative",
+          "confidence": 0.59
         },
         "category": "usa"
       },
@@ -5247,7 +5247,7 @@
         "description": "Across the country, many voters have drawn a straight line between President Trump’s policies and inflation.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-01T10:02:36.000Z",
+        "publishedAt": "2026-11-01T17:42:25.000Z",
         "sentiment": {
           "posP": 7.1,
           "negP": 0,
@@ -5278,87 +5278,27 @@
         "category": "usa"
       },
       {
-        "title": "Trump Calls Former Lawyer’s $50 Million Deal ‘Obnoxious and Outrageous’",
-        "link": "https://www.nytimes.com/2026/10/31/us/politics/trump-habba-mildon-lawyer.html",
+        "title": "Trump Has Found the Attorney General of His Dreams",
+        "link": "https://www.nytimes.com/2026/11/01/opinion/trump-blanche-comey-justice.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "At a Halloween event in Florida, President Trump told reporters that Alina Habba Mildon’s lucrative work for someone seeking a pardon was “not acceptable.”",
+        "description": "The Department of Justice is in a state of moral collapse.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-01T01:37:37.000Z",
+        "publishedAt": "2026-11-01T18:50:38.000Z",
         "sentiment": {
-          "posP": 6.9,
-          "negP": 0,
-          "neuP": 93.1,
+          "posP": 24.1,
+          "negP": 12.6,
+          "neuP": 63.3,
           "label": "positive",
-          "confidence": 0.32
+          "confidence": 0.44
         },
         "category": "usa"
       },
       {
-        "title": "‘I Came as Donald Trump’: The President Hosts a Luxury Halloween at Mar-a-Lago",
-        "link": "https://www.nytimes.com/2026/10/31/us/politics/trump-halloween-party-scene.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump attended his jungle-themed Halloween party at Mar-a-Lago dressed as a distinctly recognizable figure.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-01T03:37:24.000Z",
-        "sentiment": {
-          "posP": 9.7,
-          "negP": 0,
-          "neuP": 90.3,
-          "label": "positive",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The History Behind Trump’s Arch",
-        "link": "https://www.nytimes.com/2026/11/01/opinion/trump-arch-washington-dc.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The history of triumphal arches is long and messy. Where does Donald Trump’s proposed edifice fit in?",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-01T14:00:20.000Z",
-        "sentiment": {
-          "posP": 20.4,
-          "negP": 9.3,
-          "neuP": 70.3,
-          "label": "positive",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Putin Breaks Down His Isolation, With a Big Assist From Trump",
-        "link": "https://www.nytimes.com/2026/11/01/world/europe/putin-isolation-breakdown-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Notching wins from Washington, the Russian leader is talking with foreign leaders and could return to diplomatic center stage with possible summit meetings.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-01T10:04:00.000Z",
-        "sentiment": {
-          "posP": 9.9,
-          "negP": 7.2,
-          "neuP": 82.9,
-          "label": "positive",
-          "confidence": 0.25
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Live updates: Midterm candidates make final push in campaign's last days",
+        "title": "Live Updates: Michigan Democratic rift spills into public and more",
         "link": "https://www.cbsnews.com/live-updates/2026-midterm-elections-campaigns-weekend-before/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
@@ -5367,13 +5307,53 @@
         "description": "The November 2026 midterm elections are just two days away. Candidates in key races — and President Trump — are making their closing arguments to voters.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-01T14:04:04.000Z",
+        "publishedAt": "2026-11-01T18:51:33.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.4,
-          "neuP": 92.6,
+          "negP": 7.6,
+          "neuP": 92.4,
           "label": "negative",
           "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Cuba in Crisis | Sunday on 60 Minutes",
+        "link": "https://www.cbsnews.com/video/cuba-in-crisis-sunday-on-60-minutes/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "This Sunday, 60 Minutes' Matt Gutman travels to Cuba to report on a country in freefall. The Trump administration imposed new economic sanctions that it says target Cuba's corrupt communist regime, restricting its oil supply and access to global trade. \r\n\r\nAs the humanitarian crisis deepens, more than 9 million Cubans are caught in the middle.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-01T18:13:04.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17.8,
+          "neuP": 82.2,
+          "label": "negative",
+          "confidence": 0.9
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Endangered Republican Rep. Mike Lawler says \"I show up, and my constituents know me\"",
+        "link": "https://www.cbsnews.com/video/endangered-republican-rep-mike-lawler-says-i-show-up-and-my-constituents-know-me/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Republican Rep. Mike Lawler of New York, who is in a tough reelection battle in a district won by Kamala Harris in 2024, told \"Face the Nation with Margaret Brennan\" that he has bipartisan credentials despite his support for some of President Trump's signature policies, adding, \"I show up for my constituents, and my constituents know me.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-01T18:10:33.000Z",
+        "sentiment": {
+          "posP": 4.9,
+          "negP": 8.5,
+          "neuP": 86.6,
+          "label": "neutral",
+          "confidence": 0.17
         },
         "category": "usa"
       },
@@ -5387,7 +5367,7 @@
         "description": "After Iran's Supreme Leader warned against restarting the war, President Trump suggested there are still targets to \"take care of.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-01T13:50:35.000Z",
+        "publishedAt": "2026-11-01T15:41:44.000Z",
         "sentiment": {
           "posP": 22.7,
           "negP": 13.6,
@@ -5398,36 +5378,96 @@
         "category": "usa"
       },
       {
-        "title": "Virginia and D.C. sue over Trump's planned arch",
-        "link": "https://www.cbsnews.com/news/trump-arch-lawsuits-virginia-dc-politics/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
+        "link": "https://www.cnbc.com/2026/10/31/trump-murdoch-wsj-epstein-defamation-lawsuit-dismissed.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "There are now three lawsuits calling for a halt to potential work on a monument that would rise 250 feet over Washington, D.C.",
+        "description": "President Donald Trump denied writing a birthday letter to sex offender Jeffrey Epstein, which was the subject of a 2025 Wall Street Journal article.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-01T12:10:27.000Z",
+        "publishedAt": "2026-10-31T23:56:40.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 5.4,
-          "neuP": 94.6,
-          "label": "neutral",
-          "confidence": 0.15
+          "negP": 21.9,
+          "neuP": 78.1,
+          "label": "negative",
+          "confidence": 0.83
         },
         "category": "usa"
       },
       {
-        "title": "Residents evacuated from Russia-occupied city back in Ukraine",
-        "link": "https://www.cbsnews.com/news/residents-evacuated-oleshky-arrive-ukraine-temporary-us-brokered-ceasefire/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The civilians traveled by bus and plane through Russia and Belarus before returning to Ukraine, following a deal brokered by U.S. first lady Melania Trump.",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-01T01:05:02.000Z",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
+          "label": "neutral",
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
+        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-24T22:56:00.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5436,74 +5476,34 @@
           "confidence": 0
         },
         "category": "usa"
-      },
-      {
-        "title": "Poll: Voters demand change and a check on Trump, fueling a steep Democratic midterm advantage",
-        "link": "https://www.nbcnews.com/politics/2026-election/poll-voters-demand-change-check-trump-fueling-steep-democratic-midterm-rcna606183",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats have a sizable advantage in the battle for control of Congress days ahead of the midterm elections, a new national NBC News poll finds, with voters clamoring for change and voicing all-time high disapproval of President Donald Trump.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-01T14:00:00.000Z",
-        "sentiment": {
-          "posP": 7.4,
-          "negP": 7.6,
-          "neuP": 85,
-          "label": "neutral",
-          "confidence": 0.03
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Alaska officials ask judge to deny DOJ’s ‘impossible’ demand to set aside ballots",
-        "link": "https://www.nbcnews.com/politics/2026-election/alaska-officials-ask-judge-deny-trump-administrations-impossible-deman-rcna606765",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Republican-led state government in Alaska implored a federal judge on Saturday to permanently dismiss the Trump administration’s lawsuit seeking to block the certification of Alaska’s Senate race if GOP Sen.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-01T02:00:50.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 18.2,
-          "neuP": 81.8,
-          "label": "negative",
-          "confidence": 0.77
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.63,
-      "neu": 85.43,
-      "neg": 7.94,
-      "count": 35
+      "pos": 5.64,
+      "neu": 84.74,
+      "neg": 9.62,
+      "count": 29
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 8.38,
-        "neu": 88.06,
-        "neg": 3.56,
-        "count": 8
+        "pos": 7.98,
+        "neu": 85.52,
+        "neg": 6.5,
+        "count": 6
       },
       {
         "source": "NBC News",
-        "pos": 5.53,
-        "neu": 83.36,
-        "neg": 11.11,
-        "count": 7
+        "pos": 5.2,
+        "neu": 82.36,
+        "neg": 12.44,
+        "count": 5
       },
       {
         "source": "CBS News",
-        "pos": 5.34,
-        "neu": 86.58,
-        "neg": 8.08,
+        "pos": 6.32,
+        "neu": 81.38,
+        "neg": 12.3,
         "count": 5
       },
       {
@@ -5522,17 +5522,10 @@
       },
       {
         "source": "Fox News",
-        "pos": 14.97,
-        "neu": 78,
-        "neg": 7.03,
-        "count": 3
-      },
-      {
-        "source": "ABC News",
-        "pos": 6.1,
-        "neu": 84.03,
-        "neg": 9.87,
-        "count": 3
+        "pos": 10.85,
+        "neu": 86,
+        "neg": 3.15,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5540,42 +5533,49 @@
         "neu": 88,
         "neg": 9,
         "count": 2
+      },
+      {
+        "source": "ABC News",
+        "pos": 0,
+        "neu": 85.2,
+        "neg": 14.8,
+        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.68,
-        "neu": 82.83,
-        "neg": 9.49,
-        "count": 15
+        "pos": 7.3,
+        "neu": 81.09,
+        "neg": 11.61,
+        "count": 14
       },
       {
         "topic": "Policy",
-        "pos": 4.45,
-        "neu": 87.85,
-        "neg": 7.7,
-        "count": 6
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 4.73,
-        "neu": 87.38,
-        "neg": 7.88,
-        "count": 6
-      },
-      {
-        "topic": "Economy",
-        "pos": 12.32,
-        "neu": 80.34,
-        "neg": 7.34,
+        "pos": 2.6,
+        "neu": 87.4,
+        "neg": 10,
         "count": 5
       },
       {
+        "topic": "Foreign Policy",
+        "pos": 4.63,
+        "neu": 85.35,
+        "neg": 10.03,
+        "count": 4
+      },
+      {
+        "topic": "Economy",
+        "pos": 8.7,
+        "neu": 87.3,
+        "neg": 4,
+        "count": 3
+      },
+      {
         "topic": "Legal",
-        "pos": 0,
-        "neu": 97.3,
-        "neg": 2.7,
+        "pos": 1.85,
+        "neu": 90.95,
+        "neg": 7.2,
         "count": 2
       },
       {
@@ -5610,28 +5610,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-01T10:22:26.019Z",
+        "label": "2026-11-01T15:06:39.169Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-01T11:22:26.019Z",
+        "label": "2026-11-01T16:06:39.169Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-01T12:22:26.019Z",
+        "label": "2026-11-01T17:06:39.169Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-01T13:22:26.019Z",
+        "label": "2026-11-01T18:06:39.169Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5640,28 +5640,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-01T10:22:26.019Z",
+        "label": "2026-11-01T15:06:39.169Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-01T11:22:26.019Z",
+        "label": "2026-11-01T16:06:39.169Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-01T12:22:26.019Z",
+        "label": "2026-11-01T17:06:39.169Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-01T13:22:26.019Z",
+        "label": "2026-11-01T18:06:39.169Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5741,7 +5741,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-01T14:22:26.020Z",
+    "generatedAt": "2026-11-01T19:06:39.170Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5862,8 +5862,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 160,
-      "potusArticles": 35,
+      "usaArticles": 162,
+      "potusArticles": 29,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
