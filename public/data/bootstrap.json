@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-31T21:56:28.251Z",
+  "generatedAt": "2026-11-01T07:21:45.938Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 164,
-    "potusArticles": 33
+    "usaArticles": 162,
+    "potusArticles": 34
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-10-31T17:56:28.251Z",
+          "label": "2026-11-01T03:21:45.938Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T18:56:28.251Z",
+          "label": "2026-11-01T04:21:45.938Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T19:56:28.251Z",
+          "label": "2026-11-01T05:21:45.938Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T20:56:28.251Z",
+          "label": "2026-11-01T06:21:45.938Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-10-31T17:56:28.251Z",
+          "label": "2026-11-01T03:21:45.938Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T18:56:28.251Z",
+          "label": "2026-11-01T04:21:45.938Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T19:56:28.251Z",
+          "label": "2026-11-01T05:21:45.938Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-10-31T20:56:28.251Z",
+          "label": "2026-11-01T06:21:45.938Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.18,
-      "neu": 82.04,
-      "neg": 10.78,
-      "count": 164
+      "pos": 7.17,
+      "neu": 81.49,
+      "neg": 11.34,
+      "count": 162
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.9,
-        "neu": 81.82,
-        "neg": 10.28,
-        "count": 41
+        "pos": 7.14,
+        "neu": 81.93,
+        "neg": 10.93,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 7.66,
-        "neu": 81.1,
-        "neg": 11.24,
+        "pos": 8.73,
+        "neu": 77.42,
+        "neg": 13.85,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.63,
-        "neu": 83.22,
-        "neg": 11.15,
+        "pos": 5.69,
+        "neu": 82.35,
+        "neg": 11.95,
         "count": 26
       },
       {
@@ -4591,16 +4591,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 7.7,
-        "neu": 84.38,
-        "neg": 7.92,
+        "pos": 7.72,
+        "neu": 83.73,
+        "neg": 8.54,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 7.29,
-        "neu": 81.55,
-        "neg": 11.16,
+        "pos": 7.25,
+        "neu": 83.53,
+        "neg": 9.22,
         "count": 19
       },
       {
@@ -4628,24 +4628,29 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Materials",
-          "bias": -15.8,
-          "count": 1
-        },
-        {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
           "name": "Healthcare",
-          "bias": -8.7,
-          "count": 8
+          "bias": -9.81,
+          "count": 7
+        },
+        {
+          "name": "Utilities",
+          "bias": -9.2,
+          "count": 4
+        },
+        {
+          "name": "Energy",
+          "bias": -4.62,
+          "count": 11
         },
         {
           "name": "Finance",
-          "bias": -5.11,
-          "count": 14
+          "bias": -4.43,
+          "count": 15
         },
         {
           "name": "Manufacturing",
@@ -4654,22 +4659,12 @@
         },
         {
           "name": "Technology",
-          "bias": -3.5,
-          "count": 124
+          "bias": -4.09,
+          "count": 115
         },
         {
           "name": "Real Estate",
           "bias": -0.85,
-          "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -0.48,
-          "count": 11
-        },
-        {
-          "name": "Utilities",
-          "bias": -0.45,
           "count": 2
         }
       ],
@@ -4682,27 +4677,22 @@
       ],
       "neu": [
         {
+          "name": "Energy",
+          "bias": -4.62,
+          "count": 11
+        },
+        {
           "name": "Finance",
-          "bias": -5.11,
-          "count": 14
+          "bias": -4.43,
+          "count": 15
         },
         {
           "name": "Technology",
-          "bias": -3.5,
-          "count": 124
-        },
-        {
-          "name": "Real Estate",
-          "bias": -0.85,
-          "count": 2
+          "bias": -4.09,
+          "count": 115
         }
       ],
       "neg": [
-        {
-          "name": "Materials",
-          "bias": -15.8,
-          "count": 1
-        },
         {
           "name": "Communication",
           "bias": -14,
@@ -4710,40 +4700,45 @@
         },
         {
           "name": "Healthcare",
-          "bias": -8.7,
-          "count": 8
+          "bias": -9.81,
+          "count": 7
+        },
+        {
+          "name": "Utilities",
+          "bias": -9.2,
+          "count": 4
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-10-31T17:56:28.253Z",
-          "pos": 8,
-          "neu": 76,
-          "neg": 16,
-          "count": 7
+          "label": "2026-11-01T03:21:45.939Z",
+          "pos": 4,
+          "neu": 85,
+          "neg": 11,
+          "count": 6
         },
         {
-          "label": "2026-10-31T18:56:28.253Z",
-          "pos": 5,
-          "neu": 83,
-          "neg": 12,
-          "count": 9
-        },
-        {
-          "label": "2026-10-31T19:56:28.253Z",
+          "label": "2026-11-01T04:21:45.939Z",
           "pos": 6,
-          "neu": 83,
-          "neg": 12,
-          "count": 14
+          "neu": 59,
+          "neg": 35,
+          "count": 1
         },
         {
-          "label": "2026-10-31T20:56:28.253Z",
-          "pos": 7,
-          "neu": 80,
-          "neg": 13,
-          "count": 13
+          "label": "2026-11-01T05:21:45.939Z",
+          "pos": 12,
+          "neu": 76,
+          "neg": 12,
+          "count": 4
+        },
+        {
+          "label": "2026-11-01T06:21:45.939Z",
+          "pos": 6,
+          "neu": 63,
+          "neg": 31,
+          "count": 2
         }
       ]
     }
@@ -4971,22 +4966,22 @@
         "category": "usa"
       },
       {
-        "title": "Kid Rock reveals what he told French President Macron after Trump unexpectedly handed him phone on golf course",
-        "link": "https://www.foxnews.com/media/kid-rock-reveals-told-french-president-macron-trump-unexpectedly-handed-phone-golf-course",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Voters Usually Ignore Corruption as an Issue. It Now Has Their Attention.",
+        "link": "https://www.nytimes.com/2026/10/31/us/politics/corruption-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Kid Rock told Bill Maher how a golf outing with Trump ended with him holding the phone mid-call with Emmanuel Macron in a viral \"Real Time\" moment.",
+        "description": "Voters have shrugged off accusations of corruption for years, believing all politicians are corrupt, but thanks to President Trump’s unpopularity and growing wealth, the issue is breaking through.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-31T20:30:25.000Z",
+        "publishedAt": "2026-10-31T09:00:44.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 21,
+          "negP": 7,
+          "neuP": 72,
+          "label": "positive",
+          "confidence": 0.83
         },
         "category": "usa"
       }
@@ -5213,46 +5208,6 @@
         "category": "usa"
       },
       {
-        "title": "Kid Rock reveals what he told French President Macron after Trump unexpectedly handed him phone on golf course",
-        "link": "https://www.foxnews.com/media/kid-rock-reveals-told-french-president-macron-trump-unexpectedly-handed-phone-golf-course",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Kid Rock told Bill Maher how a golf outing with Trump ended with him holding the phone mid-call with Emmanuel Macron in a viral \"Real Time\" moment.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T20:30:25.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump prosecutions under Biden set precedent for DOJ’s Alaska ‘Decoy Dan’ probe, ex-FEC chair says",
-        "link": "https://www.foxnews.com/politics/trump-prosecutions-biden-set-precedent-doj-alaska-decoy-dan-probe-ex-fec-chair-says",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Hans von Spakovsky says Jack Smith's Trump indictment set the precedent for the DOJ's criminal probe into Alaska's \"Decoy Dan\" Senate race scheme.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T19:09:02.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 8.4,
-          "neuP": 91.6,
-          "label": "negative",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
         "title": "Voters Usually Ignore Corruption as an Issue. It Now Has Their Attention.",
         "link": "https://www.nytimes.com/2026/10/31/us/politics/corruption-midterms.html",
         "source": "NYT",
@@ -5313,142 +5268,42 @@
         "category": "usa"
       },
       {
-        "title": "Iran Braces for More War, No Matter the Outcome of the U.S. and Israeli Elections",
-        "link": "https://www.nytimes.com/2026/10/31/world/middleeast/iran-war-israel-us-elections-trump-netanyahu.html",
+        "title": "Trump Calls Former Lawyer’s $50 Million Deal ‘Obnoxious and Outrageous’",
+        "link": "https://www.nytimes.com/2026/10/31/us/politics/trump-habba-mildon-lawyer.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "With Prime Minister Benjamin Netanyahu fighting to stay in power and President Trump facing a tough midterm, Iran’s leaders expect no major shift in policy.",
+        "description": "At a Halloween event in Florida, President Trump told reporters that Alina Habba Mildon’s lucrative work for someone seeking a pardon was “not acceptable.”",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-31T20:04:18.000Z",
-        "sentiment": {
-          "posP": 2.9,
-          "negP": 27.2,
-          "neuP": 69.9,
-          "label": "negative",
-          "confidence": 0.89
-        },
-        "category": "usa"
-      },
-      {
-        "title": "2026 elections live updates: Trump supports Republicans with telerallies",
-        "link": "https://www.cbsnews.com/live-updates/2026-midterm-elections-campaigns-weekend-before/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The November 2026 midterm elections are just three days away. Candidates in key races — and President Trump — are making their closing arguments to voters.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T21:45:14.000Z",
+        "publishedAt": "2026-11-01T01:37:37.000Z",
         "sentiment": {
           "posP": 6.9,
-          "negP": 7.5,
-          "neuP": 85.6,
-          "label": "neutral",
-          "confidence": 0.05
+          "negP": 0,
+          "neuP": 93.1,
+          "label": "positive",
+          "confidence": 0.32
         },
         "category": "usa"
       },
       {
-        "title": "Judge dismisses with prejudice Trump lawsuit against Wall Street Journal",
-        "link": "https://www.cbsnews.com/news/trump-lawsuit-wall-street-journal-epstein-birthday-letter-dismissed/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Alaska officials ask judge to deny DOJ’s ‘impossible’ demand to set aside ballots",
+        "link": "https://www.nbcnews.com/politics/2026-election/alaska-officials-ask-judge-deny-trump-administrations-impossible-deman-rcna606765",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "In a 20-page ruling, U.S. District Judge Darrin Gayles in Miami dismissed the suit with prejudice, ruling that President Trump did not prove the defendants made defamatory statements with actual malice.",
+        "description": "The Republican-led state government in Alaska implored a federal judge on Saturday to permanently dismiss the Trump administration’s lawsuit that seeks to block the certification of the Alaska Senate race if GOP Sen.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-10-31T20:59:41.000Z",
+        "publishedAt": "2026-11-01T02:00:50.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 18.7,
-          "neuP": 81.3,
+          "negP": 17.5,
+          "neuP": 82.5,
           "label": "negative",
-          "confidence": 0.82
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Virginia and D.C. sue over Trump's planned arch",
-        "link": "https://www.cbsnews.com/news/trump-arch-lawsuits-virginia-dc-politics/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "There are now three lawsuits calling for a halt to potential work on a monument that would rise 250 feet over Washington, D.C.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T17:42:22.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 5.4,
-          "neuP": 94.6,
-          "label": "neutral",
-          "confidence": 0.15
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
-        "link": "https://www.cnbc.com/2026/10/31/trump-murdoch-wsj-epstein-defamation-lawsuit-dismissed.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "By dismissing the suit with prejudice, Trump can't file another amended version in district court. Trump's legal team said the president plans to appeal.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T21:05:53.000Z",
-        "sentiment": {
-          "posP": 3.6,
-          "negP": 16.1,
-          "neuP": 80.3,
-          "label": "negative",
-          "confidence": 0.73
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump promised to slash energy costs  — but gasoline, diesel and jet fuel all soared instead",
-        "link": "https://www.cnbc.com/2026/10/31/trump-gas-diesel-price-midterm-election.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump promised voters who were angry about inflation that he would slash gasoline prices below $2 a gallon in his first year in office.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T12:49:58.000Z",
-        "sentiment": {
-          "posP": 13.3,
-          "negP": 17.6,
-          "neuP": 69.1,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump called out Big Oil profits. Here’s how much their refining earnings have surged since",
-        "link": "https://www.cnbc.com/2026/10/31/trump-big-oil-refining-profits.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump criticized Big Oil for making “too much money,” but oil majors have since reported surging refining earnings as fuel supplies tightened.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-10-31T06:00:02.000Z",
-        "sentiment": {
-          "posP": 5,
-          "negP": 4.5,
-          "neuP": 90.5,
-          "label": "neutral",
-          "confidence": 0.05
+          "confidence": 0.77
         },
         "category": "usa"
       },
@@ -5471,42 +5326,175 @@
           "confidence": 0
         },
         "category": "usa"
+      },
+      {
+        "title": "Virginia and D.C. sue to stop proposed Trump arch",
+        "link": "https://www.nbcnews.com/politics/white-house/dc-virginia-lawsuit-stop-proposed-trump-arch-construction-rcna606705",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Virginia and the District of Columbia filed a lawsuit in federal court Saturday in a last-ditch effort to stop the construction of the triumphal arch planned for Memorial Circle in Washington.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T17:03:15.000Z",
+        "sentiment": {
+          "posP": 6.9,
+          "negP": 14.5,
+          "neuP": 78.6,
+          "label": "negative",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "2026 elections live updates: Trump supports Republicans with telerallies",
+        "link": "https://www.cbsnews.com/live-updates/2026-midterm-elections-campaigns-weekend-before/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The November 2026 midterm elections are just two days away. Candidates in key races — and President Trump — are making their closing arguments to voters.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-01T04:07:00.000Z",
+        "sentiment": {
+          "posP": 6.9,
+          "negP": 7.5,
+          "neuP": 85.6,
+          "label": "neutral",
+          "confidence": 0.05
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Residents evacuated from Russia-occupied city back in Ukraine",
+        "link": "https://www.cbsnews.com/news/residents-evacuated-oleshky-arrive-ukraine-temporary-us-brokered-ceasefire/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The civilians traveled by bus and plane through Russia and Belarus before returning to Ukraine, following a deal brokered by U.S. first lady Melania Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-01T01:05:02.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Residents evacuated from Ukrainian village under siege reunited with their families amid truce",
+        "link": "https://www.cbsnews.com/video/residents-evacuated-from-ukrainian-village-under-siege-reunited-with-their-families-amid-truce/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Residents of a Russian-occupied village in southern Ukraine who have been living with limited food and electricity were evacuated and reunited with their families following a temporary ceasefire there negotiated by first lady Melania Trump. Those who chose to remain in Oleshky were given emergency supplies. Aidan Stretch reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-01T00:56:23.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 7.2,
+          "neuP": 92.8,
+          "label": "negative",
+          "confidence": 0.54
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Travelers face sticker shock on airfare, gas prices as midterms approach",
+        "link": "https://www.cbsnews.com/video/travelers-face-sticker-shock-on-airfare-gas-prices-as-midterms-approach/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "High airfares, driven by President Trump's Iran war, are causing some voters to suffer from sticker shock with midterms just days away. Akiko Fujita reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-01T00:50:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 28.3,
+          "neuP": 71.7,
+          "label": "negative",
+          "confidence": 0.91
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump rallies Republicans in Iowa and Kansas on last weekend before midterms",
+        "link": "https://www.cbsnews.com/video/trump-rallies-republicans-in-iowa-and-kansas-on-last-weekend-before-midterms/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump is holding previously canceled rallies in the key battlegrounds of Iowa and Kansas during the final weekend before the midterms. Olivia Rinaldi has the story.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-01T00:48:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 4,
+          "neuP": 96,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump defamation suit against Murdoch, WSJ over Epstein letter dismissed with prejudice",
+        "link": "https://www.cnbc.com/2026/10/31/trump-murdoch-wsj-epstein-defamation-lawsuit-dismissed.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump denied writing a birthday letter to sex offender Jeffrey Epstein, which was the subject of a 2025 Wall Street Journal article.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-10-31T23:56:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 21.9,
+          "neuP": 78.1,
+          "label": "negative",
+          "confidence": 0.83
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.46,
-      "neu": 85.38,
-      "neg": 9.16,
-      "count": 33
+      "pos": 5.44,
+      "neu": 85.24,
+      "neg": 9.32,
+      "count": 34
     },
     "sourceLeaderboard": [
       {
-        "source": "NYT",
-        "pos": 9.45,
-        "neu": 80.93,
-        "neg": 9.62,
-        "count": 6
-      },
-      {
         "source": "NBC News",
-        "pos": 6.97,
-        "neu": 82.92,
-        "neg": 10.12,
-        "count": 6
+        "pos": 5.46,
+        "neu": 82.54,
+        "neg": 12,
+        "count": 7
       },
       {
-        "source": "Fox News",
-        "pos": 5.8,
-        "neu": 90.28,
-        "neg": 3.92,
-        "count": 4
+        "source": "NYT",
+        "pos": 10.12,
+        "neu": 84.8,
+        "neg": 5.08,
+        "count": 6
       },
       {
         "source": "CBS News",
-        "pos": 2.73,
-        "neu": 85.88,
-        "neg": 11.4,
-        "count": 4
+        "pos": 1.82,
+        "neu": 88.02,
+        "neg": 10.17,
+        "count": 6
       },
       {
         "source": "WSJ",
@@ -5517,9 +5505,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 2.8,
-        "neu": 86.67,
-        "neg": 10.53,
+        "pos": 3.9,
+        "neu": 82.7,
+        "neg": 13.4,
         "count": 4
       },
       {
@@ -5528,6 +5516,13 @@
         "neu": 88.67,
         "neg": 7.67,
         "count": 3
+      },
+      {
+        "source": "Fox News",
+        "pos": 11.6,
+        "neu": 84.75,
+        "neg": 3.65,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5540,31 +5535,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.54,
-        "neu": 82.58,
-        "neg": 9.88,
-        "count": 11
+        "pos": 5.99,
+        "neu": 83.15,
+        "neg": 10.86,
+        "count": 15
       },
       {
         "topic": "Policy",
-        "pos": 3.99,
-        "neu": 89.26,
-        "neg": 6.76,
-        "count": 9
-      },
-      {
-        "topic": "Legal",
-        "pos": 1.75,
-        "neu": 87.73,
-        "neg": 10.52,
-        "count": 6
+        "pos": 4.67,
+        "neu": 87.5,
+        "neg": 7.83,
+        "count": 8
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.63,
-        "neu": 85.35,
-        "neg": 10.03,
-        "count": 4
+        "pos": 3.08,
+        "neu": 89.03,
+        "neg": 7.88,
+        "count": 6
       },
       {
         "topic": "Economy",
@@ -5572,6 +5560,13 @@
         "neu": 79.37,
         "neg": 9.87,
         "count": 3
+      },
+      {
+        "topic": "Legal",
+        "pos": 3.45,
+        "neu": 89.3,
+        "neg": 7.25,
+        "count": 2
       }
     ]
   },
@@ -5598,28 +5593,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-10-31T17:56:28.255Z",
+        "label": "2026-11-01T03:21:45.941Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T18:56:28.255Z",
+        "label": "2026-11-01T04:21:45.941Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T19:56:28.255Z",
+        "label": "2026-11-01T05:21:45.941Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T20:56:28.255Z",
+        "label": "2026-11-01T06:21:45.941Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5628,28 +5623,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-10-31T17:56:28.255Z",
+        "label": "2026-11-01T03:21:45.941Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T18:56:28.255Z",
+        "label": "2026-11-01T04:21:45.941Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T19:56:28.255Z",
+        "label": "2026-11-01T05:21:45.941Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-10-31T20:56:28.255Z",
+        "label": "2026-11-01T06:21:45.941Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5729,7 +5724,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-10-31T21:56:28.256Z",
+    "generatedAt": "2026-11-01T07:21:45.941Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5850,8 +5845,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 164,
-      "potusArticles": 33,
+      "usaArticles": 162,
+      "potusArticles": 34,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
