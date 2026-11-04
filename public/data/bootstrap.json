@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-03T16:29:34.256Z",
+  "generatedAt": "2026-11-04T09:24:53.748Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 163,
-    "potusArticles": 35
+    "potusArticles": 41
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-03T12:29:34.256Z",
+          "label": "2026-11-04T05:24:53.748Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-03T13:29:34.256Z",
+          "label": "2026-11-04T06:24:53.748Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-03T14:29:34.256Z",
+          "label": "2026-11-04T07:24:53.748Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-03T15:29:34.256Z",
+          "label": "2026-11-04T08:24:53.748Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-03T12:29:34.256Z",
+          "label": "2026-11-04T05:24:53.748Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-03T13:29:34.256Z",
+          "label": "2026-11-04T06:24:53.748Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-03T14:29:34.256Z",
+          "label": "2026-11-04T07:24:53.748Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-03T15:29:34.256Z",
+          "label": "2026-11-04T08:24:53.748Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 8.05,
-      "neu": 82.03,
-      "neg": 9.92,
+      "pos": 8.78,
+      "neu": 81.78,
+      "neg": 9.44,
       "count": 163
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.07,
-        "neu": 80.26,
-        "neg": 9.67,
-        "count": 38
+        "pos": 10.32,
+        "neu": 81.55,
+        "neg": 8.13,
+        "count": 43
       },
       {
         "source": "Fox News",
-        "pos": 9.78,
-        "neu": 78.73,
-        "neg": 11.49,
+        "pos": 8.46,
+        "neu": 79.35,
+        "neg": 12.19,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.77,
-        "neu": 86.87,
-        "neg": 8.36,
+        "pos": 10.2,
+        "neu": 81.24,
+        "neg": 8.55,
         "count": 26
-      },
-      {
-        "source": "NYT",
-        "pos": 7.6,
-        "neu": 80.13,
-        "neg": 12.27,
-        "count": 21
       },
       {
         "source": "WSJ",
@@ -4598,10 +4591,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.78,
-        "neu": 87.13,
-        "neg": 4.09,
+        "pos": 8.83,
+        "neu": 87.26,
+        "neg": 3.9,
         "count": 20
+      },
+      {
+        "source": "NYT",
+        "pos": 6.84,
+        "neu": 82.05,
+        "neg": 11.11,
+        "count": 16
       },
       {
         "source": "NPR",
@@ -4633,68 +4633,68 @@
           "count": 1
         },
         {
-          "name": "Real Estate",
-          "bias": 9.17,
-          "count": 4
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
         },
         {
           "name": "Materials",
-          "bias": -8.15,
+          "bias": 12.1,
           "count": 2
         },
         {
-          "name": "Communication",
-          "bias": -3.3,
-          "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": 2.42,
-          "count": 12
-        },
-        {
-          "name": "Technology",
-          "bias": -1.28,
-          "count": 125
-        },
-        {
-          "name": "Healthcare",
-          "bias": -0.6,
-          "count": 8
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
         },
         {
           "name": "Finance",
-          "bias": -0.3,
-          "count": 17
+          "bias": 3.92,
+          "count": 19
+        },
+        {
+          "name": "Technology",
+          "bias": -2.37,
+          "count": 109
+        },
+        {
+          "name": "Energy",
+          "bias": 1.77,
+          "count": 11
+        },
+        {
+          "name": "Healthcare",
+          "bias": -1.63,
+          "count": 11
         }
       ],
       "pos": [
         {
-          "name": "Real Estate",
-          "bias": 9.17,
-          "count": 4
+          "name": "Materials",
+          "bias": 12.1,
+          "count": 2
         },
         {
-          "name": "Energy",
-          "bias": 2.42,
-          "count": 12
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
+        },
+        {
+          "name": "Finance",
+          "bias": 3.92,
+          "count": 19
         }
       ],
       "neu": [
         {
-          "name": "Technology",
-          "bias": -1.28,
-          "count": 125
+          "name": "Energy",
+          "bias": 1.77,
+          "count": 11
         },
         {
           "name": "Healthcare",
-          "bias": -0.6,
-          "count": 8
-        },
-        {
-          "name": "Finance",
-          "bias": -0.3,
-          "count": 17
+          "bias": -1.63,
+          "count": 11
         }
       ],
       "neg": [
@@ -4704,46 +4704,46 @@
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": -8.15,
-          "count": 2
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
         },
         {
-          "name": "Communication",
-          "bias": -3.3,
-          "count": 2
+          "name": "Technology",
+          "bias": -2.37,
+          "count": 109
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-03T12:29:34.258Z",
+          "label": "2026-11-04T05:24:53.750Z",
+          "pos": 7,
+          "neu": 85,
+          "neg": 8,
+          "count": 16
+        },
+        {
+          "label": "2026-11-04T06:24:53.750Z",
+          "pos": 9,
+          "neu": 86,
+          "neg": 5,
+          "count": 12
+        },
+        {
+          "label": "2026-11-04T07:24:53.750Z",
           "pos": 10,
-          "neu": 80,
-          "neg": 10,
-          "count": 10
+          "neu": 84,
+          "neg": 6,
+          "count": 8
         },
         {
-          "label": "2026-11-03T13:29:34.258Z",
-          "pos": 7,
-          "neu": 89,
-          "neg": 4,
+          "label": "2026-11-04T08:24:53.750Z",
+          "pos": 18,
+          "neu": 76,
+          "neg": 6,
           "count": 15
-        },
-        {
-          "label": "2026-11-03T14:29:34.258Z",
-          "pos": 7,
-          "neu": 82,
-          "neg": 10,
-          "count": 34
-        },
-        {
-          "label": "2026-11-03T15:29:34.258Z",
-          "pos": 8,
-          "neu": 81,
-          "neg": 11,
-          "count": 22
         }
       ]
     }
@@ -4951,42 +4951,42 @@
         "category": "world"
       },
       {
-        "title": "Talarico warms to Trump, says he wants to help fulfill some MAGA promises",
-        "link": "https://www.foxnews.com/politics/talarico-warms-trump-says-help-fulfill-maga-promises",
+        "title": "Dem wins Trump-targeted Texas district in rebuke of Republican redistricting shakeup",
+        "link": "https://www.foxnews.com/politics/dem-wins-trump-targeted-texas-district-rebuke-republican-redistricting-shakeup",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "James Talarico told the \"Diary of a CEO\" podcast he'd work with Trump on healthcare, housing and childcare despite months of attacks from the president.",
+        "description": "Johnny Garcia defeated Republican Carlos De La Cruz in Texas' redrawn 35th Congressional District, defying a Trump-backed redistricting map.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-03T14:43:50.000Z",
+        "publishedAt": "2026-11-04T07:36:03.000Z",
         "sentiment": {
-          "posP": 28.4,
-          "negP": 0,
-          "neuP": 71.6,
-          "label": "positive",
-          "confidence": 0.89
+          "posP": 10.8,
+          "negP": 13.7,
+          "neuP": 75.5,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "The economy is on the ballot. 3 charts reveal the reality voters face as they head to the polls",
-        "link": "https://www.foxnews.com/politics/economy-ballot-3-charts-reveal-reality-voters-face-head-polls",
+        "title": "Dems flips yet another Senate seat in Trump country amid sweeping GOP upsets",
+        "link": "https://www.foxnews.com/politics/dems-flips-yet-another-senate-seat-trump-country-amid-sweeping-gop-upsets",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Inflation outpacing wages, gas prices above $4, and mortgage rates past 7% are squeezing voters even as the S&P 500 surges over 26% under Trump.",
+        "description": "Josh Turek's Iowa Senate win over Ashley Hinson marks the first time Democrats captured the seat since 2008 in a state Trump won by double digits.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-03T13:30:45.000Z",
+        "publishedAt": "2026-11-04T07:07:02.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 16.7,
+          "negP": 5.6,
+          "neuP": 77.7,
+          "label": "positive",
+          "confidence": 0.72
         },
         "category": "usa"
       }
@@ -5193,320 +5193,320 @@
         "category": "world"
       },
       {
-        "title": "Talarico warms to Trump, says he wants to help fulfill some MAGA promises",
-        "link": "https://www.foxnews.com/politics/talarico-warms-trump-says-help-fulfill-maga-promises",
+        "title": "Dem wins Trump-targeted Texas district in rebuke of Republican redistricting shakeup",
+        "link": "https://www.foxnews.com/politics/dem-wins-trump-targeted-texas-district-rebuke-republican-redistricting-shakeup",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "James Talarico told the \"Diary of a CEO\" podcast he'd work with Trump on healthcare, housing and childcare despite months of attacks from the president.",
+        "description": "Johnny Garcia defeated Republican Carlos De La Cruz in Texas' redrawn 35th Congressional District, defying a Trump-backed redistricting map.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-03T14:43:50.000Z",
+        "publishedAt": "2026-11-04T07:36:03.000Z",
         "sentiment": {
-          "posP": 28.4,
-          "negP": 0,
-          "neuP": 71.6,
-          "label": "positive",
-          "confidence": 0.89
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The economy is on the ballot. 3 charts reveal the reality voters face as they head to the polls",
-        "link": "https://www.foxnews.com/politics/economy-ballot-3-charts-reveal-reality-voters-face-head-polls",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Inflation outpacing wages, gas prices above $4, and mortgage rates past 7% are squeezing voters even as the S&P 500 surges over 26% under Trump.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-03T13:30:45.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "posP": 10.8,
+          "negP": 13.7,
+          "neuP": 75.5,
           "label": "neutral",
           "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Ukraine's Zelenskyy on defying US in attacking Russian oil: 'Our response must be painful'",
-        "link": "https://www.foxnews.com/world/ukraine-zelenskyy-defying-us-attacking-russian-oil-response-must-be-painful",
+        "title": "Dems flips yet another Senate seat in Trump country amid sweeping GOP upsets",
+        "link": "https://www.foxnews.com/politics/dems-flips-yet-another-senate-seat-trump-country-amid-sweeping-gop-upsets",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Volodymyr Zelenskyy told Fox News Ukraine will keep striking Russian oil refineries unless Trump delivers Patriot missiles to shield energy infrastructure.",
+        "description": "Josh Turek's Iowa Senate win over Ashley Hinson marks the first time Democrats captured the seat since 2008 in a state Trump won by double digits.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-03T13:17:33.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 7.9,
-          "neuP": 86.6,
-          "label": "negative",
-          "confidence": 0.23
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says Israel will stop receiving $4B in US aid by year's end, can still buy weapons",
-        "link": "https://www.foxnews.com/politics/trump-says-israel-stop-receiving-4b-us-aid-years-end-can-still-buy-weapons",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump says Benjamin Netanyahu raised the idea of ending $4 billion in U.S. military aid to Israel by the end of the year.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-03T12:46:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 11.3,
-          "neuP": 88.7,
-          "label": "negative",
-          "confidence": 0.62
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What’s at Stake in Today’s Elections",
-        "link": "https://www.nytimes.com/video/us/politics/100000011228221/whats-at-stake-in-todays-elections.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Though President Trump’s name is not on the ballot, voters are weighing the effects of his agenda in Tuesday’s midterm elections. Lisa Lerer, a national political reporter for The New York Times, describes how three crucial issues are affecting their decisions.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-03T16:23:33.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Effort to Prove Rampant Noncitizen Voting Leads to Few Charges So Far",
-        "link": "https://www.nytimes.com/2026/11/03/us/politics/dhs-noncitizen-voting-midterms.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Just 236 people have been charged with voting-fraud-related offenses by the Trump administration, despite its unsubstantiated claims that fraud is widespread.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-03T16:21:27.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 25.4,
-          "neuP": 74.6,
-          "label": "negative",
-          "confidence": 0.85
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What to Expect on Election Night, and Trump’s $1 Million Voter Fraud Reward",
-        "link": "https://www.nytimes.com/2026/11/03/podcasts/the-headlines/midterm-election-trump-voter-fraud-reward.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Plus, “who’s going to believe me if I’m addicted to a wellness tonic?”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-03T11:00:10.000Z",
-        "sentiment": {
-          "posP": 20.4,
-          "negP": 11.7,
-          "neuP": 67.9,
-          "label": "positive",
-          "confidence": 0.42
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says U.S. to End $4 Billion in Aid to Israel in Favor of New Deal",
-        "link": "https://www.nytimes.com/2026/11/03/us/politics/trump-israel-aid-netanyahu.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president’s announcement on Election Day, which he said was part of an agreement reached months ago, was a sign of how quickly the politics surrounding Israel have shifted.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-03T16:07:11.000Z",
-        "sentiment": {
-          "posP": 15.1,
-          "negP": 0,
-          "neuP": 84.9,
-          "label": "positive",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "As Trump’s Midterm Deadline Looms, Gulf Countries Brace for Possible Renewal of Iran War",
-        "link": "https://www.nytimes.com/2026/11/03/world/middleeast/trump-iran-war-midterms-election.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The energy-rich Gulf Arab countries are engaged in a flurry of mediation efforts to avert war between the U.S. and Iran, as many fear that the fighting will be worse this time around.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-03T10:47:18.000Z",
-        "sentiment": {
-          "posP": 4.5,
-          "negP": 32.8,
-          "neuP": 62.7,
-          "label": "negative",
-          "confidence": 0.95
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Jimmy Kimmel Mocks the President’s ‘Pettysburg Address’",
-        "link": "https://www.nytimes.com/2026/11/03/arts/television/jimmy-kimmel-trump-midterms.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "“And where better to reassure the public that they are in good hands than in front of a pool you’ve repeatedly botched to the tune of $16 million?” Kimmel said of Trump’s speech before the midterms.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-03T07:13:47.000Z",
+        "publishedAt": "2026-11-04T07:07:02.000Z",
         "sentiment": {
           "posP": 16.7,
-          "negP": 6.1,
-          "neuP": 77.2,
+          "negP": 5.6,
+          "neuP": 77.7,
           "label": "positive",
-          "confidence": 0.64
+          "confidence": 0.72
         },
         "category": "usa"
       },
       {
-        "title": "Iran dismisses U.S. response to peace proposal as \"not convincing\"",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-negotiations-midterms/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "'Pod Save America' hosts call Democratic Party's midterm wins 'the end of the Trump era'",
+        "link": "https://www.foxnews.com/media/pod-save-america-hosts-call-democratic-party-midterm-wins-end-trump-era",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump said on eve of U.S. elections that a deal with Iran \"could happen,\" but after new U.S. strikes, Tehran called America's response to the latest proposal \"not convincing.\"",
+        "description": "\"Pod Save America\" hosts celebrated Democratic midterm wins on \"Jimmy Kimmel Live!\" Tuesday night as the party was projected to retake control of Congress.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-03T15:51:05.000Z",
+        "publishedAt": "2026-11-04T06:22:49.000Z",
         "sentiment": {
-          "posP": 5.4,
-          "negP": 7.8,
-          "neuP": 86.8,
+          "posP": 38.3,
+          "negP": 0,
+          "neuP": 61.7,
+          "label": "positive",
+          "confidence": 0.97
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Abdul El-Sayed delivers major blow to GOP in Michigan after bruising Senate race",
+        "link": "https://www.foxnews.com/politics/abdul-el-sayed-delivers-major-blow-gop-michigan-after-bruising-senate-race",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Abdul El-Sayed toppled Mike Rogers to become the first Muslim U.S. senator, overcoming Trump's attacks on his faith and alleged foreign ties.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T06:17:28.000Z",
+        "sentiment": {
+          "posP": 7.2,
+          "negP": 7.5,
+          "neuP": 85.3,
+          "label": "neutral",
+          "confidence": 0.03
+        },
+        "category": "usa"
+      },
+      {
+        "title": "LIZ PEEK: There may be a silver lining in Trump's brutal midterm defeat",
+        "link": "https://www.foxnews.com/opinion/liz-peek-silver-lining-trumps-brutal-midterm-defeat",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump's midterm losses mirror Obama's 2010 rebuke, but Democrats now face governing without a clear plan to deliver on their affordability pledge. There could be a silver lining here.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T06:09:30.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 20.8,
+          "neuP": 79.2,
           "label": "negative",
+          "confidence": 0.8
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump congratulates Democrats after dominant midterms, says he looks forward to working with them",
+        "link": "https://www.foxnews.com/media/trump-congratulates-democrats-dominant-midterms-looks-forward-working",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump congratulated Democrats, saying he looked forward to working with them following a devastating Election Day for Republicans.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T05:32:10.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 11.8,
+          "neuP": 88.2,
+          "label": "negative",
+          "confidence": 0.65
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Dems seize the Senate as blue tidal wave crashes deep into Trump country, topples GOP strongholds",
+        "link": "https://www.foxnews.com/politics/dems-seize-senate-blue-tidal-wave-crashes-deep-trump-country-topples-gop-strongholds",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats reclaimed the Senate Tuesday by toppling GOP candidates across Trump country, with Chuck Schumer clinching five pickups in a midterm wave.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T05:13:09.000Z",
+        "sentiment": {
+          "posP": 5.3,
+          "negP": 0,
+          "neuP": 94.7,
+          "label": "positive",
           "confidence": 0.25
         },
         "category": "usa"
       },
       {
-        "title": "Democratic, Republican strategists react to Trump's Reflecting Pool speech",
-        "link": "https://www.cbsnews.com/video/democratic-republican-strategists-react-to-trumps-reflecting-pool-speech/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Conservatives stunned by 'catastrophic' midterm blue tsunami, blame Trump's Iran war, high gas prices",
+        "link": "https://www.foxnews.com/media/conservatives-stunned-catastrophic-midterm-blue-tsunami-blame-trumps-iran-war-high-gas-prices",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Tens of millions of Americans will vote today. Republican strategist Erin Maguire and Democratic strategist Joel Payne break down President Trump's speech ahead of Election Day.",
+        "description": "Conservatives reacted to massive Democratic victories across the country, calling it \"catastrophic\" and assigning blame to the Iran war and President Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-03T14:53:28.000Z",
+        "publishedAt": "2026-11-04T05:10:45.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 31.1,
+          "neuP": 68.9,
+          "label": "negative",
+          "confidence": 0.92
         },
         "category": "usa"
       },
       {
-        "title": "Trump, candidates make final pitches as Election Day arrives",
-        "link": "https://www.cbsnews.com/video/trump-candidates-make-final-pitches-as-election-day-arrives/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Van Jones compares Republican midterm losses to mass murder-suicide at Jonestown",
+        "link": "https://www.foxnews.com/media/van-jones-compares-republican-midterm-losses-mass-murder-suicide-jonestown",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump and candidates across the country made their final pitches ahead of Tuesday's Election Day. Weijia Jiang, Ed O'Keefe and Major Garrett have more.",
+        "description": "Van Jones likened the Republican Party's midterm election losses to the Jonestown mass murder-suicide, calling the results a full repudiation of President Donald Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-03T14:30:50.000Z",
+        "publishedAt": "2026-11-04T04:56:00.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 14.4,
+          "neuP": 85.6,
+          "label": "negative",
+          "confidence": 0.66
         },
         "category": "usa"
       },
       {
-        "title": "Russia confirms new Ukraine peace talks as Melania Trump prepares to host ceasefire meeting",
-        "link": "https://www.cnbc.com/2026/11/03/russia-ukraine-peace-talks-abu-dhabi-trump-putin-xi.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "‘LAWYER UP’: Dems immediately put Trump on notice amid Republicans' midterm bloodbath",
+        "link": "https://www.foxnews.com/politics/lawyer-up-dems-immediately-put-trump-notice-amid-republicans-midterm-bloodbath",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Russia confirmed Ukraine peace talks in Abu Dhabi next week and signaled a possible Trump-Putin-Xi summit, raising questions over Kyiv's role in negotiations.",
+        "description": "Democrats on Capitol Hill warned the Trump administration to \"lawyer up\" as they prepare subpoenas and investigations targeting Pete Hegseth and others.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-03T13:22:25.000Z",
+        "publishedAt": "2026-11-04T04:50:17.000Z",
         "sentiment": {
-          "posP": 17.1,
-          "negP": 0,
-          "neuP": 82.9,
+          "posP": 0,
+          "negP": 6,
+          "neuP": 94,
+          "label": "negative",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump-backed ex-NFL reporter loses Senate race to progressive who vowed to 'rip ICE apart'",
+        "link": "https://www.foxnews.com/politics/trump-backed-ex-nfl-reporter-loses-senate-race-progressive-who-vowed-rip-ice-apart",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Peggy Flanagan defeated Michele Tafoya in Minnesota's special election after ICE's Operation Metro Surge became a central rallying cry for her campaign.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T04:20:18.000Z",
+        "sentiment": {
+          "posP": 6.4,
+          "negP": 20.1,
+          "neuP": 73.5,
+          "label": "negative",
+          "confidence": 0.7
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrat David Crowley makes history as Wisconsin’s first Black governor",
+        "link": "https://www.foxnews.com/politics/democrat-david-crowley-makes-history-wisconsins-first-black-governor",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democratic Milwaukee County Executive David Crowley defeated Rep. Tom Tiffany after a campaign linking the Republican to Trump's tariffs and tax bill.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T04:00:21.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 9.4,
+          "neuP": 90.6,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Pushes Venezuela for Agreement Allowing U.S. Troops to Stay",
+        "link": "https://www.nytimes.com/2026/11/03/us/politics/trump-venezuela-troop-agreement.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The two countries have long been adversaries, and the United States attacked Venezuela this year, but Secretary of State Marco Rubio is starting talks on a legal agreement.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-03T19:47:00.000Z",
+        "sentiment": {
+          "posP": 22.6,
+          "negP": 7.9,
+          "neuP": 69.5,
           "label": "positive",
-          "confidence": 0.79
+          "confidence": 0.76
+        },
+        "category": "usa"
+      },
+      {
+        "title": "The American People Have Repudiated Trump",
+        "link": "https://www.nytimes.com/2026/11/03/opinion/democracy-midterms-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Americans showed that the power to choose their leaders belongs to them. Now they must remain vigilant until officials certify every race and the winners take office.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T05:39:44.000Z",
+        "sentiment": {
+          "posP": 13.4,
+          "negP": 0,
+          "neuP": 86.6,
+          "label": "positive",
+          "confidence": 0.59
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.13,
-      "neu": 85.58,
-      "neg": 7.29,
-      "count": 35
+      "pos": 7.33,
+      "neu": 83.22,
+      "neg": 9.44,
+      "count": 41
     },
     "sourceLeaderboard": [
       {
-        "source": "NYT",
-        "pos": 8.71,
-        "neu": 80.29,
-        "neg": 11,
-        "count": 8
+        "source": "Fox News",
+        "pos": 7.21,
+        "neu": 81.99,
+        "neg": 10.8,
+        "count": 13
       },
       {
         "source": "NBC News",
-        "pos": 11.96,
-        "neu": 81.53,
-        "neg": 6.51,
-        "count": 7
-      },
-      {
-        "source": "Fox News",
-        "pos": 8.58,
-        "neu": 87.58,
-        "neg": 3.84,
-        "count": 5
+        "pos": 8.48,
+        "neu": 81.58,
+        "neg": 9.93,
+        "count": 6
       },
       {
         "source": "CBS News",
-        "pos": 2.35,
-        "neu": 92.2,
-        "neg": 5.45,
-        "count": 4
+        "pos": 10.57,
+        "neu": 77.13,
+        "neg": 12.3,
+        "count": 6
+      },
+      {
+        "source": "NYT",
+        "pos": 9.8,
+        "neu": 83.64,
+        "neg": 6.56,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5531,8 +5531,8 @@
       },
       {
         "source": "ABC News",
-        "pos": 3.8,
-        "neu": 96.2,
+        "pos": 3.7,
+        "neu": 96.3,
         "neg": 0,
         "count": 2
       }
@@ -5540,38 +5540,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.75,
-        "neu": 84.6,
-        "neg": 7.65,
-        "count": 17
+        "pos": 8.65,
+        "neu": 81.5,
+        "neg": 9.86,
+        "count": 24
       },
       {
         "topic": "Policy",
-        "pos": 4.77,
-        "neu": 86.8,
-        "neg": 8.43,
+        "pos": 2.71,
+        "neu": 89.91,
+        "neg": 7.37,
         "count": 7
       },
       {
         "topic": "Foreign Policy",
-        "pos": 6.96,
-        "neu": 86.19,
-        "neg": 6.86,
-        "count": 7
+        "pos": 4.28,
+        "neu": 87.78,
+        "neg": 7.93,
+        "count": 6
       },
       {
         "topic": "Economy",
-        "pos": 6.33,
-        "neu": 89.67,
-        "neg": 4,
-        "count": 3
+        "pos": 9.5,
+        "neu": 84.5,
+        "neg": 6,
+        "count": 2
       },
       {
-        "topic": "Public Statements",
-        "pos": 16.7,
-        "neu": 77.2,
-        "neg": 6.1,
-        "count": 1
+        "topic": "Legal",
+        "pos": 14.75,
+        "neu": 65.6,
+        "neg": 19.65,
+        "count": 2
       }
     ]
   },
@@ -5598,28 +5598,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-03T12:29:34.260Z",
+        "label": "2026-11-04T05:24:53.753Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-03T13:29:34.260Z",
+        "label": "2026-11-04T06:24:53.753Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-03T14:29:34.260Z",
+        "label": "2026-11-04T07:24:53.753Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-03T15:29:34.260Z",
+        "label": "2026-11-04T08:24:53.753Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5628,28 +5628,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-03T12:29:34.260Z",
+        "label": "2026-11-04T05:24:53.753Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-03T13:29:34.260Z",
+        "label": "2026-11-04T06:24:53.753Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-03T14:29:34.260Z",
+        "label": "2026-11-04T07:24:53.753Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-03T15:29:34.260Z",
+        "label": "2026-11-04T08:24:53.753Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5729,7 +5729,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-03T16:29:34.262Z",
+    "generatedAt": "2026-11-04T09:24:53.754Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5851,7 +5851,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 163,
-      "potusArticles": 35,
+      "potusArticles": 41,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
