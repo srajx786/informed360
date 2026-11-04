@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-04T09:24:53.748Z",
+  "generatedAt": "2026-11-04T17:26:38.698Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 163,
-    "potusArticles": 41
+    "usaArticles": 164,
+    "potusArticles": 35
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-04T05:24:53.748Z",
+          "label": "2026-11-04T13:26:38.698Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-04T06:24:53.748Z",
+          "label": "2026-11-04T14:26:38.698Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-04T07:24:53.748Z",
+          "label": "2026-11-04T15:26:38.698Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-04T08:24:53.748Z",
+          "label": "2026-11-04T16:26:38.698Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-04T05:24:53.748Z",
+          "label": "2026-11-04T13:26:38.698Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-04T06:24:53.748Z",
+          "label": "2026-11-04T14:26:38.698Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-04T07:24:53.748Z",
+          "label": "2026-11-04T15:26:38.698Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-04T08:24:53.748Z",
+          "label": "2026-11-04T16:26:38.698Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 8.78,
-      "neu": 81.78,
-      "neg": 9.44,
-      "count": 163
+      "pos": 7.59,
+      "neu": 82.27,
+      "neg": 10.14,
+      "count": 164
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.32,
-        "neu": 81.55,
-        "neg": 8.13,
-        "count": 43
+        "pos": 7.55,
+        "neu": 82.84,
+        "neg": 9.62,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 8.46,
-        "neu": 79.35,
-        "neg": 12.19,
+        "pos": 9.09,
+        "neu": 80.82,
+        "neg": 10.09,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 10.2,
+        "pos": 6.94,
         "neu": 81.24,
-        "neg": 8.55,
+        "neg": 11.82,
         "count": 26
       },
       {
@@ -4591,17 +4591,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.83,
-        "neu": 87.26,
-        "neg": 3.9,
+        "pos": 10.17,
+        "neu": 85.23,
+        "neg": 4.61,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 6.84,
-        "neu": 82.05,
-        "neg": 11.11,
-        "count": 16
+        "pos": 5.16,
+        "neu": 83.56,
+        "neg": 11.28,
+        "count": 18
       },
       {
         "source": "NPR",
@@ -4628,122 +4628,111 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
-        },
-        {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -16.43,
+          "count": 3
         },
         {
           "name": "Materials",
-          "bias": 12.1,
-          "count": 2
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
+          "bias": -12.6,
           "count": 1
         },
         {
-          "name": "Finance",
-          "bias": 3.92,
-          "count": 19
+          "name": "Utilities",
+          "bias": -8.5,
+          "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": -4.65,
+          "count": 13
         },
         {
           "name": "Technology",
-          "bias": -2.37,
-          "count": 109
-        },
-        {
-          "name": "Energy",
-          "bias": 1.77,
-          "count": 11
+          "bias": -4.43,
+          "count": 115
         },
         {
           "name": "Healthcare",
-          "bias": -1.63,
-          "count": 11
-        }
-      ],
-      "pos": [
-        {
-          "name": "Materials",
-          "bias": 12.1,
-          "count": 2
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
+          "bias": -3.94,
+          "count": 8
         },
         {
           "name": "Finance",
-          "bias": 3.92,
-          "count": 19
+          "bias": -2.18,
+          "count": 21
+        },
+        {
+          "name": "Real Estate",
+          "bias": 0.85,
+          "count": 2
         }
       ],
+      "pos": [],
       "neu": [
         {
           "name": "Energy",
-          "bias": 1.77,
-          "count": 11
+          "bias": -4.65,
+          "count": 13
+        },
+        {
+          "name": "Technology",
+          "bias": -4.43,
+          "count": 115
         },
         {
           "name": "Healthcare",
-          "bias": -1.63,
-          "count": 11
+          "bias": -3.94,
+          "count": 8
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -17,
-          "count": 1
-        },
-        {
           "name": "Communication",
-          "bias": -14,
+          "bias": -16.43,
+          "count": 3
+        },
+        {
+          "name": "Materials",
+          "bias": -12.6,
           "count": 1
         },
         {
-          "name": "Technology",
-          "bias": -2.37,
-          "count": 109
+          "name": "Utilities",
+          "bias": -8.5,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-04T05:24:53.750Z",
+          "label": "2026-11-04T13:26:38.700Z",
           "pos": 7,
-          "neu": 85,
-          "neg": 8,
-          "count": 16
-        },
-        {
-          "label": "2026-11-04T06:24:53.750Z",
-          "pos": 9,
           "neu": 86,
-          "neg": 5,
-          "count": 12
+          "neg": 7,
+          "count": 9
         },
         {
-          "label": "2026-11-04T07:24:53.750Z",
-          "pos": 10,
+          "label": "2026-11-04T14:26:38.700Z",
+          "pos": 7,
           "neu": 84,
-          "neg": 6,
-          "count": 8
+          "neg": 9,
+          "count": 24
         },
         {
-          "label": "2026-11-04T08:24:53.750Z",
-          "pos": 18,
-          "neu": 76,
-          "neg": 6,
-          "count": 15
+          "label": "2026-11-04T15:26:38.700Z",
+          "pos": 8,
+          "neu": 83,
+          "neg": 10,
+          "count": 20
+        },
+        {
+          "label": "2026-11-04T16:26:38.700Z",
+          "pos": 7,
+          "neu": 83,
+          "neg": 10,
+          "count": 26
         }
       ]
     }
@@ -4951,42 +4940,42 @@
         "category": "world"
       },
       {
-        "title": "Dem wins Trump-targeted Texas district in rebuke of Republican redistricting shakeup",
-        "link": "https://www.foxnews.com/politics/dem-wins-trump-targeted-texas-district-rebuke-republican-redistricting-shakeup",
+        "title": "Democrats seize majority of governors’ offices in election-night shift",
+        "link": "https://www.foxnews.com/politics/democrats-seize-majority-governors-offices-election-night-shift",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Johnny Garcia defeated Republican Carlos De La Cruz in Texas' redrawn 35th Congressional District, defying a Trump-backed redistricting map.",
+        "description": "Democrats flipped enough governorships to seize a majority, reversing a 26-24 Republican edge and shifting state government power opposite the White House.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T07:36:03.000Z",
+        "publishedAt": "2026-11-04T15:34:59.000Z",
         "sentiment": {
-          "posP": 10.8,
-          "negP": 13.7,
-          "neuP": 75.5,
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
           "label": "neutral",
           "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Dems flips yet another Senate seat in Trump country amid sweeping GOP upsets",
-        "link": "https://www.foxnews.com/politics/dems-flips-yet-another-senate-seat-trump-country-amid-sweeping-gop-upsets",
+        "title": "Vance's scathing Iran war postmortem puts potential 2028 GOP showdown in focus: 'Everyone knows why'",
+        "link": "https://www.foxnews.com/politics/vances-scathing-iran-war-postmortem-puts-potential-2028-gop-showdown-focus-everyone-knows-why",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Josh Turek's Iowa Senate win over Ashley Hinson marks the first time Democrats captured the seat since 2008 in a state Trump won by double digits.",
+        "description": "JD Vance blamed the war for Republicans' sweeping midterm elections losses, saying voters who backed Trump in 2024 turned against the party in 2026.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T07:07:02.000Z",
+        "publishedAt": "2026-11-04T15:34:25.000Z",
         "sentiment": {
-          "posP": 16.7,
-          "negP": 5.6,
-          "neuP": 77.7,
-          "label": "positive",
-          "confidence": 0.72
+          "posP": 7.5,
+          "negP": 27,
+          "neuP": 65.5,
+          "label": "negative",
+          "confidence": 0.9
         },
         "category": "usa"
       }
@@ -5193,319 +5182,319 @@
         "category": "world"
       },
       {
-        "title": "Dem wins Trump-targeted Texas district in rebuke of Republican redistricting shakeup",
-        "link": "https://www.foxnews.com/politics/dem-wins-trump-targeted-texas-district-rebuke-republican-redistricting-shakeup",
+        "title": "Democrats seize majority of governors’ offices in election-night shift",
+        "link": "https://www.foxnews.com/politics/democrats-seize-majority-governors-offices-election-night-shift",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Johnny Garcia defeated Republican Carlos De La Cruz in Texas' redrawn 35th Congressional District, defying a Trump-backed redistricting map.",
+        "description": "Democrats flipped enough governorships to seize a majority, reversing a 26-24 Republican edge and shifting state government power opposite the White House.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T07:36:03.000Z",
+        "publishedAt": "2026-11-04T15:34:59.000Z",
         "sentiment": {
-          "posP": 10.8,
-          "negP": 13.7,
-          "neuP": 75.5,
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
           "label": "neutral",
           "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Dems flips yet another Senate seat in Trump country amid sweeping GOP upsets",
-        "link": "https://www.foxnews.com/politics/dems-flips-yet-another-senate-seat-trump-country-amid-sweeping-gop-upsets",
+        "title": "Vance's scathing Iran war postmortem puts potential 2028 GOP showdown in focus: 'Everyone knows why'",
+        "link": "https://www.foxnews.com/politics/vances-scathing-iran-war-postmortem-puts-potential-2028-gop-showdown-focus-everyone-knows-why",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Josh Turek's Iowa Senate win over Ashley Hinson marks the first time Democrats captured the seat since 2008 in a state Trump won by double digits.",
+        "description": "JD Vance blamed the war for Republicans' sweeping midterm elections losses, saying voters who backed Trump in 2024 turned against the party in 2026.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T07:07:02.000Z",
+        "publishedAt": "2026-11-04T15:34:25.000Z",
         "sentiment": {
-          "posP": 16.7,
-          "negP": 5.6,
-          "neuP": 77.7,
-          "label": "positive",
-          "confidence": 0.72
-        },
-        "category": "usa"
-      },
-      {
-        "title": "'Pod Save America' hosts call Democratic Party's midterm wins 'the end of the Trump era'",
-        "link": "https://www.foxnews.com/media/pod-save-america-hosts-call-democratic-party-midterm-wins-end-trump-era",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "\"Pod Save America\" hosts celebrated Democratic midterm wins on \"Jimmy Kimmel Live!\" Tuesday night as the party was projected to retake control of Congress.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-04T06:22:49.000Z",
-        "sentiment": {
-          "posP": 38.3,
-          "negP": 0,
-          "neuP": 61.7,
-          "label": "positive",
-          "confidence": 0.97
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Abdul El-Sayed delivers major blow to GOP in Michigan after bruising Senate race",
-        "link": "https://www.foxnews.com/politics/abdul-el-sayed-delivers-major-blow-gop-michigan-after-bruising-senate-race",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Abdul El-Sayed toppled Mike Rogers to become the first Muslim U.S. senator, overcoming Trump's attacks on his faith and alleged foreign ties.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-04T06:17:28.000Z",
-        "sentiment": {
-          "posP": 7.2,
-          "negP": 7.5,
-          "neuP": 85.3,
-          "label": "neutral",
-          "confidence": 0.03
-        },
-        "category": "usa"
-      },
-      {
-        "title": "LIZ PEEK: There may be a silver lining in Trump's brutal midterm defeat",
-        "link": "https://www.foxnews.com/opinion/liz-peek-silver-lining-trumps-brutal-midterm-defeat",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump's midterm losses mirror Obama's 2010 rebuke, but Democrats now face governing without a clear plan to deliver on their affordability pledge. There could be a silver lining here.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-04T06:09:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 20.8,
-          "neuP": 79.2,
+          "posP": 7.5,
+          "negP": 27,
+          "neuP": 65.5,
           "label": "negative",
-          "confidence": 0.8
+          "confidence": 0.9
         },
         "category": "usa"
       },
       {
-        "title": "Trump congratulates Democrats after dominant midterms, says he looks forward to working with them",
-        "link": "https://www.foxnews.com/media/trump-congratulates-democrats-dominant-midterms-looks-forward-working",
+        "title": "Ilhan Omar lashes out at 'bigot' Trump after winning re-election despite investigation",
+        "link": "https://www.foxnews.com/politics/ilhan-omar-lashes-out-bigot-trump-winning-re-election-despite-investigation",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump congratulated Democrats, saying he looked forward to working with them following a devastating Election Day for Republicans.",
+        "description": "Ilhan Omar told supporters Democrats' midterm victories sent a message to Trump, as she addressed federal probes and Operation Metro Surge protests.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T05:32:10.000Z",
+        "publishedAt": "2026-11-04T14:45:47.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 11.8,
-          "neuP": 88.2,
-          "label": "negative",
-          "confidence": 0.65
+          "posP": 16.5,
+          "negP": 5,
+          "neuP": 78.5,
+          "label": "positive",
+          "confidence": 0.66
         },
         "category": "usa"
       },
       {
-        "title": "Dems seize the Senate as blue tidal wave crashes deep into Trump country, topples GOP strongholds",
-        "link": "https://www.foxnews.com/politics/dems-seize-senate-blue-tidal-wave-crashes-deep-trump-country-topples-gop-strongholds",
+        "title": "MICHAEL RUIZ: Tyler Robinson blames Trump post in push for camera ban",
+        "link": "https://www.foxnews.com/us/michael-ruiz-charlie-kirks-accused-assassin-tyler-robinson-blames-trumps-judge-post-push-camera-ban",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Democrats reclaimed the Senate Tuesday by toppling GOP candidates across Trump country, with Chuck Schumer clinching five pickups in a midterm wave.",
+        "description": "Tyler Robinson's lawyers cite Trump's Truth Social post slamming the judge as they renew efforts to block cameras from the Charlie Kirk case hearing.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T05:13:09.000Z",
+        "publishedAt": "2026-11-04T14:38:55.000Z",
         "sentiment": {
           "posP": 5.3,
-          "negP": 0,
-          "neuP": 94.7,
-          "label": "positive",
-          "confidence": 0.25
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Conservatives stunned by 'catastrophic' midterm blue tsunami, blame Trump's Iran war, high gas prices",
-        "link": "https://www.foxnews.com/media/conservatives-stunned-catastrophic-midterm-blue-tsunami-blame-trumps-iran-war-high-gas-prices",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Conservatives reacted to massive Democratic victories across the country, calling it \"catastrophic\" and assigning blame to the Iran war and President Trump.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-04T05:10:45.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 31.1,
-          "neuP": 68.9,
+          "negP": 21.1,
+          "neuP": 73.6,
           "label": "negative",
-          "confidence": 0.92
+          "confidence": 0.78
         },
         "category": "usa"
       },
       {
-        "title": "Van Jones compares Republican midterm losses to mass murder-suicide at Jonestown",
-        "link": "https://www.foxnews.com/media/van-jones-compares-republican-midterm-losses-mass-murder-suicide-jonestown",
+        "title": "Mike Johnson's No 2 launches GOP takeover bid as House falls to Democrats",
+        "link": "https://www.foxnews.com/politics/mike-johnsons-no-2-launches-gop-takeover-bid-house-falls-democrats",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Van Jones likened the Republican Party's midterm election losses to the Jonestown mass murder-suicide, calling the results a full repudiation of President Donald Trump.",
+        "description": "Prominent House Republicans Steve Scalise and Jim Jordan are likely heading for a brutal battle over who will be Trump's top defender as minority leader.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T04:56:00.000Z",
+        "publishedAt": "2026-11-04T14:29:47.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 14.4,
-          "neuP": 85.6,
+          "posP": 12.4,
+          "negP": 20,
+          "neuP": 67.6,
           "label": "negative",
           "confidence": 0.66
         },
         "category": "usa"
       },
       {
-        "title": "‘LAWYER UP’: Dems immediately put Trump on notice amid Republicans' midterm bloodbath",
-        "link": "https://www.foxnews.com/politics/lawyer-up-dems-immediately-put-trump-notice-amid-republicans-midterm-bloodbath",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats on Capitol Hill warned the Trump administration to \"lawyer up\" as they prepare subpoenas and investigations targeting Pete Hegseth and others.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-04T04:50:17.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 6,
-          "neuP": 94,
-          "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump-backed ex-NFL reporter loses Senate race to progressive who vowed to 'rip ICE apart'",
-        "link": "https://www.foxnews.com/politics/trump-backed-ex-nfl-reporter-loses-senate-race-progressive-who-vowed-rip-ice-apart",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Peggy Flanagan defeated Michele Tafoya in Minnesota's special election after ICE's Operation Metro Surge became a central rallying cry for her campaign.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-04T04:20:18.000Z",
-        "sentiment": {
-          "posP": 6.4,
-          "negP": 20.1,
-          "neuP": 73.5,
-          "label": "negative",
-          "confidence": 0.7
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Democrat David Crowley makes history as Wisconsin’s first Black governor",
-        "link": "https://www.foxnews.com/politics/democrat-david-crowley-makes-history-wisconsins-first-black-governor",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democratic Milwaukee County Executive David Crowley defeated Rep. Tom Tiffany after a campaign linking the Republican to Trump's tariffs and tax bill.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-04T04:00:21.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 9.4,
-          "neuP": 90.6,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Pushes Venezuela for Agreement Allowing U.S. Troops to Stay",
-        "link": "https://www.nytimes.com/2026/11/03/us/politics/trump-venezuela-troop-agreement.html",
+        "title": "Angry Voters Usher in Beginning of the End to the Trump Era",
+        "link": "https://www.nytimes.com/2026/11/04/us/politics/midterm-election-trump-voters.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The two countries have long been adversaries, and the United States attacked Venezuela this year, but Secretary of State Marco Rubio is starting talks on a legal agreement.",
+        "description": "The electoral backlash extended even into deep red states and indicated that President Trump has lost his hold over the coalition that lifted him to the White House twice.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-03T19:47:00.000Z",
+        "publishedAt": "2026-11-04T09:26:24.000Z",
         "sentiment": {
-          "posP": 22.6,
-          "negP": 7.9,
-          "neuP": 69.5,
-          "label": "positive",
-          "confidence": 0.76
+          "posP": 0,
+          "negP": 12.6,
+          "neuP": 87.4,
+          "label": "negative",
+          "confidence": 0.68
         },
         "category": "usa"
       },
       {
-        "title": "The American People Have Repudiated Trump",
-        "link": "https://www.nytimes.com/2026/11/03/opinion/democracy-midterms-trump.html",
+        "title": "‘The Beginning of the End of Trumpism’",
+        "link": "https://www.nytimes.com/video/opinion/100000011257707/the-beginning-of-the-end-of-trumpism.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Americans showed that the power to choose their leaders belongs to them. Now they must remain vigilant until officials certify every race and the winners take office.",
+        "description": "“People hate the way that Trump is running this country,” the columnist Michelle Goldberg argues. Her fellow columnists and the American electorate agree. Democrats had a great night, but what now? Eight Opinion columnists offer their views on what Democrats need to do next, and what Trump’s final two years in office might hold.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T05:39:44.000Z",
+        "publishedAt": "2026-11-04T14:25:32.000Z",
         "sentiment": {
-          "posP": 13.4,
+          "posP": 6.7,
+          "negP": 6.4,
+          "neuP": 86.9,
+          "label": "neutral",
+          "confidence": 0.04
+        },
+        "category": "usa"
+      },
+      {
+        "title": "‘Decency Won’: 9 Writers on the Best and Worst Moments From Trump’s Midterm Rout",
+        "link": "https://www.nytimes.com/2026/11/04/opinion/midterms-democrats-senate-house-results.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "What mattered most in these midterms?",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T15:48:19.000Z",
+        "sentiment": {
+          "posP": 16.6,
+          "negP": 16.2,
+          "neuP": 67.2,
+          "label": "neutral",
+          "confidence": 0.03
+        },
+        "category": "usa"
+      },
+      {
+        "title": "A Blue Wave",
+        "link": "https://www.nytimes.com/2026/11/04/briefing/a-blue-wave.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In a rebuke to President Trump, the Democrats flipped both the Senate and the House.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T12:05:10.000Z",
+        "sentiment": {
+          "posP": 0,
           "negP": 0,
-          "neuP": 86.6,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Jimmy Kimmel Rides Election Day’s ‘Blue Tsunami’",
+        "link": "https://www.nytimes.com/2026/11/04/arts/television/jimmy-kimmel-midterm-election-blue-wave.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "“Man, oh man, would I hate to be the DoorDash driver who delivers Trump his Papa Johns tonight,” Kimmel said.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T14:58:49.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 12.9,
+          "neuP": 87.1,
+          "label": "negative",
+          "confidence": 0.57
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats win House majority with Trump approval at historic low",
+        "link": "https://www.cbsnews.com/live-updates/house-election-results-2026/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats won control of the House in the 2026 midterm elections, CBS News projects, with victories in battleground districts across the country.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T17:16:00.000Z",
+        "sentiment": {
+          "posP": 25,
+          "negP": 11.3,
+          "neuP": 63.7,
           "label": "positive",
-          "confidence": 0.59
+          "confidence": 0.78
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Iran says U.S. election results show Americans reject the war",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "As the war Trump launched with Israel against Iran drags into month nine, he acknowledges its role in the GOP's election defeat, but says he'd have done it anyway.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T17:12:34.000Z",
+        "sentiment": {
+          "posP": 2.8,
+          "negP": 22.8,
+          "neuP": 74.4,
+          "label": "negative",
+          "confidence": 0.78
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump asking advisers if Hegseth should go, sources say",
+        "link": "https://www.cbsnews.com/news/trump-hegseth-midterm-election-losses/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump has been asking his advisers if Defense Secretary Pete Hegseth should remain in his job after Tuesday's losses.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T16:56:00.000Z",
+        "sentiment": {
+          "posP": 4.8,
+          "negP": 8.7,
+          "neuP": 86.5,
+          "label": "negative",
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats win Senate control, Schumer vows \"legislative razor wire\" against Trump",
+        "link": "https://www.cbsnews.com/live-updates/senate-election-results-2026/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats were able to pick up the seats needed to gain control of the Senate, CBS News projects, and the party scored several upset victories in red states.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-04T16:43:29.000Z",
+        "sentiment": {
+          "posP": 20.8,
+          "negP": 5.5,
+          "neuP": 73.7,
+          "label": "positive",
+          "confidence": 0.81
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.33,
-      "neu": 83.22,
-      "neg": 9.44,
-      "count": 41
+      "pos": 7.03,
+      "neu": 81.97,
+      "neg": 11,
+      "count": 35
     },
     "sourceLeaderboard": [
       {
+        "source": "NYT",
+        "pos": 5.19,
+        "neu": 86.23,
+        "neg": 8.59,
+        "count": 7
+      },
+      {
         "source": "Fox News",
-        "pos": 7.21,
-        "neu": 81.99,
-        "neg": 10.8,
-        "count": 13
+        "pos": 8.45,
+        "neu": 79.37,
+        "neg": 12.18,
+        "count": 6
       },
       {
         "source": "NBC News",
-        "pos": 8.48,
-        "neu": 81.58,
-        "neg": 9.93,
+        "pos": 6.73,
+        "neu": 76.65,
+        "neg": 16.62,
         "count": 6
       },
       {
         "source": "CBS News",
-        "pos": 10.57,
-        "neu": 77.13,
-        "neg": 12.3,
-        "count": 6
-      },
-      {
-        "source": "NYT",
-        "pos": 9.8,
-        "neu": 83.64,
-        "neg": 6.56,
+        "pos": 11.48,
+        "neu": 76.06,
+        "neg": 12.46,
         "count": 5
       },
       {
@@ -5531,47 +5520,47 @@
       },
       {
         "source": "ABC News",
-        "pos": 3.7,
-        "neu": 96.3,
-        "neg": 0,
+        "pos": 12.5,
+        "neu": 82.9,
+        "neg": 4.6,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 8.65,
-        "neu": 81.5,
-        "neg": 9.86,
-        "count": 24
+        "pos": 7.96,
+        "neu": 80.62,
+        "neg": 11.42,
+        "count": 22
       },
       {
         "topic": "Policy",
-        "pos": 2.71,
-        "neu": 89.91,
-        "neg": 7.37,
-        "count": 7
+        "pos": 4.75,
+        "neu": 88.03,
+        "neg": 7.22,
+        "count": 4
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.28,
-        "neu": 87.78,
-        "neg": 7.93,
-        "count": 6
+        "pos": 4.63,
+        "neu": 85.35,
+        "neg": 10.03,
+        "count": 4
       },
       {
         "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
+        "pos": 7.05,
+        "neu": 82.05,
+        "neg": 10.9,
+        "count": 4
       },
       {
         "topic": "Legal",
-        "pos": 14.75,
-        "neu": 65.6,
-        "neg": 19.65,
-        "count": 2
+        "pos": 5.3,
+        "neu": 73.6,
+        "neg": 21.1,
+        "count": 1
       }
     ]
   },
@@ -5598,28 +5587,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-04T05:24:53.753Z",
+        "label": "2026-11-04T13:26:38.702Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-04T06:24:53.753Z",
+        "label": "2026-11-04T14:26:38.702Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-04T07:24:53.753Z",
+        "label": "2026-11-04T15:26:38.702Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-04T08:24:53.753Z",
+        "label": "2026-11-04T16:26:38.702Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5628,28 +5617,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-04T05:24:53.753Z",
+        "label": "2026-11-04T13:26:38.702Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-04T06:24:53.753Z",
+        "label": "2026-11-04T14:26:38.702Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-04T07:24:53.753Z",
+        "label": "2026-11-04T15:26:38.702Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-04T08:24:53.753Z",
+        "label": "2026-11-04T16:26:38.702Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5729,7 +5718,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-04T09:24:53.754Z",
+    "generatedAt": "2026-11-04T17:26:38.704Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5850,8 +5839,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 163,
-      "potusArticles": 41,
+      "usaArticles": 164,
+      "potusArticles": 35,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
