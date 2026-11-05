@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-05T02:52:30.074Z",
+  "generatedAt": "2026-11-05T10:42:01.581Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 166,
-    "potusArticles": 35
+    "usaArticles": 164,
+    "potusArticles": 36
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-04T22:52:30.075Z",
+          "label": "2026-11-05T06:42:01.581Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-04T23:52:30.075Z",
+          "label": "2026-11-05T07:42:01.581Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T00:52:30.075Z",
+          "label": "2026-11-05T08:42:01.581Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T01:52:30.075Z",
+          "label": "2026-11-05T09:42:01.581Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-04T22:52:30.075Z",
+          "label": "2026-11-05T06:42:01.581Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-04T23:52:30.075Z",
+          "label": "2026-11-05T07:42:01.581Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T00:52:30.075Z",
+          "label": "2026-11-05T08:42:01.581Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T01:52:30.075Z",
+          "label": "2026-11-05T09:42:01.581Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 8.42,
-      "neu": 82.24,
-      "neg": 9.33,
-      "count": 166
+      "pos": 8.6,
+      "neu": 82.1,
+      "neg": 9.31,
+      "count": 164
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.45,
-        "neu": 82.04,
-        "neg": 8.5,
-        "count": 43
+        "pos": 10.85,
+        "neu": 81.05,
+        "neg": 8.1,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 7.92,
-        "neu": 80.3,
-        "neg": 11.78,
+        "pos": 8.43,
+        "neu": 77.97,
+        "neg": 13.6,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 8.22,
-        "neu": 82.3,
-        "neg": 9.48,
+        "pos": 8.83,
+        "neu": 83.93,
+        "neg": 7.23,
         "count": 26
       },
       {
@@ -4590,18 +4590,18 @@
         "count": 20
       },
       {
-        "source": "ABC News",
-        "pos": 8.22,
-        "neu": 88.08,
-        "neg": 3.7,
+        "source": "NYT",
+        "pos": 7.39,
+        "neu": 82.3,
+        "neg": 10.31,
         "count": 20
       },
       {
-        "source": "NYT",
-        "pos": 10.12,
-        "neu": 81.3,
-        "neg": 8.58,
-        "count": 19
+        "source": "ABC News",
+        "pos": 8.18,
+        "neu": 88.79,
+        "neg": 3.03,
+        "count": 20
       },
       {
         "source": "NPR",
@@ -4633,14 +4633,9 @@
           "count": 1
         },
         {
-          "name": "Energy",
-          "bias": -9.27,
-          "count": 6
-        },
-        {
           "name": "Real Estate",
-          "bias": 9.1,
-          "count": 6
+          "bias": 6.94,
+          "count": 7
         },
         {
           "name": "Manufacturing",
@@ -4649,35 +4644,40 @@
         },
         {
           "name": "Finance",
-          "bias": -4.3,
-          "count": 19
+          "bias": -4.77,
+          "count": 18
+        },
+        {
+          "name": "Energy",
+          "bias": 2.69,
+          "count": 7
         },
         {
           "name": "Materials",
-          "bias": 3.1,
-          "count": 2
-        },
-        {
-          "name": "Healthcare",
-          "bias": -2.34,
-          "count": 10
-        },
-        {
-          "name": "Utilities",
-          "bias": -1.57,
+          "bias": -1.33,
           "count": 3
         },
         {
+          "name": "Utilities",
+          "bias": 1.1,
+          "count": 4
+        },
+        {
           "name": "Technology",
-          "bias": -0.99,
-          "count": 116
+          "bias": -0.95,
+          "count": 110
+        },
+        {
+          "name": "Healthcare",
+          "bias": -0.59,
+          "count": 9
         }
       ],
       "pos": [
         {
           "name": "Real Estate",
-          "bias": 9.1,
-          "count": 6
+          "bias": 6.94,
+          "count": 7
         },
         {
           "name": "Manufacturing",
@@ -4685,26 +4685,26 @@
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": 3.1,
-          "count": 2
+          "name": "Energy",
+          "bias": 2.69,
+          "count": 7
         }
       ],
       "neu": [
         {
-          "name": "Healthcare",
-          "bias": -2.34,
-          "count": 10
-        },
-        {
-          "name": "Utilities",
-          "bias": -1.57,
+          "name": "Materials",
+          "bias": -1.33,
           "count": 3
         },
         {
+          "name": "Utilities",
+          "bias": 1.1,
+          "count": 4
+        },
+        {
           "name": "Technology",
-          "bias": -0.99,
-          "count": 116
+          "bias": -0.95,
+          "count": 110
         }
       ],
       "neg": [
@@ -4714,46 +4714,41 @@
           "count": 1
         },
         {
-          "name": "Energy",
-          "bias": -9.27,
-          "count": 6
-        },
-        {
           "name": "Finance",
-          "bias": -4.3,
-          "count": 19
+          "bias": -4.77,
+          "count": 18
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-04T22:52:30.076Z",
+          "label": "2026-11-05T06:42:01.583Z",
           "pos": 8,
-          "neu": 81,
+          "neu": 82,
+          "neg": 11,
+          "count": 3
+        },
+        {
+          "label": "2026-11-05T07:42:01.583Z",
+          "pos": 4,
+          "neu": 82,
+          "neg": 15,
+          "count": 4
+        },
+        {
+          "label": "2026-11-05T08:42:01.583Z",
+          "pos": 9,
+          "neu": 77,
+          "neg": 14,
+          "count": 11
+        },
+        {
+          "label": "2026-11-05T09:42:01.583Z",
+          "pos": 4,
+          "neu": 84,
           "neg": 12,
-          "count": 18
-        },
-        {
-          "label": "2026-11-04T23:52:30.076Z",
-          "pos": 10,
-          "neu": 79,
-          "neg": 10,
-          "count": 17
-        },
-        {
-          "label": "2026-11-05T00:52:30.076Z",
-          "pos": 9,
-          "neu": 83,
-          "neg": 8,
-          "count": 12
-        },
-        {
-          "label": "2026-11-05T01:52:30.076Z",
-          "pos": 9,
-          "neu": 86,
-          "neg": 6,
-          "count": 15
+          "count": 7
         }
       ]
     }
@@ -4961,42 +4956,42 @@
         "category": "world"
       },
       {
-        "title": "DSA leader dismisses $49T cost estimate for socialist policies as a 'made-up number'",
-        "link": "https://www.foxnews.com/media/dsa-leader-dismisses-49t-cost-estimate-socialist-policies-made-up-number",
+        "title": "HUGH HEWITT: The GOP is wounded, not dead — but recovery has to start now",
+        "link": "https://www.foxnews.com/opinion/hugh-hewitt-gop-wounded-not-dead-recovery-has-start-now",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "DSA co-chair Megan Romer dismissed the White House's $49 trillion price tag for socialist policies as a \"made-up number\" and declined to offer her own.",
+        "description": "Trump faces pressure to quickly win the battle with Iran before new Democratic majorities can interfere with his authority as commander-in-chief.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T22:50:51.000Z",
+        "publishedAt": "2026-11-05T09:00:59.000Z",
         "sentiment": {
-          "posP": 3.6,
-          "negP": 0,
-          "neuP": 96.4,
-          "label": "neutral",
-          "confidence": 0.08
+          "posP": 19.7,
+          "negP": 13.8,
+          "neuP": 66.5,
+          "label": "positive",
+          "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "Inside Team Trump’s Historic Collapse in the 2026 Midterm Elections",
-        "link": "https://www.nytimes.com/2026/11/04/us/politics/trump-midterms-losses-republicans.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Republicans turn on Trump after devastating midterm losses hand Democrats control of Congress",
+        "link": "https://www.foxnews.com/politics/republicans-turn-trump-after-devastating-midterm-losses-hand-democrats-control-congress",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "How an unpopular president and an unpopular war provided an opening for Democrats to make sweeping gains in the midterms.",
+        "description": "GOP insiders blame Trump after Election Night's blue tsunami flipped both chambers, with Democrats scoring seven Senate and 27 House pickups.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T02:02:47.000Z",
+        "publishedAt": "2026-11-05T09:00:05.000Z",
         "sentiment": {
-          "posP": 6.6,
-          "negP": 19.5,
-          "neuP": 73.9,
+          "posP": 7.5,
+          "negP": 22.1,
+          "neuP": 70.4,
           "label": "negative",
-          "confidence": 0.69
+          "confidence": 0.74
         },
         "category": "usa"
       }
@@ -5203,22 +5198,42 @@
         "category": "world"
       },
       {
-        "title": "DSA leader dismisses $49T cost estimate for socialist policies as a 'made-up number'",
-        "link": "https://www.foxnews.com/media/dsa-leader-dismisses-49t-cost-estimate-socialist-policies-made-up-number",
+        "title": "HUGH HEWITT: The GOP is wounded, not dead — but recovery has to start now",
+        "link": "https://www.foxnews.com/opinion/hugh-hewitt-gop-wounded-not-dead-recovery-has-start-now",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "DSA co-chair Megan Romer dismissed the White House's $49 trillion price tag for socialist policies as a \"made-up number\" and declined to offer her own.",
+        "description": "Trump faces pressure to quickly win the battle with Iran before new Democratic majorities can interfere with his authority as commander-in-chief.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T22:50:51.000Z",
+        "publishedAt": "2026-11-05T09:00:59.000Z",
         "sentiment": {
-          "posP": 3.6,
-          "negP": 0,
-          "neuP": 96.4,
-          "label": "neutral",
-          "confidence": 0.08
+          "posP": 19.7,
+          "negP": 13.8,
+          "neuP": 66.5,
+          "label": "positive",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Republicans turn on Trump after devastating midterm losses hand Democrats control of Congress",
+        "link": "https://www.foxnews.com/politics/republicans-turn-trump-after-devastating-midterm-losses-hand-democrats-control-congress",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "GOP insiders blame Trump after Election Night's blue tsunami flipped both chambers, with Democrats scoring seven Senate and 27 House pickups.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T09:00:05.000Z",
+        "sentiment": {
+          "posP": 7.5,
+          "negP": 22.1,
+          "neuP": 70.4,
+          "label": "negative",
+          "confidence": 0.74
         },
         "category": "usa"
       },
@@ -5232,13 +5247,33 @@
         "description": "How an unpopular president and an unpopular war provided an opening for Democrats to make sweeping gains in the midterms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T02:02:47.000Z",
+        "publishedAt": "2026-11-05T04:11:05.000Z",
         "sentiment": {
           "posP": 6.6,
           "negP": 19.5,
           "neuP": 73.9,
           "label": "negative",
           "confidence": 0.69
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Vance, in Break With Trump, Blames Iran War for Republicans’ 2026 Midterm Losses",
+        "link": "https://www.nytimes.com/2026/11/04/us/politics/vance-iran-war-midterms-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The vice president offered his striking critique of the administration’s agenda and messaging with Mr. Trump’s apparent approval.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T09:27:04.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 23.6,
+          "neuP": 68.5,
+          "label": "negative",
+          "confidence": 0.74
         },
         "category": "usa"
       },
@@ -5292,7 +5327,7 @@
         "description": "The two companies settled billing disputes between doctors and insurers, keeping patients out of the middle. One let doctors win 96 percent of the time.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T00:01:15.000Z",
+        "publishedAt": "2026-11-05T03:51:21.000Z",
         "sentiment": {
           "posP": 9.8,
           "negP": 5.4,
@@ -5303,22 +5338,42 @@
         "category": "usa"
       },
       {
-        "title": "Trump Wanted Democrats to Win",
-        "link": "https://www.nytimes.com/2026/11/04/opinion/trump-democrats-midterms.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Iran says U.S. election results show Americans reject the war",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president loves combat and chaos. He’s about to get more of it.",
+        "description": "As the war Trump launched with Israel against Iran drags into month nine, he acknowledges its role in the GOP's election defeat but says he'd have done it anyway.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T22:32:07.000Z",
+        "publishedAt": "2026-11-05T10:40:19.000Z",
         "sentiment": {
-          "posP": 27.2,
-          "negP": 22.1,
-          "neuP": 50.7,
+          "posP": 2.8,
+          "negP": 22.8,
+          "neuP": 74.4,
+          "label": "negative",
+          "confidence": 0.78
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats win House majority with Trump approval at historic low",
+        "link": "https://www.cbsnews.com/live-updates/house-election-results-2026/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats won control of the House in the 2026 midterm elections, CBS News projects, with victories in battleground districts across the country.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T03:58:16.000Z",
+        "sentiment": {
+          "posP": 25,
+          "negP": 11.3,
+          "neuP": 63.7,
           "label": "positive",
-          "confidence": 0.34
+          "confidence": 0.78
         },
         "category": "usa"
       },
@@ -5332,7 +5387,7 @@
         "description": "Vice President JD Vance posted on social media Wednesday that Republican's midterm losses were due to the war in Iran. President Trump said he agrees with that, but that he couldn't allow Iran to have a nuclear weapon. CBS News' Natalie Brand reports.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T02:34:54.000Z",
+        "publishedAt": "2026-11-05T02:34:00.000Z",
         "sentiment": {
           "posP": 5,
           "negP": 27.8,
@@ -5363,26 +5418,6 @@
         "category": "usa"
       },
       {
-        "title": "Iran says U.S. election results show Americans reject the war",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "As the war Trump launched with Israel against Iran drags into month nine, he acknowledges its role in the GOP's election defeat, but says he'd have done it anyway.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T00:55:48.000Z",
-        "sentiment": {
-          "posP": 2.8,
-          "negP": 22.8,
-          "neuP": 74.4,
-          "label": "negative",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
         "title": "Tech moguls suffer defeat as midterm results show young men swinging away from Trump",
         "link": "https://www.nbcnews.com/video/tech-moguls-suffer-defeat-as-manosphere-swings-away-from-trump-272884805508",
         "source": "NBC News",
@@ -5403,120 +5438,73 @@
         "category": "usa"
       },
       {
-        "title": "Trump brags about the White House ballroom in his first post-election appearance",
-        "link": "https://www.nbcnews.com/politics/donald-trump/trump-election-white-house-ballroom-iran-rcna607487",
+        "title": "5 key insights from the NBC News Exit Poll about the blue tsunami",
+        "link": "https://www.nbcnews.com/politics/2026-election/nbc-news-exit-poll-democrats-victory-trump-economy-rcna607391",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "One day after elections in which Democrats took back the House and the Senate, the president addressed workers building the White House ballroom and said he didn’t regret starting the Iran war.",
+        "description": "Voters expressed feeling fed up with the economy; Democratic candidates emerged more well-liked, and Trump was resoundingly rejected.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T18:36:28.000Z",
+        "publishedAt": "2026-11-04T11:52:29.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 13.8,
-          "neuP": 86.2,
+          "posP": 4.6,
+          "negP": 10.1,
+          "neuP": 85.3,
           "label": "negative",
-          "confidence": 0.77
+          "confidence": 0.42
         },
         "category": "usa"
       },
       {
-        "title": "Trump dismisses prospect of replacing Hegseth amid Iran war fallout",
-        "link": "https://abcnews.com/Politics/trump-dismisses-prospect-replacing-hegseth-amid-iran-war/story?id=137852219",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
+        "title": "What was really behind Wednesday's monster rally? Trump quickly making peace",
+        "link": "https://www.cnbc.com/2026/11/04/stock-market-rally-trump-midterms.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump's remarks come as Republicans grapple with the political fallout from the eight-month war with Iran.",
+        "description": "The stock market skyrocketed after a decisive sweep for Democrats in the 2026 midterm elections, a move that Trump's reaction added to.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T23:16:55.000Z",
+        "publishedAt": "2026-11-04T22:55:22.000Z",
         "sentiment": {
-          "posP": 6.7,
-          "negP": 23.6,
-          "neuP": 69.7,
-          "label": "negative",
-          "confidence": 0.77
-        },
-        "category": "usa"
-      },
-      {
-        "title": "WATCH:  Where do Republicans go from here?",
-        "link": "https://abcnews.com/video/137859789/",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "ABC News contributors Cristina Tzintzun Ramirez, a Democratic strategist, and Sonny Joy Nelson, a former special assistant to President Trump, share their takeaways from last night's results.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-04T21:54:26.000Z",
-        "sentiment": {
-          "posP": 23.1,
+          "posP": 15.7,
           "negP": 0,
-          "neuP": 76.9,
+          "neuP": 84.3,
           "label": "positive",
-          "confidence": 0.83
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Repudiation of Trump, economic pain drove Dems to House victory: Voter Poll analysis",
-        "link": "https://abcnews.com/Politics/abc-news-voter-polls-explain-democrats-won-us/story?id=137687246",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats are projected to retake the House for the first time since 2020.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-04T20:05:23.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 11.7,
-          "neuP": 88.3,
-          "label": "negative",
-          "confidence": 0.51
+          "confidence": 0.66
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.25,
-      "neu": 82.19,
-      "neg": 10.56,
-      "count": 35
+      "pos": 7.8,
+      "neu": 80.65,
+      "neg": 11.55,
+      "count": 36
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.81,
-        "neu": 82.79,
-        "neg": 10.4,
+        "pos": 9.04,
+        "neu": 79.93,
+        "neg": 11.02,
         "count": 9
       },
       {
         "source": "NYT",
-        "pos": 9.8,
-        "neu": 78.97,
-        "neg": 11.23,
+        "pos": 7.04,
+        "neu": 81.51,
+        "neg": 11.44,
         "count": 7
       },
       {
         "source": "CBS News",
-        "pos": 6.5,
-        "neu": 73.13,
-        "neg": 20.38,
-        "count": 4
-      },
-      {
-        "source": "ABC News",
-        "pos": 12.23,
-        "neu": 78.95,
-        "neg": 8.82,
-        "count": 4
+        "pos": 10.2,
+        "neu": 71.24,
+        "neg": 18.56,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5534,10 +5522,17 @@
       },
       {
         "source": "Fox News",
-        "pos": 6.3,
-        "neu": 93.7,
-        "neg": 0,
-        "count": 2
+        "pos": 12.07,
+        "neu": 75.97,
+        "neg": 11.97,
+        "count": 3
+      },
+      {
+        "source": "ABC News",
+        "pos": 8.9,
+        "neu": 82.03,
+        "neg": 9.07,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5550,38 +5545,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.7,
-        "neu": 80.44,
-        "neg": 11.85,
-        "count": 21
+        "pos": 8.99,
+        "neu": 77.46,
+        "neg": 13.55,
+        "count": 17
       },
       {
         "topic": "Policy",
-        "pos": 4.56,
-        "neu": 88.06,
-        "neg": 7.38,
-        "count": 5
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 4.63,
-        "neu": 85.35,
-        "neg": 10.03,
-        "count": 4
+        "pos": 5.12,
+        "neu": 84.8,
+        "neg": 10.08,
+        "count": 6
       },
       {
         "topic": "Economy",
-        "pos": 9.83,
+        "pos": 9.68,
         "neu": 81.8,
-        "neg": 8.38,
-        "count": 4
+        "neg": 8.52,
+        "count": 6
+      },
+      {
+        "topic": "Foreign Policy",
+        "pos": 4.86,
+        "neu": 85.5,
+        "neg": 9.64,
+        "count": 5
       },
       {
         "topic": "Legal",
-        "pos": 11.3,
-        "neu": 78.6,
-        "neg": 10.1,
-        "count": 1
+        "pos": 7.45,
+        "neu": 79.75,
+        "neg": 12.8,
+        "count": 2
       }
     ]
   },
@@ -5608,28 +5603,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-04T22:52:30.079Z",
+        "label": "2026-11-05T06:42:01.586Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-04T23:52:30.079Z",
+        "label": "2026-11-05T07:42:01.586Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T00:52:30.079Z",
+        "label": "2026-11-05T08:42:01.586Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T01:52:30.079Z",
+        "label": "2026-11-05T09:42:01.586Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5638,28 +5633,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-04T22:52:30.079Z",
+        "label": "2026-11-05T06:42:01.586Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-04T23:52:30.079Z",
+        "label": "2026-11-05T07:42:01.586Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T00:52:30.079Z",
+        "label": "2026-11-05T08:42:01.586Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T01:52:30.079Z",
+        "label": "2026-11-05T09:42:01.586Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5739,7 +5734,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-05T02:52:30.080Z",
+    "generatedAt": "2026-11-05T10:42:01.587Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5860,8 +5855,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 166,
-      "potusArticles": 35,
+      "usaArticles": 164,
+      "potusArticles": 36,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
