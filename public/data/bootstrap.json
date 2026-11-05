@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-05T18:18:23.450Z",
+  "generatedAt": "2026-11-05T23:42:07.437Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 167,
-    "potusArticles": 37
+    "usaArticles": 169,
+    "potusArticles": 33
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-05T14:18:23.451Z",
+          "label": "2026-11-05T19:42:07.437Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T15:18:23.451Z",
+          "label": "2026-11-05T20:42:07.437Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T16:18:23.451Z",
+          "label": "2026-11-05T21:42:07.437Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T17:18:23.451Z",
+          "label": "2026-11-05T22:42:07.437Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-05T14:18:23.451Z",
+          "label": "2026-11-05T19:42:07.437Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T15:18:23.451Z",
+          "label": "2026-11-05T20:42:07.437Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T16:18:23.451Z",
+          "label": "2026-11-05T21:42:07.437Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T17:18:23.451Z",
+          "label": "2026-11-05T22:42:07.437Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.55,
-      "neu": 82.03,
-      "neg": 10.41,
-      "count": 167
+      "pos": 8.51,
+      "neu": 81.88,
+      "neg": 9.61,
+      "count": 169
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.53,
-        "neu": 83.25,
-        "neg": 8.22,
-        "count": 40
+        "pos": 8.68,
+        "neu": 82.59,
+        "neg": 8.72,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 8.74,
-        "neu": 79.53,
-        "neg": 11.73,
+        "pos": 10.72,
+        "neu": 78.1,
+        "neg": 11.18,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 7.29,
-        "neu": 81.13,
-        "neg": 11.58,
+        "pos": 8.38,
+        "neu": 82.02,
+        "neg": 9.6,
         "count": 25
       },
       {
         "source": "NYT",
-        "pos": 7.15,
-        "neu": 79.57,
-        "neg": 13.28,
+        "pos": 10.33,
+        "neu": 80.62,
+        "neg": 9.05,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.19,
-        "neu": 88.67,
-        "neg": 5.14,
+        "pos": 6.11,
+        "neu": 88.14,
+        "neg": 5.75,
         "count": 20
       },
       {
@@ -4629,8 +4629,13 @@
       "rows": [
         {
           "name": "Communication",
-          "bias": -16,
-          "count": 2
+          "bias": -14,
+          "count": 1
+        },
+        {
+          "name": "Healthcare",
+          "bias": -9.93,
+          "count": 8
         },
         {
           "name": "Utilities",
@@ -4639,121 +4644,116 @@
         },
         {
           "name": "Manufacturing",
-          "bias": -6.1,
+          "bias": -6.7,
           "count": 3
         },
         {
           "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
+          "bias": 6.57,
+          "count": 3
         },
         {
           "name": "Energy",
-          "bias": 5.44,
-          "count": 12
+          "bias": 4.79,
+          "count": 11
         },
         {
           "name": "Materials",
-          "bias": 4.4,
-          "count": 2
-        },
-        {
-          "name": "Healthcare",
-          "bias": -3.3,
-          "count": 6
-        },
-        {
-          "name": "Technology",
-          "bias": -2.65,
-          "count": 124
+          "bias": 2.9,
+          "count": 1
         },
         {
           "name": "Finance",
-          "bias": -1.03,
-          "count": 21
+          "bias": -2.35,
+          "count": 19
+        },
+        {
+          "name": "Technology",
+          "bias": -0.9,
+          "count": 121
         }
       ],
       "pos": [
         {
           "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
+          "bias": 6.57,
+          "count": 3
         },
         {
           "name": "Energy",
-          "bias": 5.44,
-          "count": 12
+          "bias": 4.79,
+          "count": 11
         },
         {
           "name": "Materials",
-          "bias": 4.4,
-          "count": 2
+          "bias": 2.9,
+          "count": 1
         }
       ],
       "neu": [
         {
-          "name": "Healthcare",
-          "bias": -3.3,
-          "count": 6
-        },
-        {
-          "name": "Technology",
-          "bias": -2.65,
-          "count": 124
+          "name": "Manufacturing",
+          "bias": -6.7,
+          "count": 3
         },
         {
           "name": "Finance",
-          "bias": -1.03,
-          "count": 21
+          "bias": -2.35,
+          "count": 19
+        },
+        {
+          "name": "Technology",
+          "bias": -0.9,
+          "count": 121
         }
       ],
       "neg": [
         {
           "name": "Communication",
-          "bias": -16,
-          "count": 2
+          "bias": -14,
+          "count": 1
+        },
+        {
+          "name": "Healthcare",
+          "bias": -9.93,
+          "count": 8
         },
         {
           "name": "Utilities",
           "bias": -9.45,
           "count": 2
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -6.1,
-          "count": 3
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-05T14:18:23.452Z",
-          "pos": 5,
-          "neu": 85,
-          "neg": 10,
-          "count": 11
-        },
-        {
-          "label": "2026-11-05T15:18:23.452Z",
-          "pos": 7,
-          "neu": 81,
-          "neg": 12,
-          "count": 19
-        },
-        {
-          "label": "2026-11-05T16:18:23.452Z",
-          "pos": 7,
-          "neu": 82,
-          "neg": 11,
-          "count": 25
-        },
-        {
-          "label": "2026-11-05T17:18:23.452Z",
+          "label": "2026-11-05T19:42:07.438Z",
           "pos": 9,
-          "neu": 83,
+          "neu": 76,
+          "neg": 15,
+          "count": 17
+        },
+        {
+          "label": "2026-11-05T20:42:07.438Z",
+          "pos": 8,
+          "neu": 85,
+          "neg": 7,
+          "count": 16
+        },
+        {
+          "label": "2026-11-05T21:42:07.438Z",
+          "pos": 12,
+          "neu": 80,
+          "neg": 7,
+          "count": 22
+        },
+        {
+          "label": "2026-11-05T22:42:07.438Z",
+          "pos": 8,
+          "neu": 85,
           "neg": 8,
-          "count": 35
+          "count": 23
         }
       ]
     }
@@ -4961,42 +4961,42 @@
         "category": "world"
       },
       {
-        "title": "Mamdani confident there's a path for a progressive candidate to the White House in 2028",
-        "link": "https://www.foxnews.com/media/mamdani-confident-path-progressive-candidate-white-house-2028",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Tech Billionaires Face Tricky Political Waters After Democratic Midterm Sweep",
+        "link": "https://www.nytimes.com/2026/11/05/technology/tech-billionaires-democrats-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "New York City Mayor Zohran Mamdani says midterm wins in Georgia, Texas and South Carolina prove a progressive presidential path exists in 2028.",
+        "description": "Many donated money to President Trump’s favored causes and became his allies. Now that political alignment may be a liability.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T16:42:36.000Z",
+        "publishedAt": "2026-11-05T21:14:24.000Z",
         "sentiment": {
-          "posP": 17.3,
-          "negP": 0,
-          "neuP": 82.7,
-          "label": "positive",
-          "confidence": 0.78
+          "posP": 8.7,
+          "negP": 10.6,
+          "neuP": 80.7,
+          "label": "neutral",
+          "confidence": 0.1
         },
         "category": "usa"
       },
       {
-        "title": "DOJ civil rights chief Harmeet Dhillon resigns, says White House asked her to wait until after midterms",
-        "link": "https://www.foxnews.com/politics/doj-civil-rights-chief-harmeet-dhillon-resigns-says-white-house-asked-her-wait-until-after-midterms",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Tried to Undermine the Nation’s Elections. It Didn’t Work.",
+        "link": "https://www.nytimes.com/2026/11/05/us/election-deniers-midterms-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Harmeet Dhillon resigned Thursday as the Department of Justice's assistant attorney general for civil rights, sources told Fox News.",
+        "description": "Millions of Americans cast their ballots on Tuesday in an election that showed the resiliency of democracy. The president said he would accept the results.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T15:51:18.000Z",
+        "publishedAt": "2026-11-05T21:37:28.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 11.2,
-          "neuP": 88.8,
-          "label": "negative",
-          "confidence": 0.51
+          "posP": 6.9,
+          "negP": 5.8,
+          "neuP": 87.3,
+          "label": "neutral",
+          "confidence": 0.1
         },
         "category": "usa"
       }
@@ -5203,106 +5203,6 @@
         "category": "world"
       },
       {
-        "title": "Mamdani confident there's a path for a progressive candidate to the White House in 2028",
-        "link": "https://www.foxnews.com/media/mamdani-confident-path-progressive-candidate-white-house-2028",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "New York City Mayor Zohran Mamdani says midterm wins in Georgia, Texas and South Carolina prove a progressive presidential path exists in 2028.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T16:42:36.000Z",
-        "sentiment": {
-          "posP": 17.3,
-          "negP": 0,
-          "neuP": 82.7,
-          "label": "positive",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
-        "title": "DOJ civil rights chief Harmeet Dhillon resigns, says White House asked her to wait until after midterms",
-        "link": "https://www.foxnews.com/politics/doj-civil-rights-chief-harmeet-dhillon-resigns-says-white-house-asked-her-wait-until-after-midterms",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Harmeet Dhillon resigned Thursday as the Department of Justice's assistant attorney general for civil rights, sources told Fox News.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T15:51:18.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 11.2,
-          "neuP": 88.8,
-          "label": "negative",
-          "confidence": 0.51
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Inside Team Trump’s Historic Collapse in the 2026 Midterm Elections",
-        "link": "https://www.nytimes.com/2026/11/04/us/politics/trump-midterms-losses-republicans.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "How an unpopular president and an unpopular war provided an opening for Democrats to make sweeping gains in the midterms.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T15:20:18.000Z",
-        "sentiment": {
-          "posP": 6.6,
-          "negP": 19.5,
-          "neuP": 73.9,
-          "label": "negative",
-          "confidence": 0.69
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How Trump Is Reacting to the Midterm Results",
-        "link": "https://www.nytimes.com/video/us/politics/100000011262332/how-trump-is-reacting-to-the-midterm-results.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "In the days after Republicans suffered massive midterm election defeats, President Trump appeared unmoved. The New York Times’s White House correspondent Maggie Haberman explains how Trump’s public demeanor compares with what he has shared behind closed doors about voters’ frustration with some of his policies.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T14:06:13.000Z",
-        "sentiment": {
-          "posP": 4,
-          "negP": 14.3,
-          "neuP": 81.7,
-          "label": "negative",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Midterm Election Losses Complicate Trump’s Options on Iran War",
-        "link": "https://www.nytimes.com/2026/11/05/us/politics/trump-iran-war-midterm-elections.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The midterm results laid bare the deep unpopularity of the war of choice that President Trump started and is now struggling to end.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T10:04:44.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 32.2,
-          "neuP": 67.8,
-          "label": "negative",
-          "confidence": 0.92
-        },
-        "category": "usa"
-      },
-      {
         "title": "Tech Billionaires Face Tricky Political Waters After Democratic Midterm Sweep",
         "link": "https://www.nytimes.com/2026/11/05/technology/tech-billionaires-democrats-midterms.html",
         "source": "NYT",
@@ -5312,7 +5212,7 @@
         "description": "Many donated money to President Trump’s favored causes and became his allies. Now that political alignment may be a liability.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T17:02:32.000Z",
+        "publishedAt": "2026-11-05T21:14:24.000Z",
         "sentiment": {
           "posP": 8.7,
           "negP": 10.6,
@@ -5323,22 +5223,162 @@
         "category": "usa"
       },
       {
-        "title": "How Melania Trump Became a Dark Horse Diplomat on Ukraine",
-        "link": "https://www.nytimes.com/2026/11/05/world/europe/melania-trump-oleshky-ukraine-ceasefire.html",
+        "title": "Trump Tried to Undermine the Nation’s Elections. It Didn’t Work.",
+        "link": "https://www.nytimes.com/2026/11/05/us/election-deniers-midterms-trump.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Both Moscow and Kyiv say Mrs. Trump’s team was the driving force behind an evacuation of a besieged city. It was also in their interest to deliver her a humanitarian win.",
+        "description": "Millions of Americans cast their ballots on Tuesday in an election that showed the resiliency of democracy. The president said he would accept the results.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T17:39:24.000Z",
+        "publishedAt": "2026-11-05T21:37:28.000Z",
         "sentiment": {
-          "posP": 15.9,
-          "negP": 0,
-          "neuP": 84.1,
+          "posP": 6.9,
+          "negP": 5.8,
+          "neuP": 87.3,
+          "label": "neutral",
+          "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Why a Merciless Supreme Court Rebuke on Election Eve Matters",
+        "link": "https://www.nytimes.com/2026/11/05/us/politics/the-docket-supreme-court-election-eve.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The justices took just hours to reject Trump’s bid to meddle in the election.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T22:21:55.000Z",
+        "sentiment": {
+          "posP": 17.2,
+          "negP": 9.9,
+          "neuP": 72.9,
           "label": "positive",
-          "confidence": 0.78
+          "confidence": 0.25
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How Colom Changed a Long Shot in Mississippi Into a Race Too Close to Call",
+        "link": "https://www.nytimes.com/2026/11/05/us/politics/mississippi-senate-race-democrat-colom-hyde-smith.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Scott Colom, a Democrat, ran a viral ad and courted Republicans at a Trump rally before winning virtually the same number of votes as Senator Cindy Hyde-Smith, a Republican.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T22:10:09.000Z",
+        "sentiment": {
+          "posP": 11.5,
+          "negP": 0,
+          "neuP": 88.5,
+          "label": "positive",
+          "confidence": 0.57
+        },
+        "category": "usa"
+      },
+      {
+        "title": "DOJ Steps Up Leak Investigation on Supreme Court Decision Overturning Roe v. Wade",
+        "link": "https://www.nytimes.com/2026/11/05/us/politics/supreme-court-trump-abortion-leak-dobbs.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Investigators, using subpoenas and other law enforcement powers, are accelerating an inquiry that takes the Trump administration into the inner workings of the court.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T21:42:17.000Z",
+        "sentiment": {
+          "posP": 8.8,
+          "negP": 5.9,
+          "neuP": 85.3,
+          "label": "positive",
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "CBS News exit polls show how Democrats won in the midterms",
+        "link": "https://www.cbsnews.com/news/cbs-news-exit-polls-2026-midterms-democrats/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Economic issues helped propel President Trump to victory in 2024, and those same issues dragged down his party in 2026.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T23:16:05.000Z",
+        "sentiment": {
+          "posP": 18,
+          "negP": 3.4,
+          "neuP": 78.6,
+          "label": "positive",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Melania Trump's adviser Marc Beckman on her localized Ukraine ceasefire",
+        "link": "https://www.cbsnews.com/video/melania-trumps-adviser-marc-beckman-on-her-localized-ukraine-ceasefire/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Marc Beckman, Melania Trump's exclusive senior adviser, joins \"The Takeout\" to discuss her recent efforts to negotiate a local ceasefire in Olehky, Ukraine.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T23:11:34.000Z",
+        "sentiment": {
+          "posP": 4.6,
+          "negP": 0,
+          "neuP": 95.4,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump admits Iran war played a role in Republicans' midterm defeat",
+        "link": "https://www.cbsnews.com/video/trump-admits-iran-war-played-a-role-in-republicans-midterm-defeat/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump has admitted that his war with Iran played a role in many voters' decisions to go blue during the midterms as Democrats prepare to push for policy change in the new Congress. CBS News' Samantha Vinograd has more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T22:56:25.000Z",
+        "sentiment": {
+          "posP": 13.7,
+          "negP": 17.6,
+          "neuP": 68.7,
+          "label": "negative",
+          "confidence": 0.66
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he is not firing Pete Hegseth",
+        "link": "https://www.cbsnews.com/video/trump-says-he-is-not-firing-pete-hegseth/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump says he is not firing Defense Secretary Pete Hegseth, despite sources telling CBS News that he has been asking those around him whether he should keep his job. CBS News' Weijia Jiang reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T22:37:05.000Z",
+        "sentiment": {
+          "posP": 9,
+          "negP": 3,
+          "neuP": 88,
+          "label": "positive",
+          "confidence": 0.4
         },
         "category": "usa"
       },
@@ -5352,33 +5392,13 @@
         "description": "After Democrats' sweeping House and Senate victories, the party is laying out how it plans to wield power, while President Trump and Republicans react to their midterm losses.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T18:17:11.000Z",
+        "publishedAt": "2026-11-05T22:26:19.000Z",
         "sentiment": {
           "posP": 11.6,
           "negP": 11.8,
           "neuP": 76.6,
           "label": "neutral",
           "confidence": 0.03
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Oil prices rebound slightly as Iran claims new attacks on ships",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-midterms-strait-of-hormuz/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Oil rebounds slightly as ships continue coming under attack in the Persian Gulf after prices plunged following President Trump's midterm elections rebuke.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T17:52:09.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 16.2,
-          "neuP": 83.8,
-          "label": "negative",
-          "confidence": 0.72
         },
         "category": "usa"
       },
@@ -5392,7 +5412,7 @@
         "description": "Democrats won control of the House in the 2026 midterm elections, CBS News projects, with victories in battleground districts across the country.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T17:22:50.000Z",
+        "publishedAt": "2026-11-05T22:25:30.000Z",
         "sentiment": {
           "posP": 25,
           "negP": 11.3,
@@ -5403,120 +5423,93 @@
         "category": "usa"
       },
       {
-        "title": "Trump's lawyers to argue appeal in \"hush money\" case",
-        "link": "https://www.cbsnews.com/news/trump-hush-money-conviction-appeal/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Melania Trump on Oleshky ceasefire: Russia and Ukraine have chosen 'humanity over war'",
+        "link": "https://www.nbcnews.com/video/melania-trump-thanks-russia-and-ukraine-for-oleshky-ceasefire-272928837687",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump was convicted in 2024 of 34 felonies tied to a 2016 \"hush money\" payment to adult film star Stormy Daniels.",
+        "description": "First lady Melania Trump hosted delegations from Russia and Ukraine to highlight the humanitarian ceasefire she helped broker in Oleshky. She praised the countries for choosing \"humanity over war\" by following through with the agreement.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T17:09:31.000Z",
+        "publishedAt": "2026-11-05T16:41:24.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 17.4,
-          "neuP": 82.6,
-          "label": "negative",
+          "posP": 15.5,
+          "negP": 6.9,
+          "neuP": 77.6,
+          "label": "positive",
+          "confidence": 0.6
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump’s D.C.-area arch expected to be approved, but without sniper or drone plans",
+        "link": "https://www.nbcnews.com/politics/trump-administration/trump-triumphal-arch-approval-opposition-asks-judge-to-block-rcna607642",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The National Capital Planning Commission is expected approve the president’s Triumphal Arch for Washington, D.C., with construction scheduled to begin almost immediately.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T18:56:37.000Z",
+        "sentiment": {
+          "posP": 15.2,
+          "negP": 0,
+          "neuP": 84.8,
+          "label": "positive",
           "confidence": 0.71
         },
         "category": "usa"
       },
       {
-        "title": "Trump to attend Army-Navy football game next month, officials say",
-        "link": "https://www.cbsnews.com/news/trump-army-navy-game-iran-war-midterm-elections/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump has made an appearance at the Army-Navy game several times as commander-in-chief.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T16:41:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Democrats won on affordability. Whether they can deliver it is a different story.",
-        "link": "https://www.nbcnews.com/politics/2026-election/democrats-affordability-promise-midterms-trump-rcna607409",
+        "title": "Justice Department moves to toss Steve Bannon’s conviction tied to Congress’ Jan. 6 investigation",
+        "link": "https://www.nbcnews.com/politics/justice-department/trump-administration-toss-steve-bannon-conviction-congress-jan-6-rcna607693",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Fulfilling a campaign promise to bring down high prices is a lot harder than it sounds. Just ask Donald Trump.",
+        "description": "The Trump administration moved to vacate the conviction of Steve Bannon on two counts of contempt of Congress in connection with its investigation into the Jan. 6 attack on the U.S.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-04T20:39:30.000Z",
+        "publishedAt": "2026-11-05T18:41:17.000Z",
         "sentiment": {
-          "posP": 17.6,
-          "negP": 0,
-          "neuP": 82.4,
-          "label": "positive",
-          "confidence": 0.72
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Tech moguls suffer defeat as midterm results show young men swinging away from Trump",
-        "link": "https://www.nbcnews.com/video/tech-moguls-suffer-defeat-as-manosphere-swings-away-from-trump-272884805508",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Young men, a key voting block that helped President Trump return to the White House in 2024, are now swinging away from him even after tech billionaires spent a record amount on midterms. The results show critical cracks in the so-called \"manosphere.\" NBC News' Julie Tsirkin reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-04T23:45:20.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 17.5,
-          "neuP": 82.5,
+          "posP": 6.8,
+          "negP": 13.7,
+          "neuP": 79.5,
           "label": "negative",
-          "confidence": 0.89
+          "confidence": 0.54
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 8,
-      "neu": 83.42,
-      "neg": 8.58,
-      "count": 37
+      "pos": 9.31,
+      "neu": 83.82,
+      "neg": 6.87,
+      "count": 33
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 12.28,
-        "neu": 81.26,
-        "neg": 6.46,
-        "count": 8
+        "source": "NYT",
+        "pos": 9.44,
+        "neu": 84.24,
+        "neg": 6.31,
+        "count": 7
       },
       {
-        "source": "NYT",
-        "pos": 6.89,
-        "neu": 80.46,
-        "neg": 12.66,
+        "source": "NBC News",
+        "pos": 11.81,
+        "neu": 82.33,
+        "neg": 5.86,
         "count": 7
       },
       {
         "source": "CBS News",
-        "pos": 6.77,
-        "neu": 81.45,
-        "neg": 11.78,
-        "count": 6
-      },
-      {
-        "source": "ABC News",
-        "pos": 11.57,
-        "neu": 84.75,
-        "neg": 3.67,
-        "count": 4
+        "pos": 12.27,
+        "neu": 79,
+        "neg": 8.73,
+        "count": 7
       },
       {
         "source": "WSJ",
@@ -5533,55 +5526,55 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 8.77,
-        "neu": 87.5,
-        "neg": 3.73,
-        "count": 3
-      },
-      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
         "neg": 9,
+        "count": 2
+      },
+      {
+        "source": "ABC News",
+        "pos": 13.65,
+        "neu": 86.35,
+        "neg": 0,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 8.37,
-        "neu": 81.89,
-        "neg": 9.74,
-        "count": 20
+        "pos": 10.56,
+        "neu": 83.46,
+        "neg": 5.98,
+        "count": 14
       },
       {
         "topic": "Policy",
-        "pos": 6.52,
-        "neu": 86.47,
-        "neg": 7.02,
-        "count": 6
+        "pos": 8.55,
+        "neu": 83.73,
+        "neg": 7.72,
+        "count": 8
       },
       {
         "topic": "Foreign Policy",
-        "pos": 8.32,
-        "neu": 83.85,
+        "pos": 6.43,
+        "neu": 85.73,
         "neg": 7.83,
         "count": 6
       },
       {
         "topic": "Economy",
-        "pos": 9.88,
-        "neu": 84.03,
-        "neg": 6.1,
-        "count": 4
+        "pos": 7.93,
+        "neu": 83.93,
+        "neg": 8.13,
+        "count": 3
       },
       {
         "topic": "Legal",
-        "pos": 0,
-        "neu": 90.9,
-        "neg": 9.1,
-        "count": 1
+        "pos": 14.35,
+        "neu": 80.7,
+        "neg": 4.95,
+        "count": 2
       }
     ]
   },
@@ -5608,28 +5601,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-05T14:18:23.453Z",
+        "label": "2026-11-05T19:42:07.440Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T15:18:23.453Z",
+        "label": "2026-11-05T20:42:07.440Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T16:18:23.453Z",
+        "label": "2026-11-05T21:42:07.440Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T17:18:23.453Z",
+        "label": "2026-11-05T22:42:07.440Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5638,28 +5631,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-05T14:18:23.453Z",
+        "label": "2026-11-05T19:42:07.440Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T15:18:23.453Z",
+        "label": "2026-11-05T20:42:07.440Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T16:18:23.453Z",
+        "label": "2026-11-05T21:42:07.440Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T17:18:23.453Z",
+        "label": "2026-11-05T22:42:07.440Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5739,7 +5732,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-05T18:18:23.455Z",
+    "generatedAt": "2026-11-05T23:42:07.441Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5860,8 +5853,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 167,
-      "potusArticles": 37,
+      "usaArticles": 169,
+      "potusArticles": 33,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
