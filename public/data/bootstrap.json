@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-05T23:42:07.437Z",
+  "generatedAt": "2026-11-06T03:41:54.382Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 169,
-    "potusArticles": 33
+    "usaArticles": 167,
+    "potusArticles": 31
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-05T19:42:07.437Z",
+          "label": "2026-11-05T23:41:54.382Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T20:42:07.437Z",
+          "label": "2026-11-06T00:41:54.382Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T21:42:07.437Z",
+          "label": "2026-11-06T01:41:54.382Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T22:42:07.437Z",
+          "label": "2026-11-06T02:41:54.382Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-05T19:42:07.437Z",
+          "label": "2026-11-05T23:41:54.382Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T20:42:07.437Z",
+          "label": "2026-11-06T00:41:54.382Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T21:42:07.437Z",
+          "label": "2026-11-06T01:41:54.382Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-05T22:42:07.437Z",
+          "label": "2026-11-06T02:41:54.382Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 8.51,
-      "neu": 81.88,
-      "neg": 9.61,
-      "count": 169
+      "pos": 7.78,
+      "neu": 82.6,
+      "neg": 9.62,
+      "count": 167
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.68,
-        "neu": 82.59,
-        "neg": 8.72,
-        "count": 42
+        "pos": 9.03,
+        "neu": 83.2,
+        "neg": 7.77,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 10.72,
-        "neu": 78.1,
-        "neg": 11.18,
+        "pos": 8.62,
+        "neu": 80.14,
+        "neg": 11.24,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 8.38,
-        "neu": 82.02,
-        "neg": 9.6,
-        "count": 25
+        "pos": 8.23,
+        "neu": 82.05,
+        "neg": 9.72,
+        "count": 26
       },
       {
         "source": "NYT",
-        "pos": 10.33,
-        "neu": 80.62,
-        "neg": 9.05,
+        "pos": 7.43,
+        "neu": 81.65,
+        "neg": 10.93,
         "count": 24
       },
       {
@@ -4598,10 +4598,10 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.11,
-        "neu": 88.14,
-        "neg": 5.75,
-        "count": 20
+        "pos": 5.64,
+        "neu": 89.41,
+        "neg": 4.95,
+        "count": 19
       },
       {
         "source": "NPR",
@@ -4628,132 +4628,132 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
-        },
-        {
-          "name": "Healthcare",
-          "bias": -9.93,
-          "count": 8
-        },
-        {
           "name": "Utilities",
-          "bias": -9.45,
+          "bias": -13.4,
           "count": 2
         },
         {
-          "name": "Manufacturing",
-          "bias": -6.7,
-          "count": 3
+          "name": "Communication",
+          "bias": -7,
+          "count": 2
         },
         {
-          "name": "Real Estate",
-          "bias": 6.57,
-          "count": 3
+          "name": "Healthcare",
+          "bias": -5.5,
+          "count": 6
         },
         {
           "name": "Energy",
-          "bias": 4.79,
-          "count": 11
-        },
-        {
-          "name": "Materials",
-          "bias": 2.9,
-          "count": 1
-        },
-        {
-          "name": "Finance",
-          "bias": -2.35,
-          "count": 19
+          "bias": 3.78,
+          "count": 13
         },
         {
           "name": "Technology",
-          "bias": -0.9,
-          "count": 121
+          "bias": -2.75,
+          "count": 124
+        },
+        {
+          "name": "Finance",
+          "bias": -2.67,
+          "count": 20
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 2.6,
+          "count": 2
+        },
+        {
+          "name": "Real Estate",
+          "bias": 2.25,
+          "count": 2
+        },
+        {
+          "name": "Materials",
+          "bias": 1.45,
+          "count": 2
         }
       ],
       "pos": [
         {
-          "name": "Real Estate",
-          "bias": 6.57,
-          "count": 3
-        },
-        {
           "name": "Energy",
-          "bias": 4.79,
-          "count": 11
+          "bias": 3.78,
+          "count": 13
         },
         {
-          "name": "Materials",
-          "bias": 2.9,
-          "count": 1
+          "name": "Manufacturing",
+          "bias": 2.6,
+          "count": 2
+        },
+        {
+          "name": "Real Estate",
+          "bias": 2.25,
+          "count": 2
         }
       ],
       "neu": [
         {
-          "name": "Manufacturing",
-          "bias": -6.7,
-          "count": 3
+          "name": "Technology",
+          "bias": -2.75,
+          "count": 124
         },
         {
           "name": "Finance",
-          "bias": -2.35,
-          "count": 19
+          "bias": -2.67,
+          "count": 20
         },
         {
-          "name": "Technology",
-          "bias": -0.9,
-          "count": 121
+          "name": "Materials",
+          "bias": 1.45,
+          "count": 2
         }
       ],
       "neg": [
         {
+          "name": "Utilities",
+          "bias": -13.4,
+          "count": 2
+        },
+        {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -7,
+          "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -9.93,
-          "count": 8
-        },
-        {
-          "name": "Utilities",
-          "bias": -9.45,
-          "count": 2
+          "bias": -5.5,
+          "count": 6
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-05T19:42:07.438Z",
+          "label": "2026-11-05T23:41:54.383Z",
+          "pos": 5,
+          "neu": 87,
+          "neg": 7,
+          "count": 10
+        },
+        {
+          "label": "2026-11-06T00:41:54.383Z",
+          "pos": 6,
+          "neu": 85,
+          "neg": 9,
+          "count": 21
+        },
+        {
+          "label": "2026-11-06T01:41:54.383Z",
           "pos": 9,
-          "neu": 76,
-          "neg": 15,
-          "count": 17
-        },
-        {
-          "label": "2026-11-05T20:42:07.438Z",
-          "pos": 8,
-          "neu": 85,
+          "neu": 83,
           "neg": 7,
-          "count": 16
+          "count": 14
         },
         {
-          "label": "2026-11-05T21:42:07.438Z",
-          "pos": 12,
-          "neu": 80,
-          "neg": 7,
-          "count": 22
-        },
-        {
-          "label": "2026-11-05T22:42:07.438Z",
-          "pos": 8,
-          "neu": 85,
-          "neg": 8,
-          "count": 23
+          "label": "2026-11-06T02:41:54.383Z",
+          "pos": 13,
+          "neu": 75,
+          "neg": 12,
+          "count": 9
         }
       ]
     }
@@ -4961,42 +4961,42 @@
         "category": "world"
       },
       {
-        "title": "Tech Billionaires Face Tricky Political Waters After Democratic Midterm Sweep",
-        "link": "https://www.nytimes.com/2026/11/05/technology/tech-billionaires-democrats-midterms.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Vance ‘privately’ blasts Netanyahu as Iran war divides Trump administration and 2028 ambitions loom",
+        "link": "https://www.foxnews.com/politics/vance-privately-blasts-netanyahu-iran-war-divides-trump-admin-2028-ambitions-loom",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Many donated money to President Trump’s favored causes and became his allies. Now that political alignment may be a liability.",
+        "description": "JD Vance privately accused Benjamin Netanyahu of being \"wrong on everything\" about the Iran war as he positions himself for a 2028 presidential bid.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T21:14:24.000Z",
+        "publishedAt": "2026-11-05T23:49:09.000Z",
         "sentiment": {
-          "posP": 8.7,
-          "negP": 10.6,
-          "neuP": 80.7,
-          "label": "neutral",
-          "confidence": 0.1
+          "posP": 0,
+          "negP": 31.9,
+          "neuP": 68.1,
+          "label": "negative",
+          "confidence": 0.93
         },
         "category": "usa"
       },
       {
-        "title": "Trump Tried to Undermine the Nation’s Elections. It Didn’t Work.",
-        "link": "https://www.nytimes.com/2026/11/05/us/election-deniers-midterms-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump signs proclamation to prevent changes to Oval Office, other White House rooms",
+        "link": "https://www.foxnews.com/politics/trump-signs-proclamation-prevent-changes-oval-office-other-white-house-rooms",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Millions of Americans cast their ballots on Tuesday in an election that showed the resiliency of democracy. The president said he would accept the results.",
+        "description": "Trump signed a proclamation designating the Oval Office and Cabinet Room a national monument to prevent future presidents from altering them.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T21:37:28.000Z",
+        "publishedAt": "2026-11-05T23:10:31.000Z",
         "sentiment": {
-          "posP": 6.9,
-          "negP": 5.8,
-          "neuP": 87.3,
+          "posP": 6.8,
+          "negP": 0,
+          "neuP": 93.2,
           "label": "neutral",
-          "confidence": 0.1
+          "confidence": 0.05
         },
         "category": "usa"
       }
@@ -5203,22 +5203,42 @@
         "category": "world"
       },
       {
-        "title": "Tech Billionaires Face Tricky Political Waters After Democratic Midterm Sweep",
-        "link": "https://www.nytimes.com/2026/11/05/technology/tech-billionaires-democrats-midterms.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Vance ‘privately’ blasts Netanyahu as Iran war divides Trump administration and 2028 ambitions loom",
+        "link": "https://www.foxnews.com/politics/vance-privately-blasts-netanyahu-iran-war-divides-trump-admin-2028-ambitions-loom",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Many donated money to President Trump’s favored causes and became his allies. Now that political alignment may be a liability.",
+        "description": "JD Vance privately accused Benjamin Netanyahu of being \"wrong on everything\" about the Iran war as he positions himself for a 2028 presidential bid.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T21:14:24.000Z",
+        "publishedAt": "2026-11-05T23:49:09.000Z",
         "sentiment": {
-          "posP": 8.7,
-          "negP": 10.6,
-          "neuP": 80.7,
+          "posP": 0,
+          "negP": 31.9,
+          "neuP": 68.1,
+          "label": "negative",
+          "confidence": 0.93
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump signs proclamation to prevent changes to Oval Office, other White House rooms",
+        "link": "https://www.foxnews.com/politics/trump-signs-proclamation-prevent-changes-oval-office-other-white-house-rooms",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump signed a proclamation designating the Oval Office and Cabinet Room a national monument to prevent future presidents from altering them.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T23:10:31.000Z",
+        "sentiment": {
+          "posP": 6.8,
+          "negP": 0,
+          "neuP": 93.2,
           "label": "neutral",
-          "confidence": 0.1
+          "confidence": 0.05
         },
         "category": "usa"
       },
@@ -5232,7 +5252,7 @@
         "description": "Millions of Americans cast their ballots on Tuesday in an election that showed the resiliency of democracy. The president said he would accept the results.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T21:37:28.000Z",
+        "publishedAt": "2026-11-06T02:47:36.000Z",
         "sentiment": {
           "posP": 6.9,
           "negP": 5.8,
@@ -5263,22 +5283,62 @@
         "category": "usa"
       },
       {
-        "title": "How Colom Changed a Long Shot in Mississippi Into a Race Too Close to Call",
-        "link": "https://www.nytimes.com/2026/11/05/us/politics/mississippi-senate-race-democrat-colom-hyde-smith.html",
+        "title": "Rubio Dismisses Reports He Will Leave His Jobs to Run for President",
+        "link": "https://www.nytimes.com/2026/11/05/us/politics/marco-rubio-2028.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Scott Colom, a Democrat, ran a viral ad and courted Republicans at a Trump rally before winning virtually the same number of votes as Senator Cindy Hyde-Smith, a Republican.",
+        "description": "President Trump’s secretary of state and national security adviser said he intended to stick with the administration to the end.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T22:10:09.000Z",
+        "publishedAt": "2026-11-05T22:49:38.000Z",
         "sentiment": {
-          "posP": 11.5,
-          "negP": 0,
-          "neuP": 88.5,
+          "posP": 7.1,
+          "negP": 3.6,
+          "neuP": 89.3,
           "label": "positive",
-          "confidence": 0.57
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Moves to Make Oval Office a National Monument",
+        "link": "https://www.nytimes.com/2026/11/05/us/politics/trump-oval-office-national-monument.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president’s announcement reinforced his post-midterm elections preoccupation on White House renovation projects.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-06T01:24:38.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Met With a Senior Russian Official on a Ukraine Peace Deal",
+        "link": "https://www.nytimes.com/2026/11/05/us/politics/trump-russian-official-ukraine-peace-deal.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump said the deal “might involve all of Europe.” He indicated he had met with a Kremlin envoy whom Melania Trump hosted at the White House on Thursday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T23:47:35.000Z",
+        "sentiment": {
+          "posP": 8.2,
+          "negP": 0,
+          "neuP": 91.8,
+          "label": "positive",
+          "confidence": 0.54
         },
         "category": "usa"
       },
@@ -5292,7 +5352,7 @@
         "description": "Investigators, using subpoenas and other law enforcement powers, are accelerating an inquiry that takes the Trump administration into the inner workings of the court.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T21:42:17.000Z",
+        "publishedAt": "2026-11-06T01:10:29.000Z",
         "sentiment": {
           "posP": 8.8,
           "negP": 5.9,
@@ -5303,87 +5363,27 @@
         "category": "usa"
       },
       {
-        "title": "CBS News exit polls show how Democrats won in the midterms",
-        "link": "https://www.cbsnews.com/news/cbs-news-exit-polls-2026-midterms-democrats/",
+        "title": "Trump's 250-foot arch wins approval from committee stacked with allies",
+        "link": "https://www.cbsnews.com/news/trump-arch-approval-national-capital-planning-commission/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Economic issues helped propel President Trump to victory in 2024, and those same issues dragged down his party in 2026.",
+        "description": "The National Capital Planning Commission voted Thursday to approve plans for President Trump's 250-foot triumphal arch. Legal challenges are still possible.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T23:16:05.000Z",
+        "publishedAt": "2026-11-06T03:39:25.000Z",
         "sentiment": {
-          "posP": 18,
-          "negP": 3.4,
-          "neuP": 78.6,
-          "label": "positive",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Melania Trump's adviser Marc Beckman on her localized Ukraine ceasefire",
-        "link": "https://www.cbsnews.com/video/melania-trumps-adviser-marc-beckman-on-her-localized-ukraine-ceasefire/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Marc Beckman, Melania Trump's exclusive senior adviser, joins \"The Takeout\" to discuss her recent efforts to negotiate a local ceasefire in Olehky, Ukraine.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T23:11:34.000Z",
-        "sentiment": {
-          "posP": 4.6,
+          "posP": 32.6,
           "negP": 0,
-          "neuP": 95.4,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump admits Iran war played a role in Republicans' midterm defeat",
-        "link": "https://www.cbsnews.com/video/trump-admits-iran-war-played-a-role-in-republicans-midterm-defeat/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump has admitted that his war with Iran played a role in many voters' decisions to go blue during the midterms as Democrats prepare to push for policy change in the new Congress. CBS News' Samantha Vinograd has more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T22:56:25.000Z",
-        "sentiment": {
-          "posP": 13.7,
-          "negP": 17.6,
-          "neuP": 68.7,
-          "label": "negative",
-          "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he is not firing Pete Hegseth",
-        "link": "https://www.cbsnews.com/video/trump-says-he-is-not-firing-pete-hegseth/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump says he is not firing Defense Secretary Pete Hegseth, despite sources telling CBS News that he has been asking those around him whether he should keep his job. CBS News' Weijia Jiang reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T22:37:05.000Z",
-        "sentiment": {
-          "posP": 9,
-          "negP": 3,
-          "neuP": 88,
+          "neuP": 67.4,
           "label": "positive",
-          "confidence": 0.4
+          "confidence": 0.89
         },
         "category": "usa"
       },
       {
-        "title": "Democrats prepare to take Congress as GOP grapples with stunning losses",
+        "title": "Democrats flip more seats in Congress as GOP grapples with stunning losses",
         "link": "https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
@@ -5392,124 +5392,124 @@
         "description": "After Democrats' sweeping House and Senate victories, the party is laying out how it plans to wield power, while President Trump and Republicans react to their midterm losses.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T22:26:19.000Z",
+        "publishedAt": "2026-11-06T01:50:06.000Z",
         "sentiment": {
-          "posP": 11.6,
-          "negP": 11.8,
-          "neuP": 76.6,
+          "posP": 11.3,
+          "negP": 11.6,
+          "neuP": 77.1,
           "label": "neutral",
           "confidence": 0.03
         },
         "category": "usa"
       },
       {
-        "title": "Democrats win House majority with Trump approval at historic low",
-        "link": "https://www.cbsnews.com/live-updates/house-election-results-2026/",
+        "title": "Trump lawyers try to appeal convictions in his Stormy Daniels \"hush money\" case",
+        "link": "https://www.cbsnews.com/video/trump-lawyers-try-appeal-convictions-stormy-daniels-hush-money-case/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Democrats won control of the House in the 2026 midterm elections, CBS News projects, with victories in battleground districts across the country.",
+        "description": "Judges grilled President Trump's lawyers on Thursday as they try to get his conviction in the Stormy Daniels \"hush money\" case thrown out. The president was convicted of 34 felonies by a unanimous jury tied to a 2016 payment to adult film star Stormy Daniels. Now, his team argues that some of the evidence presented to jurors may be subject to presidential immunity. CBS News legal analyst Jessica Levinson has more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-05T22:25:30.000Z",
+        "publishedAt": "2026-11-06T01:10:49.000Z",
         "sentiment": {
-          "posP": 25,
-          "negP": 11.3,
-          "neuP": 63.7,
-          "label": "positive",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Melania Trump on Oleshky ceasefire: Russia and Ukraine have chosen 'humanity over war'",
-        "link": "https://www.nbcnews.com/video/melania-trump-thanks-russia-and-ukraine-for-oleshky-ceasefire-272928837687",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "First lady Melania Trump hosted delegations from Russia and Ukraine to highlight the humanitarian ceasefire she helped broker in Oleshky. She praised the countries for choosing \"humanity over war\" by following through with the agreement.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T16:41:24.000Z",
-        "sentiment": {
-          "posP": 15.5,
-          "negP": 6.9,
-          "neuP": 77.6,
-          "label": "positive",
-          "confidence": 0.6
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump’s D.C.-area arch expected to be approved, but without sniper or drone plans",
-        "link": "https://www.nbcnews.com/politics/trump-administration/trump-triumphal-arch-approval-opposition-asks-judge-to-block-rcna607642",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The National Capital Planning Commission is expected approve the president’s Triumphal Arch for Washington, D.C., with construction scheduled to begin almost immediately.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T18:56:37.000Z",
-        "sentiment": {
-          "posP": 15.2,
-          "negP": 0,
-          "neuP": 84.8,
-          "label": "positive",
-          "confidence": 0.71
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Justice Department moves to toss Steve Bannon’s conviction tied to Congress’ Jan. 6 investigation",
-        "link": "https://www.nbcnews.com/politics/justice-department/trump-administration-toss-steve-bannon-conviction-congress-jan-6-rcna607693",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration moved to vacate the conviction of Steve Bannon on two counts of contempt of Congress in connection with its investigation into the Jan. 6 attack on the U.S.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-05T18:41:17.000Z",
-        "sentiment": {
-          "posP": 6.8,
-          "negP": 13.7,
-          "neuP": 79.5,
+          "posP": 1.7,
+          "negP": 7,
+          "neuP": 91.3,
           "label": "negative",
-          "confidence": 0.54
+          "confidence": 0.68
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Nvidia's Huang is asked to brief Congress on reported Chinese spy relationship",
+        "link": "https://www.cnbc.com/2026/11/05/nvidia-jensen-huang-china-spy-congress.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump was briefed about a year ago about those intelligence findings, The New York Times reported.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T22:21:29.000Z",
+        "sentiment": {
+          "posP": 10,
+          "negP": 0,
+          "neuP": 90,
+          "label": "positive",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's energy deals are about to face a wave of investigations by Democrats",
+        "link": "https://www.cnbc.com/2026/11/05/trump-election-energy-venezuela-critical-mineral-renewable-iran.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats are certain to scrutinize the U.S. intervention in Venezuela, administration mineral deals and the cancellation of previously funded energy projects.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-05T19:13:06.000Z",
+        "sentiment": {
+          "posP": 17.4,
+          "negP": 0,
+          "neuP": 82.6,
+          "label": "positive",
+          "confidence": 0.65
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump focuses on White House decor for second straight day in post-midterm remarks",
+        "link": "https://www.nbcnews.com/politics/white-house/trump-focuses-white-house-decor-second-straight-day-midterm-remarks-rcna607776",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president signed a proclamation that he said would prevent major changes to the Oval Office and the Cabinet Room by future presidents without congressional approval.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-06T01:50:16.000Z",
+        "sentiment": {
+          "posP": 7.4,
+          "negP": 6.3,
+          "neuP": 86.3,
+          "label": "neutral",
+          "confidence": 0.14
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 9.31,
-      "neu": 83.82,
-      "neg": 6.87,
-      "count": 33
+      "pos": 7.68,
+      "neu": 85.68,
+      "neg": 6.65,
+      "count": 31
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 9.44,
-        "neu": 84.24,
-        "neg": 6.31,
-        "count": 7
+        "pos": 7.65,
+        "neu": 87.7,
+        "neg": 4.65,
+        "count": 8
       },
       {
         "source": "NBC News",
-        "pos": 11.81,
-        "neu": 82.33,
-        "neg": 5.86,
-        "count": 7
+        "pos": 11.95,
+        "neu": 84.47,
+        "neg": 3.58,
+        "count": 4
       },
       {
         "source": "CBS News",
-        "pos": 12.27,
-        "neu": 79,
-        "neg": 8.73,
-        "count": 7
+        "pos": 12.4,
+        "neu": 79.45,
+        "neg": 8.15,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5526,55 +5526,69 @@
         "count": 3
       },
       {
+        "source": "Fox News",
+        "pos": 5.27,
+        "neu": 84.1,
+        "neg": 10.63,
+        "count": 3
+      },
+      {
+        "source": "ABC News",
+        "pos": 9.1,
+        "neu": 87.73,
+        "neg": 3.17,
+        "count": 3
+      },
+      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
         "neg": 9,
-        "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 13.65,
-        "neu": 86.35,
-        "neg": 0,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 10.56,
-        "neu": 83.46,
-        "neg": 5.98,
-        "count": 14
+        "pos": 7.26,
+        "neu": 87.26,
+        "neg": 5.48,
+        "count": 12
       },
       {
         "topic": "Policy",
-        "pos": 8.55,
-        "neu": 83.73,
-        "neg": 7.72,
+        "pos": 5.79,
+        "neu": 86.1,
+        "neg": 8.11,
         "count": 8
       },
       {
         "topic": "Foreign Policy",
-        "pos": 6.43,
-        "neu": 85.73,
-        "neg": 7.83,
-        "count": 6
-      },
-      {
-        "topic": "Economy",
-        "pos": 7.93,
-        "neu": 83.93,
-        "neg": 8.13,
-        "count": 3
+        "pos": 5.34,
+        "neu": 86.64,
+        "neg": 8.02,
+        "count": 5
       },
       {
         "topic": "Legal",
-        "pos": 14.35,
-        "neu": 80.7,
-        "neg": 4.95,
+        "pos": 17.17,
+        "neu": 77.2,
+        "neg": 5.63,
+        "count": 3
+      },
+      {
+        "topic": "Economy",
+        "pos": 9.5,
+        "neu": 84.5,
+        "neg": 6,
         "count": 2
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 7.4,
+        "neu": 86.3,
+        "neg": 6.3,
+        "count": 1
       }
     ]
   },
@@ -5601,28 +5615,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-05T19:42:07.440Z",
+        "label": "2026-11-05T23:41:54.385Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T20:42:07.440Z",
+        "label": "2026-11-06T00:41:54.385Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T21:42:07.440Z",
+        "label": "2026-11-06T01:41:54.385Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T22:42:07.440Z",
+        "label": "2026-11-06T02:41:54.385Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5631,28 +5645,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-05T19:42:07.440Z",
+        "label": "2026-11-05T23:41:54.385Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T20:42:07.440Z",
+        "label": "2026-11-06T00:41:54.385Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T21:42:07.440Z",
+        "label": "2026-11-06T01:41:54.385Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-05T22:42:07.440Z",
+        "label": "2026-11-06T02:41:54.385Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5732,7 +5746,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-05T23:42:07.441Z",
+    "generatedAt": "2026-11-06T03:41:54.386Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5853,8 +5867,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 169,
-      "potusArticles": 33,
+      "usaArticles": 167,
+      "potusArticles": 31,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
