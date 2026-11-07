@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-07T02:52:48.862Z",
+  "generatedAt": "2026-11-07T09:54:18.427Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 188,
-    "potusArticles": 52
+    "usaArticles": 187,
+    "potusArticles": 51
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-06T22:52:48.863Z",
+          "label": "2026-11-07T05:54:18.428Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-06T23:52:48.863Z",
+          "label": "2026-11-07T06:54:18.428Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-07T00:52:48.863Z",
+          "label": "2026-11-07T07:54:18.428Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-07T01:52:48.863Z",
+          "label": "2026-11-07T08:54:18.428Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-06T22:52:48.863Z",
+          "label": "2026-11-07T05:54:18.428Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-06T23:52:48.863Z",
+          "label": "2026-11-07T06:54:18.428Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-07T00:52:48.863Z",
+          "label": "2026-11-07T07:54:18.428Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-07T01:52:48.863Z",
+          "label": "2026-11-07T08:54:18.428Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,45 +4555,45 @@
       }
     ],
     "sentiment": {
-      "pos": 8.09,
-      "neu": 82.27,
-      "neg": 9.65,
-      "count": 188
+      "pos": 8.31,
+      "neu": 81.92,
+      "neg": 9.77,
+      "count": 187
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.54,
-        "neu": 80.58,
-        "neg": 8.87,
+        "pos": 10.96,
+        "neu": 79.77,
+        "neg": 9.26,
         "count": 43
       },
       {
         "source": "Fox News",
-        "pos": 8.22,
-        "neu": 82.22,
-        "neg": 9.56,
+        "pos": 9.11,
+        "neu": 80.92,
+        "neg": 9.97,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.76,
-        "neu": 81.95,
-        "neg": 12.29,
+        "pos": 5.79,
+        "neu": 82.52,
+        "neg": 11.69,
         "count": 26
-      },
-      {
-        "source": "NYT",
-        "pos": 7.71,
-        "neu": 81.23,
-        "neg": 11.06,
-        "count": 21
       },
       {
         "source": "WSJ",
         "pos": 6.33,
         "neu": 79.08,
         "neg": 14.6,
+        "count": 20
+      },
+      {
+        "source": "NYT",
+        "pos": 7.65,
+        "neu": 80.66,
+        "neg": 11.69,
         "count": 20
       },
       {
@@ -4641,7 +4641,7 @@
         },
         {
           "name": "Manufacturing",
-          "bias": -14.5,
+          "bias": -14.61,
           "count": 7
         },
         {
@@ -4650,49 +4650,44 @@
           "count": 1
         },
         {
-          "name": "Real Estate",
-          "bias": -6.3,
-          "count": 3
-        },
-        {
           "name": "Utilities",
           "bias": -6.05,
           "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": -4.95,
-          "count": 11
+          "name": "Energy",
+          "bias": 5.54,
+          "count": 14
         },
         {
-          "name": "Energy",
-          "bias": 3.48,
-          "count": 13
+          "name": "Healthcare",
+          "bias": -5.01,
+          "count": 8
         },
         {
           "name": "Finance",
-          "bias": -3.16,
-          "count": 22
+          "bias": -3.57,
+          "count": 21
+        },
+        {
+          "name": "Real Estate",
+          "bias": -2.85,
+          "count": 4
         },
         {
           "name": "Technology",
-          "bias": -2.1,
-          "count": 137
+          "bias": -2.01,
+          "count": 141
         }
       ],
       "pos": [
         {
           "name": "Energy",
-          "bias": 3.48,
-          "count": 13
+          "bias": 5.54,
+          "count": 14
         }
       ],
       "neu": [
-        {
-          "name": "Real Estate",
-          "bias": -6.3,
-          "count": 3
-        },
         {
           "name": "Utilities",
           "bias": -6.05,
@@ -4700,8 +4695,13 @@
         },
         {
           "name": "Healthcare",
-          "bias": -4.95,
-          "count": 11
+          "bias": -5.01,
+          "count": 8
+        },
+        {
+          "name": "Finance",
+          "bias": -3.57,
+          "count": 21
         }
       ],
       "neg": [
@@ -4712,7 +4712,7 @@
         },
         {
           "name": "Manufacturing",
-          "bias": -14.5,
+          "bias": -14.61,
           "count": 7
         },
         {
@@ -4725,32 +4725,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-06T22:52:48.865Z",
-          "pos": 1,
-          "neu": 88,
-          "neg": 11,
-          "count": 4
+          "label": "2026-11-07T05:54:18.431Z",
+          "pos": 22,
+          "neu": 78,
+          "neg": 0,
+          "count": 2
         },
         {
-          "label": "2026-11-06T23:52:48.865Z",
-          "pos": 8,
-          "neu": 81,
-          "neg": 10,
-          "count": 12
+          "label": "2026-11-07T06:54:18.431Z",
+          "pos": 0,
+          "neu": 100,
+          "neg": 0,
+          "count": 1
         },
         {
-          "label": "2026-11-07T00:52:48.865Z",
-          "pos": 4,
-          "neu": 82,
+          "label": "2026-11-07T07:54:18.431Z",
+          "pos": 27,
+          "neu": 73,
+          "neg": 0,
+          "count": 1
+        },
+        {
+          "label": "2026-11-07T08:54:18.431Z",
+          "pos": 16,
+          "neu": 70,
           "neg": 14,
-          "count": 23
-        },
-        {
-          "label": "2026-11-07T01:52:48.865Z",
-          "pos": 13,
-          "neu": 83,
-          "neg": 4,
-          "count": 8
+          "count": 3
         }
       ]
     }
@@ -4958,6 +4958,26 @@
         "category": "world"
       },
       {
+        "title": "Top Gulf official offers glimmer of hope on Trump-Iran nuclear talks as threat of war hangs over region",
+        "link": "https://www.foxnews.com/world/gulf-official-glimmer-hope-trump-iran-nuclear-talks-threat-war-hangs-region",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A senior United Arab Emirates official says he is cautiously optimistic about U.S.-Iran nuclear talks through Qatari mediation but won't rule out war.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T09:00:39.000Z",
+        "sentiment": {
+          "posP": 22.8,
+          "negP": 9.5,
+          "neuP": 67.7,
+          "label": "positive",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump highlights NASA nuclear-powered Mars spacecraft mission planned for 2028",
         "link": "https://www.foxnews.com/politics/trump-highlights-nasa-nuclear-powered-mars-spacecraft-mission-planned-2028",
         "source": "Fox News",
@@ -4974,26 +4994,6 @@
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Bernie Sanders thinks Medicare-for-all bill could pass, 'not absolutely certain' Trump would veto",
-        "link": "https://www.foxnews.com/media/bernie-sanders-thinks-medicare-all-bill-could-pass-not-absolutely-certain-trump-would-veto",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Sen. Bernie Sanders, I-Vt., said he's not certain President Donald Trump would veto Medicare-for-all legislation, arguing the president is \"a good politician.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T01:00:48.000Z",
-        "sentiment": {
-          "posP": 7.1,
-          "negP": 16.8,
-          "neuP": 76.1,
-          "label": "negative",
-          "confidence": 0.45
         },
         "category": "usa"
       }
@@ -5200,6 +5200,26 @@
         "category": "world"
       },
       {
+        "title": "Top Gulf official offers glimmer of hope on Trump-Iran nuclear talks as threat of war hangs over region",
+        "link": "https://www.foxnews.com/world/gulf-official-glimmer-hope-trump-iran-nuclear-talks-threat-war-hangs-region",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A senior United Arab Emirates official says he is cautiously optimistic about U.S.-Iran nuclear talks through Qatari mediation but won't rule out war.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T09:00:39.000Z",
+        "sentiment": {
+          "posP": 22.8,
+          "negP": 9.5,
+          "neuP": 67.7,
+          "label": "positive",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
         "title": "Trump highlights NASA nuclear-powered Mars spacecraft mission planned for 2028",
         "link": "https://www.foxnews.com/politics/trump-highlights-nasa-nuclear-powered-mars-spacecraft-mission-planned-2028",
         "source": "Fox News",
@@ -5349,7 +5369,7 @@
         "description": "Jason Reding Quiñones joins what is expected to be a succession of departures at the Justice Department after the midterm elections, including that of the leader of the national security division.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-06T18:38:11.000Z",
+        "publishedAt": "2026-11-06T18:38:12.000Z",
         "sentiment": {
           "posP": 15.7,
           "negP": 11.8,
@@ -5360,22 +5380,22 @@
         "category": "usa"
       },
       {
-        "title": "The Evening: Trump Replaces Chief of Staff",
-        "link": "https://www.nytimes.com/2026/11/06/briefing/stephen-miller-trump.html",
+        "title": "U.S. Homeless Population Had Record Drop in 2025",
+        "link": "https://www.nytimes.com/2026/11/06/us/politics/homeless-population-drop.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Plus, a surprisingly good jobs report. Here’s the latest at the end of Friday.",
+        "description": "The Department of Housing and Urban Development credited President Trump, while homeless advocacy groups said that so-called Housing First policies of his predecessors played a part.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-06T22:47:21.000Z",
+        "publishedAt": "2026-11-07T03:09:53.000Z",
         "sentiment": {
-          "posP": 22.1,
-          "negP": 0,
-          "neuP": 77.9,
+          "posP": 13.2,
+          "negP": 5.7,
+          "neuP": 81.1,
           "label": "positive",
-          "confidence": 0.62
+          "confidence": 0.42
         },
         "category": "usa"
       },
@@ -5420,6 +5440,26 @@
         "category": "usa"
       },
       {
+        "title": "Trump shakes up team as Democratic majority comes into focus",
+        "link": "https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump is swapping out his chief of staff after Republicans' losses in the midterms, with more than two dozen House races unresolved. Follow live updates.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T04:31:47.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 7.2,
+          "neuP": 92.8,
+          "label": "negative",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
         "title": "What Wiles' legacy as chief of staff will be as she is replaced by Stephen Miller",
         "link": "https://www.cbsnews.com/video/what-wiles-legacy-as-chief-of-staff-will-be-as-she-is-replaced-by-stephen-miller/",
         "source": "CBS News",
@@ -5438,75 +5478,35 @@
           "confidence": 0
         },
         "category": "usa"
-      },
-      {
-        "title": "Democrats win House majority with Trump approval at historic low",
-        "link": "https://www.cbsnews.com/live-updates/house-election-results-2026/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats won control of the House in the 2026 midterm elections, CBS News projects, with victories in battleground districts across the country.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T01:56:41.000Z",
-        "sentiment": {
-          "posP": 25,
-          "negP": 11.3,
-          "neuP": 63.7,
-          "label": "positive",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump installs Stephen Miller as chief of staff, replacing Susie Wiles",
-        "link": "https://www.cbsnews.com/news/stephen-miller-trump-chief-of-staff-susie-wiles/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "\"I wanted to make a change,\" President Trump said, explaining the major staffing shakeup.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T01:40:50.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 6.5,
-          "neuP": 93.5,
-          "label": "neutral",
-          "confidence": 0.15
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.02,
-      "neu": 85.84,
-      "neg": 8.14,
-      "count": 52
+      "pos": 5.94,
+      "neu": 85.73,
+      "neg": 8.33,
+      "count": 51
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 6.17,
-        "neu": 87.25,
-        "neg": 6.58,
-        "count": 10
-      },
-      {
         "source": "NYT",
-        "pos": 9.14,
-        "neu": 85.48,
-        "neg": 5.38,
+        "pos": 8.16,
+        "neu": 85.83,
+        "neg": 6.01,
         "count": 9
       },
       {
         "source": "CBS News",
-        "pos": 4.61,
-        "neu": 83.1,
-        "neg": 12.29,
+        "pos": 3.67,
+        "neu": 85.06,
+        "neg": 11.28,
         "count": 9
+      },
+      {
+        "source": "NBC News",
+        "pos": 5.8,
+        "neu": 86.58,
+        "neg": 7.63,
+        "count": 8
       },
       {
         "source": "Washington Post",
@@ -5517,10 +5517,10 @@
       },
       {
         "source": "Fox News",
-        "pos": 3.22,
-        "neu": 83.1,
-        "neg": 13.68,
-        "count": 5
+        "pos": 6.48,
+        "neu": 80.53,
+        "neg": 12.98,
+        "count": 6
       },
       {
         "source": "WSJ",
@@ -5554,9 +5554,9 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.58,
-        "neu": 85.33,
-        "neg": 9.09,
+        "pos": 5.93,
+        "neu": 84.95,
+        "neg": 9.13,
         "count": 35
       },
       {
@@ -5567,17 +5567,17 @@
         "count": 8
       },
       {
-        "topic": "Economy",
-        "pos": 10.88,
-        "neu": 86.72,
-        "neg": 2.4,
-        "count": 5
-      },
-      {
         "topic": "Foreign Policy",
         "pos": 4.63,
         "neu": 85.35,
         "neg": 10.03,
+        "count": 4
+      },
+      {
+        "topic": "Economy",
+        "pos": 8.07,
+        "neu": 88.92,
+        "neg": 3,
         "count": 4
       }
     ]
@@ -5605,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-06T22:52:48.867Z",
+        "label": "2026-11-07T05:54:18.434Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-06T23:52:48.867Z",
+        "label": "2026-11-07T06:54:18.434Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-07T00:52:48.867Z",
+        "label": "2026-11-07T07:54:18.434Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-07T01:52:48.867Z",
+        "label": "2026-11-07T08:54:18.434Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-06T22:52:48.868Z",
+        "label": "2026-11-07T05:54:18.434Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-06T23:52:48.868Z",
+        "label": "2026-11-07T06:54:18.434Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-07T00:52:48.868Z",
+        "label": "2026-11-07T07:54:18.434Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-07T01:52:48.868Z",
+        "label": "2026-11-07T08:54:18.434Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-07T02:52:48.868Z",
+    "generatedAt": "2026-11-07T09:54:18.435Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5857,8 +5857,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 188,
-      "potusArticles": 52,
+      "usaArticles": 187,
+      "potusArticles": 51,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
