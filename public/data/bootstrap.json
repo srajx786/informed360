@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-06T23:17:37.625Z",
+  "generatedAt": "2026-11-07T02:52:48.862Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 190,
-    "potusArticles": 45
+    "usaArticles": 188,
+    "potusArticles": 52
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-06T19:17:37.625Z",
+          "label": "2026-11-06T22:52:48.863Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-06T20:17:37.625Z",
+          "label": "2026-11-06T23:52:48.863Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-06T21:17:37.625Z",
+          "label": "2026-11-07T00:52:48.863Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-06T22:17:37.625Z",
+          "label": "2026-11-07T01:52:48.863Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-06T19:17:37.625Z",
+          "label": "2026-11-06T22:52:48.863Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-06T20:17:37.625Z",
+          "label": "2026-11-06T23:52:48.863Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-06T21:17:37.625Z",
+          "label": "2026-11-07T00:52:48.863Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-06T22:17:37.625Z",
+          "label": "2026-11-07T01:52:48.863Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.6,
-      "neu": 83.04,
-      "neg": 9.36,
-      "count": 190
+      "pos": 8.09,
+      "neu": 82.27,
+      "neg": 9.65,
+      "count": 188
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.42,
-        "neu": 80.48,
-        "neg": 10.1,
+        "pos": 10.54,
+        "neu": 80.58,
+        "neg": 8.87,
         "count": 43
       },
       {
         "source": "Fox News",
-        "pos": 9.14,
-        "neu": 82.52,
-        "neg": 8.34,
+        "pos": 8.22,
+        "neu": 82.22,
+        "neg": 9.56,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.69,
-        "neu": 85.77,
-        "neg": 8.54,
+        "pos": 5.76,
+        "neu": 81.95,
+        "neg": 12.29,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 5.64,
-        "neu": 84.07,
-        "neg": 10.3,
-        "count": 23
+        "pos": 7.71,
+        "neu": 81.23,
+        "neg": 11.06,
+        "count": 21
       },
       {
         "source": "WSJ",
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.72,
-        "neu": 86.57,
-        "neg": 6.71,
+        "pos": 8.09,
+        "neu": 87.59,
+        "neg": 4.31,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 8.67,
-        "neu": 84.3,
-        "neg": 7.03,
+        "pos": 8.22,
+        "neu": 84.22,
+        "neg": 7.55,
         "count": 20
       },
       {
@@ -4635,19 +4635,24 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Materials",
+          "bias": -16.95,
+          "count": 2
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -14.5,
+          "count": 7
+        },
+        {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
-          "name": "Manufacturing",
-          "bias": -11.23,
+          "name": "Real Estate",
+          "bias": -6.3,
           "count": 3
-        },
-        {
-          "name": "Materials",
-          "bias": -6.2,
-          "count": 2
         },
         {
           "name": "Utilities",
@@ -4655,102 +4660,97 @@
           "count": 2
         },
         {
-          "name": "Real Estate",
-          "bias": -4.72,
-          "count": 4
+          "name": "Healthcare",
+          "bias": -4.95,
+          "count": 11
         },
         {
           "name": "Energy",
-          "bias": 4.57,
-          "count": 12
-        },
-        {
-          "name": "Technology",
-          "bias": -1.87,
-          "count": 143
+          "bias": 3.48,
+          "count": 13
         },
         {
           "name": "Finance",
-          "bias": -1.62,
-          "count": 25
+          "bias": -3.16,
+          "count": 22
         },
         {
-          "name": "Healthcare",
-          "bias": -1.11,
-          "count": 15
+          "name": "Technology",
+          "bias": -2.1,
+          "count": 137
         }
       ],
       "pos": [
         {
           "name": "Energy",
-          "bias": 4.57,
-          "count": 12
+          "bias": 3.48,
+          "count": 13
         }
       ],
       "neu": [
+        {
+          "name": "Real Estate",
+          "bias": -6.3,
+          "count": 3
+        },
         {
           "name": "Utilities",
           "bias": -6.05,
           "count": 2
         },
         {
-          "name": "Real Estate",
-          "bias": -4.72,
-          "count": 4
-        },
-        {
-          "name": "Technology",
-          "bias": -1.87,
-          "count": 143
+          "name": "Healthcare",
+          "bias": -4.95,
+          "count": 11
         }
       ],
       "neg": [
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "name": "Materials",
+          "bias": -16.95,
+          "count": 2
         },
         {
           "name": "Manufacturing",
-          "bias": -11.23,
-          "count": 3
+          "bias": -14.5,
+          "count": 7
         },
         {
-          "name": "Materials",
-          "bias": -6.2,
-          "count": 2
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-06T19:17:37.627Z",
+          "label": "2026-11-06T22:52:48.865Z",
+          "pos": 1,
+          "neu": 88,
+          "neg": 11,
+          "count": 4
+        },
+        {
+          "label": "2026-11-06T23:52:48.865Z",
           "pos": 8,
-          "neu": 85,
-          "neg": 7,
+          "neu": 81,
+          "neg": 10,
+          "count": 12
+        },
+        {
+          "label": "2026-11-07T00:52:48.865Z",
+          "pos": 4,
+          "neu": 82,
+          "neg": 14,
           "count": 23
         },
         {
-          "label": "2026-11-06T20:17:37.627Z",
-          "pos": 8,
-          "neu": 85,
-          "neg": 7,
-          "count": 26
-        },
-        {
-          "label": "2026-11-06T21:17:37.627Z",
-          "pos": 7,
-          "neu": 84,
-          "neg": 9,
-          "count": 17
-        },
-        {
-          "label": "2026-11-06T22:17:37.627Z",
-          "pos": 6,
-          "neu": 86,
-          "neg": 8,
-          "count": 18
+          "label": "2026-11-07T01:52:48.865Z",
+          "pos": 13,
+          "neu": 83,
+          "neg": 4,
+          "count": 8
         }
       ]
     }
@@ -4958,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "Secret Service arrests armed Venezuelan migrant near White House over alleged Trump assassination threat",
-        "link": "https://www.foxnews.com/us/secret-service-arrests-armed-venezuelan-migrant-near-white-house-alleged-trump-assassination-threat",
+        "title": "Trump highlights NASA nuclear-powered Mars spacecraft mission planned for 2028",
+        "link": "https://www.foxnews.com/politics/trump-highlights-nasa-nuclear-powered-mars-spacecraft-mission-planned-2028",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Secret Service officers arrested a Venezuelan migrant in Washington, D.C., after finding firearms in a stolen vehicle and hearing an alleged threat against President Donald Trump.",
+        "description": "President Donald Trump announced NASA will launch its first nuclear-powered spacecraft to Mars within two years, aiming to send astronauts to the red planet.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-06T21:18:15.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 38.3,
-          "neuP": 61.7,
-          "label": "negative",
-          "confidence": 0.96
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump's move from Wiles to Miller signals major tactical shift for governing without Congress",
-        "link": "https://www.foxnews.com/politics/trumps-move-wiles-miller-signals-major-tactical-shift-governing-without-congress",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Stephen Miller and Russ Vought have been identifying policies Trump can enact by executive order on immigration, tariffs and government spending.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-06T20:34:35.000Z",
+        "publishedAt": "2026-11-07T01:54:19.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Bernie Sanders thinks Medicare-for-all bill could pass, 'not absolutely certain' Trump would veto",
+        "link": "https://www.foxnews.com/media/bernie-sanders-thinks-medicare-all-bill-could-pass-not-absolutely-certain-trump-would-veto",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Sen. Bernie Sanders, I-Vt., said he's not certain President Donald Trump would veto Medicare-for-all legislation, arguing the president is \"a good politician.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T01:00:48.000Z",
+        "sentiment": {
+          "posP": 7.1,
+          "negP": 16.8,
+          "neuP": 76.1,
+          "label": "negative",
+          "confidence": 0.45
         },
         "category": "usa"
       }
@@ -5200,13 +5200,73 @@
         "category": "world"
       },
       {
+        "title": "Trump highlights NASA nuclear-powered Mars spacecraft mission planned for 2028",
+        "link": "https://www.foxnews.com/politics/trump-highlights-nasa-nuclear-powered-mars-spacecraft-mission-planned-2028",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump announced NASA will launch its first nuclear-powered spacecraft to Mars within two years, aiming to send astronauts to the red planet.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T01:54:19.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Bernie Sanders thinks Medicare-for-all bill could pass, 'not absolutely certain' Trump would veto",
+        "link": "https://www.foxnews.com/media/bernie-sanders-thinks-medicare-all-bill-could-pass-not-absolutely-certain-trump-would-veto",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Sen. Bernie Sanders, I-Vt., said he's not certain President Donald Trump would veto Medicare-for-all legislation, arguing the president is \"a good politician.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T01:00:48.000Z",
+        "sentiment": {
+          "posP": 7.1,
+          "negP": 16.8,
+          "neuP": 76.1,
+          "label": "negative",
+          "confidence": 0.45
+        },
+        "category": "usa"
+      },
+      {
+        "title": "White House trashes 'peanut-sized brain' Jimmy Kimmel after host demands Trump 'resign'",
+        "link": "https://www.foxnews.com/media/white-house-trashes-peanut-sized-brain-jimmy-kimmel-host-demands-trump-resign",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The White House fired back at Jimmy Kimmel after the ABC late-night host called on President Donald Trump to resign, with spokesman Davis Ingle saying his brain has \"rotted.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-06T22:30:27.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 13.3,
+          "neuP": 86.7,
+          "label": "negative",
+          "confidence": 0.72
+        },
+        "category": "usa"
+      },
+      {
         "title": "Secret Service arrests armed Venezuelan migrant near White House over alleged Trump assassination threat",
         "link": "https://www.foxnews.com/us/secret-service-arrests-armed-venezuelan-migrant-near-white-house-alleged-trump-assassination-threat",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Secret Service officers arrested a Venezuelan migrant in Washington, D.C., after finding firearms in a stolen vehicle and hearing an alleged threat against President Donald Trump.",
+        "description": "Secret Service officers arrested a Venezuelan migrant in Washington, D.C., after finding guns in a stolen vehicle and hearing an alleged threat against President Donald Trump.",
         "image": "",
         "imageUrl": "",
         "publishedAt": "2026-11-06T21:18:15.000Z",
@@ -5220,162 +5280,42 @@
         "category": "usa"
       },
       {
-        "title": "Trump's move from Wiles to Miller signals major tactical shift for governing without Congress",
-        "link": "https://www.foxnews.com/politics/trumps-move-wiles-miller-signals-major-tactical-shift-governing-without-congress",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Stephen Miller and Russ Vought have been identifying policies Trump can enact by executive order on immigration, tariffs and government spending.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-06T20:34:35.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump shakes up team as Democratic majority comes into focus",
-        "link": "https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is swapping out his chief of staff after Republicans' losses in the midterms, with more than two dozen House races unresolved. Follow live updates.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-06T23:04:42.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 7.2,
-          "neuP": 92.8,
-          "label": "negative",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What the White House might look like with Stephen Miller as the new chief of staff",
-        "link": "https://www.cbsnews.com/video/what-the-white-house-might-look-like-with-stephen-miller-as-the-new-chief-of-staff/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is replacing his current chief of staff, Susie Wiles, with immigration enforcement advocate Stephen Miller. CBS News senior White House correspondent Weijia Jiang reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-06T22:46:17.000Z",
-        "sentiment": {
-          "posP": 5.7,
-          "negP": 0,
-          "neuP": 94.3,
-          "label": "positive",
-          "confidence": 0.36
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Politicians react to Trump's decision to replace chief of staff Susie Wiles with Stephen Miller",
-        "link": "https://www.cbsnews.com/video/politicians-react-to-trumps-decision-to-replace-chief-of-staff-wiles-with-stephen-miller/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Reactions are coming in from Capitol Hill to President Trump's decision to replace White House chief of staff Susie Wiles with Stephen Miller, who is known for being tough on immigration. CBS News congressional correspondent Nikole Killion reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-06T22:44:06.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 2.8,
-          "neuP": 97.2,
-          "label": "neutral",
-          "confidence": 0.13
-        },
-        "category": "usa"
-      },
-      {
-        "title": "GOP Sen. Ron Johnson on working to delay Congress leadership elections, more",
-        "link": "https://www.cbsnews.com/video/republican-sen-ron-johnson-on-working-to-delay-congress-leadership-elections-more/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Republican Sen. Ron Johnson of Wisconsin joins \"The Takeout\" to discuss President Trump's decision to replace his White House chief of staff, his push to delay the GOP Senate leadership elections, and more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-06T22:40:32.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 9.7,
-          "neuP": 90.3,
-          "label": "negative",
-          "confidence": 0.56
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump touts imminent decision on potential new attack on Iran",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-strait-hormuz-persian-gulf/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump says he will make a decision soon on whether to order new strikes on Iran, calls Qatari emir as mediators push for a peace deal.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-06T22:26:39.000Z",
-        "sentiment": {
-          "posP": 8.5,
-          "negP": 16.3,
-          "neuP": 75.2,
-          "label": "negative",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump installs Stephen Miller as chief of staff, replacing Susie Wiles",
-        "link": "https://www.cbsnews.com/news/stephen-miller-trump-chief-of-staff-susie-wiles/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "\"I wanted to make a change,\" President Trump said, explaining the major staffing shakeup.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-06T21:46:17.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 6.5,
-          "neuP": 93.5,
-          "label": "neutral",
-          "confidence": 0.15
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What to Know About Stephen Miller, Trump’s New Chief of Staff",
-        "link": "https://www.nytimes.com/2026/11/06/us/politics/stephen-miller-white-house-chief-staff.html",
+        "title": "In Elevating Stephen Miller, Trump Doubles Down on Hard-Line Agenda",
+        "link": "https://www.nytimes.com/2026/11/06/us/politics/susie-wiles-chief-of-staff-trump.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The architect of President Trump’s mass deportation campaign, Mr. Miller has been the public face of many of Mr. Trump’s immigration policies.",
+        "description": "The new White House chief of staff is responsible for some of the most provocative policies of President Trump’s second term, as well as an aggressive approach to executive power.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-06T22:13:11.000Z",
+        "publishedAt": "2026-11-07T00:39:51.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 10.2,
+          "negP": 3.7,
+          "neuP": 86.1,
+          "label": "positive",
+          "confidence": 0.42
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Susie Wiles Is the Latest Powerful Woman to Exit the Trump Administration",
+        "link": "https://www.nytimes.com/2026/11/06/us/politics/susie-wiles-trump-women.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A wave of high-ranking women have left the Trump administration in the past year. Many were replaced by men.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-06T23:53:13.000Z",
+        "sentiment": {
+          "posP": 8.8,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 91.2,
+          "label": "positive",
+          "confidence": 0.42
         },
         "category": "usa"
       },
@@ -5420,22 +5360,22 @@
         "category": "usa"
       },
       {
-        "title": "How Farmers’ Frustration With Trump’s Policies Helped Democrats",
-        "link": "https://www.nytimes.com/2026/11/06/business/farmers-election-trump-democrats.html",
+        "title": "The Evening: Trump Replaces Chief of Staff",
+        "link": "https://www.nytimes.com/2026/11/06/briefing/stephen-miller-trump.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Anger over tariffs and higher costs because of the war in Iran led many Republican farmers and ranchers to vote blue — or stay home.",
+        "description": "Plus, a surprisingly good jobs report. Here’s the latest at the end of Friday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-06T20:03:40.000Z",
+        "publishedAt": "2026-11-06T22:47:21.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 27,
-          "neuP": 73,
-          "label": "negative",
-          "confidence": 0.89
+          "posP": 22.1,
+          "negP": 0,
+          "neuP": 77.9,
+          "label": "positive",
+          "confidence": 0.62
         },
         "category": "usa"
       },
@@ -5460,60 +5400,127 @@
         "category": "usa"
       },
       {
-        "title": "The Ruthless Ambition of Stephen Miller",
-        "link": "https://www.nytimes.com/2025/07/07/opinion/stephen-miller.html",
+        "title": "After These Midterms, JD Vance Is in a Bind",
+        "link": "https://www.nytimes.com/2026/11/06/opinion/jd-vance-midterms.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The most powerful man in the West Wing is getting what he wants. Is Trump?",
+        "description": "He will need to sell voters on a tarnished Trump brand.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-06T19:35:37.000Z",
+        "publishedAt": "2026-11-06T17:04:22.000Z",
         "sentiment": {
-          "posP": 13.4,
+          "posP": 0,
           "negP": 0,
-          "neuP": 86.6,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "What Wiles' legacy as chief of staff will be as she is replaced by Stephen Miller",
+        "link": "https://www.cbsnews.com/video/what-wiles-legacy-as-chief-of-staff-will-be-as-she-is-replaced-by-stephen-miller/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Republican strategist and CBS News contributor Terry Sullivan joins \"The Daily Report\" to break down Susie Wiles' legacy and more as she is replaced by Stephen Miller as White House chief of staff.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T02:11:13.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats win House majority with Trump approval at historic low",
+        "link": "https://www.cbsnews.com/live-updates/house-election-results-2026/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats won control of the House in the 2026 midterm elections, CBS News projects, with victories in battleground districts across the country.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T01:56:41.000Z",
+        "sentiment": {
+          "posP": 25,
+          "negP": 11.3,
+          "neuP": 63.7,
           "label": "positive",
-          "confidence": 0.48
+          "confidence": 0.78
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump installs Stephen Miller as chief of staff, replacing Susie Wiles",
+        "link": "https://www.cbsnews.com/news/stephen-miller-trump-chief-of-staff-susie-wiles/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "\"I wanted to make a change,\" President Trump said, explaining the major staffing shakeup.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T01:40:50.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 6.5,
+          "neuP": 93.5,
+          "label": "neutral",
+          "confidence": 0.15
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.54,
-      "neu": 86.18,
-      "neg": 7.28,
-      "count": 45
+      "pos": 6.02,
+      "neu": 85.84,
+      "neg": 8.14,
+      "count": 52
     },
     "sourceLeaderboard": [
       {
-        "source": "NYT",
-        "pos": 6.82,
-        "neu": 84.21,
-        "neg": 8.96,
-        "count": 8
-      },
-      {
         "source": "NBC News",
-        "pos": 9,
-        "neu": 87.21,
-        "neg": 3.79,
-        "count": 8
+        "pos": 6.17,
+        "neu": 87.25,
+        "neg": 6.58,
+        "count": 10
       },
       {
-        "source": "Washington Post",
-        "pos": 8.84,
-        "neu": 86.81,
-        "neg": 4.35,
-        "count": 8
+        "source": "NYT",
+        "pos": 9.14,
+        "neu": 85.48,
+        "neg": 5.38,
+        "count": 9
       },
       {
         "source": "CBS News",
-        "pos": 2.6,
-        "neu": 89.33,
-        "neg": 8.07,
+        "pos": 4.61,
+        "neu": 83.1,
+        "neg": 12.29,
+        "count": 9
+      },
+      {
+        "source": "Washington Post",
+        "pos": 8.2,
+        "neu": 88.8,
+        "neg": 3,
         "count": 7
+      },
+      {
+        "source": "Fox News",
+        "pos": 3.22,
+        "neu": 83.1,
+        "neg": 13.68,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5530,10 +5537,10 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 3,
-        "neu": 84.23,
-        "neg": 12.77,
+        "source": "ABC News",
+        "pos": 5.87,
+        "neu": 84.53,
+        "neg": 9.6,
         "count": 3
       },
       {
@@ -5542,29 +5549,29 @@
         "neu": 88,
         "neg": 9,
         "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 16.7,
-        "neu": 75.55,
-        "neg": 7.75,
-        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.16,
-        "neu": 86.18,
-        "neg": 7.66,
-        "count": 28
+        "pos": 5.58,
+        "neu": 85.33,
+        "neg": 9.09,
+        "count": 35
       },
       {
         "topic": "Policy",
-        "pos": 5.03,
-        "neu": 90.44,
-        "neg": 4.53,
-        "count": 7
+        "pos": 5.6,
+        "neu": 87.75,
+        "neg": 6.65,
+        "count": 8
+      },
+      {
+        "topic": "Economy",
+        "pos": 10.88,
+        "neu": 86.72,
+        "neg": 2.4,
+        "count": 5
       },
       {
         "topic": "Foreign Policy",
@@ -5572,20 +5579,6 @@
         "neu": 85.35,
         "neg": 10.03,
         "count": 4
-      },
-      {
-        "topic": "Economy",
-        "pos": 8.07,
-        "neu": 88.92,
-        "neg": 3,
-        "count": 4
-      },
-      {
-        "topic": "Legal",
-        "pos": 17.9,
-        "neu": 67.45,
-        "neg": 14.65,
-        "count": 2
       }
     ]
   },
@@ -5612,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-06T19:17:37.630Z",
+        "label": "2026-11-06T22:52:48.867Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-06T20:17:37.630Z",
+        "label": "2026-11-06T23:52:48.867Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-06T21:17:37.630Z",
+        "label": "2026-11-07T00:52:48.867Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-06T22:17:37.630Z",
+        "label": "2026-11-07T01:52:48.867Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5642,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-06T19:17:37.630Z",
+        "label": "2026-11-06T22:52:48.868Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-06T20:17:37.630Z",
+        "label": "2026-11-06T23:52:48.868Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-06T21:17:37.630Z",
+        "label": "2026-11-07T00:52:48.868Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-06T22:17:37.630Z",
+        "label": "2026-11-07T01:52:48.868Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5743,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-06T23:17:37.631Z",
+    "generatedAt": "2026-11-07T02:52:48.868Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5864,8 +5857,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 190,
-      "potusArticles": 45,
+      "usaArticles": 188,
+      "potusArticles": 52,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
