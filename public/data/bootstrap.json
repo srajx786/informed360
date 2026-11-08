@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-08T09:33:56.387Z",
+  "generatedAt": "2026-11-08T16:14:48.833Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 183,
-    "potusArticles": 38
+    "usaArticles": 178,
+    "potusArticles": 40
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-08T05:33:56.388Z",
+          "label": "2026-11-08T12:14:48.833Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T06:33:56.388Z",
+          "label": "2026-11-08T13:14:48.833Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T07:33:56.388Z",
+          "label": "2026-11-08T14:14:48.833Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T08:33:56.388Z",
+          "label": "2026-11-08T15:14:48.833Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-08T05:33:56.388Z",
+          "label": "2026-11-08T12:14:48.833Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T06:33:56.388Z",
+          "label": "2026-11-08T13:14:48.833Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T07:33:56.388Z",
+          "label": "2026-11-08T14:14:48.833Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T08:33:56.388Z",
+          "label": "2026-11-08T15:14:48.833Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,32 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 8,
-      "neu": 81.29,
-      "neg": 10.71,
-      "count": 183
+      "pos": 7.65,
+      "neu": 83.2,
+      "neg": 9.15,
+      "count": 178
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.33,
-        "neu": 79.67,
-        "neg": 10,
-        "count": 40
+        "pos": 8.96,
+        "neu": 82.28,
+        "neg": 8.76,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 8.76,
-        "neu": 78.07,
-        "neg": 13.17,
+        "pos": 5.96,
+        "neu": 79.6,
+        "neg": 14.44,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.61,
-        "neu": 78.94,
-        "neg": 14.45,
-        "count": 26
+        "pos": 7.58,
+        "neu": 84.66,
+        "neg": 7.76,
+        "count": 22
       },
       {
         "source": "WSJ",
@@ -4591,24 +4591,24 @@
       },
       {
         "source": "ABC News",
-        "pos": 7.76,
-        "neu": 85.98,
-        "neg": 6.26,
+        "pos": 7.36,
+        "neu": 87.08,
+        "neg": 5.56,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 5.9,
-        "neu": 86.87,
-        "neg": 7.23,
+        "pos": 8.37,
+        "neu": 87.27,
+        "neg": 4.37,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 8.53,
-        "neu": 82.1,
-        "neg": 9.37,
-        "count": 19
+        "pos": 8.29,
+        "neu": 84.07,
+        "neg": 7.64,
+        "count": 16
       },
       {
         "source": "NPR",
@@ -4641,67 +4641,67 @@
         },
         {
           "name": "Utilities",
-          "bias": -6.05,
-          "count": 2
-        },
-        {
-          "name": "Finance",
-          "bias": -5.19,
-          "count": 22
-        },
-        {
-          "name": "Materials",
-          "bias": -5.03,
+          "bias": -10.17,
           "count": 3
-        },
-        {
-          "name": "Energy",
-          "bias": 4.71,
-          "count": 9
-        },
-        {
-          "name": "Technology",
-          "bias": -4.04,
-          "count": 137
         },
         {
           "name": "Real Estate",
-          "bias": 4.03,
-          "count": 3
+          "bias": 5.9,
+          "count": 1
+        },
+        {
+          "name": "Energy",
+          "bias": 4.68,
+          "count": 9
+        },
+        {
+          "name": "Materials",
+          "bias": -3.8,
+          "count": 2
+        },
+        {
+          "name": "Technology",
+          "bias": -2.64,
+          "count": 134
+        },
+        {
+          "name": "Finance",
+          "bias": -1.15,
+          "count": 19
         },
         {
           "name": "Healthcare",
-          "bias": -2.65,
-          "count": 11
+          "bias": 0.24,
+          "count": 8
         }
       ],
       "pos": [
         {
-          "name": "Energy",
-          "bias": 4.71,
-          "count": 9
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
         },
         {
-          "name": "Real Estate",
-          "bias": 4.03,
-          "count": 3
+          "name": "Energy",
+          "bias": 4.68,
+          "count": 9
         }
       ],
       "neu": [
         {
-          "name": "Materials",
-          "bias": -5.03,
-          "count": 3
+          "name": "Technology",
+          "bias": -2.64,
+          "count": 134
         },
         {
-          "name": "Technology",
-          "bias": -4.04,
-          "count": 137
+          "name": "Finance",
+          "bias": -1.15,
+          "count": 19
         },
         {
           "name": "Healthcare",
-          "bias": -2.65,
-          "count": 11
+          "bias": 0.24,
+          "count": 8
         }
       ],
       "neg": [
@@ -4712,45 +4712,45 @@
         },
         {
           "name": "Utilities",
-          "bias": -6.05,
-          "count": 2
+          "bias": -10.17,
+          "count": 3
         },
         {
-          "name": "Finance",
-          "bias": -5.19,
-          "count": 22
+          "name": "Materials",
+          "bias": -3.8,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-08T05:33:56.389Z",
-          "pos": 14,
-          "neu": 80,
-          "neg": 6,
-          "count": 3
+          "label": "2026-11-08T12:14:48.835Z",
+          "pos": 6,
+          "neu": 90,
+          "neg": 4,
+          "count": 6
         },
         {
-          "label": "2026-11-08T06:33:56.389Z",
-          "pos": 0,
-          "neu": 0,
-          "neg": 0,
-          "count": 0
-        },
-        {
-          "label": "2026-11-08T07:33:56.389Z",
-          "pos": 4,
-          "neu": 82,
-          "neg": 14,
-          "count": 3
-        },
-        {
-          "label": "2026-11-08T08:33:56.389Z",
+          "label": "2026-11-08T13:14:48.835Z",
           "pos": 5,
-          "neu": 81,
-          "neg": 14,
-          "count": 3
+          "neu": 87,
+          "neg": 8,
+          "count": 11
+        },
+        {
+          "label": "2026-11-08T14:14:48.835Z",
+          "pos": 7,
+          "neu": 83,
+          "neg": 10,
+          "count": 23
+        },
+        {
+          "label": "2026-11-08T15:14:48.835Z",
+          "pos": 8,
+          "neu": 84,
+          "neg": 8,
+          "count": 18
         }
       ]
     }
@@ -4958,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "JACKSON THOMPSON: Dana White says he'll meet with Trump amid claim of White House press secretary job offer",
-        "link": "https://www.foxnews.com/outkick-sports/jackson-thompson-dana-white-says-hell-meet-trump-amid-claim-white-house-press-secretary-job-offer",
+        "title": "Trump ‘holds all the cards’ in war against Iran’s regime, White House says",
+        "link": "https://www.foxnews.com/opinion/trump-holds-all-cards-war-against-irans-regime-white-house-says",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Dana White plans to meet Trump on Monday to discuss the White House press secretary offer after the president's dramatic Truth Social announcement.",
+        "description": "Supreme Leader Ayatollah Mojtaba Khamenei taunts America after midterms, but the White House says Trump holds all the cards on the Strait of Hormuz.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T02:55:18.000Z",
+        "publishedAt": "2026-11-08T15:13:07.000Z",
         "sentiment": {
-          "posP": 5.4,
-          "negP": 0,
-          "neuP": 94.6,
-          "label": "positive",
-          "confidence": 0.32
+          "posP": 5.8,
+          "negP": 6.2,
+          "neuP": 88,
+          "label": "neutral",
+          "confidence": 0.04
         },
         "category": "usa"
       },
       {
-        "title": "Trump’s D.C. Construction Blitz May Be About to Get Tougher",
-        "link": "https://www.nytimes.com/2026/11/06/us/politics/trump-construction-projects-washington.html",
+        "title": "For Trump and America, a Clear Election Verdict but a Murky Future",
+        "link": "https://www.nytimes.com/2026/11/08/us/politics/trump-midterm-election-america-future.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president has bulldozed through obstacles as he has sought to remake the face of Washington. But newly empowered Democrats and angry judges are setting up a high-stakes showdown.",
+        "description": "As Americans absorb a stunning new political reality, they face a gap between the time they effectively decided to be done with the president and the time he is actually done.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-07T03:08:58.000Z",
+        "publishedAt": "2026-11-08T15:54:15.000Z",
         "sentiment": {
-          "posP": 4,
-          "negP": 13.8,
-          "neuP": 82.2,
-          "label": "negative",
-          "confidence": 0.64
+          "posP": 22.8,
+          "negP": 0,
+          "neuP": 77.2,
+          "label": "positive",
+          "confidence": 0.85
         },
         "category": "usa"
       }
@@ -5200,122 +5200,242 @@
         "category": "world"
       },
       {
-        "title": "JACKSON THOMPSON: Dana White says he'll meet with Trump amid claim of White House press secretary job offer",
-        "link": "https://www.foxnews.com/outkick-sports/jackson-thompson-dana-white-says-hell-meet-trump-amid-claim-white-house-press-secretary-job-offer",
+        "title": "Trump ‘holds all the cards’ in war against Iran’s regime, White House says",
+        "link": "https://www.foxnews.com/opinion/trump-holds-all-cards-war-against-irans-regime-white-house-says",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Dana White plans to meet Trump on Monday to discuss the White House press secretary offer after the president's dramatic Truth Social announcement.",
+        "description": "Supreme Leader Ayatollah Mojtaba Khamenei taunts America after midterms, but the White House says Trump holds all the cards on the Strait of Hormuz.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T02:55:18.000Z",
+        "publishedAt": "2026-11-08T15:13:07.000Z",
         "sentiment": {
-          "posP": 5.4,
-          "negP": 0,
-          "neuP": 94.6,
-          "label": "positive",
-          "confidence": 0.32
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump’s D.C. Construction Blitz May Be About to Get Tougher",
-        "link": "https://www.nytimes.com/2026/11/06/us/politics/trump-construction-projects-washington.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has bulldozed through obstacles as he has sought to remake the face of Washington. But newly empowered Democrats and angry judges are setting up a high-stakes showdown.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T03:08:58.000Z",
-        "sentiment": {
-          "posP": 4,
-          "negP": 13.8,
-          "neuP": 82.2,
-          "label": "negative",
-          "confidence": 0.64
-        },
-        "category": "usa"
-      },
-      {
-        "title": "South Carolina Republicans Fracture Over Stunning Defeat of Darline Graham",
-        "link": "https://www.nytimes.com/2026/11/07/us/politics/darline-graham-loss-blame.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Some blamed President Trump for backing the novice candidate after the death of her brother, Lindsey Graham. Others accused Mr. Graham’s team of pushing her to run despite her lack of experience.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T14:30:09.000Z",
-        "sentiment": {
-          "posP": 10.7,
-          "negP": 23.1,
-          "neuP": 66.2,
-          "label": "negative",
-          "confidence": 0.82
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Why White Working-Class Voters Shifted Left in the Midterms",
-        "link": "https://www.nytimes.com/2026/11/07/us/politics/white-working-class-voters-midterms-democrats-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "White voters without a college degree, a cornerstone of the Republican base in the Trump era, moved left this year. Some cited high prices, the war with Iran and more in their decisions.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T18:22:09.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 9.1,
-          "neuP": 90.9,
-          "label": "negative",
-          "confidence": 0.6
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he offered UFC's Dana White the press secretary role",
-        "link": "https://www.cbsnews.com/news/trump-offers-white-house-press-secretary-role-dana-white/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The role of the White House press secretary has been largely vacant since Karoline Leavitt stepped aside ​in August.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T02:09:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "posP": 5.8,
+          "negP": 6.2,
+          "neuP": 88,
           "label": "neutral",
-          "confidence": 0
+          "confidence": 0.04
         },
         "category": "usa"
       },
       {
-        "title": "More races called as Democratic majority comes into focus",
+        "title": "For Trump and America, a Clear Election Verdict but a Murky Future",
+        "link": "https://www.nytimes.com/2026/11/08/us/politics/trump-midterm-election-america-future.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "As Americans absorb a stunning new political reality, they face a gap between the time they effectively decided to be done with the president and the time he is actually done.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T15:54:15.000Z",
+        "sentiment": {
+          "posP": 22.8,
+          "negP": 0,
+          "neuP": 77.2,
+          "label": "positive",
+          "confidence": 0.85
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Hakeem Jeffries, in Line to Become House Speaker, Promises Bold Agenda",
+        "link": "https://www.nytimes.com/2026/11/08/us/politics/hakeem-jeffries-house-democrats-speaker.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The man in line to be the first Black speaker is a reserved moderate seen by activists on the left as too timid to take on President Trump. He says he’s “strongly positioned” to get things done.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T10:00:12.000Z",
+        "sentiment": {
+          "posP": 10.2,
+          "negP": 3.9,
+          "neuP": 85.9,
+          "label": "positive",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Top Astrophysicist Leaves U.S. After Trump Policies Affect Her Work",
+        "link": "https://www.nytimes.com/2026/11/07/science/space/holley-bockelmann-astrophysicist-space-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Kelly Holley-Bockelmann was one of the top astrophysicists in the country until President Trump’s policies affected every part of her work.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T11:49:36.000Z",
+        "sentiment": {
+          "posP": 10.8,
+          "negP": 4.8,
+          "neuP": 84.4,
+          "label": "positive",
+          "confidence": 0.25
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How Trump Is Dismantling America’s Scientific Research Machine",
+        "link": "https://www.nytimes.com/2026/10/31/science/how-trump-is-dismantling-americas-scientific-research-machine.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The system that has driven life-altering discoveries and helped make the United States a superpower is now under intense strain.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T02:09:25.000Z",
+        "sentiment": {
+          "posP": 14,
+          "negP": 4.1,
+          "neuP": 81.9,
+          "label": "positive",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Justice Dept. Mulled Naming The Times as Conspirator in Comey Leak Case",
+        "link": "https://www.nytimes.com/2026/11/08/us/politics/justice-dept-new-york-times-comey-leak.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "It remains unclear how the Justice Department might proceed. The move would be a major escalation of the Trump administration’s recent attacks against the news media.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T15:28:55.000Z",
+        "sentiment": {
+          "posP": 14.8,
+          "negP": 15.8,
+          "neuP": 69.4,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says U.S. took a \"giant step back in history\" with midterm results",
         "link": "https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump is swapping out his chief of staff after Republicans' losses in the midterms, with more than 20 House races unresolved. Follow live updates.",
+        "description": "President Trump on Sunday said the U.S. \"took a giant step back in history\" as his White House continued to roil from his post-midterm shakeup",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T00:18:04.000Z",
+        "publishedAt": "2026-11-08T15:34:53.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.6,
-          "neuP": 92.4,
+          "negP": 4.4,
+          "neuP": 95.6,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "UFC’s Dana White says he will meet Trump on Monday to discuss press secretary offer",
+        "link": "https://www.nbcnews.com/politics/white-house/trump-offers-press-secretary-job-ufc-ceo-dana-white-rcna608039",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump said that he’d offered the job of White House press secretary to the CEO and president of the Ultimate Fighting Championship, Dana White.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T21:39:10.000Z",
+        "sentiment": {
+          "posP": 6.5,
+          "negP": 5.6,
+          "neuP": 87.9,
+          "label": "neutral",
+          "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats won big on Election Day. But can they agree on AI?",
+        "link": "https://www.nbcnews.com/tech/tech-news/democrats-won-big-election-day-can-agree-ai-rcna607414",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats campaigned on concerns about AI and data centers, but competing priorities and opposition from the Trump administration could complicate efforts to enact new regulations.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T16:00:00.000Z",
+        "sentiment": {
+          "posP": 10.5,
+          "negP": 0,
+          "neuP": 89.5,
+          "label": "positive",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Gov. Josh Shapiro urges Democrats to prioritize healthcare, food assistance",
+        "link": "https://www.nbcnews.com/politics/2026-election/gov-josh-shapiro-urges-democrats-prioritize-healthcare-food-assistance-rcna608060",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Pennsylvania Gov. Josh Shapiro said he hopes Democrats prioritize healthcare and food assistance when they take control of Congress in January, though he urged them not to forget to hold the Trump administration accountable.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T14:00:00.000Z",
+        "sentiment": {
+          "posP": 9.6,
+          "negP": 0,
+          "neuP": 90.4,
+          "label": "positive",
+          "confidence": 0.54
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Sen.-elect Adam Hamilton says he’d be disappointed if Democrats focus on investigating Trump",
+        "link": "https://www.nbcnews.com/politics/congress/sen-adam-hamilton-disappointed-democrats-trump-investigations-schumer-rcna608088",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Sen.-elect Adam Hamilton said that he hopes to prioritize lowering costs and that he would be “deeply disappointed” to spend two years investigating Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T13:55:10.000Z",
+        "sentiment": {
+          "posP": 6.7,
+          "negP": 12.2,
+          "neuP": 81.1,
           "label": "negative",
-          "confidence": 0.4
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How Democrats will try to end Trump's tariffs",
+        "link": "https://www.cnbc.com/2026/11/08/trump-tariffs-democrats-congress-canada.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Rep. Hakeem Jeffries, D-N.Y., who is likely the next House speaker, has made clear that ending President Trump's tariffs is one of Democrats' top priorities.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T15:36:39.000Z",
+        "sentiment": {
+          "posP": 12.4,
+          "negP": 0,
+          "neuP": 87.6,
+          "label": "positive",
+          "confidence": 0.53
         },
         "category": "usa"
       },
@@ -5349,7 +5469,7 @@
         "description": "Trump ordered DOJ to examine alleged threats against Republicans while singling out Slotkin.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-07T21:59:10.000Z",
+        "publishedAt": "2026-11-08T14:15:00.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 18.3,
@@ -5358,155 +5478,35 @@
           "confidence": 0.68
         },
         "category": "usa"
-      },
-      {
-        "title": "Trump says U.S. carried out ‘minor strikes’ on Iran as missiles hit Qeshm Island",
-        "link": "https://www.cnbc.com/2026/11/07/trump-us-minor-strikes-iran-qeshm-island.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump said the U.S. carried out ‘minor strikes’ on Iran after Iranian media reported two missiles hit Qeshm Island near the Strait of Hormuz.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T07:37:36.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What midterm election blue wave rebuke of Trump means for renewable energy",
-        "link": "https://www.cnbc.com/2026/11/07/midterm-election-blue-wave-trump-renewable-energy.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The conservative war on renewable energy suffered a big loss in the rout of President Trump and the GOP in midterm elections. Investors should pay attention.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T14:33:32.000Z",
-        "sentiment": {
-          "posP": 9.1,
-          "negP": 23.5,
-          "neuP": 67.4,
-          "label": "negative",
-          "confidence": 0.77
-        },
-        "category": "usa"
-      },
-      {
-        "title": "UFC head Dana White says he’ll meet with Trump Monday on press secretary offer",
-        "link": "https://www.nbcnews.com/politics/white-house/trump-offers-press-secretary-job-ufc-ceo-dana-white-rcna608039",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump said that he’d offered the job of White House press secretary to the CEO and president of the Ultimate Fighting Championship, Dana White.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T21:39:10.000Z",
-        "sentiment": {
-          "posP": 6.7,
-          "negP": 5.8,
-          "neuP": 87.5,
-          "label": "neutral",
-          "confidence": 0.1
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.39,
-      "neu": 87.15,
-      "neg": 8.46,
-      "count": 38
+      "pos": 7.08,
+      "neu": 85.99,
+      "neg": 6.93,
+      "count": 40
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 5.05,
-        "neu": 87.09,
-        "neg": 7.85,
-        "count": 11
+        "pos": 8.39,
+        "neu": 85.79,
+        "neg": 5.82,
+        "count": 10
       },
       {
         "source": "NBC News",
-        "pos": 4.8,
-        "neu": 85.93,
-        "neg": 9.27,
-        "count": 6
+        "pos": 7.34,
+        "neu": 87.15,
+        "neg": 5.51,
+        "count": 8
       },
       {
         "source": "NYT",
-        "pos": 5.54,
-        "neu": 82.86,
-        "neg": 11.6,
-        "count": 5
+        "pos": 12.23,
+        "neu": 81.97,
+        "neg": 5.8,
+        "count": 7
       },
       {
         "source": "WSJ",
@@ -5523,17 +5523,17 @@
         "count": 3
       },
       {
-        "source": "CBS News",
-        "pos": 1.33,
-        "neu": 91.47,
-        "neg": 7.2,
-        "count": 3
+        "source": "Fox News",
+        "pos": 7.4,
+        "neu": 89.5,
+        "neg": 3.1,
+        "count": 2
       },
       {
-        "source": "Fox News",
-        "pos": 7.2,
-        "neu": 92.8,
-        "neg": 0,
+        "source": "CBS News",
+        "pos": 2,
+        "neu": 88.8,
+        "neg": 9.2,
         "count": 2
       },
       {
@@ -5546,39 +5546,39 @@
       {
         "source": "ABC News",
         "pos": 0,
-        "neu": 90.3,
-        "neg": 9.7,
+        "neu": 85.4,
+        "neg": 14.6,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 2.91,
-        "neu": 86.32,
-        "neg": 10.77,
-        "count": 17
+        "pos": 6.57,
+        "neu": 85.52,
+        "neg": 7.91,
+        "count": 20
       },
       {
         "topic": "Policy",
-        "pos": 7.46,
-        "neu": 85.1,
-        "neg": 7.44,
-        "count": 8
+        "pos": 9.46,
+        "neu": 84.41,
+        "neg": 6.13,
+        "count": 10
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.7,
-        "neu": 86.84,
-        "neg": 9.46,
-        "count": 5
+        "pos": 4.63,
+        "neu": 85.35,
+        "neg": 10.03,
+        "count": 4
       },
       {
         "topic": "Public Statements",
-        "pos": 3.22,
-        "neu": 95.62,
-        "neg": 1.16,
-        "count": 5
+        "pos": 4.95,
+        "neu": 93.65,
+        "neg": 1.4,
+        "count": 4
       },
       {
         "topic": "Economy",
@@ -5586,13 +5586,6 @@
         "neu": 84.5,
         "neg": 6,
         "count": 2
-      },
-      {
-        "topic": "Legal",
-        "pos": 4,
-        "neu": 82.2,
-        "neg": 13.8,
-        "count": 1
       }
     ]
   },
@@ -5619,28 +5612,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-08T05:33:56.392Z",
+        "label": "2026-11-08T12:14:48.837Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T06:33:56.392Z",
+        "label": "2026-11-08T13:14:48.837Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T07:33:56.392Z",
+        "label": "2026-11-08T14:14:48.837Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T08:33:56.392Z",
+        "label": "2026-11-08T15:14:48.837Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5649,28 +5642,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-08T05:33:56.392Z",
+        "label": "2026-11-08T12:14:48.837Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T06:33:56.392Z",
+        "label": "2026-11-08T13:14:48.837Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T07:33:56.392Z",
+        "label": "2026-11-08T14:14:48.837Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T08:33:56.392Z",
+        "label": "2026-11-08T15:14:48.837Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5750,7 +5743,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-08T09:33:56.393Z",
+    "generatedAt": "2026-11-08T16:14:48.838Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5871,8 +5864,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 183,
-      "potusArticles": 38,
+      "usaArticles": 178,
+      "potusArticles": 40,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
