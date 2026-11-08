@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-07T23:40:00.980Z",
+  "generatedAt": "2026-11-08T02:44:32.738Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 181,
-    "potusArticles": 41
+    "usaArticles": 180,
+    "potusArticles": 38
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-07T19:40:00.981Z",
+          "label": "2026-11-07T22:44:32.738Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-07T20:40:00.981Z",
+          "label": "2026-11-07T23:44:32.738Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-07T21:40:00.981Z",
+          "label": "2026-11-08T00:44:32.738Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-07T22:40:00.981Z",
+          "label": "2026-11-08T01:44:32.738Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-07T19:40:00.981Z",
+          "label": "2026-11-07T22:44:32.738Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-07T20:40:00.981Z",
+          "label": "2026-11-07T23:44:32.738Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-07T21:40:00.981Z",
+          "label": "2026-11-08T00:44:32.738Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-07T22:40:00.981Z",
+          "label": "2026-11-08T01:44:32.738Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.85,
-      "neu": 81.52,
-      "neg": 10.63,
-      "count": 181
+      "pos": 7.5,
+      "neu": 81.57,
+      "neg": 10.93,
+      "count": 180
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.47,
-        "neu": 80.69,
-        "neg": 9.84,
-        "count": 40
+        "pos": 9.7,
+        "neu": 80.02,
+        "neg": 10.28,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 11.09,
-        "neu": 74.03,
-        "neg": 14.88,
+        "pos": 7.94,
+        "neu": 77.03,
+        "neg": 15.03,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.77,
-        "neu": 81.25,
-        "neg": 11.98,
+        "pos": 6.79,
+        "neu": 79.87,
+        "neg": 13.35,
         "count": 26
       },
       {
@@ -4591,22 +4591,22 @@
       },
       {
         "source": "ABC News",
-        "pos": 7.51,
-        "neu": 87.66,
-        "neg": 4.83,
+        "pos": 7.76,
+        "neu": 86.51,
+        "neg": 5.73,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 6.5,
-        "neu": 85.19,
-        "neg": 8.31,
+        "pos": 5.9,
+        "neu": 86.87,
+        "neg": 7.23,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 4.84,
-        "neu": 84.84,
+        "pos": 5.85,
+        "neu": 83.82,
         "neg": 10.32,
         "count": 17
       },
@@ -4640,24 +4640,24 @@
           "count": 1
         },
         {
-          "name": "Real Estate",
-          "bias": -11.57,
-          "count": 4
-        },
-        {
           "name": "Utilities",
           "bias": -6.05,
           "count": 2
         },
         {
           "name": "Finance",
-          "bias": -5.59,
-          "count": 20
+          "bias": -5.23,
+          "count": 21
         },
         {
           "name": "Technology",
-          "bias": -3.91,
+          "bias": -4.71,
           "count": 137
+        },
+        {
+          "name": "Real Estate",
+          "bias": 4.03,
+          "count": 3
         },
         {
           "name": "Healthcare",
@@ -4666,8 +4666,8 @@
         },
         {
           "name": "Energy",
-          "bias": 1.28,
-          "count": 10
+          "bias": 2.11,
+          "count": 9
         },
         {
           "name": "Materials",
@@ -4675,22 +4675,33 @@
           "count": 4
         }
       ],
-      "pos": [],
-      "neu": [
+      "pos": [
         {
-          "name": "Finance",
-          "bias": -5.59,
-          "count": 20
+          "name": "Real Estate",
+          "bias": 4.03,
+          "count": 3
         },
         {
+          "name": "Energy",
+          "bias": 2.11,
+          "count": 9
+        }
+      ],
+      "neu": [
+        {
           "name": "Technology",
-          "bias": -3.91,
+          "bias": -4.71,
           "count": 137
         },
         {
           "name": "Healthcare",
           "bias": -2.65,
           "count": 11
+        },
+        {
+          "name": "Materials",
+          "bias": 0.57,
+          "count": 4
         }
       ],
       "neg": [
@@ -4700,46 +4711,46 @@
           "count": 1
         },
         {
-          "name": "Real Estate",
-          "bias": -11.57,
-          "count": 4
-        },
-        {
           "name": "Utilities",
           "bias": -6.05,
           "count": 2
+        },
+        {
+          "name": "Finance",
+          "bias": -5.23,
+          "count": 21
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-07T19:40:00.984Z",
-          "pos": 0,
-          "neu": 89,
-          "neg": 11,
-          "count": 3
+          "label": "2026-11-07T22:44:32.740Z",
+          "pos": 6,
+          "neu": 81,
+          "neg": 12,
+          "count": 7
         },
         {
-          "label": "2026-11-07T20:40:00.984Z",
-          "pos": 10,
-          "neu": 77,
-          "neg": 13,
-          "count": 15
-        },
-        {
-          "label": "2026-11-07T21:40:00.984Z",
-          "pos": 5,
+          "label": "2026-11-07T23:44:32.740Z",
+          "pos": 9,
           "neu": 79,
-          "neg": 16,
-          "count": 16
+          "neg": 12,
+          "count": 10
         },
         {
-          "label": "2026-11-07T22:40:00.984Z",
+          "label": "2026-11-08T00:44:32.740Z",
           "pos": 5,
-          "neu": 82,
-          "neg": 14,
-          "count": 11
+          "neu": 76,
+          "neg": 19,
+          "count": 7
+        },
+        {
+          "label": "2026-11-08T01:44:32.740Z",
+          "pos": 2,
+          "neu": 90,
+          "neg": 9,
+          "count": 6
         }
       ]
     }
@@ -4947,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "Melania Trump secures $7.2M for foster care scholarships at LSU ahead of Alabama showdown",
-        "link": "https://www.foxnews.com/politics/melania-trump-secures-7-2m-foster-care-scholarships-lsu-ahead-alabama-showdown",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump’s D.C. Construction Blitz May Be About to Get Tougher",
+        "link": "https://www.nytimes.com/2026/11/06/us/politics/trump-construction-projects-washington.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Melania Trump unveiled a $7.2 million scholarship endowment at LSU for foster care youth before receiving a custom jersey and football tribute.",
+        "description": "The president has bulldozed through obstacles as he has sought to remake the face of Washington. But newly empowered Democrats and angry judges are setting up a high-stakes showdown.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-07T21:36:56.000Z",
+        "publishedAt": "2026-11-07T03:08:58.000Z",
         "sentiment": {
-          "posP": 21.9,
-          "negP": 0,
-          "neuP": 78.1,
-          "label": "positive",
-          "confidence": 0.83
+          "posP": 4,
+          "negP": 13.8,
+          "neuP": 82.2,
+          "label": "negative",
+          "confidence": 0.64
         },
         "category": "usa"
       },
       {
-        "title": "JACKSON THOMPSON: Trump says he offered UFC CEO Dana White press secretary job",
-        "link": "https://www.foxnews.com/outkick-sports/jackson-thompson-trump-says-offered-ufc-ceo-dana-white-press-secretary-job",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "South Carolina Republicans Fracture Over Stunning Defeat of Darline Graham",
+        "link": "https://www.nytimes.com/2026/11/07/us/politics/darline-graham-loss-blame.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump proposed UFC CEO Dana White as White House press secretary in a Truth Social post, naming MMA fighters as assistants.",
+        "description": "Some blamed President Trump for backing the novice candidate after the death of her brother, Lindsey Graham. Others accused Mr. Graham’s team of pushing her to run despite her lack of experience.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-07T21:35:29.000Z",
+        "publishedAt": "2026-11-07T14:30:09.000Z",
         "sentiment": {
-          "posP": 6.3,
-          "negP": 3.3,
-          "neuP": 90.4,
-          "label": "positive",
-          "confidence": 0.27
+          "posP": 10.7,
+          "negP": 23.1,
+          "neuP": 66.2,
+          "label": "negative",
+          "confidence": 0.82
         },
         "category": "usa"
       }
@@ -5189,46 +5200,6 @@
         "category": "world"
       },
       {
-        "title": "Melania Trump secures $7.2M for foster care scholarships at LSU ahead of Alabama showdown",
-        "link": "https://www.foxnews.com/politics/melania-trump-secures-7-2m-foster-care-scholarships-lsu-ahead-alabama-showdown",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Melania Trump unveiled a $7.2 million scholarship endowment at LSU for foster care youth before receiving a custom jersey and football tribute.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T21:36:56.000Z",
-        "sentiment": {
-          "posP": 21.9,
-          "negP": 0,
-          "neuP": 78.1,
-          "label": "positive",
-          "confidence": 0.83
-        },
-        "category": "usa"
-      },
-      {
-        "title": "JACKSON THOMPSON: Trump says he offered UFC CEO Dana White press secretary job",
-        "link": "https://www.foxnews.com/outkick-sports/jackson-thompson-trump-says-offered-ufc-ceo-dana-white-press-secretary-job",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump proposed UFC CEO Dana White as White House press secretary in a Truth Social post, naming MMA fighters as assistants.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-07T21:35:29.000Z",
-        "sentiment": {
-          "posP": 6.3,
-          "negP": 3.3,
-          "neuP": 90.4,
-          "label": "positive",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
         "title": "Trump’s D.C. Construction Blitz May Be About to Get Tougher",
         "link": "https://www.nytimes.com/2026/11/06/us/politics/trump-construction-projects-washington.html",
         "source": "NYT",
@@ -5309,22 +5280,22 @@
         "category": "usa"
       },
       {
-        "title": "More races called as Democratic majority comes into focus",
-        "link": "https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "UFC head Dana White says he’ll meet with Trump Monday on press secretary offer",
+        "link": "https://www.nbcnews.com/politics/white-house/trump-offers-press-secretary-job-ufc-ceo-dana-white-rcna608039",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump is swapping out his chief of staff after Republicans' losses in the midterms, with more than two dozen House races unresolved. Follow live updates.",
+        "description": "President Donald Trump said that he’d offered the job of White House press secretary to the CEO and president of the Ultimate Fighting Championship, Dana White.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-07T23:30:59.000Z",
+        "publishedAt": "2026-11-07T21:39:10.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 7.4,
-          "neuP": 92.6,
-          "label": "negative",
-          "confidence": 0.4
+          "posP": 6.7,
+          "negP": 5.8,
+          "neuP": 87.5,
+          "label": "neutral",
+          "confidence": 0.1
         },
         "category": "usa"
       },
@@ -5338,7 +5309,7 @@
         "description": "The role of the White House press secretary has been largely vacant since Karoline Leavitt stepped aside ​in August.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-07T22:27:45.000Z",
+        "publishedAt": "2026-11-08T02:09:00.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5349,62 +5320,62 @@
         "category": "usa"
       },
       {
-        "title": "Trump replaces Susie Wiles with Stephen Miller",
-        "link": "https://www.cbsnews.com/video/trump-replaces-susie-wiles-with-stephen-miller/",
+        "title": "More races called as Democratic majority comes into focus",
+        "link": "https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump picked Stephen Miller to replace Susie Wiles as his new White House chief of staff after a dismal midterm performance for Republicans.",
+        "description": "President Trump is swapping out his chief of staff after Republicans' losses in the midterms, with more than 20 House races unresolved. Follow live updates.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-07T16:15:33.000Z",
+        "publishedAt": "2026-11-08T00:18:04.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 12.1,
-          "neuP": 87.9,
+          "negP": 7.6,
+          "neuP": 92.4,
           "label": "negative",
-          "confidence": 0.61
+          "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "Stephen Miller named as new White House chief of staff",
-        "link": "https://www.nbcnews.com/nightly-news/video/stephen-miller-named-as-new-white-house-chief-of-staff-273042501821",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Iran live updates: US disables another ship trying to breach the Iran naval blockade",
+        "link": "https://abcnews.com/International/live-updates/iran-live-updates-trump-good-call-netanyahu/?id=137762456",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump has named his controversial deputy Stephen Miller as White House chief of staff, following the departure of Susie Wiles after Republican midterm losses. NBC News’ Gabe Gutierrez reports.",
+        "description": "President Donald Trump announced \"major combat operations\" against Iran on Feb. 28.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-07T01:05:57.000Z",
+        "publishedAt": "2026-11-07T22:22:08.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 10.6,
-          "neuP": 89.4,
+          "negP": 8.8,
+          "neuP": 91.2,
           "label": "negative",
-          "confidence": 0.54
+          "confidence": 0.34
         },
         "category": "usa"
       },
       {
-        "title": "Trump offers press secretary position to UFC head Dana White",
-        "link": "https://www.nbcnews.com/politics/white-house/trump-offers-press-secretary-job-ufc-ceo-dana-white-rcna608039",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Election 2026 live updates: Trump calls for DOJ probe of Dems",
+        "link": "https://abcnews.com/Politics/live-updates/midterm-elections-live-updates/?id=137782085",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump said that he’d offered the job of White House press secretary to the CEO and president of the Ultimate Fighting Championship, Dana White.",
+        "description": "President Donald Trump is claiming, without evidence, that Democratic leaders are sending \"threatening\" letters and and that he is directing the DOJ to investigate.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-07T21:39:10.000Z",
+        "publishedAt": "2026-11-07T22:18:07.000Z",
         "sentiment": {
-          "posP": 7.4,
-          "negP": 6.3,
-          "neuP": 86.3,
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
           "label": "neutral",
-          "confidence": 0.1
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5467,28 +5438,61 @@
           "confidence": 0.48
         },
         "category": "usa"
+      },
+      {
+        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
+        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-24T22:56:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump offers UFC chief Dana White press secretary job",
+        "link": "https://www.cnbc.com/2026/11/07/trump-ufc-dana-white-press-secretary-offer.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump offered the job of press secretary to UFC president and CEO Dana White on Saturday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-07T23:13:38.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.73,
-      "neu": 87.17,
-      "neg": 8.1,
-      "count": 41
+      "pos": 4.25,
+      "neu": 87.57,
+      "neg": 8.18,
+      "count": 38
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 5.93,
-        "neu": 85.93,
-        "neg": 8.14,
-        "count": 10
-      },
-      {
-        "source": "NBC News",
-        "pos": 4.21,
-        "neu": 86.26,
-        "neg": 9.53,
-        "count": 7
+        "pos": 5.05,
+        "neu": 87.09,
+        "neg": 7.85,
+        "count": 11
       },
       {
         "source": "NYT",
@@ -5498,11 +5502,11 @@
         "count": 6
       },
       {
-        "source": "CBS News",
-        "pos": 1,
-        "neu": 90.63,
-        "neg": 8.38,
-        "count": 4
+        "source": "NBC News",
+        "pos": 4.8,
+        "neu": 85.93,
+        "neg": 9.27,
+        "count": 6
       },
       {
         "source": "WSJ",
@@ -5519,10 +5523,10 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 12.4,
-        "neu": 86.5,
-        "neg": 1.1,
+        "source": "CBS News",
+        "pos": 1.33,
+        "neu": 91.47,
+        "neg": 7.2,
         "count": 3
       },
       {
@@ -5543,10 +5547,10 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 3.32,
-        "neu": 87.5,
-        "neg": 9.18,
-        "count": 20
+        "pos": 2.75,
+        "neu": 87.67,
+        "neg": 9.58,
+        "count": 18
       },
       {
         "topic": "Policy",
@@ -5564,10 +5568,10 @@
       },
       {
         "topic": "Public Statements",
-        "pos": 5.26,
-        "neu": 91.52,
-        "neg": 3.22,
-        "count": 5
+        "pos": 2.67,
+        "neu": 95.88,
+        "neg": 1.45,
+        "count": 4
       },
       {
         "topic": "Economy",
@@ -5608,28 +5612,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-07T19:40:00.988Z",
+        "label": "2026-11-07T22:44:32.742Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-07T20:40:00.988Z",
+        "label": "2026-11-07T23:44:32.742Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-07T21:40:00.988Z",
+        "label": "2026-11-08T00:44:32.742Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-07T22:40:00.988Z",
+        "label": "2026-11-08T01:44:32.742Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5638,28 +5642,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-07T19:40:00.988Z",
+        "label": "2026-11-07T22:44:32.742Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-07T20:40:00.988Z",
+        "label": "2026-11-07T23:44:32.742Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-07T21:40:00.988Z",
+        "label": "2026-11-08T00:44:32.742Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-07T22:40:00.988Z",
+        "label": "2026-11-08T01:44:32.742Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5739,7 +5743,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-07T23:40:00.989Z",
+    "generatedAt": "2026-11-08T02:44:32.743Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5860,8 +5864,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 181,
-      "potusArticles": 41,
+      "usaArticles": 180,
+      "potusArticles": 38,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
