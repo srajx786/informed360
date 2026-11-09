@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-08T23:57:22.312Z",
+  "generatedAt": "2026-11-09T05:59:46.432Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 181,
-    "potusArticles": 48
+    "usaArticles": 183,
+    "potusArticles": 54
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-08T19:57:22.312Z",
+          "label": "2026-11-09T01:59:46.432Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T20:57:22.312Z",
+          "label": "2026-11-09T02:59:46.432Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T21:57:22.312Z",
+          "label": "2026-11-09T03:59:46.432Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T22:57:22.312Z",
+          "label": "2026-11-09T04:59:46.432Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-08T19:57:22.312Z",
+          "label": "2026-11-09T01:59:46.433Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T20:57:22.312Z",
+          "label": "2026-11-09T02:59:46.433Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T21:57:22.312Z",
+          "label": "2026-11-09T03:59:46.433Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T22:57:22.312Z",
+          "label": "2026-11-09T04:59:46.433Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.56,
-      "neu": 84.21,
-      "neg": 8.23,
-      "count": 181
+      "pos": 7.08,
+      "neu": 83,
+      "neg": 9.91,
+      "count": 183
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.83,
-        "neu": 84.56,
-        "neg": 7.61,
-        "count": 39
+        "pos": 9.26,
+        "neu": 83.12,
+        "neg": 7.63,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 10.28,
-        "neu": 79.04,
-        "neg": 10.67,
+        "pos": 7.8,
+        "neu": 78.35,
+        "neg": 13.85,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.75,
-        "neu": 87.53,
-        "neg": 7.72,
+        "pos": 4.38,
+        "neu": 81.37,
+        "neg": 14.25,
         "count": 26
       },
       {
@@ -4591,24 +4591,24 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.06,
-        "neu": 88.14,
-        "neg": 3.81,
+        "pos": 7.43,
+        "neu": 87.23,
+        "neg": 5.34,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 6.77,
-        "neu": 86.98,
-        "neg": 6.25,
+        "pos": 6.43,
+        "neu": 87.06,
+        "neg": 6.51,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 8.86,
-        "neu": 84.46,
-        "neg": 6.69,
-        "count": 18
+        "pos": 6.13,
+        "neu": 86.1,
+        "neg": 7.77,
+        "count": 19
       },
       {
         "source": "NPR",
@@ -4635,24 +4635,14 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Manufacturing",
-          "bias": -26.8,
-          "count": 1
-        },
-        {
-          "name": "Materials",
-          "bias": -17,
-          "count": 1
-        },
-        {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -9.85,
+          "count": 2
         },
         {
           "name": "Utilities",
-          "bias": -6.4,
-          "count": 5
+          "bias": -9.38,
+          "count": 6
         },
         {
           "name": "Real Estate",
@@ -4660,24 +4650,29 @@
           "count": 1
         },
         {
+          "name": "Materials",
+          "bias": -5.7,
+          "count": 2
+        },
+        {
           "name": "Energy",
-          "bias": 1.44,
+          "bias": -3.83,
           "count": 7
         },
         {
+          "name": "Finance",
+          "bias": -3.36,
+          "count": 18
+        },
+        {
           "name": "Technology",
-          "bias": -1.25,
-          "count": 140
+          "bias": -3.34,
+          "count": 142
         },
         {
           "name": "Healthcare",
-          "bias": 0.61,
-          "count": 14
-        },
-        {
-          "name": "Finance",
-          "bias": 0.1,
-          "count": 18
+          "bias": -1.18,
+          "count": 9
         }
       ],
       "pos": [
@@ -4689,68 +4684,68 @@
       ],
       "neu": [
         {
-          "name": "Utilities",
-          "bias": -6.4,
-          "count": 5
-        },
-        {
           "name": "Energy",
-          "bias": 1.44,
+          "bias": -3.83,
           "count": 7
         },
         {
+          "name": "Finance",
+          "bias": -3.36,
+          "count": 18
+        },
+        {
           "name": "Technology",
-          "bias": -1.25,
-          "count": 140
+          "bias": -3.34,
+          "count": 142
         }
       ],
       "neg": [
         {
-          "name": "Manufacturing",
-          "bias": -26.8,
-          "count": 1
+          "name": "Communication",
+          "bias": -9.85,
+          "count": 2
+        },
+        {
+          "name": "Utilities",
+          "bias": -9.38,
+          "count": 6
         },
         {
           "name": "Materials",
-          "bias": -17,
-          "count": 1
-        },
-        {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -5.7,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-08T19:57:22.314Z",
+          "label": "2026-11-09T01:59:46.435Z",
           "pos": 5,
-          "neu": 88,
-          "neg": 7,
-          "count": 9
+          "neu": 82,
+          "neg": 13,
+          "count": 11
         },
         {
-          "label": "2026-11-08T20:57:22.314Z",
-          "pos": 9,
+          "label": "2026-11-09T02:59:46.435Z",
+          "pos": 5,
+          "neu": 80,
+          "neg": 16,
+          "count": 8
+        },
+        {
+          "label": "2026-11-09T03:59:46.435Z",
+          "pos": 14,
           "neu": 77,
-          "neg": 14,
-          "count": 10
+          "neg": 8,
+          "count": 2
         },
         {
-          "label": "2026-11-08T21:57:22.314Z",
-          "pos": 9,
+          "label": "2026-11-09T04:59:46.435Z",
+          "pos": 3,
           "neu": 84,
-          "neg": 7,
-          "count": 17
-        },
-        {
-          "label": "2026-11-08T22:57:22.314Z",
-          "pos": 7,
-          "neu": 85,
-          "neg": 7,
-          "count": 13
+          "neg": 13,
+          "count": 6
         }
       ]
     }
@@ -4958,42 +4953,42 @@
         "category": "world"
       },
       {
-        "title": "Deputy White House Chief of Staff Richard Walters exits job ahead of Stephen Miller takeover",
-        "link": "https://www.foxnews.com/politics/deputy-white-house-chief-staff-richard-walters-exits-job-ahead-stephen-miller-takeover",
+        "title": "Bernie Sanders warns Democrats not to spend all their time investigating Trump",
+        "link": "https://www.foxnews.com/politics/bernie-sanders-warns-democrats-not-spend-all-time-investigating-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Stephen Miller praised Richard Walters as an “invaluable member\" who will continue helping the administration from outside the White House.",
+        "description": "Sen. Bernie Sanders warned Democrats not to spend all their time investigating the Trump administration, urging the party to prioritize affordability and working-class families.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T20:43:44.000Z",
+        "publishedAt": "2026-11-09T03:56:11.000Z",
         "sentiment": {
-          "posP": 14.1,
-          "negP": 0,
-          "neuP": 85.9,
-          "label": "positive",
-          "confidence": 0.66
+          "posP": 6.9,
+          "negP": 8.9,
+          "neuP": 84.2,
+          "label": "neutral",
+          "confidence": 0.05
         },
         "category": "usa"
       },
       {
-        "title": "Jeffries Backs Impeaching Hegseth as Democrats Push for Accountability",
-        "link": "https://www.nytimes.com/2026/11/08/us/politics/pete-hegseth-impeachment-hakeem-jeffries.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump says he doesn’t disagree with Vance that Iran war fueled GOP losses",
+        "link": "https://www.foxnews.com/media/trump-says-he-doesnt-disagree-vance-iran-war-fueled-gop-losses",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Democrats have begun laying the groundwork for an aggressive oversight agenda aimed at the Trump administration. But a political reckoning could come before the new Congress begins.",
+        "description": "President Donald Trump said he doesn’t disagree with JD Vance’s assessment that the Iran war, rising costs and Israel ties contributed to GOP midterm losses.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T19:22:53.000Z",
+        "publishedAt": "2026-11-09T03:13:14.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.8,
-          "neuP": 92.2,
+          "negP": 36.5,
+          "neuP": 63.5,
           "label": "negative",
-          "confidence": 0.2
+          "confidence": 0.95
         },
         "category": "usa"
       }
@@ -5200,22 +5195,102 @@
         "category": "world"
       },
       {
-        "title": "Deputy White House Chief of Staff Richard Walters exits job ahead of Stephen Miller takeover",
-        "link": "https://www.foxnews.com/politics/deputy-white-house-chief-staff-richard-walters-exits-job-ahead-stephen-miller-takeover",
+        "title": "Bernie Sanders warns Democrats not to spend all their time investigating Trump",
+        "link": "https://www.foxnews.com/politics/bernie-sanders-warns-democrats-not-spend-all-time-investigating-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Stephen Miller praised Richard Walters as an “invaluable member\" who will continue helping the administration from outside the White House.",
+        "description": "Sen. Bernie Sanders warned Democrats not to spend all their time investigating the Trump administration, urging the party to prioritize affordability and working-class families.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T20:43:44.000Z",
+        "publishedAt": "2026-11-09T03:56:11.000Z",
         "sentiment": {
-          "posP": 14.1,
+          "posP": 6.9,
+          "negP": 8.9,
+          "neuP": 84.2,
+          "label": "neutral",
+          "confidence": 0.05
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he doesn’t disagree with Vance that Iran war fueled GOP losses",
+        "link": "https://www.foxnews.com/media/trump-says-he-doesnt-disagree-vance-iran-war-fueled-gop-losses",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump said he doesn’t disagree with JD Vance’s assessment that the Iran war, rising costs and Israel ties contributed to GOP midterm losses.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T03:13:14.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 36.5,
+          "neuP": 63.5,
+          "label": "negative",
+          "confidence": 0.95
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump admits immigration enforcement may have been too 'tough' in first interview since midterms",
+        "link": "https://www.foxnews.com/media/trump-admits-immigration-enforcement-may-have-been-too-tough-first-interview-since-midterms",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump conceded his deportation policies may have been too \"tough\" and suggested that he could make a deal with the incoming Democratic Congress.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T02:34:49.000Z",
+        "sentiment": {
+          "posP": 5.6,
           "negP": 0,
-          "neuP": 85.9,
+          "neuP": 94.4,
           "label": "positive",
-          "confidence": 0.66
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he was ‘only kidding’ about making Dana White press secretary",
+        "link": "https://www.foxnews.com/politics/trump-says-only-kidding-making-dana-white-white-house-press-secretary",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump says he was joking when he offered Dana White the press secretary job, but confirmed the UFC boss is visiting the White House on Monday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T00:06:40.000Z",
+        "sentiment": {
+          "posP": 3.8,
+          "negP": 0,
+          "neuP": 96.2,
+          "label": "neutral",
+          "confidence": 0.12
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump’s proposed Russia deal raises NATO alarm as ex-commander warns Putin seeks influence over Europe",
+        "link": "https://www.foxnews.com/world/trumps-proposed-russia-deal-raises-nato-alarm-ex-commander-warns-putin-seeks-influence-over-europe",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump says a Russia deal could involve \"all of Europe\" as retired Gen. Philip Breedlove warns Putin wants spheres of influence.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T23:48:13.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 13.3,
+          "neuP": 86.7,
+          "label": "negative",
+          "confidence": 0.49
         },
         "category": "usa"
       },
@@ -5240,76 +5315,36 @@
         "category": "usa"
       },
       {
-        "title": "For Trump and America, a Clear Election Verdict but a Murky Future",
-        "link": "https://www.nytimes.com/2026/11/08/us/politics/trump-midterm-election-america-future.html",
+        "title": "Here Are the Difficult Options Trump Is Weighing to Resolve the War in Iran",
+        "link": "https://www.nytimes.com/2026/11/08/us/politics/trump-iran-options.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "As Americans absorb a stunning new political reality, they face a gap between the time they effectively decided to be done with the president and the time he is actually done.",
+        "description": "There are no good choices facing President Trump as he tries to find a way out of the deeply unpopular conflict. But there are choices.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T16:25:45.000Z",
+        "publishedAt": "2026-11-08T23:49:53.000Z",
         "sentiment": {
-          "posP": 22.8,
-          "negP": 0,
-          "neuP": 77.2,
-          "label": "positive",
-          "confidence": 0.85
+          "posP": 11.3,
+          "negP": 23,
+          "neuP": 65.7,
+          "label": "negative",
+          "confidence": 0.69
         },
         "category": "usa"
       },
       {
-        "title": "Top Astrophysicist Leaves U.S. After Trump Policies Affect Her Work",
-        "link": "https://www.nytimes.com/2026/11/07/science/space/holley-bockelmann-astrophysicist-space-trump.html",
+        "title": "Trump Was ‘Only Kidding’ in Asking Dana White to Be His Press Secretary",
+        "link": "https://www.nytimes.com/2026/11/08/us/politics/trump-joke-dana-white-press-secretary.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Kelly Holley-Bockelmann was one of the top astrophysicists in the country until President Trump’s policies affected every part of her work.",
+        "description": "The president said on Sunday that the U.F.C. chief executive “loves the idea” of being the White House spokesman but that his public offer of the job was “just a little fun.”",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T22:27:55.000Z",
-        "sentiment": {
-          "posP": 10.8,
-          "negP": 4.8,
-          "neuP": 84.4,
-          "label": "positive",
-          "confidence": 0.25
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How Trump Is Dismantling America’s Scientific Research Machine",
-        "link": "https://www.nytimes.com/2026/10/31/science/how-trump-is-dismantling-americas-scientific-research-machine.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The system that has driven life-altering discoveries and helped make the United States a superpower is now under intense strain.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T02:09:25.000Z",
-        "sentiment": {
-          "posP": 14,
-          "negP": 4.1,
-          "neuP": 81.9,
-          "label": "positive",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "A Stake Through the Heart of Trump’s Red Map",
-        "link": "https://www.nytimes.com/2026/11/08/opinion/midterms-democrats-schumer.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Realignment is so 2024.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T11:00:21.000Z",
+        "publishedAt": "2026-11-09T00:43:21.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5320,199 +5355,166 @@
         "category": "usa"
       },
       {
-        "title": "Justice Dept. Mulled Naming The Times as Conspirator in Comey Leak Case",
-        "link": "https://www.nytimes.com/2026/11/08/us/politics/justice-dept-new-york-times-comey-leak.html",
+        "title": "Trump Says Immigration Crackdown May Have ‘Hurt’ Republicans in Midterms",
+        "link": "https://www.nytimes.com/2026/11/08/us/politics/trump-immigration-crackdown-republicans-midterms.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "It remains unclear how the Justice Department might proceed. The move would be a major escalation of the Trump administration’s recent attacks against the news media.",
+        "description": "The president was asked in a “60 Minutes” interview that aired on Sunday whether his deportation policies went too far. “I think it might be too tough,” he said.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T22:59:31.000Z",
+        "publishedAt": "2026-11-09T03:16:26.000Z",
         "sentiment": {
-          "posP": 14.8,
-          "negP": 15.8,
-          "neuP": 69.4,
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
           "label": "neutral",
-          "confidence": 0.13
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "New House members on their top priorities: \"Cannot be afraid to do big things\"",
-        "link": "https://www.cbsnews.com/news/new-house-members-top-priorities/",
+        "title": "Trump says U.S. took a \"giant step back in history\" with midterm results",
+        "link": "https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "CBS News spoke with several Democratic representatives-elect who say their priority is making life affordable for the American people, but they also plan to hold the Trump administration accountable.",
+        "description": "President Trump on Sunday said the U.S. \"took a giant step back in history\" as his White House continued to roil from his post-midterm shakeup",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T22:23:00.000Z",
+        "publishedAt": "2026-11-09T03:29:24.000Z",
         "sentiment": {
-          "posP": 3.2,
+          "posP": 0,
+          "negP": 4.4,
+          "neuP": 95.6,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump prepares for a fight with Congress, assembling more combative White House",
+        "link": "https://www.cbsnews.com/video/trump-prepares-fight-congress-assembling-more-combative-white-house/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Lawmakers are returning to Washington, D.C., to a stunning new political reality, and President Trump is vowing to fight back against the new Congress after the midterm blowout. He spoke with 60 Minutes correspondent Ross Douthat and Olivia Gazis reports on the lawmakers' return.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T02:05:00.000Z",
+        "sentiment": {
+          "posP": 4.4,
+          "negP": 8.8,
+          "neuP": 86.8,
+          "label": "negative",
+          "confidence": 0.38
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he was kidding when he offered UFC CEO press secretary role",
+        "link": "https://www.cbsnews.com/news/trump-offers-white-house-press-secretary-role-dana-white/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The role of the White House press secretary has been largely vacant since Karoline Leavitt stepped aside ​in August.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T00:06:00.000Z",
+        "sentiment": {
+          "posP": 4.3,
           "negP": 0,
-          "neuP": 96.8,
+          "neuP": 95.7,
           "label": "neutral",
           "confidence": 0.1
         },
         "category": "usa"
       },
       {
-        "title": "Former RFK Jr. adviser accuses Trump officials of corruption",
-        "link": "https://www.cbsnews.com/news/calley-means-white-house-health-and-human-services-rfk-jr/",
+        "title": "Extended Interview: President Trump on 60 Minutes",
+        "link": "https://www.cbsnews.com/video/president-donald-trumps-extended-november-2026-60-minutes-interview/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Calley Means, a White House senior adviser and aide to Health Secretary Robert F. Kennedy Jr., who resigned last month, said on \"Face the Nation with Margaret Brennan\" that some Trump administration officials are catering to special interests.",
+        "description": "President Trump sat down with Ross Douthat in November 2026 to discuss Republican losses in the midterm elections, the wars in Iran and Ukraine, the economy, and more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T21:46:00.000Z",
+        "publishedAt": "2026-11-09T00:05:14.000Z",
         "sentiment": {
-          "posP": 9.2,
-          "negP": 8.6,
+          "posP": 0,
+          "negP": 16,
+          "neuP": 84,
+          "label": "negative",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Full transcript: Trump on 60 Minutes",
+        "link": "https://www.cbsnews.com/news/read-the-full-transcript-of-ross-douthats-interview-with-president-trump/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump sat down with Ross Douthat to discuss Republican losses in the midterm elections, the wars in Iran and Ukraine, the economy and more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T00:00:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17.8,
           "neuP": 82.2,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Full interview: Former top RFK Jr. aide Calley Means",
-        "link": "https://www.cbsnews.com/video/full-interview-former-top-rfk-jr-aide-calley-means/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Watch Margaret Brennan's full interview with former senior White House aide Calley Means, a portion of which aired on Nov. 8, 2026.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T20:07:40.000Z",
-        "sentiment": {
-          "posP": 5.8,
-          "negP": 0,
-          "neuP": 94.2,
-          "label": "positive",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Calley Means says Trump \"has been subverted by people that are beholden to special interests\"",
-        "link": "https://www.cbsnews.com/video/calley-means-on-trump-being-subverted/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Calley Means, the former White House senior adviser and aide to Health Secretary Robert F. Kennedy Jr. who resigned last month, told \"Face the Nation with Margaret Brennan\" that he believes \"President Trump has been subverted by people that are beholden to special interests and not what President Trump ran on, and what voters voted for.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T18:48:57.000Z",
-        "sentiment": {
-          "posP": 9.7,
-          "negP": 2.6,
-          "neuP": 87.7,
-          "label": "positive",
-          "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump on allegations he's profiting from the presidency",
-        "link": "https://www.cbsnews.com/video/trump-on-allegations-hes-profiting-from-the-presidency/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ross Douthat asks the President how his net worth rose by nearly $3 billion, according to a Forbes estimate, since he returned to office. Watch the interview Sunday at 7 p.m. ET/PT on 60 Minutes.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T18:03:00.000Z",
-        "sentiment": {
-          "posP": 10.3,
-          "negP": 0,
-          "neuP": 89.7,
-          "label": "positive",
-          "confidence": 0.54
-        },
-        "category": "usa"
-      },
-      {
-        "title": "ICE unlikely to scale back crackdown, sources say, citing Stephen Miller",
-        "link": "https://www.cbsnews.com/news/ice-crackdown-stephen-miller-illegal-immigration/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration is unlikely to scale back its aggressive crackdown on illegal immigration following the results of the midterm elections, multiple U.S. officials told CBS News, citing the elevation of Stephen Miller as White House chief of staff.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T17:38:05.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 9.8,
-          "neuP": 90.2,
           "label": "negative",
-          "confidence": 0.64
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Sen.-elect Adam Hamilton says he’d be disappointed if Democrats focus on investigating Trump",
-        "link": "https://www.nbcnews.com/politics/congress/sen-adam-hamilton-disappointed-democrats-trump-investigations-schumer-rcna608088",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Hamilton said Congress should focus on clawing back Trump’s tariffs and ending the war with Iran.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T13:55:10.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 20.6,
-          "neuP": 79.4,
-          "label": "negative",
-          "confidence": 0.79
+          "confidence": 0.74
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.19,
-      "neu": 86.81,
-      "neg": 6.99,
-      "count": 48
+      "pos": 4.87,
+      "neu": 85.84,
+      "neg": 9.29,
+      "count": 54
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 5.89,
-        "neu": 86.72,
-        "neg": 7.39,
-        "count": 14
-      },
-      {
-        "source": "NYT",
-        "pos": 9.42,
-        "neu": 85.01,
-        "neg": 5.56,
-        "count": 8
-      },
-      {
-        "source": "CBS News",
-        "pos": 6.03,
-        "neu": 88.97,
-        "neg": 5,
-        "count": 7
+        "pos": 5.84,
+        "neu": 87.55,
+        "neg": 6.61,
+        "count": 13
       },
       {
         "source": "NBC News",
-        "pos": 6.3,
-        "neu": 83.28,
-        "neg": 10.42,
+        "pos": 6.38,
+        "neu": 84.24,
+        "neg": 9.38,
+        "count": 9
+      },
+      {
+        "source": "CBS News",
+        "pos": 4.87,
+        "neu": 81.69,
+        "neg": 13.44,
+        "count": 9
+      },
+      {
+        "source": "NYT",
+        "pos": 4.05,
+        "neu": 88.82,
+        "neg": 7.13,
+        "count": 6
+      },
+      {
+        "source": "Fox News",
+        "pos": 4.22,
+        "neu": 86,
+        "neg": 9.78,
         "count": 6
       },
       {
@@ -5530,13 +5532,6 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 11.55,
-        "neu": 88.45,
-        "neg": 0,
-        "count": 2
-      },
-      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
@@ -5546,46 +5541,46 @@
       {
         "source": "ABC News",
         "pos": 0,
-        "neu": 95.1,
-        "neg": 4.9,
+        "neu": 85.75,
+        "neg": 14.25,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.58,
-        "neu": 85.39,
-        "neg": 8.03,
-        "count": 24
+        "pos": 5.71,
+        "neu": 83.28,
+        "neg": 11.01,
+        "count": 28
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 4.06,
+        "neu": 91.88,
+        "neg": 4.07,
+        "count": 9
       },
       {
         "topic": "Policy",
-        "pos": 6.41,
-        "neu": 87.22,
-        "neg": 6.38,
-        "count": 12
+        "pos": 3.65,
+        "neu": 89.14,
+        "neg": 7.21,
+        "count": 8
       },
       {
         "topic": "Foreign Policy",
         "pos": 3.7,
-        "neu": 88.28,
-        "neg": 8.02,
-        "count": 5
-      },
-      {
-        "topic": "Public Statements",
-        "pos": 5,
-        "neu": 92.12,
-        "neg": 2.88,
+        "neu": 85.62,
+        "neg": 10.68,
         "count": 5
       },
       {
         "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
+        "pos": 4.75,
+        "neu": 83.8,
+        "neg": 11.45,
+        "count": 4
       }
     ]
   },
@@ -5612,28 +5607,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-08T19:57:22.316Z",
+        "label": "2026-11-09T01:59:46.438Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T20:57:22.316Z",
+        "label": "2026-11-09T02:59:46.438Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T21:57:22.316Z",
+        "label": "2026-11-09T03:59:46.438Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T22:57:22.316Z",
+        "label": "2026-11-09T04:59:46.438Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5642,28 +5637,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-08T19:57:22.316Z",
+        "label": "2026-11-09T01:59:46.438Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T20:57:22.316Z",
+        "label": "2026-11-09T02:59:46.438Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T21:57:22.316Z",
+        "label": "2026-11-09T03:59:46.438Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T22:57:22.316Z",
+        "label": "2026-11-09T04:59:46.438Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5743,7 +5738,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-08T23:57:22.317Z",
+    "generatedAt": "2026-11-09T05:59:46.440Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5864,8 +5859,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 181,
-      "potusArticles": 48,
+      "usaArticles": 183,
+      "potusArticles": 54,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
