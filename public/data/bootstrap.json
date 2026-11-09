@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-08T20:31:57.184Z",
+  "generatedAt": "2026-11-08T23:57:22.312Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 181,
-    "potusArticles": 49
+    "potusArticles": 48
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-08T16:31:57.184Z",
+          "label": "2026-11-08T19:57:22.312Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T17:31:57.184Z",
+          "label": "2026-11-08T20:57:22.312Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T18:31:57.184Z",
+          "label": "2026-11-08T21:57:22.312Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T19:31:57.184Z",
+          "label": "2026-11-08T22:57:22.312Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-08T16:31:57.184Z",
+          "label": "2026-11-08T19:57:22.312Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T17:31:57.184Z",
+          "label": "2026-11-08T20:57:22.312Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T18:31:57.184Z",
+          "label": "2026-11-08T21:57:22.312Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-08T19:31:57.184Z",
+          "label": "2026-11-08T22:57:22.312Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.61,
-      "neu": 84.5,
-      "neg": 7.9,
+      "pos": 7.56,
+      "neu": 84.21,
+      "neg": 8.23,
       "count": 181
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.05,
-        "neu": 84.23,
-        "neg": 7.72,
-        "count": 40
+        "pos": 7.83,
+        "neu": 84.56,
+        "neg": 7.61,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 10.22,
-        "neu": 79.75,
-        "neg": 10.02,
+        "pos": 10.28,
+        "neu": 79.04,
+        "neg": 10.67,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.36,
-        "neu": 89.65,
-        "neg": 5.99,
+        "pos": 4.75,
+        "neu": 87.53,
+        "neg": 7.72,
         "count": 26
       },
       {
@@ -4591,24 +4591,24 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.45,
-        "neu": 88.19,
-        "neg": 5.37,
+        "pos": 8.06,
+        "neu": 88.14,
+        "neg": 3.81,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 7.46,
-        "neu": 87.7,
-        "neg": 4.85,
+        "pos": 6.77,
+        "neu": 86.98,
+        "neg": 6.25,
         "count": 20
       },
       {
         "source": "NYT",
-        "pos": 10.71,
-        "neu": 83.09,
-        "neg": 6.2,
-        "count": 17
+        "pos": 8.86,
+        "neu": 84.46,
+        "neg": 6.69,
+        "count": 18
       },
       {
         "source": "NPR",
@@ -4635,14 +4635,24 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Manufacturing",
+          "bias": -26.8,
+          "count": 1
+        },
+        {
+          "name": "Materials",
+          "bias": -17,
+          "count": 1
+        },
+        {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
           "name": "Utilities",
-          "bias": -7.63,
-          "count": 4
+          "bias": -6.4,
+          "count": 5
         },
         {
           "name": "Real Estate",
@@ -4651,28 +4661,23 @@
         },
         {
           "name": "Energy",
-          "bias": 1.45,
-          "count": 6
-        },
-        {
-          "name": "Healthcare",
-          "bias": 1.27,
-          "count": 13
-        },
-        {
-          "name": "Finance",
-          "bias": -1.15,
-          "count": 19
+          "bias": 1.44,
+          "count": 7
         },
         {
           "name": "Technology",
-          "bias": -1.05,
-          "count": 135
+          "bias": -1.25,
+          "count": 140
         },
         {
-          "name": "Materials",
-          "bias": 0,
-          "count": 1
+          "name": "Healthcare",
+          "bias": 0.61,
+          "count": 14
+        },
+        {
+          "name": "Finance",
+          "bias": 0.1,
+          "count": 18
         }
       ],
       "pos": [
@@ -4684,63 +4689,68 @@
       ],
       "neu": [
         {
+          "name": "Utilities",
+          "bias": -6.4,
+          "count": 5
+        },
+        {
           "name": "Energy",
-          "bias": 1.45,
-          "count": 6
+          "bias": 1.44,
+          "count": 7
         },
         {
-          "name": "Healthcare",
-          "bias": 1.27,
-          "count": 13
-        },
-        {
-          "name": "Finance",
-          "bias": -1.15,
-          "count": 19
+          "name": "Technology",
+          "bias": -1.25,
+          "count": 140
         }
       ],
       "neg": [
         {
-          "name": "Communication",
-          "bias": -14,
+          "name": "Manufacturing",
+          "bias": -26.8,
           "count": 1
         },
         {
-          "name": "Utilities",
-          "bias": -7.63,
-          "count": 4
+          "name": "Materials",
+          "bias": -17,
+          "count": 1
+        },
+        {
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-08T16:31:57.186Z",
+          "label": "2026-11-08T19:57:22.314Z",
+          "pos": 5,
+          "neu": 88,
+          "neg": 7,
+          "count": 9
+        },
+        {
+          "label": "2026-11-08T20:57:22.314Z",
+          "pos": 9,
+          "neu": 77,
+          "neg": 14,
+          "count": 10
+        },
+        {
+          "label": "2026-11-08T21:57:22.314Z",
+          "pos": 9,
+          "neu": 84,
+          "neg": 7,
+          "count": 17
+        },
+        {
+          "label": "2026-11-08T22:57:22.314Z",
           "pos": 7,
-          "neu": 89,
-          "neg": 4,
-          "count": 13
-        },
-        {
-          "label": "2026-11-08T17:31:57.186Z",
-          "pos": 10,
-          "neu": 85,
-          "neg": 6,
-          "count": 13
-        },
-        {
-          "label": "2026-11-08T18:31:57.186Z",
-          "pos": 3,
-          "neu": 92,
-          "neg": 5,
-          "count": 13
-        },
-        {
-          "label": "2026-11-08T19:31:57.186Z",
-          "pos": 8,
           "neu": 85,
           "neg": 7,
-          "count": 16
+          "count": 13
         }
       ]
     }
@@ -4948,22 +4958,22 @@
         "category": "world"
       },
       {
-        "title": "Leavitt reveals what Republicans must do to survive politically after Trump leaves White House",
-        "link": "https://www.foxnews.com/media/leavitt-reveals-what-republicans-must-do-survive-politically-after-trump-leaves-white-house",
+        "title": "Deputy White House Chief of Staff Richard Walters exits job ahead of Stephen Miller takeover",
+        "link": "https://www.foxnews.com/politics/deputy-white-house-chief-staff-richard-walters-exits-job-ahead-stephen-miller-takeover",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Karoline Leavitt says the GOP must find a new leader who can connect with working Americans and rebuild Trump's America First political coalition.",
+        "description": "Stephen Miller praised Richard Walters as an “invaluable member\" who will continue helping the administration from outside the White House.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T17:07:21.000Z",
+        "publishedAt": "2026-11-08T20:43:44.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 14.1,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 85.9,
+          "label": "positive",
+          "confidence": 0.66
         },
         "category": "usa"
       },
@@ -4977,7 +4987,7 @@
         "description": "Democrats have begun laying the groundwork for an aggressive oversight agenda aimed at the Trump administration. But a political reckoning could come before the new Congress begins.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T19:22:52.000Z",
+        "publishedAt": "2026-11-08T19:22:53.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 7.8,
@@ -5190,22 +5200,22 @@
         "category": "world"
       },
       {
-        "title": "Leavitt reveals what Republicans must do to survive politically after Trump leaves White House",
-        "link": "https://www.foxnews.com/media/leavitt-reveals-what-republicans-must-do-survive-politically-after-trump-leaves-white-house",
+        "title": "Deputy White House Chief of Staff Richard Walters exits job ahead of Stephen Miller takeover",
+        "link": "https://www.foxnews.com/politics/deputy-white-house-chief-staff-richard-walters-exits-job-ahead-stephen-miller-takeover",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Karoline Leavitt says the GOP must find a new leader who can connect with working Americans and rebuild Trump's America First political coalition.",
+        "description": "Stephen Miller praised Richard Walters as an “invaluable member\" who will continue helping the administration from outside the White House.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T17:07:21.000Z",
+        "publishedAt": "2026-11-08T20:43:44.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 14.1,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 85.9,
+          "label": "positive",
+          "confidence": 0.66
         },
         "category": "usa"
       },
@@ -5219,7 +5229,7 @@
         "description": "Democrats have begun laying the groundwork for an aggressive oversight agenda aimed at the Trump administration. But a political reckoning could come before the new Congress begins.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T19:22:52.000Z",
+        "publishedAt": "2026-11-08T19:22:53.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 7.8,
@@ -5259,7 +5269,7 @@
         "description": "Kelly Holley-Bockelmann was one of the top astrophysicists in the country until President Trump’s policies affected every part of her work.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T11:49:36.000Z",
+        "publishedAt": "2026-11-08T22:27:55.000Z",
         "sentiment": {
           "posP": 10.8,
           "negP": 4.8,
@@ -5319,13 +5329,53 @@
         "description": "It remains unclear how the Justice Department might proceed. The move would be a major escalation of the Trump administration’s recent attacks against the news media.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T16:10:06.000Z",
+        "publishedAt": "2026-11-08T22:59:31.000Z",
         "sentiment": {
           "posP": 14.8,
           "negP": 15.8,
           "neuP": 69.4,
           "label": "neutral",
           "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "New House members on their top priorities: \"Cannot be afraid to do big things\"",
+        "link": "https://www.cbsnews.com/news/new-house-members-top-priorities/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "CBS News spoke with several Democratic representatives-elect who say their priority is making life affordable for the American people, but they also plan to hold the Trump administration accountable.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T22:23:00.000Z",
+        "sentiment": {
+          "posP": 3.2,
+          "negP": 0,
+          "neuP": 96.8,
+          "label": "neutral",
+          "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Former RFK Jr. adviser accuses Trump officials of corruption",
+        "link": "https://www.cbsnews.com/news/calley-means-white-house-health-and-human-services-rfk-jr/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Calley Means, a White House senior adviser and aide to Health Secretary Robert F. Kennedy Jr., who resigned last month, said on \"Face the Nation with Margaret Brennan\" that some Trump administration officials are catering to special interests.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-08T21:46:00.000Z",
+        "sentiment": {
+          "posP": 9.2,
+          "negP": 8.6,
+          "neuP": 82.2,
+          "label": "neutral",
+          "confidence": 0.08
         },
         "category": "usa"
       },
@@ -5410,79 +5460,39 @@
         "category": "usa"
       },
       {
-        "title": "Trump says U.S. took a \"giant step back in history\" with midterm results",
-        "link": "https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Sen.-elect Adam Hamilton says he’d be disappointed if Democrats focus on investigating Trump",
+        "link": "https://www.nbcnews.com/politics/congress/sen-adam-hamilton-disappointed-democrats-trump-investigations-schumer-rcna608088",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump on Sunday said the U.S. \"took a giant step back in history\" as his White House continued to roil from his post-midterm shakeup",
+        "description": "Hamilton said Congress should focus on clawing back Trump’s tariffs and ending the war with Iran.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T17:04:39.000Z",
+        "publishedAt": "2026-11-08T13:55:10.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 4.4,
-          "neuP": 95.6,
-          "label": "neutral",
-          "confidence": 0.15
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How Democrats will try to end Trump's tariffs",
-        "link": "https://www.cnbc.com/2026/11/08/trump-tariffs-democrats-congress-canada.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Rep. Hakeem Jeffries, D-N.Y., who is likely the next House speaker, has made clear that ending President Trump's tariffs is one of Democrats' top priorities.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T15:36:39.000Z",
-        "sentiment": {
-          "posP": 12.4,
-          "negP": 0,
-          "neuP": 87.6,
-          "label": "positive",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Democrats amp up Trump investigation threats, Blanche counters he may probe lawmakers",
-        "link": "https://www.cnbc.com/2026/11/08/democrats-trump-oversight-blanche-doj-investigations.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats have vowed to investigate both President Donald Trump's White House and businesses that have worked with the administration.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T18:57:56.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 8.5,
-          "neuP": 91.5,
+          "negP": 20.6,
+          "neuP": 79.4,
           "label": "negative",
-          "confidence": 0.42
+          "confidence": 0.79
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.27,
-      "neu": 87.72,
-      "neg": 6.01,
-      "count": 49
+      "pos": 6.19,
+      "neu": 86.81,
+      "neg": 6.99,
+      "count": 48
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 7.62,
-        "neu": 86.11,
-        "neg": 6.27,
-        "count": 12
+        "pos": 5.89,
+        "neu": 86.72,
+        "neg": 7.39,
+        "count": 14
       },
       {
         "source": "NYT",
@@ -5492,17 +5502,17 @@
         "count": 8
       },
       {
-        "source": "NBC News",
-        "pos": 7.34,
-        "neu": 88.38,
-        "neg": 4.29,
-        "count": 8
+        "source": "CBS News",
+        "pos": 6.03,
+        "neu": 88.97,
+        "neg": 5,
+        "count": 7
       },
       {
-        "source": "CBS News",
-        "pos": 4.97,
-        "neu": 89.9,
-        "neg": 5.13,
+        "source": "NBC News",
+        "pos": 6.3,
+        "neu": 83.28,
+        "neg": 10.42,
         "count": 6
       },
       {
@@ -5510,13 +5520,6 @@
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
-        "count": 4
-      },
-      {
-        "source": "ABC News",
-        "pos": 1.68,
-        "neu": 91.03,
-        "neg": 7.3,
         "count": 4
       },
       {
@@ -5528,8 +5531,8 @@
       },
       {
         "source": "Fox News",
-        "pos": 4.5,
-        "neu": 95.5,
+        "pos": 11.55,
+        "neu": 88.45,
         "neg": 0,
         "count": 2
       },
@@ -5539,22 +5542,29 @@
         "neu": 88,
         "neg": 9,
         "count": 2
+      },
+      {
+        "source": "ABC News",
+        "pos": 0,
+        "neu": 95.1,
+        "neg": 4.9,
+        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.06,
-        "neu": 87.44,
-        "neg": 6.5,
-        "count": 23
+        "pos": 6.58,
+        "neu": 85.39,
+        "neg": 8.03,
+        "count": 24
       },
       {
         "topic": "Policy",
-        "pos": 7.49,
-        "neu": 86.26,
-        "neg": 6.24,
-        "count": 14
+        "pos": 6.41,
+        "neu": 87.22,
+        "neg": 6.38,
+        "count": 12
       },
       {
         "topic": "Foreign Policy",
@@ -5565,9 +5575,9 @@
       },
       {
         "topic": "Public Statements",
-        "pos": 5.12,
-        "neu": 93.76,
-        "neg": 1.12,
+        "pos": 5,
+        "neu": 92.12,
+        "neg": 2.88,
         "count": 5
       },
       {
@@ -5602,28 +5612,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-08T16:31:57.189Z",
+        "label": "2026-11-08T19:57:22.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T17:31:57.189Z",
+        "label": "2026-11-08T20:57:22.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T18:31:57.189Z",
+        "label": "2026-11-08T21:57:22.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T19:31:57.189Z",
+        "label": "2026-11-08T22:57:22.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5632,28 +5642,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-08T16:31:57.189Z",
+        "label": "2026-11-08T19:57:22.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T17:31:57.189Z",
+        "label": "2026-11-08T20:57:22.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T18:31:57.189Z",
+        "label": "2026-11-08T21:57:22.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-08T19:31:57.189Z",
+        "label": "2026-11-08T22:57:22.316Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5733,7 +5743,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-08T20:31:57.190Z",
+    "generatedAt": "2026-11-08T23:57:22.317Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5855,7 +5865,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 181,
-      "potusArticles": 49,
+      "potusArticles": 48,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
