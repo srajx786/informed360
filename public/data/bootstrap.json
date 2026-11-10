@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-10T15:44:26.517Z",
+  "generatedAt": "2026-11-10T21:26:58.761Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 190,
-    "potusArticles": 33
+    "potusArticles": 35
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-10T11:44:26.517Z",
+          "label": "2026-11-10T17:26:58.761Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T12:44:26.517Z",
+          "label": "2026-11-10T18:26:58.761Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T13:44:26.517Z",
+          "label": "2026-11-10T19:26:58.761Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T14:44:26.517Z",
+          "label": "2026-11-10T20:26:58.761Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-10T11:44:26.517Z",
+          "label": "2026-11-10T17:26:58.761Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T12:44:26.517Z",
+          "label": "2026-11-10T18:26:58.761Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T13:44:26.517Z",
+          "label": "2026-11-10T19:26:58.761Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T14:44:26.517Z",
+          "label": "2026-11-10T20:26:58.761Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 8.42,
-      "neu": 82.64,
-      "neg": 8.94,
+      "pos": 7.32,
+      "neu": 82.62,
+      "neg": 10.06,
       "count": 190
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.33,
-        "neu": 82.03,
-        "neg": 7.64,
+        "pos": 8.44,
+        "neu": 83.47,
+        "neg": 8.09,
         "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 8.52,
-        "neu": 78.59,
-        "neg": 12.89,
+        "pos": 7.62,
+        "neu": 78.55,
+        "neg": 13.83,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 7.52,
-        "neu": 84.47,
-        "neg": 8.01,
+        "pos": 4.43,
+        "neu": 82.59,
+        "neg": 12.98,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.83,
-        "neu": 82.63,
-        "neg": 10.55,
+        "pos": 7.4,
+        "neu": 83.88,
+        "neg": 8.72,
         "count": 24
       },
       {
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.89,
-        "neu": 86.38,
-        "neg": 2.74,
+        "pos": 10.18,
+        "neu": 84.56,
+        "neg": 5.27,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 7.59,
-        "neu": 85.75,
-        "neg": 6.66,
+        "pos": 6.35,
+        "neu": 85.38,
+        "neg": 8.28,
         "count": 20
       },
       {
@@ -4635,8 +4635,8 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -17,
+          "name": "Materials",
+          "bias": -14.4,
           "count": 1
         },
         {
@@ -4645,107 +4645,112 @@
           "count": 1
         },
         {
+          "name": "Healthcare",
+          "bias": -8.68,
+          "count": 8
+        },
+        {
           "name": "Real Estate",
-          "bias": 13.03,
-          "count": 3
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 9.03,
-          "count": 4
-        },
-        {
-          "name": "Energy",
-          "bias": 1.79,
-          "count": 13
-        },
-        {
-          "name": "Finance",
-          "bias": -0.81,
-          "count": 20
+          "bias": -6.1,
+          "count": 2
         },
         {
           "name": "Technology",
-          "bias": -0.54,
-          "count": 137
+          "bias": -3.26,
+          "count": 144
         },
         {
-          "name": "Healthcare",
-          "bias": -0.13,
-          "count": 11
+          "name": "Energy",
+          "bias": 2.33,
+          "count": 9
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 2,
+          "count": 3
+        },
+        {
+          "name": "Utilities",
+          "bias": 0.67,
+          "count": 3
+        },
+        {
+          "name": "Finance",
+          "bias": -0.53,
+          "count": 19
         }
       ],
       "pos": [
         {
-          "name": "Real Estate",
-          "bias": 13.03,
-          "count": 3
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 9.03,
-          "count": 4
+          "name": "Energy",
+          "bias": 2.33,
+          "count": 9
         }
       ],
       "neu": [
         {
-          "name": "Energy",
-          "bias": 1.79,
-          "count": 13
-        },
-        {
-          "name": "Finance",
-          "bias": -0.81,
-          "count": 20
+          "name": "Real Estate",
+          "bias": -6.1,
+          "count": 2
         },
         {
           "name": "Technology",
-          "bias": -0.54,
-          "count": 137
+          "bias": -3.26,
+          "count": 144
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 2,
+          "count": 3
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -17,
+          "name": "Materials",
+          "bias": -14.4,
           "count": 1
         },
         {
           "name": "Communication",
           "bias": -14,
           "count": 1
+        },
+        {
+          "name": "Healthcare",
+          "bias": -8.68,
+          "count": 8
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-10T11:44:26.518Z",
-          "pos": 10,
-          "neu": 82,
+          "label": "2026-11-10T17:26:58.763Z",
+          "pos": 8,
+          "neu": 78,
+          "neg": 14,
+          "count": 8
+        },
+        {
+          "label": "2026-11-10T18:26:58.763Z",
+          "pos": 6,
+          "neu": 86,
           "neg": 7,
-          "count": 10
+          "count": 9
         },
         {
-          "label": "2026-11-10T12:44:26.518Z",
-          "pos": 8,
-          "neu": 87,
-          "neg": 5,
-          "count": 17
+          "label": "2026-11-10T19:26:58.763Z",
+          "pos": 6,
+          "neu": 84,
+          "neg": 10,
+          "count": 37
         },
         {
-          "label": "2026-11-10T13:44:26.518Z",
-          "pos": 8,
+          "label": "2026-11-10T20:26:58.763Z",
+          "pos": 7,
           "neu": 83,
-          "neg": 9,
-          "count": 13
-        },
-        {
-          "label": "2026-11-10T14:44:26.518Z",
-          "pos": 8,
-          "neu": 83,
-          "neg": 9,
-          "count": 40
+          "neg": 10,
+          "count": 38
         }
       ]
     }
@@ -4953,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "Trump signals surprising approach to choosing his successor as GOP's 2028 field grows",
-        "link": "https://www.foxnews.com/politics/trump-signals-surprising-approach-choosing-his-successor-gops-2028-field-grows",
+        "title": "Jamie Raskin calls concerns over spending too much time investigating Trump a media 'narrative'",
+        "link": "https://www.foxnews.com/media/jamie-raskin-calls-concerns-over-spending-too-much-time-investigating-trump-media-narrative",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump says he may not endorse in the 2028 Republican Party presidential primary",
+        "description": "Rep. Jamie Raskin, D-Md., dismissed concerns within the party about Democrats in Congress focusing too much on Trump investigations as a media \"narrative.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T15:21:19.000Z",
+        "publishedAt": "2026-11-10T20:15:14.000Z",
         "sentiment": {
-          "posP": 21.9,
-          "negP": 6.4,
-          "neuP": 71.7,
+          "posP": 7.4,
+          "negP": 0,
+          "neuP": 92.6,
           "label": "positive",
-          "confidence": 0.58
+          "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "Chappelle, Jennifer Welch jokes about Kirk's murder part of pattern of leftists finding humor in violence",
-        "link": "https://www.foxnews.com/media/chappelle-jennifer-welch-jokes-about-kirks-murder-part-pattern-leftists-finding-humor-violence",
+        "title": "Top Dem cries ‘weaponization’ as comments warning young people not to join Trump admin land her in hot water",
+        "link": "https://www.foxnews.com/politics/top-dem-cries-weaponization-comments-warning-young-people-not-join-trump-admin-lands-hot-water",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "From Dave Chappelle's Charlie Kirk joke to several Trump assassination quips, a growing list of liberal figures have promoted political violence.",
+        "description": "Dem Sen. Elissa Slotkin, D-Mich., cries \"weaponization\" after Trump ordered the Justice Department to investigate her remarks warning young Republicans about joining his administration.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T14:58:28.000Z",
+        "publishedAt": "2026-11-10T20:12:12.000Z",
         "sentiment": {
-          "posP": 19.8,
-          "negP": 30.8,
-          "neuP": 49.4,
+          "posP": 9.8,
+          "negP": 22.7,
+          "neuP": 67.5,
           "label": "negative",
-          "confidence": 0.88
+          "confidence": 0.71
         },
         "category": "usa"
       }
@@ -5195,182 +5200,202 @@
         "category": "world"
       },
       {
-        "title": "Trump signals surprising approach to choosing his successor as GOP's 2028 field grows",
-        "link": "https://www.foxnews.com/politics/trump-signals-surprising-approach-choosing-his-successor-gops-2028-field-grows",
+        "title": "Jamie Raskin calls concerns over spending too much time investigating Trump a media 'narrative'",
+        "link": "https://www.foxnews.com/media/jamie-raskin-calls-concerns-over-spending-too-much-time-investigating-trump-media-narrative",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump says he may not endorse in the 2028 Republican Party presidential primary",
+        "description": "Rep. Jamie Raskin, D-Md., dismissed concerns within the party about Democrats in Congress focusing too much on Trump investigations as a media \"narrative.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T15:21:19.000Z",
+        "publishedAt": "2026-11-10T20:15:14.000Z",
         "sentiment": {
-          "posP": 21.9,
-          "negP": 6.4,
-          "neuP": 71.7,
+          "posP": 7.4,
+          "negP": 0,
+          "neuP": 92.6,
           "label": "positive",
-          "confidence": 0.58
+          "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "Chappelle, Jennifer Welch jokes about Kirk's murder part of pattern of leftists finding humor in violence",
-        "link": "https://www.foxnews.com/media/chappelle-jennifer-welch-jokes-about-kirks-murder-part-pattern-leftists-finding-humor-violence",
+        "title": "Top Dem cries ‘weaponization’ as comments warning young people not to join Trump admin land her in hot water",
+        "link": "https://www.foxnews.com/politics/top-dem-cries-weaponization-comments-warning-young-people-not-join-trump-admin-lands-hot-water",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "From Dave Chappelle's Charlie Kirk joke to several Trump assassination quips, a growing list of liberal figures have promoted political violence.",
+        "description": "Dem Sen. Elissa Slotkin, D-Mich., cries \"weaponization\" after Trump ordered the Justice Department to investigate her remarks warning young Republicans about joining his administration.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T14:58:28.000Z",
+        "publishedAt": "2026-11-10T20:12:12.000Z",
         "sentiment": {
-          "posP": 19.8,
-          "negP": 30.8,
-          "neuP": 49.4,
+          "posP": 9.8,
+          "negP": 22.7,
+          "neuP": 67.5,
           "label": "negative",
-          "confidence": 0.88
+          "confidence": 0.71
         },
         "category": "usa"
       },
       {
-        "title": "Nvidia CEO Jensen Huang Told Trump He Did Not Know Chinese Woman Was Suspected Spy",
-        "link": "https://www.nytimes.com/2026/11/09/us/politics/trump-jensen-huang-spy.html",
+        "title": "Despite Denial, Trump Was Told on Trip to China About Spying on Nvidia’s Jensen Huang",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump told reporters Monday that he believed Jensen Huang’s account and said he did not recall receiving a briefing warning him about Mr. Huang’s liaison.",
+        "description": "Before Jensen Huang boarded Air Force One en route to Beijing, the president was reminded of intelligence showing that he was in a relationship with a woman believed to be a Chinese spy.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T02:13:11.000Z",
+        "publishedAt": "2026-11-10T19:27:59.000Z",
+        "sentiment": {
+          "posP": 6.6,
+          "negP": 0,
+          "neuP": 93.4,
+          "label": "positive",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "House Republicans Pick Jim Jordan, a Close Trump Ally, as Their Next Leader",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/republican-house-leader-scalise-jordan.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In choosing Mr. Jordan over Representative Steve Scalise of Louisiana, House Republicans signaled a desire for fresh leadership after their biggest election losses in decades.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-10T20:15:22.000Z",
+        "sentiment": {
+          "posP": 12.3,
+          "negP": 6.6,
+          "neuP": 81.1,
+          "label": "positive",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "What Trump Said in His Letter to Biden in 2021",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/biden-trump-letter.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The letter, which former President Joseph R. Biden Jr. details in a new book, is remarkable for a warm tone starkly at odds with his predecessor’s public comments.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-10T17:00:05.000Z",
+        "sentiment": {
+          "posP": 13.9,
+          "negP": 0,
+          "neuP": 86.1,
+          "label": "positive",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Alina Habba Mildon Loses $50 Million Contract That Enraged Trump",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/alina-habba-fired-pardon.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The former Trump lawyer had signed the contract with a family company weeks before the president gave the family’s patriarch a pardon.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-10T20:51:05.000Z",
+        "sentiment": {
+          "posP": 6.7,
+          "negP": 14.6,
+          "neuP": 78.7,
+          "label": "negative",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Corey Lewandowski, Trump Ally, Is a Top Target for Democrats After the Election",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/democrats-corey-lewandowski-investigations.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The former Trump administration adviser has been urged to preserve his records, as part of Democrats’ bid to rein in the Department of Homeland Security.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-10T16:50:33.000Z",
+        "sentiment": {
+          "posP": 10.7,
+          "negP": 0,
+          "neuP": 89.3,
+          "label": "positive",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Many of Trump’s Plans to Remake D.C. Would Push Locals Aside",
+        "link": "https://www.nytimes.com/2026/11/10/arts/design/trump-washington-arch-oval-office.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "If these projects come to fruition, Washingtonians will lose access to sports fields, fishing spots and other tent poles of everyday city life.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-10T10:03:48.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 10.2,
-          "neuP": 89.8,
+          "negP": 7.6,
+          "neuP": 92.4,
           "label": "negative",
-          "confidence": 0.51
+          "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "What to Know About Thomas Massie, Leader of Drive to Impeach Hegseth",
-        "link": "https://www.nytimes.com/2026/11/10/us/thomas-massie-impeachment-hegseth.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "White House vows to press ahead with tariffs despite midterm backlash over rising prices",
+        "link": "https://www.cnbc.com/2026/11/10/trump-tariffs-midterms-gary-cohn-inflation.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Representative Thomas Massie, Republican of Kentucky, is retiring at the end of his term after losing to a primary challenger backed by President Trump.",
+        "description": "Business executives warned at a Washington summit of rising costs and shifting supply chains as polls showed growing opposition to Trump's tariffs.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T15:30:06.000Z",
+        "publishedAt": "2026-11-10T20:28:02.000Z",
         "sentiment": {
-          "posP": 7,
-          "negP": 7,
-          "neuP": 86,
-          "label": "negative",
-          "confidence": 0.25
-        },
-        "category": "usa"
-      },
-      {
-        "title": "In Trump’s Washington, Prosecutors Can’t Count on Grand Juries to Take Their Side",
-        "link": "https://www.nytimes.com/2026/11/09/us/politics/doj-trump-grand-jury-indictments.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "In the past two weeks, prosecutors in the capital have failed to secure indictments in at least three cases, an acceleration of the problems the Justice Department has had with grand juries.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-10T03:00:13.000Z",
-        "sentiment": {
-          "posP": 20.8,
-          "negP": 10.6,
-          "neuP": 68.6,
-          "label": "positive",
-          "confidence": 0.7
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says Iran war at \"status quo,\" warns U.S. \"locked and loaded\"",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-deal-negotiations/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump told 60 Minutes the war with Iran was a \"good decision\" in the long term, despite its short-term impact.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-10T15:29:42.000Z",
-        "sentiment": {
-          "posP": 7.2,
-          "negP": 22.9,
-          "neuP": 69.9,
-          "label": "negative",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Where the Trump administration's lawsuits seeking voter data stand",
-        "link": "https://www.cbsnews.com/news/trump-lawsuits-state-voter-rolls-justice-department/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Justice Department has filed lawsuits against 30 states and the District of Columbia in an effort to force them to hand over their unredacted voter rolls containing voters' sensitive information.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-10T15:20:05.000Z",
-        "sentiment": {
-          "posP": 14.4,
-          "negP": 7,
-          "neuP": 78.6,
-          "label": "positive",
-          "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Hegseth argues against Massie's impeachment, claims all his military actions were legal",
-        "link": "https://www.cbsnews.com/video/hegseth-argues-against-massies-impeachment-claims-all-his-military-action-was-legal/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Secretary of Defense Pete Hegseth held a briefing at the Pentagon, where he laid out his argument against an effort to impeach him on Capitol Hill. Hegseth claimed all of his military operations have been legal and backed President Trump's decisions in Venezuela, the Western Hemisphere and against Iran.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-10T15:19:00.000Z",
-        "sentiment": {
-          "posP": 8.7,
-          "negP": 7.9,
-          "neuP": 83.4,
-          "label": "negative",
-          "confidence": 0.36
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Another top DOJ official resigns after Democrats sweep midterms",
-        "link": "https://www.cbsnews.com/video/another-top-doj-official-resigns-after-democrats-sweep-midterms/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Various high-ranking officials at the Department of Justice have resigned in the last week as the Trump administration continues an extensive series of lawsuits in court. CBS News reporter Jake Rosen has more details.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-10T15:15:00.000Z",
-        "sentiment": {
-          "posP": 10.6,
-          "negP": 12,
-          "neuP": 77.4,
+          "posP": 4.6,
+          "negP": 5.7,
+          "neuP": 89.7,
           "label": "neutral",
-          "confidence": 0.08
+          "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Schumer accuses Trump of defending Nvidia CEO Jensen Huang at cost of national security",
+        "link": "https://www.cnbc.com/2026/11/10/moolenaar-nvidia-jensen-huang-affair-chinese-spy.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Rep. John Moolenaar, R-Mich., the Republican chairman of the Select Committee on China and told CNBC he expects answers about Jensen Huang's relationship.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-10T21:11:36.000Z",
+        "sentiment": {
+          "posP": 6,
+          "negP": 6,
+          "neuP": 88,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5381,140 +5406,113 @@
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "GOP Rep. Thomas Massie, who has clashed with President Donald Trump, kicked off the Hegseth impeachment fight days after a blue-wave midterm election.",
+        "description": "GOP Rep. Thomas Massie, who has clashed with President Donald Trump, kicked off the Hegseth impeachment fight days after a blue wave midterm election.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T14:48:34.000Z",
+        "publishedAt": "2026-11-10T17:48:47.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 18.3,
-          "neuP": 81.7,
+          "negP": 17.8,
+          "neuP": 82.2,
           "label": "negative",
           "confidence": 0.76
         },
         "category": "usa"
       },
       {
-        "title": "Trump's 2028 successors are already fighting over who to blame for GOP midterm wipeout",
-        "link": "https://www.cnbc.com/2026/11/10/trump-vance-rubio-republican-desantis-midterms.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "JD Vance, Marco Rubio and Ron DeSantis offer competing explanations for the GOP's midterm defeat as Trump keeps his potential successors guessing.",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T11:00:01.000Z",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
         "sentiment": {
-          "posP": 9.7,
-          "negP": 18.3,
-          "neuP": 72,
-          "label": "negative",
-          "confidence": 0.57
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he'd 'stand by' Hegseth even if he's impeached",
-        "link": "https://abcnews.com/Politics/defense-secretary-pete-hegseth-face-impeachment-vote/story?id=137926360",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Hegseth said he's \"not worried\" about an impeachment effort.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-10T12:30:52.000Z",
-        "sentiment": {
-          "posP": 9.5,
-          "negP": 0,
-          "neuP": 90.5,
-          "label": "positive",
-          "confidence": 0.22
-        },
-        "category": "usa"
-      },
-      {
-        "title": "WATCH:  Trump now showing 'great level of political acumen,' former staffer says",
-        "link": "https://abcnews.com/video/137974118/",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Harrison Fields served as the White House principal deputy press secretary from January to August 2025.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-09T14:54:31.000Z",
-        "sentiment": {
-          "posP": 13.2,
-          "negP": 0,
-          "neuP": 86.8,
-          "label": "positive",
-          "confidence": 0.62
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Jan. 6 should follow Trump 'to his grave,' Biden says in new memoir",
-        "link": "https://abcnews.com/US/jan-6-follow-trump-grave-biden-new-memoir/story?id=137968994",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Biden also said Trump \"bordered on fawning\" during 2024 Oval Office meeting",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-09T16:16:19.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
           "label": "neutral",
-          "confidence": 0
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.95,
-      "neu": 83.53,
-      "neg": 8.52,
-      "count": 33
+      "pos": 5.8,
+      "neu": 86.06,
+      "neg": 8.13,
+      "count": 35
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 8.16,
-        "neu": 83.88,
-        "neg": 7.96,
-        "count": 5
+        "pos": 7.9,
+        "neu": 87,
+        "neg": 5.1,
+        "count": 8
       },
       {
-        "source": "CBS News",
-        "pos": 8.98,
-        "neu": 78.26,
-        "neg": 12.76,
-        "count": 5
+        "source": "Washington Post",
+        "pos": 4.32,
+        "neu": 86.92,
+        "neg": 8.77,
+        "count": 6
       },
       {
-        "source": "ABC News",
-        "pos": 8.72,
-        "neu": 91.28,
-        "neg": 0,
-        "count": 4
+        "source": "NBC News",
+        "pos": 5.72,
+        "neu": 84.18,
+        "neg": 10.1,
+        "count": 5
       },
       {
         "source": "WSJ",
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
-        "count": 4
-      },
-      {
-        "source": "Washington Post",
-        "pos": 7.97,
-        "neu": 88.18,
-        "neg": 3.85,
         "count": 4
       },
       {
@@ -5526,16 +5524,16 @@
       },
       {
         "source": "Fox News",
-        "pos": 16.9,
-        "neu": 70.7,
-        "neg": 12.4,
+        "pos": 8.73,
+        "neu": 83.7,
+        "neg": 7.57,
         "count": 3
       },
       {
-        "source": "NBC News",
-        "pos": 7.57,
-        "neu": 77.57,
-        "neg": 14.87,
+        "source": "ABC News",
+        "pos": 6.3,
+        "neu": 85.83,
+        "neg": 7.87,
         "count": 3
       },
       {
@@ -5549,31 +5547,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.95,
-        "neu": 82.59,
-        "neg": 10.45,
-        "count": 17
+        "pos": 5.18,
+        "neu": 87.93,
+        "neg": 6.89,
+        "count": 18
       },
       {
         "topic": "Policy",
-        "pos": 8.37,
-        "neu": 86.13,
-        "neg": 5.5,
+        "pos": 7.15,
+        "neu": 84.52,
+        "neg": 8.33,
         "count": 6
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.63,
-        "neu": 85.35,
-        "neg": 10.03,
-        "count": 4
-      },
-      {
-        "topic": "Legal",
-        "pos": 14.37,
-        "neu": 79.47,
-        "neg": 6.17,
-        "count": 3
+        "pos": 5.18,
+        "neu": 87.13,
+        "neg": 7.68,
+        "count": 6
       },
       {
         "topic": "Economy",
@@ -5583,10 +5574,17 @@
         "count": 2
       },
       {
+        "topic": "Legal",
+        "pos": 6.8,
+        "neu": 78.5,
+        "neg": 14.7,
+        "count": 2
+      },
+      {
         "topic": "Public Statements",
-        "pos": 13.2,
-        "neu": 86.8,
-        "neg": 0,
+        "pos": 3.2,
+        "neu": 73.6,
+        "neg": 23.2,
         "count": 1
       }
     ]
@@ -5614,28 +5612,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-10T11:44:26.521Z",
+        "label": "2026-11-10T17:26:58.765Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T12:44:26.521Z",
+        "label": "2026-11-10T18:26:58.765Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T13:44:26.521Z",
+        "label": "2026-11-10T19:26:58.765Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T14:44:26.521Z",
+        "label": "2026-11-10T20:26:58.765Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5644,28 +5642,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-10T11:44:26.521Z",
+        "label": "2026-11-10T17:26:58.765Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T12:44:26.521Z",
+        "label": "2026-11-10T18:26:58.765Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T13:44:26.521Z",
+        "label": "2026-11-10T19:26:58.765Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T14:44:26.521Z",
+        "label": "2026-11-10T20:26:58.765Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5745,7 +5743,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-10T15:44:26.521Z",
+    "generatedAt": "2026-11-10T21:26:58.766Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5867,7 +5865,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 190,
-      "potusArticles": 33,
+      "potusArticles": 35,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
