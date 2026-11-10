@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-09T15:58:58.699Z",
+  "generatedAt": "2026-11-10T00:07:40.136Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 191,
-    "potusArticles": 50
+    "potusArticles": 49
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-09T11:58:58.699Z",
+          "label": "2026-11-09T20:07:40.136Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-09T12:58:58.699Z",
+          "label": "2026-11-09T21:07:40.136Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-09T13:58:58.699Z",
+          "label": "2026-11-09T22:07:40.136Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-09T14:58:58.699Z",
+          "label": "2026-11-09T23:07:40.136Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-09T11:58:58.699Z",
+          "label": "2026-11-09T20:07:40.136Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-09T12:58:58.699Z",
+          "label": "2026-11-09T21:07:40.136Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-09T13:58:58.699Z",
+          "label": "2026-11-09T22:07:40.136Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-09T14:58:58.699Z",
+          "label": "2026-11-09T23:07:40.136Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.01,
-      "neu": 83.53,
-      "neg": 9.47,
+      "pos": 8.22,
+      "neu": 82.91,
+      "neg": 8.87,
       "count": 191
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.75,
-        "neu": 81.54,
-        "neg": 9.72,
+        "pos": 8.2,
+        "neu": 84.7,
+        "neg": 7.1,
         "count": 43
       },
       {
         "source": "Fox News",
-        "pos": 8.18,
-        "neu": 81.27,
-        "neg": 10.55,
+        "pos": 10.88,
+        "neu": 79.58,
+        "neg": 9.54,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.77,
-        "neu": 84.37,
-        "neg": 10.87,
+        "pos": 5.92,
+        "neu": 82.73,
+        "neg": 11.35,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 5.42,
-        "neu": 83.14,
-        "neg": 11.44,
+        "pos": 9.5,
+        "neu": 80.19,
+        "neg": 10.31,
         "count": 24
       },
       {
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.55,
-        "neu": 88.8,
-        "neg": 2.64,
+        "pos": 8.99,
+        "neu": 86.45,
+        "neg": 4.55,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 5.44,
-        "neu": 88.94,
-        "neg": 5.62,
+        "pos": 7.84,
+        "neu": 86.47,
+        "neg": 5.68,
         "count": 20
       },
       {
@@ -4636,121 +4636,131 @@
       "rows": [
         {
           "name": "Utilities",
-          "bias": -11.43,
-          "count": 3
-        },
-        {
-          "name": "Communication",
-          "bias": -9.8,
-          "count": 2
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 5.4,
+          "bias": -17,
           "count": 1
         },
         {
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
+        },
+        {
+          "name": "Real Estate",
+          "bias": 10.77,
+          "count": 4
+        },
+        {
           "name": "Energy",
-          "bias": 4.71,
-          "count": 7
+          "bias": 10.04,
+          "count": 10
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 8.77,
+          "count": 3
         },
         {
           "name": "Healthcare",
-          "bias": -2.07,
-          "count": 12
+          "bias": -4.23,
+          "count": 9
+        },
+        {
+          "name": "Materials",
+          "bias": -4,
+          "count": 1
         },
         {
           "name": "Finance",
-          "bias": -1.96,
+          "bias": 1.32,
           "count": 19
         },
         {
           "name": "Technology",
-          "bias": -1.86,
-          "count": 144
-        },
-        {
-          "name": "Real Estate",
-          "bias": -1.47,
-          "count": 3
+          "bias": -0.73,
+          "count": 142
         }
       ],
       "pos": [
         {
-          "name": "Manufacturing",
-          "bias": 5.4,
-          "count": 1
+          "name": "Real Estate",
+          "bias": 10.77,
+          "count": 4
         },
         {
           "name": "Energy",
-          "bias": 4.71,
-          "count": 7
+          "bias": 10.04,
+          "count": 10
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 8.77,
+          "count": 3
         }
       ],
       "neu": [
         {
+          "name": "Materials",
+          "bias": -4,
+          "count": 1
+        },
+        {
           "name": "Finance",
-          "bias": -1.96,
+          "bias": 1.32,
           "count": 19
         },
         {
           "name": "Technology",
-          "bias": -1.86,
-          "count": 144
-        },
-        {
-          "name": "Real Estate",
-          "bias": -1.47,
-          "count": 3
+          "bias": -0.73,
+          "count": 142
         }
       ],
       "neg": [
         {
           "name": "Utilities",
-          "bias": -11.43,
-          "count": 3
+          "bias": -17,
+          "count": 1
         },
         {
           "name": "Communication",
-          "bias": -9.8,
-          "count": 2
+          "bias": -14,
+          "count": 1
         },
         {
           "name": "Healthcare",
-          "bias": -2.07,
-          "count": 12
+          "bias": -4.23,
+          "count": 9
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-09T11:58:58.701Z",
-          "pos": 7,
-          "neu": 83,
-          "neg": 10,
-          "count": 11
-        },
-        {
-          "label": "2026-11-09T12:58:58.701Z",
-          "pos": 8,
-          "neu": 86,
-          "neg": 6,
-          "count": 13
-        },
-        {
-          "label": "2026-11-09T13:58:58.701Z",
+          "label": "2026-11-09T20:07:40.138Z",
           "pos": 7,
           "neu": 87,
           "neg": 6,
+          "count": 9
+        },
+        {
+          "label": "2026-11-09T21:07:40.138Z",
+          "pos": 9,
+          "neu": 83,
+          "neg": 8,
           "count": 24
         },
         {
-          "label": "2026-11-09T14:58:58.701Z",
-          "pos": 5,
-          "neu": 83,
-          "neg": 12,
-          "count": 31
+          "label": "2026-11-09T22:07:40.138Z",
+          "pos": 8,
+          "neu": 85,
+          "neg": 7,
+          "count": 27
+        },
+        {
+          "label": "2026-11-09T23:07:40.138Z",
+          "pos": 8,
+          "neu": 84,
+          "neg": 8,
+          "count": 29
         }
       ]
     }
@@ -4958,42 +4968,42 @@
         "category": "world"
       },
       {
-        "title": "Trump-aligned Mississippi auditor launches governor bid, vows to dismantle 'good ol' boys' club'",
-        "link": "https://www.foxnews.com/politics/trump-aligned-mississippi-auditor-launches-governor-bid-vows-dismantle-good-ol-boys-club",
+        "title": "Trump renews call for Pete Rose pardon, saying MLB's all-time hits leader was 'mistreated'",
+        "link": "https://www.foxnews.com/outkick-sports/trump-renews-call-pete-rose-pardon-saying-mlbs-all-time-hits-leader-mistreated",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Mississippi State Auditor Shad White says his office uncovered $75 million in misspent funds and vows to shut down the state's \"rotten system.\"",
+        "description": "Trump said he would pardon Pete Rose for federal tax charges, calling MLB's all-time hits leader \"very mistreated\" during a meeting with Dana White.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-09T14:15:01.000Z",
+        "publishedAt": "2026-11-09T23:44:15.000Z",
         "sentiment": {
-          "posP": 7.2,
-          "negP": 8.2,
-          "neuP": 84.6,
-          "label": "neutral",
-          "confidence": 0.1
+          "posP": 11.3,
+          "negP": 5.2,
+          "neuP": 83.5,
+          "label": "positive",
+          "confidence": 0.36
         },
         "category": "usa"
       },
       {
-        "title": "Trump says he 'can't imagine' Democrats will impeach him a third time",
-        "link": "https://www.foxnews.com/media/trump-says-he-cant-imagine-democrats-impeach-him-third-time",
+        "title": "Dana White takes questions at podium during White House briefing with Trump",
+        "link": "https://www.foxnews.com/politics/dana-white-takes-questions-podium-during-white-house-briefing-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump told \"60 Minutes\" that he doubts Democrats will impeach him a third time despite a past history of animosity towards each other.",
+        "description": "Dana White took the White House podium to shut down press secretary rumors, saying he has zero political aspirations after President Trump's surprise joke.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-09T13:45:58.000Z",
+        "publishedAt": "2026-11-09T22:24:33.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 13.7,
-          "neuP": 86.3,
-          "label": "negative",
-          "confidence": 0.62
+          "posP": 11.2,
+          "negP": 0,
+          "neuP": 88.8,
+          "label": "positive",
+          "confidence": 0.51
         },
         "category": "usa"
       }
@@ -5200,102 +5210,162 @@
         "category": "world"
       },
       {
-        "title": "Trump-aligned Mississippi auditor launches governor bid, vows to dismantle 'good ol' boys' club'",
-        "link": "https://www.foxnews.com/politics/trump-aligned-mississippi-auditor-launches-governor-bid-vows-dismantle-good-ol-boys-club",
+        "title": "Trump renews call for Pete Rose pardon, saying MLB's all-time hits leader was 'mistreated'",
+        "link": "https://www.foxnews.com/outkick-sports/trump-renews-call-pete-rose-pardon-saying-mlbs-all-time-hits-leader-mistreated",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Mississippi State Auditor Shad White says his office uncovered $75 million in misspent funds and vows to shut down the state's \"rotten system.\"",
+        "description": "Trump said he would pardon Pete Rose for federal tax charges, calling MLB's all-time hits leader \"very mistreated\" during a meeting with Dana White.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-09T14:15:01.000Z",
+        "publishedAt": "2026-11-09T23:44:15.000Z",
         "sentiment": {
-          "posP": 7.2,
-          "negP": 8.2,
-          "neuP": 84.6,
-          "label": "neutral",
-          "confidence": 0.1
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he 'can't imagine' Democrats will impeach him a third time",
-        "link": "https://www.foxnews.com/media/trump-says-he-cant-imagine-democrats-impeach-him-third-time",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump told \"60 Minutes\" that he doubts Democrats will impeach him a third time despite a past history of animosity towards each other.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-09T13:45:58.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 13.7,
-          "neuP": 86.3,
-          "label": "negative",
-          "confidence": 0.62
-        },
-        "category": "usa"
-      },
-      {
-        "title": "AG Blanche clashes with anchor asking whether it's his 'job' to defend the Trump administration",
-        "link": "https://www.foxnews.com/media/ag-blanche-clashes-anchor-asking-whether-its-his-job-defend-trump-administration",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Attorney General Todd Blanche clashed with CNN's Dana Bash over his vow to defend the Trump administration against recent Democratic congressional threats.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-09T13:04:11.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 7.2,
-          "neuP": 92.8,
-          "label": "negative",
-          "confidence": 0.42
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Immigrants Are Being Systematically Returned Home Despite Court Orders",
-        "link": "https://www.nytimes.com/2026/11/09/world/africa/trump-deportations-court-orders-refoulement.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Working with the Trump administration, foreign partners accept deportees, then ship them to nations where the U.S. itself would be prohibited from sending them.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-09T12:04:29.000Z",
-        "sentiment": {
-          "posP": 7.5,
-          "negP": 0,
-          "neuP": 92.5,
+          "posP": 11.3,
+          "negP": 5.2,
+          "neuP": 83.5,
           "label": "positive",
-          "confidence": 0.38
+          "confidence": 0.36
         },
         "category": "usa"
       },
       {
-        "title": "On ‘60 Minutes,’ Trump Says Immigration Crackdown May Have ‘Hurt’ Republicans in Elections",
-        "link": "https://www.nytimes.com/2026/11/08/us/politics/trump-60-minutes-republicans-election-immigration.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Dana White takes questions at podium during White House briefing with Trump",
+        "link": "https://www.foxnews.com/politics/dana-white-takes-questions-podium-during-white-house-briefing-trump",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president was asked in a “60 Minutes” interview that aired on Sunday whether his deportation policies went too far. “I think it might be too tough,” he said.",
+        "description": "Dana White took the White House podium to shut down press secretary rumors, saying he has zero political aspirations after President Trump's surprise joke.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-09T03:16:26.000Z",
+        "publishedAt": "2026-11-09T22:24:33.000Z",
+        "sentiment": {
+          "posP": 11.2,
+          "negP": 0,
+          "neuP": 88.8,
+          "label": "positive",
+          "confidence": 0.51
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Jeffries vows Democrats won’t ‘give a dime’ to Trump’s deportation efforts",
+        "link": "https://www.foxnews.com/politics/jeffries-vows-democrats-wont-give-dime-trumps-deportation-efforts",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Hakeem Jeffries outlined House Democrats’ priorities after their midterm wins, vowing to oppose deportation funding and backing Pete Hegseth’s impeachment.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T22:09:59.000Z",
+        "sentiment": {
+          "posP": 14.6,
+          "negP": 0,
+          "neuP": 85.4,
+          "label": "positive",
+          "confidence": 0.59
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump tells DHS chief to work with Democrats on immigration reform, but no amnesty",
+        "link": "https://www.foxnews.com/politics/trump-tells-dhs-chief-work-democrats-immigration-reform-no-amnesty",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Homeland Security Secretary Markwayne Mullin says Trump told him to engage Democrats on immigration reform but insists amnesty will never happen.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T21:45:25.000Z",
+        "sentiment": {
+          "posP": 15.1,
+          "negP": 6.8,
+          "neuP": 78.1,
+          "label": "positive",
+          "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's redistricting gamble faces reckoning as GOP holdouts claim vindication",
+        "link": "https://www.foxnews.com/politics/trumps-redistricting-gamble-faces-reckoning-gop-holdouts-claim-vindication",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Republicans' mid-decade redistricting gambit in North Carolina, Florida and Texas appeared to backfire as Democrats held key seats in the blue wave.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T21:22:26.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Sarah Huckabee Sanders accuses 'The View' host of twisting her words in immigration exchange",
+        "link": "https://www.foxnews.com/media/sarah-huckabee-sanders-accuses-view-host-twisting-words-immigration-exchange",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Sarah Huckabee Sanders accused Ana Navarro of twisting her words on \"The View\" while defending Trump's border security and his recent comments on \"60 Minutes.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T21:16:16.000Z",
+        "sentiment": {
+          "posP": 5.6,
+          "negP": 10.7,
+          "neuP": 83.7,
+          "label": "negative",
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Veers Back Into Claims of Rigged Election, Questioning Midterm Results",
+        "link": "https://www.nytimes.com/2026/11/09/us/politics/trump-election-fraud-rigging-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump, who initially said he would accept the midterm results, renewed his unsubstantiated claims that voting was manipulated.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T18:37:12.000Z",
+        "sentiment": {
+          "posP": 7.4,
+          "negP": 18.5,
+          "neuP": 74.1,
+          "label": "negative",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats Demand Answers on Trump’s A.I. Policy Amid Spy Plot",
+        "link": "https://www.nytimes.com/2026/11/09/us/politics/democrats-trump-ai-nvidia.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Congressional leaders raise concerns in a letter as Nvidia investigates its chief executive’s affair with a suspected Chinese spy.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T23:48:34.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 12,
+          "neuP": 88,
+          "label": "negative",
+          "confidence": 0.34
         },
         "category": "usa"
       },
@@ -5306,101 +5376,41 @@
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "It began with an incident at an American Diabetes Association conference. Now a resulting boycott has caused a scientific slowdown, with no end in sight.",
+        "description": "It began with a protest at an American Diabetes Association conference. Now a resulting boycott has caused a scientific slowdown, with no end in sight.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-09T15:15:12.000Z",
+        "publishedAt": "2026-11-09T16:41:41.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 24.3,
-          "neuP": 75.7,
+          "negP": 29.5,
+          "neuP": 70.5,
           "label": "negative",
-          "confidence": 0.81
+          "confidence": 0.85
         },
         "category": "usa"
       },
       {
-        "title": "Here Are the Difficult Options Trump Is Weighing to Resolve the War in Iran",
-        "link": "https://www.nytimes.com/2026/11/08/us/politics/trump-iran-options.html",
+        "title": "Supreme Court Allows Construction of Trump’s Border Wall in Big Bend",
+        "link": "https://www.nytimes.com/2026/11/09/us/politics/supreme-court-border-wall-trump.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "There are no good choices facing President Trump as he tries to find a way out of the deeply unpopular conflict. But there are choices.",
+        "description": "The administration had asked the court to permit construction of a border wall in southwestern Texas, including areas within a national park.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-08T23:49:54.000Z",
+        "publishedAt": "2026-11-09T21:36:00.000Z",
         "sentiment": {
-          "posP": 11.3,
-          "negP": 23,
-          "neuP": 65.7,
-          "label": "negative",
-          "confidence": 0.69
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What to Know About Stephen Miller, Trump’s New Chief of Staff",
-        "link": "https://www.nytimes.com/2026/11/09/us/politics/stephen-miller-white-house-chief-staff.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The architect of President Trump’s mass deportation campaign, Mr. Miller has been the public face of many of Mr. Trump’s immigration policies.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-09T10:03:44.000Z",
-        "sentiment": {
-          "posP": 0,
+          "posP": 10.7,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 89.3,
+          "label": "positive",
+          "confidence": 0.56
         },
         "category": "usa"
       },
       {
-        "title": "Trump Was ‘Only Kidding’ in Asking Dana White to Be His Press Secretary",
-        "link": "https://www.nytimes.com/2026/11/08/us/politics/trump-joke-dana-white-press-secretary.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president said on Sunday that the U.F.C. chief executive “loves the idea” of being the White House spokesman but that his public offer of the job was “just a little fun.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-09T00:43:21.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "With Hopes Low and Temperatures High, Climate Summit Opens in Turkey",
-        "link": "https://www.nytimes.com/2026/11/08/climate/with-hopes-low-and-temperatures-high-climate-summit-opens-in-turkey.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "War, artificial intelligence and the Trump era have overshadowed climate change. But officials from nearly every nation are meeting to confront global warming.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-08T10:01:38.000Z",
-        "sentiment": {
-          "posP": 17.4,
-          "negP": 17.8,
-          "neuP": 64.8,
-          "label": "neutral",
-          "confidence": 0.05
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he sees no reason to escalate war with Iran",
+        "title": "Trump says Iran war at \"status quo,\" warns U.S. \"locked and loaded\"",
         "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-deal-negotiations/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
@@ -5409,124 +5419,131 @@
         "description": "President Trump told 60 Minutes the war with Iran was a \"good decision\" in the long term, despite its short-term impact.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-09T15:45:30.000Z",
+        "publishedAt": "2026-11-09T23:18:13.000Z",
         "sentiment": {
-          "posP": 7.3,
-          "negP": 25.1,
-          "neuP": 67.6,
+          "posP": 7.2,
+          "negP": 22.9,
+          "neuP": 69.9,
           "label": "negative",
-          "confidence": 0.8
+          "confidence": 0.74
         },
         "category": "usa"
       },
       {
-        "title": "How Trump's immigration policies in Kansas affected farmers and agricultural workers",
-        "link": "https://www.cbsnews.com/video/how-trumps-immigration-policies-in-kansas-affected-farmers-and-agricultural-workers/",
+        "title": "Trump says FBI is investigating Nvidia CEO Jensen Huang",
+        "link": "https://www.cbsnews.com/video/trump-says-fbi-is-investigating-nvidia-ceo-jensen-huang/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Mathew Teagarden, the CEO of the Kansas Livestock Association, joins CBS News with his take on President Trump's immigration policies that may have affected midterm voters.",
+        "description": "President Trump said Monday that the FBI is looking into Nvidia CEO Jensen Huang over allegations Huang was the target of a Chinese intelligence effort. CBS News' Olivia Rinaldi reports and Ian Duncan, tech policy reporter at the Washington Post, joins \"The Takeout\" to discuss.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-09T15:30:50.000Z",
+        "publishedAt": "2026-11-09T22:43:07.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 8.4,
-          "neuP": 91.6,
-          "label": "negative",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Democratic, Republican strategists react to Trump's \"60 Minutes\" remarks after midterms",
-        "link": "https://www.cbsnews.com/video/democratic-republican-strategists-react-to-trumps-60-minutes-remarks-after-midterms/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is speaking out after Democrats swept in the midterms. Political strategists Kristian Ramos and Harrison Fields break down his latest remarks.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-09T15:23:00.000Z",
-        "sentiment": {
-          "posP": 0,
+          "posP": 5.6,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 94.4,
+          "label": "positive",
+          "confidence": 0.48
         },
         "category": "usa"
       },
       {
-        "title": "Day 1 for Stephen Miller as Trump's chief of staff, sources say immigration crackdown won't ease",
-        "link": "https://www.cbsnews.com/video/day-1-for-stephen-miller-as-trumps-chief-of-staff-sources-say-immigration-crackdown-wont-ease/",
+        "title": "Trump admin proposes stricter unemployment work search rules",
+        "link": "https://www.cbsnews.com/news/trump-work-search-rules-unemployment-benefits/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Stephen Miller is starting in his role as President Trump's chief of staff, but lawmakers may be reluctant to work with him given his past immigration stances. CBS News' Ed O'Keefe reports.",
+        "description": "Under a proposed federal rule, Americans seeking unemployment aid would have to conduct more job searches each week.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-09T15:17:07.000Z",
+        "publishedAt": "2026-11-09T22:41:27.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 8.3,
-          "neuP": 91.7,
+          "negP": 20.1,
+          "neuP": 79.9,
           "label": "negative",
-          "confidence": 0.47
+          "confidence": 0.7
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Watch: Trump gives post-midterm press briefing, alongside Dana White",
+        "link": "https://www.cbsnews.com/video/trump-gives-white-house-press-briefing-midterms-dana-white-speaks-reporters/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump took questions in the White House briefing room Monday, nearly a week after Republican' massive midterm losses. The president took questions on the war with Iran and invited UFC CEO Dana White to speak after saying he \"was kidding\" about offering him the press secretary role.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-09T22:39:59.000Z",
+        "sentiment": {
+          "posP": 2.3,
+          "negP": 10.8,
+          "neuP": 86.9,
+          "label": "negative",
+          "confidence": 0.74
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.7,
-      "neu": 87.55,
-      "neg": 7.76,
-      "count": 50
+      "pos": 7.07,
+      "neu": 85.48,
+      "neg": 7.45,
+      "count": 49
     },
     "sourceLeaderboard": [
       {
-        "source": "Washington Post",
-        "pos": 5.3,
-        "neu": 88.52,
-        "neg": 6.18,
-        "count": 12
-      },
-      {
-        "source": "NYT",
-        "pos": 5.47,
-        "neu": 85.97,
-        "neg": 8.57,
-        "count": 9
-      },
-      {
-        "source": "CBS News",
-        "pos": 1.41,
-        "neu": 88.84,
-        "neg": 9.75,
-        "count": 8
-      },
-      {
         "source": "NBC News",
-        "pos": 9.7,
-        "neu": 82.12,
-        "neg": 8.18,
-        "count": 6
+        "pos": 8.04,
+        "neu": 86.85,
+        "neg": 5.11,
+        "count": 11
       },
       {
         "source": "Fox News",
-        "pos": 4.05,
-        "neu": 88.67,
-        "neg": 7.27,
-        "count": 4
+        "pos": 9.54,
+        "neu": 87.21,
+        "neg": 3.24,
+        "count": 7
+      },
+      {
+        "source": "ABC News",
+        "pos": 8.33,
+        "neu": 86.5,
+        "neg": 5.17,
+        "count": 7
+      },
+      {
+        "source": "NYT",
+        "pos": 5.18,
+        "neu": 82.82,
+        "neg": 12,
+        "count": 6
+      },
+      {
+        "source": "CBS News",
+        "pos": 3.82,
+        "neu": 82.62,
+        "neg": 13.56,
+        "count": 5
       },
       {
         "source": "WSJ",
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
+        "count": 4
+      },
+      {
+        "source": "Washington Post",
+        "pos": 11.6,
+        "neu": 81.03,
+        "neg": 7.38,
         "count": 4
       },
       {
@@ -5542,57 +5559,50 @@
         "neu": 88,
         "neg": 9,
         "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 0,
-        "neu": 100,
-        "neg": 0,
-        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.04,
-        "neu": 86.56,
-        "neg": 8.39,
-        "count": 32
+        "pos": 7.04,
+        "neu": 84.56,
+        "neg": 8.4,
+        "count": 27
       },
       {
         "topic": "Policy",
-        "pos": 3.47,
-        "neu": 92.16,
-        "neg": 4.37,
-        "count": 7
+        "pos": 6.13,
+        "neu": 86.93,
+        "neg": 6.93,
+        "count": 9
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.7,
-        "neu": 88.28,
-        "neg": 8.02,
-        "count": 5
-      },
-      {
-        "topic": "Public Statements",
-        "pos": 3.87,
-        "neu": 91.33,
-        "neg": 4.8,
-        "count": 3
+        "pos": 4.63,
+        "neu": 85.35,
+        "neg": 10.03,
+        "count": 4
       },
       {
         "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
+        "pos": 7.58,
+        "neu": 88.13,
+        "neg": 4.3,
+        "count": 4
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 8.13,
+        "neu": 85.77,
+        "neg": 6.1,
+        "count": 3
       },
       {
         "topic": "Legal",
-        "pos": 0,
-        "neu": 77.8,
-        "neg": 22.2,
-        "count": 1
+        "pos": 13.95,
+        "neu": 86.05,
+        "neg": 0,
+        "count": 2
       }
     ]
   },
@@ -5619,28 +5629,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-09T11:58:58.703Z",
+        "label": "2026-11-09T20:07:40.140Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-09T12:58:58.703Z",
+        "label": "2026-11-09T21:07:40.140Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-09T13:58:58.703Z",
+        "label": "2026-11-09T22:07:40.140Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-09T14:58:58.703Z",
+        "label": "2026-11-09T23:07:40.140Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5649,28 +5659,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-09T11:58:58.703Z",
+        "label": "2026-11-09T20:07:40.140Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-09T12:58:58.703Z",
+        "label": "2026-11-09T21:07:40.140Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-09T13:58:58.703Z",
+        "label": "2026-11-09T22:07:40.140Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-09T14:58:58.703Z",
+        "label": "2026-11-09T23:07:40.140Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5750,7 +5760,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-09T15:58:58.704Z",
+    "generatedAt": "2026-11-10T00:07:40.140Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5872,7 +5882,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 191,
-      "potusArticles": 50,
+      "potusArticles": 49,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
