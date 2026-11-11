@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-11T01:26:13.196Z",
+  "generatedAt": "2026-11-11T08:16:20.787Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 188,
+    "usaArticles": 189,
     "potusArticles": 38
   },
   "version": 1,
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-10T21:26:13.197Z",
+          "label": "2026-11-11T04:16:20.787Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T22:26:13.197Z",
+          "label": "2026-11-11T05:16:20.787Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T23:26:13.197Z",
+          "label": "2026-11-11T06:16:20.787Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-11T00:26:13.197Z",
+          "label": "2026-11-11T07:16:20.787Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-10T21:26:13.197Z",
+          "label": "2026-11-11T04:16:20.787Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T22:26:13.197Z",
+          "label": "2026-11-11T05:16:20.787Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T23:26:13.197Z",
+          "label": "2026-11-11T06:16:20.787Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-11T00:26:13.197Z",
+          "label": "2026-11-11T07:16:20.787Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 6.72,
-      "neu": 83.07,
-      "neg": 10.21,
-      "count": 188
+      "pos": 7.52,
+      "neu": 81.95,
+      "neg": 10.53,
+      "count": 189
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.85,
-        "neu": 85.62,
-        "neg": 7.53,
-        "count": 40
+        "pos": 7.09,
+        "neu": 85.04,
+        "neg": 7.88,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 7.93,
-        "neu": 77.92,
-        "neg": 14.15,
+        "pos": 8.19,
+        "neu": 73.63,
+        "neg": 18.17,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 2.83,
-        "neu": 84.66,
-        "neg": 12.51,
+        "pos": 6.63,
+        "neu": 82.6,
+        "neg": 10.77,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.45,
-        "neu": 85.02,
-        "neg": 8.53,
+        "pos": 7.39,
+        "neu": 82.95,
+        "neg": 9.66,
         "count": 24
       },
       {
@@ -4598,9 +4598,9 @@
       },
       {
         "source": "ABC News",
-        "pos": 11.3,
-        "neu": 81.28,
-        "neg": 7.42,
+        "pos": 11.95,
+        "neu": 82.46,
+        "neg": 5.59,
         "count": 20
       },
       {
@@ -4635,18 +4635,13 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
-        },
-        {
-          "name": "Energy",
-          "bias": 8.74,
-          "count": 5
-        },
-        {
           "name": "Manufacturing",
-          "bias": -7.6,
+          "bias": -24,
+          "count": 3
+        },
+        {
+          "name": "Materials",
+          "bias": -11.8,
           "count": 1
         },
         {
@@ -4655,102 +4650,107 @@
           "count": 2
         },
         {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Technology",
-          "bias": -4.45,
-          "count": 140
+          "name": "Communication",
+          "bias": -5.35,
+          "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -2.9,
-          "count": 10
+          "bias": -4.91,
+          "count": 11
+        },
+        {
+          "name": "Real Estate",
+          "bias": -3.75,
+          "count": 2
+        },
+        {
+          "name": "Technology",
+          "bias": -3.66,
+          "count": 139
         },
         {
           "name": "Finance",
-          "bias": -2.79,
+          "bias": 1.16,
           "count": 16
+        },
+        {
+          "name": "Energy",
+          "bias": 0.65,
+          "count": 6
         }
       ],
       "pos": [
         {
-          "name": "Energy",
-          "bias": 8.74,
-          "count": 5
-        },
-        {
           "name": "Utilities",
           "bias": 7.45,
           "count": 2
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
         }
       ],
       "neu": [
         {
           "name": "Healthcare",
-          "bias": -2.9,
-          "count": 10
+          "bias": -4.91,
+          "count": 11
         },
         {
-          "name": "Finance",
-          "bias": -2.79,
-          "count": 16
+          "name": "Real Estate",
+          "bias": -3.75,
+          "count": 2
+        },
+        {
+          "name": "Technology",
+          "bias": -3.66,
+          "count": 139
         }
       ],
       "neg": [
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
-        },
-        {
           "name": "Manufacturing",
-          "bias": -7.6,
+          "bias": -24,
+          "count": 3
+        },
+        {
+          "name": "Materials",
+          "bias": -11.8,
           "count": 1
         },
         {
-          "name": "Technology",
-          "bias": -4.45,
-          "count": 140
+          "name": "Communication",
+          "bias": -5.35,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-10T21:26:13.199Z",
-          "pos": 4,
-          "neu": 92,
-          "neg": 4,
-          "count": 12
-        },
-        {
-          "label": "2026-11-10T22:26:13.199Z",
-          "pos": 8,
-          "neu": 83,
-          "neg": 9,
-          "count": 20
-        },
-        {
-          "label": "2026-11-10T23:26:13.199Z",
-          "pos": 6,
-          "neu": 84,
-          "neg": 10,
-          "count": 19
-        },
-        {
-          "label": "2026-11-11T00:26:13.199Z",
-          "pos": 4,
-          "neu": 82,
+          "label": "2026-11-11T04:16:20.789Z",
+          "pos": 10,
+          "neu": 76,
           "neg": 14,
-          "count": 35
+          "count": 5
+        },
+        {
+          "label": "2026-11-11T05:16:20.789Z",
+          "pos": 15,
+          "neu": 71,
+          "neg": 15,
+          "count": 2
+        },
+        {
+          "label": "2026-11-11T06:16:20.789Z",
+          "pos": 9,
+          "neu": 76,
+          "neg": 15,
+          "count": 3
+        },
+        {
+          "label": "2026-11-11T07:16:20.789Z",
+          "pos": 3,
+          "neu": 82,
+          "neg": 15,
+          "count": 5
         }
       ]
     }
@@ -4958,6 +4958,26 @@
         "category": "world"
       },
       {
+        "title": "Maddow fears Trump migrant detention centers may be used to imprison ‘the rest of us’",
+        "link": "https://www.foxnews.com/media/maddow-fears-trump-migrant-detention-centers-may-used-imprison-the-rest-us",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "MS NOW host Rachel Maddow suggested the Trump administration could eventually use immigration detention centers to imprison American citizens while on \"The Daily Show.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T02:02:23.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17.8,
+          "neuP": 82.2,
+          "label": "negative",
+          "confidence": 0.78
+        },
+        "category": "usa"
+      },
+      {
         "title": "Biden reveals letter Trump left him at White House that made it seem 'as if there were two Donald Trumps'",
         "link": "https://www.foxnews.com/media/biden-reveals-letter-trump-left-him-white-house-made-seem-as-were-two-donald-trumps",
         "source": "Fox News",
@@ -4974,26 +4994,6 @@
           "neuP": 86,
           "label": "negative",
           "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "IRGC operative lands on FBI’s Most Wanted Terrorists list over alleged plot to kill former Trump advisor",
-        "link": "https://www.foxnews.com/us/irgc-operative-lands-fbis-most-wanted-terrorists-list-alleged-plot-kill-former-trump-adviser",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Shahram Poursafi allegedly sought to pay $300,000 to have John Bolton killed in a plot authorities linked to retaliation for Qasem Soleimani’s death.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T00:58:39.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 35.7,
-          "neuP": 64.3,
-          "label": "negative",
-          "confidence": 0.96
         },
         "category": "usa"
       }
@@ -5200,6 +5200,26 @@
         "category": "world"
       },
       {
+        "title": "Maddow fears Trump migrant detention centers may be used to imprison ‘the rest of us’",
+        "link": "https://www.foxnews.com/media/maddow-fears-trump-migrant-detention-centers-may-used-imprison-the-rest-us",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "MS NOW host Rachel Maddow suggested the Trump administration could eventually use immigration detention centers to imprison American citizens while on \"The Daily Show.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T02:02:23.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17.8,
+          "neuP": 82.2,
+          "label": "negative",
+          "confidence": 0.78
+        },
+        "category": "usa"
+      },
+      {
         "title": "Biden reveals letter Trump left him at White House that made it seem 'as if there were two Donald Trumps'",
         "link": "https://www.foxnews.com/media/biden-reveals-letter-trump-left-him-white-house-made-seem-as-were-two-donald-trumps",
         "source": "Fox News",
@@ -5240,46 +5260,6 @@
         "category": "usa"
       },
       {
-        "title": "'I've Had It' host Jennifer Welch cheers Wisconsin brewing company that called Kirk an 'awful human being'",
-        "link": "https://www.foxnews.com/media/ive-had-it-host-jennifer-welch-cheers-wisconsin-brewing-company-called-kirk-awful-human-being",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Jennifer Welch promoted the Minocqua Brewing Company on her \"I've Had It\" podcast after the Wisconsin anti-Trump brewery attacked Charlie Kirk and offered sponsorship.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T00:19:06.000Z",
-        "sentiment": {
-          "posP": 12.1,
-          "negP": 12.3,
-          "neuP": 75.6,
-          "label": "neutral",
-          "confidence": 0.03
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Why did Hegseth face an impeachment push? Inside the 8 articles",
-        "link": "https://www.cbsnews.com/news/pete-hegseth-impeachment-articles/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The impeachment resolution focuses on Defense Secretary Pete Hegseth's involvement in some of the most controversial episodes of President Trump's second term.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T00:52:00.000Z",
-        "sentiment": {
-          "posP": 4.5,
-          "negP": 6.2,
-          "neuP": 89.3,
-          "label": "neutral",
-          "confidence": 0.15
-        },
-        "category": "usa"
-      },
-      {
         "title": "Despite Denial, Trump Was Told on Trip to China About Spying on Nvidia’s Jensen Huang",
         "link": "https://www.nytimes.com/2026/11/10/us/politics/trump-china-trip-nvidia.html",
         "source": "NYT",
@@ -5309,7 +5289,7 @@
         "description": "As he braces for Democrats to assume legislative control in Washington, President Trump has sought to take back center stage with some discordant maneuvers.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T00:16:01.000Z",
+        "publishedAt": "2026-11-11T06:20:03.000Z",
         "sentiment": {
           "posP": 10.4,
           "negP": 13.1,
@@ -5340,46 +5320,6 @@
         "category": "usa"
       },
       {
-        "title": "Kennedys Join Suit to Block Trump’s Arch, Saying It Would Mar J.F.K. Gravesite",
-        "link": "https://www.nytimes.com/2026/11/10/us/politics/kennedy-trump-arch-lawsuit.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The legal filing argues that the arch would cast a shadow on Kennedy family graves and disrupt the sightline from the eternal flame memorializing the former president.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T00:11:51.000Z",
-        "sentiment": {
-          "posP": 8.1,
-          "negP": 17,
-          "neuP": 74.9,
-          "label": "negative",
-          "confidence": 0.61
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Many of Trump’s Plans to Remake D.C. Would Push Locals Aside",
-        "link": "https://www.nytimes.com/2026/11/10/arts/design/trump-washington-arch-oval-office.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "If these projects come to fruition, Washingtonians will lose access to sports fields, fishing spots and other tent poles of everyday city life.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-10T10:03:48.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 7.6,
-          "neuP": 92.4,
-          "label": "negative",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
         "title": "Alina Habba Mildon Loses $50 Million Contract That Enraged Trump",
         "link": "https://www.nytimes.com/2026/11/10/us/politics/alina-habba-fired-pardon.html",
         "source": "NYT",
@@ -5400,22 +5340,62 @@
         "category": "usa"
       },
       {
-        "title": "Bessent Is Moved From D.C.-Area Home to Military Base Amid Iranian Threats",
-        "link": "https://www.nytimes.com/2026/11/10/us/politics/bessent-moved-base-iran-threats.html",
+        "title": "Alina Habba Mildon Faces Discipline Over Settlement at Trump Golf Club",
+        "link": "https://www.nytimes.com/2026/11/10/nyregion/alina-habba-ethics-new-jersey-trump.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Treasury secretary, who is leading an economic pressure campaign against Iran, is the latest Trump official to leave his home over security concerns.",
+        "description": "The state’s Office of Attorney Ethics recommended discipline for her role in brokering a sexual harassment settlement involving a waitress at the president’s golf club in Bedminster, N.J.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T00:31:56.000Z",
+        "publishedAt": "2026-11-11T03:30:30.000Z",
         "sentiment": {
-          "posP": 10.1,
-          "negP": 15,
+          "posP": 4.5,
+          "negP": 8.7,
+          "neuP": 86.8,
+          "label": "negative",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "The United States Is Skipping COP31 in Turkey",
+        "link": "https://www.nytimes.com/2026/11/11/climate/trump-cop31-climate-turkey.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump refused to send an American delegation to the United Nations climate summit in Turkey.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T05:01:06.000Z",
+        "sentiment": {
+          "posP": 19.4,
+          "negP": 7.6,
+          "neuP": 73,
+          "label": "positive",
+          "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Kennedys Join Suit to Block Trump’s Arch, Saying It Would Mar J.F.K. Gravesite",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/kennedy-trump-arch-lawsuit.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The legal filing argues that the arch would cast a shadow on Kennedy family graves and disrupt the sightline from the eternal flame memorializing the former president.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T02:59:12.000Z",
+        "sentiment": {
+          "posP": 8.1,
+          "negP": 17,
           "neuP": 74.9,
           "label": "negative",
-          "confidence": 0.25
+          "confidence": 0.61
         },
         "category": "usa"
       },
@@ -5440,65 +5420,85 @@
         "category": "usa"
       },
       {
-        "title": "Hegseth impeachment effort torpedoed in House",
-        "link": "https://www.cnbc.com/2026/11/10/pete-hegseth-impeachment-massie-iran.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Kennedy family members join lawsuit to block Trump's arch",
+        "link": "https://www.cbsnews.com/news/kennedy-family-trump-triumphal-arch/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "GOP Rep. Thomas Massie, who has clashed with President Donald Trump, kicked off the Hegseth impeachment fight days after a blue wave midterm election.",
+        "description": "Several members of the Kennedy family have joined the legal battle to prevent President Trump from building a large triumphal arch near Arlington National Cemetery.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T23:46:41.000Z",
+        "publishedAt": "2026-11-11T02:53:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 8.5,
-          "neuP": 91.5,
-          "label": "negative",
-          "confidence": 0.38
+          "posP": 18.9,
+          "negP": 18,
+          "neuP": 63.1,
+          "label": "neutral",
+          "confidence": 0.15
         },
         "category": "usa"
       },
       {
-        "title": "White House vows to press ahead with tariffs despite midterm backlash over rising prices",
-        "link": "https://www.cnbc.com/2026/11/10/trump-tariffs-midterms-gary-cohn-inflation.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "GOP Rep. María Elvira Salazar wins re-election in Florida after clashing with Trump",
+        "link": "https://www.nbcnews.com/politics/2026-election/maria-elvira-salazar-gop-florida-house-election-win-trump-clash-rcna603377",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Business executives warned at a Washington summit of rising costs and shifting supply chains as polls showed growing opposition to Trump's tariffs.",
+        "description": "NBC News projects that Salazar defeated her Democratic opponent in a heavily Hispanic, Miami-based district that Trump carried by 15 points in 2024.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T21:45:46.000Z",
+        "publishedAt": "2026-11-10T22:52:46.000Z",
         "sentiment": {
-          "posP": 4.6,
-          "negP": 5.7,
-          "neuP": 89.7,
+          "posP": 9.3,
+          "negP": 7.8,
+          "neuP": 82.9,
           "label": "neutral",
-          "confidence": 0.1
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Kennedy family members seek to block construction of Trump’s arch",
+        "link": "https://www.nbcnews.com/politics/trump-administration/kennedy-family-members-block-construction-trump-arch-rcna608683",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Nine family members seek to join a lawsuit against the arch, arguing it would cast a shadow over the site where some of their notable relatives are buried.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T04:23:14.000Z",
+        "sentiment": {
+          "posP": 5.2,
+          "negP": 18.6,
+          "neuP": 76.2,
+          "label": "negative",
+          "confidence": 0.68
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.93,
-      "neu": 84.67,
-      "neg": 10.4,
+      "pos": 5.36,
+      "neu": 83.8,
+      "neg": 10.84,
       "count": 38
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 6.97,
-        "neu": 84.45,
-        "neg": 8.58,
+        "pos": 8.35,
+        "neu": 83.7,
+        "neg": 7.95,
         "count": 10
       },
       {
         "source": "NBC News",
-        "pos": 6.38,
-        "neu": 85.02,
-        "neg": 8.6,
+        "pos": 6.42,
+        "neu": 83.86,
+        "neg": 9.72,
         "count": 5
       },
       {
@@ -5510,9 +5510,9 @@
       },
       {
         "source": "Fox News",
-        "pos": 7.07,
-        "neu": 79.22,
-        "neg": 13.7,
+        "pos": 4.05,
+        "neu": 80.88,
+        "neg": 15.08,
         "count": 4
       },
       {
@@ -5538,9 +5538,9 @@
       },
       {
         "source": "CBS News",
-        "pos": 4.25,
-        "neu": 85.65,
-        "neg": 10.1,
+        "pos": 11.45,
+        "neu": 72.55,
+        "neg": 16,
         "count": 2
       },
       {
@@ -5554,10 +5554,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.7,
-        "neu": 84.83,
-        "neg": 10.47,
-        "count": 24
+        "pos": 5,
+        "neu": 84.84,
+        "neg": 10.16,
+        "count": 21
+      },
+      {
+        "topic": "Policy",
+        "pos": 4.48,
+        "neu": 86.5,
+        "neg": 9.02,
+        "count": 5
       },
       {
         "topic": "Foreign Policy",
@@ -5567,18 +5574,11 @@
         "count": 5
       },
       {
-        "topic": "Policy",
-        "pos": 5.6,
-        "neu": 87.58,
-        "neg": 6.83,
-        "count": 4
-      },
-      {
         "topic": "Legal",
-        "pos": 2.7,
-        "neu": 75.77,
-        "neg": 21.53,
-        "count": 3
+        "pos": 6.44,
+        "neu": 73.32,
+        "neg": 20.24,
+        "count": 5
       },
       {
         "topic": "Economy",
@@ -5612,28 +5612,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-10T21:26:13.201Z",
+        "label": "2026-11-11T04:16:20.790Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T22:26:13.201Z",
+        "label": "2026-11-11T05:16:20.790Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T23:26:13.201Z",
+        "label": "2026-11-11T06:16:20.790Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-11T00:26:13.201Z",
+        "label": "2026-11-11T07:16:20.790Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5642,28 +5642,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-10T21:26:13.201Z",
+        "label": "2026-11-11T04:16:20.791Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T22:26:13.201Z",
+        "label": "2026-11-11T05:16:20.791Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T23:26:13.201Z",
+        "label": "2026-11-11T06:16:20.791Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-11T00:26:13.201Z",
+        "label": "2026-11-11T07:16:20.791Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5743,7 +5743,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-11T01:26:13.202Z",
+    "generatedAt": "2026-11-11T08:16:20.792Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5864,7 +5864,7 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 188,
+      "usaArticles": 189,
       "potusArticles": 38,
       "sourceRows": 12,
       "industryRows": 6,
