@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-10T21:26:58.761Z",
+  "generatedAt": "2026-11-11T01:26:13.196Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 190,
-    "potusArticles": 35
+    "usaArticles": 188,
+    "potusArticles": 38
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-10T17:26:58.761Z",
+          "label": "2026-11-10T21:26:13.197Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T18:26:58.761Z",
+          "label": "2026-11-10T22:26:13.197Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T19:26:58.761Z",
+          "label": "2026-11-10T23:26:13.197Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T20:26:58.761Z",
+          "label": "2026-11-11T00:26:13.197Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-10T17:26:58.761Z",
+          "label": "2026-11-10T21:26:13.197Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T18:26:58.761Z",
+          "label": "2026-11-10T22:26:13.197Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T19:26:58.761Z",
+          "label": "2026-11-10T23:26:13.197Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-10T20:26:58.761Z",
+          "label": "2026-11-11T00:26:13.197Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.32,
-      "neu": 82.62,
-      "neg": 10.06,
-      "count": 190
+      "pos": 6.72,
+      "neu": 83.07,
+      "neg": 10.21,
+      "count": 188
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.44,
-        "neu": 83.47,
-        "neg": 8.09,
-        "count": 42
+        "pos": 6.85,
+        "neu": 85.62,
+        "neg": 7.53,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 7.62,
-        "neu": 78.55,
-        "neg": 13.83,
+        "pos": 7.93,
+        "neu": 77.92,
+        "neg": 14.15,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.43,
-        "neu": 82.59,
-        "neg": 12.98,
+        "pos": 2.83,
+        "neu": 84.66,
+        "neg": 12.51,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.4,
-        "neu": 83.88,
-        "neg": 8.72,
+        "pos": 6.45,
+        "neu": 85.02,
+        "neg": 8.53,
         "count": 24
       },
       {
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.18,
-        "neu": 84.56,
-        "neg": 5.27,
+        "pos": 11.3,
+        "neu": 81.28,
+        "neg": 7.42,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 6.35,
-        "neu": 85.38,
-        "neg": 8.28,
+        "pos": 5.64,
+        "neu": 85.47,
+        "neg": 8.89,
         "count": 20
       },
       {
@@ -4635,122 +4635,122 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Materials",
-          "bias": -14.4,
-          "count": 1
-        },
-        {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": -8.68,
-          "count": 8
-        },
-        {
-          "name": "Real Estate",
-          "bias": -6.1,
-          "count": 2
-        },
-        {
-          "name": "Technology",
-          "bias": -3.26,
-          "count": 144
-        },
-        {
           "name": "Energy",
-          "bias": 2.33,
-          "count": 9
+          "bias": 8.74,
+          "count": 5
         },
         {
           "name": "Manufacturing",
-          "bias": 2,
-          "count": 3
+          "bias": -7.6,
+          "count": 1
         },
         {
           "name": "Utilities",
-          "bias": 0.67,
-          "count": 3
+          "bias": 7.45,
+          "count": 2
+        },
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
+        },
+        {
+          "name": "Technology",
+          "bias": -4.45,
+          "count": 140
+        },
+        {
+          "name": "Healthcare",
+          "bias": -2.9,
+          "count": 10
         },
         {
           "name": "Finance",
-          "bias": -0.53,
-          "count": 19
+          "bias": -2.79,
+          "count": 16
         }
       ],
       "pos": [
         {
           "name": "Energy",
-          "bias": 2.33,
-          "count": 9
+          "bias": 8.74,
+          "count": 5
+        },
+        {
+          "name": "Utilities",
+          "bias": 7.45,
+          "count": 2
+        },
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
         }
       ],
       "neu": [
         {
-          "name": "Real Estate",
-          "bias": -6.1,
-          "count": 2
+          "name": "Healthcare",
+          "bias": -2.9,
+          "count": 10
         },
         {
-          "name": "Technology",
-          "bias": -3.26,
-          "count": 144
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 2,
-          "count": 3
+          "name": "Finance",
+          "bias": -2.79,
+          "count": 16
         }
       ],
       "neg": [
-        {
-          "name": "Materials",
-          "bias": -14.4,
-          "count": 1
-        },
         {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": -8.68,
-          "count": 8
+          "name": "Manufacturing",
+          "bias": -7.6,
+          "count": 1
+        },
+        {
+          "name": "Technology",
+          "bias": -4.45,
+          "count": 140
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-10T17:26:58.763Z",
+          "label": "2026-11-10T21:26:13.199Z",
+          "pos": 4,
+          "neu": 92,
+          "neg": 4,
+          "count": 12
+        },
+        {
+          "label": "2026-11-10T22:26:13.199Z",
           "pos": 8,
-          "neu": 78,
-          "neg": 14,
-          "count": 8
+          "neu": 83,
+          "neg": 9,
+          "count": 20
         },
         {
-          "label": "2026-11-10T18:26:58.763Z",
-          "pos": 6,
-          "neu": 86,
-          "neg": 7,
-          "count": 9
-        },
-        {
-          "label": "2026-11-10T19:26:58.763Z",
+          "label": "2026-11-10T23:26:13.199Z",
           "pos": 6,
           "neu": 84,
           "neg": 10,
-          "count": 37
+          "count": 19
         },
         {
-          "label": "2026-11-10T20:26:58.763Z",
-          "pos": 7,
-          "neu": 83,
-          "neg": 10,
-          "count": 38
+          "label": "2026-11-11T00:26:13.199Z",
+          "pos": 4,
+          "neu": 82,
+          "neg": 14,
+          "count": 35
         }
       ]
     }
@@ -4958,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "Jamie Raskin calls concerns over spending too much time investigating Trump a media 'narrative'",
-        "link": "https://www.foxnews.com/media/jamie-raskin-calls-concerns-over-spending-too-much-time-investigating-trump-media-narrative",
+        "title": "Biden reveals letter Trump left him at White House that made it seem 'as if there were two Donald Trumps'",
+        "link": "https://www.foxnews.com/media/biden-reveals-letter-trump-left-him-white-house-made-seem-as-were-two-donald-trumps",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Rep. Jamie Raskin, D-Md., dismissed concerns within the party about Democrats in Congress focusing too much on Trump investigations as a media \"narrative.\"",
+        "description": "President Donald Trump's letter to former President Joe Biden, sent weeks after the January 6 Capitol riots in 2021, offered warm wishes, Biden's new memoir revealed.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T20:15:14.000Z",
+        "publishedAt": "2026-11-11T01:00:30.000Z",
         "sentiment": {
-          "posP": 7.4,
-          "negP": 0,
-          "neuP": 92.6,
-          "label": "positive",
-          "confidence": 0.4
+          "posP": 7.2,
+          "negP": 6.8,
+          "neuP": 86,
+          "label": "negative",
+          "confidence": 0.2
         },
         "category": "usa"
       },
       {
-        "title": "Top Dem cries ‘weaponization’ as comments warning young people not to join Trump admin land her in hot water",
-        "link": "https://www.foxnews.com/politics/top-dem-cries-weaponization-comments-warning-young-people-not-join-trump-admin-lands-hot-water",
+        "title": "IRGC operative lands on FBI’s Most Wanted Terrorists list over alleged plot to kill former Trump advisor",
+        "link": "https://www.foxnews.com/us/irgc-operative-lands-fbis-most-wanted-terrorists-list-alleged-plot-kill-former-trump-adviser",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Dem Sen. Elissa Slotkin, D-Mich., cries \"weaponization\" after Trump ordered the Justice Department to investigate her remarks warning young Republicans about joining his administration.",
+        "description": "Shahram Poursafi allegedly sought to pay $300,000 to have John Bolton killed in a plot authorities linked to retaliation for Qasem Soleimani’s death.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T20:12:12.000Z",
+        "publishedAt": "2026-11-11T00:58:39.000Z",
         "sentiment": {
-          "posP": 9.8,
-          "negP": 22.7,
-          "neuP": 67.5,
+          "posP": 0,
+          "negP": 35.7,
+          "neuP": 64.3,
           "label": "negative",
-          "confidence": 0.71
+          "confidence": 0.96
         },
         "category": "usa"
       }
@@ -5200,42 +5200,82 @@
         "category": "world"
       },
       {
-        "title": "Jamie Raskin calls concerns over spending too much time investigating Trump a media 'narrative'",
-        "link": "https://www.foxnews.com/media/jamie-raskin-calls-concerns-over-spending-too-much-time-investigating-trump-media-narrative",
+        "title": "Biden reveals letter Trump left him at White House that made it seem 'as if there were two Donald Trumps'",
+        "link": "https://www.foxnews.com/media/biden-reveals-letter-trump-left-him-white-house-made-seem-as-were-two-donald-trumps",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Rep. Jamie Raskin, D-Md., dismissed concerns within the party about Democrats in Congress focusing too much on Trump investigations as a media \"narrative.\"",
+        "description": "President Donald Trump's letter to former President Joe Biden, sent weeks after the January 6 Capitol riots in 2021, offered warm wishes, Biden's new memoir revealed.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T20:15:14.000Z",
+        "publishedAt": "2026-11-11T01:00:30.000Z",
         "sentiment": {
-          "posP": 7.4,
-          "negP": 0,
-          "neuP": 92.6,
-          "label": "positive",
-          "confidence": 0.4
+          "posP": 7.2,
+          "negP": 6.8,
+          "neuP": 86,
+          "label": "negative",
+          "confidence": 0.2
         },
         "category": "usa"
       },
       {
-        "title": "Top Dem cries ‘weaponization’ as comments warning young people not to join Trump admin land her in hot water",
-        "link": "https://www.foxnews.com/politics/top-dem-cries-weaponization-comments-warning-young-people-not-join-trump-admin-lands-hot-water",
+        "title": "IRGC operative lands on FBI’s Most Wanted Terrorists list over alleged plot to kill former Trump advisor",
+        "link": "https://www.foxnews.com/us/irgc-operative-lands-fbis-most-wanted-terrorists-list-alleged-plot-kill-former-trump-adviser",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Dem Sen. Elissa Slotkin, D-Mich., cries \"weaponization\" after Trump ordered the Justice Department to investigate her remarks warning young Republicans about joining his administration.",
+        "description": "Shahram Poursafi allegedly sought to pay $300,000 to have John Bolton killed in a plot authorities linked to retaliation for Qasem Soleimani’s death.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T20:12:12.000Z",
+        "publishedAt": "2026-11-11T00:58:39.000Z",
         "sentiment": {
-          "posP": 9.8,
-          "negP": 22.7,
-          "neuP": 67.5,
+          "posP": 0,
+          "negP": 35.7,
+          "neuP": 64.3,
           "label": "negative",
-          "confidence": 0.71
+          "confidence": 0.96
+        },
+        "category": "usa"
+      },
+      {
+        "title": "'I've Had It' host Jennifer Welch cheers Wisconsin brewing company that called Kirk an 'awful human being'",
+        "link": "https://www.foxnews.com/media/ive-had-it-host-jennifer-welch-cheers-wisconsin-brewing-company-called-kirk-awful-human-being",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Jennifer Welch promoted the Minocqua Brewing Company on her \"I've Had It\" podcast after the Wisconsin anti-Trump brewery attacked Charlie Kirk and offered sponsorship.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T00:19:06.000Z",
+        "sentiment": {
+          "posP": 12.1,
+          "negP": 12.3,
+          "neuP": 75.6,
+          "label": "neutral",
+          "confidence": 0.03
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Why did Hegseth face an impeachment push? Inside the 8 articles",
+        "link": "https://www.cbsnews.com/news/pete-hegseth-impeachment-articles/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The impeachment resolution focuses on Defense Secretary Pete Hegseth's involvement in some of the most controversial episodes of President Trump's second term.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T00:52:00.000Z",
+        "sentiment": {
+          "posP": 4.5,
+          "negP": 6.2,
+          "neuP": 89.3,
+          "label": "neutral",
+          "confidence": 0.15
         },
         "category": "usa"
       },
@@ -5260,82 +5300,62 @@
         "category": "usa"
       },
       {
-        "title": "House Republicans Pick Jim Jordan, a Close Trump Ally, as Their Next Leader",
-        "link": "https://www.nytimes.com/2026/11/10/us/politics/republican-house-leader-scalise-jordan.html",
+        "title": "Trump Trots Out His Chaotic Greatest Hits to a Weary Public",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/trump-midterm-elections-chaos.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "In choosing Mr. Jordan over Representative Steve Scalise of Louisiana, House Republicans signaled a desire for fresh leadership after their biggest election losses in decades.",
+        "description": "As he braces for Democrats to assume legislative control in Washington, President Trump has sought to take back center stage with some discordant maneuvers.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T20:15:22.000Z",
+        "publishedAt": "2026-11-11T00:16:01.000Z",
         "sentiment": {
-          "posP": 12.3,
-          "negP": 6.6,
-          "neuP": 81.1,
-          "label": "positive",
-          "confidence": 0.32
+          "posP": 10.4,
+          "negP": 13.1,
+          "neuP": 76.5,
+          "label": "neutral",
+          "confidence": 0.03
         },
         "category": "usa"
       },
       {
-        "title": "What Trump Said in His Letter to Biden in 2021",
-        "link": "https://www.nytimes.com/2026/11/10/us/politics/biden-trump-letter.html",
+        "title": "Representative María Elvira Salazar Wins Re-Election in Florida",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/florida-house-27-salazar-rodriguez.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The letter, which former President Joseph R. Biden Jr. details in a new book, is remarkable for a warm tone starkly at odds with his predecessor’s public comments.",
+        "description": "Ms. Salazar, a Republican, had released an ad in which she said the White House had “gone too far” on immigration amid worries of Hispanic voter backlash within her party.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T17:00:05.000Z",
+        "publishedAt": "2026-11-10T23:24:36.000Z",
         "sentiment": {
-          "posP": 13.9,
-          "negP": 0,
-          "neuP": 86.1,
-          "label": "positive",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Alina Habba Mildon Loses $50 Million Contract That Enraged Trump",
-        "link": "https://www.nytimes.com/2026/11/10/us/politics/alina-habba-fired-pardon.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The former Trump lawyer had signed the contract with a family company weeks before the president gave the family’s patriarch a pardon.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-10T20:51:05.000Z",
-        "sentiment": {
-          "posP": 6.7,
-          "negP": 14.6,
+          "posP": 14.8,
+          "negP": 6.5,
           "neuP": 78.7,
-          "label": "negative",
-          "confidence": 0.4
+          "label": "positive",
+          "confidence": 0.56
         },
         "category": "usa"
       },
       {
-        "title": "Corey Lewandowski, Trump Ally, Is a Top Target for Democrats After the Election",
-        "link": "https://www.nytimes.com/2026/11/10/us/politics/democrats-corey-lewandowski-investigations.html",
+        "title": "Kennedys Join Suit to Block Trump’s Arch, Saying It Would Mar J.F.K. Gravesite",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/kennedy-trump-arch-lawsuit.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The former Trump administration adviser has been urged to preserve his records, as part of Democrats’ bid to rein in the Department of Homeland Security.",
+        "description": "The legal filing argues that the arch would cast a shadow on Kennedy family graves and disrupt the sightline from the eternal flame memorializing the former president.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T16:50:33.000Z",
+        "publishedAt": "2026-11-11T00:11:51.000Z",
         "sentiment": {
-          "posP": 10.7,
-          "negP": 0,
-          "neuP": 89.3,
-          "label": "positive",
-          "confidence": 0.49
+          "posP": 8.1,
+          "negP": 17,
+          "neuP": 74.9,
+          "label": "negative",
+          "confidence": 0.61
         },
         "category": "usa"
       },
@@ -5360,6 +5380,86 @@
         "category": "usa"
       },
       {
+        "title": "Alina Habba Mildon Loses $50 Million Contract That Enraged Trump",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/alina-habba-fired-pardon.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The former Trump lawyer had signed the contract with a family company weeks before the president gave the family’s patriarch a pardon.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-10T20:51:05.000Z",
+        "sentiment": {
+          "posP": 6.7,
+          "negP": 14.6,
+          "neuP": 78.7,
+          "label": "negative",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Bessent Is Moved From D.C.-Area Home to Military Base Amid Iranian Threats",
+        "link": "https://www.nytimes.com/2026/11/10/us/politics/bessent-moved-base-iran-threats.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Treasury secretary, who is leading an economic pressure campaign against Iran, is the latest Trump official to leave his home over security concerns.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T00:31:56.000Z",
+        "sentiment": {
+          "posP": 10.1,
+          "negP": 15,
+          "neuP": 74.9,
+          "label": "negative",
+          "confidence": 0.25
+        },
+        "category": "usa"
+      },
+      {
+        "title": "It’s Time for Israelis to Throw Out Their Trump",
+        "link": "https://www.nytimes.com/2026/11/10/opinion/israel-elections-netanyahu-eisenkot-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The U.S. midterm election results should be a lesson to the Israeli opposition in rallying against Netanyahu.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-10T22:00:06.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Hegseth impeachment effort torpedoed in House",
+        "link": "https://www.cnbc.com/2026/11/10/pete-hegseth-impeachment-massie-iran.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "GOP Rep. Thomas Massie, who has clashed with President Donald Trump, kicked off the Hegseth impeachment fight days after a blue wave midterm election.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-10T23:46:41.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 8.5,
+          "neuP": 91.5,
+          "label": "negative",
+          "confidence": 0.38
+        },
+        "category": "usa"
+      },
+      {
         "title": "White House vows to press ahead with tariffs despite midterm backlash over rising prices",
         "link": "https://www.cnbc.com/2026/11/10/trump-tariffs-midterms-gary-cohn-inflation.html",
         "source": "CNBC",
@@ -5369,7 +5469,7 @@
         "description": "Business executives warned at a Washington summit of rising costs and shifting supply chains as polls showed growing opposition to Trump's tariffs.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-10T20:28:02.000Z",
+        "publishedAt": "2026-11-10T21:45:46.000Z",
         "sentiment": {
           "posP": 4.6,
           "negP": 5.7,
@@ -5378,135 +5478,42 @@
           "confidence": 0.1
         },
         "category": "usa"
-      },
-      {
-        "title": "Schumer accuses Trump of defending Nvidia CEO Jensen Huang at cost of national security",
-        "link": "https://www.cnbc.com/2026/11/10/moolenaar-nvidia-jensen-huang-affair-chinese-spy.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Rep. John Moolenaar, R-Mich., the Republican chairman of the Select Committee on China and told CNBC he expects answers about Jensen Huang's relationship.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-10T21:11:36.000Z",
-        "sentiment": {
-          "posP": 6,
-          "negP": 6,
-          "neuP": 88,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Pete Hegseth decries impeachment push, defends Iran war handling",
-        "link": "https://www.cnbc.com/2026/11/10/pete-hegseth-impeachment-massie-iran.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "GOP Rep. Thomas Massie, who has clashed with President Donald Trump, kicked off the Hegseth impeachment fight days after a blue wave midterm election.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-10T17:48:47.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 17.8,
-          "neuP": 82.2,
-          "label": "negative",
-          "confidence": 0.76
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.8,
-      "neu": 86.06,
-      "neg": 8.13,
-      "count": 35
+      "pos": 4.93,
+      "neu": 84.67,
+      "neg": 10.4,
+      "count": 38
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 7.9,
-        "neu": 87,
-        "neg": 5.1,
-        "count": 8
-      },
-      {
-        "source": "Washington Post",
-        "pos": 4.32,
-        "neu": 86.92,
-        "neg": 8.77,
-        "count": 6
+        "pos": 6.97,
+        "neu": 84.45,
+        "neg": 8.58,
+        "count": 10
       },
       {
         "source": "NBC News",
-        "pos": 5.72,
-        "neu": 84.18,
-        "neg": 10.1,
+        "pos": 6.38,
+        "neu": 85.02,
+        "neg": 8.6,
         "count": 5
+      },
+      {
+        "source": "Washington Post",
+        "pos": 0.66,
+        "neu": 85.52,
+        "neg": 13.82,
+        "count": 5
+      },
+      {
+        "source": "Fox News",
+        "pos": 7.07,
+        "neu": 79.22,
+        "neg": 13.7,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5523,18 +5530,18 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 8.73,
-        "neu": 83.7,
-        "neg": 7.57,
+        "source": "ABC News",
+        "pos": 3.13,
+        "neu": 82.93,
+        "neg": 13.93,
         "count": 3
       },
       {
-        "source": "ABC News",
-        "pos": 6.3,
-        "neu": 85.83,
-        "neg": 7.87,
-        "count": 3
+        "source": "CBS News",
+        "pos": 4.25,
+        "neu": 85.65,
+        "neg": 10.1,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5547,24 +5554,31 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.18,
-        "neu": 87.93,
-        "neg": 6.89,
-        "count": 18
-      },
-      {
-        "topic": "Policy",
-        "pos": 7.15,
-        "neu": 84.52,
-        "neg": 8.33,
-        "count": 6
+        "pos": 4.7,
+        "neu": 84.83,
+        "neg": 10.47,
+        "count": 24
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.18,
-        "neu": 87.13,
-        "neg": 7.68,
-        "count": 6
+        "pos": 5.02,
+        "neu": 86.96,
+        "neg": 8.02,
+        "count": 5
+      },
+      {
+        "topic": "Policy",
+        "pos": 5.6,
+        "neu": 87.58,
+        "neg": 6.83,
+        "count": 4
+      },
+      {
+        "topic": "Legal",
+        "pos": 2.7,
+        "neu": 75.77,
+        "neg": 21.53,
+        "count": 3
       },
       {
         "topic": "Economy",
@@ -5572,20 +5586,6 @@
         "neu": 84.5,
         "neg": 6,
         "count": 2
-      },
-      {
-        "topic": "Legal",
-        "pos": 6.8,
-        "neu": 78.5,
-        "neg": 14.7,
-        "count": 2
-      },
-      {
-        "topic": "Public Statements",
-        "pos": 3.2,
-        "neu": 73.6,
-        "neg": 23.2,
-        "count": 1
       }
     ]
   },
@@ -5612,28 +5612,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-10T17:26:58.765Z",
+        "label": "2026-11-10T21:26:13.201Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T18:26:58.765Z",
+        "label": "2026-11-10T22:26:13.201Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T19:26:58.765Z",
+        "label": "2026-11-10T23:26:13.201Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T20:26:58.765Z",
+        "label": "2026-11-11T00:26:13.201Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5642,28 +5642,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-10T17:26:58.765Z",
+        "label": "2026-11-10T21:26:13.201Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T18:26:58.765Z",
+        "label": "2026-11-10T22:26:13.201Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T19:26:58.765Z",
+        "label": "2026-11-10T23:26:13.201Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-10T20:26:58.765Z",
+        "label": "2026-11-11T00:26:13.201Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5743,7 +5743,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-10T21:26:58.766Z",
+    "generatedAt": "2026-11-11T01:26:13.202Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5864,8 +5864,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 190,
-      "potusArticles": 35,
+      "usaArticles": 188,
+      "potusArticles": 38,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
