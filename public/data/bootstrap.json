@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-12T11:44:25.288Z",
+  "generatedAt": "2026-11-12T19:10:21.517Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 187,
-    "potusArticles": 32
+    "usaArticles": 188,
+    "potusArticles": 33
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-12T07:44:25.288Z",
+          "label": "2026-11-12T15:10:21.517Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T08:44:25.288Z",
+          "label": "2026-11-12T16:10:21.517Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T09:44:25.288Z",
+          "label": "2026-11-12T17:10:21.517Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T10:44:25.288Z",
+          "label": "2026-11-12T18:10:21.517Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-12T07:44:25.288Z",
+          "label": "2026-11-12T15:10:21.517Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T08:44:25.288Z",
+          "label": "2026-11-12T16:10:21.517Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T09:44:25.288Z",
+          "label": "2026-11-12T17:10:21.517Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T10:44:25.288Z",
+          "label": "2026-11-12T18:10:21.517Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 8.63,
-      "neu": 80.76,
-      "neg": 10.6,
-      "count": 187
+      "pos": 7.96,
+      "neu": 82.4,
+      "neg": 9.64,
+      "count": 188
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.85,
-        "neu": 83.79,
-        "neg": 8.36,
-        "count": 39
+        "pos": 5.64,
+        "neu": 85.23,
+        "neg": 9.13,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 11.1,
-        "neu": 74.3,
-        "neg": 14.61,
+        "pos": 9.3,
+        "neu": 80.12,
+        "neg": 10.58,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.43,
-        "neu": 81.2,
-        "neg": 12.37,
+        "pos": 8.15,
+        "neu": 80.03,
+        "neg": 11.82,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 8.7,
-        "neu": 79.13,
-        "neg": 12.17,
+        "pos": 6.73,
+        "neu": 81.85,
+        "neg": 11.42,
         "count": 24
       },
       {
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 11.83,
-        "neu": 80.08,
-        "neg": 8.09,
+        "pos": 12.83,
+        "neu": 82.59,
+        "neg": 4.58,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 9.57,
-        "neu": 85.05,
-        "neg": 5.38,
+        "pos": 9.18,
+        "neu": 85.56,
+        "neg": 5.26,
         "count": 20
       },
       {
@@ -4635,14 +4635,24 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Healthcare",
-          "bias": -7.99,
-          "count": 15
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
+        },
+        {
+          "name": "Real Estate",
+          "bias": 10.92,
+          "count": 9
         },
         {
           "name": "Materials",
-          "bias": -7.6,
+          "bias": -10.75,
           "count": 2
+        },
+        {
+          "name": "Energy",
+          "bias": 7.95,
+          "count": 8
         },
         {
           "name": "Utilities",
@@ -4650,112 +4660,107 @@
           "count": 2
         },
         {
-          "name": "Real Estate",
-          "bias": 6.5,
-          "count": 9
-        },
-        {
-          "name": "Communication",
-          "bias": -5.9,
-          "count": 2
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -2.7,
-          "count": 3
+          "name": "Finance",
+          "bias": -6.34,
+          "count": 16
         },
         {
           "name": "Technology",
-          "bias": -2.06,
-          "count": 145
+          "bias": -2.61,
+          "count": 141
         },
         {
-          "name": "Finance",
-          "bias": -1.67,
-          "count": 15
+          "name": "Manufacturing",
+          "bias": 2.15,
+          "count": 2
         },
         {
-          "name": "Energy",
-          "bias": 0.24,
-          "count": 10
+          "name": "Healthcare",
+          "bias": -0.98,
+          "count": 13
         }
       ],
       "pos": [
         {
+          "name": "Real Estate",
+          "bias": 10.92,
+          "count": 9
+        },
+        {
+          "name": "Energy",
+          "bias": 7.95,
+          "count": 8
+        },
+        {
           "name": "Utilities",
           "bias": 7.45,
           "count": 2
-        },
-        {
-          "name": "Real Estate",
-          "bias": 6.5,
-          "count": 9
         }
       ],
       "neu": [
         {
-          "name": "Manufacturing",
-          "bias": -2.7,
-          "count": 3
-        },
-        {
           "name": "Technology",
-          "bias": -2.06,
-          "count": 145
+          "bias": -2.61,
+          "count": 141
         },
         {
-          "name": "Finance",
-          "bias": -1.67,
-          "count": 15
+          "name": "Manufacturing",
+          "bias": 2.15,
+          "count": 2
+        },
+        {
+          "name": "Healthcare",
+          "bias": -0.98,
+          "count": 13
         }
       ],
       "neg": [
         {
-          "name": "Healthcare",
-          "bias": -7.99,
-          "count": 15
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
         },
         {
           "name": "Materials",
-          "bias": -7.6,
+          "bias": -10.75,
           "count": 2
         },
         {
-          "name": "Communication",
-          "bias": -5.9,
-          "count": 2
+          "name": "Finance",
+          "bias": -6.34,
+          "count": 16
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-12T07:44:25.291Z",
-          "pos": 7,
-          "neu": 82,
-          "neg": 11,
-          "count": 2
+          "label": "2026-11-12T15:10:21.519Z",
+          "pos": 13,
+          "neu": 85,
+          "neg": 2,
+          "count": 4
         },
         {
-          "label": "2026-11-12T08:44:25.291Z",
-          "pos": 8,
-          "neu": 80,
+          "label": "2026-11-12T16:10:21.519Z",
+          "pos": 5,
+          "neu": 88,
+          "neg": 7,
+          "count": 6
+        },
+        {
+          "label": "2026-11-12T17:10:21.519Z",
+          "pos": 5,
+          "neu": 83,
           "neg": 12,
-          "count": 7
+          "count": 33
         },
         {
-          "label": "2026-11-12T09:44:25.291Z",
-          "pos": 7,
-          "neu": 80,
-          "neg": 13,
-          "count": 19
-        },
-        {
-          "label": "2026-11-12T10:44:25.291Z",
-          "pos": 10,
-          "neu": 77,
-          "neg": 13,
-          "count": 18
+          "label": "2026-11-12T18:10:21.519Z",
+          "pos": 9,
+          "neu": 82,
+          "neg": 9,
+          "count": 38
         }
       ]
     }
@@ -4963,42 +4968,42 @@
         "category": "world"
       },
       {
-        "title": "Ro Khanna rejects warnings that Trump admin investigations could derail Democrats' affordability agenda",
-        "link": "https://www.foxnews.com/politics/ro-khanna-rejects-warnings-trump-admin-investigations-could-derail-democrats-affordability-agenda",
+        "title": "Trump asks Vance to focus on ‘corruption and crime’ in Dem-run cities, states",
+        "link": "https://www.foxnews.com/politics/trump-asks-vance-focus-corruption-crime-dem-run-cities-states",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ro Khanna says Democrats can pursue Trump investigations and tackle affordability at once, arguing accountability for the Iran war would lower prices.",
+        "description": "President Trump says JD Vance will target alleged corruption in Minnesota, California and Illinois, claiming billions are stolen monthly from government programs.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-12T10:00:33.000Z",
+        "publishedAt": "2026-11-12T17:48:55.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 36.5,
-          "neuP": 63.5,
+          "negP": 8.6,
+          "neuP": 91.4,
           "label": "negative",
-          "confidence": 0.94
+          "confidence": 0.49
         },
         "category": "usa"
       },
       {
-        "title": "Trump faces a brutal impeachment era and needs a lawyer as press secretary",
-        "link": "https://www.foxnews.com/opinion/trump-faces-brutal-impeachment-era-needs-lawyer-press-secretary",
+        "title": "Howard Lutnick is next Trump official top Dems want on the chopping block amid NVIDIA scandal",
+        "link": "https://www.foxnews.com/politics/howard-lutnick-next-trump-official-dems-want-chopping-block-amid-nvidia-scandal",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "What President Trump and his advisers learned from the first impeachment circus of the next two years is valuable. There are major lessons that can be applied to the next two years.",
+        "description": "Top House Democrats are calling for an investigation into Howard Lutnick over his alleged role in the NVIDIA Jensen Huang Chinese spy scandal.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-12T09:50:02.000Z",
+        "publishedAt": "2026-11-12T17:38:40.000Z",
         "sentiment": {
-          "posP": 6.4,
-          "negP": 8.5,
-          "neuP": 85.1,
+          "posP": 10.5,
+          "negP": 18.7,
+          "neuP": 70.8,
           "label": "negative",
-          "confidence": 0.25
+          "confidence": 0.7
         },
         "category": "usa"
       }
@@ -5205,102 +5210,122 @@
         "category": "world"
       },
       {
-        "title": "Ro Khanna rejects warnings that Trump admin investigations could derail Democrats' affordability agenda",
-        "link": "https://www.foxnews.com/politics/ro-khanna-rejects-warnings-trump-admin-investigations-could-derail-democrats-affordability-agenda",
+        "title": "Trump asks Vance to focus on ‘corruption and crime’ in Dem-run cities, states",
+        "link": "https://www.foxnews.com/politics/trump-asks-vance-focus-corruption-crime-dem-run-cities-states",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ro Khanna says Democrats can pursue Trump investigations and tackle affordability at once, arguing accountability for the Iran war would lower prices.",
+        "description": "President Trump says JD Vance will target alleged corruption in Minnesota, California and Illinois, claiming billions are stolen monthly from government programs.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-12T10:00:33.000Z",
+        "publishedAt": "2026-11-12T17:48:55.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 36.5,
-          "neuP": 63.5,
+          "negP": 8.6,
+          "neuP": 91.4,
           "label": "negative",
-          "confidence": 0.94
+          "confidence": 0.49
         },
         "category": "usa"
       },
       {
-        "title": "Trump faces a brutal impeachment era and needs a lawyer as press secretary",
-        "link": "https://www.foxnews.com/opinion/trump-faces-brutal-impeachment-era-needs-lawyer-press-secretary",
+        "title": "Howard Lutnick is next Trump official top Dems want on the chopping block amid NVIDIA scandal",
+        "link": "https://www.foxnews.com/politics/howard-lutnick-next-trump-official-dems-want-chopping-block-amid-nvidia-scandal",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "What President Trump and his advisers learned from the first impeachment circus of the next two years is valuable. There are major lessons that can be applied to the next two years.",
+        "description": "Top House Democrats are calling for an investigation into Howard Lutnick over his alleged role in the NVIDIA Jensen Huang Chinese spy scandal.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-12T09:50:02.000Z",
+        "publishedAt": "2026-11-12T17:38:40.000Z",
         "sentiment": {
-          "posP": 6.4,
-          "negP": 8.5,
-          "neuP": 85.1,
+          "posP": 10.5,
+          "negP": 18.7,
+          "neuP": 70.8,
           "label": "negative",
-          "confidence": 0.25
+          "confidence": 0.7
         },
         "category": "usa"
       },
       {
-        "title": "A Diminished Justice Dept. Braces for Fresh Fights After Midterm Loss",
-        "link": "https://www.nytimes.com/2026/11/11/us/politics/doj-trump-blanche-trump-midterms.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump opens door to immigration deal, but Republicans have one condition",
+        "link": "https://www.foxnews.com/politics/trump-opens-door-immigration-deal-republicans-have-one-condition",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The upheaval points to a broader dilemma spurred by the election: whether the department can carry out President Trump’s priorities as career officials eye the exits and senior department officials resign.",
+        "description": "President Donald Trump floated a deal for long-term immigrants, but Senate Republicans drew a hard line, insisting amnesty is completely off the table.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T21:59:02.000Z",
+        "publishedAt": "2026-11-12T17:35:28.000Z",
         "sentiment": {
-          "posP": 11.7,
-          "negP": 18.6,
-          "neuP": 69.7,
-          "label": "negative",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "San Antonio Fights Plan to Turn Warehouse Into ICE Detention Center",
-        "link": "https://www.nytimes.com/2026/11/12/us/ice-detention-center-san-antonio.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The city’s lawsuit is part of a wave of legal challenges slowing the Trump administration’s effort to build immigration detention centers across the country.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-12T10:00:24.000Z",
-        "sentiment": {
-          "posP": 6.9,
-          "negP": 23.8,
-          "neuP": 69.3,
-          "label": "negative",
-          "confidence": 0.78
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Hints at Immigration Deal, Then Reverses. He’s Done That Before.",
-        "link": "https://www.nytimes.com/2026/11/11/us/politics/trump-immigration-election-democrats-republicans.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats and some Republicans say President Trump is missing an opportunity to find consensus on an issue that has bedeviled past administrations.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T19:50:05.000Z",
-        "sentiment": {
-          "posP": 7.8,
-          "negP": 6.1,
-          "neuP": 86.1,
+          "posP": 0,
+          "negP": 4.9,
+          "neuP": 95.1,
           "label": "neutral",
           "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Singapore Says US Not Helpful on Investigation Into Alice Huang and Megaspeed",
+        "link": "https://www.nytimes.com/2026/11/12/business/nvidia-megaspeed-alice-huang.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In a statement, Singapore said it held Alice Huang’s passport months after President Trump was briefed that she was a spy.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-12T17:33:19.000Z",
+        "sentiment": {
+          "posP": 8.5,
+          "negP": 0,
+          "neuP": 91.5,
+          "label": "positive",
+          "confidence": 0.42
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He’s Pulling Vance Off Iran Talks to Focus on Fraud Campaign",
+        "link": "https://www.nytimes.com/2026/11/12/us/politics/trump-vance-iran-fraud.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The announcement on social media deepened questions about what the president’s plan is to end the war. “We don’t need a deal with Iran,” he wrote.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-12T18:51:48.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17.6,
+          "neuP": 82.4,
+          "label": "negative",
+          "confidence": 0.83
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats Put Targets on Notice as Trump Oversight Takes Shape",
+        "link": "https://www.nytimes.com/2026/11/12/climate/democrats-oversight-committees-letters.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Letters sent by two key House committees tell companies and officials not to destroy documents.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-12T18:07:23.000Z",
+        "sentiment": {
+          "posP": 10.6,
+          "negP": 0,
+          "neuP": 89.4,
+          "label": "positive",
+          "confidence": 0.43
         },
         "category": "usa"
       },
@@ -5325,102 +5350,122 @@
         "category": "usa"
       },
       {
-        "title": "Trump says Iran war will be over \"when we want to end it\"",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/",
+        "title": "Democrats respond to warning over planned Trump probes: \"We're not going to be threatened\"",
+        "link": "https://www.cbsnews.com/video/democrats-respond-to-warning-over-planned-trump-probes/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump spoke about the Iran war during a Veterans Day address at Arlington National Cemetery.",
+        "description": "The top lawyer in the White House is warning Democrats in Congress against what he calls unlawful investigations into the Trump administration that lawmakers plan to pursue in the next Congress. Nikole Killion reports.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-12T11:37:46.000Z",
+        "publishedAt": "2026-11-12T18:34:46.000Z",
         "sentiment": {
-          "posP": 3.8,
-          "negP": 22.9,
-          "neuP": 73.3,
-          "label": "negative",
-          "confidence": 0.82
-        },
-        "category": "usa"
-      },
-      {
-        "title": "White House warns congressional Democrats: Investigating us may be a crime",
-        "link": "https://www.nbcnews.com/politics/white-house/white-house-warns-congressional-democrats-investigating-us-may-crime-rcna608752",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Rep. Robert Garcia, the incoming House Oversight Committee chair, noted that the Constitution grants Congress “latitude to conduct investigations.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T18:34:45.000Z",
-        "sentiment": {
-          "posP": 5.8,
-          "negP": 14.9,
-          "neuP": 79.3,
+          "posP": 3.5,
+          "negP": 9.3,
+          "neuP": 87.2,
           "label": "negative",
           "confidence": 0.46
         },
         "category": "usa"
       },
       {
-        "title": "Ukraine warns of new Starshield disruptions as Trump envoys meet with Putin",
+        "title": "Trump says \"we don't need a deal with Iran\"",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump says the war with Iran has been won and \"we don't need a deal,\" as Tehran sticks to its demands and continues attacking ships.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-12T17:37:18.000Z",
+        "sentiment": {
+          "posP": 9.1,
+          "negP": 17,
+          "neuP": 73.9,
+          "label": "negative",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "WATCH:  President Trump pays tribute to veterans",
+        "link": "https://abcnews.com/video/138051810/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump spoke at a Veterans Day ceremony at Arlington National Cemetery honoring fallen soldiers and addressed the war with Iran.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T18:04:03.000Z",
+        "sentiment": {
+          "posP": 9.5,
+          "negP": 18.4,
+          "neuP": 72.1,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Witkoff and Kushner arrive in Moscow to meet with Putin, discuss Ukraine peace talks",
+        "link": "https://abcnews.com/International/witkoff-kushner-arrive-moscow-meet-putin-discuss-ukraine/story?id=138070892",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump's special envoy Steve Witkoff and son-in-law Jared Kushner landed in Moscow on Thursday morning.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-12T14:39:31.000Z",
+        "sentiment": {
+          "posP": 17.6,
+          "negP": 0,
+          "neuP": 82.4,
+          "label": "positive",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump recommends Tim Cook for Nvidia CEO after Jensen Huang resigns",
+        "link": "https://www.nbcnews.com/video/trump-recommends-tim-cook-for-nvidia-ceo-after-jensen-huang-resigns-273344581767",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump weighed in on the search for a permanent CEO shortly after Nvidia’s announcement about Jensen Huang's resignation, saying that Apple executive chair Tim Cook should take the role. NBC News' Allie Canal and New York Times contributor Don Clark discuss Cook's industry experience and the background of interim CEO Colette Kress.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-12T16:32:41.000Z",
+        "sentiment": {
+          "posP": 2.9,
+          "negP": 6.8,
+          "neuP": 90.3,
+          "label": "negative",
+          "confidence": 0.38
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Ukraine faces new Starshield disruptions as Trump envoys meet with Putin",
         "link": "https://www.nbcnews.com/world/ukraine/ukraine-starshield-limits-russia-war-trump-musk-rcna608938",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Ukrainian military has experienced a renewed wave of “significant disruptions” to the Starshield satellite internet service, President Volodymyr Zelenskyy said Thursday, hampering its ability to defend against Russia just as the United States pushes for progress in peace talks.",
+        "description": "Hours after an American delegation touched down in Moscow for peace talks, Ukraine’s President Volodymyr Zelenskyy said his country’s military had experienced a renewed wave of “significant disruptions” to the Starshield satellite internet service, hampering its ability to defend itself against Russia.",
         "image": "",
         "imageUrl": "",
         "publishedAt": "2026-11-12T09:53:02.000Z",
         "sentiment": {
-          "posP": 18.9,
-          "negP": 6.3,
-          "neuP": 74.8,
+          "posP": 10.1,
+          "negP": 4.2,
+          "neuP": 85.7,
           "label": "positive",
-          "confidence": 0.82
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Sen. Richard Blumenthal ordered to preserve documents from inquiry into Trump ballroom",
-        "link": "https://www.nbcnews.com/politics/trump-administration/us-attorney-demands-sen-richard-blumenthal-preserve-documents-inquiry-rcna608899",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The official’s letter comes on the day the White House told congressional Democrats that investigations into the administration could be a crime.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-12T02:11:21.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 9.9,
-          "neuP": 90.1,
-          "label": "negative",
-          "confidence": 0.54
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Canada’s ambassador warns Trump tariffs are driving up costs, threatening U.S. investment",
-        "link": "https://www.cnbc.com/2026/11/11/canada-ambassador-trump-tariffs-investments.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "U.S.-Canada trade tensions persist as Trump's tariffs drive up costs, threaten investment and complicate negotiations between the two countries.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T22:30:57.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 27.2,
-          "neuP": 72.8,
-          "label": "negative",
-          "confidence": 0.84
+          "confidence": 0.53
         },
         "category": "usa"
       },
@@ -5443,81 +5488,48 @@
           "confidence": 0.14
         },
         "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.95,
-      "neu": 80.43,
-      "neg": 12.61,
-      "count": 32
+      "pos": 6.65,
+      "neu": 84.32,
+      "neg": 9.02,
+      "count": 33
     },
     "sourceLeaderboard": [
       {
         "source": "NYT",
-        "pos": 7.68,
-        "neu": 77.82,
-        "neg": 14.5,
+        "pos": 6.47,
+        "neu": 84.18,
+        "neg": 9.35,
         "count": 6
       },
       {
-        "source": "NBC News",
-        "pos": 7.54,
-        "neu": 79.2,
-        "neg": 13.26,
+        "source": "Washington Post",
+        "pos": 11.06,
+        "neu": 82.48,
+        "neg": 6.46,
         "count": 5
+      },
+      {
+        "source": "Fox News",
+        "pos": 4.88,
+        "neu": 87.07,
+        "neg": 8.05,
+        "count": 4
+      },
+      {
+        "source": "NBC News",
+        "pos": 6.5,
+        "neu": 84,
+        "neg": 9.5,
+        "count": 4
       },
       {
         "source": "WSJ",
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
-        "count": 4
-      },
-      {
-        "source": "Washington Post",
-        "pos": 15.9,
-        "neu": 76.92,
-        "neg": 7.18,
         "count": 4
       },
       {
@@ -5528,25 +5540,11 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 5.13,
-        "neu": 79.87,
-        "neg": 15,
-        "count": 3
-      },
-      {
-        "source": "ABC News",
-        "pos": 5.2,
-        "neu": 75.07,
-        "neg": 19.73,
-        "count": 3
-      },
-      {
         "source": "CBS News",
-        "pos": 3.9,
-        "neu": 77.65,
-        "neg": 18.45,
-        "count": 2
+        "pos": 5.53,
+        "neu": 81.03,
+        "neg": 13.43,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5554,49 +5552,49 @@
         "neu": 88,
         "neg": 9,
         "count": 2
+      },
+      {
+        "source": "ABC News",
+        "pos": 13.55,
+        "neu": 77.25,
+        "neg": 9.2,
+        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.4,
-        "neu": 77.61,
-        "neg": 15.99,
-        "count": 14
+        "pos": 6.61,
+        "neu": 82.62,
+        "neg": 10.77,
+        "count": 17
       },
       {
         "topic": "Policy",
-        "pos": 5.6,
-        "neu": 84.36,
-        "neg": 10.04,
-        "count": 8
+        "pos": 4.8,
+        "neu": 86.86,
+        "neg": 8.34,
+        "count": 7
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7.48,
-        "neu": 83.24,
-        "neg": 9.28,
-        "count": 5
+        "pos": 7.7,
+        "neu": 84.92,
+        "neg": 7.38,
+        "count": 6
       },
       {
         "topic": "Economy",
-        "pos": 6.33,
-        "neu": 80.6,
-        "neg": 13.07,
-        "count": 3
+        "pos": 9.5,
+        "neu": 84.5,
+        "neg": 6,
+        "count": 2
       },
       {
         "topic": "Public Statements",
-        "pos": 6.4,
-        "neu": 85.1,
-        "neg": 8.5,
-        "count": 1
-      },
-      {
-        "topic": "Legal",
-        "pos": 25.3,
-        "neu": 69.4,
-        "neg": 5.3,
+        "pos": 8.5,
+        "neu": 91.5,
+        "neg": 0,
         "count": 1
       }
     ]
@@ -5624,28 +5622,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-12T07:44:25.294Z",
+        "label": "2026-11-12T15:10:21.520Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T08:44:25.294Z",
+        "label": "2026-11-12T16:10:21.520Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T09:44:25.294Z",
+        "label": "2026-11-12T17:10:21.520Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T10:44:25.294Z",
+        "label": "2026-11-12T18:10:21.520Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5654,28 +5652,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-12T07:44:25.294Z",
+        "label": "2026-11-12T15:10:21.520Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T08:44:25.294Z",
+        "label": "2026-11-12T16:10:21.520Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T09:44:25.294Z",
+        "label": "2026-11-12T17:10:21.520Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T10:44:25.294Z",
+        "label": "2026-11-12T18:10:21.520Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5755,7 +5753,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-12T11:44:25.295Z",
+    "generatedAt": "2026-11-12T19:10:21.521Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5876,8 +5874,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 187,
-      "potusArticles": 32,
+      "usaArticles": 188,
+      "potusArticles": 33,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
