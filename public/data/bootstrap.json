@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-11T22:45:08.562Z",
+  "generatedAt": "2026-11-12T03:25:09.900Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 191,
-    "potusArticles": 39
+    "usaArticles": 189,
+    "potusArticles": 35
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-11T18:45:08.562Z",
+          "label": "2026-11-11T23:25:09.900Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-11T19:45:08.562Z",
+          "label": "2026-11-12T00:25:09.900Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-11T20:45:08.562Z",
+          "label": "2026-11-12T01:25:09.900Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-11T21:45:08.562Z",
+          "label": "2026-11-12T02:25:09.900Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-11T18:45:08.562Z",
+          "label": "2026-11-11T23:25:09.900Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-11T19:45:08.562Z",
+          "label": "2026-11-12T00:25:09.900Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-11T20:45:08.562Z",
+          "label": "2026-11-12T01:25:09.900Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-11T21:45:08.562Z",
+          "label": "2026-11-12T02:25:09.900Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 8,
-      "neu": 82.09,
-      "neg": 9.92,
-      "count": 191
+      "pos": 7.89,
+      "neu": 82.07,
+      "neg": 10.04,
+      "count": 189
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.55,
-        "neu": 84.96,
-        "neg": 7.49,
-        "count": 43
+        "pos": 7.73,
+        "neu": 84.86,
+        "neg": 7.4,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 7.49,
-        "neu": 77.47,
-        "neg": 15.04,
+        "pos": 8.6,
+        "neu": 76.1,
+        "neg": 15.3,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.3,
-        "neu": 84.19,
-        "neg": 9.52,
+        "pos": 5.62,
+        "neu": 82.32,
+        "neg": 12.06,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 9.03,
-        "neu": 80.3,
-        "neg": 10.68,
+        "pos": 6.47,
+        "neu": 83.35,
+        "neg": 10.18,
         "count": 24
       },
       {
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.89,
-        "neu": 80.34,
-        "neg": 8.77,
+        "pos": 12.39,
+        "neu": 81.6,
+        "neg": 6,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 9.71,
-        "neu": 84.9,
-        "neg": 5.4,
+        "pos": 9.33,
+        "neu": 84.48,
+        "neg": 6.19,
         "count": 20
       },
       {
@@ -4640,39 +4640,44 @@
           "count": 1
         },
         {
+          "name": "Materials",
+          "bias": -7.6,
+          "count": 2
+        },
+        {
           "name": "Utilities",
           "bias": 7.45,
           "count": 2
         },
         {
-          "name": "Real Estate",
-          "bias": 7,
-          "count": 2
-        },
-        {
           "name": "Healthcare",
-          "bias": -6.86,
+          "bias": -4.41,
           "count": 12
         },
         {
-          "name": "Energy",
-          "bias": 2.59,
-          "count": 8
-        },
-        {
           "name": "Manufacturing",
-          "bias": 1.1,
+          "bias": -4.05,
           "count": 2
         },
         {
           "name": "Technology",
-          "bias": -0.89,
-          "count": 147
+          "bias": -2,
+          "count": 149
         },
         {
           "name": "Finance",
-          "bias": -0.57,
+          "bias": -1.53,
           "count": 15
+        },
+        {
+          "name": "Real Estate",
+          "bias": 1.08,
+          "count": 6
+        },
+        {
+          "name": "Energy",
+          "bias": 0.71,
+          "count": 9
         }
       ],
       "pos": [
@@ -4680,32 +4685,22 @@
           "name": "Utilities",
           "bias": 7.45,
           "count": 2
-        },
-        {
-          "name": "Real Estate",
-          "bias": 7,
-          "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": 2.59,
-          "count": 8
         }
       ],
       "neu": [
         {
           "name": "Manufacturing",
-          "bias": 1.1,
+          "bias": -4.05,
           "count": 2
         },
         {
           "name": "Technology",
-          "bias": -0.89,
-          "count": 147
+          "bias": -2,
+          "count": 149
         },
         {
           "name": "Finance",
-          "bias": -0.57,
+          "bias": -1.53,
           "count": 15
         }
       ],
@@ -4716,8 +4711,13 @@
           "count": 1
         },
         {
+          "name": "Materials",
+          "bias": -7.6,
+          "count": 2
+        },
+        {
           "name": "Healthcare",
-          "bias": -6.86,
+          "bias": -4.41,
           "count": 12
         }
       ]
@@ -4725,32 +4725,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-11T18:45:08.563Z",
-          "pos": 9,
-          "neu": 82,
+          "label": "2026-11-11T23:25:09.902Z",
+          "pos": 8,
+          "neu": 84,
           "neg": 8,
-          "count": 14
+          "count": 15
         },
         {
-          "label": "2026-11-11T19:45:08.563Z",
-          "pos": 7,
-          "neu": 85,
-          "neg": 7,
-          "count": 16
+          "label": "2026-11-12T00:25:09.902Z",
+          "pos": 5,
+          "neu": 83,
+          "neg": 12,
+          "count": 27
         },
         {
-          "label": "2026-11-11T20:45:08.563Z",
+          "label": "2026-11-12T01:25:09.902Z",
+          "pos": 9,
+          "neu": 81,
+          "neg": 10,
+          "count": 20
+        },
+        {
+          "label": "2026-11-12T02:25:09.902Z",
           "pos": 9,
           "neu": 82,
-          "neg": 9,
-          "count": 21
-        },
-        {
-          "label": "2026-11-11T21:45:08.563Z",
-          "pos": 6,
-          "neu": 82,
-          "neg": 11,
-          "count": 38
+          "neg": 10,
+          "count": 11
         }
       ]
     }
@@ -4958,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "Nvidia Scandal Unveils a Fierce Spy War Raging Behind Trump and Xi’s Diplomacy",
-        "link": "https://www.nytimes.com/2026/11/11/world/asia/china-us-nvidia.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Jeffries leaves door open to investigating major Trump ally as Democrats prepare to take power",
+        "link": "https://www.foxnews.com/politics/jeffries-leaves-door-open-investigating-major-trump-ally-democrats-prepare-take-power",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "That the United States suspected Nvidia’s leader was a Chinese spy target underscores the deep distrust between the two powers, even as their leaders try to stabilize ties.",
+        "description": "Hakeem Jeffries says Democrats will \"follow the facts\" as Jamie Raskin and Robert Garcia prepare to lead oversight of Elon Musk and DOGE.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T21:24:12.000Z",
+        "publishedAt": "2026-11-12T01:00:00.000Z",
         "sentiment": {
-          "posP": 5.5,
-          "negP": 29.4,
-          "neuP": 65.1,
-          "label": "negative",
-          "confidence": 0.9
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Trump Hints at Immigration Deal, Then Reverses. He’s Done That Before.",
-        "link": "https://www.nytimes.com/2026/11/11/us/politics/trump-immigration-election-democrats-republicans.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "At least 9 new Dem members will carry Al Green's mantle and try to impeach President Trump",
+        "link": "https://www.foxnews.com/politics/new-dem-members-carry-al-greens-mantle-try-impeach-president-trump",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Democrats and some Republicans say President Trump is missing an opportunity to find consensus on an issue that has bedeviled past administrations.",
+        "description": "Rep. Al Green says at least nine incoming House Democratic caucus members will join his impeachment push, citing President Trump's crypto dealings and what they described as corruption.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T19:50:05.000Z",
+        "publishedAt": "2026-11-11T23:56:14.000Z",
         "sentiment": {
-          "posP": 7.8,
-          "negP": 6.1,
-          "neuP": 86.1,
-          "label": "neutral",
-          "confidence": 0.15
+          "posP": 4.9,
+          "negP": 0,
+          "neuP": 95.1,
+          "label": "positive",
+          "confidence": 0.3
         },
         "category": "usa"
       }
@@ -5200,82 +5200,62 @@
         "category": "world"
       },
       {
-        "title": "Nvidia Scandal Unveils a Fierce Spy War Raging Behind Trump and Xi’s Diplomacy",
-        "link": "https://www.nytimes.com/2026/11/11/world/asia/china-us-nvidia.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Jeffries leaves door open to investigating major Trump ally as Democrats prepare to take power",
+        "link": "https://www.foxnews.com/politics/jeffries-leaves-door-open-investigating-major-trump-ally-democrats-prepare-take-power",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "That the United States suspected Nvidia’s leader was a Chinese spy target underscores the deep distrust between the two powers, even as their leaders try to stabilize ties.",
+        "description": "Hakeem Jeffries says Democrats will \"follow the facts\" as Jamie Raskin and Robert Garcia prepare to lead oversight of Elon Musk and DOGE.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T21:24:12.000Z",
+        "publishedAt": "2026-11-12T01:00:00.000Z",
         "sentiment": {
-          "posP": 5.5,
-          "negP": 29.4,
-          "neuP": 65.1,
-          "label": "negative",
-          "confidence": 0.9
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Hints at Immigration Deal, Then Reverses. He’s Done That Before.",
-        "link": "https://www.nytimes.com/2026/11/11/us/politics/trump-immigration-election-democrats-republicans.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Democrats and some Republicans say President Trump is missing an opportunity to find consensus on an issue that has bedeviled past administrations.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T19:50:05.000Z",
-        "sentiment": {
-          "posP": 7.8,
-          "negP": 6.1,
-          "neuP": 86.1,
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
           "label": "neutral",
-          "confidence": 0.15
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "White House Threatens Congress, Saying Aggressive Investigations Could Be Crime",
-        "link": "https://www.nytimes.com/2026/11/11/us/politics/trump-democrats-congress-oversight-committee.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "At least 9 new Dem members will carry Al Green's mantle and try to impeach President Trump",
+        "link": "https://www.foxnews.com/politics/new-dem-members-carry-al-greens-mantle-try-impeach-president-trump",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "As Democrats prepared to begin oversight inquiries, it was not clear what legal basis could support the threat. The Constitution grants lawmakers immunity for legislative acts.",
+        "description": "Rep. Al Green says at least nine incoming House Democratic caucus members will join his impeachment push, citing President Trump's crypto dealings and what they described as corruption.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T18:08:28.000Z",
+        "publishedAt": "2026-11-11T23:56:14.000Z",
         "sentiment": {
-          "posP": 13.5,
-          "negP": 30.4,
-          "neuP": 56.1,
-          "label": "negative",
-          "confidence": 0.8
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Republicans Begin Aggressive Lame-Duck Push to Install Trump Judges",
-        "link": "https://www.nytimes.com/2026/11/11/us/trump-federal-judges-senate-republicans.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The G.O.P. intends to win confirmation of about two dozen federal judges before the party loses power. But Democrats promise to do what they can to stop them.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T20:52:30.000Z",
-        "sentiment": {
-          "posP": 19.2,
-          "negP": 13.3,
-          "neuP": 67.5,
+          "posP": 4.9,
+          "negP": 0,
+          "neuP": 95.1,
           "label": "positive",
-          "confidence": 0.57
+          "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "A Diminished Justice Dept. Braces for Fresh Fights After Midterm Loss",
+        "link": "https://www.nytimes.com/2026/11/11/us/politics/doj-trump-blanche-trump-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The upheaval points to a broader dilemma spurred by the election: whether the department can carry out President Trump’s priorities as career officials eye the exits and senior department officials resign.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T21:59:02.000Z",
+        "sentiment": {
+          "posP": 11.7,
+          "negP": 18.6,
+          "neuP": 69.7,
+          "label": "negative",
+          "confidence": 0.34
         },
         "category": "usa"
       },
@@ -5320,102 +5300,62 @@
         "category": "usa"
       },
       {
-        "title": "Trump's ex-lawyer Alina Habba loses massive contract days after president blasts 'outrageous' deal",
-        "link": "https://www.foxnews.com/politics/trumps-ex-lawyer-alina-habba-loses-massive-contract-days-after-president-blasts-outrageous-deal",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Hints at Immigration Deal, Then Reverses. He’s Done That Before.",
+        "link": "https://www.nytimes.com/2026/11/11/us/politics/trump-immigration-election-democrats-republicans.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Donald Trump personally directed Alina Habba's firing from a $50 million Concord Partners contract linked to pardoned Venezuelan banker's family.",
+        "description": "Democrats and some Republicans say President Trump is missing an opportunity to find consensus on an issue that has bedeviled past administrations.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T21:45:34.000Z",
+        "publishedAt": "2026-11-11T19:50:05.000Z",
         "sentiment": {
-          "posP": 5.3,
-          "negP": 13.2,
-          "neuP": 81.5,
-          "label": "negative",
-          "confidence": 0.42
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Stephen Miller's internal memo unleashes Trump agencies after 'absolute control' under Wiles' reign",
-        "link": "https://www.foxnews.com/politics/stephen-miller-internal-memo-unleashes-trump-agencies-absolute-control-wiles-reign",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A memo under new chief of staff Stephen Miller gives Cabinet secretaries messaging control, shifting from what sources say was Susie Wiles' grip.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T20:56:52.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "posP": 7.8,
+          "negP": 6.1,
+          "neuP": 86.1,
           "label": "neutral",
-          "confidence": 0
+          "confidence": 0.15
         },
         "category": "usa"
       },
       {
-        "title": "White House warns of \"blatant criminality\" in Democratic probes",
-        "link": "https://www.cbsnews.com/news/white-house-counsel-will-scharf-house-oversight-committee-robert-garcia-investigations/",
+        "title": "White House warns Democrats of \"blatant criminality\" over possible probes into Trump administration",
+        "link": "https://www.cbsnews.com/video/white-house-warns-dems-of-blatant-criminality-over-possible-probes-into-trump-administration/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "White House counsel Will Scharf warned that congressional subpoenas could lead to investigations from the executive branch.",
+        "description": "The White House is warning Democratic lawmakers that aggressive oversight of the administration may cross the line into criminality as the new Democratic-led Congress prepares to take office in January. CBS News' Kathryn Watson reports.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T22:03:00.000Z",
+        "publishedAt": "2026-11-12T01:16:43.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 12.7,
-          "neuP": 87.3,
+          "negP": 10.7,
+          "neuP": 89.3,
           "label": "negative",
-          "confidence": 0.36
+          "confidence": 0.53
         },
         "category": "usa"
       },
       {
-        "title": "Trump says Iran war will be over \"when we want to end it\"",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/",
+        "title": "Hegseth's group asked by soldier to maintain respect at Arlington National Cemetery",
+        "link": "https://www.cbsnews.com/video/hegseths-group-asked-soldier-maintain-respect-arlington-national-cemetery/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump spoke about the Iran war during a Veterans Day address on Wednesday at Arlington National Cemetery.",
+        "description": "President Trump traveled to Arlington National Cemetery on Wednesday, laying a wreath in honor of fallen U.S. soldiers. But the cameras also captured a U.S. Army sentinel reprimanding a group that included Defense Secretary Pete Hegseth, demanding that they show respect. Charlie D'Agata has more.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T21:52:00.000Z",
+        "publishedAt": "2026-11-12T00:52:36.000Z",
         "sentiment": {
-          "posP": 3.6,
-          "negP": 21.6,
-          "neuP": 74.8,
-          "label": "negative",
-          "confidence": 0.82
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Watch: Trump honors Veterans Day with remarks at Arlington Cemetery",
-        "link": "https://www.cbsnews.com/video/watch-trump-honors-veterans-day-with-remarks-at-arlington-cemetery/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump spoke at Arlington National Cemetery on Wednesday to commemorate Veterans Day. Following the president's remarks, CBS News' Ed O'Keefe, Charlie D'Agata and Aaron MacLean provided context.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T19:19:22.000Z",
-        "sentiment": {
-          "posP": 8.2,
-          "negP": 0,
-          "neuP": 91.8,
+          "posP": 17.2,
+          "negP": 7,
+          "neuP": 75.8,
           "label": "positive",
-          "confidence": 0.51
+          "confidence": 0.76
         },
         "category": "usa"
       },
@@ -5440,6 +5380,26 @@
         "category": "usa"
       },
       {
+        "title": "Inside India newsletter: Trump's poll setback fuels hope for U.S.-India trade deal by year end",
+        "link": "https://www.cnbc.com/2026/11/12/us-india-trade-tariffs-trump-modi.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "While American voters are more affected by import duties on Canadian goods, experts said that a trade deal with India could blunt criticism against tariffs.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T23:57:38.000Z",
+        "sentiment": {
+          "posP": 6.6,
+          "negP": 11,
+          "neuP": 82.4,
+          "label": "negative",
+          "confidence": 0.22
+        },
+        "category": "usa"
+      },
+      {
         "title": "How Democrats could snarl Trump administration stakes in private sector companies",
         "link": "https://www.cnbc.com/2026/11/11/trump-company-equity-takes.html",
         "source": "CNBC",
@@ -5460,60 +5420,93 @@
         "category": "usa"
       },
       {
-        "title": "White House lawyer sends warning to House Democrats about potential investigations",
-        "link": "https://www.nbcnews.com/now/video/white-house-lawyer-sends-warning-to-house-democrats-about-potential-investigations-273288261912",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "White House counsel Will Scharf sent a letter to Rep. Robert Garcia, D-Calif., warning that his \"abusive and capricious threats\" to investigate the administration could be criminal. NBC News' Monica Alba has details on the letter and how Democrats are responding.",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T19:51:35.000Z",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 24.8,
-          "neuP": 75.2,
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
+          "label": "neutral",
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
           "label": "negative",
-          "confidence": 0.93
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.93,
-      "neu": 81.95,
-      "neg": 11.13,
-      "count": 39
+      "pos": 6.49,
+      "neu": 84.46,
+      "neg": 9.05,
+      "count": 35
     },
     "sourceLeaderboard": [
       {
-        "source": "NYT",
-        "pos": 9.95,
-        "neu": 76.2,
-        "neg": 13.85,
-        "count": 8
-      },
-      {
-        "source": "Washington Post",
-        "pos": 12.51,
-        "neu": 80.57,
-        "neg": 6.91,
+        "source": "NBC News",
+        "pos": 3.63,
+        "neu": 86.23,
+        "neg": 10.14,
         "count": 7
       },
       {
-        "source": "NBC News",
-        "pos": 4.52,
-        "neu": 78.15,
-        "neg": 17.33,
+        "source": "NYT",
+        "pos": 8.85,
+        "neu": 81.77,
+        "neg": 9.38,
         "count": 6
       },
       {
-        "source": "CBS News",
-        "pos": 3.95,
-        "neu": 83.98,
-        "neg": 12.07,
-        "count": 4
+        "source": "Washington Post",
+        "pos": 13.56,
+        "neu": 76.76,
+        "neg": 9.68,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5531,9 +5524,16 @@
       },
       {
         "source": "Fox News",
-        "pos": 4.77,
-        "neu": 90.83,
-        "neg": 4.4,
+        "pos": 4.63,
+        "neu": 95.37,
+        "neg": 0,
+        "count": 3
+      },
+      {
+        "source": "CBS News",
+        "pos": 7.07,
+        "neu": 82.37,
+        "neg": 10.57,
         "count": 3
       },
       {
@@ -5554,45 +5554,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.14,
-        "neu": 82.66,
-        "neg": 11.19,
-        "count": 18
+        "pos": 6.71,
+        "neu": 83.88,
+        "neg": 9.41,
+        "count": 16
       },
       {
         "topic": "Policy",
-        "pos": 4.43,
-        "neu": 87.5,
-        "neg": 8.08,
-        "count": 8
+        "pos": 3.93,
+        "neu": 89.36,
+        "neg": 6.71,
+        "count": 9
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.8,
-        "neu": 81.3,
-        "neg": 13.9,
-        "count": 5
-      },
-      {
-        "topic": "Legal",
-        "pos": 18.25,
-        "neu": 66.97,
-        "neg": 14.78,
+        "pos": 4.63,
+        "neu": 85.35,
+        "neg": 10.03,
         "count": 4
       },
       {
         "topic": "Economy",
-        "pos": 6.33,
-        "neu": 80.6,
-        "neg": 13.07,
-        "count": 3
+        "pos": 6.4,
+        "neu": 81.05,
+        "neg": 12.55,
+        "count": 4
       },
       {
-        "topic": "Public Statements",
-        "pos": 8.2,
-        "neu": 91.8,
-        "neg": 0,
-        "count": 1
+        "topic": "Legal",
+        "pos": 20.15,
+        "neu": 72.15,
+        "neg": 7.7,
+        "count": 2
       }
     ]
   },
@@ -5619,28 +5612,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-11T18:45:08.565Z",
+        "label": "2026-11-11T23:25:09.904Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-11T19:45:08.565Z",
+        "label": "2026-11-12T00:25:09.904Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-11T20:45:08.565Z",
+        "label": "2026-11-12T01:25:09.904Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-11T21:45:08.565Z",
+        "label": "2026-11-12T02:25:09.904Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5649,28 +5642,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-11T18:45:08.565Z",
+        "label": "2026-11-11T23:25:09.904Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-11T19:45:08.565Z",
+        "label": "2026-11-12T00:25:09.904Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-11T20:45:08.565Z",
+        "label": "2026-11-12T01:25:09.904Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-11T21:45:08.565Z",
+        "label": "2026-11-12T02:25:09.904Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5750,7 +5743,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-11T22:45:08.566Z",
+    "generatedAt": "2026-11-12T03:25:09.904Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5871,8 +5864,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 191,
-      "potusArticles": 39,
+      "usaArticles": 189,
+      "potusArticles": 35,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
