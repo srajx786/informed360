@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-13T00:31:34.221Z",
+  "generatedAt": "2026-11-13T07:07:45.430Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 189,
-    "potusArticles": 30
+    "usaArticles": 185,
+    "potusArticles": 31
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-12T20:31:34.222Z",
+          "label": "2026-11-13T03:07:45.430Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T21:31:34.222Z",
+          "label": "2026-11-13T04:07:45.430Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T22:31:34.222Z",
+          "label": "2026-11-13T05:07:45.430Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T23:31:34.222Z",
+          "label": "2026-11-13T06:07:45.430Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-12T20:31:34.222Z",
+          "label": "2026-11-13T03:07:45.430Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T21:31:34.222Z",
+          "label": "2026-11-13T04:07:45.430Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T22:31:34.222Z",
+          "label": "2026-11-13T05:07:45.430Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-12T23:31:34.222Z",
+          "label": "2026-11-13T06:07:45.430Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 6.97,
-      "neu": 83.05,
-      "neg": 9.98,
-      "count": 189
+      "pos": 7.16,
+      "neu": 82.62,
+      "neg": 10.22,
+      "count": 185
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 4.7,
-        "neu": 87.51,
-        "neg": 7.79,
-        "count": 41
+        "pos": 5.77,
+        "neu": 84.66,
+        "neg": 9.57,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 8.73,
-        "neu": 80.6,
-        "neg": 10.67,
+        "pos": 9.46,
+        "neu": 77.9,
+        "neg": 12.65,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.63,
-        "neu": 78.61,
-        "neg": 14.77,
+        "pos": 5.35,
+        "neu": 82.08,
+        "neg": 12.57,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 4.63,
-        "neu": 83.1,
-        "neg": 12.27,
-        "count": 24
+        "pos": 5.49,
+        "neu": 83.47,
+        "neg": 11.04,
+        "count": 22
       },
       {
         "source": "WSJ",
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.37,
-        "neu": 84.02,
-        "neg": 5.6,
+        "pos": 9.71,
+        "neu": 84,
+        "neg": 6.28,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 9.52,
-        "neu": 85.19,
-        "neg": 5.29,
+        "pos": 9.18,
+        "neu": 85.86,
+        "neg": 4.96,
         "count": 20
       },
       {
@@ -4640,78 +4640,73 @@
           "count": 1
         },
         {
-          "name": "Energy",
-          "bias": 8.59,
-          "count": 7
-        },
-        {
-          "name": "Real Estate",
-          "bias": 8.4,
+          "name": "Manufacturing",
+          "bias": -11.03,
           "count": 3
         },
         {
-          "name": "Utilities",
-          "bias": 7.45,
-          "count": 2
-        },
-        {
-          "name": "Finance",
-          "bias": -4.63,
-          "count": 16
-        },
-        {
-          "name": "Technology",
-          "bias": -3.83,
-          "count": 148
-        },
-        {
-          "name": "Materials",
-          "bias": -3.7,
-          "count": 4
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 2.15,
+          "name": "Real Estate",
+          "bias": 10.45,
           "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -1.62,
-          "count": 11
+          "bias": -8.18,
+          "count": 6
+        },
+        {
+          "name": "Energy",
+          "bias": 4.28,
+          "count": 12
+        },
+        {
+          "name": "Utilities",
+          "bias": -3.45,
+          "count": 4
+        },
+        {
+          "name": "Technology",
+          "bias": -3.34,
+          "count": 141
+        },
+        {
+          "name": "Finance",
+          "bias": -2.69,
+          "count": 16
+        },
+        {
+          "name": "Materials",
+          "bias": 1.95,
+          "count": 2
         }
       ],
       "pos": [
         {
-          "name": "Energy",
-          "bias": 8.59,
-          "count": 7
-        },
-        {
           "name": "Real Estate",
-          "bias": 8.4,
-          "count": 3
+          "bias": 10.45,
+          "count": 2
         },
         {
-          "name": "Utilities",
-          "bias": 7.45,
-          "count": 2
+          "name": "Energy",
+          "bias": 4.28,
+          "count": 12
         }
       ],
       "neu": [
         {
-          "name": "Materials",
-          "bias": -3.7,
+          "name": "Utilities",
+          "bias": -3.45,
           "count": 4
         },
         {
-          "name": "Manufacturing",
-          "bias": 2.15,
-          "count": 2
+          "name": "Technology",
+          "bias": -3.34,
+          "count": 141
         },
         {
-          "name": "Healthcare",
-          "bias": -1.62,
-          "count": 11
+          "name": "Finance",
+          "bias": -2.69,
+          "count": 16
         }
       ],
       "neg": [
@@ -4721,46 +4716,46 @@
           "count": 1
         },
         {
-          "name": "Finance",
-          "bias": -4.63,
-          "count": 16
+          "name": "Manufacturing",
+          "bias": -11.03,
+          "count": 3
         },
         {
-          "name": "Technology",
-          "bias": -3.83,
-          "count": 148
+          "name": "Healthcare",
+          "bias": -8.18,
+          "count": 6
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-12T20:31:34.224Z",
-          "pos": 5,
-          "neu": 88,
-          "neg": 7,
-          "count": 11
-        },
-        {
-          "label": "2026-11-12T21:31:34.224Z",
-          "pos": 7,
-          "neu": 82,
-          "neg": 11,
-          "count": 23
-        },
-        {
-          "label": "2026-11-12T22:31:34.224Z",
-          "pos": 5,
-          "neu": 83,
-          "neg": 12,
-          "count": 28
-        },
-        {
-          "label": "2026-11-12T23:31:34.224Z",
+          "label": "2026-11-13T03:07:45.431Z",
           "pos": 6,
-          "neu": 79,
-          "neg": 15,
-          "count": 17
+          "neu": 81,
+          "neg": 13,
+          "count": 7
+        },
+        {
+          "label": "2026-11-13T04:07:45.431Z",
+          "pos": 7,
+          "neu": 81,
+          "neg": 12,
+          "count": 6
+        },
+        {
+          "label": "2026-11-13T05:07:45.431Z",
+          "pos": 1,
+          "neu": 87,
+          "neg": 12,
+          "count": 5
+        },
+        {
+          "label": "2026-11-13T06:07:45.431Z",
+          "pos": 6,
+          "neu": 86,
+          "neg": 9,
+          "count": 3
         }
       ]
     }
@@ -4968,42 +4963,42 @@
         "category": "world"
       },
       {
-        "title": "Democrat Cindy Holscher wins Kansas governor's race, extending party's hold on governor's mansion",
-        "link": "https://www.foxnews.com/politics/democrat-cindy-holscher-wins-kansas-governors-race-extending-partys-hold-governors-mansion",
+        "title": "Stephen A Smith debriefs interview with President Trump, warns Democrats face steep challenge",
+        "link": "https://www.foxnews.com/media/stephen-a-smith-debriefs-interview-president-trump-warns-democrats-face-steep-challenge",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Democratic state Sen. Cindy Holscher wins the Kansas governor's race over Trump-backed Republican Ty Masterson, keeping the governor's mansion in Democratic hands.",
+        "description": "Stephen A. Smith says President Trump was \"immovable\" in refusing to accept blame for GOP midterm losses during their wide-ranging White House interview.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-12T23:06:47.000Z",
+        "publishedAt": "2026-11-13T03:50:03.000Z",
         "sentiment": {
-          "posP": 23.8,
-          "negP": 0,
-          "neuP": 76.2,
-          "label": "positive",
-          "confidence": 0.88
+          "posP": 9.3,
+          "negP": 21.9,
+          "neuP": 68.8,
+          "label": "negative",
+          "confidence": 0.65
         },
         "category": "usa"
       },
       {
-        "title": "7 People Nvidia Could Consider for Its Next C.E.O.",
-        "link": "https://www.nytimes.com/2026/11/12/technology/jensen-huang-nvidia-successor.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Donald Trump calls Barack Obama 'highly overrated' and claims he'd win a third-term matchup",
+        "link": "https://www.foxnews.com/media/donald-trump-calls-barack-obama-highly-overrated-claims-hed-win-third-term-matchup",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump suggested Tim Cook, Apple’s former C.E.O., to replace Jensen Huang at Nvidia. Here are others with experience in chips or A.I.",
+        "description": "President Donald Trump told Stephen A. Smith he'd \"easily\" beat former President Barack Obama in a hypothetical third-term election, calling him \"overrated.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-12T23:02:51.000Z",
+        "publishedAt": "2026-11-13T02:24:50.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 10.3,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 89.7,
+          "label": "positive",
+          "confidence": 0.59
         },
         "category": "usa"
       }
@@ -5210,122 +5205,162 @@
         "category": "world"
       },
       {
-        "title": "Democrat Cindy Holscher wins Kansas governor's race, extending party's hold on governor's mansion",
-        "link": "https://www.foxnews.com/politics/democrat-cindy-holscher-wins-kansas-governors-race-extending-partys-hold-governors-mansion",
+        "title": "Stephen A Smith debriefs interview with President Trump, warns Democrats face steep challenge",
+        "link": "https://www.foxnews.com/media/stephen-a-smith-debriefs-interview-president-trump-warns-democrats-face-steep-challenge",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Democratic state Sen. Cindy Holscher wins the Kansas governor's race over Trump-backed Republican Ty Masterson, keeping the governor's mansion in Democratic hands.",
+        "description": "Stephen A. Smith says President Trump was \"immovable\" in refusing to accept blame for GOP midterm losses during their wide-ranging White House interview.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-12T23:06:47.000Z",
+        "publishedAt": "2026-11-13T03:50:03.000Z",
         "sentiment": {
-          "posP": 23.8,
+          "posP": 9.3,
+          "negP": 21.9,
+          "neuP": 68.8,
+          "label": "negative",
+          "confidence": 0.65
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Donald Trump calls Barack Obama 'highly overrated' and claims he'd win a third-term matchup",
+        "link": "https://www.foxnews.com/media/donald-trump-calls-barack-obama-highly-overrated-claims-hed-win-third-term-matchup",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump told Stephen A. Smith he'd \"easily\" beat former President Barack Obama in a hypothetical third-term election, calling him \"overrated.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T02:24:50.000Z",
+        "sentiment": {
+          "posP": 10.3,
           "negP": 0,
-          "neuP": 76.2,
+          "neuP": 89.7,
           "label": "positive",
-          "confidence": 0.88
+          "confidence": 0.59
         },
         "category": "usa"
       },
       {
-        "title": "7 People Nvidia Could Consider for Its Next C.E.O.",
-        "link": "https://www.nytimes.com/2026/11/12/technology/jensen-huang-nvidia-successor.html",
+        "title": "Trump Had Urged Nvidia’s Jensen Huang to Fight for His Job",
+        "link": "https://www.nytimes.com/2026/11/12/us/politics/trump-jensen-huang-nvidia.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump suggested Tim Cook, Apple’s former C.E.O., to replace Jensen Huang at Nvidia. Here are others with experience in chips or A.I.",
+        "description": "The president called the Nvidia chief on Tuesday, continuing a pattern of supporting him even as the spy scandal was intensifying.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-12T23:02:51.000Z",
+        "publishedAt": "2026-11-13T03:27:02.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 8,
+          "negP": 15.1,
+          "neuP": 76.9,
+          "label": "negative",
+          "confidence": 0.38
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says \"we don't need a deal with Iran\"",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump says the war with Iran has been won and \"we don't need a deal,\" as Tehran sticks to its demands and continues attacking ships.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T04:52:48.000Z",
+        "sentiment": {
+          "posP": 9.1,
+          "negP": 17,
+          "neuP": 73.9,
+          "label": "negative",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Legal expert on White House warning to Democrats over possible Trump investigations",
+        "link": "https://www.cbsnews.com/video/legal-expert-weighs-in-on-white-house-warning-to-dems-over-possible-trump-investigations/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The White House is warning Democrats that threats to investigate the Trump administration could constitute an abuse of power as the new Congress prepares to take office. CBS News legal contributor Jessica Levinson explains.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T02:01:47.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 21.5,
+          "neuP": 73,
+          "label": "negative",
+          "confidence": 0.87
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Zelenskyy says Ukraine's Starshield use limited again amid meeting with U.S. envoys",
+        "link": "https://www.cbsnews.com/video/zelenskyy-says-ukraines-starshield-defense-system-limited-again/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ukrainian President Volodymyr Zelenskyy said Thursday that the country's Starshield defense system has been limited again as President Trump's senior envoys, Steve Witkoff and Jared Kushner, hold separate talks with both Zelenskyy and Russian President Vladimir Putin. CBS News' Eleanor Watson reports.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T01:37:54.000Z",
+        "sentiment": {
+          "posP": 2.7,
+          "negP": 6.7,
+          "neuP": 90.6,
+          "label": "negative",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says Vance should focus solely on domestic corruption",
+        "link": "https://www.cbsnews.com/video/trump-says-vance-should-focus-solely-on-domestic-corruption/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump posted on social media Thursday that he asked Vice President JD Vance to \"focus his complete and total attention\" on domestic corruption. Washington Sun senior editor Dave Levinthal and Semafor congressional reporter Nicholas Wu join \"The Takeout\" to discuss.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T01:04:34.000Z",
+        "sentiment": {
+          "posP": 4.3,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 95.7,
+          "label": "positive",
+          "confidence": 0.3
         },
         "category": "usa"
       },
       {
-        "title": "Trump Says He’s Pulling Vance Off Iran Talks to Focus on Fraud Campaign",
-        "link": "https://www.nytimes.com/2026/11/12/us/politics/trump-vance-iran-fraud.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The announcement on social media deepened questions about what the president’s plan is to end the war. “We don’t need a deal with Iran,” he wrote.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-12T19:38:36.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 17.6,
-          "neuP": 82.4,
-          "label": "negative",
-          "confidence": 0.83
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump calls for former Apple leader Tim Cook to replace Jensen Huang as Nvidia CEO",
-        "link": "https://www.cbsnews.com/video/trump-calls-for-tim-cook-to-replace-jensen-huang-as-nvidia-ceo/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Reactions are coming in from the White House and beyond after Nvidia co-founder Jensen Huang resigned as CEO of the company on Thursday following an affair with a suspected Chinese spy. President Trump suggested former Apple CEO Tim Cook as a replacement. CBS News' Jo Ling Kent and Weijia Jiang have more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-12T23:41:03.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 5.8,
-          "neuP": 94.2,
-          "label": "negative",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "White House warns of \"blatant criminality\" in Democratic probes",
-        "link": "https://www.cbsnews.com/news/white-house-counsel-will-scharf-house-oversight-committee-robert-garcia-investigations/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "White House counsel Will Scharf warned that congressional subpoenas could lead to investigations from the executive branch.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-12T23:09:18.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 12.7,
-          "neuP": 87.3,
-          "label": "negative",
-          "confidence": 0.36
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says ‘we don’t need a deal with Iran’",
-        "link": "https://www.cnbc.com/2026/11/12/trump-iran-deal-hormuz-strait.html",
+        "title": "Inside India newsletter: Trump's poll setback fuels hope for U.S.-India trade deal by year end",
+        "link": "https://www.cnbc.com/2026/11/12/us-india-trade-tariffs-trump-modi.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump directed Vice President JD Vance to instead focus his attention on corruption and crime in Democratic cities and states.",
+        "description": "While American voters are more affected by import duties on Canadian goods, experts said that a trade deal with India could blunt criticism against tariffs.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-12T20:34:31.000Z",
+        "publishedAt": "2026-11-11T23:57:38.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 11.5,
-          "neuP": 88.5,
+          "posP": 6.6,
+          "negP": 11,
+          "neuP": 82.4,
           "label": "negative",
-          "confidence": 0.54
+          "confidence": 0.22
         },
         "category": "usa"
       },
@@ -5346,6 +5381,46 @@
           "neuP": 90.5,
           "label": "negative",
           "confidence": 0.3
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump recommends Tim Cook for Nvidia CEO after Jensen Huang resigns",
+        "link": "https://www.nbcnews.com/video/trump-recommends-tim-cook-for-nvidia-ceo-after-jensen-huang-resigns-273344581767",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump weighed in on the search for a permanent CEO shortly after Nvidia’s announcement about Jensen Huang's resignation, saying that Apple executive chair Tim Cook should take the role. NBC News' Allie Canal and New York Times contributor Don Clark discuss Cook's industry experience and the background of interim CEO Colette Kress.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-12T16:32:41.000Z",
+        "sentiment": {
+          "posP": 2.9,
+          "negP": 6.8,
+          "neuP": 90.3,
+          "label": "negative",
+          "confidence": 0.38
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats can’t wait until after Trump to produce results, James Talarico says",
+        "link": "https://www.nbcnews.com/politics/2026-election/democrats-cant-wait-trump-produce-results-james-talarico-says-rcna609096",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "DENVER — Texas Sen.-elect James Talarico told a gathering of Democrats Thursday that voters are expecting them to immediately deliver, and that means making President Donald Trump’s last two years in office the “most productive of any presidency in American history.”",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T01:28:48.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5408,108 +5483,28 @@
           "confidence": 0.48
         },
         "category": "usa"
-      },
-      {
-        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
-        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-24T22:56:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "WATCH:  President Trump pays tribute to veterans",
-        "link": "https://abcnews.com/video/138051810/",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump spoke at a Veterans Day ceremony at Arlington National Cemetery honoring fallen soldiers and addressed the war with Iran.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T18:04:03.000Z",
-        "sentiment": {
-          "posP": 9.5,
-          "negP": 18.4,
-          "neuP": 72.1,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iran live updates: 'We don't need a deal with Iran,' Trump says",
-        "link": "https://abcnews.com/International/live-updates/iran-live-updates-americans-tired-forever-wars-araghchi/?id=137967256",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump announced \"major combat operations\" against Iran on Feb. 28.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-12T16:35:50.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 9.8,
-          "neuP": 90.2,
-          "label": "negative",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump recommends Tim Cook for Nvidia CEO after Jensen Huang resigns",
-        "link": "https://www.nbcnews.com/video/trump-recommends-tim-cook-for-nvidia-ceo-after-jensen-huang-resigns-273344581767",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump weighed in on the search for a permanent CEO shortly after Nvidia’s announcement about Jensen Huang's resignation, saying that Apple executive chair Tim Cook should take the role. NBC News' Allie Canal and New York Times contributor Don Clark discuss Cook's industry experience and the background of interim CEO Colette Kress.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-12T16:32:41.000Z",
-        "sentiment": {
-          "posP": 2.9,
-          "negP": 6.8,
-          "neuP": 90.3,
-          "label": "negative",
-          "confidence": 0.38
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.43,
-      "neu": 86.62,
-      "neg": 7.94,
-      "count": 30
+      "pos": 5.76,
+      "neu": 85.52,
+      "neg": 8.72,
+      "count": 31
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 5.37,
-        "neu": 86.38,
-        "neg": 8.25,
-        "count": 6
+        "pos": 4.5,
+        "neu": 88.44,
+        "neg": 7.06,
+        "count": 5
       },
       {
-        "source": "NYT",
-        "pos": 3.25,
-        "neu": 89.35,
-        "neg": 7.4,
-        "count": 4
+        "source": "CBS News",
+        "pos": 5.12,
+        "neu": 83.04,
+        "neg": 11.84,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5533,18 +5528,18 @@
         "count": 3
       },
       {
-        "source": "CBS News",
-        "pos": 1.33,
-        "neu": 87.83,
-        "neg": 10.83,
+        "source": "NYT",
+        "pos": 7,
+        "neu": 83.97,
+        "neg": 9.03,
         "count": 3
       },
       {
         "source": "Fox News",
-        "pos": 16.4,
-        "neu": 83.6,
-        "neg": 0,
-        "count": 2
+        "pos": 9.53,
+        "neu": 83.17,
+        "neg": 7.3,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5564,31 +5559,31 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.39,
-        "neu": 86.27,
-        "neg": 8.34,
-        "count": 19
+        "pos": 6.3,
+        "neu": 85.07,
+        "neg": 8.63,
+        "count": 18
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.72,
-        "neu": 85.42,
-        "neg": 8.86,
+        "pos": 4.24,
+        "neu": 86.4,
+        "neg": 9.36,
         "count": 5
       },
       {
         "topic": "Policy",
-        "pos": 4.33,
-        "neu": 91,
-        "neg": 4.67,
-        "count": 3
+        "pos": 4.63,
+        "neu": 86.5,
+        "neg": 8.88,
+        "count": 4
       },
       {
         "topic": "Economy",
-        "pos": 6.33,
-        "neu": 86.5,
-        "neg": 7.17,
-        "count": 3
+        "pos": 6.4,
+        "neu": 85.47,
+        "neg": 8.13,
+        "count": 4
       }
     ]
   },
@@ -5615,28 +5610,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-12T20:31:34.226Z",
+        "label": "2026-11-13T03:07:45.433Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T21:31:34.226Z",
+        "label": "2026-11-13T04:07:45.433Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T22:31:34.226Z",
+        "label": "2026-11-13T05:07:45.433Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T23:31:34.226Z",
+        "label": "2026-11-13T06:07:45.433Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5645,28 +5640,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-12T20:31:34.226Z",
+        "label": "2026-11-13T03:07:45.433Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T21:31:34.226Z",
+        "label": "2026-11-13T04:07:45.433Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T22:31:34.226Z",
+        "label": "2026-11-13T05:07:45.433Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-12T23:31:34.226Z",
+        "label": "2026-11-13T06:07:45.433Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5746,7 +5741,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-13T00:31:34.227Z",
+    "generatedAt": "2026-11-13T07:07:45.434Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5867,8 +5862,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 189,
-      "potusArticles": 30,
+      "usaArticles": 185,
+      "potusArticles": 31,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
