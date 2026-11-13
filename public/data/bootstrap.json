@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-13T07:07:45.430Z",
+  "generatedAt": "2026-11-13T15:27:51.641Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 185,
-    "potusArticles": 31
+    "usaArticles": 189,
+    "potusArticles": 36
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-13T03:07:45.430Z",
+          "label": "2026-11-13T11:27:51.642Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-13T04:07:45.430Z",
+          "label": "2026-11-13T12:27:51.642Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-13T05:07:45.430Z",
+          "label": "2026-11-13T13:27:51.642Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-13T06:07:45.430Z",
+          "label": "2026-11-13T14:27:51.642Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-13T03:07:45.430Z",
+          "label": "2026-11-13T11:27:51.642Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-13T04:07:45.430Z",
+          "label": "2026-11-13T12:27:51.642Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-13T05:07:45.430Z",
+          "label": "2026-11-13T13:27:51.642Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-13T06:07:45.430Z",
+          "label": "2026-11-13T14:27:51.642Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.16,
-      "neu": 82.62,
-      "neg": 10.22,
-      "count": 185
+      "pos": 8.83,
+      "neu": 81.92,
+      "neg": 9.25,
+      "count": 189
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 5.77,
-        "neu": 84.66,
-        "neg": 9.57,
-        "count": 39
+        "pos": 10.04,
+        "neu": 83,
+        "neg": 6.96,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 9.46,
-        "neu": 77.9,
-        "neg": 12.65,
+        "pos": 12.6,
+        "neu": 79.67,
+        "neg": 7.73,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.35,
-        "neu": 82.08,
-        "neg": 12.57,
+        "pos": 5.17,
+        "neu": 85,
+        "neg": 9.83,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 5.49,
-        "neu": 83.47,
-        "neg": 11.04,
-        "count": 22
+        "pos": 8.29,
+        "neu": 79.77,
+        "neg": 11.94,
+        "count": 23
       },
       {
         "source": "WSJ",
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 9.71,
-        "neu": 84,
-        "neg": 6.28,
+        "pos": 9.29,
+        "neu": 81.88,
+        "neg": 8.83,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 9.18,
-        "neu": 85.86,
-        "neg": 4.96,
+        "pos": 9.65,
+        "neu": 82.69,
+        "neg": 7.66,
         "count": 20
       },
       {
@@ -4635,81 +4635,86 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
+        },
+        {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
           "name": "Manufacturing",
-          "bias": -11.03,
+          "bias": -12.27,
           "count": 3
         },
         {
+          "name": "Energy",
+          "bias": 7.34,
+          "count": 12
+        },
+        {
           "name": "Real Estate",
-          "bias": 10.45,
+          "bias": 5.1,
           "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -8.18,
+          "bias": -4.57,
           "count": 6
         },
         {
-          "name": "Energy",
-          "bias": 4.28,
-          "count": 12
-        },
-        {
-          "name": "Utilities",
-          "bias": -3.45,
-          "count": 4
-        },
-        {
-          "name": "Technology",
-          "bias": -3.34,
-          "count": 141
-        },
-        {
           "name": "Finance",
-          "bias": -2.69,
-          "count": 16
+          "bias": -3.92,
+          "count": 17
         },
         {
           "name": "Materials",
-          "bias": 1.95,
+          "bias": -1.25,
           "count": 2
+        },
+        {
+          "name": "Technology",
+          "bias": -0.32,
+          "count": 135
         }
       ],
       "pos": [
         {
-          "name": "Real Estate",
-          "bias": 10.45,
-          "count": 2
+          "name": "Energy",
+          "bias": 7.34,
+          "count": 12
         },
         {
-          "name": "Energy",
-          "bias": 4.28,
-          "count": 12
+          "name": "Real Estate",
+          "bias": 5.1,
+          "count": 2
         }
       ],
       "neu": [
         {
-          "name": "Utilities",
-          "bias": -3.45,
-          "count": 4
-        },
-        {
-          "name": "Technology",
-          "bias": -3.34,
-          "count": 141
+          "name": "Healthcare",
+          "bias": -4.57,
+          "count": 6
         },
         {
           "name": "Finance",
-          "bias": -2.69,
-          "count": 16
+          "bias": -3.92,
+          "count": 17
+        },
+        {
+          "name": "Materials",
+          "bias": -1.25,
+          "count": 2
         }
       ],
       "neg": [
+        {
+          "name": "Utilities",
+          "bias": -17,
+          "count": 1
+        },
         {
           "name": "Communication",
           "bias": -14,
@@ -4717,45 +4722,40 @@
         },
         {
           "name": "Manufacturing",
-          "bias": -11.03,
+          "bias": -12.27,
           "count": 3
-        },
-        {
-          "name": "Healthcare",
-          "bias": -8.18,
-          "count": 6
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-13T03:07:45.431Z",
-          "pos": 6,
-          "neu": 81,
-          "neg": 13,
-          "count": 7
-        },
-        {
-          "label": "2026-11-13T04:07:45.431Z",
-          "pos": 7,
-          "neu": 81,
-          "neg": 12,
-          "count": 6
-        },
-        {
-          "label": "2026-11-13T05:07:45.431Z",
-          "pos": 1,
-          "neu": 87,
-          "neg": 12,
+          "label": "2026-11-13T11:27:51.645Z",
+          "pos": 3,
+          "neu": 88,
+          "neg": 9,
           "count": 5
         },
         {
-          "label": "2026-11-13T06:07:45.431Z",
-          "pos": 6,
-          "neu": 86,
+          "label": "2026-11-13T12:27:51.645Z",
+          "pos": 10,
+          "neu": 82,
           "neg": 9,
-          "count": 3
+          "count": 19
+        },
+        {
+          "label": "2026-11-13T13:27:51.645Z",
+          "pos": 9,
+          "neu": 81,
+          "neg": 10,
+          "count": 21
+        },
+        {
+          "label": "2026-11-13T14:27:51.645Z",
+          "pos": 9,
+          "neu": 82,
+          "neg": 9,
+          "count": 36
         }
       ]
     }
@@ -4963,42 +4963,42 @@
         "category": "world"
       },
       {
-        "title": "Stephen A Smith debriefs interview with President Trump, warns Democrats face steep challenge",
-        "link": "https://www.foxnews.com/media/stephen-a-smith-debriefs-interview-president-trump-warns-democrats-face-steep-challenge",
+        "title": "Hispanic voters are natural conservatives. Reagan knew. GOP needs to prove it again",
+        "link": "https://www.foxnews.com/opinion/hispanic-voters-natural-conservatives-reagan-knew-gop-needs-prove-again",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Stephen A. Smith says President Trump was \"immovable\" in refusing to accept blame for GOP midterm losses during their wide-ranging White House interview.",
+        "description": "Donald Trump's border security record became a 2026 liability after indiscriminate deportation enforcement alienated hispanic voters, a Republican congressman argues.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T03:50:03.000Z",
+        "publishedAt": "2026-11-13T14:00:33.000Z",
         "sentiment": {
-          "posP": 9.3,
-          "negP": 21.9,
-          "neuP": 68.8,
-          "label": "negative",
-          "confidence": 0.65
+          "posP": 13.5,
+          "negP": 12.1,
+          "neuP": 74.4,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       },
       {
-        "title": "Donald Trump calls Barack Obama 'highly overrated' and claims he'd win a third-term matchup",
-        "link": "https://www.foxnews.com/media/donald-trump-calls-barack-obama-highly-overrated-claims-hed-win-third-term-matchup",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Had Urged Nvidia’s Jensen Huang to Fight for His Job",
+        "link": "https://www.nytimes.com/2026/11/12/us/politics/trump-jensen-huang-nvidia.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump told Stephen A. Smith he'd \"easily\" beat former President Barack Obama in a hypothetical third-term election, calling him \"overrated.\"",
+        "description": "The president called the Nvidia chief on Tuesday, continuing a pattern of supporting him even as the spy scandal was intensifying.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T02:24:50.000Z",
+        "publishedAt": "2026-11-13T03:27:02.000Z",
         "sentiment": {
-          "posP": 10.3,
-          "negP": 0,
-          "neuP": 89.7,
-          "label": "positive",
-          "confidence": 0.59
+          "posP": 8,
+          "negP": 15.1,
+          "neuP": 76.9,
+          "label": "negative",
+          "confidence": 0.38
         },
         "category": "usa"
       }
@@ -5205,42 +5205,22 @@
         "category": "world"
       },
       {
-        "title": "Stephen A Smith debriefs interview with President Trump, warns Democrats face steep challenge",
-        "link": "https://www.foxnews.com/media/stephen-a-smith-debriefs-interview-president-trump-warns-democrats-face-steep-challenge",
+        "title": "Hispanic voters are natural conservatives. Reagan knew. GOP needs to prove it again",
+        "link": "https://www.foxnews.com/opinion/hispanic-voters-natural-conservatives-reagan-knew-gop-needs-prove-again",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Stephen A. Smith says President Trump was \"immovable\" in refusing to accept blame for GOP midterm losses during their wide-ranging White House interview.",
+        "description": "Donald Trump's border security record became a 2026 liability after indiscriminate deportation enforcement alienated hispanic voters, a Republican congressman argues.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T03:50:03.000Z",
+        "publishedAt": "2026-11-13T14:00:33.000Z",
         "sentiment": {
-          "posP": 9.3,
-          "negP": 21.9,
-          "neuP": 68.8,
-          "label": "negative",
-          "confidence": 0.65
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Donald Trump calls Barack Obama 'highly overrated' and claims he'd win a third-term matchup",
-        "link": "https://www.foxnews.com/media/donald-trump-calls-barack-obama-highly-overrated-claims-hed-win-third-term-matchup",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump told Stephen A. Smith he'd \"easily\" beat former President Barack Obama in a hypothetical third-term election, calling him \"overrated.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T02:24:50.000Z",
-        "sentiment": {
-          "posP": 10.3,
-          "negP": 0,
-          "neuP": 89.7,
-          "label": "positive",
-          "confidence": 0.59
+          "posP": 13.5,
+          "negP": 12.1,
+          "neuP": 74.4,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       },
@@ -5265,102 +5245,122 @@
         "category": "usa"
       },
       {
-        "title": "Trump says \"we don't need a deal with Iran\"",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-strait-of-hormuz/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Democrats Eye Strict New Limits on White House Budget Powers",
+        "link": "https://www.nytimes.com/2026/11/13/business/democrats-eye-strict-new-limits-on-white-house-budget-powers.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump says the war with Iran has been won and \"we don't need a deal,\" as Tehran sticks to its demands and continues attacking ships.",
+        "description": "The incoming majority is also planning aggressive oversight of the White House budget director, who appears to be working to install an ally to monitor the budget office’s handling of federal spending.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T04:52:48.000Z",
+        "publishedAt": "2026-11-13T10:03:55.000Z",
         "sentiment": {
-          "posP": 9.1,
-          "negP": 17,
-          "neuP": 73.9,
-          "label": "negative",
-          "confidence": 0.49
+          "posP": 0,
+          "negP": 3.8,
+          "neuP": 96.2,
+          "label": "neutral",
+          "confidence": 0.15
         },
         "category": "usa"
       },
       {
-        "title": "Legal expert on White House warning to Democrats over possible Trump investigations",
-        "link": "https://www.cbsnews.com/video/legal-expert-weighs-in-on-white-house-warning-to-dems-over-possible-trump-investigations/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Border Crossings Have Plummeted. Stephen Miller Isn’t Satisfied.",
+        "link": "https://www.nytimes.com/2026/11/13/world/americas/stephen-miller-mexico-immigration.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The White House is warning Democrats that threats to investigate the Trump administration could constitute an abuse of power as the new Congress prepares to take office. CBS News legal contributor Jessica Levinson explains.",
+        "description": "Mexico has cooperated to significantly slow the flow of migrants. The new White House chief of staff insists it is not enough.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T02:01:47.000Z",
+        "publishedAt": "2026-11-13T10:00:19.000Z",
         "sentiment": {
-          "posP": 5.5,
-          "negP": 21.5,
-          "neuP": 73,
-          "label": "negative",
-          "confidence": 0.87
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Zelenskyy says Ukraine's Starshield use limited again amid meeting with U.S. envoys",
-        "link": "https://www.cbsnews.com/video/zelenskyy-says-ukraines-starshield-defense-system-limited-again/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ukrainian President Volodymyr Zelenskyy said Thursday that the country's Starshield defense system has been limited again as President Trump's senior envoys, Steve Witkoff and Jared Kushner, hold separate talks with both Zelenskyy and Russian President Vladimir Putin. CBS News' Eleanor Watson reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T01:37:54.000Z",
-        "sentiment": {
-          "posP": 2.7,
-          "negP": 6.7,
-          "neuP": 90.6,
-          "label": "negative",
-          "confidence": 0.32
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says Vance should focus solely on domestic corruption",
-        "link": "https://www.cbsnews.com/video/trump-says-vance-should-focus-solely-on-domestic-corruption/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump posted on social media Thursday that he asked Vice President JD Vance to \"focus his complete and total attention\" on domestic corruption. Washington Sun senior editor Dave Levinthal and Semafor congressional reporter Nicholas Wu join \"The Takeout\" to discuss.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T01:04:34.000Z",
-        "sentiment": {
-          "posP": 4.3,
+          "posP": 0,
           "negP": 0,
-          "neuP": 95.7,
-          "label": "positive",
-          "confidence": 0.3
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Inside India newsletter: Trump's poll setback fuels hope for U.S.-India trade deal by year end",
-        "link": "https://www.cnbc.com/2026/11/12/us-india-trade-tariffs-trump-modi.html",
+        "title": "U.N. watchdog agency pushes for access to key Iran nuclear site",
+        "link": "https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "As Trump signals he may let the Iran war fester, the U.N. nuclear agency is \"increasingly concerned\" about access to a key uranium facility, according to a leaked report.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T14:56:32.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 14.7,
+          "neuP": 85.3,
+          "label": "negative",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he wants to ‘get Cuba done’ before leaving office, would consider military force",
+        "link": "https://www.cnbc.com/2026/11/13/trump-cuba-us-military-force-iran.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "While American voters are more affected by import duties on Canadian goods, experts said that a trade deal with India could blunt criticism against tariffs.",
+        "description": "It comes as the U.S. continues to enforce a comprehensive economic embargo against Cuba.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-11T23:57:38.000Z",
+        "publishedAt": "2026-11-13T13:04:00.000Z",
         "sentiment": {
-          "posP": 6.6,
-          "negP": 11,
-          "neuP": 82.4,
+          "posP": 6.9,
+          "negP": 0,
+          "neuP": 93.1,
+          "label": "positive",
+          "confidence": 0.25
+        },
+        "category": "usa"
+      },
+      {
+        "title": "‘We will sue them’: Canada threatens Stellantis as Trump trade war reshapes Jeep production plans",
+        "link": "https://www.cnbc.com/2026/11/13/canada-stellantis-auto-trump-tariffs-jeep.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The dispute comes after Stellantis scrapped planned Jeep Compass production in Brampton and shifted future output to Illinois amid U.S. auto tariffs.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T14:24:57.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 21.3,
+          "neuP": 78.7,
           "label": "negative",
-          "confidence": 0.22
+          "confidence": 0.85
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Russian crude production rebounds after Trump diesel deal, IEA says as oil markets return to surplus",
+        "link": "https://www.cnbc.com/2026/11/13/russia-oil-exports-iea-diesel-deal.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Russia’s crude output rose to 8.73 million barrels a day in October as recovering Gulf exports pushed global supply above demand, the IEA said.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T12:05:22.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 19.8,
+          "neuP": 80.2,
+          "label": "negative",
+          "confidence": 0.84
         },
         "category": "usa"
       },
@@ -5405,13 +5405,33 @@
         "category": "usa"
       },
       {
+        "title": "Trump says he wants to ‘get Cuba done’ when asked about use of military force",
+        "link": "https://www.nbcnews.com/politics/white-house/trump-cuba-military-force-rubio-rcna609138",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump signaled in a new interview that he could take military action against Cuba before he leaves office to topple the island’s communist regime.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T14:27:50.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
         "title": "Democrats can’t wait until after Trump to produce results, James Talarico says",
         "link": "https://www.nbcnews.com/politics/2026-election/democrats-cant-wait-trump-produce-results-james-talarico-says-rcna609096",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "DENVER — Texas Sen.-elect James Talarico told a gathering of Democrats Thursday that voters are expecting them to immediately deliver, and that means making President Donald Trump’s last two years in office the “most productive of any presidency in American history.”",
+        "description": "DENVER — Texas Sen.-elect James Talarico told a gathering of Democrats on Thursday that voters are expecting them to immediately deliver and that means making President Donald Trump’s last two years in office the “most productive of any presidency in American history.”",
         "image": "",
         "imageUrl": "",
         "publishedAt": "2026-11-13T01:28:48.000Z",
@@ -5421,6 +5441,26 @@
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump’s FDA pick faces Republican doubts as confirmation deadline nears",
+        "link": "https://www.nbcnews.com/health/health-news/trump-fda-overton-confirmation-republican-doubts-rcna609067",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The FDA is set to finish its safety review of the abortion pill mifepristone in March, setting up one of the most politically charged decisions the agency has faced in years.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-12T22:22:02.000Z",
+        "sentiment": {
+          "posP": 6.2,
+          "negP": 9.5,
+          "neuP": 84.3,
+          "label": "neutral",
+          "confidence": 0.12
         },
         "category": "usa"
       },
@@ -5443,67 +5483,34 @@
           "confidence": 0.14
         },
         "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.76,
-      "neu": 85.52,
-      "neg": 8.72,
-      "count": 31
+      "pos": 4.65,
+      "neu": 86.01,
+      "neg": 9.34,
+      "count": 36
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 4.5,
-        "neu": 88.44,
-        "neg": 7.06,
-        "count": 5
+        "pos": 3.22,
+        "neu": 88.46,
+        "neg": 8.32,
+        "count": 9
       },
       {
-        "source": "CBS News",
-        "pos": 5.12,
-        "neu": 83.04,
-        "neg": 11.84,
+        "source": "Washington Post",
+        "pos": 6.46,
+        "neu": 84.41,
+        "neg": 9.13,
+        "count": 7
+      },
+      {
+        "source": "NYT",
+        "pos": 4.2,
+        "neu": 89.62,
+        "neg": 6.18,
         "count": 5
       },
       {
@@ -5514,13 +5521,6 @@
         "count": 4
       },
       {
-        "source": "Washington Post",
-        "pos": 8.8,
-        "neu": 86.7,
-        "neg": 4.5,
-        "count": 4
-      },
-      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
@@ -5528,18 +5528,18 @@
         "count": 3
       },
       {
-        "source": "NYT",
-        "pos": 7,
-        "neu": 83.97,
-        "neg": 9.03,
-        "count": 3
+        "source": "Fox News",
+        "pos": 11.25,
+        "neu": 82.7,
+        "neg": 6.05,
+        "count": 2
       },
       {
-        "source": "Fox News",
-        "pos": 9.53,
-        "neu": 83.17,
-        "neg": 7.3,
-        "count": 3
+        "source": "CBS News",
+        "pos": 2,
+        "neu": 83.65,
+        "neg": 14.35,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5551,39 +5551,46 @@
       {
         "source": "ABC News",
         "pos": 4.75,
-        "neu": 81.15,
-        "neg": 14.1,
+        "neu": 72.65,
+        "neg": 22.6,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.3,
-        "neu": 85.07,
-        "neg": 8.63,
-        "count": 18
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 4.24,
-        "neu": 86.4,
-        "neg": 9.36,
-        "count": 5
-      },
-      {
-        "topic": "Policy",
-        "pos": 4.63,
-        "neu": 86.5,
-        "neg": 8.88,
-        "count": 4
+        "pos": 5.09,
+        "neu": 85.37,
+        "neg": 9.54,
+        "count": 23
       },
       {
         "topic": "Economy",
-        "pos": 6.4,
-        "neu": 85.47,
-        "neg": 8.13,
+        "pos": 3.8,
+        "neu": 83.68,
+        "neg": 12.52,
+        "count": 5
+      },
+      {
+        "topic": "Foreign Policy",
+        "pos": 4.63,
+        "neu": 85.35,
+        "neg": 10.03,
         "count": 4
+      },
+      {
+        "topic": "Policy",
+        "pos": 4.33,
+        "neu": 91,
+        "neg": 4.67,
+        "count": 3
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 0,
+        "neu": 100,
+        "neg": 0,
+        "count": 1
       }
     ]
   },
@@ -5610,28 +5617,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-13T03:07:45.433Z",
+        "label": "2026-11-13T11:27:51.647Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-13T04:07:45.433Z",
+        "label": "2026-11-13T12:27:51.647Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-13T05:07:45.433Z",
+        "label": "2026-11-13T13:27:51.647Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-13T06:07:45.433Z",
+        "label": "2026-11-13T14:27:51.647Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5640,28 +5647,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-13T03:07:45.433Z",
+        "label": "2026-11-13T11:27:51.647Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-13T04:07:45.433Z",
+        "label": "2026-11-13T12:27:51.647Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-13T05:07:45.433Z",
+        "label": "2026-11-13T13:27:51.647Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-13T06:07:45.433Z",
+        "label": "2026-11-13T14:27:51.647Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5741,7 +5748,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-13T07:07:45.434Z",
+    "generatedAt": "2026-11-13T15:27:51.648Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5862,8 +5869,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 185,
-      "potusArticles": 31,
+      "usaArticles": 189,
+      "potusArticles": 36,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
