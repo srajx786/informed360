@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-14T08:05:07.853Z",
+  "generatedAt": "2026-11-14T14:58:34.635Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 187,
-    "potusArticles": 36
+    "usaArticles": 180,
+    "potusArticles": 41
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-14T04:05:07.853Z",
+          "label": "2026-11-14T10:58:34.635Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T05:05:07.853Z",
+          "label": "2026-11-14T11:58:34.635Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T06:05:07.853Z",
+          "label": "2026-11-14T12:58:34.635Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T07:05:07.853Z",
+          "label": "2026-11-14T13:58:34.635Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-14T04:05:07.853Z",
+          "label": "2026-11-14T10:58:34.636Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T05:05:07.853Z",
+          "label": "2026-11-14T11:58:34.636Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T06:05:07.853Z",
+          "label": "2026-11-14T12:58:34.636Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T07:05:07.853Z",
+          "label": "2026-11-14T13:58:34.636Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 7.16,
-      "neu": 83.01,
-      "neg": 9.83,
-      "count": 187
+      "pos": 7.33,
+      "neu": 82.25,
+      "neg": 10.42,
+      "count": 180
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.28,
-        "neu": 84.92,
-        "neg": 6.8,
-        "count": 40
+        "pos": 10.07,
+        "neu": 82.78,
+        "neg": 7.16,
+        "count": 38
       },
       {
         "source": "Fox News",
-        "pos": 9.55,
-        "neu": 77.85,
-        "neg": 12.6,
+        "pos": 10.04,
+        "neu": 76.13,
+        "neg": 13.83,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.22,
-        "neu": 85.53,
-        "neg": 10.24,
+        "pos": 5.18,
+        "neu": 85.11,
+        "neg": 9.72,
         "count": 26
-      },
-      {
-        "source": "NYT",
-        "pos": 7.68,
-        "neu": 81.83,
-        "neg": 10.48,
-        "count": 24
       },
       {
         "source": "WSJ",
@@ -4598,16 +4591,23 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.04,
-        "neu": 84.36,
-        "neg": 7.59,
+        "pos": 8.43,
+        "neu": 84.46,
+        "neg": 7.12,
         "count": 20
       },
       {
+        "source": "NYT",
+        "pos": 5.25,
+        "neu": 78.33,
+        "neg": 16.42,
+        "count": 19
+      },
+      {
         "source": "Washington Post",
-        "pos": 4.67,
-        "neu": 86.08,
-        "neg": 9.25,
+        "pos": 3.05,
+        "neu": 89.44,
+        "neg": 7.51,
         "count": 19
       },
       {
@@ -4635,116 +4635,122 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -14.4,
-          "count": 2
-        },
-        {
           "name": "Communication",
-          "bias": -12.86,
+          "bias": -12.78,
           "count": 5
         },
         {
-          "name": "Materials",
-          "bias": -5.55,
-          "count": 2
-        },
-        {
-          "name": "Finance",
-          "bias": -4.46,
-          "count": 16
-        },
-        {
           "name": "Manufacturing",
-          "bias": -3.6,
+          "bias": 6.37,
           "count": 3
-        },
-        {
-          "name": "Technology",
-          "bias": -2.95,
-          "count": 134
-        },
-        {
-          "name": "Healthcare",
-          "bias": -1.73,
-          "count": 12
-        },
-        {
-          "name": "Energy",
-          "bias": -1.58,
-          "count": 10
         },
         {
           "name": "Real Estate",
-          "bias": 1.05,
-          "count": 2
-        }
-      ],
-      "pos": [],
-      "neu": [
-        {
-          "name": "Finance",
-          "bias": -4.46,
-          "count": 16
+          "bias": 5.9,
+          "count": 1
         },
         {
-          "name": "Manufacturing",
-          "bias": -3.6,
-          "count": 3
+          "name": "Finance",
+          "bias": -4.42,
+          "count": 14
+        },
+        {
+          "name": "Energy",
+          "bias": -4.11,
+          "count": 9
+        },
+        {
+          "name": "Utilities",
+          "bias": -3.8,
+          "count": 2
+        },
+        {
+          "name": "Healthcare",
+          "bias": 2.65,
+          "count": 10
         },
         {
           "name": "Technology",
-          "bias": -2.95,
-          "count": 134
+          "bias": -2.65,
+          "count": 135
+        }
+      ],
+      "pos": [
+        {
+          "name": "Manufacturing",
+          "bias": 6.37,
+          "count": 3
+        },
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
+          "count": 1
+        },
+        {
+          "name": "Healthcare",
+          "bias": 2.65,
+          "count": 10
+        }
+      ],
+      "neu": [
+        {
+          "name": "Utilities",
+          "bias": -3.8,
+          "count": 2
+        },
+        {
+          "name": "Technology",
+          "bias": -2.65,
+          "count": 135
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -14.4,
-          "count": 2
-        },
-        {
           "name": "Communication",
-          "bias": -12.86,
+          "bias": -12.78,
           "count": 5
         },
         {
-          "name": "Materials",
-          "bias": -5.55,
-          "count": 2
+          "name": "Finance",
+          "bias": -4.42,
+          "count": 14
+        },
+        {
+          "name": "Energy",
+          "bias": -4.11,
+          "count": 9
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-14T04:05:07.855Z",
-          "pos": 10,
-          "neu": 82,
-          "neg": 8,
-          "count": 3
-        },
-        {
-          "label": "2026-11-14T05:05:07.855Z",
-          "pos": 4,
-          "neu": 86,
-          "neg": 10,
-          "count": 6
-        },
-        {
-          "label": "2026-11-14T06:05:07.855Z",
+          "label": "2026-11-14T10:58:34.637Z",
           "pos": 8,
+          "neu": 87,
+          "neg": 5,
+          "count": 4
+        },
+        {
+          "label": "2026-11-14T11:58:34.637Z",
+          "pos": 7,
+          "neu": 78,
+          "neg": 15,
+          "count": 11
+        },
+        {
+          "label": "2026-11-14T12:58:34.637Z",
+          "pos": 11,
+          "neu": 80,
+          "neg": 9,
+          "count": 17
+        },
+        {
+          "label": "2026-11-14T13:58:34.637Z",
+          "pos": 7,
           "neu": 80,
           "neg": 13,
-          "count": 2
-        },
-        {
-          "label": "2026-11-14T07:05:07.855Z",
-          "pos": 12,
-          "neu": 88,
-          "neg": 0,
-          "count": 3
+          "count": 15
         }
       ]
     }
@@ -4952,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "Democrat flips Alaska governor's mansion after Trump-backed GOP infighting",
-        "link": "https://www.foxnews.com/politics/democrat-flips-alaska-governors-mansion-trump-backed-gop-infighting",
+        "title": "Anti-Trump Republican courts other defectors as House weighs another vote against Iran war",
+        "link": "https://www.foxnews.com/politics/anti-trump-republican-courts-other-defectors-house-weighs-another-vote-against-iran-war",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump endorsed Republican Bernadette Wilson for Alaska governor, but bitter GOP infighting and ranked-choice voting complicated the race to succeed Mike Dunleavy.",
+        "description": "Thomas Massie says he's offering Republicans a \"life boat from MAGA\" as he pushes a new Iran War Powers resolution to the House floor soon..",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T06:09:34.000Z",
+        "publishedAt": "2026-11-14T14:00:51.000Z",
         "sentiment": {
-          "posP": 15.1,
-          "negP": 9.6,
-          "neuP": 75.3,
-          "label": "positive",
-          "confidence": 0.27
+          "posP": 0,
+          "negP": 23.4,
+          "neuP": 76.6,
+          "label": "negative",
+          "confidence": 0.88
         },
         "category": "usa"
       },
       {
-        "title": "Joe Rogan says podcasters have no business at Trump press conferences alongside real journalists",
-        "link": "https://www.foxnews.com/media/joe-rogan-says-podcasters-no-business-trump-press-conferences-alongside-real-journalists",
+        "title": "Ben Shapiro warns Democrats have 'strong incentive' to crater the economy and blame Trump",
+        "link": "https://www.foxnews.com/media/ben-shapiro-warns-democrats-strong-incentive-crater-economy-blame-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Joe Rogan rejected White House advisor David Sacks' push to give podcasters front-row seats at press conferences, declaring \"we talk s---\" and aren't journalists.",
+        "description": "Ben Shapiro warns that Democrats have a strong incentive to crater the American economy after their sweeping midterm wins and blame Trump for it.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T01:28:48.000Z",
+        "publishedAt": "2026-11-14T13:16:29.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 13.3,
-          "neuP": 86.7,
-          "label": "negative",
-          "confidence": 0.67
+          "posP": 30.1,
+          "negP": 14.9,
+          "neuP": 55,
+          "label": "positive",
+          "confidence": 0.87
         },
         "category": "usa"
       }
@@ -5194,62 +5200,142 @@
         "category": "world"
       },
       {
-        "title": "Democrat flips Alaska governor's mansion after Trump-backed GOP infighting",
-        "link": "https://www.foxnews.com/politics/democrat-flips-alaska-governors-mansion-trump-backed-gop-infighting",
+        "title": "Anti-Trump Republican courts other defectors as House weighs another vote against Iran war",
+        "link": "https://www.foxnews.com/politics/anti-trump-republican-courts-other-defectors-house-weighs-another-vote-against-iran-war",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump endorsed Republican Bernadette Wilson for Alaska governor, but bitter GOP infighting and ranked-choice voting complicated the race to succeed Mike Dunleavy.",
+        "description": "Thomas Massie says he's offering Republicans a \"life boat from MAGA\" as he pushes a new Iran War Powers resolution to the House floor soon..",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T06:09:34.000Z",
-        "sentiment": {
-          "posP": 15.1,
-          "negP": 9.6,
-          "neuP": 75.3,
-          "label": "positive",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Joe Rogan says podcasters have no business at Trump press conferences alongside real journalists",
-        "link": "https://www.foxnews.com/media/joe-rogan-says-podcasters-no-business-trump-press-conferences-alongside-real-journalists",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Joe Rogan rejected White House advisor David Sacks' push to give podcasters front-row seats at press conferences, declaring \"we talk s---\" and aren't journalists.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-14T01:28:48.000Z",
+        "publishedAt": "2026-11-14T14:00:51.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 13.3,
-          "neuP": 86.7,
+          "negP": 23.4,
+          "neuP": 76.6,
           "label": "negative",
-          "confidence": 0.67
+          "confidence": 0.88
         },
         "category": "usa"
       },
       {
-        "title": "UFC boss Dana White brushes off Democratic probe threats, recalls 'crazy 48 hours' around Trump job offer",
-        "link": "https://www.foxnews.com/media/ufc-boss-dana-white-brushes-off-democratic-probe-threats-recalls-crazy-48-hours-around-trump-job-offer",
+        "title": "Ben Shapiro warns Democrats have 'strong incentive' to crater the economy and blame Trump",
+        "link": "https://www.foxnews.com/media/ben-shapiro-warns-democrats-strong-incentive-crater-economy-blame-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "UFC CEO Dana White told Lara Trump he has nothing to hide from post-midterm Democratic probes and recounted his \"crazy 48 hours\" around President Donald Trump's press secretary joke.",
+        "description": "Ben Shapiro warns that Democrats have a strong incentive to crater the American economy after their sweeping midterm wins and blame Trump for it.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T22:40:22.000Z",
+        "publishedAt": "2026-11-14T13:16:29.000Z",
         "sentiment": {
-          "posP": 7.1,
-          "negP": 14.5,
-          "neuP": 78.4,
+          "posP": 30.1,
+          "negP": 14.9,
+          "neuP": 55,
+          "label": "positive",
+          "confidence": 0.87
+        },
+        "category": "usa"
+      },
+      {
+        "title": "GOP midterm bloodbath exposes cracks in Vance's 2028 White House ambitions",
+        "link": "https://www.foxnews.com/politics/gop-midterm-bloodbath-exposes-cracks-vances-2028-white-house-ambitions",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Rep. Randy Fine compared JD Vance's post-midterm remarks on the Iran war to 1932 Germany, vowing he will not support a 2028 presidential bid.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T13:00:38.000Z",
+        "sentiment": {
+          "posP": 4.6,
+          "negP": 19.4,
+          "neuP": 76,
           "label": "negative",
+          "confidence": 0.71
+        },
+        "category": "usa"
+      },
+      {
+        "title": "One industry surged DC lobbying 337% under Trump — here’s what’s driving the push",
+        "link": "https://www.foxnews.com/politics/industry-drove-dc-lobbying-337-percent-trump-whats-driving-push",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Lobbying spending on tariff-related filings surged 337% in 2026, Advancing American Freedom found, as businesses scramble to navigate trade shifts.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T12:30:39.000Z",
+        "sentiment": {
+          "posP": 11.4,
+          "negP": 7.1,
+          "neuP": 81.5,
+          "label": "positive",
+          "confidence": 0.56
+        },
+        "category": "usa"
+      },
+      {
+        "title": "What’s Behind the Trump-Huang Relationship?",
+        "link": "https://www.nytimes.com/video/us/politics/100000011272223/whats-behind-the-trump-huang-relationship.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump’s show of support for Jensen Huang as he was under fire was a remarkable moment in a relationship that barely existed two years ago. Our White House correspondent Maggie Haberman explains how Mr. Trump came to see Mr. Huang as a modern-day Henry Ford.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T13:27:10.000Z",
+        "sentiment": {
+          "posP": 11.7,
+          "negP": 4.5,
+          "neuP": 83.8,
+          "label": "positive",
           "confidence": 0.6
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Top Democrat Eyes Filibuster-Proof Budget Bill to Unlock Affordability Agenda",
+        "link": "https://www.nytimes.com/2026/11/14/us/politics/house-democrats-affordability-costs-budget.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The lawmaker set to lead the House Budget Committee outlined Democrats’ options for forcing a negotiation with President Trump on an economic package to bring down living costs.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T10:01:49.000Z",
+        "sentiment": {
+          "posP": 4.8,
+          "negP": 0,
+          "neuP": 95.2,
+          "label": "positive",
+          "confidence": 0.2
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How the University of North Carolina Tried to Avoid Trump’s Wrath",
+        "link": "https://www.nytimes.com/2026/11/13/us/university-north-carolina-science-research-cuts-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The University of North Carolina’s chancellor tried to protect the school from the Trump administration. Work on cancer, suicide, AIDS and coronaviruses was hit anyway.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T14:12:35.000Z",
+        "sentiment": {
+          "posP": 5.7,
+          "negP": 24.3,
+          "neuP": 70,
+          "label": "negative",
+          "confidence": 0.86
         },
         "category": "usa"
       },
@@ -5274,22 +5360,22 @@
         "category": "usa"
       },
       {
-        "title": "U.N. watchdog agency pushes for access to key Iran nuclear site",
-        "link": "https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/",
+        "title": "Trump, Putin, Xi Jinping to meet in first trilateral of its kind",
+        "link": "https://www.cbsnews.com/news/trump-putin-xi-jinping-meeting-china-us-russia-talks/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "As Trump signals he may let the Iran war fester, the U.N. nuclear agency is \"increasingly concerned\" about access to a key uranium facility, according to a leaked report.",
+        "description": "President Trump is looking to talk about reducing nuclear arsenals in the first formal trilateral between the leaders of U.S., China and Russia.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T04:44:21.000Z",
+        "publishedAt": "2026-11-14T10:59:18.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 14.7,
-          "neuP": 85.3,
-          "label": "negative",
-          "confidence": 0.74
+          "posP": 9.1,
+          "negP": 0,
+          "neuP": 90.9,
+          "label": "positive",
+          "confidence": 0.53
         },
         "category": "usa"
       },
@@ -5314,62 +5400,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump, Xi and Putin plan an unprecedented  meeting on the sidelines of APEC, officials say",
-        "link": "https://www.nbcnews.com/world/china/trump-xi-putin-plan-unprecedented-joint-meeting-sidelines-apec-officia-rcna609275",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Eric Trump-backed robot soldier startup can't pay staff after founder borrowed $4.6 million from company to buy home",
+        "link": "https://www.cnbc.com/2026/11/14/foundation-payroll-ceo-loan.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump will meet with the leaders of China and Russia on the sidelines of the Asia-Pacific Economic Cooperation summit in Shenzen, China’s tech hub, next week, an unprecedented gathering of the heads of the world’s biggest nuclear powers.",
+        "description": "Eric Trump-backed robot startup Foundation Future Industries has run low on cash and missed payroll, as CEO Sankaet Pathak faces scrutiny over a $4.6 million company loan.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T00:08:58.000Z",
+        "publishedAt": "2026-11-14T12:00:01.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Commerce Secretary Lutnick agrees to testify about Nvidia",
-        "link": "https://www.nbcnews.com/video/commerce-secretary-lutnick-agrees-to-testify-about-nvidia-273452613709",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Commerce Secretary Howard Lutnick agreed to testify before Congress over national security concerns regarding the expanding Nvidia scandal. NBC News’ Yamiche Alcindor details bipartisan concern and White House reaction.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T16:02:27.000Z",
-        "sentiment": {
-          "posP": 14.9,
-          "negP": 6.9,
-          "neuP": 78.2,
-          "label": "positive",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump administration delays Medicaid work requirements by six months",
-        "link": "https://www.nbcnews.com/politics/politics-news/trump-administration-delays-medicaid-work-requirements-six-months-rcna609256",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Work requirements were set to go into effect on Jan. 1 for many able-bodied adults who receive Medicaid, which could have left millions without health insurance.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T22:49:46.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "posP": 2.8,
+          "negP": 9.2,
+          "neuP": 88,
+          "label": "negative",
+          "confidence": 0.46
         },
         "category": "usa"
       },
@@ -5394,56 +5440,36 @@
         "category": "usa"
       },
       {
-        "title": "Hassett denies report he's leaving White House: 'Not true'",
-        "link": "https://www.cnbc.com/2026/11/13/kevin-hassett-white-house-nec.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Commerce Secretary Lutnick agrees to testify about Nvidia",
+        "link": "https://www.nbcnews.com/video/commerce-secretary-lutnick-agrees-to-testify-about-nvidia-273452613709",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "National Economic Council Director Kevin Hassett poured cold water on a report that he's expected to leave the White House in the coming weeks.",
+        "description": "Commerce Secretary Howard Lutnick agreed to testify before Congress over national security concerns regarding the expanding Nvidia scandal. NBC News’ Yamiche Alcindor details bipartisan concern and White House reaction.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T20:27:47.000Z",
+        "publishedAt": "2026-11-13T16:02:27.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 11.8,
-          "neuP": 88.2,
-          "label": "negative",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Supreme Court agrees to hear Robinhood challenge to IPO information omission lawsuit",
-        "link": "https://www.cnbc.com/2026/11/13/robinhood-supreme-court-ipo-lawsuit.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration had urged the Supreme Court to hear an appeal by Robinhood of a lower-court's decision to revive an investors' lawsuit over the IPO.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T20:48:13.000Z",
-        "sentiment": {
-          "posP": 27.3,
-          "negP": 8.2,
-          "neuP": 64.5,
+          "posP": 14.9,
+          "negP": 6.9,
+          "neuP": 78.2,
           "label": "positive",
-          "confidence": 0.84
+          "confidence": 0.34
         },
         "category": "usa"
       },
       {
-        "title": "Trump to meet with Putin and Xi in China next week, US officials say",
-        "link": "https://abcnews.com/Politics/trump-meet-putin-xi-china-week-us-officials/story?id=138128914",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
+        "title": "Trump, Xi and Putin plan an unprecedented  meeting on the sidelines of APEC, officials say",
+        "link": "https://www.nbcnews.com/world/china/trump-xi-putin-plan-unprecedented-joint-meeting-sidelines-apec-officia-rcna609275",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump will participate in the first-ever trilateral meeting between the leaders of the U.S., China, and Russia on the sidelines of the APEC Summit in China next week.",
+        "description": "President Donald Trump will meet with the leaders of China and Russia on the sidelines of the Asia-Pacific Economic Cooperation summit in Shenzen, China’s tech hub, next week, an unprecedented gathering of the heads of the world’s biggest nuclear powers.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T02:43:31.000Z",
+        "publishedAt": "2026-11-14T00:08:58.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5452,55 +5478,42 @@
           "confidence": 0
         },
         "category": "usa"
-      },
-      {
-        "title": "WATCH:  President Trump pays tribute to veterans",
-        "link": "https://abcnews.com/video/138051810/",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump spoke at a Veterans Day ceremony at Arlington National Cemetery honoring fallen soldiers and addressed the war with Iran.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T18:04:03.000Z",
-        "sentiment": {
-          "posP": 9.5,
-          "negP": 18.4,
-          "neuP": 72.1,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.89,
-      "neu": 85.44,
-      "neg": 9.68,
-      "count": 36
+      "pos": 5.4,
+      "neu": 85.33,
+      "neg": 9.28,
+      "count": 41
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 7.89,
-        "neu": 85.53,
-        "neg": 6.59,
-        "count": 7
+        "source": "Washington Post",
+        "pos": 4.59,
+        "neu": 87.36,
+        "neg": 8.06,
+        "count": 9
       },
       {
-        "source": "Washington Post",
-        "pos": 3.81,
-        "neu": 86.03,
-        "neg": 10.16,
-        "count": 7
+        "source": "NYT",
+        "pos": 5.87,
+        "neu": 83.65,
+        "neg": 10.48,
+        "count": 6
+      },
+      {
+        "source": "NBC News",
+        "pos": 5.12,
+        "neu": 89,
+        "neg": 5.88,
+        "count": 6
       },
       {
         "source": "Fox News",
-        "pos": 7.8,
-        "neu": 82.85,
-        "neg": 9.35,
-        "count": 4
+        "pos": 11.02,
+        "neu": 76.02,
+        "neg": 12.96,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5517,17 +5530,10 @@
         "count": 3
       },
       {
-        "source": "NYT",
-        "pos": 4.33,
-        "neu": 84.3,
-        "neg": 11.37,
-        "count": 3
-      },
-      {
         "source": "CBS News",
-        "pos": 1.33,
-        "neu": 86.23,
-        "neg": 12.43,
+        "pos": 4.37,
+        "neu": 88.1,
+        "neg": 7.53,
         "count": 3
       },
       {
@@ -5548,37 +5554,44 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.07,
-        "neu": 83.24,
-        "neg": 11.69,
-        "count": 17
+        "pos": 5.73,
+        "neu": 85.89,
+        "neg": 8.37,
+        "count": 15
       },
       {
         "topic": "Foreign Policy",
-        "pos": 2.06,
-        "neu": 89.79,
-        "neg": 8.16,
-        "count": 9
+        "pos": 2.51,
+        "neu": 88.27,
+        "neg": 9.22,
+        "count": 11
       },
       {
         "topic": "Policy",
-        "pos": 7.46,
-        "neu": 85.29,
-        "neg": 7.26,
-        "count": 7
+        "pos": 4.42,
+        "neu": 87.21,
+        "neg": 8.36,
+        "count": 8
       },
       {
         "topic": "Economy",
-        "pos": 9.5,
-        "neu": 84.5,
-        "neg": 6,
-        "count": 2
+        "pos": 13.52,
+        "neu": 77.74,
+        "neg": 8.74,
+        "count": 5
+      },
+      {
+        "topic": "Legal",
+        "pos": 0,
+        "neu": 76.6,
+        "neg": 23.4,
+        "count": 1
       },
       {
         "topic": "Public Statements",
-        "pos": 0,
-        "neu": 86.7,
-        "neg": 13.3,
+        "pos": 4.6,
+        "neu": 76,
+        "neg": 19.4,
         "count": 1
       }
     ]
@@ -5606,28 +5619,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-14T04:05:07.857Z",
+        "label": "2026-11-14T10:58:34.638Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T05:05:07.857Z",
+        "label": "2026-11-14T11:58:34.638Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T06:05:07.857Z",
+        "label": "2026-11-14T12:58:34.638Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T07:05:07.857Z",
+        "label": "2026-11-14T13:58:34.638Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5636,28 +5649,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-14T04:05:07.857Z",
+        "label": "2026-11-14T10:58:34.638Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T05:05:07.857Z",
+        "label": "2026-11-14T11:58:34.638Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T06:05:07.857Z",
+        "label": "2026-11-14T12:58:34.638Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T07:05:07.857Z",
+        "label": "2026-11-14T13:58:34.638Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5737,7 +5750,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-14T08:05:07.858Z",
+    "generatedAt": "2026-11-14T14:58:34.639Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5858,8 +5871,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 187,
-      "potusArticles": 36,
+      "usaArticles": 180,
+      "potusArticles": 41,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
