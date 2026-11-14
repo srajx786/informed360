@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-14T01:40:50.929Z",
+  "generatedAt": "2026-11-14T08:05:07.853Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 187,
-    "potusArticles": 34
+    "potusArticles": 36
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-13T21:40:50.929Z",
+          "label": "2026-11-14T04:05:07.853Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-13T22:40:50.929Z",
+          "label": "2026-11-14T05:05:07.853Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-13T23:40:50.929Z",
+          "label": "2026-11-14T06:05:07.853Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T00:40:50.929Z",
+          "label": "2026-11-14T07:05:07.853Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-13T21:40:50.929Z",
+          "label": "2026-11-14T04:05:07.853Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-13T22:40:50.929Z",
+          "label": "2026-11-14T05:05:07.853Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-13T23:40:50.929Z",
+          "label": "2026-11-14T06:05:07.853Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T00:40:50.929Z",
+          "label": "2026-11-14T07:05:07.853Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.33,
-      "neu": 82.37,
-      "neg": 10.3,
+      "pos": 7.16,
+      "neu": 83.01,
+      "neg": 9.83,
       "count": 187
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 9.04,
-        "neu": 84.04,
-        "neg": 6.92,
+        "pos": 8.28,
+        "neu": 84.92,
+        "neg": 6.8,
         "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 7.88,
-        "neu": 78.77,
-        "neg": 13.35,
+        "pos": 9.55,
+        "neu": 77.85,
+        "neg": 12.6,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 3.89,
-        "neu": 83.11,
-        "neg": 13,
+        "pos": 4.22,
+        "neu": 85.53,
+        "neg": 10.24,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 8.99,
-        "neu": 80.97,
-        "neg": 10.04,
+        "pos": 7.68,
+        "neu": 81.83,
+        "neg": 10.48,
         "count": 24
       },
       {
@@ -4597,17 +4597,17 @@
         "count": 20
       },
       {
-        "source": "Washington Post",
-        "pos": 4.44,
-        "neu": 86.77,
-        "neg": 8.79,
+        "source": "ABC News",
+        "pos": 8.04,
+        "neu": 84.36,
+        "neg": 7.59,
         "count": 20
       },
       {
-        "source": "ABC News",
-        "pos": 9.68,
-        "neu": 82.29,
-        "neg": 8.03,
+        "source": "Washington Post",
+        "pos": 4.67,
+        "neu": 86.08,
+        "neg": 9.25,
         "count": 19
       },
       {
@@ -4635,29 +4635,24 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Communication",
-          "bias": -15.16,
-          "count": 9
-        },
-        {
           "name": "Utilities",
           "bias": -14.4,
           "count": 2
         },
         {
-          "name": "Materials",
-          "bias": -7.3,
-          "count": 1
+          "name": "Communication",
+          "bias": -12.86,
+          "count": 5
         },
         {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
+          "name": "Materials",
+          "bias": -5.55,
+          "count": 2
         },
         {
           "name": "Finance",
-          "bias": -4.29,
-          "count": 17
+          "bias": -4.46,
+          "count": 16
         },
         {
           "name": "Manufacturing",
@@ -4666,32 +4661,31 @@
         },
         {
           "name": "Technology",
-          "bias": -3.26,
-          "count": 135
+          "bias": -2.95,
+          "count": 134
         },
         {
           "name": "Healthcare",
-          "bias": -1.35,
-          "count": 11
+          "bias": -1.73,
+          "count": 12
         },
         {
           "name": "Energy",
-          "bias": -1.3,
-          "count": 6
-        }
-      ],
-      "pos": [
+          "bias": -1.58,
+          "count": 10
+        },
         {
           "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
+          "bias": 1.05,
+          "count": 2
         }
       ],
+      "pos": [],
       "neu": [
         {
           "name": "Finance",
-          "bias": -4.29,
-          "count": 17
+          "bias": -4.46,
+          "count": 16
         },
         {
           "name": "Manufacturing",
@@ -4700,57 +4694,57 @@
         },
         {
           "name": "Technology",
-          "bias": -3.26,
-          "count": 135
+          "bias": -2.95,
+          "count": 134
         }
       ],
       "neg": [
         {
-          "name": "Communication",
-          "bias": -15.16,
-          "count": 9
-        },
-        {
           "name": "Utilities",
           "bias": -14.4,
           "count": 2
         },
         {
+          "name": "Communication",
+          "bias": -12.86,
+          "count": 5
+        },
+        {
           "name": "Materials",
-          "bias": -7.3,
-          "count": 1
+          "bias": -5.55,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-13T21:40:50.931Z",
+          "label": "2026-11-14T04:05:07.855Z",
+          "pos": 10,
+          "neu": 82,
+          "neg": 8,
+          "count": 3
+        },
+        {
+          "label": "2026-11-14T05:05:07.855Z",
+          "pos": 4,
+          "neu": 86,
+          "neg": 10,
+          "count": 6
+        },
+        {
+          "label": "2026-11-14T06:05:07.855Z",
           "pos": 8,
           "neu": 80,
-          "neg": 12,
-          "count": 21
-        },
-        {
-          "label": "2026-11-13T22:40:50.931Z",
-          "pos": 8,
-          "neu": 79,
           "neg": 13,
-          "count": 17
+          "count": 2
         },
         {
-          "label": "2026-11-13T23:40:50.931Z",
-          "pos": 4,
+          "label": "2026-11-14T07:05:07.855Z",
+          "pos": 12,
           "neu": 88,
-          "neg": 9,
-          "count": 16
-        },
-        {
-          "label": "2026-11-14T00:40:50.931Z",
-          "pos": 6,
-          "neu": 84,
-          "neg": 10,
-          "count": 18
+          "neg": 0,
+          "count": 3
         }
       ]
     }
@@ -4958,6 +4952,26 @@
         "category": "world"
       },
       {
+        "title": "Democrat flips Alaska governor's mansion after Trump-backed GOP infighting",
+        "link": "https://www.foxnews.com/politics/democrat-flips-alaska-governors-mansion-trump-backed-gop-infighting",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump endorsed Republican Bernadette Wilson for Alaska governor, but bitter GOP infighting and ranked-choice voting complicated the race to succeed Mike Dunleavy.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T06:09:34.000Z",
+        "sentiment": {
+          "posP": 15.1,
+          "negP": 9.6,
+          "neuP": 75.3,
+          "label": "positive",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
         "title": "Joe Rogan says podcasters have no business at Trump press conferences alongside real journalists",
         "link": "https://www.foxnews.com/media/joe-rogan-says-podcasters-no-business-trump-press-conferences-alongside-real-journalists",
         "source": "Fox News",
@@ -4974,26 +4988,6 @@
           "neuP": 86.7,
           "label": "negative",
           "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "UFC boss Dana White brushes off Democratic probe threats, recalls 'crazy 48 hours' around Trump job offer",
-        "link": "https://www.foxnews.com/media/ufc-boss-dana-white-brushes-off-democratic-probe-threats-recalls-crazy-48-hours-around-trump-job-offer",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "UFC CEO Dana White told Lara Trump he has nothing to hide from post-midterm Democratic probes and recounted his \"crazy 48 hours\" around President Donald Trump's press secretary joke.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T22:40:22.000Z",
-        "sentiment": {
-          "posP": 7.1,
-          "negP": 14.5,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.6
         },
         "category": "usa"
       }
@@ -5200,6 +5194,26 @@
         "category": "world"
       },
       {
+        "title": "Democrat flips Alaska governor's mansion after Trump-backed GOP infighting",
+        "link": "https://www.foxnews.com/politics/democrat-flips-alaska-governors-mansion-trump-backed-gop-infighting",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump endorsed Republican Bernadette Wilson for Alaska governor, but bitter GOP infighting and ranked-choice voting complicated the race to succeed Mike Dunleavy.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T06:09:34.000Z",
+        "sentiment": {
+          "posP": 15.1,
+          "negP": 9.6,
+          "neuP": 75.3,
+          "label": "positive",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
         "title": "Joe Rogan says podcasters have no business at Trump press conferences alongside real journalists",
         "link": "https://www.foxnews.com/media/joe-rogan-says-podcasters-no-business-trump-press-conferences-alongside-real-journalists",
         "source": "Fox News",
@@ -5240,62 +5254,122 @@
         "category": "usa"
       },
       {
-        "title": "Rep Lauren Boebert projected to lose House seat in another Democratic flip",
-        "link": "https://www.foxnews.com/politics/rep-lauren-boebert-projected-lose-house-seat-another-democratic-flip",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump to Meet With Putin and Xi in China, With Nuclear Proliferation on the Agenda",
+        "link": "https://www.nytimes.com/2026/11/13/us/politics/trump-putin-xi-china-nuclear-proliferation.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Rep. Lauren Boebert, R-Colo., lost her congressional seat to Democratic challenger Eileen Laubacher. Boebert, an ally of President Trump, was seeking a fourth term.",
+        "description": "The president plans to also discuss the war against Iran, but is not expected to bring up Russia’s war in Ukraine or the scandal that has engulfed Jensen Huang.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T20:37:39.000Z",
+        "publishedAt": "2026-11-14T02:24:24.000Z",
         "sentiment": {
-          "posP": 3.9,
-          "negP": 13,
-          "neuP": 83.1,
+          "posP": 0,
+          "negP": 22.1,
+          "neuP": 77.9,
           "label": "negative",
-          "confidence": 0.54
+          "confidence": 0.91
         },
         "category": "usa"
       },
       {
-        "title": "Meet Eileen Laubacher, the Navy Veteran Who Beat Lauren Boebert",
-        "link": "https://www.nytimes.com/2026/11/13/us/elections/eileen-laubacher-defeated-lauren-boebert.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "U.N. watchdog agency pushes for access to key Iran nuclear site",
+        "link": "https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Eileen Laubacher, a retired rear admiral, defeated one of the highest-profile supporters of President Trump in a deep-red district that she knows will be tough to hold.",
+        "description": "As Trump signals he may let the Iran war fester, the U.N. nuclear agency is \"increasingly concerned\" about access to a key uranium facility, according to a leaked report.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T22:24:47.000Z",
+        "publishedAt": "2026-11-14T04:44:21.000Z",
         "sentiment": {
-          "posP": 12.7,
-          "negP": 11.3,
-          "neuP": 76,
+          "posP": 0,
+          "negP": 14.7,
+          "neuP": 85.3,
+          "label": "negative",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Nationwide ground stop lifted, Duffy calls for congressional funding to upgrade ATC system",
+        "link": "https://www.cbsnews.com/video/nationwide-ground-stop-lifted-duffy-calls-for-congressional-funding-to-upgrade-atc-system/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The FAA on Friday night lifted a nationwide ground stop issued hours earlier over what DHS Secretary Markwayne Mullin called a telecommunications outage. Mullin and Transportation Secretary Sean Duffy took questions on the situation from the White House.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T02:16:30.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 8.6,
+          "neuP": 91.4,
+          "label": "negative",
+          "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump, Xi and Putin plan an unprecedented  meeting on the sidelines of APEC, officials say",
+        "link": "https://www.nbcnews.com/world/china/trump-xi-putin-plan-unprecedented-joint-meeting-sidelines-apec-officia-rcna609275",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump will meet with the leaders of China and Russia on the sidelines of the Asia-Pacific Economic Cooperation summit in Shenzen, China’s tech hub, next week, an unprecedented gathering of the heads of the world’s biggest nuclear powers.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T00:08:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
           "label": "neutral",
-          "confidence": 0.15
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Trump Signals New Strategy on Iran: A Waiting Game",
-        "link": "https://www.nytimes.com/2026/11/13/us/politics/trump-iran-strategy.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Commerce Secretary Lutnick agrees to testify about Nvidia",
+        "link": "https://www.nbcnews.com/video/commerce-secretary-lutnick-agrees-to-testify-about-nvidia-273452613709",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The administration appears to be moving toward a long-term economic pressure campaign as President Trump expresses little urgency in securing a nuclear agreement.",
+        "description": "Commerce Secretary Howard Lutnick agreed to testify before Congress over national security concerns regarding the expanding Nvidia scandal. NBC News’ Yamiche Alcindor details bipartisan concern and White House reaction.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T18:20:50.000Z",
+        "publishedAt": "2026-11-13T16:02:27.000Z",
         "sentiment": {
-          "posP": 15.7,
-          "negP": 6.6,
-          "neuP": 77.7,
+          "posP": 14.9,
+          "negP": 6.9,
+          "neuP": 78.2,
           "label": "positive",
-          "confidence": 0.47
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump administration delays Medicaid work requirements by six months",
+        "link": "https://www.nbcnews.com/politics/politics-news/trump-administration-delays-medicaid-work-requirements-six-months-rcna609256",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Work requirements were set to go into effect on Jan. 1 for many able-bodied adults who receive Medicaid, which could have left millions without health insurance.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T22:49:46.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5360,62 +5434,22 @@
         "category": "usa"
       },
       {
-        "title": "Commerce Secretary Lutnick agrees to testify about Nvidia",
-        "link": "https://www.nbcnews.com/video/commerce-secretary-lutnick-agrees-to-testify-about-nvidia-273452613709",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Trump to meet with Putin and Xi in China next week, US officials say",
+        "link": "https://abcnews.com/Politics/trump-meet-putin-xi-china-week-us-officials/story?id=138128914",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Commerce Secretary Howard Lutnick agreed to testify before Congress over national security concerns regarding the expanding Nvidia scandal. NBC News’ Yamiche Alcindor details bipartisan concern and White House reaction.",
+        "description": "Trump will participate in the first-ever trilateral meeting between the leaders of the U.S., China, and Russia on the sidelines of the APEC Summit in China next week.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T16:02:27.000Z",
-        "sentiment": {
-          "posP": 14.9,
-          "negP": 6.9,
-          "neuP": 78.2,
-          "label": "positive",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump administration delays Medicaid work requirements by six months",
-        "link": "https://www.nbcnews.com/politics/politics-news/trump-administration-delays-medicaid-work-requirements-six-months-rcna609256",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Work requirements were set to go into effect on Jan. 1 for many able-bodied adults who receive Medicaid, which could have left millions without health insurance.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T22:49:46.000Z",
+        "publishedAt": "2026-11-14T02:43:31.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Supreme Court to rule on Trump’s asylum ban",
-        "link": "https://www.nbcnews.com/politics/supreme-court/supreme-court-takes-trumps-asylum-ban-case-rcna608564",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Supreme Court agreed to decide whether President Donald Trump’s administration has the authority to ban asylum claims at the southern border.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T18:49:06.000Z",
-        "sentiment": {
-          "posP": 25.4,
-          "negP": 17.2,
-          "neuP": 57.4,
-          "label": "positive",
-          "confidence": 0.34
         },
         "category": "usa"
       },
@@ -5438,60 +5472,20 @@
           "confidence": 0.48
         },
         "category": "usa"
-      },
-      {
-        "title": "Iran live updates: Bessent blasts Iranian threats",
-        "link": "https://abcnews.com/International/live-updates/iran-live-updates-americans-tired-forever-wars-araghchi/?id=137967256",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump announced \"major combat operations\" against Iran on Feb. 28.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T18:04:55.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 23.4,
-          "neuP": 76.6,
-          "label": "negative",
-          "confidence": 0.64
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.43,
-      "neu": 83.53,
-      "neg": 10.04,
-      "count": 34
+      "pos": 4.89,
+      "neu": 85.44,
+      "neg": 9.68,
+      "count": 36
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 11.51,
-        "neu": 79.44,
-        "neg": 9.04,
+        "pos": 7.89,
+        "neu": 85.53,
+        "neg": 6.59,
         "count": 7
       },
       {
@@ -5502,17 +5496,10 @@
         "count": 7
       },
       {
-        "source": "NYT",
-        "pos": 10.35,
-        "neu": 82.17,
-        "neg": 7.47,
-        "count": 4
-      },
-      {
         "source": "Fox News",
-        "pos": 5,
-        "neu": 84.8,
-        "neg": 10.2,
+        "pos": 7.8,
+        "neu": 82.85,
+        "neg": 9.35,
         "count": 4
       },
       {
@@ -5530,41 +5517,55 @@
         "count": 3
       },
       {
+        "source": "NYT",
+        "pos": 4.33,
+        "neu": 84.3,
+        "neg": 11.37,
+        "count": 3
+      },
+      {
+        "source": "CBS News",
+        "pos": 1.33,
+        "neu": 86.23,
+        "neg": 12.43,
+        "count": 3
+      },
+      {
+        "source": "ABC News",
+        "pos": 3.17,
+        "neu": 82.9,
+        "neg": 13.93,
+        "count": 3
+      },
+      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
         "neg": 9,
-        "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 4.75,
-        "neu": 74.35,
-        "neg": 20.9,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.48,
-        "neu": 82.63,
-        "neg": 11.89,
-        "count": 16
-      },
-      {
-        "topic": "Policy",
-        "pos": 10.37,
-        "neu": 81.34,
-        "neg": 8.29,
-        "count": 9
+        "pos": 5.07,
+        "neu": 83.24,
+        "neg": 11.69,
+        "count": 17
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.08,
-        "neu": 88.37,
-        "neg": 8.55,
-        "count": 6
+        "pos": 2.06,
+        "neu": 89.79,
+        "neg": 8.16,
+        "count": 9
+      },
+      {
+        "topic": "Policy",
+        "pos": 7.46,
+        "neu": 85.29,
+        "neg": 7.26,
+        "count": 7
       },
       {
         "topic": "Economy",
@@ -5605,28 +5606,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-13T21:40:50.933Z",
+        "label": "2026-11-14T04:05:07.857Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-13T22:40:50.933Z",
+        "label": "2026-11-14T05:05:07.857Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-13T23:40:50.933Z",
+        "label": "2026-11-14T06:05:07.857Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T00:40:50.933Z",
+        "label": "2026-11-14T07:05:07.857Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5636,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-13T21:40:50.933Z",
+        "label": "2026-11-14T04:05:07.857Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-13T22:40:50.933Z",
+        "label": "2026-11-14T05:05:07.857Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-13T23:40:50.933Z",
+        "label": "2026-11-14T06:05:07.857Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T00:40:50.933Z",
+        "label": "2026-11-14T07:05:07.857Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5737,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-14T01:40:50.933Z",
+    "generatedAt": "2026-11-14T08:05:07.858Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5858,7 +5859,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 187,
-      "potusArticles": 34,
+      "potusArticles": 36,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
