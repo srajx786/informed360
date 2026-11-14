@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-14T14:58:34.635Z",
+  "generatedAt": "2026-11-14T19:51:40.629Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 180,
-    "potusArticles": 41
+    "potusArticles": 32
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-14T10:58:34.635Z",
+          "label": "2026-11-14T15:51:40.630Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T11:58:34.635Z",
+          "label": "2026-11-14T16:51:40.630Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T12:58:34.635Z",
+          "label": "2026-11-14T17:51:40.630Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T13:58:34.635Z",
+          "label": "2026-11-14T18:51:40.630Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-14T10:58:34.636Z",
+          "label": "2026-11-14T15:51:40.630Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T11:58:34.636Z",
+          "label": "2026-11-14T16:51:40.630Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T12:58:34.636Z",
+          "label": "2026-11-14T17:51:40.630Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T13:58:34.636Z",
+          "label": "2026-11-14T18:51:40.630Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.33,
-      "neu": 82.25,
-      "neg": 10.42,
+      "pos": 8.35,
+      "neu": 82.24,
+      "neg": 9.41,
       "count": 180
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.07,
-        "neu": 82.78,
-        "neg": 7.16,
-        "count": 38
+        "pos": 11.02,
+        "neu": 81.64,
+        "neg": 7.34,
+        "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 10.04,
-        "neu": 76.13,
-        "neg": 13.83,
+        "pos": 11.45,
+        "neu": 78.29,
+        "neg": 10.26,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.18,
-        "neu": 85.11,
-        "neg": 9.72,
+        "pos": 8.07,
+        "neu": 83.18,
+        "neg": 8.74,
         "count": 26
       },
       {
@@ -4591,24 +4591,24 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.43,
-        "neu": 84.46,
-        "neg": 7.12,
+        "pos": 8.04,
+        "neu": 84.11,
+        "neg": 7.84,
         "count": 20
       },
       {
-        "source": "NYT",
-        "pos": 5.25,
-        "neu": 78.33,
-        "neg": 16.42,
+        "source": "Washington Post",
+        "pos": 3.55,
+        "neu": 89.99,
+        "neg": 6.46,
         "count": 19
       },
       {
-        "source": "Washington Post",
-        "pos": 3.05,
-        "neu": 89.44,
-        "neg": 7.51,
-        "count": 19
+        "source": "NYT",
+        "pos": 6.73,
+        "neu": 79.89,
+        "neg": 13.37,
+        "count": 18
       },
       {
         "source": "NPR",
@@ -4635,121 +4635,131 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Communication",
-          "bias": -12.78,
-          "count": 5
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 6.37,
-          "count": 3
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
+          "name": "Information Tech",
+          "bias": 22.3,
           "count": 1
         },
         {
-          "name": "Finance",
-          "bias": -4.42,
-          "count": 14
-        },
-        {
-          "name": "Energy",
-          "bias": -4.11,
-          "count": 9
-        },
-        {
-          "name": "Utilities",
-          "bias": -3.8,
+          "name": "Communication",
+          "bias": -13.05,
           "count": 2
         },
         {
+          "name": "Real Estate",
+          "bias": 7,
+          "count": 2
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 6.8,
+          "count": 4
+        },
+        {
+          "name": "Finance",
+          "bias": -3.39,
+          "count": 15
+        },
+        {
           "name": "Healthcare",
-          "bias": 2.65,
-          "count": 10
+          "bias": 2.54,
+          "count": 7
+        },
+        {
+          "name": "Utilities",
+          "bias": 2.17,
+          "count": 3
         },
         {
           "name": "Technology",
-          "bias": -2.65,
-          "count": 135
+          "bias": -2.09,
+          "count": 133
+        },
+        {
+          "name": "Energy",
+          "bias": -0.52,
+          "count": 8
         }
       ],
       "pos": [
         {
-          "name": "Manufacturing",
-          "bias": 6.37,
-          "count": 3
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
+          "name": "Information Tech",
+          "bias": 22.3,
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": 2.65,
-          "count": 10
+          "name": "Real Estate",
+          "bias": 7,
+          "count": 2
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 6.8,
+          "count": 4
         }
       ],
       "neu": [
         {
-          "name": "Utilities",
-          "bias": -3.8,
-          "count": 2
+          "name": "Healthcare",
+          "bias": 2.54,
+          "count": 7
         },
         {
-          "name": "Technology",
-          "bias": -2.65,
-          "count": 135
+          "name": "Utilities",
+          "bias": 2.17,
+          "count": 3
+        },
+        {
+          "name": "Energy",
+          "bias": -0.52,
+          "count": 8
         }
       ],
       "neg": [
         {
           "name": "Communication",
-          "bias": -12.78,
-          "count": 5
+          "bias": -13.05,
+          "count": 2
         },
         {
           "name": "Finance",
-          "bias": -4.42,
-          "count": 14
+          "bias": -3.39,
+          "count": 15
         },
         {
-          "name": "Energy",
-          "bias": -4.11,
-          "count": 9
+          "name": "Technology",
+          "bias": -2.09,
+          "count": 133
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-14T10:58:34.637Z",
-          "pos": 8,
-          "neu": 87,
-          "neg": 5,
-          "count": 4
+          "label": "2026-11-14T15:51:40.632Z",
+          "pos": 16,
+          "neu": 73,
+          "neg": 11,
+          "count": 9
         },
         {
-          "label": "2026-11-14T11:58:34.637Z",
+          "label": "2026-11-14T16:51:40.632Z",
+          "pos": 9,
+          "neu": 84,
+          "neg": 7,
+          "count": 21
+        },
+        {
+          "label": "2026-11-14T17:51:40.632Z",
           "pos": 7,
-          "neu": 78,
-          "neg": 15,
-          "count": 11
+          "neu": 85,
+          "neg": 8,
+          "count": 7
         },
         {
-          "label": "2026-11-14T12:58:34.637Z",
-          "pos": 11,
+          "label": "2026-11-14T18:51:40.632Z",
+          "pos": 6,
           "neu": 80,
-          "neg": 9,
-          "count": 17
-        },
-        {
-          "label": "2026-11-14T13:58:34.637Z",
-          "pos": 7,
-          "neu": 80,
-          "neg": 13,
+          "neg": 14,
           "count": 15
         }
       ]
@@ -4958,42 +4968,42 @@
         "category": "world"
       },
       {
-        "title": "Anti-Trump Republican courts other defectors as House weighs another vote against Iran war",
-        "link": "https://www.foxnews.com/politics/anti-trump-republican-courts-other-defectors-house-weighs-another-vote-against-iran-war",
+        "title": "Princess Diana’s legendary White House dance with John Travolta almost didn’t happen",
+        "link": "https://www.foxnews.com/entertainment/princess-diana-legendary-white-house-dance-john-travolta-almost-didnt-happen",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Thomas Massie says he's offering Republicans a \"life boat from MAGA\" as he pushes a new Iran War Powers resolution to the House floor soon..",
+        "description": "Princess Diana danced with Clint Eastwood, Tom Selleck and Ronald Reagan that evening, but it took coaxing to get John Travolta onto the floor.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T14:00:51.000Z",
+        "publishedAt": "2026-11-14T19:00:35.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 23.4,
-          "neuP": 76.6,
-          "label": "negative",
-          "confidence": 0.88
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Ben Shapiro warns Democrats have 'strong incentive' to crater the economy and blame Trump",
-        "link": "https://www.foxnews.com/media/ben-shapiro-warns-democrats-strong-incentive-crater-economy-blame-trump",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "What’s Behind the Trump-Huang Relationship?",
+        "link": "https://www.nytimes.com/video/us/politics/100000011272223/whats-behind-the-trump-huang-relationship.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ben Shapiro warns that Democrats have a strong incentive to crater the American economy after their sweeping midterm wins and blame Trump for it.",
+        "description": "President Trump’s show of support for Jensen Huang as he was under fire was a remarkable moment in a relationship that barely existed two years ago. Our White House correspondent Maggie Haberman explains how Mr. Trump came to see Mr. Huang as a modern-day Henry Ford.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T13:16:29.000Z",
+        "publishedAt": "2026-11-14T13:27:10.000Z",
         "sentiment": {
-          "posP": 30.1,
-          "negP": 14.9,
-          "neuP": 55,
+          "posP": 11.7,
+          "negP": 4.5,
+          "neuP": 83.8,
           "label": "positive",
-          "confidence": 0.87
+          "confidence": 0.6
         },
         "category": "usa"
       }
@@ -5200,82 +5210,22 @@
         "category": "world"
       },
       {
-        "title": "Anti-Trump Republican courts other defectors as House weighs another vote against Iran war",
-        "link": "https://www.foxnews.com/politics/anti-trump-republican-courts-other-defectors-house-weighs-another-vote-against-iran-war",
+        "title": "Princess Diana’s legendary White House dance with John Travolta almost didn’t happen",
+        "link": "https://www.foxnews.com/entertainment/princess-diana-legendary-white-house-dance-john-travolta-almost-didnt-happen",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Thomas Massie says he's offering Republicans a \"life boat from MAGA\" as he pushes a new Iran War Powers resolution to the House floor soon..",
+        "description": "Princess Diana danced with Clint Eastwood, Tom Selleck and Ronald Reagan that evening, but it took coaxing to get John Travolta onto the floor.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T14:00:51.000Z",
+        "publishedAt": "2026-11-14T19:00:35.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 23.4,
-          "neuP": 76.6,
-          "label": "negative",
-          "confidence": 0.88
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Ben Shapiro warns Democrats have 'strong incentive' to crater the economy and blame Trump",
-        "link": "https://www.foxnews.com/media/ben-shapiro-warns-democrats-strong-incentive-crater-economy-blame-trump",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Ben Shapiro warns that Democrats have a strong incentive to crater the American economy after their sweeping midterm wins and blame Trump for it.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-14T13:16:29.000Z",
-        "sentiment": {
-          "posP": 30.1,
-          "negP": 14.9,
-          "neuP": 55,
-          "label": "positive",
-          "confidence": 0.87
-        },
-        "category": "usa"
-      },
-      {
-        "title": "GOP midterm bloodbath exposes cracks in Vance's 2028 White House ambitions",
-        "link": "https://www.foxnews.com/politics/gop-midterm-bloodbath-exposes-cracks-vances-2028-white-house-ambitions",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Rep. Randy Fine compared JD Vance's post-midterm remarks on the Iran war to 1932 Germany, vowing he will not support a 2028 presidential bid.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-14T13:00:38.000Z",
-        "sentiment": {
-          "posP": 4.6,
-          "negP": 19.4,
-          "neuP": 76,
-          "label": "negative",
-          "confidence": 0.71
-        },
-        "category": "usa"
-      },
-      {
-        "title": "One industry surged DC lobbying 337% under Trump — here’s what’s driving the push",
-        "link": "https://www.foxnews.com/politics/industry-drove-dc-lobbying-337-percent-trump-whats-driving-push",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Lobbying spending on tariff-related filings surged 337% in 2026, Advancing American Freedom found, as businesses scramble to navigate trade shifts.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-14T12:30:39.000Z",
-        "sentiment": {
-          "posP": 11.4,
-          "negP": 7.1,
-          "neuP": 81.5,
-          "label": "positive",
-          "confidence": 0.56
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5340,62 +5290,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump to Meet With Putin and Xi in China, With Nuclear Proliferation on the Agenda",
-        "link": "https://www.nytimes.com/2026/11/13/us/politics/trump-putin-xi-china-nuclear-proliferation.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump, Xi and Putin plan an unprecedented  meeting on the sidelines of APEC, officials say",
+        "link": "https://www.nbcnews.com/world/china/trump-xi-putin-plan-unprecedented-joint-meeting-sidelines-apec-officia-rcna609275",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The president plans to also discuss the war against Iran, but is not expected to bring up Russia’s war in Ukraine or the scandal that has engulfed Jensen Huang.",
+        "description": "President Donald Trump will meet with the leaders of China and Russia on the sidelines of the Asia-Pacific Economic Cooperation summit in Shenzen, China’s tech hub, next week, an unprecedented gathering of the heads of the world’s biggest nuclear powers.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T02:24:24.000Z",
+        "publishedAt": "2026-11-14T00:08:58.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 22.1,
-          "neuP": 77.9,
-          "label": "negative",
-          "confidence": 0.91
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump, Putin, Xi Jinping to meet in first trilateral of its kind",
-        "link": "https://www.cbsnews.com/news/trump-putin-xi-jinping-meeting-china-us-russia-talks/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is looking to talk about reducing nuclear arsenals in the first formal trilateral between the leaders of U.S., China and Russia.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-14T10:59:18.000Z",
-        "sentiment": {
-          "posP": 9.1,
           "negP": 0,
-          "neuP": 90.9,
-          "label": "positive",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Nationwide ground stop lifted, Duffy calls for congressional funding to upgrade ATC system",
-        "link": "https://www.cbsnews.com/video/nationwide-ground-stop-lifted-duffy-calls-for-congressional-funding-to-upgrade-atc-system/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The FAA on Friday night lifted a nationwide ground stop issued hours earlier over what DHS Secretary Markwayne Mullin called a telecommunications outage. Mullin and Transportation Secretary Sean Duffy took questions on the situation from the White House.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-14T02:16:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 8.6,
-          "neuP": 91.4,
-          "label": "negative",
-          "confidence": 0.53
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5429,7 +5339,7 @@
         "description": "Nvidia CEO Jensen Huang resigned this week after reports of multiple affairs, including one with a suspected Chinese spy, Alice Huang.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T01:34:11.000Z",
+        "publishedAt": "2026-11-14T15:36:47.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 11.2,
@@ -5440,36 +5350,116 @@
         "category": "usa"
       },
       {
-        "title": "Commerce Secretary Lutnick agrees to testify about Nvidia",
-        "link": "https://www.nbcnews.com/video/commerce-secretary-lutnick-agrees-to-testify-about-nvidia-273452613709",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "WATCH:  President Trump pays tribute to veterans",
+        "link": "https://abcnews.com/video/138051810/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Commerce Secretary Howard Lutnick agreed to testify before Congress over national security concerns regarding the expanding Nvidia scandal. NBC News’ Yamiche Alcindor details bipartisan concern and White House reaction.",
+        "description": "President Donald Trump spoke at a Veterans Day ceremony at Arlington National Cemetery honoring fallen soldiers and addressed the war with Iran.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-13T16:02:27.000Z",
+        "publishedAt": "2026-11-11T18:04:03.000Z",
         "sentiment": {
-          "posP": 14.9,
-          "negP": 6.9,
-          "neuP": 78.2,
-          "label": "positive",
-          "confidence": 0.34
+          "posP": 9.5,
+          "negP": 18.4,
+          "neuP": 72.1,
+          "label": "negative",
+          "confidence": 0.48
         },
         "category": "usa"
       },
       {
-        "title": "Trump, Xi and Putin plan an unprecedented  meeting on the sidelines of APEC, officials say",
-        "link": "https://www.nbcnews.com/world/china/trump-xi-putin-plan-unprecedented-joint-meeting-sidelines-apec-officia-rcna609275",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Iran live updates: Bessent blasts Iranian threats",
+        "link": "https://abcnews.com/International/live-updates/iran-live-updates-americans-tired-forever-wars-araghchi/?id=137967256",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump will meet with the leaders of China and Russia on the sidelines of the Asia-Pacific Economic Cooperation summit in Shenzen, China’s tech hub, next week, an unprecedented gathering of the heads of the world’s biggest nuclear powers.",
+        "description": "President Donald Trump announced \"major combat operations\" against Iran on Feb. 28.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T00:08:58.000Z",
+        "publishedAt": "2026-11-13T18:04:55.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 23.4,
+          "neuP": 76.6,
+          "label": "negative",
+          "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
+          "label": "neutral",
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
+          "label": "negative",
+          "confidence": 0.67
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
+        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-24T22:56:00.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5478,42 +5468,55 @@
           "confidence": 0
         },
         "category": "usa"
+      },
+      {
+        "title": "Judge in golf course case says inquiry into DOJ lawyers will proceed",
+        "link": "https://www.washingtonpost.com/politics/2026/11/14/judge-golf-course-case-says-inquiry-into-doj-lawyers-will-proceed/",
+        "source": "Washington Post",
+        "sourceDomain": "washingtonpost.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration’s attorneys have objected to a special master reviewing their conduct in the case.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T15:30:00.000Z",
+        "sentiment": {
+          "posP": 9.4,
+          "negP": 0,
+          "neuP": 90.6,
+          "label": "positive",
+          "confidence": 0.4
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.4,
-      "neu": 85.33,
-      "neg": 9.28,
-      "count": 41
+      "pos": 5.02,
+      "neu": 86.92,
+      "neg": 8.06,
+      "count": 32
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 4.59,
-        "neu": 87.36,
-        "neg": 8.06,
+        "pos": 5.63,
+        "neu": 88.53,
+        "neg": 5.83,
         "count": 9
       },
       {
         "source": "NYT",
-        "pos": 5.87,
-        "neu": 83.65,
-        "neg": 10.48,
-        "count": 6
+        "pos": 7.04,
+        "neu": 84.8,
+        "neg": 8.16,
+        "count": 5
       },
       {
         "source": "NBC News",
-        "pos": 5.12,
-        "neu": 89,
-        "neg": 5.88,
-        "count": 6
-      },
-      {
-        "source": "Fox News",
-        "pos": 11.02,
-        "neu": 76.02,
-        "neg": 12.96,
-        "count": 5
+        "pos": 3.95,
+        "neu": 88.95,
+        "neg": 7.1,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5530,18 +5533,11 @@
         "count": 3
       },
       {
-        "source": "CBS News",
-        "pos": 4.37,
-        "neu": 88.1,
-        "neg": 7.53,
-        "count": 3
-      },
-      {
-        "source": "ABC News",
-        "pos": 3.17,
-        "neu": 82.9,
-        "neg": 13.93,
-        "count": 3
+        "source": "Fox News",
+        "pos": 4.5,
+        "neu": 95.5,
+        "neg": 0,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5549,50 +5545,43 @@
         "neu": 88,
         "neg": 9,
         "count": 2
+      },
+      {
+        "source": "ABC News",
+        "pos": 4.75,
+        "neu": 74.35,
+        "neg": 20.9,
+        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.73,
-        "neu": 85.89,
-        "neg": 8.37,
-        "count": 15
+        "pos": 5.08,
+        "neu": 87.06,
+        "neg": 7.86,
+        "count": 14
       },
       {
         "topic": "Foreign Policy",
-        "pos": 2.51,
-        "neu": 88.27,
-        "neg": 9.22,
-        "count": 11
-      },
-      {
-        "topic": "Policy",
-        "pos": 4.42,
-        "neu": 87.21,
-        "neg": 8.36,
+        "pos": 2.31,
+        "neu": 87.78,
+        "neg": 9.91,
         "count": 8
       },
       {
+        "topic": "Policy",
+        "pos": 6.4,
+        "neu": 86.9,
+        "neg": 6.7,
+        "count": 7
+      },
+      {
         "topic": "Economy",
-        "pos": 13.52,
-        "neu": 77.74,
-        "neg": 8.74,
-        "count": 5
-      },
-      {
-        "topic": "Legal",
-        "pos": 0,
-        "neu": 76.6,
-        "neg": 23.4,
-        "count": 1
-      },
-      {
-        "topic": "Public Statements",
-        "pos": 4.6,
-        "neu": 76,
-        "neg": 19.4,
-        "count": 1
+        "pos": 8.7,
+        "neu": 84.07,
+        "neg": 7.23,
+        "count": 3
       }
     ]
   },
@@ -5619,28 +5608,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-14T10:58:34.638Z",
+        "label": "2026-11-14T15:51:40.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T11:58:34.638Z",
+        "label": "2026-11-14T16:51:40.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T12:58:34.638Z",
+        "label": "2026-11-14T17:51:40.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T13:58:34.638Z",
+        "label": "2026-11-14T18:51:40.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5649,28 +5638,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-14T10:58:34.638Z",
+        "label": "2026-11-14T15:51:40.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T11:58:34.638Z",
+        "label": "2026-11-14T16:51:40.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T12:58:34.638Z",
+        "label": "2026-11-14T17:51:40.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T13:58:34.638Z",
+        "label": "2026-11-14T18:51:40.634Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5750,7 +5739,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-14T14:58:34.639Z",
+    "generatedAt": "2026-11-14T19:51:40.635Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5872,7 +5861,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 180,
-      "potusArticles": 41,
+      "potusArticles": 32,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
