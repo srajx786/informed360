@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-14T19:51:40.629Z",
+  "generatedAt": "2026-11-14T23:26:26.446Z",
   "counts": {
     "articles": 120,
     "topics": 12,
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-14T15:51:40.630Z",
+          "label": "2026-11-14T19:26:26.447Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T16:51:40.630Z",
+          "label": "2026-11-14T20:26:26.447Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T17:51:40.630Z",
+          "label": "2026-11-14T21:26:26.447Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T18:51:40.630Z",
+          "label": "2026-11-14T22:26:26.447Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-14T15:51:40.630Z",
+          "label": "2026-11-14T19:26:26.447Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T16:51:40.630Z",
+          "label": "2026-11-14T20:26:26.447Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T17:51:40.630Z",
+          "label": "2026-11-14T21:26:26.447Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T18:51:40.630Z",
+          "label": "2026-11-14T22:26:26.447Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 8.35,
-      "neu": 82.24,
-      "neg": 9.41,
+      "pos": 7.97,
+      "neu": 83.11,
+      "neg": 8.93,
       "count": 180
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 11.02,
-        "neu": 81.64,
-        "neg": 7.34,
+        "pos": 11.95,
+        "neu": 81.45,
+        "neg": 6.6,
         "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 11.45,
-        "neu": 78.29,
-        "neg": 10.26,
+        "pos": 10.96,
+        "neu": 81.56,
+        "neg": 7.48,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 8.07,
-        "neu": 83.18,
-        "neg": 8.74,
+        "pos": 4.14,
+        "neu": 86.45,
+        "neg": 9.41,
         "count": 26
       },
       {
@@ -4591,24 +4591,24 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.04,
-        "neu": 84.11,
-        "neg": 7.84,
+        "pos": 8.75,
+        "neu": 83.98,
+        "neg": 7.27,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 3.55,
-        "neu": 89.99,
-        "neg": 6.46,
-        "count": 19
+        "pos": 4.15,
+        "neu": 89.03,
+        "neg": 6.81,
+        "count": 20
       },
       {
         "source": "NYT",
-        "pos": 6.73,
-        "neu": 79.89,
-        "neg": 13.37,
-        "count": 18
+        "pos": 5.99,
+        "neu": 80.19,
+        "neg": 13.82,
+        "count": 17
       },
       {
         "source": "NPR",
@@ -4641,23 +4641,8 @@
         },
         {
           "name": "Communication",
-          "bias": -13.05,
-          "count": 2
-        },
-        {
-          "name": "Real Estate",
-          "bias": 7,
-          "count": 2
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 6.8,
-          "count": 4
-        },
-        {
-          "name": "Finance",
-          "bias": -3.39,
-          "count": 15
+          "bias": -13.6,
+          "count": 3
         },
         {
           "name": "Healthcare",
@@ -4665,19 +4650,34 @@
           "count": 7
         },
         {
+          "name": "Manufacturing",
+          "bias": 2.5,
+          "count": 4
+        },
+        {
+          "name": "Energy",
+          "bias": -1.93,
+          "count": 6
+        },
+        {
+          "name": "Finance",
+          "bias": -1.68,
+          "count": 16
+        },
+        {
           "name": "Utilities",
-          "bias": 2.17,
+          "bias": -1.23,
           "count": 3
         },
         {
           "name": "Technology",
-          "bias": -2.09,
+          "bias": -0.79,
           "count": 133
         },
         {
-          "name": "Energy",
-          "bias": -0.52,
-          "count": 8
+          "name": "Real Estate",
+          "bias": 0.77,
+          "count": 4
         }
       ],
       "pos": [
@@ -4687,80 +4687,70 @@
           "count": 1
         },
         {
-          "name": "Real Estate",
-          "bias": 7,
-          "count": 2
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 6.8,
-          "count": 4
-        }
-      ],
-      "neu": [
-        {
           "name": "Healthcare",
           "bias": 2.54,
           "count": 7
         },
         {
-          "name": "Utilities",
-          "bias": 2.17,
-          "count": 3
-        },
+          "name": "Manufacturing",
+          "bias": 2.5,
+          "count": 4
+        }
+      ],
+      "neu": [
         {
           "name": "Energy",
-          "bias": -0.52,
-          "count": 8
+          "bias": -1.93,
+          "count": 6
+        },
+        {
+          "name": "Finance",
+          "bias": -1.68,
+          "count": 16
+        },
+        {
+          "name": "Utilities",
+          "bias": -1.23,
+          "count": 3
         }
       ],
       "neg": [
         {
           "name": "Communication",
-          "bias": -13.05,
-          "count": 2
-        },
-        {
-          "name": "Finance",
-          "bias": -3.39,
-          "count": 15
-        },
-        {
-          "name": "Technology",
-          "bias": -2.09,
-          "count": 133
+          "bias": -13.6,
+          "count": 3
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-14T15:51:40.632Z",
-          "pos": 16,
-          "neu": 73,
-          "neg": 11,
+          "label": "2026-11-14T19:26:26.448Z",
+          "pos": 11,
+          "neu": 79,
+          "neg": 10,
           "count": 9
         },
         {
-          "label": "2026-11-14T16:51:40.632Z",
+          "label": "2026-11-14T20:26:26.448Z",
           "pos": 9,
-          "neu": 84,
-          "neg": 7,
-          "count": 21
+          "neu": 87,
+          "neg": 5,
+          "count": 17
         },
         {
-          "label": "2026-11-14T17:51:40.632Z",
+          "label": "2026-11-14T21:26:26.448Z",
           "pos": 7,
-          "neu": 85,
-          "neg": 8,
-          "count": 7
+          "neu": 86,
+          "neg": 6,
+          "count": 10
         },
         {
-          "label": "2026-11-14T18:51:40.632Z",
-          "pos": 6,
-          "neu": 80,
-          "neg": 14,
-          "count": 15
+          "label": "2026-11-14T22:26:26.448Z",
+          "pos": 7,
+          "neu": 84,
+          "neg": 9,
+          "count": 13
         }
       ]
     }
@@ -4968,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "Princess Diana’s legendary White House dance with John Travolta almost didn’t happen",
-        "link": "https://www.foxnews.com/entertainment/princess-diana-legendary-white-house-dance-john-travolta-almost-didnt-happen",
+        "title": "Kai Trump opens up about relationship with Tiger Woods, her mother's boyfriend: 'I love him so much'",
+        "link": "https://www.foxnews.com/outkick-sports/kai-trump-opens-relationship-tiger-woods-mothers-boyfriend-love-him-so-much",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Princess Diana danced with Clint Eastwood, Tom Selleck and Ronald Reagan that evening, but it took coaxing to get John Travolta onto the floor.",
+        "description": "Kai Trump revealed how Tiger Woods helps with her golf game, calling her mother Vanessa Trump's boyfriend \"the best\" in a Golfweek interview.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T19:00:35.000Z",
+        "publishedAt": "2026-11-14T22:50:07.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 23.4,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 76.6,
+          "label": "positive",
+          "confidence": 0.9
         },
         "category": "usa"
       },
       {
-        "title": "What’s Behind the Trump-Huang Relationship?",
-        "link": "https://www.nytimes.com/video/us/politics/100000011272223/whats-behind-the-trump-huang-relationship.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump takes parting shot at DC golf course conditions one day before major overhaul begins",
+        "link": "https://www.foxnews.com/outkick-sports/trump-takes-parting-shot-dc-golf-course-conditions-one-day-before-major-overhaul-begins",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump’s show of support for Jensen Huang as he was under fire was a remarkable moment in a relationship that barely existed two years ago. Our White House correspondent Maggie Haberman explains how Mr. Trump came to see Mr. Huang as a modern-day Henry Ford.",
+        "description": "Trump shared photos of what he calls \"Trash Island\" on Truth Social, blasting U.S. District Judge Ana Reyes for slowing the East Potomac overhaul.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T13:27:10.000Z",
+        "publishedAt": "2026-11-14T21:55:15.000Z",
         "sentiment": {
-          "posP": 11.7,
-          "negP": 4.5,
-          "neuP": 83.8,
+          "posP": 11.3,
+          "negP": 0,
+          "neuP": 88.7,
           "label": "positive",
-          "confidence": 0.6
+          "confidence": 0.57
         },
         "category": "usa"
       }
@@ -5210,42 +5200,42 @@
         "category": "world"
       },
       {
-        "title": "Princess Diana’s legendary White House dance with John Travolta almost didn’t happen",
-        "link": "https://www.foxnews.com/entertainment/princess-diana-legendary-white-house-dance-john-travolta-almost-didnt-happen",
+        "title": "Kai Trump opens up about relationship with Tiger Woods, her mother's boyfriend: 'I love him so much'",
+        "link": "https://www.foxnews.com/outkick-sports/kai-trump-opens-relationship-tiger-woods-mothers-boyfriend-love-him-so-much",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Princess Diana danced with Clint Eastwood, Tom Selleck and Ronald Reagan that evening, but it took coaxing to get John Travolta onto the floor.",
+        "description": "Kai Trump revealed how Tiger Woods helps with her golf game, calling her mother Vanessa Trump's boyfriend \"the best\" in a Golfweek interview.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T19:00:35.000Z",
+        "publishedAt": "2026-11-14T22:50:07.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 23.4,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 76.6,
+          "label": "positive",
+          "confidence": 0.9
         },
         "category": "usa"
       },
       {
-        "title": "What’s Behind the Trump-Huang Relationship?",
-        "link": "https://www.nytimes.com/video/us/politics/100000011272223/whats-behind-the-trump-huang-relationship.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump takes parting shot at DC golf course conditions one day before major overhaul begins",
+        "link": "https://www.foxnews.com/outkick-sports/trump-takes-parting-shot-dc-golf-course-conditions-one-day-before-major-overhaul-begins",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump’s show of support for Jensen Huang as he was under fire was a remarkable moment in a relationship that barely existed two years ago. Our White House correspondent Maggie Haberman explains how Mr. Trump came to see Mr. Huang as a modern-day Henry Ford.",
+        "description": "Trump shared photos of what he calls \"Trash Island\" on Truth Social, blasting U.S. District Judge Ana Reyes for slowing the East Potomac overhaul.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T13:27:10.000Z",
+        "publishedAt": "2026-11-14T21:55:15.000Z",
         "sentiment": {
-          "posP": 11.7,
-          "negP": 4.5,
-          "neuP": 83.8,
+          "posP": 11.3,
+          "negP": 0,
+          "neuP": 88.7,
           "label": "positive",
-          "confidence": 0.6
+          "confidence": 0.57
         },
         "category": "usa"
       },
@@ -5290,22 +5280,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump, Xi and Putin plan an unprecedented  meeting on the sidelines of APEC, officials say",
-        "link": "https://www.nbcnews.com/world/china/trump-xi-putin-plan-unprecedented-joint-meeting-sidelines-apec-officia-rcna609275",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "U.S. facilitating direct engagement between Europe and Russia",
+        "link": "https://www.cbsnews.com/news/us-europe-russia-engagement-ukraine-war/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump will meet with the leaders of China and Russia on the sidelines of the Asia-Pacific Economic Cooperation summit in Shenzen, China’s tech hub, next week, an unprecedented gathering of the heads of the world’s biggest nuclear powers.",
+        "description": "President Trump's senior envoy and son-in-law, Jared Kushner, said they are also preparing for the next round of trilateral talks.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T00:08:58.000Z",
+        "publishedAt": "2026-11-14T22:07:08.000Z",
         "sentiment": {
-          "posP": 0,
+          "posP": 10,
           "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "neuP": 90,
+          "label": "positive",
+          "confidence": 0.46
         },
         "category": "usa"
       },
@@ -5346,46 +5336,6 @@
           "neuP": 88.8,
           "label": "negative",
           "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "WATCH:  President Trump pays tribute to veterans",
-        "link": "https://abcnews.com/video/138051810/",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump spoke at a Veterans Day ceremony at Arlington National Cemetery honoring fallen soldiers and addressed the war with Iran.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-11T18:04:03.000Z",
-        "sentiment": {
-          "posP": 9.5,
-          "negP": 18.4,
-          "neuP": 72.1,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iran live updates: Bessent blasts Iranian threats",
-        "link": "https://abcnews.com/International/live-updates/iran-live-updates-americans-tired-forever-wars-araghchi/?id=137967256",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump announced \"major combat operations\" against Iran on Feb. 28.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-13T18:04:55.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 23.4,
-          "neuP": 76.6,
-          "label": "negative",
-          "confidence": 0.64
         },
         "category": "usa"
       },
@@ -5470,52 +5420,85 @@
         "category": "usa"
       },
       {
-        "title": "Judge in golf course case says inquiry into DOJ lawyers will proceed",
-        "link": "https://www.washingtonpost.com/politics/2026/11/14/judge-golf-course-case-says-inquiry-into-doj-lawyers-will-proceed/",
+        "title": "WATCH:  President Trump pays tribute to veterans",
+        "link": "https://abcnews.com/video/138051810/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump spoke at a Veterans Day ceremony at Arlington National Cemetery honoring fallen soldiers and addressed the war with Iran.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-11T18:04:03.000Z",
+        "sentiment": {
+          "posP": 9.5,
+          "negP": 18.4,
+          "neuP": 72.1,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Iran live updates: Bessent blasts Iranian threats",
+        "link": "https://abcnews.com/International/live-updates/iran-live-updates-americans-tired-forever-wars-araghchi/?id=137967256",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump announced \"major combat operations\" against Iran on Feb. 28.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-13T18:04:55.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 23.4,
+          "neuP": 76.6,
+          "label": "negative",
+          "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Majority of Americans disapprove of Trump’s construction projects, poll finds",
+        "link": "https://www.washingtonpost.com/politics/2026/11/14/majority-americans-disapprove-trumps-construction-projects-poll-finds/",
         "source": "Washington Post",
         "sourceDomain": "washingtonpost.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Trump administration’s attorneys have objected to a special master reviewing their conduct in the case.",
+        "description": "The president’s efforts to remake Washington also face significant Republican opposition.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T15:30:00.000Z",
+        "publishedAt": "2026-11-14T20:30:00.000Z",
         "sentiment": {
-          "posP": 9.4,
+          "posP": 8.3,
           "negP": 0,
-          "neuP": 90.6,
+          "neuP": 91.7,
           "label": "positive",
-          "confidence": 0.4
+          "confidence": 0.2
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.02,
-      "neu": 86.92,
-      "neg": 8.06,
+      "pos": 6.35,
+      "neu": 85.3,
+      "neg": 8.35,
       "count": 32
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 5.63,
-        "neu": 88.53,
-        "neg": 5.83,
+        "pos": 6.71,
+        "neu": 85.94,
+        "neg": 7.34,
         "count": 9
       },
       {
         "source": "NYT",
-        "pos": 7.04,
-        "neu": 84.8,
-        "neg": 8.16,
-        "count": 5
-      },
-      {
-        "source": "NBC News",
-        "pos": 3.95,
-        "neu": 88.95,
-        "neg": 7.1,
+        "pos": 5.88,
+        "neu": 85.05,
+        "neg": 9.07,
         "count": 4
       },
       {
@@ -5534,9 +5517,23 @@
       },
       {
         "source": "Fox News",
-        "pos": 4.5,
-        "neu": 95.5,
+        "pos": 14.57,
+        "neu": 85.43,
         "neg": 0,
+        "count": 3
+      },
+      {
+        "source": "NBC News",
+        "pos": 5.27,
+        "neu": 85.27,
+        "neg": 9.47,
+        "count": 3
+      },
+      {
+        "source": "CBS News",
+        "pos": 7,
+        "neu": 86,
+        "neg": 7,
         "count": 2
       },
       {
@@ -5557,15 +5554,15 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.08,
-        "neu": 87.06,
-        "neg": 7.86,
-        "count": 14
+        "pos": 5.76,
+        "neu": 84.31,
+        "neg": 9.93,
+        "count": 12
       },
       {
         "topic": "Foreign Policy",
-        "pos": 2.31,
-        "neu": 87.78,
+        "pos": 3.56,
+        "neu": 86.53,
         "neg": 9.91,
         "count": 8
       },
@@ -5582,6 +5579,20 @@
         "neu": 84.07,
         "neg": 7.23,
         "count": 3
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 23.4,
+        "neu": 76.6,
+        "neg": 0,
+        "count": 1
+      },
+      {
+        "topic": "Legal",
+        "pos": 11.3,
+        "neu": 88.7,
+        "neg": 0,
+        "count": 1
       }
     ]
   },
@@ -5608,28 +5619,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-14T15:51:40.634Z",
+        "label": "2026-11-14T19:26:26.450Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T16:51:40.634Z",
+        "label": "2026-11-14T20:26:26.450Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T17:51:40.634Z",
+        "label": "2026-11-14T21:26:26.450Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T18:51:40.634Z",
+        "label": "2026-11-14T22:26:26.450Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5638,28 +5649,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-14T15:51:40.634Z",
+        "label": "2026-11-14T19:26:26.451Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T16:51:40.634Z",
+        "label": "2026-11-14T20:26:26.451Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T17:51:40.634Z",
+        "label": "2026-11-14T21:26:26.451Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T18:51:40.634Z",
+        "label": "2026-11-14T22:26:26.451Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5739,7 +5750,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-14T19:51:40.635Z",
+    "generatedAt": "2026-11-14T23:26:26.451Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
