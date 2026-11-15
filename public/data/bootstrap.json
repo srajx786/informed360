@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-14T23:26:26.446Z",
+  "generatedAt": "2026-11-15T02:59:29.059Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 180,
-    "potusArticles": 32
+    "usaArticles": 183,
+    "potusArticles": 37
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-14T19:26:26.447Z",
+          "label": "2026-11-14T22:59:29.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T20:26:26.447Z",
+          "label": "2026-11-14T23:59:29.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T21:26:26.447Z",
+          "label": "2026-11-15T00:59:29.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T22:26:26.447Z",
+          "label": "2026-11-15T01:59:29.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-14T19:26:26.447Z",
+          "label": "2026-11-14T22:59:29.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T20:26:26.447Z",
+          "label": "2026-11-14T23:59:29.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T21:26:26.447Z",
+          "label": "2026-11-15T00:59:29.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-14T22:26:26.447Z",
+          "label": "2026-11-15T01:59:29.059Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.97,
-      "neu": 83.11,
-      "neg": 8.93,
-      "count": 180
+      "pos": 7.95,
+      "neu": 82.79,
+      "neg": 9.27,
+      "count": 183
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 11.95,
-        "neu": 81.45,
-        "neg": 6.6,
+        "pos": 11.51,
+        "neu": 82.13,
+        "neg": 6.36,
         "count": 39
       },
       {
         "source": "Fox News",
-        "pos": 10.96,
-        "neu": 81.56,
-        "neg": 7.48,
+        "pos": 11.34,
+        "neu": 78.18,
+        "neg": 10.48,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.14,
-        "neu": 86.45,
-        "neg": 9.41,
+        "pos": 3.55,
+        "neu": 84.7,
+        "neg": 11.75,
         "count": 26
       },
       {
@@ -4590,10 +4590,17 @@
         "count": 20
       },
       {
+        "source": "NYT",
+        "pos": 6.3,
+        "neu": 82.06,
+        "neg": 11.64,
+        "count": 20
+      },
+      {
         "source": "ABC News",
-        "pos": 8.75,
-        "neu": 83.98,
-        "neg": 7.27,
+        "pos": 9.7,
+        "neu": 84.96,
+        "neg": 5.35,
         "count": 20
       },
       {
@@ -4602,13 +4609,6 @@
         "neu": 89.03,
         "neg": 6.81,
         "count": 20
-      },
-      {
-        "source": "NYT",
-        "pos": 5.99,
-        "neu": 80.19,
-        "neg": 13.82,
-        "count": 17
       },
       {
         "source": "NPR",
@@ -4641,13 +4641,8 @@
         },
         {
           "name": "Communication",
-          "bias": -13.6,
-          "count": 3
-        },
-        {
-          "name": "Healthcare",
-          "bias": 2.54,
-          "count": 7
+          "bias": -13.05,
+          "count": 2
         },
         {
           "name": "Manufacturing",
@@ -4661,8 +4656,8 @@
         },
         {
           "name": "Finance",
-          "bias": -1.68,
-          "count": 16
+          "bias": -1.58,
+          "count": 17
         },
         {
           "name": "Utilities",
@@ -4671,13 +4666,18 @@
         },
         {
           "name": "Technology",
-          "bias": -0.79,
-          "count": 133
+          "bias": -0.98,
+          "count": 136
         },
         {
           "name": "Real Estate",
           "bias": 0.77,
           "count": 4
+        },
+        {
+          "name": "Healthcare",
+          "bias": 0.01,
+          "count": 8
         }
       ],
       "pos": [
@@ -4685,11 +4685,6 @@
           "name": "Information Tech",
           "bias": 22.3,
           "count": 1
-        },
-        {
-          "name": "Healthcare",
-          "bias": 2.54,
-          "count": 7
         },
         {
           "name": "Manufacturing",
@@ -4705,8 +4700,8 @@
         },
         {
           "name": "Finance",
-          "bias": -1.68,
-          "count": 16
+          "bias": -1.58,
+          "count": 17
         },
         {
           "name": "Utilities",
@@ -4717,40 +4712,40 @@
       "neg": [
         {
           "name": "Communication",
-          "bias": -13.6,
-          "count": 3
+          "bias": -13.05,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-14T19:26:26.448Z",
-          "pos": 11,
-          "neu": 79,
-          "neg": 10,
-          "count": 9
-        },
-        {
-          "label": "2026-11-14T20:26:26.448Z",
-          "pos": 9,
-          "neu": 87,
-          "neg": 5,
-          "count": 17
-        },
-        {
-          "label": "2026-11-14T21:26:26.448Z",
-          "pos": 7,
-          "neu": 86,
-          "neg": 6,
+          "label": "2026-11-14T22:59:29.060Z",
+          "pos": 3,
+          "neu": 83,
+          "neg": 14,
           "count": 10
         },
         {
-          "label": "2026-11-14T22:26:26.448Z",
-          "pos": 7,
+          "label": "2026-11-14T23:59:29.060Z",
+          "pos": 8,
+          "neu": 78,
+          "neg": 14,
+          "count": 8
+        },
+        {
+          "label": "2026-11-15T00:59:29.060Z",
+          "pos": 12,
+          "neu": 81,
+          "neg": 7,
+          "count": 5
+        },
+        {
+          "label": "2026-11-15T01:59:29.060Z",
+          "pos": 4,
           "neu": 84,
-          "neg": 9,
-          "count": 13
+          "neg": 12,
+          "count": 7
         }
       ]
     }
@@ -5240,6 +5235,26 @@
         "category": "usa"
       },
       {
+        "title": "Trump Kept Out of Sight as F.A.A. Issued Flight Ground Stop",
+        "link": "https://www.nytimes.com/2026/11/14/us/politics/trump-flights-air-traffic-social-media.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The F.A.A. called a rare halt on flights nationwide, but the president stayed away from cameras and issued social media posts on the entertainment industry and California’s Democratic governor.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T22:10:42.000Z",
+        "sentiment": {
+          "posP": 8.7,
+          "negP": 3.8,
+          "neuP": 87.5,
+          "label": "positive",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
         "title": "Top Democrat Eyes Filibuster-Proof Budget Bill to Unlock Affordability Agenda",
         "link": "https://www.nytimes.com/2026/11/14/us/politics/house-democrats-affordability-costs-budget.html",
         "source": "NYT",
@@ -5260,22 +5275,82 @@
         "category": "usa"
       },
       {
-        "title": "How the University of North Carolina Tried to Avoid Trump’s Wrath",
-        "link": "https://www.nytimes.com/2026/11/13/us/university-north-carolina-science-research-cuts-trump.html",
+        "title": "Judge Blocks Immediate Closure of East Potomac Park for Trump Golf Project",
+        "link": "https://www.nytimes.com/2026/11/14/us/politics/trump-east-potomac-golf-course.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The University of North Carolina’s chancellor tried to protect the school from the Trump administration. Work on cancer, suicide, AIDS and coronaviruses was hit anyway.",
+        "description": "Judge Ana C. Reyes, who has been overseeing combative litigation, said the Trump administration would not be responsible for operating the course while the case proceeded.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T14:12:35.000Z",
+        "publishedAt": "2026-11-15T02:42:57.000Z",
         "sentiment": {
-          "posP": 5.7,
-          "negP": 24.3,
-          "neuP": 70,
+          "posP": 0,
+          "negP": 13.9,
+          "neuP": 86.1,
           "label": "negative",
-          "confidence": 0.86
+          "confidence": 0.57
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Talarico Wants to Transcend the Pettiness of Modern Politics. Can He?",
+        "link": "https://www.nytimes.com/2026/11/14/opinion/talarico-midterms-trump-washington.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "It’s an open question how much unity, healing and love is possible in Trump’s Washington.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T20:35:29.000Z",
+        "sentiment": {
+          "posP": 14.4,
+          "negP": 0,
+          "neuP": 85.6,
+          "label": "positive",
+          "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Jensen Huang’s Fall Is a Dark Consequence of What’s Happening in Silicon Valley",
+        "link": "https://www.nytimes.com/2026/11/14/opinion/jensen-huang-donald-trump-silicon-valley.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Silicon Valley’s authoritarianism has left itself particularly vulnerable to Donald Trump’s corruptive tendencies.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T12:00:16.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 8.4,
+          "neuP": 91.6,
+          "label": "negative",
+          "confidence": 0.29
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Federal judge blocks Trump from closing historic D.C. golf course, for now",
+        "link": "https://www.cbsnews.com/news/judge-blocks-east-potomac-park-dc-closing/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "U.S. District Judge Ana Reyes ruled that the Trump administration cannot close East Potomac Park in Washington, D.C., for now.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-15T02:57:07.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 5.8,
+          "neuP": 94.2,
+          "label": "negative",
+          "confidence": 0.23
         },
         "category": "usa"
       },
@@ -5296,6 +5371,26 @@
           "neuP": 90,
           "label": "positive",
           "confidence": 0.46
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Judge temporarily blocks Trump’s plan to redevelop East Potomac golf course in D.C.",
+        "link": "https://www.nbcnews.com/politics/trump-administration/judge-temporarily-blocks-trumps-plan-redevelop-east-potomac-golf-cours-rcna609366",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration cannot close East Potomac Park to the public for now, a federal judge in Washington ruled Saturday, dealing a blow to the president’s effort to renovate its golf course.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-15T02:46:52.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 4.3,
+          "neuP": 95.7,
+          "label": "negative",
+          "confidence": 0.23
         },
         "category": "usa"
       },
@@ -5340,86 +5435,6 @@
         "category": "usa"
       },
       {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
-        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-24T22:56:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
         "title": "WATCH:  President Trump pays tribute to veterans",
         "link": "https://abcnews.com/video/138051810/",
         "source": "ABC News",
@@ -5458,33 +5473,13 @@
           "confidence": 0.64
         },
         "category": "usa"
-      },
-      {
-        "title": "Majority of Americans disapprove of Trump’s construction projects, poll finds",
-        "link": "https://www.washingtonpost.com/politics/2026/11/14/majority-americans-disapprove-trumps-construction-projects-poll-finds/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president’s efforts to remake Washington also face significant Republican opposition.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-14T20:30:00.000Z",
-        "sentiment": {
-          "posP": 8.3,
-          "negP": 0,
-          "neuP": 91.7,
-          "label": "positive",
-          "confidence": 0.2
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.35,
-      "neu": 85.3,
-      "neg": 8.35,
-      "count": 32
+      "pos": 5.96,
+      "neu": 86.5,
+      "neg": 7.54,
+      "count": 37
     },
     "sourceLeaderboard": [
       {
@@ -5496,9 +5491,16 @@
       },
       {
         "source": "NYT",
-        "pos": 5.88,
-        "neu": 85.05,
-        "neg": 9.07,
+        "pos": 5.84,
+        "neu": 88.71,
+        "neg": 5.44,
+        "count": 7
+      },
+      {
+        "source": "NBC News",
+        "pos": 3.95,
+        "neu": 87.88,
+        "neg": 8.18,
         "count": 4
       },
       {
@@ -5523,18 +5525,11 @@
         "count": 3
       },
       {
-        "source": "NBC News",
-        "pos": 5.27,
-        "neu": 85.27,
-        "neg": 9.47,
-        "count": 3
-      },
-      {
         "source": "CBS News",
-        "pos": 7,
-        "neu": 86,
-        "neg": 7,
-        "count": 2
+        "pos": 4.67,
+        "neu": 88.73,
+        "neg": 6.6,
+        "count": 3
       },
       {
         "source": "Bloomberg",
@@ -5554,10 +5549,17 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.76,
-        "neu": 84.31,
-        "neg": 9.93,
-        "count": 12
+        "pos": 6.15,
+        "neu": 85.09,
+        "neg": 8.76,
+        "count": 15
+      },
+      {
+        "topic": "Policy",
+        "pos": 4.34,
+        "neu": 90.48,
+        "neg": 5.18,
+        "count": 9
       },
       {
         "topic": "Foreign Policy",
@@ -5565,13 +5567,6 @@
         "neu": 86.53,
         "neg": 9.91,
         "count": 8
-      },
-      {
-        "topic": "Policy",
-        "pos": 6.4,
-        "neu": 86.9,
-        "neg": 6.7,
-        "count": 7
       },
       {
         "topic": "Economy",
@@ -5619,28 +5614,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-14T19:26:26.450Z",
+        "label": "2026-11-14T22:59:29.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T20:26:26.450Z",
+        "label": "2026-11-14T23:59:29.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T21:26:26.450Z",
+        "label": "2026-11-15T00:59:29.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T22:26:26.450Z",
+        "label": "2026-11-15T01:59:29.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5649,28 +5644,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-14T19:26:26.451Z",
+        "label": "2026-11-14T22:59:29.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T20:26:26.451Z",
+        "label": "2026-11-14T23:59:29.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T21:26:26.451Z",
+        "label": "2026-11-15T00:59:29.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-14T22:26:26.451Z",
+        "label": "2026-11-15T01:59:29.062Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5750,7 +5745,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-14T23:26:26.451Z",
+    "generatedAt": "2026-11-15T02:59:29.063Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5871,8 +5866,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 180,
-      "potusArticles": 32,
+      "usaArticles": 183,
+      "potusArticles": 37,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
