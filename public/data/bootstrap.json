@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-15T17:26:27.858Z",
+  "generatedAt": "2026-11-15T22:01:07.667Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 186,
-    "potusArticles": 33
+    "usaArticles": 185,
+    "potusArticles": 34
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-15T13:26:27.859Z",
+          "label": "2026-11-15T18:01:07.667Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-15T14:26:27.859Z",
+          "label": "2026-11-15T19:01:07.667Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-15T15:26:27.859Z",
+          "label": "2026-11-15T20:01:07.667Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-15T16:26:27.859Z",
+          "label": "2026-11-15T21:01:07.667Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-15T13:26:27.859Z",
+          "label": "2026-11-15T18:01:07.667Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-15T14:26:27.859Z",
+          "label": "2026-11-15T19:01:07.667Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-15T15:26:27.859Z",
+          "label": "2026-11-15T20:01:07.667Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-15T16:26:27.859Z",
+          "label": "2026-11-15T21:01:07.667Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 6.81,
-      "neu": 83.87,
-      "neg": 9.32,
-      "count": 186
+      "pos": 7.26,
+      "neu": 83.77,
+      "neg": 8.97,
+      "count": 185
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.31,
-        "neu": 83.36,
-        "neg": 6.33,
-        "count": 40
+        "pos": 10.93,
+        "neu": 82.9,
+        "neg": 6.17,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 6.65,
-        "neu": 79.37,
-        "neg": 13.98,
+        "pos": 8.9,
+        "neu": 79.95,
+        "neg": 11.15,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 2.5,
-        "neu": 89.56,
-        "neg": 7.94,
-        "count": 24
-      },
-      {
-        "source": "NYT",
-        "pos": 4.31,
-        "neu": 85.19,
-        "neg": 10.5,
-        "count": 24
+        "pos": 3.07,
+        "neu": 86.98,
+        "neg": 9.95,
+        "count": 26
       },
       {
         "source": "WSJ",
@@ -4597,17 +4590,24 @@
         "count": 20
       },
       {
+        "source": "NYT",
+        "pos": 4.22,
+        "neu": 87.39,
+        "neg": 8.39,
+        "count": 20
+      },
+      {
         "source": "ABC News",
-        "pos": 9.36,
-        "neu": 85.73,
-        "neg": 4.91,
+        "pos": 7.2,
+        "neu": 86.34,
+        "neg": 6.47,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 5.75,
-        "neu": 85.13,
-        "neg": 9.13,
+        "pos": 6.94,
+        "neu": 84.7,
+        "neg": 8.37,
         "count": 20
       },
       {
@@ -4636,12 +4636,12 @@
       "rows": [
         {
           "name": "Communication",
-          "bias": -13.06,
+          "bias": -11.26,
           "count": 5
         },
         {
           "name": "Utilities",
-          "bias": -10.35,
+          "bias": -8.5,
           "count": 2
         },
         {
@@ -4651,23 +4651,23 @@
         },
         {
           "name": "Healthcare",
-          "bias": -5.03,
-          "count": 8
+          "bias": -5.5,
+          "count": 7
         },
         {
           "name": "Energy",
-          "bias": -3.99,
-          "count": 8
-        },
-        {
-          "name": "Technology",
-          "bias": -3.13,
-          "count": 139
+          "bias": -4.06,
+          "count": 7
         },
         {
           "name": "Manufacturing",
-          "bias": -2.5,
-          "count": 4
+          "bias": 2.77,
+          "count": 3
+        },
+        {
+          "name": "Technology",
+          "bias": -1.87,
+          "count": 135
         },
         {
           "name": "Finance",
@@ -4685,72 +4685,77 @@
           "name": "Real Estate",
           "bias": 7.1,
           "count": 2
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 2.77,
+          "count": 3
         }
       ],
       "neu": [
         {
           "name": "Energy",
-          "bias": -3.99,
-          "count": 8
+          "bias": -4.06,
+          "count": 7
         },
         {
           "name": "Technology",
-          "bias": -3.13,
-          "count": 139
+          "bias": -1.87,
+          "count": 135
         },
         {
-          "name": "Manufacturing",
-          "bias": -2.5,
-          "count": 4
+          "name": "Finance",
+          "bias": 0.46,
+          "count": 17
         }
       ],
       "neg": [
         {
           "name": "Communication",
-          "bias": -13.06,
+          "bias": -11.26,
           "count": 5
         },
         {
           "name": "Utilities",
-          "bias": -10.35,
+          "bias": -8.5,
           "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -5.03,
-          "count": 8
+          "bias": -5.5,
+          "count": 7
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-15T13:26:27.861Z",
-          "pos": 3,
-          "neu": 83,
-          "neg": 15,
-          "count": 7
+          "label": "2026-11-15T18:01:07.669Z",
+          "pos": 6,
+          "neu": 87,
+          "neg": 7,
+          "count": 12
         },
         {
-          "label": "2026-11-15T14:26:27.861Z",
-          "pos": 9,
+          "label": "2026-11-15T19:01:07.669Z",
+          "pos": 5,
+          "neu": 84,
+          "neg": 12,
+          "count": 9
+        },
+        {
+          "label": "2026-11-15T20:01:07.669Z",
+          "pos": 6,
           "neu": 86,
-          "neg": 6,
+          "neg": 9,
           "count": 20
         },
         {
-          "label": "2026-11-15T15:26:27.861Z",
-          "pos": 3,
-          "neu": 84,
-          "neg": 14,
-          "count": 21
-        },
-        {
-          "label": "2026-11-15T16:26:27.861Z",
-          "pos": 3,
-          "neu": 88,
-          "neg": 9,
-          "count": 16
+          "label": "2026-11-15T21:01:07.669Z",
+          "pos": 7,
+          "neu": 83,
+          "neg": 10,
+          "count": 11
         }
       ]
     }
@@ -4958,42 +4963,42 @@
         "category": "world"
       },
       {
-        "title": "Buttigieg takes swipe at Trump administration amid FAA flight chaos",
-        "link": "https://www.foxnews.com/politics/buttigieg-takes-swipe-trump-administration-amid-faa-flight-chaos",
+        "title": "DHS chief Mullin says Iran poses daily threat to Trump and his family amid drone concerns",
+        "link": "https://www.foxnews.com/media/dhs-chief-mullin-says-iran-poses-daily-threat-trump-his-family-amid-drone-concerns",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Former Transportation Secretary Pete Buttigieg joked he'd help travelers rebook flights at a hotel bar after the FAA's nationwide ground stop Friday.",
+        "description": "Markwayne Mullin says Trump and his family are Iran's top target, revealing daily threat briefings as drone security gaps raise urgent concerns.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-15T16:28:15.000Z",
+        "publishedAt": "2026-11-15T21:21:13.000Z",
         "sentiment": {
-          "posP": 13.2,
-          "negP": 15.6,
-          "neuP": 71.2,
+          "posP": 13.1,
+          "negP": 14.8,
+          "neuP": 72.1,
           "label": "negative",
-          "confidence": 0.23
+          "confidence": 0.42
         },
         "category": "usa"
       },
       {
-        "title": "5 Big Questions as C.E.O.s Meet in China",
-        "link": "https://www.nytimes.com/2026/11/14/business/dealbook/questions-china-us-apec-summit.html",
+        "title": "Nvidia Fallout Looms Over Trump-Xi Meeting",
+        "link": "https://www.nytimes.com/2026/11/15/us/politics/nvidia-trump-huang-china-xi.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump and U.S. tech executives are expected to gather for a major summit in Shenzhen next week. On the agenda: a stalled trade war, expanding export controls, and suspected spy games.",
+        "description": "So far, President Trump has indicated that he does not plan to press the Chinese leader about U.S. intelligence findings that a Chinese spy targeted Jensen Huang.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T13:00:06.000Z",
+        "publishedAt": "2026-11-15T21:44:40.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 18.3,
-          "neuP": 81.7,
-          "label": "negative",
-          "confidence": 0.77
+          "posP": 8.9,
+          "negP": 4.6,
+          "neuP": 86.5,
+          "label": "positive",
+          "confidence": 0.36
         },
         "category": "usa"
       }
@@ -5200,62 +5205,62 @@
         "category": "world"
       },
       {
-        "title": "Buttigieg takes swipe at Trump administration amid FAA flight chaos",
-        "link": "https://www.foxnews.com/politics/buttigieg-takes-swipe-trump-administration-amid-faa-flight-chaos",
+        "title": "DHS chief Mullin says Iran poses daily threat to Trump and his family amid drone concerns",
+        "link": "https://www.foxnews.com/media/dhs-chief-mullin-says-iran-poses-daily-threat-trump-his-family-amid-drone-concerns",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Former Transportation Secretary Pete Buttigieg joked he'd help travelers rebook flights at a hotel bar after the FAA's nationwide ground stop Friday.",
+        "description": "Markwayne Mullin says Trump and his family are Iran's top target, revealing daily threat briefings as drone security gaps raise urgent concerns.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-15T16:28:15.000Z",
+        "publishedAt": "2026-11-15T21:21:13.000Z",
         "sentiment": {
-          "posP": 13.2,
-          "negP": 15.6,
-          "neuP": 71.2,
+          "posP": 13.1,
+          "negP": 14.8,
+          "neuP": 72.1,
           "label": "negative",
-          "confidence": 0.23
+          "confidence": 0.42
         },
         "category": "usa"
       },
       {
-        "title": "5 Big Questions as C.E.O.s Meet in China",
-        "link": "https://www.nytimes.com/2026/11/14/business/dealbook/questions-china-us-apec-summit.html",
+        "title": "Nvidia Fallout Looms Over Trump-Xi Meeting",
+        "link": "https://www.nytimes.com/2026/11/15/us/politics/nvidia-trump-huang-china-xi.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump and U.S. tech executives are expected to gather for a major summit in Shenzhen next week. On the agenda: a stalled trade war, expanding export controls, and suspected spy games.",
+        "description": "So far, President Trump has indicated that he does not plan to press the Chinese leader about U.S. intelligence findings that a Chinese spy targeted Jensen Huang.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T13:00:06.000Z",
+        "publishedAt": "2026-11-15T21:44:40.000Z",
+        "sentiment": {
+          "posP": 8.9,
+          "negP": 4.6,
+          "neuP": 86.5,
+          "label": "positive",
+          "confidence": 0.36
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Sen. Bill Cassidy saying RFK Jr. is \"covering a series of failures\"",
+        "link": "https://www.cbsnews.com/video/sen-bill-cassidy-saying-rfk-jr-is-covering-a-series-of-failures/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Sen. Bill Cassidy, who is on the Senate health committee, told \"Face the Nation with Margaret Brennan\" that Robert F. Kennedy Jr. is \"covering for a series of failures\" after the health secretary said the Senate will not have leverage over him now that Democrats are taking over and Stephen Miller is the new White House chief of staff.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-15T19:40:52.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 18.3,
-          "neuP": 81.7,
+          "negP": 4.2,
+          "neuP": 95.8,
           "label": "negative",
-          "confidence": 0.77
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Embattled Federal Employees Look to a Democratic Congress for a Lifeline",
-        "link": "https://www.nytimes.com/2026/11/15/us/politics/federal-employees-democratic-congress-lifeline.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Former and current workers have found a sympathetic ear among Democrats set to take over the House and Senate. But any reversal of President Trump’s cuts is unlikely to happen immediately.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-15T17:09:23.000Z",
-        "sentiment": {
-          "posP": 7.8,
-          "negP": 5.2,
-          "neuP": 87,
-          "label": "positive",
-          "confidence": 0.27
+          "confidence": 0.46
         },
         "category": "usa"
       },
@@ -5320,26 +5325,6 @@
         "category": "usa"
       },
       {
-        "title": "Judge temporarily halts Trump’s ‘Trash Island’ golf course redevelopment in D.C.",
-        "link": "https://www.nbcnews.com/politics/trump-administration/judge-temporarily-blocks-trumps-plan-redevelop-east-potomac-golf-cours-rcna609366",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration cannot close East Potomac Park to the public for now, a federal judge in Washington ruled Saturday, dealing a blow to the president’s effort to renovate its golf course.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-15T02:46:52.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
         "title": "Bessent calls for ‘dramatic shakeup’ at Nvidia, urges outside CEO",
         "link": "https://www.cnbc.com/2026/11/15/bessent-nvidia-ceo-lutnick-megaspeed.html",
         "source": "CNBC",
@@ -5349,13 +5334,33 @@
         "description": "Bessent has criticized Howard Lutnick’s department over suspected chip diversion to China while defending President Donald Trump’s handling of the matter.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-15T16:49:11.000Z",
+        "publishedAt": "2026-11-15T18:10:18.000Z",
         "sentiment": {
           "posP": 3.3,
           "negP": 13.1,
           "neuP": 83.6,
           "label": "negative",
           "confidence": 0.51
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Eric Trump-backed robot soldier startup can't pay staff after founder borrowed $4.6 million from company to buy home",
+        "link": "https://www.cnbc.com/2026/11/14/foundation-payroll-ceo-loan.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Eric Trump-backed robot startup Foundation Future Industries has run low on cash and missed payroll, as CEO Sankaet Pathak faces scrutiny over a $4.6 million company loan.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T12:00:01.000Z",
+        "sentiment": {
+          "posP": 2.8,
+          "negP": 9.2,
+          "neuP": 88,
+          "label": "negative",
+          "confidence": 0.46
         },
         "category": "usa"
       },
@@ -5380,22 +5385,22 @@
         "category": "usa"
       },
       {
-        "title": "Eric Trump-backed robot soldier startup can't pay staff after founder borrowed $4.6 million from company to buy home",
-        "link": "https://www.cnbc.com/2026/11/14/foundation-payroll-ceo-loan.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
+        "title": "Judge temporarily halts Trump’s ‘Trash Island’ golf course redevelopment in D.C.",
+        "link": "https://www.nbcnews.com/politics/trump-administration/judge-temporarily-blocks-trumps-plan-redevelop-east-potomac-golf-cours-rcna609366",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Eric Trump-backed robot startup Foundation Future Industries has run low on cash and missed payroll, as CEO Sankaet Pathak faces scrutiny over a $4.6 million company loan.",
+        "description": "The Trump administration cannot close East Potomac Park to the public for now, a federal judge in Washington ruled Saturday, dealing a blow to the president’s effort to renovate the park’s golf course.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-14T12:00:01.000Z",
+        "publishedAt": "2026-11-15T02:46:52.000Z",
         "sentiment": {
-          "posP": 2.8,
-          "negP": 9.2,
-          "neuP": 88,
-          "label": "negative",
-          "confidence": 0.46
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
@@ -5481,10 +5486,10 @@
       }
     ],
     "sentiment": {
-      "pos": 4.87,
-      "neu": 86.16,
-      "neg": 8.98,
-      "count": 33
+      "pos": 4.75,
+      "neu": 86.99,
+      "neg": 8.26,
+      "count": 34
     },
     "sourceLeaderboard": [
       {
@@ -5502,18 +5507,11 @@
         "count": 5
       },
       {
-        "source": "NYT",
-        "pos": 5.2,
-        "neu": 85.92,
-        "neg": 8.88,
-        "count": 4
-      },
-      {
         "source": "CBS News",
-        "pos": 2.08,
-        "neu": 91.38,
-        "neg": 6.55,
-        "count": 4
+        "pos": 1.66,
+        "neu": 92.26,
+        "neg": 6.08,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5530,10 +5528,17 @@
         "count": 3
       },
       {
+        "source": "NYT",
+        "pos": 7.3,
+        "neu": 87.17,
+        "neg": 5.53,
+        "count": 3
+      },
+      {
         "source": "Fox News",
-        "pos": 11.1,
-        "neu": 81.1,
-        "neg": 7.8,
+        "pos": 11.05,
+        "neu": 81.55,
+        "neg": 7.4,
         "count": 2
       },
       {
@@ -5547,31 +5552,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.52,
-        "neu": 85.7,
-        "neg": 8.78,
+        "pos": 5.92,
+        "neu": 84.55,
+        "neg": 9.52,
         "count": 13
       },
       {
         "topic": "Policy",
-        "pos": 4.56,
-        "neu": 88.69,
-        "neg": 6.76,
+        "pos": 3.09,
+        "neu": 91.42,
+        "neg": 5.49,
         "count": 9
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.11,
-        "neu": 85.29,
-        "neg": 11.6,
-        "count": 7
+        "pos": 2.73,
+        "neu": 87.13,
+        "neg": 10.15,
+        "count": 8
       },
       {
         "topic": "Economy",
-        "pos": 6.53,
-        "neu": 83.47,
-        "neg": 10,
-        "count": 4
+        "pos": 8.7,
+        "neu": 84.07,
+        "neg": 7.23,
+        "count": 3
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 8.9,
+        "neu": 86.5,
+        "neg": 4.6,
+        "count": 1
       }
     ]
   },
@@ -5598,28 +5610,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-15T13:26:27.864Z",
+        "label": "2026-11-15T18:01:07.670Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-15T14:26:27.864Z",
+        "label": "2026-11-15T19:01:07.670Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-15T15:26:27.864Z",
+        "label": "2026-11-15T20:01:07.670Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-15T16:26:27.864Z",
+        "label": "2026-11-15T21:01:07.670Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5628,28 +5640,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-15T13:26:27.864Z",
+        "label": "2026-11-15T18:01:07.670Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-15T14:26:27.864Z",
+        "label": "2026-11-15T19:01:07.670Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-15T15:26:27.864Z",
+        "label": "2026-11-15T20:01:07.670Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-15T16:26:27.864Z",
+        "label": "2026-11-15T21:01:07.670Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5729,7 +5741,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-15T17:26:27.865Z",
+    "generatedAt": "2026-11-15T22:01:07.671Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5850,8 +5862,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 186,
-      "potusArticles": 33,
+      "usaArticles": 185,
+      "potusArticles": 34,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
