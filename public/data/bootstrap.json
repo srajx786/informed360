@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-16T01:49:35.983Z",
+  "generatedAt": "2026-11-16T08:38:08.618Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 183,
-    "potusArticles": 30
+    "usaArticles": 179,
+    "potusArticles": 35
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-15T21:49:35.983Z",
+          "label": "2026-11-16T04:38:08.618Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-15T22:49:35.983Z",
+          "label": "2026-11-16T05:38:08.618Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-15T23:49:35.983Z",
+          "label": "2026-11-16T06:38:08.618Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-16T00:49:35.983Z",
+          "label": "2026-11-16T07:38:08.618Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-15T21:49:35.983Z",
+          "label": "2026-11-16T04:38:08.618Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-15T22:49:35.983Z",
+          "label": "2026-11-16T05:38:08.618Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-15T23:49:35.983Z",
+          "label": "2026-11-16T06:38:08.618Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-16T00:49:35.983Z",
+          "label": "2026-11-16T07:38:08.618Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,32 @@
       }
     ],
     "sentiment": {
-      "pos": 7.83,
+      "pos": 8.14,
       "neu": 81.48,
-      "neg": 10.69,
-      "count": 183
+      "neg": 10.38,
+      "count": 179
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 11.36,
-        "neu": 81.39,
-        "neg": 7.25,
-        "count": 39
+        "pos": 11.99,
+        "neu": 79.81,
+        "neg": 8.2,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 10.25,
-        "neu": 72.14,
-        "neg": 17.61,
+        "pos": 9.82,
+        "neu": 72.33,
+        "neg": 17.85,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.15,
-        "neu": 82.1,
-        "neg": 13.75,
+        "pos": 3.39,
+        "neu": 84.75,
+        "neg": 11.85,
         "count": 26
-      },
-      {
-        "source": "NYT",
-        "pos": 5.42,
-        "neu": 85.99,
-        "neg": 8.59,
-        "count": 23
       },
       {
         "source": "WSJ",
@@ -4598,17 +4591,24 @@
       },
       {
         "source": "ABC News",
-        "pos": 7.2,
-        "neu": 86.34,
-        "neg": 6.47,
+        "pos": 9.29,
+        "neu": 86.03,
+        "neg": 4.68,
         "count": 20
       },
       {
+        "source": "NYT",
+        "pos": 6.25,
+        "neu": 86.05,
+        "neg": 7.71,
+        "count": 19
+      },
+      {
         "source": "Washington Post",
-        "pos": 7.69,
-        "neu": 84.22,
-        "neg": 8.08,
-        "count": 17
+        "pos": 7.16,
+        "neu": 85.1,
+        "neg": 7.74,
+        "count": 16
       },
       {
         "source": "NPR",
@@ -4635,73 +4635,78 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Information Tech",
+          "bias": 22.3,
+          "count": 1
+        },
+        {
           "name": "Utilities",
           "bias": -17,
           "count": 1
         },
         {
           "name": "Communication",
-          "bias": -11.28,
-          "count": 4
-        },
-        {
-          "name": "Real Estate",
-          "bias": 7.1,
+          "bias": -9.55,
           "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -6.61,
-          "count": 12
+          "bias": -5.84,
+          "count": 9
         },
         {
           "name": "Technology",
-          "bias": -3.25,
-          "count": 135
+          "bias": -2.69,
+          "count": 130
         },
         {
-          "name": "Manufacturing",
-          "bias": 2.08,
-          "count": 4
+          "name": "Real Estate",
+          "bias": 1.8,
+          "count": 3
         },
         {
           "name": "Energy",
-          "bias": 1.54,
-          "count": 10
+          "bias": 1.76,
+          "count": 9
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 1.5,
+          "count": 5
         },
         {
           "name": "Finance",
-          "bias": 0.62,
+          "bias": -0.31,
           "count": 18
+        },
+        {
+          "name": "Materials",
+          "bias": 0.17,
+          "count": 3
         }
       ],
       "pos": [
         {
-          "name": "Real Estate",
-          "bias": 7.1,
-          "count": 2
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 2.08,
-          "count": 4
+          "name": "Information Tech",
+          "bias": 22.3,
+          "count": 1
         }
       ],
       "neu": [
         {
           "name": "Technology",
-          "bias": -3.25,
-          "count": 135
+          "bias": -2.69,
+          "count": 130
+        },
+        {
+          "name": "Real Estate",
+          "bias": 1.8,
+          "count": 3
         },
         {
           "name": "Energy",
-          "bias": 1.54,
-          "count": 10
-        },
-        {
-          "name": "Finance",
-          "bias": 0.62,
-          "count": 18
+          "bias": 1.76,
+          "count": 9
         }
       ],
       "neg": [
@@ -4712,45 +4717,45 @@
         },
         {
           "name": "Communication",
-          "bias": -11.28,
-          "count": 4
+          "bias": -9.55,
+          "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -6.61,
-          "count": 12
+          "bias": -5.84,
+          "count": 9
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-15T21:49:35.985Z",
-          "pos": 6,
-          "neu": 81,
-          "neg": 13,
-          "count": 12
-        },
-        {
-          "label": "2026-11-15T22:49:35.985Z",
-          "pos": 9,
-          "neu": 79,
-          "neg": 12,
-          "count": 7
-        },
-        {
-          "label": "2026-11-15T23:49:35.985Z",
+          "label": "2026-11-16T04:38:08.620Z",
           "pos": 5,
-          "neu": 78,
-          "neg": 17,
-          "count": 19
+          "neu": 88,
+          "neg": 7,
+          "count": 4
         },
         {
-          "label": "2026-11-16T00:49:35.985Z",
-          "pos": 12,
-          "neu": 71,
-          "neg": 17,
-          "count": 11
+          "label": "2026-11-16T05:38:08.620Z",
+          "pos": 14,
+          "neu": 76,
+          "neg": 10,
+          "count": 3
+        },
+        {
+          "label": "2026-11-16T06:38:08.620Z",
+          "pos": 8,
+          "neu": 85,
+          "neg": 7,
+          "count": 1
+        },
+        {
+          "label": "2026-11-16T07:38:08.620Z",
+          "pos": 9,
+          "neu": 80,
+          "neg": 11,
+          "count": 7
         }
       ]
     }
@@ -4958,22 +4963,22 @@
         "category": "world"
       },
       {
-        "title": "White House calls DC policies 'insanity' after 19-year-old gunman gets probation in shooting",
-        "link": "https://www.foxnews.com/politics/white-house-calls-dc-policies-insanity-after-19-year-old-gunman-gets-probation-shooting",
+        "title": "Federal prosecutor warns Sen Warren of 'legal consequences' if records aren't preserved in Trump-linked probes",
+        "link": "https://www.foxnews.com/politics/federal-prosecutor-warns-sen-warren-legal-consequences-records-arent-preserved-trump-linked-probes",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A 19-year-old who prosecutors said fired more than 20 rounds into a D.C. neighborhood got probation, prompting the White House to slam the city's crime policies.",
+        "description": "U.S. Attorney Aaron Reitz warned Elizabeth Warren of legal consequences over her plans to investigate people close to President Donald Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-15T22:31:11.000Z",
+        "publishedAt": "2026-11-16T07:52:27.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 22.2,
-          "neuP": 77.8,
-          "label": "negative",
-          "confidence": 0.87
+          "posP": 7.8,
+          "negP": 9.1,
+          "neuP": 83.1,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       },
@@ -5200,22 +5205,22 @@
         "category": "world"
       },
       {
-        "title": "White House calls DC policies 'insanity' after 19-year-old gunman gets probation in shooting",
-        "link": "https://www.foxnews.com/politics/white-house-calls-dc-policies-insanity-after-19-year-old-gunman-gets-probation-shooting",
+        "title": "Federal prosecutor warns Sen Warren of 'legal consequences' if records aren't preserved in Trump-linked probes",
+        "link": "https://www.foxnews.com/politics/federal-prosecutor-warns-sen-warren-legal-consequences-records-arent-preserved-trump-linked-probes",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A 19-year-old who prosecutors said fired more than 20 rounds into a D.C. neighborhood got probation, prompting the White House to slam the city's crime policies.",
+        "description": "U.S. Attorney Aaron Reitz warned Elizabeth Warren of legal consequences over her plans to investigate people close to President Donald Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-15T22:31:11.000Z",
+        "publishedAt": "2026-11-16T07:52:27.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 22.2,
-          "neuP": 77.8,
-          "label": "negative",
-          "confidence": 0.87
+          "posP": 7.8,
+          "negP": 9.1,
+          "neuP": 83.1,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       },
@@ -5240,20 +5245,140 @@
         "category": "usa"
       },
       {
-        "title": "Sen. Bill Cassidy saying RFK Jr. is \"covering a series of failures\"",
-        "link": "https://www.cbsnews.com/video/sen-bill-cassidy-saying-rfk-jr-is-covering-a-series-of-failures/",
+        "title": "A Year On, Mark Carney of Canada Returns to China a Political Star",
+        "link": "https://www.nytimes.com/2026/11/16/world/canada/carney-china-xi-trump-putin-trade.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Canada’s leader is courting Europe, but the bigger payoff might be in Asia, where he will share summit stages with Xi Jinping, Vladimir Putin and President Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-16T08:31:01.000Z",
+        "sentiment": {
+          "posP": 7,
+          "negP": 0,
+          "neuP": 93,
+          "label": "positive",
+          "confidence": 0.42
+        },
+        "category": "usa"
+      },
+      {
+        "title": "International Students Are Turning Away From U.S. Universities",
+        "link": "https://www.nytimes.com/2026/11/16/us/international-student-college-enrollment-declines.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "For a second year, Trump administration policies appear to be scaring away international students, disrupting the finances of the American colleges that depend on them.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-16T05:01:06.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 8.6,
+          "neuP": 91.4,
+          "label": "negative",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "The New Congress Must Rein in Trump’s Dangerous China Policy",
+        "link": "https://www.nytimes.com/2026/11/16/opinion/china-us-trump-asia-military.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump’s accommodating approach toward China has emboldened Beijing, but the new Congress has a rare chance to change course.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-16T06:55:05.000Z",
+        "sentiment": {
+          "posP": 8.2,
+          "negP": 6.7,
+          "neuP": 85.1,
+          "label": "neutral",
+          "confidence": 0.12
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump officials ask for $50 billion for air traffic control after ground stop",
+        "link": "https://www.cbsnews.com/video/trump-officials-ask-50-billion-air-traffic-control-ground-stop/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Sen. Bill Cassidy, who is on the Senate health committee, told \"Face the Nation with Margaret Brennan\" that Robert F. Kennedy Jr. is \"covering for a series of failures\" after the health secretary said the Senate will not have leverage over him now that Democrats are taking over and Stephen Miller is the new White House chief of staff.",
+        "description": "President Trump broke his silence on the travel turmoil, triggered by Friday's nationwide ground stop. Taurean Small reports from the White House.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-15T19:40:52.000Z",
+        "publishedAt": "2026-11-16T01:48:00.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 4.2,
-          "neuP": 95.8,
+          "negP": 23.8,
+          "neuP": 76.2,
+          "label": "negative",
+          "confidence": 0.83
+        },
+        "category": "usa"
+      },
+      {
+        "title": "China confirms Xi-Trump-Putin historic summit. What will be on the agenda?",
+        "link": "https://www.cnbc.com/2026/11/16/trump-xi-putin-ukraine-nuclear-tariffs-russia-iran-.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The talks are expected to focus on issues including nuclear non-proliferation, the Middle East war, trade policies and, possibly, the Ukraine war.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-16T04:34:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 20.1,
+          "neuP": 79.9,
+          "label": "negative",
+          "confidence": 0.83
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump breaks silence about FAA nationwide ground stop, blames Biden administration",
+        "link": "https://www.cnbc.com/2026/11/15/trump-breaks-silence-on-faa-nationwide-ground-stop-blames-biden-.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump blamed the Biden administration for the FAA’s aging system after a nationwide ground stop disrupted air travel and urged Congress to approve more funding.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-15T16:56:40.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 24.8,
+          "neuP": 75.2,
+          "label": "negative",
+          "confidence": 0.85
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Eric Trump-backed robot soldier startup can't pay staff after founder borrowed $4.6 million from company to buy home",
+        "link": "https://www.cnbc.com/2026/11/14/foundation-payroll-ceo-loan.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Eric Trump-backed robot startup Foundation Future Industries has run low on cash and missed payroll, as CEO Sankaet Pathak faces scrutiny over a $4.6 million company loan.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-14T12:00:01.000Z",
+        "sentiment": {
+          "posP": 2.8,
+          "negP": 9.2,
+          "neuP": 88,
           "label": "negative",
           "confidence": 0.46
         },
@@ -5340,166 +5465,53 @@
         "category": "usa"
       },
       {
-        "title": "Trump plans to take Qatari jet to Asia, but it’s unclear whether it’s been ‘maxed out’",
-        "link": "https://www.nbcnews.com/politics/trump-administration/trump-plans-take-qatari-jet-asia-s-unclear-whether-s-maxed-rcna609487",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump is expected to take the Qatari-gifted Air Force One to Asia on Monday as questions linger about upgrades the White House said were needed after a security threat from Iran forced the president to fly home from Turkey on a secret military plane in July, according to two U.S. officials.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-15T23:12:20.000Z",
-        "sentiment": {
-          "posP": 4,
-          "negP": 14.4,
-          "neuP": 81.6,
-          "label": "negative",
-          "confidence": 0.84
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump to meet with Putin and Xi in China, US officials say",
-        "link": "https://abcnews.com/Politics/trump-meet-putin-xi-china-week-us-officials/story?id=138128914",
+        "title": "Iran live updates: Bahrain reports Iranian attack, IRGC says air base targeted",
+        "link": "https://abcnews.com/International/live-updates/iran-live-updates-americans-tired-forever-wars-araghchi/?id=137967256",
         "source": "ABC News",
         "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump will participate in the first-ever trilateral meeting between the leaders of the U.S., China, and Russia on the sidelines of the APEC Summit in China next week.",
+        "description": "President Donald Trump announced \"major combat operations\" against Iran on Feb. 28.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-15T09:30:14.000Z",
+        "publishedAt": "2026-11-15T22:24:23.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump blames Biden for FAA problems in first comments on nationwide ground stop",
-        "link": "https://www.washingtonpost.com/politics/2026/11/15/trump-blames-biden-faa-problems-first-comments-nationwide-ground-stop/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "For more than a day and a half, Trump had been publicly mum on the travel chaos.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-15T15:37:44.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 32,
-          "neuP": 68,
+          "negP": 20,
+          "neuP": 80,
           "label": "negative",
-          "confidence": 0.88
-        },
-        "category": "usa"
-      },
-      {
-        "title": "How immigration policy plays out after Democrats sweep elections",
-        "link": "https://www.washingtonpost.com/politics/2026/11/15/with-miller-charge-hope-fades-immigration-compromise-with-democrats/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump and his DHS secretary say they are open to working with Democrats on immigration policy. Stephen Miller as White House chief of staff might change that.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-15T11:00:00.000Z",
-        "sentiment": {
-          "posP": 5.4,
-          "negP": 0,
-          "neuP": 94.6,
-          "label": "positive",
-          "confidence": 0.25
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Majority of Americans disapprove of Trump’s construction projects, poll finds",
-        "link": "https://www.washingtonpost.com/politics/2026/11/14/majority-americans-disapprove-trumps-construction-projects-poll-finds/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president’s efforts to remake Washington also face significant Republican opposition.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-14T20:30:00.000Z",
-        "sentiment": {
-          "posP": 8.3,
-          "negP": 0,
-          "neuP": 91.7,
-          "label": "positive",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Judge in golf course case says inquiry into DOJ lawyers will proceed",
-        "link": "https://www.washingtonpost.com/politics/2026/11/14/judge-golf-course-case-says-inquiry-into-doj-lawyers-will-proceed/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration’s attorneys have objected to a special master reviewing their conduct in the case.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-14T15:30:00.000Z",
-        "sentiment": {
-          "posP": 9.4,
-          "negP": 0,
-          "neuP": 90.6,
-          "label": "positive",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Stephen Miller dresses like a reasonable man. But listen to what he says.",
-        "link": "https://www.washingtonpost.com/style/2026/11/14/stephen-millers-suits-make-radical-look-reassuringly-routine/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The new White House chief of staff understands how ordinary menswear can lend familiarity — and legitimacy — to an uncompromising worldview.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-14T11:00:00.000Z",
-        "sentiment": {
-          "posP": 7.5,
-          "negP": 0,
-          "neuP": 92.5,
-          "label": "positive",
-          "confidence": 0.36
+          "confidence": 0.67
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 4.94,
-      "neu": 85.38,
-      "neg": 9.68,
-      "count": 30
+      "pos": 5.1,
+      "neu": 85.11,
+      "neg": 9.79,
+      "count": 35
     },
     "sourceLeaderboard": [
       {
-        "source": "Washington Post",
-        "pos": 6.74,
-        "neu": 82.85,
-        "neg": 10.41,
-        "count": 8
+        "source": "NBC News",
+        "pos": 6.67,
+        "neu": 79.96,
+        "neg": 13.37,
+        "count": 7
       },
       {
-        "source": "NBC News",
-        "pos": 4.62,
-        "neu": 81.48,
-        "neg": 13.9,
-        "count": 5
+        "source": "Washington Post",
+        "pos": 5.39,
+        "neu": 84.66,
+        "neg": 9.96,
+        "count": 7
+      },
+      {
+        "source": "NYT",
+        "pos": 6.18,
+        "neu": 88.5,
+        "neg": 5.32,
+        "count": 6
       },
       {
         "source": "WSJ",
@@ -5516,24 +5528,17 @@
         "count": 3
       },
       {
-        "source": "NYT",
-        "pos": 7.3,
-        "neu": 87.17,
-        "neg": 5.53,
-        "count": 3
-      },
-      {
         "source": "Fox News",
-        "pos": 4.5,
-        "neu": 84.4,
-        "neg": 11.1,
+        "pos": 8.4,
+        "neu": 87.05,
+        "neg": 4.55,
         "count": 2
       },
       {
         "source": "CBS News",
         "pos": 2,
-        "neu": 88.9,
-        "neg": 9.1,
+        "neu": 79.1,
+        "neg": 18.9,
         "count": 2
       },
       {
@@ -5542,36 +5547,50 @@
         "neu": 88,
         "neg": 9,
         "count": 2
+      },
+      {
+        "source": "ABC News",
+        "pos": 0,
+        "neu": 90,
+        "neg": 10,
+        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
         "pos": 5.3,
-        "neu": 83.05,
-        "neg": 11.65,
+        "neu": 82.94,
+        "neg": 11.76,
         "count": 12
       },
       {
         "topic": "Policy",
-        "pos": 3.97,
-        "neu": 89.89,
-        "neg": 6.14,
-        "count": 7
+        "pos": 4.67,
+        "neu": 87.54,
+        "neg": 7.79,
+        "count": 10
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.11,
-        "neu": 85.29,
-        "neg": 11.6,
-        "count": 7
+        "pos": 3.08,
+        "neu": 85.57,
+        "neg": 11.35,
+        "count": 6
       },
       {
         "topic": "Economy",
-        "pos": 8.7,
-        "neu": 84.07,
-        "neg": 7.23,
-        "count": 3
+        "pos": 6.53,
+        "neu": 83.03,
+        "neg": 10.45,
+        "count": 4
+      },
+      {
+        "topic": "Legal",
+        "pos": 7.4,
+        "neu": 88.05,
+        "neg": 4.55,
+        "count": 2
       },
       {
         "topic": "Public Statements",
@@ -5605,28 +5624,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-15T21:49:35.986Z",
+        "label": "2026-11-16T04:38:08.623Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-15T22:49:35.986Z",
+        "label": "2026-11-16T05:38:08.623Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-15T23:49:35.986Z",
+        "label": "2026-11-16T06:38:08.623Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-16T00:49:35.986Z",
+        "label": "2026-11-16T07:38:08.623Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5654,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-15T21:49:35.986Z",
+        "label": "2026-11-16T04:38:08.623Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-15T22:49:35.986Z",
+        "label": "2026-11-16T05:38:08.623Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-15T23:49:35.986Z",
+        "label": "2026-11-16T06:38:08.623Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-16T00:49:35.986Z",
+        "label": "2026-11-16T07:38:08.623Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5755,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-16T01:49:35.987Z",
+    "generatedAt": "2026-11-16T08:38:08.624Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5857,8 +5876,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 183,
-      "potusArticles": 30,
+      "usaArticles": 179,
+      "potusArticles": 35,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
