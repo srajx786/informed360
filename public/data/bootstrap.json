@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-17T02:25:02.359Z",
+  "generatedAt": "2026-11-17T11:02:36.255Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 187,
-    "potusArticles": 40
+    "usaArticles": 188,
+    "potusArticles": 48
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-16T22:25:02.359Z",
+          "label": "2026-11-17T07:02:36.256Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-16T23:25:02.359Z",
+          "label": "2026-11-17T08:02:36.256Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-17T00:25:02.359Z",
+          "label": "2026-11-17T09:02:36.256Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-17T01:25:02.359Z",
+          "label": "2026-11-17T10:02:36.256Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-16T22:25:02.359Z",
+          "label": "2026-11-17T07:02:36.256Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-16T23:25:02.359Z",
+          "label": "2026-11-17T08:02:36.256Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-17T00:25:02.359Z",
+          "label": "2026-11-17T09:02:36.256Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-17T01:25:02.359Z",
+          "label": "2026-11-17T10:02:36.256Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.82,
-      "neu": 82.02,
-      "neg": 10.16,
-      "count": 187
+      "pos": 8.21,
+      "neu": 81.13,
+      "neg": 10.66,
+      "count": 188
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.4,
-        "neu": 83,
-        "neg": 8.6,
-        "count": 40
+        "pos": 10.67,
+        "neu": 80.17,
+        "neg": 9.16,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 9.4,
-        "neu": 78.88,
-        "neg": 11.72,
+        "pos": 7.52,
+        "neu": 78.65,
+        "neg": 13.83,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.06,
-        "neu": 83.91,
-        "neg": 10.03,
+        "pos": 5.16,
+        "neu": 83.83,
+        "neg": 11,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.65,
-        "neu": 82.18,
-        "neg": 11.17,
-        "count": 24
+        "pos": 10.35,
+        "neu": 77.6,
+        "neg": 12.05,
+        "count": 23
       },
       {
         "source": "WSJ",
@@ -4598,17 +4598,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.86,
-        "neu": 83.59,
-        "neg": 7.56,
+        "pos": 7.16,
+        "neu": 86.25,
+        "neg": 6.6,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 9.01,
-        "neu": 81.64,
-        "neg": 9.35,
-        "count": 19
+        "pos": 8.96,
+        "neu": 82.03,
+        "neg": 9.01,
+        "count": 20
       },
       {
         "source": "NPR",
@@ -4635,24 +4635,24 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -18.5,
-          "count": 2
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -13.93,
+          "name": "Communication",
+          "bias": -18.17,
           "count": 3
         },
         {
-          "name": "Communication",
-          "bias": -10.05,
-          "count": 4
+          "name": "Utilities",
+          "bias": -16.37,
+          "count": 3
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 7.9,
+          "count": 1
         },
         {
           "name": "Materials",
-          "bias": 6.3,
-          "count": 2
+          "bias": 6.66,
+          "count": 5
         },
         {
           "name": "Real Estate",
@@ -4660,31 +4660,36 @@
           "count": 1
         },
         {
-          "name": "Healthcare",
-          "bias": -4.85,
-          "count": 11
-        },
-        {
           "name": "Finance",
-          "bias": -4.37,
-          "count": 21
+          "bias": -3.97,
+          "count": 19
         },
         {
           "name": "Energy",
-          "bias": -2.54,
-          "count": 7
+          "bias": -3.54,
+          "count": 8
         },
         {
           "name": "Technology",
-          "bias": -2.46,
-          "count": 147
+          "bias": -2.66,
+          "count": 146
+        },
+        {
+          "name": "Healthcare",
+          "bias": -2.36,
+          "count": 8
         }
       ],
       "pos": [
         {
+          "name": "Manufacturing",
+          "bias": 7.9,
+          "count": 1
+        },
+        {
           "name": "Materials",
-          "bias": 6.3,
-          "count": 2
+          "bias": 6.66,
+          "count": 5
         },
         {
           "name": "Real Estate",
@@ -4694,68 +4699,68 @@
       ],
       "neu": [
         {
-          "name": "Healthcare",
-          "bias": -4.85,
-          "count": 11
-        },
-        {
-          "name": "Finance",
-          "bias": -4.37,
-          "count": 21
-        },
-        {
           "name": "Energy",
-          "bias": -2.54,
-          "count": 7
+          "bias": -3.54,
+          "count": 8
+        },
+        {
+          "name": "Technology",
+          "bias": -2.66,
+          "count": 146
+        },
+        {
+          "name": "Healthcare",
+          "bias": -2.36,
+          "count": 8
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -18.5,
-          "count": 2
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -13.93,
+          "name": "Communication",
+          "bias": -18.17,
           "count": 3
         },
         {
-          "name": "Communication",
-          "bias": -10.05,
-          "count": 4
+          "name": "Utilities",
+          "bias": -16.37,
+          "count": 3
+        },
+        {
+          "name": "Finance",
+          "bias": -3.97,
+          "count": 19
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-16T22:25:02.361Z",
-          "pos": 8,
-          "neu": 85,
-          "neg": 7,
-          "count": 21
+          "label": "2026-11-17T07:02:36.258Z",
+          "pos": 17,
+          "neu": 77,
+          "neg": 6,
+          "count": 3
         },
         {
-          "label": "2026-11-16T23:25:02.361Z",
-          "pos": 9,
-          "neu": 80,
-          "neg": 11,
-          "count": 13
-        },
-        {
-          "label": "2026-11-17T00:25:02.361Z",
-          "pos": 8,
-          "neu": 84,
-          "neg": 8,
-          "count": 26
-        },
-        {
-          "label": "2026-11-17T01:25:02.361Z",
-          "pos": 7,
+          "label": "2026-11-17T08:02:36.258Z",
+          "pos": 5,
           "neu": 78,
-          "neg": 15,
-          "count": 11
+          "neg": 16,
+          "count": 5
+        },
+        {
+          "label": "2026-11-17T09:02:36.258Z",
+          "pos": 6,
+          "neu": 81,
+          "neg": 13,
+          "count": 14
+        },
+        {
+          "label": "2026-11-17T10:02:36.258Z",
+          "pos": 7,
+          "neu": 84,
+          "neg": 9,
+          "count": 17
         }
       ]
     }
@@ -4963,42 +4968,42 @@
         "category": "world"
       },
       {
-        "title": "Hillary Clinton picks a foreign politician she believes is now the ‘leader of the free world’",
-        "link": "https://www.foxnews.com/media/hillary-clinton-picks-foreign-politician-believes-leader-free-world",
+        "title": "To beat China on AI, Washington must first earn Americans' trust",
+        "link": "https://www.foxnews.com/opinion/beat-china-ai-washington-must-first-earn-americans-trust",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Former Secretary of State Hillary Clinton argued Canadian Prime Minister Mark Carney may be the current \"leader of the free world\" instead of President Donald Trump.",
+        "description": "Trump has positioned America to lead the AI race against China, but earning public trust through commonsense AI guardrails is the key to winning.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T01:11:15.000Z",
+        "publishedAt": "2026-11-17T10:00:36.000Z",
         "sentiment": {
-          "posP": 14,
-          "negP": 5.3,
-          "neuP": 80.7,
+          "posP": 25.9,
+          "negP": 0,
+          "neuP": 74.1,
           "label": "positive",
-          "confidence": 0.62
+          "confidence": 0.9
         },
         "category": "usa"
       },
       {
-        "title": "Trump admin opens civil rights probes into 15 colleges over DEI grants",
-        "link": "https://www.foxnews.com/media/trump-admin-opens-civil-rights-probes-15-colleges-over-dei-grants",
+        "title": "I talked with Trump. Will his final years lead to an immigration deal?",
+        "link": "https://www.foxnews.com/opinion/i-talked-trump-his-final-years-lead-immigration-deal",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Education Department's Office for Civil Rights opened probes into CUNY's NYC Men Teach program over alleged race- and sex-based discrimination.",
+        "description": "Trump signals he's open to negotiating regularization for nonviolent immigrants, but warns Democrats that impeachment efforts could kill any deal.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T00:23:40.000Z",
+        "publishedAt": "2026-11-17T10:00:15.000Z",
         "sentiment": {
-          "posP": 5.6,
-          "negP": 0,
-          "neuP": 94.4,
-          "label": "positive",
-          "confidence": 0.23
+          "posP": 0,
+          "negP": 21.4,
+          "neuP": 78.6,
+          "label": "negative",
+          "confidence": 0.85
         },
         "category": "usa"
       }
@@ -5205,6 +5210,86 @@
         "category": "world"
       },
       {
+        "title": "To beat China on AI, Washington must first earn Americans' trust",
+        "link": "https://www.foxnews.com/opinion/beat-china-ai-washington-must-first-earn-americans-trust",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump has positioned America to lead the AI race against China, but earning public trust through commonsense AI guardrails is the key to winning.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-17T10:00:36.000Z",
+        "sentiment": {
+          "posP": 25.9,
+          "negP": 0,
+          "neuP": 74.1,
+          "label": "positive",
+          "confidence": 0.9
+        },
+        "category": "usa"
+      },
+      {
+        "title": "I talked with Trump. Will his final years lead to an immigration deal?",
+        "link": "https://www.foxnews.com/opinion/i-talked-trump-his-final-years-lead-immigration-deal",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump signals he's open to negotiating regularization for nonviolent immigrants, but warns Democrats that impeachment efforts could kill any deal.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-17T10:00:15.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 21.4,
+          "neuP": 78.6,
+          "label": "negative",
+          "confidence": 0.85
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump kicks off high-stakes Asia trip with Xi, Putin meetings looming on world stage",
+        "link": "https://www.foxnews.com/politics/trump-kicks-off-high-stakes-asia-swing-xi-putin-meetings-looming-world-stage",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump is set to sign a trade deal with Thailand at the ASEAN summit before heading to China for historic talks with Xi Jinping.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-17T10:00:12.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 3.8,
+          "neuP": 96.2,
+          "label": "neutral",
+          "confidence": 0.13
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump arrives in Philippines ahead of Xi Jinping summit in China after GOP midterm losses",
+        "link": "https://www.foxnews.com/politics/trump-philippines-arrival-xi-jinping-china-summit",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump arrives in the Philippines ahead of a historic summit with China's Xi Jinping, following bruising GOP losses in the US midterm elections.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-17T09:47:25.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 12.7,
+          "neuP": 87.3,
+          "label": "negative",
+          "confidence": 0.66
+        },
+        "category": "usa"
+      },
+      {
         "title": "Hillary Clinton picks a foreign politician she believes is now the ‘leader of the free world’",
         "link": "https://www.foxnews.com/media/hillary-clinton-picks-foreign-politician-believes-leader-free-world",
         "source": "Fox News",
@@ -5225,42 +5310,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump admin opens civil rights probes into 15 colleges over DEI grants",
-        "link": "https://www.foxnews.com/media/trump-admin-opens-civil-rights-probes-15-colleges-over-dei-grants",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "As Trump and Xi Mingle, Their Governments Are Arming Up",
+        "link": "https://www.nytimes.com/2026/11/17/business/trump-xi-meeting-tensions.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Education Department's Office for Civil Rights opened probes into CUNY's NYC Men Teach program over alleged race- and sex-based discrimination.",
+        "description": "Public displays of friendship contrast with mounting trade and investment restrictions, highlighting the widening rift between the two economies.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T00:23:40.000Z",
+        "publishedAt": "2026-11-17T10:03:49.000Z",
         "sentiment": {
-          "posP": 5.6,
+          "posP": 9.4,
           "negP": 0,
-          "neuP": 94.4,
+          "neuP": 90.6,
           "label": "positive",
-          "confidence": 0.23
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump’s Asia trip takes Alaska detour as weather forces refueling stop change",
-        "link": "https://www.foxnews.com/politics/trumps-asia-trip-takes-alaska-detour-weather-forces-refueling-stop-change",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Air Force One diverted its Alaska refueling stop from Anchorage to Fairbanks due to extreme weather as President Donald Trump's Asia trip heads to Manila.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-16T23:48:44.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 11.2,
-          "neuP": 88.8,
-          "label": "negative",
-          "confidence": 0.53
+          "confidence": 0.44
         },
         "category": "usa"
       },
@@ -5274,7 +5339,7 @@
         "description": "The airing of a fight over advanced A.I. chips shows how much the Nvidia scandal has deepened fissures inside the government, just as President Trump heads to a critical meeting with his Chinese counterpart.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T00:51:40.000Z",
+        "publishedAt": "2026-11-17T03:48:50.000Z",
         "sentiment": {
           "posP": 4.2,
           "negP": 16.3,
@@ -5285,76 +5350,116 @@
         "category": "usa"
       },
       {
-        "title": "Bessent Takes Hawkish Turn in White House Debate on China",
-        "link": "https://www.nytimes.com/2026/11/16/us/politics/bessent-lutnick-china.html",
+        "title": "As Trump Goes to China, A.I. Tensions Surge Amid Spying and Safety Fears",
+        "link": "https://www.nytimes.com/2026/11/17/us/politics/trump-china-ai-tensions.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Treasury secretary who sought to de-escalate tariff wars is taking a tougher approach to exports of sensitive U.S. technology.",
+        "description": "The espionage concerns that led to Jensen Huang’s ouster at Nvidia highlight a core challenge to diplomacy between Washington and Beijing on A.I. advancement.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-16T22:46:09.000Z",
+        "publishedAt": "2026-11-17T10:22:54.000Z",
         "sentiment": {
-          "posP": 10.6,
-          "negP": 10.9,
-          "neuP": 78.5,
-          "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Administration Aims to Clamp Down on A.I. Chip Loophole",
-        "link": "https://www.nytimes.com/2026/11/16/briefing/trump-china-ai-loophole.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Also, new data paves the way for weight-loss drugs for children. Here’s the latest at the end of Monday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-16T22:27:45.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "posP": 15.1,
+          "negP": 12.8,
+          "neuP": 72.1,
           "label": "neutral",
           "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "The Enraging Hypocrisy at the Heart of the Nvidia Scandal",
-        "link": "https://www.nytimes.com/2026/11/16/opinion/nvidia-trump-jensen-huang-lutnick.html",
+        "title": "Facing Criticism, Trump Administration Says It’s Investigating Megaspeed",
+        "link": "https://www.nytimes.com/2026/11/17/business/economy/megaspeed-investigation-trump-doj.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "It started with sex, but it’s really about Trump’s utterly careless attitude toward U.S. security.",
+        "description": "The announcement appeared to be a response to recent criticism that the Commerce Department has moved too slowly on the alleged chip smuggling case.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T02:10:54.000Z",
+        "publishedAt": "2026-11-17T07:02:17.000Z",
         "sentiment": {
-          "posP": 9.6,
-          "negP": 25,
-          "neuP": 65.4,
+          "posP": 0,
+          "negP": 24.1,
+          "neuP": 75.9,
           "label": "negative",
-          "confidence": 0.6
+          "confidence": 0.84
         },
         "category": "usa"
       },
       {
-        "title": "Trump heads to Asia for Putin, Xi summit; possible Kim meeting",
+        "title": "Trump’s Culture War, Amid Setbacks, Will Soon Face a Hostile Congress",
+        "link": "https://www.nytimes.com/2026/11/17/arts/design/trump-congress-smithsonian-kennedy-center.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The White House campaign to make major changes at the Smithsonian and the Kennedy Center has fallen short of its goals. Will it be further disrupted by a Democrat-led Congress?",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-17T10:02:56.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 20,
+          "neuP": 80,
+          "label": "negative",
+          "confidence": 0.84
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump’s Ego Trip With Xi and Putin Will End Badly",
+        "link": "https://www.nytimes.com/2026/11/17/opinion/trump-xi-putin-summit.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Nothing good can come from sucking up to authoritarians.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-17T06:00:12.000Z",
+        "sentiment": {
+          "posP": 12.6,
+          "negP": 13.5,
+          "neuP": 73.9,
+          "label": "neutral",
+          "confidence": 0.05
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Ukraine and Russia trade major strikes as Trump set to meet Putin",
+        "link": "https://www.cbsnews.com/news/ukraine-war-russia-crimea-kerch-bridge-kyiv/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ukraine has struck the Kerch Bridge, which connects Russian-occupied Crimea and Russia, twice, taking it out of service, as Moscow attacks bridges in Kyiv.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-17T10:50:16.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 18.3,
+          "neuP": 81.7,
+          "label": "negative",
+          "confidence": 0.75
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump in Asia for Putin, Xi summit; possible Kim meeting",
         "link": "https://www.cbsnews.com/news/trump-asia-trip-trilateral-summit-putin-xi/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump set off on a multi-day swing in Asia, where he's scheduled to meet with Russian President Vladimir Putin and China's President Xi Jinping for a highly anticipated summit.",
+        "description": "The president arrived in Manila for the start of a multi-day swing in Asia, where he's scheduled to meet with Russia's Vladimir Putin and China's Xi Jinping in a highly anticipated summit. He says he may also meet with North Korea's Kim Jong Un.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T01:00:21.000Z",
+        "publishedAt": "2026-11-17T09:51:00.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5365,166 +5470,73 @@
         "category": "usa"
       },
       {
-        "title": "Trump traveling to China amid Nvidia scandal fallout",
-        "link": "https://www.cbsnews.com/video/trump-traveling-china-amid-nvidia-scandal-fallout/",
+        "title": "Experts and reporters break down FAA meltdown, explaining what's responsible",
+        "link": "https://www.cbsnews.com/video/experts-reporters-break-down-faa-meltdown-responsible/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump was on his way to Asia for a historic three-way meeting with the leaders of Russia and China. The meeting comes amid the fallout from the Nvidia scandal, but the president tried to downplay the impact. Weijia Jiang has more.",
+        "description": "Before the Federal Aviation Administration air travel meltdown on Friday, transportation officials had received years of warnings, records show. CBS News examines what Transportation Secretary Sean Duffy says is the likely origin of the outage and how the Trump administration is responding.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T00:43:18.000Z",
+        "publishedAt": "2026-11-17T04:37:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 7.7,
-          "neuP": 92.3,
-          "label": "negative",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he ‘would not mind’ if Jensen Huang returned to lead Nvidia",
-        "link": "https://www.nbcnews.com/now/video/trump-says-he-would-not-mind-if-jensen-huang-returned-to-lead-nvidia-273579077862",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump said he “wouldn’t mind” if Jensen Huang were reinstated as CEO of Nvidia after he was ousted following allegations of multiple extramarital affairs, including one with a suspected Chinese spy. NBC News’ Garrett Haake details what tech leaders are saying about the scandal.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-16T15:08:46.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 8,
-          "neuP": 92,
-          "label": "negative",
-          "confidence": 0.59
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump’s accounts traded up to $97.5 million in Nvidia as Huang gained White House access",
-        "link": "https://www.cnbc.com/2026/11/16/trump-nvidia-stock-trades-jensen-huang.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump’s accounts sold up to $1 million in Nvidia stock five days after he was briefed on Jensen Huang’s relationship with a suspected Chinese spy.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-16T22:37:45.000Z",
-        "sentiment": {
-          "posP": 6.3,
-          "negP": 4.6,
-          "neuP": 89.1,
+          "posP": 4.2,
+          "negP": 4,
+          "neuP": 91.8,
           "label": "neutral",
-          "confidence": 0.18
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Eric Trump-backed robot soldier startup can't pay staff after founder borrowed $4.6 million from company to buy home",
-        "link": "https://www.cnbc.com/2026/11/14/foundation-payroll-ceo-loan.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Eric Trump-backed robot startup Foundation Future Industries has run low on cash and missed payroll, as CEO Sankaet Pathak faces scrutiny over a $4.6 million company loan.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-16T17:14:13.000Z",
-        "sentiment": {
-          "posP": 2.8,
-          "negP": 9.2,
-          "neuP": 88,
-          "label": "negative",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
+          "confidence": 0.03
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.71,
-      "neu": 84.9,
-      "neg": 9.4,
-      "count": 40
+      "pos": 6.15,
+      "neu": 82.94,
+      "neg": 10.91,
+      "count": 48
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 8.06,
-        "neu": 80.92,
-        "neg": 11.02,
-        "count": 9
+        "pos": 7.25,
+        "neu": 81.45,
+        "neg": 11.3,
+        "count": 10
       },
       {
         "source": "NYT",
-        "pos": 6.23,
-        "neu": 83.07,
-        "neg": 10.7,
+        "pos": 6.79,
+        "neu": 80.88,
+        "neg": 12.34,
+        "count": 8
+      },
+      {
+        "source": "Fox News",
+        "pos": 8.15,
+        "neu": 84.65,
+        "neg": 7.2,
         "count": 6
       },
       {
         "source": "ABC News",
-        "pos": 5.48,
-        "neu": 81.72,
-        "neg": 12.8,
+        "pos": 5.52,
+        "neu": 84.02,
+        "neg": 10.47,
+        "count": 6
+      },
+      {
+        "source": "CBS News",
+        "pos": 3.06,
+        "neu": 86.74,
+        "neg": 10.2,
         "count": 5
       },
       {
-        "source": "Fox News",
-        "pos": 7.15,
-        "neu": 88.73,
-        "neg": 4.13,
-        "count": 4
-      },
-      {
         "source": "NBC News",
-        "pos": 5.53,
-        "neu": 87.03,
-        "neg": 7.45,
+        "pos": 8.7,
+        "neu": 72.7,
+        "neg": 18.6,
         "count": 4
       },
       {
@@ -5542,13 +5554,6 @@
         "count": 3
       },
       {
-        "source": "CBS News",
-        "pos": 1.33,
-        "neu": 91.43,
-        "neg": 7.23,
-        "count": 3
-      },
-      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
@@ -5559,31 +5564,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 3.83,
-        "neu": 84.79,
-        "neg": 11.38,
+        "pos": 3.84,
+        "neu": 83.64,
+        "neg": 12.52,
         "count": 19
       },
       {
         "topic": "Policy",
-        "pos": 8.52,
-        "neu": 82.69,
-        "neg": 8.79,
-        "count": 9
+        "pos": 7.51,
+        "neu": 81,
+        "neg": 11.49,
+        "count": 11
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.96,
-        "neu": 86.93,
-        "neg": 7.11,
-        "count": 9
+        "pos": 8.4,
+        "neu": 84.51,
+        "neg": 7.09,
+        "count": 10
       },
       {
         "topic": "Economy",
-        "pos": 8.43,
-        "neu": 86.03,
-        "neg": 5.53,
-        "count": 3
+        "pos": 5.75,
+        "neu": 84.95,
+        "neg": 9.3,
+        "count": 6
+      },
+      {
+        "topic": "Legal",
+        "pos": 10.55,
+        "neu": 73.15,
+        "neg": 16.3,
+        "count": 2
       }
     ]
   },
@@ -5610,28 +5622,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-16T22:25:02.363Z",
+        "label": "2026-11-17T07:02:36.261Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-16T23:25:02.363Z",
+        "label": "2026-11-17T08:02:36.261Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-17T00:25:02.363Z",
+        "label": "2026-11-17T09:02:36.261Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-17T01:25:02.363Z",
+        "label": "2026-11-17T10:02:36.261Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5640,28 +5652,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-16T22:25:02.363Z",
+        "label": "2026-11-17T07:02:36.261Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-16T23:25:02.363Z",
+        "label": "2026-11-17T08:02:36.261Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-17T00:25:02.363Z",
+        "label": "2026-11-17T09:02:36.261Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-17T01:25:02.363Z",
+        "label": "2026-11-17T10:02:36.261Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5741,7 +5753,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-17T02:25:02.364Z",
+    "generatedAt": "2026-11-17T11:02:36.262Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5862,8 +5874,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 187,
-      "potusArticles": 40,
+      "usaArticles": 188,
+      "potusArticles": 48,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
