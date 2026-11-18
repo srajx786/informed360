@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-18T10:00:11.448Z",
+  "generatedAt": "2026-11-18T18:46:38.208Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 191,
-    "potusArticles": 47
+    "usaArticles": 190,
+    "potusArticles": 40
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-18T06:00:11.448Z",
+          "label": "2026-11-18T14:46:38.208Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-18T07:00:11.448Z",
+          "label": "2026-11-18T15:46:38.208Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-18T08:00:11.448Z",
+          "label": "2026-11-18T16:46:38.208Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-18T09:00:11.448Z",
+          "label": "2026-11-18T17:46:38.208Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-18T06:00:11.448Z",
+          "label": "2026-11-18T14:46:38.208Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-18T07:00:11.448Z",
+          "label": "2026-11-18T15:46:38.208Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-18T08:00:11.448Z",
+          "label": "2026-11-18T16:46:38.208Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-18T09:00:11.448Z",
+          "label": "2026-11-18T17:46:38.208Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.06,
-      "neu": 83.88,
-      "neg": 9.05,
-      "count": 191
+      "pos": 8.03,
+      "neu": 84.14,
+      "neg": 7.82,
+      "count": 190
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.78,
-        "neu": 82.97,
-        "neg": 9.24,
-        "count": 43
+        "pos": 8.69,
+        "neu": 86.45,
+        "neg": 4.85,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 8.88,
-        "neu": 82.03,
-        "neg": 9.09,
+        "pos": 9.38,
+        "neu": 79.08,
+        "neg": 11.53,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.22,
-        "neu": 84.86,
-        "neg": 9.92,
+        "pos": 6.45,
+        "neu": 86.13,
+        "neg": 7.42,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.23,
-        "neu": 84.43,
-        "neg": 9.34,
+        "pos": 10.96,
+        "neu": 80.85,
+        "neg": 8.19,
         "count": 24
       },
       {
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.1,
-        "neu": 87.85,
-        "neg": 6.05,
+        "pos": 5.58,
+        "neu": 88.88,
+        "neg": 5.54,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 8.04,
-        "neu": 87.04,
-        "neg": 4.92,
+        "pos": 7.98,
+        "neu": 87.59,
+        "neg": 4.43,
         "count": 20
       },
       {
@@ -4636,121 +4636,126 @@
       "rows": [
         {
           "name": "Communication",
-          "bias": -14,
+          "bias": -14.03,
+          "count": 4
+        },
+        {
+          "name": "Materials",
+          "bias": 12.6,
           "count": 1
         },
         {
           "name": "Manufacturing",
-          "bias": -11.4,
-          "count": 2
-        },
-        {
-          "name": "Materials",
-          "bias": 10,
-          "count": 2
-        },
-        {
-          "name": "Healthcare",
-          "bias": -7.77,
-          "count": 12
-        },
-        {
-          "name": "Utilities",
-          "bias": -5.45,
-          "count": 2
-        },
-        {
-          "name": "Energy",
-          "bias": -3.06,
-          "count": 8
-        },
-        {
-          "name": "Technology",
-          "bias": -2.45,
-          "count": 153
-        },
-        {
-          "name": "Finance",
-          "bias": -1.08,
-          "count": 21
+          "bias": 4,
+          "count": 7
         },
         {
           "name": "Real Estate",
-          "bias": -0.95,
+          "bias": -3.2,
           "count": 2
+        },
+        {
+          "name": "Utilities",
+          "bias": -2.44,
+          "count": 5
+        },
+        {
+          "name": "Healthcare",
+          "bias": -1.9,
+          "count": 10
+        },
+        {
+          "name": "Finance",
+          "bias": 0.76,
+          "count": 22
+        },
+        {
+          "name": "Technology",
+          "bias": 0.41,
+          "count": 137
+        },
+        {
+          "name": "Energy",
+          "bias": -0.03,
+          "count": 9
         }
       ],
       "pos": [
         {
           "name": "Materials",
-          "bias": 10,
-          "count": 2
+          "bias": 12.6,
+          "count": 1
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 4,
+          "count": 7
         }
       ],
       "neu": [
         {
-          "name": "Utilities",
-          "bias": -5.45,
-          "count": 2
+          "name": "Healthcare",
+          "bias": -1.9,
+          "count": 10
         },
         {
-          "name": "Energy",
-          "bias": -3.06,
-          "count": 8
+          "name": "Finance",
+          "bias": 0.76,
+          "count": 22
         },
         {
           "name": "Technology",
-          "bias": -2.45,
-          "count": 153
+          "bias": 0.41,
+          "count": 137
         }
       ],
       "neg": [
         {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -14.03,
+          "count": 4
         },
         {
-          "name": "Manufacturing",
-          "bias": -11.4,
+          "name": "Real Estate",
+          "bias": -3.2,
           "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": -7.77,
-          "count": 12
+          "name": "Utilities",
+          "bias": -2.44,
+          "count": 5
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-18T06:00:11.449Z",
+          "label": "2026-11-18T14:46:38.210Z",
           "pos": 6,
           "neu": 89,
           "neg": 5,
-          "count": 4
+          "count": 10
         },
         {
-          "label": "2026-11-18T07:00:11.449Z",
-          "pos": 5,
-          "neu": 79,
-          "neg": 16,
-          "count": 6
+          "label": "2026-11-18T15:46:38.210Z",
+          "pos": 7,
+          "neu": 87,
+          "neg": 6,
+          "count": 16
         },
         {
-          "label": "2026-11-18T08:00:11.449Z",
-          "pos": 6,
-          "neu": 86,
+          "label": "2026-11-18T16:46:38.210Z",
+          "pos": 7,
+          "neu": 87,
+          "neg": 6,
+          "count": 32
+        },
+        {
+          "label": "2026-11-18T17:46:38.210Z",
+          "pos": 9,
+          "neu": 82,
           "neg": 8,
-          "count": 6
-        },
-        {
-          "label": "2026-11-18T09:00:11.449Z",
-          "pos": 5,
-          "neu": 90,
-          "neg": 5,
-          "count": 12
+          "count": 33
         }
       ]
     }
@@ -4958,42 +4963,42 @@
         "category": "world"
       },
       {
-        "title": "Will a Spy Scandal, Trade Friction and a Surprise Guest Ruin Xi’s Big Moment?",
-        "link": "https://www.nytimes.com/2026/11/17/world/asia/xi-apec.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Ukraine strikes 'one of the largest oil refineries' in southern Russia ahead of Putin-Trump meeting in China",
+        "link": "https://www.foxnews.com/world/ukraine-strikes-one-largest-oil-refineries-southern-russia-ahead-putin-trump-meeting-china",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The leader wants the APEC summit to showcase China’s strengths, but he faces export worries and an unpredictable Trump, who has floated meeting Kim Jong-un.",
+        "description": "Ukraine's military says its strikes hit a key oil refinery in Russia's Krasnodar Krai region ahead of President Donald Trump's meeting with Vladimir Putin.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-18T02:11:27.000Z",
+        "publishedAt": "2026-11-18T18:32:36.000Z",
         "sentiment": {
-          "posP": 7.8,
-          "negP": 18.5,
-          "neuP": 73.7,
+          "posP": 0,
+          "negP": 11.6,
+          "neuP": 88.4,
           "label": "negative",
-          "confidence": 0.69
+          "confidence": 0.61
         },
         "category": "usa"
       },
       {
-        "title": "Trump and Marcos Share a Moment Over Jollibee Fried Chicken",
-        "link": "https://www.nytimes.com/2026/11/18/world/asia/trump-marcos-philippines-fried-chicken-jollibee.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Protesters heckle Trump's ex-Border Patrol chief offstage after Dem governor condemns College Republican event",
+        "link": "https://www.foxnews.com/politics/protesters-heckle-trumps-ex-border-patrol-chief-offstage-dem-governor-condemns-college-republican-event",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump’s host in Manila put in a late-night order from the Filipino fast-food chain Jollibee for the American leader.",
+        "description": "Protesters shouted \"Immigrants are welcome here\" as Gregory Bovino was escorted offstage at Rutgers College Republicans event Mikie Sherrill called \"wrong.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-18T08:34:12.000Z",
+        "publishedAt": "2026-11-18T18:26:49.000Z",
         "sentiment": {
-          "posP": 7.5,
-          "negP": 0,
-          "neuP": 92.5,
-          "label": "positive",
-          "confidence": 0.3
+          "posP": 7.3,
+          "negP": 17.3,
+          "neuP": 75.4,
+          "label": "negative",
+          "confidence": 0.48
         },
         "category": "usa"
       }
@@ -5200,320 +5205,320 @@
         "category": "world"
       },
       {
-        "title": "Will a Spy Scandal, Trade Friction and a Surprise Guest Ruin Xi’s Big Moment?",
-        "link": "https://www.nytimes.com/2026/11/17/world/asia/xi-apec.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Ukraine strikes 'one of the largest oil refineries' in southern Russia ahead of Putin-Trump meeting in China",
+        "link": "https://www.foxnews.com/world/ukraine-strikes-one-largest-oil-refineries-southern-russia-ahead-putin-trump-meeting-china",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The leader wants the APEC summit to showcase China’s strengths, but he faces export worries and an unpredictable Trump, who has floated meeting Kim Jong-un.",
+        "description": "Ukraine's military says its strikes hit a key oil refinery in Russia's Krasnodar Krai region ahead of President Donald Trump's meeting with Vladimir Putin.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-18T02:11:27.000Z",
+        "publishedAt": "2026-11-18T18:32:36.000Z",
         "sentiment": {
-          "posP": 7.8,
-          "negP": 18.5,
-          "neuP": 73.7,
+          "posP": 0,
+          "negP": 11.6,
+          "neuP": 88.4,
           "label": "negative",
-          "confidence": 0.69
+          "confidence": 0.61
         },
         "category": "usa"
       },
       {
-        "title": "Trump and Marcos Share a Moment Over Jollibee Fried Chicken",
-        "link": "https://www.nytimes.com/2026/11/18/world/asia/trump-marcos-philippines-fried-chicken-jollibee.html",
+        "title": "Protesters heckle Trump's ex-Border Patrol chief offstage after Dem governor condemns College Republican event",
+        "link": "https://www.foxnews.com/politics/protesters-heckle-trumps-ex-border-patrol-chief-offstage-dem-governor-condemns-college-republican-event",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Protesters shouted \"Immigrants are welcome here\" as Gregory Bovino was escorted offstage at Rutgers College Republicans event Mikie Sherrill called \"wrong.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T18:26:49.000Z",
+        "sentiment": {
+          "posP": 7.3,
+          "negP": 17.3,
+          "neuP": 75.4,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "SOUND OFF: Trump face to face with Putin in China",
+        "link": "https://www.foxnews.com/politics/sound-off-trump-face-face-putin-china",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump and Russian President Vladimir Putin are expected to meet in China this week. Give us your thoughts about its impact on Iran, Ukraine and more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T18:22:10.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Senate Republicans advance Trump's effort to abolish Dept of Education",
+        "link": "https://www.foxnews.com/media/senate-republicans-advance-trumps-effort-abolish-dept-education",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Senate Republicans, led by Jim Banks, push a 10-bill package to permanently transfer Department of Education programs, codifying Trump's dismantling order.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T18:16:31.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "House Democrats Cast Wide Net as They Prepare Trump Investigations",
+        "link": "https://www.nytimes.com/2026/11/18/us/politics/democrats-cast-investigative-net.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump’s host in Manila put in a late-night order from the Filipino fast-food chain Jollibee for the American leader.",
+        "description": "The inquiries would focus on President Trump, his family and top officials in his administration and would include a look at Commerce Secretary Howard Lutnick and policies related to Nvidia.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-18T08:34:12.000Z",
+        "publishedAt": "2026-11-18T14:17:26.000Z",
         "sentiment": {
-          "posP": 7.5,
+          "posP": 4.5,
           "negP": 0,
-          "neuP": 92.5,
+          "neuP": 95.5,
           "label": "positive",
-          "confidence": 0.3
+          "confidence": 0.2
         },
         "category": "usa"
       },
       {
-        "title": "Trump Briefly Met an Old Friend in Manila: Imelda Marcos",
-        "link": "https://www.nytimes.com/2026/11/18/world/asia/trump-imelda-marcos.html",
+        "title": "Trump Grows Frustrated With Vance Over Iran War Critique",
+        "link": "https://www.nytimes.com/2026/11/18/us/politics/vance-trump-iran-2028-election-rubio.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump and the former first lady of the Philippines know each other well, her son, the country’s leader, has said.",
+        "description": "The tension comes at a critical juncture for the vice president, who is considering whether to run for president in 2028.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-18T09:52:56.000Z",
-        "sentiment": {
-          "posP": 15.5,
-          "negP": 0,
-          "neuP": 84.5,
-          "label": "positive",
-          "confidence": 0.65
-        },
-        "category": "usa"
-      },
-      {
-        "title": "White House Withdraws Nomination of Heidi Overton to Be F.D.A. Commissioner",
-        "link": "https://www.nytimes.com/2026/11/17/us/overton-fda-nomination-withdrawn.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Senate health committee was scheduled to vote on her nomination Wednesday morning after wrestling with concerns about her stance on abortion and vaccines.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-18T03:26:28.000Z",
+        "publishedAt": "2026-11-18T17:15:08.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Administration Presses Ahead in Legal Battle Over U.S. Attorneys",
-        "link": "https://www.nytimes.com/2026/11/18/us/trump-administration-presses-ahead-in-legal-battle-over-us-attorneys.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A judge has ruled that Bill Essayli was acting “unlawfully” as U.S. attorney in Los Angeles. He is one of three prosecutors appointed by the Trump administration through a unique process.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-18T08:21:49.000Z",
-        "sentiment": {
-          "posP": 3.6,
-          "negP": 6.3,
-          "neuP": 90.1,
+          "negP": 32.2,
+          "neuP": 67.8,
           "label": "negative",
-          "confidence": 0.27
+          "confidence": 0.9
         },
         "category": "usa"
       },
       {
-        "title": "Iran Is Emboldened After Trump and GOP’s Election Losses, Officials Say",
-        "link": "https://www.nytimes.com/2026/11/17/us/politics/iran-trump-midterms.html",
+        "title": "Senator Bill Cassidy Blocks Trump Pick to Head Science Agency",
+        "link": "https://www.nytimes.com/2026/11/18/us/politics/bill-cassidy-jim-oneill-science.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Iran’s negotiating position has hardened since the midterms, U.S. and other Western officials say. An American lawmaker warned that Iran felt “strategically empowered.”",
+        "description": "A venture capitalist and Peter Thiel acolyte, Jim O’Neill faced bipartisan concern over whether he would stand up for science.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T23:11:02.000Z",
+        "publishedAt": "2026-11-18T17:47:25.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 13,
-          "neuP": 87,
+          "negP": 6.4,
+          "neuP": 93.6,
           "label": "negative",
-          "confidence": 0.59
+          "confidence": 0.23
         },
         "category": "usa"
       },
       {
-        "title": "Kevin Bleyer, Writer Behind Obama’s Speech Roasting Trump, Has Died at 54",
-        "link": "https://www.nytimes.com/2026/11/17/obituaries/kevin-bleyer-dead.html",
+        "title": "Trump Arrives in China Focused on Friendship, Not Spy Scandal",
+        "link": "https://www.nytimes.com/2026/11/18/us/politics/trump-xi-shenzhen-spy-scandal.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Emmy Award-winning writer worked with Jon Stewart, Bill Maher and Barack Obama, and may just have helped motivate Donald Trump to run for office.",
+        "description": "President Xi Jinping of China offered a hug and a red-carpet welcome as President Trump avoided discussing the espionage case that brought down Nvidia’s Jensen Huang.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-18T00:35:22.000Z",
+        "publishedAt": "2026-11-18T18:39:38.000Z",
         "sentiment": {
-          "posP": 6.3,
-          "negP": 8.7,
-          "neuP": 85,
-          "label": "negative",
-          "confidence": 0.25
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Michael Kosta Faults Trump for Shrugging Off Mass Tech Failures",
-        "link": "https://www.nytimes.com/2026/11/18/arts/television/late-night-michael-kosta-trump-technology.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "“Maybe for Trump it’s fine,” Kosta said on “The Daily Show.” “He doesn’t fly commercial, he doesn’t know how to use email, his bank is a guy from Qatar. For the rest of us though, it’s not fine.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-18T07:01:57.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 11.9,
-          "neuP": 88.1,
-          "label": "negative",
-          "confidence": 0.73
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump arrives in China ahead of summit with Putin and Xi",
-        "link": "https://www.cbsnews.com/news/trump-asia-trip-trilateral-summit-putin-xi/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is in China, where he may meet with Vladimir Putin before a trilateral summit with Putin and China's Xi Jinping, and a possible meeting with Kim Jong Un.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-18T09:53:57.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "White House drops its nomination for FDA commissioner",
-        "link": "https://www.cbsnews.com/news/white-house-drops-heidi-overton-fda-commissioner/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The White House has dropped the nomination of Dr. Heidi Overton, President Trump's pick for FDA commissioner, CBS News has confirmed.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-18T03:30:49.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump FDA nominee Heidi Overton struggling to win GOP support",
-        "link": "https://www.cbsnews.com/news/trump-fda-nominee-heidi-overton-confirmation-struggle/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Heidi Overton, Trump's pick to be FDA commissioner, is having trouble finding enough Republican support to advance her nomination, which could be pulled if she falls short.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-18T01:50:00.000Z",
-        "sentiment": {
-          "posP": 19.7,
+          "posP": 25.8,
           "negP": 11.8,
-          "neuP": 68.5,
+          "neuP": 62.4,
           "label": "positive",
-          "confidence": 0.57
+          "confidence": 0.74
         },
         "category": "usa"
       },
       {
-        "title": "Man convicted in Iran-backed plot to kill Trump is sentenced",
-        "link": "https://www.cbsnews.com/news/asif-merchant-sentencing-prison-iran-backed-plot-to-murder-trump/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Carney and Trump Hold Unscheduled Trade Meeting at Asia Summit",
+        "link": "https://www.nytimes.com/2026/11/18/world/canada/trump-carney-meeting-asia-us-canada-trade.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A man who was convicted of attempted terrorism and murder-for-hire plots, with potential targets including President Trump and former President Joe Biden, was sentenced to 27 1/2 years in federal prison.",
+        "description": "The bilateral meeting between the neighbors follows trade gains for Canada’s prime minister this week with China and the Philippines.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-18T01:01:39.000Z",
+        "publishedAt": "2026-11-18T17:23:46.000Z",
+        "sentiment": {
+          "posP": 7.6,
+          "negP": 0,
+          "neuP": 92.4,
+          "label": "positive",
+          "confidence": 0.34
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Shut out of meeting, Zelenskyy says what he would say to Trump, Xi and Putin",
+        "link": "https://www.nbcnews.com/video/zelenskyy-says-sanctions-from-u-s-and-china-would-force-russia-into-a-ceasefire-273747013513",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ahead of Trump's meeting with Presidents Putin and Xi, Zelenskyy speaks exclusively with NBC News' Richard Engel. Zelenskyy talks about what he would advocate for if he were present at the meeting and why he thinks sanctions against Russia are crucial to ending the war.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T17:45:31.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 29.7,
-          "neuP": 70.3,
+          "negP": 6.2,
+          "neuP": 93.8,
           "label": "negative",
-          "confidence": 0.93
+          "confidence": 0.6
         },
         "category": "usa"
       },
       {
-        "title": "Pakistani man sentenced to 27.5 years for Iran-backed plot to murder Trump",
-        "link": "https://www.cbsnews.com/video/pakistani-man-sentenced-to-275-years-in-prison-for-conspiring-with-iran-to-murder-trump/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump Lands in China Ahead of Historic Meeting with Xi and Putin",
+        "link": "https://www.today.com/video/trump-lands-in-china-ahead-of-historic-meeting-with-xi-and-putin-273718341601",
+        "source": "NBC News",
+        "sourceDomain": "today.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Pakistani man Asif Merchant was sentenced to 27.5 years in prison on Tuesday for his role in an Iran-backed plot to assassinate President Trump and other U.S. political figures. CBS News' Katrina Kaufman has the details.",
+        "description": "President Donald Trump touched down in China Wednesday ahead of a historic three-way meeting with the presidents of China and Russia on Thursday, which Trump says will focus on denuclearization and global security along with the conflicts in Ukraine and Iran. NBC’s Garrett Haake reports for TODAY.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-18T00:59:58.000Z",
+        "publishedAt": "2026-11-18T12:22:04.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 18.8,
-          "neuP": 81.2,
-          "label": "negative",
-          "confidence": 0.85
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
+          "posP": 3.9,
+          "negP": 4.3,
+          "neuP": 91.8,
           "label": "neutral",
-          "confidence": 0.14
+          "confidence": 0.05
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump to hold one-on-one with Putin on the sidelines of Asia summit",
+        "link": "https://www.nbcnews.com/politics/trump-administration/trump-putin-bilateral-meeting-asia-summit-ukraine-rcna609997",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump will hold a one-on-one meeting with Russian President Vladimir Putin on Thursday, a U.S. official confirmed, marking the leaders’ first in-person meeting in over a year.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T15:39:07.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "World waits as Trump, Xi and Putin prepare for high-stakes meeting",
+        "link": "https://www.nbcnews.com/world/asia/world-waits-trump-xi-putin-prepare-high-stakes-meeting-rcna609776",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "SHENZHEN, China — What these three men might decide has the potential to reverberate across the globe.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T17:22:41.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Xi greets Trump as he arrives in China, a rare move ahead of Putin talks",
+        "link": "https://www.nbcnews.com/world/asia/xi-jinping-greets-trump-arrives-china-tarmac-putin-talks-shenzhen-apec-rcna609962",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In a rare and surprising move, Chinese leader Xi Jinping personally greeted President Donald Trump as he arrived in China on Wednesday ahead of historic three-way talks with Russian President Vladimir Putin.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T10:29:18.000Z",
+        "sentiment": {
+          "posP": 12.1,
+          "negP": 0,
+          "neuP": 87.9,
+          "label": "positive",
+          "confidence": 0.59
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.12,
-      "neu": 87.16,
-      "neg": 7.72,
-      "count": 47
+      "pos": 5.94,
+      "neu": 87.8,
+      "neg": 6.26,
+      "count": 40
     },
     "sourceLeaderboard": [
       {
-        "source": "NYT",
-        "pos": 5.37,
-        "neu": 87.59,
-        "neg": 7.04,
-        "count": 10
-      },
-      {
-        "source": "Washington Post",
-        "pos": 6.58,
-        "neu": 87.72,
-        "neg": 5.7,
+        "source": "NBC News",
+        "pos": 6.64,
+        "neu": 90.3,
+        "neg": 3.06,
         "count": 9
       },
       {
-        "source": "NBC News",
-        "pos": 6.2,
-        "neu": 87.16,
-        "neg": 6.64,
+        "source": "NYT",
+        "pos": 7.27,
+        "neu": 83.81,
+        "neg": 8.91,
         "count": 7
       },
       {
-        "source": "CBS News",
-        "pos": 3.95,
-        "neu": 83.67,
-        "neg": 12.38,
+        "source": "Washington Post",
+        "pos": 10.15,
+        "neu": 86.08,
+        "neg": 3.77,
         "count": 6
+      },
+      {
+        "source": "Fox News",
+        "pos": 3.26,
+        "neu": 90.96,
+        "neg": 5.78,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5530,18 +5535,11 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 4.07,
-        "neu": 92.77,
-        "neg": 3.17,
-        "count": 3
-      },
-      {
-        "source": "ABC News",
-        "pos": 4,
-        "neu": 85.83,
-        "neg": 10.17,
-        "count": 3
+        "source": "CBS News",
+        "pos": 3.95,
+        "neu": 89.05,
+        "neg": 7,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5549,43 +5547,43 @@
         "neu": 88,
         "neg": 9,
         "count": 2
+      },
+      {
+        "source": "ABC News",
+        "pos": 2.7,
+        "neu": 89.95,
+        "neg": 7.35,
+        "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 4.63,
-        "neu": 86.88,
-        "neg": 8.5,
-        "count": 21
-      },
-      {
-        "topic": "Policy",
-        "pos": 4.37,
-        "neu": 88.25,
-        "neg": 7.38,
-        "count": 12
+        "pos": 7.1,
+        "neu": 84.32,
+        "neg": 8.58,
+        "count": 16
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.08,
-        "neu": 88.7,
-        "neg": 6.22,
-        "count": 8
+        "pos": 5.02,
+        "neu": 89.28,
+        "neg": 5.69,
+        "count": 13
+      },
+      {
+        "topic": "Policy",
+        "pos": 3.5,
+        "neu": 93.59,
+        "neg": 2.91,
+        "count": 7
       },
       {
         "topic": "Economy",
-        "pos": 8.12,
-        "neu": 83.46,
-        "neg": 8.42,
-        "count": 5
-      },
-      {
-        "topic": "Legal",
-        "pos": 9.7,
-        "neu": 86.2,
-        "neg": 4.1,
-        "count": 1
+        "pos": 8.53,
+        "neu": 86.72,
+        "neg": 4.75,
+        "count": 4
       }
     ]
   },
@@ -5612,28 +5610,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-18T06:00:11.451Z",
+        "label": "2026-11-18T14:46:38.212Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-18T07:00:11.451Z",
+        "label": "2026-11-18T15:46:38.212Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-18T08:00:11.451Z",
+        "label": "2026-11-18T16:46:38.212Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-18T09:00:11.451Z",
+        "label": "2026-11-18T17:46:38.212Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5642,28 +5640,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-18T06:00:11.451Z",
+        "label": "2026-11-18T14:46:38.212Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-18T07:00:11.451Z",
+        "label": "2026-11-18T15:46:38.212Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-18T08:00:11.451Z",
+        "label": "2026-11-18T16:46:38.212Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-18T09:00:11.451Z",
+        "label": "2026-11-18T17:46:38.212Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5743,7 +5741,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-18T10:00:11.452Z",
+    "generatedAt": "2026-11-18T18:46:38.213Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5864,8 +5862,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 191,
-      "potusArticles": 47,
+      "usaArticles": 190,
+      "potusArticles": 40,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
