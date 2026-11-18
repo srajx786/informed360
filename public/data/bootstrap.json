@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-17T19:44:29.096Z",
+  "generatedAt": "2026-11-18T01:52:52.692Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
     "usaArticles": 191,
-    "potusArticles": 51
+    "potusArticles": 48
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-17T15:44:29.096Z",
+          "label": "2026-11-17T21:52:52.692Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-17T16:44:29.096Z",
+          "label": "2026-11-17T22:52:52.692Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-17T17:44:29.096Z",
+          "label": "2026-11-17T23:52:52.692Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-17T18:44:29.096Z",
+          "label": "2026-11-18T00:52:52.692Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-17T15:44:29.096Z",
+          "label": "2026-11-17T21:52:52.692Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-17T16:44:29.096Z",
+          "label": "2026-11-17T22:52:52.692Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-17T17:44:29.096Z",
+          "label": "2026-11-17T23:52:52.692Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-17T18:44:29.096Z",
+          "label": "2026-11-18T00:52:52.692Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 6.65,
-      "neu": 83.51,
-      "neg": 9.84,
+      "pos": 6.22,
+      "neu": 83.84,
+      "neg": 9.94,
       "count": 191
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.53,
-        "neu": 84.53,
-        "neg": 8.94,
+        "pos": 6.21,
+        "neu": 84.63,
+        "neg": 9.16,
         "count": 43
       },
       {
         "source": "Fox News",
-        "pos": 6.86,
-        "neu": 82.08,
-        "neg": 11.07,
+        "pos": 7.98,
+        "neu": 77.35,
+        "neg": 14.67,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.14,
-        "neu": 83.31,
-        "neg": 11.55,
+        "pos": 3.55,
+        "neu": 85.55,
+        "neg": 10.9,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.7,
-        "neu": 83.86,
-        "neg": 9.44,
+        "pos": 6.25,
+        "neu": 85.27,
+        "neg": 8.48,
         "count": 24
       },
       {
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.57,
-        "neu": 85.77,
-        "neg": 7.66,
+        "pos": 5.22,
+        "neu": 88.23,
+        "neg": 6.54,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 8.5,
-        "neu": 84.84,
-        "neg": 6.65,
+        "pos": 7.58,
+        "neu": 86.87,
+        "neg": 5.55,
         "count": 20
       },
       {
@@ -4635,24 +4635,19 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Communication",
+          "bias": -16.6,
+          "count": 4
+        },
+        {
           "name": "Utilities",
-          "bias": -18.87,
+          "bias": -10.3,
           "count": 3
         },
         {
-          "name": "Communication",
-          "bias": -8.33,
-          "count": 6
-        },
-        {
-          "name": "Healthcare",
-          "bias": -7.93,
-          "count": 10
-        },
-        {
-          "name": "Energy",
-          "bias": -7.24,
-          "count": 5
+          "name": "Materials",
+          "bias": -8.65,
+          "count": 4
         },
         {
           "name": "Real Estate",
@@ -4660,91 +4655,96 @@
           "count": 3
         },
         {
+          "name": "Manufacturing",
+          "bias": -5.1,
+          "count": 2
+        },
+        {
+          "name": "Healthcare",
+          "bias": -4.69,
+          "count": 18
+        },
+        {
+          "name": "Energy",
+          "bias": -4.07,
+          "count": 11
+        },
+        {
           "name": "Technology",
-          "bias": -3.3,
-          "count": 148
+          "bias": -3.78,
+          "count": 152
         },
         {
           "name": "Finance",
-          "bias": -1.99,
-          "count": 24
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -1.2,
-          "count": 1
-        },
-        {
-          "name": "Materials",
-          "bias": -0.97,
-          "count": 3
+          "bias": -1.91,
+          "count": 22
         }
       ],
       "pos": [],
       "neu": [
         {
-          "name": "Energy",
-          "bias": -7.24,
-          "count": 5
-        },
-        {
           "name": "Real Estate",
           "bias": -6.1,
           "count": 3
         },
         {
-          "name": "Technology",
-          "bias": -3.3,
-          "count": 148
+          "name": "Manufacturing",
+          "bias": -5.1,
+          "count": 2
+        },
+        {
+          "name": "Healthcare",
+          "bias": -4.69,
+          "count": 18
         }
       ],
       "neg": [
         {
+          "name": "Communication",
+          "bias": -16.6,
+          "count": 4
+        },
+        {
           "name": "Utilities",
-          "bias": -18.87,
+          "bias": -10.3,
           "count": 3
         },
         {
-          "name": "Communication",
-          "bias": -8.33,
-          "count": 6
-        },
-        {
-          "name": "Healthcare",
-          "bias": -7.93,
-          "count": 10
+          "name": "Materials",
+          "bias": -8.65,
+          "count": 4
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-17T15:44:29.097Z",
-          "pos": 5,
-          "neu": 91,
-          "neg": 4,
-          "count": 12
+          "label": "2026-11-17T21:52:52.693Z",
+          "pos": 3,
+          "neu": 92,
+          "neg": 5,
+          "count": 10
         },
         {
-          "label": "2026-11-17T16:44:29.097Z",
-          "pos": 5,
-          "neu": 81,
+          "label": "2026-11-17T22:52:52.693Z",
+          "pos": 7,
+          "neu": 80,
           "neg": 14,
-          "count": 18
+          "count": 17
         },
         {
-          "label": "2026-11-17T17:44:29.097Z",
-          "pos": 7,
-          "neu": 85,
-          "neg": 8,
-          "count": 28
+          "label": "2026-11-17T23:52:52.693Z",
+          "pos": 5,
+          "neu": 84,
+          "neg": 10,
+          "count": 30
         },
         {
-          "label": "2026-11-17T18:44:29.097Z",
-          "pos": 7,
-          "neu": 83,
-          "neg": 11,
-          "count": 32
+          "label": "2026-11-18T00:52:52.693Z",
+          "pos": 5,
+          "neu": 86,
+          "neg": 9,
+          "count": 16
         }
       ]
     }
@@ -4952,42 +4952,42 @@
         "category": "world"
       },
       {
-        "title": "Warren grills Trump Navy secretary on cost of Iran war: 'You don't have any idea?'",
-        "link": "https://www.foxnews.com/politics/warren-grills-trump-navy-secretary-cost-iran-war-you-dont-have-any-idea",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "White House Withdraws Nomination of Heidi Overton to Be F.D.A. Commissioner",
+        "link": "https://www.nytimes.com/2026/11/17/us/overton-fda-nomination-withdrawn.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Elizabeth Warren pressed acting Navy Secretary Hung Cao on the Iran war blockade's cost as he dodged questions and urged funding to reach 355 ships.",
+        "description": "The Senate health committee was scheduled to vote on her nomination Wednesday morning, but it became increasingly clear that she did not have enough support.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T19:15:54.000Z",
+        "publishedAt": "2026-11-18T01:23:27.000Z",
         "sentiment": {
-          "posP": 2.4,
-          "negP": 17,
-          "neuP": 80.6,
-          "label": "negative",
-          "confidence": 0.83
+          "posP": 8.4,
+          "negP": 7.2,
+          "neuP": 84.4,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       },
       {
-        "title": "Obama-appointed judge paves way to unseal Ilhan Omar search warrant in blow to Trump's DOJ",
-        "link": "https://www.foxnews.com/politics/obama-appointed-judge-paves-way-to-unseal-ilhan-omar-search-warrant-as-doj-suffers-blow",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Hegseth Nominates His Former Aide to Lead the Army",
+        "link": "https://www.nytimes.com/2026/11/17/us/hegseth-christopher-laneve-army-chief-of-staff.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A federal judge in Washington, D.C., paved the way to unseal the criminal search warrant and related documents against Rep. Ilhan Omar.",
+        "description": "After months of delay, Defense Secretary Pete Hegseth and the White House have sent Gen. Christopher LaNeve’s nomination for Army chief of staff to the Senate.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T18:26:14.000Z",
+        "publishedAt": "2026-11-17T18:38:03.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 8.9,
-          "neuP": 91.1,
+          "posP": 4.1,
+          "negP": 6.3,
+          "neuP": 89.6,
           "label": "negative",
-          "confidence": 0.53
+          "confidence": 0.2
         },
         "category": "usa"
       }
@@ -5194,182 +5194,22 @@
         "category": "world"
       },
       {
-        "title": "Warren grills Trump Navy secretary on cost of Iran war: 'You don't have any idea?'",
-        "link": "https://www.foxnews.com/politics/warren-grills-trump-navy-secretary-cost-iran-war-you-dont-have-any-idea",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "White House Withdraws Nomination of Heidi Overton to Be F.D.A. Commissioner",
+        "link": "https://www.nytimes.com/2026/11/17/us/overton-fda-nomination-withdrawn.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Elizabeth Warren pressed acting Navy Secretary Hung Cao on the Iran war blockade's cost as he dodged questions and urged funding to reach 355 ships.",
+        "description": "The Senate health committee was scheduled to vote on her nomination Wednesday morning, but it became increasingly clear that she did not have enough support.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T19:15:54.000Z",
+        "publishedAt": "2026-11-18T01:23:27.000Z",
         "sentiment": {
-          "posP": 2.4,
-          "negP": 17,
-          "neuP": 80.6,
-          "label": "negative",
-          "confidence": 0.83
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Obama-appointed judge paves way to unseal Ilhan Omar search warrant in blow to Trump's DOJ",
-        "link": "https://www.foxnews.com/politics/obama-appointed-judge-paves-way-to-unseal-ilhan-omar-search-warrant-as-doj-suffers-blow",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A federal judge in Washington, D.C., paved the way to unseal the criminal search warrant and related documents against Rep. Ilhan Omar.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-17T18:26:14.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 8.9,
-          "neuP": 91.1,
-          "label": "negative",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Ex-hostage recounts captivity in Iran-backed militia stronghold now targeted by Iraqi prime minister",
-        "link": "https://www.foxnews.com/world/ex-hostage-recounts-captivity-iran-backed-militia-stronghold-now-targeted-iraqi-prime-minister",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Israeli-Russian researcher Elizabeth Tsurkov describes where Iran-backed Iraqi terrorists held her captive for months as Iraq's Trump-backed prime minister orders a crackdown on the militia.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-17T18:04:00.000Z",
-        "sentiment": {
-          "posP": 3.7,
-          "negP": 10.1,
-          "neuP": 86.2,
-          "label": "negative",
-          "confidence": 0.56
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Mamdani takes swipe at Trump administration's response to tech outages: 'Far from what many wanted to hear'",
-        "link": "https://www.foxnews.com/politics/mamdani-takes-swipe-trump-administrations-response-tech-outages-far-from-what-many-wanted-hear",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "New York City Mayor Zohran Mamdani on Tuesday blasted the federal government's response to multiple technical outages that impacted Americans.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-17T17:45:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "posP": 8.4,
+          "negP": 7.2,
+          "neuP": 84.4,
           "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "'West Wing' star declares America has 60,000 people in internment camps on 'The View'",
-        "link": "https://www.foxnews.com/media/west-wing-star-declares-america-60000-people-internment-camps-view",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Bradley Whitford claimed on ABC's \"The View\" that 60,000 people are held in \"internment camps,\" referencing ICE detention under the Trump administration.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-17T17:07:06.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 6.7,
-          "neuP": 93.3,
-          "label": "negative",
-          "confidence": 0.36
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Ukraine Talks Run Up Against Deep Enmity Between Russia and Europe",
-        "link": "https://www.nytimes.com/2026/11/17/us/politics/ukraine-russia-europe-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump’s envoys are trying to overcome Russian hostility and European suspicion to craft a postwar security agreement in Europe that could end the war in Ukraine.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-17T19:19:07.000Z",
-        "sentiment": {
-          "posP": 11.8,
-          "negP": 21,
-          "neuP": 67.2,
-          "label": "negative",
-          "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
-        "title": "President Trump Starts Asia Trip in Manila by Shrugging Off U.S. Concerns",
-        "link": "https://www.nytimes.com/2026/11/17/world/asia/17trump-summit-manila-asean-marcos.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Even for a president who prizes photo opportunities, Mr. Trump’s appearance in Manila suggested a lack of interest in diplomatic wins or issues at home. “It’s life,” he said.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-17T17:46:55.000Z",
-        "sentiment": {
-          "posP": 25.3,
-          "negP": 4.7,
-          "neuP": 70,
-          "label": "positive",
-          "confidence": 0.88
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump’s New A.I. Chip Rules Rattle Southeast Asia",
-        "link": "https://www.nytimes.com/2026/11/17/business/southeast-asia-china-ai-chips.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "New U.S. restrictions could jeopardize billions in investment and force countries in the region to strike an increasingly difficult balance between Washington and Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-17T16:42:30.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 11.8,
-          "neuP": 88.2,
-          "label": "negative",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "I.R.S. Opens Criminal Probes as Part of Trump’s Pursuit of Left-Wing Groups",
-        "link": "https://www.nytimes.com/2026/11/17/us/politics/irs-criminal-investigations.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "An internal I.R.S. memo viewed by The New York Times reveals how the agency is carrying out President Trump’s orders to investigate “domestic terrorism.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-17T18:38:33.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 8.9,
-          "neuP": 91.1,
-          "label": "negative",
-          "confidence": 0.53
+          "confidence": 0.13
         },
         "category": "usa"
       },
@@ -5394,133 +5234,286 @@
         "category": "usa"
       },
       {
-        "title": "Fed's Lisa Cook rebuffs White House hearing without changes",
-        "link": "https://www.cbsnews.com/news/lisa-cook-federal-reserve-white-house-hearing/",
+        "title": "Iran Is Emboldened After Trump and GOP’s Election Losses, Officials Say",
+        "link": "https://www.nytimes.com/2026/11/17/us/politics/iran-trump-midterms.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Iran’s negotiating position has hardened since the midterms, U.S. and other Western officials say. An American lawmaker warned that Iran felt “strategically empowered.”",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-17T23:11:02.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 13,
+          "neuP": 87,
+          "label": "negative",
+          "confidence": 0.59
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Will a Spy Scandal, Trade Friction and a Surprise Guest Ruin Xi’s Big Moment?",
+        "link": "https://www.nytimes.com/2026/11/17/world/asia/xi-apec.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The leader wants the APEC summit to showcase China’s strengths, but he faces export worries and an unpredictable Trump, who has floated meeting Kim Jong-un.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T00:12:06.000Z",
+        "sentiment": {
+          "posP": 7.8,
+          "negP": 18.5,
+          "neuP": 73.7,
+          "label": "negative",
+          "confidence": 0.69
+        },
+        "category": "usa"
+      },
+      {
+        "title": "White House drops Heidi Overton's nomination for FDA commissioner",
+        "link": "https://www.cbsnews.com/news/white-house-drops-heidi-overton-fda-commissioner/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A lawyer for Federal Reserve Governor Lisa Cook said she has \"no legal obligation\" to appear at a White House hearing about mortgage fraud allegations.",
+        "description": "The White House has dropped the nomination of Dr. Heidi Overton, President Trump's pick for FDA commissioner, CBS News has confirmed.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T19:30:08.000Z",
+        "publishedAt": "2026-11-18T01:14:00.000Z",
         "sentiment": {
-          "posP": 4.1,
-          "negP": 16.4,
-          "neuP": 79.5,
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Man convicted in Iran-backed plot to kill Trump is sentenced",
+        "link": "https://www.cbsnews.com/news/asif-merchant-sentencing-prison-iran-backed-plot-to-murder-trump/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A man who was convicted of attempted terrorism and murder-for-hire plots, with potential targets including President Trump and former President Joe Biden, was sentenced to 27 1/2 years in federal prison.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T01:01:39.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 29.7,
+          "neuP": 70.3,
+          "label": "negative",
+          "confidence": 0.93
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Pakistani man sentenced to 27.5 years for Iran-backed plot to murder Trump",
+        "link": "https://www.cbsnews.com/video/pakistani-man-sentenced-to-275-years-in-prison-for-conspiring-with-iran-to-murder-trump/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Pakistani man Asif Merchant was sentenced to 27.5 years in prison on Tuesday for his role in an Iran-backed plot to assassinate President Trump and other U.S. political figures. CBS News' Katrina Kaufman has the details.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T00:59:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 18.8,
+          "neuP": 81.2,
+          "label": "negative",
+          "confidence": 0.85
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says \"we're looking into\" report that Iran may use dirty bomb on D.C.",
+        "link": "https://www.cbsnews.com/video/trump-says-were-looking-report-iran-may-use-dirty-bomb-dc/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump responded to a CNN report about possible plans by Iran for a devastating attack in Washington, D.C. Weijia Jiang reports from the Philippines, the president's first stop on his historic Asia trip.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T00:23:31.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 27.7,
+          "neuP": 72.3,
+          "label": "negative",
+          "confidence": 0.94
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
+          "label": "neutral",
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
+        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-26T23:30:00.000Z",
+        "sentiment": {
+          "posP": 5.9,
+          "negP": 15.7,
+          "neuP": 78.4,
           "label": "negative",
           "confidence": 0.67
         },
         "category": "usa"
       },
       {
-        "title": "Ukraine and Russia trade strikes ahead of Trump's summit with Putin, Xi",
-        "link": "https://www.cbsnews.com/video/ukraine-and-russia-trade-strikes-ahead-of-trump-summit-with-putin-xi/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Ukraine targeted a bridge linking Russia to Crimea, a region Russia annexed in 2014. CBS News' Aidan Stretch has more.",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T17:59:00.000Z",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 7.9,
-          "neuP": 92.1,
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
           "label": "negative",
-          "confidence": 0.36
+          "confidence": 0.48
         },
         "category": "usa"
       },
       {
-        "title": "Groups raise concerns over DOJ's new Civil Rights Division chief",
-        "link": "https://www.cbsnews.com/news/craig-trainor-justice-department-civil-rights-division/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
+        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Eighteen civil rights organizations asked President Trump to withdraw his appointment of Craig Trainor as the new acting head of the Justice Department's Civil Rights Division.",
+        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T17:13:55.000Z",
+        "publishedAt": "2025-01-24T22:56:00.000Z",
         "sentiment": {
-          "posP": 8.9,
+          "posP": 0,
           "negP": 0,
-          "neuP": 91.1,
-          "label": "positive",
-          "confidence": 0.53
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Trump reacts to Iran's \"dirty bomb\" threat: \"We take it very seriously\"",
-        "link": "https://www.cbsnews.com/video/trump-says-us-taking-iranian-dirty-bomb-threat-very-seriously/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Trump's pick Heidi Overton dropped as nominee for FDA commissioner",
+        "link": "https://abcnews.com/Politics/trumps-pick-heidi-overton-dropped-nominee-fda-commissioner/story?id=138232475",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump says the U.S. is taking a potential Iranian threat against Washington, D.C., \"very seriously.\" This comes ahead of his planned summit with China's Xi Jinping and Russia's Vladimir Putin. CBS News' Aaron Navarro reports.",
+        "description": "Dr. Heidi Overton’s nomination to lead the Food and Drug Administration was dropped on Tuesday, a White House official confirmed to ABC News.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-17T16:56:00.000Z",
+        "publishedAt": "2026-11-18T01:07:22.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 23.1,
-          "neuP": 76.9,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "WATCH:  Trump blames Biden administration for FAA ground stop & other stories",
+        "link": "https://abcnews.com/video/138191402/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Nationwide FAA ground stop resulted from equipment failure, says administrator; Anthropic to price its IPO this week; NOAA reports strong El Niño expected to peak in the New Year",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-16T22:56:23.000Z",
+        "sentiment": {
+          "posP": 6.8,
+          "negP": 21.4,
+          "neuP": 71.8,
           "label": "negative",
-          "confidence": 0.92
+          "confidence": 0.73
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.15,
-      "neu": 85.33,
-      "neg": 9.52,
-      "count": 51
+      "pos": 4.83,
+      "neu": 85.84,
+      "neg": 9.33,
+      "count": 48
     },
     "sourceLeaderboard": [
       {
-        "source": "Washington Post",
-        "pos": 7.62,
-        "neu": 84.78,
-        "neg": 7.6,
-        "count": 11
+        "source": "NBC News",
+        "pos": 5.75,
+        "neu": 83.51,
+        "neg": 10.74,
+        "count": 10
       },
       {
-        "source": "NBC News",
-        "pos": 4.39,
-        "neu": 82.74,
-        "neg": 12.88,
-        "count": 8
+        "source": "Washington Post",
+        "pos": 7.6,
+        "neu": 86.42,
+        "neg": 5.98,
+        "count": 10
       },
       {
         "source": "NYT",
-        "pos": 7.74,
-        "neu": 83.01,
-        "neg": 9.24,
-        "count": 7
-      },
-      {
-        "source": "Fox News",
-        "pos": 2.52,
-        "neu": 90.37,
-        "neg": 7.12,
+        "pos": 5.55,
+        "neu": 84.95,
+        "neg": 9.5,
         "count": 6
       },
       {
         "source": "CBS News",
-        "pos": 2.83,
-        "neu": 86.93,
-        "neg": 10.23,
-        "count": 6
+        "pos": 0.8,
+        "neu": 81.16,
+        "neg": 18.04,
+        "count": 5
       },
       {
-        "source": "ABC News",
-        "pos": 5.3,
-        "neu": 82.33,
-        "neg": 12.38,
+        "source": "Fox News",
+        "pos": 3.05,
+        "neu": 91.38,
+        "neg": 5.58,
         "count": 4
       },
       {
@@ -5528,6 +5521,13 @@
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
+        "count": 4
+      },
+      {
+        "source": "ABC News",
+        "pos": 3.13,
+        "neu": 89.25,
+        "neg": 7.63,
         "count": 4
       },
       {
@@ -5548,44 +5548,37 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.25,
-        "neu": 84.7,
-        "neg": 10.05,
-        "count": 21
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 5.23,
-        "neu": 84.11,
-        "neg": 10.66,
-        "count": 11
+        "pos": 4.32,
+        "neu": 85.26,
+        "neg": 10.42,
+        "count": 24
       },
       {
         "topic": "Policy",
-        "pos": 5.35,
-        "neu": 88.28,
-        "neg": 6.37,
+        "pos": 3.58,
+        "neu": 89.82,
+        "neg": 6.6,
         "count": 10
       },
       {
+        "topic": "Foreign Policy",
+        "pos": 6,
+        "neu": 84.99,
+        "neg": 9.01,
+        "count": 7
+      },
+      {
         "topic": "Economy",
-        "pos": 5.06,
-        "neu": 85.56,
-        "neg": 9.38,
-        "count": 5
+        "pos": 6.77,
+        "neu": 82.48,
+        "neg": 10.75,
+        "count": 6
       },
       {
         "topic": "Legal",
-        "pos": 4.6,
-        "neu": 85.6,
-        "neg": 9.8,
-        "count": 3
-      },
-      {
-        "topic": "Public Statements",
-        "pos": 2.4,
-        "neu": 80.6,
-        "neg": 17,
+        "pos": 9.7,
+        "neu": 86.2,
+        "neg": 4.1,
         "count": 1
       }
     ]
@@ -5613,28 +5606,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-17T15:44:29.099Z",
+        "label": "2026-11-17T21:52:52.695Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-17T16:44:29.099Z",
+        "label": "2026-11-17T22:52:52.695Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-17T17:44:29.099Z",
+        "label": "2026-11-17T23:52:52.695Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-17T18:44:29.099Z",
+        "label": "2026-11-18T00:52:52.695Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5643,28 +5636,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-17T15:44:29.099Z",
+        "label": "2026-11-17T21:52:52.695Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-17T16:44:29.099Z",
+        "label": "2026-11-17T22:52:52.695Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-17T17:44:29.099Z",
+        "label": "2026-11-17T23:52:52.695Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-17T18:44:29.099Z",
+        "label": "2026-11-18T00:52:52.695Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5744,7 +5737,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-17T19:44:29.100Z",
+    "generatedAt": "2026-11-18T01:52:52.696Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5866,7 +5859,7 @@
       "articles": 120,
       "latestNews": 36,
       "usaArticles": 191,
-      "potusArticles": 51,
+      "potusArticles": 48,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
