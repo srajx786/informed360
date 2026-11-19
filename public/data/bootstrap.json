@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-19T07:59:10.135Z",
+  "generatedAt": "2026-11-19T17:16:03.581Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 190,
-    "potusArticles": 42
+    "usaArticles": 192,
+    "potusArticles": 39
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-19T03:59:10.135Z",
+          "label": "2026-11-19T13:16:03.582Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-19T04:59:10.135Z",
+          "label": "2026-11-19T14:16:03.582Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-19T05:59:10.135Z",
+          "label": "2026-11-19T15:16:03.582Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-19T06:59:10.135Z",
+          "label": "2026-11-19T16:16:03.582Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-19T03:59:10.135Z",
+          "label": "2026-11-19T13:16:03.582Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-19T04:59:10.135Z",
+          "label": "2026-11-19T14:16:03.582Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-19T05:59:10.135Z",
+          "label": "2026-11-19T15:16:03.582Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-19T06:59:10.135Z",
+          "label": "2026-11-19T16:16:03.582Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 7.61,
-      "neu": 82.71,
-      "neg": 9.68,
-      "count": 190
+      "pos": 8.12,
+      "neu": 82.56,
+      "neg": 9.32,
+      "count": 192
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.53,
-        "neu": 85.53,
-        "neg": 7.94,
-        "count": 42
+        "pos": 10.27,
+        "neu": 82.52,
+        "neg": 7.22,
+        "count": 44
       },
       {
         "source": "Fox News",
-        "pos": 10.18,
-        "neu": 78.22,
-        "neg": 11.6,
+        "pos": 9.46,
+        "neu": 78.91,
+        "neg": 11.63,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.98,
-        "neu": 84.67,
-        "neg": 10.35,
+        "pos": 8.3,
+        "neu": 83.05,
+        "neg": 8.66,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 10.55,
-        "neu": 80.86,
-        "neg": 8.59,
+        "pos": 5.42,
+        "neu": 82.33,
+        "neg": 12.25,
         "count": 24
       },
       {
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 6.55,
-        "neu": 84.11,
-        "neg": 9.34,
+        "pos": 6.71,
+        "neu": 85.99,
+        "neg": 7.3,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 8.89,
-        "neu": 83.69,
-        "neg": 7.42,
+        "pos": 8.31,
+        "neu": 86.2,
+        "neg": 5.49,
         "count": 20
       },
       {
@@ -4636,126 +4636,121 @@
       "rows": [
         {
           "name": "Materials",
-          "bias": 12.6,
-          "count": 1
-        },
-        {
-          "name": "Utilities",
-          "bias": -11.4,
+          "bias": -8.65,
           "count": 2
         },
         {
+          "name": "Communication",
+          "bias": -6.63,
+          "count": 3
+        },
+        {
           "name": "Manufacturing",
-          "bias": 9.61,
+          "bias": 6.01,
           "count": 9
         },
         {
-          "name": "Communication",
-          "bias": -6.45,
+          "name": "Real Estate",
+          "bias": -5.8,
           "count": 4
         },
         {
-          "name": "Technology",
-          "bias": -2.38,
-          "count": 149
+          "name": "Healthcare",
+          "bias": -3.1,
+          "count": 9
         },
         {
           "name": "Finance",
-          "bias": -2.36,
-          "count": 18
+          "bias": -1.04,
+          "count": 17
         },
         {
-          "name": "Energy",
-          "bias": -2.21,
-          "count": 8
-        },
-        {
-          "name": "Healthcare",
-          "bias": -0.73,
+          "name": "Utilities",
+          "bias": -0.92,
           "count": 6
         },
         {
-          "name": "Real Estate",
-          "bias": 0.43,
-          "count": 3
+          "name": "Technology",
+          "bias": -0.79,
+          "count": 160
+        },
+        {
+          "name": "Energy",
+          "bias": 0.22,
+          "count": 8
         }
       ],
       "pos": [
         {
-          "name": "Materials",
-          "bias": 12.6,
-          "count": 1
-        },
-        {
           "name": "Manufacturing",
-          "bias": 9.61,
+          "bias": 6.01,
           "count": 9
         }
       ],
       "neu": [
         {
-          "name": "Finance",
-          "bias": -2.36,
-          "count": 18
-        },
-        {
-          "name": "Energy",
-          "bias": -2.21,
-          "count": 8
-        },
-        {
           "name": "Healthcare",
-          "bias": -0.73,
+          "bias": -3.1,
+          "count": 9
+        },
+        {
+          "name": "Finance",
+          "bias": -1.04,
+          "count": 17
+        },
+        {
+          "name": "Utilities",
+          "bias": -0.92,
           "count": 6
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -11.4,
+          "name": "Materials",
+          "bias": -8.65,
           "count": 2
         },
         {
           "name": "Communication",
-          "bias": -6.45,
-          "count": 4
+          "bias": -6.63,
+          "count": 3
         },
         {
-          "name": "Technology",
-          "bias": -2.38,
-          "count": 149
+          "name": "Real Estate",
+          "bias": -5.8,
+          "count": 4
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-19T03:59:10.137Z",
-          "pos": 12,
-          "neu": 88,
-          "neg": 0,
-          "count": 2
-        },
-        {
-          "label": "2026-11-19T04:59:10.137Z",
-          "pos": 10,
-          "neu": 75,
-          "neg": 14,
-          "count": 2
-        },
-        {
-          "label": "2026-11-19T05:59:10.137Z",
-          "pos": 1,
+          "label": "2026-11-19T13:16:03.584Z",
+          "pos": 3,
           "neu": 92,
-          "neg": 7,
+          "neg": 6,
           "count": 5
         },
         {
-          "label": "2026-11-19T06:59:10.137Z",
-          "pos": 4,
-          "neu": 82,
-          "neg": 14,
-          "count": 9
+          "label": "2026-11-19T14:16:03.584Z",
+          "pos": 11,
+          "neu": 84,
+          "neg": 5,
+          "count": 14
+        },
+        {
+          "label": "2026-11-19T15:16:03.584Z",
+          "pos": 11,
+          "neu": 81,
+          "neg": 8,
+          "count": 20
+        },
+        {
+          "label": "2026-11-19T16:16:03.584Z",
+          "pos": 7,
+          "neu": 83,
+          "neg": 10,
+          "count": 32
         }
       ]
     }
@@ -4963,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "President Trump downplays panic over tech outages: ‘Nobody’s going to play games with us’",
-        "link": "https://www.foxnews.com/media/president-trump-downplays-panic-tech-outages-nobody-going-play-games-us",
+        "title": "AOC leaves door open to 2028 presidential run, signals willingness to work with Trump",
+        "link": "https://www.foxnews.com/politics/aoc-leaves-door-open-2028-presidential-run-signals-willingness-work-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump urged Americans to \"relax\" over FAA and Microsoft outages, warning any country that targeted U.S. systems would be hit hard.",
+        "description": "Alexandria Ocasio-Cortez would not rule out a 2028 White House run, saying her focus is getting results for people after Democrats reclaimed the House majority.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-19T02:22:49.000Z",
+        "publishedAt": "2026-11-19T14:52:29.000Z",
         "sentiment": {
-          "posP": 5.6,
-          "negP": 16.7,
-          "neuP": 77.7,
-          "label": "negative",
-          "confidence": 0.57
+          "posP": 5.4,
+          "negP": 0,
+          "neuP": 94.6,
+          "label": "positive",
+          "confidence": 0.27
         },
         "category": "usa"
       },
       {
-        "title": "Obama-era homeless policy fueled crisis it promised to end, expert says as Trump admin makes striking reversal",
-        "link": "https://www.foxnews.com/us/obama-era-homeless-policy-fueled-crisis-promised-end-expert-says-trump-admin-makes-striking-reversal",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Behind Trump Meeting, Xi and Putin Share a Vision of Usurping U.S. Power",
+        "link": "https://www.nytimes.com/2026/11/19/world/asia/xi-putin-trump-meeting-china-russia.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Homeless services veteran Michele Steeb says LA’s funding cutoff offers a chance to restore accountability after years of alleged mismanagement.",
+        "description": "President Trump joined the Chinese and Russian leaders for a summit in Shenzhen, even though the two autocrats are trying to reverse America’s victory in the Cold War.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-19T01:02:11.000Z",
+        "publishedAt": "2026-11-19T12:41:50.000Z",
         "sentiment": {
-          "posP": 15.7,
-          "negP": 9.6,
-          "neuP": 74.7,
+          "posP": 9.5,
+          "negP": 8.8,
+          "neuP": 81.7,
           "label": "neutral",
-          "confidence": 0.15
+          "confidence": 0.18
         },
         "category": "usa"
       }
@@ -5205,62 +5200,62 @@
         "category": "world"
       },
       {
-        "title": "President Trump downplays panic over tech outages: ‘Nobody’s going to play games with us’",
-        "link": "https://www.foxnews.com/media/president-trump-downplays-panic-tech-outages-nobody-going-play-games-us",
+        "title": "AOC leaves door open to 2028 presidential run, signals willingness to work with Trump",
+        "link": "https://www.foxnews.com/politics/aoc-leaves-door-open-2028-presidential-run-signals-willingness-work-trump",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump urged Americans to \"relax\" over FAA and Microsoft outages, warning any country that targeted U.S. systems would be hit hard.",
+        "description": "Alexandria Ocasio-Cortez would not rule out a 2028 White House run, saying her focus is getting results for people after Democrats reclaimed the House majority.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-19T02:22:49.000Z",
+        "publishedAt": "2026-11-19T14:52:29.000Z",
         "sentiment": {
-          "posP": 5.6,
-          "negP": 16.7,
-          "neuP": 77.7,
-          "label": "negative",
-          "confidence": 0.57
+          "posP": 5.4,
+          "negP": 0,
+          "neuP": 94.6,
+          "label": "positive",
+          "confidence": 0.27
         },
         "category": "usa"
       },
       {
-        "title": "Obama-era homeless policy fueled crisis it promised to end, expert says as Trump admin makes striking reversal",
-        "link": "https://www.foxnews.com/us/obama-era-homeless-policy-fueled-crisis-promised-end-expert-says-trump-admin-makes-striking-reversal",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Homeless services veteran Michele Steeb says LA’s funding cutoff offers a chance to restore accountability after years of alleged mismanagement.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T01:02:11.000Z",
-        "sentiment": {
-          "posP": 15.7,
-          "negP": 9.6,
-          "neuP": 74.7,
-          "label": "neutral",
-          "confidence": 0.15
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Villa Where Trump, Xi and Putin Will Meet Once Hosted Kim Jong-il",
-        "link": "https://www.nytimes.com/2026/11/19/world/asia/trump-xi-putin-kylin-villa.html",
+        "title": "Behind Trump Meeting, Xi and Putin Share a Vision of Usurping U.S. Power",
+        "link": "https://www.nytimes.com/2026/11/19/world/asia/xi-putin-trump-meeting-china-russia.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The secluded Kylin Villa resort in the Chinese city of Shenzhen once hosted the North Korean dictator, Xi Jinping’s father and envoys of the Dalai Lama.",
+        "description": "President Trump joined the Chinese and Russian leaders for a summit in Shenzhen, even though the two autocrats are trying to reverse America’s victory in the Cold War.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-19T06:53:53.000Z",
+        "publishedAt": "2026-11-19T12:41:50.000Z",
+        "sentiment": {
+          "posP": 9.5,
+          "negP": 8.8,
+          "neuP": 81.7,
+          "label": "neutral",
+          "confidence": 0.18
+        },
+        "category": "usa"
+      },
+      {
+        "title": "China Bars Bloomberg Reporter From Trilateral Talks for Asking a Question",
+        "link": "https://www.nytimes.com/2026/11/19/world/asia/trump-summit-china-media-bloomberg-reporter-nvidia.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The exclusion of the reporter after she shouted a question to President Trump is an example of how tightly China tries to stage-manage events.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-19T12:08:19.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 6.4,
+          "neuP": 93.6,
+          "label": "negative",
+          "confidence": 0.3
         },
         "category": "usa"
       },
@@ -5285,240 +5280,240 @@
         "category": "usa"
       },
       {
-        "title": "Trump Grows Frustrated With Vance Over Iran War Critique",
-        "link": "https://www.nytimes.com/2026/11/18/us/politics/vance-trump-iran-2028-election-rubio.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The tension comes at a critical juncture for the vice president, who is considering whether to run for president in 2028.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T01:23:01.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 32.2,
-          "neuP": 67.8,
-          "label": "negative",
-          "confidence": 0.9
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump, Xi, Putin set for rare joint meeting in China",
-        "link": "https://www.cbsnews.com/news/trump-xi-putin-china-apec-summit/",
+        "title": "Law firm that cut deal with Trump has done $11.8M in pro bono work",
+        "link": "https://www.cbsnews.com/news/kirkland-ellis-law-firm-trump-deal-12-million-free-legal-work/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump, Chinese President Xi Jinping and Russian President Vladimir Putin are about to hold a rare face-to-face meeting in China.",
+        "description": "A lawyer representing the law firm Kirkland & Ellis said it has provided nearly $12 million in free legal services for the Trump administration.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-19T07:05:18.000Z",
+        "publishedAt": "2026-11-19T17:11:21.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What we know about Trump's meeting with China's Xi, Russia's Putin",
-        "link": "https://www.cbsnews.com/video/trump-meets-with-chinas-xi-russias-putin/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump, Chinese President Xi Jinping and Russian President Vladimir Putin are scheduled to hold a trilateral meeting on Thursday in Shenzhen, China. Nancy Cordes and Anna Coren report on the summit.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T03:47:57.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What to know about Trump's meeting with Xi in China",
-        "link": "https://www.cbsnews.com/news/trump-xi-meet-china-chips-ai/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump is holding a high-stakes meeting with Chinese President Xi Jinping on Thursday against the backdrop of a widening scandal.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T03:18:55.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 9.4,
-          "neuP": 90.6,
-          "label": "negative",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump summit with Xi and Putin comes at time of uncertainty",
-        "link": "https://www.cbsnews.com/video/trump-summit-with-xi-and-putin-comes-at-time-of-uncertainty/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump's meeting with China's Xi Jinping and Russia's Vladimir Putin comes as the U.S. and China are battling for dominancy in the AI chip race. It also comes as Mr. Trump works to broker a peace deal between Russia and Ukraine. Henrietta Levin, senior fellow at the Center for Strategic and International Studies, joins CBS News to discuss.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T02:32:44.000Z",
-        "sentiment": {
-          "posP": 4.7,
-          "negP": 6.1,
-          "neuP": 89.2,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Latest on Trump's summit with Xi, Putin",
-        "link": "https://www.cbsnews.com/video/latest-on-trumps-summit-with-xi-putin/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump has arrived in China ahead of his highly-anticipated meeting with Chinese President Xi Jinping and Russian President Vladimir Putin. CBS News' Nancy Cordes reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T00:54:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "What to expect from Trump's meeting with Putin and Xi Jinping",
-        "link": "https://www.nbcnews.com/video/what-to-expect-from-trump-s-meeting-with-putin-and-xi-jinping-273779781736",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "NBC News' Janis Mackey Frayer and Gabe Gutierrez go over what to potentially expect from President Trump's meeting with President Putin and President Xi Jinping during the APEC summit and what each country may ask for.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T01:39:13.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump pushes for three-way nuclear deal as Russia and China show little interest",
-        "link": "https://www.nbcnews.com/world/asia/trump-pushes-three-way-nuclear-deal-russia-china-show-little-interest-rcna610145",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump has repeatedly placed nonproliferation near the top of the agenda for his unprecedented trilateral meeting Thursday with Chinese President Xi Jinping and Russian President Vladimir Putin, but his counterparts have expressed little interest in committing to new limitations on their nuclear arsenals.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T03:46:42.000Z",
-        "sentiment": {
-          "posP": 12.7,
-          "negP": 0,
-          "neuP": 87.3,
+          "posP": 12,
+          "negP": 5.3,
+          "neuP": 82.7,
           "label": "positive",
-          "confidence": 0.71
+          "confidence": 0.4
         },
         "category": "usa"
       },
       {
-        "title": "Elon Musk says he is ‘not MAGA’ after spending millions on Trump and his allies",
-        "link": "https://www.nbcnews.com/politics/2026-election/elon-musk-says-not-maga-spending-millions-trump-allies-rcna610129",
+        "title": "Iran may be working on biological weapons, Trump says",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump told Fox News there are indications Iran may be working on biological or chemical weapons as the war drags on toward its ninth month.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-19T16:55:04.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 26.9,
+          "neuP": 73.1,
+          "label": "negative",
+          "confidence": 0.89
+        },
+        "category": "usa"
+      },
+      {
+        "title": "DOJ taps prosecutor for probes into Mar-a-Lago raid, docs case",
+        "link": "https://www.cbsnews.com/news/bill-essayli-justice-department-mar-a-lago-trump-documents-case/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Justice Department has tapped the top federal prosecutor in Los Angeles to work on probes into the FBI's raid on Mar-a-Lago and the Trump documents case.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-19T16:49:24.000Z",
+        "sentiment": {
+          "posP": 12.9,
+          "negP": 0,
+          "neuP": 87.1,
+          "label": "positive",
+          "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump holds historic meeting with Xi and Putin",
+        "link": "https://www.today.com/video/trump-holds-historic-meeting-with-xi-and-putin-273803845530",
+        "source": "NBC News",
+        "sourceDomain": "today.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump took part in historic three-way talks with Russian President Vladimir Putin and Chinese President Xi Jinping in China. NBC News' Garrett Haake has the details.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-19T13:37:28.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump urges nuclear arms control in historic meeting with Putin and Xi",
+        "link": "https://www.nbcnews.com/world/asia/world-waits-trump-xi-putin-prepare-high-stakes-meeting-rcna609776",
         "source": "NBC News",
         "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Elon Musk struck a more moderate tone while discussing his political affiliation Wednesday, arguing that he does not have “blind adherence” to the policies of the Republican Party or MAGA.",
+        "description": "What these three men might decide has the potential to reverberate across the globe.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-19T01:59:27.000Z",
+        "publishedAt": "2026-11-18T17:22:41.000Z",
         "sentiment": {
-          "posP": 5.5,
-          "negP": 10.3,
-          "neuP": 84.2,
-          "label": "negative",
-          "confidence": 0.32
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Trump holds talks separately with Putin and Xi ahead of their historic trilateral meeting",
-        "link": "https://www.cnbc.com/2026/11/19/trump-xi-putin-china-apec-.html",
+        "title": "WATCH:  Trump's trilateral meeting with Xi and Putin begins",
+        "link": "https://abcnews.com/video/138280448/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Presidents Donald Trump, Xi Jinping and Vladimir Putin began historic three-way talks to discuss Iran, trade and Russia’s war with Ukraine.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-19T10:24:27.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 11.9,
+          "neuP": 88.1,
+          "label": "negative",
+          "confidence": 0.6
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump admin says it's weighing new penalties against China over jailed Americans",
+        "link": "https://abcnews.com/Politics/trump-administration-weighs-new-penalties-china-jailed-americans/story?id=138188622",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Beijing has shut down attempts to open negotiations, officials say.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-18T21:46:25.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 13.2,
+          "neuP": 86.8,
+          "label": "negative",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Judge extends temporary restraining order that blocks construction of Trump's arch",
+        "link": "https://abcnews.com/Politics/judge-extends-temporary-restraining-order-blocks-construction-trumps/story?id=138262809",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The original order was set to expire on Thursday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-19T10:59:12.000Z",
+        "sentiment": {
+          "posP": 16.7,
+          "negP": 8.4,
+          "neuP": 74.9,
+          "label": "positive",
+          "confidence": 0.23
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump, Xi, Putin said they plan to boost oil production, revamp UN after trilateral talks",
+        "link": "https://www.cnbc.com/2026/11/19/trump-xi-putin-trilateral-meeting-china.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "U.S. President Donald Trump met individually on Thursday with Russian President Vladimir Putin, as well as Chinese President Xi Jinping.",
+        "description": "The leaders of the U.S., China and Russia met in Shenzhen, China on Thursday for a rare trilateral gathering.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-19T06:29:34.000Z",
+        "publishedAt": "2026-11-19T17:01:41.000Z",
         "sentiment": {
-          "posP": 6,
+          "posP": 7.8,
           "negP": 0,
-          "neuP": 94,
+          "neuP": 92.2,
           "label": "positive",
-          "confidence": 0.27
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Denmark ratifies Trump security deal over Greenland after months of diplomatic tensions",
+        "link": "https://www.cnbc.com/2026/11/19/greenland-denmark-trump-security-military-bases.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "It follows months of tensions after President Donald Trump repeatedly said the U.S. should take control of Greenland for national security reasons.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-19T12:02:08.000Z",
+        "sentiment": {
+          "posP": 11.9,
+          "negP": 13.4,
+          "neuP": 74.7,
+          "label": "neutral",
+          "confidence": 0.15
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.74,
-      "neu": 86.85,
-      "neg": 7.41,
-      "count": 42
+      "pos": 6.9,
+      "neu": 85.38,
+      "neg": 7.72,
+      "count": 39
     },
     "sourceLeaderboard": [
       {
-        "source": "NBC News",
-        "pos": 6.79,
-        "neu": 89.61,
-        "neg": 3.6,
-        "count": 8
-      },
-      {
         "source": "Washington Post",
-        "pos": 10.21,
-        "neu": 81.42,
-        "neg": 8.36,
-        "count": 8
+        "pos": 10.41,
+        "neu": 82.7,
+        "neg": 6.89,
+        "count": 10
       },
       {
-        "source": "CBS News",
-        "pos": 1.45,
-        "neu": 93.63,
-        "neg": 4.92,
+        "source": "NBC News",
+        "pos": 7.72,
+        "neu": 87.1,
+        "neg": 5.18,
         "count": 6
       },
       {
         "source": "NYT",
-        "pos": 2.6,
-        "neu": 85.86,
-        "neg": 11.54,
+        "pos": 4.5,
+        "neu": 87.36,
+        "neg": 8.14,
         "count": 5
+      },
+      {
+        "source": "CBS News",
+        "pos": 7.22,
+        "neu": 81.22,
+        "neg": 11.55,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5535,18 +5530,18 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 10.1,
-        "neu": 81.13,
-        "neg": 8.77,
+        "source": "ABC News",
+        "pos": 5.57,
+        "neu": 83.27,
+        "neg": 11.17,
         "count": 3
       },
       {
-        "source": "ABC News",
-        "pos": 5.57,
-        "neu": 87.23,
-        "neg": 7.2,
-        "count": 3
+        "source": "Fox News",
+        "pos": 7.2,
+        "neu": 92.8,
+        "neg": 0,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5559,30 +5554,30 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.78,
-        "neu": 83.78,
-        "neg": 9.45,
-        "count": 17
+        "pos": 8.04,
+        "neu": 84.14,
+        "neg": 7.81,
+        "count": 16
       },
       {
         "topic": "Foreign Policy",
-        "pos": 3.35,
-        "neu": 91.41,
-        "neg": 5.24,
-        "count": 14
+        "pos": 4.92,
+        "neu": 87.54,
+        "neg": 7.55,
+        "count": 11
       },
       {
         "topic": "Policy",
-        "pos": 5.95,
-        "neu": 87.87,
-        "neg": 6.18,
-        "count": 6
+        "pos": 7.24,
+        "neu": 85.94,
+        "neg": 6.81,
+        "count": 7
       },
       {
         "topic": "Economy",
-        "pos": 8.83,
-        "neu": 84.83,
-        "neg": 6.33,
+        "pos": 6.33,
+        "neu": 85.7,
+        "neg": 7.97,
         "count": 3
       },
       {
@@ -5617,28 +5612,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-19T03:59:10.139Z",
+        "label": "2026-11-19T13:16:03.587Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-19T04:59:10.139Z",
+        "label": "2026-11-19T14:16:03.587Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-19T05:59:10.139Z",
+        "label": "2026-11-19T15:16:03.587Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-19T06:59:10.139Z",
+        "label": "2026-11-19T16:16:03.587Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5647,28 +5642,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-19T03:59:10.139Z",
+        "label": "2026-11-19T13:16:03.587Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-19T04:59:10.139Z",
+        "label": "2026-11-19T14:16:03.587Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-19T05:59:10.139Z",
+        "label": "2026-11-19T15:16:03.587Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-19T06:59:10.139Z",
+        "label": "2026-11-19T16:16:03.587Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5748,7 +5743,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-19T07:59:10.140Z",
+    "generatedAt": "2026-11-19T17:16:03.587Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5869,8 +5864,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 190,
-      "potusArticles": 42,
+      "usaArticles": 192,
+      "potusArticles": 39,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
