@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-20T04:13:55.622Z",
+  "generatedAt": "2026-11-20T13:03:27.066Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 190,
-    "potusArticles": 60
+    "usaArticles": 189,
+    "potusArticles": 52
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-20T00:13:55.622Z",
+          "label": "2026-11-20T09:03:27.066Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T01:13:55.622Z",
+          "label": "2026-11-20T10:03:27.066Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T02:13:55.622Z",
+          "label": "2026-11-20T11:03:27.066Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T03:13:55.622Z",
+          "label": "2026-11-20T12:03:27.066Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-20T00:13:55.622Z",
+          "label": "2026-11-20T09:03:27.066Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T01:13:55.622Z",
+          "label": "2026-11-20T10:03:27.066Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T02:13:55.622Z",
+          "label": "2026-11-20T11:03:27.066Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T03:13:55.622Z",
+          "label": "2026-11-20T12:03:27.066Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,38 +4555,38 @@
       }
     ],
     "sentiment": {
-      "pos": 8.07,
-      "neu": 82.28,
-      "neg": 9.65,
-      "count": 190
+      "pos": 8.74,
+      "neu": 81.3,
+      "neg": 9.96,
+      "count": 189
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.44,
-        "neu": 85.79,
-        "neg": 5.77,
-        "count": 42
+        "pos": 10.12,
+        "neu": 83.27,
+        "neg": 6.61,
+        "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 8.26,
-        "neu": 78.65,
-        "neg": 13.1,
+        "pos": 8.51,
+        "neu": 80.22,
+        "neg": 11.27,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.89,
-        "neu": 85.57,
-        "neg": 8.53,
+        "pos": 6.13,
+        "neu": 82.48,
+        "neg": 11.39,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 8.75,
-        "neu": 82.33,
-        "neg": 8.92,
+        "pos": 11.43,
+        "neu": 79.7,
+        "neg": 8.87,
         "count": 24
       },
       {
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.04,
-        "neu": 79.34,
-        "neg": 10.63,
+        "pos": 9.41,
+        "neu": 80.32,
+        "neg": 10.28,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 9.23,
-        "neu": 80.33,
-        "neg": 10.44,
+        "pos": 8.96,
+        "neu": 80.53,
+        "neg": 10.5,
         "count": 20
       },
       {
@@ -4635,19 +4635,14 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Manufacturing",
-          "bias": 7.4,
-          "count": 5
-        },
-        {
           "name": "Utilities",
-          "bias": 6.35,
-          "count": 4
+          "bias": -14,
+          "count": 2
         },
         {
           "name": "Energy",
-          "bias": 6.05,
-          "count": 17
+          "bias": 8.43,
+          "count": 20
         },
         {
           "name": "Real Estate",
@@ -4656,48 +4651,41 @@
         },
         {
           "name": "Communication",
-          "bias": 4.73,
-          "count": 4
+          "bias": 5.67,
+          "count": 3
         },
         {
-          "name": "Healthcare",
-          "bias": -4.1,
-          "count": 6
-        },
-        {
-          "name": "Materials",
-          "bias": 1.8,
+          "name": "Manufacturing",
+          "bias": 5.5,
           "count": 3
         },
         {
           "name": "Finance",
-          "bias": -1.01,
-          "count": 21
+          "bias": -4.85,
+          "count": 19
+        },
+        {
+          "name": "Healthcare",
+          "bias": 3.37,
+          "count": 7
+        },
+        {
+          "name": "Materials",
+          "bias": 2.63,
+          "count": 3
         },
         {
           "name": "Technology",
-          "bias": -1,
-          "count": 158
+          "bias": -0.97,
+          "count": 150
         }
       ],
       "pos": [
         {
-          "name": "Manufacturing",
-          "bias": 7.4,
-          "count": 5
-        },
-        {
-          "name": "Utilities",
-          "bias": 6.35,
-          "count": 4
-        },
-        {
           "name": "Energy",
-          "bias": 6.05,
-          "count": 17
-        }
-      ],
-      "neu": [
+          "bias": 8.43,
+          "count": 20
+        },
         {
           "name": "Real Estate",
           "bias": 5.9,
@@ -4705,52 +4693,69 @@
         },
         {
           "name": "Communication",
-          "bias": 4.73,
-          "count": 4
+          "bias": 5.67,
+          "count": 3
+        }
+      ],
+      "neu": [
+        {
+          "name": "Manufacturing",
+          "bias": 5.5,
+          "count": 3
+        },
+        {
+          "name": "Healthcare",
+          "bias": 3.37,
+          "count": 7
         },
         {
           "name": "Materials",
-          "bias": 1.8,
+          "bias": 2.63,
           "count": 3
         }
       ],
       "neg": [
         {
-          "name": "Healthcare",
-          "bias": -4.1,
-          "count": 6
+          "name": "Utilities",
+          "bias": -14,
+          "count": 2
+        },
+        {
+          "name": "Finance",
+          "bias": -4.85,
+          "count": 19
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-20T00:13:55.624Z",
+          "label": "2026-11-20T09:03:27.068Z",
+          "pos": 10,
+          "neu": 82,
+          "neg": 8,
+          "count": 13
+        },
+        {
+          "label": "2026-11-20T10:03:27.068Z",
+          "pos": 10,
+          "neu": 78,
+          "neg": 12,
+          "count": 12
+        },
+        {
+          "label": "2026-11-20T11:03:27.068Z",
           "pos": 8,
-          "neu": 84,
-          "neg": 9,
-          "count": 22
-        },
-        {
-          "label": "2026-11-20T01:13:55.624Z",
-          "pos": 7,
-          "neu": 83,
+          "neu": 81,
           "neg": 11,
-          "count": 22
+          "count": 15
         },
         {
-          "label": "2026-11-20T02:13:55.624Z",
-          "pos": 3,
+          "label": "2026-11-20T12:03:27.068Z",
+          "pos": 6,
           "neu": 87,
-          "neg": 10,
-          "count": 10
-        },
-        {
-          "label": "2026-11-20T03:13:55.624Z",
-          "pos": 11,
-          "neu": 83,
-          "neg": 6,
-          "count": 14
+          "neg": 8,
+          "count": 23
         }
       ]
     }
@@ -4958,42 +4963,42 @@
         "category": "world"
       },
       {
-        "title": "Trump’s National Cyber Director Sean Cairncross fired amid widespread tech outages",
-        "link": "https://www.foxnews.com/politics/trumps-national-cyber-director-sean-cairncross-fired",
+        "title": "Americans don’t have to choose between our AI future and ripping off copyright owners",
+        "link": "https://www.foxnews.com/opinion/americans-dont-choose-between-ai-future-ripping-off-copyright-owners",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump backed the firing of National Cyber Director Sean Cairncross over cybersecurity credentials, with Kirsten A. Davies stepping in.",
+        "description": "The DOJ's embrace of fair use for AI training breaks with the White House's own framework, as OpenAI, Microsoft and news groups battle over copyright.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T02:00:36.000Z",
+        "publishedAt": "2026-11-25T10:00:00.000Z",
         "sentiment": {
-          "posP": 3,
-          "negP": 16.6,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.71
+          "posP": 10.6,
+          "negP": 6,
+          "neuP": 83.4,
+          "label": "positive",
+          "confidence": 0.25
         },
         "category": "usa"
       },
       {
-        "title": "Trump Flaunts Camaraderie With Xi and Putin but Has Little to Show for It",
-        "link": "https://www.nytimes.com/2026/11/19/world/asia/trump-xi-putin.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump set to address Americans after historic talks in China and more top headlines",
+        "link": "https://www.foxnews.com/us/trump-set-address-after-historic-talks-china-more-top-headlines",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump called Russia’s leader his “friend” and marveled at China’s warm welcome for his first-ever trilateral summit. But there were no breakthroughs on nuclear control, the war in Ukraine or A.I.",
+        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T02:10:57.000Z",
+        "publishedAt": "2026-11-20T12:39:30.000Z",
         "sentiment": {
-          "posP": 11.2,
-          "negP": 14.4,
-          "neuP": 74.4,
-          "label": "negative",
-          "confidence": 0.42
+          "posP": 13.6,
+          "negP": 0,
+          "neuP": 86.4,
+          "label": "positive",
+          "confidence": 0.64
         },
         "category": "usa"
       }
@@ -5200,62 +5205,102 @@
         "category": "world"
       },
       {
-        "title": "Trump’s National Cyber Director Sean Cairncross fired amid widespread tech outages",
-        "link": "https://www.foxnews.com/politics/trumps-national-cyber-director-sean-cairncross-fired",
+        "title": "Americans don’t have to choose between our AI future and ripping off copyright owners",
+        "link": "https://www.foxnews.com/opinion/americans-dont-choose-between-ai-future-ripping-off-copyright-owners",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump backed the firing of National Cyber Director Sean Cairncross over cybersecurity credentials, with Kirsten A. Davies stepping in.",
+        "description": "The DOJ's embrace of fair use for AI training breaks with the White House's own framework, as OpenAI, Microsoft and news groups battle over copyright.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T02:00:36.000Z",
+        "publishedAt": "2026-11-25T10:00:00.000Z",
         "sentiment": {
-          "posP": 3,
-          "negP": 16.6,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.71
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Flaunts Camaraderie With Xi and Putin but Has Little to Show for It",
-        "link": "https://www.nytimes.com/2026/11/19/world/asia/trump-xi-putin.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump called Russia’s leader his “friend” and marveled at China’s warm welcome for his first-ever trilateral summit. But there were no breakthroughs on nuclear control, the war in Ukraine or A.I.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T02:10:57.000Z",
-        "sentiment": {
-          "posP": 11.2,
-          "negP": 14.4,
-          "neuP": 74.4,
-          "label": "negative",
-          "confidence": 0.42
-        },
-        "category": "usa"
-      },
-      {
-        "title": "At Summit With Xi and Putin, Trump Seeks to Project Power Abroad While Sharing It at Home",
-        "link": "https://www.nytimes.com/2026/11/19/us/politics/trump-summit-power.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Weakened by the midterm elections, President Trump offered hugs, arm pats and smiles to autocrats from Russia and China in contrast to the threats he is making to ascendant Democrats in Washington.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T17:05:18.000Z",
-        "sentiment": {
-          "posP": 15.6,
-          "negP": 8.8,
-          "neuP": 75.6,
+          "posP": 10.6,
+          "negP": 6,
+          "neuP": 83.4,
           "label": "positive",
-          "confidence": 0.61
+          "confidence": 0.25
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump set to address Americans after historic talks in China and more top headlines",
+        "link": "https://www.foxnews.com/us/trump-set-address-after-historic-talks-china-more-top-headlines",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T12:39:30.000Z",
+        "sentiment": {
+          "posP": 13.6,
+          "negP": 0,
+          "neuP": 86.4,
+          "label": "positive",
+          "confidence": 0.64
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump will face reporters after historic Xi-Putin talks as war questions linger",
+        "link": "https://www.foxnews.com/politics/trump-face-reporters-historic-xi-putin-talks-war-questions-linger",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump faces reporters Friday after Shenzhen summit with Xi Jinping and Putin yielded a nuclear risk pledge but no Ukraine breakthrough.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T10:00:11.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 18,
+          "neuP": 82,
+          "label": "negative",
+          "confidence": 0.7
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Ron DeSantis Ponders a Presidential Run in a Post-Trump World",
+        "link": "https://www.nytimes.com/2026/11/20/us/politics/ron-desantis-florida-2028.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "In a wide-ranging interview, the governor of Florida talked about the potential timing of a presidential run. “I haven’t made any decisions,” he said.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T12:09:53.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Justice Department Gives Up on Alaska Senate Lawsuit",
+        "link": "https://www.nytimes.com/2026/11/19/us/politics/justice-department-gives-up-on-alaska-senate-lawsuit.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration had sought to block certification of election results if Senator Dan Sullivan, a Republican, lost narrowly in his bid for re-election. Critics had called the suit meritless.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T12:54:26.000Z",
+        "sentiment": {
+          "posP": 7.6,
+          "negP": 20.8,
+          "neuP": 71.6,
+          "label": "negative",
+          "confidence": 0.6
         },
         "category": "usa"
       },
@@ -5280,42 +5325,62 @@
         "category": "usa"
       },
       {
-        "title": "Justice Department Gives Up on Alaska Senate Lawsuit",
-        "link": "https://www.nytimes.com/2026/11/19/us/politics/justice-department-gives-up-on-alaska-senate-lawsuit.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "U.S. and Israel considering new assault on Iran, sources say",
+        "link": "https://www.cbsnews.com/news/iran-war-us-israel-considering-new-assault-sources-say/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Trump administration had sought to block certification of election results if Senator Dan Sullivan, a Republican, lost narrowly in his bid for re-election. Critics had called the suit meritless.",
+        "description": "Israel wants a new joint operation with the U.S. against Iran, but it's unclear whether President Trump is willing to resume military action, and if so, to what extent.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T03:47:05.000Z",
+        "publishedAt": "2026-11-20T12:02:39.000Z",
         "sentiment": {
-          "posP": 7.6,
-          "negP": 20.8,
-          "neuP": 71.6,
+          "posP": 0,
+          "negP": 12,
+          "neuP": 88,
           "label": "negative",
           "confidence": 0.6
         },
         "category": "usa"
       },
       {
-        "title": "Former Biden Chief, With Help From Alex Soros, Will Gather Aides of 2028 Hopefuls",
-        "link": "https://www.nytimes.com/2026/11/19/us/politics/alex-soros-jen-omalley-dillon-2028-democratic-presidential-race.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Can Democrats force an end to the Iran war when they take Congress?",
+        "link": "https://www.cbsnews.com/news/iran-war-democrats-congress-trump/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Jen O’Malley Dillon, who led the former president’s last two White House bids, is inviting top Democratic operatives to a gathering funded in part by the megadonor Alex Soros.",
+        "description": "With Democrats set to take decisive House and Senate majorities, some members want to pressure the Trump administration to end the Iran war. The exact plan is not clear.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T00:16:06.000Z",
+        "publishedAt": "2026-11-20T11:00:00.000Z",
         "sentiment": {
-          "posP": 14.8,
-          "negP": 0,
-          "neuP": 85.2,
-          "label": "positive",
-          "confidence": 0.7
+          "posP": 6.2,
+          "negP": 23.7,
+          "neuP": 70.1,
+          "label": "negative",
+          "confidence": 0.87
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Iran may be working on biological weapons, Trump says",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump told Fox News there are indications Iran may be working on biological or chemical weapons as the war drags on toward its ninth month.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T08:51:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 26.9,
+          "neuP": 73.1,
+          "label": "negative",
+          "confidence": 0.89
         },
         "category": "usa"
       },
@@ -5336,26 +5401,6 @@
           "neuP": 63,
           "label": "positive",
           "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iran may be working on biological weapons, Trump says",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump told Fox News there are indications Iran may be working on biological or chemical weapons as the war drags on toward its ninth month.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T03:02:14.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 26.9,
-          "neuP": 73.1,
-          "label": "negative",
-          "confidence": 0.89
         },
         "category": "usa"
       },
@@ -5400,127 +5445,94 @@
         "category": "usa"
       },
       {
-        "title": "No major agreements from Trump summit with Putin, Xi",
-        "link": "https://www.cbsnews.com/video/no-major-agreements-from-trump-summit-with-putin-xi/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Justice Department seeks dismissal of its lawsuit in Alaska Senate race",
+        "link": "https://www.nbcnews.com/politics/2026-election/doj-seeks-dismissal-lawsuit-alaska-senate-dan-sullivan-mary-peltola-rcna610343",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump, Chinese President Xi Jinping and Russian President Vladimir Putin held a historic summit this week in China, but they didn't reach any major agreements. Zeke Miller, deputy Washington bureau chief at the Associated Press, joins CBS News to discuss.",
+        "description": "The Trump administration had sought to block certification of the election results if Republican Sen. Dan Sullivan lost. Democrat Mary Peltola won the race.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T01:55:00.000Z",
+        "publishedAt": "2026-11-20T01:59:24.000Z",
         "sentiment": {
-          "posP": 8.1,
-          "negP": 5.2,
-          "neuP": 86.7,
+          "posP": 16.1,
+          "negP": 16.1,
+          "neuP": 67.8,
           "label": "positive",
-          "confidence": 0.36
+          "confidence": 0.25
         },
         "category": "usa"
       },
       {
-        "title": "Trump to speak Friday about summit with Xi and Putin; Zelenskyy meets with U.S. envoys",
-        "link": "https://www.cbsnews.com/video/trump-to-speak-friday-about-summit-with-xi-and-putin/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Russia Strikes Ukraine Just Hours After Summit With US, China",
+        "link": "https://www.today.com/video/russia-strikes-ukraine-just-hours-after-summit-with-us-china-273884229505",
+        "source": "NBC News",
+        "sourceDomain": "today.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump will speak Friday about the meeting he had this week with Russia's Vladimir Putin and China's Xi Jinping. CBS News' Aidan Stretch has more on that and Ukrainian President Volodymyr Zelenskyy's meeting with U.S. envoys and European leaders.",
+        "description": "Russia launched a massive attack on Ukraine just hours after Russian President Vladimir Putin met with President Donald Trump and Chinese President Xi Jinping at an historic summit. NBC’s Richard Engel reports for TODAY from Kyiv.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T01:26:21.000Z",
+        "publishedAt": "2026-11-20T12:23:02.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Husband of American detained in Russia says case was not mentioned during Trump meeting with Putin",
-        "link": "https://www.cbsnews.com/video/husband-of-american-detained-in-russia-speaks-out/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Harold Jezler is the husband of Olga Jezler, an American who has been detained in Russia for over four years. He joins \"The Takeout\" to share details on his wife's condition and call for her safe return.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T01:26:16.000Z",
-        "sentiment": {
-          "posP": 8.6,
-          "negP": 9.1,
-          "neuP": 82.3,
-          "label": "neutral",
-          "confidence": 0.08
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump calls Putin his friend at summit, prompting backlash from some world leaders",
-        "link": "https://www.cbsnews.com/video/trump-calls-putin-his-friend-at-summit-prompting-backlash-from-some-world-leaders/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump insisted that Russian President Vladimir Putin wants to end his war with Ukraine as the two leaders met with Chinese President Xi Jinping. But Putin later told reporters he plans to halt negotiations with the country he invaded in 2022. Mr. Trump also called Putin his friend, sparking a rebuke from the prime minister of Poland. Nancy Cordes and Anna Coren report.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T01:26:05.000Z",
-        "sentiment": {
-          "posP": 7.7,
-          "negP": 4.7,
-          "neuP": 87.6,
-          "label": "positive",
-          "confidence": 0.36
+          "posP": 3.1,
+          "negP": 11.4,
+          "neuP": 85.5,
+          "label": "negative",
+          "confidence": 0.62
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.52,
-      "neu": 83.66,
-      "neg": 8.81,
-      "count": 60
+      "pos": 7.26,
+      "neu": 82.59,
+      "neg": 10.15,
+      "count": 52
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 8.19,
-        "neu": 81.41,
-        "neg": 10.39,
-        "count": 15
+        "pos": 7.63,
+        "neu": 80.88,
+        "neg": 11.48,
+        "count": 13
       },
       {
         "source": "NBC News",
-        "pos": 7.56,
-        "neu": 85.74,
-        "neg": 6.7,
-        "count": 11
+        "pos": 9.64,
+        "neu": 81.78,
+        "neg": 8.58,
+        "count": 10
       },
       {
         "source": "CBS News",
-        "pos": 6.3,
-        "neu": 87.25,
-        "neg": 6.45,
-        "count": 11
-      },
-      {
-        "source": "NYT",
-        "pos": 9.76,
-        "neu": 81.47,
-        "neg": 8.77,
+        "pos": 6.39,
+        "neu": 81.1,
+        "neg": 12.51,
         "count": 7
       },
       {
-        "source": "ABC News",
-        "pos": 11.88,
-        "neu": 74.14,
-        "neg": 13.98,
+        "source": "NYT",
+        "pos": 5.34,
+        "neu": 87.02,
+        "neg": 7.64,
         "count": 5
+      },
+      {
+        "source": "Fox News",
+        "pos": 8.3,
+        "neu": 85.7,
+        "neg": 6,
+        "count": 4
+      },
+      {
+        "source": "ABC News",
+        "pos": 10.3,
+        "neu": 74.13,
+        "neg": 15.57,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5537,13 +5549,6 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 6,
-        "neu": 85.7,
-        "neg": 8.3,
-        "count": 2
-      },
-      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
@@ -5554,30 +5559,30 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.04,
-        "neu": 84,
-        "neg": 9.95,
-        "count": 22
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 7.11,
-        "neu": 85.9,
-        "neg": 6.99,
-        "count": 17
+        "pos": 5.26,
+        "neu": 84.1,
+        "neg": 10.65,
+        "count": 21
       },
       {
         "topic": "Policy",
-        "pos": 9.21,
-        "neu": 80.86,
-        "neg": 9.94,
-        "count": 14
+        "pos": 9.7,
+        "neu": 78.88,
+        "neg": 11.42,
+        "count": 13
+      },
+      {
+        "topic": "Foreign Policy",
+        "pos": 7.26,
+        "neu": 83.59,
+        "neg": 9.15,
+        "count": 11
       },
       {
         "topic": "Economy",
-        "pos": 10.6,
-        "neu": 77.73,
-        "neg": 11.67,
+        "pos": 10.23,
+        "neu": 77.07,
+        "neg": 12.7,
         "count": 3
       },
       {
@@ -5589,8 +5594,8 @@
       },
       {
         "topic": "Public Statements",
-        "pos": 6.4,
-        "neu": 93.6,
+        "pos": 0,
+        "neu": 100,
         "neg": 0,
         "count": 1
       }
@@ -5619,28 +5624,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-20T00:13:55.627Z",
+        "label": "2026-11-20T09:03:27.070Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T01:13:55.627Z",
+        "label": "2026-11-20T10:03:27.070Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T02:13:55.627Z",
+        "label": "2026-11-20T11:03:27.070Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T03:13:55.627Z",
+        "label": "2026-11-20T12:03:27.070Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5649,28 +5654,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-20T00:13:55.627Z",
+        "label": "2026-11-20T09:03:27.071Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T01:13:55.627Z",
+        "label": "2026-11-20T10:03:27.071Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T02:13:55.627Z",
+        "label": "2026-11-20T11:03:27.071Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T03:13:55.627Z",
+        "label": "2026-11-20T12:03:27.071Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5750,7 +5755,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-20T04:13:55.628Z",
+    "generatedAt": "2026-11-20T13:03:27.071Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5871,8 +5876,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 190,
-      "potusArticles": 60,
+      "usaArticles": 189,
+      "potusArticles": 52,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
