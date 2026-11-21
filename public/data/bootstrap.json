@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-20T21:00:09.253Z",
+  "generatedAt": "2026-11-21T02:06:55.184Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 186,
-    "potusArticles": 56
+    "usaArticles": 188,
+    "potusArticles": 48
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-20T17:00:09.254Z",
+          "label": "2026-11-20T22:06:55.184Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T18:00:09.254Z",
+          "label": "2026-11-20T23:06:55.184Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T19:00:09.254Z",
+          "label": "2026-11-21T00:06:55.184Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T20:00:09.254Z",
+          "label": "2026-11-21T01:06:55.184Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-20T17:00:09.254Z",
+          "label": "2026-11-20T22:06:55.184Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T18:00:09.254Z",
+          "label": "2026-11-20T23:06:55.184Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T19:00:09.254Z",
+          "label": "2026-11-21T00:06:55.184Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-20T20:00:09.254Z",
+          "label": "2026-11-21T01:06:55.184Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.84,
-      "neu": 82.4,
-      "neg": 9.76,
-      "count": 186
+      "pos": 7.48,
+      "neu": 82.58,
+      "neg": 9.93,
+      "count": 188
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.54,
-        "neu": 82.17,
-        "neg": 7.28,
+        "pos": 10.19,
+        "neu": 83.54,
+        "neg": 6.27,
         "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 8.19,
-        "neu": 81,
-        "neg": 10.81,
+        "pos": 8.32,
+        "neu": 79.63,
+        "neg": 12.05,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.3,
-        "neu": 84.13,
-        "neg": 10.57,
+        "pos": 2.41,
+        "neu": 82.79,
+        "neg": 14.8,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 6.16,
-        "neu": 84.54,
-        "neg": 9.3,
-        "count": 22
+        "pos": 5.15,
+        "neu": 84.95,
+        "neg": 9.89,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 9.08,
-        "neu": 81.01,
-        "neg": 9.91,
+        "pos": 10.08,
+        "neu": 80.96,
+        "neg": 8.96,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 7.67,
-        "neu": 83.74,
-        "neg": 8.59,
+        "pos": 8.97,
+        "neu": 85.63,
+        "neg": 5.41,
         "count": 20
       },
       {
@@ -4635,9 +4635,9 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -16.4,
-          "count": 2
+          "name": "Healthcare",
+          "bias": -9.49,
+          "count": 11
         },
         {
           "name": "Communication",
@@ -4645,75 +4645,70 @@
           "count": 2
         },
         {
-          "name": "Manufacturing",
-          "bias": 7.1,
-          "count": 2
-        },
-        {
-          "name": "Materials",
-          "bias": 4.05,
-          "count": 2
-        },
-        {
-          "name": "Healthcare",
-          "bias": -3.3,
-          "count": 8
-        },
-        {
-          "name": "Finance",
-          "bias": -3.18,
-          "count": 24
-        },
-        {
-          "name": "Energy",
-          "bias": -3.05,
-          "count": 11
-        },
-        {
-          "name": "Real Estate",
-          "bias": -1.73,
+          "name": "Utilities",
+          "bias": -7.9,
           "count": 3
         },
         {
+          "name": "Energy",
+          "bias": 6.26,
+          "count": 12
+        },
+        {
+          "name": "Finance",
+          "bias": -3.7,
+          "count": 23
+        },
+        {
           "name": "Technology",
-          "bias": -1.59,
-          "count": 140
+          "bias": -1.51,
+          "count": 144
+        },
+        {
+          "name": "Real Estate",
+          "bias": 1.38,
+          "count": 4
+        },
+        {
+          "name": "Materials",
+          "bias": -0.9,
+          "count": 5
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 0.55,
+          "count": 4
         }
       ],
       "pos": [
         {
-          "name": "Manufacturing",
-          "bias": 7.1,
-          "count": 2
-        },
-        {
-          "name": "Materials",
-          "bias": 4.05,
-          "count": 2
+          "name": "Energy",
+          "bias": 6.26,
+          "count": 12
         }
       ],
       "neu": [
         {
           "name": "Finance",
-          "bias": -3.18,
-          "count": 24
+          "bias": -3.7,
+          "count": 23
         },
         {
-          "name": "Energy",
-          "bias": -3.05,
-          "count": 11
+          "name": "Technology",
+          "bias": -1.51,
+          "count": 144
         },
         {
           "name": "Real Estate",
-          "bias": -1.73,
-          "count": 3
+          "bias": 1.38,
+          "count": 4
         }
       ],
       "neg": [
         {
-          "name": "Utilities",
-          "bias": -16.4,
-          "count": 2
+          "name": "Healthcare",
+          "bias": -9.49,
+          "count": 11
         },
         {
           "name": "Communication",
@@ -4721,41 +4716,41 @@
           "count": 2
         },
         {
-          "name": "Healthcare",
-          "bias": -3.3,
-          "count": 8
+          "name": "Utilities",
+          "bias": -7.9,
+          "count": 3
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-20T17:00:09.256Z",
-          "pos": 7,
-          "neu": 84,
-          "neg": 9,
-          "count": 6
+          "label": "2026-11-20T22:06:55.185Z",
+          "pos": 6,
+          "neu": 83,
+          "neg": 11,
+          "count": 17
         },
         {
-          "label": "2026-11-20T18:00:09.256Z",
-          "pos": 9,
-          "neu": 84,
-          "neg": 7,
-          "count": 18
+          "label": "2026-11-20T23:06:55.185Z",
+          "pos": 10,
+          "neu": 79,
+          "neg": 12,
+          "count": 13
         },
         {
-          "label": "2026-11-20T19:00:09.256Z",
-          "pos": 7,
-          "neu": 84,
-          "neg": 10,
-          "count": 20
-        },
-        {
-          "label": "2026-11-20T20:00:09.256Z",
+          "label": "2026-11-21T00:06:55.185Z",
           "pos": 5,
-          "neu": 84,
-          "neg": 10,
-          "count": 30
+          "neu": 82,
+          "neg": 12,
+          "count": 21
+        },
+        {
+          "label": "2026-11-21T01:06:55.185Z",
+          "pos": 2,
+          "neu": 80,
+          "neg": 17,
+          "count": 15
         }
       ]
     }
@@ -4983,22 +4978,22 @@
         "category": "usa"
       },
       {
-        "title": "EXCLUSIVE: Trump’s FDA nominee vows new abortion pill safety review after pressure from Sen Hawley",
-        "link": "https://www.foxnews.com/politics/exclusive-trumps-fda-nominee-vows-new-abortion-pill-safety-review-after-pressure-sen-hawley",
+        "title": "Trump floats an unexpected name to be his successor as powerhouses Rubio and Vance stand by",
+        "link": "https://www.foxnews.com/politics/trump-floats-unexpected-name-successor-powerhouses-rubio-vance-stand",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Food and Drug Administration nominee Dr. Heidi Overton committed to a timeline for a delayed mifepristone safety study, Sen. Josh Hawley's office says.",
+        "description": "Donald Trump stunned the White House press briefing room by asking Stephen Miller if he wants to run for president, as JD Vance and Marco Rubio looked on.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T20:38:16.000Z",
+        "publishedAt": "2026-11-20T21:28:09.000Z",
         "sentiment": {
-          "posP": 22.6,
-          "negP": 9.3,
-          "neuP": 68.1,
-          "label": "positive",
-          "confidence": 0.7
+          "posP": 4.2,
+          "negP": 3.1,
+          "neuP": 92.7,
+          "label": "neutral",
+          "confidence": 0.13
         },
         "category": "usa"
       }
@@ -5225,202 +5220,62 @@
         "category": "usa"
       },
       {
-        "title": "EXCLUSIVE: Trump’s FDA nominee vows new abortion pill safety review after pressure from Sen Hawley",
-        "link": "https://www.foxnews.com/politics/exclusive-trumps-fda-nominee-vows-new-abortion-pill-safety-review-after-pressure-sen-hawley",
+        "title": "Trump floats an unexpected name to be his successor as powerhouses Rubio and Vance stand by",
+        "link": "https://www.foxnews.com/politics/trump-floats-unexpected-name-successor-powerhouses-rubio-vance-stand",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Food and Drug Administration nominee Dr. Heidi Overton committed to a timeline for a delayed mifepristone safety study, Sen. Josh Hawley's office says.",
+        "description": "Donald Trump stunned the White House press briefing room by asking Stephen Miller if he wants to run for president, as JD Vance and Marco Rubio looked on.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T20:38:16.000Z",
+        "publishedAt": "2026-11-20T21:28:09.000Z",
         "sentiment": {
-          "posP": 22.6,
-          "negP": 9.3,
-          "neuP": 68.1,
-          "label": "positive",
-          "confidence": 0.7
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iran takes pointed jab at Trump Cabinet secretary for moving onto military base",
-        "link": "https://www.foxnews.com/politics/iran-takes-pointed-jab-trump-cabinet-secretary-moving-military-base",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Treasury Secretary Scott Bessent moved to a military base amid reported Iranian assassination threats a senior official says reached an advanced stage.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T20:36:05.000Z",
-        "sentiment": {
-          "posP": 13,
-          "negP": 16.8,
-          "neuP": 70.2,
-          "label": "negative",
-          "confidence": 0.54
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump wags finger at 'really rude' reporter, tells her she belongs in the 'back row' during press exchange",
-        "link": "https://www.foxnews.com/politics/trump-wags-finger-really-rude-reporter-tells-her-she-belongs-back-row-during-press-exchange",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Donald Trump wagged his finger at a reporter, calling her \"really a rude person\" and telling her she belonged in the \"back row\" at the White House.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T20:35:08.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 13.8,
-          "neuP": 86.2,
-          "label": "negative",
-          "confidence": 0.76
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump responds after Vance blames Iran war for midterm losses, VP says his job is to support president",
-        "link": "https://www.foxnews.com/politics/trump-responds-vance-blames-iran-war-midterm-losses-vp-says-job-support-president",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump says he would launch the war against Iran again, as JD Vance blames midterm losses on voter anger over the conflict and oil prices.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T20:03:11.000Z",
-        "sentiment": {
-          "posP": 4.3,
-          "negP": 38.9,
-          "neuP": 56.8,
-          "label": "negative",
-          "confidence": 0.97
-        },
-        "category": "usa"
-      },
-      {
-        "title": "C.F.T.C. Officials Considered Investigating Trump’s Memecoin, Then Punted",
-        "link": "https://www.nytimes.com/2026/11/20/us/politics/cftc-cryptocurrency-trump-memecoin.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Lawyers at the Commodity Futures Trading Commission looked into possible fraud soon after the digital token’s launch, then decided they would not get the commission’s support.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T15:03:34.000Z",
-        "sentiment": {
-          "posP": 7,
-          "negP": 9.9,
-          "neuP": 83.1,
-          "label": "negative",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Britain and Brussels Have Begun a Brexit Rollback. How Far Will It Go?",
-        "link": "https://www.nytimes.com/2026/11/20/world/europe/britain-and-brussels-have-begun-a-brexit-rollback-how-far-will-it-go.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The United Kingdom is removing barriers with the European Union a decade after it voted to leave. Global turmoil, and the disruptive policies of President Trump, helped push them back together.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T20:22:13.000Z",
-        "sentiment": {
-          "posP": 6,
-          "negP": 12.8,
-          "neuP": 81.2,
-          "label": "negative",
-          "confidence": 0.3
-        },
-        "category": "usa"
-      },
-      {
-        "title": "The Democrats’ Plan for Investigating Trump",
-        "link": "https://www.nytimes.com/2026/11/20/opinion/ezra-klein-podcast-robert-garcia.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The incoming House Oversight Committee chairman, Robert Garcia, lays out his committee’s top targets.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T10:04:03.000Z",
-        "sentiment": {
-          "posP": 8.7,
-          "negP": 0,
-          "neuP": 91.3,
-          "label": "positive",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he and Xi agreed to \"joint guardrails\" on AI, comments on tech outages",
-        "link": "https://www.cbsnews.com/video/trump-says-he-and-xi-will-do-joint-guardrails-on-ai/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump told reporters Friday that he and Chinese President Xi Jinping had agreed to \"joint guardrails\" on AI during their summit this week. CBS News' Natalie Brand and Samantha Vinograd have more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T20:31:22.000Z",
-        "sentiment": {
-          "posP": 8.4,
-          "negP": 0,
-          "neuP": 91.6,
-          "label": "positive",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Inside the situations in Ukraine, Iran following Trump summit with Xi and Putin",
-        "link": "https://www.cbsnews.com/video/inside-the-situations-in-ukraine-iran-following-trump-summit-with-xi-and-putin/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump addressed reporters Friday after his summit with Chinese President Xi Jinping and Russian President Vladimir Putin. CBS News contributor Elliot Ackerman has more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T20:26:57.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
+          "posP": 4.2,
+          "negP": 3.1,
+          "neuP": 92.7,
           "label": "neutral",
-          "confidence": 0
+          "confidence": 0.13
         },
         "category": "usa"
       },
       {
-        "title": "Musk said he'd \"look into\" this disclosure law. Now it heads to court.",
-        "link": "https://www.cbsnews.com/news/elon-musk-corporate-disclosure-lawsuit/",
+        "title": "Trump defends calling Putin his friend, talks outages in first presser after China summit",
+        "link": "https://www.cbsnews.com/video/trump-defends-calling-putin-his-friend-talks-outages-in-first-presser-after-china-summit/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Two county prosecutors say the Trump administration broke the law when it exempted U.S. companies from ownership reporting.",
+        "description": "President Trump addressed Iran's nuclear program, the Ukraine war and more in his first press conference following his summit with Vladimir Putin and Xi Jinping on Friday. Ed O'Keefe reports.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T20:26:18.000Z",
+        "publishedAt": "2026-11-21T01:08:22.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 8.5,
-          "neuP": 91.5,
+          "posP": 6.5,
+          "negP": 7.9,
+          "neuP": 85.6,
+          "label": "neutral",
+          "confidence": 0.18
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says recent tech outages are \"all separate events\"",
+        "link": "https://www.cbsnews.com/video/trump-says-recent-tech-outages-are-all-separate-events/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump's wide-ranging remarks Friday touched on the lingering concerns that tech outages at the FAA, NSA, banks and other companies were part of a coordinated attack. Mr. Trump denied that, saying all the incidents were unrelated. CBS News national security contributor Joseph Zacks has more.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-21T00:09:40.000Z",
+        "sentiment": {
+          "posP": 4,
+          "negP": 10.1,
+          "neuP": 85.9,
           "label": "negative",
-          "confidence": 0.42
+          "confidence": 0.56
         },
         "category": "usa"
       },
@@ -5434,7 +5289,7 @@
         "description": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T20:00:46.000Z",
+        "publishedAt": "2026-11-21T00:00:42.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 15.8,
@@ -5445,94 +5300,220 @@
         "category": "usa"
       },
       {
-        "title": "Trump addresses tech outages, Iran, touts meeting with Xi and Putin in first remarks since summit",
-        "link": "https://www.cbsnews.com/video/trump-addresses-tech-outages-touts-meeting-with-xi-and-putin-in-first-remarks-since-summit/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "The Evening: Are Nvidia Chips Helping Power the Chinese Military?",
+        "link": "https://www.nytimes.com/2026/11/20/briefing/nvidia-anthropic-ice.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump spoke to reporters Friday for the first time since his trip to Asia and his meeting with Xi Jinping and Vladimir Putin. CBS News' Natalie Brand, Ed O'Keefe and Olivia Gazis have more.",
+        "description": "Plus, Trump is bullish on data centers. Here’s the latest at the end of Friday.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T19:45:24.000Z",
+        "publishedAt": "2026-11-20T22:49:15.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 2.2,
-          "neuP": 97.8,
-          "label": "neutral",
-          "confidence": 0.03
+          "posP": 8.4,
+          "negP": 0,
+          "neuP": 91.6,
+          "label": "positive",
+          "confidence": 0.3
         },
         "category": "usa"
       },
       {
-        "title": "Trump touts Asia trip, meeting with Putin and Xi at news conference",
-        "link": "https://www.cbsnews.com/live-updates/trump-press-conference-live-stream-2026-11-20/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Officials Find Cascade of Problems With ICE Training in Trump’s Immigration Crackdown",
+        "link": "https://www.nytimes.com/2026/11/20/us/politics/training-ice-immigration-inspector-general.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump touted his trip to Asia this week and his meetings with China's Xi Jinping and Russia's Vladimir Putin at a press conference at the White House.",
+        "description": "In a draft report, officials found widespread training gaps as the Department of Homeland Security sought to rapidly hire and deploy 10,000 new officers.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-20T19:00:00.000Z",
+        "publishedAt": "2026-11-21T01:43:40.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 5.9,
-          "neuP": 94.1,
+          "posP": 6.3,
+          "negP": 7.1,
+          "neuP": 86.6,
           "label": "neutral",
           "confidence": 0.08
+        },
+        "category": "usa"
+      },
+      {
+        "title": "It’s a Bill on Energy Permits, but Trump’s Pet Projects Are Part of the Debate",
+        "link": "https://www.nytimes.com/2026/11/20/us/politics/baaja-permitting-bill-trump.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The pervasive presence of the president hovers over the bipartisan legislation to speed up construction of energy projects that are advancing through Congress.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-21T00:57:33.000Z",
+        "sentiment": {
+          "posP": 10.7,
+          "negP": 0,
+          "neuP": 89.3,
+          "label": "positive",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Threatens to Bar U.S. Tech Firms From Building Data Centers Abroad",
+        "link": "https://www.nytimes.com/2026/11/20/us/politics/trump-data-centers-ban.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president suggested he would tax the same companies, though it was not clear how he would carry out the plan unveiled at a news conference.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T18:51:22.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 12,
+          "neuP": 88,
+          "label": "negative",
+          "confidence": 0.58
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Takeaways From Trump’s Post-Trip News Conference",
+        "link": "https://www.nytimes.com/2026/11/20/us/politics/trump-news-conference-asia-trip.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump called the trilateral meeting with Xi Jinping and Vladimir Putin in China an “amazing event.” He also said he would work with Democrats in Congress on key issues.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-21T01:24:30.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump vows to stop U.S. companies from building data centers abroad, threatens 'tremendous tax'",
+        "link": "https://www.cnbc.com/2026/11/20/trump-data-centers-ai-companies-tax.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump spoke at the White House after meeting with Chinese President Xi Jinping and Russian President Vladimir Putin for a historic trilateral summit in China.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T20:47:58.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 11.8,
+          "neuP": 88.2,
+          "label": "negative",
+          "confidence": 0.59
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he still has confidence in Lutnick",
+        "link": "https://www.cnbc.com/2026/11/20/trump-lutnick-commerce-china-ai.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump, when asked by CNBC's Eamon Javers, said he has not lost confidence in Commerce Secretary Howard Lutnick.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T20:52:08.000Z",
+        "sentiment": {
+          "posP": 16,
+          "negP": 8.2,
+          "neuP": 75.8,
+          "label": "positive",
+          "confidence": 0.37
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he discussed Jensen Huang with Xi; Bessent tells CNBC Nvidia chip export policy is unchanged",
+        "link": "https://www.cnbc.com/2026/11/20/treasury-secretary-scott-bessent.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump said he discussed Jensen Huang with China's Xi. Bessent said the ousted Nvidia CEO didn't come up in talks he had while in China.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T22:08:41.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
+        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-27T03:59:00.000Z",
+        "sentiment": {
+          "posP": 7.9,
+          "negP": 9.7,
+          "neuP": 82.4,
+          "label": "neutral",
+          "confidence": 0.14
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.57,
-      "neu": 83.61,
-      "neg": 9.82,
-      "count": 56
+      "pos": 6.7,
+      "neu": 86.5,
+      "neg": 6.8,
+      "count": 48
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 8.27,
-        "neu": 80.41,
-        "neg": 11.31,
+        "pos": 10.14,
+        "neu": 83.11,
+        "neg": 6.76,
         "count": 14
       },
       {
+        "source": "NYT",
+        "pos": 5.49,
+        "neu": 90.07,
+        "neg": 4.44,
+        "count": 7
+      },
+      {
         "source": "NBC News",
-        "pos": 6.78,
-        "neu": 81.28,
-        "neg": 11.94,
-        "count": 9
+        "pos": 5.94,
+        "neu": 88.56,
+        "neg": 5.5,
+        "count": 7
       },
       {
         "source": "CBS News",
-        "pos": 3.04,
-        "neu": 91.16,
-        "neg": 5.8,
-        "count": 8
-      },
-      {
-        "source": "Fox News",
-        "pos": 9.92,
-        "neu": 75.95,
-        "neg": 14.13,
-        "count": 6
-      },
-      {
-        "source": "NYT",
-        "pos": 6.94,
-        "neu": 86.12,
-        "neg": 6.94,
-        "count": 5
-      },
-      {
-        "source": "ABC News",
-        "pos": 7.26,
-        "neu": 85.18,
-        "neg": 7.56,
-        "count": 5
+        "pos": 3.63,
+        "neu": 84.42,
+        "neg": 11.95,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5542,10 +5523,24 @@
         "count": 4
       },
       {
+        "source": "ABC News",
+        "pos": 6.3,
+        "neu": 87.48,
+        "neg": 6.22,
+        "count": 4
+      },
+      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
+        "count": 3
+      },
+      {
+        "source": "Fox News",
+        "pos": 7.93,
+        "neu": 89.03,
+        "neg": 3.03,
         "count": 3
       },
       {
@@ -5559,45 +5554,45 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.72,
-        "neu": 80.29,
-        "neg": 11.99,
-        "count": 23
-      },
-      {
-        "topic": "Foreign Policy",
-        "pos": 5.33,
-        "neu": 87.65,
-        "neg": 7.02,
-        "count": 11
+        "pos": 8.25,
+        "neu": 83.87,
+        "neg": 7.89,
+        "count": 22
       },
       {
         "topic": "Policy",
-        "pos": 7.08,
-        "neu": 83.02,
-        "neg": 9.9,
-        "count": 10
+        "pos": 7.07,
+        "neu": 88.87,
+        "neg": 4.05,
+        "count": 8
+      },
+      {
+        "topic": "Foreign Policy",
+        "pos": 5.26,
+        "neu": 87.83,
+        "neg": 6.91,
+        "count": 8
       },
       {
         "topic": "Economy",
-        "pos": 6.47,
-        "neu": 83.83,
-        "neg": 9.7,
-        "count": 6
+        "pos": 5.42,
+        "neu": 87.42,
+        "neg": 7.16,
+        "count": 5
       },
       {
         "topic": "Public Statements",
-        "pos": 0,
-        "neu": 94.67,
-        "neg": 5.33,
+        "pos": 2.73,
+        "neu": 92.87,
+        "neg": 4.4,
         "count": 3
       },
       {
         "topic": "Legal",
-        "pos": 7.37,
-        "neu": 84.63,
-        "neg": 8,
-        "count": 3
+        "pos": 3.15,
+        "neu": 88.7,
+        "neg": 8.15,
+        "count": 2
       }
     ]
   },
@@ -5624,28 +5619,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-20T17:00:09.257Z",
+        "label": "2026-11-20T22:06:55.187Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T18:00:09.257Z",
+        "label": "2026-11-20T23:06:55.187Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T19:00:09.257Z",
+        "label": "2026-11-21T00:06:55.187Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T20:00:09.257Z",
+        "label": "2026-11-21T01:06:55.187Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5654,28 +5649,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-20T17:00:09.257Z",
+        "label": "2026-11-20T22:06:55.188Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T18:00:09.257Z",
+        "label": "2026-11-20T23:06:55.188Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T19:00:09.257Z",
+        "label": "2026-11-21T00:06:55.188Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-20T20:00:09.257Z",
+        "label": "2026-11-21T01:06:55.188Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5755,7 +5750,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-20T21:00:09.258Z",
+    "generatedAt": "2026-11-21T02:06:55.188Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5876,8 +5871,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 186,
-      "potusArticles": 56,
+      "usaArticles": 188,
+      "potusArticles": 48,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
