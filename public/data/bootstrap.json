@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T17:44:43.639Z",
+  "generatedAt": "2026-11-22T22:50:15.927Z",
   "counts": {
     "articles": 120,
     "topics": 12,
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-22T13:44:43.639Z",
+          "label": "2026-11-22T18:50:15.928Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-22T14:44:43.639Z",
+          "label": "2026-11-22T19:50:15.928Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-22T15:44:43.639Z",
+          "label": "2026-11-22T20:50:15.928Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-22T16:44:43.639Z",
+          "label": "2026-11-22T21:50:15.928Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-22T13:44:43.640Z",
+          "label": "2026-11-22T18:50:15.928Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-22T14:44:43.640Z",
+          "label": "2026-11-22T19:50:15.928Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-22T15:44:43.640Z",
+          "label": "2026-11-22T20:50:15.928Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-22T16:44:43.640Z",
+          "label": "2026-11-22T21:50:15.928Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 8.55,
-      "neu": 82.61,
-      "neg": 8.84,
+      "pos": 7.95,
+      "neu": 82.78,
+      "neg": 9.26,
       "count": 180
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.38,
-        "neu": 81.64,
-        "neg": 7.98,
-        "count": 41
+        "pos": 10.8,
+        "neu": 79.8,
+        "neg": 9.4,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 9.67,
-        "neu": 79.6,
-        "neg": 10.74,
+        "pos": 8.48,
+        "neu": 82.92,
+        "neg": 8.6,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 7.08,
-        "neu": 86.88,
-        "neg": 6.03,
+        "pos": 5.75,
+        "neu": 86.95,
+        "neg": 7.3,
         "count": 26
       },
       {
@@ -4591,24 +4591,24 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.07,
-        "neu": 83.18,
-        "neg": 6.74,
+        "pos": 10.38,
+        "neu": 82.74,
+        "neg": 6.88,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 7.83,
-        "neu": 85.64,
-        "neg": 6.53,
-        "count": 20
+        "pos": 5.84,
+        "neu": 86.95,
+        "neg": 7.21,
+        "count": 19
       },
       {
         "source": "NYT",
-        "pos": 6.94,
-        "neu": 81.81,
-        "neg": 11.25,
-        "count": 15
+        "pos": 5.61,
+        "neu": 82.08,
+        "neg": 12.31,
+        "count": 17
       },
       {
         "source": "NPR",
@@ -4636,126 +4636,121 @@
       "rows": [
         {
           "name": "Communication",
-          "bias": -14,
+          "bias": -7,
+          "count": 2
+        },
+        {
+          "name": "Real Estate",
+          "bias": 5.9,
           "count": 1
         },
         {
           "name": "Materials",
-          "bias": -7.16,
-          "count": 5
-        },
-        {
-          "name": "Utilities",
-          "bias": 6.87,
-          "count": 3
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -3.02,
-          "count": 4
-        },
-        {
-          "name": "Finance",
-          "bias": -1.51,
-          "count": 18
-        },
-        {
-          "name": "Healthcare",
-          "bias": -0.83,
-          "count": 13
+          "bias": -2.71,
+          "count": 8
         },
         {
           "name": "Energy",
-          "bias": 0.7,
-          "count": 10
+          "bias": 2.02,
+          "count": 14
         },
         {
           "name": "Technology",
-          "bias": 0.19,
-          "count": 136
+          "bias": -1.05,
+          "count": 132
+        },
+        {
+          "name": "Utilities",
+          "bias": -0.63,
+          "count": 3
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -0.6,
+          "count": 5
+        },
+        {
+          "name": "Healthcare",
+          "bias": 0.41,
+          "count": 12
+        },
+        {
+          "name": "Finance",
+          "bias": -0.4,
+          "count": 19
         }
       ],
       "pos": [
         {
-          "name": "Utilities",
-          "bias": 6.87,
-          "count": 3
-        },
-        {
           "name": "Real Estate",
           "bias": 5.9,
           "count": 1
+        },
+        {
+          "name": "Energy",
+          "bias": 2.02,
+          "count": 14
         }
       ],
       "neu": [
         {
-          "name": "Finance",
-          "bias": -1.51,
-          "count": 18
+          "name": "Technology",
+          "bias": -1.05,
+          "count": 132
         },
         {
-          "name": "Healthcare",
-          "bias": -0.83,
-          "count": 13
+          "name": "Utilities",
+          "bias": -0.63,
+          "count": 3
         },
         {
-          "name": "Energy",
-          "bias": 0.7,
-          "count": 10
+          "name": "Manufacturing",
+          "bias": -0.6,
+          "count": 5
         }
       ],
       "neg": [
         {
           "name": "Communication",
-          "bias": -14,
-          "count": 1
+          "bias": -7,
+          "count": 2
         },
         {
           "name": "Materials",
-          "bias": -7.16,
-          "count": 5
-        },
-        {
-          "name": "Manufacturing",
-          "bias": -3.02,
-          "count": 4
+          "bias": -2.71,
+          "count": 8
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-22T13:44:43.641Z",
-          "pos": 15,
-          "neu": 84,
-          "neg": 1,
+          "label": "2026-11-22T18:50:15.930Z",
+          "pos": 7,
+          "neu": 86,
+          "neg": 7,
           "count": 5
         },
         {
-          "label": "2026-11-22T14:44:43.641Z",
-          "pos": 11,
+          "label": "2026-11-22T19:50:15.930Z",
+          "pos": 7,
+          "neu": 79,
+          "neg": 15,
+          "count": 10
+        },
+        {
+          "label": "2026-11-22T20:50:15.930Z",
+          "pos": 7,
           "neu": 84,
-          "neg": 5,
-          "count": 20
+          "neg": 9,
+          "count": 17
         },
         {
-          "label": "2026-11-22T15:44:43.641Z",
+          "label": "2026-11-22T21:50:15.930Z",
           "pos": 8,
-          "neu": 82,
-          "neg": 10,
-          "count": 14
-        },
-        {
-          "label": "2026-11-22T16:44:43.641Z",
-          "pos": 5,
           "neu": 87,
-          "neg": 8,
-          "count": 21
+          "neg": 5,
+          "count": 7
         }
       ]
     }
@@ -4983,22 +4978,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump says it would be 'hard' to work with Chuck Schumer: 'He will fail again'",
-        "link": "https://www.foxnews.com/politics/trump-says-hard-work-chuck-schumer-fail-again",
+        "title": "Trump dares Iran to breach US port blockade as Tehran reportedly readies 14 oil tankers",
+        "link": "https://www.foxnews.com/world/trump-dares-iran-breach-us-port-blockade-tehran-reportedly-readies-14-oil-tankers",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump says it will be \"hard\" to work with Chuck Schumer as Senate majority leader, claiming the Democratic leader will \"fail again.\"",
+        "description": "Iran reportedly positioned 14 tankers at Kharg Island to breach the U.S. blockade, as President Donald Trump dared Tehran to test American naval forces in the Gulf.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-22T17:18:57.000Z",
+        "publishedAt": "2026-11-22T22:43:24.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 15.9,
-          "neuP": 84.1,
-          "label": "negative",
-          "confidence": 0.79
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       }
@@ -5225,22 +5220,82 @@
         "category": "usa"
       },
       {
-        "title": "Trump says it would be 'hard' to work with Chuck Schumer: 'He will fail again'",
-        "link": "https://www.foxnews.com/politics/trump-says-hard-work-chuck-schumer-fail-again",
+        "title": "Trump dares Iran to breach US port blockade as Tehran reportedly readies 14 oil tankers",
+        "link": "https://www.foxnews.com/world/trump-dares-iran-breach-us-port-blockade-tehran-reportedly-readies-14-oil-tankers",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump says it will be \"hard\" to work with Chuck Schumer as Senate majority leader, claiming the Democratic leader will \"fail again.\"",
+        "description": "Iran reportedly positioned 14 tankers at Kharg Island to breach the U.S. blockade, as President Donald Trump dared Tehran to test American naval forces in the Gulf.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-22T17:18:57.000Z",
+        "publishedAt": "2026-11-22T22:43:24.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 15.9,
-          "neuP": 84.1,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Tehran threatens to 'break legs' as 'Trump corridor' prepares to launch on Iran's border",
+        "link": "https://www.foxnews.com/world/tehran-threatens-break-legs-trump-corridor-prepares-launch-irans-border",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Armenia launches the U.S.-backed Trump Route corridor despite Iran's stark warning it would \"break their legs\" if Trump crossed its red line.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-22T22:13:15.000Z",
+        "sentiment": {
+          "posP": 5.3,
+          "negP": 6.7,
+          "neuP": 88,
+          "label": "neutral",
+          "confidence": 0.14
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Hakeem Jeffries calls Trump chief of staff Stephen Miller a ‘stone-cold racist,’ refuses to sit down with him",
+        "link": "https://www.foxnews.com/media/hakeem-jeffries-calls-trump-chief-staff-stephen-miller-stone-cold-racist-refuses-sit-down-him",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Hakeem Jeffries said he refuses to meet Stephen Miller, calling him a \"stone-cold racist\" and slamming his role in the Trump administration's mass deportation agenda.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-22T21:24:17.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 9.1,
+          "neuP": 90.9,
           "label": "negative",
-          "confidence": 0.79
+          "confidence": 0.61
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democrats clinch historic House majority as Chuck Hubbard defeats longtime GOP Rep. Virginia Foxx",
+        "link": "https://www.foxnews.com/politics/democrats-clinch-historic-house-majority-chuck-hubbard-defeats-longtime-gop-rep-virginia-foxx",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Democrats secured their largest House majority since 1992, setting up clashes with Trump over investigations, health care and Republican policies.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-22T20:34:07.000Z",
+        "sentiment": {
+          "posP": 15.1,
+          "negP": 5.9,
+          "neuP": 79,
+          "label": "positive",
+          "confidence": 0.56
         },
         "category": "usa"
       },
@@ -5261,6 +5316,86 @@
           "neuP": 70.9,
           "label": "negative",
           "confidence": 0.71
+        },
+        "category": "usa"
+      },
+      {
+        "title": "How Melania Trump Found a Diplomatic Opening in the War in Ukraine",
+        "link": "https://www.nytimes.com/2026/11/22/us/politics/melania-trump-ukraine-diplomacy.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The first lady, who has little experience in international affairs, developed back channels to key figures on both sides of the conflict through her longtime agent.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-22T18:12:18.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 15,
+          "neuP": 85,
+          "label": "negative",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Fact-Checking Stephen Miller, the New White House Chief of Staff",
+        "link": "https://www.nytimes.com/2026/11/22/us/politics/stephen-miller-fact-check.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Mr. Miller has promoted some of the second Trump administration’s most egregious falsehoods about immigration policy, the economy and political opposition.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-22T10:02:17.000Z",
+        "sentiment": {
+          "posP": 8.5,
+          "negP": 0,
+          "neuP": 91.5,
+          "label": "positive",
+          "confidence": 0.42
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Why Are We at the Mercy of the World’s Weirdest Men?",
+        "link": "https://www.nytimes.com/2026/11/22/opinion/jensen-huang-ai-ethics-cold-war.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "No kings isn’t just about Trump.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-22T17:40:26.000Z",
+        "sentiment": {
+          "posP": 12.1,
+          "negP": 19.9,
+          "neuP": 68,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he wants \"permanent\" deal with Iran",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-22T22:29:17.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 17.1,
+          "neuP": 82.9,
+          "label": "negative",
+          "confidence": 0.74
         },
         "category": "usa"
       },
@@ -5305,42 +5440,22 @@
         "category": "usa"
       },
       {
-        "title": "Bessent says Trump administration has \"been in touch\" with Nvidia leadership but still needs answers",
-        "link": "https://www.cbsnews.com/video/bessent-says-trump-administration-has-been-in-touch-with-nvidia-leadership-but-still-needs-answers/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
+        "title": "Employees at Eric Trump-backed robot startup lose health benefits as company's cash crunch deepens",
+        "link": "https://www.cnbc.com/2026/11/22/foundation-future-industries-health-benefits-payroll-base-group.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Treasury Secretary Scott Bessent told Margaret Brennan that the Trump administration has \"been in touch\" with Nvidia's leadership amid the Jensen Huang scandal, but the government still needs answers from the company.",
+        "description": "Foundation is pursuing an emergency bridge loan and has been in talks with VC firms as it waits for a $150 million investment from South Korea's Base Group.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-22T17:25:29.000Z",
+        "publishedAt": "2026-11-22T18:55:05.000Z",
         "sentiment": {
-          "posP": 4.3,
-          "negP": 7.5,
-          "neuP": 88.2,
+          "posP": 5.7,
+          "negP": 11.5,
+          "neuP": 82.8,
           "label": "negative",
-          "confidence": 0.39
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he wants \"permanent\" deal with Iran",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-22T16:30:04.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 17.1,
-          "neuP": 82.9,
-          "label": "negative",
-          "confidence": 0.74
+          "confidence": 0.4
         },
         "category": "usa"
       },
@@ -5363,161 +5478,48 @@
           "confidence": 0.56
         },
         "category": "usa"
-      },
-      {
-        "title": "Abdul El-Sayed says passing Medicare for all with Trump support would be ‘the ultimate trump card’",
-        "link": "https://www.nbcnews.com/meet-the-press/video/abdul-el-sayed-says-passing-medicare-for-all-with-trump-support-would-be-the-ultimate-trump-card-273978437750",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Sen.-elect Abdul El-Sayed (D-Mich.) joins Meet the Press to discuss his push to pass “guaranteed health care” with President Trump’s support.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-22T14:15:50.000Z",
-        "sentiment": {
-          "posP": 13.4,
-          "negP": 0,
-          "neuP": 86.6,
-          "label": "positive",
-          "confidence": 0.66
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Sen.-elect Abdul El-Sayed says he’s open to working with the Trump administration",
-        "link": "https://www.nbcnews.com/politics/congress/abdul-el-sayed-open-working-trump-administration-healthcare-medicare-rcna610664",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Sen.-elect Abdul El-Sayed said he’s open to working with Trump on an agenda to bring down costs and improve healthcare for Americans, just weeks after the three men lobbed attacks on each other during a tense campaign season.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-22T15:16:23.000Z",
-        "sentiment": {
-          "posP": 5.4,
-          "negP": 9.8,
-          "neuP": 84.8,
-          "label": "negative",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Abdul El-Sayed catches president’s attention with pitch for ‘Trumpcare’",
-        "link": "https://www.nbcnews.com/politics/donald-trump/abdul-el-sayed-catches-trumps-attention-pitch-trumpcare-rcna610626",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump responded on Saturday to Sen.-elect Abdul El-Sayed’s push for universal healthcare after the progressive Michigan Democrat pitched that it be called “Trumpcare.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-22T00:37:21.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "WATCH:  Trump calls Putin, Xi his friends after meeting",
-        "link": "https://abcnews.com/video/138294590/",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Doug Lute, former U.S. ambassador to NATO, says President Donald Trump referring to Putin and Xi as friends is \"concerning for America's allies.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T18:46:56.000Z",
-        "sentiment": {
-          "posP": 17.1,
-          "negP": 0,
-          "neuP": 82.9,
-          "label": "positive",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump touts relationships with Putin and Xi after historic Asia trip",
-        "link": "https://abcnews.com/Politics/trump-hold-news-conference-friday-asia-trip/story?id=138307456",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump said the three countries made strides in advancing denuclearization talks.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T22:09:39.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 5,
-          "neuP": 95,
-          "label": "neutral",
-          "confidence": 0.03
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Administration tries to intervene after Kalshi is threatened with restraining order",
-        "link": "https://abcnews.com/US/kalshi-prediction-market-crippled-judge-grants-restraining-order/story?id=138329957",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration tried to step in after Kalshi warned it could be crippled if a judge grants a temporary restraining order being sought by the New York AG.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-21T00:49:33.000Z",
-        "sentiment": {
-          "posP": 4.5,
-          "negP": 12.1,
-          "neuP": 83.4,
-          "label": "negative",
-          "confidence": 0.49
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 7.04,
-      "neu": 85.6,
-      "neg": 7.37,
+      "pos": 6.09,
+      "neu": 85.98,
+      "neg": 7.93,
       "count": 42
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 9.95,
-        "neu": 83.35,
-        "neg": 6.7,
-        "count": 13
+        "pos": 6.72,
+        "neu": 87.06,
+        "neg": 6.22,
+        "count": 9
+      },
+      {
+        "source": "NYT",
+        "pos": 6.67,
+        "neu": 81.73,
+        "neg": 11.6,
+        "count": 6
+      },
+      {
+        "source": "Fox News",
+        "pos": 6.67,
+        "neu": 88.72,
+        "neg": 4.62,
+        "count": 6
       },
       {
         "source": "NBC News",
-        "pos": 9.06,
-        "neu": 87.38,
-        "neg": 3.56,
-        "count": 5
+        "pos": 9.4,
+        "neu": 83.28,
+        "neg": 7.33,
+        "count": 4
       },
       {
         "source": "CBS News",
-        "pos": 4.8,
-        "neu": 87.48,
-        "neg": 7.72,
-        "count": 5
-      },
-      {
-        "source": "ABC News",
-        "pos": 5.4,
-        "neu": 87.38,
-        "neg": 7.23,
+        "pos": 4.92,
+        "neu": 87.3,
+        "neg": 7.78,
         "count": 4
       },
       {
@@ -5528,24 +5530,17 @@
         "count": 4
       },
       {
+        "source": "ABC News",
+        "pos": 5.4,
+        "neu": 84.85,
+        "neg": 9.75,
+        "count": 4
+      },
+      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
-        "count": 3
-      },
-      {
-        "source": "NYT",
-        "pos": 6.47,
-        "neu": 81.97,
-        "neg": 11.57,
-        "count": 3
-      },
-      {
-        "source": "Fox News",
-        "pos": 6.53,
-        "neu": 86.17,
-        "neg": 7.3,
         "count": 3
       },
       {
@@ -5559,24 +5554,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.51,
-        "neu": 85.27,
-        "neg": 7.22,
-        "count": 25
+        "pos": 6.55,
+        "neu": 85.63,
+        "neg": 7.82,
+        "count": 24
       },
       {
         "topic": "Policy",
-        "pos": 4.41,
-        "neu": 87.04,
-        "neg": 8.54,
-        "count": 9
+        "pos": 4.39,
+        "neu": 87.76,
+        "neg": 7.85,
+        "count": 10
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7.12,
-        "neu": 84.86,
-        "neg": 8.02,
-        "count": 5
+        "pos": 5.93,
+        "neu": 84.88,
+        "neg": 9.18,
+        "count": 6
       },
       {
         "topic": "Economy",
@@ -5584,13 +5579,6 @@
         "neu": 84.5,
         "neg": 6,
         "count": 2
-      },
-      {
-        "topic": "Public Statements",
-        "pos": 13.4,
-        "neu": 86.6,
-        "neg": 0,
-        "count": 1
       }
     ]
   },
@@ -5617,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-22T13:44:43.644Z",
+        "label": "2026-11-22T18:50:15.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-22T14:44:43.644Z",
+        "label": "2026-11-22T19:50:15.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-22T15:44:43.644Z",
+        "label": "2026-11-22T20:50:15.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-22T16:44:43.644Z",
+        "label": "2026-11-22T21:50:15.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5647,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-22T13:44:43.644Z",
+        "label": "2026-11-22T18:50:15.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-22T14:44:43.644Z",
+        "label": "2026-11-22T19:50:15.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-22T15:44:43.644Z",
+        "label": "2026-11-22T20:50:15.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-22T16:44:43.644Z",
+        "label": "2026-11-22T21:50:15.933Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5748,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-22T17:44:43.646Z",
+    "generatedAt": "2026-11-22T22:50:15.934Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
