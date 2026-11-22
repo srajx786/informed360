@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-22T02:08:11.424Z",
+  "generatedAt": "2026-11-22T09:52:40.810Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 180,
-    "potusArticles": 49
+    "usaArticles": 175,
+    "potusArticles": 42
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-21T22:08:11.425Z",
+          "label": "2026-11-22T05:52:40.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-21T23:08:11.425Z",
+          "label": "2026-11-22T06:52:40.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-22T00:08:11.425Z",
+          "label": "2026-11-22T07:52:40.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-22T01:08:11.425Z",
+          "label": "2026-11-22T08:52:40.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-21T22:08:11.425Z",
+          "label": "2026-11-22T05:52:40.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-21T23:08:11.425Z",
+          "label": "2026-11-22T06:52:40.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-22T00:08:11.425Z",
+          "label": "2026-11-22T07:52:40.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-22T01:08:11.425Z",
+          "label": "2026-11-22T08:52:40.810Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 7.81,
-      "neu": 82.33,
-      "neg": 9.85,
-      "count": 180
+      "pos": 8.31,
+      "neu": 81.58,
+      "neg": 10.12,
+      "count": 175
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.73,
-        "neu": 81.69,
-        "neg": 9.58,
-        "count": 40
+        "pos": 8.36,
+        "neu": 81.79,
+        "neg": 9.84,
+        "count": 38
       },
       {
         "source": "Fox News",
-        "pos": 12.02,
-        "neu": 76.53,
-        "neg": 11.45,
+        "pos": 11.25,
+        "neu": 76.36,
+        "neg": 12.38,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.19,
-        "neu": 83.41,
-        "neg": 11.4,
+        "pos": 6.63,
+        "neu": 82.78,
+        "neg": 10.59,
         "count": 26
       },
       {
@@ -4590,6 +4590,13 @@
         "count": 20
       },
       {
+        "source": "ABC News",
+        "pos": 9.26,
+        "neu": 82.6,
+        "neg": 8.14,
+        "count": 20
+      },
+      {
         "source": "Washington Post",
         "pos": 7.12,
         "neu": 86.94,
@@ -4597,18 +4604,11 @@
         "count": 20
       },
       {
-        "source": "ABC News",
-        "pos": 9.14,
-        "neu": 83.39,
-        "neg": 7.47,
-        "count": 20
-      },
-      {
         "source": "NYT",
-        "pos": 4.32,
-        "neu": 87.32,
-        "neg": 8.36,
-        "count": 16
+        "pos": 9.83,
+        "neu": 80.71,
+        "neg": 9.46,
+        "count": 13
       },
       {
         "source": "NPR",
@@ -4635,89 +4635,89 @@
     "industryLeaderboard": {
       "rows": [
         {
-          "name": "Utilities",
-          "bias": -19.4,
-          "count": 3
-        },
-        {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": -12.6,
-          "count": 5
+          "name": "Utilities",
+          "bias": -10.85,
+          "count": 4
         },
         {
-          "name": "Healthcare",
-          "bias": -7.18,
-          "count": 12
+          "name": "Materials",
+          "bias": -6.84,
+          "count": 5
         },
         {
           "name": "Finance",
-          "bias": -5.26,
-          "count": 22
+          "bias": -5.21,
+          "count": 18
+        },
+        {
+          "name": "Healthcare",
+          "bias": -4.41,
+          "count": 14
         },
         {
           "name": "Manufacturing",
-          "bias": 4.7,
-          "count": 5
-        },
-        {
-          "name": "Technology",
-          "bias": -1.89,
-          "count": 136
+          "bias": 4.17,
+          "count": 3
         },
         {
           "name": "Energy",
-          "bias": 1.56,
+          "bias": -3.87,
           "count": 7
         },
         {
           "name": "Real Estate",
-          "bias": -0.6,
-          "count": 2
+          "bias": -2.4,
+          "count": 3
+        },
+        {
+          "name": "Technology",
+          "bias": -1.48,
+          "count": 131
         }
       ],
       "pos": [
         {
           "name": "Manufacturing",
-          "bias": 4.7,
-          "count": 5
+          "bias": 4.17,
+          "count": 3
         }
       ],
       "neu": [
         {
-          "name": "Healthcare",
-          "bias": -7.18,
-          "count": 12
-        },
-        {
           "name": "Finance",
-          "bias": -5.26,
-          "count": 22
+          "bias": -5.21,
+          "count": 18
         },
         {
-          "name": "Technology",
-          "bias": -1.89,
-          "count": 136
+          "name": "Healthcare",
+          "bias": -4.41,
+          "count": 14
+        },
+        {
+          "name": "Energy",
+          "bias": -3.87,
+          "count": 7
         }
       ],
       "neg": [
-        {
-          "name": "Utilities",
-          "bias": -19.4,
-          "count": 3
-        },
         {
           "name": "Communication",
           "bias": -14,
           "count": 1
         },
         {
+          "name": "Utilities",
+          "bias": -10.85,
+          "count": 4
+        },
+        {
           "name": "Materials",
-          "bias": -12.6,
+          "bias": -6.84,
           "count": 5
         }
       ]
@@ -4725,32 +4725,32 @@
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-21T22:08:11.426Z",
-          "pos": 12,
-          "neu": 79,
-          "neg": 9,
-          "count": 11
-        },
-        {
-          "label": "2026-11-21T23:08:11.426Z",
-          "pos": 9,
-          "neu": 82,
-          "neg": 9,
-          "count": 6
-        },
-        {
-          "label": "2026-11-22T00:08:11.426Z",
+          "label": "2026-11-22T05:52:40.812Z",
           "pos": 7,
-          "neu": 85,
-          "neg": 8,
-          "count": 5
+          "neu": 79,
+          "neg": 13,
+          "count": 2
         },
         {
-          "label": "2026-11-22T01:08:11.426Z",
-          "pos": 4,
-          "neu": 78,
-          "neg": 18,
-          "count": 9
+          "label": "2026-11-22T06:52:40.812Z",
+          "pos": 36,
+          "neu": 64,
+          "neg": 0,
+          "count": 1
+        },
+        {
+          "label": "2026-11-22T07:52:40.812Z",
+          "pos": 0,
+          "neu": 0,
+          "neg": 0,
+          "count": 0
+        },
+        {
+          "label": "2026-11-22T08:52:40.812Z",
+          "pos": 5,
+          "neu": 95,
+          "neg": 0,
+          "count": 2
         }
       ]
     }
@@ -4978,22 +4978,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump says Roger Clemens should be in the Baseball Hall of Fame 'immediately,' won't fully back Barry Bonds",
-        "link": "https://www.foxnews.com/outkick-sports/trump-says-roger-clemens-should-baseball-hall-fame-immediately-wont-fully-back-barry-bonds",
+        "title": "The Pennsylvania farm behind a White House Thanksgiving turkey tradition",
+        "link": "https://www.foxnews.com/culture/jaindl-farms-white-house-thanksgiving-turkeys",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Fresh off pardoning Pete Rose, President Donald Trump said Roger Clemens belongs in the Baseball Hall of Fame immediately, citing his seven Cy Youngs.",
+        "description": "For more than six decades, Jaindl Farms in Orefield, Pennsylvania, has supplied turkeys to presidents for the White House Thanksgiving meal. FOX's Pete Cuddihy visits the family-owned farm behind the presidential tradition.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-21T23:02:03.000Z",
+        "publishedAt": "2026-11-22T08:55:01.000Z",
         "sentiment": {
-          "posP": 22.1,
+          "posP": 0,
           "negP": 0,
-          "neuP": 77.9,
-          "label": "positive",
-          "confidence": 0.87
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       }
@@ -5220,162 +5220,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump says Roger Clemens should be in the Baseball Hall of Fame 'immediately,' won't fully back Barry Bonds",
-        "link": "https://www.foxnews.com/outkick-sports/trump-says-roger-clemens-should-baseball-hall-fame-immediately-wont-fully-back-barry-bonds",
+        "title": "The Pennsylvania farm behind a White House Thanksgiving turkey tradition",
+        "link": "https://www.foxnews.com/culture/jaindl-farms-white-house-thanksgiving-turkeys",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Fresh off pardoning Pete Rose, President Donald Trump said Roger Clemens belongs in the Baseball Hall of Fame immediately, citing his seven Cy Youngs.",
+        "description": "For more than six decades, Jaindl Farms in Orefield, Pennsylvania, has supplied turkeys to presidents for the White House Thanksgiving meal. FOX's Pete Cuddihy visits the family-owned farm behind the presidential tradition.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-21T23:02:03.000Z",
-        "sentiment": {
-          "posP": 22.1,
-          "negP": 0,
-          "neuP": 77.9,
-          "label": "positive",
-          "confidence": 0.87
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says He Wants to 'Clean Out' Gaza, Send Refugees to Egypt and Jordan",
-        "link": "https://www.wsj.com/articles/trump-says-he-wants-to-clean-out-gaza-send-refugees-to-egypt-and-jordan-d90beccc",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president, calling the heavily bombed enclave “a demolition site,” proposed relocating Palestinians temporarily or long-term, a move rejected by Arab countries since the war began.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-26T23:30:00.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 15.7,
-          "neuP": 78.4,
-          "label": "negative",
-          "confidence": 0.67
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
-        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-25T00:58:00.000Z",
-        "sentiment": {
-          "posP": 5.5,
-          "negP": 14.1,
-          "neuP": 80.4,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
-        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-24T22:56:00.000Z",
+        "publishedAt": "2026-11-22T08:55:01.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump says he wants \"permanent\" deal with Iran",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-22T01:34:57.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 17.1,
-          "neuP": 82.9,
-          "label": "negative",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump signs executive order on federal workers' responses to Congress",
-        "link": "https://www.cbsnews.com/news/trump-executive-order-federal-contractors-white-house-congress/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "If they fail to comply, the White House warns their contracts could be terminated and their future work with the federal government suspended.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-21T18:33:46.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 21.1,
-          "neuP": 78.9,
-          "label": "negative",
-          "confidence": 0.79
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump vows to work with Democrats to cap credit card interest rates",
-        "link": "https://www.cbsnews.com/news/trump-credit-card-rates-democrats-politics/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump says he will work with the incoming Democratic Congress to cap credit card interest rates.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-21T18:27:57.000Z",
-        "sentiment": {
-          "posP": 30.9,
-          "negP": 0,
-          "neuP": 69.1,
-          "label": "positive",
-          "confidence": 0.88
         },
         "category": "usa"
       },
@@ -5400,36 +5260,56 @@
         "category": "usa"
       },
       {
-        "title": "A New Trump Tactic to Restrict Transit Funding: Rewrite the Rules",
-        "link": "https://www.nytimes.com/2026/11/21/upshot/trump-transit-grants.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump says he wants \"permanent\" deal with Iran",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The changes could make it harder for dozens of projects across the country to get funding they have pursued for years.",
+        "description": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-21T13:54:46.000Z",
+        "publishedAt": "2026-11-22T01:34:57.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 8,
-          "neuP": 92,
+          "negP": 17.1,
+          "neuP": 82.9,
           "label": "negative",
-          "confidence": 0.38
+          "confidence": 0.74
         },
         "category": "usa"
       },
       {
-        "title": "Advice to Democrats: Impeach Trump’s Cabinet",
-        "link": "https://www.nytimes.com/2026/11/21/opinion/trump-xi-putin-summit-china-ai-democrats.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump vows to work with Democrats to cap credit card interest rates",
+        "link": "https://www.cbsnews.com/news/trump-credit-card-rates-democrats-politics/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Autocrats, tech lords and a whole lot of hubris: a week in politics.",
+        "description": "President Trump says he will work with the incoming Democratic Congress to cap credit card interest rates.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-21T16:45:01.000Z",
+        "publishedAt": "2026-11-21T18:27:57.000Z",
+        "sentiment": {
+          "posP": 30.9,
+          "negP": 0,
+          "neuP": 69.1,
+          "label": "positive",
+          "confidence": 0.88
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Abdul El-Sayed catches president’s attention with pitch for ‘Trumpcare’",
+        "link": "https://www.nbcnews.com/politics/donald-trump/abdul-el-sayed-catches-trumps-attention-pitch-trumpcare-rcna610626",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump responded on Saturday to Sen.-elect Abdul El-Sayed’s push for universal healthcare after the progressive Michigan Democrat pitched that it be called “Trumpcare.”",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-22T00:37:21.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
@@ -5440,51 +5320,171 @@
         "category": "usa"
       },
       {
-        "title": "Trump says Cornyn blocked judicial pick because his ‘feelings were hurt’",
-        "link": "https://www.washingtonpost.com/politics/2026/11/21/trump-says-cornyn-blocked-judicial-pick-because-his-feelings-were-hurt/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
+        "title": "Trump formally ends minting of the penny after nearly 250 years of production",
+        "link": "https://www.nbcnews.com/politics/white-house/trump-formally-ends-minting-penny-nearly-250-years-production-rcna600580",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "In response, outgoing Sen. John Cornyn (R-Texas) criticized the president’s nomination and said he had put forward his own candidate.",
+        "description": "The U.S. Mint, which began producing the currency in 1793, has said it costs nearly 4 cents to make each penny.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-21T21:30:00.000Z",
-        "sentiment": {
-          "posP": 6.3,
-          "negP": 13.2,
-          "neuP": 80.5,
-          "label": "negative",
-          "confidence": 0.34
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Was Trump’s news conference with Vance and Rubio an audition for 2028?",
-        "link": "https://www.washingtonpost.com/politics/2026/11/21/was-trumps-news-conference-with-vance-rubio-an-audition-2028/",
-        "source": "Washington Post",
-        "sourceDomain": "washingtonpost.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Vice President JD Vance and Secretary of State Marco Rubio are widely considered to be potential Republican presidential candidates.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-21T18:00:00.000Z",
+        "publishedAt": "2026-11-21T03:32:50.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 0,
           "neuP": 100,
           "label": "neutral",
           "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says there could be a 'positive spin' from the latest FBI database hack",
+        "link": "https://www.cnbc.com/2026/11/21/trump-fbi-database-hack.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "This would make the second recent intrusion into the FBI system.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-21T16:57:34.000Z",
+        "sentiment": {
+          "posP": 13.5,
+          "negP": 0,
+          "neuP": 86.5,
+          "label": "positive",
+          "confidence": 0.56
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump says he still has confidence in Lutnick",
+        "link": "https://www.cnbc.com/2026/11/20/trump-lutnick-commerce-china-ai.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump, when asked by CNBC's Eamon Javers, said he has not lost confidence in Commerce Secretary Howard Lutnick.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T20:52:08.000Z",
+        "sentiment": {
+          "posP": 16,
+          "negP": 8.2,
+          "neuP": 75.8,
+          "label": "positive",
+          "confidence": 0.37
+        },
+        "category": "usa"
+      },
+      {
+        "title": "FBI's national crime database targeted in hack, Trump says",
+        "link": "https://abcnews.com/US/fbis-national-crime-database-targeted-hack-trump/story?id=138347810",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump confirmed on Saturday that the FBI’s National Crime Information Center database was targeted in a hack.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-22T02:12:39.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 21.9,
+          "neuP": 78.1,
+          "label": "negative",
+          "confidence": 0.79
+        },
+        "category": "usa"
+      },
+      {
+        "title": "WATCH:  Trump calls Putin, Xi his friends after meeting",
+        "link": "https://abcnews.com/video/138294590/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Doug Lute, former U.S. ambassador to NATO, says President Donald Trump referring to Putin and Xi as friends is \"concerning for America's allies.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-19T18:46:56.000Z",
+        "sentiment": {
+          "posP": 17.1,
+          "negP": 0,
+          "neuP": 82.9,
+          "label": "positive",
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump touts relationships with Putin and Xi after historic Asia trip",
+        "link": "https://abcnews.com/Politics/trump-hold-news-conference-friday-asia-trip/story?id=138307456",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump said the three countries made strides in advancing denuclearization talks.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T22:09:39.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 5,
+          "neuP": 95,
+          "label": "neutral",
+          "confidence": 0.03
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Administration tries to intervene after Kalshi is threatened with restraining order",
+        "link": "https://abcnews.com/US/kalshi-prediction-market-crippled-judge-grants-restraining-order/story?id=138329957",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration tried to step in after Kalshi warned it could be crippled if a judge grants a temporary restraining order being sought by the New York AG.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-21T00:49:33.000Z",
+        "sentiment": {
+          "posP": 4.5,
+          "negP": 12.1,
+          "neuP": 83.4,
+          "label": "negative",
+          "confidence": 0.49
+        },
+        "category": "usa"
+      },
+      {
+        "title": "White House replaces national cyber director amid widespread tech outages",
+        "link": "https://abcnews.com/Politics/white-house-replaces-national-cyber-director-amid-widespread/story?id=138310514",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "White House National Cyber Director Sean Cairncross has been fired, according to a source close to the White House.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T15:16:47.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 11.8,
+          "neuP": 88.2,
+          "label": "negative",
+          "confidence": 0.56
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.58,
-      "neu": 86.68,
-      "neg": 6.73,
-      "count": 49
+      "pos": 6.74,
+      "neu": 86.55,
+      "neg": 6.71,
+      "count": 42
     },
     "sourceLeaderboard": [
       {
@@ -5496,31 +5496,17 @@
       },
       {
         "source": "NBC News",
-        "pos": 7.4,
-        "neu": 87.56,
-        "neg": 5.04,
-        "count": 7
-      },
-      {
-        "source": "ABC News",
-        "pos": 4.24,
-        "neu": 88.5,
-        "neg": 7.26,
-        "count": 7
-      },
-      {
-        "source": "NYT",
-        "pos": 2.6,
-        "neu": 91.44,
-        "neg": 5.96,
+        "pos": 8.5,
+        "neu": 88.26,
+        "neg": 3.24,
         "count": 5
       },
       {
-        "source": "CBS News",
-        "pos": 8.72,
-        "neu": 78.22,
-        "neg": 13.05,
-        "count": 4
+        "source": "ABC News",
+        "pos": 4.32,
+        "neu": 85.52,
+        "neg": 10.16,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5537,10 +5523,24 @@
         "count": 3
       },
       {
+        "source": "NYT",
+        "pos": 4.33,
+        "neu": 88.4,
+        "neg": 7.27,
+        "count": 3
+      },
+      {
         "source": "Fox News",
-        "pos": 13.9,
-        "neu": 84.1,
+        "pos": 6.53,
+        "neu": 91.47,
         "neg": 2,
+        "count": 3
+      },
+      {
+        "source": "CBS News",
+        "pos": 11.63,
+        "neu": 78,
+        "neg": 10.37,
         "count": 3
       },
       {
@@ -5554,31 +5554,31 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 7.81,
-        "neu": 85.61,
-        "neg": 6.58,
-        "count": 29
+        "pos": 7.63,
+        "neu": 85.86,
+        "neg": 6.51,
+        "count": 26
       },
       {
         "topic": "Policy",
-        "pos": 3.33,
-        "neu": 88.4,
-        "neg": 8.27,
-        "count": 9
+        "pos": 4.29,
+        "neu": 88.1,
+        "neg": 7.61,
+        "count": 7
       },
       {
         "topic": "Foreign Policy",
-        "pos": 6.48,
-        "neu": 85.9,
-        "neg": 7.62,
-        "count": 6
+        "pos": 7.12,
+        "neu": 84.86,
+        "neg": 8.02,
+        "count": 5
       },
       {
         "topic": "Economy",
-        "pos": 9.03,
-        "neu": 86.97,
-        "neg": 4,
-        "count": 3
+        "pos": 9.5,
+        "neu": 84.5,
+        "neg": 6,
+        "count": 2
       },
       {
         "topic": "Legal",
@@ -5619,28 +5619,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-21T22:08:11.428Z",
+        "label": "2026-11-22T05:52:40.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-21T23:08:11.428Z",
+        "label": "2026-11-22T06:52:40.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-22T00:08:11.428Z",
+        "label": "2026-11-22T07:52:40.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-22T01:08:11.428Z",
+        "label": "2026-11-22T08:52:40.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5649,28 +5649,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-21T22:08:11.428Z",
+        "label": "2026-11-22T05:52:40.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-21T23:08:11.428Z",
+        "label": "2026-11-22T06:52:40.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-22T00:08:11.428Z",
+        "label": "2026-11-22T07:52:40.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-22T01:08:11.428Z",
+        "label": "2026-11-22T08:52:40.814Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5750,7 +5750,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-22T02:08:11.428Z",
+    "generatedAt": "2026-11-22T09:52:40.815Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5871,8 +5871,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 180,
-      "potusArticles": 49,
+      "usaArticles": 175,
+      "potusArticles": 42,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
