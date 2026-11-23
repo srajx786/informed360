@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-23T03:14:07.807Z",
+  "generatedAt": "2026-11-23T13:03:03.976Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 184,
-    "potusArticles": 39
+    "usaArticles": 185,
+    "potusArticles": 37
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-22T23:14:07.807Z",
+          "label": "2026-11-23T09:03:03.976Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T00:14:07.807Z",
+          "label": "2026-11-23T10:03:03.976Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T01:14:07.807Z",
+          "label": "2026-11-23T11:03:03.976Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T02:14:07.807Z",
+          "label": "2026-11-23T12:03:03.976Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-22T23:14:07.807Z",
+          "label": "2026-11-23T09:03:03.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T00:14:07.807Z",
+          "label": "2026-11-23T10:03:03.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T01:14:07.807Z",
+          "label": "2026-11-23T11:03:03.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T02:14:07.807Z",
+          "label": "2026-11-23T12:03:03.977Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.51,
-      "neu": 81.89,
-      "neg": 10.59,
-      "count": 184
+      "pos": 7.16,
+      "neu": 81.87,
+      "neg": 10.97,
+      "count": 185
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 10.42,
-        "neu": 80.29,
-        "neg": 9.28,
-        "count": 39
+        "pos": 7.76,
+        "neu": 83.74,
+        "neg": 8.5,
+        "count": 40
       },
       {
         "source": "Fox News",
-        "pos": 5.93,
-        "neu": 81.87,
-        "neg": 12.2,
+        "pos": 7.52,
+        "neu": 78.87,
+        "neg": 13.61,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 5.7,
-        "neu": 82.1,
-        "neg": 12.2,
+        "pos": 4.19,
+        "neu": 81.73,
+        "neg": 14.08,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.37,
-        "neu": 79.98,
-        "neg": 12.65,
-        "count": 22
+        "pos": 7.79,
+        "neu": 79.53,
+        "neg": 12.68,
+        "count": 23
       },
       {
         "source": "WSJ",
@@ -4598,17 +4598,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 9.33,
-        "neu": 83.97,
-        "neg": 6.7,
+        "pos": 10.23,
+        "neu": 82.35,
+        "neg": 7.41,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 5.76,
-        "neu": 86.55,
-        "neg": 7.69,
-        "count": 19
+        "pos": 6.13,
+        "neu": 86.38,
+        "neg": 7.49,
+        "count": 18
       },
       {
         "source": "NPR",
@@ -4635,29 +4635,34 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Utilities",
+          "bias": -21.8,
+          "count": 2
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 10.45,
+          "count": 2
+        },
+        {
           "name": "Materials",
-          "bias": -10.69,
-          "count": 7
+          "bias": -6.88,
+          "count": 5
+        },
+        {
+          "name": "Healthcare",
+          "bias": -6.48,
+          "count": 13
         },
         {
           "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Energy",
-          "bias": 4.81,
-          "count": 11
-        },
-        {
-          "name": "Finance",
-          "bias": -3.42,
-          "count": 21
+          "bias": -4.27,
+          "count": 3
         },
         {
           "name": "Technology",
-          "bias": -3.39,
-          "count": 139
+          "bias": -3.77,
+          "count": 148
         },
         {
           "name": "Communication",
@@ -4665,102 +4670,87 @@
           "count": 3
         },
         {
-          "name": "Healthcare",
-          "bias": -2.54,
-          "count": 13
+          "name": "Finance",
+          "bias": -1.34,
+          "count": 20
         },
         {
-          "name": "Manufacturing",
-          "bias": 2.54,
-          "count": 5
-        },
-        {
-          "name": "Utilities",
-          "bias": -1.1,
-          "count": 2
+          "name": "Energy",
+          "bias": -0.64,
+          "count": 14
         }
       ],
       "pos": [
         {
-          "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Energy",
-          "bias": 4.81,
-          "count": 11
-        },
-        {
           "name": "Manufacturing",
-          "bias": 2.54,
-          "count": 5
+          "bias": 10.45,
+          "count": 2
         }
       ],
       "neu": [
         {
-          "name": "Communication",
-          "bias": -3.03,
+          "name": "Real Estate",
+          "bias": -4.27,
           "count": 3
         },
         {
-          "name": "Healthcare",
-          "bias": -2.54,
-          "count": 13
+          "name": "Technology",
+          "bias": -3.77,
+          "count": 148
         },
         {
-          "name": "Utilities",
-          "bias": -1.1,
-          "count": 2
+          "name": "Communication",
+          "bias": -3.03,
+          "count": 3
         }
       ],
       "neg": [
         {
+          "name": "Utilities",
+          "bias": -21.8,
+          "count": 2
+        },
+        {
           "name": "Materials",
-          "bias": -10.69,
-          "count": 7
+          "bias": -6.88,
+          "count": 5
         },
         {
-          "name": "Finance",
-          "bias": -3.42,
-          "count": 21
-        },
-        {
-          "name": "Technology",
-          "bias": -3.39,
-          "count": 139
+          "name": "Healthcare",
+          "bias": -6.48,
+          "count": 13
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-22T23:14:07.809Z",
-          "pos": 5,
+          "label": "2026-11-23T09:03:03.978Z",
+          "pos": 7,
+          "neu": 82,
+          "neg": 11,
+          "count": 13
+        },
+        {
+          "label": "2026-11-23T10:03:03.978Z",
+          "pos": 6,
+          "neu": 82,
+          "neg": 12,
+          "count": 13
+        },
+        {
+          "label": "2026-11-23T11:03:03.978Z",
+          "pos": 6,
           "neu": 81,
-          "neg": 14,
-          "count": 11
+          "neg": 13,
+          "count": 19
         },
         {
-          "label": "2026-11-23T00:14:07.809Z",
-          "pos": 6,
-          "neu": 87,
-          "neg": 8,
-          "count": 10
-        },
-        {
-          "label": "2026-11-23T01:14:07.809Z",
+          "label": "2026-11-23T12:03:03.978Z",
           "pos": 5,
-          "neu": 80,
-          "neg": 14,
-          "count": 16
-        },
-        {
-          "label": "2026-11-23T02:14:07.809Z",
-          "pos": 6,
-          "neu": 85,
-          "neg": 10,
-          "count": 10
+          "neu": 84,
+          "neg": 11,
+          "count": 15
         }
       ]
     }
@@ -4988,22 +4978,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump's Thanksgiving turkeys arrive at luxury DC hotel as Americans vote on their names",
-        "link": "https://www.foxnews.com/politics/trumps-thanksgiving-turkeys-arrive-luxury-dc-hotel-americans-vote-names",
+        "title": "Trump to confront Newsom over plan to spare 548 death row inmates and more top headlines",
+        "link": "https://www.foxnews.com/us/trump-confront-newsom-plan-spare-548-death-row-inmates-more-top-headlines",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Two turkeys raised on a West Virginia farm strutted a red carpet at the Willard InterContinental Washington, D.C., ahead of Tuesday's pardon.",
+        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-23T02:48:57.000Z",
+        "publishedAt": "2026-11-23T12:32:00.000Z",
         "sentiment": {
-          "posP": 6.5,
-          "negP": 0,
-          "neuP": 93.5,
-          "label": "positive",
-          "confidence": 0.32
+          "posP": 11.8,
+          "negP": 12.8,
+          "neuP": 75.4,
+          "label": "neutral",
+          "confidence": 0.11
         },
         "category": "usa"
       }
@@ -5230,142 +5220,102 @@
         "category": "usa"
       },
       {
-        "title": "Trump's Thanksgiving turkeys arrive at luxury DC hotel as Americans vote on their names",
-        "link": "https://www.foxnews.com/politics/trumps-thanksgiving-turkeys-arrive-luxury-dc-hotel-americans-vote-names",
+        "title": "Trump to confront Newsom over plan to spare 548 death row inmates and more top headlines",
+        "link": "https://www.foxnews.com/us/trump-confront-newsom-plan-spare-548-death-row-inmates-more-top-headlines",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Two turkeys raised on a West Virginia farm strutted a red carpet at the Willard InterContinental Washington, D.C., ahead of Tuesday's pardon.",
+        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-23T02:48:57.000Z",
+        "publishedAt": "2026-11-23T12:32:00.000Z",
         "sentiment": {
-          "posP": 6.5,
-          "negP": 0,
-          "neuP": 93.5,
-          "label": "positive",
-          "confidence": 0.32
+          "posP": 11.8,
+          "negP": 12.8,
+          "neuP": 75.4,
+          "label": "neutral",
+          "confidence": 0.11
         },
         "category": "usa"
       },
       {
-        "title": "Trump says Iran unleashed missile, drone surge after midterms",
-        "link": "https://www.foxnews.com/world/trump-says-iran-unleashed-missile-drone-surge-after-midterms",
+        "title": "Trump to confront Newsom over plan to spare 548 death row inmates, including notorious child killers",
+        "link": "https://www.foxnews.com/politics/president-trump-confront-newsom-plan-spare-548-death-row-inmates-notorious-child-killers",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Donald Trump says Iran launched more missiles and drones over the past week than at any point in over a year, and all were knocked down with no damage.",
+        "description": "President Donald Trump is expected to join victims' families at the DOJ to condemn Gavin Newsom's plan to commute all 548 California death sentences to life without parole.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-22T23:33:06.000Z",
+        "publishedAt": "2026-11-23T11:00:58.000Z",
         "sentiment": {
-          "posP": 3.6,
-          "negP": 12.9,
-          "neuP": 83.5,
+          "posP": 5.7,
+          "negP": 36,
+          "neuP": 58.3,
           "label": "negative",
-          "confidence": 0.6
+          "confidence": 0.96
         },
         "category": "usa"
       },
       {
-        "title": "Trump dares Iran to breach US port blockade as Tehran reportedly readies 14 oil tankers",
-        "link": "https://www.foxnews.com/world/trump-dares-iran-breach-us-port-blockade-tehran-reportedly-readies-14-oil-tankers",
+        "title": "In a world of surging hacks and attacks, is anyone running the show?",
+        "link": "https://www.foxnews.com/opinion/world-surging-hacks-attacks-anyone-running-show",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Iran reportedly positioned 14 tankers at Kharg Island to breach the U.S. blockade, as President Donald Trump dared Tehran to test American naval forces in the Gulf.",
+        "description": "As hackers hit 178 companies and the FBI suffered its second breach since September, White House messaging on the outages took a full week to recover.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-22T22:43:24.000Z",
+        "publishedAt": "2026-11-23T08:00:40.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 0,
-          "neuP": 100,
-          "label": "neutral",
-          "confidence": 0
+          "negP": 14.8,
+          "neuP": 85.2,
+          "label": "negative",
+          "confidence": 0.73
         },
         "category": "usa"
       },
       {
-        "title": "Tehran threatens to 'break legs' as 'Trump corridor' prepares to launch on Iran's border",
-        "link": "https://www.foxnews.com/world/tehran-threatens-break-legs-trump-corridor-prepares-launch-irans-border",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Iran vows to end U.S. naval blockade by \"all available means\"",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-blockade-strait-of-hormuz-ship-attacks/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Armenia launches the U.S.-backed Trump Route corridor despite Iran's stark warning it would \"break their legs\" if Trump crossed its red line.",
+        "description": "Iran vows to force the U.S. to lift its blockade as Trump acknowledges the regime's increasing attacks, but says they've \"done no damage.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-22T22:13:15.000Z",
+        "publishedAt": "2026-11-23T12:24:01.000Z",
         "sentiment": {
-          "posP": 5.3,
-          "negP": 6.7,
-          "neuP": 88,
-          "label": "neutral",
-          "confidence": 0.14
+          "posP": 0,
+          "negP": 12.9,
+          "neuP": 87.1,
+          "label": "negative",
+          "confidence": 0.58
         },
         "category": "usa"
       },
       {
-        "title": "How Melania Trump Found a Diplomatic Opening in the War in Ukraine",
-        "link": "https://www.nytimes.com/2026/11/22/us/politics/melania-trump-ukraine-diplomacy.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump says he wants \"permanent\" deal with Iran",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The first lady, who has little experience in international affairs, developed back channels to key figures on both sides of the conflict through her longtime agent.",
+        "description": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-22T18:12:18.000Z",
+        "publishedAt": "2026-11-23T07:20:00.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 15,
-          "neuP": 85,
+          "negP": 17.1,
+          "neuP": 82.9,
           "label": "negative",
           "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Fact-Checking Stephen Miller, the New White House Chief of Staff",
-        "link": "https://www.nytimes.com/2026/11/22/us/politics/stephen-miller-fact-check.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Mr. Miller has promoted some of the second Trump administration’s most egregious falsehoods about immigration policy, the economy and political opposition.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-22T10:02:17.000Z",
-        "sentiment": {
-          "posP": 8.5,
-          "negP": 0,
-          "neuP": 91.5,
-          "label": "positive",
-          "confidence": 0.42
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Why Are We at the Mercy of the World’s Weirdest Men?",
-        "link": "https://www.nytimes.com/2026/11/22/opinion/jensen-huang-ai-ethics-cold-war.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "No kings isn’t just about Trump.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-22T17:40:26.000Z",
-        "sentiment": {
-          "posP": 12.1,
-          "negP": 19.9,
-          "neuP": 68,
-          "label": "neutral",
-          "confidence": 0.15
         },
         "category": "usa"
       },
@@ -5410,22 +5360,102 @@
         "category": "usa"
       },
       {
-        "title": "Trump says there could be a 'positive spin' from the latest FBI database hack",
-        "link": "https://www.cnbc.com/2026/11/21/trump-fbi-database-hack.html",
+        "title": "Yemen's Houthis claim attacks on Saudi oil refinery as Trump warns of new strikes next year",
+        "link": "https://www.cnbc.com/2026/11/23/trump-iran-war-hormuz-saudi-.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "This would make the second recent intrusion into the FBI system.",
+        "description": "Yemen's Iran-aligned Houthis claimed an operation against Saudi Arabia's Rabigh oil refinery, as diplomatic efforts to end the war face long odds.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-21T16:57:34.000Z",
+        "publishedAt": "2026-11-23T03:52:17.000Z",
         "sentiment": {
-          "posP": 13.5,
+          "posP": 0,
+          "negP": 23.9,
+          "neuP": 76.1,
+          "label": "negative",
+          "confidence": 0.87
+        },
+        "category": "usa"
+      },
+      {
+        "title": "WATCH:  Trump calls Putin, Xi his friends after meeting",
+        "link": "https://abcnews.com/video/138294590/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Doug Lute, former U.S. ambassador to NATO, says President Donald Trump referring to Putin and Xi as friends is \"concerning for America's allies.\"",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-19T18:46:56.000Z",
+        "sentiment": {
+          "posP": 17.1,
           "negP": 0,
-          "neuP": 86.5,
+          "neuP": 82.9,
           "label": "positive",
-          "confidence": 0.56
+          "confidence": 0.74
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump touts relationships with Putin and Xi after historic Asia trip",
+        "link": "https://abcnews.com/Politics/trump-hold-news-conference-friday-asia-trip/story?id=138307456",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump said the three countries made strides in advancing denuclearization talks.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-20T22:09:39.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 5,
+          "neuP": 95,
+          "label": "neutral",
+          "confidence": 0.03
+        },
+        "category": "usa"
+      },
+      {
+        "title": "FBI's national crime database targeted in hack, Trump says",
+        "link": "https://abcnews.com/US/fbis-national-crime-database-targeted-hack-trump/story?id=138347810",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump confirmed on Saturday that the FBI’s National Crime Information Center database was targeted in a hack.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-23T11:53:51.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 21.9,
+          "neuP": 78.1,
+          "label": "negative",
+          "confidence": 0.79
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Democratic National Committee sets broad rules for the party’s 2028 presidential debates",
+        "link": "https://www.nbcnews.com/politics/2028-election/democratic-national-committee-sets-broad-rules-partys-2028-presidentia-rcna610439",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Democratic National Committee will hold 12 debates next year and in 2028 for candidates seeking the party’s presidential nomination, the party announced, as it sets rules of the road for what’s expected to be a crowded campaign for the White House.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-23T10:00:40.000Z",
+        "sentiment": {
+          "posP": 4.9,
+          "negP": 0,
+          "neuP": 95.1,
+          "label": "positive",
+          "confidence": 0.4
         },
         "category": "usa"
       },
@@ -5448,82 +5478,42 @@
           "confidence": 0.76
         },
         "category": "usa"
-      },
-      {
-        "title": "New escalations in conflicts in Iran and Ukraine",
-        "link": "https://www.nbcnews.com/nightly-news/video/new-escalations-in-conflicts-in-iran-and-ukraine-273988677851",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Days after a declaration toward peace was signed by President Trump, Russian President Vladimir Putin and Chinese President Xi Jinping, the conflicts in both the Gulf and Ukraine appear to be intensifying. NBC News’ Keir Simmons reports.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-22T23:44:37.000Z",
-        "sentiment": {
-          "posP": 7,
-          "negP": 10.5,
-          "neuP": 82.5,
-          "label": "neutral",
-          "confidence": 0.18
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Says Colombia Will Accept Deportees, Ending Tariff Standoff",
-        "link": "https://www.wsj.com/articles/trump-says-colombia-will-face-25-tariffs-amid-fight-over-deportation-flights-e32dc497",
-        "source": "WSJ",
-        "sourceDomain": "wsj.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The president has made immigration an early priority to start second term, with ICE making more than 900 arrests Sunday.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2025-01-27T03:59:00.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 9.7,
-          "neuP": 82.4,
-          "label": "neutral",
-          "confidence": 0.14
-        },
-        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.2,
-      "neu": 85.86,
-      "neg": 7.94,
-      "count": 39
+      "pos": 5.53,
+      "neu": 84.18,
+      "neg": 10.29,
+      "count": 37
     },
     "sourceLeaderboard": [
       {
         "source": "Washington Post",
-        "pos": 6.56,
-        "neu": 86.2,
-        "neg": 7.24,
+        "pos": 6.23,
+        "neu": 84.47,
+        "neg": 9.3,
         "count": 9
       },
       {
         "source": "Fox News",
-        "pos": 5.83,
-        "neu": 89.9,
-        "neg": 4.27,
-        "count": 6
-      },
-      {
-        "source": "NYT",
-        "pos": 6.72,
-        "neu": 83.9,
-        "neg": 9.38,
+        "pos": 7.42,
+        "neu": 78.66,
+        "neg": 13.92,
         "count": 5
       },
       {
         "source": "NBC News",
-        "pos": 11.34,
-        "neu": 82.66,
-        "neg": 6,
+        "pos": 8.22,
+        "neu": 83.1,
+        "neg": 8.68,
         "count": 5
+      },
+      {
+        "source": "CBS News",
+        "pos": 1,
+        "neu": 82.83,
+        "neg": 16.18,
+        "count": 4
       },
       {
         "source": "WSJ",
@@ -5547,10 +5537,10 @@
         "count": 3
       },
       {
-        "source": "CBS News",
-        "pos": 2,
-        "neu": 80.65,
-        "neg": 17.35,
+        "source": "NYT",
+        "pos": 6.5,
+        "neu": 87.5,
+        "neg": 6,
         "count": 2
       },
       {
@@ -5564,24 +5554,24 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.52,
-        "neu": 86.11,
-        "neg": 7.37,
-        "count": 21
+        "pos": 5.14,
+        "neu": 83.69,
+        "neg": 11.17,
+        "count": 23
       },
       {
         "topic": "Policy",
-        "pos": 4.25,
-        "neu": 87.23,
-        "neg": 8.53,
-        "count": 8
+        "pos": 3.77,
+        "neu": 85.78,
+        "neg": 10.45,
+        "count": 6
       },
       {
         "topic": "Foreign Policy",
-        "pos": 6.09,
-        "neu": 84.54,
-        "neg": 9.37,
-        "count": 7
+        "pos": 7.12,
+        "neu": 84.86,
+        "neg": 8.02,
+        "count": 5
       },
       {
         "topic": "Economy",
@@ -5615,28 +5605,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-22T23:14:07.811Z",
+        "label": "2026-11-23T09:03:03.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T00:14:07.811Z",
+        "label": "2026-11-23T10:03:03.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T01:14:07.811Z",
+        "label": "2026-11-23T11:03:03.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T02:14:07.811Z",
+        "label": "2026-11-23T12:03:03.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5645,28 +5635,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-22T23:14:07.811Z",
+        "label": "2026-11-23T09:03:03.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T00:14:07.811Z",
+        "label": "2026-11-23T10:03:03.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T01:14:07.811Z",
+        "label": "2026-11-23T11:03:03.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T02:14:07.811Z",
+        "label": "2026-11-23T12:03:03.981Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5746,7 +5736,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-23T03:14:07.811Z",
+    "generatedAt": "2026-11-23T13:03:03.982Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5867,8 +5857,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 184,
-      "potusArticles": 39,
+      "usaArticles": 185,
+      "potusArticles": 37,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
