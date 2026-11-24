@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-23T13:03:03.976Z",
+  "generatedAt": "2026-11-24T00:43:20.317Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 185,
-    "potusArticles": 37
+    "usaArticles": 187,
+    "potusArticles": 47
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-23T09:03:03.976Z",
+          "label": "2026-11-23T20:43:20.317Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T10:03:03.976Z",
+          "label": "2026-11-23T21:43:20.317Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T11:03:03.976Z",
+          "label": "2026-11-23T22:43:20.317Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T12:03:03.976Z",
+          "label": "2026-11-23T23:43:20.317Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-23T09:03:03.977Z",
+          "label": "2026-11-23T20:43:20.317Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T10:03:03.977Z",
+          "label": "2026-11-23T21:43:20.317Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T11:03:03.977Z",
+          "label": "2026-11-23T22:43:20.317Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-23T12:03:03.977Z",
+          "label": "2026-11-23T23:43:20.317Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.16,
-      "neu": 81.87,
-      "neg": 10.97,
-      "count": 185
+      "pos": 7.44,
+      "neu": 82.43,
+      "neg": 10.13,
+      "count": 187
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.76,
-        "neu": 83.74,
-        "neg": 8.5,
-        "count": 40
+        "pos": 8.34,
+        "neu": 83.76,
+        "neg": 7.9,
+        "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 7.52,
-        "neu": 78.87,
-        "neg": 13.61,
+        "pos": 8.71,
+        "neu": 79.3,
+        "neg": 11.98,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.19,
-        "neu": 81.73,
-        "neg": 14.08,
+        "pos": 4.79,
+        "neu": 83.75,
+        "neg": 11.46,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.79,
-        "neu": 79.53,
-        "neg": 12.68,
-        "count": 23
+        "pos": 8.54,
+        "neu": 78.88,
+        "neg": 12.58,
+        "count": 21
       },
       {
         "source": "WSJ",
@@ -4598,17 +4598,17 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.23,
-        "neu": 82.35,
-        "neg": 7.41,
+        "pos": 9.61,
+        "neu": 84.17,
+        "neg": 6.21,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 6.13,
-        "neu": 86.38,
-        "neg": 7.49,
-        "count": 18
+        "pos": 5.15,
+        "neu": 86.3,
+        "neg": 8.54,
+        "count": 20
       },
       {
         "source": "NPR",
@@ -4636,121 +4636,131 @@
       "rows": [
         {
           "name": "Utilities",
-          "bias": -21.8,
+          "bias": -11.25,
+          "count": 2
+        },
+        {
+          "name": "Real Estate",
+          "bias": 8.7,
           "count": 2
         },
         {
           "name": "Manufacturing",
-          "bias": 10.45,
+          "bias": 6.35,
           "count": 2
         },
         {
-          "name": "Materials",
-          "bias": -6.88,
-          "count": 5
+          "name": "Communication",
+          "bias": 5.4,
+          "count": 3
         },
         {
           "name": "Healthcare",
-          "bias": -6.48,
-          "count": 13
-        },
-        {
-          "name": "Real Estate",
-          "bias": -4.27,
-          "count": 3
+          "bias": -4.93,
+          "count": 6
         },
         {
           "name": "Technology",
-          "bias": -3.77,
-          "count": 148
-        },
-        {
-          "name": "Communication",
-          "bias": -3.03,
-          "count": 3
-        },
-        {
-          "name": "Finance",
-          "bias": -1.34,
-          "count": 20
+          "bias": -2.69,
+          "count": 147
         },
         {
           "name": "Energy",
-          "bias": -0.64,
-          "count": 14
+          "bias": 1.97,
+          "count": 12
+        },
+        {
+          "name": "Finance",
+          "bias": -1.07,
+          "count": 21
+        },
+        {
+          "name": "Materials",
+          "bias": -0.25,
+          "count": 2
         }
       ],
       "pos": [
         {
-          "name": "Manufacturing",
-          "bias": 10.45,
+          "name": "Real Estate",
+          "bias": 8.7,
           "count": 2
+        },
+        {
+          "name": "Manufacturing",
+          "bias": 6.35,
+          "count": 2
+        },
+        {
+          "name": "Communication",
+          "bias": 5.4,
+          "count": 3
         }
       ],
       "neu": [
         {
-          "name": "Real Estate",
-          "bias": -4.27,
-          "count": 3
+          "name": "Energy",
+          "bias": 1.97,
+          "count": 12
         },
         {
-          "name": "Technology",
-          "bias": -3.77,
-          "count": 148
+          "name": "Finance",
+          "bias": -1.07,
+          "count": 21
         },
         {
-          "name": "Communication",
-          "bias": -3.03,
-          "count": 3
+          "name": "Materials",
+          "bias": -0.25,
+          "count": 2
         }
       ],
       "neg": [
         {
           "name": "Utilities",
-          "bias": -21.8,
+          "bias": -11.25,
           "count": 2
         },
         {
-          "name": "Materials",
-          "bias": -6.88,
-          "count": 5
+          "name": "Healthcare",
+          "bias": -4.93,
+          "count": 6
         },
         {
-          "name": "Healthcare",
-          "bias": -6.48,
-          "count": 13
+          "name": "Technology",
+          "bias": -2.69,
+          "count": 147
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-23T09:03:03.978Z",
+          "label": "2026-11-23T20:43:20.319Z",
           "pos": 7,
-          "neu": 82,
-          "neg": 11,
-          "count": 13
-        },
-        {
-          "label": "2026-11-23T10:03:03.978Z",
-          "pos": 6,
-          "neu": 82,
-          "neg": 12,
-          "count": 13
-        },
-        {
-          "label": "2026-11-23T11:03:03.978Z",
-          "pos": 6,
           "neu": 81,
-          "neg": 13,
-          "count": 19
+          "neg": 11,
+          "count": 20
         },
         {
-          "label": "2026-11-23T12:03:03.978Z",
-          "pos": 5,
-          "neu": 84,
-          "neg": 11,
-          "count": 15
+          "label": "2026-11-23T21:43:20.319Z",
+          "pos": 10,
+          "neu": 81,
+          "neg": 9,
+          "count": 13
+        },
+        {
+          "label": "2026-11-23T22:43:20.319Z",
+          "pos": 6,
+          "neu": 86,
+          "neg": 7,
+          "count": 31
+        },
+        {
+          "label": "2026-11-23T23:43:20.319Z",
+          "pos": 9,
+          "neu": 82,
+          "neg": 9,
+          "count": 16
         }
       ]
     }
@@ -4978,22 +4988,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump to confront Newsom over plan to spare 548 death row inmates and more top headlines",
-        "link": "https://www.foxnews.com/us/trump-confront-newsom-plan-spare-548-death-row-inmates-more-top-headlines",
+        "title": "Venezuelan illegal immigrant arrested in Utah after soliciting assassination of Trump, DHS says",
+        "link": "https://www.foxnews.com/us/venezuelan-illegal-immigrant-arrested-utah-soliciting-assassination-trump-dhs",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
+        "description": "DHS says an FBI tip led to the arrest of a Venezuelan national in Provo, Utah, over stickers urging the assassination of President Donald Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-23T12:32:00.000Z",
+        "publishedAt": "2026-11-23T23:46:10.000Z",
         "sentiment": {
-          "posP": 11.8,
-          "negP": 12.8,
-          "neuP": 75.4,
-          "label": "neutral",
-          "confidence": 0.11
+          "posP": 0,
+          "negP": 34.6,
+          "neuP": 65.4,
+          "label": "negative",
+          "confidence": 0.95
         },
         "category": "usa"
       }
@@ -5220,62 +5230,162 @@
         "category": "usa"
       },
       {
-        "title": "Trump to confront Newsom over plan to spare 548 death row inmates and more top headlines",
-        "link": "https://www.foxnews.com/us/trump-confront-newsom-plan-spare-548-death-row-inmates-more-top-headlines",
+        "title": "Venezuelan illegal immigrant arrested in Utah after soliciting assassination of Trump, DHS says",
+        "link": "https://www.foxnews.com/us/venezuelan-illegal-immigrant-arrested-utah-soliciting-assassination-trump-dhs",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
+        "description": "DHS says an FBI tip led to the arrest of a Venezuelan national in Provo, Utah, over stickers urging the assassination of President Donald Trump.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-23T12:32:00.000Z",
-        "sentiment": {
-          "posP": 11.8,
-          "negP": 12.8,
-          "neuP": 75.4,
-          "label": "neutral",
-          "confidence": 0.11
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump to confront Newsom over plan to spare 548 death row inmates, including notorious child killers",
-        "link": "https://www.foxnews.com/politics/president-trump-confront-newsom-plan-spare-548-death-row-inmates-notorious-child-killers",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump is expected to join victims' families at the DOJ to condemn Gavin Newsom's plan to commute all 548 California death sentences to life without parole.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-23T11:00:58.000Z",
-        "sentiment": {
-          "posP": 5.7,
-          "negP": 36,
-          "neuP": 58.3,
-          "label": "negative",
-          "confidence": 0.96
-        },
-        "category": "usa"
-      },
-      {
-        "title": "In a world of surging hacks and attacks, is anyone running the show?",
-        "link": "https://www.foxnews.com/opinion/world-surging-hacks-attacks-anyone-running-show",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "As hackers hit 178 companies and the FBI suffered its second breach since September, White House messaging on the outages took a full week to recover.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-23T08:00:40.000Z",
+        "publishedAt": "2026-11-23T23:46:10.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 14.8,
-          "neuP": 85.2,
+          "negP": 34.6,
+          "neuP": 65.4,
           "label": "negative",
-          "confidence": 0.73
+          "confidence": 0.95
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Is Said to Have Pushed to Reinstate Nvidia CEO Jensen Huang",
+        "link": "https://www.nytimes.com/2026/11/23/us/politics/trump-nvidia-huang.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The president set in motion a weekend of maneuvering, led by Vice President JD Vance, to help Jensen Huang get his old job back.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-23T23:41:28.000Z",
+        "sentiment": {
+          "posP": 7.4,
+          "negP": 0,
+          "neuP": 92.6,
+          "label": "positive",
+          "confidence": 0.4
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Republicans Break With Trump Over Jensen Huang’s Reinstatement at Nvidia",
+        "link": "https://www.nytimes.com/2026/11/23/technology/republicans-trump-jensen-huang-nvidia.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "It was a rare instance of the G.O.P. pushing back on the president and threatening to use its oversight and legislative power to challenge his administration’s approach.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-23T23:18:45.000Z",
+        "sentiment": {
+          "posP": 3.4,
+          "negP": 8.8,
+          "neuP": 87.8,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Administration Imposes Sanctions on Megaspeed, Singaporean Firm at Center of Nvidia Scandal",
+        "link": "https://www.nytimes.com/2026/11/23/business/trump-administration-megaspeed-trade-blacklist-nvidia.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The administration added Megaspeed to the entity list, a trade blacklist, after weeks of sparring among top officials on the decision.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-23T23:18:58.000Z",
+        "sentiment": {
+          "posP": 5,
+          "negP": 11.9,
+          "neuP": 83.1,
+          "label": "negative",
+          "confidence": 0.36
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Federal Court Clears the Way for Planned Ammunition Explosion in Iowa",
+        "link": "https://www.nytimes.com/2026/11/23/climate/iowa-army-ammunition-explosion.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The ruling capped a day of uncertainty in which President Trump spoke out on a crisis that threatens to launch a cloud of toxic lead dust across homes and farmland.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-23T23:43:36.000Z",
+        "sentiment": {
+          "posP": 2.9,
+          "negP": 20.5,
+          "neuP": 76.6,
+          "label": "negative",
+          "confidence": 0.83
+        },
+        "category": "usa"
+      },
+      {
+        "title": "With Jensen Huang, Trump Strikes Another Blow for Billionaire Impunity",
+        "link": "https://www.nytimes.com/2026/11/23/opinion/jensen-huang-trump-reinstated.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Huang’s firing damaged something Donald Trump values even more than national security: the stock market.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-24T00:17:34.000Z",
+        "sentiment": {
+          "posP": 16.2,
+          "negP": 23.5,
+          "neuP": 60.3,
+          "label": "negative",
+          "confidence": 0.35
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump tells Army to halt detonation for now in Iowa this week",
+        "link": "https://www.cbsnews.com/news/trump-tells-army-to-halt-detonation-in-iowa-this-week/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Trump said he will wait for the courts and Iowa Gov.-elect Rob Sand to agree with the Army's plan.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-23T23:51:00.000Z",
+        "sentiment": {
+          "posP": 6.9,
+          "negP": 10,
+          "neuP": 83.1,
+          "label": "negative",
+          "confidence": 0.27
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Senate passes bipartisan energy bill, potentially easing some restrictions on data centers",
+        "link": "https://www.cbsnews.com/video/senate-passes-bipartisan-energy-bill-potentially-easing-some-restrictions-on-data-centers/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "On Friday, the Senate passed the bipartisan American Affordability and Jobs Act, which is designed to speed up the approval process for the construction of data centers and power plants. Stephen Moore, former senior economic adviser to President Trump, and Robert Wolf, former economic adviser to President Obama, join \"The Takeout\" to discuss that bill and their own bipartisan proposal to build data centers.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-23T23:32:41.000Z",
+        "sentiment": {
+          "posP": 11.5,
+          "negP": 0,
+          "neuP": 88.5,
+          "label": "positive",
+          "confidence": 0.81
         },
         "category": "usa"
       },
@@ -5289,7 +5399,7 @@
         "description": "Iran vows to force the U.S. to lift its blockade as Trump acknowledges the regime's increasing attacks, but says they've \"done no damage.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-23T12:24:01.000Z",
+        "publishedAt": "2026-11-23T23:11:13.000Z",
         "sentiment": {
           "posP": 0,
           "negP": 12.9,
@@ -5300,219 +5410,126 @@
         "category": "usa"
       },
       {
-        "title": "Trump says he wants \"permanent\" deal with Iran",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
+        "title": "U.S. adds Megaspeed to trade blacklist after Nvidia scandal",
+        "link": "https://www.cbsnews.com/news/megaspeed-trade-blacklist-nvidia-jensen-huang/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027.",
+        "description": "The Trump administration restricted Megaspeed from buying advanced semiconductor chips, after the firm's alleged links to China helped kick-start the scandal surrounding Nvidia CEO Jensen Huang.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-23T07:20:00.000Z",
+        "publishedAt": "2026-11-23T22:16:20.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 17.1,
-          "neuP": 82.9,
+          "posP": 4.8,
+          "negP": 20.3,
+          "neuP": 74.9,
           "label": "negative",
-          "confidence": 0.74
+          "confidence": 0.75
         },
         "category": "usa"
       },
       {
-        "title": "Army moves forward with plans to detonate 5 tons of toxic materials in Iowa",
-        "link": "https://www.cbsnews.com/video/army-moves-forward-plans-detonate-5-tons-toxic-materials-iowa/",
+        "title": "Trump says he convinced Nvidia board to reinstate Jensen Huang",
+        "link": "https://www.cbsnews.com/news/nvidia-jensen-huang-trump-comment-national-security-risk/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The Army warned that freezing temperatures could risk an accidental toxic explosion at a munitions plant in Middletown, Iowa. The Trump administration declared an emergency and is moving ahead with a plan to blow up the unstable explosives despite a federal court order. Ian Lee has more on the controversial plan.",
+        "description": "President Trump claimed the government \"has no reason to believe\" Jensen Huang's return is a national security risk.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-23T01:49:00.000Z",
+        "publishedAt": "2026-11-23T21:02:08.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 20.7,
-          "neuP": 79.3,
-          "label": "negative",
-          "confidence": 0.88
+          "posP": 15.7,
+          "negP": 13.3,
+          "neuP": 71,
+          "label": "positive",
+          "confidence": 0.2
         },
         "category": "usa"
       },
       {
-        "title": "Employees at Eric Trump-backed robot startup lose health benefits as company's cash crunch deepens",
-        "link": "https://www.cnbc.com/2026/11/22/foundation-future-industries-health-benefits-payroll-base-group.html",
+        "title": "Peterson: Here’s what Bessent’s about-face on Jensen Huang reveals about Trump and China",
+        "link": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-trump-bessent-china.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Foundation is pursuing an emergency bridge loan and has been in talks with VC firms as it waits for a $150 million investment from South Korea's Base Group.",
+        "description": "Treasury Secretary Scott Bessent was becoming the face of an emerging harder line on Nvidia— until he reversed course",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-22T18:55:05.000Z",
+        "publishedAt": "2026-11-23T21:00:59.000Z",
         "sentiment": {
-          "posP": 5.7,
-          "negP": 11.5,
-          "neuP": 82.8,
-          "label": "negative",
-          "confidence": 0.4
+          "posP": 5.5,
+          "negP": 0,
+          "neuP": 94.5,
+          "label": "positive",
+          "confidence": 0.2
         },
         "category": "usa"
       },
       {
-        "title": "Yemen's Houthis claim attacks on Saudi oil refinery as Trump warns of new strikes next year",
-        "link": "https://www.cnbc.com/2026/11/23/trump-iran-war-hormuz-saudi-.html",
+        "title": "Congress shreds Nvidia's 'outrageous' decision to bring back Huang: 'Failure of character'",
+        "link": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-congress-trump.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Yemen's Iran-aligned Houthis claimed an operation against Saudi Arabia's Rabigh oil refinery, as diplomatic efforts to end the war face long odds.",
+        "description": "Congress members of both parties are sharply questioning President Donald Trump's conclusion that Jensen Huang poses no national security risk leading Nvidia.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-23T03:52:17.000Z",
+        "publishedAt": "2026-11-23T20:22:49.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 23.9,
-          "neuP": 76.1,
+          "posP": 12.1,
+          "negP": 21.4,
+          "neuP": 66.5,
           "label": "negative",
-          "confidence": 0.87
-        },
-        "category": "usa"
-      },
-      {
-        "title": "WATCH:  Trump calls Putin, Xi his friends after meeting",
-        "link": "https://abcnews.com/video/138294590/",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Doug Lute, former U.S. ambassador to NATO, says President Donald Trump referring to Putin and Xi as friends is \"concerning for America's allies.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-19T18:46:56.000Z",
-        "sentiment": {
-          "posP": 17.1,
-          "negP": 0,
-          "neuP": 82.9,
-          "label": "positive",
-          "confidence": 0.74
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump touts relationships with Putin and Xi after historic Asia trip",
-        "link": "https://abcnews.com/Politics/trump-hold-news-conference-friday-asia-trip/story?id=138307456",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump said the three countries made strides in advancing denuclearization talks.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-20T22:09:39.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 5,
-          "neuP": 95,
-          "label": "neutral",
-          "confidence": 0.03
-        },
-        "category": "usa"
-      },
-      {
-        "title": "FBI's national crime database targeted in hack, Trump says",
-        "link": "https://abcnews.com/US/fbis-national-crime-database-targeted-hack-trump/story?id=138347810",
-        "source": "ABC News",
-        "sourceDomain": "abcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump confirmed on Saturday that the FBI’s National Crime Information Center database was targeted in a hack.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-23T11:53:51.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 21.9,
-          "neuP": 78.1,
-          "label": "negative",
-          "confidence": 0.79
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Democratic National Committee sets broad rules for the party’s 2028 presidential debates",
-        "link": "https://www.nbcnews.com/politics/2028-election/democratic-national-committee-sets-broad-rules-partys-2028-presidentia-rcna610439",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Democratic National Committee will hold 12 debates next year and in 2028 for candidates seeking the party’s presidential nomination, the party announced, as it sets rules of the road for what’s expected to be a crowded campaign for the White House.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-23T10:00:40.000Z",
-        "sentiment": {
-          "posP": 4.9,
-          "negP": 0,
-          "neuP": 95.1,
-          "label": "positive",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump hosts exclusive dinner for investors in his declining meme coin",
-        "link": "https://www.nbcnews.com/politics/donald-trump/trump-hosts-exclusive-dinner-investors-declining-meme-coin-rcna610757",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump will reward top investors in his declining meme coin with an exclusive dinner Sunday night as Democrats focus future congressional probes on the president’s business dealings, including his crypto ventures.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-22T23:11:54.000Z",
-        "sentiment": {
-          "posP": 17.5,
-          "negP": 0,
-          "neuP": 82.5,
-          "label": "positive",
-          "confidence": 0.76
+          "confidence": 0.44
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.53,
-      "neu": 84.18,
-      "neg": 10.29,
-      "count": 37
+      "pos": 6.15,
+      "neu": 84.62,
+      "neg": 9.23,
+      "count": 47
     },
     "sourceLeaderboard": [
       {
-        "source": "Washington Post",
-        "pos": 6.23,
-        "neu": 84.47,
-        "neg": 9.3,
-        "count": 9
-      },
-      {
-        "source": "Fox News",
-        "pos": 7.42,
-        "neu": 78.66,
-        "neg": 13.92,
-        "count": 5
-      },
-      {
         "source": "NBC News",
-        "pos": 8.22,
-        "neu": 83.1,
-        "neg": 8.68,
-        "count": 5
+        "pos": 7.29,
+        "neu": 86.96,
+        "neg": 5.75,
+        "count": 10
+      },
+      {
+        "source": "Washington Post",
+        "pos": 5.25,
+        "neu": 85.86,
+        "neg": 8.89,
+        "count": 8
+      },
+      {
+        "source": "NYT",
+        "pos": 6.84,
+        "neu": 82.2,
+        "neg": 10.96,
+        "count": 7
       },
       {
         "source": "CBS News",
-        "pos": 1,
-        "neu": 82.83,
-        "neg": 16.18,
+        "pos": 7.15,
+        "neu": 81.1,
+        "neg": 11.75,
+        "count": 6
+      },
+      {
+        "source": "ABC News",
+        "pos": 6.88,
+        "neu": 83.88,
+        "neg": 9.25,
         "count": 4
       },
       {
@@ -5530,18 +5547,11 @@
         "count": 3
       },
       {
-        "source": "ABC News",
-        "pos": 5.7,
-        "neu": 85.33,
-        "neg": 8.97,
+        "source": "Fox News",
+        "pos": 6.53,
+        "neu": 79.93,
+        "neg": 13.53,
         "count": 3
-      },
-      {
-        "source": "NYT",
-        "pos": 6.5,
-        "neu": 87.5,
-        "neg": 6,
-        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5554,31 +5564,45 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.14,
-        "neu": 83.69,
-        "neg": 11.17,
-        "count": 23
+        "pos": 6.65,
+        "neu": 83.96,
+        "neg": 9.38,
+        "count": 19
       },
       {
         "topic": "Policy",
-        "pos": 3.77,
-        "neu": 85.78,
-        "neg": 10.45,
-        "count": 6
+        "pos": 5.41,
+        "neu": 86.28,
+        "neg": 8.31,
+        "count": 13
+      },
+      {
+        "topic": "Legal",
+        "pos": 6.46,
+        "neu": 81.14,
+        "neg": 12.4,
+        "count": 7
       },
       {
         "topic": "Foreign Policy",
-        "pos": 7.12,
-        "neu": 84.86,
+        "pos": 4.8,
+        "neu": 87.18,
         "neg": 8.02,
         "count": 5
       },
       {
         "topic": "Economy",
-        "pos": 9.4,
-        "neu": 83.53,
-        "neg": 7.07,
-        "count": 3
+        "pos": 9.5,
+        "neu": 84.5,
+        "neg": 6,
+        "count": 2
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 4.2,
+        "neu": 87.1,
+        "neg": 8.7,
+        "count": 1
       }
     ]
   },
@@ -5605,28 +5629,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-23T09:03:03.981Z",
+        "label": "2026-11-23T20:43:20.322Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T10:03:03.981Z",
+        "label": "2026-11-23T21:43:20.322Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T11:03:03.981Z",
+        "label": "2026-11-23T22:43:20.322Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T12:03:03.981Z",
+        "label": "2026-11-23T23:43:20.322Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5635,28 +5659,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-23T09:03:03.981Z",
+        "label": "2026-11-23T20:43:20.322Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T10:03:03.981Z",
+        "label": "2026-11-23T21:43:20.322Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T11:03:03.981Z",
+        "label": "2026-11-23T22:43:20.322Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-23T12:03:03.981Z",
+        "label": "2026-11-23T23:43:20.322Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5736,7 +5760,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-23T13:03:03.982Z",
+    "generatedAt": "2026-11-24T00:43:20.323Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5857,8 +5881,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 185,
-      "potusArticles": 37,
+      "usaArticles": 187,
+      "potusArticles": 47,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
