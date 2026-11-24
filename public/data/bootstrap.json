@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-24T10:27:39.045Z",
+  "generatedAt": "2026-11-24T20:49:44.288Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 188,
-    "potusArticles": 47
+    "usaArticles": 189,
+    "potusArticles": 44
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-24T06:27:39.046Z",
+          "label": "2026-11-24T16:49:44.288Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-24T07:27:39.046Z",
+          "label": "2026-11-24T17:49:44.288Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-24T08:27:39.046Z",
+          "label": "2026-11-24T18:49:44.288Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-24T09:27:39.046Z",
+          "label": "2026-11-24T19:49:44.288Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-24T06:27:39.046Z",
+          "label": "2026-11-24T16:49:44.288Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-24T07:27:39.046Z",
+          "label": "2026-11-24T17:49:44.288Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-24T08:27:39.046Z",
+          "label": "2026-11-24T18:49:44.288Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-24T09:27:39.046Z",
+          "label": "2026-11-24T19:49:44.288Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 6.96,
-      "neu": 82.97,
-      "neg": 10.07,
-      "count": 188
+      "pos": 9.44,
+      "neu": 80.88,
+      "neg": 9.68,
+      "count": 189
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 8.75,
-        "neu": 83.91,
-        "neg": 7.34,
+        "pos": 10.75,
+        "neu": 81.97,
+        "neg": 7.28,
         "count": 43
       },
       {
         "source": "Fox News",
-        "pos": 7.42,
-        "neu": 79.6,
-        "neg": 12.99,
+        "pos": 9.81,
+        "neu": 76.6,
+        "neg": 13.59,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 4.74,
-        "neu": 84.88,
-        "neg": 10.38,
-        "count": 26
+        "pos": 7.63,
+        "neu": 82.95,
+        "neg": 9.42,
+        "count": 25
       },
       {
         "source": "NYT",
-        "pos": 5.04,
-        "neu": 81.48,
-        "neg": 13.48,
-        "count": 21
+        "pos": 7.33,
+        "neu": 81.7,
+        "neg": 10.97,
+        "count": 23
       },
       {
         "source": "WSJ",
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 8.72,
-        "neu": 84.28,
-        "neg": 7,
+        "pos": 14.33,
+        "neu": 80.34,
+        "neg": 5.33,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 6,
-        "neu": 86.33,
-        "neg": 7.67,
+        "pos": 10.32,
+        "neu": 80.98,
+        "neg": 8.69,
         "count": 20
       },
       {
@@ -4636,131 +4636,121 @@
       "rows": [
         {
           "name": "Utilities",
-          "bias": -11.45,
-          "count": 4
-        },
-        {
-          "name": "Materials",
-          "bias": -8.98,
-          "count": 5
-        },
-        {
-          "name": "Real Estate",
-          "bias": 5.9,
+          "bias": -17,
           "count": 1
         },
         {
-          "name": "Technology",
-          "bias": -3.54,
-          "count": 144
-        },
-        {
           "name": "Communication",
-          "bias": 3.4,
+          "bias": -14,
+          "count": 1
+        },
+        {
+          "name": "Real Estate",
+          "bias": 11.67,
           "count": 3
         },
         {
-          "name": "Manufacturing",
-          "bias": 3.07,
-          "count": 3
+          "name": "Materials",
+          "bias": -7.25,
+          "count": 2
         },
         {
           "name": "Healthcare",
-          "bias": -1.26,
-          "count": 10
-        },
-        {
-          "name": "Finance",
-          "bias": 1.14,
-          "count": 17
+          "bias": -6.29,
+          "count": 8
         },
         {
           "name": "Energy",
-          "bias": -1.08,
-          "count": 11
+          "bias": -4.1,
+          "count": 9
+        },
+        {
+          "name": "Finance",
+          "bias": -0.67,
+          "count": 19
+        },
+        {
+          "name": "Technology",
+          "bias": -0.48,
+          "count": 144
+        },
+        {
+          "name": "Manufacturing",
+          "bias": -0.2,
+          "count": 3
         }
       ],
       "pos": [
         {
           "name": "Real Estate",
-          "bias": 5.9,
-          "count": 1
-        },
-        {
-          "name": "Communication",
-          "bias": 3.4,
-          "count": 3
-        },
-        {
-          "name": "Manufacturing",
-          "bias": 3.07,
+          "bias": 11.67,
           "count": 3
         }
       ],
       "neu": [
         {
           "name": "Healthcare",
-          "bias": -1.26,
-          "count": 10
-        },
-        {
-          "name": "Finance",
-          "bias": 1.14,
-          "count": 17
+          "bias": -6.29,
+          "count": 8
         },
         {
           "name": "Energy",
-          "bias": -1.08,
-          "count": 11
+          "bias": -4.1,
+          "count": 9
+        },
+        {
+          "name": "Finance",
+          "bias": -0.67,
+          "count": 19
         }
       ],
       "neg": [
         {
           "name": "Utilities",
-          "bias": -11.45,
-          "count": 4
+          "bias": -17,
+          "count": 1
+        },
+        {
+          "name": "Communication",
+          "bias": -14,
+          "count": 1
         },
         {
           "name": "Materials",
-          "bias": -8.98,
-          "count": 5
-        },
-        {
-          "name": "Technology",
-          "bias": -3.54,
-          "count": 144
+          "bias": -7.25,
+          "count": 2
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-24T06:27:39.048Z",
-          "pos": 10,
-          "neu": 83,
+          "label": "2026-11-24T16:49:44.290Z",
+          "pos": 11,
+          "neu": 86,
+          "neg": 4,
+          "count": 6
+        },
+        {
+          "label": "2026-11-24T17:49:44.290Z",
+          "pos": 13,
+          "neu": 78,
+          "neg": 9,
+          "count": 18
+        },
+        {
+          "label": "2026-11-24T18:49:44.290Z",
+          "pos": 11,
+          "neu": 80,
           "neg": 8,
-          "count": 7
+          "count": 24
         },
         {
-          "label": "2026-11-24T07:27:39.048Z",
-          "pos": 0,
-          "neu": 66,
-          "neg": 34,
-          "count": 1
-        },
-        {
-          "label": "2026-11-24T08:27:39.048Z",
-          "pos": 6,
-          "neu": 84,
-          "neg": 10,
-          "count": 4
-        },
-        {
-          "label": "2026-11-24T09:27:39.048Z",
-          "pos": 7,
-          "neu": 82,
+          "label": "2026-11-24T19:49:44.290Z",
+          "pos": 9,
+          "neu": 80,
           "neg": 11,
-          "count": 9
+          "count": 33
         }
       ]
     }
@@ -4988,22 +4978,22 @@
         "category": "usa"
       },
       {
-        "title": "Trump flirts with leftist Democrats on credit cards and could be flirting with disaster",
-        "link": "https://www.foxnews.com/opinion/trump-flirts-leftist-democrats-credit-cards-flirting-disaster",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump’s Nvidia Push Shows Companies’ Importance in Global Economic War",
+        "link": "https://www.nytimes.com/2026/11/24/business/economy/trump-nvidia-national-security-us-economics.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Donald Trump flirts with Medicare for All as Abdul El-Sayed pitches \"Trumpcare,\" though an NBC survey found 82% of Americans like their coverage.",
+        "description": "Presidents before him have bailed out companies in times of national crisis. Mr. Trump went further: He staked the fortunes of the United States on those of a favored chief executive.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-24T10:00:37.000Z",
+        "publishedAt": "2026-11-24T19:54:58.000Z",
         "sentiment": {
-          "posP": 22.7,
-          "negP": 9,
-          "neuP": 68.3,
-          "label": "positive",
-          "confidence": 0.49
+          "posP": 15.9,
+          "negP": 15.7,
+          "neuP": 68.4,
+          "label": "negative",
+          "confidence": 0.23
         },
         "category": "usa"
       }
@@ -5230,306 +5220,306 @@
         "category": "usa"
       },
       {
-        "title": "Trump flirts with leftist Democrats on credit cards and could be flirting with disaster",
-        "link": "https://www.foxnews.com/opinion/trump-flirts-leftist-democrats-credit-cards-flirting-disaster",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Donald Trump flirts with Medicare for All as Abdul El-Sayed pitches \"Trumpcare,\" though an NBC survey found 82% of Americans like their coverage.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-24T10:00:37.000Z",
-        "sentiment": {
-          "posP": 22.7,
-          "negP": 9,
-          "neuP": 68.3,
-          "label": "positive",
-          "confidence": 0.49
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Bringing hostages home: How Trump revived Rome's citizen-first ethos",
-        "link": "https://www.foxnews.com/opinion/bringing-hostages-home-trump-revived-rome-citizen-first-ethos",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Like the Roman Empire retrieving its citizens, President Donald Trump has freed every Gaza hostage and over 100 detained Americans.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-24T09:50:45.000Z",
-        "sentiment": {
-          "posP": 15.3,
-          "negP": 8,
-          "neuP": 76.7,
-          "label": "positive",
-          "confidence": 0.36
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Massachusetts sues Trump admin to stop ICE's courthouse arrests: 'Unnecessary fear'",
-        "link": "https://www.foxnews.com/politics/massachusetts-sues-trump-admin-stop-ice-courthouse-arrests-unnecessary-fear",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Massachusetts officials sued the Trump administration over ICE's courthouse arrests without judicial warrants, saying they violate a new state law.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-24T06:16:28.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 30.1,
-          "neuP": 69.9,
-          "label": "negative",
-          "confidence": 0.88
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump's Nixon-to-China moment: There's an immigration move only he can make",
-        "link": "https://www.foxnews.com/opinion/trumps-nixon-to-china-moment-immigration-move-only-he-can-make",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump discussed immigration on Fox News after calling deportations too tough. There's a case to be made for using presidential pardon power to shield some undocumented immigrants.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-24T05:06:19.000Z",
-        "sentiment": {
-          "posP": 5.9,
-          "negP": 3.9,
-          "neuP": 90.2,
-          "label": "positive",
-          "confidence": 0.2
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iran vows to end U.S. naval blockade by \"all available means\"",
-        "link": "https://www.cbsnews.com/live-updates/iran-war-us-trump-blockade-strait-of-hormuz-ship-attacks/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Iran vows to force the U.S. to lift its blockade as Trump acknowledges the regime's increasing attacks, but says they've \"done no damage.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-24T09:47:52.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 12.9,
-          "neuP": 87.1,
-          "label": "negative",
-          "confidence": 0.58
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Experts, reporters and lawmakers dig into Nvidia reinstalling Jensen Huang as CEO",
-        "link": "https://www.cbsnews.com/video/experts-reporters-lawmakers-dig-nvidia-reinstalling-jensen-huang-ceo/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Just days after Jensen Huang stepped down as Nvidia CEO following allegations he had an affair with an alleged Chinese, the chip maker reinstalled Huang to his position in a stunning reversal. President Trump took credit for intervening. Experts, reporters and lawmakers spoke with CBS News about how it affected the markets, what it could mean for national security, how it could impact the AI race with China and more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-24T04:15:00.000Z",
-        "sentiment": {
-          "posP": 8.8,
-          "negP": 1.9,
-          "neuP": 89.3,
-          "label": "positive",
-          "confidence": 0.72
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump downplays Iran's latest attacks as it vows to use all means to end U.S. blockade",
-        "link": "https://www.cbsnews.com/video/trump-downplays-irans-latest-attacks-threatens-all-means-end-us-blockade/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Iranian government said it would use \"all available means\" to end the U.S. naval blockade of the country's ports, dubbing it an \"act of military aggression.\" CBS News Pentagon reporter Eleanor Watson has more.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-24T01:49:00.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 5.5,
-          "neuP": 94.5,
-          "label": "negative",
-          "confidence": 0.44
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Jensen Huang Returns to Nvidia, Showing What Trump Will Do for AI",
-        "link": "https://www.nytimes.com/2026/11/23/business/trump-jensen-huang-nvidia.html",
+        "title": "Trump’s Nvidia Push Shows Companies’ Importance in Global Economic War",
+        "link": "https://www.nytimes.com/2026/11/24/business/economy/trump-nvidia-national-security-us-economics.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump intervened on behalf of the returning Nvidia chief in a bid to boost a key company driving the stock market. The company’s share price soared.",
+        "description": "Presidents before him have bailed out companies in times of national crisis. Mr. Trump went further: He staked the fortunes of the United States on those of a favored chief executive.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-23T22:19:47.000Z",
+        "publishedAt": "2026-11-24T19:54:58.000Z",
         "sentiment": {
-          "posP": 12.3,
+          "posP": 15.9,
+          "negP": 15.7,
+          "neuP": 68.4,
+          "label": "negative",
+          "confidence": 0.23
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump Ballroom and Other Projects Got $300 Million Donation Boost",
+        "link": "https://www.nytimes.com/2026/11/24/us/politics/account-park-service-trump-ballroom-donation.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Trump administration declined to say who donated those funds to an account funding presidential projects like the White House ballroom and the triumphal arch.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-24T18:28:48.000Z",
+        "sentiment": {
+          "posP": 20.4,
           "negP": 0,
-          "neuP": 87.7,
+          "neuP": 79.6,
           "label": "positive",
-          "confidence": 0.6
+          "confidence": 0.8
         },
         "category": "usa"
       },
       {
-        "title": "Jensen Huang Returns to Nvidia After President Trump Intervenes",
-        "link": "https://www.nytimes.com/2026/11/23/business/nvidia-jensen-huang.html",
+        "title": "Smithsonian Boss Defends Autonomy After Report of Trump Overhaul Plan",
+        "link": "https://www.nytimes.com/2026/11/24/arts/design/smithsonian-letter-lonnie-bunch-white-house.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Mr. Trump, a close ally of Mr. Huang, led a campaign to assure the chip company’s board that the longtime chief executive did not present a national security risk.",
+        "description": "Lonnie Bunch wrote a letter intended to calm his staff after an outline of major personnel and programming changes was seen on a White House aide’s computer.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-24T00:13:24.000Z",
+        "publishedAt": "2026-11-24T19:25:21.000Z",
         "sentiment": {
-          "posP": 6.2,
-          "negP": 10.7,
-          "neuP": 83.1,
+          "posP": 6.3,
+          "negP": 0,
+          "neuP": 93.7,
+          "label": "positive",
+          "confidence": 0.32
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Blanche assures he would have told Trump about any crimes Jensen Huang committed",
+        "link": "https://www.nbcnews.com/video/blanche-assures-he-would-have-told-trump-about-any-crimes-jensen-huang-committed-274102341578",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Attorney General Todd Blanche told reporters that he \"certainly\" would have told President Trump if the Department of Justice was investigating Jensen Huang for committing any crimes before his reinstatement as Nvidia's CEO.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-24T17:17:08.000Z",
+        "sentiment": {
+          "posP": 17.8,
+          "negP": 0,
+          "neuP": 82.2,
+          "label": "positive",
+          "confidence": 0.8
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump pardons turkeys Freedom and Feathers at the White House",
+        "link": "https://www.nbcnews.com/video/watch-live-trump-pardons-turkeys-freedom-and-feathers-at-the-white-house-274094661663",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Watch live coverage as President Trump pardons the turkeys Freedom and Feathers at the White House ahead of the Thanksgiving holiday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-24T16:02:23.000Z",
+        "sentiment": {
+          "posP": 37.3,
+          "negP": 0,
+          "neuP": 62.7,
+          "label": "positive",
+          "confidence": 0.94
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump awards Rudy Giuliani the Medal of Freedom, the nation’s highest civilian honor",
+        "link": "https://www.nbcnews.com/politics/trump-administration/trump-giuliani-medal-freedom-2020-election-nyc-mayor-911-attacks-rcna611099",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Giuliani was hailed for his actions as New York City’s mayor during the 9/11 attacks, but was later disbarred for pushing President Donald Trump’s false election fraud claims.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-24T16:34:26.000Z",
+        "sentiment": {
+          "posP": 19.9,
+          "negP": 13.9,
+          "neuP": 66.2,
           "label": "neutral",
-          "confidence": 0.19
+          "confidence": 0.01
         },
         "category": "usa"
       },
       {
-        "title": "Republicans Break With Trump Over Jensen Huang’s Reinstatement at Nvidia",
-        "link": "https://www.nytimes.com/2026/11/23/technology/republicans-trump-jensen-huang-nvidia.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Watch: Trump pardons turkeys Freedom and Feathers at White House",
+        "link": "https://www.cbsnews.com/video/watch-trump-pardons-turkeys-freedom-and-feathers-at-white-house/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "It was a rare instance of the G.O.P. pushing back on the president and threatening to use its oversight and legislative power to challenge his administration’s approach.",
+        "description": "President Trump spoke at the White House before pardoning two turkeys, Freedom and Feathers, ahead of Thanksgiving.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-23T23:18:46.000Z",
+        "publishedAt": "2026-11-24T20:18:14.000Z",
         "sentiment": {
-          "posP": 3.4,
-          "negP": 8.8,
-          "neuP": 87.8,
-          "label": "negative",
-          "confidence": 0.48
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Court Clears the Way for Iowa Ammunition Detonation; Trump Addresses the Crisis",
-        "link": "https://www.nytimes.com/2026/11/23/climate/iowa-army-ammunition-explosion.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The announcement late Monday capped a day of uncertainty in which President Trump spoke out on a crisis that threatens to launch a cloud of toxic lead dust across homes and farmland.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-24T04:25:21.000Z",
-        "sentiment": {
-          "posP": 2.6,
-          "negP": 26.1,
-          "neuP": 71.3,
-          "label": "negative",
+          "posP": 36.6,
+          "negP": 0,
+          "neuP": 63.4,
+          "label": "positive",
           "confidence": 0.92
         },
         "category": "usa"
       },
       {
-        "title": "Jimmy Kimmel Clocks Trump’s Personal Investment in Jensen Huang",
-        "link": "https://www.nytimes.com/2026/11/24/arts/television/jimmy-kimmel-trump-jensen-huang.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump presents Rudy Giuliani with Presidential Medal of Freedom",
+        "link": "https://www.cbsnews.com/news/trump-rudy-giuliani-presidential-medal-of-freedom-white-house/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "The late night host pointed to President Trump’s haranguing of the Nvidia board on Huang’s behalf: “And if you think that sounds fishy, it’s not — it’s called being a good friend.”",
+        "description": "Rudy Giuliani, the former mayor of New York City who worked as a personal lawyer to President Trump, said he will be honored in the Oval Office.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-24T07:05:40.000Z",
+        "publishedAt": "2026-11-24T20:16:27.000Z",
         "sentiment": {
-          "posP": 7.1,
+          "posP": 25.8,
           "negP": 0,
-          "neuP": 92.9,
+          "neuP": 74.2,
           "label": "positive",
-          "confidence": 0.44
+          "confidence": 0.9
         },
         "category": "usa"
       },
       {
-        "title": "Trump’s role in bringing Huang back to Nvidia met with bipartisan criticism",
-        "link": "https://www.nbcnews.com/nightly-news/video/trump-s-role-in-bringing-huang-back-to-nvidia-met-with-bipartisan-criticism-274057285739",
-        "source": "NBC News",
-        "sourceDomain": "nbcnews.com",
+        "title": "Trump pardons 2 turkeys, Freedom and Feathers",
+        "link": "https://www.cbsnews.com/news/white-house-turkey-pardon-trump-thanksgiving-freedom-feathers/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "After President Trump shared news of his role in Jensen Huang’s return to Nvidia as CEO, the move was met with sharp criticism on both sides of the political aisle. NBC News’ Chief White House Correspondent Garrett Haake reports.",
+        "description": "Freedom and Feathers were introduced on Monday at the Willard InterContinental in Washington, where the two stayed in a suite leading up to their trip to the White House.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-24T01:27:41.000Z",
+        "publishedAt": "2026-11-24T19:51:40.000Z",
         "sentiment": {
-          "posP": 4.3,
-          "negP": 10.3,
-          "neuP": 85.4,
+          "posP": 25.5,
+          "negP": 0,
+          "neuP": 74.5,
+          "label": "positive",
+          "confidence": 0.89
+        },
+        "category": "usa"
+      },
+      {
+        "title": "'The threat is finally real': Judge rips White House 'weaponization'",
+        "link": "https://abcnews.com/US/threat-finally-real-judge-rips-white-house-weaponization/story?id=138417990",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A D.C. magistrate judge has issued a scathing written order ripping the Trump administration for what he described as the blatant \"weaponization\" of law enforcement.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-24T20:20:06.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 9.6,
+          "neuP": 90.4,
           "label": "negative",
           "confidence": 0.53
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump awards Medal of Freedom to former NYC Mayor Rudy Giuliani",
+        "link": "https://abcnews.com/Politics/trump-award-medal-freedom-former-nyc-mayor-rudy/story?id=138411544",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Trump pardoned Giuliani last year.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-24T19:13:09.000Z",
+        "sentiment": {
+          "posP": 50.4,
+          "negP": 0,
+          "neuP": 49.6,
+          "label": "positive",
+          "confidence": 0.9
+        },
+        "category": "usa"
+      },
+      {
+        "title": "WATCH:  President Trump holds Thanksgiving turkey pardoning ceremony",
+        "link": "https://abcnews.com/video/138420700/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump held the annual Thanksgiving turkey pardon ceremony at the White House on Tuesday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-24T20:14:56.000Z",
+        "sentiment": {
+          "posP": 18.5,
+          "negP": 0,
+          "neuP": 81.5,
+          "label": "positive",
+          "confidence": 0.61
+        },
+        "category": "usa"
+      },
+      {
+        "title": "WATCH:  Preparing for annual White House turkey pardon",
+        "link": "https://abcnews.com/video/138404725/",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Two turkeys named Freedom and Feather are set to get Thanksgiving pardons from President Donald Trump Tuesday.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-24T11:04:00.000Z",
+        "sentiment": {
+          "posP": 28.3,
+          "negP": 0,
+          "neuP": 71.7,
+          "label": "positive",
+          "confidence": 0.83
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 5.9,
-      "neu": 86.31,
-      "neg": 7.79,
-      "count": 47
+      "pos": 13.6,
+      "neu": 80.3,
+      "neg": 6.11,
+      "count": 44
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 6.26,
-        "neu": 87.13,
-        "neg": 6.62,
-        "count": 12
+        "pos": 14.32,
+        "neu": 79.45,
+        "neg": 6.23,
+        "count": 11
       },
       {
-        "source": "NYT",
-        "pos": 6.37,
-        "neu": 85.4,
-        "neg": 8.23,
+        "source": "ABC News",
+        "pos": 15.06,
+        "neu": 79.11,
+        "neg": 5.83,
         "count": 7
       },
       {
         "source": "Washington Post",
-        "pos": 6.44,
-        "neu": 86.76,
-        "neg": 6.8,
-        "count": 7
-      },
-      {
-        "source": "Fox News",
-        "pos": 10.58,
-        "neu": 79.92,
-        "neg": 9.5,
+        "pos": 21.98,
+        "neu": 72.8,
+        "neg": 5.22,
         "count": 6
       },
       {
+        "source": "NYT",
+        "pos": 11.12,
+        "neu": 83.34,
+        "neg": 5.54,
+        "count": 5
+      },
+      {
         "source": "CBS News",
-        "pos": 3.2,
-        "neu": 88.22,
-        "neg": 8.57,
+        "pos": 22.98,
+        "neu": 73.53,
+        "neg": 3.5,
         "count": 4
       },
       {
@@ -5547,62 +5537,62 @@
         "count": 3
       },
       {
+        "source": "Fox News",
+        "pos": 9.8,
+        "neu": 87.2,
+        "neg": 3,
+        "count": 2
+      },
+      {
         "source": "Bloomberg",
         "pos": 3,
         "neu": 88,
         "neg": 9,
-        "count": 2
-      },
-      {
-        "source": "ABC News",
-        "pos": 0,
-        "neu": 95.1,
-        "neg": 4.9,
         "count": 2
       }
     ],
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 6.77,
-        "neu": 85.65,
-        "neg": 7.58,
-        "count": 21
+        "pos": 16.79,
+        "neu": 77.21,
+        "neg": 6,
+        "count": 27
       },
       {
         "topic": "Policy",
-        "pos": 3.55,
-        "neu": 88.28,
-        "neg": 8.17,
-        "count": 11
+        "pos": 8.2,
+        "neu": 85.96,
+        "neg": 5.84,
+        "count": 7
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.98,
-        "neu": 87.68,
-        "neg": 7.33,
-        "count": 6
+        "pos": 4.8,
+        "neu": 87.18,
+        "neg": 8.02,
+        "count": 5
       },
       {
         "topic": "Economy",
-        "pos": 10.03,
-        "neu": 86.5,
-        "neg": 3.48,
-        "count": 4
-      },
-      {
-        "topic": "Legal",
-        "pos": 4.53,
-        "neu": 81.83,
-        "neg": 13.63,
+        "pos": 12.5,
+        "neu": 83.5,
+        "neg": 4,
         "count": 3
       },
       {
         "topic": "Public Statements",
-        "pos": 6.3,
-        "neu": 84.5,
-        "neg": 9.2,
-        "count": 2
+        "pos": 17.8,
+        "neu": 82.2,
+        "neg": 0,
+        "count": 1
+      },
+      {
+        "topic": "Legal",
+        "pos": 8.2,
+        "neu": 77.9,
+        "neg": 13.9,
+        "count": 1
       }
     ]
   },
@@ -5629,28 +5619,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-24T06:27:39.051Z",
+        "label": "2026-11-24T16:49:44.292Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-24T07:27:39.051Z",
+        "label": "2026-11-24T17:49:44.292Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-24T08:27:39.051Z",
+        "label": "2026-11-24T18:49:44.292Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-24T09:27:39.051Z",
+        "label": "2026-11-24T19:49:44.292Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5659,28 +5649,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-24T06:27:39.051Z",
+        "label": "2026-11-24T16:49:44.292Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-24T07:27:39.051Z",
+        "label": "2026-11-24T17:49:44.292Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-24T08:27:39.051Z",
+        "label": "2026-11-24T18:49:44.292Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-24T09:27:39.051Z",
+        "label": "2026-11-24T19:49:44.292Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5760,7 +5750,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-24T10:27:39.052Z",
+    "generatedAt": "2026-11-24T20:49:44.294Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5881,8 +5871,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 188,
-      "potusArticles": 47,
+      "usaArticles": 189,
+      "potusArticles": 44,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
