@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-25T13:35:24.404Z",
+  "generatedAt": "2026-11-25T22:42:17.112Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 186,
+    "usaArticles": 189,
     "potusArticles": 40
   },
   "version": 1,
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-25T09:35:24.405Z",
+          "label": "2026-11-25T18:42:17.112Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-25T10:35:24.405Z",
+          "label": "2026-11-25T19:42:17.112Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-25T11:35:24.405Z",
+          "label": "2026-11-25T20:42:17.112Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-25T12:35:24.405Z",
+          "label": "2026-11-25T21:42:17.112Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-25T09:35:24.405Z",
+          "label": "2026-11-25T18:42:17.112Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-25T10:35:24.405Z",
+          "label": "2026-11-25T19:42:17.112Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-25T11:35:24.405Z",
+          "label": "2026-11-25T20:42:17.112Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-25T12:35:24.405Z",
+          "label": "2026-11-25T21:42:17.112Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,39 +4555,39 @@
       }
     ],
     "sentiment": {
-      "pos": 7.78,
-      "neu": 81.68,
-      "neg": 10.53,
-      "count": 186
+      "pos": 7.98,
+      "neu": 82.47,
+      "neg": 9.55,
+      "count": 189
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 7.89,
-        "neu": 82.48,
-        "neg": 9.64,
+        "pos": 7.99,
+        "neu": 83.72,
+        "neg": 8.29,
         "count": 41
       },
       {
         "source": "Fox News",
-        "pos": 9.33,
-        "neu": 78.94,
-        "neg": 11.73,
+        "pos": 7.83,
+        "neu": 79.61,
+        "neg": 12.56,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 3.43,
-        "neu": 83.96,
-        "neg": 12.61,
+        "pos": 6.22,
+        "neu": 83.74,
+        "neg": 10.05,
         "count": 26
       },
       {
         "source": "NYT",
-        "pos": 7.85,
-        "neu": 79.98,
-        "neg": 12.17,
-        "count": 21
+        "pos": 9.42,
+        "neu": 82.49,
+        "neg": 8.09,
+        "count": 24
       },
       {
         "source": "WSJ",
@@ -4598,16 +4598,16 @@
       },
       {
         "source": "ABC News",
-        "pos": 10.64,
-        "neu": 82.25,
-        "neg": 7.11,
+        "pos": 9.11,
+        "neu": 84.78,
+        "neg": 6.12,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 9.97,
-        "neu": 83.04,
-        "neg": 6.99,
+        "pos": 9.61,
+        "neu": 82.06,
+        "neg": 8.33,
         "count": 20
       },
       {
@@ -4635,24 +4635,24 @@
     "industryLeaderboard": {
       "rows": [
         {
+          "name": "Communication",
+          "bias": -20.6,
+          "count": 2
+        },
+        {
           "name": "Utilities",
-          "bias": -18.43,
+          "bias": -9.53,
           "count": 3
         },
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
-        },
-        {
           "name": "Healthcare",
-          "bias": -8.52,
-          "count": 5
+          "bias": -8.74,
+          "count": 7
         },
         {
-          "name": "Manufacturing",
-          "bias": 7,
-          "count": 1
+          "name": "Materials",
+          "bias": -6.4,
+          "count": 6
         },
         {
           "name": "Real Estate",
@@ -4660,107 +4660,97 @@
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": -4.67,
-          "count": 4
+          "name": "Energy",
+          "bias": 4.18,
+          "count": 13
         },
         {
           "name": "Technology",
-          "bias": -3.6,
-          "count": 141
+          "bias": -1.85,
+          "count": 148
         },
         {
           "name": "Finance",
-          "bias": -2.92,
-          "count": 23
-        },
-        {
-          "name": "Energy",
-          "bias": 2.61,
-          "count": 14
+          "bias": 0.13,
+          "count": 25
         }
       ],
       "pos": [
         {
-          "name": "Manufacturing",
-          "bias": 7,
-          "count": 1
-        },
-        {
           "name": "Real Estate",
           "bias": 5.9,
           "count": 1
         },
         {
           "name": "Energy",
-          "bias": 2.61,
-          "count": 14
+          "bias": 4.18,
+          "count": 13
         }
       ],
       "neu": [
         {
           "name": "Materials",
-          "bias": -4.67,
-          "count": 4
+          "bias": -6.4,
+          "count": 6
         },
         {
           "name": "Technology",
-          "bias": -3.6,
-          "count": 141
+          "bias": -1.85,
+          "count": 148
         },
         {
           "name": "Finance",
-          "bias": -2.92,
-          "count": 23
+          "bias": 0.13,
+          "count": 25
         }
       ],
       "neg": [
         {
+          "name": "Communication",
+          "bias": -20.6,
+          "count": 2
+        },
+        {
           "name": "Utilities",
-          "bias": -18.43,
+          "bias": -9.53,
           "count": 3
         },
         {
-          "name": "Communication",
-          "bias": -14,
-          "count": 1
-        },
-        {
           "name": "Healthcare",
-          "bias": -8.52,
-          "count": 5
+          "bias": -8.74,
+          "count": 7
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-25T09:35:24.406Z",
-          "pos": 5,
-          "neu": 85,
-          "neg": 10,
-          "count": 14
+          "label": "2026-11-25T18:42:17.113Z",
+          "pos": 3,
+          "neu": 92,
+          "neg": 5,
+          "count": 4
         },
         {
-          "label": "2026-11-25T10:35:24.406Z",
-          "pos": 8,
-          "neu": 86,
-          "neg": 6,
-          "count": 8
-        },
-        {
-          "label": "2026-11-25T11:35:24.406Z",
-          "pos": 10,
-          "neu": 79,
-          "neg": 11,
-          "count": 19
-        },
-        {
-          "label": "2026-11-25T12:35:24.406Z",
+          "label": "2026-11-25T19:42:17.113Z",
           "pos": 7,
-          "neu": 81,
-          "neg": 12,
-          "count": 25
+          "neu": 83,
+          "neg": 10,
+          "count": 15
+        },
+        {
+          "label": "2026-11-25T20:42:17.113Z",
+          "pos": 9,
+          "neu": 82,
+          "neg": 9,
+          "count": 27
+        },
+        {
+          "label": "2026-11-25T21:42:17.113Z",
+          "pos": 6,
+          "neu": 86,
+          "neg": 8,
+          "count": 22
         }
       ]
     }
@@ -4968,42 +4958,42 @@
         "category": "world"
       },
       {
-        "title": "Marco Rubio's 2028 stock surges among House Republicans as Trump insiders split on Vance",
-        "link": "https://www.foxnews.com/politics/marco-rubios-2028-stock-surges-among-house-republicans-trump-insiders-split-vance",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Blindsided by Iowa detonation, White House scrambled, sources say",
+        "link": "https://www.cbsnews.com/news/iowa-detonation-lead-white-house-blindsided-accountability/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "House Republicans are pushing Secretary of State Marco Rubio to launch a 2028 presidential run, calling him the GOP's unifier after midterm losses.",
+        "description": "White House officials have expressed frustration in internal conversations that they had to scramble to deal with the crisis.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-25T11:00:37.000Z",
+        "publishedAt": "2026-11-25T22:35:25.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.2,
-          "neuP": 92.8,
+          "negP": 21.7,
+          "neuP": 78.3,
           "label": "negative",
-          "confidence": 0.4
+          "confidence": 0.8
         },
         "category": "usa"
       },
       {
-        "title": "Trump's NVIDIA power play opens Pandora's box Democrats could weaponize, analyst warns",
-        "link": "https://www.foxnews.com/politics/trumps-nvidia-power-play-opens-pandoras-box-democrats-could-weaponize-analyst-warns",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Trump Administration Unveils New Tariffs for China, EU and More, Citing Unfair Practices",
+        "link": "https://www.nytimes.com/2026/11/25/business/trump-tariffs-trade.html",
+        "source": "NYT",
+        "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Eric Schiffer says Trump's push to reinstate NVIDIA CEO Jensen Huang opens a Pandora's box Democrats may exploit, but national security won.",
+        "description": "The latest escalation came as the administration confronts continued legal obstacles and new scrutiny from an incoming Democratic-led Congress.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-25T11:00:17.000Z",
+        "publishedAt": "2026-11-25T15:58:36.000Z",
         "sentiment": {
-          "posP": 24.5,
-          "negP": 6,
-          "neuP": 69.5,
-          "label": "positive",
-          "confidence": 0.86
+          "posP": 4,
+          "negP": 21.1,
+          "neuP": 74.9,
+          "label": "negative",
+          "confidence": 0.75
         },
         "category": "usa"
       }
@@ -5210,87 +5200,27 @@
         "category": "world"
       },
       {
-        "title": "Marco Rubio's 2028 stock surges among House Republicans as Trump insiders split on Vance",
-        "link": "https://www.foxnews.com/politics/marco-rubios-2028-stock-surges-among-house-republicans-trump-insiders-split-vance",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
+        "title": "Blindsided by Iowa detonation, White House scrambled, sources say",
+        "link": "https://www.cbsnews.com/news/iowa-detonation-lead-white-house-blindsided-accountability/",
+        "source": "CBS News",
+        "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "House Republicans are pushing Secretary of State Marco Rubio to launch a 2028 presidential run, calling him the GOP's unifier after midterm losses.",
+        "description": "White House officials have expressed frustration in internal conversations that they had to scramble to deal with the crisis.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-25T11:00:37.000Z",
+        "publishedAt": "2026-11-25T22:35:25.000Z",
         "sentiment": {
           "posP": 0,
-          "negP": 7.2,
-          "neuP": 92.8,
+          "negP": 21.7,
+          "neuP": 78.3,
           "label": "negative",
-          "confidence": 0.4
+          "confidence": 0.8
         },
         "category": "usa"
       },
       {
-        "title": "Trump's NVIDIA power play opens Pandora's box Democrats could weaponize, analyst warns",
-        "link": "https://www.foxnews.com/politics/trumps-nvidia-power-play-opens-pandoras-box-democrats-could-weaponize-analyst-warns",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Eric Schiffer says Trump's push to reinstate NVIDIA CEO Jensen Huang opens a Pandora's box Democrats may exploit, but national security won.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-25T11:00:17.000Z",
-        "sentiment": {
-          "posP": 24.5,
-          "negP": 6,
-          "neuP": 69.5,
-          "label": "positive",
-          "confidence": 0.86
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump owned millions in Nvidia stock as he pressed for Jensen Huang's reinstatement",
-        "link": "https://www.cbsnews.com/news/trump-nvidia-stock-jensen-huang/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump holds tens of millions in Nvidia shares, giving him a personal stake in the company's stock market roller coaster ride of the past two weeks, financial disclosure documents show.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-25T12:51:35.000Z",
-        "sentiment": {
-          "posP": 10.1,
-          "negP": 0,
-          "neuP": 89.9,
-          "label": "positive",
-          "confidence": 0.56
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Legal expert breaks down Trump's involvement in Huang reinstatement at Nvidia",
-        "link": "https://www.cbsnews.com/video/legal-expert-breaks-down-trumps-involvement-in-nvidia-scandal-huang-reinstatement/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "CBS News legal contributor Jessica Levinson weighs in on if there are any Constitutional issues around President Trump's involvement in Nvidia's reinstatement of CEO Jensen Huang.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-25T01:16:50.000Z",
-        "sentiment": {
-          "posP": 7.9,
-          "negP": 0,
-          "neuP": 92.1,
-          "label": "positive",
-          "confidence": 0.25
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Administration Unveils New Tariffs for Dozens of Countries, Citing Unfair Practices",
+        "title": "Trump Administration Unveils New Tariffs for China, EU and More, Citing Unfair Practices",
         "link": "https://www.nytimes.com/2026/11/25/business/trump-tariffs-trade.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
@@ -5299,153 +5229,33 @@
         "description": "The latest escalation came as the administration confronts continued legal obstacles and new scrutiny from an incoming Democratic-led Congress.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-25T13:24:29.000Z",
+        "publishedAt": "2026-11-25T15:58:36.000Z",
         "sentiment": {
-          "posP": 4.2,
+          "posP": 4,
           "negP": 21.1,
-          "neuP": 74.7,
+          "neuP": 74.9,
           "label": "negative",
-          "confidence": 0.73
+          "confidence": 0.75
         },
         "category": "usa"
       },
       {
-        "title": "Officials Brief Congressional Staff on Intelligence Surrounding Nvidia Affair",
-        "link": "https://www.nytimes.com/2026/11/24/us/politics/intelligence-nvidia-affair-congressional-briefing.html",
+        "title": "Border Barrier Cannot be Removed for Decades, Texas Republicans and D.O.J. Agree",
+        "link": "https://www.nytimes.com/2026/11/25/us/politics/texas-border-legal-settlement-trump.html",
         "source": "NYT",
         "sourceDomain": "nytimes.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "After President Trump said Jensen Huang was not a security threat, U.S. intelligence agencies told aides to lawmakers there was no evidence the woman at the heart of the scandal took directions from the Chinese spy agency.",
+        "description": "Just before Democrats take over the state government, Trump administration and outgoing Republican officials in Texas ink legal settlement barring removal of wire for 30 years.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-25T03:15:54.000Z",
+        "publishedAt": "2026-11-25T20:19:48.000Z",
         "sentiment": {
-          "posP": 16.3,
-          "negP": 12.9,
-          "neuP": 70.8,
+          "posP": 14.9,
+          "negP": 3.6,
+          "neuP": 81.5,
           "label": "positive",
-          "confidence": 0.43
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trapped on the Tarmac: 3-Hour Flight Delays Spike Under Trump",
-        "link": "https://www.nytimes.com/2026/11/25/upshot/tarmac-delays-flights-trump.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Long delays have risen to levels not seen in more than 15 years, with no enforcement in sight.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-25T10:03:47.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 17.7,
-          "neuP": 82.3,
-          "label": "negative",
-          "confidence": 0.68
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Here’s How Democrats Should Investigate Trump’s Corruption",
-        "link": "https://www.nytimes.com/2026/11/25/opinion/trump-corruption-investigate-democrats.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "By focusing on corruption, Congress can make clear that President Trump and his allies are willing to harm other Americans for their own benefit.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-25T10:01:45.000Z",
-        "sentiment": {
-          "posP": 15.1,
-          "negP": 9.4,
-          "neuP": 75.5,
-          "label": "positive",
-          "confidence": 0.27
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Late Night Rips Into Trump for Honoring Rudy Giuliani",
-        "link": "https://www.nytimes.com/2026/11/25/arts/television/late-night-rips-into-trump-for-honoring-rudy-giuliani.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Seth Meyers congratulated the former New York mayor and Trump ally for “A, receiving the Presidential Medal of Freedom and B, still being alive.”",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-25T06:31:34.000Z",
-        "sentiment": {
-          "posP": 26.1,
-          "negP": 0,
-          "neuP": 73.9,
-          "label": "positive",
-          "confidence": 0.89
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump’s meddling in Huang scandal reignites voter angst over tech’s outsized political power",
-        "link": "https://www.cnbc.com/2026/11/25/huang-reinstatement-reignites-voter-angst-over-techs-outsized-power.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Nvidia’s decision to reinstate CEO Jensen Huang after pressure from Trump is intensifying bipartisan scrutiny of tech companies' ties to the administration.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-25T13:20:34.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 13.4,
-          "neuP": 86.6,
-          "label": "negative",
-          "confidence": 0.62
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump wanted Jensen Huang back. Now, the president is all alone in Washington",
-        "link": "https://www.cnbc.com/2026/11/24/trump-jensen-huang-nvidia.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Republicans worry Nvidia CEO Jensen Huang's affairs with a suspected Chinese spy jeopardized U.S. national security.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-24T21:13:39.000Z",
-        "sentiment": {
-          "posP": 7.2,
-          "negP": 20.5,
-          "neuP": 72.3,
-          "label": "negative",
-          "confidence": 0.53
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Account contributions from friends and family pass $1 billion mark, Treasury says",
-        "link": "https://www.cnbc.com/2026/11/24/trump-accounts-family-contributions-billion.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Trump Account contributions from friends and family have passed $1 billion, according to the Treasury Department. Here's what families need to know.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-24T22:18:47.000Z",
-        "sentiment": {
-          "posP": 24,
-          "negP": 0,
-          "neuP": 76,
-          "label": "positive",
-          "confidence": 0.83
+          "confidence": 0.57
         },
         "category": "usa"
       },
@@ -5488,48 +5298,235 @@
           "confidence": 0.67
         },
         "category": "usa"
+      },
+      {
+        "title": "Beijing Signals Readiness to Talk to Trump's Team, Even Old Foes",
+        "link": "https://www.wsj.com/articles/beijing-signals-readiness-to-talk-to-trumps-team-even-old-foes-2faddbec",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Chinese foreign minister spoke by phone with Marco Rubio, the new secretary of state who has been a critic of Beijing.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-25T00:58:00.000Z",
+        "sentiment": {
+          "posP": 5.5,
+          "negP": 14.1,
+          "neuP": 80.4,
+          "label": "negative",
+          "confidence": 0.48
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Canada Is Becoming a Fentanyl Exporter, and a Target for Trump",
+        "link": "https://www.wsj.com/articles/canada-fentanyl-increase-organized-crime-00886863",
+        "source": "WSJ",
+        "sourceDomain": "wsj.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The drug is increasingly manufactured in and trafficked from the U.S.’s northern neighbor, though the numbers remain small compared with Mexico.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2025-01-24T22:56:00.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump's birthright citizenship restrictions struck down again by DC federal judge he called 'hater'",
+        "link": "https://www.foxnews.com/politics/trumps-birthright-citizenship-restrictions-struck-down-dc-federal-judge-called-hater",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Judge Christopher Cooper struck down Trump's second birthright citizenship order, citing the Fourteenth Amendment and rejecting surrogacy-based exclusions.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-25T21:48:11.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 19.4,
+          "neuP": 80.6,
+          "label": "negative",
+          "confidence": 0.72
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump could avoid Dems' ‘extreme’ amnesty push by signing immigration reform before new Congress",
+        "link": "https://www.foxnews.com/politics/trump-sign-dignity-act-dems-extreme-amnesty-push-house-republican-says",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "House Republicans say President Donald Trump could sign the Dignity Act this Congress, but warn delay would bring a bill more like an amnesty bill.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-25T20:38:15.000Z",
+        "sentiment": {
+          "posP": 12.4,
+          "negP": 13.8,
+          "neuP": 73.8,
+          "label": "neutral",
+          "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Presidential contender's 'remarkably tone-deaf’ move against Trump triggers parental uproar: 'Unconscionable'",
+        "link": "https://www.foxnews.com/politics/presidential-contenders-remarkably-tone-deaf-move-against-trump-triggers-parental-uproar-unconscionable",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Illinois Democratic Gov. JB Pritzker faces fierce school choice backlash after opting out of the federal scholarship tax credit. Critics cite politics.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-25T20:37:46.000Z",
+        "sentiment": {
+          "posP": 7.3,
+          "negP": 6.1,
+          "neuP": 86.6,
+          "label": "neutral",
+          "confidence": 0.1
+        },
+        "category": "usa"
+      },
+      {
+        "title": "EXCLUSIVE: White House accuses South Korea of breaking promise to Trump as US tech giant faces $688M in fines",
+        "link": "https://www.foxnews.com/politics/exclusive-white-house-accuses-south-korea-breaking-promise-trump-us-tech-giant-faces-688m-fines",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The White House says Seoul broke a promise to President Donald Trump on fair treatment for U.S. tech companies as regulators fined Coupang $688 million.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-25T20:16:44.000Z",
+        "sentiment": {
+          "posP": 17.8,
+          "negP": 10.1,
+          "neuP": 72.1,
+          "label": "positive",
+          "confidence": 0.45
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Vance says he was assured Jensen Huang was not under DOJ investigation",
+        "link": "https://www.cnbc.com/2026/11/25/vance-jensen-huang-nvidia-doj-investigation.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Whether the Trump administration has investigated Jensen Huang for potential national security risks has been the subject of questions.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-25T21:00:08.000Z",
+        "sentiment": {
+          "posP": 14,
+          "negP": 6,
+          "neuP": 80,
+          "label": "positive",
+          "confidence": 0.42
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump’s meddling in Huang scandal reignites voter angst over tech’s outsized political power",
+        "link": "https://www.cnbc.com/2026/11/25/huang-reinstatement-reignites-voter-angst-over-techs-outsized-power.html",
+        "source": "CNBC",
+        "sourceDomain": "cnbc.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Nvidia’s decision to reinstate CEO Jensen Huang after pressure from Trump is intensifying bipartisan scrutiny of tech companies' ties to the administration.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-25T13:20:34.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 13.4,
+          "neuP": 86.6,
+          "label": "negative",
+          "confidence": 0.62
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump admin proposes new tariffs on China, EU and 12 other trading partners",
+        "link": "https://abcnews.com/Politics/trump-admin-proposes-new-tariffs-china-eu-12/story?id=138442698",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A senior admin official said the countries were informed of proposed tariffs.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-25T20:23:09.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 10.17,
-      "neu": 82.2,
-      "neg": 7.63,
+      "pos": 7.94,
+      "neu": 84.01,
+      "neg": 8.04,
       "count": 40
     },
     "sourceLeaderboard": [
       {
-        "source": "NYT",
-        "pos": 10.67,
-        "neu": 78.89,
-        "neg": 10.44,
-        "count": 7
+        "source": "Washington Post",
+        "pos": 15.35,
+        "neu": 79.36,
+        "neg": 5.29,
+        "count": 10
+      },
+      {
+        "source": "Fox News",
+        "pos": 9.3,
+        "neu": 80.82,
+        "neg": 9.88,
+        "count": 5
       },
       {
         "source": "NBC News",
-        "pos": 7.83,
-        "neu": 81.36,
-        "neg": 10.81,
-        "count": 7
+        "pos": 5.4,
+        "neu": 89.12,
+        "neg": 5.48,
+        "count": 5
       },
       {
-        "source": "Washington Post",
-        "pos": 18.83,
-        "neu": 76.7,
-        "neg": 4.47,
-        "count": 7
+        "source": "ABC News",
+        "pos": 3.7,
+        "neu": 88.48,
+        "neg": 7.82,
+        "count": 5
+      },
+      {
+        "source": "NYT",
+        "pos": 7.97,
+        "neu": 82.85,
+        "neg": 9.18,
+        "count": 4
       },
       {
         "source": "WSJ",
         "pos": 4.83,
         "neu": 85.3,
         "neg": 9.88,
-        "count": 4
-      },
-      {
-        "source": "ABC News",
-        "pos": 13.45,
-        "neu": 82.22,
-        "neg": 4.33,
         "count": 4
       },
       {
@@ -5540,18 +5537,11 @@
         "count": 3
       },
       {
-        "source": "Fox News",
-        "pos": 11.17,
-        "neu": 84.43,
-        "neg": 4.4,
-        "count": 3
-      },
-      {
         "source": "CBS News",
-        "pos": 7.33,
-        "neu": 88,
-        "neg": 4.67,
-        "count": 3
+        "pos": 2,
+        "neu": 80.15,
+        "neg": 17.85,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5564,37 +5554,44 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 13.12,
-        "neu": 78.25,
-        "neg": 8.63,
-        "count": 20
+        "pos": 13.17,
+        "neu": 76.89,
+        "neg": 9.94,
+        "count": 12
       },
       {
         "topic": "Policy",
-        "pos": 7.05,
-        "neu": 84.91,
-        "neg": 8.04,
-        "count": 10
-      },
-      {
-        "topic": "Economy",
-        "pos": 9.52,
-        "neu": 88.08,
-        "neg": 2.4,
-        "count": 5
+        "pos": 6.79,
+        "neu": 85.8,
+        "neg": 7.41,
+        "count": 11
       },
       {
         "topic": "Foreign Policy",
-        "pos": 4.63,
-        "neu": 85.35,
-        "neg": 10.03,
-        "count": 4
+        "pos": 3.94,
+        "neu": 88.95,
+        "neg": 7.11,
+        "count": 8
+      },
+      {
+        "topic": "Economy",
+        "pos": 7.47,
+        "neu": 89.52,
+        "neg": 3.02,
+        "count": 6
       },
       {
         "topic": "Legal",
-        "pos": 7.9,
-        "neu": 92.1,
-        "neg": 0,
+        "pos": 4.35,
+        "neu": 83.55,
+        "neg": 12.1,
+        "count": 2
+      },
+      {
+        "topic": "Public Statements",
+        "pos": 0,
+        "neu": 78.3,
+        "neg": 21.7,
         "count": 1
       }
     ]
@@ -5622,28 +5619,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-25T09:35:24.409Z",
+        "label": "2026-11-25T18:42:17.115Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-25T10:35:24.409Z",
+        "label": "2026-11-25T19:42:17.115Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-25T11:35:24.409Z",
+        "label": "2026-11-25T20:42:17.115Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-25T12:35:24.409Z",
+        "label": "2026-11-25T21:42:17.115Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5652,28 +5649,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-25T09:35:24.409Z",
+        "label": "2026-11-25T18:42:17.115Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-25T10:35:24.409Z",
+        "label": "2026-11-25T19:42:17.115Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-25T11:35:24.409Z",
+        "label": "2026-11-25T20:42:17.115Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-25T12:35:24.409Z",
+        "label": "2026-11-25T21:42:17.115Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5753,7 +5750,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-25T13:35:24.410Z",
+    "generatedAt": "2026-11-25T22:42:17.115Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5874,7 +5871,7 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 186,
+      "usaArticles": 189,
       "potusArticles": 40,
       "sourceRows": 12,
       "industryRows": 6,
