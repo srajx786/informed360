@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-27T04:55:13.955Z",
+  "generatedAt": "2026-11-27T14:53:49.654Z",
   "counts": {
     "articles": 120,
     "topics": 12,
     "stories": 8,
-    "usaArticles": 177,
-    "potusArticles": 36
+    "usaArticles": 178,
+    "potusArticles": 35
   },
   "version": 1,
   "topStories": [
@@ -3612,28 +3612,28 @@
     "plots": {
       "indiaSentimentTimeline": [
         {
-          "label": "2026-11-27T00:55:13.956Z",
+          "label": "2026-11-27T10:53:49.654Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-27T01:55:13.956Z",
+          "label": "2026-11-27T11:53:49.654Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-27T02:55:13.956Z",
+          "label": "2026-11-27T12:53:49.654Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-27T03:55:13.956Z",
+          "label": "2026-11-27T13:53:49.654Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -3642,28 +3642,28 @@
       ],
       "worldSentimentTimeline": [
         {
-          "label": "2026-11-27T00:55:13.956Z",
+          "label": "2026-11-27T10:53:49.654Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-27T01:55:13.956Z",
+          "label": "2026-11-27T11:53:49.654Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-27T02:55:13.956Z",
+          "label": "2026-11-27T12:53:49.654Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
           "count": 0
         },
         {
-          "label": "2026-11-27T03:55:13.956Z",
+          "label": "2026-11-27T13:53:49.654Z",
           "pos": 0,
           "neu": 0,
           "neg": 0,
@@ -4555,31 +4555,31 @@
       }
     ],
     "sentiment": {
-      "pos": 8.5,
-      "neu": 81.07,
-      "neg": 10.43,
-      "count": 177
+      "pos": 7.82,
+      "neu": 81.78,
+      "neg": 10.4,
+      "count": 178
     },
     "leaderboard": [
       {
         "source": "NBC News",
-        "pos": 12.49,
-        "neu": 79.94,
-        "neg": 7.57,
+        "pos": 7.9,
+        "neu": 83.22,
+        "neg": 8.88,
         "count": 42
       },
       {
         "source": "Fox News",
-        "pos": 8.25,
-        "neu": 77.06,
-        "neg": 14.69,
+        "pos": 10.3,
+        "neu": 79.45,
+        "neg": 10.24,
         "count": 26
       },
       {
         "source": "CBS News",
-        "pos": 6.88,
-        "neu": 81.16,
-        "neg": 11.96,
+        "pos": 6.93,
+        "neu": 78.63,
+        "neg": 14.44,
         "count": 26
       },
       {
@@ -4591,24 +4591,24 @@
       },
       {
         "source": "NYT",
-        "pos": 6.64,
-        "neu": 82,
-        "neg": 11.36,
+        "pos": 8.78,
+        "neu": 82.05,
+        "neg": 9.17,
         "count": 20
       },
       {
         "source": "ABC News",
-        "pos": 7.81,
-        "neu": 84.88,
-        "neg": 7.31,
+        "pos": 6.46,
+        "neu": 84.38,
+        "neg": 9.15,
         "count": 20
       },
       {
         "source": "Washington Post",
-        "pos": 7.53,
-        "neu": 86.35,
-        "neg": 6.13,
-        "count": 11
+        "pos": 7.7,
+        "neu": 85.95,
+        "neg": 6.35,
+        "count": 12
       },
       {
         "source": "NPR",
@@ -4640,19 +4640,9 @@
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": -12.13,
-          "count": 3
-        },
-        {
           "name": "Manufacturing",
-          "bias": 11.43,
+          "bias": 7.5,
           "count": 4
-        },
-        {
-          "name": "Healthcare",
-          "bias": -9.1,
-          "count": 7
         },
         {
           "name": "Real Estate",
@@ -4660,30 +4650,40 @@
           "count": 1
         },
         {
-          "name": "Energy",
-          "bias": 5.18,
-          "count": 16
-        },
-        {
-          "name": "Communication",
-          "bias": 2.73,
-          "count": 3
+          "name": "Materials",
+          "bias": 4.68,
+          "count": 4
         },
         {
           "name": "Technology",
-          "bias": -1.98,
-          "count": 139
+          "bias": -3.67,
+          "count": 136
+        },
+        {
+          "name": "Communication",
+          "bias": 3.1,
+          "count": 3
         },
         {
           "name": "Finance",
-          "bias": 1.35,
-          "count": 18
+          "bias": -2.27,
+          "count": 22
+        },
+        {
+          "name": "Energy",
+          "bias": 2.22,
+          "count": 20
+        },
+        {
+          "name": "Healthcare",
+          "bias": -0.29,
+          "count": 11
         }
       ],
       "pos": [
         {
           "name": "Manufacturing",
-          "bias": 11.43,
+          "bias": 7.5,
           "count": 4
         },
         {
@@ -4692,26 +4692,26 @@
           "count": 1
         },
         {
-          "name": "Energy",
-          "bias": 5.18,
-          "count": 16
+          "name": "Materials",
+          "bias": 4.68,
+          "count": 4
         }
       ],
       "neu": [
         {
           "name": "Communication",
-          "bias": 2.73,
+          "bias": 3.1,
           "count": 3
         },
         {
-          "name": "Technology",
-          "bias": -1.98,
-          "count": 139
+          "name": "Energy",
+          "bias": 2.22,
+          "count": 20
         },
         {
-          "name": "Finance",
-          "bias": 1.35,
-          "count": 18
+          "name": "Healthcare",
+          "bias": -0.29,
+          "count": 11
         }
       ],
       "neg": [
@@ -4721,46 +4721,46 @@
           "count": 1
         },
         {
-          "name": "Materials",
-          "bias": -12.13,
-          "count": 3
+          "name": "Technology",
+          "bias": -3.67,
+          "count": 136
         },
         {
-          "name": "Healthcare",
-          "bias": -9.1,
-          "count": 7
+          "name": "Finance",
+          "bias": -2.27,
+          "count": 22
         }
       ]
     },
     "plots": {
       "sentimentTimeline": [
         {
-          "label": "2026-11-27T00:55:13.957Z",
-          "pos": 6,
-          "neu": 77,
-          "neg": 17,
-          "count": 6
-        },
-        {
-          "label": "2026-11-27T01:55:13.957Z",
-          "pos": 7,
-          "neu": 80,
+          "label": "2026-11-27T10:53:49.656Z",
+          "pos": 11,
+          "neu": 75,
           "neg": 13,
-          "count": 7
+          "count": 16
         },
         {
-          "label": "2026-11-27T02:55:13.957Z",
-          "pos": 2,
-          "neu": 85,
-          "neg": 13,
-          "count": 4
-        },
-        {
-          "label": "2026-11-27T03:55:13.957Z",
+          "label": "2026-11-27T11:53:49.656Z",
           "pos": 9,
-          "neu": 77,
+          "neu": 78,
           "neg": 13,
-          "count": 4
+          "count": 12
+        },
+        {
+          "label": "2026-11-27T12:53:49.656Z",
+          "pos": 9,
+          "neu": 88,
+          "neg": 3,
+          "count": 15
+        },
+        {
+          "label": "2026-11-27T13:53:49.656Z",
+          "pos": 6,
+          "neu": 84,
+          "neg": 9,
+          "count": 26
         }
       ]
     }
@@ -4968,42 +4968,42 @@
         "category": "world"
       },
       {
-        "title": "FLASHBACK: Two presidents pulled off secret Thanksgiving surprises for US troops — see the moments",
-        "link": "https://www.foxnews.com/politics/flashback-two-presidents-pulled-off-secret-thanksgiving-surprises-us-troops-see-moments",
+        "title": "US pilot tells Trump which fighter jet is ‘world’s greatest’ during Thanksgiving phone call",
+        "link": "https://www.foxnews.com/politics/us-pilot-tells-trump-which-fighter-jet-worlds-greatest-thanksgiving-phone-call",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Two Presidents pulled off secret Thanksgiving trips to war zones, with Donald Trump serving turkey at Bagram Airfield and George W. Bush visiting Iraq.",
+        "description": "An F-16 pilot told President Donald Trump the jet is the \"world's greatest\" during a Thanksgiving call, saying \"you couldn't pay me to switch airplanes.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-27T02:00:39.000Z",
+        "publishedAt": "2026-11-27T14:25:40.000Z",
         "sentiment": {
-          "posP": 4.5,
-          "negP": 9.3,
-          "neuP": 86.2,
-          "label": "negative",
-          "confidence": 0.46
+          "posP": 16.9,
+          "negP": 0,
+          "neuP": 83.1,
+          "label": "positive",
+          "confidence": 0.73
         },
         "category": "usa"
       },
       {
-        "title": "Iran accuses Zelenskyy of 'false flag' Kuwait drone strike op to get Trump's attention",
-        "link": "https://www.foxnews.com/world/iran-accuses-zelenskyy-false-flag-kuwait-drone-strike-op-get-trumps-attention",
+        "title": "Trump draws line on Somali welfare in Thanksgiving message and more top headlines",
+        "link": "https://www.foxnews.com/us/trump-somali-welfare-thanksgiving-message-nov-27-newsletter-more-top-headlines",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "A former Iran nuclear adviser claimed Thursday the Kuwait drone attack was a Ukrainian \"false flag\" staged to get President Donald Trump's attention.",
+        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-26T23:19:59.000Z",
+        "publishedAt": "2026-11-27T11:28:04.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 17.9,
-          "neuP": 82.1,
-          "label": "negative",
-          "confidence": 0.72
+          "posP": 13.9,
+          "negP": 0,
+          "neuP": 86.1,
+          "label": "positive",
+          "confidence": 0.64
         },
         "category": "usa"
       }
@@ -5210,202 +5210,82 @@
         "category": "world"
       },
       {
-        "title": "FLASHBACK: Two presidents pulled off secret Thanksgiving surprises for US troops — see the moments",
-        "link": "https://www.foxnews.com/politics/flashback-two-presidents-pulled-off-secret-thanksgiving-surprises-us-troops-see-moments",
+        "title": "US pilot tells Trump which fighter jet is ‘world’s greatest’ during Thanksgiving phone call",
+        "link": "https://www.foxnews.com/politics/us-pilot-tells-trump-which-fighter-jet-worlds-greatest-thanksgiving-phone-call",
         "source": "Fox News",
         "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Two Presidents pulled off secret Thanksgiving trips to war zones, with Donald Trump serving turkey at Bagram Airfield and George W. Bush visiting Iraq.",
+        "description": "An F-16 pilot told President Donald Trump the jet is the \"world's greatest\" during a Thanksgiving call, saying \"you couldn't pay me to switch airplanes.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-27T02:00:39.000Z",
+        "publishedAt": "2026-11-27T14:25:40.000Z",
         "sentiment": {
-          "posP": 4.5,
-          "negP": 9.3,
-          "neuP": 86.2,
-          "label": "negative",
-          "confidence": 0.46
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Iran accuses Zelenskyy of 'false flag' Kuwait drone strike op to get Trump's attention",
-        "link": "https://www.foxnews.com/world/iran-accuses-zelenskyy-false-flag-kuwait-drone-strike-op-get-trumps-attention",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "A former Iran nuclear adviser claimed Thursday the Kuwait drone attack was a Ukrainian \"false flag\" staged to get President Donald Trump's attention.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-26T23:19:59.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 17.9,
-          "neuP": 82.1,
-          "label": "negative",
-          "confidence": 0.72
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump takes on Somali welfare dependency in Thanksgiving message, lays out who should stay in US",
-        "link": "https://www.foxnews.com/politics/trump-takes-somali-welfare-dependency-thanksgiving-message-lays-who-should-stay-us",
-        "source": "Fox News",
-        "sourceDomain": "foxnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Donald Trump says only 2% of Minnesota's Somali community should stay, claiming on Truth Social the rest should be thrown out to save the state.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-26T20:58:30.000Z",
-        "sentiment": {
-          "posP": 12.1,
+          "posP": 16.9,
           "negP": 0,
-          "neuP": 87.9,
+          "neuP": 83.1,
           "label": "positive",
-          "confidence": 0.67
+          "confidence": 0.73
         },
         "category": "usa"
       },
       {
-        "title": "Democrats Confront a Familiar Question: How Are You Going to Pay for That?",
-        "link": "https://www.nytimes.com/2026/11/26/business/democrats-congress-agenda-taxes-spending.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
+        "title": "Trump draws line on Somali welfare in Thanksgiving message and more top headlines",
+        "link": "https://www.foxnews.com/us/trump-somali-welfare-thanksgiving-message-nov-27-newsletter-more-top-headlines",
+        "source": "Fox News",
+        "sourceDomain": "foxnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Many Democratic plans are unlikely to become law under President Trump. But the party is still grappling with the difficult budget math of its agenda.",
+        "description": "Get all the stories you need-to-know from the most powerful name in news delivered first thing every morning to your inbox.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-26T14:50:28.000Z",
+        "publishedAt": "2026-11-27T11:28:04.000Z",
         "sentiment": {
-          "posP": 6.5,
-          "negP": 13.6,
-          "neuP": 79.9,
-          "label": "negative",
-          "confidence": 0.23
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Administration’s Cuts to SNAP Threaten Free School Meals",
-        "link": "https://www.nytimes.com/2026/11/26/us/politics/snap-food-stamps-school-meals.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "The Trump administration’s cuts and proposed regulatory changes to the Supplemental Nutrition Assistance Program would have consequences for school lunch and breakfast.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-26T15:44:53.000Z",
-        "sentiment": {
-          "posP": 8.8,
-          "negP": 18.8,
-          "neuP": 72.4,
-          "label": "negative",
-          "confidence": 0.4
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump Lost My Brother!",
-        "link": "https://www.nytimes.com/2026/11/26/opinion/trump-maureen-dowd-brother.html",
-        "source": "NYT",
-        "sourceDomain": "nytimes.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Two miracles: my brother’s health and his disillusionment.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-26T10:02:33.000Z",
-        "sentiment": {
-          "posP": 0,
-          "negP": 34.6,
-          "neuP": 65.4,
-          "label": "negative",
-          "confidence": 0.65
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Trump to visit maker of semiconductor chips, including Nvidia's",
-        "link": "https://www.cbsnews.com/news/trump-visit-tsmc-semiconductor-facility-phoenix-nvidia/",
-        "source": "CBS News",
-        "sourceDomain": "cbsnews.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "President Trump will visit the Phoenix TSMC facility, one of the largest manufacturers of advanced chips, including Nvidia's.",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-27T02:34:45.000Z",
-        "sentiment": {
-          "posP": 7.1,
+          "posP": 13.9,
           "negP": 0,
-          "neuP": 92.9,
+          "neuP": 86.1,
           "label": "positive",
-          "confidence": 0.25
+          "confidence": 0.64
         },
         "category": "usa"
       },
       {
-        "title": "Trump claims \"fake economic numbers\" were released before election",
-        "link": "https://www.cbsnews.com/news/trump-thanksgiving-commerce-department-gdp-investigation/",
+        "title": "Trump slams foes and threatens future vetoes in Thanksgiving posts",
+        "link": "https://www.cbsnews.com/video/trump-slams-foes-and-threatens-future-vetoes-in-thanksgiving-posts/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump demanded an investigation into the Commerce Department's recent revising of the GDP, which happens routinely.",
+        "description": "President Trump took questions from reporters during the Thanksgiving holiday. He touched on Jensen Huang's return to Nvidia and lauded his latest meeting with Russia's Vladimir Putin and China's Xi Jinping. Weijia Jiang reports.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-27T00:39:06.000Z",
+        "publishedAt": "2026-11-27T14:23:12.000Z",
         "sentiment": {
-          "posP": 0,
-          "negP": 17.2,
-          "neuP": 82.8,
+          "posP": 5.5,
+          "negP": 11.4,
+          "neuP": 83.1,
           "label": "negative",
-          "confidence": 0.61
+          "confidence": 0.44
         },
         "category": "usa"
       },
       {
-        "title": "Trump signs severe weather disaster declarations from Mar-a-Lago on Thanksgiving",
-        "link": "https://www.cbsnews.com/video/trump-signs-severe-weather-disaster-declarations-mar-a-lago-thanksgiving/",
+        "title": "Trump says he's giving Iran \"a chance to be smart\"",
+        "link": "https://www.cbsnews.com/live-updates/iran-war-trump-us-threats-diplomacy-strait-of-hormuz/",
         "source": "CBS News",
         "sourceDomain": "cbsnews.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "President Trump celebrated Thanksgiving at his resort in Palm Beach, Florida. He signed disaster declarations for Florida in the wake of severe weather. Weijia Jiang has more.",
+        "description": "Trump says victory over Iran will come \"whenever I want it,\" but he's giving the regime \"a chance to be smart\" while his threat of new strikes looms.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-27T00:32:27.000Z",
+        "publishedAt": "2026-11-27T13:21:49.000Z",
         "sentiment": {
-          "posP": 7.5,
-          "negP": 27.3,
-          "neuP": 65.2,
-          "label": "negative",
-          "confidence": 0.87
-        },
-        "category": "usa"
-      },
-      {
-        "title": "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’",
-        "link": "https://www.cnbc.com/2026/11/27/us-iran-war-trump-hormuz-italian-killed-trump.html",
-        "source": "CNBC",
-        "sourceDomain": "cnbc.com",
-        "sourceCredibility": "High",
-        "industry": "",
-        "description": "Iran's foreign minister Abbas Araghchi said \"The incident is suspicious and looks like a precooked recipe for war.\"",
-        "image": "",
-        "imageUrl": "",
-        "publishedAt": "2026-11-27T03:30:23.000Z",
-        "sentiment": {
-          "posP": 8.7,
-          "negP": 32,
-          "neuP": 59.3,
-          "label": "negative",
-          "confidence": 0.9
+          "posP": 26.3,
+          "negP": 19,
+          "neuP": 54.7,
+          "label": "neutral",
+          "confidence": 0.19
         },
         "category": "usa"
       },
@@ -5430,107 +5310,213 @@
         "category": "usa"
       },
       {
-        "title": "How Trump’s latest tariff moves hand India an edge over rival Asian exporters",
-        "link": "https://www.cnbc.com/2026/11/26/trump-us-tariff-india-trade.html",
+        "title": "SpaceX shares jump 4% amid tech rally and after Musk says he will expand on Trump Account share donations",
+        "link": "https://www.cnbc.com/2026/11/27/spacex-shares-musk-donations.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Proposed tariffs of 18% on Bangladesh, Cambodia, Thailand, and 20% on China and Vietnam, subject to their respective trade deals, offer India a competitive advantage.",
+        "description": "SpaceX shares jumped in premarket trading after Elon Musk said on X that he would donate shares to American children every year.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-26T04:12:18.000Z",
+        "publishedAt": "2026-11-27T10:20:39.000Z",
         "sentiment": {
-          "posP": 22.7,
+          "posP": 24.1,
           "negP": 0,
-          "neuP": 77.3,
+          "neuP": 75.9,
           "label": "positive",
-          "confidence": 0.83
+          "confidence": 0.84
         },
         "category": "usa"
       },
       {
-        "title": "SpaceX, Musk pledge to donate a share each to active Trump Accounts",
-        "link": "https://www.cnbc.com/2026/11/25/spacex-musk-trump-account-stock.html",
+        "title": "Spain’s election could pull Madrid closer to Trump’s Washington",
+        "link": "https://www.cnbc.com/2026/11/27/spain-election-trump-sanchez.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "SpaceX said it will donate one share of the company's class A stock to every active Trump Account, and CEO Elon Musk would match it.",
+        "description": "Spanish voters head to the polls on Sunday for a snap election that could bring socialist Prime Minister Pedro Sánchez's eight years in power to an end.",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-26T06:39:34.000Z",
+        "publishedAt": "2026-11-27T13:00:42.000Z",
         "sentiment": {
-          "posP": 24,
+          "posP": 0,
           "negP": 0,
-          "neuP": 76,
-          "label": "positive",
-          "confidence": 0.83
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
         },
         "category": "usa"
       },
       {
-        "title": "Trump, NATO chief caution Russia as attacks on Ukraine’s energy infrastructure intensify",
-        "link": "https://www.cnbc.com/2026/11/26/trump-nato-rutte-russia-ukraine-war.html",
+        "title": "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’",
+        "link": "https://www.cnbc.com/2026/11/27/us-iran-war-trump-hormuz-italian-killed-trump.html",
         "source": "CNBC",
         "sourceDomain": "cnbc.com",
         "sourceCredibility": "High",
         "industry": "",
-        "description": "Trump and NATO chief Mark Rutte urged Russia to avoid actions that could expand the war and called for a rapid peaceful resolution.",
+        "description": "Iran's foreign minister Abbas Araghchi said \"The incident is suspicious and looks like a precooked recipe for war.\"",
         "image": "",
         "imageUrl": "",
-        "publishedAt": "2026-11-26T16:12:47.000Z",
+        "publishedAt": "2026-11-27T03:30:23.000Z",
         "sentiment": {
-          "posP": 17,
-          "negP": 20.2,
-          "neuP": 62.8,
+          "posP": 8.7,
+          "negP": 32,
+          "neuP": 59.3,
           "label": "negative",
-          "confidence": 0.34
+          "confidence": 0.9
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Judge blocks FCC review of ABC station licenses for now",
+        "link": "https://www.nbcnews.com/business/media/judge-blocks-fcc-review-abc-station-licenses-now-rcna601892",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The Walt Disney Co. secured a temporary restraining order Wednesday blocking the Federal Communications Commission from moving forward with an unusually early review of ABC’s broadcast-station licenses, which the media company has called an attack on free speech by the Trump administration.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-26T00:45:11.000Z",
+        "sentiment": {
+          "posP": 10.1,
+          "negP": 12.8,
+          "neuP": 77.1,
+          "label": "neutral",
+          "confidence": 0.15
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Judge halts order requiring Fulton County to turn over copies of 2020 ballots",
+        "link": "https://www.nbcnews.com/politics/elections/judge-halts-order-fulton-county-copies-2020-ballots-georgia-election-rcna611353",
+        "source": "NBC News",
+        "sourceDomain": "nbcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "The judge previously ruled the county had to turn over unredacted digital copies of election materials to the State Election Board, which is run by Trump allies.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-25T22:49:14.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Zelenskyy urges the US to pressure Putin, calling Trump’s 'my friend' remark strange",
+        "link": "https://abcnews.com/International/wireStory/zelenskyy-urges-us-pressure-putin-calling-trumps-friend-138478386",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "Ukrainian President Volodymyr Zelenskyy is expressing frustration with the U.S. approach to Russian leader Vladimir Putin",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-27T11:55:58.000Z",
+        "sentiment": {
+          "posP": 9.1,
+          "negP": 20.1,
+          "neuP": 70.8,
+          "label": "negative",
+          "confidence": 0.44
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Iran live updates: Iranian drone attack killed 2 Italians, Kuwait says",
+        "link": "https://abcnews.com/International/live-updates/iran-live-updates-tehran-strait-hormuz-safe-demands/?id=138369648",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "President Donald Trump announced \"major combat operations\" against Iran on Feb. 28.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-26T17:12:36.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 34.5,
+          "neuP": 65.5,
+          "label": "negative",
+          "confidence": 0.88
+        },
+        "category": "usa"
+      },
+      {
+        "title": "Trump admin proposes new tariffs on China, EU and 12 other trading partners",
+        "link": "https://abcnews.com/Politics/trump-admin-proposes-new-tariffs-china-eu-12/story?id=138442698",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A senior admin official said the countries were informed of proposed tariffs.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-25T20:23:09.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 0,
+          "neuP": 100,
+          "label": "neutral",
+          "confidence": 0
+        },
+        "category": "usa"
+      },
+      {
+        "title": "'The threat is finally real': Judge rips White House 'weaponization'",
+        "link": "https://abcnews.com/US/threat-finally-real-judge-rips-white-house-weaponization/story?id=138417990",
+        "source": "ABC News",
+        "sourceDomain": "abcnews.com",
+        "sourceCredibility": "High",
+        "industry": "",
+        "description": "A D.C. magistrate judge has issued a scathing written order ripping the Trump administration for what he described as the blatant \"weaponization\" of law enforcement.",
+        "image": "",
+        "imageUrl": "",
+        "publishedAt": "2026-11-25T15:17:13.000Z",
+        "sentiment": {
+          "posP": 0,
+          "negP": 9.6,
+          "neuP": 90.4,
+          "label": "negative",
+          "confidence": 0.53
         },
         "category": "usa"
       }
     ],
     "sentiment": {
-      "pos": 6.45,
-      "neu": 82.84,
-      "neg": 10.71,
-      "count": 36
+      "pos": 7.33,
+      "neu": 84.13,
+      "neg": 8.53,
+      "count": 35
     },
     "sourceLeaderboard": [
       {
         "source": "NBC News",
-        "pos": 14.23,
-        "neu": 73.35,
-        "neg": 12.42,
+        "pos": 7.99,
+        "neu": 82.43,
+        "neg": 9.59,
+        "count": 7
+      },
+      {
+        "source": "Washington Post",
+        "pos": 8.98,
+        "neu": 85.95,
+        "neg": 5.07,
         "count": 6
       },
       {
-        "source": "NYT",
-        "pos": 5.66,
-        "neu": 78.54,
-        "neg": 15.8,
-        "count": 5
-      },
-      {
-        "source": "Fox News",
-        "pos": 6.4,
-        "neu": 86.8,
-        "neg": 6.8,
-        "count": 4
-      },
-      {
-        "source": "CBS News",
-        "pos": 4.65,
-        "neu": 80.72,
-        "neg": 14.63,
-        "count": 4
-      },
-      {
         "source": "ABC News",
-        "pos": 0,
-        "neu": 88.97,
-        "neg": 11.03,
-        "count": 4
+        "pos": 4.4,
+        "neu": 82.76,
+        "neg": 12.84,
+        "count": 5
       },
       {
         "source": "WSJ",
@@ -5540,18 +5526,32 @@
         "count": 4
       },
       {
-        "source": "Washington Post",
-        "pos": 9.52,
-        "neu": 85.08,
-        "neg": 5.4,
-        "count": 4
-      },
-      {
         "source": "NPR",
         "pos": 3.67,
         "neu": 88.67,
         "neg": 7.67,
         "count": 3
+      },
+      {
+        "source": "Fox News",
+        "pos": 13.27,
+        "neu": 86.73,
+        "neg": 0,
+        "count": 3
+      },
+      {
+        "source": "CBS News",
+        "pos": 11.93,
+        "neu": 73.27,
+        "neg": 14.8,
+        "count": 3
+      },
+      {
+        "source": "NYT",
+        "pos": 6.5,
+        "neu": 87.5,
+        "neg": 6,
+        "count": 2
       },
       {
         "source": "Bloomberg",
@@ -5564,38 +5564,38 @@
     "topicSentiment": [
       {
         "topic": "Campaign / Politics",
-        "pos": 5.41,
-        "neu": 81.03,
-        "neg": 13.57,
-        "count": 16
+        "pos": 8.18,
+        "neu": 82.88,
+        "neg": 8.94,
+        "count": 13
       },
       {
         "topic": "Foreign Policy",
-        "pos": 5.72,
-        "neu": 83.37,
-        "neg": 10.91,
+        "pos": 5.48,
+        "neu": 82.48,
+        "neg": 12.04,
         "count": 10
       },
       {
         "topic": "Policy",
-        "pos": 6.37,
-        "neu": 86.57,
-        "neg": 7.07,
-        "count": 6
+        "pos": 6.26,
+        "neu": 87.29,
+        "neg": 6.46,
+        "count": 7
       },
       {
         "topic": "Economy",
-        "pos": 13.9,
-        "neu": 82.1,
+        "pos": 14.37,
+        "neu": 81.63,
         "neg": 4,
         "count": 3
       },
       {
         "topic": "Legal",
-        "pos": 8.7,
-        "neu": 86.5,
-        "neg": 4.8,
-        "count": 1
+        "pos": 4.35,
+        "neu": 93.25,
+        "neg": 2.4,
+        "count": 2
       }
     ]
   },
@@ -5622,28 +5622,28 @@
   "plots": {
     "indiaSentimentTimeline": [
       {
-        "label": "2026-11-27T00:55:13.960Z",
+        "label": "2026-11-27T10:53:49.658Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-27T01:55:13.960Z",
+        "label": "2026-11-27T11:53:49.658Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-27T02:55:13.960Z",
+        "label": "2026-11-27T12:53:49.658Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-27T03:55:13.960Z",
+        "label": "2026-11-27T13:53:49.658Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5652,28 +5652,28 @@
     ],
     "worldSentimentTimeline": [
       {
-        "label": "2026-11-27T00:55:13.960Z",
+        "label": "2026-11-27T10:53:49.659Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-27T01:55:13.960Z",
+        "label": "2026-11-27T11:53:49.659Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-27T02:55:13.960Z",
+        "label": "2026-11-27T12:53:49.659Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
         "count": 0
       },
       {
-        "label": "2026-11-27T03:55:13.960Z",
+        "label": "2026-11-27T13:53:49.659Z",
         "pos": 0,
         "neu": 0,
         "neg": 0,
@@ -5753,7 +5753,7 @@
   "meta": {
     "source": "bootstrap-cache",
     "schemaVersion": 1,
-    "generatedAt": "2026-11-27T04:55:13.960Z",
+    "generatedAt": "2026-11-27T14:53:49.660Z",
     "sourceCount": 55,
     "enabledSourceCount": 54,
     "healthySourceCount": 0,
@@ -5874,8 +5874,8 @@
     "counts": {
       "articles": 120,
       "latestNews": 36,
-      "usaArticles": 177,
-      "potusArticles": 36,
+      "usaArticles": 178,
+      "potusArticles": 35,
       "sourceRows": 12,
       "industryRows": 6,
       "trendingPoints": 12
